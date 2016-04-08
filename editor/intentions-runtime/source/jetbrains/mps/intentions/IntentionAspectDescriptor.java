@@ -17,8 +17,11 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.Collection;
 
@@ -38,8 +41,13 @@ public interface IntentionAspectDescriptor extends LanguageAspectDescriptor {
    * @param conceptId identity of a concept
    * @return <code>null</code> if no intentions for the concept are known, non-empty collection with intentions associated with the given concept otherwise
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Nullable
   Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId);
+
+  @Nullable
+  Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept);
 
   /**
    * PROVISIONAL API.

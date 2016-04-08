@@ -13,161 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractMoveExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.refactoring.behavior.AbstractMoveExpression_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractMoveNodeExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.AbstractMoveNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractMoveNodesExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.AbstractMoveNodesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="AffectedNodesClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,134,0" name="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_Model_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_Module_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Module_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_SModel_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SModel_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_SNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SNode_BehaviorDescriptor" />
-    </file>
-    <file name="ContextMemberOperation_BehaviorDescriptor.java">
-      <unit at="16,0,41,0" name="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ContextType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.ContextType_BehaviorDescriptor" />
-    </file>
-    <file name="CreateRefactoringContext_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.CreateRefactoringContext_BehaviorDescriptor" />
-    </file>
-    <file name="DoRefactorClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause_BehaviorDescriptor" />
-    </file>
-    <file name="DoWhenDoneClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteRefactoringStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.ExecuteRefactoringStatement_BehaviorDescriptor" />
-    </file>
-    <file name="GetModelsToUpdateClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.GetModelsToUpdateClause_BehaviorDescriptor" />
-    </file>
-    <file name="InitClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.InitClause_BehaviorDescriptor" />
-    </file>
-    <file name="IsApplicableToModelClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause_BehaviorDescriptor" />
-    </file>
-    <file name="IsApplicableToModuleClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause_BehaviorDescriptor" />
-    </file>
-    <file name="IsApplicableToNodeClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToNodeClause_BehaviorDescriptor" />
-    </file>
-    <file name="IsRefactoringApplicable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.IsRefactoringApplicable_BehaviorDescriptor" />
-    </file>
-    <file name="MainProjectOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ModelDescriptorOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ModelTarget_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.ModelTarget_BehaviorDescriptor" />
-    </file>
-    <file name="ModelsToGenerateByDefault_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateByDefault_BehaviorDescriptor" />
-    </file>
-    <file name="ModelsToGenerateClause_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateClause_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleTarget_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.ModuleTarget_BehaviorDescriptor" />
-    </file>
-    <file name="MoveNodeToModelExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.MoveNodeToModelExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MoveNodeToNodeExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.MoveNodeToNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MoveNodesToModelExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.MoveNodesToModelExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MoveNodesToNodeExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.MoveNodesToNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="NodeOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.NodeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTarget_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.refactoring.behavior.NodeTarget_BehaviorDescriptor" />
-    </file>
-    <file name="NodesOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.NodesOperation_BehaviorDescriptor" />
-    </file>
-    <file name="OperationContextOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringAction_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringAction_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringArgumentReference_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringArgumentReference_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringArgument_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringFieldReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringFieldReference_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringField_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringField_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringParameterReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringParameter_BehaviorDescriptor" />
-    </file>
-    <file name="RefactoringTarget_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringTarget_BehaviorDescriptor" />
-    </file>
-    <file name="Refactoring_BehaviorDescriptor.java">
-      <unit at="19,0,45,0" name="jetbrains.mps.lang.refactoring.behavior.Refactoring_BehaviorDescriptor" />
-    </file>
-    <file name="RepositoryOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.RepositoryOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ScopeOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="UpdateModelProcedure_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.refactoring.behavior.UpdateModelProcedure_BehaviorDescriptor" />
+      <unit at="14,0,186,0" name="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1239805638160">
-    <file name="AbstractMoveExpression_Behavior.java">
-      <unit id="1239805638160" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.AbstractMoveExpression_Behavior" />
-    </file>
     <file name="AbstractMoveExpression__BehaviorDescriptor.java">
       <node id="1239805638160" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1239805638160" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -242,9 +92,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741498400">
-    <file name="DoWhenDoneClause_Behavior.java">
-      <unit id="1262430001741498400" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause_Behavior" />
-    </file>
     <file name="DoWhenDoneClause__BehaviorDescriptor.java">
       <node id="1262430001741498400" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741498400" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -354,9 +201,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741523347">
-    <file name="GetModelsToUpdateClause_Behavior.java">
-      <unit id="1262430001741523347" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.GetModelsToUpdateClause_Behavior" />
-    </file>
     <file name="GetModelsToUpdateClause__BehaviorDescriptor.java">
       <node id="1262430001741523347" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741523347" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -473,9 +317,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741641686">
-    <file name="DoRefactorClause_Behavior.java">
-      <unit id="1262430001741641686" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause_Behavior" />
-    </file>
     <file name="DoRefactorClause__BehaviorDescriptor.java">
       <node id="1262430001741641686" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741641686" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -585,9 +426,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741643032">
-    <file name="AffectedNodesClause_Behavior.java">
-      <unit id="1262430001741643032" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_Behavior" />
-    </file>
     <file name="AffectedNodesClause__BehaviorDescriptor.java">
       <node id="1262430001741643032" at="30,0,31,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741643032" at="31,0,32,0" concept="7" trace="REGISTRY" />
@@ -698,9 +536,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741647148">
-    <file name="IsApplicableToModuleClause_Behavior.java">
-      <unit id="1262430001741647148" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause_Behavior" />
-    </file>
     <file name="IsApplicableToModuleClause__BehaviorDescriptor.java">
       <node id="1262430001741647148" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741647148" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -810,9 +645,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741703647">
-    <file name="IsApplicableToModelClause_Behavior.java">
-      <unit id="1262430001741703647" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause_Behavior" />
-    </file>
     <file name="IsApplicableToModelClause__BehaviorDescriptor.java">
       <node id="1262430001741703647" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703647" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -922,9 +754,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741704647">
-    <file name="RefactoringFieldReference_Behavior.java">
-      <unit id="1262430001741704647" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.RefactoringFieldReference_Behavior" />
-    </file>
     <file name="RefactoringFieldReference__BehaviorDescriptor.java">
       <node id="1262430001741704647" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741704647" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -999,9 +828,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741704688">
-    <file name="ModelsToGenerateClause_Behavior.java">
-      <unit id="1262430001741704688" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateClause_Behavior" />
-    </file>
     <file name="ModelsToGenerateClause__BehaviorDescriptor.java">
       <node id="1262430001741704688" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741704688" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -1118,9 +944,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741718505">
-    <file name="IsApplicableToNodeClause_Behavior.java">
-      <unit id="1262430001741718505" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.IsApplicableToNodeClause_Behavior" />
-    </file>
     <file name="IsApplicableToNodeClause__BehaviorDescriptor.java">
       <node id="1262430001741718505" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741718505" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -1230,9 +1053,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/1262430001741720224">
-    <file name="InitClause_Behavior.java">
-      <unit id="1262430001741720224" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.InitClause_Behavior" />
-    </file>
     <file name="InitClause__BehaviorDescriptor.java">
       <node id="1262430001741720224" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741720224" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -1342,9 +1162,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/4205271146524200389">
-    <file name="Refactoring_Behavior.java">
-      <unit id="4205271146524200389" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.Refactoring_Behavior" />
-    </file>
     <file name="Refactoring__BehaviorDescriptor.java">
       <node id="4205271146524200389" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="4205271146524200389" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -1437,9 +1254,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/5452844340287046483">
-    <file name="ConceptFunctionParameter_Model_Behavior.java">
-      <unit id="5452844340287046483" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_Model__BehaviorDescriptor.java">
       <node id="5452844340287046483" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287046483" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -1527,9 +1341,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/5452844340287051342">
-    <file name="ConceptFunctionParameter_SModel_Behavior.java">
-      <unit id="5452844340287051342" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SModel_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_SModel__BehaviorDescriptor.java">
       <node id="5452844340287051342" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287051342" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -1617,9 +1428,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/5938312768538181836">
-    <file name="RepositoryOperation_Behavior.java">
-      <unit id="5938312768538181836" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.RepositoryOperation_Behavior" />
-    </file>
     <file name="RepositoryOperation__BehaviorDescriptor.java">
       <node id="5938312768538181836" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="5938312768538181836" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -1708,9 +1516,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652449">
-    <file name="ContextMemberOperation_Behavior.java">
-      <unit id="7012097027058652449" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation_Behavior" />
-    </file>
     <file name="ContextMemberOperation__BehaviorDescriptor.java">
       <node id="7012097027058652449" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652449" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1777,9 +1582,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652475">
-    <file name="ModelDescriptorOperation_Behavior.java">
-      <unit id="7012097027058652475" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_Behavior" />
-    </file>
     <file name="ModelDescriptorOperation__BehaviorDescriptor.java">
       <node id="7012097027058652475" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652475" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -1868,9 +1670,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652491">
-    <file name="ModuleOperation_Behavior.java">
-      <unit id="7012097027058652491" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior" />
-    </file>
     <file name="ModuleOperation__BehaviorDescriptor.java">
       <node id="7012097027058652491" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652491" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -1959,9 +1758,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652503">
-    <file name="NodeOperation_Behavior.java">
-      <unit id="7012097027058652503" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior" />
-    </file>
     <file name="NodeOperation__BehaviorDescriptor.java">
       <node id="7012097027058652503" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652503" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -2071,9 +1867,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652510">
-    <file name="NodesOperation_Behavior.java">
-      <unit id="7012097027058652510" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.NodesOperation_Behavior" />
-    </file>
     <file name="NodesOperation__BehaviorDescriptor.java">
       <node id="7012097027058652510" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652510" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -2183,9 +1976,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652517">
-    <file name="OperationContextOperation_Behavior.java">
-      <unit id="7012097027058652517" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_Behavior" />
-    </file>
     <file name="OperationContextOperation__BehaviorDescriptor.java">
       <node id="7012097027058652517" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652517" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -2274,9 +2064,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652533">
-    <file name="ProjectOperation_Behavior.java">
-      <unit id="7012097027058652533" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_Behavior" />
-    </file>
     <file name="ProjectOperation__BehaviorDescriptor.java">
       <node id="7012097027058652533" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652533" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -2365,9 +2152,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/7012097027058652547">
-    <file name="ScopeOperation_Behavior.java">
-      <unit id="7012097027058652547" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior" />
-    </file>
     <file name="ScopeOperation__BehaviorDescriptor.java">
       <node id="7012097027058652547" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="7012097027058652547" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -2456,9 +2240,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/8113680833395644312">
-    <file name="MainProjectOperation_Behavior.java">
-      <unit id="8113680833395644312" at="10,0,13,0" name="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior" />
-    </file>
     <file name="MainProjectOperation__BehaviorDescriptor.java">
       <node id="8113680833395644312" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="8113680833395644312" at="28,0,29,0" concept="7" trace="REGISTRY" />

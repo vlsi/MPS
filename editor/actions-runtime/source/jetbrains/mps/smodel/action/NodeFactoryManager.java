@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -41,6 +42,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 public class NodeFactoryManager {
@@ -62,7 +64,7 @@ public class NodeFactoryManager {
   }
 
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(nodeConcept, sampleNode, enclosingNode, model, createConceptsSet());
+    return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<SAbstractConcept>());
   }
 
   private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,
@@ -72,7 +74,7 @@ public class NodeFactoryManager {
     if (nodeConcept instanceof SInterfaceConcept) {
       return newNode;
     }
-    BehaviorReflection.initNode(newNode);
+    BHReflection.initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }
@@ -117,7 +119,7 @@ public class NodeFactoryManager {
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
     for (SAbstractConcept ancestor : new DepthFirstConceptIterator(nodeConcept)) {
       ActionAspectDescriptor actionAspectDescriptor = null;
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage().getQualifiedName());
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage());
       if (languageRuntime != null) {
         actionAspectDescriptor = languageRuntime.getAspect(ActionAspectDescriptor.class);
       }
@@ -133,21 +135,5 @@ public class NodeFactoryManager {
 
   private static SConcept asSConcept(SNode nodeConcept) {
     return MetaAdapterByDeclaration.getInstanceConcept(nodeConcept);
-  }
-
-  private static Set<SAbstractConcept> createConceptsSet() {
-    return new THashSet<SAbstractConcept>(new ConceptHashingStrategy());
-  }
-
-  private static class ConceptHashingStrategy implements TObjectHashingStrategy<SAbstractConcept> {
-    @Override
-    public int computeHashCode(SAbstractConcept concept) {
-      return MetaIdHelper.getConcept(concept).hashCode();
-    }
-
-    @Override
-    public boolean equals(SAbstractConcept concept1, SAbstractConcept concept2) {
-      return concept1.equals(concept2);
-    }
   }
 }

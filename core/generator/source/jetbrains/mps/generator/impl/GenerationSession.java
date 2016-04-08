@@ -47,7 +47,6 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -752,8 +751,8 @@ class GenerationSession {
           if (hintObject instanceof SNode) {
             final SModel m = ((SNode) hintObject).getModel();
             myLogRecorder.record(MessageKind.fromPriority(level), m.getReference());
-          } else if (hintObject instanceof NodeWithContext) {
-            SModelReference mr = ((NodeWithContext) hintObject).getNode().getModelReference();
+          } else if (hintObject instanceof SModelReference) {
+            SModelReference mr = (SModelReference) hintObject;
             myLogRecorder.record(MessageKind.fromPriority(level), mr);
           } else if (hintObject instanceof SNodeReference) {
             myLogRecorder.record(MessageKind.fromPriority(level), ((SNodeReference) hintObject).getModelReference());

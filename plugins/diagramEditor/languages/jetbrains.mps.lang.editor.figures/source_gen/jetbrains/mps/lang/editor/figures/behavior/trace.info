@@ -13,46 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.lang.editor.figures.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ExternalViewFigureParameter_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_BehaviorDescriptor" />
-    </file>
-    <file name="ExternalViewFigure_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_BehaviorDescriptor" />
-    </file>
-    <file name="FigureAttribute_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttributeField_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttributeMethod_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttributeViewProperty_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttribute_BehaviorDescriptor.java">
-      <unit at="13,0,23,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameter_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor" />
-    </file>
-    <file name="Figure_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.Figure_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.lang.editor.figures.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/2084788800270490179">
-    <file name="FigureParameterAttributeField_Behavior.java">
-      <node id="2084788800270490179" at="13,88,14,109" concept="5" />
-      <node id="2084788800270490179" at="13,0,16,0" concept="7" trace="call_getFieldDeclaration_7911346875269141454#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2084788800270490179" at="13,88,14,109" />
-      <scope id="2084788800270490179" at="13,0,16,0">
-        <var name="__thisNode__" id="2084788800270490179" />
-      </scope>
-      <unit id="2084788800270490179" at="11,0,17,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField_Behavior" />
-    </file>
     <file name="FigureParameterAttributeField__BehaviorDescriptor.java">
       <node id="2084788800270490179" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="2084788800270490179" at="27,0,28,0" concept="6" trace="REGISTRY" />
@@ -145,15 +109,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/2084788800270510744">
-    <file name="FigureParameterAttributeMethod_Behavior.java">
-      <node id="2084788800270510744" at="13,89,14,111" concept="5" />
-      <node id="2084788800270510744" at="13,0,16,0" concept="7" trace="call_getMethodDeclaration_7911346875269168300#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2084788800270510744" at="13,89,14,111" />
-      <scope id="2084788800270510744" at="13,0,16,0">
-        <var name="__thisNode__" id="2084788800270510744" />
-      </scope>
-      <unit id="2084788800270510744" at="11,0,17,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_Behavior" />
-    </file>
     <file name="FigureParameterAttributeMethod__BehaviorDescriptor.java">
       <node id="2084788800270510744" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="2084788800270510744" at="27,0,28,0" concept="6" trace="REGISTRY" />
@@ -246,9 +201,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/342110547581235633">
-    <file name="FigureParameter_Behavior.java">
-      <unit id="342110547581235633" at="10,0,13,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_Behavior" />
-    </file>
     <file name="FigureParameter__BehaviorDescriptor.java">
       <node id="342110547581235633" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="342110547581235633" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -315,9 +267,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561918019432">
-    <file name="ExternalViewFigure_Behavior.java">
-      <unit id="5422656561918019432" at="10,0,13,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior" />
-    </file>
     <file name="ExternalViewFigure__BehaviorDescriptor.java">
       <node id="5422656561918019432" at="36,0,37,0" concept="6" trace="CONCEPT" />
       <node id="5422656561918019432" at="37,0,38,0" concept="6" trace="REGISTRY" />
@@ -411,21 +360,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561931892662">
-    <file name="FigureAttribute_Behavior.java">
-      <node id="5422656561931892662" at="13,83,14,90" concept="5" />
-      <node id="5422656561931892662" at="16,100,17,97" concept="5" />
-      <node id="5422656561931892662" at="13,0,16,0" concept="7" trace="call_getFigureClass_5422656561931904592#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5422656561931892662" at="16,0,19,0" concept="7" trace="call_getPrameterAttributes_5422656561931892777#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="5422656561931892662" at="13,83,14,90" />
-      <scope id="5422656561931892662" at="16,100,17,97" />
-      <scope id="5422656561931892662" at="13,0,16,0">
-        <var name="__thisNode__" id="5422656561931892662" />
-      </scope>
-      <scope id="5422656561931892662" at="16,0,19,0">
-        <var name="__thisNode__" id="5422656561931892662" />
-      </scope>
-      <unit id="5422656561931892662" at="11,0,20,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior" />
-    </file>
     <file name="FigureAttribute__BehaviorDescriptor.java">
       <node id="5422656561931892662" at="29,0,30,0" concept="6" trace="CONCEPT" />
       <node id="5422656561931892662" at="30,0,31,0" concept="6" trace="REGISTRY" />
@@ -525,9 +459,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561931910495">
-    <file name="FigureParameterAttribute_Behavior.java">
-      <unit id="5422656561931910495" at="10,0,13,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_Behavior" />
-    </file>
     <file name="FigureParameterAttribute__BehaviorDescriptor.java">
       <node id="5422656561931910495" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="5422656561931910495" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -594,27 +525,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561935117665">
-    <file name="ExternalViewFigureParameter_Behavior.java">
-      <node id="5422656561935117665" at="13,87,14,106" concept="5" />
-      <node id="5422656561935117665" at="16,83,17,101" concept="5" />
-      <node id="5422656561935117665" at="19,79,20,97" concept="5" />
-      <node id="5422656561935117665" at="13,0,16,0" concept="7" trace="call_getParameterMethod_5422656561935120433#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5422656561935117665" at="16,0,19,0" concept="7" trace="call_getGetterName_3748979635600013007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="5422656561935117665" at="19,0,22,0" concept="7" trace="call_getSuffix_3748979635600238774#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="5422656561935117665" at="13,87,14,106" />
-      <scope id="5422656561935117665" at="16,83,17,101" />
-      <scope id="5422656561935117665" at="19,79,20,97" />
-      <scope id="5422656561935117665" at="13,0,16,0">
-        <var name="__thisNode__" id="5422656561935117665" />
-      </scope>
-      <scope id="5422656561935117665" at="16,0,19,0">
-        <var name="__thisNode__" id="5422656561935117665" />
-      </scope>
-      <scope id="5422656561935117665" at="19,0,22,0">
-        <var name="__thisNode__" id="5422656561935117665" />
-      </scope>
-      <unit id="5422656561935117665" at="11,0,23,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_Behavior" />
-    </file>
     <file name="ExternalViewFigureParameter__BehaviorDescriptor.java">
       <node id="5422656561935117665" at="31,0,32,0" concept="6" trace="CONCEPT" />
       <node id="5422656561935117665" at="32,0,33,0" concept="6" trace="REGISTRY" />
@@ -750,15 +660,6 @@
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/7319867929567417504">
-    <file name="FigureParameterAttributeViewProperty_Behavior.java">
-      <node id="7319867929567417504" at="13,94,14,122" concept="5" />
-      <node id="7319867929567417504" at="13,0,16,0" concept="7" trace="call_getStaticFieldDeclaration_7911346875269169672#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7319867929567417504" at="13,94,14,122" />
-      <scope id="7319867929567417504" at="13,0,16,0">
-        <var name="__thisNode__" id="7319867929567417504" />
-      </scope>
-      <unit id="7319867929567417504" at="11,0,17,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_Behavior" />
-    </file>
     <file name="FigureParameterAttributeViewProperty__BehaviorDescriptor.java">
       <node id="7319867929567417504" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="7319867929567417504" at="27,0,28,0" concept="6" trace="REGISTRY" />

@@ -349,7 +349,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     } else {
       myEditorTracker.markOnlyEditorsChecked(activeEditors);
     }
-    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, checkers, activeEditors);
+    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, checkers, activeEditors, getInspector());
   }
 
   public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
@@ -379,8 +379,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return myEditorTracker;
   }
 
-  @Override
-  public EditorComponent getInspector() {
+  private EditorComponent getInspector() {
     if (myInspectorTool == null) return null;
     return myInspectorTool.getInspector();
   }

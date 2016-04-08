@@ -7,404 +7,667 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"))) {
-        return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab20495600L, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"))) {
-        return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L, "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"))) {
-        return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b152bc1fL, "jetbrains.mps.lang.editor.structure.CaretPositionParameter"))) {
-        return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, "jetbrains.mps.lang.editor.structure.CellActionMapItem"))) {
-        return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5877365L, "jetbrains.mps.lang.editor.structure.CellKeyMapItem"))) {
-        return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"))) {
-        return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dc11caL, "jetbrains.mps.lang.editor.structure.CellLayout"))) {
-        return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7e91dcf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58784317L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b5e5f6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e2300bcaL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1115d1a2839L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5021674eL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f87862dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a0aafeL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3fa975a0L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"))) {
-        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ea28b54668aeb4bL, "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, "jetbrains.mps.lang.editor.structure.CellModel_Image"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x100d0e71cb2L, "jetbrains.mps.lang.editor.structure.CellModel_JComponent"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x42e5e943db1f2dd0L, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuContribution_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Action_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Conditional_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_IncludeMenu"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_IncludeMenu_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_SubMenu"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_SubMenu_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Super"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Super_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuReference_Default_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuReference_Named_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenu_Default_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextAssistantMenu_Named_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"))) {
-        return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"))) {
-        return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac437b468L, "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x22926e62b7d495a0L, "jetbrains.mps.lang.editor.structure.DominatesRecord"))) {
-        return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"))) {
-        return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
-        return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference"))) {
-        return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ae0865e9a712712L, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"))) {
-        return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41b27e5L, "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc74ebe6cL, "jetbrains.mps.lang.editor.structure.HorizontalAlign"))) {
-        return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"))) {
-        return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f1d6594edL, "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abafc10eaL, "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a2febf37d13730eL, "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9dbb2ccL, "jetbrains.mps.lang.editor.structure.ModelAccessor"))) {
-        return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c1429L, "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11de23fdb1fL, "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"))) {
-        return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce060712L, "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b40a56a20L, "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b31a45ad7L, "jetbrains.mps.lang.editor.structure.PositionStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"))) {
-        return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d3fe71eL, "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"))) {
-        return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"))) {
-        return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b132f8cdL, "jetbrains.mps.lang.editor.structure.SelectPositionParameter"))) {
-        return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L, "jetbrains.mps.lang.editor.structure.StubEditorCellModel"))) {
-        return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x53ac4acb2cb6e9d7L, "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9af02L, "jetbrains.mps.lang.editor.structure.StyleKeyPack"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fd64815dL, "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"))) {
-        return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5ea66701cd0a0c86L, "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, "jetbrains.mps.lang.editor.structure.UnapplyStyle"))) {
-        return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))) {
-        return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
+          }
+          break;
+        case 28:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
+          }
+          break;
+        case 29:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
+          }
+          break;
+        case 30:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
+          }
+          break;
+        case 31:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
+          }
+          break;
+        case 32:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
+          }
+          break;
+        case 33:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
+          }
+          break;
+        case 34:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
+          }
+          break;
+        case 35:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
+          }
+          break;
+        case 36:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
+          }
+          break;
+        case 37:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
+          }
+          break;
+        case 38:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
+          }
+          break;
+        case 39:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
+          }
+          break;
+        case 40:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
+          }
+          break;
+        case 41:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
+          }
+          break;
+        case 42:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
+          }
+          break;
+        case 43:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
+          }
+          break;
+        case 44:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
+          }
+          break;
+        case 45:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
+          }
+          break;
+        case 46:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
+          }
+          break;
+        case 47:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
+          }
+          break;
+        case 48:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
+          }
+          break;
+        case 49:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
+          }
+          break;
+        case 50:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
+          }
+          break;
+        case 51:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
+          }
+          break;
+        case 52:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
+          }
+          break;
+        case 53:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
+          }
+          break;
+        case 54:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
+          }
+          break;
+        case 55:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
+          }
+          break;
+        case 56:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
+          }
+          break;
+        case 57:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
+          }
+          break;
+        case 58:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
+          }
+          break;
+        case 59:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
+          }
+          break;
+        case 60:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
+          }
+          break;
+        case 61:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
+          }
+          break;
+        case 62:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
+          }
+          break;
+        case 63:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
+          }
+          break;
+        case 64:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
+          }
+          break;
+        case 65:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
+          }
+          break;
+        case 66:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuContribution_Editor());
+          }
+          break;
+        case 67:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Editor());
+          }
+          break;
+        case 68:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Action_Editor());
+          }
+          break;
+        case 69:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Conditional_Editor());
+          }
+          break;
+        case 70:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_IncludeMenu_Editor());
+          }
+          break;
+        case 71:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_SubMenu_Editor());
+          }
+          break;
+        case 72:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuPart_Super_Editor());
+          }
+          break;
+        case 73:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuReference_Default_Editor());
+          }
+          break;
+        case 74:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenuReference_Named_Editor());
+          }
+          break;
+        case 75:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenu_Default_Editor());
+          }
+          break;
+        case 76:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextAssistantMenu_Named_Editor());
+          }
+          break;
+        case 77:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
+          }
+          break;
+        case 78:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
+          }
+          break;
+        case 79:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
+          }
+          break;
+        case 80:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
+          }
+          break;
+        case 81:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
+          }
+          break;
+        case 82:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
+          }
+          break;
+        case 83:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
+          }
+          break;
+        case 84:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
+          }
+          break;
+        case 85:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
+          }
+          break;
+        case 86:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
+          }
+          break;
+        case 87:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
+          }
+          break;
+        case 88:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
+          }
+          break;
+        case 89:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
+          }
+          break;
+        case 90:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
+          }
+          break;
+        case 91:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
+          }
+          break;
+        case 92:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
+          }
+          break;
+        case 93:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
+          }
+          break;
+        case 94:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
+          }
+          break;
+        case 95:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
+          }
+          break;
+        case 96:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
+          }
+          break;
+        case 97:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
+          }
+          break;
+        case 98:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
+          }
+          break;
+        case 99:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
+          }
+          break;
+        case 100:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
+          }
+          break;
+        case 101:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
+          }
+          break;
+        case 102:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
+          }
+          break;
+        case 103:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
+          }
+          break;
+        case 104:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
+          }
+          break;
+        case 105:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
+          }
+          break;
+        case 106:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
+          }
+          break;
+        case 107:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
+          }
+          break;
+        case 108:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
+          }
+          break;
+        case 109:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
+          }
+          break;
+        case 110:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
+          }
+          break;
+        case 111:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
+          }
+          break;
+        case 112:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
+          }
+          break;
+        case 113:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
+          }
+          break;
+        case 114:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
+          }
+          break;
+        case 115:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
+          }
+          break;
+        case 116:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
+          }
+          break;
+        case 117:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
+          }
+          break;
+        case 118:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
+          }
+          break;
+        case 119:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
+          }
+          break;
+        case 120:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
+          }
+          break;
+        case 121:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
+          }
+          break;
+        case 122:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
+          }
+          break;
+        case 123:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
+          }
+          break;
+        case 124:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
+          }
+          break;
+        case 125:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
+          }
+          break;
+        case 126:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
+          }
+          break;
+        case 127:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
+          }
+          break;
+        case 128:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -414,40 +677,53 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))) {
-        if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"))) {
-        if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d0a0c, editorComponentId)) {
-          case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
-          case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
-          case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
-          case 3:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
-          case 4:
-            return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
-          case 5:
-            return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
-          case 6:
-            return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
-          default:
-            return Collections.<ConceptEditorComponent>emptyList();
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, "jetbrains.mps.lang.editor.structure.ICellStyle"))) {
-        if ("jetbrains.mps.lang.editor.editor.CellStyle_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component());
-        }
+      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
+            }
+          }
+          break;
+        case 2:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c3a0a2, editorComponentId)) {
+              case 0:
+                return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
+              case 1:
+                return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
+              case 2:
+                return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
+              case 3:
+                return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
+              case 4:
+                return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
+              case 5:
+                return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
+              case 6:
+                return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
+              default:
+                return Collections.<ConceptEditorComponent>emptyList();
+            }
+          }
+          break;
+        case 3:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.editor.CellStyle_Component".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -455,5 +731,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0d0a0c = new String[]{"jetbrains.mps.lang.editor.editor.Common_Component", "jetbrains.mps.lang.editor.editor.Style_Component", "jetbrains.mps.lang.editor.editor._CellKeyMapLnk_Component", "jetbrains.mps.lang.editor.editor._CellModel_Common", "jetbrains.mps.lang.editor.editor._CloseTag", "jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable", "jetbrains.mps.lang.editor.editor._OpenTag"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab20495600L, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L, "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b152bc1fL, "jetbrains.mps.lang.editor.structure.CaretPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, "jetbrains.mps.lang.editor.structure.CellActionMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5877365L, "jetbrains.mps.lang.editor.structure.CellKeyMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dc11caL, "jetbrains.mps.lang.editor.structure.CellLayout"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7e91dcf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58784317L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b5e5f6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e2300bcaL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1115d1a2839L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5021674eL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f87862dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a0aafeL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3fa975a0L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ea28b54668aeb4bL, "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, "jetbrains.mps.lang.editor.structure.CellModel_Image"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x100d0e71cb2L, "jetbrains.mps.lang.editor.structure.CellModel_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x42e5e943db1f2dd0L, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_SubMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Super"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac437b468L, "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x22926e62b7d495a0L, "jetbrains.mps.lang.editor.structure.DominatesRecord"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ae0865e9a712712L, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41b27e5L, "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc74ebe6cL, "jetbrains.mps.lang.editor.structure.HorizontalAlign"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f1d6594edL, "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abafc10eaL, "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a2febf37d13730eL, "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9dbb2ccL, "jetbrains.mps.lang.editor.structure.ModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c1429L, "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11de23fdb1fL, "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce060712L, "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b40a56a20L, "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b31a45ad7L, "jetbrains.mps.lang.editor.structure.PositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d3fe71eL, "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b132f8cdL, "jetbrains.mps.lang.editor.structure.SelectPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L, "jetbrains.mps.lang.editor.structure.StubEditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x53ac4acb2cb6e9d7L, "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9af02L, "jetbrains.mps.lang.editor.structure.StyleKeyPack"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fd64815dL, "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5ea66701cd0a0c86L, "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, "jetbrains.mps.lang.editor.structure.UnapplyStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, "jetbrains.mps.lang.editor.structure.ICellStyle"));
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a2 = new String[]{"jetbrains.mps.lang.editor.editor.Common_Component", "jetbrains.mps.lang.editor.editor.Style_Component", "jetbrains.mps.lang.editor.editor._CellKeyMapLnk_Component", "jetbrains.mps.lang.editor.editor._CellModel_Common", "jetbrains.mps.lang.editor.editor._CloseTag", "jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable", "jetbrains.mps.lang.editor.editor._OpenTag"};
 }

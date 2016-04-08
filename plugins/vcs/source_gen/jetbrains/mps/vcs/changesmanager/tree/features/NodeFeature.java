@@ -4,8 +4,8 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -18,8 +18,8 @@ public class NodeFeature extends AbstractNodeFeature {
   }
   @Nullable
   @Override
-  public Feature getParent() {
-    SNode node = getNodePointer().resolve(MPSModuleRepository.getInstance());
+  protected Feature getParent(SRepository repo) {
+    SNode node = getNodePointer().resolve(repo);
     SNode parentNode = SNodeOperations.getParent(node);
     if (parentNode == null) {
       String virtualPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));

@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="IncludeXMLTarget_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.TargetXML.behavior.IncludeXMLTarget_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

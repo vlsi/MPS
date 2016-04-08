@@ -18,6 +18,7 @@ import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -54,7 +55,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
         }
       };
-      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", creator);
+      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), creator);
     }
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
@@ -70,8 +71,8 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
         }
       };
-      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", creator);
-      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", creator);
+      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), creator);
+      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), creator);
     }
   }
   public void doDispose() {

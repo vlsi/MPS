@@ -5,7 +5,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="15,0,73,0" name="jetbrains.mps.samples.Kaja.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="15,0,96,0" name="jetbrains.mps.samples.Kaja.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/4816737345355688307">

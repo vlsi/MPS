@@ -4,447 +4,378 @@ package jetbrains.mps.baseLanguage.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
-  private IntentionFactory[] myIntentions7;
-  private IntentionFactory[] myIntentions8;
-  private IntentionFactory[] myIntentions9;
-  private IntentionFactory[] myIntentions10;
-  private IntentionFactory[] myIntentions11;
-  private IntentionFactory[] myIntentions12;
-  private IntentionFactory[] myIntentions13;
-  private IntentionFactory[] myIntentions14;
-  private IntentionFactory[] myIntentions15;
-  private IntentionFactory[] myIntentions16;
-  private IntentionFactory[] myIntentions17;
-  private IntentionFactory[] myIntentions18;
-  private IntentionFactory[] myIntentions19;
-  private IntentionFactory[] myIntentions20;
-  private IntentionFactory[] myIntentions21;
-  private IntentionFactory[] myIntentions22;
-  private IntentionFactory[] myIntentions23;
-  private IntentionFactory[] myIntentions24;
-  private IntentionFactory[] myIntentions25;
-  private IntentionFactory[] myIntentions26;
-  private IntentionFactory[] myIntentions27;
-  private IntentionFactory[] myIntentions28;
-  private IntentionFactory[] myIntentions29;
-  private IntentionFactory[] myIntentions30;
-  private IntentionFactory[] myIntentions31;
-  private IntentionFactory[] myIntentions32;
-  private IntentionFactory[] myIntentions33;
-  private IntentionFactory[] myIntentions34;
-  private IntentionFactory[] myIntentions35;
-  private IntentionFactory[] myIntentions36;
-  private IntentionFactory[] myIntentions37;
-  private IntentionFactory[] myIntentions38;
-  private IntentionFactory[] myIntentions39;
-  private IntentionFactory[] myIntentions40;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[41];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0xf8c108ca68L;
-    myId2Index[2] = 0xf8c37a7f6eL;
-    myId2Index[3] = 0xf8c37f506dL;
-    myId2Index[4] = 0xf8c37f506fL;
-    myId2Index[5] = 0xf8c77f1e94L;
-    myId2Index[6] = 0xf8c77f1e98L;
-    myId2Index[7] = 0xf8cc56b1fcL;
-    myId2Index[8] = 0xf8cc56b210L;
-    myId2Index[9] = 0xf8cc56b213L;
-    myId2Index[10] = 0xf8cc56b215L;
-    myId2Index[11] = 0xf8cc56b217L;
-    myId2Index[12] = 0xf8cc56b21dL;
-    myId2Index[13] = 0xf8cc67c7efL;
-    myId2Index[14] = 0xf8cc67c7fbL;
-    myId2Index[15] = 0xf93c84351fL;
-    myId2Index[16] = 0xf93d4da00cL;
-    myId2Index[17] = 0xf93d565d10L;
-    myId2Index[18] = 0xf940d819f7L;
-    myId2Index[19] = 0xfaa4bf0f2fL;
-    myId2Index[20] = 0xfbdeb6fecfL;
-    myId2Index[21] = 0xfc092b6b77L;
-    myId2Index[22] = 0x101d9d3ca30L;
-    myId2Index[23] = 0x10a6933ce33L;
-    myId2Index[24] = 0x10a698082feL;
-    myId2Index[25] = 0x10e50ecba3dL;
-    myId2Index[26] = 0x10ef01239c9L;
-    myId2Index[27] = 0x10f3ee082d8L;
-    myId2Index[28] = 0x1107e0cb103L;
-    myId2Index[29] = 0x114a6be947aL;
-    myId2Index[30] = 0x117b744dafeL;
-    myId2Index[31] = 0x117b9245fc5L;
-    myId2Index[32] = 0x118154a6332L;
-    myId2Index[33] = 0x11857355952L;
-    myId2Index[34] = 0x118ceceb41aL;
-    myId2Index[35] = 0x11a59b0fbceL;
-    myId2Index[36] = 0x11d2ea8a339L;
-    myId2Index[37] = 0x120237c2cebL;
-    myId2Index[38] = 0x3399756d2c03d422L;
-    myId2Index[39] = 0x6c6b6a1e379f9404L;
-    myId2Index[40] = 0x6c6b6a1e379f9408L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ClassConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[2];
-          myIntentions0[0] = new MakeClassAbstract_Intention();
-          myIntentions0[1] = new MakeClassFinal_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: FieldDeclaration 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[4];
-          myIntentions1[0] = new MoveInitializerToConstructor_Intention();
-          myIntentions1[1] = new MakeFieldVolatile_Intention();
-          myIntentions1[2] = new MakeFieldTransient_Intention();
-          myIntentions1[3] = new AddStaticFieldModifier_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: VariableDeclaration 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new AddFinalModifierToAny_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: Type 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new ConvertToArrayType_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: Expression 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[8];
-          myIntentions4[0] = new SurroundWithParenthesis_Intention();
-          myIntentions4[1] = new SurroundWithTypeCast_Intention();
-          myIntentions4[2] = new SurroundWithNegation_Intention();
-          myIntentions4[3] = new SurroundWithIfClause_Intention();
-          myIntentions4[4] = new SurroundWithIfElseClause_Intention();
-          myIntentions4[5] = new CleanUnmatchedParentheses_Intention();
-          myIntentions4[6] = new ComputeWholeExpressionValue_Intention();
-          myIntentions4[7] = new ComputeExpressionValue_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: ParameterDeclaration 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[1];
-          myIntentions5[0] = new AddFieldForUnUsedParameter_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: VariableReference 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[3];
-          myIntentions6[0] = new ExpandBoolean_Intention();
-          myIntentions6[1] = new ConvertAssignmentToVariableDeclaration_Intention();
-          myIntentions6[2] = new MakeParameterFinal_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      case 7:
-        // Concept: BaseMethodDeclaration 
-        if (myIntentions7 == null) {
-          myIntentions7 = new IntentionFactory[5];
-          myIntentions7[0] = new MakeGeneric_Intention();
-          myIntentions7[1] = new AddThrows_Intention();
-          myIntentions7[2] = new MakeMethodFinal_Intention();
-          myIntentions7[3] = new MakeSynchronized_Intention();
-          myIntentions7[4] = new AddModifiers_Intention();
-        }
-        return Arrays.asList(myIntentions7);
-      case 8:
-        // Concept: EqualsExpression 
-        if (myIntentions8 == null) {
-          myIntentions8 = new IntentionFactory[1];
-          myIntentions8[0] = new ReplaceEqualityWithEquals_Intention();
-        }
-        return Arrays.asList(myIntentions8);
-      case 9:
-        // Concept: ExpressionStatement 
-        if (myIntentions9 == null) {
-          myIntentions9 = new IntentionFactory[2];
-          myIntentions9[0] = new IterateOverIterable_Intention();
-          myIntentions9[1] = new ConvertToReturnStatement_Intention();
-        }
-        return Arrays.asList(myIntentions9);
-      case 10:
-        // Concept: Statement 
-        if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[13];
-          myIntentions10[0] = new CreateInternalLabel_Intention();
-          myIntentions10[1] = new SurroundWithIf_Intention();
-          myIntentions10[2] = new SurroundWithIfElse_Intention();
-          myIntentions10[3] = new SurroundWithWhile_Intention();
-          myIntentions10[4] = new SurroundWithDoWhile_Intention();
-          myIntentions10[5] = new SurroundWithFor_Intention();
-          myIntentions10[6] = new SurroundStatementsWithForEach_Intention();
-          myIntentions10[7] = new SuroundWithTryCatch_Intention();
-          myIntentions10[8] = new SurroundWithTryFinally_Intention();
-          myIntentions10[9] = new TryCatchFinally_Intention();
-          myIntentions10[10] = new SurroundWithSynchronized_Intention();
-          myIntentions10[11] = new SurroundWithBrackets_Intention();
-          myIntentions10[12] = new JoinVariableDeclarationAndInitializer_Intention();
-        }
-        return Arrays.asList(myIntentions10);
-      case 11:
-        // Concept: IfStatement 
-        if (myIntentions11 == null) {
-          myIntentions11 = new IntentionFactory[11];
-          myIntentions11[0] = new AddCastStatement_Intention();
-          myIntentions11[1] = new InvertIfCondition_Intention();
-          myIntentions11[2] = new AddElsifClause_Intention();
-          myIntentions11[3] = new ElsifTransform_Intention();
-          myIntentions11[4] = new ConvertElseToElseIf_Intention();
-          myIntentions11[5] = new MakeOneLiner_Intention();
-          myIntentions11[6] = new MakeMultiLiner_Intention();
-          myIntentions11[7] = new UsedefaultLayout_Intention();
-          myIntentions11[8] = new UnwrapIfThenBlock_Intention();
-          myIntentions11[9] = new SplitIf_Intention();
-          myIntentions11[10] = new ConvertIfConditionToTernaryOperator_Intention();
-        }
-        return Arrays.asList(myIntentions11);
-      case 12:
-        // Concept: InstanceMethodDeclaration 
-        if (myIntentions12 == null) {
-          myIntentions12 = new IntentionFactory[3];
-          myIntentions12[0] = new MakeMethodAbstract_Intention();
-          myIntentions12[1] = new MakeClassAbstractFromMethod_Intention();
-          myIntentions12[2] = new AddOverrideAnnotation_Intention();
-        }
-        return Arrays.asList(myIntentions12);
-      case 13:
-        // Concept: LocalVariableDeclaration 
-        if (myIntentions13 == null) {
-          myIntentions13 = new IntentionFactory[1];
-          myIntentions13[0] = new SplitIntoDeclarationAndAssignment_Intention();
-        }
-        return Arrays.asList(myIntentions13);
-      case 14:
-        // Concept: PlusExpression 
-        if (myIntentions14 == null) {
-          myIntentions14 = new IntentionFactory[1];
-          myIntentions14[0] = new MergeStringConcatenation_Intention();
-        }
-        return Arrays.asList(myIntentions14);
-      case 15:
-        // Concept: StaticFieldDeclaration 
-        if (myIntentions15 == null) {
-          myIntentions15 = new IntentionFactory[3];
-          myIntentions15[0] = new RemoveStaticFieldModifier_Intention();
-          myIntentions15[1] = new MakeStaticFieldVolatile_Intention();
-          myIntentions15[2] = new MakeStaticFieldTransient_Intention();
-        }
-        return Arrays.asList(myIntentions15);
-      case 16:
-        // Concept: ThisExpression 
-        if (myIntentions16 == null) {
-          myIntentions16 = new IntentionFactory[1];
-          myIntentions16[0] = new CreateReferenceOnClass_Intention();
-        }
-        return Arrays.asList(myIntentions16);
-      case 17:
-        // Concept: StringLiteral 
-        if (myIntentions17 == null) {
-          myIntentions17 = new IntentionFactory[1];
-          myIntentions17[0] = new SplitStringIntoConcatenation_Intention();
-        }
-        return Arrays.asList(myIntentions17);
-      case 18:
-        // Concept: ArrayType 
-        if (myIntentions18 == null) {
-          myIntentions18 = new IntentionFactory[1];
-          myIntentions18[0] = new RemoveArrayType_Intention();
-        }
-        return Arrays.asList(myIntentions18);
-      case 19:
-        // Concept: WhileStatement 
-        if (myIntentions19 == null) {
-          myIntentions19 = new IntentionFactory[1];
-          myIntentions19[0] = new ExtractWhileConditionToInternalIfStatement_Intention();
-        }
-        return Arrays.asList(myIntentions19);
-      case 20:
-        // Concept: BinaryOperation 
-        if (myIntentions20 == null) {
-          myIntentions20 = new IntentionFactory[2];
-          myIntentions20[0] = new FlipBinaryOperation_Intention();
-          myIntentions20[1] = new OrToAndAndBack_Intention();
-        }
-        return Arrays.asList(myIntentions20);
-      case 21:
-        // Concept: BlockStatement 
-        if (myIntentions21 == null) {
-          myIntentions21 = new IntentionFactory[1];
-          myIntentions21[0] = new ReplaceBlockWithItsContent_Intention();
-        }
-        return Arrays.asList(myIntentions21);
-      case 22:
-        // Concept: Classifier 
-        if (myIntentions22 == null) {
-          myIntentions22 = new IntentionFactory[1];
-          myIntentions22[0] = new ChangeStaticInInner_Intention();
-        }
-        return Arrays.asList(myIntentions22);
-      case 23:
-        // Concept: ForeachStatement 
-        if (myIntentions23 == null) {
-          myIntentions23 = new IntentionFactory[1];
-          myIntentions23[0] = new ReplaceForEachLoopWithIndexedLoop_Intention();
-        }
-        return Arrays.asList(myIntentions23);
-      case 24:
-        // Concept: ForStatement 
-        if (myIntentions24 == null) {
-          myIntentions24 = new IntentionFactory[1];
-          myIntentions24[0] = new ReplaceForLoopWithWhileLoop_Intention();
-        }
-        return Arrays.asList(myIntentions24);
-      case 25:
-        // Concept: AssertStatement 
-        if (myIntentions25 == null) {
-          myIntentions25 = new IntentionFactory[1];
-          myIntentions25[0] = new ReplaceAssertWithIf_Intention();
-        }
-        return Arrays.asList(myIntentions25);
-      case 26:
-        // Concept: TernaryOperatorExpression 
-        if (myIntentions26 == null) {
-          myIntentions26 = new IntentionFactory[2];
-          myIntentions26[0] = new ReplaceConditionalWithIf_Intention();
-          myIntentions26[1] = new SwapTernaryBranches_Intention();
-        }
-        return Arrays.asList(myIntentions26);
-      case 27:
-        // Concept: ThrowStatement 
-        if (myIntentions27 == null) {
-          myIntentions27 = new IntentionFactory[1];
-          myIntentions27[0] = new AddRuntimeExceptionToMethodSignature_Intention();
-        }
-        return Arrays.asList(myIntentions27);
-      case 28:
-        // Concept: AnonymousClass 
-        if (myIntentions28 == null) {
-          myIntentions28 = new IntentionFactory[2];
-          myIntentions28[0] = new ConvertToClosure_Intention();
-          myIntentions28[1] = new RemoveTVDInAnonymousClass_Intention();
-        }
-        return Arrays.asList(myIntentions28);
-      case 29:
-        // Concept: HasAnnotation 
-        if (myIntentions29 == null) {
-          myIntentions29 = new IntentionFactory[1];
-          myIntentions29[0] = new AddAnnotation_Intention();
-        }
-        return Arrays.asList(myIntentions29);
-      case 30:
-        // Concept: Property 
-        if (myIntentions30 == null) {
-          myIntentions30 = new IntentionFactory[3];
-          myIntentions30[0] = new SwitchToCustomPropertyImplementation_Intention();
-          myIntentions30[1] = new SwitchToDefaultPropertyImplementation_Intention();
-          myIntentions30[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
-        }
-        return Arrays.asList(myIntentions30);
-      case 31:
-        // Concept: GetAccessor 
-        if (myIntentions31 == null) {
-          myIntentions31 = new IntentionFactory[1];
-          myIntentions31[0] = new CreateSetAccessor_Intention();
-        }
-        return Arrays.asList(myIntentions31);
-      case 32:
-        // Concept: InstanceMethodCallOperation 
-        if (myIntentions32 == null) {
-          myIntentions32 = new IntentionFactory[2];
-          myIntentions32[0] = new ReplaceEqualsWithEquality_Intention();
-          myIntentions32[1] = new FilpEqualsIntention_Intention();
-        }
-        return Arrays.asList(myIntentions32);
-      case 33:
-        // Concept: IMethodCall 
-        if (myIntentions33 == null) {
-          myIntentions33 = new IntentionFactory[1];
-          myIntentions33[0] = new AddTypeParameters_Intention();
-        }
-        return Arrays.asList(myIntentions33);
-      case 34:
-        // Concept: ElsifClause 
-        if (myIntentions34 == null) {
-          myIntentions34 = new IntentionFactory[2];
-          myIntentions34[0] = new ElsifSwapWithMain_Intention();
-          myIntentions34[1] = new ConvertElsifToNewIfStatement_Intention();
-        }
-        return Arrays.asList(myIntentions34);
-      case 35:
-        // Concept: ClassCreator 
-        if (myIntentions35 == null) {
-          myIntentions35 = new IntentionFactory[1];
-          myIntentions35[0] = new ConvertClassCreatorToAnonimous_Intention();
-        }
-        return Arrays.asList(myIntentions35);
-      case 36:
-        // Concept: IBLDeprecatable 
-        if (myIntentions36 == null) {
-          myIntentions36 = new IntentionFactory[1];
-          myIntentions36[0] = new MakeDeprecated_Intention();
-        }
-        return Arrays.asList(myIntentions36);
-      case 37:
-        // Concept: IContainsStatementList 
-        if (myIntentions37 == null) {
-          myIntentions37 = new IntentionFactory[1];
-          myIntentions37[0] = new AlterStatementListContainer_Intention();
-        }
-        return Arrays.asList(myIntentions37);
-      case 38:
-        // Concept: ITryCatchStatement 
-        if (myIntentions38 == null) {
-          myIntentions38 = new IntentionFactory[1];
-          myIntentions38[0] = new UnwrapTryCatch_Intention();
-        }
-        return Arrays.asList(myIntentions38);
-      case 39:
-        // Concept: LocalMethodCall 
-        if (myIntentions39 == null) {
-          myIntentions39 = new IntentionFactory[1];
-          myIntentions39[0] = new SpecifyClass_Intention();
-        }
-        return Arrays.asList(myIntentions39);
-      case 40:
-        // Concept: MethodDeclaration 
-        if (myIntentions40 == null) {
-          myIntentions40 = new IntentionFactory[1];
-          myIntentions40[0] = new MakeMethodStatic_Intention();
-        }
-        return Arrays.asList(myIntentions40);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: AnonymousClass 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ConvertToClosure_Intention();
+            intentions[1] = new RemoveTVDInAnonymousClass_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: ArrayType 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new RemoveArrayType_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: AssertStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceAssertWithIf_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: BaseMethodDeclaration 
+            intentions = new IntentionFactory[5];
+            intentions[0] = new MakeGeneric_Intention();
+            intentions[1] = new AddThrows_Intention();
+            intentions[2] = new MakeMethodFinal_Intention();
+            intentions[3] = new MakeSynchronized_Intention();
+            intentions[4] = new AddModifiers_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: BinaryOperation 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new FlipBinaryOperation_Intention();
+            intentions[1] = new OrToAndAndBack_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: BlockStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceBlockWithItsContent_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: ClassConcept 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new MakeClassAbstract_Intention();
+            intentions[1] = new MakeClassFinal_Intention();
+          }
+          break;
+        case 7:
+          if (true) {
+            // Concept: ClassCreator 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertClassCreatorToAnonimous_Intention();
+          }
+          break;
+        case 8:
+          if (true) {
+            // Concept: Classifier 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ChangeStaticInInner_Intention();
+          }
+          break;
+        case 9:
+          if (true) {
+            // Concept: ElsifClause 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ElsifSwapWithMain_Intention();
+            intentions[1] = new ConvertElsifToNewIfStatement_Intention();
+          }
+          break;
+        case 10:
+          if (true) {
+            // Concept: EqualsExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceEqualityWithEquals_Intention();
+          }
+          break;
+        case 11:
+          if (true) {
+            // Concept: Expression 
+            intentions = new IntentionFactory[8];
+            intentions[0] = new SurroundWithParenthesis_Intention();
+            intentions[1] = new SurroundWithTypeCast_Intention();
+            intentions[2] = new SurroundWithNegation_Intention();
+            intentions[3] = new SurroundWithIfClause_Intention();
+            intentions[4] = new SurroundWithIfElseClause_Intention();
+            intentions[5] = new CleanUnmatchedParentheses_Intention();
+            intentions[6] = new ComputeWholeExpressionValue_Intention();
+            intentions[7] = new ComputeExpressionValue_Intention();
+          }
+          break;
+        case 12:
+          if (true) {
+            // Concept: ExpressionStatement 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new IterateOverIterable_Intention();
+            intentions[1] = new ConvertToReturnStatement_Intention();
+          }
+          break;
+        case 13:
+          if (true) {
+            // Concept: FieldDeclaration 
+            intentions = new IntentionFactory[4];
+            intentions[0] = new MoveInitializerToConstructor_Intention();
+            intentions[1] = new MakeFieldVolatile_Intention();
+            intentions[2] = new MakeFieldTransient_Intention();
+            intentions[3] = new AddStaticFieldModifier_Intention();
+          }
+          break;
+        case 14:
+          if (true) {
+            // Concept: ForStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceForLoopWithWhileLoop_Intention();
+          }
+          break;
+        case 15:
+          if (true) {
+            // Concept: ForeachStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceForEachLoopWithIndexedLoop_Intention();
+          }
+          break;
+        case 16:
+          if (true) {
+            // Concept: GetAccessor 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new CreateSetAccessor_Intention();
+          }
+          break;
+        case 17:
+          if (true) {
+            // Concept: HasAnnotation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddAnnotation_Intention();
+          }
+          break;
+        case 18:
+          if (true) {
+            // Concept: IBLDeprecatable 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new MakeDeprecated_Intention();
+          }
+          break;
+        case 19:
+          if (true) {
+            // Concept: IContainsStatementList 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AlterStatementListContainer_Intention();
+          }
+          break;
+        case 20:
+          if (true) {
+            // Concept: IMethodCall 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddTypeParameters_Intention();
+          }
+          break;
+        case 21:
+          if (true) {
+            // Concept: ITryCatchStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new UnwrapTryCatch_Intention();
+          }
+          break;
+        case 22:
+          if (true) {
+            // Concept: IfStatement 
+            intentions = new IntentionFactory[11];
+            intentions[0] = new AddCastStatement_Intention();
+            intentions[1] = new InvertIfCondition_Intention();
+            intentions[2] = new AddElsifClause_Intention();
+            intentions[3] = new ElsifTransform_Intention();
+            intentions[4] = new ConvertElseToElseIf_Intention();
+            intentions[5] = new MakeOneLiner_Intention();
+            intentions[6] = new MakeMultiLiner_Intention();
+            intentions[7] = new UsedefaultLayout_Intention();
+            intentions[8] = new UnwrapIfThenBlock_Intention();
+            intentions[9] = new SplitIf_Intention();
+            intentions[10] = new ConvertIfConditionToTernaryOperator_Intention();
+          }
+          break;
+        case 23:
+          if (true) {
+            // Concept: InstanceMethodCallOperation 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ReplaceEqualsWithEquality_Intention();
+            intentions[1] = new FilpEqualsIntention_Intention();
+          }
+          break;
+        case 24:
+          if (true) {
+            // Concept: InstanceMethodDeclaration 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new MakeMethodAbstract_Intention();
+            intentions[1] = new MakeClassAbstractFromMethod_Intention();
+            intentions[2] = new AddOverrideAnnotation_Intention();
+          }
+          break;
+        case 25:
+          if (true) {
+            // Concept: LocalMethodCall 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new SpecifyClass_Intention();
+          }
+          break;
+        case 26:
+          if (true) {
+            // Concept: LocalVariableDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new SplitIntoDeclarationAndAssignment_Intention();
+          }
+          break;
+        case 27:
+          if (true) {
+            // Concept: MethodDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new MakeMethodStatic_Intention();
+          }
+          break;
+        case 28:
+          if (true) {
+            // Concept: ParameterDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddFieldForUnUsedParameter_Intention();
+          }
+          break;
+        case 29:
+          if (true) {
+            // Concept: PlusExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new MergeStringConcatenation_Intention();
+          }
+          break;
+        case 30:
+          if (true) {
+            // Concept: Property 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new SwitchToCustomPropertyImplementation_Intention();
+            intentions[1] = new SwitchToDefaultPropertyImplementation_Intention();
+            intentions[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
+          }
+          break;
+        case 31:
+          if (true) {
+            // Concept: Statement 
+            intentions = new IntentionFactory[13];
+            intentions[0] = new CreateInternalLabel_Intention();
+            intentions[1] = new SurroundWithIf_Intention();
+            intentions[2] = new SurroundWithIfElse_Intention();
+            intentions[3] = new SurroundWithWhile_Intention();
+            intentions[4] = new SurroundWithDoWhile_Intention();
+            intentions[5] = new SurroundWithFor_Intention();
+            intentions[6] = new SurroundStatementsWithForEach_Intention();
+            intentions[7] = new SuroundWithTryCatch_Intention();
+            intentions[8] = new SurroundWithTryFinally_Intention();
+            intentions[9] = new TryCatchFinally_Intention();
+            intentions[10] = new SurroundWithSynchronized_Intention();
+            intentions[11] = new SurroundWithBrackets_Intention();
+            intentions[12] = new JoinVariableDeclarationAndInitializer_Intention();
+          }
+          break;
+        case 32:
+          if (true) {
+            // Concept: StaticFieldDeclaration 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new RemoveStaticFieldModifier_Intention();
+            intentions[1] = new MakeStaticFieldVolatile_Intention();
+            intentions[2] = new MakeStaticFieldTransient_Intention();
+          }
+          break;
+        case 33:
+          if (true) {
+            // Concept: StringLiteral 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new SplitStringIntoConcatenation_Intention();
+          }
+          break;
+        case 34:
+          if (true) {
+            // Concept: TernaryOperatorExpression 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ReplaceConditionalWithIf_Intention();
+            intentions[1] = new SwapTernaryBranches_Intention();
+          }
+          break;
+        case 35:
+          if (true) {
+            // Concept: ThisExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new CreateReferenceOnClass_Intention();
+          }
+          break;
+        case 36:
+          if (true) {
+            // Concept: ThrowStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRuntimeExceptionToMethodSignature_Intention();
+          }
+          break;
+        case 37:
+          if (true) {
+            // Concept: Type 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertToArrayType_Intention();
+          }
+          break;
+        case 38:
+          if (true) {
+            // Concept: VariableDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddFinalModifierToAny_Intention();
+          }
+          break;
+        case 39:
+          if (true) {
+            // Concept: VariableReference 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new ExpandBoolean_Intention();
+            intentions[1] = new ConvertAssignmentToVariableDeclaration_Intention();
+            intentions[2] = new MakeParameterFinal_Intention();
+          }
+          break;
+        case 40:
+          if (true) {
+            // Concept: WhileStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ExtractWhileConditionToInternalIfStatement_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -545,4 +476,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[91] = new JoinVariableDeclarationAndInitializer_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, "jetbrains.mps.baseLanguage.structure.GetAccessor"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3399756d2c03d422L, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"));
 }

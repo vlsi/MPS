@@ -4,12 +4,12 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myPropertyMacro__BehaviorDescriptor = new PropertyMacro__BehaviorDescriptor();
@@ -84,238 +84,384 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myModelIdentity__BehaviorDescriptor = new ModelIdentity__BehaviorDescriptor();
   private final BHDescriptor myTrivialModelId__BehaviorDescriptor = new TrivialModelId__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[71];
-    myConceptBehaviorIds[0] = 0xfd47e9f6f0L;
-    myConceptBehaviorIds[1] = 0xfd47ed6742L;
-    myConceptBehaviorIds[2] = 0xfd7f44d616L;
-    myConceptBehaviorIds[3] = 0xfe43cb41d0L;
-    myConceptBehaviorIds[4] = 0xff0bea0475L;
-    myConceptBehaviorIds[5] = 0xff1b29b76cL;
-    myConceptBehaviorIds[6] = 0x10313ed7688L;
-    myConceptBehaviorIds[7] = 0x10389b50fefL;
-    myConceptBehaviorIds[8] = 0x1038b0c2cc7L;
-    myConceptBehaviorIds[9] = 0x1047c1472deL;
-    myConceptBehaviorIds[10] = 0x1047ce009c3L;
-    myConceptBehaviorIds[11] = 0x10759372d78L;
-    myConceptBehaviorIds[12] = 0x107ce4fbf98L;
-    myConceptBehaviorIds[13] = 0x10fbbd5854aL;
-    myConceptBehaviorIds[14] = 0x10fbbd643c6L;
-    myConceptBehaviorIds[15] = 0x10fc0b05beaL;
-    myConceptBehaviorIds[16] = 0x10fc0b471fcL;
-    myConceptBehaviorIds[17] = 0x10fc0b64647L;
-    myConceptBehaviorIds[18] = 0x10fca296532L;
-    myConceptBehaviorIds[19] = 0x10fd54746dbL;
-    myConceptBehaviorIds[20] = 0x10fe3afb5ffL;
-    myConceptBehaviorIds[21] = 0x10fe3b1dbebL;
-    myConceptBehaviorIds[22] = 0x10fe485cc9bL;
-    myConceptBehaviorIds[23] = 0x10fe4879c6aL;
-    myConceptBehaviorIds[24] = 0x10feefdbd6eL;
-    myConceptBehaviorIds[25] = 0x10fef52f5efL;
-    myConceptBehaviorIds[26] = 0x10fef5bd603L;
-    myConceptBehaviorIds[27] = 0x10ff3acfa74L;
-    myConceptBehaviorIds[28] = 0x110138ccc4bL;
-    myConceptBehaviorIds[29] = 0x11013906056L;
-    myConceptBehaviorIds[30] = 0x11017244494L;
-    myConceptBehaviorIds[31] = 0x11094af4e18L;
-    myConceptBehaviorIds[32] = 0x112103dd1e8L;
-    myConceptBehaviorIds[33] = 0x113c2300eb1L;
-    myConceptBehaviorIds[34] = 0x113c23283bdL;
-    myConceptBehaviorIds[35] = 0x113d09e4da2L;
-    myConceptBehaviorIds[36] = 0x113db24924aL;
-    myConceptBehaviorIds[37] = 0x11621ab7715L;
-    myConceptBehaviorIds[38] = 0x11659655aa8L;
-    myConceptBehaviorIds[39] = 0x11b4d0ca830L;
-    myConceptBehaviorIds[40] = 0x11c0ad08d2aL;
-    myConceptBehaviorIds[41] = 0x11d455674bfL;
-    myConceptBehaviorIds[42] = 0x90726ff283822d4L;
-    myConceptBehaviorIds[43] = 0xda3dc6e51747593L;
-    myConceptBehaviorIds[44] = 0xe2b8adb3aba4b3bL;
-    myConceptBehaviorIds[45] = 0x1231e32ff7a958ceL;
-    myConceptBehaviorIds[46] = 0x1231e32ff7a958cfL;
-    myConceptBehaviorIds[47] = 0x14f7f8a311b8f14fL;
-    myConceptBehaviorIds[48] = 0x17e941d108ce3120L;
-    myConceptBehaviorIds[49] = 0x190d31fe6a12ebb4L;
-    myConceptBehaviorIds[50] = 0x300c02df884235d3L;
-    myConceptBehaviorIds[51] = 0x35a02f6bfc9806c4L;
-    myConceptBehaviorIds[52] = 0x35a02f6bfc9806c7L;
-    myConceptBehaviorIds[53] = 0x380132d742e95ce5L;
-    myConceptBehaviorIds[54] = 0x40be82ad503b3c88L;
-    myConceptBehaviorIds[55] = 0x42d71bfbeb1a07e5L;
-    myConceptBehaviorIds[56] = 0x42d71bfbeb1a5de7L;
-    myConceptBehaviorIds[57] = 0x42d71bfbeb1a5de8L;
-    myConceptBehaviorIds[58] = 0x45991daad6a3d34eL;
-    myConceptBehaviorIds[59] = 0x45991daad6a5c71aL;
-    myConceptBehaviorIds[60] = 0x473cc5baf8a1e7a4L;
-    myConceptBehaviorIds[61] = 0x65a7fcfba8f40208L;
-    myConceptBehaviorIds[62] = 0x65a7fcfba8f41ba9L;
-    myConceptBehaviorIds[63] = 0x671e792f3d934cacL;
-    myConceptBehaviorIds[64] = 0x67b585b44f4d9446L;
-    myConceptBehaviorIds[65] = 0x6cab949e66d5ae81L;
-    myConceptBehaviorIds[66] = 0x7b85dded0be53d6cL;
-    myConceptBehaviorIds[67] = 0x7d58bd9fd9b5e358L;
-    myConceptBehaviorIds[68] = 0x7d58bd9fd9b64463L;
-    myConceptBehaviorIds[69] = 0x7d58bd9fd9c8b6d3L;
-    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b8cbL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myPropertyMacro__BehaviorDescriptor;
-      case 1:
-        return myNodeMacro__BehaviorDescriptor;
-      case 2:
-        return myReferenceMacro__BehaviorDescriptor;
-      case 3:
-        return myTemplateDeclaration__BehaviorDescriptor;
-      case 4:
-        return myMappingConfiguration__BehaviorDescriptor;
-      case 5:
-        return myTemplateFragment__BehaviorDescriptor;
-      case 6:
-        return myTemplateSwitch__BehaviorDescriptor;
-      case 7:
-        return myCopySrcNodeMacro__BehaviorDescriptor;
-      case 8:
-        return myCopySrcListMacro__BehaviorDescriptor;
-      case 9:
-        return myIfMacro__BehaviorDescriptor;
-      case 10:
-        return myLoopMacro__BehaviorDescriptor;
-      case 11:
-        return myMapSrcNodeMacro__BehaviorDescriptor;
-      case 12:
-        return myMapSrcListMacro__BehaviorDescriptor;
-      case 13:
-        return myCreateRootRule__BehaviorDescriptor;
-      case 14:
-        return myCreateRootRule_Condition__BehaviorDescriptor;
-      case 15:
-        return myBaseMappingRule_Condition__BehaviorDescriptor;
-      case 16:
-        return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
-      case 17:
-        return myBaseMappingRule__BehaviorDescriptor;
-      case 18:
-        return myReduction_MappingRule__BehaviorDescriptor;
-      case 19:
-        return myRoot_MappingRule__BehaviorDescriptor;
-      case 20:
-        return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
-      case 21:
-        return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
-      case 22:
-        return myReferenceMacro_GetReferent__BehaviorDescriptor;
-      case 23:
-        return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
-      case 24:
-        return myIfMacro_Condition__BehaviorDescriptor;
-      case 25:
-        return mySourceSubstituteMacro__BehaviorDescriptor;
-      case 26:
-        return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
-      case 27:
-        return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
-      case 28:
-        return myRuleConsequence__BehaviorDescriptor;
-      case 29:
-        return myTemplateDeclarationReference__BehaviorDescriptor;
-      case 30:
-        return myRootTemplateAnnotation__BehaviorDescriptor;
-      case 31:
-        return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
-      case 32:
-        return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
-      case 33:
-        return myTemplateFragment_ContextNodeQuery__BehaviorDescriptor;
-      case 34:
-        return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
-      case 35:
-        return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
-      case 36:
-        return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
-      case 37:
-        return myIncludeMacro__BehaviorDescriptor;
-      case 38:
-        return myMappingScript_CodeBlock__BehaviorDescriptor;
-      case 39:
-        return myTemplateQueryBase__BehaviorDescriptor;
-      case 40:
-        return myDropRootRule_Condition__BehaviorDescriptor;
-      case 41:
-        return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
-      case 42:
-        return myIGeneratorParameter__BehaviorDescriptor;
-      case 43:
-        return myTemplateSwitchMacro__BehaviorDescriptor;
-      case 44:
-        return myWeavingAnchorQuery__BehaviorDescriptor;
-      case 45:
-        return myInsertMacro__BehaviorDescriptor;
-      case 46:
-        return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
-      case 47:
-        return myTemplateCallMacro__BehaviorDescriptor;
-      case 48:
-        return myITemplateCall__BehaviorDescriptor;
-      case 49:
-        return myPatternReduction_MappingRule__BehaviorDescriptor;
-      case 50:
-        return myWeaveMacro__BehaviorDescriptor;
-      case 51:
-        return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
-      case 52:
-        return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
-      case 53:
-        return myTemplateArgumentQuery__BehaviorDescriptor;
-      case 54:
-        return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
-      case 55:
-        return myTemplateArgumentPatternRef__BehaviorDescriptor;
-      case 56:
-        return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
-      case 57:
-        return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
-      case 58:
-        return myVarMacro__BehaviorDescriptor;
-      case 59:
-        return myVarMacro_ValueQuery__BehaviorDescriptor;
-      case 60:
-        return myLabelMacro__BehaviorDescriptor;
-      case 61:
-        return myMarshalFunction__BehaviorDescriptor;
-      case 62:
-        return myUnmarshalFunction__BehaviorDescriptor;
-      case 63:
-        return myContextVariableProvider__BehaviorDescriptor;
-      case 64:
-        return myDropAttributeRule_Condition__BehaviorDescriptor;
-      case 65:
-        return myMappingConfiguration_Condition__BehaviorDescriptor;
-      case 66:
-        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
-      case 67:
-        return myNodeIdentity__BehaviorDescriptor;
-      case 68:
-        return myTrivialNodeId__BehaviorDescriptor;
-      case 69:
-        return myModelIdentity__BehaviorDescriptor;
-      case 70:
-        return myTrivialModelId__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0wc.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBaseMappingRule__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBaseMappingRule_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myContextVariableProvider__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myCopySrcListMacro__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myCopySrcNodeMacro__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myCreateRootRule__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myCreateRootRule_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myDropAttributeRule_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myDropRootRule_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myIGeneratorParameter__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myITemplateCall__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myIfMacro__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myIfMacro_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myIncludeMacro__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myInsertMacro__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myLabelMacro__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myLoopMacro__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myMapSrcListMacro__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myMapSrcNodeMacro__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myMappingConfiguration__BehaviorDescriptor;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myMappingConfiguration_Condition__BehaviorDescriptor;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myMappingScript_CodeBlock__BehaviorDescriptor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myMarshalFunction__BehaviorDescriptor;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myModelIdentity__BehaviorDescriptor;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myNodeIdentity__BehaviorDescriptor;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myNodeMacro__BehaviorDescriptor;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myPatternReduction_MappingRule__BehaviorDescriptor;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myPropertyMacro__BehaviorDescriptor;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myReduction_MappingRule__BehaviorDescriptor;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myReferenceMacro__BehaviorDescriptor;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myReferenceMacro_GetReferent__BehaviorDescriptor;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myRootTemplateAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myRoot_MappingRule__BehaviorDescriptor;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myRuleConsequence__BehaviorDescriptor;
+          }
+          break;
+        case 42:
+          if (true) {
+            return mySourceSubstituteMacro__BehaviorDescriptor;
+          }
+          break;
+        case 43:
+          if (true) {
+            return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
+          }
+          break;
+        case 44:
+          if (true) {
+            return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myTemplateArgumentPatternRef__BehaviorDescriptor;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myTemplateArgumentQuery__BehaviorDescriptor;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myTemplateCallMacro__BehaviorDescriptor;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myTemplateDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myTemplateDeclarationReference__BehaviorDescriptor;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myTemplateFragment__BehaviorDescriptor;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myTemplateFragment_ContextNodeQuery__BehaviorDescriptor;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myTemplateQueryBase__BehaviorDescriptor;
+          }
+          break;
+        case 61:
+          if (true) {
+            return myTemplateSwitch__BehaviorDescriptor;
+          }
+          break;
+        case 62:
+          if (true) {
+            return myTemplateSwitchMacro__BehaviorDescriptor;
+          }
+          break;
+        case 63:
+          if (true) {
+            return myTrivialModelId__BehaviorDescriptor;
+          }
+          break;
+        case 64:
+          if (true) {
+            return myTrivialNodeId__BehaviorDescriptor;
+          }
+          break;
+        case 65:
+          if (true) {
+            return myUnmarshalFunction__BehaviorDescriptor;
+          }
+          break;
+        case 66:
+          if (true) {
+            return myVarMacro__BehaviorDescriptor;
+          }
+          break;
+        case 67:
+          if (true) {
+            return myVarMacro_ValueQuery__BehaviorDescriptor;
+          }
+          break;
+        case 68:
+          if (true) {
+            return myWeaveMacro__BehaviorDescriptor;
+          }
+          break;
+        case 69:
+          if (true) {
+            return myWeavingAnchorQuery__BehaviorDescriptor;
+          }
+          break;
+        case 70:
+          if (true) {
+            return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0wc = buildConceptIndices(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b05beaL, "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d934cacL, "jetbrains.mps.lang.generator.structure.ContextVariableProvider"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10389b50fefL, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd643c6L, "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d9446L, "jetbrains.mps.lang.generator.structure.DropAttributeRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0ad08d2aL, "jetbrains.mps.lang.generator.structure.DropRootRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283822d4L, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10feefdbd6eL, "jetbrains.mps.lang.generator.structure.IfMacro_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, "jetbrains.mps.lang.generator.structure.IncludeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1231e32ff7a958ceL, "jetbrains.mps.lang.generator.structure.InsertMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1231e32ff7a958cfL, "jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x473cc5baf8a1e7a4L, "jetbrains.mps.lang.generator.structure.LabelMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11094af4e18L, "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11d455674bfL, "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6cab949e66d5ae81L, "jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11659655aa8L, "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f40208L, "jetbrains.mps.lang.generator.structure.MarshalFunction"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe3afb5ffL, "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe485cc9bL, "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fef52f5efL, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10ff3acfa74L, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fef5bd603L, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de8L, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e95ce5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113c2300eb1L, "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113c23283bdL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113db24924aL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b471fcL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe3b1dbebL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe4879c6aL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11b4d0ca830L, "jetbrains.mps.lang.generator.structure.TemplateQueryBase"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, "jetbrains.mps.lang.generator.structure.TrivialModelId"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41ba9L, "jetbrains.mps.lang.generator.structure.UnmarshalFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a5c71aL, "jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xe2b8adb3aba4b3bL, "jetbrains.mps.lang.generator.structure.WeavingAnchorQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113d09e4da2L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"));
 }

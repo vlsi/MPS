@@ -22,418 +22,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,326,0" name="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BuildAspect_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
-    </file>
-    <file name="BuildCompositePath_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildCustomWorkflow_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
-    </file>
-    <file name="BuildDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildExternalDependency_BehaviorDescriptor.java">
-      <unit at="14,0,18,0" name="jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildExternalLayoutDependency_BehaviorDescriptor.java">
-      <unit at="14,0,30,0" name="jetbrains.mps.build.behavior.BuildExternalLayoutDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildExternalLayout_BehaviorDescriptor.java">
-      <unit at="15,0,43,0" name="jetbrains.mps.build.behavior.BuildExternalLayout_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFileExcludeSelector_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildFileExcludeSelector_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFileIncludeSelector_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildFileIncludeSelector_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFileIncludesSelector_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildFileIncludesSelector_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFileSelectorInAttribute_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.build.behavior.BuildFileSelectorInAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFileSelector_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildFileSelector_BehaviorDescriptor" />
-    </file>
-    <file name="BuildFolderMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildFolderMacro_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputFileSet_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildInputFileSet_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputFiles_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildInputFiles_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputFolderSet_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildInputFolderSet_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputFolders_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildInputFolders_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputResourceSet_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildInputResourceSet_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputSingleFile_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.build.behavior.BuildInputSingleFile_BehaviorDescriptor" />
-    </file>
-    <file name="BuildInputSingleFolder_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.build.behavior.BuildInputSingleFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildJavaPlugin_BehaviorDescriptor.java">
-      <unit at="14,0,32,0" name="jetbrains.mps.build.behavior.BuildJavaPlugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_AbstractContainer_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_AbstractCopy_BehaviorDescriptor.java">
-      <unit at="14,0,33,0" name="jetbrains.mps.build.behavior.BuildLayout_AbstractCopy_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_BehaviorDescriptor.java">
-      <unit at="14,0,36,0" name="jetbrains.mps.build.behavior.BuildLayout_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Comment_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CompileOutputOf_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.java">
-      <unit at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Container_BehaviorDescriptor.java">
-      <unit at="13,0,19,0" name="jetbrains.mps.build.behavior.BuildLayout_Container_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyFilterReplaceTokens_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceTokens_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyFilter_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyFilter_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyFlattenMapper_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyFlattenMapper_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyGlobMapper_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyGlobMapper_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyHandler_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyHandler_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyMapper_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyMapper_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyParameter_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyParameter_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyProcessor_BehaviorDescriptor.java">
-      <unit at="13,0,24,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CopyRegexMapper_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyRegexMapper_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Copy_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.behavior.BuildLayout_Copy_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_CustomCopy_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.behavior.BuildLayout_CustomCopy_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_EchoProperties_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_EchoPropertyEntry_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildLayout_EchoPropertyEntry_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_EchoXml_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.build.behavior.BuildLayout_EchoXml_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_ExportAsJavaLibrary_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildLayout_ExportAsJavaLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_FileSet_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.build.behavior.BuildLayout_FileSet_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_FileStub_BehaviorDescriptor.java">
-      <unit at="14,0,33,0" name="jetbrains.mps.build.behavior.BuildLayout_FileStub_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_File_BehaviorDescriptor.java">
-      <unit at="14,0,36,0" name="jetbrains.mps.build.behavior.BuildLayout_File_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Filemode_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildLayout_Filemode_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_FilesOf_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_FilesOf_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Files_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_Files_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Folder_BehaviorDescriptor.java">
-      <unit at="15,0,38,0" name="jetbrains.mps.build.behavior.BuildLayout_Folder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_ImportContent_BehaviorDescriptor.java">
-      <unit at="15,0,29,0" name="jetbrains.mps.build.behavior.BuildLayout_ImportContent_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Import_BehaviorDescriptor.java">
-      <unit at="15,0,29,0" name="jetbrains.mps.build.behavior.BuildLayout_Import_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_InJarNode_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.build.behavior.BuildLayout_InJarNode_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_JarManifest_Attribute_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_JarManifest_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_JarManifest_Part_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Part_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_JarManifest_Section_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Section_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Jar_BehaviorDescriptor.java">
-      <unit at="14,0,46,0" name="jetbrains.mps.build.behavior.BuildLayout_Jar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_NamedContainer_BehaviorDescriptor.java">
-      <unit at="18,0,47,0" name="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Node_BehaviorDescriptor.java">
-      <unit at="16,0,44,0" name="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_PathElement_BehaviorDescriptor.java">
-      <unit at="14,0,20,0" name="jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_PureNode_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.build.behavior.BuildLayout_PureNode_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Tar_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.build.behavior.BuildLayout_Tar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_TransparentContainer_BehaviorDescriptor.java">
-      <unit at="14,0,28,0" name="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_War_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.build.behavior.BuildLayout_War_BehaviorDescriptor" />
-    </file>
-    <file name="BuildLayout_Zip_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.build.behavior.BuildLayout_Zip_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMacro_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.build.behavior.BuildMacro_BehaviorDescriptor" />
-    </file>
-    <file name="BuildNamedLayout_BehaviorDescriptor.java">
-      <unit at="16,0,44,0" name="jetbrains.mps.build.behavior.BuildNamedLayout_BehaviorDescriptor" />
-    </file>
-    <file name="BuildPlugin_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.build.behavior.BuildPlugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildProjectDependency_BehaviorDescriptor.java">
-      <unit at="14,0,30,0" name="jetbrains.mps.build.behavior.BuildProjectDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildProjectPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildProject_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" />
-    </file>
-    <file name="BuildRelativePath_BehaviorDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSourceArchiveRelativePath_BehaviorDescriptor.java">
-      <unit at="16,0,39,0" name="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSourceMacroRelativePath_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSourcePath_BehaviorDescriptor.java">
-      <unit at="15,0,39,0" name="jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSourceProjectRelativePath_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSourceSetContainer_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.build.behavior.BuildSourceSetContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_CompilablePart_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.build.behavior.BuildSource_CompilablePart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_FilesetProjectPart_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.build.behavior.BuildSource_FilesetProjectPart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaCP_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaCP_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaClassFolder_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaClassFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaContentFolder_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaContentFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaContentRoot_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaContentRoot_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyExternalJar_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyExternalJar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyFileset_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyFileset_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyJar_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyJar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyLibrary_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependencyModule_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarFolderRef_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaExternalJarRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaFiles_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaFiles_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaJar_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaJar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaJars_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaJars_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaLibraryCP_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryCP_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaLibraryElement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryElement_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaLibraryExternalJar_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaLibrary_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaModuleOptions_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaModuleOptions_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaModule_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildSource_JavaModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaOptions_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaOptions_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaResources_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildSource_JavaResources_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_JavaSources_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildSource_JavaSources_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_SingleFile_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.build.behavior.BuildSource_SingleFile_BehaviorDescriptor" />
-    </file>
-    <file name="BuildSource_SingleFolder_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor" />
-    </file>
-    <file name="BuildStringContainer_BehaviorDescriptor.java">
-      <unit at="15,0,21,0" name="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuildStringNotEmpty_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildStringNotEmpty_BehaviorDescriptor" />
-    </file>
-    <file name="BuildStringPart_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.build.behavior.BuildStringPart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildString_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.build.behavior.BuildString_BehaviorDescriptor" />
-    </file>
-    <file name="BuildTextStringPart_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVarRefStringPart_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.build.behavior.BuildVarRefStringPart_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVariableMacroInitValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVariableMacroInitWithDate_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildVariableMacroInitWithDate_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVariableMacroInitWithString_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.BuildVariableMacroInitWithString_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.behavior.BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor" />
-    </file>
-    <file name="BuildVariableMacro_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildVariableMacro_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_Folder_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_Folder_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_JarFolder_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JarFolder_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_JavaJar_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JavaJar_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_JavaLibrary_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JavaLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_JavaModule_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JavaModule_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSource_SingleFile_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_SingleFile_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_LibraryArtifacts_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_LibraryArtifacts_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_Mapping_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_Mapping_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ProjectDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.behavior.GeneratorInternal_ProjectDependency_BehaviorDescriptor" />
-    </file>
-    <file name="IWorkflowParticipant_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.build.behavior.IWorkflowParticipant_BehaviorDescriptor" />
+      <unit at="14,0,474,0" name="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1065091787191627086">
-    <file name="BuildSource_JavaModule_Behavior.java">
-      <node id="1065091787191627086" at="13,93,14,96" concept="9" />
-      <node id="1065091787191627086" at="13,0,16,0" concept="13" trace="call_getTestSources_1065091787192492727#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="1065091787191627086" at="13,93,14,96" />
-      <scope id="1065091787191627086" at="13,0,16,0">
-        <var name="__thisNode__" id="1065091787191627086" />
-      </scope>
-      <unit id="1065091787191627086" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildSource_JavaModule_Behavior" />
-    </file>
     <file name="BuildSource_JavaModule__BehaviorDescriptor.java">
       <node id="1065091787191627086" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="1065091787191627086" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -529,15 +121,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1224588814561775849">
-    <file name="BuildPlugin_Behavior.java">
-      <node id="1224588814561775849" at="13,79,14,82" concept="9" />
-      <node id="1224588814561775849" at="13,0,16,0" concept="13" trace="call_getProject_1224588814561866657#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1224588814561775849" at="13,79,14,82" />
-      <scope id="1224588814561775849" at="13,0,16,0">
-        <var name="__thisNode__" id="1224588814561775849" />
-      </scope>
-      <unit id="1224588814561775849" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildPlugin_Behavior" />
-    </file>
     <file name="BuildPlugin__BehaviorDescriptor.java">
       <node id="1224588814561775849" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1224588814561775849" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -641,9 +224,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1224588814561807530">
-    <file name="BuildJavaPlugin_Behavior.java">
-      <unit id="1224588814561807530" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildJavaPlugin_Behavior" />
-    </file>
     <file name="BuildJavaPlugin__BehaviorDescriptor.java">
       <node id="1224588814561807530" at="39,0,40,0" concept="12" trace="CONCEPT" />
       <node id="1224588814561807530" at="40,0,41,0" concept="12" trace="REGISTRY" />
@@ -797,30 +377,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798060762852">
-    <file name="BuildLayout_CopyProcessor_Behavior.java">
-      <node id="1330375798060762852" at="15,116,16,111" concept="9" />
-      <node id="1330375798060762852" at="18,114,19,113" concept="9" />
-      <node id="1330375798060762852" at="21,110,22,109" concept="9" />
-      <node id="1330375798060762852" at="15,0,18,0" concept="13" trace="call_getTempFolder_1330375798096391716#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
-      <node id="1330375798060762852" at="18,0,21,0" concept="13" trace="call_representativeName_1330375798101242503#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1330375798060762852" at="21,0,24,0" concept="13" trace="call_filesetName_1330375798101726877#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1330375798060762852" at="15,116,16,111" />
-      <scope id="1330375798060762852" at="18,114,19,113" />
-      <scope id="1330375798060762852" at="21,110,22,109" />
-      <scope id="1330375798060762852" at="15,0,18,0">
-        <var name="__thisNode__" id="1330375798060762852" />
-        <var name="genContext" id="1330375798096391732" />
-      </scope>
-      <scope id="1330375798060762852" at="18,0,21,0">
-        <var name="__thisConcept__" id="1330375798060762852" />
-        <var name="path" id="1330375798101256907" />
-      </scope>
-      <scope id="1330375798060762852" at="21,0,24,0">
-        <var name="__thisConcept__" id="1330375798060762852" />
-        <var name="fileset" id="1330375798101735661" />
-      </scope>
-      <unit id="1330375798060762852" at="13,0,25,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior" />
-    </file>
     <file name="BuildLayout_CopyProcessor__BehaviorDescriptor.java">
       <node id="1330375798060762852" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="1330375798060762852" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -969,9 +525,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085107723">
-    <file name="BuildLayout_FileSet_Behavior.java">
-      <unit id="1330375798085107723" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_FileSet_Behavior" />
-    </file>
     <file name="BuildLayout_FileSet__BehaviorDescriptor.java">
       <node id="1330375798085107723" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1330375798085107723" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1038,9 +591,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085118680">
-    <file name="BuildInputFiles_Behavior.java">
-      <unit id="1330375798085118680" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildInputFiles_Behavior" />
-    </file>
     <file name="BuildInputFiles__BehaviorDescriptor.java">
       <node id="1330375798085118680" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1330375798085118680" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1115,9 +665,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085131849">
-    <file name="BuildLayout_CompileOutputOf_Behavior.java">
-      <unit id="1330375798085131849" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_Behavior" />
-    </file>
     <file name="BuildLayout_CompileOutputOf__BehaviorDescriptor.java">
       <node id="1330375798085131849" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1330375798085131849" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1192,9 +739,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085137504">
-    <file name="BuildLayout_Copy_Behavior.java">
-      <unit id="1330375798085137504" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Copy_Behavior" />
-    </file>
     <file name="BuildLayout_Copy__BehaviorDescriptor.java">
       <node id="1330375798085137504" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1330375798085137504" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1269,9 +813,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085214312">
-    <file name="BuildLayout_CustomCopy_Behavior.java">
-      <unit id="1330375798085214312" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_CustomCopy_Behavior" />
-    </file>
     <file name="BuildLayout_CustomCopy__BehaviorDescriptor.java">
       <node id="1330375798085214312" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1330375798085214312" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -1353,16 +894,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/202934866059116664">
-    <file name="BuildLayout_EchoProperties_Behavior.java">
-      <node id="202934866059116664" at="14,109,15,118" concept="9" />
-      <node id="202934866059116664" at="14,0,17,0" concept="13" trace="call_getOutputPath_WithMacro_202934866059116697#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="202934866059116664" at="14,109,15,118" />
-      <scope id="202934866059116664" at="14,0,17,0">
-        <var name="__thisNode__" id="202934866059116664" />
-        <var name="context" id="202934866059116698" />
-      </scope>
-      <unit id="202934866059116664" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior" />
-    </file>
     <file name="BuildLayout_EchoProperties__BehaviorDescriptor.java">
       <node id="202934866059116664" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="202934866059116664" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -1455,40 +986,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2037010980100931075">
-    <file name="BuildLayout_JarManifest_Behavior.java">
-      <node id="2037010980100931075" at="15,110,16,116" concept="9" />
-      <node id="2037010980100931075" at="18,78,19,91" concept="9" />
-      <node id="2037010980100931075" at="21,90,22,95" concept="9" />
-      <node id="2037010980100931075" at="24,92,25,97" concept="9" />
-      <node id="2037010980100931075" at="27,103,28,106" concept="9" />
-      <node id="2037010980100931075" at="15,0,18,0" concept="13" trace="call_getOutputPath_WithMacro_6837653846148442229#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="2037010980100931075" at="18,0,21,0" concept="13" trace="call_isInJar_6837653846148477885#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2037010980100931075" at="21,0,24,0" concept="13" trace="call_getSections_8563603456895840664#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2037010980100931075" at="24,0,27,0" concept="13" trace="call_getAttributes_8563603456895840897#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2037010980100931075" at="27,0,30,0" concept="13" trace="call_defaultManifestName_8990969321155958188#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="2037010980100931075" at="15,110,16,116" />
-      <scope id="2037010980100931075" at="18,78,19,91" />
-      <scope id="2037010980100931075" at="21,90,22,95" />
-      <scope id="2037010980100931075" at="24,92,25,97" />
-      <scope id="2037010980100931075" at="27,103,28,106" />
-      <scope id="2037010980100931075" at="15,0,18,0">
-        <var name="__thisNode__" id="2037010980100931075" />
-        <var name="context" id="6837653846148442230" />
-      </scope>
-      <scope id="2037010980100931075" at="18,0,21,0">
-        <var name="__thisNode__" id="2037010980100931075" />
-      </scope>
-      <scope id="2037010980100931075" at="21,0,24,0">
-        <var name="__thisNode__" id="2037010980100931075" />
-      </scope>
-      <scope id="2037010980100931075" at="24,0,27,0">
-        <var name="__thisNode__" id="2037010980100931075" />
-      </scope>
-      <scope id="2037010980100931075" at="27,0,30,0">
-        <var name="__thisConcept__" id="2037010980100931075" />
-      </scope>
-      <unit id="2037010980100931075" at="13,0,31,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior" />
-    </file>
     <file name="BuildLayout_JarManifest__BehaviorDescriptor.java">
       <node id="2037010980100931075" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="2037010980100931075" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -1650,16 +1147,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2389279258816928526">
-    <file name="BuildSource_JavaContentFolder_Behavior.java">
-      <node id="2389279258816928526" at="14,97,15,109" concept="9" />
-      <node id="2389279258816928526" at="14,0,17,0" concept="13" trace="call_getAntPath_2389279258816946193#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="2389279258816928526" at="14,97,15,109" />
-      <scope id="2389279258816928526" at="14,0,17,0">
-        <var name="__thisNode__" id="2389279258816928526" />
-        <var name="context" id="2389279258816951846" />
-      </scope>
-      <unit id="2389279258816928526" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildSource_JavaContentFolder_Behavior" />
-    </file>
     <file name="BuildSource_JavaContentFolder__BehaviorDescriptor.java">
       <node id="2389279258816928526" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="2389279258816928526" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -1735,15 +1222,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/244868996532694526">
-    <file name="BuildVariableMacroInitValue_Behavior.java">
-      <node id="244868996532694526" at="13,81,14,99" concept="9" />
-      <node id="244868996532694526" at="13,0,16,0" concept="13" trace="call_getMacroName_244868996532694558#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="244868996532694526" at="13,81,14,99" />
-      <scope id="244868996532694526" at="13,0,16,0">
-        <var name="__thisNode__" id="244868996532694526" />
-      </scope>
-      <unit id="244868996532694526" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_Behavior" />
-    </file>
     <file name="BuildVariableMacroInitValue__BehaviorDescriptor.java">
       <node id="244868996532694526" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="244868996532694526" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -1818,30 +1296,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2539347366864764587">
-    <file name="BuildSourceArchiveRelativePath_Behavior.java">
-      <node id="2539347366864764587" at="14,100,15,113" concept="9" />
-      <node id="2539347366864764587" at="17,105,18,118" concept="9" />
-      <node id="2539347366864764587" at="20,99,21,113" concept="9" />
-      <node id="2539347366864764587" at="14,0,17,0" concept="13" trace="call_getUnpackPath_8563603456895534343#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="2539347366864764587" at="17,0,20,0" concept="13" trace="call_calculateUnpackPath_715289236985547394#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="2539347366864764587" at="20,0,23,0" concept="13" trace="call_getUnpackTask_8990969321156029654#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2539347366864764587" at="14,100,15,113" />
-      <scope id="2539347366864764587" at="17,105,18,118" />
-      <scope id="2539347366864764587" at="20,99,21,113" />
-      <scope id="2539347366864764587" at="14,0,17,0">
-        <var name="__thisNode__" id="2539347366864764587" />
-        <var name="context" id="8563603456895534350" />
-      </scope>
-      <scope id="2539347366864764587" at="17,0,20,0">
-        <var name="__thisNode__" id="2539347366864764587" />
-        <var name="context" id="715289236985547398" />
-      </scope>
-      <scope id="2539347366864764587" at="20,0,23,0">
-        <var name="__thisNode__" id="2539347366864764587" />
-        <var name="context" id="8563603456895455211" />
-      </scope>
-      <unit id="2539347366864764587" at="12,0,24,0" name="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior" />
-    </file>
     <file name="BuildSourceArchiveRelativePath__BehaviorDescriptor.java">
       <node id="2539347366864764587" at="40,0,41,0" concept="12" trace="CONCEPT" />
       <node id="2539347366864764587" at="41,0,42,0" concept="12" trace="REGISTRY" />
@@ -2142,17 +1596,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2590001334067676315">
-    <file name="BuildLayout_Node_Behavior.java">
-      <node id="2590001334067676315" at="14,131,15,102" concept="4" />
-      <node id="2590001334067676315" at="14,0,17,0" concept="13" trace="call_appendName_internal_1368030936106708110#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/StringBuilder;)V" />
-      <scope id="2590001334067676315" at="14,131,15,102" />
-      <scope id="2590001334067676315" at="14,0,17,0">
-        <var name="__thisConcept__" id="2590001334067676315" />
-        <var name="node" id="1368030936106708115" />
-        <var name="sb" id="1368030936106708118" />
-      </scope>
-      <unit id="2590001334067676315" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_Node_Behavior" />
-    </file>
     <file name="BuildLayout_Node__BehaviorDescriptor.java">
       <node id="2590001334067676315" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="2590001334067676315" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -2315,9 +1758,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2750015747481074674">
-    <file name="BuildLayout_Files_Behavior.java">
-      <unit id="2750015747481074674" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Files_Behavior" />
-    </file>
     <file name="BuildLayout_Files__BehaviorDescriptor.java">
       <node id="2750015747481074674" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="2750015747481074674" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -2383,15 +1823,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/280273048052522028">
-    <file name="BuildLayout_Folder_Behavior.java">
-      <node id="280273048052522028" at="13,103,14,103" concept="9" />
-      <node id="280273048052522028" at="13,0,16,0" concept="13" trace="call_getImportContentChildren_7045211410692956036#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="280273048052522028" at="13,103,14,103" />
-      <scope id="280273048052522028" at="13,0,16,0">
-        <var name="__thisNode__" id="280273048052522028" />
-      </scope>
-      <unit id="280273048052522028" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildLayout_Folder_Behavior" />
-    </file>
     <file name="BuildLayout_Folder__BehaviorDescriptor.java">
       <node id="280273048052522028" at="34,0,35,0" concept="12" trace="CONCEPT" />
       <node id="280273048052522028" at="35,0,36,0" concept="12" trace="REGISTRY" />
@@ -2637,9 +2068,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2913098736709313158">
-    <file name="BuildLayout_TransparentContainer_Behavior.java">
-      <unit id="2913098736709313158" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_Behavior" />
-    </file>
     <file name="BuildLayout_TransparentContainer__BehaviorDescriptor.java">
       <node id="2913098736709313158" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="2913098736709313158" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2733,9 +2161,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2913098736709465779">
-    <file name="BuildLayout_ExportAsJavaLibrary_Behavior.java">
-      <unit id="2913098736709465779" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_ExportAsJavaLibrary_Behavior" />
-    </file>
     <file name="BuildLayout_ExportAsJavaLibrary__BehaviorDescriptor.java">
       <node id="2913098736709465779" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2913098736709465779" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -2819,9 +2244,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/2913098736709465902">
-    <file name="BuildSource_JavaDependencyLibrary_Behavior.java">
-      <unit id="2913098736709465902" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyLibrary_Behavior" />
-    </file>
     <file name="BuildSource_JavaDependencyLibrary__BehaviorDescriptor.java">
       <node id="2913098736709465902" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="2913098736709465902" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2899,9 +2321,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/342830306171239604">
-    <file name="BuildSource_JavaDependencyExternalJarInFolder_Behavior.java">
-      <unit id="342830306171239604" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyExternalJarInFolder_Behavior" />
-    </file>
     <file name="BuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor.java">
       <node id="342830306171239604" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="342830306171239604" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2984,16 +2403,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4045247515868395483">
-    <file name="BuildLayout_NamedContainer_Behavior.java">
-      <node id="4045247515868395483" at="14,109,15,118" concept="9" />
-      <node id="4045247515868395483" at="14,0,17,0" concept="13" trace="call_getOutputPath_WithMacro_280273048052535414#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="4045247515868395483" at="14,109,15,118" />
-      <scope id="4045247515868395483" at="14,0,17,0">
-        <var name="__thisNode__" id="4045247515868395483" />
-        <var name="context" id="5584673629410321115" />
-      </scope>
-      <unit id="4045247515868395483" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
-    </file>
     <file name="BuildLayout_NamedContainer__BehaviorDescriptor.java">
       <node id="4045247515868395483" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="4045247515868395483" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -3132,16 +2541,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4380385936562003287">
-    <file name="BuildString_Behavior.java">
-      <node id="4380385936562003287" at="14,97,15,87" concept="9" />
-      <node id="4380385936562003287" at="14,0,17,0" concept="13" trace="call_getText_4380385936562005550#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/MacroHelper;)Ljava/lang/String;" />
-      <scope id="4380385936562003287" at="14,97,15,87" />
-      <scope id="4380385936562003287" at="14,0,17,0">
-        <var name="__thisNode__" id="4380385936562003287" />
-        <var name="helper" id="6520682027041025469" />
-      </scope>
-      <unit id="4380385936562003287" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildString_Behavior" />
-    </file>
     <file name="BuildString__BehaviorDescriptor.java">
       <node id="4380385936562003287" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="4380385936562003287" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -3226,15 +2625,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4380385936562037064">
-    <file name="BuildTextStringPart_Behavior.java">
-      <node id="4380385936562037064" at="15,81,16,92" concept="9" />
-      <node id="4380385936562037064" at="14,0,18,0" concept="13" trace="call_getContainer_6083230236994622122#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4380385936562037064" at="15,81,16,92" />
-      <scope id="4380385936562037064" at="14,0,18,0">
-        <var name="__thisNode__" id="4380385936562037064" />
-      </scope>
-      <unit id="4380385936562037064" at="12,0,19,0" name="jetbrains.mps.build.behavior.BuildTextStringPart_Behavior" />
-    </file>
     <file name="BuildTextStringPart__BehaviorDescriptor.java">
       <node id="4380385936562037064" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="4380385936562037064" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -3322,9 +2712,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4380385936562037086">
-    <file name="BuildVarRefStringPart_Behavior.java">
-      <unit id="4380385936562037086" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildVarRefStringPart_Behavior" />
-    </file>
     <file name="BuildVarRefStringPart__BehaviorDescriptor.java">
       <node id="4380385936562037086" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="4380385936562037086" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -3428,9 +2815,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4701820937132344008">
-    <file name="BuildLayout_Container_Behavior.java">
-      <unit id="4701820937132344008" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
-    </file>
     <file name="BuildLayout_Container__BehaviorDescriptor.java">
       <node id="4701820937132344008" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="4701820937132344008" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -3499,9 +2883,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4701820937132391104">
-    <file name="BuildNamedLayout_Behavior.java">
-      <unit id="4701820937132391104" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildNamedLayout_Behavior" />
-    </file>
     <file name="BuildNamedLayout__BehaviorDescriptor.java">
       <node id="4701820937132391104" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="4701820937132391104" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3634,29 +3015,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4959435991187140512">
-    <file name="BuildRelativePath_Behavior.java">
-      <node id="4959435991187140512" at="14,81,15,89" concept="9" />
-      <node id="4959435991187140512" at="17,106,18,96" concept="9" />
-      <node id="4959435991187140512" at="20,97,21,89" concept="9" />
-      <node id="4959435991187140512" at="14,0,17,0" concept="13" trace="call_getPathTail_1258644073389171001#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4959435991187140512" at="17,0,20,0" concept="13" trace="call_isEmptyTail_8654221991637157686#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4959435991187140512" at="20,0,23,0" concept="13" trace="call_next_8654221991637156927#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4959435991187140512" at="14,81,15,89" />
-      <scope id="4959435991187140512" at="17,106,18,96" />
-      <scope id="4959435991187140512" at="20,97,21,89" />
-      <scope id="4959435991187140512" at="14,0,17,0">
-        <var name="__thisNode__" id="4959435991187140512" />
-      </scope>
-      <scope id="4959435991187140512" at="17,0,20,0">
-        <var name="__thisConcept__" id="4959435991187140512" />
-        <var name="cp" id="8654221991637157692" />
-      </scope>
-      <scope id="4959435991187140512" at="20,0,23,0">
-        <var name="__thisConcept__" id="4959435991187140512" />
-        <var name="cp" id="8654221991637156933" />
-      </scope>
-      <unit id="4959435991187140512" at="12,0,24,0" name="jetbrains.mps.build.behavior.BuildRelativePath_Behavior" />
-    </file>
     <file name="BuildRelativePath__BehaviorDescriptor.java">
       <node id="4959435991187140512" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="4959435991187140512" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3844,9 +3202,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4959435991187146226">
-    <file name="BuildSourceMacroRelativePath_Behavior.java">
-      <unit id="4959435991187146226" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_Behavior" />
-    </file>
     <file name="BuildSourceMacroRelativePath__BehaviorDescriptor.java">
       <node id="4959435991187146226" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="4959435991187146226" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -3934,16 +3289,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4959435991187146972">
-    <file name="BuildFolderMacro_Behavior.java">
-      <node id="4959435991187146972" at="14,95,15,94" concept="9" />
-      <node id="4959435991187146972" at="14,0,17,0" concept="13" trace="call_evaluate_4959435991187146982#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="4959435991187146972" at="14,95,15,94" />
-      <scope id="4959435991187146972" at="14,0,17,0">
-        <var name="__thisNode__" id="4959435991187146972" />
-        <var name="context" id="4959435991187166469" />
-      </scope>
-      <unit id="4959435991187146972" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildFolderMacro_Behavior" />
-    </file>
     <file name="BuildFolderMacro__BehaviorDescriptor.java">
       <node id="4959435991187146972" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="4959435991187146972" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -4039,9 +3384,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5096397858823356720">
-    <file name="BuildStringPart_Behavior.java">
-      <unit id="5096397858823356720" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildStringPart_Behavior" />
-    </file>
     <file name="BuildStringPart__BehaviorDescriptor.java">
       <node id="5096397858823356720" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5096397858823356720" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4154,9 +3496,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5481553824944787361">
-    <file name="BuildSourcePath_Behavior.java">
-      <unit id="5481553824944787361" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
-    </file>
     <file name="BuildSourcePath__BehaviorDescriptor.java">
       <node id="5481553824944787361" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5481553824944787361" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4270,9 +3609,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5481553824944831598">
-    <file name="BuildSourceProjectRelativePath_Behavior.java">
-      <unit id="5481553824944831598" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_Behavior" />
-    </file>
     <file name="BuildSourceProjectRelativePath__BehaviorDescriptor.java">
       <node id="5481553824944831598" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="5481553824944831598" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -4360,9 +3696,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5584673629410192611">
-    <file name="BuildLayout_Behavior.java">
-      <unit id="5584673629410192611" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Behavior" />
-    </file>
     <file name="BuildLayout__BehaviorDescriptor.java">
       <node id="5584673629410192611" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5584673629410192611" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4491,9 +3824,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299013068447">
-    <file name="BuildLayout_ImportContent_Behavior.java">
-      <unit id="5610619299013068447" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_ImportContent_Behavior" />
-    </file>
     <file name="BuildLayout_ImportContent__BehaviorDescriptor.java">
       <node id="5610619299013068447" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5610619299013068447" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -4592,9 +3922,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299013425875">
-    <file name="BuildSource_SingleFile_Behavior.java">
-      <unit id="5610619299013425875" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
-    </file>
     <file name="BuildSource_SingleFile__BehaviorDescriptor.java">
       <node id="5610619299013425875" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="5610619299013425875" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4661,9 +3988,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299013975125">
-    <file name="BuildInputSingleFile_Behavior.java">
-      <unit id="5610619299013975125" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildInputSingleFile_Behavior" />
-    </file>
     <file name="BuildInputSingleFile__BehaviorDescriptor.java">
       <node id="5610619299013975125" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="5610619299013975125" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -4747,15 +4071,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014309359">
-    <file name="BuildSource_JavaLibrary_Behavior.java">
-      <node id="5610619299014309359" at="13,87,14,100" concept="9" />
-      <node id="5610619299014309359" at="13,0,16,0" concept="13" trace="call_canExportByParts_5610619299014309362#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5610619299014309359" at="13,87,14,100" />
-      <scope id="5610619299014309359" at="13,0,16,0">
-        <var name="__thisNode__" id="5610619299014309359" />
-      </scope>
-      <unit id="5610619299014309359" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior" />
-    </file>
     <file name="BuildSource_JavaLibrary__BehaviorDescriptor.java">
       <node id="5610619299014309359" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014309359" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -4845,16 +4160,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014309559">
-    <file name="BuildSource_JavaExternalJarRef_Behavior.java">
-      <node id="5610619299014309559" at="15,136,16,121" concept="9" />
-      <node id="5610619299014309559" at="15,0,18,0" concept="13" trace="call_getDependencyTarget_5610619299014309566#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-      <scope id="5610619299014309559" at="15,136,16,121" />
-      <scope id="5610619299014309559" at="15,0,18,0">
-        <var name="__thisNode__" id="5610619299014309559" />
-        <var name="artifacts" id="5610619299014309656" />
-      </scope>
-      <unit id="5610619299014309559" at="13,0,19,0" name="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior" />
-    </file>
     <file name="BuildSource_JavaExternalJarRef__BehaviorDescriptor.java">
       <node id="5610619299014309559" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014309559" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -4934,9 +4239,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014446522">
-    <file name="BuildSource_JavaLibraryExternalJar_Behavior.java">
-      <unit id="5610619299014446522" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_Behavior" />
-    </file>
     <file name="BuildSource_JavaLibraryExternalJar__BehaviorDescriptor.java">
       <node id="5610619299014446522" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014446522" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -5024,9 +4326,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531544">
-    <file name="BuildSource_SingleFolder_Behavior.java">
-      <unit id="5610619299014531544" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior" />
-    </file>
     <file name="BuildSource_SingleFolder__BehaviorDescriptor.java">
       <node id="5610619299014531544" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014531544" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -5093,9 +4392,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531588">
-    <file name="BuildInputSingleFolder_Behavior.java">
-      <unit id="5610619299014531588" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildInputSingleFolder_Behavior" />
-    </file>
     <file name="BuildInputSingleFolder__BehaviorDescriptor.java">
       <node id="5610619299014531588" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014531588" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -5170,16 +4466,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531750">
-    <file name="BuildSource_JavaExternalJarFolderRef_Behavior.java">
-      <node id="5610619299014531750" at="14,116,15,127" concept="9" />
-      <node id="5610619299014531750" at="14,0,17,0" concept="13" trace="call_getDependencyTarget_5610619299014531753#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5610619299014531750" at="14,116,15,127" />
-      <scope id="5610619299014531750" at="14,0,17,0">
-        <var name="__thisNode__" id="5610619299014531750" />
-        <var name="artifacts" id="5610619299014531822" />
-      </scope>
-      <unit id="5610619299014531750" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildSource_JavaExternalJarFolderRef_Behavior" />
-    </file>
     <file name="BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor.java">
       <node id="5610619299014531750" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014531750" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -5259,9 +4545,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531836">
-    <file name="BuildSource_JavaLibraryExternalJarFolder_Behavior.java">
-      <unit id="5610619299014531836" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJarFolder_Behavior" />
-    </file>
     <file name="BuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor.java">
       <node id="5610619299014531836" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="5610619299014531836" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -5344,9 +4627,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5970181360961342216">
-    <file name="BuildLayout_InJarNode_Behavior.java">
-      <unit id="5970181360961342216" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_InJarNode_Behavior" />
-    </file>
     <file name="BuildLayout_InJarNode__BehaviorDescriptor.java">
       <node id="5970181360961342216" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="5970181360961342216" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -5413,9 +4693,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6408167411310575209">
-    <file name="BuildLayout_ContainerAcceptingFileSet_Behavior.java">
-      <unit id="6408167411310575209" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
-    </file>
     <file name="BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor.java">
       <node id="6408167411310575209" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="6408167411310575209" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -5484,17 +4761,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219485324">
-    <file name="BuildLayout_Jar_Behavior.java">
-      <node id="6547494638219485324" at="13,117,14,109" concept="9" />
-      <node id="6547494638219485324" at="13,0,16,0" concept="13" trace="call_scanInJarNodes_5970181360961342226#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Z" />
-      <scope id="6547494638219485324" at="13,117,14,109" />
-      <scope id="6547494638219485324" at="13,0,16,0">
-        <var name="__thisNode__" id="6547494638219485324" />
-        <var name="container" id="5970181360961342233" />
-        <var name="object" id="5970181360961342409" />
-      </scope>
-      <unit id="6547494638219485324" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior" />
-    </file>
     <file name="BuildLayout_Jar__BehaviorDescriptor.java">
       <node id="6547494638219485324" at="33,0,34,0" concept="12" trace="CONCEPT" />
       <node id="6547494638219485324" at="34,0,35,0" concept="12" trace="REGISTRY" />
@@ -5795,9 +5061,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219588845">
-    <file name="BuildSource_JavaDependencyModule_Behavior.java">
-      <unit id="6547494638219588845" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyModule_Behavior" />
-    </file>
     <file name="BuildSource_JavaDependencyModule__BehaviorDescriptor.java">
       <node id="6547494638219588845" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="6547494638219588845" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -5875,9 +5138,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219688110">
-    <file name="BuildMacro_Behavior.java">
-      <unit id="6547494638219688110" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildMacro_Behavior" />
-    </file>
     <file name="BuildMacro__BehaviorDescriptor.java">
       <node id="6547494638219688110" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="6547494638219688110" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -5952,9 +5212,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219688122">
-    <file name="BuildVariableMacro_Behavior.java">
-      <unit id="6547494638219688122" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildVariableMacro_Behavior" />
-    </file>
     <file name="BuildVariableMacro__BehaviorDescriptor.java">
       <node id="6547494638219688122" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="6547494638219688122" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -6029,9 +5286,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6853883513540398153">
-    <file name="BuildSource_JavaCP_Behavior.java">
-      <unit id="6853883513540398153" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaCP_Behavior" />
-    </file>
     <file name="BuildSource_JavaCP__BehaviorDescriptor.java">
       <node id="6853883513540398153" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="6853883513540398153" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -6097,9 +5351,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6854204111265837869">
-    <file name="IWorkflowParticipant_Behavior.java">
-      <unit id="6854204111265837869" at="10,0,13,0" name="jetbrains.mps.build.behavior.IWorkflowParticipant_Behavior" />
-    </file>
     <file name="IWorkflowParticipant__BehaviorDescriptor.java">
       <node id="6854204111265837869" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="6854204111265837869" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -6166,9 +5417,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6859736767834558025">
-    <file name="BuildSource_JavaDependencyExternalJar_Behavior.java">
-      <unit id="6859736767834558025" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildSource_JavaDependencyExternalJar_Behavior" />
-    </file>
     <file name="BuildSource_JavaDependencyExternalJar__BehaviorDescriptor.java">
       <node id="6859736767834558025" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="6859736767834558025" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -6257,9 +5505,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6967233722066057022">
-    <file name="BuildLayout_War_Behavior.java">
-      <unit id="6967233722066057022" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_War_Behavior" />
-    </file>
     <file name="BuildLayout_War__BehaviorDescriptor.java">
       <node id="6967233722066057022" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="6967233722066057022" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -6334,9 +5579,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7128123785277710733">
-    <file name="BuildLayout_PathElement_Behavior.java">
-      <unit id="7128123785277710733" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
-    </file>
     <file name="BuildLayout_PathElement__BehaviorDescriptor.java">
       <node id="7128123785277710733" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="7128123785277710733" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -6405,9 +5647,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7128123785277898836">
-    <file name="BuildLayout_Zip_Behavior.java">
-      <unit id="7128123785277898836" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Zip_Behavior" />
-    </file>
     <file name="BuildLayout_Zip__BehaviorDescriptor.java">
       <node id="7128123785277898836" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="7128123785277898836" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -6634,9 +5873,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7181125477683216360">
-    <file name="BuildExternalLayout_Behavior.java">
-      <unit id="7181125477683216360" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildExternalLayout_Behavior" />
-    </file>
     <file name="BuildExternalLayout__BehaviorDescriptor.java">
       <node id="7181125477683216360" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7181125477683216360" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -6768,9 +6004,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7181125477683370818">
-    <file name="BuildLayout_FileStub_Behavior.java">
-      <unit id="7181125477683370818" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_FileStub_Behavior" />
-    </file>
     <file name="BuildLayout_FileStub__BehaviorDescriptor.java">
       <node id="7181125477683370818" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7181125477683370818" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -6887,9 +6120,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7181125477683417259">
-    <file name="BuildExternalLayoutDependency_Behavior.java">
-      <unit id="7181125477683417259" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildExternalLayoutDependency_Behavior" />
-    </file>
     <file name="BuildExternalLayoutDependency__BehaviorDescriptor.java">
       <node id="7181125477683417259" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="7181125477683417259" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -6995,9 +6225,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7389400916848004877">
-    <file name="BuildLayout_AbstractContainer_Behavior.java">
-      <unit id="7389400916848004877" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_Behavior" />
-    </file>
     <file name="BuildLayout_AbstractContainer__BehaviorDescriptor.java">
       <node id="7389400916848004877" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="7389400916848004877" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -7081,80 +6308,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7389400916848182205">
-    <file name="BuildProject_Behavior.java">
-      <node id="7389400916848182205" at="18,98,19,92" concept="9" />
-      <node id="7389400916848182205" at="22,98,23,93" concept="9" />
-      <node id="7389400916848182205" at="26,101,27,96" concept="9" />
-      <node id="7389400916848182205" at="29,87,30,90" concept="9" />
-      <node id="7389400916848182205" at="32,119,33,114" concept="9" />
-      <node id="7389400916848182205" at="35,113,36,93" concept="9" />
-      <node id="7389400916848182205" at="38,129,39,115" concept="9" />
-      <node id="7389400916848182205" at="41,124,42,105" concept="4" />
-      <node id="7389400916848182205" at="44,126,45,107" concept="9" />
-      <node id="7389400916848182205" at="47,84,48,86" concept="9" />
-      <node id="7389400916848182205" at="18,0,21,0" concept="13" trace="call_isPackaged_4129895186893455885#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Z" />
-      <node id="7389400916848182205" at="29,0,32,0" concept="13" trace="call_getOutputFileName_4915877860351551360#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7389400916848182205" at="32,0,35,0" concept="13" trace="call_getBasePathRelativeToScriptsPath_5178006408628632053#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="7389400916848182205" at="35,0,38,0" concept="13" trace="call_getScope_1224588814561808649#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljetbrains/mps/scope/Scope;" />
-      <node id="7389400916848182205" at="38,0,41,0" concept="13" trace="call_getVisibleProjects_1224588814561807665#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/lang/Iterable;" />
-      <node id="7389400916848182205" at="41,0,44,0" concept="13" trace="call_collectVisibleProjects_1224588814561808211#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7389400916848182205" at="44,0,47,0" concept="13" trace="call_getBuildMacroScope_3767587139141108514#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;)Ljetbrains/mps/scope/Scope;" />
-      <node id="7389400916848182205" at="47,0,50,0" concept="13" trace="call_canEditBaseDir_631271972590018330#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7389400916848182205" at="21,0,25,0" concept="13" trace="call_getBasePath_4959435991187146924#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="7389400916848182205" at="25,0,29,0" concept="13" trace="call_getScriptsPath_4796668409958419284#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="7389400916848182205" at="18,98,19,92" />
-      <scope id="7389400916848182205" at="22,98,23,93" />
-      <scope id="7389400916848182205" at="26,101,27,96" />
-      <scope id="7389400916848182205" at="29,87,30,90" />
-      <scope id="7389400916848182205" at="32,119,33,114" />
-      <scope id="7389400916848182205" at="35,113,36,93" />
-      <scope id="7389400916848182205" at="38,129,39,115" />
-      <scope id="7389400916848182205" at="41,124,42,105" />
-      <scope id="7389400916848182205" at="44,126,45,107" />
-      <scope id="7389400916848182205" at="47,84,48,86" />
-      <scope id="7389400916848182205" at="18,0,21,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="context" id="4129895186893470928" />
-      </scope>
-      <scope id="7389400916848182205" at="29,0,32,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-      </scope>
-      <scope id="7389400916848182205" at="32,0,35,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="context" id="5178006408628632058" />
-      </scope>
-      <scope id="7389400916848182205" at="35,0,38,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="kind" id="1224588814561808654" />
-        <var name="role" id="1224588814561808656" />
-      </scope>
-      <scope id="7389400916848182205" at="38,0,41,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="directDependenciesOnly" id="1224588814561807673" />
-      </scope>
-      <scope id="7389400916848182205" at="41,0,44,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="current" id="1224588814561808222" />
-        <var name="result" id="1224588814561808217" />
-      </scope>
-      <scope id="7389400916848182205" at="44,0,47,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="child" id="3767587139141108513" />
-        <var name="visited" id="3643570831019073963" />
-      </scope>
-      <scope id="7389400916848182205" at="47,0,50,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-      </scope>
-      <scope id="7389400916848182205" at="21,0,25,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="context" id="6432389088572863298" />
-      </scope>
-      <scope id="7389400916848182205" at="25,0,29,0">
-        <var name="__thisNode__" id="7389400916848182205" />
-        <var name="context" id="6432389088572870584" />
-      </scope>
-      <unit id="7389400916848182205" at="16,0,51,0" name="jetbrains.mps.build.behavior.BuildProject_Behavior" />
-    </file>
     <file name="BuildProject__BehaviorDescriptor.java">
       <node id="7389400916848182205" at="48,0,49,0" concept="12" trace="CONCEPT" />
       <node id="7389400916848182205" at="49,0,50,0" concept="12" trace="REGISTRY" />
@@ -7586,9 +6739,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7471276865246016972">
-    <file name="BuildLayout_JarManifest_Attribute_Behavior.java">
-      <unit id="7471276865246016972" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_Behavior" />
-    </file>
     <file name="BuildLayout_JarManifest_Attribute__BehaviorDescriptor.java">
       <node id="7471276865246016972" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7471276865246016972" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -7681,9 +6831,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/763409143595654857">
-    <file name="BuildProjectDependency_Behavior.java">
-      <unit id="763409143595654857" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildProjectDependency_Behavior" />
-    </file>
     <file name="BuildProjectDependency__BehaviorDescriptor.java">
       <node id="763409143595654857" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="763409143595654857" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -7789,16 +6936,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7655580649838832283">
-    <file name="BuildLayout_EchoXml_Behavior.java">
-      <node id="7655580649838832283" at="14,110,15,112" concept="9" />
-      <node id="7655580649838832283" at="14,0,17,0" concept="13" trace="call_getOutputPath_WithMacro_4643216374596143062#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <scope id="7655580649838832283" at="14,110,15,112" />
-      <scope id="7655580649838832283" at="14,0,17,0">
-        <var name="__thisNode__" id="7655580649838832283" />
-        <var name="context" id="4643216374596143108" />
-      </scope>
-      <unit id="7655580649838832283" at="12,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior" />
-    </file>
     <file name="BuildLayout_EchoXml__BehaviorDescriptor.java">
       <node id="7655580649838832283" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7655580649838832283" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -7891,9 +7028,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7801138212747310472">
-    <file name="BuildLayout_Filemode_Behavior.java">
-      <unit id="7801138212747310472" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Filemode_Behavior" />
-    </file>
     <file name="BuildLayout_Filemode__BehaviorDescriptor.java">
       <node id="7801138212747310472" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7801138212747310472" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -7997,9 +7131,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/841011766566205092">
-    <file name="BuildExternalDependency_Behavior.java">
-      <unit id="841011766566205092" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildExternalDependency_Behavior" />
-    </file>
     <file name="BuildExternalDependency__BehaviorDescriptor.java">
       <node id="841011766566205092" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="841011766566205092" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -8066,9 +7197,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/841011766566205111">
-    <file name="BuildLayout_Import_Behavior.java">
-      <unit id="841011766566205111" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Import_Behavior" />
-    </file>
     <file name="BuildLayout_Import__BehaviorDescriptor.java">
       <node id="841011766566205111" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="841011766566205111" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -8167,9 +7295,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/8577651205286949056">
-    <file name="BuildLayout_Tar_Behavior.java">
-      <unit id="8577651205286949056" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_Tar_Behavior" />
-    </file>
     <file name="BuildLayout_Tar__BehaviorDescriptor.java">
       <node id="8577651205286949056" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="8577651205286949056" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -8413,42 +7538,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/8618885170173674797">
-    <file name="BuildCompositePath_Behavior.java">
-      <node id="8618885170173674797" at="17,77,18,86" concept="9" />
-      <node id="8618885170173674797" at="20,104,21,101" concept="9" />
-      <node id="8618885170173674797" at="23,83,24,92" concept="9" />
-      <node id="8618885170173674797" at="26,111,27,107" concept="9" />
-      <node id="8618885170173674797" at="29,92,30,94" concept="9" />
-      <node id="8618885170173674797" at="17,0,20,0" concept="13" trace="call_getPath_8618885170173674800#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8618885170173674797" at="20,0,23,0" concept="13" trace="call_getLastSegment_1368030936106771152#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/MacroHelper;)Ljava/lang/String;" />
-      <node id="8618885170173674797" at="23,0,26,0" concept="13" trace="call_getPathToHead_3968971886499106107#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="8618885170173674797" at="26,0,29,0" concept="13" trace="call_getHeadSuggestions_4959435991187212109#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-      <node id="8618885170173674797" at="29,0,32,0" concept="13" trace="call_getFile_841084130032784919#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljetbrains/mps/vfs/IFile;" />
-      <scope id="8618885170173674797" at="17,77,18,86" />
-      <scope id="8618885170173674797" at="20,104,21,101" />
-      <scope id="8618885170173674797" at="23,83,24,92" />
-      <scope id="8618885170173674797" at="26,111,27,107" />
-      <scope id="8618885170173674797" at="29,92,30,94" />
-      <scope id="8618885170173674797" at="17,0,20,0">
-        <var name="__thisNode__" id="8618885170173674797" />
-      </scope>
-      <scope id="8618885170173674797" at="20,0,23,0">
-        <var name="__thisNode__" id="8618885170173674797" />
-        <var name="helper" id="1368030936106771157" />
-      </scope>
-      <scope id="8618885170173674797" at="23,0,26,0">
-        <var name="__thisNode__" id="8618885170173674797" />
-      </scope>
-      <scope id="8618885170173674797" at="26,0,29,0">
-        <var name="__thisNode__" id="8618885170173674797" />
-        <var name="basePath" id="3968971886499110423" />
-      </scope>
-      <scope id="8618885170173674797" at="29,0,32,0">
-        <var name="__thisNode__" id="8618885170173674797" />
-        <var name="context" id="841084130032784960" />
-      </scope>
-      <unit id="8618885170173674797" at="15,0,33,0" name="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
-    </file>
     <file name="BuildCompositePath__BehaviorDescriptor.java">
       <node id="8618885170173674797" at="35,0,36,0" concept="12" trace="CONCEPT" />
       <node id="8618885170173674797" at="36,0,37,0" concept="12" trace="REGISTRY" />
@@ -8620,15 +7709,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/9126048691955220764">
-    <file name="BuildLayout_File_Behavior.java">
-      <node id="9126048691955220764" at="13,86,14,92" concept="9" />
-      <node id="9126048691955220764" at="13,0,16,0" concept="13" trace="call_canHaveFilemode_9126048691955221297#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="9126048691955220764" at="13,86,14,92" />
-      <scope id="9126048691955220764" at="13,0,16,0">
-        <var name="__thisNode__" id="9126048691955220764" />
-      </scope>
-      <unit id="9126048691955220764" at="11,0,17,0" name="jetbrains.mps.build.behavior.BuildLayout_File_Behavior" />
-    </file>
     <file name="BuildLayout_File__BehaviorDescriptor.java">
       <node id="9126048691955220764" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="9126048691955220764" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -8818,9 +7898,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/9184644532456496022">
-    <file name="BuildLayout_AbstractCopy_Behavior.java">
-      <unit id="9184644532456496022" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildLayout_AbstractCopy_Behavior" />
-    </file>
     <file name="BuildLayout_AbstractCopy__BehaviorDescriptor.java">
       <node id="9184644532456496022" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="9184644532456496022" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -9007,9 +8084,6 @@
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/9184644532456897461">
-    <file name="BuildStringContainer_Behavior.java">
-      <unit id="9184644532456897461" at="10,0,13,0" name="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
-    </file>
     <file name="BuildStringContainer__BehaviorDescriptor.java">
       <node id="9184644532456897461" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="9184644532456897461" at="27,0,28,0" concept="12" trace="REGISTRY" />

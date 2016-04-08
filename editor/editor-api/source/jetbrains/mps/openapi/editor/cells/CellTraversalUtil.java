@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
+import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
@@ -214,5 +216,16 @@ public class CellTraversalUtil {
       }
     }
     return null;
+  }
+
+  /**
+   * Returns a {@link CellTreeIterable} that iterates over the subtree of {@code root}, in preorder, starting with {@code start}.
+   * @param root the root of the subtree to iterate, {@code null} to iterate the whole tree that {@code start} is part of.
+   * @param start the first node to visit
+   * @param forward {@code true} to visit children of a cell from first to last, {@code false} for the reverse order.
+   * @return a new instance of {@link CellTreeIterable}
+   */
+  public static CellTreeIterable iterateTree(@Nullable EditorCell root, @NotNull EditorCell start, boolean forward) {
+    return new CellTreeIterable(root, start, forward);
   }
 }

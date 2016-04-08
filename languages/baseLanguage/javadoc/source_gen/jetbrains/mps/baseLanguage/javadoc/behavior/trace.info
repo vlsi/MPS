@@ -16,116 +16,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AuthorBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="BaseBlockDocTag_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="BaseDocComment_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor" />
-    </file>
-    <file name="BaseDocReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocReference_BehaviorDescriptor" />
-    </file>
-    <file name="BaseInlineDocTag_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseInlineDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="BaseParameterReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="BaseVariableDocReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,78,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ClassifierDocComment_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_BehaviorDescriptor" />
-    </file>
-    <file name="ClassifierDocReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocReference_BehaviorDescriptor" />
-    </file>
-    <file name="CodeInlineDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CodeInlineDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="CodeSnippet_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CodeSnippet_BehaviorDescriptor" />
-    </file>
-    <file name="CommentLinePart_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_BehaviorDescriptor" />
-    </file>
-    <file name="CommentLine_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_BehaviorDescriptor" />
-    </file>
-    <file name="DeprecatedBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DeprecatedBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="DocMethodParameterReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DocMethodParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="DocTypeParameterReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DocTypeParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="EmptyBlockDocTag_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="FieldDocComment_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocComment_BehaviorDescriptor" />
-    </file>
-    <file name="FieldDocReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocReference_BehaviorDescriptor" />
-    </file>
-    <file name="HTMLElement_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_BehaviorDescriptor" />
-    </file>
-    <file name="InheritDocInlineDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.InheritDocInlineDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="InlineTagCommentLinePart_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_BehaviorDescriptor" />
-    </file>
-    <file name="LinkInlineDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.LinkInlineDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="MethodDocComment_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_BehaviorDescriptor" />
-    </file>
-    <file name="MethodDocReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocReference_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ParameterBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="ReturnBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ReturnBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="SeeBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.SeeBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="SinceBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.SinceBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="StaticFieldDocReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.StaticFieldDocReference_BehaviorDescriptor" />
-    </file>
-    <file name="TextCommentLinePart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.TextCommentLinePart_BehaviorDescriptor" />
-    </file>
-    <file name="ThrowsBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ThrowsBlockDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="ValueInlineDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ValueInlineDocTag_BehaviorDescriptor" />
-    </file>
-    <file name="VersionBlockDocTag_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.VersionBlockDocTag_BehaviorDescriptor" />
+      <unit at="14,0,102,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/1262430001741642820">
-    <file name="FieldDocComment_Behavior.java">
-      <unit id="1262430001741642820" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocComment_Behavior" />
-    </file>
     <file name="FieldDocComment__BehaviorDescriptor.java">
       <node id="1262430001741642820" at="20,0,21,0" concept="10" trace="CONCEPT" />
       <node id="1262430001741642820" at="21,0,22,0" concept="10" trace="REGISTRY" />
@@ -191,9 +86,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/2068944020170643572">
-    <file name="ClassifierDocComment_Behavior.java">
-      <unit id="2068944020170643572" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_Behavior" />
-    </file>
     <file name="ClassifierDocComment__BehaviorDescriptor.java">
       <node id="2068944020170643572" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="2068944020170643572" at="27,0,28,0" concept="10" trace="REGISTRY" />
@@ -268,9 +160,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/3633133276124276204">
-    <file name="InlineTagCommentLinePart_Behavior.java">
-      <unit id="3633133276124276204" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_Behavior" />
-    </file>
     <file name="InlineTagCommentLinePart__BehaviorDescriptor.java">
       <node id="3633133276124276204" at="28,0,29,0" concept="10" trace="CONCEPT" />
       <node id="3633133276124276204" at="29,0,30,0" concept="10" trace="REGISTRY" />
@@ -359,9 +248,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/4021391592914343326">
-    <file name="AuthorBlockDocTag_Behavior.java">
-      <unit id="4021391592914343326" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_Behavior" />
-    </file>
     <file name="AuthorBlockDocTag__BehaviorDescriptor.java">
       <node id="4021391592914343326" at="20,0,21,0" concept="10" trace="CONCEPT" />
       <node id="4021391592914343326" at="21,0,22,0" concept="10" trace="REGISTRY" />
@@ -427,9 +313,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/6612597108004626828">
-    <file name="HTMLElement_Behavior.java">
-      <unit id="6612597108004626828" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" />
-    </file>
     <file name="HTMLElement__BehaviorDescriptor.java">
       <node id="6612597108004626828" at="30,0,31,0" concept="10" trace="CONCEPT" />
       <node id="6612597108004626828" at="31,0,32,0" concept="10" trace="REGISTRY" />
@@ -588,16 +471,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/6962838954693316943">
-    <file name="CommentLine_Behavior.java">
-      <node id="6962838954693316943" at="14,102,15,93" concept="7" />
-      <node id="6962838954693316943" at="14,0,17,0" concept="11" trace="call_tryMergeToRight_439148907936414403#(Lorg/jetbrains/mps/openapi/model/SNode;I)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
-      <scope id="6962838954693316943" at="14,102,15,93" />
-      <scope id="6962838954693316943" at="14,0,17,0">
-        <var name="__thisNode__" id="6962838954693316943" />
-        <var name="index" id="439148907936414408" />
-      </scope>
-      <unit id="6962838954693316943" at="12,0,18,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
-    </file>
     <file name="CommentLine__BehaviorDescriptor.java">
       <node id="6962838954693316943" at="29,0,30,0" concept="10" trace="CONCEPT" />
       <node id="6962838954693316943" at="30,0,31,0" concept="10" trace="REGISTRY" />
@@ -693,15 +566,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8465538089690623792">
-    <file name="BaseDocComment_Behavior.java">
-      <node id="8465538089690623792" at="13,78,14,82" concept="7" />
-      <node id="8465538089690623792" at="13,0,16,0" concept="11" trace="call_hasTags_4948473272651019109#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="8465538089690623792" at="13,78,14,82" />
-      <scope id="8465538089690623792" at="13,0,16,0">
-        <var name="__thisNode__" id="8465538089690623792" />
-      </scope>
-      <unit id="8465538089690623792" at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
-    </file>
     <file name="BaseDocComment__BehaviorDescriptor.java">
       <node id="8465538089690623792" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="8465538089690623792" at="27,0,28,0" concept="10" trace="REGISTRY" />
@@ -785,9 +649,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8465538089690983820">
-    <file name="MethodDocComment_Behavior.java">
-      <unit id="8465538089690983820" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
-    </file>
     <file name="MethodDocComment__BehaviorDescriptor.java">
       <node id="8465538089690983820" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="8465538089690983820" at="27,0,28,0" concept="10" trace="REGISTRY" />
@@ -862,9 +723,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8844725588324684453">
-    <file name="EmptyBlockDocTag_Behavior.java">
-      <unit id="8844725588324684453" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_Behavior" />
-    </file>
     <file name="EmptyBlockDocTag__BehaviorDescriptor.java">
       <node id="8844725588324684453" at="20,0,21,0" concept="10" trace="CONCEPT" />
       <node id="8844725588324684453" at="21,0,22,0" concept="10" trace="REGISTRY" />
@@ -930,9 +788,6 @@
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/9042833497008205275">
-    <file name="CommentLinePart_Behavior.java">
-      <unit id="9042833497008205275" at="10,0,13,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_Behavior" />
-    </file>
     <file name="CommentLinePart__BehaviorDescriptor.java">
       <node id="9042833497008205275" at="26,0,27,0" concept="10" trace="CONCEPT" />
       <node id="9042833497008205275" at="27,0,28,0" concept="10" trace="REGISTRY" />

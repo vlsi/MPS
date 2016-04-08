@@ -14,31 +14,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_editorContext_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_model_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_operationContext_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_progressMonitor_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_progressMonitor_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_scope_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_scope_BehaviorDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)/1213877217441">
-    <file name="ConceptFunctionParameter_operationContext_Behavior.java">
-      <unit id="1213877217441" at="10,0,13,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_operationContext__BehaviorDescriptor.java">
       <node id="1213877217441" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1213877217441" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -136,9 +115,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)/5452844340287042924">
-    <file name="ConceptFunctionParameter_editorContext_Behavior.java">
-      <unit id="5452844340287042924" at="10,0,13,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_editorContext__BehaviorDescriptor.java">
       <node id="5452844340287042924" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287042924" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -227,9 +203,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)/5452844340287050954">
-    <file name="ConceptFunctionParameter_node_Behavior.java">
-      <unit id="5452844340287050954" at="10,0,13,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_node__BehaviorDescriptor.java">
       <node id="5452844340287050954" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287050954" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -317,9 +290,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)/5452844340287052517">
-    <file name="ConceptFunctionParameter_model_Behavior.java">
-      <unit id="5452844340287052517" at="10,0,13,0" name="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_model__BehaviorDescriptor.java">
       <node id="5452844340287052517" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5452844340287052517" at="27,0,28,0" concept="7" trace="REGISTRY" />

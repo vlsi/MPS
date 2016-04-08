@@ -11,13 +11,15 @@ import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
-import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ModelComputeRunnable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.util.ModelComputeRunnable;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -25,7 +27,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +41,7 @@ public class IntelligentNodeMover {
   private boolean myIsValid;
   private SContainmentLink myCommonNodesContainmentLink;
   private SNode myCommonNodesParent;
-  private boolean wasMoved;
+
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(IntelligentNodeMover.class));
   public IntelligentNodeMover(@NotNull SNode node, @NotNull EditorContext editorContext, boolean forward) {
     this(CollectionSequence.fromCollectionAndArray(new ArrayList<SNode>(), node), editorContext, forward);
@@ -52,32 +55,42 @@ public class IntelligentNodeMover {
 
   /**
    * move nodes
+   * Throws exception if mover has invalid state. State of mover is valid iff all of the following conditions are met
+   * 1) Collection of nodes to move is not empty
+   * 2) All nodes to move have same non-null parent
+   * 3) All nodes to move have same non-null containment link
+   * Check for isValid() before running this method
    * 
-   * @return true if nodes were moved
+   * @throws IllegalStateException if mover has invalid state
+   * @return true if nodes were moved. Otherwise if there is no place for nodes to be moved false is returned
    */
   public boolean move() {
-    if (wasMoved) {
-      return false;
+    myIsValid = isValid();
+    if (!(myIsValid)) {
+      throw new IllegalStateException("IntelligentNodeMover has invalid state. Nodes to move have different parents of different containment links");
     }
-    myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
-      protected void doExecute() {
-        myIsValid = isValid();
-        if (!(myIsValid)) {
-          return;
-        }
+    ComputeRunnable<Boolean> mover = new ModelComputeRunnable<Boolean>(new Computable<Boolean>() {
+      public Boolean compute() {
         IntelligentNodeMover.PlaceToMove placeToMove = findPlaceToMove();
-        if (placeToMove != null) {
-          Iterable<SNode> intersection = ListSequence.fromList(SNodeOperations.getNodeAncestors(placeToMove.myParent, null, false)).intersect(CollectionSequence.fromCollection(myNodesToMove));
-          if (Sequence.fromIterable(intersection).isNotEmpty()) {
-            SNode first = Sequence.fromIterable(intersection).first();
-            LOG.error("Possible creation of cyclic tree. Node [\"" + first + "\"; concept: " + SNodeOperations.getConcept(first) + "; id: " + first.getNodeId() + "] is supposed to be moved inside itself. Moving was cancelled");
-            return;
-          }
-          doMove(placeToMove);
-          wasMoved = true;
+        if (placeToMove == null) {
+          return false;
         }
-        if (wasMoved) {
-          myEditorContext.flushEvents();
+        Iterable<SNode> intersection = ListSequence.fromList(SNodeOperations.getNodeAncestors(placeToMove.myParent, null, false)).intersect(CollectionSequence.fromCollection(myNodesToMove));
+        if (Sequence.fromIterable(intersection).isNotEmpty()) {
+          SNode first = Sequence.fromIterable(intersection).first();
+          LOG.error("Possible creation of cyclic tree. Node [\"" + first + "\"; concept: " + SNodeOperations.getConcept(first) + "; id: " + first.getNodeId() + "] is supposed to be moved inside itself. Moving was cancelled");
+          return false;
+        }
+        doMove(placeToMove);
+        return true;
+      }
+    });
+    myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(mover, myEditorContext));
+    boolean result = mover.getResult();
+    if (result) {
+      myEditorContext.flushEvents();
+      myEditorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
           if (CollectionSequence.fromCollection(myNodesToMove).count() == 1) {
             myEditorContext.select(getBoundaryNode());
           } else {
@@ -85,9 +98,9 @@ public class IntelligentNodeMover {
             selectionManager.setSelection(selectionManager.createRangeSelection(CollectionSequence.fromCollection(myNodesToMove).first(), CollectionSequence.fromCollection(myNodesToMove).last()));
           }
         }
-      }
-    });
-    return wasMoved;
+      });
+    }
+    return result;
   }
 
 
@@ -96,12 +109,12 @@ public class IntelligentNodeMover {
    * Returns true if all the following conditions are met
    * 1) Collection of nodes to move is not empty
    * 2) All nodes to move have same non-null parent
-   * 3) All nodes to move have same non-nul containment link
+   * 3) All nodes to move have same non-null containment link
    * 
    * @return true if valid
    */
-  private boolean isValid() {
-    ModelComputeRunnable<Boolean> computeIsValid = new ModelComputeRunnable<Boolean>(new Computable<Boolean>() {
+  public boolean isValid() {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         if (CollectionSequence.fromCollection(myNodesToMove).isEmpty()) {
           return false;
@@ -130,13 +143,10 @@ public class IntelligentNodeMover {
           } else if (commonParent != parent) {
             return false;
           }
-
         }
         return true;
       }
     });
-    myEditorContext.getRepository().getModelAccess().runReadAction(computeIsValid);
-    return computeIsValid.getResult();
   }
 
   @NotNull
@@ -269,10 +279,7 @@ public class IntelligentNodeMover {
   }
 
   private EditorCell findCellToMoveInsideCell(@NotNull EditorCell parentCell) {
-    if (isProperCellToMove(parentCell)) {
-      return parentCell;
-    }
-    DfsTraverserIterable cellIterable = new DfsTraverserIterable(parentCell, myIsForward, true);
+    CellTreeIterable cellIterable = CellTraversalUtil.iterateTree(parentCell, parentCell, myIsForward);
     for (EditorCell cell : cellIterable) {
       if (isProperCellToMove(cell)) {
         return cell;
@@ -342,8 +349,7 @@ public class IntelligentNodeMover {
         return null;
       }
     });
-    editorContext.getRepository().getModelAccess().runReadAction(findNode);
-    return findNode.getResult();
+    return findNode.runRead(editorContext.getRepository().getModelAccess());
   }
   private static SContainmentLink getNodesContainmentLink(@NotNull SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))) {

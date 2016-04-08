@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myInIntervalExpression__BehaviorDescriptor = new InIntervalExpression__BehaviorDescriptor();
@@ -34,88 +34,134 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConjugateOperation__BehaviorDescriptor = new ConjugateOperation__BehaviorDescriptor();
   private final BHDescriptor myTransposeOperation__BehaviorDescriptor = new TransposeOperation__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[21];
-    myConceptBehaviorIds[0] = 0x11fb8483964L;
-    myConceptBehaviorIds[1] = 0x11fb8483968L;
-    myConceptBehaviorIds[2] = 0x11fe0ca1899L;
-    myConceptBehaviorIds[3] = 0x11fe0e12aa0L;
-    myConceptBehaviorIds[4] = 0x11fe0e16047L;
-    myConceptBehaviorIds[5] = 0x11fe0e1674dL;
-    myConceptBehaviorIds[6] = 0x11fe188eafbL;
-    myConceptBehaviorIds[7] = 0x120568d9c5bL;
-    myConceptBehaviorIds[8] = 0x1207697107bL;
-    myConceptBehaviorIds[9] = 0x120769754c8L;
-    myConceptBehaviorIds[10] = 0x1207697a328L;
-    myConceptBehaviorIds[11] = 0x12076988136L;
-    myConceptBehaviorIds[12] = 0x13afebc2af505abcL;
-    myConceptBehaviorIds[13] = 0x1a6fbb5a434b008bL;
-    myConceptBehaviorIds[14] = 0x42d5783a6267f776L;
-    myConceptBehaviorIds[15] = 0x42d5783a626b0a85L;
-    myConceptBehaviorIds[16] = 0x58aab8999c8f432aL;
-    myConceptBehaviorIds[17] = 0x64b1e972e6443a20L;
-    myConceptBehaviorIds[18] = 0x64b1e972e647ad7dL;
-    myConceptBehaviorIds[19] = 0x64b1e972e64afe53L;
-    myConceptBehaviorIds[20] = 0x7418107bdc9576d4L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myInIntervalExpression__BehaviorDescriptor;
-      case 1:
-        return myIntervalContainsExpression__BehaviorDescriptor;
-      case 2:
-        return myMathSymbol__BehaviorDescriptor;
-      case 3:
-        return myBigProdExpression__BehaviorDescriptor;
-      case 4:
-        return myBigMaxExpression__BehaviorDescriptor;
-      case 5:
-        return myBigMinExpression__BehaviorDescriptor;
-      case 6:
-        return myBigSumExpression__BehaviorDescriptor;
-      case 7:
-        return myDecimalBinaryOperation__BehaviorDescriptor;
-      case 8:
-        return myDecimalDivExpression__BehaviorDescriptor;
-      case 9:
-        return myDecimalMulExpression__BehaviorDescriptor;
-      case 10:
-        return myDecimalPlusExpression__BehaviorDescriptor;
-      case 11:
-        return myDecimalMinusExpression__BehaviorDescriptor;
-      case 12:
-        return myMatrixInverseOperation__BehaviorDescriptor;
-      case 13:
-        return myMathContext__BehaviorDescriptor;
-      case 14:
-        return myMatrixType__BehaviorDescriptor;
-      case 15:
-        return myMatrixConstructor__BehaviorDescriptor;
-      case 16:
-        return myMatrixElementAccessExpression__BehaviorDescriptor;
-      case 17:
-        return myExponentialOperation__BehaviorDescriptor;
-      case 18:
-        return myMatrixExponentialOperation__BehaviorDescriptor;
-      case 19:
-        return myConjugateOperation__BehaviorDescriptor;
-      case 20:
-        return myTransposeOperation__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0y.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBigMaxExpression__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBigMinExpression__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myBigProdExpression__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myBigSumExpression__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConjugateOperation__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myDecimalBinaryOperation__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myDecimalDivExpression__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myDecimalMinusExpression__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myDecimalMulExpression__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myDecimalPlusExpression__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myExponentialOperation__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myInIntervalExpression__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myIntervalContainsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myMathContext__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myMathSymbol__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myMatrixConstructor__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myMatrixElementAccessExpression__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myMatrixExponentialOperation__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myMatrixInverseOperation__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myMatrixType__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myTransposeOperation__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0y = buildConceptIndices(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e16047L, "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e1674dL, "jetbrains.mps.baseLanguage.math.structure.BigMinExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e12aa0L, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe188eafbL, "jetbrains.mps.baseLanguage.math.structure.BigSumExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e64afe53L, "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697107bL, "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12076988136L, "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120769754c8L, "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697a328L, "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483964L, "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483968L, "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e647ad7dL, "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x7418107bdc9576d4L, "jetbrains.mps.baseLanguage.math.structure.TransposeOperation"));
 }

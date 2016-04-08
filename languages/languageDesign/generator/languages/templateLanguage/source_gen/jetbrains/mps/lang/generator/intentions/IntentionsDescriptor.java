@@ -4,175 +4,158 @@ package jetbrains.mps.lang.generator.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
-  private IntentionFactory[] myIntentions7;
-  private IntentionFactory[] myIntentions8;
-  private IntentionFactory[] myIntentions9;
-  private IntentionFactory[] myIntentions10;
-  private IntentionFactory[] myIntentions11;
-  private IntentionFactory[] myIntentions12;
-  private IntentionFactory[] myIntentions13;
-  private IntentionFactory[] myIntentions14;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[15];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0x10313ed7688L;
-    myId2Index[2] = 0x1047ce009c3L;
-    myId2Index[3] = 0x10802efe25aL;
-    myId2Index[4] = 0x10fbbd5854aL;
-    myId2Index[5] = 0x10fc0d8c573L;
-    myId2Index[6] = 0x10fca296532L;
-    myId2Index[7] = 0x10fd54746dbL;
-    myId2Index[8] = 0x11013906056L;
-    myId2Index[9] = 0x1104fcac3b1L;
-    myId2Index[10] = 0x112103dd1e8L;
-    myId2Index[11] = 0x11644fa2edeL;
-    myId2Index[12] = 0x11644fdbf49L;
-    myId2Index[13] = 0x116597b27aaL;
-    myId2Index[14] = 0x11dc0f7933bL;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ClassConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new ConvertClassConceptToExtract_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: TemplateSwitch 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new NewTemplateInSwitchDefault_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: LoopMacro 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new ConvertLoopWithCopySrc_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: BaseConcept 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[12];
-          myIntentions3[0] = new AddNodeMacro_Intention();
-          myIntentions3[1] = new AddPropertyMacro_Intention();
-          myIntentions3[2] = new AddReferenceMacro_Intention();
-          myIntentions3[3] = new AddNodeMacroParam_ifMacro_Intention();
-          myIntentions3[4] = new AddReferenceMacroParam_link_Intention();
-          myIntentions3[5] = new AddPropertyMacroParam_property_Intention();
-          myIntentions3[6] = new AddNodeMacroParam_copySrcMacro_Intention();
-          myIntentions3[7] = new AddNodeMacroParam_copySrclMacro_Intention();
-          myIntentions3[8] = new AddNodeMacroParam_loopMacro_Intention();
-          myIntentions3[9] = new NewTemplateFragment_Intention();
-          myIntentions3[10] = new AddNodeMacroParam_switch_Intention();
-          myIntentions3[11] = new ReplaceWithConcreteSubconcept_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: CreateRootRule 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[1];
-          myIntentions4[0] = new NewTemplateInCreateRootRule_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: Weaving_MappingRule 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[1];
-          myIntentions5[0] = new NewTemplateInWeavingRule_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: Reduction_MappingRule 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[2];
-          myIntentions6[0] = new NewTemplateInReductionRule_Intention();
-          myIntentions6[1] = new NewTemplateInSwitchCase_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      case 7:
-        // Concept: Root_MappingRule 
-        if (myIntentions7 == null) {
-          myIntentions7 = new IntentionFactory[1];
-          myIntentions7[0] = new NewTemplateInRootMappingRule_Intention();
-        }
-        return Arrays.asList(myIntentions7);
-      case 8:
-        // Concept: TemplateDeclarationReference 
-        if (myIntentions8 == null) {
-          myIntentions8 = new IntentionFactory[1];
-          myIntentions8[0] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
-        }
-        return Arrays.asList(myIntentions8);
-      case 9:
-        // Concept: WeaveEach_RuleConsequence 
-        if (myIntentions9 == null) {
-          myIntentions9 = new IntentionFactory[1];
-          myIntentions9[0] = new NewTemplateInWeaveEach_Intention();
-        }
-        return Arrays.asList(myIntentions9);
-      case 10:
-        // Concept: InlineTemplate_RuleConsequence 
-        if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[2];
-          myIntentions10[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
-          myIntentions10[1] = new AddContext_Intention();
-        }
-        return Arrays.asList(myIntentions10);
-      case 11:
-        // Concept: InlineSwitch_RuleConsequence 
-        if (myIntentions11 == null) {
-          myIntentions11 = new IntentionFactory[1];
-          myIntentions11[0] = new NewTemplateInInlineSwitchDefault_Intention();
-        }
-        return Arrays.asList(myIntentions11);
-      case 12:
-        // Concept: InlineSwitch_Case 
-        if (myIntentions12 == null) {
-          myIntentions12 = new IntentionFactory[1];
-          myIntentions12[0] = new NewTemplateInInlineSwitchCase_Intention();
-        }
-        return Arrays.asList(myIntentions12);
-      case 13:
-        // Concept: MappingScriptReference 
-        if (myIntentions13 == null) {
-          myIntentions13 = new IntentionFactory[1];
-          myIntentions13[0] = new CreateScript_Intention();
-        }
-        return Arrays.asList(myIntentions13);
-      case 14:
-        // Concept: AbstractMacro 
-        if (myIntentions14 == null) {
-          myIntentions14 = new IntentionFactory[1];
-          myIntentions14[0] = new DeleteTemplateMacro_Intention();
-        }
-        return Arrays.asList(myIntentions14);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: AbstractMacro 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new DeleteTemplateMacro_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: BaseConcept 
+            intentions = new IntentionFactory[12];
+            intentions[0] = new AddNodeMacro_Intention();
+            intentions[1] = new AddPropertyMacro_Intention();
+            intentions[2] = new AddReferenceMacro_Intention();
+            intentions[3] = new AddNodeMacroParam_ifMacro_Intention();
+            intentions[4] = new AddReferenceMacroParam_link_Intention();
+            intentions[5] = new AddPropertyMacroParam_property_Intention();
+            intentions[6] = new AddNodeMacroParam_copySrcMacro_Intention();
+            intentions[7] = new AddNodeMacroParam_copySrclMacro_Intention();
+            intentions[8] = new AddNodeMacroParam_loopMacro_Intention();
+            intentions[9] = new NewTemplateFragment_Intention();
+            intentions[10] = new AddNodeMacroParam_switch_Intention();
+            intentions[11] = new ReplaceWithConcreteSubconcept_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: ClassConcept 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertClassConceptToExtract_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: CreateRootRule 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInCreateRootRule_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: InlineSwitch_Case 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInInlineSwitchCase_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: InlineSwitch_RuleConsequence 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInInlineSwitchDefault_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: InlineTemplate_RuleConsequence 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
+            intentions[1] = new AddContext_Intention();
+          }
+          break;
+        case 7:
+          if (true) {
+            // Concept: LoopMacro 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertLoopWithCopySrc_Intention();
+          }
+          break;
+        case 8:
+          if (true) {
+            // Concept: MappingScriptReference 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new CreateScript_Intention();
+          }
+          break;
+        case 9:
+          if (true) {
+            // Concept: Reduction_MappingRule 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new NewTemplateInReductionRule_Intention();
+            intentions[1] = new NewTemplateInSwitchCase_Intention();
+          }
+          break;
+        case 10:
+          if (true) {
+            // Concept: Root_MappingRule 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInRootMappingRule_Intention();
+          }
+          break;
+        case 11:
+          if (true) {
+            // Concept: TemplateDeclarationReference 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
+          }
+          break;
+        case 12:
+          if (true) {
+            // Concept: TemplateSwitch 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInSwitchDefault_Intention();
+          }
+          break;
+        case 13:
+          if (true) {
+            // Concept: WeaveEach_RuleConsequence 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInWeaveEach_Intention();
+          }
+          break;
+        case 14:
+          if (true) {
+            // Concept: Weaving_MappingRule 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new NewTemplateInWeavingRule_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -209,4 +192,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[27] = new DeleteTemplateMacro_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fdbf49L, "jetbrains.mps.lang.generator.structure.InlineSwitch_Case"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
 }

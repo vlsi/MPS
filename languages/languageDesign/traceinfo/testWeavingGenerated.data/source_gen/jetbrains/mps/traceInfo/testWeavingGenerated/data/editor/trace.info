@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,43,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,67,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008329120">

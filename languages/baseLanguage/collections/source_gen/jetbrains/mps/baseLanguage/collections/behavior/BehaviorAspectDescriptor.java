@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myListType__BehaviorDescriptor = new ListType__BehaviorDescriptor();
@@ -61,169 +61,269 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myCollectionType__BehaviorDescriptor = new CollectionType__BehaviorDescriptor();
   private final BHDescriptor myMultiForEachStatement__BehaviorDescriptor = new MultiForEachStatement__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[48];
-    myConceptBehaviorIds[0] = 0x10c25fb076aL;
-    myConceptBehaviorIds[1] = 0x10c260e9444L;
-    myConceptBehaviorIds[2] = 0x10c26c9a2d9L;
-    myConceptBehaviorIds[3] = 0x10cac65f399L;
-    myConceptBehaviorIds[4] = 0x10cac6fa5c3L;
-    myConceptBehaviorIds[5] = 0x10e39306c2eL;
-    myConceptBehaviorIds[6] = 0x11257567b07L;
-    myConceptBehaviorIds[7] = 0x112f6f0e9beL;
-    myConceptBehaviorIds[8] = 0x116db7e6bcbL;
-    myConceptBehaviorIds[9] = 0x116dbb34f2dL;
-    myConceptBehaviorIds[10] = 0x116ea555a25L;
-    myConceptBehaviorIds[11] = 0x117aea47a16L;
-    myConceptBehaviorIds[12] = 0x117e3fd45c4L;
-    myConceptBehaviorIds[13] = 0x118b81cc8f6L;
-    myConceptBehaviorIds[14] = 0x11d16b423daL;
-    myConceptBehaviorIds[15] = 0x11d6213c318L;
-    myConceptBehaviorIds[16] = 0x11d91cbbcd0L;
-    myConceptBehaviorIds[17] = 0x11d9210de65L;
-    myConceptBehaviorIds[18] = 0x11daf69a138L;
-    myConceptBehaviorIds[19] = 0x1201ed2b158L;
-    myConceptBehaviorIds[20] = 0x12020864111L;
-    myConceptBehaviorIds[21] = 0x1202df1ada0L;
-    myConceptBehaviorIds[22] = 0x12031a066ecL;
-    myConceptBehaviorIds[23] = 0x120c2ad6432L;
-    myConceptBehaviorIds[24] = 0x120c2b5bbfdL;
-    myConceptBehaviorIds[25] = 0x120c4067207L;
-    myConceptBehaviorIds[26] = 0x120c408d37aL;
-    myConceptBehaviorIds[27] = 0x120c482dd1aL;
-    myConceptBehaviorIds[28] = 0x120c4838d33L;
-    myConceptBehaviorIds[29] = 0x120cf0ddd15L;
-    myConceptBehaviorIds[30] = 0x120e6ec6b83L;
-    myConceptBehaviorIds[31] = 0x127be81db92655b3L;
-    myConceptBehaviorIds[32] = 0x15e2150d4bff8a67L;
-    myConceptBehaviorIds[33] = 0x1db93187ffc4d808L;
-    myConceptBehaviorIds[34] = 0x1db93187ffc7e7efL;
-    myConceptBehaviorIds[35] = 0x2e99e9ab97de7711L;
-    myConceptBehaviorIds[36] = 0x2e9a0b9a89009f6cL;
-    myConceptBehaviorIds[37] = 0x4eec26fcbaf74491L;
-    myConceptBehaviorIds[38] = 0x4eec26fcbaf8c39bL;
-    myConceptBehaviorIds[39] = 0x53310200e8d9eaf6L;
-    myConceptBehaviorIds[40] = 0x53310200e8d9eef7L;
-    myConceptBehaviorIds[41] = 0x53310200e8d9eef8L;
-    myConceptBehaviorIds[42] = 0x53310200e8d9eefbL;
-    myConceptBehaviorIds[43] = 0x53310200e8d9eefcL;
-    myConceptBehaviorIds[44] = 0x53310200e8d9eefdL;
-    myConceptBehaviorIds[45] = 0x5e6446aa46ee5eecL;
-    myConceptBehaviorIds[46] = 0x62e1df06bd2172b2L;
-    myConceptBehaviorIds[47] = 0x7d7db8f4181fe9f2L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myListType__BehaviorDescriptor;
-      case 1:
-        return mySequenceType__BehaviorDescriptor;
-      case 2:
-        return mySequenceOperation__BehaviorDescriptor;
-      case 3:
-        return myForEachStatement__BehaviorDescriptor;
-      case 4:
-        return myForEachVariableReference__BehaviorDescriptor;
-      case 5:
-        return myListCreatorWithInit__BehaviorDescriptor;
-      case 6:
-        return mySortDirection__BehaviorDescriptor;
-      case 7:
-        return myConcatOperation__BehaviorDescriptor;
-      case 8:
-        return myMapType__BehaviorDescriptor;
-      case 9:
-        return myHashMapCreator__BehaviorDescriptor;
-      case 10:
-        return myMapElement__BehaviorDescriptor;
-      case 11:
-        return myMapOperation__BehaviorDescriptor;
-      case 12:
-        return myWhereOperation__BehaviorDescriptor;
-      case 13:
-        return mySortOperation__BehaviorDescriptor;
-      case 14:
-        return mySkipStatement__BehaviorDescriptor;
-      case 15:
-        return myListElementAccessExpression__BehaviorDescriptor;
-      case 16:
-        return mySetType__BehaviorDescriptor;
-      case 17:
-        return myHashSetCreator__BehaviorDescriptor;
-      case 18:
-        return myLinkedListCreator__BehaviorDescriptor;
-      case 19:
-        return myIteratorType__BehaviorDescriptor;
-      case 20:
-        return myEnumeratorType__BehaviorDescriptor;
-      case 21:
-        return myAbstractContainerCreator__BehaviorDescriptor;
-      case 22:
-        return myAllConstant__BehaviorDescriptor;
-      case 23:
-        return myLinkedHashMapCreator__BehaviorDescriptor;
-      case 24:
-        return myLinkedHashSetCreator__BehaviorDescriptor;
-      case 25:
-        return mySortedMapType__BehaviorDescriptor;
-      case 26:
-        return myTreeMapCreator__BehaviorDescriptor;
-      case 27:
-        return mySortedSetType__BehaviorDescriptor;
-      case 28:
-        return myTreeSetCreator__BehaviorDescriptor;
-      case 29:
-        return myMappingType__BehaviorDescriptor;
-      case 30:
-        return myValueAccessOperation__BehaviorDescriptor;
-      case 31:
-        return myCustomContainerCreator__BehaviorDescriptor;
-      case 32:
-        return myCustomMapCreator__BehaviorDescriptor;
-      case 33:
-        return myIContainerOperation__BehaviorDescriptor;
-      case 34:
-        return myIListOperation__BehaviorDescriptor;
-      case 35:
-        return myDequeType__BehaviorDescriptor;
-      case 36:
-        return myPriorityQueueCreator__BehaviorDescriptor;
-      case 37:
-        return myQueueType__BehaviorDescriptor;
-      case 38:
-        return myAbstractContainerType__BehaviorDescriptor;
-      case 39:
-        return myIApplicableToNothing__BehaviorDescriptor;
-      case 40:
-        return myIApplicableToCollection__BehaviorDescriptor;
-      case 41:
-        return myIApplicableToList__BehaviorDescriptor;
-      case 42:
-        return myIApplicableToDeque__BehaviorDescriptor;
-      case 43:
-        return myIApplicableToQueue__BehaviorDescriptor;
-      case 44:
-        return myIApplicableToStack__BehaviorDescriptor;
-      case 45:
-        return myStackType__BehaviorDescriptor;
-      case 46:
-        return myCollectionType__BehaviorDescriptor;
-      case 47:
-        return myMultiForEachStatement__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0zb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractContainerCreator__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAbstractContainerType__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myAllConstant__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myCollectionType__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConcatOperation__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myCustomContainerCreator__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myCustomMapCreator__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myDequeType__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myEnumeratorType__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myForEachStatement__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myForEachVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myHashMapCreator__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myHashSetCreator__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myIApplicableToCollection__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myIApplicableToDeque__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myIApplicableToList__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myIApplicableToNothing__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myIApplicableToQueue__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myIApplicableToStack__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myIContainerOperation__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myIListOperation__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myIteratorType__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myLinkedHashMapCreator__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myLinkedHashSetCreator__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myLinkedListCreator__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myListCreatorWithInit__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myListElementAccessExpression__BehaviorDescriptor;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myListType__BehaviorDescriptor;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myMapElement__BehaviorDescriptor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myMapOperation__BehaviorDescriptor;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myMapType__BehaviorDescriptor;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myMappingType__BehaviorDescriptor;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myMultiForEachStatement__BehaviorDescriptor;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myPriorityQueueCreator__BehaviorDescriptor;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myQueueType__BehaviorDescriptor;
+          }
+          break;
+        case 35:
+          if (true) {
+            return mySequenceOperation__BehaviorDescriptor;
+          }
+          break;
+        case 36:
+          if (true) {
+            return mySequenceType__BehaviorDescriptor;
+          }
+          break;
+        case 37:
+          if (true) {
+            return mySetType__BehaviorDescriptor;
+          }
+          break;
+        case 38:
+          if (true) {
+            return mySkipStatement__BehaviorDescriptor;
+          }
+          break;
+        case 39:
+          if (true) {
+            return mySortDirection__BehaviorDescriptor;
+          }
+          break;
+        case 40:
+          if (true) {
+            return mySortOperation__BehaviorDescriptor;
+          }
+          break;
+        case 41:
+          if (true) {
+            return mySortedMapType__BehaviorDescriptor;
+          }
+          break;
+        case 42:
+          if (true) {
+            return mySortedSetType__BehaviorDescriptor;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myStackType__BehaviorDescriptor;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myTreeMapCreator__BehaviorDescriptor;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myTreeSetCreator__BehaviorDescriptor;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myValueAccessOperation__BehaviorDescriptor;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myWhereOperation__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0zb = buildConceptIndices(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x112f6f0e9beL, "jetbrains.mps.baseLanguage.collections.structure.ConcatOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x127be81db92655b3L, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e99e9ab97de7711L, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020864111L, "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9210de65L, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef7L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToCollection"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefbL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToDeque"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef8L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToList"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefcL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToQueue"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefdL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToStack"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc4d808L, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc7e7efL, "jetbrains.mps.baseLanguage.collections.structure.IListOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ed2b158L, "jetbrains.mps.baseLanguage.collections.structure.IteratorType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2ad6432L, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2b5bbfdL, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daf69a138L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e39306c2eL, "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6213c318L, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, "jetbrains.mps.baseLanguage.collections.structure.MapElement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L, "jetbrains.mps.baseLanguage.collections.structure.MapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120cf0ddd15L, "jetbrains.mps.baseLanguage.collections.structure.MappingType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fe9f2L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a89009f6cL, "jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf74491L, "jetbrains.mps.baseLanguage.collections.structure.QueueType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d16b423daL, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118b81cc8f6L, "jetbrains.mps.baseLanguage.collections.structure.SortOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4067207L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5e6446aa46ee5eecL, "jetbrains.mps.baseLanguage.collections.structure.StackType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c408d37aL, "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ec6b83L, "jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117e3fd45c4L, "jetbrains.mps.baseLanguage.collections.structure.WhereOperation"));
 }

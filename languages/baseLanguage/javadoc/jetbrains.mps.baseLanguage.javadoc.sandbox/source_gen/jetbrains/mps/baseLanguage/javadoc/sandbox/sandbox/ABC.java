@@ -6,7 +6,7 @@ package jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox;
 /**
  * Comment for class 
  * 
- * @param TT param
+ * @param <TT> param
  */
 public class ABC<TT> {
   /**

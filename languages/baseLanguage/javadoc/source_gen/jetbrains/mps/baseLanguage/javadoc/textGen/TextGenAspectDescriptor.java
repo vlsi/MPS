@@ -6,101 +6,171 @@ import jetbrains.mps.text.rt.TextGenAspectBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
-  private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[25];
-    myId2Index[0] = 0x1cb65d9fe66a764cL;
-    myId2Index[1] = 0x1ec532ec252a7b73L;
-    myId2Index[2] = 0x1ec532ec252c9a28L;
-    myId2Index[3] = 0x1ec532ec252ca3abL;
-    myId2Index[4] = 0x1ec532ec2531d2d3L;
-    myId2Index[5] = 0x1ec532ec2531d2e4L;
-    myId2Index[6] = 0x235789022a5d3a2fL;
-    myId2Index[7] = 0x2398cefbc261e3ffL;
-    myId2Index[8] = 0x41a6af3499e5305fL;
-    myId2Index[9] = 0x4a3c146b7faee13eL;
-    myId2Index[10] = 0x4a3c146b7faeeb34L;
-    myId2Index[11] = 0x514c0f68704ec270L;
-    myId2Index[12] = 0x514c0f687050918eL;
-    myId2Index[13] = 0x5a38b07c2d6d7c7bL;
-    myId2Index[14] = 0x5bc4aa08e154b399L;
-    myId2Index[15] = 0x5ed0d79d7dbe86d7L;
-    myId2Index[16] = 0x5ed0d79d7dc44bf2L;
-    myId2Index[17] = 0x60a0f9237ac5e83bL;
-    myId2Index[18] = 0x757ba20a4c87dda0L;
-    myId2Index[19] = 0x757ba20a4c87ddadL;
-    myId2Index[20] = 0x757ba20a4c87f964L;
-    myId2Index[21] = 0x757ba20a4c87f96cL;
-    myId2Index[22] = 0x757ba20a4c905f8aL;
-    myId2Index[23] = 0x7c7f5b2f31990287L;
-    myId2Index[24] = 0x7c7f5b2f31990289L;
   }
+
   @Nullable
   @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId id) {
-    final int index = Arrays.binarySearch(myId2Index, id.getIdValue());
-    switch (index) {
-      case 0:
-        return new ClassifierDocComment_TextGen();
-      case 1:
-        return new CodeInlineDocTag_TextGen();
-      case 2:
-        return new FieldDocReference_TextGen();
-      case 3:
-        return new SeeBlockDocTag_TextGen();
-      case 4:
-        return new MethodDocReference_TextGen();
-      case 5:
-        return new ClassifierDocReference_TextGen();
-      case 6:
-        return new LinkInlineDocTag_TextGen();
-      case 7:
-        return new CodeSnippet_TextGen();
-      case 8:
-        return new InheritDocInlineDocTag_TextGen();
-      case 9:
-        return new AuthorBlockDocTag_TextGen();
-      case 10:
-        return new MethodDocComment_TextGen();
-      case 11:
-        return new ThrowsBlockDocTag_TextGen();
-      case 12:
-        return new ReturnBlockDocTag_TextGen();
-      case 13:
-        return new StaticFieldDocReference_TextGen();
-      case 14:
-        return new HTMLElement_TextGen();
-      case 15:
-        return new BaseParameterReference_TextGen();
-      case 16:
-        return new FieldDocComment_TextGen();
-      case 17:
-        return new ValueInlineDocTag_TextGen();
-      case 18:
-        return new VersionBlockDocTag_TextGen();
-      case 19:
-        return new SinceBlockDocTag_TextGen();
-      case 20:
-        return new DeprecatedBlockDocTag_TextGen();
-      case 21:
-        return new CommentLine_TextGen();
-      case 22:
-        return new ParameterBlockDocTag_TextGen();
-      case 23:
-        return new TextCommentLinePart_TextGen();
-      case 24:
-        return new InlineTagCommentLinePart_TextGen();
-      default:
-        return null;
+  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_t8hmqt_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return new AuthorBlockDocTag_TextGen();
+          }
+          break;
+        case 1:
+          if (true) {
+            return new BaseParameterReference_TextGen();
+          }
+          break;
+        case 2:
+          if (true) {
+            return new ClassifierDocComment_TextGen();
+          }
+          break;
+        case 3:
+          if (true) {
+            return new ClassifierDocReference_TextGen();
+          }
+          break;
+        case 4:
+          if (true) {
+            return new CodeInlineDocTag_TextGen();
+          }
+          break;
+        case 5:
+          if (true) {
+            return new CodeSnippet_TextGen();
+          }
+          break;
+        case 6:
+          if (true) {
+            return new CommentLine_TextGen();
+          }
+          break;
+        case 7:
+          if (true) {
+            return new DeprecatedBlockDocTag_TextGen();
+          }
+          break;
+        case 8:
+          if (true) {
+            return new DocTypeParameterReference_TextGen();
+          }
+          break;
+        case 9:
+          if (true) {
+            return new FieldDocComment_TextGen();
+          }
+          break;
+        case 10:
+          if (true) {
+            return new FieldDocReference_TextGen();
+          }
+          break;
+        case 11:
+          if (true) {
+            return new HTMLElement_TextGen();
+          }
+          break;
+        case 12:
+          if (true) {
+            return new InheritDocInlineDocTag_TextGen();
+          }
+          break;
+        case 13:
+          if (true) {
+            return new InlineTagCommentLinePart_TextGen();
+          }
+          break;
+        case 14:
+          if (true) {
+            return new LinkInlineDocTag_TextGen();
+          }
+          break;
+        case 15:
+          if (true) {
+            return new MethodDocComment_TextGen();
+          }
+          break;
+        case 16:
+          if (true) {
+            return new MethodDocReference_TextGen();
+          }
+          break;
+        case 17:
+          if (true) {
+            return new ParameterBlockDocTag_TextGen();
+          }
+          break;
+        case 18:
+          if (true) {
+            return new ReturnBlockDocTag_TextGen();
+          }
+          break;
+        case 19:
+          if (true) {
+            return new SeeBlockDocTag_TextGen();
+          }
+          break;
+        case 20:
+          if (true) {
+            return new SinceBlockDocTag_TextGen();
+          }
+          break;
+        case 21:
+          if (true) {
+            return new StaticFieldDocReference_TextGen();
+          }
+          break;
+        case 22:
+          if (true) {
+            return new TextCommentLinePart_TextGen();
+          }
+          break;
+        case 23:
+          if (true) {
+            return new ThrowsBlockDocTag_TextGen();
+          }
+          break;
+        case 24:
+          if (true) {
+            return new ValueInlineDocTag_TextGen();
+          }
+          break;
+        case 25:
+          if (true) {
+            return new VersionBlockDocTag_TextGen();
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
 
   @Override
   public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_t8hmqt_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d7L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252a7b73L, "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x2398cefbc261e3ffL, "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86dbL, "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252c9a28L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x41a6af3499e5305fL, "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5a38b07c2d6d7c7bL, "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"));
 }

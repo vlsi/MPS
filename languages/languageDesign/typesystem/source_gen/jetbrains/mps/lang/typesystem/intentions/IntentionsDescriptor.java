@@ -4,55 +4,62 @@ package jetbrains.mps.lang.typesystem.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[3];
-    myId2Index[0] = 0x111efb6d46fL;
-    myId2Index[1] = 0x11a342c1412L;
-    myId2Index[2] = 0x11db4aad802L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: MultipleForeachLoop 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: AbstractInequationStatement 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[2];
-          myIntentions1[0] = new FlipInequality_Intention();
-          myIntentions1[1] = new MakeInequalityCheckOnly_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: MessageStatement 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new CreateTypesystemIntention_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: AbstractInequationStatement 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new FlipInequality_Intention();
+            intentions[1] = new MakeInequalityCheckOnly_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: MessageStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new CreateTypesystemIntention_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: MultipleForeachLoop 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -65,4 +72,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"));
 }

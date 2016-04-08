@@ -1,24 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="CommentAttribute2_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.CommentAttribute2_BehaviorDescriptor" />
-    </file>
-    <file name="CommentAttribute_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.CommentAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="HandlerAsChild_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.HandlerAsChild_BehaviorDescriptor" />
-    </file>
-    <file name="HandlerAsRoot_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.HandlerAsRoot_BehaviorDescriptor" />
-    </file>
-    <file name="SubConceptToTransformNested_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.SubConceptToTransformNested_BehaviorDescriptor" />
-    </file>
-    <file name="SubConceptToTransform_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.SubConceptToTransform_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

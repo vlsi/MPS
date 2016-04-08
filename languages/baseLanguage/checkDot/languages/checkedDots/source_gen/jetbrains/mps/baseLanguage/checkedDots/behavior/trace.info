@@ -14,22 +14,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CheckedDotExpression_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4f21a85f-2360-4902-a7db-0bcdaedbbb5c(jetbrains.mps.baseLanguage.checkedDots.behavior)/3674434577577159919">
-    <file name="CheckedDotExpression_Behavior.java">
-      <node id="3674434577577159919" at="13,92,14,102" concept="5" />
-      <node id="3674434577577159919" at="13,0,16,0" concept="8" trace="call_hasLocalContextInside_3674434577577159922#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="3674434577577159919" at="13,92,14,102" />
-      <scope id="3674434577577159919" at="13,0,16,0">
-        <var name="__thisNode__" id="3674434577577159919" />
-      </scope>
-      <unit id="3674434577577159919" at="11,0,17,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior" />
-    </file>
     <file name="CheckedDotExpression__BehaviorDescriptor.java">
       <node id="3674434577577159919" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="3674434577577159919" at="29,0,30,0" concept="7" trace="REGISTRY" />

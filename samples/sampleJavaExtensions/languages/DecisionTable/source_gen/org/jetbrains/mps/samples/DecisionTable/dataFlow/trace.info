@@ -4,7 +4,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="15,0,33,0" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="15,0,46,0" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:241cf93e-3ab8-4ff2-b162-46fd2d7b00c0(org.jetbrains.mps.samples.DecisionTable.dataFlow)/6590643739750295650">

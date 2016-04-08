@@ -15,145 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,174,0" name="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptConstraints_BehaviorDescriptor.java">
-      <unit at="18,0,44,0" name="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_checkedNode_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_childConcept_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_childNode_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_containingLink_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_containingLink_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_contextNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_contextRole_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_exists_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_inEditor_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_linkTarget_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_linkTarget_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_link_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_parameterNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parameterNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_parentNode_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_position_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_referenceNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_referenceNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_smartReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunctionParameter_visible_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_CanBeAChild_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_CanBeAParent_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_CanBeARoot_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_PropertyGetter_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_PropertySetter_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_PropertyValidator_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintFunction_ReferentSetHandler_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintsFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_BehaviorDescriptor" />
-    </file>
-    <file name="ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="InheritedNodeScopeFactory_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" />
-    </file>
-    <file name="NodeDefaultSearchScope_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor" />
-    </file>
-    <file name="NodePropertyConstraint_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" />
-    </file>
-    <file name="NodeReferentConstraint_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" />
-    </file>
-    <file name="NodeScopeFactory_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" />
+      <unit at="14,0,246,0" name="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877261402">
-    <file name="NodeDefaultSearchScope_Behavior.java">
-      <node id="1213877261402" at="13,81,14,97" concept="7" />
-      <node id="1213877261402" at="13,0,16,0" concept="9" trace="call_getReferentConcept_1213877261403#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877261402" at="13,81,14,97" />
-      <scope id="1213877261402" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877261402" />
-      </scope>
-      <unit id="1213877261402" at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior" />
-    </file>
     <file name="NodeDefaultSearchScope__BehaviorDescriptor.java">
       <node id="1213877261402" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1213877261402" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -234,15 +99,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877292344">
-    <file name="NodePropertyConstraint_Behavior.java">
-      <node id="1213877292344" at="13,83,14,99" concept="7" />
-      <node id="1213877292344" at="13,0,16,0" concept="9" trace="call_getApplicableConcept_1213877292345#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877292344" at="13,83,14,99" />
-      <scope id="1213877292344" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877292344" />
-      </scope>
-      <unit id="1213877292344" at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior" />
-    </file>
     <file name="NodePropertyConstraint__BehaviorDescriptor.java">
       <node id="1213877292344" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1213877292344" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -323,9 +179,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877330449">
-    <file name="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java">
-      <unit id="1213877330449" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor.java">
       <node id="1213877330449" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="1213877330449" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -423,9 +276,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877345068">
-    <file name="ConstraintFunction_CanBeAChild_Behavior.java">
-      <unit id="1213877345068" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_Behavior" />
-    </file>
     <file name="ConstraintFunction_CanBeAChild__BehaviorDescriptor.java">
       <node id="1213877345068" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1213877345068" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -540,15 +390,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877399321">
-    <file name="NodeReferentConstraint_Behavior.java">
-      <node id="1213877399321" at="13,83,14,99" concept="7" />
-      <node id="1213877399321" at="13,0,16,0" concept="9" trace="call_getApplicableConcept_1213877399322#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877399321" at="13,83,14,99" />
-      <scope id="1213877399321" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877399321" />
-      </scope>
-      <unit id="1213877399321" at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior" />
-    </file>
     <file name="NodeReferentConstraint__BehaviorDescriptor.java">
       <node id="1213877399321" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1213877399321" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -629,9 +470,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877530539">
-    <file name="ConstraintFunction_PropertyGetter_Behavior.java">
-      <unit id="1213877530539" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
-    </file>
     <file name="ConstraintFunction_PropertyGetter__BehaviorDescriptor.java">
       <node id="1213877530539" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="1213877530539" at="32,0,33,0" concept="8" trace="REGISTRY" />
@@ -742,9 +580,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877537278">
-    <file name="ConstraintFunction_CanBeAParent_Behavior.java">
-      <unit id="1213877537278" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_Behavior" />
-    </file>
     <file name="ConstraintFunction_CanBeAParent__BehaviorDescriptor.java">
       <node id="1213877537278" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1213877537278" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -859,27 +694,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1217541907773">
-    <file name="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java">
-      <node id="1217541907773" at="13,93,14,129" concept="7" />
-      <node id="1217541907773" at="16,90,17,126" concept="7" />
-      <node id="1217541907773" at="19,81,20,119" concept="7" />
-      <node id="1217541907773" at="13,0,16,0" concept="9" trace="call_isNodeSequenceReturned_2990203945683056978#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1217541907773" at="16,0,19,0" concept="9" trace="call_isValidatorGenerated_522233044824082130#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1217541907773" at="19,0,22,0" concept="9" trace="call_getValidator_2990203945683058946#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1217541907773" at="13,93,14,129" />
-      <scope id="1217541907773" at="16,90,17,126" />
-      <scope id="1217541907773" at="19,81,20,119" />
-      <scope id="1217541907773" at="13,0,16,0">
-        <var name="__thisNode__" id="1217541907773" />
-      </scope>
-      <scope id="1217541907773" at="16,0,19,0">
-        <var name="__thisNode__" id="1217541907773" />
-      </scope>
-      <scope id="1217541907773" at="19,0,22,0">
-        <var name="__thisNode__" id="1217541907773" />
-      </scope>
-      <unit id="1217541907773" at="11,0,23,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.java">
       <node id="1217541907773" at="34,0,35,0" concept="8" trace="CONCEPT" />
       <node id="1217541907773" at="35,0,36,0" concept="8" trace="REGISTRY" />
@@ -1064,9 +878,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1227085021513">
-    <file name="ConstraintFunction_CanBeARoot_Behavior.java">
-      <unit id="1227085021513" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_Behavior" />
-    </file>
     <file name="ConstraintFunction_CanBeARoot__BehaviorDescriptor.java">
       <node id="1227085021513" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1227085021513" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1178,9 +989,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741498895">
-    <file name="ConstraintFunctionParameter_childConcept_Behavior.java">
-      <unit id="1262430001741498895" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_childConcept__BehaviorDescriptor.java">
       <node id="1262430001741498895" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741498895" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1277,9 +1085,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741523488">
-    <file name="ConstraintFunctionParameter_checkedNode_Behavior.java">
-      <unit id="1262430001741523488" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_checkedNode__BehaviorDescriptor.java">
       <node id="1262430001741523488" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741523488" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -1354,9 +1159,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741639195">
-    <file name="ConstraintFunctionParameter_link_Behavior.java">
-      <unit id="1262430001741639195" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_link__BehaviorDescriptor.java">
       <node id="1262430001741639195" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741639195" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -1454,9 +1256,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741642959">
-    <file name="ConstraintFunctionParameter_childNode_Behavior.java">
-      <unit id="1262430001741642959" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childNode_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_childNode__BehaviorDescriptor.java">
       <node id="1262430001741642959" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741642959" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1553,9 +1352,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741703027">
-    <file name="ConstraintsFunctionParameter_node_Behavior.java">
-      <unit id="1262430001741703027" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_Behavior" />
-    </file>
     <file name="ConstraintsFunctionParameter_node__BehaviorDescriptor.java">
       <node id="1262430001741703027" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741703027" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -1630,9 +1426,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741703895">
-    <file name="ConstraintFunctionParameter_parentNode_Behavior.java">
-      <unit id="1262430001741703895" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_parentNode__BehaviorDescriptor.java">
       <node id="1262430001741703895" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741703895" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1729,15 +1522,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/2990203945683058804">
-    <file name="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java">
-      <node id="2990203945683058804" at="13,90,14,130" concept="7" />
-      <node id="2990203945683058804" at="13,0,16,0" concept="9" trace="call_getSearchScopeFactory_2990203945683059022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2990203945683058804" at="13,90,14,130" />
-      <scope id="2990203945683058804" at="13,0,16,0">
-        <var name="__thisNode__" id="2990203945683058804" />
-      </scope>
-      <unit id="2990203945683058804" at="11,0,17,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor.java">
       <node id="2990203945683058804" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="2990203945683058804" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1850,9 +1634,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914717718">
-    <file name="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java">
-      <unit id="3044950653914717718" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_Behavior" />
-    </file>
     <file name="ConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor.java">
       <node id="3044950653914717718" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914717718" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1955,9 +1736,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718708">
-    <file name="ConstraintFunction_PropertyValidator_Behavior.java">
-      <unit id="3044950653914718708" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_Behavior" />
-    </file>
     <file name="ConstraintFunction_PropertyValidator__BehaviorDescriptor.java">
       <node id="3044950653914718708" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914718708" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -2059,9 +1837,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718829">
-    <file name="ConstraintFunction_PropertySetter_Behavior.java">
-      <unit id="3044950653914718829" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_Behavior" />
-    </file>
     <file name="ConstraintFunction_PropertySetter__BehaviorDescriptor.java">
       <node id="3044950653914718829" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914718829" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -2163,9 +1938,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914720299">
-    <file name="ConstraintFunction_GetAlternativeIcon_Behavior.java">
-      <unit id="3044950653914720299" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_Behavior" />
-    </file>
     <file name="ConstraintFunction_GetAlternativeIcon__BehaviorDescriptor.java">
       <node id="3044950653914720299" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914720299" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -2266,9 +2038,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914722935">
-    <file name="ConstraintFunction_ReferentSetHandler_Behavior.java">
-      <unit id="3044950653914722935" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSetHandler__BehaviorDescriptor.java">
       <node id="3044950653914722935" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914722935" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -2349,9 +2118,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914723982">
-    <file name="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java">
-      <unit id="3044950653914723982" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor.java">
       <node id="3044950653914723982" at="28,0,29,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914723982" at="29,0,30,0" concept="8" trace="REGISTRY" />
@@ -2455,9 +2221,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287040384">
-    <file name="ConceptParameter_ReferentSearchScope_enclosingNode_Behavior.java">
-      <unit id="5452844340287040384" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_Behavior" />
-    </file>
     <file name="ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor.java">
       <node id="5452844340287040384" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287040384" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2545,9 +2308,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287048380">
-    <file name="ConstraintFunctionParameter_inEditor_Behavior.java">
-      <unit id="5452844340287048380" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_inEditor__BehaviorDescriptor.java">
       <node id="5452844340287048380" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287048380" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2635,9 +2395,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287048596">
-    <file name="ConstraintFunctionParameter_contextNode_Behavior.java">
-      <unit id="5452844340287048596" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_contextNode__BehaviorDescriptor.java">
       <node id="5452844340287048596" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287048596" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2725,9 +2482,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287048605">
-    <file name="ConstraintFunctionParameter_exists_Behavior.java">
-      <unit id="5452844340287048605" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_exists__BehaviorDescriptor.java">
       <node id="5452844340287048605" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287048605" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2815,9 +2569,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287050936">
-    <file name="ConstraintFunctionParameter_smartReference_Behavior.java">
-      <unit id="5452844340287050936" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_smartReference__BehaviorDescriptor.java">
       <node id="5452844340287050936" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287050936" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2905,9 +2656,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287051300">
-    <file name="ConstraintFunctionParameter_position_Behavior.java">
-      <unit id="5452844340287051300" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_position__BehaviorDescriptor.java">
       <node id="5452844340287051300" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287051300" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -2995,9 +2743,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287051351">
-    <file name="ConstraintFunctionParameter_containingLink_Behavior.java">
-      <unit id="5452844340287051351" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_containingLink_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_containingLink__BehaviorDescriptor.java">
       <node id="5452844340287051351" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287051351" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -3086,9 +2831,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287051369">
-    <file name="ConstraintFunctionParameter_visible_Behavior.java">
-      <unit id="5452844340287051369" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_visible__BehaviorDescriptor.java">
       <node id="5452844340287051369" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287051369" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -3176,9 +2918,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5452844340287052562">
-    <file name="ConstraintFunctionParameter_contextRole_Behavior.java">
-      <unit id="5452844340287052562" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole_Behavior" />
-    </file>
     <file name="ConstraintFunctionParameter_contextRole__BehaviorDescriptor.java">
       <node id="5452844340287052562" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="5452844340287052562" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -3266,9 +3005,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5676632058862813504">
-    <file name="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java">
-      <unit id="5676632058862813504" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_Behavior" />
-    </file>
     <file name="ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor.java">
       <node id="5676632058862813504" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="5676632058862813504" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -3357,9 +3093,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/7494912800760359233">
-    <file name="ConstraintFunction_CanBeAnAncestor_Behavior.java">
-      <unit id="7494912800760359233" at="10,0,13,0" name="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_Behavior" />
-    </file>
     <file name="ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor.java">
       <node id="7494912800760359233" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="7494912800760359233" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -3473,17 +3206,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/8952337903384645665">
-    <file name="ConceptConstraints_Behavior.java">
-      <node id="8952337903384645665" at="15,229,16,161" concept="7" />
-      <node id="8952337903384645665" at="15,0,18,0" concept="9" trace="call_getConstraintFunctionBodyUsingInheritance_4960272075650318140#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="8952337903384645665" at="15,229,16,161" />
-      <scope id="8952337903384645665" at="15,0,18,0">
-        <var name="__thisConcept__" id="8952337903384645665" />
-        <var name="concept" id="4960272075650318145" />
-        <var name="constraintFunctionSpecifier" id="4960272075650318148" />
-      </scope>
-      <unit id="8952337903384645665" at="13,0,19,0" name="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
-    </file>
     <file name="ConceptConstraints__BehaviorDescriptor.java">
       <node id="8952337903384645665" at="32,0,33,0" concept="8" trace="CONCEPT" />
       <node id="8952337903384645665" at="33,0,34,0" concept="8" trace="REGISTRY" />

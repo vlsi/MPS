@@ -13,71 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractClassifierSpecification_BehaviorDescriptor.java">
-      <unit at="13,0,24,0" name="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractMethodSpecification_BehaviorDescriptor.java">
-      <unit at="13,0,23,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,74,0" name="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CommentMigrationScriptPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.script.behavior.CommentMigrationScriptPart_BehaviorDescriptor" />
-    </file>
-    <file name="DirectClassifierSpecification_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_BehaviorDescriptor" />
-    </file>
-    <file name="DirectMethodSpecification_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractInterfaceMigration_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.script.behavior.ExtractInterfaceMigration_BehaviorDescriptor" />
-    </file>
-    <file name="FQNameClassifierSpecification_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_BehaviorDescriptor" />
-    </file>
-    <file name="FQNameMethodSpecification_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_BehaviorDescriptor" />
-    </file>
-    <file name="FactoryMigrationScriptPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.script.behavior.FactoryMigrationScriptPart_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptPart_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptPart_Instance_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptPart_Instance_Predicate_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptPart_Instance_Updater_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptPart_node_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_node_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScript_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
-    </file>
-    <file name="PullUpMethod_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_BehaviorDescriptor" />
-    </file>
-    <file name="WhitespaceMigrationScriptPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.script.behavior.WhitespaceMigrationScriptPart_BehaviorDescriptor" />
+      <unit at="14,0,96,0" name="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/2291767839160328141">
-    <file name="AbstractMethodSpecification_Behavior.java">
-      <node id="2291767839160328141" at="13,84,14,103" concept="6" />
-      <node id="2291767839160328141" at="13,0,16,0" concept="8" trace="call_getPullUpMethod_2291767839160328420#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2291767839160328141" at="13,84,14,103" />
-      <scope id="2291767839160328141" at="13,0,16,0">
-        <var name="__thisNode__" id="2291767839160328141" />
-      </scope>
-      <unit id="2291767839160328141" at="11,0,17,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
-    </file>
     <file name="AbstractMethodSpecification__BehaviorDescriptor.java">
       <node id="2291767839160328141" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="2291767839160328141" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -153,9 +93,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914717773">
-    <file name="MigrationScriptPart_Instance_Updater_Behavior.java">
-      <unit id="3044950653914717773" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_Behavior" />
-    </file>
     <file name="MigrationScriptPart_Instance_Updater__BehaviorDescriptor.java">
       <node id="3044950653914717773" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="3044950653914717773" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -234,9 +171,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914725604">
-    <file name="MigrationScriptPart_Instance_Predicate_Behavior.java">
-      <unit id="3044950653914725604" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_Behavior" />
-    </file>
     <file name="MigrationScriptPart_Instance_Predicate__BehaviorDescriptor.java">
       <node id="3044950653914725604" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="3044950653914725604" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -337,15 +271,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5166971494091017143">
-    <file name="PullUpMethod_Behavior.java">
-      <node id="5166971494091017143" at="13,81,14,85" concept="6" />
-      <node id="5166971494091017143" at="13,0,16,0" concept="8" trace="call_getMigration_5166971494091017146#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5166971494091017143" at="13,81,14,85" />
-      <scope id="5166971494091017143" at="13,0,16,0">
-        <var name="__thisNode__" id="5166971494091017143" />
-      </scope>
-      <unit id="5166971494091017143" at="11,0,17,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />
-    </file>
     <file name="PullUpMethod__BehaviorDescriptor.java">
       <node id="5166971494091017143" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="5166971494091017143" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -420,9 +345,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112920986">
-    <file name="AbstractClassifierSpecification_Behavior.java">
-      <unit id="5434557751112920986" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_Behavior" />
-    </file>
     <file name="AbstractClassifierSpecification__BehaviorDescriptor.java">
       <node id="5434557751112920986" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="5434557751112920986" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -490,9 +412,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112931020">
-    <file name="DirectClassifierSpecification_Behavior.java">
-      <unit id="5434557751112931020" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_Behavior" />
-    </file>
     <file name="DirectClassifierSpecification__BehaviorDescriptor.java">
       <node id="5434557751112931020" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="5434557751112931020" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -576,9 +495,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112931023">
-    <file name="FQNameClassifierSpecification_Behavior.java">
-      <unit id="5434557751112931023" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_Behavior" />
-    </file>
     <file name="FQNameClassifierSpecification__BehaviorDescriptor.java">
       <node id="5434557751112931023" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="5434557751112931023" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -662,9 +578,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/7941431147614164684">
-    <file name="DirectMethodSpecification_Behavior.java">
-      <unit id="7941431147614164684" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_Behavior" />
-    </file>
     <file name="DirectMethodSpecification__BehaviorDescriptor.java">
       <node id="7941431147614164684" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="7941431147614164684" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -739,9 +652,6 @@
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/7941431147614173189">
-    <file name="FQNameMethodSpecification_Behavior.java">
-      <unit id="7941431147614173189" at="10,0,13,0" name="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_Behavior" />
-    </file>
     <file name="FQNameMethodSpecification__BehaviorDescriptor.java">
       <node id="7941431147614173189" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="7941431147614173189" at="26,0,27,0" concept="7" trace="REGISTRY" />

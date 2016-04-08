@@ -4,22 +4,35 @@ package jetbrains.mps.samples.customAspect.sampleLanguage.documentation;
 
 import jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DocumentationDescriptor implements DocumentationAspectDescriptor {
   public String getConceptDocumentation(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L, "jetbrains.mps.samples.customAspect.sampleLanguage.structure.DocumentedConcept"))) {
-        matchedCase = true;
-        return "Hello, documentation world!";
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_kuvwlw_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return "Hello, documentation world!";
+          }
+          break;
+        default:
+          // default 
       }
     }
     return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_kuvwlw_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L, "jetbrains.mps.samples.customAspect.sampleLanguage.structure.DocumentedConcept"));
 }

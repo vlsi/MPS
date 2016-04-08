@@ -20,6 +20,10 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+/**
+ * @deprecated Use {@link CellTraversalUtil#iterateTree(EditorCell, EditorCell, boolean)}
+ */
+@Deprecated
 public class DfsTraverser implements Iterator<EditorCell>{
   private EditorCell myCurrent;
   private boolean myVisitChildrenOnly;

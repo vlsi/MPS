@@ -12,131 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractRequestDescription_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
-    </file>
-    <file name="AddressReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AddressReference_BehaviorDescriptor" />
-    </file>
-    <file name="Address_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_BehaviorDescriptor" />
-    </file>
-    <file name="AgendaItem_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AgendaItem_BehaviorDescriptor" />
-    </file>
-    <file name="Apple_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Car_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" />
-    </file>
-    <file name="CombinedPerformance_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.CombinedPerformance_BehaviorDescriptor" />
-    </file>
-    <file name="ComponentUsage_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ComponentUsage_BehaviorDescriptor" />
-    </file>
-    <file name="Component_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_BehaviorDescriptor" />
-    </file>
-    <file name="Concert_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Concert_BehaviorDescriptor" />
-    </file>
-    <file name="Container_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Container_BehaviorDescriptor" />
-    </file>
-    <file name="DottedLine_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DottedLine_BehaviorDescriptor" />
-    </file>
-    <file name="DrawCommand_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawCommand_BehaviorDescriptor" />
-    </file>
-    <file name="DrawLine_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawLine_BehaviorDescriptor" />
-    </file>
-    <file name="DrawRect_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawRect_BehaviorDescriptor" />
-    </file>
-    <file name="EmptyLine_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" />
-    </file>
-    <file name="FormDescription_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" />
-    </file>
-    <file name="FruitPlate_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" />
-    </file>
-    <file name="Fruit_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Fruit_BehaviorDescriptor" />
-    </file>
-    <file name="IncompleteCommand_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.IncompleteCommand_BehaviorDescriptor" />
-    </file>
-    <file name="ItemReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference_BehaviorDescriptor" />
-    </file>
-    <file name="Item_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Item_BehaviorDescriptor" />
-    </file>
-    <file name="LineStyle_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.LineStyle_BehaviorDescriptor" />
-    </file>
-    <file name="ListOfDrawCommands_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ListOfDrawCommands_BehaviorDescriptor" />
-    </file>
-    <file name="OperationOnAddress_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.OperationOnAddress_BehaviorDescriptor" />
-    </file>
-    <file name="Orange_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Orange_BehaviorDescriptor" />
-    </file>
-    <file name="Participant_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Participant_BehaviorDescriptor" />
-    </file>
-    <file name="PerformanceWithTitle_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.PerformanceWithTitle_BehaviorDescriptor" />
-    </file>
-    <file name="Performance_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Performance_BehaviorDescriptor" />
-    </file>
-    <file name="RaceParticipant_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.RaceParticipant_BehaviorDescriptor" />
-    </file>
-    <file name="Request_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" />
-    </file>
-    <file name="SimplifiedFormDescription_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" />
-    </file>
-    <file name="Singer_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" />
-    </file>
-    <file name="SolidLine_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" />
-    </file>
-    <file name="SomeForm_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SomeForm_BehaviorDescriptor" />
-    </file>
-    <file name="StreetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.StreetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="StringDescription_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" />
-    </file>
-    <file name="Truck_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" />
-    </file>
-    <file name="ZipOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ZipOperation_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/5235060235298116961">
-    <file name="Address_Behavior.java">
-      <unit id="5235060235298116961" at="10,0,13,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_Behavior" />
-    </file>
     <file name="Address__BehaviorDescriptor.java">
       <node id="5235060235298116961" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="5235060235298116961" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -211,15 +91,6 @@
     </file>
   </root>
   <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/5681697064999291989">
-    <file name="Component_Behavior.java">
-      <node id="5681697064999291989" at="13,78,14,78" concept="5" />
-      <node id="5681697064999291989" at="13,0,16,0" concept="7" trace="call_fullName_5681697064999291992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="5681697064999291989" at="13,78,14,78" />
-      <scope id="5681697064999291989" at="13,0,16,0">
-        <var name="__thisNode__" id="5681697064999291989" />
-      </scope>
-      <unit id="5681697064999291989" at="11,0,17,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_Behavior" />
-    </file>
     <file name="Component__BehaviorDescriptor.java">
       <node id="5681697064999291989" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="5681697064999291989" at="27,0,28,0" concept="6" trace="REGISTRY" />
@@ -294,9 +165,6 @@
     </file>
   </root>
   <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/9119725621034346788">
-    <file name="ItemReference_Behavior.java">
-      <unit id="9119725621034346788" at="10,0,13,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference_Behavior" />
-    </file>
     <file name="ItemReference__BehaviorDescriptor.java">
       <node id="9119725621034346788" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="9119725621034346788" at="25,0,26,0" concept="6" trace="REGISTRY" />

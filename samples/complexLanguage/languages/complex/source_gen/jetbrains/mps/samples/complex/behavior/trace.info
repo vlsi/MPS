@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="AbsExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.AbsExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ArgExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.ArgExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ComplexType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.complex.behavior.ComplexType_BehaviorDescriptor" />
-    </file>
-    <file name="ConjugateComplexExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.ConjugateComplexExpression_BehaviorDescriptor" />
-    </file>
-    <file name="DegreeComplexExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.DegreeComplexExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ImExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.ImExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ImaginaryUnit_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.complex.behavior.ImaginaryUnit_BehaviorDescriptor" />
-    </file>
-    <file name="ReExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.complex.behavior.ReExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SingleComplexExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.complex.behavior.SingleComplexExpression_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

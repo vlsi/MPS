@@ -16,11 +16,15 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -31,50 +35,55 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * PROVISIONAL API, DO NOT USE
- *
+ * <p/>
  * This class hides mechanism to access aspects of meta-model we need for persistence purposes.
  * Generally, this information could be retrieved from SConcept/ConceptDescriptor and friends, however,
  * there are two use-cases when we can't rely on general MPS mechanism:
  * 1) Model merge, primarily (or only) merge driver (git-invoked conflict resolution tool).
  * 2) Convert models to binary during build.
- *
+ * <p/>
  * In either case, we read model first, and then save, and need save to know (and keep) information we've read.
- *
+ * <p/>
  * The reasons not to use general MPS  mechanism are:
  * (a) We don't want to pay MPS start-up costs
  * (b) Languages used in the models might not be available in classpath (Doesn't apply to (2) - we do know them during build)
- *
+ * <p/>
  * The idea is to fill this provider with information read, and use it from model write. This provider shall not survive
  * single read/write pair for a given model. Although perhaps in the future we might utilize it to keep model-specific
  * {@link jetbrains.mps.smodel.DebugRegistry}, which is global at the moment.
- *
+ * <p/>
  * To certain extent, this class serves to overcome limitations of SConcept API, as it doesn't expose e.g. scope or kind. Once (and if)
  * we decide to expose these from SConcept, there would be no need in this mediator. Perhaps, it's the right way to go? XXX revisit
- *
+ * <p/>
  * Note, this class replaces {@link jetbrains.mps.persistence.ModelEnvironmentInfo} which was likely intended for the similar purpose,
  * but is ugly and doesn't suite modern (v9-bis) persistence well.
- *
+ * <p/>
  * There's implementation for most use-cases, {@link jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo}, which merely delegates
  * to appropriate general MPS facilities, and doesn't support change (attempt to change is no-op).
- *
+ * <p/>
  * IMPLEMENTATION NOTE: use {@link jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo} as base class, do not implement this interface directly.
- *
+ * <p/>
  * Instances are not thread-safe unless noted otherwise.
- *
+ * <p/>
  * All methods are allowed to return <code>null</code> to indicate provider knows nothing about attribute questioned.
  * Setters arguments, except for id (i.e. name, concept kind, etc), may be <code>null</code> as well.
  *
+ * @author Artem Tikhomirov
  * @see jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo
  * @see jetbrains.mps.smodel.DebugRegistry
  * @see jetbrains.mps.persistence.ModelEnvironmentInfo
- * @author Artem Tikhomirov
  */
 public interface MetaModelInfoProvider {
   /**
@@ -85,29 +94,38 @@ public interface MetaModelInfoProvider {
   public static final String OPTION_KEEP_READ_METAINFO = "keep-metainfo";
 
   String getLanguageName(SLanguageId lang);
+
   void setLanguageName(SLanguageId lang, String name);
+
   /**
    * @return FIXME qualified concept name at the moment, short name once we switch to short names in persistence
    */
   String getConceptName(SConceptId concept);
+
   void setConceptName(SConceptId concept, String name);
 
   String getPropertyName(SPropertyId property);
+
   void setPropertyName(SPropertyId property, String name);
 
   String getAssociationName(SReferenceLinkId link);
+
   void setAssociationName(SReferenceLinkId link, String name);
 
   String getAggregationName(SContainmentLinkId link);
+
   void setAggregationName(SContainmentLinkId link, String name);
 
   ConceptKind getKind(SConceptId concept);
+
   void setKind(SConceptId concept, ConceptKind kind);
 
   StaticScope getScope(SConceptId concept);
-  void  setScope(SConceptId concept, StaticScope scope);
+
+  void setScope(SConceptId concept, StaticScope scope);
 
   Boolean isUnordered(SContainmentLinkId link);
+
   void setUnordered(SContainmentLinkId link, boolean unordered);
 
   /**
@@ -115,6 +133,7 @@ public interface MetaModelInfoProvider {
    * {@link #getKind(jetbrains.mps.smodel.adapter.ids.SConceptId) kind} == {@link jetbrains.mps.smodel.runtime.ConceptKind#IMPLEMENTATION_WITH_STUB}
    */
   SConceptId getStubConcept(SConceptId origin);
+
   void setStubConcept(SConceptId origin, SConceptId stub);
 
   /**
@@ -218,7 +237,7 @@ public interface MetaModelInfoProvider {
    * Default implementation to use in general MPS scenarios.
    * Sort of {@link jetbrains.mps.smodel.runtime.ConceptDescriptor}, limited to methods essential for persistence.
    * Ensures non-<code>null</code> values (empty strings for names to satisfy persistence) and reasonable defaults otherwise.
-   *
+   * <p/>
    * Uses {@link jetbrains.mps.smodel.DebugRegistry} to retrieve names, if available.
    * Setter methods update {@link jetbrains.mps.smodel.DebugRegistry}.
    */
@@ -319,12 +338,18 @@ public interface MetaModelInfoProvider {
         return null;
       }
       // FIXME move stub concept id to ConceptDescriptor
-      String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
-      final ConceptDescriptor stubConceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(stubFQName);
-      if(stubConceptDescriptor != null) {
-        return stubConceptDescriptor.getId();
-      }
-      return null;
+      final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
+
+      final SConcept[] concept = new SConcept[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          //no instances of interfaces allowed
+          concept[0] = MetaAdapterFactoryByName.getConcept(stubFQName);
+        }
+      });
+      if (!(concept[0].isValid())) return null;
+      return MetaIdHelper.getConcept(concept[0]);
     }
 
     @Override
@@ -377,7 +402,7 @@ public interface MetaModelInfoProvider {
     /**
      * Fill another StuffedMetaModelInfo instance with information known to this one.
      * It might be necessary if we don't want to use this provider as is due to delegate.
-     *
+     * <p/>
      * There would be no need in this method if we could pass proper StuffedMetaModelInfo
      * instance right into modelFactory.load(). However, given Map(String,String) for options,
      * we have to assume there might be inappropriate delegate which we can't rely on (i.e. merge has to
@@ -532,7 +557,7 @@ public interface MetaModelInfoProvider {
     @Override
     public ConceptKind getKind(SConceptId concept) {
       ConceptKind kind = myKind.get(concept);
-      if(kind != null) {
+      if (kind != null) {
         return kind;
       }
       return myDelegate.getKind(concept);

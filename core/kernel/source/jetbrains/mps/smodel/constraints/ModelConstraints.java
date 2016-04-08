@@ -87,18 +87,6 @@ public class ModelConstraints {
     return descriptor.canBeAncestor(ancestor, descendant, childConcept, getOperationContext(getModule(ancestor)), checkingNodeContext);
   }
 
-  /**
-   * @deprecated use {@link #canBeChild(SAbstractConcept, SNode, SNode, SNode, CheckingNodeContext)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //no usages in MPS
-  public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
-    SModule module = getModule(parentNode);
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
-    return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName), getOperationContext(module), checkingNodeContext);
-  }
-
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
       @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());

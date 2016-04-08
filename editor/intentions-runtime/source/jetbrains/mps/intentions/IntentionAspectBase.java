@@ -15,11 +15,46 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+
+import java.util.Collection;
+import java.util.Collections;
+
 /**
  * Base implementation of {@link IntentionAspectDescriptor} for generated classes to subclass.
  * Facilitates future {@link IntentionAspectDescriptor} API changes.
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */
 public abstract class IntentionAspectBase implements IntentionAspectDescriptor {
+  @Nullable
+  @Override
+  @ToRemove(version = 3.4)
+  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
+    return getIntentions(MetaAdapterFactory.getConcept(conceptId, "<random concept name from IntentionAspectBase; method should not have been used>"));
+  }
+
+  @Nullable
+  @Override
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    //default implementation to be removed after 3.4
+    if (concept instanceof SConceptAdapterById) {
+      return getIntentions(((SConceptAdapterById) concept).getId());
+    }
+    if (concept instanceof SInterfaceConceptAdapterById) {
+      return getIntentions(((SInterfaceConceptAdapterById) concept).getId());
+    }
+
+    return Collections.emptyList();
+  }
 }

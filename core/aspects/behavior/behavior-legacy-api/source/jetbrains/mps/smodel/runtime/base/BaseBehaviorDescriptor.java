@@ -15,31 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.core.aspects.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter;
-import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Used to be the common ancestor for all generated behavior descriptors.
@@ -48,77 +29,32 @@ import java.util.regex.Pattern;
  * @see jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor
  */
 @Deprecated
-@ToRemove(version = 3.3)
+@ToRemove(version = 3.4) //seems it can't be removed before 3.4 as old behaviors are still generated => compilation error
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
-  private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
-
-  private static final Pattern CONCEPT_FQ_NAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
-
-  private final SAbstractConcept myConcept;
-  private final List<SAbstractConcept> myAncestors; // including me
-
   public BaseBehaviorDescriptor(@NotNull SAbstractConcept concept) {
-    myConcept = concept;
-    myAncestors = getBehaviorRegistry().getMRO().linearize(concept);
+    throw new UnsupportedOperationException();
   }
 
   public BaseBehaviorDescriptor(String conceptFqName) {
-    myConcept = getConcept(conceptFqName);
-    myAncestors = getBehaviorRegistry().getMRO().linearize(myConcept);
-  }
-
-  private BehaviorRegistry getBehaviorRegistry() {
-    return ConceptRegistry.getInstance().getBehaviorRegistry();
-  }
-
-  @NotNull
-  private SAbstractConcept getConcept(String conceptFqName) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName);
-    return MetaAdapterFactory.getAbstractConcept(conceptDescriptor);
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public String getConceptFqName() {
-    return myConcept.getQualifiedName();
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public void initNode(SNode node) {
-    if (node == null) {
-      throw new IllegalArgumentException("initNode on null node");
-    }
-    Object[] parameters = new Object[0];
-    NodeOrConcept nodeOrConcept = NodeOrConcept.create(node);
-    String constructorName = BehaviorDescriptor.CONSTRUCTOR_METHOD_NAME;
-    invokeMethodOrConstructor(nodeOrConcept, constructorName, getConstructingOrder(), false, parameters);
-  }
-
-  private Iterable<SAbstractConcept> getConstructingOrder() {
-    List<SAbstractConcept> order = new ArrayList<SAbstractConcept>(myAncestors);
-    Collections.reverse(order);
-    return order;
+    throw new UnsupportedOperationException();
   }
 
   public static String behaviorClassByConceptFqName(@NotNull String fqName) {
-    Matcher m = CONCEPT_FQ_NAME.matcher(fqName);
-    if (m.matches()) {
-      return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
-    } else {
-      throw new RuntimeException();
-    }
+    throw new UnsupportedOperationException();
   }
 
   protected static Class<?> getGeneratedClass(String conceptFqName, String className) {
-    String conceptLanguageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
-    Language language = ModuleRepositoryFacade.getInstance().getModule(conceptLanguageNamespace, Language.class);
-    if (language == null) {
-      return null;
-    }
-    try {
-      return language.getOwnClass(className);
-    } catch (ClassNotFoundException ignored) {
-      return null;
-    }
+    throw new UnsupportedOperationException();
   }
 
   /**
@@ -126,55 +62,11 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
    * and {@link jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter} extending this class and pick out a common invocation model.
    */
   protected Object genericInvoke(@NotNull NodeOrConcept nodeOrConcept, String methodName, Object[] parameters) {
-    return invokeMethodOrConstructor(nodeOrConcept, methodName, myAncestors, true, parameters);
-  }
-
-  /**
-   * common method for constructors invocation and method invocation
-   */
-  private Object invokeMethodOrConstructor(@NotNull NodeOrConcept nodeOrConcept, String methodName, Iterable<SAbstractConcept> ancestors,
-      boolean methodInvocation, Object[] parameters) {
-    for (SAbstractConcept ancestor : ancestors) {
-      BHDescriptor bhDescriptor = getBehaviorRegistry().getBHDescriptor(ancestor);
-      if (bhDescriptor instanceof BHDescriptorLegacyAdapter) { // legacy generated code
-        InterpretedBehaviorDescriptor legacyDescriptor = ((BHDescriptorLegacyAdapter) bhDescriptor).getLegacyDescriptor();
-        if (legacyDescriptor.hasOwnMethod(methodName)) {
-          Object result = legacyDescriptor.invokeSpecial(nodeOrConcept, methodName, parameters);
-          if (methodInvocation) {
-            return result;
-          }
-        }
-      } else if (bhDescriptor instanceof BaseBHDescriptor) { // newly generated code
-        BehaviorDescriptor behaviorDescriptor = getBehaviorDescriptor(ancestor.getQualifiedName());
-        if (!(behaviorDescriptor instanceof BehaviorDescriptorAdapter)) {
-          throw new IllegalStateException("Could not get legacy behavior descriptor + " + behaviorDescriptor +
-              "; unable to resolve method '" + methodName + "'");
-        }
-        BehaviorDescriptorAdapter behaviorDescriptorAdapter = (BehaviorDescriptorAdapter) behaviorDescriptor;
-        if (behaviorDescriptorAdapter.hasOwnMethod(methodName, parameters)) {
-          Object result = behaviorDescriptorAdapter.invokeOwn(nodeOrConcept, methodName, parameters);
-          if (methodInvocation) {
-            return result;
-          }
-        }
-      }
-    }
-    if (methodInvocation) {
-      throwNoSuchMethod(methodName);
-    }
-    return null;
-  }
-
-  @NotNull
-  private BehaviorDescriptor getBehaviorDescriptor(@NotNull String conceptFqName) {
-    if (conceptFqName.equals(getConceptFqName())) {
-      return this;
-    }
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName);
+    throw new UnsupportedOperationException();
   }
 
   protected void throwNoSuchMethod(String methodName) {
-    throw new RuntimeException(new NoSuchMethodException("No such method for '" + methodName + "' in the concept '" + getConceptFqName()) + "'");
+    throw new UnsupportedOperationException();
   }
 
   public final static class NodeOrConcept {

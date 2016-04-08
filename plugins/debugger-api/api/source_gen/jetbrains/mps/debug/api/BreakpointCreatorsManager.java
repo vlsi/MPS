@@ -16,15 +16,19 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.Mapper2;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.kernel.model.SModelUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -43,10 +47,16 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   public String getComponentName() {
     return "Debug Info Manager";
   }
-  public void addConceptBreakpointCreator(final String baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public void addConceptBreakpointCreator(String baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
+    SAbstractConcept concept = MetaAdapterFactoryByName.getConcept(baseConcept);
+    if (concept == null) {
+      concept = MetaAdapterFactoryByName.getInterfaceConcept(baseConcept);
+    }
     Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
       public Boolean invoke(SNode concept, SNode n) {
-        return SModelUtil.isAssignableConcept(concept, baseConcept);
+        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)), SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)));
       }
     }, new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
       public ILocationBreakpoint invoke(SNode node, Project project) {
@@ -54,6 +64,21 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       }
     });
     MapSequence.fromMap(myAddedByConceptCreators).put(baseConcept, pair);
+    SetSequence.fromSet(myCreators).addElement(pair);
+
+    // this is needed to support compilation compatibility in 3.4 
+  }
+  public void addConceptBreakpointCreator(final SAbstractConcept baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
+    Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
+      public Boolean invoke(SNode concept, SNode n) {
+        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)), SNodeOperations.asSConcept(baseConcept));
+      }
+    }, new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
+      public ILocationBreakpoint invoke(SNode node, Project project) {
+        return breakpointCreator.value(node, project);
+      }
+    });
+    MapSequence.fromMap(myAddedByConceptCreators).put(baseConcept.getQualifiedName(), pair);
     SetSequence.fromSet(myCreators).addElement(pair);
   }
   public void removeConceptBreakpointCreator(String fqName) {

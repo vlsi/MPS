@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="ConceptDocumentation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.customAspect.documentation.behavior.ConceptDocumentation_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

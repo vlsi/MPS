@@ -108,6 +108,9 @@
       <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <!--

@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public abstract class Feature {
     return myModelReference;
   }
   @Nullable
-  public abstract Feature getParent();
+  protected abstract Feature getParent(SRepository repo);
   @Override
   public int hashCode() {
     if (myHashCode == 0) {
@@ -50,9 +51,9 @@ public abstract class Feature {
   @NotNull
   @Override
   public abstract String toString();
-  public Feature[] getAncestors() {
+  public Feature[] getAncestors(SRepository repo) {
     List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
-    for (Feature current = getParent(); current != null; current = current.getParent()) {
+    for (Feature current = getParent(repo); current != null; current = current.getParent(repo)) {
       ListSequence.fromList(features).addElement(current);
     }
     return ListSequence.fromList(features).toGenericArray(Feature.class);

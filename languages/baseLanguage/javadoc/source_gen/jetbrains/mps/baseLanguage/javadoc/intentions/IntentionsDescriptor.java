@@ -4,97 +4,96 @@ package jetbrains.mps.baseLanguage.javadoc.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[7];
-    myId2Index[0] = 0xf8c108ca68L;
-    myId2Index[1] = 0xf8cc56b1fcL;
-    myId2Index[2] = 0xf93c84351fL;
-    myId2Index[3] = 0x101d9d3ca30L;
-    myId2Index[4] = 0x4a3c146b7fae70d3L;
-    myId2Index[5] = 0x4a3c146b7faeeb34L;
-    myId2Index[6] = 0x5bc4aa08e154b399L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: FieldDeclaration 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new AddFieldDocComment_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: BaseMethodDeclaration 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new AddMethodDocComment_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: StaticFieldDeclaration 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new AddStaticFieldDocComment_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: Classifier 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new AddClassifierDocComment_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: BaseDocComment 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[6];
-          myIntentions4[0] = new AddAuthorBlockDocTag_Intention();
-          myIntentions4[1] = new AddSinceBlockDocTag_Intention();
-          myIntentions4[2] = new AddVersionBlockTagDoc_Intention();
-          myIntentions4[3] = new AddSeeBlockTag_Intention();
-          myIntentions4[4] = new AddDeprecatedBlockDocTag_Intention();
-          myIntentions4[5] = new OrganizeTags_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: MethodDocComment 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[3];
-          myIntentions5[0] = new AddParameterBlockDocTag_Intention();
-          myIntentions5[1] = new AddReturnBlockTag_Intention();
-          myIntentions5[2] = new AddThrowBlockDocTag_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: HTMLElement 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[1];
-          myIntentions6[0] = new FoldHTMLElement_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: BaseDocComment 
+            intentions = new IntentionFactory[6];
+            intentions[0] = new AddAuthorBlockDocTag_Intention();
+            intentions[1] = new AddSinceBlockDocTag_Intention();
+            intentions[2] = new AddVersionBlockTagDoc_Intention();
+            intentions[3] = new AddSeeBlockTag_Intention();
+            intentions[4] = new AddDeprecatedBlockDocTag_Intention();
+            intentions[5] = new OrganizeTags_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: BaseMethodDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddMethodDocComment_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: Classifier 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddClassifierDocComment_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: FieldDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddFieldDocComment_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: HTMLElement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new FoldHTMLElement_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: MethodDocComment 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new AddParameterBlockDocTag_Intention();
+            intentions[1] = new AddReturnBlockTag_Intention();
+            intentions[2] = new AddThrowBlockDocTag_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: StaticFieldDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddStaticFieldDocComment_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -117,4 +116,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[13] = new OrganizeTags_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
 }

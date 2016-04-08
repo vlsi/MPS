@@ -15,231 +15,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AtLeastNTimesRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,146,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BinaryRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BinaryRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="CharacterSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_BehaviorDescriptor" />
-    </file>
-    <file name="DotRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.DotRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="FindMatchExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchExpression_BehaviorDescriptor" />
-    </file>
-    <file name="FindMatchStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ForEachMatchStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ForEachMatchStatement_BehaviorDescriptor" />
-    </file>
-    <file name="FromNToMTimesRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="InlineRegexpExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.InlineRegexpExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IntersectionSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />
-    </file>
-    <file name="IntervalSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_BehaviorDescriptor" />
-    </file>
-    <file name="LazyPlusRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyPlusRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="LazyQuestionRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyQuestionRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="LazyStarRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyStarRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="LineEndRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineEndRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="LineStartRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineStartRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="LiteralReplacement_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" />
-    </file>
-    <file name="LookRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="MatchParensRegexp_BehaviorDescriptor.java">
-      <unit at="17,0,38,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="MatchRegexpExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MatchRegexpOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MatchRegexpStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpStatement_BehaviorDescriptor" />
-    </file>
-    <file name="MatchVariableReferenceRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="MatchVariableReferenceReplacement_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_BehaviorDescriptor" />
-    </file>
-    <file name="MatchVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="NTimesRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="NegativeLookAheadRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookAheadRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="NegativeLookBehindRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookBehindRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="NegativeSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeSymbolClassRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="OrRegexp_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="ParensRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PlusRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PlusRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PositiveLookAheadRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookAheadRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PositiveLookBehindRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookBehindRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PositiveSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveSymbolClassRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PredefinedSymbolClassDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PredefinedSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor" />
-    </file>
-    <file name="PredefinedSymbolClasses_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClasses_BehaviorDescriptor" />
-    </file>
-    <file name="QuestionRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.QuestionRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="RegexpDeclarationReferenceRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="RegexpDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="RegexpExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpExpression_BehaviorDescriptor" />
-    </file>
-    <file name="RegexpUsingConstruction_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpUsingConstruction_BehaviorDescriptor" />
-    </file>
-    <file name="Regexp_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor" />
-    </file>
-    <file name="Regexps_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexps_BehaviorDescriptor" />
-    </file>
-    <file name="ReplaceBlock_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ReplaceRegexpOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ReplaceWithRegexpExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ReplaceWithRegexpOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpOperation_BehaviorDescriptor" />
-    </file>
-    <file name="Replacement_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_BehaviorDescriptor" />
-    </file>
-    <file name="SeqRegexp_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="SplitExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SplitOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitOperation_BehaviorDescriptor" />
-    </file>
-    <file name="StarRegexp_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StarRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="StringLiteralRegexp_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="SymbolClassPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_BehaviorDescriptor" />
-    </file>
-    <file name="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
-    </file>
-    <file name="SymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="UnaryRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
-    </file>
-    <file name="UnicodeCharacterRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
+      <unit at="14,0,204,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877429450">
-    <file name="Regexp_Behavior.java">
-      <node id="1213877429450" at="13,80,14,80" concept="8" />
-      <node id="1213877429450" at="16,77,17,69" concept="8" />
-      <node id="1213877429450" at="19,96,20,87" concept="8" />
-      <node id="1213877429450" at="22,78,23,72" concept="8" />
-      <node id="1213877429450" at="25,86,26,76" concept="8" />
-      <node id="1213877429450" at="13,0,16,0" concept="10" trace="call_getTopLevelRegexp_1223362823237#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877429450" at="16,0,19,0" concept="10" trace="call_par_1222433790846#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1213877429450" at="19,0,22,0" concept="10" trace="call_checkStringForUnicode_1222857160881#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="1213877429450" at="22,0,25,0" concept="10" trace="call_quote_1222857178958#(Lorg/jetbrains/mps/openapi/model/SNode;C)Ljava/lang/String;" />
-      <node id="1213877429450" at="25,0,28,0" concept="10" trace="call_escape_1353467374624660231#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1213877429450" at="13,80,14,80" />
-      <scope id="1213877429450" at="16,77,17,69" />
-      <scope id="1213877429450" at="19,96,20,87" />
-      <scope id="1213877429450" at="22,78,23,72" />
-      <scope id="1213877429450" at="25,86,26,76" />
-      <scope id="1213877429450" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877429450" />
-      </scope>
-      <scope id="1213877429450" at="16,0,19,0">
-        <var name="__thisNode__" id="1213877429450" />
-        <var name="s" id="1222433807664" />
-      </scope>
-      <scope id="1213877429450" at="19,0,22,0">
-        <var name="__thisNode__" id="1213877429450" />
-        <var name="s" id="1222857225250" />
-      </scope>
-      <scope id="1213877429450" at="22,0,25,0">
-        <var name="__thisNode__" id="1213877429450" />
-        <var name="ch" id="1222857212132" />
-      </scope>
-      <scope id="1213877429450" at="25,0,28,0">
-        <var name="__thisNode__" id="1213877429450" />
-        <var name="s" id="1353467374624660236" />
-      </scope>
-      <unit id="1213877429450" at="11,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
-    </file>
     <file name="Regexp__BehaviorDescriptor.java">
       <node id="1213877429450" at="29,0,30,0" concept="9" trace="CONCEPT" />
       <node id="1213877429450" at="30,0,31,0" concept="9" trace="REGISTRY" />
@@ -420,15 +200,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877475221">
-    <file name="MatchParensRegexp_Behavior.java">
-      <node id="1213877475221" at="13,69,14,82" concept="8" />
-      <node id="1213877475221" at="13,0,16,0" concept="10" trace="call_getIndex_1223361984345#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <scope id="1213877475221" at="13,69,14,82" />
-      <scope id="1213877475221" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877475221" />
-      </scope>
-      <unit id="1213877475221" at="11,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_Behavior" />
-    </file>
     <file name="MatchParensRegexp__BehaviorDescriptor.java">
       <node id="1213877475221" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1213877475221" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -529,9 +300,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877492182">
-    <file name="MatchVariableReferenceRegexp_Behavior.java">
-      <unit id="1213877492182" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
-    </file>
     <file name="MatchVariableReferenceRegexp__BehaviorDescriptor.java">
       <node id="1213877492182" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1213877492182" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -607,23 +375,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222431791866">
-    <file name="StringLiteralRegexp_Behavior.java">
-      <node id="1222431791866" at="14,88,15,91" concept="8" />
-      <node id="1222431791866" at="17,102,18,95" concept="8" />
-      <node id="1222431791866" at="14,0,17,0" concept="10" trace="call_toRegexp_8330008649152995372#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1222431791866" at="17,0,20,0" concept="10" trace="call_isHexChar_8949395081772969908#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;C)Z" />
-      <scope id="1222431791866" at="14,88,15,91" />
-      <scope id="1222431791866" at="17,102,18,95" />
-      <scope id="1222431791866" at="14,0,17,0">
-        <var name="__thisNode__" id="1222431791866" />
-        <var name="s" id="8330008649152995624" />
-      </scope>
-      <scope id="1222431791866" at="17,0,20,0">
-        <var name="__thisConcept__" id="1222431791866" />
-        <var name="c" id="8949395081772969913" />
-      </scope>
-      <unit id="1222431791866" at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
-    </file>
     <file name="StringLiteralRegexp__BehaviorDescriptor.java">
       <node id="1222431791866" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222431791866" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -805,9 +556,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433039738">
-    <file name="UnicodeCharacterRegexp_Behavior.java">
-      <unit id="1222433039738" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
-    </file>
     <file name="UnicodeCharacterRegexp__BehaviorDescriptor.java">
       <node id="1222433039738" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222433039738" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -883,9 +631,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433139931">
-    <file name="PredefinedSymbolClassRegexp_Behavior.java">
-      <unit id="1222433139931" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
-    </file>
     <file name="PredefinedSymbolClassRegexp__BehaviorDescriptor.java">
       <node id="1222433139931" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222433139931" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -961,15 +706,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433930821">
-    <file name="OrRegexp_Behavior.java">
-      <node id="1222433930821" at="13,84,14,82" concept="8" />
-      <node id="1222433930821" at="13,0,16,0" concept="10" trace="call_inParentheses_1353467374623956858#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1222433930821" at="13,84,14,82" />
-      <scope id="1222433930821" at="13,0,16,0">
-        <var name="__thisNode__" id="1222433930821" />
-      </scope>
-      <unit id="1222433930821" at="11,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
-    </file>
     <file name="OrRegexp__BehaviorDescriptor.java">
       <node id="1222433930821" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222433930821" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -1066,9 +802,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222434887346">
-    <file name="ParensRegexp_Behavior.java">
-      <unit id="1222434887346" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
-    </file>
     <file name="ParensRegexp__BehaviorDescriptor.java">
       <node id="1222434887346" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222434887346" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1144,9 +877,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222436753891">
-    <file name="SeqRegexp_Behavior.java">
-      <unit id="1222436753891" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
-    </file>
     <file name="SeqRegexp__BehaviorDescriptor.java">
       <node id="1222436753891" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222436753891" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1231,9 +961,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437176020">
-    <file name="RegexpDeclarationReferenceRegexp_Behavior.java">
-      <unit id="1222437176020" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
-    </file>
     <file name="RegexpDeclarationReferenceRegexp__BehaviorDescriptor.java">
       <node id="1222437176020" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="1222437176020" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1309,9 +1036,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437727387">
-    <file name="NTimesRegexp_Behavior.java">
-      <unit id="1222437727387" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
-    </file>
     <file name="NTimesRegexp__BehaviorDescriptor.java">
       <node id="1222437727387" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222437727387" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -1390,9 +1114,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609599871">
-    <file name="AtLeastNTimesRegexp_Behavior.java">
-      <unit id="1222609599871" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
-    </file>
     <file name="AtLeastNTimesRegexp__BehaviorDescriptor.java">
       <node id="1222609599871" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222609599871" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -1471,9 +1192,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609846769">
-    <file name="FromNToMTimesRegexp_Behavior.java">
-      <unit id="1222609846769" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
-    </file>
     <file name="FromNToMTimesRegexp__BehaviorDescriptor.java">
       <node id="1222609846769" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1222609846769" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -1552,16 +1270,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222857576752">
-    <file name="SymbolClassRegexp_Behavior.java">
-      <node id="1222857576752" at="14,96,15,94" concept="8" />
-      <node id="1222857576752" at="14,0,17,0" concept="10" trace="call_partsToString_1222857748873#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <scope id="1222857576752" at="14,96,15,94" />
-      <scope id="1222857576752" at="14,0,17,0">
-        <var name="__thisNode__" id="1222857576752" />
-        <var name="parts" id="1222859816327" />
-      </scope>
-      <unit id="1222857576752" at="12,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" />
-    </file>
     <file name="SymbolClassRegexp__BehaviorDescriptor.java">
       <node id="1222857576752" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222857576752" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -1665,9 +1373,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222861534672">
-    <file name="LookRegexp_Behavior.java">
-      <unit id="1222861534672" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
-    </file>
     <file name="LookRegexp__BehaviorDescriptor.java">
       <node id="1222861534672" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222861534672" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -1743,15 +1448,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222867682828">
-    <file name="UnaryRegexp_Behavior.java">
-      <node id="1222867682828" at="13,84,14,85" concept="8" />
-      <node id="1222867682828" at="13,0,16,0" concept="10" trace="call_inParentheses_1353467374623956744#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1222867682828" at="13,84,14,85" />
-      <scope id="1222867682828" at="13,0,16,0">
-        <var name="__thisNode__" id="1222867682828" />
-      </scope>
-      <unit id="1222867682828" at="11,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
-    </file>
     <file name="UnaryRegexp__BehaviorDescriptor.java">
       <node id="1222867682828" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1222867682828" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -1839,15 +1535,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137207004">
-    <file name="ReplaceRegexpOperation_Behavior.java">
-      <node id="3796137614137207004" at="13,90,14,103" concept="8" />
-      <node id="3796137614137207004" at="13,0,16,0" concept="10" trace="call_getReplacementString_3796137614137207007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="3796137614137207004" at="13,90,14,103" />
-      <scope id="3796137614137207004" at="13,0,16,0">
-        <var name="__thisNode__" id="3796137614137207004" />
-      </scope>
-      <unit id="3796137614137207004" at="11,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
-    </file>
     <file name="ReplaceRegexpOperation__BehaviorDescriptor.java">
       <node id="3796137614137207004" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137207004" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1933,9 +1620,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538899">
-    <file name="Replacement_Behavior.java">
-      <unit id="3796137614137538899" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
-    </file>
     <file name="Replacement__BehaviorDescriptor.java">
       <node id="3796137614137538899" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137538899" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -2011,22 +1695,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538913">
-    <file name="LiteralReplacement_Behavior.java">
-      <node id="3796137614137538913" at="13,78,14,86" concept="8" />
-      <node id="3796137614137538913" at="16,88,17,90" concept="8" />
-      <node id="3796137614137538913" at="13,0,16,0" concept="10" trace="call_isValid_3796137614137567952#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3796137614137538913" at="16,0,19,0" concept="10" trace="call_toRegexp_3796137614137565586#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="3796137614137538913" at="13,78,14,86" />
-      <scope id="3796137614137538913" at="16,88,17,90" />
-      <scope id="3796137614137538913" at="13,0,16,0">
-        <var name="__thisNode__" id="3796137614137538913" />
-      </scope>
-      <scope id="3796137614137538913" at="16,0,19,0">
-        <var name="__thisNode__" id="3796137614137538913" />
-        <var name="s" id="3796137614137565886" />
-      </scope>
-      <unit id="3796137614137538913" at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
-    </file>
     <file name="LiteralReplacement__BehaviorDescriptor.java">
       <node id="3796137614137538913" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137538913" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -2203,9 +1871,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137539492">
-    <file name="MatchVariableReferenceReplacement_Behavior.java">
-      <unit id="3796137614137539492" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
-    </file>
     <file name="MatchVariableReferenceReplacement__BehaviorDescriptor.java">
       <node id="3796137614137539492" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="3796137614137539492" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -2285,9 +1950,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/658365993682020152">
-    <file name="ReplaceBlock_Behavior.java">
-      <unit id="658365993682020152" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_Behavior" />
-    </file>
     <file name="ReplaceBlock__BehaviorDescriptor.java">
       <node id="658365993682020152" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="658365993682020152" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -2375,23 +2037,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637182">
-    <file name="SymbolClassPart_Behavior.java">
-      <node id="8173814113624637182" at="13,92,14,91" concept="8" />
-      <node id="8173814113624637182" at="16,90,17,89" concept="8" />
-      <node id="8173814113624637182" at="13,0,16,0" concept="10" trace="call_validateChar_8173814113624732613#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="8173814113624637182" at="16,0,19,0" concept="10" trace="call_escapeChar_8173814113624637238#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="8173814113624637182" at="13,92,14,91" />
-      <scope id="8173814113624637182" at="16,90,17,89" />
-      <scope id="8173814113624637182" at="13,0,16,0">
-        <var name="__thisNode__" id="8173814113624637182" />
-        <var name="s" id="8173814113624732924" />
-      </scope>
-      <scope id="8173814113624637182" at="16,0,19,0">
-        <var name="__thisNode__" id="8173814113624637182" />
-        <var name="s" id="8173814113624637538" />
-      </scope>
-      <unit id="8173814113624637182" at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_Behavior" />
-    </file>
     <file name="SymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637182" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637182" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -2554,9 +2199,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637190">
-    <file name="PredefinedSymbolClassSymbolClassPart_Behavior.java">
-      <unit id="8173814113624637190" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
-    </file>
     <file name="PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637190" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637190" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -2631,9 +2273,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637220">
-    <file name="IntervalSymbolClassPart_Behavior.java">
-      <unit id="8173814113624637220" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
-    </file>
     <file name="IntervalSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637220" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637220" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -2708,9 +2347,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637890">
-    <file name="IntersectionSymbolClassPart_Behavior.java">
-      <unit id="8173814113624637890" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
-    </file>
     <file name="IntersectionSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637890" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637890" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -2785,9 +2421,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637901">
-    <file name="CharacterSymbolClassPart_Behavior.java">
-      <unit id="8173814113624637901" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
-    </file>
     <file name="CharacterSymbolClassPart__BehaviorDescriptor.java">
       <node id="8173814113624637901" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624637901" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -2862,9 +2495,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624650479">
-    <file name="SymbolClassRegexpAndPart_Behavior.java">
-      <unit id="8173814113624650479" at="10,0,13,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_Behavior" />
-    </file>
     <file name="SymbolClassRegexpAndPart__BehaviorDescriptor.java">
       <node id="8173814113624650479" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="8173814113624650479" at="25,0,26,0" concept="9" trace="REGISTRY" />

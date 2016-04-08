@@ -86,42 +86,14 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return myStructureRegistry.getConceptDescriptor(concept);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  @NotNull
-  public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
-    return myStructureRegistry.getConceptDescriptor(fqName);
-  }
-
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     return myStructureRegistry.getConceptDescriptor(id);
   }
 
   @NotNull
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
-    return ((BehaviorRegistryImpl) myBehaviorRegistry).getBehaviorDescriptor(fqName);
-  }
-
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
-    return ((BehaviorRegistryImpl) myBehaviorRegistry).getBehaviorDescriptorForInstanceNode(node);
-  }
-
-  @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
     return myConstraintsRegistry.getConstraintsDescriptor(concept);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  @NotNull
-  //no usages in MPS
-  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
-    return myConstraintsRegistry.getConstraintsDescriptor(fqName);
   }
 
   /**

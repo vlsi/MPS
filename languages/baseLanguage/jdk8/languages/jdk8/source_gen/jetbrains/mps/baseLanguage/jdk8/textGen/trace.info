@@ -5,7 +5,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="13,0,35,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
+      <unit at="15,0,52,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:b6a70233-79fe-4a79-a356-99338b0be46c(jetbrains.mps.baseLanguage.jdk8.textGen)/6434864236541625324">

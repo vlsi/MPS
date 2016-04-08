@@ -22,6 +22,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -81,8 +82,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     return INSTANCE;
   }
 
-  private final Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
-  private final Map<SLanguageId, LanguageRuntime> myLanguagesById = new HashMap<SLanguageId, LanguageRuntime>();
+  private final Map<SLanguage, LanguageRuntime> myLanguagesById = new HashMap<SLanguage, LanguageRuntime>();
 
   private final Map<SModuleReference, GeneratorRuntime> myGeneratorsWithCompiledRuntime = new HashMap<SModuleReference, GeneratorRuntime>();
 
@@ -110,8 +110,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        notifyUnload(myLanguages.values());
-        myLanguages.clear();
+        notifyUnload(myLanguagesById.values());
         myLanguagesById.clear();
       }
     });
@@ -120,7 +119,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   private void notifyUnload(final Collection<LanguageRuntime> languages) {
-    if (languages.isEmpty()) return;
+    if (languages.isEmpty()) {
+      return;
+    }
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
@@ -132,7 +133,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   private void notifyLoad(final Collection<LanguageRuntime> languages) {
-    if (languages.isEmpty()) return;
+    if (languages.isEmpty()) {
+      return;
+    }
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
@@ -176,10 +179,10 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
    * For the time being, we instantiate runtime of generated generators only.
    * We could have had TemplateModuleInterpreted instantiated here, but don't do that for few reasons
    * (1) We are in [kernel] now, can't access code in [generator-engine] module. Would need to move the registry
-   *     to [project], perhaps, to satisfy the dependency
+   * to [project], perhaps, to satisfy the dependency
    * (2) TemplateModuleInterpreted doesn't work well when it lasts. It doesn't track model/module changes and may answer with stale info if
-   *     the instance stays for a long time. Present approach is to ask language for generators (LR.getGenerators(), where new instance is created),
-   *     and LR+TMI assume no changes in generator module while these generators are consumed.
+   * the instance stays for a long time. Present approach is to ask language for generators (LR.getGenerators(), where new instance is created),
+   * and LR+TMI assume no changes in generator module while these generators are consumed.
    */
   private GeneratorRuntime createRuntime(Generator g) {
     if (g.generateTemplates()) {
@@ -264,7 +267,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
    */
   public Collection<LanguageRuntime> getAvailableLanguages() {
     myRepository.getModelAccess().checkReadAccess();
-    return myLanguages.values();
+    return myLanguagesById.values();
   }
 
   public Collection<SLanguage> getAllLanguages() {
@@ -278,21 +281,26 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Nullable
   public LanguageRuntime getLanguage(SLanguage language) {
-    return ((SLanguageAdapter) language).getLanguageDescriptor();
+    return myLanguagesById.get(language);
   }
 
   @Nullable
   public LanguageRuntime getLanguage(SLanguageId id) {
-    return myLanguagesById.get(id);
+    return getLanguage(MetaAdapterFactory.getLanguage(id, "<LanguageRegistry: this name must not be used>"));
   }
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
-    return myLanguages.get(namespace);
+    for (SLanguage l : myLanguagesById.keySet()) {
+      if (l.getQualifiedName().equals(namespace)) {
+        return myLanguagesById.get(l);
+      }
+    }
+    return null;
   }
 
   public LanguageRuntime getLanguage(Language language) {
-    return getLanguage(language.getModuleName());
+    return getLanguage(MetaAdapterByDeclaration.getLanguage(language));
   }
 
   /**
@@ -329,19 +337,18 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (Language language : collectLanguageModules(unloadedModules)) {
-      SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
-      if (!myLanguagesById.containsKey(languageId)) {
-        LOG.warn("No language with id " + languageId + " to unload");
+      SLanguage sl = MetaAdapterByDeclaration.getLanguage(language);
+      if (!myLanguagesById.containsKey(sl)) {
+        LOG.warn("No language with id " + sl + " to unload");
       } else {
-        languagesToUnload.add(myLanguagesById.get(languageId));
+        languagesToUnload.add(myLanguagesById.get(sl));
       }
     }
 
     notifyUnload(languagesToUnload);
 
     for (LanguageRuntime languageRuntime : languagesToUnload) {
-      myLanguages.remove(languageRuntime.getNamespace());
-      myLanguagesById.remove(languageRuntime.getId());
+      myLanguagesById.remove(MetaAdapterFactory.getLanguage(languageRuntime.getId(), languageRuntime.getNamespace()));
     }
     reinitialize();
   }
@@ -350,21 +357,18 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new LinkedHashSet<LanguageRuntime>();
     for (Language language : collectLanguageModules(loadedModules)) {
-      SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
-      if (myLanguagesById.containsKey(languageId)) {
-        LOG.error("", new IllegalArgumentException(String.format("There is already a language '%s' with id '%s'", myLanguagesById.get(languageId), languageId)));
+      SLanguage sl = MetaAdapterByDeclaration.getLanguage(language);
+      if (myLanguagesById.containsKey(sl)) {
+        LOG.error("", new IllegalArgumentException(String.format("There is already a language '%s'", myLanguagesById.get(sl))));
         continue;
       }
       try {
         LanguageRuntime langRuntime = createRuntime(language);
-        if (langRuntime == null) continue;
-
-        String langName = langRuntime.getNamespace();
-        if (myLanguages.containsKey(langName)) {
-          LOG.warn(String.format("There is already a language '%s' with a name '%s'", myLanguages.get(langName), langName));
+        if (langRuntime == null) {
+          continue;
         }
-        myLanguages.put(langName, langRuntime);
-        myLanguagesById.put(languageId, langRuntime);
+
+        myLanguagesById.put(sl, langRuntime);
         loadedRuntimes.add(langRuntime);
       } catch (LinkageError le) {
         processLinkageErrorForLanguage(language, le);
@@ -398,10 +402,10 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   private void reinitialize() {
-    for (LanguageRuntime languageRuntime : myLanguages.values()) {
+    for (LanguageRuntime languageRuntime : myLanguagesById.values()) {
       languageRuntime.deinitialize();
     }
-    for (LanguageRuntime languageRuntime : myLanguages.values()) {
+    for (LanguageRuntime languageRuntime : myLanguagesById.values()) {
       languageRuntime.initialize(this);
     }
   }

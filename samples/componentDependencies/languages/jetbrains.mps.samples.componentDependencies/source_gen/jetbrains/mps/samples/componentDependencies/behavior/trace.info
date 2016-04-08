@@ -13,34 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ComponentSet_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
-    </file>
-    <file name="Component_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
-    </file>
-    <file name="Dependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
-    </file>
-    <file name="InPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
-    </file>
-    <file name="OutPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365528900259">
-    <file name="ComponentSet_Behavior.java">
-      <node id="9095678365528900259" at="13,99,14,93" concept="5" />
-      <node id="9095678365528900259" at="13,0,16,0" concept="7" trace="call_retrieveDependencies_9095678365528900313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="9095678365528900259" at="13,99,14,93" />
-      <scope id="9095678365528900259" at="13,0,16,0">
-        <var name="__thisNode__" id="9095678365528900259" />
-      </scope>
-      <unit id="9095678365528900259" at="11,0,17,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior" />
-    </file>
     <file name="ComponentSet__BehaviorDescriptor.java">
       <node id="9095678365528900259" at="27,0,28,0" concept="6" trace="CONCEPT" />
       <node id="9095678365528900259" at="28,0,29,0" concept="6" trace="REGISTRY" />
@@ -122,9 +98,6 @@
     </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365529689048">
-    <file name="Dependency_Behavior.java">
-      <unit id="9095678365529689048" at="10,0,13,0" name="jetbrains.mps.samples.componentDependencies.behavior.Dependency_Behavior" />
-    </file>
     <file name="Dependency__BehaviorDescriptor.java">
       <node id="9095678365529689048" at="20,0,21,0" concept="6" trace="CONCEPT" />
       <node id="9095678365529689048" at="21,0,22,0" concept="6" trace="REGISTRY" />
@@ -190,9 +163,6 @@
     </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365530118209">
-    <file name="Component_Behavior.java">
-      <unit id="9095678365530118209" at="10,0,13,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior" />
-    </file>
     <file name="Component__BehaviorDescriptor.java">
       <node id="9095678365530118209" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="9095678365530118209" at="22,0,23,0" concept="6" trace="REGISTRY" />

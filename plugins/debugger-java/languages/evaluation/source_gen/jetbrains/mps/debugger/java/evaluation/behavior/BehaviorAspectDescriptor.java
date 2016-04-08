@@ -4,12 +4,12 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myEvaluator__BehaviorDescriptor = new Evaluator__BehaviorDescriptor();
@@ -22,52 +22,74 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myDoNotTransformAnnotation__BehaviorDescriptor = new DoNotTransformAnnotation__BehaviorDescriptor();
   private final BHDescriptor myIEvaluatorConcept__BehaviorDescriptor = new IEvaluatorConcept__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[9];
-    myConceptBehaviorIds[0] = 0xbbe5b47d7cc5fa1L;
-    myConceptBehaviorIds[1] = 0x3f11b1341fa25ed8L;
-    myConceptBehaviorIds[2] = 0x4135c73fbe7fc985L;
-    myConceptBehaviorIds[3] = 0x50b810dd5c871ea2L;
-    myConceptBehaviorIds[4] = 0x53c5060c6b18d925L;
-    myConceptBehaviorIds[5] = 0x53c5060c6b18d926L;
-    myConceptBehaviorIds[6] = 0x53c5060c6b1ae1feL;
-    myConceptBehaviorIds[7] = 0x7eed83c2376f34a5L;
-    myConceptBehaviorIds[8] = 0x7f4a99699cea367bL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myEvaluator__BehaviorDescriptor;
-      case 1:
-        return myDebuggedType__BehaviorDescriptor;
-      case 2:
-        return myToEvaluateAnnotation__BehaviorDescriptor;
-      case 3:
-        return myUnprocessedAnnotation__BehaviorDescriptor;
-      case 4:
-        return myEvaluatorConcept__BehaviorDescriptor;
-      case 5:
-        return myLowLevelVariable__BehaviorDescriptor;
-      case 6:
-        return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
-      case 7:
-        return myDoNotTransformAnnotation__BehaviorDescriptor;
-      case 8:
-        return myIEvaluatorConcept__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myDebuggedType__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myDoNotTransformAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myEvaluator__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myEvaluatorConcept__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myIEvaluatorConcept__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myLowLevelVariable__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myToEvaluateAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myUnprocessedAnnotation__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7eed83c2376f34a5L, "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1feL, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall"), MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x4135c73fbe7fc985L, "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x50b810dd5c871ea2L, "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"));
 }

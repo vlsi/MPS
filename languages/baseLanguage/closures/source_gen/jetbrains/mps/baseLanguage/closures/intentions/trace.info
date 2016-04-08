@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="13,0,81,0" name="jetbrains.mps.baseLanguage.closures.intentions.IntentionsDescriptor" />
+      <unit at="16,0,95,0" name="jetbrains.mps.baseLanguage.closures.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)/1229717881949">

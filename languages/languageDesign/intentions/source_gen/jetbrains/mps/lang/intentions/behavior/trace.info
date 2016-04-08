@@ -14,80 +14,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="BaseIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="21,0,68,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,86,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ChildFilterBlock_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ChildFilterFunction_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_childNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-    </file>
-    <file name="DescriptionBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ErrorIntentionPriority_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.intentions.behavior.ErrorIntentionPriority_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ForConceptMethodParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.intentions.behavior.ForConceptMethodParameter_BehaviorDescriptor" />
-    </file>
-    <file name="IntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="IntentionParameter_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
-    </file>
-    <file name="IntentionPriority_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.intentions.behavior.IntentionPriority_BehaviorDescriptor" />
-    </file>
-    <file name="Intention_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.intentions.behavior.Intention_BehaviorDescriptor" />
-    </file>
-    <file name="IsApplicableBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
-    </file>
-    <file name="Parameter_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.intentions.behavior.Parameter_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterizedDescriptionBlock_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedDescriptionBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterizedExecuteBlock_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedExecuteBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterizedIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="QueryBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.intentions.behavior.QueryBlock_BehaviorDescriptor" />
-    </file>
-    <file name="SurroundWithIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.intentions.behavior.SurroundWithIntentionDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,114,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1213877237627">
-    <file name="IntentionDeclaration_Behavior.java">
-      <node id="1213877237627" at="13,78,14,91" concept="6" />
-      <node id="1213877237627" at="13,0,16,0" concept="9" trace="call_getConceptName_1213877237638#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877237627" at="13,78,14,91" />
-      <scope id="1213877237627" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877237627" />
-      </scope>
-      <unit id="1213877237627" at="11,0,17,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" />
-    </file>
     <file name="IntentionDeclaration__BehaviorDescriptor.java">
       <node id="1213877237627" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1213877237627" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -196,9 +127,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1240396432370">
-    <file name="ParameterizedIntentionDeclaration_Behavior.java">
-      <unit id="1240396432370" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_Behavior" />
-    </file>
     <file name="ParameterizedIntentionDeclaration__BehaviorDescriptor.java">
       <node id="1240396432370" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1240396432370" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -273,9 +201,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1262430001741519711">
-    <file name="IsApplicableBlock_Behavior.java">
-      <unit id="1262430001741519711" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_Behavior" />
-    </file>
     <file name="IsApplicableBlock__BehaviorDescriptor.java">
       <node id="1262430001741519711" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741519711" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -386,9 +311,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1262430001741703089">
-    <file name="QueryBlock_Behavior.java">
-      <unit id="1262430001741703089" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.QueryBlock_Behavior" />
-    </file>
     <file name="QueryBlock__BehaviorDescriptor.java">
       <node id="1262430001741703089" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741703089" at="32,0,33,0" concept="8" trace="REGISTRY" />
@@ -510,9 +432,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1262430001741719753">
-    <file name="DescriptionBlock_Behavior.java">
-      <unit id="1262430001741719753" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_Behavior" />
-    </file>
     <file name="DescriptionBlock__BehaviorDescriptor.java">
       <node id="1262430001741719753" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741719753" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -623,9 +542,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1262430001741720159">
-    <file name="ExecuteBlock_Behavior.java">
-      <unit id="1262430001741720159" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_Behavior" />
-    </file>
     <file name="ExecuteBlock__BehaviorDescriptor.java">
       <node id="1262430001741720159" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741720159" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -736,9 +652,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/3044950653914719384">
-    <file name="ChildFilterFunction_Behavior.java">
-      <unit id="3044950653914719384" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_Behavior" />
-    </file>
     <file name="ChildFilterFunction__BehaviorDescriptor.java">
       <node id="3044950653914719384" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914719384" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -841,9 +754,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/3044950653914725211">
-    <file name="ParameterizedExecuteBlock_Behavior.java">
-      <unit id="3044950653914725211" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedExecuteBlock_Behavior" />
-    </file>
     <file name="ParameterizedExecuteBlock__BehaviorDescriptor.java">
       <node id="3044950653914725211" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914725211" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -922,9 +832,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/3044950653914725992">
-    <file name="ParameterizedDescriptionBlock_Behavior.java">
-      <unit id="3044950653914725992" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedDescriptionBlock_Behavior" />
-    </file>
     <file name="ParameterizedDescriptionBlock__BehaviorDescriptor.java">
       <node id="3044950653914725992" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="3044950653914725992" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1003,15 +910,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/6263518417926802282">
-    <file name="BaseIntentionDeclaration_Behavior.java">
-      <node id="6263518417926802282" at="13,84,14,99" concept="6" />
-      <node id="6263518417926802282" at="13,0,16,0" concept="9" trace="call_getConceptName_6263518417926802300#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6263518417926802282" at="13,84,14,99" />
-      <scope id="6263518417926802282" at="13,0,16,0">
-        <var name="__thisNode__" id="6263518417926802282" />
-      </scope>
-      <unit id="6263518417926802282" at="11,0,17,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
-    </file>
     <file name="BaseIntentionDeclaration__BehaviorDescriptor.java">
       <node id="6263518417926802282" at="33,0,34,0" concept="8" trace="CONCEPT" />
       <node id="6263518417926802282" at="34,0,35,0" concept="8" trace="REGISTRY" />
@@ -1168,9 +1066,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/7388353295030898203">
-    <file name="Parameter_Behavior.java">
-      <unit id="7388353295030898203" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.Parameter_Behavior" />
-    </file>
     <file name="Parameter__BehaviorDescriptor.java">
       <node id="7388353295030898203" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="7388353295030898203" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1278,9 +1173,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/7538218632063813121">
-    <file name="Intention_Behavior.java">
-      <unit id="7538218632063813121" at="10,0,13,0" name="jetbrains.mps.lang.intentions.behavior.Intention_Behavior" />
-    </file>
     <file name="Intention__BehaviorDescriptor.java">
       <node id="7538218632063813121" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="7538218632063813121" at="26,0,27,0" concept="8" trace="REGISTRY" />

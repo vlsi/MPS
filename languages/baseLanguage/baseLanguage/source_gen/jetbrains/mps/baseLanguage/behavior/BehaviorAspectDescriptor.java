@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myClassConcept__BehaviorDescriptor = new ClassConcept__BehaviorDescriptor();
@@ -214,628 +214,1034 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myUnknownNameRef__BehaviorDescriptor = new UnknownNameRef__BehaviorDescriptor();
   private final BHDescriptor myUnknownConsCall__BehaviorDescriptor = new UnknownConsCall__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[201];
-    myConceptBehaviorIds[0] = 0xf8c108ca66L;
-    myConceptBehaviorIds[1] = 0xf8c108ca68L;
-    myConceptBehaviorIds[2] = 0xf8c37a7f6eL;
-    myConceptBehaviorIds[3] = 0xf8c37f506dL;
-    myConceptBehaviorIds[4] = 0xf8c37f506fL;
-    myConceptBehaviorIds[5] = 0xf8c77f1e94L;
-    myConceptBehaviorIds[6] = 0xf8c77f1e96L;
-    myConceptBehaviorIds[7] = 0xf8c77f1e98L;
-    myConceptBehaviorIds[8] = 0xf8c78301acL;
-    myConceptBehaviorIds[9] = 0xf8cc56b1fcL;
-    myConceptBehaviorIds[10] = 0xf8cc56b200L;
-    myConceptBehaviorIds[11] = 0xf8cc56b201L;
-    myConceptBehaviorIds[12] = 0xf8cc56b204L;
-    myConceptBehaviorIds[13] = 0xf8cc56b210L;
-    myConceptBehaviorIds[14] = 0xf8cc56b213L;
-    myConceptBehaviorIds[15] = 0xf8cc56b215L;
-    myConceptBehaviorIds[16] = 0xf8cc56b217L;
-    myConceptBehaviorIds[17] = 0xf8cc56b21dL;
-    myConceptBehaviorIds[18] = 0xf8cc59b314L;
-    myConceptBehaviorIds[19] = 0xf8cc67c7efL;
-    myConceptBehaviorIds[20] = 0xf8cc67c7f0L;
-    myConceptBehaviorIds[21] = 0xf8cc67c7f2L;
-    myConceptBehaviorIds[22] = 0xf8cc67c7f3L;
-    myConceptBehaviorIds[23] = 0xf8cc67c7f5L;
-    myConceptBehaviorIds[24] = 0xf8cc67c7faL;
-    myConceptBehaviorIds[25] = 0xf8cc67c7fbL;
-    myConceptBehaviorIds[26] = 0xf8cc67c7feL;
-    myConceptBehaviorIds[27] = 0xf8cc6bf96dL;
-    myConceptBehaviorIds[28] = 0xf93c84351fL;
-    myConceptBehaviorIds[29] = 0xf93d4da00cL;
-    myConceptBehaviorIds[30] = 0xf93d512e1eL;
-    myConceptBehaviorIds[31] = 0xf93d565d10L;
-    myConceptBehaviorIds[32] = 0xf940c80846L;
-    myConceptBehaviorIds[33] = 0xf940cc380dL;
-    myConceptBehaviorIds[34] = 0xf940cd6167L;
-    myConceptBehaviorIds[35] = 0xf940d22479L;
-    myConceptBehaviorIds[36] = 0xf940d327fdL;
-    myConceptBehaviorIds[37] = 0xf940d451a6L;
-    myConceptBehaviorIds[38] = 0xf940d4f826L;
-    myConceptBehaviorIds[39] = 0xf940d5b617L;
-    myConceptBehaviorIds[40] = 0xf940d6513eL;
-    myConceptBehaviorIds[41] = 0xf940d819f7L;
-    myConceptBehaviorIds[42] = 0xf940dabe4aL;
-    myConceptBehaviorIds[43] = 0xf9d78b55aaL;
-    myConceptBehaviorIds[44] = 0xf9e20e303fL;
-    myConceptBehaviorIds[45] = 0xfaa4bf0f2fL;
-    myConceptBehaviorIds[46] = 0xfb4ed32b7fL;
-    myConceptBehaviorIds[47] = 0xfb7c3070eeL;
-    myConceptBehaviorIds[48] = 0xfb8255689fL;
-    myConceptBehaviorIds[49] = 0xfbbebabf09L;
-    myConceptBehaviorIds[50] = 0xfbbebabf0aL;
-    myConceptBehaviorIds[51] = 0xfbced38fcfL;
-    myConceptBehaviorIds[52] = 0xfbced3b82aL;
-    myConceptBehaviorIds[53] = 0xfbcf6bd10dL;
-    myConceptBehaviorIds[54] = 0xfbdeb6fecfL;
-    myConceptBehaviorIds[55] = 0xfbe39a867fL;
-    myConceptBehaviorIds[56] = 0xfbf3043726L;
-    myConceptBehaviorIds[57] = 0xfc092b6b77L;
-    myConceptBehaviorIds[58] = 0xfc367070a5L;
-    myConceptBehaviorIds[59] = 0xfc367388b3L;
-    myConceptBehaviorIds[60] = 0xfc37588bc8L;
-    myConceptBehaviorIds[61] = 0xfe476b758fL;
-    myConceptBehaviorIds[62] = 0xff2bbc13daL;
-    myConceptBehaviorIds[63] = 0x101c66e2c0bL;
-    myConceptBehaviorIds[64] = 0x101d9d3ca30L;
-    myConceptBehaviorIds[65] = 0x101de48bf9eL;
-    myConceptBehaviorIds[66] = 0x101edd46144L;
-    myConceptBehaviorIds[67] = 0x1024639ed74L;
-    myConceptBehaviorIds[68] = 0x102463b447aL;
-    myConceptBehaviorIds[69] = 0x102467229d8L;
-    myConceptBehaviorIds[70] = 0x102cb19a434L;
-    myConceptBehaviorIds[71] = 0x103fb730c14L;
-    myConceptBehaviorIds[72] = 0x108bbca0f48L;
-    myConceptBehaviorIds[73] = 0x10a6933ce33L;
-    myConceptBehaviorIds[74] = 0x10a697996feL;
-    myConceptBehaviorIds[75] = 0x10a698082feL;
-    myConceptBehaviorIds[76] = 0x10ab8473cc5L;
-    myConceptBehaviorIds[77] = 0x10c63f4f3f3L;
-    myConceptBehaviorIds[78] = 0x10c7edba8b3L;
-    myConceptBehaviorIds[79] = 0x10c8d0fac2cL;
-    myConceptBehaviorIds[80] = 0x10c8d509af4L;
-    myConceptBehaviorIds[81] = 0x10c8d53a915L;
-    myConceptBehaviorIds[82] = 0x10cacebf556L;
-    myConceptBehaviorIds[83] = 0x10cb1ac5adeL;
-    myConceptBehaviorIds[84] = 0x10ef01239c9L;
-    myConceptBehaviorIds[85] = 0x10ef02a8c6aL;
-    myConceptBehaviorIds[86] = 0x10ef02cdd1bL;
-    myConceptBehaviorIds[87] = 0x10f0ad8bde4L;
-    myConceptBehaviorIds[88] = 0x10f383e6771L;
-    myConceptBehaviorIds[89] = 0x10f39a56e2fL;
-    myConceptBehaviorIds[90] = 0x10f3ee082d8L;
-    myConceptBehaviorIds[91] = 0x1101757c8faL;
-    myConceptBehaviorIds[92] = 0x1106df1d8d8L;
-    myConceptBehaviorIds[93] = 0x1107e0cb103L;
-    myConceptBehaviorIds[94] = 0x110dae5f4a3L;
-    myConceptBehaviorIds[95] = 0x110dae9d53dL;
-    myConceptBehaviorIds[96] = 0x110daeaa84aL;
-    myConceptBehaviorIds[97] = 0x110e12d8c7dL;
-    myConceptBehaviorIds[98] = 0x110e4207559L;
-    myConceptBehaviorIds[99] = 0x11126b40c25L;
-    myConceptBehaviorIds[100] = 0x1121e2102fdL;
-    myConceptBehaviorIds[101] = 0x11232674988L;
-    myConceptBehaviorIds[102] = 0x112574373bdL;
-    myConceptBehaviorIds[103] = 0x112670d273fL;
-    myConceptBehaviorIds[104] = 0x1127b878882L;
-    myConceptBehaviorIds[105] = 0x1129761e073L;
-    myConceptBehaviorIds[106] = 0x1129778b846L;
-    myConceptBehaviorIds[107] = 0x114a69dc80cL;
-    myConceptBehaviorIds[108] = 0x114a6a17a27L;
-    myConceptBehaviorIds[109] = 0x114a6b4ccabL;
-    myConceptBehaviorIds[110] = 0x114a6be947aL;
-    myConceptBehaviorIds[111] = 0x114a71b1af4L;
-    myConceptBehaviorIds[112] = 0x11638b31955L;
-    myConceptBehaviorIds[113] = 0x116b46a08c4L;
-    myConceptBehaviorIds[114] = 0x116b46ac030L;
-    myConceptBehaviorIds[115] = 0x116b483d77aL;
-    myConceptBehaviorIds[116] = 0x11750ef8265L;
-    myConceptBehaviorIds[117] = 0x1177d44b21bL;
-    myConceptBehaviorIds[118] = 0x117ac2330f4L;
-    myConceptBehaviorIds[119] = 0x117b744dafeL;
-    myConceptBehaviorIds[120] = 0x117b75f36c8L;
-    myConceptBehaviorIds[121] = 0x117b7633177L;
-    myConceptBehaviorIds[122] = 0x117b821eaaeL;
-    myConceptBehaviorIds[123] = 0x117b8f1b18eL;
-    myConceptBehaviorIds[124] = 0x117b9245fc5L;
-    myConceptBehaviorIds[125] = 0x117bd9ac3d9L;
-    myConceptBehaviorIds[126] = 0x117e16a7273L;
-    myConceptBehaviorIds[127] = 0x118154a6332L;
-    myConceptBehaviorIds[128] = 0x11857355952L;
-    myConceptBehaviorIds[129] = 0x118cd59904dL;
-    myConceptBehaviorIds[130] = 0x118ceceb41aL;
-    myConceptBehaviorIds[131] = 0x118f0b909f7L;
-    myConceptBehaviorIds[132] = 0x1197781411dL;
-    myConceptBehaviorIds[133] = 0x11a3afa8c0dL;
-    myConceptBehaviorIds[134] = 0x11a59b0fbceL;
-    myConceptBehaviorIds[135] = 0x11adecdb4f0L;
-    myConceptBehaviorIds[136] = 0x11aded05fe6L;
-    myConceptBehaviorIds[137] = 0x11b0d00332cL;
-    myConceptBehaviorIds[138] = 0x11c08f42e7bL;
-    myConceptBehaviorIds[139] = 0x11c60bb0a14L;
-    myConceptBehaviorIds[140] = 0x11c7538039dL;
-    myConceptBehaviorIds[141] = 0x11c8f444674L;
-    myConceptBehaviorIds[142] = 0x11cfb3b82a4L;
-    myConceptBehaviorIds[143] = 0x11d0053f19bL;
-    myConceptBehaviorIds[144] = 0x11d19eede01L;
-    myConceptBehaviorIds[145] = 0x11d19ef4652L;
-    myConceptBehaviorIds[146] = 0x11d19ef69abL;
-    myConceptBehaviorIds[147] = 0x11d2ea8a339L;
-    myConceptBehaviorIds[148] = 0x11d47da71ecL;
-    myConceptBehaviorIds[149] = 0x11d47db1c91L;
-    myConceptBehaviorIds[150] = 0x11d47dc0e3bL;
-    myConceptBehaviorIds[151] = 0x11d47dc8da1L;
-    myConceptBehaviorIds[152] = 0x11d486a1d9eL;
-    myConceptBehaviorIds[153] = 0x11d6cde9fb9L;
-    myConceptBehaviorIds[154] = 0x11d6ce051dfL;
-    myConceptBehaviorIds[155] = 0x11ef4675fccL;
-    myConceptBehaviorIds[156] = 0x11f4b6b2435L;
-    myConceptBehaviorIds[157] = 0x120237c2cebL;
-    myConceptBehaviorIds[158] = 0x1206e6cc291L;
-    myConceptBehaviorIds[159] = 0x1206e9046e6L;
-    myConceptBehaviorIds[160] = 0x1208f458d37L;
-    myConceptBehaviorIds[161] = 0x120a46df580L;
-    myConceptBehaviorIds[162] = 0x120a472f0e8L;
-    myConceptBehaviorIds[163] = 0x120a4c1f269L;
-    myConceptBehaviorIds[164] = 0x121119ae5ffL;
-    myConceptBehaviorIds[165] = 0x470fa5a7b03ac59L;
-    myConceptBehaviorIds[166] = 0xe34de34746464f2L;
-    myConceptBehaviorIds[167] = 0xede3fe8510255edL;
-    myConceptBehaviorIds[168] = 0x1458378889e6d166L;
-    myConceptBehaviorIds[169] = 0x182da1771714863eL;
-    myConceptBehaviorIds[170] = 0x245faa02186fc5d6L;
-    myConceptBehaviorIds[171] = 0x245faa02186fc7b5L;
-    myConceptBehaviorIds[172] = 0x2463999e524f3bf5L;
-    myConceptBehaviorIds[173] = 0x2a8fe0cadfaa8af2L;
-    myConceptBehaviorIds[174] = 0x2d45f01afccba89cL;
-    myConceptBehaviorIds[175] = 0x2d45f01afccba89dL;
-    myConceptBehaviorIds[176] = 0x2dda7700ec3ae154L;
-    myConceptBehaviorIds[177] = 0x32175ac2e6fcc181L;
-    myConceptBehaviorIds[178] = 0x3399756d2c03d422L;
-    myConceptBehaviorIds[179] = 0x38ff5220e0ac710dL;
-    myConceptBehaviorIds[180] = 0x3ac89e1b122cd5c2L;
-    myConceptBehaviorIds[181] = 0x3b418722717710b4L;
-    myConceptBehaviorIds[182] = 0x3b7a2005a14cfe5eL;
-    myConceptBehaviorIds[183] = 0x3ff8b7a0d94242e1L;
-    myConceptBehaviorIds[184] = 0x494547eeedc219b9L;
-    myConceptBehaviorIds[185] = 0x515d7a8d927e9fb3L;
-    myConceptBehaviorIds[186] = 0x53f7c33f069862f2L;
-    myConceptBehaviorIds[187] = 0x57d533a7af15ed3aL;
-    myConceptBehaviorIds[188] = 0x57d533a7af15ed3bL;
-    myConceptBehaviorIds[189] = 0x57d533a7af15ed3dL;
-    myConceptBehaviorIds[190] = 0x5a98df4004080866L;
-    myConceptBehaviorIds[191] = 0x66c71d82c2eb113dL;
-    myConceptBehaviorIds[192] = 0x66c71d82c2eb113eL;
-    myConceptBehaviorIds[193] = 0x66c71d82c2eb7f7eL;
-    myConceptBehaviorIds[194] = 0x6c0ba864df016178L;
-    myConceptBehaviorIds[195] = 0x6c6b6a1e379f9404L;
-    myConceptBehaviorIds[196] = 0x6fea7de6103549b1L;
-    myConceptBehaviorIds[197] = 0x70ea1dc4c5721865L;
-    myConceptBehaviorIds[198] = 0x72de18bba2dc2a73L;
-    myConceptBehaviorIds[199] = 0x759937a5973279b7L;
-    myConceptBehaviorIds[200] = 0x7e4a5cff51167b74L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myClassConcept__BehaviorDescriptor;
-      case 1:
-        return myFieldDeclaration__BehaviorDescriptor;
-      case 2:
-        return myVariableDeclaration__BehaviorDescriptor;
-      case 3:
-        return myType__BehaviorDescriptor;
-      case 4:
-        return myExpression__BehaviorDescriptor;
-      case 5:
-        return myParameterDeclaration__BehaviorDescriptor;
-      case 6:
-        return myAssignmentExpression__BehaviorDescriptor;
-      case 7:
-        return myVariableReference__BehaviorDescriptor;
-      case 8:
-        return myBaseMethodCall__BehaviorDescriptor;
-      case 9:
-        return myBaseMethodDeclaration__BehaviorDescriptor;
-      case 10:
-        return myStatementList__BehaviorDescriptor;
-      case 11:
-        return myBooleanConstant__BehaviorDescriptor;
-      case 12:
-        return myConstructorDeclaration__BehaviorDescriptor;
-      case 13:
-        return myEqualsExpression__BehaviorDescriptor;
-      case 14:
-        return myExpressionStatement__BehaviorDescriptor;
-      case 15:
-        return myStatement__BehaviorDescriptor;
-      case 16:
-        return myIfStatement__BehaviorDescriptor;
-      case 17:
-        return myInstanceMethodDeclaration__BehaviorDescriptor;
-      case 18:
-        return myIntegerConstant__BehaviorDescriptor;
-      case 19:
-        return myLocalVariableDeclaration__BehaviorDescriptor;
-      case 20:
-        return myLocalVariableDeclarationStatement__BehaviorDescriptor;
-      case 21:
-        return myLocalVariableReference__BehaviorDescriptor;
-      case 22:
-        return myLongType__BehaviorDescriptor;
-      case 23:
-        return myMinusExpression__BehaviorDescriptor;
-      case 24:
-        return myParameterReference__BehaviorDescriptor;
-      case 25:
-        return myPlusExpression__BehaviorDescriptor;
-      case 26:
-        return myReturnStatement__BehaviorDescriptor;
-      case 27:
-        return myVoidType__BehaviorDescriptor;
-      case 28:
-        return myStaticFieldDeclaration__BehaviorDescriptor;
-      case 29:
-        return myThisExpression__BehaviorDescriptor;
-      case 30:
-        return mySuperConstructorInvocation__BehaviorDescriptor;
-      case 31:
-        return myStringLiteral__BehaviorDescriptor;
-      case 32:
-        return myStaticFieldReference__BehaviorDescriptor;
-      case 33:
-        return myShortType__BehaviorDescriptor;
-      case 34:
-        return myNullLiteral__BehaviorDescriptor;
-      case 35:
-        return myIntegerType__BehaviorDescriptor;
-      case 36:
-        return myFloatType__BehaviorDescriptor;
-      case 37:
-        return myDoubleType__BehaviorDescriptor;
-      case 38:
-        return myCharType__BehaviorDescriptor;
-      case 39:
-        return myByteType__BehaviorDescriptor;
-      case 40:
-        return myBooleanType__BehaviorDescriptor;
-      case 41:
-        return myArrayType__BehaviorDescriptor;
-      case 42:
-        return myCastExpression__BehaviorDescriptor;
-      case 43:
-        return mySuperMethodCall__BehaviorDescriptor;
-      case 44:
-        return myNotEqualsExpression__BehaviorDescriptor;
-      case 45:
-        return myWhileStatement__BehaviorDescriptor;
-      case 46:
-        return myParenthesizedExpression__BehaviorDescriptor;
-      case 47:
-        return myAndExpression__BehaviorDescriptor;
-      case 48:
-        return myOrExpression__BehaviorDescriptor;
-      case 49:
-        return myStaticMethodCall__BehaviorDescriptor;
-      case 50:
-        return myStaticMethodDeclaration__BehaviorDescriptor;
-      case 51:
-        return myGreaterThanExpression__BehaviorDescriptor;
-      case 52:
-        return myLessThanExpression__BehaviorDescriptor;
-      case 53:
-        return myNotExpression__BehaviorDescriptor;
-      case 54:
-        return myBinaryOperation__BehaviorDescriptor;
-      case 55:
-        return myBreakStatement__BehaviorDescriptor;
-      case 56:
-        return myContinueStatement__BehaviorDescriptor;
-      case 57:
-        return myBlockStatement__BehaviorDescriptor;
-      case 58:
-        return myEnumClass__BehaviorDescriptor;
-      case 59:
-        return myEnumConstantDeclaration__BehaviorDescriptor;
-      case 60:
-        return myEnumConstantReference__BehaviorDescriptor;
-      case 61:
-        return myMulExpression__BehaviorDescriptor;
-      case 62:
-        return myDivExpression__BehaviorDescriptor;
-      case 63:
-        return myConceptFunctionParameter__BehaviorDescriptor;
-      case 64:
-        return myClassifier__BehaviorDescriptor;
-      case 65:
-        return myClassifierType__BehaviorDescriptor;
-      case 66:
-        return myInterface__BehaviorDescriptor;
-      case 67:
-        return myTypeVariableDeclaration__BehaviorDescriptor;
-      case 68:
-        return myGenericDeclaration__BehaviorDescriptor;
-      case 69:
-        return myTypeVariableReference__BehaviorDescriptor;
-      case 70:
-        return myFloatingPointConstant__BehaviorDescriptor;
-      case 71:
-        return myClassifierClassExpression__BehaviorDescriptor;
-      case 72:
-        return myConceptFunction__BehaviorDescriptor;
-      case 73:
-        return myForeachStatement__BehaviorDescriptor;
-      case 74:
-        return myAbstractForStatement__BehaviorDescriptor;
-      case 75:
-        return myForStatement__BehaviorDescriptor;
-      case 76:
-        return myGenericNewExpression__BehaviorDescriptor;
-      case 77:
-        return myClosure__BehaviorDescriptor;
-      case 78:
-        return myClosureParameterReference__BehaviorDescriptor;
-      case 79:
-        return myGreaterThanOrEqualsExpression__BehaviorDescriptor;
-      case 80:
-        return myRemExpression__BehaviorDescriptor;
-      case 81:
-        return myLessThanOrEqualsExpression__BehaviorDescriptor;
-      case 82:
-        return myTryStatement__BehaviorDescriptor;
-      case 83:
-        return myAbstractLoopStatement__BehaviorDescriptor;
-      case 84:
-        return myTernaryOperatorExpression__BehaviorDescriptor;
-      case 85:
-        return mySwitchStatement__BehaviorDescriptor;
-      case 86:
-        return mySwitchCase__BehaviorDescriptor;
-      case 87:
-        return myPrimitiveType__BehaviorDescriptor;
-      case 88:
-        return myTryCatchStatement__BehaviorDescriptor;
-      case 89:
-        return myCatchClause__BehaviorDescriptor;
-      case 90:
-        return myThrowStatement__BehaviorDescriptor;
-      case 91:
-        return myRemarkStatement__BehaviorDescriptor;
-      case 92:
-        return mySynchronizedStatement__BehaviorDescriptor;
-      case 93:
-        return myAnonymousClass__BehaviorDescriptor;
-      case 94:
-        return myWildCardType__BehaviorDescriptor;
-      case 95:
-        return myLowerBoundType__BehaviorDescriptor;
-      case 96:
-        return myUpperBoundType__BehaviorDescriptor;
-      case 97:
-        return myLocalStaticFieldReference__BehaviorDescriptor;
-      case 98:
-        return myLocalStaticMethodCall__BehaviorDescriptor;
-      case 99:
-        return myArrayAccessExpression__BehaviorDescriptor;
-      case 100:
-        return myCommentedStatementsBlock__BehaviorDescriptor;
-      case 101:
-        return myDoWhileStatement__BehaviorDescriptor;
-      case 102:
-        return myClassifierMember__BehaviorDescriptor;
-      case 103:
-        return myIVisible__BehaviorDescriptor;
-      case 104:
-        return myThisConstructorInvocation__BehaviorDescriptor;
-      case 105:
-        return myHexIntegerLiteral__BehaviorDescriptor;
-      case 106:
-        return myIntegerLiteral__BehaviorDescriptor;
-      case 107:
-        return myAnnotation__BehaviorDescriptor;
-      case 108:
-        return myAnnotationMethodDeclaration__BehaviorDescriptor;
-      case 109:
-        return myAnnotationInstance__BehaviorDescriptor;
-      case 110:
-        return myHasAnnotation__BehaviorDescriptor;
-      case 111:
-        return myAnnotationInstanceValue__BehaviorDescriptor;
-      case 112:
-        return myIMemberContainer__BehaviorDescriptor;
-      case 113:
-        return myDotExpression__BehaviorDescriptor;
-      case 114:
-        return myIOperation__BehaviorDescriptor;
-      case 115:
-        return myFieldReferenceOperation__BehaviorDescriptor;
-      case 116:
-        return myIStatementListContainer__BehaviorDescriptor;
-      case 117:
-        return myCharConstant__BehaviorDescriptor;
-      case 118:
-        return myTypeDerivable__BehaviorDescriptor;
-      case 119:
-        return myProperty__BehaviorDescriptor;
-      case 120:
-        return myPropertyImplementation__BehaviorDescriptor;
-      case 121:
-        return myDefaultPropertyImplementation__BehaviorDescriptor;
-      case 122:
-        return myPropertyReference__BehaviorDescriptor;
-      case 123:
-        return myCustomPropertyImplementation__BehaviorDescriptor;
-      case 124:
-        return myGetAccessor__BehaviorDescriptor;
-      case 125:
-        return mySetAccessor__BehaviorDescriptor;
-      case 126:
-        return myDefaultSetAccessor__BehaviorDescriptor;
-      case 127:
-        return myInstanceMethodCallOperation__BehaviorDescriptor;
-      case 128:
-        return myIMethodCall__BehaviorDescriptor;
-      case 129:
-        return myIInternalType__BehaviorDescriptor;
-      case 130:
-        return myElsifClause__BehaviorDescriptor;
-      case 131:
-        return myInstanceInitializer__BehaviorDescriptor;
-      case 132:
-        return myArrayLengthOperation__BehaviorDescriptor;
-      case 133:
-        return myIValidIdentifier__BehaviorDescriptor;
-      case 134:
-        return myClassCreator__BehaviorDescriptor;
-      case 135:
-        return myPostfixIncrementExpression__BehaviorDescriptor;
-      case 136:
-        return myPostfixDecrementExpression__BehaviorDescriptor;
-      case 137:
-        return myBaseAssignmentExpression__BehaviorDescriptor;
-      case 138:
-        return myVariableArityType__BehaviorDescriptor;
-      case 139:
-        return myIExtractMethodAvailable__BehaviorDescriptor;
-      case 140:
-        return myStaticInitializer__BehaviorDescriptor;
-      case 141:
-        return myIStaticContainerForMethods__BehaviorDescriptor;
-      case 142:
-        return myIVariableAssignment__BehaviorDescriptor;
-      case 143:
-        return myUsingStatement__BehaviorDescriptor;
-      case 144:
-        return myBitwiseAndExpression__BehaviorDescriptor;
-      case 145:
-        return myBitwiseOrExpression__BehaviorDescriptor;
-      case 146:
-        return myBitwiseXorExpression__BehaviorDescriptor;
-      case 147:
-        return myIBLDeprecatable__BehaviorDescriptor;
-      case 148:
-        return myStringType__BehaviorDescriptor;
-      case 149:
-        return myNPENotEqualsExpression__BehaviorDescriptor;
-      case 150:
-        return myNPEEqualsExpression__BehaviorDescriptor;
-      case 151:
-        return myBaseStringOperation__BehaviorDescriptor;
-      case 152:
-        return myIParameter__BehaviorDescriptor;
-      case 153:
-        return myShiftLeftExpression__BehaviorDescriptor;
-      case 154:
-        return myShiftRightExpression__BehaviorDescriptor;
-      case 155:
-        return myCommentedStatement__BehaviorDescriptor;
-      case 156:
-        return myTypeAnnotable__BehaviorDescriptor;
-      case 157:
-        return myIContainsStatementList__BehaviorDescriptor;
-      case 158:
-        return myILocalVariableElement__BehaviorDescriptor;
-      case 159:
-        return myILocalVariableElementList__BehaviorDescriptor;
-      case 160:
-        return myIMethodLike__BehaviorDescriptor;
-      case 161:
-        return myPrefixIncrementExpression__BehaviorDescriptor;
-      case 162:
-        return myPrefixDecrementExpression__BehaviorDescriptor;
-      case 163:
-        return myAbstractUnaryNumberOperation__BehaviorDescriptor;
-      case 164:
-        return myConstructorInvocationStatement__BehaviorDescriptor;
-      case 165:
-        return myShiftRightUnsignedExpression__BehaviorDescriptor;
-      case 166:
-        return myIVariableReference__BehaviorDescriptor;
-      case 167:
-        return myIIncompleteParen__BehaviorDescriptor;
-      case 168:
-        return myPlaceholderMember__BehaviorDescriptor;
-      case 169:
-        return myIBinaryLike__BehaviorDescriptor;
-      case 170:
-        return myUnknownLocalCall__BehaviorDescriptor;
-      case 171:
-        return myUnknownDotCall__BehaviorDescriptor;
-      case 172:
-        return myPropertyValueReference__BehaviorDescriptor;
-      case 173:
-        return myLocalInstanceMethodCall__BehaviorDescriptor;
-      case 174:
-        return myILocalDeclaration__BehaviorDescriptor;
-      case 175:
-        return myILocalReference__BehaviorDescriptor;
-      case 176:
-        return myUnknownNew__BehaviorDescriptor;
-      case 177:
-        return myIncompleteMemberDeclaration__BehaviorDescriptor;
-      case 178:
-        return myITryCatchStatement__BehaviorDescriptor;
-      case 179:
-        return myIGenericType__BehaviorDescriptor;
-      case 180:
-        return myIConditional__BehaviorDescriptor;
-      case 181:
-        return myLongLiteral__BehaviorDescriptor;
-      case 182:
-        return myCustomSetterPropertyImplementation__BehaviorDescriptor;
-      case 183:
-        return myIWillBeClassifier__BehaviorDescriptor;
-      case 184:
-        return myFloatingPointFloatConstant__BehaviorDescriptor;
-      case 185:
-        return myLocalPropertyReference__BehaviorDescriptor;
-      case 186:
-        return myJavaImports__BehaviorDescriptor;
-      case 187:
-        return mySingleLineComment__BehaviorDescriptor;
-      case 188:
-        return myCommentPart__BehaviorDescriptor;
-      case 189:
-        return myTextCommentPart__BehaviorDescriptor;
-      case 190:
-        return myTokens__BehaviorDescriptor;
-      case 191:
-        return myIClassifier__BehaviorDescriptor;
-      case 192:
-        return myIClassifierMember__BehaviorDescriptor;
-      case 193:
-        return myIClassifierType__BehaviorDescriptor;
-      case 194:
-        return myLocalInstanceFieldReference__BehaviorDescriptor;
-      case 195:
-        return myLocalMethodCall__BehaviorDescriptor;
-      case 196:
-        return myUnaryMinus__BehaviorDescriptor;
-      case 197:
-        return myIYetUnresolved__BehaviorDescriptor;
-      case 198:
-        return myITypeApplicable__BehaviorDescriptor;
-      case 199:
-        return myUnknownNameRef__BehaviorDescriptor;
-      case 200:
-        return myUnknownConsCall__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0wh.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractForStatement__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAbstractLoopStatement__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myAbstractUnaryNumberOperation__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myAndExpression__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myAnnotationInstance__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myAnnotationInstanceValue__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myAnnotationMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myAnonymousClass__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myArrayAccessExpression__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myArrayLengthOperation__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myArrayType__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myAssignmentExpression__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myBaseAssignmentExpression__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myBaseMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myBaseMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myBaseStringOperation__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myBinaryOperation__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myBitwiseAndExpression__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myBitwiseOrExpression__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myBitwiseXorExpression__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myBlockStatement__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myBooleanConstant__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myBooleanType__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myBreakStatement__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myByteType__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myCastExpression__BehaviorDescriptor;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myCatchClause__BehaviorDescriptor;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myCharConstant__BehaviorDescriptor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myCharType__BehaviorDescriptor;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myClassConcept__BehaviorDescriptor;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myClassCreator__BehaviorDescriptor;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myClassifier__BehaviorDescriptor;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myClassifierClassExpression__BehaviorDescriptor;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myClassifierMember__BehaviorDescriptor;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myClassifierType__BehaviorDescriptor;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myClosure__BehaviorDescriptor;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myClosureParameterReference__BehaviorDescriptor;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myCommentPart__BehaviorDescriptor;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myCommentedStatement__BehaviorDescriptor;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myCommentedStatementsBlock__BehaviorDescriptor;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptFunction__BehaviorDescriptor;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptFunctionParameter__BehaviorDescriptor;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConstructorDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConstructorInvocationStatement__BehaviorDescriptor;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myContinueStatement__BehaviorDescriptor;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myCustomPropertyImplementation__BehaviorDescriptor;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myCustomSetterPropertyImplementation__BehaviorDescriptor;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myDefaultPropertyImplementation__BehaviorDescriptor;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myDefaultSetAccessor__BehaviorDescriptor;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myDivExpression__BehaviorDescriptor;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myDoWhileStatement__BehaviorDescriptor;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myDotExpression__BehaviorDescriptor;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myDoubleType__BehaviorDescriptor;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myElsifClause__BehaviorDescriptor;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myEnumClass__BehaviorDescriptor;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myEnumConstantDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myEnumConstantReference__BehaviorDescriptor;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myExpression__BehaviorDescriptor;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myExpressionStatement__BehaviorDescriptor;
+          }
+          break;
+        case 61:
+          if (true) {
+            return myFieldDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 62:
+          if (true) {
+            return myFieldReferenceOperation__BehaviorDescriptor;
+          }
+          break;
+        case 63:
+          if (true) {
+            return myFloatType__BehaviorDescriptor;
+          }
+          break;
+        case 64:
+          if (true) {
+            return myFloatingPointConstant__BehaviorDescriptor;
+          }
+          break;
+        case 65:
+          if (true) {
+            return myFloatingPointFloatConstant__BehaviorDescriptor;
+          }
+          break;
+        case 66:
+          if (true) {
+            return myForStatement__BehaviorDescriptor;
+          }
+          break;
+        case 67:
+          if (true) {
+            return myForeachStatement__BehaviorDescriptor;
+          }
+          break;
+        case 68:
+          if (true) {
+            return myGenericDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 69:
+          if (true) {
+            return myGenericNewExpression__BehaviorDescriptor;
+          }
+          break;
+        case 70:
+          if (true) {
+            return myGetAccessor__BehaviorDescriptor;
+          }
+          break;
+        case 71:
+          if (true) {
+            return myGreaterThanExpression__BehaviorDescriptor;
+          }
+          break;
+        case 72:
+          if (true) {
+            return myGreaterThanOrEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 73:
+          if (true) {
+            return myHasAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 74:
+          if (true) {
+            return myHexIntegerLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 75:
+          if (true) {
+            return myIBLDeprecatable__BehaviorDescriptor;
+          }
+          break;
+        case 76:
+          if (true) {
+            return myIBinaryLike__BehaviorDescriptor;
+          }
+          break;
+        case 77:
+          if (true) {
+            return myIClassifier__BehaviorDescriptor;
+          }
+          break;
+        case 78:
+          if (true) {
+            return myIClassifierMember__BehaviorDescriptor;
+          }
+          break;
+        case 79:
+          if (true) {
+            return myIClassifierType__BehaviorDescriptor;
+          }
+          break;
+        case 80:
+          if (true) {
+            return myIConditional__BehaviorDescriptor;
+          }
+          break;
+        case 81:
+          if (true) {
+            return myIContainsStatementList__BehaviorDescriptor;
+          }
+          break;
+        case 82:
+          if (true) {
+            return myIExtractMethodAvailable__BehaviorDescriptor;
+          }
+          break;
+        case 83:
+          if (true) {
+            return myIGenericType__BehaviorDescriptor;
+          }
+          break;
+        case 84:
+          if (true) {
+            return myIIncompleteParen__BehaviorDescriptor;
+          }
+          break;
+        case 85:
+          if (true) {
+            return myIInternalType__BehaviorDescriptor;
+          }
+          break;
+        case 86:
+          if (true) {
+            return myILocalDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 87:
+          if (true) {
+            return myILocalReference__BehaviorDescriptor;
+          }
+          break;
+        case 88:
+          if (true) {
+            return myILocalVariableElement__BehaviorDescriptor;
+          }
+          break;
+        case 89:
+          if (true) {
+            return myILocalVariableElementList__BehaviorDescriptor;
+          }
+          break;
+        case 90:
+          if (true) {
+            return myIMemberContainer__BehaviorDescriptor;
+          }
+          break;
+        case 91:
+          if (true) {
+            return myIMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 92:
+          if (true) {
+            return myIMethodLike__BehaviorDescriptor;
+          }
+          break;
+        case 93:
+          if (true) {
+            return myIOperation__BehaviorDescriptor;
+          }
+          break;
+        case 94:
+          if (true) {
+            return myIParameter__BehaviorDescriptor;
+          }
+          break;
+        case 95:
+          if (true) {
+            return myIStatementListContainer__BehaviorDescriptor;
+          }
+          break;
+        case 96:
+          if (true) {
+            return myIStaticContainerForMethods__BehaviorDescriptor;
+          }
+          break;
+        case 97:
+          if (true) {
+            return myITryCatchStatement__BehaviorDescriptor;
+          }
+          break;
+        case 98:
+          if (true) {
+            return myITypeApplicable__BehaviorDescriptor;
+          }
+          break;
+        case 99:
+          if (true) {
+            return myIValidIdentifier__BehaviorDescriptor;
+          }
+          break;
+        case 100:
+          if (true) {
+            return myIVariableAssignment__BehaviorDescriptor;
+          }
+          break;
+        case 101:
+          if (true) {
+            return myIVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 102:
+          if (true) {
+            return myIVisible__BehaviorDescriptor;
+          }
+          break;
+        case 103:
+          if (true) {
+            return myIWillBeClassifier__BehaviorDescriptor;
+          }
+          break;
+        case 104:
+          if (true) {
+            return myIYetUnresolved__BehaviorDescriptor;
+          }
+          break;
+        case 105:
+          if (true) {
+            return myIfStatement__BehaviorDescriptor;
+          }
+          break;
+        case 106:
+          if (true) {
+            return myIncompleteMemberDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 107:
+          if (true) {
+            return myInstanceInitializer__BehaviorDescriptor;
+          }
+          break;
+        case 108:
+          if (true) {
+            return myInstanceMethodCallOperation__BehaviorDescriptor;
+          }
+          break;
+        case 109:
+          if (true) {
+            return myInstanceMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 110:
+          if (true) {
+            return myIntegerConstant__BehaviorDescriptor;
+          }
+          break;
+        case 111:
+          if (true) {
+            return myIntegerLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 112:
+          if (true) {
+            return myIntegerType__BehaviorDescriptor;
+          }
+          break;
+        case 113:
+          if (true) {
+            return myInterface__BehaviorDescriptor;
+          }
+          break;
+        case 114:
+          if (true) {
+            return myJavaImports__BehaviorDescriptor;
+          }
+          break;
+        case 115:
+          if (true) {
+            return myLessThanExpression__BehaviorDescriptor;
+          }
+          break;
+        case 116:
+          if (true) {
+            return myLessThanOrEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 117:
+          if (true) {
+            return myLocalInstanceFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 118:
+          if (true) {
+            return myLocalInstanceMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 119:
+          if (true) {
+            return myLocalMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 120:
+          if (true) {
+            return myLocalPropertyReference__BehaviorDescriptor;
+          }
+          break;
+        case 121:
+          if (true) {
+            return myLocalStaticFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 122:
+          if (true) {
+            return myLocalStaticMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 123:
+          if (true) {
+            return myLocalVariableDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 124:
+          if (true) {
+            return myLocalVariableDeclarationStatement__BehaviorDescriptor;
+          }
+          break;
+        case 125:
+          if (true) {
+            return myLocalVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 126:
+          if (true) {
+            return myLongLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 127:
+          if (true) {
+            return myLongType__BehaviorDescriptor;
+          }
+          break;
+        case 128:
+          if (true) {
+            return myLowerBoundType__BehaviorDescriptor;
+          }
+          break;
+        case 129:
+          if (true) {
+            return myMinusExpression__BehaviorDescriptor;
+          }
+          break;
+        case 130:
+          if (true) {
+            return myMulExpression__BehaviorDescriptor;
+          }
+          break;
+        case 131:
+          if (true) {
+            return myNPEEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 132:
+          if (true) {
+            return myNPENotEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 133:
+          if (true) {
+            return myNotEqualsExpression__BehaviorDescriptor;
+          }
+          break;
+        case 134:
+          if (true) {
+            return myNotExpression__BehaviorDescriptor;
+          }
+          break;
+        case 135:
+          if (true) {
+            return myNullLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 136:
+          if (true) {
+            return myOrExpression__BehaviorDescriptor;
+          }
+          break;
+        case 137:
+          if (true) {
+            return myParameterDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 138:
+          if (true) {
+            return myParameterReference__BehaviorDescriptor;
+          }
+          break;
+        case 139:
+          if (true) {
+            return myParenthesizedExpression__BehaviorDescriptor;
+          }
+          break;
+        case 140:
+          if (true) {
+            return myPlaceholderMember__BehaviorDescriptor;
+          }
+          break;
+        case 141:
+          if (true) {
+            return myPlusExpression__BehaviorDescriptor;
+          }
+          break;
+        case 142:
+          if (true) {
+            return myPostfixDecrementExpression__BehaviorDescriptor;
+          }
+          break;
+        case 143:
+          if (true) {
+            return myPostfixIncrementExpression__BehaviorDescriptor;
+          }
+          break;
+        case 144:
+          if (true) {
+            return myPrefixDecrementExpression__BehaviorDescriptor;
+          }
+          break;
+        case 145:
+          if (true) {
+            return myPrefixIncrementExpression__BehaviorDescriptor;
+          }
+          break;
+        case 146:
+          if (true) {
+            return myPrimitiveType__BehaviorDescriptor;
+          }
+          break;
+        case 147:
+          if (true) {
+            return myProperty__BehaviorDescriptor;
+          }
+          break;
+        case 148:
+          if (true) {
+            return myPropertyImplementation__BehaviorDescriptor;
+          }
+          break;
+        case 149:
+          if (true) {
+            return myPropertyReference__BehaviorDescriptor;
+          }
+          break;
+        case 150:
+          if (true) {
+            return myPropertyValueReference__BehaviorDescriptor;
+          }
+          break;
+        case 151:
+          if (true) {
+            return myRemExpression__BehaviorDescriptor;
+          }
+          break;
+        case 152:
+          if (true) {
+            return myRemarkStatement__BehaviorDescriptor;
+          }
+          break;
+        case 153:
+          if (true) {
+            return myReturnStatement__BehaviorDescriptor;
+          }
+          break;
+        case 154:
+          if (true) {
+            return mySetAccessor__BehaviorDescriptor;
+          }
+          break;
+        case 155:
+          if (true) {
+            return myShiftLeftExpression__BehaviorDescriptor;
+          }
+          break;
+        case 156:
+          if (true) {
+            return myShiftRightExpression__BehaviorDescriptor;
+          }
+          break;
+        case 157:
+          if (true) {
+            return myShiftRightUnsignedExpression__BehaviorDescriptor;
+          }
+          break;
+        case 158:
+          if (true) {
+            return myShortType__BehaviorDescriptor;
+          }
+          break;
+        case 159:
+          if (true) {
+            return mySingleLineComment__BehaviorDescriptor;
+          }
+          break;
+        case 160:
+          if (true) {
+            return myStatement__BehaviorDescriptor;
+          }
+          break;
+        case 161:
+          if (true) {
+            return myStatementList__BehaviorDescriptor;
+          }
+          break;
+        case 162:
+          if (true) {
+            return myStaticFieldDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 163:
+          if (true) {
+            return myStaticFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 164:
+          if (true) {
+            return myStaticInitializer__BehaviorDescriptor;
+          }
+          break;
+        case 165:
+          if (true) {
+            return myStaticMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 166:
+          if (true) {
+            return myStaticMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 167:
+          if (true) {
+            return myStringLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 168:
+          if (true) {
+            return myStringType__BehaviorDescriptor;
+          }
+          break;
+        case 169:
+          if (true) {
+            return mySuperConstructorInvocation__BehaviorDescriptor;
+          }
+          break;
+        case 170:
+          if (true) {
+            return mySuperMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 171:
+          if (true) {
+            return mySwitchCase__BehaviorDescriptor;
+          }
+          break;
+        case 172:
+          if (true) {
+            return mySwitchStatement__BehaviorDescriptor;
+          }
+          break;
+        case 173:
+          if (true) {
+            return mySynchronizedStatement__BehaviorDescriptor;
+          }
+          break;
+        case 174:
+          if (true) {
+            return myTernaryOperatorExpression__BehaviorDescriptor;
+          }
+          break;
+        case 175:
+          if (true) {
+            return myTextCommentPart__BehaviorDescriptor;
+          }
+          break;
+        case 176:
+          if (true) {
+            return myThisConstructorInvocation__BehaviorDescriptor;
+          }
+          break;
+        case 177:
+          if (true) {
+            return myThisExpression__BehaviorDescriptor;
+          }
+          break;
+        case 178:
+          if (true) {
+            return myThrowStatement__BehaviorDescriptor;
+          }
+          break;
+        case 179:
+          if (true) {
+            return myTokens__BehaviorDescriptor;
+          }
+          break;
+        case 180:
+          if (true) {
+            return myTryCatchStatement__BehaviorDescriptor;
+          }
+          break;
+        case 181:
+          if (true) {
+            return myTryStatement__BehaviorDescriptor;
+          }
+          break;
+        case 182:
+          if (true) {
+            return myType__BehaviorDescriptor;
+          }
+          break;
+        case 183:
+          if (true) {
+            return myTypeAnnotable__BehaviorDescriptor;
+          }
+          break;
+        case 184:
+          if (true) {
+            return myTypeDerivable__BehaviorDescriptor;
+          }
+          break;
+        case 185:
+          if (true) {
+            return myTypeVariableDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 186:
+          if (true) {
+            return myTypeVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 187:
+          if (true) {
+            return myUnaryMinus__BehaviorDescriptor;
+          }
+          break;
+        case 188:
+          if (true) {
+            return myUnknownConsCall__BehaviorDescriptor;
+          }
+          break;
+        case 189:
+          if (true) {
+            return myUnknownDotCall__BehaviorDescriptor;
+          }
+          break;
+        case 190:
+          if (true) {
+            return myUnknownLocalCall__BehaviorDescriptor;
+          }
+          break;
+        case 191:
+          if (true) {
+            return myUnknownNameRef__BehaviorDescriptor;
+          }
+          break;
+        case 192:
+          if (true) {
+            return myUnknownNew__BehaviorDescriptor;
+          }
+          break;
+        case 193:
+          if (true) {
+            return myUpperBoundType__BehaviorDescriptor;
+          }
+          break;
+        case 194:
+          if (true) {
+            return myUsingStatement__BehaviorDescriptor;
+          }
+          break;
+        case 195:
+          if (true) {
+            return myVariableArityType__BehaviorDescriptor;
+          }
+          break;
+        case 196:
+          if (true) {
+            return myVariableDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 197:
+          if (true) {
+            return myVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 198:
+          if (true) {
+            return myVoidType__BehaviorDescriptor;
+          }
+          break;
+        case 199:
+          if (true) {
+            return myWhileStatement__BehaviorDescriptor;
+          }
+          break;
+        case 200:
+          if (true) {
+            return myWildCardType__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0wh = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, "jetbrains.mps.baseLanguage.structure.AbstractForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c78301acL, "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dc8da1L, "jetbrains.mps.baseLanguage.structure.BaseStringOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19eede01L, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef4652L, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef69abL, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3bL, "jetbrains.mps.baseLanguage.structure.CommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, "jetbrains.mps.baseLanguage.structure.CommentedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x121119ae5ffL, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b7a2005a14cfe5eL, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e16a7273L, "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xff2bbc13daL, "jetbrains.mps.baseLanguage.structure.DivExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d451a6L, "jetbrains.mps.baseLanguage.structure.DoubleType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d327fdL, "jetbrains.mps.baseLanguage.structure.FloatType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, "jetbrains.mps.baseLanguage.structure.GetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d0fac2cL, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113dL, "jetbrains.mps.baseLanguage.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb7f7eL, "jetbrains.mps.baseLanguage.structure.IClassifierType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c60bb0a14L, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, "jetbrains.mps.baseLanguage.structure.IIncompleteParen"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL, "jetbrains.mps.baseLanguage.structure.IInternalType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2d45f01afccba89cL, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2d45f01afccba89dL, "jetbrains.mps.baseLanguage.structure.ILocalReference"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d486a1d9eL, "jetbrains.mps.baseLanguage.structure.IParameter"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3399756d2c03d422L, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x72de18bba2dc2a73L, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11cfb3b82a4L, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L, "jetbrains.mps.baseLanguage.structure.IVariableReference"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ff8b7a0d94242e1L, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d53a915L, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c0ba864df016178L, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2a8fe0cadfaa8af2L, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e4207559L, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f3L, "jetbrains.mps.baseLanguage.structure.LongType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dc0e3bL, "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47db1c91L, "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b75f36c8L, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, "jetbrains.mps.baseLanguage.structure.PropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d509af4L, "jetbrains.mps.baseLanguage.structure.RemExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117bd9ac3d9L, "jetbrains.mps.baseLanguage.structure.SetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6cde9fb9L, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6ce051dfL, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x470fa5a7b03ac59L, "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11f4b6b2435L, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, "jetbrains.mps.baseLanguage.structure.UnknownConsCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, "jetbrains.mps.baseLanguage.structure.UnknownDotCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L, "jetbrains.mps.baseLanguage.structure.UnknownLocalCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x759937a5973279b7L, "jetbrains.mps.baseLanguage.structure.UnknownNameRef"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, "jetbrains.mps.baseLanguage.structure.UnknownNew"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d0053f19bL, "jetbrains.mps.baseLanguage.structure.UsingStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
 }

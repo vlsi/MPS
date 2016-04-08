@@ -18,524 +18,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractContainerCreator_BehaviorDescriptor.java">
-      <unit at="16,0,35,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractContainerType_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractEnumeratorOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractEnumeratorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractIteratorOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractIteratorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractMappingOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractMappingOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddAllElementsOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddAllElementsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddAllSetElementsOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddAllSetElementsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddFirstElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddFirstElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddLastElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddLastElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AddSetElementOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AddSetElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AllConstant_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.AllConstant_BehaviorDescriptor" />
-    </file>
-    <file name="AllOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AllOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AlsoSortOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AlsoSortOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AnyOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AnyOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AsSequenceOperation_BehaviorDescriptor.java">
-      <unit at="14,0,23,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AsSynchronizedOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AsUnmodifiableOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,230,0" name="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BinaryOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.BinaryOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ChunkOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ChunkOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ClearAllElementsOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.ClearAllElementsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ClearSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ClearSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CollectionType_BehaviorDescriptor.java">
-      <unit at="17,0,61,0" name="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
-    </file>
-    <file name="ComparatorSortOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ComparatorSortOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ConcatOperation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ContainerIteratorType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ContainerIteratorType_BehaviorDescriptor" />
-    </file>
-    <file name="ContainsAllOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ContainsAllOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ContainsKeyOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ContainsKeyOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ContainsOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ContainsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ContainsValueOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ContainsValueOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CustomContainerCreator_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_BehaviorDescriptor" />
-    </file>
-    <file name="CustomContainerDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,23,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="CustomContainers_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomContainers_BehaviorDescriptor" />
-    </file>
-    <file name="CustomMapCreator_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator_BehaviorDescriptor" />
-    </file>
-    <file name="CutOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.CutOperation_BehaviorDescriptor" />
-    </file>
-    <file name="DequeType_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.baseLanguage.collections.behavior.DequeType_BehaviorDescriptor" />
-    </file>
-    <file name="DisjunctOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.DisjunctOperation_BehaviorDescriptor" />
-    </file>
-    <file name="DistinctOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.DistinctOperation_BehaviorDescriptor" />
-    </file>
-    <file name="DowncastExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.collections.behavior.DowncastExpression_BehaviorDescriptor" />
-    </file>
-    <file name="EnumeratorType_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.EnumeratorType_BehaviorDescriptor" />
-    </file>
-    <file name="ExcludeOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ExcludeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="FindFirstOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.FindFirstOperation_BehaviorDescriptor" />
-    </file>
-    <file name="FindLastOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.FindLastOperation_BehaviorDescriptor" />
-    </file>
-    <file name="FoldLeftOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.FoldLeftOperation_BehaviorDescriptor" />
-    </file>
-    <file name="FoldRightOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.FoldRightOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ForEachStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.ForEachStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ForEachVariableReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="ForEachVariable_BehaviorDescriptor.java">
-      <unit at="17,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariable_BehaviorDescriptor" />
-    </file>
-    <file name="GetCurrentOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetCurrentOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetEnumeratorOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetEnumeratorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetFirstOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetFirstOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetIndexOfOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetIndexOfOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetIteratorOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetIteratorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetKeysOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetKeysOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetLastIndexOfOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetLastIndexOfOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetLastOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetLastOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetNextOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetNextOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetSizeOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetSizeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetValuesOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.GetValuesOperation_BehaviorDescriptor" />
-    </file>
-    <file name="HasNextOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.HasNextOperation_BehaviorDescriptor" />
-    </file>
-    <file name="HashMapCreator_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.HashMapCreator_BehaviorDescriptor" />
-    </file>
-    <file name="HashSetCreator_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_BehaviorDescriptor" />
-    </file>
-    <file name="HeadListOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.HeadListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="HeadMapOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.HeadMapOperation_BehaviorDescriptor" />
-    </file>
-    <file name="HeadSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.HeadSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToCollection_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToCollection_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToDeque_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToDeque_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToList_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToList_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToNothing_BehaviorDescriptor.java">
-      <unit at="16,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToQueue_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToQueue_BehaviorDescriptor" />
-    </file>
-    <file name="IApplicableToStack_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToStack_BehaviorDescriptor" />
-    </file>
-    <file name="ICollectionOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IContainerOperation_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IDequeOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IDequeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IListOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IQueueOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IQueueOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IStackOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IStackOperation_BehaviorDescriptor" />
-    </file>
-    <file name="InsertElementOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.InsertElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="InternalSequenceOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.InternalSequenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IntersectOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.IntersectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IsEmptyOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.IsEmptyOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IsNotEmptyOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.IsNotEmptyOperation_BehaviorDescriptor" />
-    </file>
-    <file name="IteratorType_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_BehaviorDescriptor" />
-    </file>
-    <file name="JoinOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.JoinOperation_BehaviorDescriptor" />
-    </file>
-    <file name="KeyAccessOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.KeyAccessOperation_BehaviorDescriptor" />
-    </file>
-    <file name="LinkedHashMapCreator_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashMapCreator_BehaviorDescriptor" />
-    </file>
-    <file name="LinkedHashSetCreator_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashSetCreator_BehaviorDescriptor" />
-    </file>
-    <file name="LinkedListCreator_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_BehaviorDescriptor" />
-    </file>
-    <file name="LinkedListType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedListType_BehaviorDescriptor" />
-    </file>
-    <file name="ListCreatorWithInit_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_BehaviorDescriptor" />
-    </file>
-    <file name="ListElementAccessExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListElementAccessExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ListType_BehaviorDescriptor.java">
-      <unit at="18,0,62,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
-    </file>
-    <file name="MapAsSequenceVarRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapAsSequenceVarRef_BehaviorDescriptor" />
-    </file>
-    <file name="MapClearOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapClearOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MapElement_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapElement_BehaviorDescriptor" />
-    </file>
-    <file name="MapEntry_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapEntry_BehaviorDescriptor" />
-    </file>
-    <file name="MapInitializer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="MapOperationExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperationExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MapOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MapRemoveOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapRemoveOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MapType_BehaviorDescriptor.java">
-      <unit at="18,0,53,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapType_BehaviorDescriptor" />
-    </file>
-    <file name="MappingType_BehaviorDescriptor.java">
-      <unit at="16,0,42,0" name="jetbrains.mps.baseLanguage.collections.behavior.MappingType_BehaviorDescriptor" />
-    </file>
-    <file name="MappingsSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.MappingsSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MoveNextOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.MoveNextOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MultiForEachPair_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachPair_BehaviorDescriptor" />
-    </file>
-    <file name="MultiForEachStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_BehaviorDescriptor" />
-    </file>
-    <file name="MultiForEachVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="MultiForEachVariable_BehaviorDescriptor.java">
-      <unit at="16,0,28,0" name="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariable_BehaviorDescriptor" />
-    </file>
-    <file name="NoArgumentsSequenceOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.NoArgumentsSequenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="OfTypeOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PageOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.PageOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PeekOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.PeekOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PopOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.PopOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PriorityQueueCreator_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_BehaviorDescriptor" />
-    </file>
-    <file name="PushOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.PushOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PutAllOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.PutAllOperation_BehaviorDescriptor" />
-    </file>
-    <file name="QueueType_BehaviorDescriptor.java">
-      <unit at="17,0,46,0" name="jetbrains.mps.baseLanguage.collections.behavior.QueueType_BehaviorDescriptor" />
-    </file>
-    <file name="ReduceLeftOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ReduceLeftOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ReduceRightOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ReduceRightOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveAllElementsOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveAllElementsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveAllSetElementsOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveAllSetElementsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveAtElementOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveAtElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveFirstElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveFirstElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveLastElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveLastElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveSetElementOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveSetElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveWhereOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveWhereOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ReverseOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.ReverseOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SelectOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SelectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SequenceCreator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceCreator_BehaviorDescriptor" />
-    </file>
-    <file name="SequenceOperation_BehaviorDescriptor.java">
-      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SequenceType_BehaviorDescriptor.java">
-      <unit at="17,0,55,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_BehaviorDescriptor" />
-    </file>
-    <file name="SetElementOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.SetElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SetType_BehaviorDescriptor.java">
-      <unit at="18,0,62,0" name="jetbrains.mps.baseLanguage.collections.behavior.SetType_BehaviorDescriptor" />
-    </file>
-    <file name="SingleArgumentSequenceOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SingleArgumentSequenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SingletonSequenceCreator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.SingletonSequenceCreator_BehaviorDescriptor" />
-    </file>
-    <file name="SkipOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SkipOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SkipStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.collections.behavior.SkipStatement_BehaviorDescriptor" />
-    </file>
-    <file name="SmartClosureParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.SmartClosureParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SortDirection_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortDirection_BehaviorDescriptor" />
-    </file>
-    <file name="SortOperation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SortedMapOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedMapOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SortedMapType_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_BehaviorDescriptor" />
-    </file>
-    <file name="SortedSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SortedSetType_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_BehaviorDescriptor" />
-    </file>
-    <file name="StackType_BehaviorDescriptor.java">
-      <unit at="17,0,46,0" name="jetbrains.mps.baseLanguage.collections.behavior.StackType_BehaviorDescriptor" />
-    </file>
-    <file name="StopStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.StopStatement_BehaviorDescriptor" />
-    </file>
-    <file name="SubListOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.SubListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SubMapOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SubMapOperation_BehaviorDescriptor" />
-    </file>
-    <file name="SubSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.SubSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TailListOperation_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.baseLanguage.collections.behavior.TailListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TailMapOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.TailMapOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TailOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.TailOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TailSetOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.TailSetOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TakeOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.TakeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TestAddElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.TestAddElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TestRemoveElementOperation_BehaviorDescriptor.java">
-      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.TestRemoveElementOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ToArrayOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ToArrayOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ToIteratorOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.ToIteratorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ToListOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.ToListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TranslateOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.TranslateOperation_BehaviorDescriptor" />
-    </file>
-    <file name="TreeMapCreator_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.TreeMapCreator_BehaviorDescriptor" />
-    </file>
-    <file name="TreeSetCreator_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.baseLanguage.collections.behavior.TreeSetCreator_BehaviorDescriptor" />
-    </file>
-    <file name="UnionOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.UnionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ValueAccessOperation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.ValueAccessOperation_BehaviorDescriptor" />
-    </file>
-    <file name="VisitAllOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.VisitAllOperation_BehaviorDescriptor" />
-    </file>
-    <file name="WhereOperation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.collections.behavior.WhereOperation_BehaviorDescriptor" />
+      <unit at="14,0,330,0" name="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1023687332192534913">
-    <file name="ForEachVariableReference_Behavior.java">
-      <unit id="1023687332192534913" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ForEachVariableReference_Behavior" />
-    </file>
     <file name="ForEachVariableReference__BehaviorDescriptor.java">
       <node id="1023687332192534913" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="1023687332192534913" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -610,9 +97,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877245174">
-    <file name="SequenceType_Behavior.java">
-      <unit id="1213877245174" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_Behavior" />
-    </file>
     <file name="SequenceType__BehaviorDescriptor.java">
       <node id="1213877245174" at="35,0,36,0" concept="12" trace="CONCEPT" />
       <node id="1213877245174" at="36,0,37,0" concept="12" trace="REGISTRY" />
@@ -771,15 +255,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877497462">
-    <file name="SequenceOperation_Behavior.java">
-      <node id="1213877497462" at="14,70,15,81" concept="9" />
-      <node id="1213877497462" at="13,0,17,0" concept="13" trace="call_getLeft_1213877497463#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877497462" at="14,70,15,81" />
-      <scope id="1213877497462" at="13,0,17,0">
-        <var name="__thisNode__" id="1213877497462" />
-      </scope>
-      <unit id="1213877497462" at="11,0,18,0" name="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavior" />
-    </file>
     <file name="SequenceOperation__BehaviorDescriptor.java">
       <node id="1213877497462" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="1213877497462" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -857,9 +332,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877511286">
-    <file name="ListType_Behavior.java">
-      <unit id="1213877511286" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListType_Behavior" />
-    </file>
     <file name="ListType__BehaviorDescriptor.java">
       <node id="1213877511286" at="38,0,39,0" concept="12" trace="CONCEPT" />
       <node id="1213877511286" at="39,0,40,0" concept="12" trace="REGISTRY" />
@@ -1046,9 +518,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877520358">
-    <file name="MapType_Behavior.java">
-      <unit id="1213877520358" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapType_Behavior" />
-    </file>
     <file name="MapType__BehaviorDescriptor.java">
       <node id="1213877520358" at="36,0,37,0" concept="12" trace="CONCEPT" />
       <node id="1213877520358" at="37,0,38,0" concept="12" trace="REGISTRY" />
@@ -1245,9 +714,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1213877532555">
-    <file name="MapOperation_Behavior.java">
-      <unit id="1213877532555" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_Behavior" />
-    </file>
     <file name="MapOperation__BehaviorDescriptor.java">
       <node id="1213877532555" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1213877532555" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -1313,9 +779,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1226515539540">
-    <file name="SetType_Behavior.java">
-      <unit id="1226515539540" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior" />
-    </file>
     <file name="SetType__BehaviorDescriptor.java">
       <node id="1226515539540" at="38,0,39,0" concept="12" trace="CONCEPT" />
       <node id="1226515539540" at="39,0,40,0" concept="12" trace="REGISTRY" />
@@ -1540,9 +1003,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237468611264">
-    <file name="IteratorType_Behavior.java">
-      <unit id="1237468611264" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_Behavior" />
-    </file>
     <file name="IteratorType__BehaviorDescriptor.java">
       <node id="1237468611264" at="35,0,36,0" concept="12" trace="CONCEPT" />
       <node id="1237468611264" at="36,0,37,0" concept="12" trace="REGISTRY" />
@@ -1681,9 +1141,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237496376141">
-    <file name="EnumeratorType_Behavior.java">
-      <unit id="1237496376141" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.EnumeratorType_Behavior" />
-    </file>
     <file name="EnumeratorType__BehaviorDescriptor.java">
       <node id="1237496376141" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="1237496376141" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -1799,9 +1256,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237548270025">
-    <file name="SkipStatement_Behavior.java">
-      <unit id="1237548270025" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SkipStatement_Behavior" />
-    </file>
     <file name="SkipStatement__BehaviorDescriptor.java">
       <node id="1237548270025" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1237548270025" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1876,9 +1330,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237722435323">
-    <file name="AbstractContainerCreator_Behavior.java">
-      <unit id="1237722435323" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior" />
-    </file>
     <file name="AbstractContainerCreator__BehaviorDescriptor.java">
       <node id="1237722435323" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1237722435323" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -1976,9 +1427,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237724489609">
-    <file name="ListCreatorWithInit_Behavior.java">
-      <unit id="1237724489609" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_Behavior" />
-    </file>
     <file name="ListCreatorWithInit__BehaviorDescriptor.java">
       <node id="1237724489609" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="1237724489609" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -2101,9 +1549,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237724578571">
-    <file name="HashSetCreator_Behavior.java">
-      <unit id="1237724578571" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_Behavior" />
-    </file>
     <file name="HashSetCreator__BehaviorDescriptor.java">
       <node id="1237724578571" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="1237724578571" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -2226,9 +1671,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237724603556">
-    <file name="LinkedListCreator_Behavior.java">
-      <unit id="1237724603556" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
-    </file>
     <file name="LinkedListCreator__BehaviorDescriptor.java">
       <node id="1237724603556" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="1237724603556" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -2346,9 +1788,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237783270701">
-    <file name="AllConstant_Behavior.java">
-      <unit id="1237783270701" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.AllConstant_Behavior" />
-    </file>
     <file name="AllConstant__BehaviorDescriptor.java">
       <node id="1237783270701" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1237783270701" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2423,9 +1862,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1240239413630">
-    <file name="SortedMapType_Behavior.java">
-      <unit id="1240239413630" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_Behavior" />
-    </file>
     <file name="SortedMapType__BehaviorDescriptor.java">
       <node id="1240239413630" at="33,0,34,0" concept="12" trace="CONCEPT" />
       <node id="1240239413630" at="34,0,35,0" concept="12" trace="REGISTRY" />
@@ -2563,9 +1999,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1240249640915">
-    <file name="SortedSetType_Behavior.java">
-      <unit id="1240249640915" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_Behavior" />
-    </file>
     <file name="SortedSetType__BehaviorDescriptor.java">
       <node id="1240249640915" at="33,0,34,0" concept="12" trace="CONCEPT" />
       <node id="1240249640915" at="34,0,35,0" concept="12" trace="REGISTRY" />
@@ -2693,9 +2126,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1240249694731">
-    <file name="TreeSetCreator_Behavior.java">
-      <unit id="1240249694731" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.TreeSetCreator_Behavior" />
-    </file>
     <file name="TreeSetCreator__BehaviorDescriptor.java">
       <node id="1240249694731" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="1240249694731" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -2828,9 +2258,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1240823859791">
-    <file name="MappingType_Behavior.java">
-      <unit id="1240823859791" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.MappingType_Behavior" />
-    </file>
     <file name="MappingType__BehaviorDescriptor.java">
       <node id="1240823859791" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1240823859791" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -2905,9 +2332,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741497999">
-    <file name="HashMapCreator_Behavior.java">
-      <unit id="1262430001741497999" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.HashMapCreator_Behavior" />
-    </file>
     <file name="HashMapCreator__BehaviorDescriptor.java">
       <node id="1262430001741497999" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741497999" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2982,9 +2406,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741498008">
-    <file name="TreeMapCreator_Behavior.java">
-      <unit id="1262430001741498008" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.TreeMapCreator_Behavior" />
-    </file>
     <file name="TreeMapCreator__BehaviorDescriptor.java">
       <node id="1262430001741498008" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741498008" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3059,9 +2480,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741641647">
-    <file name="SortDirection_Behavior.java">
-      <unit id="1262430001741641647" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortDirection_Behavior" />
-    </file>
     <file name="SortDirection__BehaviorDescriptor.java">
       <node id="1262430001741641647" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741641647" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3136,9 +2554,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741642968">
-    <file name="ListElementAccessExpression_Behavior.java">
-      <unit id="1262430001741642968" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ListElementAccessExpression_Behavior" />
-    </file>
     <file name="ListElementAccessExpression__BehaviorDescriptor.java">
       <node id="1262430001741642968" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741642968" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3213,9 +2628,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741647307">
-    <file name="MapElement_Behavior.java">
-      <unit id="1262430001741647307" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.MapElement_Behavior" />
-    </file>
     <file name="MapElement__BehaviorDescriptor.java">
       <node id="1262430001741647307" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741647307" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3290,9 +2702,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741704797">
-    <file name="LinkedHashMapCreator_Behavior.java">
-      <unit id="1262430001741704797" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashMapCreator_Behavior" />
-    </file>
     <file name="LinkedHashMapCreator__BehaviorDescriptor.java">
       <node id="1262430001741704797" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741704797" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3367,9 +2776,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741718457">
-    <file name="ValueAccessOperation_Behavior.java">
-      <unit id="1262430001741718457" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ValueAccessOperation_Behavior" />
-    </file>
     <file name="ValueAccessOperation__BehaviorDescriptor.java">
       <node id="1262430001741718457" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741718457" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3444,9 +2850,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1262430001741718689">
-    <file name="LinkedHashSetCreator_Behavior.java">
-      <unit id="1262430001741718689" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashSetCreator_Behavior" />
-    </file>
     <file name="LinkedHashSetCreator__BehaviorDescriptor.java">
       <node id="1262430001741718689" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741718689" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -3535,9 +2938,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1331913329176106421">
-    <file name="CustomContainerCreator_Behavior.java">
-      <unit id="1331913329176106421" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_Behavior" />
-    </file>
     <file name="CustomContainerCreator__BehaviorDescriptor.java">
       <node id="1331913329176106421" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1331913329176106421" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -3708,15 +3108,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1576845966386891472">
-    <file name="CustomMapCreator_Behavior.java">
-      <node id="1576845966386891472" at="13,79,14,87" concept="9" />
-      <node id="1576845966386891472" at="13,0,16,0" concept="13" trace="call_createType_1576845966386891475#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1576845966386891472" at="13,79,14,87" />
-      <scope id="1576845966386891472" at="13,0,16,0">
-        <var name="__thisNode__" id="1576845966386891472" />
-      </scope>
-      <unit id="1576845966386891472" at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator_Behavior" />
-    </file>
     <file name="CustomMapCreator__BehaviorDescriptor.java">
       <node id="1576845966386891472" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1576845966386891472" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3829,9 +3220,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/2141797557973018586">
-    <file name="IContainerOperation_Behavior.java">
-      <unit id="2141797557973018586" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
-    </file>
     <file name="IContainerOperation__BehaviorDescriptor.java">
       <node id="2141797557973018586" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="2141797557973018586" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -3897,9 +3285,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/2141797557973018609">
-    <file name="IListOperation_Behavior.java">
-      <unit id="2141797557973018609" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_Behavior" />
-    </file>
     <file name="IListOperation__BehaviorDescriptor.java">
       <node id="2141797557973018609" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="2141797557973018609" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -3965,9 +3350,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/2504598135591556453">
-    <file name="WhereOperation_Behavior.java">
-      <unit id="2504598135591556453" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.WhereOperation_Behavior" />
-    </file>
     <file name="WhereOperation__BehaviorDescriptor.java">
       <node id="2504598135591556453" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="2504598135591556453" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4042,9 +3424,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/2504598135591557835">
-    <file name="ConcatOperation_Behavior.java">
-      <unit id="2504598135591557835" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_Behavior" />
-    </file>
     <file name="ConcatOperation__BehaviorDescriptor.java">
       <node id="2504598135591557835" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="2504598135591557835" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4119,9 +3498,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3185788474596486341">
-    <file name="SortOperation_Behavior.java">
-      <unit id="3185788474596486341" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.SortOperation_Behavior" />
-    </file>
     <file name="SortOperation__BehaviorDescriptor.java">
       <node id="3185788474596486341" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="3185788474596486341" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4196,9 +3572,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509337679">
-    <file name="QueueType_Behavior.java">
-      <unit id="3358009230509337679" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior" />
-    </file>
     <file name="QueueType__BehaviorDescriptor.java">
       <node id="3358009230509337679" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="3358009230509337679" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -4341,9 +3714,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509514611">
-    <file name="PriorityQueueCreator_Behavior.java">
-      <unit id="3358009230509514611" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_Behavior" />
-    </file>
     <file name="PriorityQueueCreator__BehaviorDescriptor.java">
       <node id="3358009230509514611" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="3358009230509514611" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -4465,9 +3835,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509734418">
-    <file name="DequeType_Behavior.java">
-      <unit id="3358009230509734418" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.DequeType_Behavior" />
-    </file>
     <file name="DequeType__BehaviorDescriptor.java">
       <node id="3358009230509734418" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="3358009230509734418" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -4585,9 +3952,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509812020">
-    <file name="StackType_Behavior.java">
-      <unit id="3358009230509812020" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.StackType_Behavior" />
-    </file>
     <file name="StackType__BehaviorDescriptor.java">
       <node id="3358009230509812020" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="3358009230509812020" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -4705,9 +4069,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5686963296372576518">
-    <file name="AbstractContainerType_Behavior.java">
-      <unit id="5686963296372576518" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_Behavior" />
-    </file>
     <file name="AbstractContainerType__BehaviorDescriptor.java">
       <node id="5686963296372576518" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="5686963296372576518" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -4823,22 +4184,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955586073">
-    <file name="IApplicableToNothing_Behavior.java">
-      <node id="5994574781955586073" at="15,109,16,105" concept="9" />
-      <node id="5994574781955586073" at="18,118,19,111" concept="9" />
-      <node id="5994574781955586073" at="15,0,18,0" concept="13" trace="call_getAllApplicableTypes_5994574781955687463#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Set;" />
-      <node id="5994574781955586073" at="18,0,21,0" concept="13" trace="call_hasApplicableTypes_2142237368811537351#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5994574781955586073" at="15,109,16,105" />
-      <scope id="5994574781955586073" at="18,118,19,111" />
-      <scope id="5994574781955586073" at="15,0,18,0">
-        <var name="__thisConcept__" id="5994574781955586073" />
-      </scope>
-      <scope id="5994574781955586073" at="18,0,21,0">
-        <var name="__thisConcept__" id="5994574781955586073" />
-        <var name="concept" id="2142237368811537504" />
-      </scope>
-      <unit id="5994574781955586073" at="13,0,22,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_Behavior" />
-    </file>
     <file name="IApplicableToNothing__BehaviorDescriptor.java">
       <node id="5994574781955586073" at="33,0,34,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955586073" at="34,0,35,0" concept="12" trace="REGISTRY" />
@@ -5006,9 +4351,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955586161">
-    <file name="IApplicableToDeque_Behavior.java">
-      <unit id="5994574781955586161" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToDeque_Behavior" />
-    </file>
     <file name="IApplicableToDeque__BehaviorDescriptor.java">
       <node id="5994574781955586161" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955586161" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -5103,9 +4445,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955614657">
-    <file name="IApplicableToList_Behavior.java">
-      <unit id="5994574781955614657" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToList_Behavior" />
-    </file>
     <file name="IApplicableToList__BehaviorDescriptor.java">
       <node id="5994574781955614657" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955614657" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -5200,9 +4539,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955644230">
-    <file name="IApplicableToCollection_Behavior.java">
-      <unit id="5994574781955644230" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToCollection_Behavior" />
-    </file>
     <file name="IApplicableToCollection__BehaviorDescriptor.java">
       <node id="5994574781955644230" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955644230" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -5301,9 +4637,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955645631">
-    <file name="IApplicableToQueue_Behavior.java">
-      <unit id="5994574781955645631" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToQueue_Behavior" />
-    </file>
     <file name="IApplicableToQueue__BehaviorDescriptor.java">
       <node id="5994574781955645631" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955645631" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -5402,9 +4735,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5994574781955646444">
-    <file name="IApplicableToStack_Behavior.java">
-      <unit id="5994574781955646444" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToStack_Behavior" />
-    </file>
     <file name="IApplicableToStack__BehaviorDescriptor.java">
       <node id="5994574781955646444" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="5994574781955646444" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -5503,9 +4833,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/6257218603554017649">
-    <file name="ForEachStatement_Behavior.java">
-      <unit id="6257218603554017649" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.ForEachStatement_Behavior" />
-    </file>
     <file name="ForEachStatement__BehaviorDescriptor.java">
       <node id="6257218603554017649" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="6257218603554017649" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -5587,9 +4914,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/6640659353039755348">
-    <file name="MultiForEachStatement_Behavior.java">
-      <unit id="6640659353039755348" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_Behavior" />
-    </file>
     <file name="MultiForEachStatement__BehaviorDescriptor.java">
       <node id="6640659353039755348" at="34,0,35,0" concept="12" trace="CONCEPT" />
       <node id="6640659353039755348" at="35,0,36,0" concept="12" trace="REGISTRY" />
@@ -5685,9 +5009,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/7886927014685055056">
-    <file name="CollectionType_Behavior.java">
-      <unit id="7886927014685055056" at="10,0,13,0" name="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_Behavior" />
-    </file>
     <file name="CollectionType__BehaviorDescriptor.java">
       <node id="7886927014685055056" at="36,0,37,0" concept="12" trace="CONCEPT" />
       <node id="7886927014685055056" at="37,0,38,0" concept="12" trace="REGISTRY" />

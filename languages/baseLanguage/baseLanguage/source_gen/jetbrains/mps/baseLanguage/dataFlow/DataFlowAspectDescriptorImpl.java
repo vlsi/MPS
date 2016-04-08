@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Map;
+import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
@@ -31,271 +31,348 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d00538bdfL, "jetbrains.mps.baseLanguage.structure.AsExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c78301acL, "jetbrains.mps.baseLanguage.structure.BaseMethodCall"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6d026f5fL, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47df21f3L, "jetbrains.mps.baseLanguage.structure.SubstringExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_vhxjlb_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
+          }
+          break;
+        case 28:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
+          }
+          break;
+        case 29:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
+          }
+          break;
+        case 30:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
+          }
+          break;
+        case 31:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
+          }
+          break;
+        case 32:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
+          }
+          break;
+        case 33:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
+          }
+          break;
+        case 34:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
+          }
+          break;
+        case 35:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
+          }
+          break;
+        case 36:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
+          }
+          break;
+        case 37:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
+          }
+          break;
+        case 38:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
+          }
+          break;
+        case 39:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
+          }
+          break;
+        case 40:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
+          }
+          break;
+        case 41:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
+          }
+          break;
+        case 42:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
+          }
+          break;
+        case 43:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
+          }
+          break;
+        case 44:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
+          }
+          break;
+        case 45:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
+          }
+          break;
+        case 46:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
+          }
+          break;
+        case 47:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
+          }
+          break;
+        case 48:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
+          }
+          break;
+        case 49:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
+          }
+          break;
+        case 50:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
+          }
+          break;
+        case 51:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
+          }
+          break;
+        case 52:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
+          }
+          break;
+        case 53:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
+          }
+          break;
+        case 54:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
+          }
+          break;
+        case 55:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
+          }
+          break;
+        case 56:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
+          }
+          break;
+        case 57:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
+          }
+          break;
+        case 58:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
+          }
+          break;
+        case 59:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
+          }
+          break;
+        case 60:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
+          }
+          break;
+        case 61:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
+          }
+          break;
+        case 62:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
+          }
+          break;
+        case 63:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
+          }
+          break;
+        case 64:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
+          }
+          break;
+        default:
+          // default 
       }
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d00538bdfL, "jetbrains.mps.baseLanguage.structure.AsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c78301acL, "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6d026f5fL, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47df21f3L, "jetbrains.mps.baseLanguage.structure.SubstringExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"));
   private static String[] stringSwitchCases_vhxjlb_a0a0a = new String[]{"jetbrains.mps.baseLanguage.dataFlow.Nullable"};
 }

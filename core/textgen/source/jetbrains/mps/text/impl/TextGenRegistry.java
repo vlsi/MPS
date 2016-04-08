@@ -112,7 +112,7 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
       if (textGenAspectDescriptor == null) {
         continue;
       }
-      descriptor = textGenAspectDescriptor.getDescriptor(MetaIdHelper.getConcept(next));
+      descriptor = textGenAspectDescriptor.getDescriptor(next);
       if (descriptor != null) {
         break;
       }

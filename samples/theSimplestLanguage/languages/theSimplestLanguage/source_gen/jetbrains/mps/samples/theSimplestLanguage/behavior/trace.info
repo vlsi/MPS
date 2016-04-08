@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="TheSimplestConcept_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.samples.theSimplestLanguage.behavior.TheSimplestConcept_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

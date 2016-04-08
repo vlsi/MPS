@@ -13,31 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="org.jetbrains.mps.samples.Constants.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConstantReferenceKeeper_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Constants.behavior.ConstantReferenceKeeper_BehaviorDescriptor" />
-    </file>
-    <file name="ConstantReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
-    </file>
-    <file name="Constant_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
-    </file>
-    <file name="Constants_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
-    </file>
-    <file name="DistantConstantReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="org.jetbrains.mps.samples.Constants.behavior.DistantConstantReference_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratedClassKeeper_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Constants.behavior.GeneratedClassKeeper_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="org.jetbrains.mps.samples.Constants.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)/5956117492786858347">
-    <file name="Constants_Behavior.java">
-      <unit id="5956117492786858347" at="10,0,13,0" name="org.jetbrains.mps.samples.Constants.behavior.Constants_Behavior" />
-    </file>
     <file name="Constants__BehaviorDescriptor.java">
       <node id="5956117492786858347" at="29,0,30,0" concept="6" trace="CONCEPT" />
       <node id="5956117492786858347" at="30,0,31,0" concept="6" trace="REGISTRY" />

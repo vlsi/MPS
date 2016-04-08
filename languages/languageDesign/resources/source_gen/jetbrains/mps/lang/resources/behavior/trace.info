@@ -16,43 +16,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="IconResourceBundle_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.resources.behavior.IconResourceBundle_BehaviorDescriptor" />
-    </file>
-    <file name="IconResourceDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.resources.behavior.IconResourceDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="IconResourceExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IconResourceReference_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.resources.behavior.IconResourceReference_BehaviorDescriptor" />
-    </file>
-    <file name="IconResource_BehaviorDescriptor.java">
-      <unit at="13,0,24,0" name="jetbrains.mps.lang.resources.behavior.IconResource_BehaviorDescriptor" />
-    </file>
-    <file name="Resource_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400029987">
-    <file name="IconResource_Behavior.java">
-      <node id="8974276187400029987" at="13,78,14,80" concept="5" />
-      <node id="8974276187400029987" at="16,81,17,84" concept="5" />
-      <node id="8974276187400029987" at="13,0,16,0" concept="9" trace="call_isValid_8974276187400030063#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8974276187400029987" at="16,0,19,0" concept="9" trace="call_getFilename_8974276187400030131#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="8974276187400029987" at="13,78,14,80" />
-      <scope id="8974276187400029987" at="16,81,17,84" />
-      <scope id="8974276187400029987" at="13,0,16,0">
-        <var name="__thisNode__" id="8974276187400029987" />
-      </scope>
-      <scope id="8974276187400029987" at="16,0,19,0">
-        <var name="__thisNode__" id="8974276187400029987" />
-      </scope>
-      <unit id="8974276187400029987" at="11,0,20,0" name="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
-    </file>
     <file name="IconResource__BehaviorDescriptor.java">
       <node id="8974276187400029987" at="37,0,38,0" concept="8" trace="CONCEPT" />
       <node id="8974276187400029987" at="38,0,39,0" concept="8" trace="REGISTRY" />
@@ -195,9 +162,6 @@
     </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400030151">
-    <file name="Resource_Behavior.java">
-      <unit id="8974276187400030151" at="10,0,13,0" name="jetbrains.mps.lang.resources.behavior.Resource_Behavior" />
-    </file>
     <file name="Resource__BehaviorDescriptor.java">
       <node id="8974276187400030151" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="8974276187400030151" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -264,15 +228,6 @@
     </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400030158">
-    <file name="IconResourceBundle_Behavior.java">
-      <node id="8974276187400030158" at="13,81,14,90" concept="5" />
-      <node id="8974276187400030158" at="13,0,16,0" concept="9" trace="call_getJavaName_8974276187400030159#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="8974276187400030158" at="13,81,14,90" />
-      <scope id="8974276187400030158" at="13,0,16,0">
-        <var name="__thisNode__" id="8974276187400030158" />
-      </scope>
-      <unit id="8974276187400030158" at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.IconResourceBundle_Behavior" />
-    </file>
     <file name="IconResourceBundle__BehaviorDescriptor.java">
       <node id="8974276187400030158" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="8974276187400030158" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -347,9 +302,6 @@
     </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400030172">
-    <file name="IconResourceReference_Behavior.java">
-      <unit id="8974276187400030172" at="10,0,13,0" name="jetbrains.mps.lang.resources.behavior.IconResourceReference_Behavior" />
-    </file>
     <file name="IconResourceReference__BehaviorDescriptor.java">
       <node id="8974276187400030172" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="8974276187400030172" at="28,0,29,0" concept="8" trace="REGISTRY" />

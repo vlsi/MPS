@@ -113,11 +113,14 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.AbsractMake_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ActionCallDeclaredParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor" />
@@ -136,8 +139,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowGenPlan_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.StatCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.SubtreeStatisticsTarget_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId" />

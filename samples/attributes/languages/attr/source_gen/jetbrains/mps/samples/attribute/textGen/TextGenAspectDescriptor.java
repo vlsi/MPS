@@ -6,34 +6,43 @@ import jetbrains.mps.text.rt.TextGenAspectBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.text.impl.BufferLayoutBuilder;
 import jetbrains.mps.text.impl.RegularTextUnit2;
+import java.util.Map;
+import java.util.HashMap;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
-  private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[2];
-    myId2Index[0] = 0x63feb1ccbe205151L;
-    myId2Index[1] = 0x702703eb14011dd3L;
   }
+
   @Nullable
   @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId id) {
-    final int index = Arrays.binarySearch(myId2Index, id.getIdValue());
-    switch (index) {
-      case 0:
-        return new CommentAttribute_TextGen();
-      case 1:
-        return new CommentAttribute2_TextGen();
-      default:
-        return null;
+  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_t8hmqt_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return new CommentAttribute_TextGen();
+          }
+          break;
+        case 1:
+          if (true) {
+            return new CommentAttribute2_TextGen();
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
 
   @Override
@@ -64,4 +73,13 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     rv.setBufferLayout(lb.create());
     return rv;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_t8hmqt_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x63feb1ccbe205151L, "jetbrains.mps.samples.attribute.structure.CommentAttribute"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x702703eb14011dd3L, "jetbrains.mps.samples.attribute.structure.CommentAttribute2"));
 }

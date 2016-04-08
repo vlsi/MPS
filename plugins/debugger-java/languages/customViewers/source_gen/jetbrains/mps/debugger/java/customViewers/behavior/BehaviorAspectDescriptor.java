@@ -4,12 +4,12 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor = new GetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor();
@@ -19,43 +19,59 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myToProcessMethod__BehaviorDescriptor = new ToProcessMethod__BehaviorDescriptor();
   private final BHDescriptor myWatchableListType__BehaviorDescriptor = new WatchableListType__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[6];
-    myConceptBehaviorIds[0] = 0x9a1514043ecbd2L;
-    myConceptBehaviorIds[1] = 0x9a1514043ecbd6L;
-    myConceptBehaviorIds[2] = 0x9a1514043ecbdbL;
-    myConceptBehaviorIds[3] = 0x97038071a3bfa40L;
-    myConceptBehaviorIds[4] = 0xa01bb2d9f697c10L;
-    myConceptBehaviorIds[5] = 0x19926b3196c33bb3L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
-      case 1:
-        return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
-      case 2:
-        return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
-      case 3:
-        return myHighLevelCustomViewer__BehaviorDescriptor;
-      case 4:
-        return myToProcessMethod__BehaviorDescriptor;
-      case 5:
-        return myWatchableListType__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myHighLevelCustomViewer__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myToProcessMethod__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myWatchableListType__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbdbL, "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbd2L, "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbd6L, "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0xa01bb2d9f697c10L, "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x19926b3196c33bb3L, "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType"));
 }

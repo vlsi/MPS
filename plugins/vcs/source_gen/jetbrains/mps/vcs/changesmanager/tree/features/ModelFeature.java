@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class ModelFeature extends Feature {
   public ModelFeature(@NotNull SModelReference modelReference) {
@@ -12,7 +13,7 @@ public class ModelFeature extends Feature {
   }
   @Nullable
   @Override
-  public Feature getParent() {
+  protected Feature getParent(SRepository repo) {
     return null;
   }
   @NotNull

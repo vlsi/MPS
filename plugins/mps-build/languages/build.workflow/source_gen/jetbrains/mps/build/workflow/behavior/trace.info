@@ -15,97 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,94,0" name="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BwfAntStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfAntStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BwfAntTaskBundleDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="BwfAntTaskDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="BwfCustomMacro_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_BehaviorDescriptor" />
-    </file>
-    <file name="BwfDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BwfFileSet_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfFileSet_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaClassPath_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaClassPath_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaLibraryReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaLibraryReference_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaLibrary_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaModuleReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_BehaviorDescriptor" />
-    </file>
-    <file name="BwfJavaModule_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
-    </file>
-    <file name="BwfMacroListImport_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfMacroListImport_BehaviorDescriptor" />
-    </file>
-    <file name="BwfMacro_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.build.workflow.behavior.BwfMacro_BehaviorDescriptor" />
-    </file>
-    <file name="BwfPathDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="BwfPathReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfPathReference_BehaviorDescriptor" />
-    </file>
-    <file name="BwfProjectPartStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfProjectPartStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BwfProjectPart_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.workflow.behavior.BwfProjectPart_BehaviorDescriptor" />
-    </file>
-    <file name="BwfProject_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.build.workflow.behavior.BwfProject_BehaviorDescriptor" />
-    </file>
-    <file name="BwfStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BwfSubTaskDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTaskDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BwfSubTask_BehaviorDescriptor.java">
-      <unit at="17,0,35,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTask_BehaviorDescriptor" />
-    </file>
-    <file name="BwfTaskDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BwfTaskLibraryDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskLibraryDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BwfTaskLibrary_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary_BehaviorDescriptor" />
-    </file>
-    <file name="BwfTaskPart_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskPart_BehaviorDescriptor" />
-    </file>
-    <file name="BwfTask_BehaviorDescriptor.java">
-      <unit at="16,0,37,0" name="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
+      <unit at="14,0,126,0" name="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2059109515400548715">
-    <file name="BwfProjectPart_Behavior.java">
-      <unit id="2059109515400548715" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior" />
-    </file>
     <file name="BwfProjectPart__BehaviorDescriptor.java">
       <node id="2059109515400548715" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2059109515400548715" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -180,9 +93,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2059109515400548735">
-    <file name="BwfMacro_Behavior.java">
-      <unit id="2059109515400548735" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfMacro_Behavior" />
-    </file>
     <file name="BwfMacro__BehaviorDescriptor.java">
       <node id="2059109515400548735" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2059109515400548735" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -257,9 +167,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2059109515400548749">
-    <file name="BwfMacroListImport_Behavior.java">
-      <unit id="2059109515400548749" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfMacroListImport_Behavior" />
-    </file>
     <file name="BwfMacroListImport__BehaviorDescriptor.java">
       <node id="2059109515400548749" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2059109515400548749" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -334,9 +241,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2059109515400548763">
-    <file name="BwfAntTaskDeclaration_Behavior.java">
-      <unit id="2059109515400548763" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_Behavior" />
-    </file>
     <file name="BwfAntTaskDeclaration__BehaviorDescriptor.java">
       <node id="2059109515400548763" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2059109515400548763" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -411,9 +315,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/244868996532667552">
-    <file name="BwfCustomMacro_Behavior.java">
-      <unit id="244868996532667552" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_Behavior" />
-    </file>
     <file name="BwfCustomMacro__BehaviorDescriptor.java">
       <node id="244868996532667552" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="244868996532667552" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -488,9 +389,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2529023923283158068">
-    <file name="BwfAntTaskBundleDeclaration_Behavior.java">
-      <unit id="2529023923283158068" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration_Behavior" />
-    </file>
     <file name="BwfAntTaskBundleDeclaration__BehaviorDescriptor.java">
       <node id="2529023923283158068" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2529023923283158068" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -565,9 +463,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2769948622284605897">
-    <file name="BwfTask_Behavior.java">
-      <unit id="2769948622284605897" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
-    </file>
     <file name="BwfTask__BehaviorDescriptor.java">
       <node id="2769948622284605897" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="2769948622284605897" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -667,9 +562,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/3961775458390352366">
-    <file name="BwfTaskPart_Behavior.java">
-      <unit id="3961775458390352366" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskPart_Behavior" />
-    </file>
     <file name="BwfTaskPart__BehaviorDescriptor.java">
       <node id="3961775458390352366" at="30,0,31,0" concept="8" trace="CONCEPT" />
       <node id="3961775458390352366" at="31,0,32,0" concept="8" trace="REGISTRY" />
@@ -769,9 +661,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/3961775458390497598">
-    <file name="BwfSubTask_Behavior.java">
-      <unit id="3961775458390497598" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTask_Behavior" />
-    </file>
     <file name="BwfSubTask__BehaviorDescriptor.java">
       <node id="3961775458390497598" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="3961775458390497598" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -866,15 +755,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/6647099934207210772">
-    <file name="BwfPathDeclaration_Behavior.java">
-      <node id="6647099934207210772" at="13,79,14,88" concept="6" />
-      <node id="6647099934207210772" at="13,0,16,0" concept="9" trace="call_getPathId_6647099934207210775#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6647099934207210772" at="13,79,14,88" />
-      <scope id="6647099934207210772" at="13,0,16,0">
-        <var name="__thisNode__" id="6647099934207210772" />
-      </scope>
-      <unit id="6647099934207210772" at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior" />
-    </file>
     <file name="BwfPathDeclaration__BehaviorDescriptor.java">
       <node id="6647099934207210772" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="6647099934207210772" at="26,0,27,0" concept="8" trace="REGISTRY" />
@@ -958,9 +838,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/6647099934207246775">
-    <file name="BwfJavaDependency_Behavior.java">
-      <unit id="6647099934207246775" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_Behavior" />
-    </file>
     <file name="BwfJavaDependency__BehaviorDescriptor.java">
       <node id="6647099934207246775" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="6647099934207246775" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -1026,9 +903,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/6647099934207246785">
-    <file name="BwfJavaModuleReference_Behavior.java">
-      <unit id="6647099934207246785" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_Behavior" />
-    </file>
     <file name="BwfJavaModuleReference__BehaviorDescriptor.java">
       <node id="6647099934207246785" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="6647099934207246785" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -1094,9 +968,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/7306485738221487431">
-    <file name="BwfProject_Behavior.java">
-      <unit id="7306485738221487431" at="10,0,13,0" name="jetbrains.mps.build.workflow.behavior.BwfProject_Behavior" />
-    </file>
     <file name="BwfProject__BehaviorDescriptor.java">
       <node id="7306485738221487431" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="7306485738221487431" at="26,0,27,0" concept="8" trace="REGISTRY" />
@@ -1176,27 +1047,6 @@
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/7385586609667776608">
-    <file name="BwfJavaModule_Behavior.java">
-      <node id="7385586609667776608" at="15,106,16,93" concept="6" />
-      <node id="7385586609667776608" at="18,86,19,90" concept="6" />
-      <node id="7385586609667776608" at="21,80,22,83" concept="6" />
-      <node id="7385586609667776608" at="15,0,18,0" concept="9" trace="call_getCompilerNames_4416461515996720469#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="7385586609667776608" at="18,0,21,0" concept="9" trace="call_getAntTargetName_7385586609667776611#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7385586609667776608" at="21,0,24,0" concept="9" trace="call_needsFork_4416461515996686032#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="7385586609667776608" at="15,106,16,93" />
-      <scope id="7385586609667776608" at="18,86,19,90" />
-      <scope id="7385586609667776608" at="21,80,22,83" />
-      <scope id="7385586609667776608" at="15,0,18,0">
-        <var name="__thisConcept__" id="7385586609667776608" />
-      </scope>
-      <scope id="7385586609667776608" at="18,0,21,0">
-        <var name="__thisNode__" id="7385586609667776608" />
-      </scope>
-      <scope id="7385586609667776608" at="21,0,24,0">
-        <var name="__thisNode__" id="7385586609667776608" />
-      </scope>
-      <unit id="7385586609667776608" at="13,0,25,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
-    </file>
     <file name="BwfJavaModule__BehaviorDescriptor.java">
       <node id="7385586609667776608" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="7385586609667776608" at="26,0,27,0" concept="8" trace="REGISTRY" />

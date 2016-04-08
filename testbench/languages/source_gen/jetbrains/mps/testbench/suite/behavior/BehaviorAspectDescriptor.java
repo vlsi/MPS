@@ -4,12 +4,12 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor mySolutionRef__BehaviorDescriptor = new SolutionRef__BehaviorDescriptor();
@@ -20,46 +20,64 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myJUnit3TestCaseRef__BehaviorDescriptor = new JUnit3TestCaseRef__BehaviorDescriptor();
   private final BHDescriptor myITestRef__BehaviorDescriptor = new ITestRef__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[7];
-    myConceptBehaviorIds[0] = 0x11c3fc56a6d1cbdcL;
-    myConceptBehaviorIds[1] = 0x11c3fc56a6d1d7a3L;
-    myConceptBehaviorIds[2] = 0x3e81ed1e2be77cb5L;
-    myConceptBehaviorIds[3] = 0x3e81ed1e2be77cb7L;
-    myConceptBehaviorIds[4] = 0x3e81ed1e2be77cb8L;
-    myConceptBehaviorIds[5] = 0x3e81ed1e2be77cb9L;
-    myConceptBehaviorIds[6] = 0x3e81ed1e2be77cbaL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return mySolutionRef__BehaviorDescriptor;
-      case 1:
-        return myIModuleRef__BehaviorDescriptor;
-      case 2:
-        return myModuleSuite__BehaviorDescriptor;
-      case 3:
-        return myTestCaseRef__BehaviorDescriptor;
-      case 4:
-        return myJUnit4TestCaseRef__BehaviorDescriptor;
-      case 5:
-        return myJUnit3TestCaseRef__BehaviorDescriptor;
-      case 6:
-        return myITestRef__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myIModuleRef__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myITestRef__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myJUnit3TestCaseRef__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myJUnit4TestCaseRef__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myModuleSuite__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return mySolutionRef__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myTestCaseRef__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0k = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1d7a3L, "jetbrains.mps.testbench.suite.structure.IModuleRef"), MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb7L, "jetbrains.mps.testbench.suite.structure.TestCaseRef"));
 }

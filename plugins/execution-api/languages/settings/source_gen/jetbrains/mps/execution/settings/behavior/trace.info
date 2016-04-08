@@ -14,104 +14,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="ApplyTo_Function_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,106,0" name="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CheckProperitesOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.settings.behavior.CheckProperitesOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CheckProperties_Function_BehaviorDescriptor.java">
-      <unit at="17,0,53,0" name="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_BehaviorDescriptor" />
-    </file>
-    <file name="Configuration_Parameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.Configuration_Parameter_BehaviorDescriptor" />
-    </file>
-    <file name="CreateEditor_Function_BehaviorDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" />
-    </file>
-    <file name="DeprecatedAnnotation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="Dispose_Function_BehaviorDescriptor.java">
-      <unit at="14,0,32,0" name="jetbrains.mps.execution.settings.behavior.Dispose_Function_BehaviorDescriptor" />
-    </file>
-    <file name="EditorExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.EditorExpression_BehaviorDescriptor" />
-    </file>
-    <file name="EditorOperationCall_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.settings.behavior.EditorOperationCall_BehaviorDescriptor" />
-    </file>
-    <file name="EditorOperationDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,24,0" name="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="EditorPropertyDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="EditorPropertyReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.settings.behavior.EditorPropertyReference_BehaviorDescriptor" />
-    </file>
-    <file name="GetEditorOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.settings.behavior.GetEditorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GridBagConstraints_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.GridBagConstraints_BehaviorDescriptor" />
-    </file>
-    <file name="IPersistentPropertyHolder_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.execution.settings.behavior.IPersistentPropertyHolder_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfigurationAssistent_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationAssistent_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfigurationMethod_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationMethod_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfigurationTemplateInitializer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplateInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfigurationTemplate_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfigurationType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationType_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentConfiguration_BehaviorDescriptor.java">
-      <unit at="18,0,60,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentPropertyDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PersistentPropertyReferenceOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.settings.behavior.PersistentPropertyReferenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ReportConfigurationErrorStatement_BehaviorDescriptor.java">
-      <unit at="14,0,25,0" name="jetbrains.mps.execution.settings.behavior.ReportConfigurationErrorStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ResetFrom_Function_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_BehaviorDescriptor" />
-    </file>
-    <file name="SettingsEditorType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.SettingsEditorType_BehaviorDescriptor" />
-    </file>
-    <file name="SettingsEditor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.SettingsEditor_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateParameterReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.settings.behavior.TemplateParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.settings.behavior.TemplateParameter_BehaviorDescriptor" />
-    </file>
-    <file name="TemplatePersistentConfigurationType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.settings.behavior.TemplatePersistentConfigurationType_BehaviorDescriptor" />
+      <unit at="14,0,144,0" name="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741647398">
-    <file name="PersistentPropertyReferenceOperation_Behavior.java">
-      <unit id="1262430001741647398" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.PersistentPropertyReferenceOperation_Behavior" />
-    </file>
     <file name="PersistentPropertyReferenceOperation__BehaviorDescriptor.java">
       <node id="1262430001741647398" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741647398" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -186,9 +93,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741704585">
-    <file name="CheckProperties_Function_Behavior.java">
-      <unit id="1262430001741704585" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_Behavior" />
-    </file>
     <file name="CheckProperties_Function__BehaviorDescriptor.java">
       <node id="1262430001741704585" at="28,0,29,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741704585" at="29,0,30,0" concept="8" trace="REGISTRY" />
@@ -286,9 +190,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741717159">
-    <file name="TemplateParameterReference_Behavior.java">
-      <unit id="1262430001741717159" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.TemplateParameterReference_Behavior" />
-    </file>
     <file name="TemplateParameterReference__BehaviorDescriptor.java">
       <node id="1262430001741717159" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741717159" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -363,9 +264,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741717491">
-    <file name="EditorPropertyReference_Behavior.java">
-      <unit id="1262430001741717491" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.EditorPropertyReference_Behavior" />
-    </file>
     <file name="EditorPropertyReference__BehaviorDescriptor.java">
       <node id="1262430001741717491" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741717491" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -440,9 +338,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741718588">
-    <file name="DeprecatedAnnotation_Behavior.java">
-      <unit id="1262430001741718588" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_Behavior" />
-    </file>
     <file name="DeprecatedAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741718588" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741718588" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -508,9 +403,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/2797684467151253534">
-    <file name="ReportConfigurationErrorStatement_Behavior.java">
-      <unit id="2797684467151253534" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.ReportConfigurationErrorStatement_Behavior" />
-    </file>
     <file name="ReportConfigurationErrorStatement__BehaviorDescriptor.java">
       <node id="2797684467151253534" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="2797684467151253534" at="32,0,33,0" concept="8" trace="REGISTRY" />
@@ -603,9 +495,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/3677530513558609526">
-    <file name="EditorPropertyDeclaration_Behavior.java">
-      <unit id="3677530513558609526" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_Behavior" />
-    </file>
     <file name="EditorPropertyDeclaration__BehaviorDescriptor.java">
       <node id="3677530513558609526" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="3677530513558609526" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -680,9 +569,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066370">
-    <file name="PersistentConfigurationType_Behavior.java">
-      <unit id="946964771156066370" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationType_Behavior" />
-    </file>
     <file name="PersistentConfigurationType__BehaviorDescriptor.java">
       <node id="946964771156066370" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066370" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -758,59 +644,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066386">
-    <file name="PersistentConfiguration_Behavior.java">
-      <node id="946964771156066386" at="15,91,16,105" concept="7" />
-      <node id="946964771156066386" at="18,86,19,100" concept="7" />
-      <node id="946964771156066386" at="21,95,22,104" concept="7" />
-      <node id="946964771156066386" at="24,98,25,107" concept="7" />
-      <node id="946964771156066386" at="27,84,28,98" concept="7" />
-      <node id="946964771156066386" at="30,131,31,129" concept="7" />
-      <node id="946964771156066386" at="33,130,34,122" concept="7" />
-      <node id="946964771156066386" at="36,101,37,104" concept="7" />
-      <node id="946964771156066386" at="15,0,18,0" concept="9" trace="call_getGeneratedEditorName_946964771156066479#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066386" at="18,0,21,0" concept="9" trace="call_getFullEditorName_946964771156066491#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066386" at="21,0,24,0" concept="9" trace="call_getTemplateProperties_946964771156066510#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="946964771156066386" at="24,0,27,0" concept="9" trace="call_getNonTemplateProperties_946964771156066530#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="946964771156066386" at="27,0,30,0" concept="9" trace="call_getEditorSuffix_946964771156066551#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066386" at="30,0,33,0" concept="9" trace="call_getContextPersistentConfigurationType_946964771156066389#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="946964771156066386" at="33,0,36,0" concept="9" trace="call_getContextPersistentProperties_946964771156066434#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="946964771156066386" at="36,0,39,0" concept="9" trace="call_getCheckMethodName_946964771156066466#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="946964771156066386" at="15,91,16,105" />
-      <scope id="946964771156066386" at="18,86,19,100" />
-      <scope id="946964771156066386" at="21,95,22,104" />
-      <scope id="946964771156066386" at="24,98,25,107" />
-      <scope id="946964771156066386" at="27,84,28,98" />
-      <scope id="946964771156066386" at="30,131,31,129" />
-      <scope id="946964771156066386" at="33,130,34,122" />
-      <scope id="946964771156066386" at="36,101,37,104" />
-      <scope id="946964771156066386" at="15,0,18,0">
-        <var name="__thisNode__" id="946964771156066386" />
-      </scope>
-      <scope id="946964771156066386" at="18,0,21,0">
-        <var name="__thisNode__" id="946964771156066386" />
-      </scope>
-      <scope id="946964771156066386" at="21,0,24,0">
-        <var name="__thisNode__" id="946964771156066386" />
-      </scope>
-      <scope id="946964771156066386" at="24,0,27,0">
-        <var name="__thisNode__" id="946964771156066386" />
-      </scope>
-      <scope id="946964771156066386" at="27,0,30,0">
-        <var name="__thisNode__" id="946964771156066386" />
-      </scope>
-      <scope id="946964771156066386" at="30,0,33,0">
-        <var name="__thisConcept__" id="946964771156066386" />
-        <var name="node" id="946964771156066390" />
-      </scope>
-      <scope id="946964771156066386" at="33,0,36,0">
-        <var name="__thisConcept__" id="946964771156066386" />
-        <var name="node" id="946964771156066435" />
-      </scope>
-      <scope id="946964771156066386" at="36,0,39,0">
-        <var name="__thisConcept__" id="946964771156066386" />
-      </scope>
-      <unit id="946964771156066386" at="13,0,40,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
-    </file>
     <file name="PersistentConfiguration__BehaviorDescriptor.java">
       <node id="946964771156066386" at="35,0,36,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066386" at="36,0,37,0" concept="8" trace="REGISTRY" />
@@ -1050,9 +883,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066803">
-    <file name="CreateEditor_Function_Behavior.java">
-      <unit id="946964771156066803" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" />
-    </file>
     <file name="CreateEditor_Function__BehaviorDescriptor.java">
       <node id="946964771156066803" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066803" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -1168,9 +998,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066813">
-    <file name="Dispose_Function_Behavior.java">
-      <unit id="946964771156066813" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.Dispose_Function_Behavior" />
-    </file>
     <file name="Dispose_Function__BehaviorDescriptor.java">
       <node id="946964771156066813" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066813" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -1263,9 +1090,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066823">
-    <file name="PersistentConfigurationTemplate_Behavior.java">
-      <unit id="946964771156066823" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior" />
-    </file>
     <file name="PersistentConfigurationTemplate__BehaviorDescriptor.java">
       <node id="946964771156066823" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066823" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1354,60 +1178,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066835">
-    <file name="PersistentPropertyDeclaration_Behavior.java">
-      <node id="946964771156066835" at="14,80,15,99" concept="7" />
-      <node id="946964771156066835" at="17,84,18,104" concept="7" />
-      <node id="946964771156066835" at="20,82,21,102" concept="7" />
-      <node id="946964771156066835" at="23,88,24,108" concept="7" />
-      <node id="946964771156066835" at="26,79,27,100" concept="7" />
-      <node id="946964771156066835" at="29,108,30,110" concept="7" />
-      <node id="946964771156066835" at="32,118,33,120" concept="7" />
-      <node id="946964771156066835" at="35,110,36,112" concept="7" />
-      <node id="946964771156066835" at="14,0,17,0" concept="9" trace="call_isTemplate_946964771156066860#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="946964771156066835" at="17,0,20,0" concept="9" trace="call_getAccessorName_946964771156066871#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066835" at="20,0,23,0" concept="9" trace="call_getTypeFqName_946964771156066903#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066835" at="23,0,26,0" concept="9" trace="call_getTypeEditorFqName_946964771156066917#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156066835" at="26,0,29,0" concept="9" trace="call_getTemplate_946964771156066964#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="946964771156066835" at="29,0,32,0" concept="9" trace="call_addMyPrefix_6314556899428615272#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="946964771156066835" at="32,0,35,0" concept="9" trace="call_removeMyPrefixInternal_946964771156066931#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="946964771156066835" at="35,0,38,0" concept="9" trace="call_removeMyPrefix_946964771156066836#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="946964771156066835" at="14,80,15,99" />
-      <scope id="946964771156066835" at="17,84,18,104" />
-      <scope id="946964771156066835" at="20,82,21,102" />
-      <scope id="946964771156066835" at="23,88,24,108" />
-      <scope id="946964771156066835" at="26,79,27,100" />
-      <scope id="946964771156066835" at="29,108,30,110" />
-      <scope id="946964771156066835" at="32,118,33,120" />
-      <scope id="946964771156066835" at="35,110,36,112" />
-      <scope id="946964771156066835" at="14,0,17,0">
-        <var name="__thisNode__" id="946964771156066835" />
-      </scope>
-      <scope id="946964771156066835" at="17,0,20,0">
-        <var name="__thisNode__" id="946964771156066835" />
-      </scope>
-      <scope id="946964771156066835" at="20,0,23,0">
-        <var name="__thisNode__" id="946964771156066835" />
-      </scope>
-      <scope id="946964771156066835" at="23,0,26,0">
-        <var name="__thisNode__" id="946964771156066835" />
-      </scope>
-      <scope id="946964771156066835" at="26,0,29,0">
-        <var name="__thisNode__" id="946964771156066835" />
-      </scope>
-      <scope id="946964771156066835" at="29,0,32,0">
-        <var name="__thisConcept__" id="946964771156066835" />
-        <var name="name" id="6314556899428615277" />
-      </scope>
-      <scope id="946964771156066835" at="32,0,35,0">
-        <var name="__thisConcept__" id="946964771156066835" />
-        <var name="name" id="946964771156066934" />
-      </scope>
-      <scope id="946964771156066835" at="35,0,38,0">
-        <var name="__thisConcept__" id="946964771156066835" />
-        <var name="name" id="946964771156066837" />
-      </scope>
-      <unit id="946964771156066835" at="12,0,39,0" name="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
-    </file>
     <file name="PersistentPropertyDeclaration__BehaviorDescriptor.java">
       <node id="48168216978196027" at="159,254,159,254" concept="1" />
       <node id="946964771156066835" at="32,0,33,0" concept="8" trace="CONCEPT" />
@@ -1596,9 +1366,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066978">
-    <file name="ApplyTo_Function_Behavior.java">
-      <unit id="946964771156066978" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_Behavior" />
-    </file>
     <file name="ApplyTo_Function__BehaviorDescriptor.java">
       <node id="946964771156066978" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066978" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -1704,16 +1471,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066990">
-    <file name="EditorOperationDeclaration_Behavior.java">
-      <node id="946964771156066990" at="13,96,14,107" concept="7" />
-      <node id="946964771156066990" at="13,0,16,0" concept="9" trace="call_getMethodbyName_946964771156066997#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="946964771156066990" at="13,96,14,107" />
-      <scope id="946964771156066990" at="13,0,16,0">
-        <var name="__thisNode__" id="946964771156066990" />
-        <var name="name" id="946964771156067000" />
-      </scope>
-      <unit id="946964771156066990" at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
-    </file>
     <file name="EditorOperationDeclaration__BehaviorDescriptor.java">
       <node id="946964771156066990" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="946964771156066990" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1798,9 +1555,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156067020">
-    <file name="ResetFrom_Function_Behavior.java">
-      <unit id="946964771156067020" at="10,0,13,0" name="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_Behavior" />
-    </file>
     <file name="ResetFrom_Function__BehaviorDescriptor.java">
       <node id="946964771156067020" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="946964771156067020" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -1906,15 +1660,6 @@
     </file>
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156067030">
-    <file name="SettingsEditor_Behavior.java">
-      <node id="946964771156067030" at="14,95,15,95" concept="7" />
-      <node id="946964771156067030" at="14,0,17,0" concept="9" trace="call_getDeclaredOperations_946964771156067031#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="946964771156067030" at="14,95,15,95" />
-      <scope id="946964771156067030" at="14,0,17,0">
-        <var name="__thisNode__" id="946964771156067030" />
-      </scope>
-      <unit id="946964771156067030" at="12,0,18,0" name="jetbrains.mps.execution.settings.behavior.SettingsEditor_Behavior" />
-    </file>
     <file name="SettingsEditor__BehaviorDescriptor.java">
       <node id="946964771156067030" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="946964771156067030" at="26,0,27,0" concept="8" trace="REGISTRY" />

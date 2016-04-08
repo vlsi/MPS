@@ -16,9 +16,14 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.*;
@@ -26,22 +31,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
-  private final SConceptId myConcept;
-  private final String myConceptName;
+  private final SAbstractConcept myConcept;
 
-  public IllegalConstraintsDescriptor(@NotNull SConceptId concept, @NotNull String conceptName) {
-    this.myConcept = concept;
-    this.myConceptName = conceptName;
+  public IllegalConstraintsDescriptor(@NotNull SAbstractConcept concept) {
+    myConcept = concept;
   }
 
   @Override
   public String getConceptFqName() {
-    return myConceptName;
+    return myConcept.getQualifiedName();
   }
 
   @Override
   public SConceptId getConceptId() {
-    return myConcept;
+    if (myConcept instanceof SInterfaceConceptAdapterById) return ((SInterfaceConceptAdapterById) myConcept).getId();
+    if (myConcept instanceof SConceptAdapterById) return ((SConceptAdapterById) myConcept).getId();
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @Override

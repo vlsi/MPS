@@ -4,100 +4,99 @@ package org.jetbrains.mps.samples.ParallelFor.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[7];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0xf8c37a7f6eL;
-    myId2Index[2] = 0xfbbebabf09L;
-    myId2Index[3] = 0x10cac65f399L;
-    myId2Index[4] = 0x116b46a08c4L;
-    myId2Index[5] = 0x6c6b6a1e379f9404L;
-    myId2Index[6] = 0x7bd8445d1e8770aaL;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ClassConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[4];
-          myIntentions0[0] = new MarkAsThreadSafe_Intention();
-          myIntentions0[1] = new UnmarkAsThreadSafe_Intention();
-          myIntentions0[2] = new MarkAsNonThreadSafe_Intention();
-          myIntentions0[3] = new UnmarkAsNonThreadSafe_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: VariableDeclaration 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[2];
-          myIntentions1[0] = new MarkVariableDeclarationAsThreadSafe_Intention();
-          myIntentions1[1] = new UnmarkVariableAsThreadSafe_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: StaticMethodCall 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[2];
-          myIntentions2[0] = new MarkStaticMethodCallAsThreadSafe_Intention();
-          myIntentions2[1] = new UnmarkStaticMethodCallAsThreadSafe_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: ForEachStatement 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new TurnToParallelForEachStatement_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: DotExpression 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[2];
-          myIntentions4[0] = new MarkInstanceMethodCallAsThreadSafe_Intention();
-          myIntentions4[1] = new UnmarkInstanceMethodCallAsThreadSafe_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: LocalMethodCall 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[4];
-          myIntentions5[0] = new MarkLocalStaticMethodCallAsThreadSafe_Intention();
-          myIntentions5[1] = new UnmarkLocalStaticMethodCallAsThreadSafe_Intention();
-          myIntentions5[2] = new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention();
-          myIntentions5[3] = new MarkLocalInstanceMethodCallAsThreadSafe_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: ParallelFor 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[2];
-          myIntentions6[0] = new DetachFromThreadPool_Intention();
-          myIntentions6[1] = new TurnToForEachStatement_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: ClassConcept 
+            intentions = new IntentionFactory[4];
+            intentions[0] = new MarkAsThreadSafe_Intention();
+            intentions[1] = new UnmarkAsThreadSafe_Intention();
+            intentions[2] = new MarkAsNonThreadSafe_Intention();
+            intentions[3] = new UnmarkAsNonThreadSafe_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: DotExpression 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new MarkInstanceMethodCallAsThreadSafe_Intention();
+            intentions[1] = new UnmarkInstanceMethodCallAsThreadSafe_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: ForEachStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new TurnToParallelForEachStatement_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: LocalMethodCall 
+            intentions = new IntentionFactory[4];
+            intentions[0] = new MarkLocalStaticMethodCallAsThreadSafe_Intention();
+            intentions[1] = new UnmarkLocalStaticMethodCallAsThreadSafe_Intention();
+            intentions[2] = new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention();
+            intentions[3] = new MarkLocalInstanceMethodCallAsThreadSafe_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: ParallelFor 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new DetachFromThreadPool_Intention();
+            intentions[1] = new TurnToForEachStatement_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: StaticMethodCall 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new MarkStaticMethodCallAsThreadSafe_Intention();
+            intentions[1] = new UnmarkStaticMethodCallAsThreadSafe_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: VariableDeclaration 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new MarkVariableDeclarationAsThreadSafe_Intention();
+            intentions[1] = new UnmarkVariableAsThreadSafe_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -123,4 +122,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[16] = new MarkLocalInstanceMethodCallAsThreadSafe_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
 }

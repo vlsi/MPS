@@ -17,59 +17,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="IGeneratedToClass_BehaviorDescriptor.java">
-      <unit at="14,0,22,0" name="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)/946964771156905389">
-    <file name="IGeneratedToClass_Behavior.java">
-      <node id="946964771156905389" at="15,108,16,101" concept="7" />
-      <node id="946964771156905389" at="18,103,19,104" concept="7" />
-      <node id="946964771156905389" at="21,82,22,90" concept="7" />
-      <node id="946964771156905389" at="24,134,25,117" concept="7" />
-      <node id="946964771156905389" at="27,130,28,108" concept="7" />
-      <node id="946964771156905389" at="30,122,31,104" concept="7" />
-      <node id="946964771156905389" at="15,0,18,0" concept="10" trace="call_getValidClassName_2572811016744662265#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="946964771156905389" at="18,0,21,0" concept="10" trace="call_getGeneratedClassName_946964771156905516#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="946964771156905389" at="21,0,24,0" concept="10" trace="call_getNamespace_2256484787298834694#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="946964771156905389" at="24,0,27,0" concept="10" trace="call_replaceProhibitedSymbol_946964771156905390#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="946964771156905389" at="27,0,30,0" concept="10" trace="call_makeUpperCase_946964771156905431#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;I)Ljava/lang/String;" />
-      <node id="946964771156905389" at="30,0,33,0" concept="10" trace="call_getValidClassName_3754131050835940481#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="946964771156905389" at="15,108,16,101" />
-      <scope id="946964771156905389" at="18,103,19,104" />
-      <scope id="946964771156905389" at="21,82,22,90" />
-      <scope id="946964771156905389" at="24,134,25,117" />
-      <scope id="946964771156905389" at="27,130,28,108" />
-      <scope id="946964771156905389" at="30,122,31,104" />
-      <scope id="946964771156905389" at="15,0,18,0">
-        <var name="__thisNode__" id="946964771156905389" />
-        <var name="name" id="2572811016744662271" />
-      </scope>
-      <scope id="946964771156905389" at="18,0,21,0">
-        <var name="__thisNode__" id="946964771156905389" />
-        <var name="name" id="946964771156905519" />
-      </scope>
-      <scope id="946964771156905389" at="21,0,24,0">
-        <var name="__thisNode__" id="946964771156905389" />
-      </scope>
-      <scope id="946964771156905389" at="24,0,27,0">
-        <var name="__thisConcept__" id="946964771156905389" />
-        <var name="name" id="946964771156905391" />
-        <var name="symbol" id="946964771156905393" />
-      </scope>
-      <scope id="946964771156905389" at="27,0,30,0">
-        <var name="__thisConcept__" id="946964771156905389" />
-        <var name="index" id="946964771156905435" />
-        <var name="string" id="946964771156905432" />
-      </scope>
-      <scope id="946964771156905389" at="30,0,33,0">
-        <var name="__thisConcept__" id="946964771156905389" />
-        <var name="name" id="3754131050835940486" />
-      </scope>
-      <unit id="946964771156905389" at="13,0,34,0" name="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
-    </file>
     <file name="IGeneratedToClass__BehaviorDescriptor.java">
       <node id="946964771156905389" at="31,0,32,0" concept="9" trace="CONCEPT" />
       <node id="946964771156905389" at="32,0,33,0" concept="9" trace="REGISTRY" />

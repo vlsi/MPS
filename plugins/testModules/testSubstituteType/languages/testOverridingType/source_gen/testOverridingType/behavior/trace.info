@@ -1,24 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="ErrorType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testOverridingType.behavior.ErrorType_BehaviorDescriptor" />
-    </file>
-    <file name="OverrideAnnotation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="OverridingPrimFloatType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testOverridingType.behavior.OverridingPrimFloatType_BehaviorDescriptor" />
-    </file>
-    <file name="OverridingPrimIntType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testOverridingType.behavior.OverridingPrimIntType_BehaviorDescriptor" />
-    </file>
-    <file name="OverridingPrimNumConstant_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testOverridingType.behavior.OverridingPrimNumConstant_BehaviorDescriptor" />
-    </file>
-    <file name="UnconditionalOverrideAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="testOverridingType.behavior.UnconditionalOverrideAnnotation_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

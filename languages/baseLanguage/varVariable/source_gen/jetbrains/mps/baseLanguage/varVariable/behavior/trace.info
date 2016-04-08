@@ -13,16 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="VarVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)/8425555512443914486">
-    <file name="VarVariableDeclaration_Behavior.java">
-      <unit id="8425555512443914486" at="10,0,13,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" />
-    </file>
     <file name="VarVariableDeclaration__BehaviorDescriptor.java">
       <node id="8425555512443914486" at="22,0,23,0" concept="6" trace="CONCEPT" />
       <node id="8425555512443914486" at="23,0,24,0" concept="6" trace="REGISTRY" />

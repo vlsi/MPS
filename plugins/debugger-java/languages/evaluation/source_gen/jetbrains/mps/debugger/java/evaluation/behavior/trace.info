@@ -15,55 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,74,0" name="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="DebuggedType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" />
-    </file>
-    <file name="DoNotTransformAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="DownCastToLowLevel_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorConcept_BehaviorDescriptor.java">
-      <unit at="16,0,49,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_BehaviorDescriptor" />
-    </file>
-    <file name="Evaluator_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorsSuperMethodCall_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="EvaluatorsThisExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsThisExpression_BehaviorDescriptor" />
-    </file>
-    <file name="GenerationHelperAnnotation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="IEvaluatorConcept_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
-    </file>
-    <file name="LowLevelVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="LowLevelVariable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" />
-    </file>
-    <file name="ToEvaluateAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="UnitNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" />
-    </file>
-    <file name="UnprocessedAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" />
+      <unit at="14,0,96,0" name="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741643006">
-    <file name="ToEvaluateAnnotation_Behavior.java">
-      <unit id="1262430001741643006" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" />
-    </file>
     <file name="ToEvaluateAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741643006" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741643006" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -129,9 +84,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741646975">
-    <file name="DoNotTransformAnnotation_Behavior.java">
-      <unit id="1262430001741646975" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" />
-    </file>
     <file name="DoNotTransformAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741646975" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741646975" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -197,9 +149,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741647095">
-    <file name="UnprocessedAnnotation_Behavior.java">
-      <unit id="1262430001741647095" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" />
-    </file>
     <file name="UnprocessedAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741647095" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741647095" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -265,9 +214,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4005274477404902656">
-    <file name="LowLevelVariable_Behavior.java">
-      <unit id="4005274477404902656" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_Behavior" />
-    </file>
     <file name="LowLevelVariable__BehaviorDescriptor.java">
       <node id="4005274477404902656" at="21,0,22,0" concept="8" trace="CONCEPT" />
       <node id="4005274477404902656" at="22,0,23,0" concept="8" trace="REGISTRY" />
@@ -334,21 +280,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4544608336420723235">
-    <file name="DebuggedType_Behavior.java">
-      <node id="4544608336420723235" at="13,90,14,94" concept="6" />
-      <node id="4544608336420723235" at="16,89,17,93" concept="6" />
-      <node id="4544608336420723235" at="13,0,16,0" concept="9" trace="call_getHighClassifierType_4544608336420723238#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4544608336420723235" at="16,0,19,0" concept="9" trace="call_getLowClassifierType_4544608336420723302#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4544608336420723235" at="13,90,14,94" />
-      <scope id="4544608336420723235" at="16,89,17,93" />
-      <scope id="4544608336420723235" at="13,0,16,0">
-        <var name="__thisNode__" id="4544608336420723235" />
-      </scope>
-      <scope id="4544608336420723235" at="16,0,19,0">
-        <var name="__thisNode__" id="4544608336420723235" />
-      </scope>
-      <unit id="4544608336420723235" at="11,0,20,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
-    </file>
     <file name="DebuggedType__BehaviorDescriptor.java">
       <node id="4544608336420723235" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="4544608336420723235" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -441,9 +372,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/5211667636169798154">
-    <file name="EvaluatorConcept_Behavior.java">
-      <unit id="5211667636169798154" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" />
-    </file>
     <file name="EvaluatorConcept__BehaviorDescriptor.java">
       <node id="5211667636169798154" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="5211667636169798154" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -559,9 +487,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/6036237525966348398">
-    <file name="EvaluatorsSuperMethodCall_Behavior.java">
-      <unit id="6036237525966348398" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" />
-    </file>
     <file name="EvaluatorsSuperMethodCall__BehaviorDescriptor.java">
       <node id="6036237525966348398" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="6036237525966348398" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -636,9 +561,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/846214144113560209">
-    <file name="Evaluator_Behavior.java">
-      <unit id="846214144113560209" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" />
-    </file>
     <file name="Evaluator__BehaviorDescriptor.java">
       <node id="846214144113560209" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="846214144113560209" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -725,9 +647,6 @@
     </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/9172312269976647292">
-    <file name="IEvaluatorConcept_Behavior.java">
-      <unit id="9172312269976647292" at="10,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_Behavior" />
-    </file>
     <file name="IEvaluatorConcept__BehaviorDescriptor.java">
       <node id="9172312269976647292" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="9172312269976647292" at="25,0,26,0" concept="8" trace="REGISTRY" />

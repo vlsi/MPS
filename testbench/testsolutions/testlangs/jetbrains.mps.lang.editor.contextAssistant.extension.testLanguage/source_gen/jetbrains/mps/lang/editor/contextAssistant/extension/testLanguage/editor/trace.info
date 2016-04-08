@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="17,0,51,0" name="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="17,0,75,0" name="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor)/5624877018229166268">

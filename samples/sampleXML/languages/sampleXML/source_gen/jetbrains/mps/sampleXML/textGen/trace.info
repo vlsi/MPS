@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="15,0,51,0" name="jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor" />
+      <unit at="16,0,67,0" name="jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)/1236699935298">
@@ -33,7 +33,7 @@
       <unit id="1236699935298" at="10,0,20,0" name="jetbrains.mps.sampleXML.textGen.Document_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="2341412953773657688" at="47,63,48,17" concept="5" />
+      <node id="2341412953773657688" at="54,63,55,17" concept="5" />
     </file>
   </root>
   <root nodeRef="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)/1236700479964">

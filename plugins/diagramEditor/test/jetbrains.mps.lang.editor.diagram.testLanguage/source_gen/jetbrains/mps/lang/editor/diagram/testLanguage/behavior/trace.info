@@ -13,46 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,46,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Diagram1_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram1_BehaviorDescriptor" />
-    </file>
-    <file name="Diagram2_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram2_BehaviorDescriptor" />
-    </file>
-    <file name="InputPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.InputPort_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWithName_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithName_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWithPortQueries_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPortQueries_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWithPorts_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWithSize_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_BehaviorDescriptor" />
-    </file>
-    <file name="Node_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Node_BehaviorDescriptor" />
-    </file>
-    <file name="OutputPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputPort_BehaviorDescriptor" />
-    </file>
-    <file name="OutputToInputPortConnector_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputToInputPortConnector_BehaviorDescriptor" />
-    </file>
-    <file name="RectangleNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.RectangleNode_BehaviorDescriptor" />
+      <unit at="14,0,54,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/5540569706414469751">
-    <file name="NodeWithPorts_Behavior.java">
-      <unit id="5540569706414469751" at="10,0,13,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_Behavior" />
-    </file>
     <file name="NodeWithPorts__BehaviorDescriptor.java">
       <node id="5540569706414469751" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="5540569706414469751" at="22,0,23,0" concept="6" trace="REGISTRY" />
@@ -119,9 +83,6 @@
     </file>
   </root>
   <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/8794120090377793952">
-    <file name="NodeWithSize_Behavior.java">
-      <unit id="8794120090377793952" at="10,0,13,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_Behavior" />
-    </file>
     <file name="NodeWithSize__BehaviorDescriptor.java">
       <node id="8794120090377793952" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="8794120090377793952" at="22,0,23,0" concept="6" trace="REGISTRY" />

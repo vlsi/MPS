@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,30 +15,29 @@
  */
 package jetbrains.mps.ide.messages.navigation;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.pom.Navigatable;
+import jetbrains.mps.ide.navigation.NavigatableFactory;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
+import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-class NodePointerNavigationHandler implements INavigationHandler<SNodeReference> {
-  @Override
-  public boolean canNavigate(SNodeReference object) {
-    return isCorrectNode(object);
-  }
+class NodePointerNavigationHandler implements NavigatableFactory {
 
-  public static boolean isCorrectNode(SNodeReference object) {
-    SNode realNode = object.resolve(MPSModuleRepository.getInstance());
-    return realNode != null;
+  private final Project myProject;
+
+  NodePointerNavigationHandler(@NotNull Project mpsProject) {
+    myProject = mpsProject;
   }
 
   @Override
-  public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    final SNode resolved = node.resolve(mpsProject.getRepository());
-    if (resolved != null) {
-      NavigationSupport.getInstance().openNode(mpsProject, resolved, focus, select);
-    }
+  public boolean canCreate(@NotNull Object o) {
+    return o instanceof SNodeReference;
+  }
+
+  @NotNull
+  @Override
+  public Navigatable create(@NotNull Object o) {
+    return new NodeNavigatable(myProject, (SNodeReference) o);
   }
 }

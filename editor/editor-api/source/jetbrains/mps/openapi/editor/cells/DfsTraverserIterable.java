@@ -20,7 +20,10 @@ import java.util.Iterator;
 /**
  * Semen Alperovich
  * 03 22, 2013
+ *
+ * @deprecated Use {@link CellTraversalUtil#iterateTree(EditorCell, EditorCell, boolean)}
  */
+@Deprecated
 public class DfsTraverserIterable implements Iterable<EditorCell> {
   private EditorCell myStart;
   private boolean myForward;

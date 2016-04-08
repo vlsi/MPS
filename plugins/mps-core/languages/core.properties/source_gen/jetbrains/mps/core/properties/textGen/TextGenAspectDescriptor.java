@@ -6,37 +6,50 @@ import jetbrains.mps.text.rt.TextGenAspectBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Map;
+import java.util.HashMap;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
-  private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[4];
-    myId2Index[0] = 0x36fb0dc9fd3a2754L;
-    myId2Index[1] = 0x36fb0dc9fd3a3ac1L;
-    myId2Index[2] = 0x36fb0dc9fd3a3ac2L;
-    myId2Index[3] = 0x36fb0dc9fd3a3ad9L;
   }
+
   @Nullable
   @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId id) {
-    final int index = Arrays.binarySearch(myId2Index, id.getIdValue());
-    switch (index) {
-      case 0:
-        return new PropertiesFile_TextGen();
-      case 1:
-        return new PropertiesDeclaration_TextGen();
-      case 2:
-        return new PropertiesLine_TextGen();
-      case 3:
-        return new PropertiesComment_TextGen();
-      default:
-        return null;
+  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_t8hmqt_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return new PropertiesComment_TextGen();
+          }
+          break;
+        case 1:
+          if (true) {
+            return new PropertiesDeclaration_TextGen();
+          }
+          break;
+        case 2:
+          if (true) {
+            return new PropertiesFile_TextGen();
+          }
+          break;
+        case 3:
+          if (true) {
+            return new PropertiesLine_TextGen();
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
 
   @Override
@@ -56,4 +69,13 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   private static String getFileExtension_PropertiesFile(SNode node) {
     return "properties";
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_t8hmqt_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ad9L, "jetbrains.mps.core.properties.structure.PropertiesComment"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, "jetbrains.mps.core.properties.structure.PropertiesDeclaration"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a2754L, "jetbrains.mps.core.properties.structure.PropertiesFile"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L, "jetbrains.mps.core.properties.structure.PropertiesLine"));
 }

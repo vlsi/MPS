@@ -8,44 +8,65 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import java.util.Arrays;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.editor.runtime.style.InheritableStyleAttribute;
 import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements StyleAttributeProvider {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0aL, "jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle"))) {
-        return Collections.<ConceptEditor>singletonList(new HugePriorityStyle_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x38990895c164873aL, "jetbrains.mps.lang.editor.styleTests.structure.LeafNode"))) {
-        return Collections.<ConceptEditor>singletonList(new LeafNode_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a34c76L, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle"))) {
-        return Collections.<ConceptEditor>singletonList(new PriorityStyle_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3689eL, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy"))) {
-        return Collections.<ConceptEditor>singletonList(new PriorityStyleCopy_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x5bb841570e741168L, "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"))) {
-        return Collections.<ConceptEditor>singletonList(new TestConceptWithStyleAttributes_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"))) {
-        return Collections.<ConceptEditor>singletonList(new TestInheritedAttribute_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"))) {
-        return Collections.<ConceptEditor>singletonList(new TestSimpleAttribute_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0fL, "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"))) {
-        return Collections.<ConceptEditor>singletonList(new UnapplyPriorityStyleCopy_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new HugePriorityStyle_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LeafNode_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PriorityStyle_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PriorityStyleCopy_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TestConceptWithStyleAttributes_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TestInheritedAttribute_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TestSimpleAttribute_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnapplyPriorityStyleCopy_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -55,25 +76,36 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"))) {
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a0c, editorComponentId)) {
-          case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new StyleTestElement_EditorComponent());
-          case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new StyleTest_EditorComponent());
-          default:
-            return Collections.<ConceptEditorComponent>emptyList();
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"))) {
-        if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TestInheritedAttibute_EditorComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"))) {
-        if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TestISimpleAttribute_EditorComponent());
-        }
+      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a2, editorComponentId)) {
+              case 0:
+                return Collections.<ConceptEditorComponent>singletonList(new StyleTestElement_EditorComponent());
+              case 1:
+                return Collections.<ConceptEditorComponent>singletonList(new StyleTest_EditorComponent());
+              default:
+                return Collections.<ConceptEditorComponent>emptyList();
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new TestInheritedAttibute_EditorComponent());
+            }
+          }
+          break;
+        case 2:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new TestISimpleAttribute_EditorComponent());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -91,6 +123,16 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     }
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b0a0c = new String[]{"jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent", "jetbrains.mps.lang.editor.styleTests.editor.StyleTest_EditorComponent"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0aL, "jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x38990895c164873aL, "jetbrains.mps.lang.editor.styleTests.structure.LeafNode"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a34c76L, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3689eL, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x5bb841570e741168L, "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0fL, "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"));
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a2 = new String[]{"jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent", "jetbrains.mps.lang.editor.styleTests.editor.StyleTest_EditorComponent"};
   private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"test-inherited-attribute", "test-simple-attribute"};
 }

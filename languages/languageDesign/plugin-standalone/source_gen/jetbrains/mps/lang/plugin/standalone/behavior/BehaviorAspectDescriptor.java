@@ -4,12 +4,12 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myProjectPluginDisposeBlock__BehaviorDescriptor = new ProjectPluginDisposeBlock__BehaviorDescriptor();
@@ -21,49 +21,69 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myApplicationPluginInitBlock__BehaviorDescriptor = new ApplicationPluginInitBlock__BehaviorDescriptor();
   private final BHDescriptor myProjectPluginType__BehaviorDescriptor = new ProjectPluginType__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[8];
-    myConceptBehaviorIds[0] = 0x6b059b0986f2043L;
-    myConceptBehaviorIds[1] = 0x6b059b0986f2049L;
-    myConceptBehaviorIds[2] = 0x6b059b0986f204fL;
-    myConceptBehaviorIds[3] = 0x6b059b0986f2052L;
-    myConceptBehaviorIds[4] = 0x6b059b0986f2058L;
-    myConceptBehaviorIds[5] = 0x6b059b0986f205eL;
-    myConceptBehaviorIds[6] = 0x6b059b0986f2063L;
-    myConceptBehaviorIds[7] = 0x6b059b0986f2068L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myProjectPluginDisposeBlock__BehaviorDescriptor;
-      case 1:
-        return myProjectPluginInitBlock__BehaviorDescriptor;
-      case 2:
-        return myApplicationPluginType__BehaviorDescriptor;
-      case 3:
-        return myProjectPluginDeclaration__BehaviorDescriptor;
-      case 4:
-        return myApplicationPluginDeclaration__BehaviorDescriptor;
-      case 5:
-        return myApplicationPluginDisposeBlock__BehaviorDescriptor;
-      case 6:
-        return myApplicationPluginInitBlock__BehaviorDescriptor;
-      case 7:
-        return myProjectPluginType__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myApplicationPluginDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myApplicationPluginDisposeBlock__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myApplicationPluginInitBlock__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myApplicationPluginType__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myProjectPluginDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myProjectPluginDisposeBlock__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myProjectPluginInitBlock__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myProjectPluginType__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2063L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2043L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2049L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2068L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType"));
 }

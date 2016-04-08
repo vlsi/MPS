@@ -4,12 +4,12 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myTemplateFunctionParameter_generationContext__BehaviorDescriptor = new TemplateFunctionParameter_generationContext__BehaviorDescriptor();
@@ -23,55 +23,79 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myGenerationContextOp_NodePatternRef__BehaviorDescriptor = new GenerationContextOp_NodePatternRef__BehaviorDescriptor();
   private final BHDescriptor myGenerationContextOp_ContextVarRef__BehaviorDescriptor = new GenerationContextOp_ContextVarRef__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[10];
-    myConceptBehaviorIds[0] = 0x11b5282d0e3L;
-    myConceptBehaviorIds[1] = 0x11b8fe26de8L;
-    myConceptBehaviorIds[2] = 0x11b8fe60348L;
-    myConceptBehaviorIds[3] = 0x11b9023d290L;
-    myConceptBehaviorIds[4] = 0x11b90242983L;
-    myConceptBehaviorIds[5] = 0x186874d40ed9c757L;
-    myConceptBehaviorIds[6] = 0x186874d40ed9c758L;
-    myConceptBehaviorIds[7] = 0x186874d40edb6a16L;
-    myConceptBehaviorIds[8] = 0x3fb2d847d55fc21eL;
-    myConceptBehaviorIds[9] = 0x671e792f3dbdfe7eL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
-      case 1:
-        return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
-      case 2:
-        return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
-      case 3:
-        return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
-      case 4:
-        return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
-      case 5:
-        return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
-      case 6:
-        return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
-      case 7:
-        return myGenerationContextOp_PatternRef__BehaviorDescriptor;
-      case 8:
-        return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
-      case 9:
-        return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0n.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myGenerationContextOp_PatternRef__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40edb6a16L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe26de8L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9023d290L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b90242983L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe60348L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e3L, "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"));
 }

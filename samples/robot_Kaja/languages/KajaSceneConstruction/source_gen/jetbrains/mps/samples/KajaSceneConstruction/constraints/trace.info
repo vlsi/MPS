@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.samples.KajaSceneConstruction.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,45,0" name="jetbrains.mps.samples.KajaSceneConstruction.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:84a4ed3f-fed0-4bb5-977e-0cf55665a49a(jetbrains.mps.samples.KajaSceneConstruction.constraints)/3210697320273648134">

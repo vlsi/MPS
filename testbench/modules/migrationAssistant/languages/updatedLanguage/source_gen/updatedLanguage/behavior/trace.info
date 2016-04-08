@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="MigratingConcept_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="updatedLanguage.behavior.MigratingConcept_BehaviorDescriptor" />
-    </file>
-    <file name="RootConcept_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="updatedLanguage.behavior.RootConcept_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

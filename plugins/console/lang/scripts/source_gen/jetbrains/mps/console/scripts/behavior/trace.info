@@ -12,26 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractConsoleScript_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConsoleScript_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
-    </file>
-    <file name="Execute_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
-    </file>
-    <file name="RefactorOperation_BehaviorDescriptor.java">
-      <unit at="14,0,41,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">
-    <file name="AbstractConsoleScript_Behavior.java">
-      <unit id="1734392475491235553" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
-    </file>
     <file name="AbstractConsoleScript__BehaviorDescriptor.java">
       <node id="1734392475491235553" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1734392475491235553" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -98,9 +83,6 @@
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235576">
-    <file name="ConsoleScript_Behavior.java">
-      <unit id="1734392475491235576" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
-    </file>
     <file name="ConsoleScript__BehaviorDescriptor.java">
       <node id="1734392475491235576" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="1734392475491235576" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -175,9 +157,6 @@
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">
-    <file name="RefactorOperation_Behavior.java">
-      <unit id="2663801026049983654" at="10,0,13,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />
-    </file>
     <file name="RefactorOperation__BehaviorDescriptor.java">
       <node id="2663801026049983654" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="2663801026049983654" at="25,0,26,0" concept="6" trace="REGISTRY" />

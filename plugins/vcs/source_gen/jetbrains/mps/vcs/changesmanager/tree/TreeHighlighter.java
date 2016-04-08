@@ -243,7 +243,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       public void run() {
         for (Feature anotherFeature : ListSequence.fromList(toCheck)) {
           // getAncestors might require (see NodeFeature) model read access, which shall not be under myFeaturesHolder lock 
-          if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+          if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors(getProjectRepository()))).any(new IWhereFilter<Feature>() {
             public boolean accept(Feature a) {
               return feature.equals(a);
             }

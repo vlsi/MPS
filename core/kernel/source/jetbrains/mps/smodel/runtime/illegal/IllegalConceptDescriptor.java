@@ -15,25 +15,24 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,26 +40,13 @@ import java.util.Set;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
   private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
-  private static final Set<SConceptId> ourReportedConcepts = new ConcurrentHashSet<SConceptId>();
+  private static final Set<SAbstractConcept> ourReportedConcepts = new ConcurrentHashSet<SAbstractConcept>();
   private boolean myReported = false;
 
-  private String fqName;
-  private SConceptId myConceptId;
+  private SAbstractConcept myConcept;
 
-  public IllegalConceptDescriptor(@NotNull SConceptId conceptId) {
-    this(conceptId, null);
-  }
-
-  public IllegalConceptDescriptor(@NotNull String fqName) {
-    this(null, fqName);
-  }
-
-  private IllegalConceptDescriptor(@Nullable SConceptId conceptId, @Nullable String fqName) {
-    if (conceptId == null && fqName == null) {
-      throw new IllegalArgumentException();
-    }
-    this.fqName = fqName == null ? DebugRegistry.getInstance().getConceptName(conceptId) : fqName;
-    this.myConceptId = conceptId == null ? MetaIdFactory.INVALID_CONCEPT_ID : conceptId;
+  public IllegalConceptDescriptor(@NotNull SAbstractConcept concept) {
+    myConcept = concept;
   }
 
   private void reportWarn() {
@@ -68,18 +54,10 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
       return;
     }
     myReported = true;
-
-    String languageName = NameUtil.namespaceFromConceptFQName(this.fqName);
-    SConceptId conceptId = myConceptId == MetaIdFactory.INVALID_CONCEPT_ID ? null : myConceptId;
-    SLanguageId languageId = conceptId == null ? null : conceptId.getLanguageId();
-
-    String msg = "IllegalConceptDescriptor created for concept " + (this.fqName == null ? "" : this.fqName) + (conceptId == null ? "" : " with id " + conceptId) +
-        ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) +
-        " is built and compiled.";
-    if (conceptId == null) {
-      LOG.warn(msg);
-    } else if (!ourReportedConcepts.contains(conceptId)) {
-      ourReportedConcepts.add(conceptId);
+    String msg = "IllegalConceptDescriptor created for concept " + myConcept +
+        ". Please check the language " + myConcept.getLanguage() + " is built and compiled.";
+    if (!ourReportedConcepts.contains(myConcept)) {
+      ourReportedConcepts.add(myConcept);
       LOG.warn(msg);
     }
   }
@@ -88,16 +66,14 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public SConceptId getId() {
     reportWarn();
-    return myConceptId;
+    if (myConcept instanceof SAbstractConceptAdapterById) return ((SAbstractConceptAdapterById) myConcept).getId();
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @Override
   public String getConceptFqName() {
     reportWarn();
-    if (fqName == null) {
-      fqName = DebugRegistry.getInstance().getConceptName(myConceptId);
-    }
-    return fqName == null ? MetaIdFactory.INVALID_CONCEPT_NAME : fqName;
+    return myConcept.getQualifiedName();
   }
 
   @Override

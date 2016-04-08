@@ -19,77 +19,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AbstractFunctionType_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,106,0" name="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ClosureArgReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureArgReference_BehaviorDescriptor" />
-    </file>
-    <file name="ClosureControlStatement_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ClosureLiteralType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteralType_BehaviorDescriptor" />
-    </file>
-    <file name="ClosureLiteral_BehaviorDescriptor.java">
-      <unit at="22,0,76,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="CompactInvokeFunctionExpression_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ControlAbstractionContainer_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_BehaviorDescriptor" />
-    </file>
-    <file name="ControlAbstractionDeclaration_BehaviorDescriptor.java">
-      <unit at="20,0,58,0" name="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ControlClosureLiteral_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.closures.behavior.ControlClosureLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="FunctionMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="FunctionType_BehaviorDescriptor.java">
-      <unit at="16,0,60,0" name="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" />
-    </file>
-    <file name="InvokeExpression_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InvokeFunctionExpression_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InvokeFunctionOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PairOfInts_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.closures.behavior.PairOfInts_BehaviorDescriptor" />
-    </file>
-    <file name="StringPropertyHolder_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.closures.behavior.StringPropertyHolder_BehaviorDescriptor" />
-    </file>
-    <file name="UnboundClosureParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="UnrestrictedClosureLiteral_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="UnrestrictedFunctionType_BehaviorDescriptor.java">
-      <unit at="12,0,33,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" />
-    </file>
-    <file name="YieldAllStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
-    </file>
-    <file name="YieldStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_BehaviorDescriptor" />
+      <unit at="14,0,144,0" name="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1046929382682558561">
-    <file name="ClosureLiteralType_Behavior.java">
-      <unit id="1046929382682558561" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteralType_Behavior" />
-    </file>
     <file name="ClosureLiteralType__BehaviorDescriptor.java">
       <node id="1046929382682558561" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1046929382682558561" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -220,9 +154,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1196771128252883567">
-    <file name="InvokeExpression_Behavior.java">
-      <unit id="1196771128252883567" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_Behavior" />
-    </file>
     <file name="InvokeExpression__BehaviorDescriptor.java">
       <node id="1196771128252883567" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1196771128252883567" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -297,15 +228,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877338503">
-    <file name="ClosureLiteral_Behavior.java">
-      <node id="1213877338503" at="13,88,14,95" concept="10" />
-      <node id="1213877338503" at="13,0,16,0" concept="13" trace="call_getFunctionInterfaceName_1213877338544#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877338503" at="13,88,14,95" />
-      <scope id="1213877338503" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877338503" />
-      </scope>
-      <unit id="1213877338503" at="11,0,17,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_Behavior" />
-    </file>
     <file name="ClosureLiteral__BehaviorDescriptor.java">
       <node id="1213877338503" at="37,0,38,0" concept="12" trace="CONCEPT" />
       <node id="1213877338503" at="38,0,39,0" concept="12" trace="REGISTRY" />
@@ -557,9 +479,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877398363">
-    <file name="UnboundClosureParameterDeclaration_Behavior.java">
-      <unit id="1213877398363" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_Behavior" />
-    </file>
     <file name="UnboundClosureParameterDeclaration__BehaviorDescriptor.java">
       <node id="1213877398363" at="22,0,23,0" concept="12" trace="CONCEPT" />
       <node id="1213877398363" at="23,0,24,0" concept="12" trace="REGISTRY" />
@@ -626,65 +545,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877404868">
-    <file name="FunctionType_Behavior.java">
-      <node id="1213877404868" at="14,89,15,89" concept="10" />
-      <node id="1213877404868" at="17,88,18,94" concept="10" />
-      <node id="1213877404868" at="20,77,21,83" concept="10" />
-      <node id="1213877404868" at="23,107,24,105" concept="10" />
-      <node id="1213877404868" at="26,86,27,92" concept="10" />
-      <node id="1213877404868" at="29,89,30,95" concept="10" />
-      <node id="1213877404868" at="32,99,33,97" concept="10" />
-      <node id="1213877404868" at="35,103,36,109" concept="10" />
-      <node id="1213877404868" at="38,96,39,96" concept="10" />
-      <node id="1213877404868" at="14,0,17,0" concept="13" trace="call_unmeet_1237318764946#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="17,0,20,0" concept="13" trace="call_getDeclarationRuntimeType_1230319610063#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="20,0,23,0" concept="13" trace="call_getRuntimeType_1230319150573#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="23,0,26,0" concept="13" trace="call_getDeclarationRuntimeType_811905832257074290#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="26,0,29,0" concept="13" trace="call_getNormalizedReturnType_1213877405252#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="29,0,32,0" concept="13" trace="call_getNormalizedTerminateType_1232036646585#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="32,0,35,0" concept="13" trace="call_getNormalizedThrowsTypes_3448422702164385781#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1213877404868" at="35,0,38,0" concept="13" trace="call_getNormalizedSequenceParameterReturnType_1213877405260#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877404868" at="38,0,41,0" concept="13" trace="call_getNormalizedParameterTypes_1213877405276#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="1213877404868" at="14,89,15,89" />
-      <scope id="1213877404868" at="17,88,18,94" />
-      <scope id="1213877404868" at="20,77,21,83" />
-      <scope id="1213877404868" at="23,107,24,105" />
-      <scope id="1213877404868" at="26,86,27,92" />
-      <scope id="1213877404868" at="29,89,30,95" />
-      <scope id="1213877404868" at="32,99,33,97" />
-      <scope id="1213877404868" at="35,103,36,109" />
-      <scope id="1213877404868" at="38,96,39,96" />
-      <scope id="1213877404868" at="14,0,17,0">
-        <var name="__thisNode__" id="1213877404868" />
-        <var name="possiblyMeet" id="1237318835049" />
-      </scope>
-      <scope id="1213877404868" at="17,0,20,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="20,0,23,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="23,0,26,0">
-        <var name="__thisNode__" id="1213877404868" />
-        <var name="sample" id="7854901761081576545" />
-      </scope>
-      <scope id="1213877404868" at="26,0,29,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="29,0,32,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="32,0,35,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="35,0,38,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <scope id="1213877404868" at="38,0,41,0">
-        <var name="__thisNode__" id="1213877404868" />
-      </scope>
-      <unit id="1213877404868" at="12,0,42,0" name="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
-    </file>
     <file name="FunctionType__BehaviorDescriptor.java">
       <node id="1213877404868" at="44,0,45,0" concept="12" trace="CONCEPT" />
       <node id="1213877404868" at="45,0,46,0" concept="12" trace="REGISTRY" />
@@ -1292,9 +1152,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1225799468871">
-    <file name="InvokeFunctionExpression_Behavior.java">
-      <unit id="1225799468871" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_Behavior" />
-    </file>
     <file name="InvokeFunctionExpression__BehaviorDescriptor.java">
       <node id="1225799468871" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1225799468871" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -1369,9 +1226,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229600742436">
-    <file name="ControlAbstractionContainer_Behavior.java">
-      <unit id="1229600742436" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" />
-    </file>
     <file name="ControlAbstractionContainer__BehaviorDescriptor.java">
       <node id="1229600742436" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1229600742436" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -1459,9 +1313,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229629866761">
-    <file name="ClosureControlStatement_Behavior.java">
-      <unit id="1229629866761" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_Behavior" />
-    </file>
     <file name="ClosureControlStatement__BehaviorDescriptor.java">
       <node id="1229629866761" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1229629866761" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -1694,15 +1545,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229716601301">
-    <file name="UnrestrictedFunctionType_Behavior.java">
-      <node id="1229716601301" at="13,90,14,107" concept="10" />
-      <node id="1229716601301" at="13,0,16,0" concept="13" trace="call_getRuntimeAdapterClassName_1231423631922#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1229716601301" at="13,90,14,107" />
-      <scope id="1229716601301" at="13,0,16,0">
-        <var name="__thisNode__" id="1229716601301" />
-      </scope>
-      <unit id="1229716601301" at="11,0,17,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior" />
-    </file>
     <file name="UnrestrictedFunctionType__BehaviorDescriptor.java">
       <node id="1229716601301" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1229716601301" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -1852,9 +1694,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229718424142">
-    <file name="UnrestrictedClosureLiteral_Behavior.java">
-      <unit id="1229718424142" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_Behavior" />
-    </file>
     <file name="UnrestrictedClosureLiteral__BehaviorDescriptor.java">
       <node id="1229718424142" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1229718424142" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2000,9 +1839,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1237548240741">
-    <file name="YieldAllStatement_Behavior.java">
-      <unit id="1237548240741" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_Behavior" />
-    </file>
     <file name="YieldAllStatement__BehaviorDescriptor.java">
       <node id="1237548240741" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1237548240741" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2077,9 +1913,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1237548257796">
-    <file name="YieldStatement_Behavior.java">
-      <unit id="1237548257796" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_Behavior" />
-    </file>
     <file name="YieldStatement__BehaviorDescriptor.java">
       <node id="1237548257796" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1237548257796" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2154,9 +1987,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1251851371723365254">
-    <file name="ControlAbstractionDeclaration_Behavior.java">
-      <unit id="1251851371723365254" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_Behavior" />
-    </file>
     <file name="ControlAbstractionDeclaration__BehaviorDescriptor.java">
       <node id="1251851371723365254" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1251851371723365254" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -2222,9 +2052,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1262430001741523513">
-    <file name="CompactInvokeFunctionExpression_Behavior.java">
-      <unit id="1262430001741523513" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_Behavior" />
-    </file>
     <file name="CompactInvokeFunctionExpression__BehaviorDescriptor.java">
       <node id="1262430001741523513" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741523513" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2299,15 +2126,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/2857237956452412448">
-    <file name="FunctionMethodDeclaration_Behavior.java">
-      <node id="2857237956452412448" at="13,81,14,98" concept="10" />
-      <node id="2857237956452412448" at="13,0,16,0" concept="13" trace="call_functionType_2857237956452412451#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2857237956452412448" at="13,81,14,98" />
-      <scope id="2857237956452412448" at="13,0,16,0">
-        <var name="__thisNode__" id="2857237956452412448" />
-      </scope>
-      <unit id="2857237956452412448" at="11,0,17,0" name="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior" />
-    </file>
     <file name="FunctionMethodDeclaration__BehaviorDescriptor.java">
       <node id="2857237956452412448" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="2857237956452412448" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -2441,15 +2259,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/418758558327452978">
-    <file name="InvokeFunctionOperation_Behavior.java">
-      <node id="418758558327452978" at="14,87,15,96" concept="10" />
-      <node id="418758558327452978" at="14,0,17,0" concept="13" trace="call_getParameters_418758558327452981#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="418758558327452978" at="14,87,15,96" />
-      <scope id="418758558327452978" at="14,0,17,0">
-        <var name="__thisNode__" id="418758558327452978" />
-      </scope>
-      <unit id="418758558327452978" at="12,0,18,0" name="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_Behavior" />
-    </file>
     <file name="InvokeFunctionOperation__BehaviorDescriptor.java">
       <node id="418758558327452978" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="418758558327452978" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -2530,9 +2339,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/5612111951671625667">
-    <file name="AbstractFunctionType_Behavior.java">
-      <unit id="5612111951671625667" at="10,0,13,0" name="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_Behavior" />
-    </file>
     <file name="AbstractFunctionType__BehaviorDescriptor.java">
       <node id="5612111951671625667" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5612111951671625667" at="27,0,28,0" concept="12" trace="REGISTRY" />

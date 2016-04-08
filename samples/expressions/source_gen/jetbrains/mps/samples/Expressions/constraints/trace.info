@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.samples.Expressions.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,45,0" name="jetbrains.mps.samples.Expressions.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c8883f02-cad6-4252-a4e6-ca01d435b80e(jetbrains.mps.samples.Expressions.constraints)/2073504467208672573">

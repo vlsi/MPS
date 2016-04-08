@@ -16,122 +16,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AbstractionVarRef_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractionVariable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVariable_BehaviorDescriptor" />
-    </file>
-    <file name="AddOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AddOperation_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BinaryNumericOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryNumericOperation_BehaviorDescriptor" />
-    </file>
-    <file name="BinaryOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryOperation_BehaviorDescriptor" />
-    </file>
-    <file name="BinaryStringOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryStringOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ConcatenateOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ConcatenateOperation_BehaviorDescriptor" />
-    </file>
-    <file name="DivideOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.DivideOperation_BehaviorDescriptor" />
-    </file>
-    <file name="FunctionType_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_BehaviorDescriptor" />
-    </file>
-    <file name="LambdaAbstraction_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor" />
-    </file>
-    <file name="LambdaApplication_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_BehaviorDescriptor" />
-    </file>
-    <file name="LambdaExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_BehaviorDescriptor" />
-    </file>
-    <file name="LambdaType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaType_BehaviorDescriptor" />
-    </file>
-    <file name="LetExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_BehaviorDescriptor" />
-    </file>
-    <file name="LetRef_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef_BehaviorDescriptor" />
-    </file>
-    <file name="LetVariable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetVariable_BehaviorDescriptor" />
-    </file>
-    <file name="MultipleExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultipleExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MultiplyOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultiplyOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NumberType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumberType_BehaviorDescriptor" />
-    </file>
-    <file name="NumericConstant_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumericConstant_BehaviorDescriptor" />
-    </file>
-    <file name="ParenthesisExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ParenthesisExpression_BehaviorDescriptor" />
-    </file>
-    <file name="Program_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Program_BehaviorDescriptor" />
-    </file>
-    <file name="StringConstant_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringConstant_BehaviorDescriptor" />
-    </file>
-    <file name="StringType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringType_BehaviorDescriptor" />
-    </file>
-    <file name="SubtractOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.SubtractOperation_BehaviorDescriptor" />
-    </file>
-    <file name="VariableOwner_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor" />
-    </file>
-    <file name="VariableReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="Variable_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Variable_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/1308935328408190990">
-    <file name="LambdaExpression_Behavior.java">
-      <node id="1308935328408190990" at="14,88,15,96" concept="6" />
-      <node id="1308935328408190990" at="17,87,18,93" concept="6" />
-      <node id="1308935328408190990" at="20,79,21,85" concept="6" />
-      <node id="1308935328408190990" at="23,92,24,94" concept="6" />
-      <node id="1308935328408190990" at="14,0,17,0" concept="10" trace="call_getOuterApplication_1308935328408190993#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1308935328408190990" at="17,0,20,0" concept="10" trace="call_hasParameterRefs_7397484091645986293#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1308935328408190990" at="20,0,23,0" concept="10" trace="call_isInFull_7347119454575591465#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1308935328408190990" at="23,0,26,0" concept="10" trace="call_getOuterVariables_5249919352014727828#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="1308935328408190990" at="14,88,15,96" />
-      <scope id="1308935328408190990" at="17,87,18,93" />
-      <scope id="1308935328408190990" at="20,79,21,85" />
-      <scope id="1308935328408190990" at="23,92,24,94" />
-      <scope id="1308935328408190990" at="14,0,17,0">
-        <var name="__thisNode__" id="1308935328408190990" />
-      </scope>
-      <scope id="1308935328408190990" at="17,0,20,0">
-        <var name="__thisNode__" id="1308935328408190990" />
-      </scope>
-      <scope id="1308935328408190990" at="20,0,23,0">
-        <var name="__thisNode__" id="1308935328408190990" />
-      </scope>
-      <scope id="1308935328408190990" at="23,0,26,0">
-        <var name="__thisNode__" id="1308935328408190990" />
-      </scope>
-      <unit id="1308935328408190990" at="12,0,27,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_Behavior" />
-    </file>
     <file name="LambdaExpression__BehaviorDescriptor.java">
       <node id="1308935328408190990" at="28,0,29,0" concept="9" trace="CONCEPT" />
       <node id="1308935328408190990" at="29,0,30,0" concept="9" trace="REGISTRY" />
@@ -273,9 +162,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/2985097847315904384">
-    <file name="FunctionType_Behavior.java">
-      <unit id="2985097847315904384" at="10,0,13,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_Behavior" />
-    </file>
     <file name="FunctionType__BehaviorDescriptor.java">
       <node id="2985097847315904384" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="2985097847315904384" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -350,9 +236,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/3851847705188496529">
-    <file name="AbstractionVarRef_Behavior.java">
-      <unit id="3851847705188496529" at="10,0,13,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_Behavior" />
-    </file>
     <file name="AbstractionVarRef__BehaviorDescriptor.java">
       <node id="3851847705188496529" at="20,0,21,0" concept="9" trace="CONCEPT" />
       <node id="3851847705188496529" at="21,0,22,0" concept="9" trace="REGISTRY" />
@@ -418,21 +301,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5066394162984540351">
-    <file name="LambdaAbstraction_Behavior.java">
-      <node id="5066394162984540351" at="14,81,15,90" concept="6" />
-      <node id="5066394162984540351" at="17,90,18,93" concept="6" />
-      <node id="5066394162984540351" at="14,0,17,0" concept="10" trace="call_getInnerBody_5066394162984540354#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5066394162984540351" at="17,0,20,0" concept="10" trace="call_getAllVariables_5066394162984559815#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="5066394162984540351" at="14,81,15,90" />
-      <scope id="5066394162984540351" at="17,90,18,93" />
-      <scope id="5066394162984540351" at="14,0,17,0">
-        <var name="__thisNode__" id="5066394162984540351" />
-      </scope>
-      <scope id="5066394162984540351" at="17,0,20,0">
-        <var name="__thisNode__" id="5066394162984540351" />
-      </scope>
-      <unit id="5066394162984540351" at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" />
-    </file>
     <file name="LambdaAbstraction__BehaviorDescriptor.java">
       <node id="5066394162984540351" at="28,0,29,0" concept="9" trace="CONCEPT" />
       <node id="5066394162984540351" at="29,0,30,0" concept="9" trace="REGISTRY" />
@@ -536,33 +404,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5066394162984555386">
-    <file name="LambdaApplication_Behavior.java">
-      <node id="5066394162984555386" at="14,87,15,90" concept="6" />
-      <node id="5066394162984555386" at="17,89,18,98" concept="6" />
-      <node id="5066394162984555386" at="20,78,21,85" concept="6" />
-      <node id="5066394162984555386" at="23,88,24,95" concept="6" />
-      <node id="5066394162984555386" at="14,0,17,0" concept="10" trace="call_getArguments_5066394162984555451#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="5066394162984555386" at="17,0,20,0" concept="10" trace="call_getLambdaAbstraction_4976946798230781575#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5066394162984555386" at="20,0,23,0" concept="10" trace="call_isInner_1308935328408185123#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5066394162984555386" at="23,0,26,0" concept="10" trace="call_isFullApplication_1308935328408190838#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5066394162984555386" at="14,87,15,90" />
-      <scope id="5066394162984555386" at="17,89,18,98" />
-      <scope id="5066394162984555386" at="20,78,21,85" />
-      <scope id="5066394162984555386" at="23,88,24,95" />
-      <scope id="5066394162984555386" at="14,0,17,0">
-        <var name="__thisNode__" id="5066394162984555386" />
-      </scope>
-      <scope id="5066394162984555386" at="17,0,20,0">
-        <var name="__thisNode__" id="5066394162984555386" />
-      </scope>
-      <scope id="5066394162984555386" at="20,0,23,0">
-        <var name="__thisNode__" id="5066394162984555386" />
-      </scope>
-      <scope id="5066394162984555386" at="23,0,26,0">
-        <var name="__thisNode__" id="5066394162984555386" />
-      </scope>
-      <unit id="5066394162984555386" at="12,0,27,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_Behavior" />
-    </file>
     <file name="LambdaApplication__BehaviorDescriptor.java">
       <node id="5066394162984555386" at="28,0,29,0" concept="9" trace="CONCEPT" />
       <node id="5066394162984555386" at="29,0,30,0" concept="9" trace="REGISTRY" />
@@ -678,9 +519,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5249919352014727814">
-    <file name="VariableOwner_Behavior.java">
-      <unit id="5249919352014727814" at="10,0,13,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" />
-    </file>
     <file name="VariableOwner__BehaviorDescriptor.java">
       <node id="5249919352014727814" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="5249919352014727814" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -747,9 +585,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5400493247431796468">
-    <file name="LetExpression_Behavior.java">
-      <unit id="5400493247431796468" at="10,0,13,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_Behavior" />
-    </file>
     <file name="LetExpression__BehaviorDescriptor.java">
       <node id="5400493247431796468" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="5400493247431796468" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -828,15 +663,6 @@
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/926857988255581399">
-    <file name="LetRef_Behavior.java">
-      <node id="926857988255581399" at="14,90,15,82" concept="6" />
-      <node id="926857988255581399" at="14,0,17,0" concept="10" trace="call_getAllReferences_926857988255581402#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="926857988255581399" at="14,90,15,82" />
-      <scope id="926857988255581399" at="14,0,17,0">
-        <var name="__thisNode__" id="926857988255581399" />
-      </scope>
-      <unit id="926857988255581399" at="12,0,18,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef_Behavior" />
-    </file>
     <file name="LetRef__BehaviorDescriptor.java">
       <node id="926857988255581399" at="28,0,29,0" concept="9" trace="CONCEPT" />
       <node id="926857988255581399" at="29,0,30,0" concept="9" trace="REGISTRY" />

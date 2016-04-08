@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9v9a8toeuzhtaasepq5cu7go3imm796">
-  <common hash="dy6i583atj8ga39n5hv5quzbeok9r6x" />
-  <source id="852022627621594578" name="Box" hash="b0eceukv7nciftujopqprdsfizrugec">
-    <file name="map_Container.xml" />
-  </source>
-  <source id="7957904439566614986" hash="dr7afw39liqcil21ap4avaze5f1oo73" />
-</dependencies>
+<dependencies version="2" modelHash="-9v9a8toeuzhtaasepq5cu7go3imm796" />
 

@@ -4,12 +4,12 @@ package jetbrains.mps.lang.quotation.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myAbstractAntiquotation__BehaviorDescriptor = new AbstractAntiquotation__BehaviorDescriptor();
@@ -22,52 +22,74 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myNodeBuilderNode__BehaviorDescriptor = new NodeBuilderNode__BehaviorDescriptor();
   private final BHDescriptor myNodeBuilderInitLink__BehaviorDescriptor = new NodeBuilderInitLink__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[9];
-    myConceptBehaviorIds[0] = 0x1168c104656L;
-    myConceptBehaviorIds[1] = 0x1168c104658L;
-    myConceptBehaviorIds[2] = 0x1168c104659L;
-    myConceptBehaviorIds[3] = 0x1168c10465dL;
-    myConceptBehaviorIds[4] = 0x1168c10465eL;
-    myConceptBehaviorIds[5] = 0x116aac96587L;
-    myConceptBehaviorIds[6] = 0x4bb51009d20a4a9dL;
-    myConceptBehaviorIds[7] = 0x4bb51009d20a4aa0L;
-    myConceptBehaviorIds[8] = 0x4bb51009d20c8e1aL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myAbstractAntiquotation__BehaviorDescriptor;
-      case 1:
-        return myAntiquotation__BehaviorDescriptor;
-      case 2:
-        return myQuotation__BehaviorDescriptor;
-      case 3:
-        return myReferenceAntiquotation__BehaviorDescriptor;
-      case 4:
-        return myListAntiquotation__BehaviorDescriptor;
-      case 5:
-        return myPropertyAntiquotation__BehaviorDescriptor;
-      case 6:
-        return myNodeBuilder__BehaviorDescriptor;
-      case 7:
-        return myNodeBuilderNode__BehaviorDescriptor;
-      case 8:
-        return myNodeBuilderInitLink__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractAntiquotation__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAntiquotation__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myListAntiquotation__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myNodeBuilder__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myNodeBuilderInitLink__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myNodeBuilderNode__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myPropertyAntiquotation__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myQuotation__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myReferenceAntiquotation__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0m = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
 }

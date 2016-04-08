@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,86,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,126,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/1960260476749651797">

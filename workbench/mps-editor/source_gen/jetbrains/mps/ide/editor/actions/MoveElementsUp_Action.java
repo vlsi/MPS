@@ -68,8 +68,13 @@ public class MoveElementsUp_Action extends BaseAction {
       SNode nodeToMove = IntelligentNodeMover.findNodeToMove(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
       if (nodeToMove != null) {
         nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
+      } else {
+        return;
       }
     }
-    new IntelligentNodeMover(nodesToMove, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).move();
+    IntelligentNodeMover mover = new IntelligentNodeMover(nodesToMove, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false);
+    if (mover.isValid()) {
+      mover.move();
+    }
   }
 }

@@ -19,7 +19,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -109,7 +109,7 @@ public final class SModelOperations {
       return null;
     }
 
-    BehaviorReflection.initNode(result);
+    BHReflection.initNode(result);
     return result;
   }
   public static SNode createNewRootNode(SModel model, SConcept concept) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final TextAttributes INFO_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.SYSTEM_OUTPUT_KEY);
   private static final TextAttributes ERROR_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_ERROR_OUTPUT_KEY);
   private static final TextAttributes WARNING_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
-  private static final TextAttributes EXPIRED_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_EXPIRED_ENTRY);
   private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
 
   @Override
@@ -62,54 +61,32 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     }
     String text = sb.toString();
 
-    final NavStatus ns = canNavigate(message);
-    if (ns == NavStatus.YES) {
+    if (message.getHintObject() != null) {
       component.setToolTipText(String.valueOf(message.getHintObject()));
     } else {
       component.setToolTipText(null);
     }
-    if (ns == NavStatus.OUTDATED) {
-      component.setForeground(EXPIRED_ATTRIBUTES.getForegroundColor());
-      text = String.format("[outdated] %s:%s", message.getHintObject().toString(), text);
-    } else {
-      switch (message.getKind()) {
-        case WARNING:
-          component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
-          break;
-        case ERROR:
-          component.setForeground(ERROR_ATTRIBUTES.getForegroundColor());
-          break;
-        default:
-          component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
-          break;
+    switch (message.getKind()) {
+      case WARNING: {
+        component.setIcon(Icons.WARNING_ICON);
+        component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
+        break;
+      }
+      case ERROR: {
+        component.setIcon(Icons.ERROR_ICON);
+        component.setForeground(ERROR_ATTRIBUTES.getForegroundColor());
+        break;
+      }
+      case INFORMATION: {
+        component.setIcon(Icons.INFORMATION_ICON);
+        // fall-through
+      }
+      default: {
+        component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
+        break;
       }
     }
     component.setText(text);
-
-    switch (message.getKind()) {
-      case INFORMATION:
-        component.setIcon(Icons.INFORMATION_ICON);
-        break;
-      case WARNING:
-        component.setIcon(Icons.WARNING_ICON);
-        break;
-      case ERROR:
-        component.setIcon(Icons.ERROR_ICON);
-        break;
-    }
     return component;
-  }
-
-  public static NavStatus canNavigate(IMessage message) {
-    Object hint = message.getHintObject();
-    if (hint == null) return NavStatus.NO;
-    return NavStatus.YES;
-    //return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
-  }
-
-  public enum NavStatus {
-    NO,
-    OUTDATED,
-    YES
   }
 }

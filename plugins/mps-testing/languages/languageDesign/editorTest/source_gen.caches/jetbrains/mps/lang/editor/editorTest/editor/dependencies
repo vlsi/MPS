@@ -169,8 +169,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.AttractsFocusBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.BinaryExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.BracesBlock_Editor" />
@@ -207,8 +210,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

@@ -16,28 +16,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="NonThreadSafeClass_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_BehaviorDescriptor" />
-    </file>
-    <file name="ParallelFor_BehaviorDescriptor.java">
-      <unit at="19,0,60,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
-    </file>
-    <file name="ParallelLoopVariable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
-    </file>
-    <file name="ThreadPool_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
-    </file>
-    <file name="ThreadSafe_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/1262430001741646801">
-    <file name="NonThreadSafeClass_Behavior.java">
-      <unit id="1262430001741646801" at="10,0,13,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_Behavior" />
-    </file>
     <file name="NonThreadSafeClass__BehaviorDescriptor.java">
       <node id="1262430001741646801" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741646801" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -103,9 +85,6 @@
     </file>
   </root>
   <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/1262430001741647380">
-    <file name="ThreadSafe_Behavior.java">
-      <unit id="1262430001741647380" at="10,0,13,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_Behavior" />
-    </file>
     <file name="ThreadSafe__BehaviorDescriptor.java">
       <node id="1262430001741647380" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741647380" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -171,22 +150,6 @@
     </file>
   </root>
   <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/4120418308311043819">
-    <file name="ParallelFor_Behavior.java">
-      <node id="4120418308311043819" at="14,123,15,113" concept="6" />
-      <node id="4120418308311043819" at="17,88,18,91" concept="6" />
-      <node id="4120418308311043819" at="14,0,17,0" concept="9" trace="call_uncaughtThrowables_3331512479731115649#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/Set;" />
-      <node id="4120418308311043819" at="17,0,20,0" concept="9" trace="call_findPoolDeclaration_7704855178165020537#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4120418308311043819" at="14,123,15,113" />
-      <scope id="4120418308311043819" at="17,88,18,91" />
-      <scope id="4120418308311043819" at="14,0,17,0">
-        <var name="__thisNode__" id="4120418308311043819" />
-        <var name="ignoreMayBeThrowables" id="3331512479731121367" />
-      </scope>
-      <scope id="4120418308311043819" at="17,0,20,0">
-        <var name="__thisNode__" id="4120418308311043819" />
-      </scope>
-      <unit id="4120418308311043819" at="12,0,21,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_Behavior" />
-    </file>
     <file name="ParallelFor__BehaviorDescriptor.java">
       <node id="4120418308311043819" at="41,0,42,0" concept="8" trace="CONCEPT" />
       <node id="4120418308311043819" at="42,0,43,0" concept="8" trace="REGISTRY" />

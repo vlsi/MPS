@@ -17,356 +17,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AddMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.AddMenuPart_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,322,0" name="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_EditorCell_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_EditorCell_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_OperationContext_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_OperationContext_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_childConcept_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_childSetter_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childSetter_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_concept_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_concept_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_createdNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_link_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_link_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_nodeToCopyPreProcess_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_nodeToWrap_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToWrap_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_parameterObject_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_parameterObject_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_parentNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_parentNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_pattern_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_pattern_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_result_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_result_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_sourceNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_sourceNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_strictly_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_targetNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_targetNode_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_wrapped_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_wrapped_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.ConceptPart_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptRightTransformPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.ConceptRightTransformPart_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptSubstitutePart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.ConceptSubstitutePart_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptsSubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.ConceptsSubstituteMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="CopyPasteHandlers_BehaviorDescriptor.java">
-      <unit at="18,0,44,0" name="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_BehaviorDescriptor" />
-    </file>
-    <file name="CopyPreProcessFunction_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.actions.behavior.CopyPreProcessFunction_BehaviorDescriptor" />
-    </file>
-    <file name="CopyPreProcessor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.CopyPreProcessor_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteSmartActionFunction_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_BehaviorDescriptor" />
-    </file>
-    <file name="GenerateCodeAction_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.GenerateCodeAction_BehaviorDescriptor" />
-    </file>
-    <file name="GenericSubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.GenericSubstituteMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="GetActionUIFunction_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.actions.behavior.GetActionUIFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ISideTransform_String_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.ISideTransform_String_BehaviorDescriptor" />
-    </file>
-    <file name="ISubstitute_String_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.ISubstitute_String_BehaviorDescriptor" />
-    </file>
-    <file name="IncludeRightTransformForNodePart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.IncludeRightTransformForNodePart_BehaviorDescriptor" />
-    </file>
-    <file name="IsSmartActionApplicableFunction_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_BehaviorDescriptor" />
-    </file>
-    <file name="MenuPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.MenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Concept_NewInstance_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance_BehaviorDescriptor" />
-    </file>
-    <file name="NF_LinkList_AddNewChildOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Link_SetNewChildOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Link_SetNewChildOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Model_CreateNewNodeOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewNodeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Model_CreateNewRootNodeOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewRootNodeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NF_Node_ReplaceWithNewOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeFactories_BehaviorDescriptor.java">
-      <unit at="18,0,44,0" name="jetbrains.mps.lang.actions.behavior.NodeFactories_BehaviorDescriptor" />
-    </file>
-    <file name="NodeFactory_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.NodeFactory_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSetupFunction_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSetupFunction_EnclosingNode_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_EnclosingNode_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSetupFunction_NewNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_NewNode_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSetupFunction_SampleNode_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_SampleNode_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSubstituteActionsBuilder_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSubstituteActions_BehaviorDescriptor.java">
-      <unit at="18,0,44,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActions_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSubstituteMenuBuilderPart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
-    </file>
-    <file name="NodeSubstitutePreconditionFunction_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstitutePreconditionFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterizedSideTransformMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.ParameterizedSideTransformMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="ParameterizedSubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.ParameterizedSubstituteMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="PastePostProcessFunction_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.actions.behavior.PastePostProcessFunction_BehaviorDescriptor" />
-    </file>
-    <file name="PastePostProcessor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.PastePostProcessor_BehaviorDescriptor" />
-    </file>
-    <file name="PasteWrapper_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.PasteWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="PasteWrappers_BehaviorDescriptor.java">
-      <unit at="19,0,45,0" name="jetbrains.mps.lang.actions.behavior.PasteWrappers_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ActionType_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_CanSubstitute_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_IconNode_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_PasteWrapper_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_PasteWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_RemoveBy_Condition_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ReturnSmallPart_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_STVariableInitializer_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_STVariableInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ST_CommonInitializer_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_CommonInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SideTransform_Handler_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Handler_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SideTransform_Icon_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Icon_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SideTransform_String_BehaviorDescriptor.java">
-      <unit at="16,0,37,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_String_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SubstituteIcon_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SubstituteString_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_SubstituteWrapper_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_Substitute_Handler_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_BehaviorDescriptor" />
-    </file>
-    <file name="QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveByConditionPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.RemoveByConditionPart_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveDefaultsPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.RemoveDefaultsPart_BehaviorDescriptor" />
-    </file>
-    <file name="RemovePart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.RemovePart_BehaviorDescriptor" />
-    </file>
-    <file name="RemoveSTByConditionPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_BehaviorDescriptor" />
-    </file>
-    <file name="SNodeCreatorAndInitializer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.SNodeCreatorAndInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformHintSubstituteActions_BehaviorDescriptor.java">
-      <unit at="18,0,44,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActions_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformMenuBuilderPart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.SideTransformMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,23,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformVariableReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransform_SimpleString_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.SideTransform_SimpleString_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleItemSubstitutePart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.SimpleItemSubstitutePart_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleSideTransformMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.SimpleSideTransformMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="SmartActionParameterReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.SmartActionParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="SmartActionParameter_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.SmartActionParameter_BehaviorDescriptor" />
-    </file>
-    <file name="SmartEditorActions_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.SmartEditorActions_BehaviorDescriptor" />
-    </file>
-    <file name="SubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.SubstituteMenuPart_BehaviorDescriptor" />
-    </file>
-    <file name="SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,23,0" name="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SubstituteNodeBuilderVariableReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="Substitute_SimpleString_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.actions.behavior.Substitute_SimpleString_BehaviorDescriptor" />
-    </file>
-    <file name="SurroundWithAction_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.actions.behavior.SurroundWithAction_BehaviorDescriptor" />
-    </file>
-    <file name="WrapperSubstituteMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.WrapperSubstituteMenuPart_BehaviorDescriptor" />
+      <unit at="14,0,468,0" name="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877228937">
-    <file name="QueryFunction_Substitute_Handler_Behavior.java">
-      <unit id="1213877228937" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_Behavior" />
-    </file>
     <file name="QueryFunction_Substitute_Handler__BehaviorDescriptor.java">
       <node id="1213877228937" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1213877228937" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -490,9 +145,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877247276">
-    <file name="QueryFunction_SideTransform_Handler_Behavior.java">
-      <unit id="1213877247276" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Handler_Behavior" />
-    </file>
     <file name="QueryFunction_SideTransform_Handler__BehaviorDescriptor.java">
       <node id="1213877247276" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1213877247276" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -613,9 +265,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877273936">
-    <file name="QueryFunction_ParameterizedSideTransform_Handler_Behavior.java">
-      <unit id="1213877273936" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor.java">
       <node id="1213877273936" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1213877273936" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -740,9 +389,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877328704">
-    <file name="QueryFunction_SideTransform_String_Behavior.java">
-      <unit id="1213877328704" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_String_Behavior" />
-    </file>
     <file name="QueryFunction_SideTransform_String__BehaviorDescriptor.java">
       <node id="1213877328704" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1213877328704" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -875,9 +521,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877372965">
-    <file name="QueryFunction_SubstituteWrapper_Behavior.java">
-      <unit id="1213877372965" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteWrapper_Behavior" />
-    </file>
     <file name="QueryFunction_SubstituteWrapper__BehaviorDescriptor.java">
       <node id="1213877372965" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1213877372965" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -1011,9 +654,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877380314">
-    <file name="QueryFunction_SideTransform_Icon_Behavior.java">
-      <unit id="1213877380314" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Icon_Behavior" />
-    </file>
     <file name="QueryFunction_SideTransform_Icon__BehaviorDescriptor.java">
       <node id="1213877380314" at="30,0,31,0" concept="11" trace="CONCEPT" />
       <node id="1213877380314" at="31,0,32,0" concept="11" trace="REGISTRY" />
@@ -1121,9 +761,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877395198">
-    <file name="QueryFunction_RemoveBy_Condition_Behavior.java">
-      <unit id="1213877395198" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_Behavior" />
-    </file>
     <file name="QueryFunction_RemoveBy_Condition__BehaviorDescriptor.java">
       <node id="1213877395198" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1213877395198" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -1239,9 +876,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877415648">
-    <file name="QueryFunction_ParameterizedSubstitute_Query_Behavior.java">
-      <unit id="1213877415648" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Query_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor.java">
       <node id="1213877415648" at="32,0,33,0" concept="11" trace="CONCEPT" />
       <node id="1213877415648" at="33,0,34,0" concept="11" trace="REGISTRY" />
@@ -1425,9 +1059,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877437021">
-    <file name="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java">
-      <unit id="1213877437021" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Handler_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor.java">
       <node id="1213877437021" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1213877437021" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -1555,9 +1186,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877437423">
-    <file name="QueryFunction_SubstituteVariableInitializer_Behavior.java">
-      <unit id="1213877437423" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_Behavior" />
-    </file>
     <file name="QueryFunction_SubstituteVariableInitializer__BehaviorDescriptor.java">
       <node id="1213877437423" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1213877437423" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -1662,9 +1290,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877477288">
-    <file name="QueryFunction_SideTransform_ConceptHandler_Behavior.java">
-      <unit id="1213877477288" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_ConceptHandler_Behavior" />
-    </file>
     <file name="QueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor.java">
       <node id="1213877477288" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1213877477288" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -1799,9 +1424,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877533502">
-    <file name="QueryFunction_ParameterizedSideTransform_Query_Behavior.java">
-      <unit id="1213877533502" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Query_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor.java">
       <node id="1213877533502" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1213877533502" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -1952,21 +1574,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1220278670367">
-    <file name="NodeSubstituteActionsBuilder_Behavior.java">
-      <node id="1220278670367" at="13,94,14,115" concept="8" />
-      <node id="1220278670367" at="16,89,17,110" concept="8" />
-      <node id="1220278670367" at="13,0,16,0" concept="12" trace="call_getPreconditionQueryMethodName_1220278671791#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1220278670367" at="16,0,19,0" concept="12" trace="call_getBuilderQueryMethodName_1220278926652#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1220278670367" at="13,94,14,115" />
-      <scope id="1220278670367" at="16,89,17,110" />
-      <scope id="1220278670367" at="13,0,16,0">
-        <var name="__thisNode__" id="1220278670367" />
-      </scope>
-      <scope id="1220278670367" at="16,0,19,0">
-        <var name="__thisNode__" id="1220278670367" />
-      </scope>
-      <unit id="1220278670367" at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_Behavior" />
-    </file>
     <file name="NodeSubstituteActionsBuilder__BehaviorDescriptor.java">
       <node id="1220278670367" at="33,0,34,0" concept="11" trace="CONCEPT" />
       <node id="1220278670367" at="34,0,35,0" concept="11" trace="REGISTRY" />
@@ -2091,15 +1698,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1220279060526">
-    <file name="NodeFactory_Behavior.java">
-      <node id="1220279060526" at="13,82,14,86" concept="8" />
-      <node id="1220279060526" at="13,0,16,0" concept="12" trace="call_getQueryMethodName_1220279061997#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1220279060526" at="13,82,14,86" />
-      <scope id="1220279060526" at="13,0,16,0">
-        <var name="__thisNode__" id="1220279060526" />
-      </scope>
-      <unit id="1220279060526" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior" />
-    </file>
     <file name="NodeFactory__BehaviorDescriptor.java">
       <node id="1220279060526" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1220279060526" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -2179,21 +1777,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1220279070263">
-    <file name="SideTransformHintSubstituteActionsBuilder_Behavior.java">
-      <node id="1220279070263" at="13,89,14,123" concept="8" />
-      <node id="1220279070263" at="16,94,17,128" concept="8" />
-      <node id="1220279070263" at="13,0,16,0" concept="12" trace="call_getBuilderQueryMethodName_1220279234749#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1220279070263" at="16,0,19,0" concept="12" trace="call_getPreconditionQueryMethodName_1220279571415#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1220279070263" at="13,89,14,123" />
-      <scope id="1220279070263" at="16,94,17,128" />
-      <scope id="1220279070263" at="13,0,16,0">
-        <var name="__thisNode__" id="1220279070263" />
-      </scope>
-      <scope id="1220279070263" at="16,0,19,0">
-        <var name="__thisNode__" id="1220279070263" />
-      </scope>
-      <unit id="1220279070263" at="11,0,20,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior" />
-    </file>
     <file name="SideTransformHintSubstituteActionsBuilder__BehaviorDescriptor.java">
       <node id="1220279070263" at="33,0,34,0" concept="11" trace="CONCEPT" />
       <node id="1220279070263" at="34,0,35,0" concept="11" trace="REGISTRY" />
@@ -2318,15 +1901,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1220279472899">
-    <file name="RemoveSTByConditionPart_Behavior.java">
-      <node id="1220279472899" at="13,82,14,98" concept="8" />
-      <node id="1220279472899" at="13,0,16,0" concept="12" trace="call_getQueryMethodName_1220279474449#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1220279472899" at="13,82,14,98" />
-      <scope id="1220279472899" at="13,0,16,0">
-        <var name="__thisNode__" id="1220279472899" />
-      </scope>
-      <unit id="1220279472899" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior" />
-    </file>
     <file name="RemoveSTByConditionPart__BehaviorDescriptor.java">
       <node id="1220279472899" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1220279472899" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -2401,15 +1975,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1221137354968">
-    <file name="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java">
-      <node id="1221137354968" at="13,73,14,107" concept="8" />
-      <node id="1221137354968" at="13,0,16,0" concept="12" trace="call_getWrapper_1221137356128#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1221137354968" at="13,73,14,107" />
-      <scope id="1221137354968" at="13,0,16,0">
-        <var name="__thisNode__" id="1221137354968" />
-      </scope>
-      <unit id="1221137354968" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteWrap_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor.java">
       <node id="1221137354968" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="1221137354968" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -2484,15 +2049,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1221137518235">
-    <file name="QueryFunction_PasteWrapper_Behavior.java">
-      <node id="1221137518235" at="13,73,14,93" concept="8" />
-      <node id="1221137518235" at="13,0,16,0" concept="12" trace="call_getWrapper_1221137519379#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1221137518235" at="13,73,14,93" />
-      <scope id="1221137518235" at="13,0,16,0">
-        <var name="__thisNode__" id="1221137518235" />
-      </scope>
-      <unit id="1221137518235" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_PasteWrapper_Behavior" />
-    </file>
     <file name="QueryFunction_PasteWrapper__BehaviorDescriptor.java">
       <node id="1221137518235" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1221137518235" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -2614,9 +2170,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1235663595514">
-    <file name="SmartActionParameterReference_Behavior.java">
-      <unit id="1235663595514" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.SmartActionParameterReference_Behavior" />
-    </file>
     <file name="SmartActionParameterReference__BehaviorDescriptor.java">
       <node id="1235663595514" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1235663595514" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -2691,9 +2244,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741523300">
-    <file name="NF_Concept_NewInstance_Behavior.java">
-      <unit id="1262430001741523300" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance_Behavior" />
-    </file>
     <file name="NF_Concept_NewInstance__BehaviorDescriptor.java">
       <node id="1262430001741523300" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741523300" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -2777,9 +2327,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741523338">
-    <file name="NF_Node_ReplaceWithNewOperation_Behavior.java">
-      <unit id="1262430001741523338" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation_Behavior" />
-    </file>
     <file name="NF_Node_ReplaceWithNewOperation__BehaviorDescriptor.java">
       <node id="1262430001741523338" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741523338" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -2854,9 +2401,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741641695">
-    <file name="ConceptFunctionParameter_strictly_Behavior.java">
-      <unit id="1262430001741641695" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_strictly__BehaviorDescriptor.java">
       <node id="1262430001741641695" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741641695" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -2931,9 +2475,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642119">
-    <file name="NodeSubstitutePreconditionFunction_Behavior.java">
-      <unit id="1262430001741642119" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstitutePreconditionFunction_Behavior" />
-    </file>
     <file name="NodeSubstitutePreconditionFunction__BehaviorDescriptor.java">
       <node id="1262430001741642119" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741642119" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -3050,9 +2591,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642195">
-    <file name="NF_Node_InsertNewNextSiblingOperation_Behavior.java">
-      <unit id="1262430001741642195" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewNextSiblingOperation_Behavior" />
-    </file>
     <file name="NF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor.java">
       <node id="1262430001741642195" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741642195" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -3127,9 +2665,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642276">
-    <file name="QueryFunction_ST_CommonInitializer_Behavior.java">
-      <unit id="1262430001741642276" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_CommonInitializer_Behavior" />
-    </file>
     <file name="QueryFunction_ST_CommonInitializer__BehaviorDescriptor.java">
       <node id="1262430001741642276" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741642276" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -3241,9 +2776,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642996">
-    <file name="QueryFunction_SubstituteString_Behavior.java">
-      <unit id="1262430001741642996" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_Behavior" />
-    </file>
     <file name="QueryFunction_SubstituteString__BehaviorDescriptor.java">
       <node id="1262430001741642996" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741642996" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -3359,9 +2891,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741643050">
-    <file name="QueryFunction_ST_RemoveBy_Condition_Behavior.java">
-      <unit id="1262430001741643050" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_RemoveBy_Condition_Behavior" />
-    </file>
     <file name="QueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor.java">
       <node id="1262430001741643050" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741643050" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -3473,9 +3002,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741646955">
-    <file name="NF_LinkList_AddNewChildOperation_Behavior.java">
-      <unit id="1262430001741646955" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation_Behavior" />
-    </file>
     <file name="NF_LinkList_AddNewChildOperation__BehaviorDescriptor.java">
       <node id="1262430001741646955" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741646955" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -3550,9 +3076,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741647168">
-    <file name="QueryFunction_Substitute_CommonInitializer_Behavior.java">
-      <unit id="1262430001741647168" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_Behavior" />
-    </file>
     <file name="QueryFunction_Substitute_CommonInitializer__BehaviorDescriptor.java">
       <node id="1262430001741647168" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741647168" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -3667,9 +3190,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741647474">
-    <file name="NodeSetupFunction_Behavior.java">
-      <unit id="1262430001741647474" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_Behavior" />
-    </file>
     <file name="NodeSetupFunction__BehaviorDescriptor.java">
       <node id="1262430001741647474" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741647474" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -3760,9 +3280,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741702950">
-    <file name="ConceptFunctionParameter_pattern_Behavior.java">
-      <unit id="1262430001741702950" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_pattern_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_pattern__BehaviorDescriptor.java">
       <node id="1262430001741702950" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741702950" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -3837,9 +3354,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741703149">
-    <file name="NF_Node_InsertNewPrevSiblingOperation_Behavior.java">
-      <unit id="1262430001741703149" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewPrevSiblingOperation_Behavior" />
-    </file>
     <file name="NF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor.java">
       <node id="1262430001741703149" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741703149" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -3914,9 +3428,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741703396">
-    <file name="ConceptFunctionParameter_parameterObject_Behavior.java">
-      <unit id="1262430001741703396" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_parameterObject_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_parameterObject__BehaviorDescriptor.java">
       <node id="1262430001741703396" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741703396" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -3991,9 +3502,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741703427">
-    <file name="NF_Link_SetNewChildOperation_Behavior.java">
-      <unit id="1262430001741703427" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Link_SetNewChildOperation_Behavior" />
-    </file>
     <file name="NF_Link_SetNewChildOperation__BehaviorDescriptor.java">
       <node id="1262430001741703427" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741703427" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -4068,9 +3576,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741703527">
-    <file name="QueryFunction_CanSubstitute_Behavior.java">
-      <unit id="1262430001741703527" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_Behavior" />
-    </file>
     <file name="QueryFunction_CanSubstitute__BehaviorDescriptor.java">
       <node id="1262430001741703527" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741703527" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -4187,9 +3692,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741704857">
-    <file name="SideTransformHintSubstitutePreconditionFunction_Behavior.java">
-      <unit id="1262430001741704857" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstitutePreconditionFunction_Behavior" />
-    </file>
     <file name="SideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor.java">
       <node id="1262430001741704857" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741704857" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -4301,9 +3803,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741717123">
-    <file name="SideTransformVariableReference_Behavior.java">
-      <unit id="1262430001741717123" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableReference_Behavior" />
-    </file>
     <file name="SideTransformVariableReference__BehaviorDescriptor.java">
       <node id="1262430001741717123" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741717123" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -4378,9 +3877,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741717141">
-    <file name="SubstituteNodeBuilderVariableReference_Behavior.java">
-      <unit id="1262430001741717141" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableReference_Behavior" />
-    </file>
     <file name="SubstituteNodeBuilderVariableReference__BehaviorDescriptor.java">
       <node id="1262430001741717141" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741717141" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -4455,9 +3951,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741717466">
-    <file name="NF_Model_CreateNewRootNodeOperation_Behavior.java">
-      <unit id="1262430001741717466" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewRootNodeOperation_Behavior" />
-    </file>
     <file name="NF_Model_CreateNewRootNodeOperation__BehaviorDescriptor.java">
       <node id="1262430001741717466" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741717466" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -4532,9 +4025,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741718707">
-    <file name="QueryFunction_ParameterizedSubstitute_Icon_Behavior.java">
-      <unit id="1262430001741718707" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Icon_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor.java">
       <node id="1262430001741718707" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741718707" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -4651,9 +4141,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741718738">
-    <file name="QueryFunction_ParameterizedSubstitute_String_Behavior.java">
-      <unit id="1262430001741718738" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_String_Behavior" />
-    </file>
     <file name="QueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor.java">
       <node id="1262430001741718738" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741718738" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -4770,9 +4257,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741718908">
-    <file name="QueryFunction_SideTransform_NodeQuery_Behavior.java">
-      <unit id="1262430001741718908" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_NodeQuery_Behavior" />
-    </file>
     <file name="QueryFunction_SideTransform_NodeQuery__BehaviorDescriptor.java">
       <node id="1262430001741718908" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741718908" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -4884,9 +4368,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741718926">
-    <file name="QueryFunction_GenericSubstituteMenuPart_Behavior.java">
-      <unit id="1262430001741718926" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_Behavior" />
-    </file>
     <file name="QueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor.java">
       <node id="1262430001741718926" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741718926" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -5008,9 +4489,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741719785">
-    <file name="NF_Model_CreateNewNodeOperation_Behavior.java">
-      <unit id="1262430001741719785" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewNodeOperation_Behavior" />
-    </file>
     <file name="NF_Model_CreateNewNodeOperation__BehaviorDescriptor.java">
       <node id="1262430001741719785" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741719785" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -5085,9 +4563,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1709772128917319278">
-    <file name="ConceptFunctionParameter_createdNode_Behavior.java">
-      <unit id="1709772128917319278" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_createdNode__BehaviorDescriptor.java">
       <node id="1709772128917319278" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1709772128917319278" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -5162,9 +4637,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914718496">
-    <file name="QueryFunction_ReturnSmallPart_Behavior.java">
-      <unit id="3044950653914718496" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_Behavior" />
-    </file>
     <file name="QueryFunction_ReturnSmallPart__BehaviorDescriptor.java">
       <node id="3044950653914718496" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914718496" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -5283,9 +4755,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914719003">
-    <file name="ExecuteSmartActionFunction_Behavior.java">
-      <unit id="3044950653914719003" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_Behavior" />
-    </file>
     <file name="ExecuteSmartActionFunction__BehaviorDescriptor.java">
       <node id="3044950653914719003" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914719003" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -5388,9 +4857,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914721336">
-    <file name="QueryFunction_SubstituteIcon_Behavior.java">
-      <unit id="3044950653914721336" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_Behavior" />
-    </file>
     <file name="QueryFunction_SubstituteIcon__BehaviorDescriptor.java">
       <node id="3044950653914721336" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914721336" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -5497,9 +4963,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914721820">
-    <file name="IsSmartActionApplicableFunction_Behavior.java">
-      <unit id="3044950653914721820" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_Behavior" />
-    </file>
     <file name="IsSmartActionApplicableFunction__BehaviorDescriptor.java">
       <node id="3044950653914721820" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914721820" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -5601,9 +5064,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914724437">
-    <file name="CopyPreProcessFunction_Behavior.java">
-      <unit id="3044950653914724437" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.CopyPreProcessFunction_Behavior" />
-    </file>
     <file name="CopyPreProcessFunction__BehaviorDescriptor.java">
       <node id="3044950653914724437" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914724437" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -5683,9 +5143,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914724634">
-    <file name="QueryFunction_ActionType_Behavior.java">
-      <unit id="3044950653914724634" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_Behavior" />
-    </file>
     <file name="QueryFunction_ActionType__BehaviorDescriptor.java">
       <node id="3044950653914724634" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914724634" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -5804,9 +5261,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914724801">
-    <file name="PastePostProcessFunction_Behavior.java">
-      <unit id="3044950653914724801" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.PastePostProcessFunction_Behavior" />
-    </file>
     <file name="PastePostProcessFunction__BehaviorDescriptor.java">
       <node id="3044950653914724801" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="3044950653914724801" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -5885,9 +5339,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3146964333471402253">
-    <file name="QueryFunction_STVariableInitializer_Behavior.java">
-      <unit id="3146964333471402253" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_STVariableInitializer_Behavior" />
-    </file>
     <file name="QueryFunction_STVariableInitializer__BehaviorDescriptor.java">
       <node id="3146964333471402253" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="3146964333471402253" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -6003,9 +5454,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/441141899447717382">
-    <file name="QueryFunction_Substitute_SelectionHandler_Behavior.java">
-      <unit id="441141899447717382" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_Behavior" />
-    </file>
     <file name="QueryFunction_Substitute_SelectionHandler__BehaviorDescriptor.java">
       <node id="441141899447717382" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="441141899447717382" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -6127,9 +5575,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5270353093116089375">
-    <file name="NodeFactories_Behavior.java">
-      <unit id="5270353093116089375" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeFactories_Behavior" />
-    </file>
     <file name="NodeFactories__BehaviorDescriptor.java">
       <node id="5270353093116089375" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="5270353093116089375" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -6228,9 +5673,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5270353093116089661">
-    <file name="NodeSubstituteActions_Behavior.java">
-      <unit id="5270353093116089661" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActions_Behavior" />
-    </file>
     <file name="NodeSubstituteActions__BehaviorDescriptor.java">
       <node id="5270353093116089661" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="5270353093116089661" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -6329,9 +5771,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5270353093116089914">
-    <file name="PasteWrappers_Behavior.java">
-      <unit id="5270353093116089914" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.PasteWrappers_Behavior" />
-    </file>
     <file name="PasteWrappers__BehaviorDescriptor.java">
       <node id="5270353093116089914" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="5270353093116089914" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -6430,9 +5869,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5270353093116090174">
-    <file name="SideTransformHintSubstituteActions_Behavior.java">
-      <unit id="5270353093116090174" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActions_Behavior" />
-    </file>
     <file name="SideTransformHintSubstituteActions__BehaviorDescriptor.java">
       <node id="5270353093116090174" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="5270353093116090174" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -6531,9 +5967,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5452844340287043400">
-    <file name="NodeSetupFunction_SampleNode_Behavior.java">
-      <unit id="5452844340287043400" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_SampleNode_Behavior" />
-    </file>
     <file name="NodeSetupFunction_SampleNode__BehaviorDescriptor.java">
       <node id="5452844340287043400" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="5452844340287043400" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -6621,9 +6054,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5452844340287048413">
-    <file name="ConceptFunctionParameter_OperationContext_Behavior.java">
-      <unit id="5452844340287048413" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_OperationContext_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_OperationContext__BehaviorDescriptor.java">
       <node id="5452844340287048413" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="5452844340287048413" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -6712,9 +6142,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5452844340287048422">
-    <file name="ConceptFunctionParameter_childSetter_Behavior.java">
-      <unit id="5452844340287048422" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childSetter_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_childSetter__BehaviorDescriptor.java">
       <node id="5452844340287048422" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="5452844340287048422" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -6803,9 +6230,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5452844340287048440">
-    <file name="NodeSetupFunction_EnclosingNode_Behavior.java">
-      <unit id="5452844340287048440" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_EnclosingNode_Behavior" />
-    </file>
     <file name="NodeSetupFunction_EnclosingNode__BehaviorDescriptor.java">
       <node id="5452844340287048440" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="5452844340287048440" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -6893,9 +6317,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5452844340287050945">
-    <file name="ConceptFunctionParameter_targetNode_Behavior.java">
-      <unit id="5452844340287050945" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_targetNode_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_targetNode__BehaviorDescriptor.java">
       <node id="5452844340287050945" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="5452844340287050945" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -6983,15 +6404,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5457641811177522082">
-    <file name="PastePostProcessor_Behavior.java">
-      <node id="5457641811177522082" at="13,82,14,91" concept="8" />
-      <node id="5457641811177522082" at="13,0,16,0" concept="12" trace="call_getClassName_5457641811177522085#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="5457641811177522082" at="13,82,14,91" />
-      <scope id="5457641811177522082" at="13,0,16,0">
-        <var name="__thisNode__" id="5457641811177522082" />
-      </scope>
-      <unit id="5457641811177522082" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.PastePostProcessor_Behavior" />
-    </file>
     <file name="PastePostProcessor__BehaviorDescriptor.java">
       <node id="5457641811177522082" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="5457641811177522082" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -7069,15 +6481,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5948027493682347858">
-    <file name="CopyPreProcessor_Behavior.java">
-      <node id="5948027493682347858" at="13,82,14,89" concept="8" />
-      <node id="5948027493682347858" at="13,0,16,0" concept="12" trace="call_getClassName_5948027493682347861#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="5948027493682347858" at="13,82,14,89" />
-      <scope id="5948027493682347858" at="13,0,16,0">
-        <var name="__thisNode__" id="5948027493682347858" />
-      </scope>
-      <unit id="5948027493682347858" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior" />
-    </file>
     <file name="CopyPreProcessor__BehaviorDescriptor.java">
       <node id="5948027493682347858" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="5948027493682347858" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -7155,15 +6558,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5948027493682405566">
-    <file name="ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.java">
-      <node id="5948027493682405566" at="13,84,14,121" concept="8" />
-      <node id="5948027493682405566" at="13,0,16,0" concept="12" trace="call_getPreProcessor_5948027493682405569#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5948027493682405566" at="13,84,14,121" />
-      <scope id="5948027493682405566" at="13,0,16,0">
-        <var name="__thisNode__" id="5948027493682405566" />
-      </scope>
-      <unit id="5948027493682405566" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor.java">
       <node id="5948027493682405566" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="5948027493682405566" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -7247,15 +6641,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5948027493682405580">
-    <file name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.java">
-      <node id="5948027493682405580" at="13,84,14,129" concept="8" />
-      <node id="5948027493682405580" at="13,0,16,0" concept="12" trace="call_getPreProcessor_5948027493682405583#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5948027493682405580" at="13,84,14,129" />
-      <scope id="5948027493682405580" at="13,0,16,0">
-        <var name="__thisNode__" id="5948027493682405580" />
-      </scope>
-      <unit id="5948027493682405580" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor.java">
       <node id="5948027493682405580" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="5948027493682405580" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -7339,9 +6724,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/5948027493682791347">
-    <file name="CopyPasteHandlers_Behavior.java">
-      <unit id="5948027493682791347" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_Behavior" />
-    </file>
     <file name="CopyPasteHandlers__BehaviorDescriptor.java">
       <node id="5948027493682791347" at="33,0,34,0" concept="11" trace="CONCEPT" />
       <node id="5948027493682791347" at="34,0,35,0" concept="11" trace="REGISTRY" />
@@ -7453,15 +6835,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/6026743057587447967">
-    <file name="ConceptFunctionParameter_nodeToPastePostProcess_Behavior.java">
-      <node id="6026743057587447967" at="13,85,14,124" concept="8" />
-      <node id="6026743057587447967" at="13,0,16,0" concept="12" trace="call_getPostProcessor_6026743057587447970#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6026743057587447967" at="13,85,14,124" />
-      <scope id="6026743057587447967" at="13,0,16,0">
-        <var name="__thisNode__" id="6026743057587447967" />
-      </scope>
-      <unit id="6026743057587447967" at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess_Behavior" />
-    </file>
     <file name="ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor.java">
       <node id="6026743057587447967" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="6026743057587447967" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -7545,9 +6918,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/6400740936061775100">
-    <file name="QueryFunction_IconNode_Behavior.java">
-      <unit id="6400740936061775100" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_Behavior" />
-    </file>
     <file name="QueryFunction_IconNode__BehaviorDescriptor.java">
       <node id="6400740936061775100" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="6400740936061775100" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -7672,9 +7042,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/658365993681971249">
-    <file name="GetActionUIFunction_Behavior.java">
-      <unit id="658365993681971249" at="10,0,13,0" name="jetbrains.mps.lang.actions.behavior.GetActionUIFunction_Behavior" />
-    </file>
     <file name="GetActionUIFunction__BehaviorDescriptor.java">
       <node id="658365993681971249" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="658365993681971249" at="28,0,29,0" concept="11" trace="REGISTRY" />

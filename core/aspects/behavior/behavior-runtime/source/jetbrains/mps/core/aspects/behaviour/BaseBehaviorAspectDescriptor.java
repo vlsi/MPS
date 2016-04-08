@@ -17,9 +17,15 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Common ancestor for all generated behavior aspect's classes.
@@ -29,9 +35,30 @@ public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDesc
   /**
    * Main API for behavior aspect descriptor.
    * Will move up to the interface after 3.3
-   * @param concept input kind for behavior
-   * @return descriptor for the concept, or <code>null</code> if this aspect knows nothing about the concept
    */
   @Nullable
-  public abstract BHDescriptor getDescriptor(@NotNull SConceptId concept);
+  @ToRemove(version = 3.4)
+  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
+    return getDescriptor(MetaAdapterFactory.getConcept(conceptId, "<random concept name from IntentionAspectBase; method should not have been used>"));
+  }
+
+  @Nullable
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    //default implementation to be removed after 3.4
+    if (concept instanceof SConceptAdapterById) {
+      return getDescriptor(((SConceptAdapterById) concept).getId());
+    }
+    if (concept instanceof SInterfaceConceptAdapterById) {
+      return getDescriptor(((SInterfaceConceptAdapterById) concept).getId());
+    }
+
+    return null;
+  }
+
+  @Nullable
+  @ToRemove(version = 3.4)
+  @Override
+  public BehaviorDescriptor getDescriptor(String fqName) {
+    throw new UnsupportedOperationException();
+  }
 }

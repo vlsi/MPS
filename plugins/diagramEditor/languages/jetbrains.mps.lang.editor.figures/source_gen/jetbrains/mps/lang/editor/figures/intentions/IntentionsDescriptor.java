@@ -4,63 +4,68 @@ package jetbrains.mps.lang.editor.figures.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[4];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0xf8c108ca68L;
-    myId2Index[2] = 0xf8cc56b21dL;
-    myId2Index[3] = 0xf93c84351fL;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ClassConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new AddRemoveFigureAttribute_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: FieldDeclaration 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new AddRemoveFigureParameterAttributeField_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: InstanceMethodDeclaration 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new AddRemoveFigureParameterAttributeMethod_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: StaticFieldDeclaration 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new AddRemoveFigureParameterAttributePropertySpecification_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: ClassConcept 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRemoveFigureAttribute_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: FieldDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRemoveFigureParameterAttributeField_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: InstanceMethodDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRemoveFigureParameterAttributeMethod_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: StaticFieldDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRemoveFigureParameterAttributePropertySpecification_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -73,4 +78,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new AddRemoveFigureParameterAttributePropertySpecification_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
 }

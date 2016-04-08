@@ -4,12 +4,12 @@ package jetbrains.mps.make.script.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myQueryDefinition__BehaviorDescriptor = new QueryDefinition__BehaviorDescriptor();
@@ -22,52 +22,74 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConceptFunctionParameter_progressMonitor__BehaviorDescriptor = new ConceptFunctionParameter_progressMonitor__BehaviorDescriptor();
   private final BHDescriptor myResultStatement__BehaviorDescriptor = new ResultStatement__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[9];
-    myConceptBehaviorIds[0] = 0x70276038dc49b2bL;
-    myConceptBehaviorIds[1] = 0x70276038dc4d7b5L;
-    myConceptBehaviorIds[2] = 0x70276038dc4d7bbL;
-    myConceptBehaviorIds[3] = 0x1b731b4510dbc59fL;
-    myConceptBehaviorIds[4] = 0x20c069f80a947282L;
-    myConceptBehaviorIds[5] = 0x20c069f80a972dabL;
-    myConceptBehaviorIds[6] = 0x20c069f80a972dacL;
-    myConceptBehaviorIds[7] = 0x40d591ab6a24e48dL;
-    myConceptBehaviorIds[8] = 0x6237d5bb8b2a942dL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myQueryDefinition__BehaviorDescriptor;
-      case 1:
-        return myOptionType__BehaviorDescriptor;
-      case 2:
-        return myExpectedOption__BehaviorDescriptor;
-      case 3:
-        return myRelayQueryExpression__BehaviorDescriptor;
-      case 4:
-        return myResourceType__BehaviorDescriptor;
-      case 5:
-        return myJobDefinition__BehaviorDescriptor;
-      case 6:
-        return myInputResourcesParameter__BehaviorDescriptor;
-      case 7:
-        return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
-      case 8:
-        return myResultStatement__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myExpectedOption__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myInputResourcesParameter__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myJobDefinition__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myOptionType__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myQueryDefinition__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myRelayQueryExpression__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myResourceType__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myResultStatement__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x40d591ab6a24e48dL, "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dacL, "jetbrains.mps.make.script.structure.InputResourcesParameter"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b5L, "jetbrains.mps.make.script.structure.OptionType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL, "jetbrains.mps.make.script.structure.QueryDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL, "jetbrains.mps.make.script.structure.RelayQueryExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement"));
 }

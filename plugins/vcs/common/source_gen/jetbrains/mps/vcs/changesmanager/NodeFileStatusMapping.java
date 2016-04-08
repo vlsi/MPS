@@ -37,7 +37,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry myRegistry;
   private final Map<SNodeReference, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodeReference, FileStatus>());
   private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
-  private final MPSProject myMPSProject;
+  protected final MPSProject myMPSProject;
   public NodeFileStatusMapping(MPSProject project, CurrentDifferenceRegistry registry) {
     super(project.getProject());
     myRegistry = registry;

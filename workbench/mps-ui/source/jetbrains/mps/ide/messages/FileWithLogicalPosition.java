@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,18 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.annotations.Immutable;
 
 /**
+ * XXX Not specific to ide.messages, could reside elsewhere
  * User: Sinchuk Sergey
  * Date: 13.06.2010
  */
+@Immutable
 public class FileWithLogicalPosition {
-  private IFile myFile;
-  private int myLine;
-  private int myColumn;
+  private final IFile myFile;
+  private final int myLine;
+  private final int myColumn;
 
   public FileWithLogicalPosition(IFile file, int line, int column) {
     myFile = file;

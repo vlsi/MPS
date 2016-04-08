@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -33,12 +34,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class FeatureForestMapSupport extends AbstractProjectComponent {
-  private FeatureForestMap<ModelChange> myMap = new FeatureForestMap<ModelChange>();
+  private final FeatureForestMap<ModelChange> myMap;
   private Map<ModelChange, Feature[]> myChangeToFeaturesMap = MapSequence.fromMap(new HashMap<ModelChange, Feature[]>());
   private CurrentDifferenceRegistry myCurrentDifferenceRegistry;
   private FeatureForestMapSupport.MyListener myListener = new FeatureForestMapSupport.MyListener();
-  public FeatureForestMapSupport(Project project, CurrentDifferenceRegistry currentDifferenceRegistry) {
+  public FeatureForestMapSupport(Project project, MPSProject mpsProject, CurrentDifferenceRegistry currentDifferenceRegistry) {
     super(project);
+    myMap = new FeatureForestMap<ModelChange>(mpsProject.getRepository());
     myCurrentDifferenceRegistry = currentDifferenceRegistry;
   }
   @Override

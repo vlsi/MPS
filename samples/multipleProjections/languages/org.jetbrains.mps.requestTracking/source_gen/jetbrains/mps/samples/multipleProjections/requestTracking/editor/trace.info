@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,42,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,60,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:94330202-b33f-456a-85ea-8a2bb978933f(jetbrains.mps.samples.multipleProjections.requestTracking.editor)/3675491646420733859">

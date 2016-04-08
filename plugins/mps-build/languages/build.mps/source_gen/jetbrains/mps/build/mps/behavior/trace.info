@@ -18,181 +18,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,106,0" name="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMPSPlugin_BehaviorDescriptor.java">
-      <unit at="18,0,38,0" name="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsAspect_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMpsAspect_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_ModuleJarContent_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJarContent_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java">
-      <unit at="16,0,33,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_ModuleSources_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_ModuleXml_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleXml_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_PluginDescriptor_BehaviorDescriptor.java">
-      <unit at="16,0,35,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMpsLayout_Plugin_BehaviorDescriptor.java">
-      <unit at="19,0,50,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_AbstractModule_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_BrandingCompany_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingCompany_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_BrandingHelp_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingHelp_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_BrandingKeymap_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingKeymap_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_BrandingStats_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingStats_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_BrandingUpdateSite_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingUpdateSite_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Branding_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Branding_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_DevKitExportLanguage_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportLanguage_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_DevKitExportSolution_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportSolution_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_DevKitExport_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExport_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_DevKitRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitRef_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_DevKit_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ExtractedModuleDependency_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_GeneratorOptions_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.mps.behavior.BuildMps_GeneratorOptions_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Generator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Generator_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Group_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginContent_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginGroup_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginModule_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPluginVendor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginVendor_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_IdeaPlugin_BehaviorDescriptor.java">
-      <unit at="18,0,36,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Language_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Language_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyJar_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyJar_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyOnModule_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnModule_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependency_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleJarRuntime_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleJarRuntime_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleJavaSource_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleJavaSource_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleModelRoot_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleModelRoot_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleRuntime_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleRuntime_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleSolutionRuntime_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleSolutionRuntime_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleSource_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleSource_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_ModuleTestSource_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleTestSource_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Module_BehaviorDescriptor.java">
-      <unit at="17,0,31,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Module_BehaviorDescriptor" />
-    </file>
-    <file name="BuildMps_Solution_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Solution_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildMps_Module_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildMps_Module_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_BuildSourcePath_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildSourcePath_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_String_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_String_BehaviorDescriptor" />
+      <unit at="14,0,144,0" name="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1224588814561889092">
-    <file name="BuildMPSPlugin_Behavior.java">
-      <node id="1224588814561889092" at="14,96,15,91" concept="8" />
-      <node id="1224588814561889092" at="14,0,17,0" concept="12" trace="call_getMpsLibrary_4101476690147447822#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1224588814561889092" at="14,96,15,91" />
-      <scope id="1224588814561889092" at="14,0,17,0">
-        <var name="__thisConcept__" id="1224588814561889092" />
-      </scope>
-      <unit id="1224588814561889092" at="12,0,18,0" name="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior" />
-    </file>
     <file name="BuildMPSPlugin__BehaviorDescriptor.java">
       <node id="1224588814561889092" at="47,0,48,0" concept="11" trace="CONCEPT" />
       <node id="1224588814561889092" at="48,0,49,0" concept="11" trace="REGISTRY" />
@@ -438,9 +267,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1265949165890654187">
-    <file name="BuildMpsLayout_ModuleJars_Behavior.java">
-      <unit id="1265949165890654187" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_Behavior" />
-    </file>
     <file name="BuildMpsLayout_ModuleJars__BehaviorDescriptor.java">
       <node id="1265949165890654187" at="30,0,31,0" concept="11" trace="CONCEPT" />
       <node id="1265949165890654187" at="31,0,32,0" concept="11" trace="REGISTRY" />
@@ -571,9 +397,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1330375798066759587">
-    <file name="BuildLayout_ToBinaryCopyProcessor_Behavior.java">
-      <unit id="1330375798066759587" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_Behavior" />
-    </file>
     <file name="BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor.java">
       <node id="1330375798066759587" at="27,0,28,0" concept="11" trace="CONCEPT" />
       <node id="1330375798066759587" at="28,0,29,0" concept="11" trace="REGISTRY" />
@@ -661,15 +484,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1517654889524432594">
-    <file name="BuildMps_Language_Behavior.java">
-      <node id="1517654889524432594" at="13,81,14,90" concept="8" />
-      <node id="1517654889524432594" at="13,0,16,0" concept="12" trace="call_getGenerator_1517654889524434844#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1517654889524432594" at="13,81,14,90" />
-      <scope id="1517654889524432594" at="13,0,16,0">
-        <var name="__thisNode__" id="1517654889524432594" />
-      </scope>
-      <unit id="1517654889524432594" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Language_Behavior" />
-    </file>
     <file name="BuildMps_Language__BehaviorDescriptor.java">
       <node id="1517654889524432594" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1517654889524432594" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -750,9 +564,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1957532277556926137">
-    <file name="BuildMps_IdeaPluginContent_Behavior.java">
-      <unit id="1957532277556926137" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent_Behavior" />
-    </file>
     <file name="BuildMps_IdeaPluginContent__BehaviorDescriptor.java">
       <node id="1957532277556926137" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1957532277556926137" at="25,0,26,0" concept="11" trace="REGISTRY" />
@@ -828,9 +639,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1957532277556933961">
-    <file name="BuildMps_IdeaPluginModule_Behavior.java">
-      <unit id="1957532277556933961" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule_Behavior" />
-    </file>
     <file name="BuildMps_IdeaPluginModule__BehaviorDescriptor.java">
       <node id="1957532277556933961" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1957532277556933961" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -914,16 +722,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1957532277556934103">
-    <file name="BuildMps_IdeaPluginGroup_Behavior.java">
-      <node id="1957532277556934103" at="13,102,14,110" concept="8" />
-      <node id="1957532277556934103" at="13,0,16,0" concept="12" trace="call_isCustomPackaging_8301447434616552323#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1957532277556934103" at="13,102,14,110" />
-      <scope id="1957532277556934103" at="13,0,16,0">
-        <var name="__thisNode__" id="1957532277556934103" />
-        <var name="module" id="8301447434616552328" />
-      </scope>
-      <unit id="1957532277556934103" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup_Behavior" />
-    </file>
     <file name="BuildMps_IdeaPluginGroup__BehaviorDescriptor.java">
       <node id="1957532277556934103" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="1957532277556934103" at="29,0,30,0" concept="11" trace="REGISTRY" />
@@ -1024,9 +822,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/2569834391839790363">
-    <file name="BuildMps_Module_Behavior.java">
-      <unit id="2569834391839790363" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
-    </file>
     <file name="BuildMps_Module__BehaviorDescriptor.java">
       <node id="2569834391839790363" at="37,0,38,0" concept="11" trace="CONCEPT" />
       <node id="2569834391839790363" at="38,0,39,0" concept="11" trace="REGISTRY" />
@@ -1294,9 +1089,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/5970181360961361219">
-    <file name="BuildMpsLayout_FolderWithSources_Behavior.java">
-      <unit id="5970181360961361219" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_Behavior" />
-    </file>
     <file name="BuildMpsLayout_FolderWithSources__BehaviorDescriptor.java">
       <node id="5970181360961361219" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="5970181360961361219" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -1372,9 +1164,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/5970181360961361293">
-    <file name="BuildMpsLayout_ModuleSources_Behavior.java">
-      <unit id="5970181360961361293" at="10,0,13,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources_Behavior" />
-    </file>
     <file name="BuildMpsLayout_ModuleSources__BehaviorDescriptor.java">
       <node id="5970181360961361293" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="5970181360961361293" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -1450,23 +1239,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/6592112598314855408">
-    <file name="BuildMpsLayout_Plugin_Behavior.java">
-      <node id="6592112598314855408" at="14,109,15,113" concept="8" />
-      <node id="6592112598314855408" at="17,92,18,99" concept="8" />
-      <node id="6592112598314855408" at="14,0,17,0" concept="12" trace="call_getOutputPath_WithMacro_280273048052535414#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-      <node id="6592112598314855408" at="17,0,20,0" concept="12" trace="call_findGroup_8301447434616448040#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6592112598314855408" at="14,109,15,113" />
-      <scope id="6592112598314855408" at="17,92,18,99" />
-      <scope id="6592112598314855408" at="14,0,17,0">
-        <var name="__thisNode__" id="6592112598314855408" />
-        <var name="context" id="5584673629410321115" />
-      </scope>
-      <scope id="6592112598314855408" at="17,0,20,0">
-        <var name="__thisNode__" id="6592112598314855408" />
-        <var name="module" id="8301447434616448039" />
-      </scope>
-      <unit id="6592112598314855408" at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_Behavior" />
-    </file>
     <file name="BuildMpsLayout_Plugin__BehaviorDescriptor.java">
       <node id="6592112598314855408" at="38,0,39,0" concept="11" trace="CONCEPT" />
       <node id="6592112598314855408" at="39,0,40,0" concept="11" trace="REGISTRY" />
@@ -1775,15 +1547,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/6592112598314896727">
-    <file name="BuildMps_IdeaPlugin_Behavior.java">
-      <node id="6592112598314896727" at="13,79,14,90" concept="8" />
-      <node id="6592112598314896727" at="13,0,16,0" concept="12" trace="call_getProject_1224588814562002122#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6592112598314896727" at="13,79,14,90" />
-      <scope id="6592112598314896727" at="13,0,16,0">
-        <var name="__thisNode__" id="6592112598314896727" />
-      </scope>
-      <unit id="6592112598314896727" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_Behavior" />
-    </file>
     <file name="BuildMps_IdeaPlugin__BehaviorDescriptor.java">
       <node id="6592112598314896727" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="6592112598314896727" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -1872,21 +1635,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/7354447573575921317">
-    <file name="BuildMps_Solution_Behavior.java">
-      <node id="7354447573575921317" at="13,86,14,93" concept="8" />
-      <node id="7354447573575921317" at="16,81,17,88" concept="8" />
-      <node id="7354447573575921317" at="13,0,16,0" concept="12" trace="call_hasTestsSources_7354447573575923452#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7354447573575921317" at="16,0,19,0" concept="12" trace="call_hasSources_7354447573576714831#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="7354447573575921317" at="13,86,14,93" />
-      <scope id="7354447573575921317" at="16,81,17,88" />
-      <scope id="7354447573575921317" at="13,0,16,0">
-        <var name="__thisNode__" id="7354447573575921317" />
-      </scope>
-      <scope id="7354447573575921317" at="16,0,19,0">
-        <var name="__thisNode__" id="7354447573575921317" />
-      </scope>
-      <unit id="7354447573575921317" at="11,0,20,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Solution_Behavior" />
-    </file>
     <file name="BuildMps_Solution__BehaviorDescriptor.java">
       <node id="7354447573575921317" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="7354447573575921317" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -1982,15 +1730,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/7391870795496918760">
-    <file name="BuildMps_DevKit_Behavior.java">
-      <node id="7391870795496918760" at="13,97,14,94" concept="8" />
-      <node id="7391870795496918760" at="13,0,16,0" concept="12" trace="call_getExportedModules_7391870795496918763#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="7391870795496918760" at="13,97,14,94" />
-      <scope id="7391870795496918760" at="13,0,16,0">
-        <var name="__thisNode__" id="7391870795496918760" />
-      </scope>
-      <unit id="7391870795496918760" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior" />
-    </file>
     <file name="BuildMps_DevKit__BehaviorDescriptor.java">
       <node id="7391870795496918760" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="7391870795496918760" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -2093,15 +1832,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/8301447434615522451">
-    <file name="BuildMpsLayout_PluginDescriptor_Behavior.java">
-      <node id="8301447434615522451" at="13,92,14,103" concept="8" />
-      <node id="8301447434615522451" at="13,0,16,0" concept="12" trace="call_pluginXml_978600701690250198#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="8301447434615522451" at="13,92,14,103" />
-      <scope id="8301447434615522451" at="13,0,16,0">
-        <var name="__thisConcept__" id="8301447434615522451" />
-      </scope>
-      <unit id="8301447434615522451" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor_Behavior" />
-    </file>
     <file name="BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.java">
       <node id="8301447434615522451" at="29,0,30,0" concept="11" trace="CONCEPT" />
       <node id="8301447434615522451" at="30,0,31,0" concept="11" trace="REGISTRY" />
@@ -2245,15 +1975,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/8369506495128693727">
-    <file name="BuildMps_AbstractModule_Behavior.java">
-      <node id="8369506495128693727" at="13,88,14,102" concept="8" />
-      <node id="8369506495128693727" at="13,0,16,0" concept="12" trace="call_getModuleReference_4643216374596368935#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="8369506495128693727" at="13,88,14,102" />
-      <scope id="8369506495128693727" at="13,0,16,0">
-        <var name="__thisNode__" id="8369506495128693727" />
-      </scope>
-      <unit id="8369506495128693727" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior" />
-    </file>
     <file name="BuildMps_AbstractModule__BehaviorDescriptor.java">
       <node id="8369506495128693727" at="25,0,26,0" concept="11" trace="CONCEPT" />
       <node id="8369506495128693727" at="26,0,27,0" concept="11" trace="REGISTRY" />
@@ -2337,15 +2058,6 @@
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/9200313594510517116">
-    <file name="BuildMps_Generator_Behavior.java">
-      <node id="9200313594510517116" at="13,86,14,96" concept="8" />
-      <node id="9200313594510517116" at="13,0,16,0" concept="12" trace="call_getSourceLanguage_9200313594510517119#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9200313594510517116" at="13,86,14,96" />
-      <scope id="9200313594510517116" at="13,0,16,0">
-        <var name="__thisNode__" id="9200313594510517116" />
-      </scope>
-      <unit id="9200313594510517116" at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior" />
-    </file>
     <file name="BuildMps_Generator__BehaviorDescriptor.java">
       <node id="9200313594510517116" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="9200313594510517116" at="27,0,28,0" concept="11" trace="REGISTRY" />

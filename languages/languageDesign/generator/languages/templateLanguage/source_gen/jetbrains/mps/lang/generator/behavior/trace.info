@@ -18,335 +18,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbandonInput_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractMacro_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" />
-    </file>
-    <file name="BaseMappingRule_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="BaseMappingRule_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Condition_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,322,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ContextVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.ContextVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ContextVariableProvider_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.lang.generator.behavior.ContextVariableProvider_BehaviorDescriptor" />
-    </file>
-    <file name="CopySrcListMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_BehaviorDescriptor" />
-    </file>
-    <file name="CopySrcNodeMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_BehaviorDescriptor" />
-    </file>
-    <file name="CreateRootRule_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
-    </file>
-    <file name="CreateRootRule_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="DismissTopMappingRule_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.DismissTopMappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="DropAttributeRule_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.DropAttributeRule_BehaviorDescriptor" />
-    </file>
-    <file name="DropAttributeRule_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.DropAttributeRule_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="DropRootRule_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
-    </file>
-    <file name="DropRootRule_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="ExportEntry_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.ExportEntry_BehaviorDescriptor" />
-    </file>
-    <file name="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" />
-    </file>
-    <file name="ExportLabelParameter_keeper_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_keeper_BehaviorDescriptor" />
-    </file>
-    <file name="ExportLabelParameter_outputNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_outputNode_BehaviorDescriptor" />
-    </file>
-    <file name="ExportLabel_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.ExportLabel_BehaviorDescriptor" />
-    </file>
-    <file name="ExportMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.ExportMacro_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorDebug_LabelEntry_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_LabelEntry_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorDebug_Mappings_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_Mappings_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorDebug_NodeMapEntry_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeMapEntry_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorDebug_NodeRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeRef_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorMessage_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorParameterReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.GeneratorParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="IGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
-    </file>
-    <file name="IParameterizedTemplate_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.lang.generator.behavior.IParameterizedTemplate_BehaviorDescriptor" />
-    </file>
-    <file name="ITemplateCall_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.lang.generator.behavior.ITemplateCall_BehaviorDescriptor" />
-    </file>
-    <file name="IfMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_BehaviorDescriptor" />
-    </file>
-    <file name="IfMacro_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="IncludeMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.IncludeMacro_BehaviorDescriptor" />
-    </file>
-    <file name="InlineSwitch_Case_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_Case_BehaviorDescriptor" />
-    </file>
-    <file name="InlineSwitch_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="InlineTemplate_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="InsertMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_BehaviorDescriptor" />
-    </file>
-    <file name="InsertMacro_CreateNodeQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery_BehaviorDescriptor" />
-    </file>
-    <file name="LabelMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" />
-    </file>
-    <file name="LoopMacro_BehaviorDescriptor.java">
-      <unit at="14,0,32,0" name="jetbrains.mps.lang.generator.behavior.LoopMacro_BehaviorDescriptor" />
-    </file>
-    <file name="MapSrcListMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" />
-    </file>
-    <file name="MapSrcMacro_MapperFunction_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_MapperFunction_BehaviorDescriptor" />
-    </file>
-    <file name="MapSrcMacro_PostMapperFunction_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_BehaviorDescriptor" />
-    </file>
-    <file name="MapSrcNodeMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfiguration_BehaviorDescriptor.java">
-      <unit at="20,0,55,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfiguration_Condition_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
-    </file>
-    <file name="MappingLabelDeclaration_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="MappingScriptReference_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
-    </file>
-    <file name="MappingScript_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" />
-    </file>
-    <file name="MappingScript_CodeBlock_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" />
-    </file>
-    <file name="MarshalFunction_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ModelIdentity_BehaviorDescriptor.java">
-      <unit at="14,0,18,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
-    </file>
-    <file name="NodeIdentity_BehaviorDescriptor.java">
-      <unit at="13,0,18,0" name="jetbrains.mps.lang.generator.behavior.NodeIdentity_BehaviorDescriptor" />
-    </file>
-    <file name="NodeMacro_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" />
-    </file>
-    <file name="PatternReduction_MappingRule_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyMacro_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="ReductionRule_BehaviorDescriptor.java">
-      <unit at="12,0,15,0" name="jetbrains.mps.lang.generator.behavior.ReductionRule_BehaviorDescriptor" />
-    </file>
-    <file name="Reduction_MappingRule_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceMacro_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceMacro_GetReferent_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_BehaviorDescriptor" />
-    </file>
-    <file name="RootTemplateAnnotation_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="Root_MappingRule_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="RuleConsequence_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="SourceSubstituteMacro_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_BehaviorDescriptor" />
-    </file>
-    <file name="SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor" />
-    </file>
-    <file name="SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentParameterExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentParameterExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentPatternRef_BehaviorDescriptor.java">
-      <unit at="13,0,23,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentPatternVarRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentQueryExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQueryExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateArgumentVariableRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentVariableRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateCallMacro_BehaviorDescriptor.java">
-      <unit at="12,0,30,0" name="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateDeclarationReference_BehaviorDescriptor.java">
-      <unit at="12,0,30,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateDeclaration_BehaviorDescriptor.java">
-      <unit at="19,0,45,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFragment_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_outputNode_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_outputNode_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_sourceNode_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateFunctionParameter_templateReferent_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templateReferent_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateQueryBase_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateSwitchMacro_BehaviorDescriptor.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateSwitchReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" />
-    </file>
-    <file name="TemplateSwitch_BehaviorDescriptor.java">
-      <unit at="19,0,45,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
-    </file>
-    <file name="TraceMacro_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.TraceMacro_BehaviorDescriptor" />
-    </file>
-    <file name="TrivialModelId_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" />
-    </file>
-    <file name="TrivialNodeId_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_BehaviorDescriptor" />
-    </file>
-    <file name="UnmarshalFunction_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" />
-    </file>
-    <file name="VarMacro_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_BehaviorDescriptor" />
-    </file>
-    <file name="VarMacro_ValueQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_BehaviorDescriptor" />
-    </file>
-    <file name="WeaveEach_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.WeaveEach_RuleConsequence_BehaviorDescriptor" />
-    </file>
-    <file name="WeaveMacro_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" />
-    </file>
-    <file name="WeavingAnchorQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.WeavingAnchorQuery_BehaviorDescriptor" />
-    </file>
-    <file name="Weaving_MappingRule_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor" />
+      <unit at="14,0,468,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1021062414717341661">
-    <file name="WeavingAnchorQuery_Behavior.java">
-      <unit id="1021062414717341661" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.WeavingAnchorQuery_Behavior" />
-    </file>
     <file name="WeavingAnchorQuery__BehaviorDescriptor.java">
       <node id="1021062414717341661" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1021062414717341661" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -458,9 +134,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877219536">
-    <file name="ReferenceMacro_GetReferent_Behavior.java">
-      <unit id="1213877219536" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior" />
-    </file>
     <file name="ReferenceMacro_GetReferent__BehaviorDescriptor.java">
       <node id="1213877219536" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="1213877219536" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -608,9 +281,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877222908">
-    <file name="CopySrcListMacro_Behavior.java">
-      <unit id="1213877222908" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" />
-    </file>
     <file name="CopySrcListMacro__BehaviorDescriptor.java">
       <node id="1213877222908" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1213877222908" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -731,9 +401,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877250500">
-    <file name="IfMacro_Behavior.java">
-      <unit id="1213877250500" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
-    </file>
     <file name="IfMacro__BehaviorDescriptor.java">
       <node id="1213877250500" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1213877250500" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -799,9 +466,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877263098">
-    <file name="CreateRootRule_Behavior.java">
-      <unit id="1213877263098" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Behavior" />
-    </file>
     <file name="CreateRootRule__BehaviorDescriptor.java">
       <node id="1213877263098" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1213877263098" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -885,9 +549,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877284681">
-    <file name="MapSrcListMacro_Behavior.java">
-      <unit id="1213877284681" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
-    </file>
     <file name="MapSrcListMacro__BehaviorDescriptor.java">
       <node id="1213877284681" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1213877284681" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1005,35 +666,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877290798">
-    <file name="NodeMacro_Behavior.java">
-      <node id="1213877290798" at="13,83,14,86" concept="9" />
-      <node id="1213877290798" at="16,119,17,110" concept="9" />
-      <node id="1213877290798" at="19,94,20,97" concept="9" />
-      <node id="1213877290798" at="22,86,23,85" concept="9" />
-      <node id="1213877290798" at="13,0,16,0" concept="13" trace="call_getPreviousNodeMacro_1213877290823#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877290798" at="16,0,19,0" concept="13" trace="call_getEnclosingMacro_1213877290834#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877290798" at="19,0,22,0" concept="13" trace="call_getInputNodeTypeFromEnvironment_1213877290892#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877290798" at="22,0,25,0" concept="13" trace="call_hasMappingLabel_6635545314667344478#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1213877290798" at="13,83,14,86" />
-      <scope id="1213877290798" at="16,119,17,110" />
-      <scope id="1213877290798" at="19,94,20,97" />
-      <scope id="1213877290798" at="22,86,23,85" />
-      <scope id="1213877290798" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877290798" />
-      </scope>
-      <scope id="1213877290798" at="16,0,19,0">
-        <var name="__thisNode__" id="1213877290798" />
-        <var name="currentMacro" id="1213877290888" />
-        <var name="currentNode" id="1213877290890" />
-      </scope>
-      <scope id="1213877290798" at="19,0,22,0">
-        <var name="__thisNode__" id="1213877290798" />
-      </scope>
-      <scope id="1213877290798" at="22,0,25,0">
-        <var name="__thisNode__" id="1213877290798" />
-      </scope>
-      <unit id="1213877290798" at="11,0,26,0" name="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
-    </file>
     <file name="NodeMacro__BehaviorDescriptor.java">
       <node id="1213877290798" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1213877290798" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1222,16 +854,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877354940">
-    <file name="MappingConfiguration_Behavior.java">
-      <node id="1213877354940" at="13,94,14,94" concept="4" />
-      <node id="1213877354940" at="13,0,16,0" concept="13" trace="call_addMember_3166264919334415805#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877354940" at="13,94,14,94" />
-      <scope id="1213877354940" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877354940" />
-        <var name="newMember" id="3166264919334422162" />
-      </scope>
-      <unit id="1213877354940" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior" />
-    </file>
     <file name="MappingConfiguration__BehaviorDescriptor.java">
       <node id="1213877354940" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="1213877354940" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -1375,15 +997,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877361819">
-    <file name="LoopMacro_Behavior.java">
-      <node id="1213877361819" at="13,87,14,87" concept="9" />
-      <node id="1213877361819" at="13,0,16,0" concept="13" trace="call_getCounterVarName_6635545314666773603#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877361819" at="13,87,14,87" />
-      <scope id="1213877361819" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877361819" />
-      </scope>
-      <unit id="1213877361819" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" />
-    </file>
     <file name="LoopMacro__BehaviorDescriptor.java">
       <node id="7430509679011634120" at="152,219,152,219" concept="0" />
       <node id="1213877361819" at="38,0,39,0" concept="12" trace="CONCEPT" />
@@ -1566,9 +1179,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877378066">
-    <file name="IncludeMacro_Behavior.java">
-      <unit id="1213877378066" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior" />
-    </file>
     <file name="IncludeMacro__BehaviorDescriptor.java">
       <node id="1213877378066" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1213877378066" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1679,9 +1289,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877426757">
-    <file name="CopySrcNodeMacro_Behavior.java">
-      <unit id="1213877426757" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior" />
-    </file>
     <file name="CopySrcNodeMacro__BehaviorDescriptor.java">
       <node id="1213877426757" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1213877426757" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1792,9 +1399,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877472999">
-    <file name="PropertyMacro_GetPropertyValue_Behavior.java">
-      <unit id="1213877472999" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior" />
-    </file>
     <file name="PropertyMacro_GetPropertyValue__BehaviorDescriptor.java">
       <node id="1213877472999" at="32,0,33,0" concept="12" trace="CONCEPT" />
       <node id="1213877472999" at="33,0,34,0" concept="12" trace="REGISTRY" />
@@ -1906,9 +1510,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877486464">
-    <file name="Root_MappingRule_Behavior.java">
-      <unit id="1213877486464" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.Root_MappingRule_Behavior" />
-    </file>
     <file name="Root_MappingRule__BehaviorDescriptor.java">
       <node id="1213877486464" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="1213877486464" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -1983,21 +1584,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877498462">
-    <file name="BaseMappingRule_Behavior.java">
-      <node id="1213877498462" at="13,83,14,91" concept="9" />
-      <node id="1213877498462" at="16,86,17,91" concept="9" />
-      <node id="1213877498462" at="13,0,16,0" concept="13" trace="call_getMappingLabelText_1213877498516#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1213877498462" at="16,0,19,0" concept="13" trace="call_hasMappingLabel_4006750417599229661#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1213877498462" at="13,83,14,91" />
-      <scope id="1213877498462" at="16,86,17,91" />
-      <scope id="1213877498462" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877498462" />
-      </scope>
-      <scope id="1213877498462" at="16,0,19,0">
-        <var name="__thisNode__" id="1213877498462" />
-      </scope>
-      <unit id="1213877498462" at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior" />
-    </file>
     <file name="BaseMappingRule__BehaviorDescriptor.java">
       <node id="1213877498462" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1213877498462" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2121,9 +1707,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741520185">
-    <file name="TemplateFragment_ContextNodeQuery_Behavior.java">
-      <unit id="1262430001741520185" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_Behavior" />
-    </file>
     <file name="TemplateFragment_ContextNodeQuery__BehaviorDescriptor.java">
       <node id="1262430001741520185" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741520185" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2227,9 +1810,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641656">
-    <file name="TemplateFragment_Behavior.java">
-      <unit id="1262430001741641656" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_Behavior" />
-    </file>
     <file name="TemplateFragment__BehaviorDescriptor.java">
       <node id="1262430001741641656" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741641656" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -2295,9 +1875,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641667">
-    <file name="IfMacro_Condition_Behavior.java">
-      <unit id="1262430001741641667" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_Behavior" />
-    </file>
     <file name="IfMacro_Condition__BehaviorDescriptor.java">
       <node id="1262430001741641667" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741641667" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2400,9 +1977,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642153">
-    <file name="BaseMappingRule_Condition_Behavior.java">
-      <unit id="1262430001741642153" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Condition_Behavior" />
-    </file>
     <file name="BaseMappingRule_Condition__BehaviorDescriptor.java">
       <node id="1262430001741642153" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741642153" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2505,9 +2079,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642829">
-    <file name="MapSrcMacro_MapperFunction_Behavior.java">
-      <unit id="1262430001741642829" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_MapperFunction_Behavior" />
-    </file>
     <file name="MapSrcMacro_MapperFunction__BehaviorDescriptor.java">
       <node id="1262430001741642829" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741642829" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2611,9 +2182,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642977">
-    <file name="MapSrcMacro_PostMapperFunction_Behavior.java">
-      <unit id="1262430001741642977" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_Behavior" />
-    </file>
     <file name="MapSrcMacro_PostMapperFunction__BehaviorDescriptor.java">
       <node id="1262430001741642977" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741642977" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2695,9 +2263,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741646754">
-    <file name="CreateRootRule_Condition_Behavior.java">
-      <unit id="1262430001741646754" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_Behavior" />
-    </file>
     <file name="CreateRootRule_Condition__BehaviorDescriptor.java">
       <node id="1262430001741646754" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741646754" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2799,9 +2364,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741647188">
-    <file name="Weaving_MappingRule_ContextNodeQuery_Behavior.java">
-      <unit id="1262430001741647188" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_Behavior" />
-    </file>
     <file name="Weaving_MappingRule_ContextNodeQuery__BehaviorDescriptor.java">
       <node id="1262430001741647188" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741647188" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -2904,9 +2466,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703037">
-    <file name="MappingScript_CodeBlock_Behavior.java">
-      <unit id="1262430001741703037" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_Behavior" />
-    </file>
     <file name="MappingScript_CodeBlock__BehaviorDescriptor.java">
       <node id="1262430001741703037" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741703037" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2987,9 +2546,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703474">
-    <file name="PropertyMacro_Behavior.java">
-      <unit id="1262430001741703474" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_Behavior" />
-    </file>
     <file name="PropertyMacro__BehaviorDescriptor.java">
       <node id="1262430001741703474" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741703474" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -3055,9 +2611,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703872">
-    <file name="DropRootRule_Condition_Behavior.java">
-      <unit id="1262430001741703872" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_Behavior" />
-    </file>
     <file name="DropRootRule_Condition__BehaviorDescriptor.java">
       <node id="1262430001741703872" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741703872" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3160,9 +2713,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741704594">
-    <file name="SourceSubstituteMacro_SourceNodeQuery_Behavior.java">
-      <unit id="1262430001741704594" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery_Behavior" />
-    </file>
     <file name="SourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor.java">
       <node id="1262430001741704594" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741704594" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3265,9 +2815,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741704930">
-    <file name="SourceSubstituteMacro_SourceNodesQuery_Behavior.java">
-      <unit id="1262430001741704930" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_Behavior" />
-    </file>
     <file name="SourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor.java">
       <node id="1262430001741704930" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741704930" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3377,9 +2924,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741717313">
-    <file name="RootTemplateAnnotation_Behavior.java">
-      <unit id="1262430001741717313" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_Behavior" />
-    </file>
     <file name="RootTemplateAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741717313" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741717313" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -3445,9 +2989,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741719795">
-    <file name="MappingConfiguration_Condition_Behavior.java">
-      <unit id="1262430001741719795" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_Behavior" />
-    </file>
     <file name="MappingConfiguration_Condition__BehaviorDescriptor.java">
       <node id="1262430001741719795" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741719795" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3548,9 +3089,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741720197">
-    <file name="InsertMacro_CreateNodeQuery_Behavior.java">
-      <unit id="1262430001741720197" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery_Behavior" />
-    </file>
     <file name="InsertMacro_CreateNodeQuery__BehaviorDescriptor.java">
       <node id="1262430001741720197" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741720197" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -3652,9 +3190,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1311078761699602468">
-    <file name="InsertMacro_Behavior.java">
-      <unit id="1311078761699602468" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" />
-    </file>
     <file name="InsertMacro__BehaviorDescriptor.java">
       <node id="1311078761699602468" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1311078761699602468" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -3731,15 +3266,6 @@
         <var name="patternNode" id="1510949579266902216" />
       </scope>
       <unit id="1510949579266902216" at="9,0,18,0" name="jetbrains.mps.lang.generator.behavior.Pattern_bh9exa9pg1jc" />
-    </file>
-    <file name="TemplateCallMacro_Behavior.java">
-      <node id="1510949579266902209" at="13,79,14,88" concept="9" />
-      <node id="1510949579266902209" at="13,0,16,0" concept="13" trace="call_getTemplate_982871510068205176#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1510949579266902209" at="13,79,14,88" />
-      <scope id="1510949579266902209" at="13,0,16,0">
-        <var name="__thisNode__" id="1510949579266902209" />
-      </scope>
-      <unit id="1510949579266902209" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior" />
     </file>
     <file name="TemplateCallMacro__BehaviorDescriptor.java">
       <node id="1510949579266902209" at="30,0,31,0" concept="12" trace="CONCEPT" />
@@ -3848,15 +3374,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1722980698497616258">
-    <file name="TemplateDeclarationReference_Behavior.java">
-      <node id="1722980698497616258" at="13,79,14,99" concept="9" />
-      <node id="1722980698497616258" at="13,0,16,0" concept="13" trace="call_getTemplate_982871510068196871#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1722980698497616258" at="13,79,14,99" />
-      <scope id="1722980698497616258" at="13,0,16,0">
-        <var name="__thisNode__" id="1722980698497616258" />
-      </scope>
-      <unit id="1722980698497616258" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
-    </file>
     <file name="TemplateDeclarationReference__BehaviorDescriptor.java">
       <node id="1722980698497616258" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1722980698497616258" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -3951,9 +3468,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1722980698497626475">
-    <file name="ITemplateCall_Behavior.java">
-      <unit id="1722980698497626475" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.ITemplateCall_Behavior" />
-    </file>
     <file name="ITemplateCall__BehaviorDescriptor.java">
       <node id="1722980698497626475" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1722980698497626475" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -4044,21 +3558,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1805153994417064760">
-    <file name="PatternReduction_MappingRule_Behavior.java">
-      <node id="1805153994417064760" at="13,79,14,99" concept="9" />
-      <node id="1805153994417064760" at="16,84,17,104" concept="9" />
-      <node id="1805153994417064760" at="13,0,16,0" concept="13" trace="call_getConcept_1805153994417064763#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1805153994417064760" at="16,0,19,0" concept="13" trace="call_getTemplateType_1805153994417123441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1805153994417064760" at="13,79,14,99" />
-      <scope id="1805153994417064760" at="16,84,17,104" />
-      <scope id="1805153994417064760" at="13,0,16,0">
-        <var name="__thisNode__" id="1805153994417064760" />
-      </scope>
-      <scope id="1805153994417064760" at="16,0,19,0">
-        <var name="__thisNode__" id="1805153994417064760" />
-      </scope>
-      <unit id="1805153994417064760" at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
-    </file>
     <file name="PatternReduction_MappingRule__BehaviorDescriptor.java">
       <node id="1805153994417064760" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="1805153994417064760" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4142,9 +3641,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2400318052852908806">
-    <file name="TemplateQueryBase_Behavior.java">
-      <unit id="2400318052852908806" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_Behavior" />
-    </file>
     <file name="TemplateQueryBase__BehaviorDescriptor.java">
       <node id="2400318052852908806" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2400318052852908806" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4242,15 +3738,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2721957369897649363">
-    <file name="VarMacro_Behavior.java">
-      <node id="2721957369897649363" at="13,77,14,76" concept="9" />
-      <node id="2721957369897649363" at="13,0,16,0" concept="13" trace="call_getName_2721957369897649366#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="2721957369897649363" at="13,77,14,76" />
-      <scope id="2721957369897649363" at="13,0,16,0">
-        <var name="__thisNode__" id="2721957369897649363" />
-      </scope>
-      <unit id="2721957369897649363" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior" />
-    </file>
     <file name="VarMacro__BehaviorDescriptor.java">
       <node id="2721957369897649363" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="2721957369897649363" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -4346,9 +3833,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2902001550281906068">
-    <file name="TemplateArgumentPatternRef_Behavior.java">
-      <unit id="2902001550281906068" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_Behavior" />
-    </file>
     <file name="TemplateArgumentPatternRef__BehaviorDescriptor.java">
       <node id="2902001550281906068" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="2902001550281906068" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4415,9 +3899,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2902001550281949293">
-    <file name="TemplateArgumentPatternVarRefExpression_Behavior.java">
-      <unit id="2902001550281949293" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_Behavior" />
-    </file>
     <file name="TemplateArgumentPatternVarRefExpression__BehaviorDescriptor.java">
       <node id="2902001550281949293" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2902001550281949293" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4492,9 +3973,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2902001550282064500">
-    <file name="TemplateArgumentLinkPatternRefExpression_Behavior.java">
-      <unit id="2902001550282064500" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_Behavior" />
-    </file>
     <file name="TemplateArgumentLinkPatternRefExpression__BehaviorDescriptor.java">
       <node id="2902001550282064500" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2902001550282064500" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4569,9 +4047,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2902001550282064516">
-    <file name="TemplateArgumentPropertyPatternRefExpression_Behavior.java">
-      <unit id="2902001550282064516" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" />
-    </file>
     <file name="TemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor.java">
       <node id="2902001550282064516" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2902001550282064516" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4646,9 +4121,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3462145372627957703">
-    <file name="LabelMacro_Behavior.java">
-      <unit id="3462145372627957703" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.LabelMacro_Behavior" />
-    </file>
     <file name="LabelMacro__BehaviorDescriptor.java">
       <node id="3462145372627957703" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="3462145372627957703" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -4725,9 +4197,6 @@
         <var name="patternNode" id="3850501259760043559" />
       </scope>
       <unit id="3850501259760043559" at="9,0,18,0" name="jetbrains.mps.lang.generator.behavior.Pattern_t95ks2ugq5gn" />
-    </file>
-    <file name="WeaveMacro_Behavior.java">
-      <unit id="3462145372628083275" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
     </file>
     <file name="WeaveMacro__BehaviorDescriptor.java">
       <node id="3462145372628083275" at="29,0,30,0" concept="12" trace="CONCEPT" />
@@ -4837,9 +4306,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3864140621129715973">
-    <file name="GeneratorDebug_LabelEntry_Behavior.java">
-      <unit id="3864140621129715973" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_LabelEntry_Behavior" />
-    </file>
     <file name="GeneratorDebug_LabelEntry__BehaviorDescriptor.java">
       <node id="3864140621129715973" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="3864140621129715973" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -4914,9 +4380,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3864140621129718613">
-    <file name="GeneratorDebug_NodeMapEntry_Behavior.java">
-      <unit id="3864140621129718613" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeMapEntry_Behavior" />
-    </file>
     <file name="GeneratorDebug_NodeMapEntry__BehaviorDescriptor.java">
       <node id="3864140621129718613" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="3864140621129718613" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -4991,9 +4454,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/4035562641222622440">
-    <file name="TemplateArgumentQuery_Behavior.java">
-      <unit id="4035562641222622440" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior" />
-    </file>
     <file name="TemplateArgumentQuery__BehaviorDescriptor.java">
       <node id="4035562641222622440" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="4035562641222622440" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -5109,9 +4569,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5015072279636592417">
-    <file name="VarMacro_ValueQuery_Behavior.java">
-      <unit id="5015072279636592417" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_Behavior" />
-    </file>
     <file name="VarMacro_ValueQuery__BehaviorDescriptor.java">
       <node id="5015072279636592417" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="5015072279636592417" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -5223,9 +4680,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5452844340287048614">
-    <file name="TemplateFunctionParameter_mainContextNode_Behavior.java">
-      <unit id="5452844340287048614" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_Behavior" />
-    </file>
     <file name="TemplateFunctionParameter_mainContextNode__BehaviorDescriptor.java">
       <node id="5452844340287048614" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5452844340287048614" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -5313,9 +4767,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5452844340287050912">
-    <file name="TemplateFunctionParameter_templatePropertyValue_Behavior.java">
-      <unit id="5452844340287050912" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_Behavior" />
-    </file>
     <file name="TemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor.java">
       <node id="5452844340287050912" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5452844340287050912" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -5403,9 +4854,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5452844340287052508">
-    <file name="TemplateFunctionParameter_parentOutputNode_Behavior.java">
-      <unit id="5452844340287052508" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_Behavior" />
-    </file>
     <file name="TemplateFunctionParameter_parentOutputNode__BehaviorDescriptor.java">
       <node id="5452844340287052508" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5452844340287052508" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -5493,9 +4941,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5452844340287052553">
-    <file name="TemplateFunctionParameter_templateReferent_Behavior.java">
-      <unit id="5452844340287052553" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templateReferent_Behavior" />
-    </file>
     <file name="TemplateFunctionParameter_templateReferent__BehaviorDescriptor.java">
       <node id="5452844340287052553" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5452844340287052553" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -5583,9 +5028,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5580940619725340902">
-    <file name="ReferenceMacro_Behavior.java">
-      <unit id="5580940619725340902" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
-    </file>
     <file name="ReferenceMacro__BehaviorDescriptor.java">
       <node id="5580940619725340902" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="5580940619725340902" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -5661,9 +5103,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6255346656297357649">
-    <file name="TrivialModelId_Behavior.java">
-      <unit id="6255346656297357649" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_Behavior" />
-    </file>
     <file name="TrivialModelId__BehaviorDescriptor.java">
       <node id="6255346656297357649" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="6255346656297357649" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -5747,9 +5186,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/650531548511609558">
-    <file name="IGeneratorParameter_Behavior.java">
-      <unit id="650531548511609558" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
-    </file>
     <file name="IGeneratorParameter__BehaviorDescriptor.java">
       <node id="650531548511609558" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="650531548511609558" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -5816,9 +5252,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6635545314668025207">
-    <file name="MapSrcNodeMacro_Behavior.java">
-      <unit id="6635545314668025207" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_Behavior" />
-    </file>
     <file name="MapSrcNodeMacro__BehaviorDescriptor.java">
       <node id="6635545314668025207" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="6635545314668025207" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -5929,9 +5362,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6736062018948492760">
-    <file name="TemplateFunctionParameter_sourceNode_Behavior.java">
-      <unit id="6736062018948492760" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_Behavior" />
-    </file>
     <file name="TemplateFunctionParameter_sourceNode__BehaviorDescriptor.java">
       <node id="6736062018948492760" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="6736062018948492760" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -6007,9 +5437,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743014802">
-    <file name="MarshalFunction_Behavior.java">
-      <unit id="7325101476743014802" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_Behavior" />
-    </file>
     <file name="MarshalFunction__BehaviorDescriptor.java">
       <node id="7325101476743014802" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7325101476743014802" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -6090,9 +5517,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743439464">
-    <file name="UnmarshalFunction_Behavior.java">
-      <unit id="7325101476743439464" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_Behavior" />
-    </file>
     <file name="UnmarshalFunction__BehaviorDescriptor.java">
       <node id="7325101476743439464" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="7325101476743439464" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -6173,9 +5597,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7430509679011528973">
-    <file name="ContextVariableProvider_Behavior.java">
-      <unit id="7430509679011528973" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.ContextVariableProvider_Behavior" />
-    </file>
     <file name="ContextVariableProvider__BehaviorDescriptor.java">
       <node id="7430509679011528973" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="7430509679011528973" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -6242,9 +5663,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7473026166162298371">
-    <file name="DropAttributeRule_Condition_Behavior.java">
-      <unit id="7473026166162298371" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.DropAttributeRule_Condition_Behavior" />
-    </file>
     <file name="DropAttributeRule_Condition__BehaviorDescriptor.java">
       <node id="7473026166162298371" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="7473026166162298371" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -6346,9 +5764,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7933327286924650855">
-    <file name="Reduction_MappingRule_Behavior.java">
-      <unit id="7933327286924650855" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule_Behavior" />
-    </file>
     <file name="Reduction_MappingRule__BehaviorDescriptor.java">
       <node id="7933327286924650855" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="7933327286924650855" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -6423,9 +5838,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7933327286924651182">
-    <file name="RuleConsequence_Behavior.java">
-      <unit id="7933327286924651182" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.RuleConsequence_Behavior" />
-    </file>
     <file name="RuleConsequence__BehaviorDescriptor.java">
       <node id="7933327286924651182" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="7933327286924651182" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -6500,9 +5912,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7933327286924651209">
-    <file name="InlineTemplate_RuleConsequence_Behavior.java">
-      <unit id="7933327286924651209" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_Behavior" />
-    </file>
     <file name="InlineTemplate_RuleConsequence__BehaviorDescriptor.java">
       <node id="7933327286924651209" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="7933327286924651209" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -6577,9 +5986,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7933327286924671183">
-    <file name="InlineTemplateWithContext_RuleConsequence_Behavior.java">
-      <unit id="7933327286924671183" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence_Behavior" />
-    </file>
     <file name="InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor.java">
       <node id="7933327286924671183" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7933327286924671183" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -6660,9 +6066,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/8015517816488820490">
-    <file name="SourceSubstituteMacro_Behavior.java">
-      <unit id="8015517816488820490" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_Behavior" />
-    </file>
     <file name="SourceSubstituteMacro__BehaviorDescriptor.java">
       <node id="8015517816488820490" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="8015517816488820490" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -6741,9 +6144,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/8360039740498070952">
-    <file name="TemplateSwitch_Behavior.java">
-      <unit id="8360039740498070952" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_Behavior" />
-    </file>
     <file name="TemplateSwitch__BehaviorDescriptor.java">
       <node id="8360039740498070952" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="8360039740498070952" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -6842,9 +6242,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/8952337903384729124">
-    <file name="TemplateDeclaration_Behavior.java">
-      <unit id="8952337903384729124" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
-    </file>
     <file name="TemplateDeclaration__BehaviorDescriptor.java">
       <node id="8952337903384729124" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="8952337903384729124" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -6931,17 +6328,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546941555841">
-    <file name="NodeIdentity_Behavior.java">
-      <node id="9032177546941555841" at="15,112,16,92" concept="9" />
-      <node id="9032177546941555841" at="15,0,18,0" concept="13" trace="call_create_9032177546941796951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9032177546941555841" at="15,112,16,92" />
-      <scope id="9032177546941555841" at="15,0,18,0">
-        <var name="__thisConcept__" id="9032177546941555841" />
-        <var name="n" id="9032177546941797003" />
-        <var name="where" id="9032177546941801999" />
-      </scope>
-      <unit id="9032177546941555841" at="13,0,19,0" name="jetbrains.mps.lang.generator.behavior.NodeIdentity_Behavior" />
-    </file>
     <file name="NodeIdentity__BehaviorDescriptor.java">
       <node id="9032177546941555841" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="9032177546941555841" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -7026,9 +6412,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546941580698">
-    <file name="TrivialNodeId_Behavior.java">
-      <unit id="9032177546941580698" at="10,0,13,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_Behavior" />
-    </file>
     <file name="TrivialNodeId__BehaviorDescriptor.java">
       <node id="9032177546941580698" at="31,0,32,0" concept="12" trace="CONCEPT" />
       <node id="9032177546941580698" at="32,0,33,0" concept="12" trace="REGISTRY" />
@@ -7119,17 +6502,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546942789355">
-    <file name="ModelIdentity_Behavior.java">
-      <node id="9032177546942789355" at="15,122,16,102" concept="9" />
-      <node id="9032177546942789355" at="15,0,18,0" concept="13" trace="call_create_9032177546942789358#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9032177546942789355" at="15,122,16,102" />
-      <scope id="9032177546942789355" at="15,0,18,0">
-        <var name="__thisConcept__" id="9032177546942789355" />
-        <var name="toIdentify" id="9032177546942789378" />
-        <var name="where" id="9032177546942789370" />
-      </scope>
-      <unit id="9032177546942789355" at="13,0,19,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_Behavior" />
-    </file>
     <file name="ModelIdentity__BehaviorDescriptor.java">
       <node id="9032177546942789355" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="9032177546942789355" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -7211,15 +6583,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/982871510068041617">
-    <file name="TemplateSwitchMacro_Behavior.java">
-      <node id="982871510068041617" at="13,85,14,96" concept="9" />
-      <node id="982871510068041617" at="13,0,16,0" concept="13" trace="call_getTemplateSwitch_982871510068041631#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="982871510068041617" at="13,85,14,96" />
-      <scope id="982871510068041617" at="13,0,16,0">
-        <var name="__thisNode__" id="982871510068041617" />
-      </scope>
-      <unit id="982871510068041617" at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro_Behavior" />
-    </file>
     <file name="TemplateSwitchMacro__BehaviorDescriptor.java">
       <node id="982871510068041617" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="982871510068041617" at="27,0,28,0" concept="12" trace="REGISTRY" />

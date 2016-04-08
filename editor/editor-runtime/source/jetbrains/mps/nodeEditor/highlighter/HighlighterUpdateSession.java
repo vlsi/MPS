@@ -29,6 +29,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -45,13 +46,16 @@ public class HighlighterUpdateSession {
   private final boolean myEssentialOnly;
   private final Collection<EditorChecker> myCheckers;
   private final List<EditorComponent> myAllEditorComponents;
+  @Nullable
+  private final EditorComponent myInspector;
 
   public HighlighterUpdateSession(IHighlighter highlighter, boolean essentialOnly, Collection<EditorChecker> checkers,
-      List<EditorComponent> allEditorComponents) {
+      List<EditorComponent> allEditorComponents, @Nullable EditorComponent inspector) {
     myHighlighter = highlighter;
     myEssentialOnly = essentialOnly;
     myCheckers = checkers;
     myAllEditorComponents = allEditorComponents;
+    myInspector = inspector;
   }
 
   @NotNull
@@ -112,12 +116,11 @@ public class HighlighterUpdateSession {
       return;
     }
 
-    final EditorComponent inspector = myHighlighter.getInspector();
-    if (inspector != null) {
-      TypeContextManager.getInstance().runTypecheckingAction(inspector.getTypecheckingContextOwner(), new Runnable() {
+    if (myInspector != null) {
+      TypeContextManager.getInstance().runTypecheckingAction(myInspector.getTypecheckingContextOwner(), new Runnable() {
         @Override
         public void run() {
-          updateEditorComponent(inspector, isUpdated[0], false);
+          updateEditorComponent(myInspector, isUpdated[0], false);
         }
       });
     }

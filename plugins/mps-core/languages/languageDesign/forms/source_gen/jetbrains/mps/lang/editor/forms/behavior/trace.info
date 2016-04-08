@@ -12,29 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractCheckboxUI_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.forms.behavior.AbstractCheckboxUI_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.lang.editor.forms.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CellModel_Checkbox_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.lang.editor.forms.behavior.CellModel_Checkbox_BehaviorDescriptor" />
-    </file>
-    <file name="CheckboxUI_Platform_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Platform_BehaviorDescriptor" />
-    </file>
-    <file name="CheckboxUI_Text_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Text_BehaviorDescriptor" />
-    </file>
-    <file name="StubCellModel_Checkbox_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.forms.behavior.StubCellModel_Checkbox_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.lang.editor.forms.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:014e282c-c608-4d01-bfad-9b53d4b5193a(jetbrains.mps.lang.editor.forms.behavior)/7569401714697029747">
-    <file name="CellModel_Checkbox_Behavior.java">
-      <unit id="7569401714697029747" at="10,0,13,0" name="jetbrains.mps.lang.editor.forms.behavior.CellModel_Checkbox_Behavior" />
-    </file>
     <file name="CellModel_Checkbox__BehaviorDescriptor.java">
       <node id="7569401714697029747" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="7569401714697029747" at="25,0,26,0" concept="6" trace="REGISTRY" />

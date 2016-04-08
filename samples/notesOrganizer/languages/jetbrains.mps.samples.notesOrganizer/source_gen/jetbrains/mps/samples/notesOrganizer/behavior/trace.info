@@ -15,50 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.samples.notesOrganizer.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CategoryReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.notesOrganizer.behavior.CategoryReference_BehaviorDescriptor" />
-    </file>
-    <file name="Category_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Category_BehaviorDescriptor" />
-    </file>
-    <file name="NoteMetaInfo_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NoteMetaInfo_BehaviorDescriptor" />
-    </file>
-    <file name="NotePart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NotePart_BehaviorDescriptor" />
-    </file>
-    <file name="Note_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Note_BehaviorDescriptor" />
-    </file>
-    <file name="NotesConfiguration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.notesOrganizer.behavior.NotesConfiguration_BehaviorDescriptor" />
-    </file>
-    <file name="Notes_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Notes_BehaviorDescriptor" />
-    </file>
-    <file name="Priority_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Priority_BehaviorDescriptor" />
-    </file>
-    <file name="Status_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Status_BehaviorDescriptor" />
-    </file>
-    <file name="TextNotePart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.notesOrganizer.behavior.TextNotePart_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.samples.notesOrganizer.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:2ed514bb-0dfc-4876-91d2-b5b2bfa150da(jetbrains.mps.samples.notesOrganizer.behavior)/3892287256988935420">
-    <file name="Note_Behavior.java">
-      <node id="3892287256988935420" at="14,96,15,85" concept="6" />
-      <node id="3892287256988935420" at="14,0,17,0" concept="8" trace="call_findColor_3892287256988935426#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
-      <scope id="3892287256988935420" at="14,96,15,85" />
-      <scope id="3892287256988935420" at="14,0,17,0">
-        <var name="__thisNode__" id="3892287256988935420" />
-        <var name="colorName" id="3892287256988944917" />
-      </scope>
-      <unit id="3892287256988935420" at="12,0,18,0" name="jetbrains.mps.samples.notesOrganizer.behavior.Note_Behavior" />
-    </file>
     <file name="Note__BehaviorDescriptor.java">
       <node id="3892287256988935420" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="3892287256988935420" at="30,0,31,0" concept="7" trace="REGISTRY" />

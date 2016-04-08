@@ -13,47 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="ApplicationPluginDeclaration_BehaviorDescriptor.java">
-      <unit at="16,0,46,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ApplicationPluginDisposeBlock_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ApplicationPluginInitBlock_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ApplicationPluginType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.lang.plugin.standalone.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="GetPreferencesComponentInProjectOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="GetToolInProjectOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetToolInProjectOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectPluginDeclaration_BehaviorDescriptor.java">
-      <unit at="16,0,46,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectPluginDisposeBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectPluginInitBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectPluginType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_BehaviorDescriptor" />
-    </file>
-    <file name="StandalonePluginDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.StandalonePluginDescriptor_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.lang.plugin.standalone.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741703666">
-    <file name="ProjectPluginInitBlock_Behavior.java">
-      <unit id="1262430001741703666" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_Behavior" />
-    </file>
     <file name="ProjectPluginInitBlock__BehaviorDescriptor.java">
       <node id="1262430001741703666" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703666" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -163,9 +127,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741719813">
-    <file name="ApplicationPluginDisposeBlock_Behavior.java">
-      <unit id="1262430001741719813" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_Behavior" />
-    </file>
     <file name="ApplicationPluginDisposeBlock__BehaviorDescriptor.java">
       <node id="1262430001741719813" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741719813" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -262,9 +223,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741720051">
-    <file name="ProjectPluginDisposeBlock_Behavior.java">
-      <unit id="1262430001741720051" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_Behavior" />
-    </file>
     <file name="ProjectPluginDisposeBlock__BehaviorDescriptor.java">
       <node id="1262430001741720051" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741720051" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -374,9 +332,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741720257">
-    <file name="ApplicationPluginInitBlock_Behavior.java">
-      <unit id="1262430001741720257" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_Behavior" />
-    </file>
     <file name="ApplicationPluginInitBlock__BehaviorDescriptor.java">
       <node id="1262430001741720257" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741720257" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -473,21 +428,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135178933">
-    <file name="ProjectPluginDeclaration_Behavior.java">
-      <node id="481983775135178933" at="13,85,14,100" concept="6" />
-      <node id="481983775135178933" at="16,92,17,107" concept="6" />
-      <node id="481983775135178933" at="13,0,16,0" concept="8" trace="call_getGeneratedName_481983775135178936#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="481983775135178933" at="16,0,19,0" concept="8" trace="call_getGeneratedClassFQName_481983775135178947#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="481983775135178933" at="13,85,14,100" />
-      <scope id="481983775135178933" at="16,92,17,107" />
-      <scope id="481983775135178933" at="13,0,16,0">
-        <var name="__thisNode__" id="481983775135178933" />
-      </scope>
-      <scope id="481983775135178933" at="16,0,19,0">
-        <var name="__thisNode__" id="481983775135178933" />
-      </scope>
-      <unit id="481983775135178933" at="11,0,20,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_Behavior" />
-    </file>
     <file name="ProjectPluginDeclaration__BehaviorDescriptor.java">
       <node id="481983775135178933" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="481983775135178933" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -584,9 +524,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135178981">
-    <file name="ProjectPluginType_Behavior.java">
-      <unit id="481983775135178981" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_Behavior" />
-    </file>
     <file name="ProjectPluginType__BehaviorDescriptor.java">
       <node id="481983775135178981" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="481983775135178981" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -662,9 +599,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135178997">
-    <file name="ApplicationPluginType_Behavior.java">
-      <unit id="481983775135178997" at="10,0,13,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_Behavior" />
-    </file>
     <file name="ApplicationPluginType__BehaviorDescriptor.java">
       <node id="481983775135178997" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="481983775135178997" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -740,21 +674,6 @@
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135179013">
-    <file name="ApplicationPluginDeclaration_Behavior.java">
-      <node id="481983775135179013" at="13,85,14,104" concept="6" />
-      <node id="481983775135179013" at="16,92,17,111" concept="6" />
-      <node id="481983775135179013" at="13,0,16,0" concept="8" trace="call_getGeneratedName_481983775135179014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="481983775135179013" at="16,0,19,0" concept="8" trace="call_getGeneratedClassFQName_481983775135179025#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="481983775135179013" at="13,85,14,104" />
-      <scope id="481983775135179013" at="16,92,17,111" />
-      <scope id="481983775135179013" at="13,0,16,0">
-        <var name="__thisNode__" id="481983775135179013" />
-      </scope>
-      <scope id="481983775135179013" at="16,0,19,0">
-        <var name="__thisNode__" id="481983775135179013" />
-      </scope>
-      <unit id="481983775135179013" at="11,0,20,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_Behavior" />
-    </file>
     <file name="ApplicationPluginDeclaration__BehaviorDescriptor.java">
       <node id="481983775135179013" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="481983775135179013" at="30,0,31,0" concept="7" trace="REGISTRY" />

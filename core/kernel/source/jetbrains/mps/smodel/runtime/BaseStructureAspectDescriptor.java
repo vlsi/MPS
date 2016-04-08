@@ -15,7 +15,13 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.Collection;
 import java.util.Map;
@@ -31,6 +37,13 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
 
   public abstract Collection<ConceptDescriptor> getDescriptors();
 
+  @Deprecated
+  @ToRemove(version = 3.4)
+  //this is needed only because in 3.3 there's overriding method with @Override annotation
+  public ConceptDescriptor getDescriptor(String fqName) {
+    throw new UnsupportedOperationException();
+  }
+
   @Override
   public ConceptDescriptor getDescriptor(SConceptId id) {
     ensureInitialized();
@@ -38,9 +51,13 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
   }
 
   protected void ensureInitialized() {
-    if (myDescriptors != null) return;
+    if (myDescriptors != null) {
+      return;
+    }
     synchronized (LOCK) {
-      if (myDescriptors != null) return;
+      if (myDescriptors != null) {
+        return;
+      }
 
       Collection<ConceptDescriptor> ds = getDescriptors();
       Map<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>(ds.size());

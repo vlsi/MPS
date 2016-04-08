@@ -13,205 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbsExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.AbsExpression_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractIndex_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.math.behavior.AbstractIndex_BehaviorDescriptor" />
-    </file>
-    <file name="ArithmSymbol_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.ArithmSymbol_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,122,0" name="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BigComplexType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.BigComplexType_BehaviorDescriptor" />
-    </file>
-    <file name="BigDecimalType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.BigDecimalType_BehaviorDescriptor" />
-    </file>
-    <file name="BigIntegerType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.BigIntegerType_BehaviorDescriptor" />
-    </file>
-    <file name="BigMaxExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BigMinExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BigProdExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BigSumExpression_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ComplexLiteral_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.math.behavior.ComplexLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="ComplexType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.ComplexType_BehaviorDescriptor" />
-    </file>
-    <file name="ConjugateOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CosineExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.CosineExpression_BehaviorDescriptor" />
-    </file>
-    <file name="DecimalBinaryOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_BehaviorDescriptor" />
-    </file>
-    <file name="DecimalDivExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_BehaviorDescriptor" />
-    </file>
-    <file name="DecimalMinusExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_BehaviorDescriptor" />
-    </file>
-    <file name="DecimalMulExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_BehaviorDescriptor" />
-    </file>
-    <file name="DecimalPlusExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_BehaviorDescriptor" />
-    </file>
-    <file name="Determinant_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.Determinant_BehaviorDescriptor" />
-    </file>
-    <file name="DivExpressionFraction_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.DivExpressionFraction_BehaviorDescriptor" />
-    </file>
-    <file name="ExponentExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.ExponentExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExponentialOperation_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ExtrSymbol_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.ExtrSymbol_BehaviorDescriptor" />
-    </file>
-    <file name="InIntervalExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IntervalContainsExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IntervalLiteral_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.IntervalLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="IntervalType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.IntervalType_BehaviorDescriptor" />
-    </file>
-    <file name="LinearSolveOperation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.LinearSolveOperation_BehaviorDescriptor" />
-    </file>
-    <file name="LiteralI_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.LiteralI_BehaviorDescriptor" />
-    </file>
-    <file name="LogExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.LogExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MathContext_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MathContext_BehaviorDescriptor" />
-    </file>
-    <file name="MathFuncExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MathFuncExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MathPrimitiveType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MathPrimitiveType_BehaviorDescriptor" />
-    </file>
-    <file name="MathSymbolFromToIndex_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.MathSymbolFromToIndex_BehaviorDescriptor" />
-    </file>
-    <file name="MathSymbolIndexReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MathSymbolIndexReference_BehaviorDescriptor" />
-    </file>
-    <file name="MathSymbolIndex_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.MathSymbolIndex_BehaviorDescriptor" />
-    </file>
-    <file name="MathSymbol_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_BehaviorDescriptor" />
-    </file>
-    <file name="MathTypeCast_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.math.behavior.MathTypeCast_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixConstructor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixElementAccessExpression_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixExponentialOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixIndexWildcard_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixIndexWildcard_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixInitializerIndexReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializerIndexReference_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixInitializerIndex_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializerIndex_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixInitializer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixInverseOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixNorm_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixNorm_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixOrVectorInitializer_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixOrVectorType_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorType_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixType_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixType_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixUnit_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixUnit_BehaviorDescriptor" />
-    </file>
-    <file name="MatrixZero_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixZero_BehaviorDescriptor" />
-    </file>
-    <file name="PowExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.PowExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SineExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.SineExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TangentExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.TangentExpression_BehaviorDescriptor" />
-    </file>
-    <file name="TransposeOperation_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_BehaviorDescriptor" />
-    </file>
-    <file name="VectorInitializer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.VectorInitializer_BehaviorDescriptor" />
-    </file>
-    <file name="VectorType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.math.behavior.VectorType_BehaviorDescriptor" />
+      <unit at="14,0,168,0" name="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1236440389435">
-    <file name="MathSymbol_Behavior.java">
-      <node id="1236440389435" at="14,114,15,94" concept="2" />
-      <node id="1236440389435" at="17,86,18,84" concept="6" />
-      <node id="1236440389435" at="14,0,17,0" concept="8" trace="call_getVisibleIndices_1236440390782#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
-      <node id="1236440389435" at="17,0,20,0" concept="8" trace="call_getEmptyIndexList_1237828382992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="1236440389435" at="14,114,15,94" />
-      <scope id="1236440389435" at="17,86,18,84" />
-      <scope id="1236440389435" at="14,0,17,0">
-        <var name="__thisNode__" id="1236440389435" />
-        <var name="indices" id="1236440623606" />
-        <var name="sender" id="1236440416647" />
-      </scope>
-      <scope id="1236440389435" at="17,0,20,0">
-        <var name="__thisNode__" id="1236440389435" />
-      </scope>
-      <unit id="1236440389435" at="12,0,21,0" name="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
-    </file>
     <file name="MathSymbol__BehaviorDescriptor.java">
       <node id="1236440389435" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="1236440389435" at="29,0,30,0" concept="7" trace="REGISTRY" />
@@ -317,9 +123,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1238405584079">
-    <file name="DecimalBinaryOperation_Behavior.java">
-      <unit id="1238405584079" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_Behavior" />
-    </file>
     <file name="DecimalBinaryOperation__BehaviorDescriptor.java">
       <node id="1238405584079" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1238405584079" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -1585,9 +1388,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741497834">
-    <file name="ExponentialOperation_Behavior.java">
-      <unit id="1262430001741497834" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_Behavior" />
-    </file>
     <file name="ExponentialOperation__BehaviorDescriptor.java">
       <node id="1262430001741497834" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741497834" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -1675,9 +1475,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741519697">
-    <file name="DecimalPlusExpression_Behavior.java">
-      <unit id="1262430001741519697" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_Behavior" />
-    </file>
     <file name="DecimalPlusExpression__BehaviorDescriptor.java">
       <node id="1262430001741519697" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741519697" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1752,9 +1549,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741642110">
-    <file name="DecimalDivExpression_Behavior.java">
-      <unit id="1262430001741642110" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_Behavior" />
-    </file>
     <file name="DecimalDivExpression__BehaviorDescriptor.java">
       <node id="1262430001741642110" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741642110" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1829,9 +1623,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741642767">
-    <file name="BigProdExpression_Behavior.java">
-      <unit id="1262430001741642767" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_Behavior" />
-    </file>
     <file name="BigProdExpression__BehaviorDescriptor.java">
       <node id="1262430001741642767" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741642767" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1906,9 +1697,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741643113">
-    <file name="MatrixInverseOperation_Behavior.java">
-      <unit id="1262430001741643113" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_Behavior" />
-    </file>
     <file name="MatrixInverseOperation__BehaviorDescriptor.java">
       <node id="1262430001741643113" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741643113" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1983,9 +1771,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741647625">
-    <file name="BigSumExpression_Behavior.java">
-      <unit id="1262430001741647625" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_Behavior" />
-    </file>
     <file name="BigSumExpression__BehaviorDescriptor.java">
       <node id="1262430001741647625" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741647625" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2060,9 +1845,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741702977">
-    <file name="MatrixElementAccessExpression_Behavior.java">
-      <unit id="1262430001741702977" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_Behavior" />
-    </file>
     <file name="MatrixElementAccessExpression__BehaviorDescriptor.java">
       <node id="1262430001741702977" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741702977" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2137,9 +1919,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703003">
-    <file name="InIntervalExpression_Behavior.java">
-      <unit id="1262430001741703003" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_Behavior" />
-    </file>
     <file name="InIntervalExpression__BehaviorDescriptor.java">
       <node id="1262430001741703003" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703003" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2214,9 +1993,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703812">
-    <file name="IntervalContainsExpression_Behavior.java">
-      <unit id="1262430001741703812" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_Behavior" />
-    </file>
     <file name="IntervalContainsExpression__BehaviorDescriptor.java">
       <node id="1262430001741703812" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703812" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2291,9 +2067,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703917">
-    <file name="TransposeOperation_Behavior.java">
-      <unit id="1262430001741703917" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_Behavior" />
-    </file>
     <file name="TransposeOperation__BehaviorDescriptor.java">
       <node id="1262430001741703917" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703917" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2368,9 +2141,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741704748">
-    <file name="ConjugateOperation_Behavior.java">
-      <unit id="1262430001741704748" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_Behavior" />
-    </file>
     <file name="ConjugateOperation__BehaviorDescriptor.java">
       <node id="1262430001741704748" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741704748" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2445,9 +2215,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741704846">
-    <file name="BigMaxExpression_Behavior.java">
-      <unit id="1262430001741704846" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_Behavior" />
-    </file>
     <file name="BigMaxExpression__BehaviorDescriptor.java">
       <node id="1262430001741704846" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741704846" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2522,9 +2289,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718335">
-    <file name="DecimalMinusExpression_Behavior.java">
-      <unit id="1262430001741718335" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_Behavior" />
-    </file>
     <file name="DecimalMinusExpression__BehaviorDescriptor.java">
       <node id="1262430001741718335" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741718335" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2599,9 +2363,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718383">
-    <file name="BigMinExpression_Behavior.java">
-      <unit id="1262430001741718383" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_Behavior" />
-    </file>
     <file name="BigMinExpression__BehaviorDescriptor.java">
       <node id="1262430001741718383" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741718383" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2676,9 +2437,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718542">
-    <file name="DecimalMulExpression_Behavior.java">
-      <unit id="1262430001741718542" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_Behavior" />
-    </file>
     <file name="DecimalMulExpression__BehaviorDescriptor.java">
       <node id="1262430001741718542" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741718542" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2753,9 +2511,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1904947163751563871">
-    <file name="MathContext_Behavior.java">
-      <unit id="1904947163751563871" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" />
-    </file>
     <file name="MathContext__BehaviorDescriptor.java">
       <node id="1904947163751563871" at="21,0,22,0" concept="7" trace="CONCEPT" />
       <node id="1904947163751563871" at="22,0,23,0" concept="7" trace="REGISTRY" />
@@ -2822,9 +2577,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/3044950653914719985">
-    <file name="MatrixExponentialOperation_Behavior.java">
-      <unit id="3044950653914719985" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_Behavior" />
-    </file>
     <file name="MatrixExponentialOperation__BehaviorDescriptor.java">
       <node id="3044950653914719985" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="3044950653914719985" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -2903,9 +2655,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/3498370411873438939">
-    <file name="MatrixConstructor_Behavior.java">
-      <unit id="3498370411873438939" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" />
-    </file>
     <file name="MatrixConstructor__BehaviorDescriptor.java">
       <node id="3498370411873438939" at="21,0,22,0" concept="7" trace="CONCEPT" />
       <node id="3498370411873438939" at="22,0,23,0" concept="7" trace="REGISTRY" />
@@ -2972,9 +2721,6 @@
     </file>
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/5217243589491051780">
-    <file name="MatrixType_Behavior.java">
-      <unit id="5217243589491051780" at="10,0,13,0" name="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" />
-    </file>
     <file name="MatrixType__BehaviorDescriptor.java">
       <node id="5217243589491051780" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5217243589491051780" at="27,0,28,0" concept="7" trace="REGISTRY" />

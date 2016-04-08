@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="TypeWithUnits_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="testWrappedType.behavior.TypeWithUnits_BehaviorDescriptor" />
-    </file>
-    <file name="WrapperType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="testWrappedType.behavior.WrapperType_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

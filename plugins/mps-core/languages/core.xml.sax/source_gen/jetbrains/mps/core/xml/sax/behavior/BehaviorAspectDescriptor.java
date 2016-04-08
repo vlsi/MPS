@@ -4,12 +4,12 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myXMLSAXAttributeHandler__BehaviorDescriptor = new XMLSAXAttributeHandler__BehaviorDescriptor();
@@ -28,70 +28,104 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor = new XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor();
   private final BHDescriptor myXMLSAXChildRuleCondition__BehaviorDescriptor = new XMLSAXChildRuleCondition__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[15];
-    myConceptBehaviorIds[0] = 0x1f6c736337b5e2c1L;
-    myConceptBehaviorIds[1] = 0x1f6c736337b5e2d2L;
-    myConceptBehaviorIds[2] = 0x1f6c736337b5e2d8L;
-    myConceptBehaviorIds[3] = 0x1f6c736337b5e2e0L;
-    myConceptBehaviorIds[4] = 0x1f6c736337b5e2e3L;
-    myConceptBehaviorIds[5] = 0x1f6c736337b5e2efL;
-    myConceptBehaviorIds[6] = 0x1f6c736337b5e2f2L;
-    myConceptBehaviorIds[7] = 0x1f6c736337b5e2fcL;
-    myConceptBehaviorIds[8] = 0x1f6c736337b5e301L;
-    myConceptBehaviorIds[9] = 0x1f6c736337b5e308L;
-    myConceptBehaviorIds[10] = 0x30181d5ee4a76f2eL;
-    myConceptBehaviorIds[11] = 0x30181d5ee4a78284L;
-    myConceptBehaviorIds[12] = 0x3afd693759ffee07L;
-    myConceptBehaviorIds[13] = 0x3afd69375a089554L;
-    myConceptBehaviorIds[14] = 0x4180d2369bed9265L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myXMLSAXAttributeHandler__BehaviorDescriptor;
-      case 1:
-        return myXMLSAXChildHandler__BehaviorDescriptor;
-      case 2:
-        return myXMLSAXChildRule__BehaviorDescriptor;
-      case 3:
-        return myXMLSAXFieldReference__BehaviorDescriptor;
-      case 4:
-        return myXMLSAXHandlerFunction__BehaviorDescriptor;
-      case 5:
-        return myXMLSAXNodeCreator__BehaviorDescriptor;
-      case 6:
-        return myXMLSAXNodeRule__BehaviorDescriptor;
-      case 7:
-        return myXMLSAXNodeValidator__BehaviorDescriptor;
-      case 8:
-        return myXMLSAXParser__BehaviorDescriptor;
-      case 9:
-        return myXMLSAXTextHandler__BehaviorDescriptor;
-      case 10:
-        return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
-      case 11:
-        return myXMLSAXTextHandler_value__BehaviorDescriptor;
-      case 12:
-        return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
-      case 13:
-        return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
-      case 14:
-        return myXMLSAXChildRuleCondition__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0s.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myXMLSAXAttributeHandler__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myXMLSAXChildHandler__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myXMLSAXChildRule__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myXMLSAXChildRuleCondition__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myXMLSAXFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myXMLSAXHandlerFunction__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myXMLSAXNodeCreator__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myXMLSAXNodeRule__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myXMLSAXNodeValidator__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myXMLSAXParser__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myXMLSAXTextHandler__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myXMLSAXTextHandler_value__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0s = buildConceptIndices(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c1L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a76f2eL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369bed9265L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd693759ffee07L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd69375a089554L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e3L, "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2efL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2fcL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e308L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a78284L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value"));
 }

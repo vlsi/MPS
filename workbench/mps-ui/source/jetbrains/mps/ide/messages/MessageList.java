@@ -30,18 +30,11 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowId;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
-import com.intellij.ui.content.Content;
-import com.intellij.ui.content.MessageView;
-import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ExceptionUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
@@ -50,14 +43,10 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.messages.MessagesListCellRenderer.NavStatus;
-import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -96,8 +85,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * User: fyodor
- * Date: 4/21/11
+ * Distinction between MessageList and its sole subclass in MessagesViewTool is subtle and perhaps not worth
+ * effort. Latter knows about IDEA's MessageView and Content, former is more about Swing UI and actions, both though depend
+ * from IDEA platform. I doubt anyone would reuse this class any time soon.
  */
 public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
@@ -134,15 +124,13 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private ActionToolbar myToolbar;
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
-  private Project myProject;
   private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, null, null, true);
   private final Object myUpdateIdentity = new Object();
   private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
   private volatile boolean myIsDisposed = false;
   private boolean myActivateOnMessage = false;
 
-  protected MessageList(Project project) {
-    myProject = project;
+  protected MessageList() {
     myUpdateQueue.setRestartTimerOnAdd(true);
   }
 
@@ -153,6 +141,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
    *  Perhaps, it's just about focus gained?)
    *
    * By default, we don't show the list when message is added.
+   * @see #bringToFront()
    */
   public void setActivateOnMessage(boolean activateOnMessage) {
     myActivateOnMessage = activateOnMessage;
@@ -162,29 +151,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   public void dispose() {
     myUpdateQueue.dispose();
     myIsDisposed = true;
-  }
-
-  public void show(boolean setActive) {
-    if (RuntimeFlags.isTestMode()) {
-      return;
-    }
-    if (myIsDisposed) {
-      return;
-    }
-
-    ToolWindow window = ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
-    if (!window.isAvailable()) {
-      window.setAvailable(true, null);
-    }
-    if (!window.isVisible()) {
-      window.show(null);
-    }
-    if (setActive) {
-      window.activate(null);
-    }
-
-    Content content = getMessagesService().getContentManager().getContent(myComponent);
-    getMessagesService().getContentManager().setSelectedContent(content);
   }
 
   @Override
@@ -280,7 +246,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         updateHeader();
         updateActions();
         if (myActivateOnMessage && messagesToAdd.size() > 0) {
-          show(false);
+          bringToFront();
         }
       }
 
@@ -314,10 +280,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   public JComponent getComponent() {
     return myComponent;
-  }
-
-  public MessageView getMessagesService() {
-    return SERVICE.getInstance(myProject);
   }
 
   protected void initUI() {
@@ -432,13 +394,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
           return;
         }
 
-        boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            return MessagesListCellRenderer.canNavigate(message) == NavStatus.YES;
-          }
-        });
-
+        boolean canNavigate = canNavigate(message);
         myList.setCursor(Cursor.getPredefinedCursor(canNavigate ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
       }
     });
@@ -446,17 +402,18 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   protected void openCurrentMessageIfPossible() {
     final IMessage selectedMessage = (IMessage) myList.getSelectedValue();
-    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
-
-    /* temp hack: write action instead of read, TODO remove lock*/
-    final Project project = getProject();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
-      }
-    });
+    if (selectedMessage != null && canNavigate(selectedMessage)) {
+      navigate(selectedMessage, true);
+    }
   }
+
+  // invoked in EDT
+  protected abstract boolean canNavigate(@NotNull IMessage msg);
+  // invoked in EDT
+  protected abstract void navigate(@NotNull IMessage msg, boolean focus);
+
+  // invoked when there were visible messages added, and list requires exposure to user
+  protected abstract void bringToFront();
 
   /**
    * Override and implement registration of UI component into the MessageView.
@@ -474,7 +431,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   private void showPopupMenu(MouseEvent evt) {
-    if (myList.getSelectedValue() == null) return;
+    if (myList.getSelectedValue() == null) {
+      return;
+    }
 
     DefaultActionGroup group = createActionGroup();
 
@@ -539,10 +498,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   protected abstract void populateActions(JList list, DefaultActionGroup group);
-
-  private Project getProject() {
-    return myProject;
-  }
 
   private void showHelpForCurrentMessage() {
     String helpURL = getHelpUrlForCurrentMessage();

@@ -19,40 +19,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.baseLanguage.tuples.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="IndexedTupleLiteral_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="IndexedTupleMemberAccessExpression_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression_BehaviorDescriptor" />
-    </file>
-    <file name="IndexedTupleType_BehaviorDescriptor.java">
-      <unit at="17,0,52,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleComponentAccessOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleComponentDeclaration_BehaviorDescriptor.java">
-      <unit at="20,0,47,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleComponentReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentReference_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleDeclaration_BehaviorDescriptor.java">
-      <unit at="19,0,58,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleLiteral_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="NamedTupleType_BehaviorDescriptor.java">
-      <unit at="18,0,41,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.baseLanguage.tuples.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1238852249419">
-    <file name="IndexedTupleType_Behavior.java">
-      <unit id="1238852249419" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_Behavior" />
-    </file>
     <file name="IndexedTupleType__BehaviorDescriptor.java">
       <node id="1238852249419" at="31,0,32,0" concept="11" trace="CONCEPT" />
       <node id="1238852249419" at="32,0,33,0" concept="11" trace="REGISTRY" />
@@ -207,9 +177,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1238855618942">
-    <file name="IndexedTupleLiteral_Behavior.java">
-      <unit id="1238855618942" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral_Behavior" />
-    </file>
     <file name="IndexedTupleLiteral__BehaviorDescriptor.java">
       <node id="1238855618942" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1238855618942" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -310,22 +277,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1239537338572">
-    <file name="NamedTupleDeclaration_Behavior.java">
-      <node id="1239537338572" at="15,85,16,92" concept="8" />
-      <node id="1239537338572" at="18,120,19,110" concept="3" />
-      <node id="1239537338572" at="15,0,18,0" concept="12" trace="call_allExtends_3142843783245461132#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1239537338572" at="18,0,21,0" concept="12" trace="call_markLoadedNodeAsDeprecated_6577771797484298256#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1239537338572" at="15,85,16,92" />
-      <scope id="1239537338572" at="18,120,19,110" />
-      <scope id="1239537338572" at="15,0,18,0">
-        <var name="__thisNode__" id="1239537338572" />
-      </scope>
-      <scope id="1239537338572" at="18,0,21,0">
-        <var name="__thisConcept__" id="1239537338572" />
-        <var name="node" id="6577771797484306032" />
-      </scope>
-      <unit id="1239537338572" at="13,0,22,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior" />
-    </file>
     <file name="NamedTupleDeclaration__BehaviorDescriptor.java">
       <node id="1239537338572" at="52,0,53,0" concept="11" trace="CONCEPT" />
       <node id="1239537338572" at="53,0,54,0" concept="11" trace="REGISTRY" />
@@ -674,9 +625,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1239617398721">
-    <file name="NamedTupleType_Behavior.java">
-      <unit id="1239617398721" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior" />
-    </file>
     <file name="NamedTupleType__BehaviorDescriptor.java">
       <node id="1239617398721" at="38,0,39,0" concept="11" trace="CONCEPT" />
       <node id="1239617398721" at="39,0,40,0" concept="11" trace="REGISTRY" />
@@ -891,9 +839,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1239700191747">
-    <file name="IndexedTupleMemberAccessExpression_Behavior.java">
-      <unit id="1239700191747" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression_Behavior" />
-    </file>
     <file name="IndexedTupleMemberAccessExpression__BehaviorDescriptor.java">
       <node id="1239700191747" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1239700191747" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -968,9 +913,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1240400869906">
-    <file name="NamedTupleComponentDeclaration_Behavior.java">
-      <unit id="1240400869906" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_Behavior" />
-    </file>
     <file name="NamedTupleComponentDeclaration__BehaviorDescriptor.java">
       <node id="1240400869906" at="21,0,22,0" concept="11" trace="CONCEPT" />
       <node id="1240400869906" at="22,0,23,0" concept="11" trace="REGISTRY" />
@@ -1037,9 +979,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1240402235406">
-    <file name="NamedTupleComponentAccessOperation_Behavior.java">
-      <unit id="1240402235406" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation_Behavior" />
-    </file>
     <file name="NamedTupleComponentAccessOperation__BehaviorDescriptor.java">
       <node id="1240402235406" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="1240402235406" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -1114,9 +1053,6 @@
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1262430001741498142">
-    <file name="NamedTupleLiteral_Behavior.java">
-      <unit id="1262430001741498142" at="10,0,13,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_Behavior" />
-    </file>
     <file name="NamedTupleLiteral__BehaviorDescriptor.java">
       <node id="1262430001741498142" at="24,0,25,0" concept="11" trace="CONCEPT" />
       <node id="1262430001741498142" at="25,0,26,0" concept="11" trace="REGISTRY" />

@@ -47,10 +47,13 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.CheckProperitesOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.EditorComponent" />
@@ -74,8 +77,6 @@
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplateParameterReference_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplateParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplatePersistentConfigurationType_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

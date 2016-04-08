@@ -30,71 +30,40 @@ import org.jetbrains.mps.openapi.model.SNode;
 @ToRemove(version = 3.3)
 @Deprecated
 public class BehaviorReflection {
-  @NotNull
-  private static ConceptRegistry getConceptRegistry() {
-    return ConceptRegistry.getInstance();
-  }
-
-  private static Object invokeVirtual(@NotNull SNode node, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
-  }
-
-  private static Object invokeNonVirtual(@NotNull SNode node, String conceptFqName, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
-  }
-
-  private static Object invokeNonVirtual(@NotNull SNode node, SAbstractConcept concept, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invoke(node, methodName, parameters);
-  }
-
-  private static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
-  }
-
-  private static Object invokeNonVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
-  }
-
-  private static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
-  }
-
-  private static Object invokeSuperStatic(@NotNull SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
-    return getConceptRegistry().getBehaviorDescriptor(targetSuperFqName).invokeStatic(concept, methodName, parameters);
-  }
-
   // public API
   public static void initNode(SNode node) {
-    getConceptRegistry().getBehaviorDescriptorForInstanceNode(node).initNode(node);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
   // these methods are for <T> generic parameter and null safety
   public static <T> T invokeVirtual(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
-    return node == null ? defaultValue(returnType) : (T) invokeVirtual(node, methodName, parameters);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
   public static <T> T invokeNonVirtual(Class<T> returnType, SNode node, String conceptFqName, String methodName, Object[] parameters) {
-    return node == null ? defaultValue(returnType) : (T) invokeNonVirtual(node, conceptFqName, methodName, parameters);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
   public static <T> T invokeVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
-    return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
   public static <T> T invokeSuperStatic(Class<T> returnType, SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
-    return concept == null ? defaultValue(returnType) : (T) invokeSuperStatic(concept, targetSuperFqName, methodName, parameters);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
-
   public static <T> T invokeNonVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
-    return concept == null ? defaultValue(returnType) : (T) invokeNonVirtualStatic(concept, methodName, parameters);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 
   public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
-    return node == null ? defaultValue(returnType) : (T) invokeSuper(node, targetSuperFqName, methodName, parameters);
-  }
-
-  private static <T> T defaultValue(Class<T> returnValueClass) {
-    return DefaultValuesHolder.defaultValue(returnValueClass);
+    //if some code is generated into such a call in 3.3, we can't remove it before 3.4 [Alexey to decide]
+    throw new UnsupportedOperationException();
   }
 }

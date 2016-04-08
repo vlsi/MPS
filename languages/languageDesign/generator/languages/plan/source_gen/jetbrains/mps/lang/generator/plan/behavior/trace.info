@@ -1,18 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="Checkpoint_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.plan.behavior.Checkpoint_BehaviorDescriptor" />
-    </file>
-    <file name="Plan_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.plan.behavior.Plan_BehaviorDescriptor" />
-    </file>
-    <file name="Step_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.plan.behavior.Step_BehaviorDescriptor" />
-    </file>
-    <file name="Transform_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.plan.behavior.Transform_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

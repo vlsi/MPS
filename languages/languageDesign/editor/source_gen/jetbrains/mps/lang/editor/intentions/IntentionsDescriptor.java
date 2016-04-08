@@ -4,176 +4,159 @@ package jetbrains.mps.lang.editor.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
-  private IntentionFactory[] myIntentions7;
-  private IntentionFactory[] myIntentions8;
-  private IntentionFactory[] myIntentions9;
-  private IntentionFactory[] myIntentions10;
-  private IntentionFactory[] myIntentions11;
-  private IntentionFactory[] myIntentions12;
-  private IntentionFactory[] myIntentions13;
-  private IntentionFactory[] myIntentions14;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[15];
-    myId2Index[0] = 0xf9845363abL;
-    myId2Index[1] = 0xf9eafb9a39L;
-    myId2Index[2] = 0xf9eaff2517L;
-    myId2Index[3] = 0xf9eb01232eL;
-    myId2Index[4] = 0xf9eb02612eL;
-    myId2Index[5] = 0xf9eb0ad38eL;
-    myId2Index[6] = 0xfd766383e4L;
-    myId2Index[7] = 0x1098c8cf48aL;
-    myId2Index[8] = 0x113bef3a464L;
-    myId2Index[9] = 0x1143b178f1fL;
-    myId2Index[10] = 0x1143b2bb8c4L;
-    myId2Index[11] = 0x1143b2c9756L;
-    myId2Index[12] = 0x1143bd1283bL;
-    myId2Index[13] = 0x11b35f4f515L;
-    myId2Index[14] = 0x2ef3b3796a126f24L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ConceptEditorDeclaration 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[2];
-          myIntentions0[0] = new GenerateMultiLineDefaultEditor_Intention();
-          myIntentions0[1] = new GenerateSingleLineDefaultEditor_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: EditorCellModel 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[10];
-          myIntentions1[0] = new SurroundWithVerticalCollection_Intention();
-          myIntentions1[1] = new SurroundWithHorizontalCollection_Intention();
-          myIntentions1[2] = new AddNewLine_Intention();
-          myIntentions1[3] = new AddIndent_Intention();
-          myIntentions1[4] = new AddOnNewLine_Intention();
-          myIntentions1[5] = new RemoveIndent_Intention();
-          myIntentions1[6] = new RemoveNewLine_Intention();
-          myIntentions1[7] = new RemoveOnNewLine_Intention();
-          myIntentions1[8] = new AddRemoveNewLineForChildren_Intention();
-          myIntentions1[9] = new SurroundWithIndentCollection_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: CellModel_Collection 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[3];
-          myIntentions2[0] = new ChangeOrientationCollection_Intention();
-          myIntentions2[1] = new UseIndentLayoutInCollection_Intention();
-          myIntentions2[2] = new MigrateToIndentLayout_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: CellModel_Constant 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[2];
-          myIntentions3[0] = new SplitConstantCellIntoWords_Intention();
-          myIntentions3[1] = new TrimConstantCell_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: CellModel_Property 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[2];
-          myIntentions4[0] = new ChangeProperty_Intention();
-          myIntentions4[1] = new ChangePropertyWithNonEmpty_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: CellModel_RefNodeList 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[1];
-          myIntentions5[0] = new UseIndentLayoutInRefNodeList_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: CellModel_Alternation 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[1];
-          myIntentions6[0] = new ChangeOrientationAlternation_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      case 7:
-        // Concept: CellModel_ListWithRole 
-        if (myIntentions7 == null) {
-          myIntentions7 = new IntentionFactory[1];
-          myIntentions7[0] = new ChangeOrientationList_Intention();
-        }
-        return Arrays.asList(myIntentions7);
-      case 8:
-        // Concept: CellModel_NonEmptyProperty 
-        if (myIntentions8 == null) {
-          myIntentions8 = new IntentionFactory[1];
-          myIntentions8[0] = new ChangeNonEmptyProperty_Intention();
-        }
-        return Arrays.asList(myIntentions8);
-      case 9:
-        // Concept: StyleSheetClass 
-        if (myIntentions9 == null) {
-          myIntentions9 = new IntentionFactory[1];
-          myIntentions9[0] = new AddExtendsClause_Intention();
-        }
-        return Arrays.asList(myIntentions9);
-      case 10:
-        // Concept: ColorStyleClassItem 
-        if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[1];
-          myIntentions10[0] = new ColorQuery_Intention();
-        }
-        return Arrays.asList(myIntentions10);
-      case 11:
-        // Concept: FontStyleStyleClassItem 
-        if (myIntentions11 == null) {
-          myIntentions11 = new IntentionFactory[1];
-          myIntentions11[0] = new FontStyleQuery_Intention();
-        }
-        return Arrays.asList(myIntentions11);
-      case 12:
-        // Concept: BooleanStyleSheetItem 
-        if (myIntentions12 == null) {
-          myIntentions12 = new IntentionFactory[1];
-          myIntentions12[0] = new BooleanQuery_Intention();
-        }
-        return Arrays.asList(myIntentions12);
-      case 13:
-        // Concept: CellModel_TransactionalProperty 
-        if (myIntentions13 == null) {
-          myIntentions13 = new IntentionFactory[1];
-          myIntentions13[0] = new ChangeTransactionalProperty_Intention();
-        }
-        return Arrays.asList(myIntentions13);
-      case 14:
-        // Concept: StyleClass 
-        if (myIntentions14 == null) {
-          myIntentions14 = new IntentionFactory[1];
-          myIntentions14[0] = new AddDominance_Intention();
-        }
-        return Arrays.asList(myIntentions14);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: BooleanStyleSheetItem 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new BooleanQuery_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: CellModel_Alternation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ChangeOrientationAlternation_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: CellModel_Collection 
+            intentions = new IntentionFactory[3];
+            intentions[0] = new ChangeOrientationCollection_Intention();
+            intentions[1] = new UseIndentLayoutInCollection_Intention();
+            intentions[2] = new MigrateToIndentLayout_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: CellModel_Constant 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new SplitConstantCellIntoWords_Intention();
+            intentions[1] = new TrimConstantCell_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: CellModel_ListWithRole 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ChangeOrientationList_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: CellModel_NonEmptyProperty 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ChangeNonEmptyProperty_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: CellModel_Property 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ChangeProperty_Intention();
+            intentions[1] = new ChangePropertyWithNonEmpty_Intention();
+          }
+          break;
+        case 7:
+          if (true) {
+            // Concept: CellModel_RefNodeList 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new UseIndentLayoutInRefNodeList_Intention();
+          }
+          break;
+        case 8:
+          if (true) {
+            // Concept: CellModel_TransactionalProperty 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ChangeTransactionalProperty_Intention();
+          }
+          break;
+        case 9:
+          if (true) {
+            // Concept: ColorStyleClassItem 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ColorQuery_Intention();
+          }
+          break;
+        case 10:
+          if (true) {
+            // Concept: ConceptEditorDeclaration 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new GenerateMultiLineDefaultEditor_Intention();
+            intentions[1] = new GenerateSingleLineDefaultEditor_Intention();
+          }
+          break;
+        case 11:
+          if (true) {
+            // Concept: EditorCellModel 
+            intentions = new IntentionFactory[10];
+            intentions[0] = new SurroundWithVerticalCollection_Intention();
+            intentions[1] = new SurroundWithHorizontalCollection_Intention();
+            intentions[2] = new AddNewLine_Intention();
+            intentions[3] = new AddIndent_Intention();
+            intentions[4] = new AddOnNewLine_Intention();
+            intentions[5] = new RemoveIndent_Intention();
+            intentions[6] = new RemoveNewLine_Intention();
+            intentions[7] = new RemoveOnNewLine_Intention();
+            intentions[8] = new AddRemoveNewLineForChildren_Intention();
+            intentions[9] = new SurroundWithIndentCollection_Intention();
+          }
+          break;
+        case 12:
+          if (true) {
+            // Concept: FontStyleStyleClassItem 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new FontStyleQuery_Intention();
+          }
+          break;
+        case 13:
+          if (true) {
+            // Concept: StyleClass 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddDominance_Intention();
+          }
+          break;
+        case 14:
+          if (true) {
+            // Concept: StyleSheetClass 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddExtendsClause_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -211,4 +194,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[28] = new AddDominance_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"));
 }

@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,20,0" name="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,45,0" name="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)/6007318803035047592">

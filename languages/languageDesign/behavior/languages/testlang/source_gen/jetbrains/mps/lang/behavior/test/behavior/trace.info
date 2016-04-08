@@ -13,48 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="A_BehaviorDescriptor.java">
-      <unit at="14,0,32,0" name="jetbrains.mps.lang.behavior.test.behavior.A_BehaviorDescriptor" />
-    </file>
-    <file name="B_BehaviorDescriptor.java">
-      <unit at="13,0,32,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="C_BehaviorDescriptor.java">
-      <unit at="12,0,30,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />
-    </file>
-    <file name="I_BehaviorDescriptor.java">
-      <unit at="12,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.I_BehaviorDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577184914">
-    <file name="A_Behavior.java">
-      <node id="4731970554577184914" at="14,108,15,89" concept="5" />
-      <node id="4731970554577184914" at="17,118,18,88" concept="5" />
-      <node id="4731970554577184914" at="20,79,21,66" concept="1" />
-      <node id="4731970554577184914" at="14,0,17,0" concept="8" trace="call_nonVirtualMethod_4731970554577184968#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljava/lang/String;" />
-      <node id="4731970554577184914" at="17,0,20,0" concept="8" trace="call_staticMethod_4731970554577185180#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;I)Ljava/lang/String;" />
-      <node id="4731970554577184914" at="20,0,23,0" concept="8" trace="call_doInvokeAll_4731970554577188128#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4731970554577184914" at="14,108,15,89" />
-      <scope id="4731970554577184914" at="17,118,18,88" />
-      <scope id="4731970554577184914" at="20,79,21,66" />
-      <scope id="4731970554577184914" at="14,0,17,0">
-        <var name="__thisNode__" id="4731970554577184914" />
-        <var name="dummy" id="4731970554577185245" />
-        <var name="in" id="4731970554577185219" />
-      </scope>
-      <scope id="4731970554577184914" at="17,0,20,0">
-        <var name="__thisConcept__" id="4731970554577184914" />
-        <var name="dummy" id="4731970554577185495" />
-        <var name="in" id="4731970554577185477" />
-      </scope>
-      <scope id="4731970554577184914" at="20,0,23,0">
-        <var name="__thisNode__" id="4731970554577184914" />
-      </scope>
-      <unit id="4731970554577184914" at="12,0,24,0" name="jetbrains.mps.lang.behavior.test.behavior.A_Behavior" />
-    </file>
     <file name="A__BehaviorDescriptor.java">
       <node id="4731970554577184914" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="4731970554577184914" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -196,17 +159,6 @@
     </file>
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577185774">
-    <file name="I_Behavior.java">
-      <node id="4731970554577185774" at="13,122,14,103" concept="5" />
-      <node id="4731970554577185774" at="13,0,16,0" concept="8" trace="call_nonVirtualFromInterfaceConcept_4731970554577186854#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljava/lang/String;" />
-      <scope id="4731970554577185774" at="13,122,14,103" />
-      <scope id="4731970554577185774" at="13,0,16,0">
-        <var name="__thisNode__" id="4731970554577185774" />
-        <var name="dummy" id="4731970554577186894" />
-        <var name="in" id="4731970554577186878" />
-      </scope>
-      <unit id="4731970554577185774" at="11,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.I_Behavior" />
-    </file>
     <file name="I__BehaviorDescriptor.java">
       <node id="4731970554577185774" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="4731970554577185774" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -294,23 +246,6 @@
     </file>
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577217981">
-    <file name="B_Behavior.java">
-      <node id="4731970554577217981" at="13,108,14,89" concept="5" />
-      <node id="4731970554577217981" at="16,79,17,66" concept="1" />
-      <node id="4731970554577217981" at="13,0,16,0" concept="8" trace="call_nonVirtualMethod_4731970554577218075#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljava/lang/String;" />
-      <node id="4731970554577217981" at="16,0,19,0" concept="8" trace="call_doInvokeAll_4731970554577222218#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4731970554577217981" at="13,108,14,89" />
-      <scope id="4731970554577217981" at="16,79,17,66" />
-      <scope id="4731970554577217981" at="13,0,16,0">
-        <var name="__thisNode__" id="4731970554577217981" />
-        <var name="dummy" id="4731970554577218113" />
-        <var name="in" id="4731970554577218097" />
-      </scope>
-      <scope id="4731970554577217981" at="16,0,19,0">
-        <var name="__thisNode__" id="4731970554577217981" />
-      </scope>
-      <unit id="4731970554577217981" at="11,0,20,0" name="jetbrains.mps.lang.behavior.test.behavior.B_Behavior" />
-    </file>
     <file name="B__BehaviorDescriptor.java">
       <node id="4731970554577217981" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="4731970554577217981" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -447,15 +382,6 @@
     </file>
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577270775">
-    <file name="C_Behavior.java">
-      <node id="4731970554577270775" at="13,79,14,66" concept="1" />
-      <node id="4731970554577270775" at="13,0,16,0" concept="8" trace="call_doInvokeAll_4731970554577271015#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4731970554577270775" at="13,79,14,66" />
-      <scope id="4731970554577270775" at="13,0,16,0">
-        <var name="__thisNode__" id="4731970554577270775" />
-      </scope>
-      <unit id="4731970554577270775" at="11,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.C_Behavior" />
-    </file>
     <file name="C__BehaviorDescriptor.java">
       <node id="4731970554577270775" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="4731970554577270775" at="25,0,26,0" concept="7" trace="REGISTRY" />

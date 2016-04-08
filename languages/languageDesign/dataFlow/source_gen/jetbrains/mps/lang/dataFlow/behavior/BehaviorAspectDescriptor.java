@@ -4,12 +4,12 @@ package jetbrains.mps.lang.dataFlow.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myDataFlowBuilderDeclaration__BehaviorDescriptor = new DataFlowBuilderDeclaration__BehaviorDescriptor();
@@ -19,43 +19,59 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myLabelPosition__BehaviorDescriptor = new LabelPosition__BehaviorDescriptor();
   private final BHDescriptor myInstructionType__BehaviorDescriptor = new InstructionType__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[6];
-    myConceptBehaviorIds[0] = 0x118e58cd635L;
-    myConceptBehaviorIds[1] = 0x118e5960f51L;
-    myConceptBehaviorIds[2] = 0x118e597667fL;
-    myConceptBehaviorIds[3] = 0x118e5a42658L;
-    myConceptBehaviorIds[4] = 0x1190a8b1526L;
-    myConceptBehaviorIds[5] = 0x44f5e79f9e613080L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myDataFlowBuilderDeclaration__BehaviorDescriptor;
-      case 1:
-        return myBuilderBlock__BehaviorDescriptor;
-      case 2:
-        return myNodeParameter__BehaviorDescriptor;
-      case 3:
-        return myEmitStatement__BehaviorDescriptor;
-      case 4:
-        return myLabelPosition__BehaviorDescriptor;
-      case 5:
-        return myInstructionType__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBuilderBlock__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myDataFlowBuilderDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myEmitStatement__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myInstructionType__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myLabelPosition__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myNodeParameter__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL, "jetbrains.mps.lang.dataFlow.structure.NodeParameter"));
 }

@@ -15,125 +15,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="Attribute_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
-    </file>
-    <file name="BaseCommentAttribute_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="BaseConcept_BehaviorDescriptor.java">
-      <unit at="17,0,44,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,114,0" name="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ChildAttribute_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="ExportScopeModule_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
-    </file>
-    <file name="ExportScopeNamespace_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
-    </file>
-    <file name="ExportScopePublic_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
-    </file>
-    <file name="ExportScope_BehaviorDescriptor.java">
-      <unit at="12,0,22,0" name="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
-    </file>
-    <file name="IAntisuppressErrors_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
-    </file>
-    <file name="ICanSuppressErrors_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
-    </file>
-    <file name="IContainer_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
-    </file>
-    <file name="IDeprecatable_BehaviorDescriptor.java">
-      <unit at="12,0,17,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
-    </file>
-    <file name="IDontApplyTypesystemRules_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
-    </file>
-    <file name="IDontSubstituteByDefault_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    </file>
-    <file name="IMetaLevelChanger_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
-    </file>
-    <file name="INamedConcept_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    </file>
-    <file name="IOldCommentAnnotation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IOldCommentAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="IOldCommentContainer_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.IOldCommentContainer_BehaviorDescriptor" />
-    </file>
-    <file name="IResolveInfo_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
-    </file>
-    <file name="ISkipConstraintsChecking_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
-    </file>
-    <file name="IStubForAnotherConcept_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ISuppressErrors_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
-    </file>
-    <file name="IType_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
-    </file>
-    <file name="IWrapper_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="ImplementationContainer_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
-    </file>
-    <file name="ImplementationPart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
-    </file>
-    <file name="ImplementationWithStubPart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" />
-    </file>
-    <file name="InterfacePart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
-    </file>
-    <file name="LinkAttribute_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="NodeAttribute_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyAttribute_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="ScopeFacade_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
-    </file>
-    <file name="ScopeProvider_BehaviorDescriptor.java">
-      <unit at="13,0,18,0" name="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
-    </file>
-    <file name="SideTransformInfo_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.SideTransformInfo_BehaviorDescriptor" />
-    </file>
-    <file name="SuppressErrorsAnnotation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" />
+      <unit at="14,0,156,0" name="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877396626">
-    <file name="BaseConcept_Behavior.java">
-      <node id="1213877396626" at="13,78,14,81" concept="6" />
-      <node id="1213877396626" at="13,0,16,0" concept="10" trace="call_isInTemplates_1213877396627#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1213877396626" at="13,78,14,81" />
-      <scope id="1213877396626" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877396626" />
-      </scope>
-      <unit id="1213877396626" at="11,0,17,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
-    </file>
     <file name="BaseConcept__BehaviorDescriptor.java">
       <node id="1213877396626" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="1213877396626" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -297,9 +183,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877404257">
-    <file name="INamedConcept_Behavior.java">
-      <unit id="1213877404257" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    </file>
     <file name="INamedConcept__BehaviorDescriptor.java">
       <node id="1213877404257" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1213877404257" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -386,9 +269,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877439350">
-    <file name="IResolveInfo_Behavior.java">
-      <unit id="1213877439350" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_Behavior" />
-    </file>
     <file name="IResolveInfo__BehaviorDescriptor.java">
       <node id="1213877439350" at="20,0,21,0" concept="9" trace="CONCEPT" />
       <node id="1213877439350" at="21,0,22,0" concept="9" trace="REGISTRY" />
@@ -454,9 +334,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1224608888226">
-    <file name="IDeprecatable_Behavior.java">
-      <unit id="1224608888226" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" />
-    </file>
     <file name="IDeprecatable__BehaviorDescriptor.java">
       <node id="1224608888226" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="1224608888226" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -540,9 +417,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1262430001741497903">
-    <file name="Attribute_Behavior.java">
-      <unit id="1262430001741497903" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.Attribute_Behavior" />
-    </file>
     <file name="Attribute__BehaviorDescriptor.java">
       <node id="1262430001741497903" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="1262430001741497903" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -638,9 +512,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1262430001741646630">
-    <file name="SuppressErrorsAnnotation_Behavior.java">
-      <unit id="1262430001741646630" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_Behavior" />
-    </file>
     <file name="SuppressErrorsAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741646630" at="20,0,21,0" concept="9" trace="CONCEPT" />
       <node id="1262430001741646630" at="21,0,22,0" concept="9" trace="REGISTRY" />
@@ -706,9 +577,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1319728274783151658">
-    <file name="ImplementationContainer_Behavior.java">
-      <unit id="1319728274783151658" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ImplementationContainer_Behavior" />
-    </file>
     <file name="ImplementationContainer__BehaviorDescriptor.java">
       <node id="1319728274783151658" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="1319728274783151658" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -775,22 +643,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1341860900488068797">
-    <file name="PropertyAttribute_Behavior.java">
-      <node id="1341860900488068797" at="14,84,15,89" concept="6" />
-      <node id="1341860900488068797" at="17,103,18,96" concept="1" />
-      <node id="1341860900488068797" at="14,0,17,0" concept="10" trace="call_getProperty_1341860900488756504#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SProperty;" />
-      <node id="1341860900488068797" at="17,0,20,0" concept="10" trace="call_setProperty_7714691473529670203#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
-      <scope id="1341860900488068797" at="14,84,15,89" />
-      <scope id="1341860900488068797" at="17,103,18,96" />
-      <scope id="1341860900488068797" at="14,0,17,0">
-        <var name="__thisNode__" id="1341860900488068797" />
-      </scope>
-      <scope id="1341860900488068797" at="17,0,20,0">
-        <var name="__thisNode__" id="1341860900488068797" />
-        <var name="metaProperty" id="7714691473529676002" />
-      </scope>
-      <unit id="1341860900488068797" at="12,0,21,0" name="jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior" />
-    </file>
     <file name="PropertyAttribute__BehaviorDescriptor.java">
       <node id="1341860900488068797" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="1341860900488068797" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -886,22 +738,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1341860900489572036">
-    <file name="LinkAttribute_Behavior.java">
-      <node id="1341860900489572036" at="14,85,15,81" concept="6" />
-      <node id="1341860900489572036" at="17,100,18,84" concept="1" />
-      <node id="1341860900489572036" at="14,0,17,0" concept="10" trace="call_getLink_1341860900489573894#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SReferenceLink;" />
-      <node id="1341860900489572036" at="17,0,20,0" concept="10" trace="call_setLink_7714691473529772139#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
-      <scope id="1341860900489572036" at="14,85,15,81" />
-      <scope id="1341860900489572036" at="17,100,18,84" />
-      <scope id="1341860900489572036" at="14,0,17,0">
-        <var name="__thisNode__" id="1341860900489572036" />
-      </scope>
-      <scope id="1341860900489572036" at="17,0,20,0">
-        <var name="__thisNode__" id="1341860900489572036" />
-        <var name="metaLink" id="7714691473529772309" />
-      </scope>
-      <unit id="1341860900489572036" at="12,0,21,0" name="jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior" />
-    </file>
     <file name="LinkAttribute__BehaviorDescriptor.java">
       <node id="1341860900489572036" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="1341860900489572036" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -997,9 +833,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/201537367881074471">
-    <file name="IMetaLevelChanger_Behavior.java">
-      <unit id="201537367881074471" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" />
-    </file>
     <file name="IMetaLevelChanger__BehaviorDescriptor.java">
       <node id="201537367881074471" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="201537367881074471" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -1066,41 +899,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/2565736246230026577">
-    <file name="ExportScope_Behavior.java">
-      <node id="2565736246230026577" at="14,145,15,114" concept="6" />
-      <node id="2565736246230026577" at="17,152,18,121" concept="6" />
-      <node id="2565736246230026577" at="20,109,21,95" concept="6" />
-      <node id="2565736246230026577" at="23,108,24,93" concept="6" />
-      <node id="2565736246230026577" at="14,0,17,0" concept="10" trace="call_checkExport_2565736246230031479#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;ZLorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="2565736246230026577" at="17,0,20,0" concept="10" trace="call_checkExportDefault_8259195909097980935#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;ZLorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="2565736246230026577" at="20,0,23,0" concept="10" trace="call_getExportScope_4075196924244445285#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2565736246230026577" at="23,0,26,0" concept="10" trace="call_getNamespace_2565736246230026649#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="2565736246230026577" at="14,145,15,114" />
-      <scope id="2565736246230026577" at="17,152,18,121" />
-      <scope id="2565736246230026577" at="20,109,21,95" />
-      <scope id="2565736246230026577" at="23,108,24,93" />
-      <scope id="2565736246230026577" at="14,0,17,0">
-        <var name="__thisConcept__" id="2565736246230026577" />
-        <var name="isConcept" id="402007580867615938" />
-        <var name="namespace" id="2565736246230031484" />
-        <var name="node" id="2565736246230031490" />
-      </scope>
-      <scope id="2565736246230026577" at="17,0,20,0">
-        <var name="__thisConcept__" id="2565736246230026577" />
-        <var name="isConcept" id="8259195909097980941" />
-        <var name="namespace" id="8259195909097980947" />
-        <var name="node" id="8259195909097980944" />
-      </scope>
-      <scope id="2565736246230026577" at="20,0,23,0">
-        <var name="__thisConcept__" id="2565736246230026577" />
-        <var name="node" id="4075196924244445290" />
-      </scope>
-      <scope id="2565736246230026577" at="23,0,26,0">
-        <var name="__thisConcept__" id="2565736246230026577" />
-        <var name="node" id="2565736246230026654" />
-      </scope>
-      <unit id="2565736246230026577" at="12,0,27,0" name="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
-    </file>
     <file name="ExportScope__BehaviorDescriptor.java">
       <node id="2565736246230026577" at="33,0,34,0" concept="9" trace="CONCEPT" />
       <node id="2565736246230026577" at="34,0,35,0" concept="9" trace="REGISTRY" />
@@ -1259,9 +1057,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/3393165121846091588">
-    <file name="ISuppressErrors_Behavior.java">
-      <unit id="3393165121846091588" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior" />
-    </file>
     <file name="ISuppressErrors__BehaviorDescriptor.java">
       <node id="3393165121846091588" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="3393165121846091588" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -1337,9 +1132,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/3734116213129792500">
-    <file name="ScopeProvider_Behavior.java">
-      <unit id="3734116213129792500" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
-    </file>
     <file name="ScopeProvider__BehaviorDescriptor.java">
       <node id="3734116213129792500" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="3734116213129792500" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1428,9 +1220,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/402007580867586248">
-    <file name="ExportScopePublic_Behavior.java">
-      <unit id="402007580867586248" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
-    </file>
     <file name="ExportScopePublic__BehaviorDescriptor.java">
       <node id="402007580867586248" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="402007580867586248" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -1507,9 +1296,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/402007580867586260">
-    <file name="ExportScopeModule_Behavior.java">
-      <unit id="402007580867586260" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
-    </file>
     <file name="ExportScopeModule__BehaviorDescriptor.java">
       <node id="402007580867586260" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="402007580867586260" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1586,9 +1372,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/402007580867615875">
-    <file name="ExportScopeNamespace_Behavior.java">
-      <unit id="402007580867615875" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
-    </file>
     <file name="ExportScopeNamespace__BehaviorDescriptor.java">
       <node id="402007580867615875" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="402007580867615875" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1665,9 +1448,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/4123120730935488460">
-    <file name="IOldCommentContainer_Behavior.java">
-      <unit id="4123120730935488460" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IOldCommentContainer_Behavior" />
-    </file>
     <file name="IOldCommentContainer__BehaviorDescriptor.java">
       <node id="4123120730935488460" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="4123120730935488460" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -1734,22 +1514,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/709746936026609868">
-    <file name="ChildAttribute_Behavior.java">
-      <node id="709746936026609868" at="14,86,15,81" concept="6" />
-      <node id="709746936026609868" at="17,101,18,84" concept="1" />
-      <node id="709746936026609868" at="14,0,17,0" concept="10" trace="call_getLink_709746936026609871#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
-      <node id="709746936026609868" at="17,0,20,0" concept="10" trace="call_setLink_709746936026609906#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
-      <scope id="709746936026609868" at="14,86,15,81" />
-      <scope id="709746936026609868" at="17,101,18,84" />
-      <scope id="709746936026609868" at="14,0,17,0">
-        <var name="__thisNode__" id="709746936026609868" />
-      </scope>
-      <scope id="709746936026609868" at="17,0,20,0">
-        <var name="__thisNode__" id="709746936026609868" />
-        <var name="metaLink" id="709746936026609927" />
-      </scope>
-      <unit id="709746936026609868" at="12,0,21,0" name="jetbrains.mps.lang.core.behavior.ChildAttribute_Behavior" />
-    </file>
     <file name="ChildAttribute__BehaviorDescriptor.java">
       <node id="709746936026609868" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="709746936026609868" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -1845,9 +1609,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/8383079901754093194">
-    <file name="BaseCommentAttribute_Behavior.java">
-      <unit id="8383079901754093194" at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
-    </file>
     <file name="BaseCommentAttribute__BehaviorDescriptor.java">
       <node id="8383079901754093194" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="8383079901754093194" at="28,0,29,0" concept="9" trace="REGISTRY" />

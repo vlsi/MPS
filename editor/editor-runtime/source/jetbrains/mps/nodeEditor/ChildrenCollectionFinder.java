@@ -16,14 +16,14 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeLegacy;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -74,7 +74,7 @@ public class ChildrenCollectionFinder {
           }
         }
 
-        for (EditorCell current : new DfsTraverserIterable(myCurrent, myForward, false)) {
+        for (EditorCell current : CellTraversalUtil.iterateTree(null, myCurrent, myForward).skipStart()) {
           SNode currentNode = current.getSNode();
 
           if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {

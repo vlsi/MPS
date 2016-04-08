@@ -2042,10 +2042,13 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.AbstractCellSelector_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.AbstractPaddingStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor" />
@@ -2185,8 +2188,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._CloseTag" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._OpenTag" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

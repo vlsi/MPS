@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.AndCondition;
@@ -94,11 +94,7 @@ public class CellFinderUtil {
   }
 
   public static EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean forward, boolean includeThis) {
-    if (includeThis && condition.met(cell)) {
-      return cell;
-    }
-
-    for (EditorCell current : new DfsTraverserIterable(cell, forward, true)) {
+    for (EditorCell current : CellTraversalUtil.iterateTree(cell, cell, forward).skipStart(!includeThis)) {
       if (condition.met(current)) {
         return current;
       }

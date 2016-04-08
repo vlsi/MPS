@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class ReferenceFeature extends AbstractNodeFeature {
   private String myReferenceRole;
@@ -18,7 +19,7 @@ public class ReferenceFeature extends AbstractNodeFeature {
   }
   @Nullable
   @Override
-  public Feature getParent() {
+  protected Feature getParent(SRepository repo) {
     return new ReferencesFeature(getNodePointer());
   }
   @Override

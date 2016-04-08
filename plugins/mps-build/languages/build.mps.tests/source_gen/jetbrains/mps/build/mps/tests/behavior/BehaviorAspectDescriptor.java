@@ -4,12 +4,12 @@ package jetbrains.mps.build.mps.tests.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myBuildModuleTestsPlugin__BehaviorDescriptor = new BuildModuleTestsPlugin__BehaviorDescriptor();
@@ -18,40 +18,54 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myBuildMpsLayout_TestModules_Content__BehaviorDescriptor = new BuildMpsLayout_TestModules_Content__BehaviorDescriptor();
   private final BHDescriptor myBuildMpsLayout_TestModule__BehaviorDescriptor = new BuildMpsLayout_TestModule__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[5];
-    myConceptBehaviorIds[0] = 0x37967cbe67d9eca4L;
-    myConceptBehaviorIds[1] = 0x3f496e80bd8ef36bL;
-    myConceptBehaviorIds[2] = 0x3f496e80bd8ef36dL;
-    myConceptBehaviorIds[3] = 0x3f496e80bd8ef371L;
-    myConceptBehaviorIds[4] = 0x3f496e80bd8ef372L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myBuildModuleTestsPlugin__BehaviorDescriptor;
-      case 1:
-        return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
-      case 2:
-        return myBuildMpsLayout_TestModules__BehaviorDescriptor;
-      case 3:
-        return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
-      case 4:
-        return myBuildMpsLayout_TestModule__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBuildModuleTestsPlugin__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBuildMpsLayout_TestModule__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myBuildMpsLayout_TestModules__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x37967cbe67d9eca4L, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef372L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"));
 }

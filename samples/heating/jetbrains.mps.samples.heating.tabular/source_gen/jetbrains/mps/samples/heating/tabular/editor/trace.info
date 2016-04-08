@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,48,0" name="jetbrains.mps.samples.heating.tabular.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,70,0" name="jetbrains.mps.samples.heating.tabular.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1185481067857141563">
