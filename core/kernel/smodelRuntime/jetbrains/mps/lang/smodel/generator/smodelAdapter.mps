@@ -14382,10 +14382,10 @@
                 <ref role="355D3u" to="tpck:1avfQ4B$JLs" resolve="linkId" />
               </node>
               <node concept="2OqwBi" id="1avfQ4BF_z4" role="37wK5m">
-                <node concept="2YIFZM" id="5q7UjaiRQT_" role="2Oq$k0">
-                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAssociation(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getAssociation" />
+                <node concept="2YIFZM" id="2u22WRjkIPE" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getReference" />
                   <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                  <node concept="37vLTw" id="5q7UjaiRQTA" role="37wK5m">
+                  <node concept="37vLTw" id="2u22WRjkIPF" role="37wK5m">
                     <ref role="3cqZAo" node="1avfQ4BB76K" resolve="link" />
                   </node>
                 </node>
@@ -14449,10 +14449,10 @@
                 <ref role="355D3u" to="tpck:BpxLfMirm7" resolve="linkId" />
               </node>
               <node concept="2OqwBi" id="Dyw7F7eZ6" role="37wK5m">
-                <node concept="2YIFZM" id="5q7UjaiRQW_" role="2Oq$k0">
-                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAggregation(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getAggregation" />
+                <node concept="2YIFZM" id="2u22WRjkIRV" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLink(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLink" />
                   <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                  <node concept="37vLTw" id="5q7UjaiRQWA" role="37wK5m">
+                  <node concept="37vLTw" id="2u22WRjkIRW" role="37wK5m">
                     <ref role="3cqZAo" node="Dyw7F7eZk" resolve="link" />
                   </node>
                 </node>

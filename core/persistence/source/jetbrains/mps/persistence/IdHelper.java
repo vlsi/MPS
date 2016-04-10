@@ -73,10 +73,10 @@ public class IdHelper {
   }
 
   public static SReferenceLinkId getRefId(SReferenceLink r) {
-    return MetaIdHelper.getAssociation(r);
+    return MetaIdHelper.getReference(r);
   }
 
   public static SContainmentLinkId getLinkId(SContainmentLink l) {
-    return MetaIdHelper.getAggregation(l);
+    return MetaIdHelper.getLink(l);
   }
 }

@@ -46,7 +46,7 @@ public final class ChildAttribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static void setLink_idBpxLfMirzM(@NotNull SNode __thisNode__, SContainmentLink metaLink) {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "linkRole"), metaLink.getRoleName());
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"), MetaIdHelper.getAggregation(metaLink).toString());
+    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"), MetaIdHelper.getLink(metaLink).toString());
   }
 
   /*package*/ ChildAttribute__BehaviorDescriptor() {

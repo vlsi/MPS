@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.registry.ConceptInfo;
 import jetbrains.mps.persistence.registry.IdInfoRegistry;
@@ -101,7 +100,7 @@ public class IdInfoCollector {
   private void fillAssociations(SNode n) {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
-      SReferenceLinkId linkId = MetaIdHelper.getAssociation(l);
+      SReferenceLinkId linkId = MetaIdHelper.getReference(l);
       assert linkId != null : String.format("Can't get identity of association %s of node %s", l, n.getReference());
       SConceptId conceptId = linkId.getConceptId();
       final ConceptInfo conceptInfo = registerConcept(conceptId);
@@ -114,7 +113,7 @@ public class IdInfoCollector {
   // unlike association, records link to parent node
   private void fillAggregation(SNode n) {
     final SContainmentLink l = n.getContainmentLink();
-    SContainmentLinkId linkId = MetaIdHelper.getAggregation(l);
+    SContainmentLinkId linkId = MetaIdHelper.getLink(l);
     assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
     SConceptId conceptId = linkId.getConceptId();
     final ConceptInfo conceptInfo = registerConcept(conceptId);

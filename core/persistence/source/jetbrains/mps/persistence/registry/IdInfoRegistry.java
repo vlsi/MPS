@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence.registry;
 
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -122,12 +121,12 @@ public class IdInfoRegistry {
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AssociationLinkInfo find(@NotNull SReferenceLink link) {
-    SReferenceLinkId id = MetaIdHelper.getAssociation(link);
+    SReferenceLinkId id = MetaIdHelper.getReference(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AggregationLinkInfo find(@NotNull SContainmentLink link) {
-    SContainmentLinkId id = MetaIdHelper.getAggregation(link);
+    SContainmentLinkId id = MetaIdHelper.getLink(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }

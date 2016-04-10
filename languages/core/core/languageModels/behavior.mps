@@ -1780,10 +1780,10 @@
         <node concept="3clFbF" id="6Gg5KlvuyM8" role="3cqZAp">
           <node concept="37vLTI" id="6Gg5Klvuzn8" role="3clFbG">
             <node concept="2OqwBi" id="6Gg5KlvuzSa" role="37vLTx">
-              <node concept="2YIFZM" id="5Z_8g9ZjxQQ" role="2Oq$k0">
-                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAssociation(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getAssociation" />
+              <node concept="2YIFZM" id="2u22WRjkwtU" role="2Oq$k0">
+                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getReference" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                <node concept="37vLTw" id="5Z_8g9ZjxQR" role="37wK5m">
+                <node concept="37vLTw" id="2u22WRjkwtV" role="37wK5m">
                   <ref role="3cqZAo" node="6Gg5Klvux$l" resolve="metaLink" />
                 </node>
               </node>
@@ -1915,10 +1915,10 @@
         <node concept="3clFbF" id="BpxLfMirzY" role="3cqZAp">
           <node concept="37vLTI" id="BpxLfMirzZ" role="3clFbG">
             <node concept="2OqwBi" id="BpxLfMir$0" role="37vLTx">
-              <node concept="2YIFZM" id="4NfTi62Q0Il" role="2Oq$k0">
-                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAggregation(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getAggregation" />
+              <node concept="2YIFZM" id="2u22WRjkwij" role="2Oq$k0">
+                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLink(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLink" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                <node concept="37vLTw" id="4NfTi62Q0Im" role="37wK5m">
+                <node concept="37vLTw" id="2u22WRjkwik" role="37wK5m">
                   <ref role="3cqZAo" node="BpxLfMir$7" resolve="metaLink" />
                 </node>
               </node>

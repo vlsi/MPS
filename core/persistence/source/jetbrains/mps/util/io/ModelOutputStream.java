@@ -16,13 +16,11 @@
 package jetbrains.mps.util.io;
 
 import gnu.trove.TObjectIntHashMap;
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -280,7 +278,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SReferenceLinkId id = MetaIdHelper.getAssociation(link);
+    final SReferenceLinkId id = MetaIdHelper.getReference(link);
     assert id != null : "Can't get identity of association " + link;
     if (myAssociation2Index.containsKey(id)) {
       writeByte(ASSOCIATION_INDEX);
@@ -298,7 +296,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SContainmentLinkId id = MetaIdHelper.getAggregation(link);
+    final SContainmentLinkId id = MetaIdHelper.getLink(link);
     assert id != null : "Can't get identity of aggregation " + link;
     if (myAggregation2Index.containsKey(id)) {
       writeByte(AGGREGATION_INDEX);

@@ -54,12 +54,12 @@ public final class MetaIdHelper {
   }
 
   @NotNull
-  public static SReferenceLinkId getAssociation(SReferenceLink r) {
+  public static SReferenceLinkId getReference(SReferenceLink r) {
     return ((SReferenceLinkAdapter) r).getRoleId();
   }
 
   @NotNull
-  public static SContainmentLinkId getAggregation(SContainmentLink l) {
+  public static SContainmentLinkId getLink(SContainmentLink l) {
     return ((SContainmentLinkAdapter) l).getRoleId();
   }
 }
