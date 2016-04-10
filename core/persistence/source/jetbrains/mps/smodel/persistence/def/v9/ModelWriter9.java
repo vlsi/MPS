@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.util.ToStringComparator;
@@ -243,7 +244,7 @@ public class ModelWriter9 implements IModelWriter {
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
     for (SLanguage l : sourceModel.usedLanguages()) {
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(IdHelper.getLanguageId(l)));
+      languageElem.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(MetaIdHelper.getLanguage(l)));
       // although there's name of the language in the registry, don't want to rely on it:
       // (a) the language might not be necessarily in actual use (thus registry won't list it)
       // (b) in multi-stream persistence, registry is saved per-root, while usedLanguages are saved once for header stream

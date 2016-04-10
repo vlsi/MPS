@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -226,7 +227,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SLanguageId id = IdHelper.getLanguageId(lang);
+    final SLanguageId id = MetaIdHelper.getLanguage(lang);
     if (myLanguage2Index.containsKey(id)) {
       writeByte(LANGUAGE_INDEX);
       writeShort(myLanguage2Index.get(id));
@@ -243,7 +244,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SConceptId id = IdHelper.getConceptId(concept);
+    final SConceptId id = MetaIdHelper.getConcept(concept);
     assert id != null : "Can't get identity of concept " + concept;
     if (myConcept2Index.containsKey(id)) {
       writeByte(CONCEPT_INDEX);
@@ -261,7 +262,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SPropertyId id = IdHelper.getPropertyId(property);
+    final SPropertyId id = MetaIdHelper.getProperty(property);
     assert id != null : "Can't get identity of property " + property;
     if (myProperty2Index.containsKey(id)) {
       writeByte(PROPERTY_INDEX);
@@ -279,7 +280,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SReferenceLinkId id = IdHelper.getRefId(link);
+    final SReferenceLinkId id = MetaIdHelper.getAssociation(link);
     assert id != null : "Can't get identity of association " + link;
     if (myAssociation2Index.containsKey(id)) {
       writeByte(ASSOCIATION_INDEX);
@@ -297,7 +298,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SContainmentLinkId id = IdHelper.getLinkId(link);
+    final SContainmentLinkId id = MetaIdHelper.getAggregation(link);
     assert id != null : "Can't get identity of aggregation " + link;
     if (myAggregation2Index.containsKey(id)) {
       writeByte(AGGREGATION_INDEX);

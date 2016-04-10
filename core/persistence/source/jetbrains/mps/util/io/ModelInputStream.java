@@ -20,6 +20,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -239,7 +240,7 @@ public class ModelInputStream extends DataInputStream {
       throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
-    SProperty p = MetaAdapterFactory.getProperty(new SPropertyId(IdHelper.getConceptId(c), readLong()), readString());
+    SProperty p = MetaAdapterFactory.getProperty(new SPropertyId(MetaIdHelper.getConcept(c), readLong()), readString());
     myProperties.add(p);
     return p;
   }
@@ -255,7 +256,7 @@ public class ModelInputStream extends DataInputStream {
       throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
-    SReferenceLink l = MetaAdapterFactory.getReferenceLink(new SReferenceLinkId(IdHelper.getConceptId(c), readLong()), readString());
+    SReferenceLink l = MetaAdapterFactory.getReferenceLink(new SReferenceLinkId(MetaIdHelper.getConcept(c), readLong()), readString());
     myAssociations.add(l);
     return l;
   }
@@ -271,7 +272,7 @@ public class ModelInputStream extends DataInputStream {
       throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
-    SContainmentLink l = MetaAdapterFactory.getContainmentLink(new SContainmentLinkId(IdHelper.getConceptId(c), readLong()), readString());
+    SContainmentLink l = MetaAdapterFactory.getContainmentLink(new SContainmentLinkId(MetaIdHelper.getConcept(c), readLong()), readString());
     myAggregations.add(l);
     return l;
   }

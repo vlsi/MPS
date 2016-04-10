@@ -19,6 +19,7 @@ import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.registry.ConceptInfo;
 import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -79,7 +80,7 @@ public class IdInfoCollector {
 
   private void fillConcept(SNode n) {
     final SConcept concept = n.getConcept();
-    SConceptId conceptId = IdHelper.getConceptId(concept);
+    SConceptId conceptId = MetaIdHelper.getConcept(concept);
 
     assert conceptId != null : String.format("Can't get identity of concept %s of node %s", concept, n.getReference());
 
@@ -88,7 +89,7 @@ public class IdInfoCollector {
 
   private void fillProperties(SNode n) {
     for (SProperty prop : n.getProperties()) {
-      SPropertyId propId = IdHelper.getPropertyId(prop);
+      SPropertyId propId = MetaIdHelper.getProperty(prop);
       assert propId != null : String.format("Can't get identity of property %s of node %s", prop, n.getReference());
       SConceptId conceptId = propId.getConceptId();
       final ConceptInfo conceptInfo = registerConcept(conceptId);
@@ -100,7 +101,7 @@ public class IdInfoCollector {
   private void fillAssociations(SNode n) {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
-      SReferenceLinkId linkId = IdHelper.getRefId(l);
+      SReferenceLinkId linkId = MetaIdHelper.getAssociation(l);
       assert linkId != null : String.format("Can't get identity of association %s of node %s", l, n.getReference());
       SConceptId conceptId = linkId.getConceptId();
       final ConceptInfo conceptInfo = registerConcept(conceptId);
@@ -113,7 +114,7 @@ public class IdInfoCollector {
   // unlike association, records link to parent node
   private void fillAggregation(SNode n) {
     final SContainmentLink l = n.getContainmentLink();
-    SContainmentLinkId linkId = IdHelper.getLinkId(l);
+    SContainmentLinkId linkId = MetaIdHelper.getAggregation(l);
     assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
     SConceptId conceptId = linkId.getConceptId();
     final ConceptInfo conceptInfo = registerConcept(conceptId);

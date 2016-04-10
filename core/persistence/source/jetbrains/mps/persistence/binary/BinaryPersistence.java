@@ -33,6 +33,7 @@ import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -424,7 +425,7 @@ public final class BinaryPersistence {
     os.writeShort(refs.size());
     for (SLanguage l : refs) {
       // id, name, version
-      os.writeUUID(IdHelper.getLanguageId(l).getIdValue());
+      os.writeUUID(MetaIdHelper.getLanguage(l).getIdValue());
       os.writeString(l.getQualifiedName());
     }
   }
