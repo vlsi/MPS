@@ -227,6 +227,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
 
+  /**
+   * @deprecated the repository must be able to contain two modules with the same name.
+   * Thus one cannot rely on the module - name one-to-one correspondence.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SModule getModuleByFqName(@NotNull String fqName) {
     //todo assertCanRead();
 

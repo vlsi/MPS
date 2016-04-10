@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DefaultEditor_DontSubstituteAbstractConcepts_Test extends BaseTransformationTest {
-  public DefaultEditor_DontSubstituteAbstractConcepts_Test() {
-  }
   @Test
   public void test_DefaultEditor_DontSubstituteAbstractConcepts() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DefaultEditor_DontSubstituteAbstractConcepts_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DefaultEditor_DontSubstituteAbstractConcepts_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("472942194665436919", "472942194665436916");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert this.getEditorComponent().getNodeSubstituteChooser().isVisible() && this.getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
+      initEditorComponent("472942194665436919", "472942194665436916");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      assert getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
 
     }
   }

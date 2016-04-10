@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SubstitudeAmbigousActions_Test extends BaseTransformationTest {
-  public SubstitudeAmbigousActions_Test() {
-  }
   @Test
   public void test_SubstitudeAmbigousActions() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SubstitudeAmbigousActions_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SubstitudeAmbigousActions_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4439253381394558444", "4439253381394559643");
-      this.typeString("method1");
+      initEditorComponent("4439253381394558444", "4439253381394559643");
+      typeString("method1");
     }
   }
 }

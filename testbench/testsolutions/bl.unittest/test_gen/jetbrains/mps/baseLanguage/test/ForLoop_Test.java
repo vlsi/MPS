@@ -14,14 +14,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ForLoop_Test extends BaseTransformationTest {
   @Test
   public void test_ForLoop() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody", "test_ForLoop", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody", "test_ForLoop", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ForLoop() throws Exception {
-      this.addNodeById("1217271585525");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444253196"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
+      addNodeById("1217271585525");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444253196"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
     }
+
+
   }
 }

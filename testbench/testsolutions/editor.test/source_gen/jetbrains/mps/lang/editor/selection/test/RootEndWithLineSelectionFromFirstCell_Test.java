@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RootEndWithLineSelectionFromFirstCell_Test extends BaseTransformationTest {
-  public RootEndWithLineSelectionFromFirstCell_Test() {
-  }
   @Test
   public void test_RootEndWithLineSelectionFromFirstCell() throws Throwable {
-    this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
-    this.runTest("jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    runTest("jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5097407566121753123", "5097407566121753130");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.RootEnd_Action");
+      initEditorComponent("5097407566121753123", "5097407566121753130");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.RootEnd_Action");
     }
   }
 }

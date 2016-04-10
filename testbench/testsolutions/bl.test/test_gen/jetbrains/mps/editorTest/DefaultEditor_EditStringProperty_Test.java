@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DefaultEditor_EditStringProperty_Test extends BaseTransformationTest {
-  public DefaultEditor_EditStringProperty_Test() {
-  }
   @Test
   public void test_DefaultEditor_EditStringProperty() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DefaultEditor_EditStringProperty_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DefaultEditor_EditStringProperty_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6007318803030056752", "6007318803030056757");
-      this.typeString("Alperovich");
+      initEditorComponent("6007318803030056752", "6007318803030056757");
+      typeString("Alperovich");
     }
   }
 }

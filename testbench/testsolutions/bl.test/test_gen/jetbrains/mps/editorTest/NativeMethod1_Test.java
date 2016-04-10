@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class NativeMethod1_Test extends BaseTransformationTest {
-  public NativeMethod1_Test() {
-  }
   @Test
   public void test_NativeMethod1() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.NativeMethod1_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.NativeMethod1_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8347245235044854668", "8347245235044854672");
-      this.typeString("private native void foo");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditorComponent("8347245235044854668", "8347245235044854672");
+      typeString("private native void foo");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

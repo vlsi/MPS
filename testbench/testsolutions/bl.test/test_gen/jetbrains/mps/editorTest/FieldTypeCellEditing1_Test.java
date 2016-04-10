@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class FieldTypeCellEditing1_Test extends BaseTransformationTest {
-  public FieldTypeCellEditing1_Test() {
-  }
   @Test
   public void test_FieldTypeCellEditing1() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.FieldTypeCellEditing1_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.FieldTypeCellEditing1_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2900530436652943951", "2900530436652944768");
-      this.typeString("field int f");
+      initEditorComponent("2900530436652943951", "2900530436652944768");
+      typeString("field int f");
     }
   }
 }

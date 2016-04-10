@@ -9,33 +9,30 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveSynchronizedOnLastPositionDelete_Test extends BaseTransformationTest {
-  public RemoveSynchronizedOnLastPositionDelete_Test() {
-  }
   @Test
   public void test_RemoveSynchronizedOnLastPositionDelete() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RemoveSynchronizedOnLastPositionDelete_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RemoveSynchronizedOnLastPositionDelete_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6131265013450968241", "6131265013450968250");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditorComponent("6131265013450968241", "6131265013450968250");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

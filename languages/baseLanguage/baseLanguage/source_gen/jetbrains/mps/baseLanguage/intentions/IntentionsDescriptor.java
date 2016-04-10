@@ -98,8 +98,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         case 8:
           if (true) {
             // Concept: Classifier 
-            intentions = new IntentionFactory[1];
+            intentions = new IntentionFactory[2];
             intentions[0] = new ChangeStaticInInner_Intention();
+            intentions[1] = new AutoSpacing_Intention();
           }
           break;
         case 9:
@@ -381,7 +382,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[92];
+    IntentionFactory[] rv = new IntentionFactory[93];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -474,6 +475,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[89] = new ComputeWholeExpressionValue_Intention();
     rv[90] = new ComputeExpressionValue_Intention();
     rv[91] = new JoinVariableDeclarationAndInitializer_Intention();
+    rv[92] = new AutoSpacing_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

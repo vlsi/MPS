@@ -24,29 +24,32 @@ import jetbrains.mps.smodel.SReference;
 public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
   @Test
   public void test_throwsOrder() throws Throwable {
-    this.initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
-    this.runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_throwsOrder", true);
+    initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
+    runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_throwsOrder", true);
   }
   @Test
   public void test_NodeErrorCheck3981396688773519576() throws Throwable {
-    this.initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
-    this.runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_NodeErrorCheck3981396688773519576", true);
+    initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
+    runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_NodeErrorCheck3981396688773519576", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_throwsOrder() throws Exception {
-      this.addNodeById("6374750171056867594");
-      this.addNodeById("6374750171056867606");
+      addNodeById("6374750171056867594");
+      addNodeById("6374750171056867606");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(this.getNodeById("6374750171056867612"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
-      SNode funtype = SNodeOperations.cast(this.getNodeById("6374750171056867639"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+      SNode literal = SNodeOperations.cast(getNodeById("6374750171056867612"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
+      SNode funtype = SNodeOperations.cast(getNodeById("6374750171056867639"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType__BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
-      this.assertLiteralTarget(genContext, literal, _quotation_createNode_7325qm_c0a6a0c());
+      this.assertLiteralTarget(genContext, literal, _quotation_createNode_7325qm_c0a6a0d());
     }
+
     public void test_NodeErrorCheck3981396688773519576() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("3981396688773519576"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6374750171056867612"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("3981396688773519576"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("6374750171056867612"));
     }
+
     public TemplateQueryContext getContext() {
       return (TemplateQueryContext) ((TemplateQueryContext) new MockTemplateQueryContext());
     }
@@ -55,7 +58,7 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
 
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
-    private static SNode _quotation_createNode_7325qm_c0a6a0c() {
+    private static SNode _quotation_createNode_7325qm_c0a6a0d() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

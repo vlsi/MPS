@@ -53,43 +53,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.ModulesWithLanguagesScope" file="ModulesWithLanguagesScope.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.extapi.module.TransientSModule" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.project.FilteredScope" />
-  </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.NodeByConceptChooser" file="NodeByConceptChooser.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.ModulesWithLanguagesScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ScopeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -98,6 +76,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
   </dependency>
@@ -112,7 +91,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodesDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.ModulesWithLanguagesScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -122,16 +100,14 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ScopeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
   </dependency>

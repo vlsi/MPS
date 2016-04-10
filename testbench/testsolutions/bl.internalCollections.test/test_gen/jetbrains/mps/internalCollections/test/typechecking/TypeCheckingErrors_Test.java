@@ -16,67 +16,70 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class TypeCheckingErrors_Test extends BaseTransformationTest {
   @Test
   public void test_mps18720() throws Throwable {
-    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
-    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_mps18720", true);
+    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_mps18720", true);
   }
   @Test
   public void test_varar_raw() throws Throwable {
-    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
-    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_varar_raw", true);
+    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_varar_raw", true);
   }
   @Test
   public void test_lbt_subtypeof_param() throws Throwable {
-    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
-    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_lbt_subtypeof_param", true);
+    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_lbt_subtypeof_param", true);
   }
   @Test
   public void test_meet_with_variable_excluded_from_lcs() throws Throwable {
-    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
-    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_meet_with_variable_excluded_from_lcs", true);
+    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_meet_with_variable_excluded_from_lcs", true);
   }
   @Test
   public void test_NodeErrorCheck1089557578630058014() throws Throwable {
-    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
-    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck1089557578630058014", true);
+    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+    runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck1089557578630058014", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_mps18720() throws Exception {
-      this.addNodeById("1301553664999174765");
-      this.addNodeById("3441689827373214227");
-      this.addNodeById("1089557578627272135");
-      this.addNodeById("360223900466871399");
-      this.addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1301553664997476018"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false);
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("3441689827373215907"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false);
+      addNodeById("1301553664999174765");
+      addNodeById("3441689827373214227");
+      addNodeById("1089557578627272135");
+      addNodeById("360223900466871399");
+      addNodeById("5532302989585163343");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1301553664997476018"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("3441689827373215907"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false);
     }
     public void test_varar_raw() throws Exception {
-      this.addNodeById("1301553664999174765");
-      this.addNodeById("3441689827373214227");
-      this.addNodeById("1089557578627272135");
-      this.addNodeById("360223900466871399");
-      this.addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1089557578627275112"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
+      addNodeById("1301553664999174765");
+      addNodeById("3441689827373214227");
+      addNodeById("1089557578627272135");
+      addNodeById("360223900466871399");
+      addNodeById("5532302989585163343");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1089557578627275112"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
     }
     public void test_lbt_subtypeof_param() throws Exception {
-      this.addNodeById("1301553664999174765");
-      this.addNodeById("3441689827373214227");
-      this.addNodeById("1089557578627272135");
-      this.addNodeById("360223900466871399");
-      this.addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("360223900466887047"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
+      addNodeById("1301553664999174765");
+      addNodeById("3441689827373214227");
+      addNodeById("1089557578627272135");
+      addNodeById("360223900466871399");
+      addNodeById("5532302989585163343");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("360223900466887047"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
     }
     public void test_meet_with_variable_excluded_from_lcs() throws Exception {
-      this.addNodeById("1301553664999174765");
-      this.addNodeById("3441689827373214227");
-      this.addNodeById("1089557578627272135");
-      this.addNodeById("360223900466871399");
-      this.addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6368058149914761648"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
+      addNodeById("1301553664999174765");
+      addNodeById("3441689827373214227");
+      addNodeById("1089557578627272135");
+      addNodeById("360223900466871399");
+      addNodeById("5532302989585163343");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("6368058149914761648"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
     }
+
     public void test_NodeErrorCheck1089557578630058014() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1089557578630058014"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451230191"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("1089557578630058014"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451230191"));
     }
+
   }
 }

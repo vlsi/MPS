@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddParensToArrayAccess7_Test extends BaseTransformationTest {
-  public AddParensToArrayAccess7_Test() {
-  }
   @Test
   public void test_AddParensToArrayAccess7() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddParensToArrayAccess7_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddParensToArrayAccess7_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6141629764077225958", "6141629764077225988");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("6141629764077225958", "6141629764077225988");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class WrapLocalVariableWithGenericType_Test extends BaseTransformationTest {
-  public WrapLocalVariableWithGenericType_Test() {
-  }
   @Test
   public void test_WrapLocalVariableWithGenericType() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.WrapLocalVariableWithGenericType_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.WrapLocalVariableWithGenericType_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2900530436644698639", "2900530436644698646");
-      this.typeString("Class<");
+      initEditorComponent("2900530436644698639", "2900530436644698646");
+      typeString("Class<");
     }
   }
 }

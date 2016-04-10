@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AnnotationSelection_Test extends BaseTransformationTest {
-  public AnnotationSelection_Test() {
-  }
   @Test
   public void test_AnnotationSelection() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AnnotationSelection_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AnnotationSelection_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1235221839249", "1235221888081");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
+      initEditorComponent("1235221839249", "1235221888081");
+      invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
     }
   }
 }

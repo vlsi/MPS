@@ -36,21 +36,24 @@ import org.apache.log4j.LogManager;
 public class JUnitInProcessUndo_Test extends BaseTransformationTest {
   @Test
   public void test_startTrickyTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody", "test_startTrickyTestCase", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody", "test_startTrickyTestCase", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startTrickyTestCase() throws Exception {
-      String testName = new ModelAccessHelper(this.myProject.getModelAccess()).runReadAction(new Computable<String>() {
+      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return SNodeOperations.getNode("r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", "4177017564823046256").getName();
         }
       });
       this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
+
+
     public SModel getMyModel() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.editorTest@tests");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.editorTest@tests");
     }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
@@ -65,7 +68,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
         }
         ProcessHandler process = processExecutor.execute();
         final Wrappers._T<CheckTestStateListener> checkListener = new Wrappers._T<CheckTestStateListener>();
-        this.myProject.getModelAccess().runReadAction(new Runnable() {
+        myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             checkListener.value = new CheckTestStateListener(success, failure);
             runState.addListener(checkListener.value);

@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SUBST_BooleanConstantArgiument_with_Expression_Test extends BaseTransformationTest {
-  public SUBST_BooleanConstantArgiument_with_Expression_Test() {
-  }
   @Test
   public void test_SUBST_BooleanConstantArgiument_with_Expression() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_Expression_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_Expression_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("957371990172616469", "957371990172715706");
-      this.typeString("localVar");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("957371990172616469", "957371990172715706");
+      typeString("localVar");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

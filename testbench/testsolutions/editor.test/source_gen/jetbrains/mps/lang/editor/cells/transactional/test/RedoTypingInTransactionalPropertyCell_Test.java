@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RedoTypingInTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public RedoTypingInTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_RedoTypingInTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5931285799429786232", "5931285799429786234");
-      this.typeString("tmpstr");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Redo");
+      initEditorComponent("5931285799429786232", "5931285799429786234");
+      typeString("tmpstr");
+      invokeAction("$Undo");
+      invokeAction("$Redo");
 
     }
   }

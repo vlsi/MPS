@@ -15,21 +15,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 @MPSLaunch
 public class DefaultCellInfoTest_Test extends BaseTransformationTest {
-  public DefaultCellInfoTest_Test() {
-  }
   @Test
   public void test_DefaultCellInfoTest() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5560058483159205760", "5560058483159208304");
-      IOperationContext operationContext = this.myEditor.getCurrentEditorComponent().getOperationContext();
+      initEditorComponent("5560058483159205760", "5560058483159208304");
+      IOperationContext operationContext = getEditor().getCurrentEditorComponent().getOperationContext();
       EditorComponent inspector = operationContext.getComponent(InspectorTool.class).getInspector();
       EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
         @Override
@@ -38,7 +35,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
         }
       });
       inspector.getSelectionManager().setSelection(editorCell);
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

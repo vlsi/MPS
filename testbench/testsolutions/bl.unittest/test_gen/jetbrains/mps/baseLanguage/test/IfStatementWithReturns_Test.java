@@ -15,14 +15,17 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class IfStatementWithReturns_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck1220013512724() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test$TestBody", "test_ErrorMessagesCheck1220013512724", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test$TestBody", "test_ErrorMessagesCheck1220013512724", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_ErrorMessagesCheck1220013512724() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1220013512724"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1220013400783"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("1220013512724"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("1220013400783"));
     }
+
   }
 }

@@ -9,38 +9,35 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RedoIncorrectlyTypedValue_Test extends BaseTransformationTest {
-  public RedoIncorrectlyTypedValue_Test() {
-  }
   @Test
   public void test_RedoIncorrectlyTypedValue() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RedoIncorrectlyTypedValue_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RedoIncorrectlyTypedValue_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5305372928077233092", "5305372928077233099");
-      this.typeString("=1");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.typeString("\u00a7123");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Redo");
-      this.invokeAction("$Redo");
-      this.invokeAction("$Redo");
-      this.invokeAction("$Redo");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("5305372928077233092", "5305372928077233099");
+      typeString("=1");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      typeString("\u00a7123");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
+      invokeAction("$Redo");
+      invokeAction("$Redo");
+      invokeAction("$Redo");
+      invokeAction("$Redo");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

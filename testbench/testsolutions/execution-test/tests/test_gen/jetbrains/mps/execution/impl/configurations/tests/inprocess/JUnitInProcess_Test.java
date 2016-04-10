@@ -36,18 +36,19 @@ import org.apache.log4j.LogManager;
 public class JUnitInProcess_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
   }
   @Test
   public void test_startFailedTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
-      String testName = new ModelAccessHelper(this.myProject.getModelAccess()).runReadAction(new Computable<String>() {
+      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380").getName();
         }
@@ -55,15 +56,17 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public void test_startFailedTestCase() throws Exception {
-      String testName = new ModelAccessHelper(this.myProject.getModelAccess()).runReadAction(new Computable<String>() {
+      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140").getName();
         }
       });
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)));
     }
+
+
     public SModel getMyModel() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
     }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
@@ -78,7 +81,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         }
         ProcessHandler process = processExecutor.execute();
         final Wrappers._T<CheckTestStateListener> checkListener = new Wrappers._T<CheckTestStateListener>();
-        this.myProject.getModelAccess().runReadAction(new Runnable() {
+        myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             checkListener.value = new CheckTestStateListener(success, failure);
             runState.addListener(checkListener.value);

@@ -16,83 +16,86 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class MacroTest_Test extends BaseTransformationTest {
   @Test
   public void test_normalScope() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_normalScope", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_normalScope", true);
   }
   @Test
   public void test_onlySeePreviouslyDeclaredMacro() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_onlySeePreviouslyDeclaredMacro", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_onlySeePreviouslyDeclaredMacro", true);
   }
   @Test
   public void test_doNotSeeItsefl() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeItsefl", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeItsefl", true);
   }
   @Test
   public void test_doNotSeeImported() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
   }
   @Test
   public void test_seeImportedVariableInScope() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeImportedVariableInScope", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeImportedVariableInScope", true);
   }
   @Test
   public void test_doNotSeeForwardVariabletInScope() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeForwardVariabletInScope", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_doNotSeeForwardVariabletInScope", true);
   }
   @Test
   public void test_seeBackwardVariableInScope() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
-    this.runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeBackwardVariableInScope", true);
+    initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
+    runTest("jetbrains.mps.build.tests.MacroTest_Test$TestBody", "test_seeBackwardVariableInScope", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_normalScope() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("193602448594327348"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("193602448594327348"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
     }
     public void test_onlySeePreviouslyDeclaredMacro() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("193602448594327348"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("193602448594327348"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
     }
     public void test_doNotSeeItsefl() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
     }
     public void test_doNotSeeImported() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("193602448594330632"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("763409143595572705"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("193602448594330636"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
     }
     public void test_seeImportedVariableInScope() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("384280137912153739"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("763409143595572700"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("384280137912153739"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("384280137912153734"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
     }
     public void test_doNotSeeForwardVariabletInScope() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("384280137912153749"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("384280137912153758"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertFalse(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("384280137912153749"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("384280137912153758"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("384280137912153753"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
     }
     public void test_seeBackwardVariableInScope() throws Exception {
-      this.addNodeById("193602448594327347");
-      this.addNodeById("763409143595572699");
-      this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(this.getNodeById("384280137912153749"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(this.getNodeById("384280137912153762"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
+      addNodeById("193602448594327347");
+      addNodeById("763409143595572699");
+      addNodeById("384280137912153748");
+      Assert.assertTrue(Sequence.fromIterable(ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(SNodeOperations.cast(getNodeById("384280137912153749"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), SNodeOperations.cast(getNodeById("384280137912153762"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))).getAvailableElements("")).contains(SNodeOperations.cast(getNodeById("384280137912153753"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))));
     }
+
+
   }
 }

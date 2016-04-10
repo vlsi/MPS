@@ -80,6 +80,7 @@
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" file="EvaluationModule.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -102,12 +103,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependency" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependencyScope" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class BackspaceOnlyStatement_Test extends BaseTransformationTest {
-  public BackspaceOnlyStatement_Test() {
-  }
   @Test
   public void test_BackspaceOnlyStatement() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.BackspaceOnlyStatement_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.BackspaceOnlyStatement_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1938740395228994780", "1938740395228994787");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("1938740395228994780", "1938740395228994787");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

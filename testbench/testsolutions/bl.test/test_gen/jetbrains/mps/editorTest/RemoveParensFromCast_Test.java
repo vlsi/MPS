@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveParensFromCast_Test extends BaseTransformationTest {
-  public RemoveParensFromCast_Test() {
-  }
   @Test
   public void test_RemoveParensFromCast() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RemoveParensFromCast_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RemoveParensFromCast_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3455074683968401468", "3455074683968401478");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("3455074683968401468", "3455074683968401478");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

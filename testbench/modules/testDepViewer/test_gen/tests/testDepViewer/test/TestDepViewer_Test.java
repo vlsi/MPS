@@ -19,29 +19,30 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 public class TestDepViewer_Test extends BaseTransformationTest {
   @Test
   public void test_testPrecondition() throws Throwable {
-    this.initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
-    this.runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testPrecondition", true);
+    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testPrecondition", true);
   }
   @Test
   public void test_testModel1DependsOnSomething() throws Throwable {
-    this.initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
-    this.runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnSomething", true);
+    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnSomething", true);
   }
   @Test
   public void test_testModel3DoesntDependOnAnything() throws Throwable {
-    this.initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
-    this.runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel3DoesntDependOnAnything", true);
+    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel3DoesntDependOnAnything", true);
   }
   @Test
   public void test_testModel1DependsOnModel2() throws Throwable {
-    this.initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
-    this.runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnModel2", true);
+    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnModel2", true);
   }
   @Test
   public void test_testModel1DoesntDependOnModel3() throws Throwable {
-    this.initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
-    this.runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DoesntDependOnModel3", true);
+    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+    runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DoesntDependOnModel3", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testPrecondition() throws Exception {
@@ -90,14 +91,16 @@ public class TestDepViewer_Test extends BaseTransformationTest {
       SearchResults refSearchResults = finder.getRefsBetweenScopes(nodes, testScope, targetScope, new EmptyProgressMonitor());
       Assert.assertTrue(refSearchResults.getSearchResults().isEmpty());
     }
+
+
     public SModel model1() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("tests.testDepViewer.model1");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("tests.testDepViewer.model1");
     }
     public SModel model2() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("tests.testDepViewer.model2");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("tests.testDepViewer.model2");
     }
     public SModel model3() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("tests.testDepViewer.model3");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("tests.testDepViewer.model3");
     }
   }
 }

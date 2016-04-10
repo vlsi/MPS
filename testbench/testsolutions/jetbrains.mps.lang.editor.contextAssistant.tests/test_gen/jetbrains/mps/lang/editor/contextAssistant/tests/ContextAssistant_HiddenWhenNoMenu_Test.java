@@ -14,21 +14,18 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
 public class ContextAssistant_HiddenWhenNoMenu_Test extends BaseTransformationTest {
-  public ContextAssistant_HiddenWhenNoMenu_Test() {
-  }
   @Test
   public void test_ContextAssistant_HiddenWhenNoMenu() throws Throwable {
-    this.initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HiddenWhenNoMenu_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HiddenWhenNoMenu_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6183626235528683202", "");
-      final EditorContext editorContext = this.getEditorComponent().getEditorContext();
+      initEditorComponent("6183626235528683202", "");
+      final EditorContext editorContext = getEditorComponent().getEditorContext();
       editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
           ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
@@ -36,7 +33,7 @@ public class ContextAssistant_HiddenWhenNoMenu_Test extends BaseTransformationTe
           Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
           Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
 
-          TestBody.this.getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(TestBody.this.getNodeById("6183626235528683202"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent")));
+          getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("6183626235528683202"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent")));
 
           contextAssistantManager.updateImmediately();
 

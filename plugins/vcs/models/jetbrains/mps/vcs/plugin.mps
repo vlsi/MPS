@@ -9,7 +9,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -1162,6 +1162,50 @@
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Differences with Model on Disk" />
     <property role="1teQrl" value="true" />
+    <node concept="tkhdA" id="5YG5KSKXSff" role="tmbBb">
+      <node concept="3clFbS" id="5YG5KSKXSfg" role="2VODD2">
+        <node concept="3clFbF" id="5YG5KSKY1aX" role="3cqZAp">
+          <node concept="1rXfSq" id="5YG5KSKY1aV" role="3clFbG">
+            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+            <node concept="2OqwBi" id="5YG5KSKY2u2" role="37wK5m">
+              <node concept="tl45R" id="5YG5KSKY2oJ" role="2Oq$k0" />
+              <node concept="liA8E" id="5YG5KSKY2Dm" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="1Wc70l" id="5YG5KSKY0Eg" role="37wK5m">
+              <node concept="2ZW3vV" id="5YG5KSKY0Eh" role="3uHU7w">
+                <node concept="3uibUv" id="5YG5KSKY0Ei" role="2ZW6by">
+                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                </node>
+                <node concept="2OqwBi" id="5YG5KSKY0Ej" role="2ZW6bz">
+                  <node concept="2WthIp" id="5YG5KSKY0Ek" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="5YG5KSKY0El" role="2OqNvi">
+                    <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ZW3vV" id="5YG5KSKY0Em" role="3uHU7B">
+                <node concept="3uibUv" id="5YG5KSKY0En" role="2ZW6by">
+                  <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
+                </node>
+                <node concept="2OqwBi" id="5YG5KSKY0Eo" role="2ZW6bz">
+                  <node concept="liA8E" id="5YG5KSKY0Ep" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+                  </node>
+                  <node concept="2OqwBi" id="5YG5KSKY0Eq" role="2Oq$k0">
+                    <node concept="2WthIp" id="5YG5KSKY0Er" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="5YG5KSKY0Es" role="2OqNvi">
+                      <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="tnohg" id="6ySnuJfjgCQ" role="tncku">
       <node concept="3clFbS" id="6ySnuJfjgCR" role="2VODD2">
         <node concept="3cpWs8" id="6z2l4wac7g7" role="3cqZAp">
@@ -1281,50 +1325,6 @@
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDiW" role="1oa70y" />
-    </node>
-    <node concept="tkhdA" id="5YG5KSKXSff" role="tmbBb">
-      <node concept="3clFbS" id="5YG5KSKXSfg" role="2VODD2">
-        <node concept="3clFbF" id="5YG5KSKY1aX" role="3cqZAp">
-          <node concept="1rXfSq" id="5YG5KSKY1aV" role="3clFbG">
-            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
-            <node concept="2OqwBi" id="5YG5KSKY2u2" role="37wK5m">
-              <node concept="tl45R" id="5YG5KSKY2oJ" role="2Oq$k0" />
-              <node concept="liA8E" id="5YG5KSKY2Dm" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-              </node>
-            </node>
-            <node concept="1Wc70l" id="5YG5KSKY0Eg" role="37wK5m">
-              <node concept="2ZW3vV" id="5YG5KSKY0Eh" role="3uHU7w">
-                <node concept="3uibUv" id="5YG5KSKY0Ei" role="2ZW6by">
-                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
-                </node>
-                <node concept="2OqwBi" id="5YG5KSKY0Ej" role="2ZW6bz">
-                  <node concept="2WthIp" id="5YG5KSKY0Ek" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5YG5KSKY0El" role="2OqNvi">
-                    <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2ZW3vV" id="5YG5KSKY0Em" role="3uHU7B">
-                <node concept="3uibUv" id="5YG5KSKY0En" role="2ZW6by">
-                  <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
-                </node>
-                <node concept="2OqwBi" id="5YG5KSKY0Eo" role="2ZW6bz">
-                  <node concept="liA8E" id="5YG5KSKY0Ep" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
-                  </node>
-                  <node concept="2OqwBi" id="5YG5KSKY0Eq" role="2Oq$k0">
-                    <node concept="2WthIp" id="5YG5KSKY0Er" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="5YG5KSKY0Es" role="2OqNvi">
-                      <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="tC5Ba" id="6ySnuJfjgGI">

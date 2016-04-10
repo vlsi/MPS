@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SimpleUndoTest_Test extends BaseTransformationTest {
-  public SimpleUndoTest_Test() {
-  }
   @Test
   public void test_SimpleUndoTest() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SimpleUndoTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SimpleUndoTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7011073693661757279", "7011073693661765725");
-      this.typeString("=");
-      this.invokeAction("$Undo");
+      initEditorComponent("7011073693661757279", "7011073693661765725");
+      typeString("=");
+      invokeAction("$Undo");
     }
   }
 }

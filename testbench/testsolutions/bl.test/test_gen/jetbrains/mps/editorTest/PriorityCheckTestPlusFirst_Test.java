@@ -23,26 +23,29 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class PriorityCheckTestPlusFirst_Test extends BaseTransformationTest {
   @Test
   public void test_testRotation() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
-    this.runTest("jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test$TestBody", "test_testRotation", true);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+    runTest("jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test$TestBody", "test_testRotation", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testRotation() throws Exception {
-      this.addNodeById("818296778579245155");
-      this.addNodeById("818296778579245164");
+      addNodeById("818296778579245155");
+      addNodeById("818296778579245164");
       SNode op = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression")));
       SNode constant = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant")));
       SPropertyOperations.set(constant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "" + (3));
       SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), constant);
-      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression")), op);
-      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeOperations.cast(this.getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression")));
+      SNodeOperations.replaceWithAnother(SNodeOperations.cast(getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression")), op);
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeOperations.cast(getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression")));
       ParenthesisUtil.checkOperationWRTPriority(op);
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245167"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245158"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
-        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("818296778579245167"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("818296778579245158"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+        Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
     }
+
+
   }
 }

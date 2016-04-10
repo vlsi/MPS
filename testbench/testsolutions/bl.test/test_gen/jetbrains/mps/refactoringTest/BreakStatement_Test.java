@@ -18,41 +18,44 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class BreakStatement_Test extends BaseTransformationTest {
   @Test
   public void test_noBreaks() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_noBreaks", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_noBreaks", true);
   }
   @Test
   public void test_oneBreak() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneBreak", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneBreak", true);
   }
   @Test
   public void test_oneContionue() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneContionue", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneContionue", true);
   }
   @Test
   public void test_breakAndContinue() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_breakAndContinue", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_breakAndContinue", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_noBreaks() throws Exception {
-      this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480270"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement")))));
+      addNodeById("1230052480264");
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052480270"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement")))));
     }
     public void test_oneBreak() throws Exception {
-      this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))));
+      addNodeById("1230052480264");
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052480275"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))));
     }
     public void test_oneContionue() throws Exception {
-      this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480282"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))));
+      addNodeById("1230052480264");
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052480282"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))));
     }
     public void test_breakAndContinue() throws Exception {
-      this.addNodeById("1230052480264");
-      Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")), SNodeOperations.cast(this.getNodeById("1230052480282"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))) != null);
+      addNodeById("1230052480264");
+      Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052480275"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")), SNodeOperations.cast(getNodeById("1230052480282"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")))) != null);
     }
+
+
   }
 }

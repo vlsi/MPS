@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveNotTest_Test extends BaseTransformationTest {
-  public RemoveNotTest_Test() {
-  }
   @Test
   public void test_RemoveNotTest() throws Throwable {
-    this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
-    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
+    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5264300948581715474", "5264300948581716165");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("5264300948581715474", "5264300948581716165");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

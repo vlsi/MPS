@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CreateY_Test extends BaseTransformationTest {
-  public CreateY_Test() {
-  }
   @Test
   public void test_CreateY() throws Throwable {
-    this.initTest("${mps_home}", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1310272842909656086", "1310272842909656095");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditorComponent("1310272842909656086", "1310272842909656095");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

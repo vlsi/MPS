@@ -15,20 +15,23 @@ import junit.framework.Assert;
 public class CheckVisibility_Test extends BaseTransformationTest {
   @Test
   public void test_CheckVisibility() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.CheckVisibility_Test$TestBody", "test_CheckVisibility", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.CheckVisibility_Test$TestBody", "test_CheckVisibility", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_CheckVisibility() throws Exception {
-      this.addNodeById("1230053114874");
-      this.addNodeById("1230053114900");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114888"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      addNodeById("1230053114874");
+      addNodeById("1230053114900");
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114888"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114893"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114893"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114898"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114898"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() == 0);
     }
+
+
   }
 }

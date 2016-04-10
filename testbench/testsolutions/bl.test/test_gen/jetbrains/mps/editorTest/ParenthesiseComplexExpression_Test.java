@@ -9,44 +9,41 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ParenthesiseComplexExpression_Test extends BaseTransformationTest {
-  public ParenthesiseComplexExpression_Test() {
-  }
   @Test
   public void test_ParenthesiseComplexExpression() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ParenthesiseComplexExpression_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ParenthesiseComplexExpression_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("341917192554977807", "341917192555002277");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.typeString("(");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.typeString(")");
+      initEditorComponent("341917192554977807", "341917192555002277");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      typeString("(");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      typeString(")");
     }
   }
 }

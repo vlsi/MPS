@@ -10,25 +10,22 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class AddMenuPart_ParameterizedSubstitute_smartComplete_Test extends BaseTransformationTest {
-  public AddMenuPart_ParameterizedSubstitute_smartComplete_Test() {
-  }
   @Test
   public void test_AddMenuPart_ParameterizedSubstitute_smartComplete() throws Throwable {
-    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2534942168317963978", "2534942168317964289");
-      this.typeString("ActionTestChild1");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
-      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
-      this.invokeAction("jetbrains.mps.ide.editor.actions.CompleteSmart_Action");
+      initEditorComponent("2534942168317963978", "2534942168317964289");
+      typeString("ActionTestChild1");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      getEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      invokeAction("jetbrains.mps.ide.editor.actions.CompleteSmart_Action");
     }
   }
 }

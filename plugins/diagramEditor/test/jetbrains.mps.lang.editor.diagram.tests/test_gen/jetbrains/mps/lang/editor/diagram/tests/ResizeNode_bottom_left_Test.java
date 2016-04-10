@@ -11,27 +11,24 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class ResizeNode_bottom_left_Test extends BaseTransformationTest {
-  public ResizeNode_bottom_left_Test() {
-  }
   @Test
   public void test_ResizeNode_bottom_left() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1030067674862347160", "1030067674862347163");
+      initEditorComponent("1030067674862347160", "1030067674862347163");
       {
         int x_oy4n3d_a0 = 8;
         int y_oy4n3d_a0 = 90;
-        Component eventTargetComponent_oy4n3d_a0 = this.processMouseEvent(x_oy4n3d_a0, y_oy4n3d_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0 = -10, y_oy4n3d_a0 = -20, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0 = 18, y_oy4n3d_a0 = 70, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0, y_oy4n3d_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_oy4n3d_a0 = processMouseEvent(x_oy4n3d_a0, y_oy4n3d_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0 = -10, y_oy4n3d_a0 = -20, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0 = 18, y_oy4n3d_a0 = 70, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_oy4n3d_a0, x_oy4n3d_a0, y_oy4n3d_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

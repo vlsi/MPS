@@ -22,81 +22,82 @@ import java.util.List;
 public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
   @Test
   public void test_childContainingLinks() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
   }
   @Test
   public void test_childContaininLinksForSpecializedChildren() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
   }
   @Test
   public void test_childContainingRoles() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
   }
   @Test
   public void test_unspecifiedChildren() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
   }
   @Test
   public void test_childOperationsOnNull() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
   }
   @Test
   public void test_childrenByLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
   }
   @Test
   public void test_childrenByLinkDeclarationSpecialized() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
   }
   @Test
   public void test_childrenByLinkDeclarationOnNull() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
+    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_childContainingLinks() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new SContainmentLink[]{MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x7a02788de4ab50L, "childSubConcept_0_n")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).select(new ISelector<SNode, SContainmentLink>() {
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      TestUtilities.assertEquals(Sequence.fromArray(new SContainmentLink[]{MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x7a02788de4ab50L, "childSubConcept_0_n")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).select(new ISelector<SNode, SContainmentLink>() {
         public SContainmentLink select(SNode it) {
           return it.getContainmentLink();
         }
       }));
     }
     public void test_childContaininLinksForSpecializedChildren() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      Assert.assertEquals(MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1"), SNodeOperations.cast(this.getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild")).getContainmentLink());
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      Assert.assertEquals(MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1"), SNodeOperations.cast(getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild")).getContainmentLink());
     }
     public void test_childContainingRoles() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new SContainmentLink[]{MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x7a02788de4ab50L, "childSubConcept_0_n")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).select(new ISelector<SNode, SContainmentLink>() {
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      TestUtilities.assertEquals(Sequence.fromArray(new SContainmentLink[]{MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x7a02788de4ab50L, "childSubConcept_0_n")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).select(new ISelector<SNode, SContainmentLink>() {
         public SContainmentLink select(SNode it) {
           return it.getContainmentLink();
         }
       }));
     }
     public void test_unspecifiedChildren() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      int initialSize = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).count();
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      int initialSize = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).count();
       SNode unspecifiedChild = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild")));
-      SContainmentLink unspecifiedChildRole = this.addUnspecifiedChild(SNodeOperations.cast(this.getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), unspecifiedChild);
-      Assert.assertEquals(initialSize + 1, ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).count());
-      Iterable<SNode> unspecifiedChildren = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).where(new IWhereFilter<SNode>() {
+      SContainmentLink unspecifiedChildRole = this.addUnspecifiedChild(SNodeOperations.cast(getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), unspecifiedChild);
+      Assert.assertEquals(initialSize + 1, ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).count());
+      Iterable<SNode> unspecifiedChildren = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("2166349271756548531"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SNodeOperations.getContainingLinkDeclaration(it) == null);
         }
@@ -107,39 +108,41 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(unspecifiedChild, theChild);
     }
     public void test_childOperationsOnNull() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertNull(SNodeOperations.getContainingLinkDeclaration(nullNode));
       Assert.assertNull(SNodeOperations.getContainingLinkRole(nullNode));
     }
     public void test_childrenByLinkDeclaration() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      List<SNode> singleChild = SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"));
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      List<SNode> singleChild = SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"));
       Assert.assertEquals(1, ListSequence.fromList(singleChild).count());
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("8758390115029078427"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")), ListSequence.fromList(singleChild).first());
-      List<SNode> twins = SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("5815925154349132137"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"));
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("5815925154349132142"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")), SNodeOperations.cast(this.getNodeById("5815925154349132138"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child"))}), twins);
+      Assert.assertEquals(SNodeOperations.cast(getNodeById("8758390115029078427"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")), ListSequence.fromList(singleChild).first());
+      List<SNode> twins = SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("5815925154349132137"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc7L, "child_1_n"));
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(getNodeById("5815925154349132142"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child")), SNodeOperations.cast(getNodeById("5815925154349132138"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child"))}), twins);
     }
     public void test_childrenByLinkDeclarationSpecialized() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild"))}), SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078430"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x7a02788de4ab4dL, "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1")));
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild"))}), SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078430"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x7a02788de4ab4dL, "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1")));
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild"))}), SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078430"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x7a02788de4ab4dL, "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1")));
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(getNodeById("2600026384779198859"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild"))}), SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078430"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x7a02788de4ab4dL, "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")), MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1")));
     }
     public void test_childrenByLinkDeclarationOnNull() throws Exception {
-      this.addNodeById("8758390115029078425");
-      this.addNodeById("5815925154349132136");
-      this.addNodeById("2166349271756548530");
+      addNodeById("8758390115029078425");
+      addNodeById("5815925154349132136");
+      addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertTrue(ListSequence.fromList(SNodeOperations.getChildren(nullNode, MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, 0x3dd540b968e9fc6L, "child_0_n"))).isEmpty());
       SContainmentLink nullLinkDeclaration = null;
-      Assert.assertTrue(ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), nullLinkDeclaration)).isEmpty());
+      Assert.assertTrue(ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(getNodeById("8758390115029078426"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root")), nullLinkDeclaration)).isEmpty());
     }
+
+
     public SContainmentLink addUnspecifiedChild(SNode input, SNode unspecifiedChild) {
       SContainmentLink link = MetaAdapterFactory.getContainmentLink(1, 1, 1, 1, "unspecifiedChild");
       input.addChild(link, unspecifiedChild);

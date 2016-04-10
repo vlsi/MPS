@@ -34,6 +34,7 @@ import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GlobalSModelEventsManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(GlobalSModelEventsManager.class);
@@ -57,7 +58,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
   private SModelRepository mySModelRepository;
 
   private List<List<SModelListener>> myGlobalListenersList;
-  private List<SModelCommandListener> myGlobalCommandListeners = new ArrayList<SModelCommandListener>();
+  private List<SModelCommandListener> myGlobalCommandListeners = new CopyOnWriteArrayList<SModelCommandListener>();
 
   private SModelListener[] myRelayListeners;
   private MyEventsCollector myEventsCollector = new MyEventsCollector();

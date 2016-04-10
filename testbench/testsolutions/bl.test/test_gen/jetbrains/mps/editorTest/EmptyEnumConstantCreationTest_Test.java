@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class EmptyEnumConstantCreationTest_Test extends BaseTransformationTest {
-  public EmptyEnumConstantCreationTest_Test() {
-  }
   @Test
   public void test_EmptyEnumConstantCreationTest() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6080342878134144578", "6080342878134192007");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " A"));
-      this.typeString("abc");
+      initEditorComponent("6080342878134144578", "6080342878134192007");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " A"));
+      typeString("abc");
     }
   }
 }

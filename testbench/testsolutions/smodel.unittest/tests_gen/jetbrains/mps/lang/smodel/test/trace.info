@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)/1835794636205154554">
     <file name="InsertPrevSiblingOperation_Focus_Test.java">
-      <node id="1835794636205154554" at="15,72,16,107" concept="1" />
-      <node id="1835794636205154554" at="16,107,17,119" concept="1" />
-      <node id="1835794636205154554" at="24,51,25,63" concept="1" />
-      <node id="4997106363361386792" at="25,63,26,47" concept="1" />
-      <node id="4997106363361416683" at="26,47,27,29" concept="1" />
-      <node id="1835794636205154554" at="12,0,14,0" concept="0" trace="InsertPrevSiblingOperation_Focus_Test#()V" />
-      <node id="1835794636205154554" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="1835794636205154554" at="14,0,19,0" concept="2" trace="test_InsertPrevSiblingOperation_Focus#()V" />
-      <node id="1835794636205154554" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="1835794636205154554" at="12,50,12,50" />
-      <scope id="1835794636205154554" at="21,23,21,23" />
-      <scope id="1835794636205154554" at="12,0,14,0" />
-      <scope id="1835794636205154554" at="15,72,17,119" />
-      <scope id="1835794636205154554" at="21,0,23,0" />
-      <scope id="1835794636205154554" at="24,51,27,29" />
-      <scope id="1835794636205154554" at="14,0,19,0" />
-      <scope id="1835794636205154554" at="23,0,29,0" />
-      <unit id="1835794636205154554" at="19,0,30,0" name="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody" />
-      <unit id="1835794636205154554" at="10,0,31,0" name="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
+      <node id="1835794636205154554" at="13,72,14,102" concept="0" />
+      <node id="1835794636205154554" at="14,102,15,114" concept="0" />
+      <node id="1835794636205154554" at="21,51,22,72" concept="0" />
+      <node id="4997106363361386792" at="22,72,23,42" concept="0" />
+      <node id="4997106363361416683" at="23,42,24,24" concept="0" />
+      <node id="1835794636205154554" at="12,0,17,0" concept="1" trace="test_InsertPrevSiblingOperation_Focus#()V" />
+      <node id="1835794636205154554" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1835794636205154554" at="13,72,15,114" />
+      <scope id="1835794636205154554" at="21,51,24,24" />
+      <scope id="1835794636205154554" at="12,0,17,0" />
+      <scope id="1835794636205154554" at="20,0,26,0" />
+      <unit id="1835794636205154554" at="18,0,27,0" name="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody" />
+      <unit id="1835794636205154554" at="10,0,28,0" name="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
     </file>
   </root>
 </debug-info>

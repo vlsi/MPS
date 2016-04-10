@@ -10,24 +10,21 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class RemoveDefaultsPart_Test extends BaseTransformationTest {
-  public RemoveDefaultsPart_Test() {
-  }
   @Test
   public void test_RemoveDefaultsPart() throws Throwable {
-    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    runTest("jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8349639607733719236", "8349639607733719255");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
-      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
-      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      initEditorComponent("8349639607733719236", "8349639607733719255");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
+      getEditorComponent().getNodeSubstituteChooser().setVisible(false);
     }
   }
 }

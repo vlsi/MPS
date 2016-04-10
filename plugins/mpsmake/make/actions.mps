@@ -614,9 +614,6 @@
         <node concept="3cpWs8" id="4BZFyk0pEUf" role="3cqZAp">
           <node concept="3cpWsn" id="4BZFyk0pEUg" role="3cpWs9">
             <property role="TrG5h" value="settings" />
-            <node concept="3uibUv" id="5sSs$oSYvr0" role="1tU5fm">
-              <ref role="3uigEE" to="ap4t:~IModifiableGenerationSettings" resolve="IModifiableGenerationSettings" />
-            </node>
             <node concept="2OqwBi" id="3mq37CcYjoC" role="33vP2m">
               <node concept="2YIFZM" id="3mq37CcYjoD" role="2Oq$k0">
                 <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
@@ -625,6 +622,9 @@
               <node concept="liA8E" id="3mq37CcYjoE" role="2OqNvi">
                 <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
               </node>
+            </node>
+            <node concept="3uibUv" id="5sSs$oSYvr0" role="1tU5fm">
+              <ref role="3uigEE" to="ap4t:~IModifiableGenerationSettings" resolve="IModifiableGenerationSettings" />
             </node>
           </node>
         </node>
@@ -7884,9 +7884,6 @@
       <node concept="3clFbS" id="4_qBpm$bmFx" role="3clF47">
         <node concept="3cpWs6" id="4_qBpm$bmFy" role="3cqZAp">
           <node concept="2OqwBi" id="4_qBpm$bmFz" role="3cqZAk">
-            <node concept="liA8E" id="4_qBpm$bmF_" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
-            </node>
             <node concept="2OqwBi" id="3mq37CcYkQx" role="2Oq$k0">
               <node concept="2YIFZM" id="3mq37CcYkQy" role="2Oq$k0">
                 <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
@@ -7895,6 +7892,9 @@
               <node concept="liA8E" id="3mq37CcYkQz" role="2OqNvi">
                 <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
               </node>
+            </node>
+            <node concept="liA8E" id="4_qBpm$bmF_" role="2OqNvi">
+              <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
             </node>
           </node>
         </node>
@@ -8035,12 +8035,6 @@
       <node concept="3clFbS" id="4_qBpm$bmGq" role="3clF47">
         <node concept="3clFbF" id="4_qBpm$bmGr" role="3cqZAp">
           <node concept="2OqwBi" id="4_qBpm$bmGs" role="3clFbG">
-            <node concept="liA8E" id="4_qBpm$bmGu" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setSaveTransientModels(boolean):void" resolve="setSaveTransientModels" />
-              <node concept="37vLTw" id="2BHiRxghfq_" role="37wK5m">
-                <ref role="3cqZAo" node="4_qBpm$bmGo" resolve="state" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="3mq37CcYkTv" role="2Oq$k0">
               <node concept="2YIFZM" id="3mq37CcYkTw" role="2Oq$k0">
                 <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
@@ -8048,6 +8042,12 @@
               </node>
               <node concept="liA8E" id="3mq37CcYkTx" role="2OqNvi">
                 <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4_qBpm$bmGu" role="2OqNvi">
+              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setSaveTransientModels(boolean):void" resolve="setSaveTransientModels" />
+              <node concept="37vLTw" id="2BHiRxghfq_" role="37wK5m">
+                <ref role="3cqZAo" node="4_qBpm$bmGo" resolve="state" />
               </node>
             </node>
           </node>
@@ -8722,9 +8722,6 @@
             </node>
             <node concept="3fqX7Q" id="7yo6vBMyssv" role="3uHU7B">
               <node concept="2OqwBi" id="7yo6vBMyssw" role="3fr31v">
-                <node concept="liA8E" id="7yo6vBMyssy" role="2OqNvi">
-                  <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
-                </node>
                 <node concept="2OqwBi" id="3mq37CcYNoI" role="2Oq$k0">
                   <node concept="2YIFZM" id="3mq37CcYNoJ" role="2Oq$k0">
                     <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
@@ -8733,6 +8730,9 @@
                   <node concept="liA8E" id="3mq37CcYNoK" role="2OqNvi">
                     <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
                   </node>
+                </node>
+                <node concept="liA8E" id="7yo6vBMyssy" role="2OqNvi">
+                  <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
                 </node>
               </node>
             </node>

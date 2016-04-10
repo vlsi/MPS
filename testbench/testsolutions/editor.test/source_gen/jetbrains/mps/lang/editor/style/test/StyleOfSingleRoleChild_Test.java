@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class StyleOfSingleRoleChild_Test extends BaseTransformationTest {
-  public StyleOfSingleRoleChild_Test() {
-  }
   @Test
   public void test_StyleOfSingleRoleChild() throws Throwable {
-    this.initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
-    this.runTest("jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
+    runTest("jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6519503956375945748", "6519503956376023403");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Home_Action");
+      initEditorComponent("6519503956375945748", "6519503956376023403");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Home_Action");
     }
   }
 }

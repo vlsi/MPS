@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MoveRangeToNextMethod_Test extends BaseTransformationTest {
-  public MoveRangeToNextMethod_Test() {
-  }
   @Test
   public void test_MoveRangeToNextMethod() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveRangeToNextMethod_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MoveRangeToNextMethod_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("953450985260255429", "953450985260255526");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      initEditorComponent("953450985260255429", "953450985260255526");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

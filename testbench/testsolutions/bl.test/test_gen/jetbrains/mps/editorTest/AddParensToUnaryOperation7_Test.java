@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddParensToUnaryOperation7_Test extends BaseTransformationTest {
-  public AddParensToUnaryOperation7_Test() {
-  }
   @Test
   public void test_AddParensToUnaryOperation7() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddParensToUnaryOperation7_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddParensToUnaryOperation7_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1645633669421241701", "1645633669421241716");
-      this.typeString(")");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      initEditorComponent("1645633669421241701", "1645633669421241716");
+      typeString(")");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

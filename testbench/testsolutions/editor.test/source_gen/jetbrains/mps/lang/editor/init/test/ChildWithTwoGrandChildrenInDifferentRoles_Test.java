@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ChildWithTwoGrandChildrenInDifferentRoles_Test extends BaseTransformationTest {
-  public ChildWithTwoGrandChildrenInDifferentRoles_Test() {
-  }
   @Test
   public void test_ChildWithTwoGrandChildrenInDifferentRoles() throws Throwable {
-    this.initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
-    this.runTest("jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
+    runTest("jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7454474523886895227", "7454474523886895233");
-      this.typeString("two_same_");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("7454474523886895227", "7454474523886895233");
+      typeString("two_same_");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

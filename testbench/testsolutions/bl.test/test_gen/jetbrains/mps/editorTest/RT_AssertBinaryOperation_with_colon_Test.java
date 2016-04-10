@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RT_AssertBinaryOperation_with_colon_Test extends BaseTransformationTest {
-  public RT_AssertBinaryOperation_with_colon_Test() {
-  }
   @Test
   public void test_RT_AssertBinaryOperation_with_colon() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RT_AssertBinaryOperation_with_colon_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RT_AssertBinaryOperation_with_colon_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5041847952539846136", "5041847952539922814");
-      this.typeString(": ");
+      initEditorComponent("5041847952539846136", "5041847952539922814");
+      typeString(": ");
     }
   }
 }

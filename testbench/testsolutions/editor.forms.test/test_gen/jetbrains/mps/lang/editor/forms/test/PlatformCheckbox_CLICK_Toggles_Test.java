@@ -11,26 +11,23 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class PlatformCheckbox_CLICK_Toggles_Test extends BaseTransformationTest {
-  public PlatformCheckbox_CLICK_Toggles_Test() {
-  }
   @Test
   public void test_PlatformCheckbox_CLICK_Toggles() throws Throwable {
-    this.initTest("${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)");
+    runTest("jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7013563450911367694", "7013563450911367697");
+      initEditorComponent("7013563450911367694", "7013563450911367697");
       {
         int x_y07yvj_a0 = 0;
         int y_y07yvj_a0 = 0;
-        Component eventTargetComponent_y07yvj_a0 = this.processMouseEvent(x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_y07yvj_a0, x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_y07yvj_a0, x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_y07yvj_a0 = processMouseEvent(x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_y07yvj_a0, x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_y07yvj_a0, x_y07yvj_a0, y_y07yvj_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

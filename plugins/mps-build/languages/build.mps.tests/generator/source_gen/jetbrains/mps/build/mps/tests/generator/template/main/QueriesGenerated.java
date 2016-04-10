@@ -8,11 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor;
-import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -47,14 +47,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7459197473276744078(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
   }
-  public static Object propertyMacro_GetPropertyValue_7206546315287713492(final PropertyMacroContext _context) {
-    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-    MacroHelper macroHelper = new MacroHelper.MacroContext(project, _context).getMacros(project);
-    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")) == null)) {
-      return "false";
-    }
-    return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")), macroHelper);
-  }
   public static Object propertyMacro_GetPropertyValue_185990153988622954(final PropertyMacroContext _context) {
     SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     if (project == null) {
@@ -68,6 +60,14 @@ public class QueriesGenerated {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(mpsTestJar, helper, artifact);
     }
     return _context.getTemplateValue();
+  }
+  public static Object propertyMacro_GetPropertyValue_7206546315287713492(final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    MacroHelper macroHelper = new MacroHelper.MacroContext(project, _context).getMacros(project);
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")) == null)) {
+      return "false";
+    }
+    return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")), macroHelper);
   }
   public static Object propertyMacro_GetPropertyValue_149846544984625626(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

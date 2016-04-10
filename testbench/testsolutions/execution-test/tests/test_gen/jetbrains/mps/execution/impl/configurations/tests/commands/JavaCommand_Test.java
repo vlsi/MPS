@@ -32,19 +32,20 @@ import junit.framework.Assert;
 public class JavaCommand_Test extends BaseTransformationTest {
   @Test
   public void test_startJavaByNode() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
+    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startJavaByNode() throws Exception {
       final Wrappers._T<SNodeReference> pointer = new Wrappers._T<SNodeReference>();
-      this.myProject.getModelAccess().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          SModel model = new ModuleRepositoryFacade(TestBody.this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
+          SModel model = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
           SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
+              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
             }
           });
           pointer.value = new SNodePointer(mainNode);
@@ -52,6 +53,8 @@ public class JavaCommand_Test extends BaseTransformationTest {
       });
       this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");
     }
+
+
     public void checkProcess(ProcessHandler process, final String expectedSysErr) {
       final ProcessEvent[] failed = new ProcessEvent[1];
       final boolean[] printed = new boolean[1];
@@ -60,7 +63,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a1a3a1b(event.getText(), expectedSysErr)) {
+            if (neq_849b2c_a0a0a0a0a1a3a3c(event.getText(), expectedSysErr)) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -83,10 +86,10 @@ public class JavaCommand_Test extends BaseTransformationTest {
         Assert.fail("Exit with code " + exitCode);
       }
     }
-    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(Object a, Object b) {
+    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-    private static boolean neq_849b2c_a0a0a0a0a1a3a1b(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a1a3a3c(Object a, Object b) {
       return !(((a != null ? a.equals(b) : a == b)));
     }
   }

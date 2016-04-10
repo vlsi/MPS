@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DoubleConstant1_Test extends BaseTransformationTest {
-  public DoubleConstant1_Test() {
-  }
   @Test
   public void test_DoubleConstant1() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.DoubleConstant1_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    runTest("jetbrains.mps.baseLanguage.test.DoubleConstant1_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5868639094267614279", "5868639094267615301");
-      this.typeString("-1.56754E9");
+      initEditorComponent("5868639094267614279", "5868639094267615301");
+      typeString("-1.56754E9");
     }
   }
 }

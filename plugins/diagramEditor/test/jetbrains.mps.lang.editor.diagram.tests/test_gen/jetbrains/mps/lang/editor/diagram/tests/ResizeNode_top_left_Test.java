@@ -11,26 +11,23 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class ResizeNode_top_left_Test extends BaseTransformationTest {
-  public ResizeNode_top_left_Test() {
-  }
   @Test
   public void test_ResizeNode_top_left() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7604889971551653126", "7604889971551653129");
+      initEditorComponent("7604889971551653126", "7604889971551653129");
       {
         int x_gfax2l_a0 = 10;
         int y_gfax2l_a0 = 10;
-        Component eventTargetComponent_gfax2l_a0 = this.processMouseEvent(x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0 = 5, y_gfax2l_a0 = 15, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_gfax2l_a0 = processMouseEvent(x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0 = 5, y_gfax2l_a0 = 15, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

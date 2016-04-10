@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class WrapLocalVariableWithArrayType_Test extends BaseTransformationTest {
-  public WrapLocalVariableWithArrayType_Test() {
-  }
   @Test
   public void test_WrapLocalVariableWithArrayType() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.WrapLocalVariableWithArrayType_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.WrapLocalVariableWithArrayType_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("9002759989422799853", "9002759989422799860");
-      this.typeString("int[][] a");
+      initEditorComponent("9002759989422799853", "9002759989422799860");
+      typeString("int[][] a");
     }
   }
 }

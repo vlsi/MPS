@@ -14,14 +14,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class RollBacksNewTypeSystem_Test extends BaseTransformationTest {
   @Test
   public void test_GenerationMode() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody", "test_GenerationMode", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody", "test_GenerationMode", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
-      this.addNodeById("5210914756411638024");
-      TypeSystemCheckUtil.checkRollBacks(SNodeOperations.cast(this.getNodeById("5210914756411638027"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
+      addNodeById("5210914756411638024");
+      TypeSystemCheckUtil.checkRollBacks(SNodeOperations.cast(getNodeById("5210914756411638027"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
     }
+
+
   }
 }

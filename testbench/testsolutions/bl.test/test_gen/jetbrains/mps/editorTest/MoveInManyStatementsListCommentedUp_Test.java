@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MoveInManyStatementsListCommentedUp_Test extends BaseTransformationTest {
-  public MoveInManyStatementsListCommentedUp_Test() {
-  }
   @Test
   public void test_MoveInManyStatementsListCommentedUp() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveInManyStatementsListCommentedUp_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MoveInManyStatementsListCommentedUp_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5845623209572069239", "5845623209572069254");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      initEditorComponent("5845623209572069239", "5845623209572069254");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
     }
   }
 }

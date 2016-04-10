@@ -13,22 +13,19 @@ import javax.swing.SwingUtilities;
 
 @MPSLaunch
 public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransformationTest {
-  public InspectorOfCompactPresentation_pushHints_Test() {
-  }
   @Test
   public void test_InspectorOfCompactPresentation_pushHints() throws Throwable {
-    this.initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
-    this.runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
+    runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2112659629360604460", "");
+      initEditorComponent("2112659629360604460", "");
 
-      final NodeEditorComponent component = ((NodeEditorComponent) this.getEditorComponent());
+      final NodeEditorComponent component = ((NodeEditorComponent) getEditorComponent());
       EditorCell rootCell = component.getInspector().getRootCell();
       assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("default");
       component.getUpdater().setInitialEditorHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});

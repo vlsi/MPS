@@ -95,7 +95,7 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     copyToProject(PLUGINS_PATH + "/mps-core/languages", "IdeaPlugin/mps-core/languages");
 
     copyToProject(PLUGINS_PATH + "/mps-testing/lib/jetbrains.mps.lang.test.util.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.util.jar");
-    copyToProject(PLUGINS_PATH + "/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
+    copyToProject(PLUGINS_PATH + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
     copyToProject(PLUGINS_PATH + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.runtime.jar");
 
     loadProject(projectDir);

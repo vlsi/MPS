@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CustomPropertyReferences2_Test extends BaseTransformationTest {
-  public CustomPropertyReferences2_Test() {
-  }
   @Test
   public void test_CustomPropertyReferences2() throws Throwable {
-    this.initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)");
-    this.runTest("jetbrains.mps.propertiesTest.CustomPropertyReferences2_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)");
+    runTest("jetbrains.mps.propertiesTest.CustomPropertyReferences2_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6799807267508942865", "6799807267508942886");
-      this.typeString("this.a");
-      this.typeString("+");
-      this.typeString("this.b");
+      initEditorComponent("6799807267508942865", "6799807267508942886");
+      typeString("this.a");
+      typeString("+");
+      typeString("this.b");
     }
   }
 }

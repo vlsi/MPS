@@ -5,6 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="fyhk" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps(MPS.Workbench/)" />
@@ -17,6 +18,8 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -29,6 +32,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
@@ -404,6 +408,7 @@
       <node concept="3Tm1VV" id="3EnpNH2_Hx9" role="1B3o_S" />
       <node concept="3clFbS" id="3EnpNH2_Hxa" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="3DMUjJxKYjI" role="jymVt" />
     <node concept="2YIFZL" id="3EnpNH2_Hxb" role="jymVt">
       <property role="TrG5h" value="findFile" />
       <node concept="37vLTG" id="3EnpNH2_Hxc" role="3clF46">
@@ -738,6 +743,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3DMUjJxKYnS" role="jymVt" />
     <node concept="2YIFZL" id="3EnpNH2_Hzo" role="jymVt">
       <property role="TrG5h" value="openFile" />
       <node concept="3cqZAl" id="3EnpNH2_Hzp" role="3clF45" />

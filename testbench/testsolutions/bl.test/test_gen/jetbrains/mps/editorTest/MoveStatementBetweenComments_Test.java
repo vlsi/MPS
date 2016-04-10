@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MoveStatementBetweenComments_Test extends BaseTransformationTest {
-  public MoveStatementBetweenComments_Test() {
-  }
   @Test
   public void test_MoveStatementBetweenComments() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveStatementBetweenComments_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MoveStatementBetweenComments_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5845623209572067316", "5845623209572067333");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+      initEditorComponent("5845623209572067316", "5845623209572067333");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
   }
 }

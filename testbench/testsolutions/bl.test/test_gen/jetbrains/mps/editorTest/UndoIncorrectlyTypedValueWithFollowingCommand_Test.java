@@ -9,30 +9,27 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoIncorrectlyTypedValueWithFollowingCommand_Test extends BaseTransformationTest {
-  public UndoIncorrectlyTypedValueWithFollowingCommand_Test() {
-  }
   @Test
   public void test_UndoIncorrectlyTypedValueWithFollowingCommand() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.UndoIncorrectlyTypedValueWithFollowingCommand_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.UndoIncorrectlyTypedValueWithFollowingCommand_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5305372928076817874", "5305372928076817881");
-      this.typeString("=1");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.typeString("\u00a7123");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
+      initEditorComponent("5305372928076817874", "5305372928076817881");
+      typeString("=1");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      typeString("\u00a7123");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
     }
   }
 }

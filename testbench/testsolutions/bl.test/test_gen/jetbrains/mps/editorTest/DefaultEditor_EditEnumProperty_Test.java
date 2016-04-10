@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DefaultEditor_EditEnumProperty_Test extends BaseTransformationTest {
-  public DefaultEditor_EditEnumProperty_Test() {
-  }
   @Test
   public void test_DefaultEditor_EditEnumProperty() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DefaultEditor_EditEnumProperty_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DefaultEditor_EditEnumProperty_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5987562135989648323", "5987562135989657760");
-      this.typeString("right");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("5987562135989648323", "5987562135989657760");
+      typeString("right");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

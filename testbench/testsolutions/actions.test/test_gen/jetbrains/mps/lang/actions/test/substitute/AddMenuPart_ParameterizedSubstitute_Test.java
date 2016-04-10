@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddMenuPart_ParameterizedSubstitute_Test extends BaseTransformationTest {
-  public AddMenuPart_ParameterizedSubstitute_Test() {
-  }
   @Test
   public void test_AddMenuPart_ParameterizedSubstitute() throws Throwable {
-    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3286607483605166060", "3286607483605909808");
-      this.typeString("ActionTestChild2");
+      initEditorComponent("3286607483605166060", "3286607483605909808");
+      typeString("ActionTestChild2");
     }
   }
 }

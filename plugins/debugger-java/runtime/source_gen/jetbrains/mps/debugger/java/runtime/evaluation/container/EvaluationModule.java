@@ -4,13 +4,16 @@ package jetbrains.mps.debugger.java.runtime.evaluation.container;
 
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -18,7 +21,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.mps.openapi.module.SDependency;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.module.TransientSModule;
@@ -33,24 +35,38 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
 public class EvaluationModule extends AbstractModule implements SModule {
+  private static final Logger LOG = LogManager.getLogger(EvaluationModule.class);
+
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
-  private static final Logger LOG = LogManager.getLogger(EvaluationModule.class);
+  private final SRepository myRepository;
+
+  /**
+   * 
+   * @deprecated please provide a repository at the constructioni
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public EvaluationModule() {
-    SModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
-    setModuleReference(reference);
+    this(MPSModuleRepository.getInstance());
+  }
+
+  public EvaluationModule(@NotNull SRepository repo) {
+    setModuleReference(new ModuleReference("Evaluation Container Module ", ModuleId.regular()));
+    myRepository = repo;
     myDescriptor = new ModuleDescriptor();
   }
 
   @Override
   public String toString() {
-    return getName() + " [evaluation module]";
+    return getModuleName() + " [evaluation module]";
   }
 
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
+
   @Override
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
@@ -66,6 +82,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     }
     return result;
   }
+
   public String addClassPathItem(String path) {
     if (SetSequence.fromSet(myClassPaths).contains(path)) {
       path = null;
@@ -79,7 +96,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
+    Iterable<SModule> modules = myRepository.getModules();
     return Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return it != EvaluationModule.this && !(it instanceof TransientSModule);
@@ -93,7 +110,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    Collection<Language> languages = new ModuleRepositoryFacade(myRepository).getAllModules(Language.class);
     return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
         return MetaAdapterByDeclaration.getLanguage(it);

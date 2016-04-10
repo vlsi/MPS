@@ -16,23 +16,26 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTest {
   @Test
   public void test_UnexpectedReturnInAnonymousClass() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_UnexpectedReturnInAnonymousClass", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_UnexpectedReturnInAnonymousClass", true);
   }
   @Test
   public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeReturnExpectedErrorCheck6923385624929494145", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeReturnExpectedErrorCheck6923385624929494145", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_UnexpectedReturnInAnonymousClass() throws Exception {
-      this.addNodeById("1217271586587");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444400359"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), false, false);
+      addNodeById("1217271586587");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444400359"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), false, false);
     }
+
     public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929494145"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451230829"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929494145"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451230829"));
     }
+
   }
 }

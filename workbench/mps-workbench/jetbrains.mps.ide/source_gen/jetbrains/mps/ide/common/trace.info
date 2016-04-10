@@ -10,88 +10,88 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4221956679901042757">
     <file name="FileOpenUtil.java">
-      <node id="4221956679901042772" at="27,101,28,97" concept="5" />
-      <node id="4221956679901042782" at="29,41,30,46" concept="5" />
-      <node id="4221956679901042791" at="31,26,32,38" concept="2" />
-      <node id="4221956679901042800" at="33,14,34,95" concept="2" />
-      <node id="4221956679901042821" at="36,5,37,106" concept="5" />
-      <node id="4221956679901042838" at="39,77,40,88" concept="6" />
-      <node id="4221956679901042861" at="44,48,45,71" concept="6" />
-      <node id="4221956679901042870" at="48,52,49,81" concept="6" />
-      <node id="4221956679901042882" at="52,45,53,57" concept="6" />
-      <node id="4221956679901042893" at="56,55,57,53" concept="6" />
-      <node id="4221956679901042900" at="58,5,59,16" concept="6" />
-      <node id="4221956679901042908" at="61,82,62,92" concept="5" />
-      <node id="4221956679901042931" at="63,64,64,53" concept="5" />
-      <node id="4221956679901042939" at="64,53,65,72" concept="5" />
-      <node id="4221956679901042948" at="65,72,66,77" concept="2" />
-      <node id="4221956679901042957" at="66,77,67,88" concept="2" />
+      <node id="4221956679901042772" at="28,101,29,97" concept="5" />
+      <node id="4221956679901042782" at="30,41,31,46" concept="5" />
+      <node id="4221956679901042791" at="32,26,33,38" concept="2" />
+      <node id="4221956679901042800" at="34,14,35,95" concept="2" />
+      <node id="4221956679901042821" at="37,5,38,106" concept="5" />
+      <node id="4221956679901042838" at="40,77,41,88" concept="6" />
+      <node id="4221956679901042861" at="45,48,46,71" concept="6" />
+      <node id="4221956679901042870" at="49,52,50,81" concept="6" />
+      <node id="4221956679901042882" at="53,45,54,57" concept="6" />
+      <node id="4221956679901042893" at="57,55,58,53" concept="6" />
+      <node id="4221956679901042900" at="59,5,60,16" concept="6" />
+      <node id="4221956679901042908" at="63,82,64,92" concept="5" />
+      <node id="4221956679901042931" at="65,64,66,53" concept="5" />
+      <node id="4221956679901042939" at="66,53,67,72" concept="5" />
+      <node id="4221956679901042948" at="67,72,68,77" concept="2" />
+      <node id="4221956679901042957" at="68,77,69,88" concept="2" />
       <node id="4221956679901042759" at="24,0,26,0" concept="1" trace="FileOpenUtil#()V" />
-      <node id="4221956679901042798" at="33,12,35,7" concept="0" />
-      <node id="4221956679901042836" at="39,0,42,0" concept="4" trace="translate#(Lcom/intellij/navigation/ChooseByNameContributor;)Ljava/lang/Iterable;" />
-      <node id="4221956679901042859" at="44,0,47,0" concept="4" trace="accept#(Lcom/intellij/navigation/NavigationItem;)Z" />
-      <node id="4221956679901042868" at="48,0,51,0" concept="4" trace="select#(Lcom/intellij/navigation/NavigationItem;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-      <node id="4221956679901042880" at="52,0,55,0" concept="4" trace="accept#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-      <node id="4221956679901042891" at="55,7,58,5" concept="3" />
-      <node id="4221956679901042789" at="30,46,35,7" concept="3" />
-      <node id="4221956679901042827" at="37,106,42,7" concept="5" />
-      <node id="4221956679901042918" at="62,92,68,5" concept="3" />
-      <node id="4221956679901042780" at="28,97,36,5" concept="3" />
-      <node id="4221956679901042904" at="61,0,70,0" concept="7" trace="openFile#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;I)V" />
-      <node id="4221956679901042850" at="42,7,55,7" concept="5" />
-      <node id="4221956679901042763" at="26,0,61,0" concept="7" trace="findFile#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="4221956679901042798" at="34,12,36,7" concept="0" />
+      <node id="4221956679901042836" at="40,0,43,0" concept="4" trace="translate#(Lcom/intellij/navigation/ChooseByNameContributor;)Ljava/lang/Iterable;" />
+      <node id="4221956679901042859" at="45,0,48,0" concept="4" trace="accept#(Lcom/intellij/navigation/NavigationItem;)Z" />
+      <node id="4221956679901042868" at="49,0,52,0" concept="4" trace="select#(Lcom/intellij/navigation/NavigationItem;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="4221956679901042880" at="53,0,56,0" concept="4" trace="accept#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+      <node id="4221956679901042891" at="56,7,59,5" concept="3" />
+      <node id="4221956679901042789" at="31,46,36,7" concept="3" />
+      <node id="4221956679901042827" at="38,106,43,7" concept="5" />
+      <node id="4221956679901042918" at="64,92,70,5" concept="3" />
+      <node id="4221956679901042780" at="29,97,37,5" concept="3" />
+      <node id="4221956679901042904" at="63,0,72,0" concept="7" trace="openFile#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;I)V" />
+      <node id="4221956679901042850" at="43,7,56,7" concept="5" />
+      <node id="4221956679901042763" at="27,0,62,0" concept="7" trace="findFile#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
       <scope id="4221956679901042762" at="24,25,24,25" />
-      <scope id="4221956679901042790" at="31,26,32,38" />
-      <scope id="4221956679901042799" at="33,14,34,95" />
-      <scope id="4221956679901042837" at="39,77,40,88" />
-      <scope id="4221956679901042860" at="44,48,45,71" />
-      <scope id="4221956679901042869" at="48,52,49,81" />
-      <scope id="4221956679901042881" at="52,45,53,57" />
-      <scope id="4221956679901042892" at="56,55,57,53" />
+      <scope id="4221956679901042790" at="32,26,33,38" />
+      <scope id="4221956679901042799" at="34,14,35,95" />
+      <scope id="4221956679901042837" at="40,77,41,88" />
+      <scope id="4221956679901042860" at="45,48,46,71" />
+      <scope id="4221956679901042869" at="49,52,50,81" />
+      <scope id="4221956679901042881" at="53,45,54,57" />
+      <scope id="4221956679901042892" at="57,55,58,53" />
       <scope id="4221956679901042759" at="24,0,26,0" />
-      <scope id="4221956679901042836" at="39,0,42,0">
+      <scope id="4221956679901042836" at="40,0,43,0">
         <var name="it" id="4221956679901042836" />
       </scope>
-      <scope id="4221956679901042859" at="44,0,47,0">
+      <scope id="4221956679901042859" at="45,0,48,0">
         <var name="it" id="4221956679901042859" />
       </scope>
-      <scope id="4221956679901042868" at="48,0,51,0">
+      <scope id="4221956679901042868" at="49,0,52,0">
         <var name="it" id="4221956679901042868" />
       </scope>
-      <scope id="4221956679901042880" at="52,0,55,0">
+      <scope id="4221956679901042880" at="53,0,56,0">
         <var name="it" id="4221956679901042880" />
       </scope>
-      <scope id="4221956679901042930" at="63,64,67,88">
+      <scope id="4221956679901042930" at="65,64,69,88">
         <var name="position" id="4221956679901042940" />
         <var name="textEditor" id="4221956679901042932" />
       </scope>
-      <scope id="4221956679901042781" at="29,41,35,7">
+      <scope id="4221956679901042781" at="30,41,36,7">
         <var name="lastDot" id="4221956679901042783" />
       </scope>
-      <scope id="4221956679901042907" at="61,82,68,5">
+      <scope id="4221956679901042907" at="63,82,70,5">
         <var name="result" id="4221956679901042909" />
       </scope>
-      <scope id="4221956679901042904" at="61,0,70,0">
+      <scope id="4221956679901042904" at="63,0,72,0">
         <var name="file" id="4221956679901042968" />
         <var name="lineNumber" id="4221956679901042970" />
         <var name="project" id="4221956679901042966" />
       </scope>
-      <scope id="4221956679901042771" at="27,101,59,16">
+      <scope id="4221956679901042771" at="28,101,60,16">
         <var name="extensions" id="4221956679901042822" />
         <var name="found" id="4221956679901042828" />
         <var name="fullFileName" id="4221956679901042773" />
         <var name="matching" id="4221956679901042851" />
       </scope>
-      <scope id="4221956679901042763" at="26,0,61,0">
+      <scope id="4221956679901042763" at="27,0,62,0">
         <var name="fileName" id="4221956679901042768" />
         <var name="project" id="4221956679901042764" />
         <var name="unitName" id="4221956679901042766" />
       </scope>
-      <unit id="4221956679901042836" at="38,105,42,5" name="jetbrains.mps.ide.common.FileOpenUtil$1" />
-      <unit id="4221956679901042859" at="43,76,47,5" name="jetbrains.mps.ide.common.FileOpenUtil$2" />
-      <unit id="4221956679901042868" at="47,18,51,5" name="jetbrains.mps.ide.common.FileOpenUtil$3" />
-      <unit id="4221956679901042880" at="51,17,55,5" name="jetbrains.mps.ide.common.FileOpenUtil$4" />
-      <unit id="4221956679901042757" at="23,0,71,0" name="jetbrains.mps.ide.common.FileOpenUtil" />
+      <unit id="4221956679901042836" at="39,105,43,5" name="jetbrains.mps.ide.common.FileOpenUtil$1" />
+      <unit id="4221956679901042859" at="44,76,48,5" name="jetbrains.mps.ide.common.FileOpenUtil$2" />
+      <unit id="4221956679901042868" at="48,18,52,5" name="jetbrains.mps.ide.common.FileOpenUtil$3" />
+      <unit id="4221956679901042880" at="52,17,56,5" name="jetbrains.mps.ide.common.FileOpenUtil$4" />
+      <unit id="4221956679901042757" at="23,0,73,0" name="jetbrains.mps.ide.common.FileOpenUtil" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/8606486054003576517">

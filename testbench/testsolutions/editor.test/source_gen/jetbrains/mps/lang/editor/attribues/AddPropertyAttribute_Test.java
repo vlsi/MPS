@@ -9,20 +9,17 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddPropertyAttribute_Test extends BaseTransformationTest {
-  public AddPropertyAttribute_Test() {
-  }
   @Test
   public void test_AddPropertyAttribute() throws Throwable {
-    this.initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
-    this.runTest("jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
+    runTest("jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3447504547919025661", "3447504547919025665");
+      initEditorComponent("3447504547919025661", "3447504547919025665");
       invokeIntention("jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention", myStart.getNode());
     }
   }

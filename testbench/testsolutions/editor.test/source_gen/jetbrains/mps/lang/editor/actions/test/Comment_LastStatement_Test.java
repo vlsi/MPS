@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Comment_LastStatement_Test extends BaseTransformationTest {
-  public Comment_LastStatement_Test() {
-  }
   @Test
   public void test_Comment_LastStatement() throws Throwable {
-    this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Comment_LastStatement_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
+    runTest("jetbrains.mps.lang.editor.actions.test.Comment_LastStatement_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6047905657530800801", "6047905657530800819");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
+      initEditorComponent("6047905657530800801", "6047905657530800819");
+      invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }
 }

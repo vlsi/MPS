@@ -7,12 +7,10 @@ import java.util.List;
 import jetbrains.mps.execution.lib.NodesDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -32,10 +30,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class NodeBySeveralConceptChooser extends NodeChooser {
   @NotNull
   private final List<NodesDescriptor> myTargetConcepts = ListSequence.fromList(new ArrayList<NodesDescriptor>());
-  private final ModulesWithLanguagesScope myScope;
+  private final SearchScope myScope;
+
   public NodeBySeveralConceptChooser(NodesDescriptor... targets) {
     this(Sequence.fromIterable(Sequence.fromArray(targets)).toListSequence());
   }
+
   public NodeBySeveralConceptChooser(List<NodesDescriptor> targets) {
     ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<NodesDescriptor, NodesDescriptor>() {
       public NodesDescriptor select(NodesDescriptor it) {
@@ -43,18 +43,9 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
       }
     }));
 
-    Iterable<Language> languages = ListSequence.fromList(myTargetConcepts).select(new ISelector<NodesDescriptor, Language>() {
-      public Language select(final NodesDescriptor it) {
-        return ModelAccess.instance().runReadAction(new Computable<Language>() {
-          public Language compute() {
-            return (Language) it.concept().getLanguage().getSourceModule();
-          }
-        });
-      }
-    });
-
-    myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), languages);
+    myScope = GlobalScope.getInstance();
   }
+
   @Override
   protected List<SNode> findToChooseFromOnInit(final FindUsagesFacade manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<NodesDescriptor, SNode>() {
@@ -74,10 +65,12 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
       }
     }).toListSequence());
   }
+
   @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
+
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {

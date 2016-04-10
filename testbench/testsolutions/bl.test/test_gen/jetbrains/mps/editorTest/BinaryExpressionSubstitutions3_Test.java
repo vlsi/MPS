@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class BinaryExpressionSubstitutions3_Test extends BaseTransformationTest {
-  public BinaryExpressionSubstitutions3_Test() {
-  }
   @Test
   public void test_BinaryExpressionSubstitutions3() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.BinaryExpressionSubstitutions3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.BinaryExpressionSubstitutions3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7992311601979810504", "7992311601979817173");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.typeString("=");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      initEditorComponent("7992311601979810504", "7992311601979817173");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      typeString("=");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
     }
   }
 }

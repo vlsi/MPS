@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
-    <option name="BUILD_PROCESS_HEAP_SIZE" value="1024" />
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/test_gen" includeSubdirectories="true" />

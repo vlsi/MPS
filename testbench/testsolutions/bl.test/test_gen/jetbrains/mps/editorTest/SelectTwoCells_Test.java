@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SelectTwoCells_Test extends BaseTransformationTest {
-  public SelectTwoCells_Test() {
-  }
   @Test
   public void test_SelectTwoCells() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SelectTwoCells_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SelectTwoCells_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1230119716735", "1230119724125");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectRight_Action");
+      initEditorComponent("1230119716735", "1230119724125");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectRight_Action");
     }
   }
 }

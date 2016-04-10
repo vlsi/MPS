@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class InsertRowBefore_FromFirstCell_ByIns_Test extends BaseTransformationTest {
-  public InsertRowBefore_FromFirstCell_ByIns_Test() {
-  }
   @Test
   public void test_InsertRowBefore_FromFirstCell_ByIns() throws Throwable {
-    this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromFirstCell_ByIns_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromFirstCell_ByIns_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5481602834662762304", "5481602834662762326");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
+      initEditorComponent("5481602834662762304", "5481602834662762326");
+      invokeAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
     }
   }
 }

@@ -9,27 +9,24 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CustomPropertyReferences3_Test extends BaseTransformationTest {
-  public CustomPropertyReferences3_Test() {
-  }
   @Test
   public void test_CustomPropertyReferences3() throws Throwable {
-    this.initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)");
-    this.runTest("jetbrains.mps.propertiesTest.CustomPropertyReferences3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)");
+    runTest("jetbrains.mps.propertiesTest.CustomPropertyReferences3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6799807267508959429", "6799807267508959450");
-      this.typeString("a");
-      this.typeString("+");
-      this.typeString("b");
-      this.typeString("+");
-      this.typeString("this.a");
-      this.typeString("+");
-      this.typeString("this.b");
+      initEditorComponent("6799807267508959429", "6799807267508959450");
+      typeString("a");
+      typeString("+");
+      typeString("b");
+      typeString("+");
+      typeString("this.a");
+      typeString("+");
+      typeString("this.b");
     }
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DeleteFirstStatement_Test extends BaseTransformationTest {
-  public DeleteFirstStatement_Test() {
-  }
   @Test
   public void test_DeleteFirstStatement() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DeleteFirstStatement_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DeleteFirstStatement_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1938740395228994799", "1938740395228994806");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditorComponent("1938740395228994799", "1938740395228994806");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

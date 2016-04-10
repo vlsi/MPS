@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class TextCheckbox_SPACE_Toggles_Test extends BaseTransformationTest {
-  public TextCheckbox_SPACE_Toggles_Test() {
-  }
   @Test
   public void test_TextCheckbox_SPACE_Toggles() throws Throwable {
-    this.initTest("${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_Toggles_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)");
+    runTest("jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_Toggles_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5347446703374107793", "5347446703374107798");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " SPACE"));
+      initEditorComponent("5347446703374107793", "5347446703374107798");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " SPACE"));
     }
   }
 }

@@ -51,6 +51,7 @@ public final class NodesMatcher {
       return null;
     }
   }
+
   /**
    * 
    * @deprecated use instance method
@@ -59,6 +60,7 @@ public final class NodesMatcher {
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b) {
     return NodesMatcher.matchNodes(a, b, new HashMap<SNode, SNode>());
   }
+
   public List<NodeDifference> match(List<SNode> a, List<SNode> b) {
     Iterator<SNode> iteratorA = a.iterator();
     Iterator<SNode> iteratorB = b.iterator();
@@ -76,6 +78,7 @@ public final class NodesMatcher {
     }
     return (ret.isEmpty() ? null : ret);
   }
+
   /**
    * 
    * @deprecated use instance method instead
@@ -121,6 +124,7 @@ public final class NodesMatcher {
     }
     return null;
   }
+
   /**
    * 
    * @deprecated use instance method instead

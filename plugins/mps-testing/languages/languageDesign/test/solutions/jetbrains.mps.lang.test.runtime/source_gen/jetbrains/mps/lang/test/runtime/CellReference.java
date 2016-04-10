@@ -6,21 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation__BehaviorDescriptor;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 
 public class CellReference {
@@ -28,40 +25,34 @@ public class CellReference {
   private SNode myAnnotation;
   private Map<SNode, SNode> myMap;
   public CellReference(SNode node, SNode annotation, Map<SNode, SNode> map) {
-    this.myNode = node;
-    this.myAnnotation = SNodeOperations.cast(annotation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
-    this.myMap = map;
+    myNode = node;
+    myAnnotation = SNodeOperations.cast(annotation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
+    myMap = map;
   }
+
   public SNode getNode() {
     return this.myNode;
   }
+
   @Override
   public String toString() {
-    final Wrappers._T<String> result = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = "(node " + CellReference.this.myNode.getNodeId().toString() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")) + ")";
-      }
-    });
-    return result.value;
+    return "(node " + myNode.getNodeId().toString() + ", id " + SPropertyOperations.getString(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")) + ")";
   }
-  public void setupSelection(Editor editor) {
-    NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
-    BHReflection.invoke(myAnnotation, SMethodTrimmedId.create("setupSelection", MetaAdapterFactory.getConcept(-8825571760360698496L, -7431307307277756308L, 1229194968594L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "5rZKa_fUiYP"), editorComponent, this.myNode, this.myMap);
-  }
-  public void assertEditor(Editor editor, Map<SNode, SNode> map) {
-    EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
-    if (SPropertyOperations.getBoolean(this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
-      component = ((NodeEditorComponent) component).getInspector();
-    }
-    SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd"));
 
-    Selection selection = component.getSelectionManager().getSelection();
+  public EditorComponent setupSelection(NodeEditorComponent editorComponent) {
+    return AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5g7DxxpaP55.invoke(myAnnotation, editorComponent, myNode, myMap);
+  }
+
+  public void assertSelectionIsTheSame(EditorComponent editorComponent, Map<SNode, SNode> map) {
+    if (SPropertyOperations.getBoolean(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
+      assert editorComponent instanceof InspectorEditorComponent;
+    }
+    Selection selection = editorComponent.getSelectionManager().getSelection();
     assert selection != null : "Selection was not set in the resulting editor";
     if (selection instanceof SingularSelection) {
       EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
-      Assert.assertSame(this.getNode(), MapSequence.fromMap(map).get(selectedCell.getSNode()));
-      Assert.assertEquals(SPropertyOperations.getString(this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")), selectedCell.getCellId());
+      Assert.assertSame(getNode(), MapSequence.fromMap(map).get(selectedCell.getSNode()));
+      Assert.assertEquals(SPropertyOperations.getString(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")), selectedCell.getCellId());
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
         Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc33L, "selectionStart")), label.getSelectionStart());
@@ -78,6 +69,5 @@ public class CellReference {
     } else {
       Assert.fail("Selection of unsupported type: " + selection.getClass());
     }
-
   }
 }

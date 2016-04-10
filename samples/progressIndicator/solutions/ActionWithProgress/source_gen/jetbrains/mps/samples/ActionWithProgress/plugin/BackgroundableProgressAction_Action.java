@@ -67,11 +67,12 @@ public class BackgroundableProgressAction_Action extends BaseAction {
     // and handle yourself all steps to revert the action 
 
     final Task.Backgroundable backgroundable = new Task.Backgroundable(event.getData(CommonDataKeys.PROJECT), "Backgroundable cancelable task", canBeCanceled, showProgress) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         final ProgressMonitorAdapter adapter = new ProgressMonitorAdapter(indicator);
         SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
 
-        adapter.start("Progress in progress...", 5);
+        adapter.start("Progress in progress...", 4);
         int stepValue = 1;
 
         // a normal step 
@@ -107,18 +108,6 @@ public class BackgroundableProgressAction_Action extends BaseAction {
           return;
         }
 
-        // Command in step is ok 
-        repository.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            adapter.step("Do some work in command...");
-            BackgroundableProgressAction_Action.this.doWork(event);
-          }
-        });
-        adapter.advance(stepValue);
-        if (adapter.isCanceled()) {
-          return;
-        }
-
         adapter.step("Finishing...");
         BackgroundableProgressAction_Action.this.doWork(event);
         adapter.advance(stepValue);
@@ -128,6 +117,7 @@ public class BackgroundableProgressAction_Action extends BaseAction {
 
         adapter.done();
       }
+
       @Override
       public void onCancel() {
         super.onCancel();

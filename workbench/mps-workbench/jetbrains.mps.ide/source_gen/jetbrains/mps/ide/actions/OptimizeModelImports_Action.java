@@ -16,10 +16,16 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.application.ModalityState;
 
 public class OptimizeModelImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -75,13 +81,49 @@ public class OptimizeModelImports_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Wrappers._T<String> report = new Wrappers._T<String>();
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        report.value = new OptimizeImportsHelper().optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-        SModelRepository.getInstance().saveAll();
+    final StringBuilder report = new StringBuilder();
+    final Task.Modal task = new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Optimizing model imports", true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator);
+        try {
+          final int modelsNumber = ((List<SModel>) MapSequence.fromMap(_params).get("models")).size();
+          final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+          monitor.start("Optimizing imports of " + modelsNumber + " models", modelsNumber);
+          WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+            public void run() {
+            }
+          });
+          final OptimizeImportsHelper helper = new OptimizeImportsHelper(repo);
+          repo.getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              String result = helper.optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")), monitor.subTask(modelsNumber));
+              report.append(result);
+            }
+          });
+          if (monitor.isCanceled()) {
+            return;
+          }
+          monitor.step("Saving...");
+          WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+            public void run() {
+              repo.getModelAccess().executeCommand(new Runnable() {
+                public void run() {
+                  repo.saveAll();
+                }
+              });
+            }
+          });
+          monitor.advance(1);
+        } finally {
+          monitor.done();
+        }
       }
-    });
-    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ? "Nothing to optimize" : report.value), "Optimize Imports", Messages.getInformationIcon());
+    };
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ProgressManager.getInstance().run(task);
+        Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.length() == 0 ? "Nothing to optimize" : report.toString()), "Optimize Imports", Messages.getInformationIcon());
+      }
+    }, ModalityState.defaultModalityState());
   }
 }

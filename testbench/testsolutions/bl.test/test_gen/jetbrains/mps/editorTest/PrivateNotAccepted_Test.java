@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class PrivateNotAccepted_Test extends BaseTransformationTest {
-  public PrivateNotAccepted_Test() {
-  }
   @Test
   public void test_PrivateNotAccepted() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.PrivateNotAccepted_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.PrivateNotAccepted_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3543341247930400253", "3543341247930400257");
-      this.typeString("private");
+      initEditorComponent("3543341247930400253", "3543341247930400257");
+      typeString("private");
     }
   }
 }

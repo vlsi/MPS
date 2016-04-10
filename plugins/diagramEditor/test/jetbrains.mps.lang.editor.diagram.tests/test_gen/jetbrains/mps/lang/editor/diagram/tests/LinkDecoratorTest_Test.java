@@ -23,28 +23,25 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView;
 
 @MPSLaunch
 public class LinkDecoratorTest_Test extends BaseTransformationTest {
-  public LinkDecoratorTest_Test() {
-  }
   @Test
   public void test_LinkDecoratorTest() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1638882350373488135", "1560508619093517333");
+      initEditorComponent("1638882350373488135", "1560508619093517333");
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          node.value = SNodeOperations.cast(TestBody.this.getNodeById("1638882350373488142"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"));
+          node.value = SNodeOperations.cast(getNodeById("1638882350373488142"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"));
         }
       });
       Mapper descendantMapper;
-      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, this.getEditorComponent(), ConnectorCell.class);
+      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, getEditorComponent(), ConnectorCell.class);
       Assert.assertTrue(descendantMapper != null);
       Assert.assertTrue(descendantMapper.getTarget() != null);
       Assert.assertTrue(descendantMapper.getTarget() instanceof ConnectorDecoratorView);

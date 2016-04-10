@@ -580,6 +580,10 @@
         <include name="lib/**/*.jar" />
         <include name="languages/**/*.jar" />
       </fileset>
+      <fileset dir="${artifacts.mps}/lib">
+        <include name="**/*.jar" />
+      </fileset>
+      <pathelement path="${jdk.home}/lib/tools.jar" />
     </path>
     <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
       <path refid="long.class.path" />
@@ -603,10 +607,6 @@
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       
       <classpath>
-        <fileset dir="${artifacts.mps}/lib">
-          <include name="**/*.jar" />
-        </fileset>
-        <pathelement path="${jdk.home}/lib/tools.jar" />
         <fileset dir="${build.tmp}">
           <include name="mps.class.path.jar" />
         </fileset>

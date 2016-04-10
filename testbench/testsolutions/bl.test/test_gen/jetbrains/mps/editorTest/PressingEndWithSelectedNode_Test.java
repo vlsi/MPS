@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
-  public PressingEndWithSelectedNode_Test() {
-  }
   @Test
   public void test_PressingEndWithSelectedNode() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1232980665819", "1232980720898");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP", "ctrl UP"));
-      this.invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      initEditorComponent("1232980665819", "1232980720898");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP", "ctrl UP"));
+      invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

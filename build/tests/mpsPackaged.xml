@@ -400,7 +400,12 @@
       <pathelement location="${build.layout}/testPackagedLanguage.test.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <path id="long.class.path" />
+    <path id="long.class.path">
+      <fileset dir="${artifacts.mps}/lib">
+        <include name="**/*.jar" />
+      </fileset>
+      <pathelement path="${jdk.home}/lib/tools.jar" />
+    </path>
     <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
       <path refid="long.class.path" />
       <chainedmapper>
@@ -423,10 +428,6 @@
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       
       <classpath>
-        <fileset dir="${artifacts.mps}/lib">
-          <include name="**/*.jar" />
-        </fileset>
-        <pathelement path="${jdk.home}/lib/tools.jar" />
         <fileset dir="${build.tmp}">
           <include name="mps.class.path.jar" />
         </fileset>

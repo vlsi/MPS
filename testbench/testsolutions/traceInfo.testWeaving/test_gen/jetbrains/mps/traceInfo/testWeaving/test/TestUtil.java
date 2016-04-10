@@ -26,7 +26,7 @@ public class TestUtil {
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
           List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceInfo.unitNames(root).get(0), SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".java", line.value));
-          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+          Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
         }
         line.value += delta;
       }
@@ -42,7 +42,7 @@ public class TestUtil {
           {
             List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
             List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceInfo.unitNames(root).get(0), SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".java", line.value));
-            Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+            Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
           }
           line.value += delta;
         }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class WrapIncompleteMemberDeclarationWithGenericType_Test extends BaseTransformationTest {
-  public WrapIncompleteMemberDeclarationWithGenericType_Test() {
-  }
   @Test
   public void test_WrapIncompleteMemberDeclarationWithGenericType() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithGenericType_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.WrapIncompleteMemberDeclarationWithGenericType_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2900530436643915457", "2900530436643915461");
-      this.typeString("public Class<");
+      initEditorComponent("2900530436643915457", "2900530436643915461");
+      typeString("public Class<");
     }
   }
 }

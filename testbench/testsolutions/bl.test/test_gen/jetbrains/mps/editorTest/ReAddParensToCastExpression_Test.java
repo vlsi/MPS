@@ -9,28 +9,25 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ReAddParensToCastExpression_Test extends BaseTransformationTest {
-  public ReAddParensToCastExpression_Test() {
-  }
   @Test
   public void test_ReAddParensToCastExpression() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ReAddParensToCastExpression_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ReAddParensToCastExpression_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7247988578514883309", "7247988578514883325");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.typeString("(");
+      initEditorComponent("7247988578514883309", "7247988578514883325");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      typeString("(");
     }
   }
 }

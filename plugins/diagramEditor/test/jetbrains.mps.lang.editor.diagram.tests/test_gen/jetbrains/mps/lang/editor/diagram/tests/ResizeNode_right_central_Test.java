@@ -11,28 +11,25 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class ResizeNode_right_central_Test extends BaseTransformationTest {
-  public ResizeNode_right_central_Test() {
-  }
   @Test
   public void test_ResizeNode_right_central() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_right_central_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_right_central_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3873095776499066418", "3873095776499066421");
+      initEditorComponent("3873095776499066418", "3873095776499066421");
       {
         int x_re6jqc_a0 = 92;
         int y_re6jqc_a0 = 49;
-        Component eventTargetComponent_re6jqc_a0 = this.processMouseEvent(x_re6jqc_a0, y_re6jqc_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 5, y_re6jqc_a0 = 100, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 50, y_re6jqc_a0 = 800, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 82, y_re6jqc_a0 = 54, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0, y_re6jqc_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_re6jqc_a0 = processMouseEvent(x_re6jqc_a0, y_re6jqc_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 5, y_re6jqc_a0 = 100, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 50, y_re6jqc_a0 = 800, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0 = 82, y_re6jqc_a0 = 54, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_re6jqc_a0, x_re6jqc_a0, y_re6jqc_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

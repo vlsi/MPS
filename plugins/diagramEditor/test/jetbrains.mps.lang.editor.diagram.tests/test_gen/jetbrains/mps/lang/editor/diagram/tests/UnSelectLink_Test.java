@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class UnSelectLink_Test extends BaseTransformationTest {
-  public UnSelectLink_Test() {
-  }
   @Test
   public void test_UnSelectLink() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectLink_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectLink_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("822550549814665086", "822550549814668456");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
+      initEditorComponent("822550549814665086", "822550549814668456");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
     }
   }
 }

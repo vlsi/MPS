@@ -14,52 +14,52 @@
   </root>
   <root nodeRef="r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)/5244026788026549053">
     <file name="ImageExport_Test.java">
-      <node id="5244026788026549053" at="16,61,17,130" concept="1" />
-      <node id="5244026788026549053" at="17,130,18,123" concept="1" />
-      <node id="5244026788026549053" at="21,64,22,130" concept="1" />
-      <node id="5244026788026549053" at="22,130,23,126" concept="1" />
-      <node id="5244026788026559032" at="27,63,28,77" concept="4" />
-      <node id="5244026788026564435" at="29,11,30,53" concept="4" />
-      <node id="5244026788026564797" at="30,53,31,36" concept="1" />
-      <node id="5244026788026565379" at="32,31,33,56" concept="1" />
-      <node id="3856853424911892008" at="36,66,37,84" concept="4" />
-      <node id="3856853424911892016" at="38,11,39,53" concept="4" />
-      <node id="3856853424911892022" at="39,53,40,36" concept="1" />
-      <node id="3856853424911892026" at="41,31,42,56" concept="1" />
+      <node id="5244026788026549053" at="16,61,17,125" concept="1" />
+      <node id="5244026788026549053" at="17,125,18,118" concept="1" />
+      <node id="5244026788026549053" at="21,64,22,125" concept="1" />
+      <node id="5244026788026549053" at="22,125,23,121" concept="1" />
+      <node id="5244026788026559032" at="28,63,29,77" concept="4" />
+      <node id="5244026788026564435" at="30,11,31,53" concept="4" />
+      <node id="5244026788026564797" at="31,53,32,36" concept="1" />
+      <node id="5244026788026565379" at="33,31,34,56" concept="1" />
+      <node id="3856853424911892008" at="37,66,38,84" concept="4" />
+      <node id="3856853424911892016" at="39,11,40,53" concept="4" />
+      <node id="3856853424911892022" at="40,53,41,36" concept="1" />
+      <node id="3856853424911892026" at="42,31,43,56" concept="1" />
       <node id="5244026788026549053" at="15,0,20,0" concept="3" trace="test_manuallyExportedImage#()V" />
       <node id="5244026788026549053" at="20,0,25,0" concept="3" trace="test_imageExportedByGenerator#()V" />
-      <node id="5244026788026564922" at="28,77,34,7" concept="6" />
-      <node id="3856853424911892014" at="37,84,43,7" concept="6" />
-      <node id="5244026788026549149" at="27,0,36,0" concept="3" trace="test_manuallyExportedImage#()V" />
-      <node id="3856853424911892005" at="36,0,45,0" concept="3" trace="test_imageExportedByGenerator#()V" />
-      <scope id="5244026788026564918" at="32,0,33,56">
+      <node id="5244026788026564922" at="29,77,35,7" concept="6" />
+      <node id="3856853424911892014" at="38,84,44,7" concept="6" />
+      <node id="5244026788026549149" at="28,0,37,0" concept="3" trace="test_manuallyExportedImage#()V" />
+      <node id="3856853424911892005" at="37,0,46,0" concept="3" trace="test_imageExportedByGenerator#()V" />
+      <scope id="5244026788026564918" at="33,0,34,56">
         <var name="e" id="5244026788026564920" />
       </scope>
-      <scope id="5244026788026564919" at="32,31,33,56" />
-      <scope id="3856853424911892024" at="41,0,42,56">
+      <scope id="5244026788026564919" at="33,31,34,56" />
+      <scope id="3856853424911892024" at="42,0,43,56">
         <var name="e" id="3856853424911892031" />
       </scope>
-      <scope id="3856853424911892025" at="41,31,42,56" />
-      <scope id="5244026788026549053" at="16,61,18,123" />
-      <scope id="5244026788026549053" at="21,64,23,126" />
-      <scope id="5244026788026564923" at="29,11,31,36">
+      <scope id="3856853424911892025" at="42,31,43,56" />
+      <scope id="5244026788026549053" at="16,61,18,118" />
+      <scope id="5244026788026549053" at="21,64,23,121" />
+      <scope id="5244026788026564923" at="30,11,32,36">
         <var name="image" id="5244026788026564436" />
       </scope>
-      <scope id="3856853424911892015" at="38,11,40,36">
+      <scope id="3856853424911892015" at="39,11,41,36">
         <var name="image" id="3856853424911892017" />
       </scope>
       <scope id="5244026788026549053" at="15,0,20,0" />
       <scope id="5244026788026549053" at="20,0,25,0" />
-      <scope id="5244026788026549149" at="27,63,34,7">
+      <scope id="5244026788026549149" at="28,63,35,7">
         <var name="imageloader" id="5244026788026559033" />
       </scope>
-      <scope id="3856853424911892005" at="36,66,43,7">
+      <scope id="3856853424911892005" at="37,66,44,7">
         <var name="imageloader" id="3856853424911892009" />
       </scope>
-      <scope id="5244026788026549149" at="27,0,36,0" />
-      <scope id="3856853424911892005" at="36,0,45,0" />
-      <unit id="5244026788026549053" at="25,0,46,0" name="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody" />
-      <unit id="5244026788026549053" at="13,0,47,0" name="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test" />
+      <scope id="5244026788026549149" at="28,0,37,0" />
+      <scope id="3856853424911892005" at="37,0,46,0" />
+      <unit id="5244026788026549053" at="26,0,49,0" name="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody" />
+      <unit id="5244026788026549053" at="13,0,50,0" name="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test" />
     </file>
   </root>
   <root nodeRef="r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)/5244026788026555459">

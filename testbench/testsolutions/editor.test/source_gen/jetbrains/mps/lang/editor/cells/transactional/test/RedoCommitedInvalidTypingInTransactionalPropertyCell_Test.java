@@ -9,30 +9,27 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RedoCommitedInvalidTypingInTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public RedoCommitedInvalidTypingInTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_RedoCommitedInvalidTypingInTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoCommitedInvalidTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoCommitedInvalidTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2786154196593934308", "2786154196593934310");
-      this.typeString("\u00a7123");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Redo");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      initEditorComponent("2786154196593934308", "2786154196593934310");
+      typeString("\u00a7123");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
+      invokeAction("$Redo");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

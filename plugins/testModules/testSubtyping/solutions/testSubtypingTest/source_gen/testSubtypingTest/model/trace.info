@@ -5,122 +5,122 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)/2078093584692996702">
     <file name="Subtyping_Test.java">
-      <node id="2078093584692996702" at="17,73,18,107" concept="0" />
-      <node id="2078093584692996702" at="18,107,19,116" concept="0" />
-      <node id="2078093584692996702" at="22,73,23,107" concept="0" />
-      <node id="2078093584692996702" at="23,107,24,116" concept="0" />
-      <node id="2078093584692996702" at="27,72,28,107" concept="0" />
-      <node id="2078093584692996702" at="28,107,29,115" concept="0" />
-      <node id="2078093584692996702" at="32,76,33,107" concept="0" />
-      <node id="2078093584692996702" at="33,107,34,119" concept="0" />
-      <node id="2078093584692996702" at="38,75,39,235" concept="2" />
-      <node id="2078093584692996702" at="39,235,40,129" concept="0" />
-      <node id="2078093584692996702" at="42,75,43,235" concept="2" />
-      <node id="2078093584692996702" at="43,235,44,129" concept="0" />
-      <node id="2078093584692996702" at="46,74,47,234" concept="2" />
-      <node id="2078093584692996702" at="47,234,48,128" concept="0" />
-      <node id="2078093584692996702" at="50,78,51,234" concept="2" />
-      <node id="2078093584692996702" at="51,234,52,129" concept="0" />
-      <node id="2078093584692996702" at="38,0,42,0" concept="1" trace="test_NodeErrorCheck2078093584693310057#()V" />
-      <node id="2078093584692996702" at="42,0,46,0" concept="1" trace="test_NodeErrorCheck2078093584693358841#()V" />
-      <node id="2078093584692996702" at="46,0,50,0" concept="1" trace="test_NodeErrorCheck204609444630139535#()V" />
-      <node id="2078093584692996702" at="50,0,54,0" concept="1" trace="test_ErrorMessagesCheck204609444630139319#()V" />
+      <node id="2078093584692996702" at="17,73,18,102" concept="0" />
+      <node id="2078093584692996702" at="18,102,19,111" concept="0" />
+      <node id="2078093584692996702" at="22,73,23,102" concept="0" />
+      <node id="2078093584692996702" at="23,102,24,111" concept="0" />
+      <node id="2078093584692996702" at="27,72,28,102" concept="0" />
+      <node id="2078093584692996702" at="28,102,29,110" concept="0" />
+      <node id="2078093584692996702" at="32,76,33,102" concept="0" />
+      <node id="2078093584692996702" at="33,102,34,114" concept="0" />
+      <node id="2078093584692996702" at="40,75,41,230" concept="2" />
+      <node id="2078093584692996702" at="41,230,42,124" concept="0" />
+      <node id="2078093584692996702" at="44,75,45,230" concept="2" />
+      <node id="2078093584692996702" at="45,230,46,124" concept="0" />
+      <node id="2078093584692996702" at="48,74,49,229" concept="2" />
+      <node id="2078093584692996702" at="49,229,50,123" concept="0" />
+      <node id="2078093584692996702" at="52,78,53,229" concept="2" />
+      <node id="2078093584692996702" at="53,229,54,124" concept="0" />
+      <node id="2078093584692996702" at="40,0,44,0" concept="1" trace="test_NodeErrorCheck2078093584693310057#()V" />
+      <node id="2078093584692996702" at="44,0,48,0" concept="1" trace="test_NodeErrorCheck2078093584693358841#()V" />
+      <node id="2078093584692996702" at="48,0,52,0" concept="1" trace="test_NodeErrorCheck204609444630139535#()V" />
+      <node id="2078093584692996702" at="52,0,56,0" concept="1" trace="test_ErrorMessagesCheck204609444630139319#()V" />
       <node id="2078093584692996702" at="16,0,21,0" concept="1" trace="test_NodeErrorCheck2078093584693310057#()V" />
       <node id="2078093584692996702" at="21,0,26,0" concept="1" trace="test_NodeErrorCheck2078093584693358841#()V" />
       <node id="2078093584692996702" at="26,0,31,0" concept="1" trace="test_NodeErrorCheck204609444630139535#()V" />
       <node id="2078093584692996702" at="31,0,36,0" concept="1" trace="test_ErrorMessagesCheck204609444630139319#()V" />
-      <scope id="2078093584692996702" at="17,73,19,116" />
-      <scope id="2078093584692996702" at="22,73,24,116" />
-      <scope id="2078093584692996702" at="27,72,29,115" />
-      <scope id="2078093584692996702" at="32,76,34,119" />
-      <scope id="2078093584692996702" at="38,75,40,129">
+      <scope id="2078093584692996702" at="17,73,19,111" />
+      <scope id="2078093584692996702" at="22,73,24,111" />
+      <scope id="2078093584692996702" at="27,72,29,110" />
+      <scope id="2078093584692996702" at="32,76,34,114" />
+      <scope id="2078093584692996702" at="40,75,42,124">
         <var name="operation" id="2078093584692996702" />
       </scope>
-      <scope id="2078093584692996702" at="42,75,44,129">
+      <scope id="2078093584692996702" at="44,75,46,124">
         <var name="operation" id="2078093584692996702" />
       </scope>
-      <scope id="2078093584692996702" at="46,74,48,128">
+      <scope id="2078093584692996702" at="48,74,50,123">
         <var name="operation" id="2078093584692996702" />
       </scope>
-      <scope id="2078093584692996702" at="50,78,52,129">
+      <scope id="2078093584692996702" at="52,78,54,124">
         <var name="operation" id="2078093584692996702" />
       </scope>
-      <scope id="2078093584692996702" at="38,0,42,0" />
-      <scope id="2078093584692996702" at="42,0,46,0" />
-      <scope id="2078093584692996702" at="46,0,50,0" />
-      <scope id="2078093584692996702" at="50,0,54,0" />
+      <scope id="2078093584692996702" at="40,0,44,0" />
+      <scope id="2078093584692996702" at="44,0,48,0" />
+      <scope id="2078093584692996702" at="48,0,52,0" />
+      <scope id="2078093584692996702" at="52,0,56,0" />
       <scope id="2078093584692996702" at="16,0,21,0" />
       <scope id="2078093584692996702" at="21,0,26,0" />
       <scope id="2078093584692996702" at="26,0,31,0" />
       <scope id="2078093584692996702" at="31,0,36,0" />
-      <unit id="2078093584692996702" at="36,0,55,0" name="testSubtypingTest.model.Subtyping_Test$TestBody" />
-      <unit id="2078093584692996702" at="14,0,56,0" name="testSubtypingTest.model.Subtyping_Test" />
+      <unit id="2078093584692996702" at="37,0,58,0" name="testSubtypingTest.model.Subtyping_Test$TestBody" />
+      <unit id="2078093584692996702" at="14,0,59,0" name="testSubtypingTest.model.Subtyping_Test" />
     </file>
   </root>
   <root nodeRef="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)/706089536802542525">
     <file name="NullProperties_Test.java">
-      <node id="706089536802542525" at="17,73,18,107" concept="0" />
-      <node id="706089536802542525" at="18,107,19,121" concept="0" />
-      <node id="706089536802542525" at="22,73,23,107" concept="0" />
-      <node id="706089536802542525" at="23,107,24,121" concept="0" />
-      <node id="706089536802542525" at="27,76,28,107" concept="0" />
-      <node id="706089536802542525" at="28,107,29,124" concept="0" />
-      <node id="706089536802542525" at="32,76,33,107" concept="0" />
-      <node id="706089536802542525" at="33,107,34,124" concept="0" />
-      <node id="706089536802542525" at="37,76,38,107" concept="0" />
-      <node id="706089536802542525" at="38,107,39,124" concept="0" />
-      <node id="706089536802542525" at="43,75,44,235" concept="2" />
-      <node id="706089536802542525" at="44,235,45,128" concept="0" />
-      <node id="706089536802542525" at="47,75,48,235" concept="2" />
-      <node id="706089536802542525" at="48,235,49,128" concept="0" />
-      <node id="706089536802542525" at="51,78,52,234" concept="2" />
-      <node id="706089536802542525" at="52,234,53,128" concept="0" />
-      <node id="706089536802542525" at="55,78,56,234" concept="2" />
-      <node id="706089536802542525" at="56,234,57,128" concept="0" />
-      <node id="706089536802542525" at="59,78,60,234" concept="2" />
-      <node id="706089536802542525" at="60,234,61,128" concept="0" />
-      <node id="706089536802542525" at="43,0,47,0" concept="1" trace="test_NodeErrorCheck8681827087508331151#()V" />
-      <node id="706089536802542525" at="47,0,51,0" concept="1" trace="test_NodeErrorCheck8681827087508331336#()V" />
-      <node id="706089536802542525" at="51,0,55,0" concept="1" trace="test_ErrorMessagesCheck706089536802542545#()V" />
-      <node id="706089536802542525" at="55,0,59,0" concept="1" trace="test_ErrorMessagesCheck706089536802542565#()V" />
-      <node id="706089536802542525" at="59,0,63,0" concept="1" trace="test_ErrorMessagesCheck706089536802542585#()V" />
+      <node id="706089536802542525" at="17,73,18,102" concept="0" />
+      <node id="706089536802542525" at="18,102,19,116" concept="0" />
+      <node id="706089536802542525" at="22,73,23,102" concept="0" />
+      <node id="706089536802542525" at="23,102,24,116" concept="0" />
+      <node id="706089536802542525" at="27,76,28,102" concept="0" />
+      <node id="706089536802542525" at="28,102,29,119" concept="0" />
+      <node id="706089536802542525" at="32,76,33,102" concept="0" />
+      <node id="706089536802542525" at="33,102,34,119" concept="0" />
+      <node id="706089536802542525" at="37,76,38,102" concept="0" />
+      <node id="706089536802542525" at="38,102,39,119" concept="0" />
+      <node id="706089536802542525" at="45,75,46,230" concept="2" />
+      <node id="706089536802542525" at="46,230,47,123" concept="0" />
+      <node id="706089536802542525" at="49,75,50,230" concept="2" />
+      <node id="706089536802542525" at="50,230,51,123" concept="0" />
+      <node id="706089536802542525" at="53,78,54,229" concept="2" />
+      <node id="706089536802542525" at="54,229,55,123" concept="0" />
+      <node id="706089536802542525" at="57,78,58,229" concept="2" />
+      <node id="706089536802542525" at="58,229,59,123" concept="0" />
+      <node id="706089536802542525" at="61,78,62,229" concept="2" />
+      <node id="706089536802542525" at="62,229,63,123" concept="0" />
+      <node id="706089536802542525" at="45,0,49,0" concept="1" trace="test_NodeErrorCheck8681827087508331151#()V" />
+      <node id="706089536802542525" at="49,0,53,0" concept="1" trace="test_NodeErrorCheck8681827087508331336#()V" />
+      <node id="706089536802542525" at="53,0,57,0" concept="1" trace="test_ErrorMessagesCheck706089536802542545#()V" />
+      <node id="706089536802542525" at="57,0,61,0" concept="1" trace="test_ErrorMessagesCheck706089536802542565#()V" />
+      <node id="706089536802542525" at="61,0,65,0" concept="1" trace="test_ErrorMessagesCheck706089536802542585#()V" />
       <node id="706089536802542525" at="16,0,21,0" concept="1" trace="test_NodeErrorCheck8681827087508331151#()V" />
       <node id="706089536802542525" at="21,0,26,0" concept="1" trace="test_NodeErrorCheck8681827087508331336#()V" />
       <node id="706089536802542525" at="26,0,31,0" concept="1" trace="test_ErrorMessagesCheck706089536802542545#()V" />
       <node id="706089536802542525" at="31,0,36,0" concept="1" trace="test_ErrorMessagesCheck706089536802542565#()V" />
       <node id="706089536802542525" at="36,0,41,0" concept="1" trace="test_ErrorMessagesCheck706089536802542585#()V" />
-      <scope id="706089536802542525" at="17,73,19,121" />
-      <scope id="706089536802542525" at="22,73,24,121" />
-      <scope id="706089536802542525" at="27,76,29,124" />
-      <scope id="706089536802542525" at="32,76,34,124" />
-      <scope id="706089536802542525" at="37,76,39,124" />
-      <scope id="706089536802542525" at="43,75,45,128">
+      <scope id="706089536802542525" at="17,73,19,116" />
+      <scope id="706089536802542525" at="22,73,24,116" />
+      <scope id="706089536802542525" at="27,76,29,119" />
+      <scope id="706089536802542525" at="32,76,34,119" />
+      <scope id="706089536802542525" at="37,76,39,119" />
+      <scope id="706089536802542525" at="45,75,47,123">
         <var name="operation" id="706089536802542525" />
       </scope>
-      <scope id="706089536802542525" at="47,75,49,128">
+      <scope id="706089536802542525" at="49,75,51,123">
         <var name="operation" id="706089536802542525" />
       </scope>
-      <scope id="706089536802542525" at="51,78,53,128">
+      <scope id="706089536802542525" at="53,78,55,123">
         <var name="operation" id="706089536802542525" />
       </scope>
-      <scope id="706089536802542525" at="55,78,57,128">
+      <scope id="706089536802542525" at="57,78,59,123">
         <var name="operation" id="706089536802542525" />
       </scope>
-      <scope id="706089536802542525" at="59,78,61,128">
+      <scope id="706089536802542525" at="61,78,63,123">
         <var name="operation" id="706089536802542525" />
       </scope>
-      <scope id="706089536802542525" at="43,0,47,0" />
-      <scope id="706089536802542525" at="47,0,51,0" />
-      <scope id="706089536802542525" at="51,0,55,0" />
-      <scope id="706089536802542525" at="55,0,59,0" />
-      <scope id="706089536802542525" at="59,0,63,0" />
+      <scope id="706089536802542525" at="45,0,49,0" />
+      <scope id="706089536802542525" at="49,0,53,0" />
+      <scope id="706089536802542525" at="53,0,57,0" />
+      <scope id="706089536802542525" at="57,0,61,0" />
+      <scope id="706089536802542525" at="61,0,65,0" />
       <scope id="706089536802542525" at="16,0,21,0" />
       <scope id="706089536802542525" at="21,0,26,0" />
       <scope id="706089536802542525" at="26,0,31,0" />
       <scope id="706089536802542525" at="31,0,36,0" />
       <scope id="706089536802542525" at="36,0,41,0" />
-      <unit id="706089536802542525" at="41,0,64,0" name="testSubtypingTest.model.NullProperties_Test$TestBody" />
-      <unit id="706089536802542525" at="14,0,65,0" name="testSubtypingTest.model.NullProperties_Test" />
+      <unit id="706089536802542525" at="42,0,67,0" name="testSubtypingTest.model.NullProperties_Test$TestBody" />
+      <unit id="706089536802542525" at="14,0,68,0" name="testSubtypingTest.model.NullProperties_Test" />
     </file>
   </root>
 </debug-info>

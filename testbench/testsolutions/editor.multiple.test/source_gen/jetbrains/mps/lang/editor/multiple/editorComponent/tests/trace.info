@@ -1,94 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)/6420745394459121798">
     <file name="DefaultEditorComponent_Test.java">
-      <node id="6420745394459121798" at="15,62,16,133" concept="1" />
-      <node id="6420745394459121798" at="16,133,17,135" concept="1" />
-      <node id="6420745394459121798" at="24,51,25,63" concept="1" />
-      <node id="6420745394459121860" at="25,63,26,34" concept="1" />
-      <node id="6420745394459121798" at="12,0,14,0" concept="0" trace="DefaultEditorComponent_Test#()V" />
-      <node id="6420745394459121798" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6420745394459121798" at="14,0,19,0" concept="2" trace="test_DefaultEditorComponent#()V" />
-      <node id="6420745394459121798" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6420745394459121798" at="12,40,12,40" />
-      <scope id="6420745394459121798" at="21,23,21,23" />
-      <scope id="6420745394459121798" at="12,0,14,0" />
-      <scope id="6420745394459121798" at="15,62,17,135" />
-      <scope id="6420745394459121798" at="21,0,23,0" />
-      <scope id="6420745394459121798" at="24,51,26,34" />
-      <scope id="6420745394459121798" at="14,0,19,0" />
-      <scope id="6420745394459121798" at="23,0,28,0" />
-      <unit id="6420745394459121798" at="19,0,29,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test$TestBody" />
-      <unit id="6420745394459121798" at="10,0,30,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test" />
+      <node id="6420745394459121798" at="13,62,14,128" concept="0" />
+      <node id="6420745394459121798" at="14,128,15,130" concept="0" />
+      <node id="6420745394459121798" at="21,51,22,72" concept="0" />
+      <node id="6420745394459121860" at="22,72,23,29" concept="0" />
+      <node id="6420745394459121798" at="12,0,17,0" concept="1" trace="test_DefaultEditorComponent#()V" />
+      <node id="6420745394459121798" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6420745394459121798" at="13,62,15,130" />
+      <scope id="6420745394459121798" at="21,51,23,29" />
+      <scope id="6420745394459121798" at="12,0,17,0" />
+      <scope id="6420745394459121798" at="20,0,25,0" />
+      <unit id="6420745394459121798" at="18,0,26,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test$TestBody" />
+      <unit id="6420745394459121798" at="10,0,27,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test" />
     </file>
   </root>
   <root nodeRef="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)/6420745394459130152">
     <file name="EditorComponentSpecifiedBy_context_hint_Test.java">
-      <node id="6420745394459130152" at="15,79,16,133" concept="1" />
-      <node id="6420745394459130152" at="16,133,17,152" concept="1" />
-      <node id="6420745394459130152" at="24,51,25,63" concept="1" />
-      <node id="6420745394459130217" at="25,63,26,39" concept="1" />
-      <node id="6420745394459130152" at="12,0,14,0" concept="0" trace="EditorComponentSpecifiedBy_context_hint_Test#()V" />
-      <node id="6420745394459130152" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6420745394459130152" at="14,0,19,0" concept="2" trace="test_EditorComponentSpecifiedBy_context_hint#()V" />
-      <node id="6420745394459130152" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6420745394459130152" at="12,57,12,57" />
-      <scope id="6420745394459130152" at="21,23,21,23" />
-      <scope id="6420745394459130152" at="12,0,14,0" />
-      <scope id="6420745394459130152" at="15,79,17,152" />
-      <scope id="6420745394459130152" at="21,0,23,0" />
-      <scope id="6420745394459130152" at="24,51,26,39" />
-      <scope id="6420745394459130152" at="14,0,19,0" />
-      <scope id="6420745394459130152" at="23,0,28,0" />
-      <unit id="6420745394459130152" at="19,0,29,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test$TestBody" />
-      <unit id="6420745394459130152" at="10,0,30,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test" />
+      <node id="6420745394459130152" at="13,79,14,128" concept="0" />
+      <node id="6420745394459130152" at="14,128,15,147" concept="0" />
+      <node id="6420745394459130152" at="21,51,22,72" concept="0" />
+      <node id="6420745394459130217" at="22,72,23,34" concept="0" />
+      <node id="6420745394459130152" at="12,0,17,0" concept="1" trace="test_EditorComponentSpecifiedBy_context_hint#()V" />
+      <node id="6420745394459130152" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6420745394459130152" at="13,79,15,147" />
+      <scope id="6420745394459130152" at="21,51,23,34" />
+      <scope id="6420745394459130152" at="12,0,17,0" />
+      <scope id="6420745394459130152" at="20,0,25,0" />
+      <unit id="6420745394459130152" at="18,0,26,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test$TestBody" />
+      <unit id="6420745394459130152" at="10,0,27,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.EditorComponentSpecifiedBy_context_hint_Test" />
     </file>
   </root>
   <root nodeRef="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)/6420745394459130264">
     <file name="MostSpecificEditorComponent_Test.java">
-      <node id="6420745394459130264" at="15,67,16,133" concept="1" />
-      <node id="6420745394459130264" at="16,133,17,140" concept="1" />
-      <node id="6420745394459130264" at="24,51,25,63" concept="1" />
-      <node id="6420745394459384388" at="25,63,26,39" concept="1" />
-      <node id="6420745394459130264" at="12,0,14,0" concept="0" trace="MostSpecificEditorComponent_Test#()V" />
-      <node id="6420745394459130264" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6420745394459130264" at="14,0,19,0" concept="2" trace="test_MostSpecificEditorComponent#()V" />
-      <node id="6420745394459130264" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6420745394459130264" at="12,45,12,45" />
-      <scope id="6420745394459130264" at="21,23,21,23" />
-      <scope id="6420745394459130264" at="12,0,14,0" />
-      <scope id="6420745394459130264" at="15,67,17,140" />
-      <scope id="6420745394459130264" at="21,0,23,0" />
-      <scope id="6420745394459130264" at="24,51,26,39" />
-      <scope id="6420745394459130264" at="14,0,19,0" />
-      <scope id="6420745394459130264" at="23,0,28,0" />
-      <unit id="6420745394459130264" at="19,0,29,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test$TestBody" />
-      <unit id="6420745394459130264" at="10,0,30,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test" />
+      <node id="6420745394459130264" at="13,67,14,128" concept="0" />
+      <node id="6420745394459130264" at="14,128,15,135" concept="0" />
+      <node id="6420745394459130264" at="21,51,22,72" concept="0" />
+      <node id="6420745394459384388" at="22,72,23,34" concept="0" />
+      <node id="6420745394459130264" at="12,0,17,0" concept="1" trace="test_MostSpecificEditorComponent#()V" />
+      <node id="6420745394459130264" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6420745394459130264" at="13,67,15,135" />
+      <scope id="6420745394459130264" at="21,51,23,34" />
+      <scope id="6420745394459130264" at="12,0,17,0" />
+      <scope id="6420745394459130264" at="20,0,25,0" />
+      <unit id="6420745394459130264" at="18,0,26,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test$TestBody" />
+      <unit id="6420745394459130264" at="10,0,27,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.MostSpecificEditorComponent_Test" />
     </file>
   </root>
   <root nodeRef="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)/6420745394459902267">
     <file name="OverridenEditorComponent_Test.java">
-      <node id="6420745394459902267" at="15,64,16,133" concept="1" />
-      <node id="6420745394459902267" at="16,133,17,137" concept="1" />
-      <node id="6420745394459902267" at="24,51,25,63" concept="1" />
-      <node id="6420745394460144884" at="25,63,26,29" concept="1" />
-      <node id="6420745394459902267" at="12,0,14,0" concept="0" trace="OverridenEditorComponent_Test#()V" />
-      <node id="6420745394459902267" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6420745394459902267" at="14,0,19,0" concept="2" trace="test_OverridenEditorComponent#()V" />
-      <node id="6420745394459902267" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6420745394459902267" at="12,42,12,42" />
-      <scope id="6420745394459902267" at="21,23,21,23" />
-      <scope id="6420745394459902267" at="12,0,14,0" />
-      <scope id="6420745394459902267" at="15,64,17,137" />
-      <scope id="6420745394459902267" at="21,0,23,0" />
-      <scope id="6420745394459902267" at="24,51,26,29" />
-      <scope id="6420745394459902267" at="14,0,19,0" />
-      <scope id="6420745394459902267" at="23,0,28,0" />
-      <unit id="6420745394459902267" at="19,0,29,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test$TestBody" />
-      <unit id="6420745394459902267" at="10,0,30,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test" />
+      <node id="6420745394459902267" at="13,64,14,128" concept="0" />
+      <node id="6420745394459902267" at="14,128,15,132" concept="0" />
+      <node id="6420745394459902267" at="21,51,22,72" concept="0" />
+      <node id="6420745394460144884" at="22,72,23,24" concept="0" />
+      <node id="6420745394459902267" at="12,0,17,0" concept="1" trace="test_OverridenEditorComponent#()V" />
+      <node id="6420745394459902267" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6420745394459902267" at="13,64,15,132" />
+      <scope id="6420745394459902267" at="21,51,23,24" />
+      <scope id="6420745394459902267" at="12,0,17,0" />
+      <scope id="6420745394459902267" at="20,0,25,0" />
+      <unit id="6420745394459902267" at="18,0,26,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test$TestBody" />
+      <unit id="6420745394459902267" at="10,0,27,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test" />
     </file>
   </root>
 </debug-info>

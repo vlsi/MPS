@@ -17,35 +17,32 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 @MPSLaunch
 public class StyleAttributeNonInheritanceTest_Test extends BaseTransformationTest {
-  public StyleAttributeNonInheritanceTest_Test() {
-  }
   @Test
   public void test_StyleAttributeNonInheritanceTest() throws Throwable {
-    this.initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
-    this.runTest("jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
+    runTest("jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("23293207022863752", "");
+      initEditorComponent("23293207022863752", "");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode root = SNodeOperations.cast(TestBody.this.getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
+          SNode root = SNodeOperations.cast(getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
           SNode leaf = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
           SNode inner1 = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(1);
           SNode inner1Leaf = ListSequence.fromList(SLinkOperations.getChildren(inner1, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
           SNode inner2 = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(2);
           SNode inner2Leaf = ListSequence.fromList(SLinkOperations.getChildren(inner2, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
 
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.TRUE);
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(inner1).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.TRUE);
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(inner1Leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(inner2).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.FALSE);
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(inner2Leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
+          Assert.assertEquals(getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.TRUE);
+          Assert.assertEquals(getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
+          Assert.assertEquals(getEditorComponent().findNodeCell(inner1).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.TRUE);
+          Assert.assertEquals(getEditorComponent().findNodeCell(inner1Leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
+          Assert.assertEquals(getEditorComponent().findNodeCell(inner2).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.FALSE);
+          Assert.assertEquals(getEditorComponent().findNodeCell(inner2Leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));
         }
       });
     }

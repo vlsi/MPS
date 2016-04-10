@@ -122,6 +122,13 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     return (T) m;
   }
 
+  /**
+   * @return the module with the given name (and with given class)
+   * @deprecated
+   * @see MPSModuleRepository#getModuleByFqName(String)
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public <T extends SModule> T getModule(String fqName, Class<T> cls) {
     SModule m = REPO.getModuleByFqName(fqName);
     if (!cls.isInstance(m)) return null;

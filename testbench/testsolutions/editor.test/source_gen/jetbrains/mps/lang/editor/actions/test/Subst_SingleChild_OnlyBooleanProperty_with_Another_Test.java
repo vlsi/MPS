@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Subst_SingleChild_OnlyBooleanProperty_with_Another_Test extends BaseTransformationTest {
-  public Subst_SingleChild_OnlyBooleanProperty_with_Another_Test() {
-  }
   @Test
   public void test_Subst_SingleChild_OnlyBooleanProperty_with_Another() throws Throwable {
-    this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
+    runTest("jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2890539347285262654", "2890539347285262656");
-      this.typeString("v1");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("2890539347285262654", "2890539347285262656");
+      typeString("v1");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

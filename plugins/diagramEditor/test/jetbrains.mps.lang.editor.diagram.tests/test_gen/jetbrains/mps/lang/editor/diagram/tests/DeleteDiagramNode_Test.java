@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class DeleteDiagramNode_Test extends BaseTransformationTest {
-  public DeleteDiagramNode_Test() {
-  }
   @Test
   public void test_DeleteDiagramNode() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5003005296038309041", "5003005296038309154");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
+      initEditorComponent("5003005296038309041", "5003005296038309154");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
     }
   }
 }

@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class IfStatementUnwrap3_Test extends BaseTransformationTest {
-  public IfStatementUnwrap3_Test() {
-  }
   @Test
   public void test_IfStatementUnwrap3() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.IfStatementUnwrap3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.IfStatementUnwrap3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6412722656403837986", "6412722656403838008");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditorComponent("6412722656403837986", "6412722656403838008");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

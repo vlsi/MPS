@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SynchronizedFieldUnavailable_Test extends BaseTransformationTest {
-  public SynchronizedFieldUnavailable_Test() {
-  }
   @Test
   public void test_SynchronizedFieldUnavailable() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("284804022080833434", "284804022080833439");
-      this.typeString("bar");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditorComponent("284804022080833434", "284804022080833439");
+      typeString("bar");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

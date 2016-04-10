@@ -12,22 +12,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 @MPSLaunch
 public class InspectorOfDefaultPresentation_Test extends BaseTransformationTest {
-  public InspectorOfDefaultPresentation_Test() {
-  }
   @Test
   public void test_InspectorOfDefaultPresentation() throws Throwable {
-    this.initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
-    this.runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfDefaultPresentation_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
+    runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfDefaultPresentation_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2112659629360603447", "2112659629360603449");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      EditorCell rootCell = ((NodeEditorComponent) this.getEditorComponent()).getInspector().getRootCell();
+      initEditorComponent("2112659629360603447", "2112659629360603449");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      EditorCell rootCell = ((NodeEditorComponent) getEditorComponent()).getInspector().getRootCell();
       assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("default");
     }
   }

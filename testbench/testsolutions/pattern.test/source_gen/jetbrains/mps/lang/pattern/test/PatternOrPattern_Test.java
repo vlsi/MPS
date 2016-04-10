@@ -49,7 +49,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qttyfe_a0a0a0g0c2());
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), pattern.getMatchedNode("ds"));
-        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
       return true;
     }

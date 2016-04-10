@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class RestoreCellSelection_Test extends BaseTransformationTest {
-  public RestoreCellSelection_Test() {
-  }
   @Test
   public void test_RestoreCellSelection() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RestoreCellSelection_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RestoreCellSelection_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7301049412170117859", "7301049412170117862");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " F5"));
+      initEditorComponent("7301049412170117859", "7301049412170117862");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " F5"));
     }
   }
 }

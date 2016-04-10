@@ -41,8 +41,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public final class LibraryInitializer implements CoreComponent, RepositoryReader<LibraryContributor> {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
+
+  // fixme get rid of
   private static LibraryInitializer INSTANCE;
 
+  // fixme get rid of
   public static LibraryInitializer getInstance() {
     return INSTANCE;
   }
@@ -117,44 +120,42 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    */
   @Deprecated
   public void update(final boolean refreshFiles) {
-    final Set<SLibrary> currentLibs = new HashSet<SLibrary>();
-    List<LibraryContributor> contributors = myContributors;
-    for (LibraryContributor contributor : contributors) {
-      boolean hidden = contributor.hiddenLanguages();
-      for (LibDescriptor pathDescriptor : contributor.getPaths()) {
-        SLibrary lib = new SLibrary(pathDescriptor, hidden);
-        currentLibs.add(lib);
+    myModelAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        final Set<SLibrary> currentLibs = new HashSet<SLibrary>();
+        List<LibraryContributor> contributors = myContributors;
+        for (LibraryContributor contributor : contributors) {
+          boolean hidden = contributor.hiddenLanguages();
+          for (LibDescriptor pathDescriptor : contributor.getPaths()) {
+            SLibrary lib = new SLibrary(pathDescriptor, hidden);
+            currentLibs.add(lib);
+          }
+        }
+        final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
+        if (libraryDelta.isEmpty()) return;
+        updateState(refreshFiles, libraryDelta);
+        libraryDelta.apply(myLibraries);
       }
-    }
-
-    final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
-
-    if (libraryDelta.isEmpty()) return;
-
-    updateState(refreshFiles, libraryDelta);
-
-    libraryDelta.apply(myLibraries);
+    });
   }
 
   // performed in write action
   // actual reading from disk happens here
   private void updateState(final boolean refreshFiles, Delta<SLibrary> libraryDelta) {
+    myModelAccess.checkWriteAccess();
+
     final List<SLibrary> toUnload = libraryDelta.getRemoved();
     final List<SLibrary> toLoad = libraryDelta.getAdded();
 
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LOG.info("Loading " + toLoad.size() + " libraries; Unloading " + toUnload.size() + " libraries.");
-        for (SLibrary unloadLib : toUnload) {
-          unloadLib.dispose();
-        }
+    LOG.info("Loading " + toLoad.size() + " libraries; Unloading " + toUnload.size() + " libraries.");
+    for (SLibrary unloadLib : toUnload) {
+      unloadLib.dispose();
+    }
 
-        for (SLibrary loadLib : toLoad) {
-          loadLib.attach(refreshFiles);
-        }
-      }
-    });
+    for (SLibrary loadLib : toLoad) {
+      loadLib.attach(refreshFiles);
+    }
   }
 
   //----------bootstrap modules
@@ -176,7 +177,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    */
   @Deprecated
   public void addContributor(@NotNull LibraryContributor c) {
-    LOG.info("Adding libraries from " + c.getClass().getName());
+    LOG.info("Adding libraries from " + c);
     myContributors.add(c);
   }
 
@@ -185,7 +186,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    */
   @Deprecated
   public void removeContributor(@NotNull LibraryContributor c) {
-    LOG.info("Removing libraries from " + c.getClass().getName());
+    LOG.info("Removing libraries from " + c);
     myContributors.remove(c);
   }
 

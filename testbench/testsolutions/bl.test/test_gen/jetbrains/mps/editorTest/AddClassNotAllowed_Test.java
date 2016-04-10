@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddClassNotAllowed_Test extends BaseTransformationTest {
-  public AddClassNotAllowed_Test() {
-  }
   @Test
   public void test_AddClassNotAllowed() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddClassNotAllowed_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddClassNotAllowed_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("346011455438298499", "346011455438298503");
-      this.typeString("publictransientclass");
+      initEditorComponent("346011455438298499", "346011455438298503");
+      typeString("publictransientclass");
     }
   }
 }

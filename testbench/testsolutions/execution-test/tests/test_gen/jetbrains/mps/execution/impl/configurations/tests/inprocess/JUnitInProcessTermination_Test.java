@@ -42,20 +42,23 @@ import org.apache.log4j.LogManager;
 public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   @Test
   public void test_terminate() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody", "test_terminate", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody", "test_terminate", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
-      SModel model = new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
-      String testName = new ModelAccessHelper(this.myProject.getModelAccess()).runReadAction(new Computable<String>() {
+      SModel model = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
+      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090").getName();
         }
       });
       this.startAndTerminate(JUnitUtil.wrapTests(model, Sequence.<String>singleton(testName)));
     }
+
+
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
         final TestRunState runState = new TestRunState(testNodes);
@@ -68,7 +71,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         }
         ProcessHandler process = processExecutor.execute();
         final Wrappers._T<CheckTestStateListener> checkListener = new Wrappers._T<CheckTestStateListener>();
-        this.myProject.getModelAccess().runReadAction(new Runnable() {
+        myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             checkListener.value = new CheckTestStateListener(testNodes, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
             runState.addListener(checkListener.value);

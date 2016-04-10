@@ -14,14 +14,15 @@ import java.io.IOException;
 public class ImageExport_Test extends BaseTransformationTest {
   @Test
   public void test_manuallyExportedImage() throws Throwable {
-    this.initTest("${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
-    this.runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_manuallyExportedImage", true);
+    initTest("${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
+    runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_manuallyExportedImage", true);
   }
   @Test
   public void test_imageExportedByGenerator() throws Throwable {
-    this.initTest("${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
-    this.runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_imageExportedByGenerator", true);
+    initTest("${mps_home}", "r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)", false);
+    runTest("jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test$TestBody", "test_imageExportedByGenerator", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_manuallyExportedImage() throws Exception {
@@ -42,5 +43,7 @@ public class ImageExport_Test extends BaseTransformationTest {
         Assert.fail("exception on loading image: " + e);
       }
     }
+
+
   }
 }

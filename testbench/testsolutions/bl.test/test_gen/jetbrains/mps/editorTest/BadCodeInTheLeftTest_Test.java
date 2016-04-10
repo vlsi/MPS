@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class BadCodeInTheLeftTest_Test extends BaseTransformationTest {
-  public BadCodeInTheLeftTest_Test() {
-  }
   @Test
   public void test_BadCodeInTheLeftTest() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.BadCodeInTheLeftTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.BadCodeInTheLeftTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1230058635690", "1230058635701");
-      this.typeString("#");
+      initEditorComponent("1230058635690", "1230058635701");
+      typeString("#");
     }
   }
 }

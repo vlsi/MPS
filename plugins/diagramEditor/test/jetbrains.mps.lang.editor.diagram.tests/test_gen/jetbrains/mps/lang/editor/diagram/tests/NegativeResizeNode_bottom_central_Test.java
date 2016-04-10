@@ -11,26 +11,23 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class NegativeResizeNode_bottom_central_Test extends BaseTransformationTest {
-  public NegativeResizeNode_bottom_central_Test() {
-  }
   @Test
   public void test_NegativeResizeNode_bottom_central() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5540569706412486832", "5540569706412486835");
+      initEditorComponent("5540569706412486832", "5540569706412486835");
       {
         int x_dddoqy_a0 = 50;
         int y_dddoqy_a0 = 90;
-        Component eventTargetComponent_dddoqy_a0 = this.processMouseEvent(x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0 = 50, y_dddoqy_a0 = -30, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_dddoqy_a0 = processMouseEvent(x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0 = 50, y_dddoqy_a0 = -30, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

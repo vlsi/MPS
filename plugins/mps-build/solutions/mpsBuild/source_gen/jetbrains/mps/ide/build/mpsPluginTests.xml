@@ -40,6 +40,11 @@
     <fileset file="${artifacts.IDEA}/plugins/devkit/lib/devkit-jps-plugin.jar" />
   </path>
   
+  <path id="path.java.library.test.plugin">
+    <fileset dir="${artifacts.mpsPlugin}/mps-testing/languages/languageDesign" includes="*.jar" />
+    <fileset dir="${artifacts.mpsPlugin}/mps-testing/lib" includes="*.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes">
@@ -122,8 +127,6 @@
   <target name="java.compile.mps-plugin-tests" depends="fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/testSrc" />
     <mkdir dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
-    <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
-    <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
     <mkdir dir="${mps_home}/testbench/source_gen" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin-tests" />
@@ -132,8 +135,6 @@
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/testSrc" />
         <path location="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
-        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
-        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
         <path location="${mps_home}/testbench/source_gen" />
         <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
       </src>
@@ -166,14 +167,13 @@
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
+        <path refid="path.java.library.test.plugin" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-plugin-tests">
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

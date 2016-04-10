@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoInvalidTypingInTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public UndoInvalidTypingInTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_UndoInvalidTypingInTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoInvalidTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoInvalidTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1758932278025063586", "1758932278025066308");
-      this.typeString("\u00a7123");
-      this.invokeAction("$Undo");
+      initEditorComponent("1758932278025063586", "1758932278025066308");
+      typeString("\u00a7123");
+      invokeAction("$Undo");
     }
   }
 }

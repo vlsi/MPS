@@ -9,20 +9,17 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DeprecationTest4_Test extends BaseTransformationTest {
-  public DeprecationTest4_Test() {
-  }
   @Test
   public void test_DeprecationTest4() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DeprecationTest4_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DeprecationTest4_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("992603586001643388", "90258596274922870");
+      initEditorComponent("992603586001643388", "90258596274922870");
       invokeIntention("jetbrains.mps.baseLanguage.intentions.MakeDeprecated_Intention", myStart.getNode());
     }
   }

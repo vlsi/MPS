@@ -15,14 +15,14 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -37,19 +37,25 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> setupSelection_id5rZKa_fUiYP = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUiYP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(NodeEditorComponent.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<EditorComponent> setupSelection_id5g7DxxpaP55 = new SMethodBuilder<EditorComponent>(new SJavaCompoundTypeImpl(EditorComponent.class)).name("setupSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5g7DxxpaP55").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(NodeEditorComponent.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Integer> getCaretPosition_id5rZKa_fUlry = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getCaretPosition").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUlry").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(EditorCell_Label.class, ""));
   /*package*/ static final SMethod<Void> setupCaretAndSelection_id7TYU6fNl1yz = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupCaretAndSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7TYU6fNl1yz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(EditorCell.class, ""));
   /*package*/ static final SMethod<EditorComponent> setupInspector_id4VoD2D0CSEA = new SMethodBuilder<EditorComponent>(new SJavaCompoundTypeImpl(EditorComponent.class)).name("setupInspector").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("4VoD2D0CSEA").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(NodeEditorComponent.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(setupSelection_id5rZKa_fUiYP, getCaretPosition_id5rZKa_fUlry, setupCaretAndSelection_id7TYU6fNl1yz, setupInspector_id4VoD2D0CSEA);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(setupSelection_id5rZKa_fUiYP, setupSelection_id5g7DxxpaP55, getCaretPosition_id5rZKa_fUlry, setupCaretAndSelection_id7TYU6fNl1yz, setupInspector_id4VoD2D0CSEA);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void setupSelection_id5rZKa_fUiYP(@NotNull final SNode __thisNode__, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
+  @Deprecated
+  /*package*/ static void setupSelection_id5rZKa_fUiYP(@NotNull SNode __thisNode__, NodeEditorComponent nodeEditorComponent, SNode node, Map<SNode, SNode> map) {
+    AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5rZKa_fUiYP.invoke(__thisNode__, nodeEditorComponent, node, map);
+  }
+  /*package*/ static EditorComponent setupSelection_id5g7DxxpaP55(@NotNull final SNode __thisNode__, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
     final Wrappers._T<EditorComponent> editorComponent = new Wrappers._T<EditorComponent>(nodeEditorComponent);
     final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    SRepository contextRepository = editorComponent.value.getEditorContext().getRepository();
+    contextRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
           editorComponent.value = AnonymousCellAnnotation__BehaviorDescriptor.setupInspector_id4VoD2D0CSEA.invoke(__thisNode__, node, nodeEditorComponent);
@@ -62,7 +68,7 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
       }
     });
     editorComponent.value.changeSelection(cellWithId.value);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    contextRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")) != null) {
           SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")));
@@ -72,6 +78,7 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
         }
       }
     });
+    return editorComponent.value;
   }
   /*package*/ static int getCaretPosition_id5rZKa_fUlry(@NotNull SNode __thisNode__, EditorCell_Label label) {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e3fde6f41L, "isLastPosition"))) {
@@ -117,11 +124,13 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
         setupSelection_id5rZKa_fUiYP(node, (NodeEditorComponent) parameters[0], (SNode) parameters[1], (Map<SNode, SNode>) parameters[2]);
         return null;
       case 1:
-        return (T) ((Integer) getCaretPosition_id5rZKa_fUlry(node, (EditorCell_Label) parameters[0]));
+        return (T) ((EditorComponent) setupSelection_id5g7DxxpaP55(node, (NodeEditorComponent) parameters[0], (SNode) parameters[1], (Map<SNode, SNode>) parameters[2]));
       case 2:
+        return (T) ((Integer) getCaretPosition_id5rZKa_fUlry(node, (EditorCell_Label) parameters[0]));
+      case 3:
         setupCaretAndSelection_id7TYU6fNl1yz(node, (EditorCell) parameters[0]);
         return null;
-      case 3:
+      case 4:
         return (T) ((EditorComponent) setupInspector_id4VoD2D0CSEA(node, (SNode) parameters[0], (NodeEditorComponent) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);

@@ -15,77 +15,80 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class FinalVarRefs_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck4705425356438246964() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_ErrorMessagesCheck4705425356438246964", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_ErrorMessagesCheck4705425356438246964", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624929711095() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624929711095", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624929711095", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564265886454() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeErrorCheck8129007564265886454", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeErrorCheck8129007564265886454", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624928162026() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624928162026", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624928162026", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624929647060() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929647060", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929647060", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624929358438() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929358438", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929358438", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624927704204() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624927704204", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624927704204", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_ErrorMessagesCheck4705425356438246964() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("4705425356438246964"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("4705425356438246926"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("4705425356438246964"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("4705425356438246926"));
     }
     public void test_NodeVariableHasNotBeenInitializedCheck6923385624929711095() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929711095"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451228255"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929711095"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451228255"));
     }
     public void test_NodeErrorCheck8129007564265886454() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8129007564265886454"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6640766779612767800"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8129007564265886454"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("6640766779612767800"));
     }
     public void test_NodeCannotAssignValueToFinalCheck6923385624928162026() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928162026"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451228600"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624928162026"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451228600"));
     }
     public void test_NodeCannotAssignValueToFinalCheck6923385624929647060() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929647060"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451226154"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929647060"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451226154"));
     }
     public void test_NodeCannotAssignValueToFinalCheck6923385624929358438() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929358438"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451229008"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929358438"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451229008"));
     }
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927750488"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451229128"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927750488"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451229128"));
     }
     public void test_NodeCannotAssignValueToFinalCheck6923385624927704204() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927704204"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451230643"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927704204"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("3951985765451230643"));
     }
+
   }
 }

@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class LT_DotExpression_with_Not_Test extends BaseTransformationTest {
-  public LT_DotExpression_with_Not_Test() {
-  }
   @Test
   public void test_LT_DotExpression_with_Not() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Not_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6042072087468729532", "6042072087468729550");
-      this.typeString("!");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("6042072087468729532", "6042072087468729550");
+      typeString("!");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

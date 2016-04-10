@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DeleteOnSelectedNode_Test extends BaseTransformationTest {
-  public DeleteOnSelectedNode_Test() {
-  }
   @Test
   public void test_DeleteOnSelectedNode() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DeleteOnSelectedNode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DeleteOnSelectedNode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6230565632479558667", "6230565632479560179");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditorComponent("6230565632479558667", "6230565632479560179");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

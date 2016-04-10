@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddParensToArrayAccess9_Test extends BaseTransformationTest {
-  public AddParensToArrayAccess9_Test() {
-  }
   @Test
   public void test_AddParensToArrayAccess9() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddParensToArrayAccess9_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddParensToArrayAccess9_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6141629764077265188", "6141629764077265217");
-      this.typeString(")");
+      initEditorComponent("6141629764077265188", "6141629764077265217");
+      typeString(")");
     }
   }
 }

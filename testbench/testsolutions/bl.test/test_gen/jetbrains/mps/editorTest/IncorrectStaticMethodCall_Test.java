@@ -11,22 +11,19 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class IncorrectStaticMethodCall_Test extends BaseTransformationTest {
-  public IncorrectStaticMethodCall_Test() {
-  }
   @Test
   public void test_IncorrectStaticMethodCall() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.IncorrectStaticMethodCall_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.IncorrectStaticMethodCall_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("609981668907111219", "609981668907111229");
-      this.typeString("getStaticTestValue");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("609981668907111219", "609981668907111229");
+      typeString("getStaticTestValue");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

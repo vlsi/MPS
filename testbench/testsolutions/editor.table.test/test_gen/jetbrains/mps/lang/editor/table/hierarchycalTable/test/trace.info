@@ -1,341 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/1211716198725196074">
     <file name="InsertRowAfterLast_Test.java">
-      <node id="1211716198725196074" at="15,58,16,137" concept="1" />
-      <node id="1211716198725196074" at="16,137,17,129" concept="1" />
-      <node id="1211716198725196074" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162725" at="25,63,26,74" concept="1" />
-      <node id="1211716198725196074" at="12,0,14,0" concept="0" trace="InsertRowAfterLast_Test#()V" />
-      <node id="1211716198725196074" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="1211716198725196074" at="14,0,19,0" concept="2" trace="test_InsertRowAfterLast#()V" />
-      <node id="1211716198725196074" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="1211716198725196074" at="12,36,12,36" />
-      <scope id="1211716198725196074" at="21,23,21,23" />
-      <scope id="1211716198725196074" at="12,0,14,0" />
-      <scope id="1211716198725196074" at="15,58,17,129" />
-      <scope id="1211716198725196074" at="21,0,23,0" />
-      <scope id="1211716198725196074" at="24,51,26,74" />
-      <scope id="1211716198725196074" at="14,0,19,0" />
-      <scope id="1211716198725196074" at="23,0,28,0" />
-      <unit id="1211716198725196074" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test$TestBody" />
-      <unit id="1211716198725196074" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test" />
+      <node id="1211716198725196074" at="13,58,14,132" concept="0" />
+      <node id="1211716198725196074" at="14,132,15,124" concept="0" />
+      <node id="1211716198725196074" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162725" at="22,72,23,69" concept="0" />
+      <node id="1211716198725196074" at="12,0,17,0" concept="1" trace="test_InsertRowAfterLast#()V" />
+      <node id="1211716198725196074" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1211716198725196074" at="13,58,15,124" />
+      <scope id="1211716198725196074" at="21,51,23,69" />
+      <scope id="1211716198725196074" at="12,0,17,0" />
+      <scope id="1211716198725196074" at="20,0,25,0" />
+      <unit id="1211716198725196074" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test$TestBody" />
+      <unit id="1211716198725196074" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/5171926735592465361">
     <file name="InsertColumnBeforeFirst_Test.java">
-      <node id="5171926735592465361" at="15,63,16,137" concept="1" />
-      <node id="5171926735592465361" at="16,137,17,134" concept="1" />
-      <node id="5171926735592465361" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162719" at="25,63,26,74" concept="1" />
-      <node id="5171926735592465361" at="12,0,14,0" concept="0" trace="InsertColumnBeforeFirst_Test#()V" />
-      <node id="5171926735592465361" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="5171926735592465361" at="14,0,19,0" concept="2" trace="test_InsertColumnBeforeFirst#()V" />
-      <node id="5171926735592465361" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5171926735592465361" at="12,41,12,41" />
-      <scope id="5171926735592465361" at="21,23,21,23" />
-      <scope id="5171926735592465361" at="12,0,14,0" />
-      <scope id="5171926735592465361" at="15,63,17,134" />
-      <scope id="5171926735592465361" at="21,0,23,0" />
-      <scope id="5171926735592465361" at="24,51,26,74" />
-      <scope id="5171926735592465361" at="14,0,19,0" />
-      <scope id="5171926735592465361" at="23,0,28,0" />
-      <unit id="5171926735592465361" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test$TestBody" />
-      <unit id="5171926735592465361" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test" />
+      <node id="5171926735592465361" at="13,63,14,132" concept="0" />
+      <node id="5171926735592465361" at="14,132,15,129" concept="0" />
+      <node id="5171926735592465361" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162719" at="22,72,23,69" concept="0" />
+      <node id="5171926735592465361" at="12,0,17,0" concept="1" trace="test_InsertColumnBeforeFirst#()V" />
+      <node id="5171926735592465361" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5171926735592465361" at="13,63,15,129" />
+      <scope id="5171926735592465361" at="21,51,23,69" />
+      <scope id="5171926735592465361" at="12,0,17,0" />
+      <scope id="5171926735592465361" at="20,0,25,0" />
+      <unit id="5171926735592465361" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test$TestBody" />
+      <unit id="5171926735592465361" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/5171926735592482851">
     <file name="InsertColumnAfterLast_Test.java">
-      <node id="5171926735592482851" at="15,61,16,137" concept="1" />
-      <node id="5171926735592482851" at="16,137,17,132" concept="1" />
-      <node id="5171926735592482851" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162717" at="25,63,26,74" concept="1" />
-      <node id="5171926735592482851" at="12,0,14,0" concept="0" trace="InsertColumnAfterLast_Test#()V" />
-      <node id="5171926735592482851" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="5171926735592482851" at="14,0,19,0" concept="2" trace="test_InsertColumnAfterLast#()V" />
-      <node id="5171926735592482851" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5171926735592482851" at="12,39,12,39" />
-      <scope id="5171926735592482851" at="21,23,21,23" />
-      <scope id="5171926735592482851" at="12,0,14,0" />
-      <scope id="5171926735592482851" at="15,61,17,132" />
-      <scope id="5171926735592482851" at="21,0,23,0" />
-      <scope id="5171926735592482851" at="24,51,26,74" />
-      <scope id="5171926735592482851" at="14,0,19,0" />
-      <scope id="5171926735592482851" at="23,0,28,0" />
-      <unit id="5171926735592482851" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test$TestBody" />
-      <unit id="5171926735592482851" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test" />
+      <node id="5171926735592482851" at="13,61,14,132" concept="0" />
+      <node id="5171926735592482851" at="14,132,15,127" concept="0" />
+      <node id="5171926735592482851" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162717" at="22,72,23,69" concept="0" />
+      <node id="5171926735592482851" at="12,0,17,0" concept="1" trace="test_InsertColumnAfterLast#()V" />
+      <node id="5171926735592482851" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5171926735592482851" at="13,61,15,127" />
+      <scope id="5171926735592482851" at="21,51,23,69" />
+      <scope id="5171926735592482851" at="12,0,17,0" />
+      <scope id="5171926735592482851" at="20,0,25,0" />
+      <unit id="5171926735592482851" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test$TestBody" />
+      <unit id="5171926735592482851" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276078">
     <file name="Create_Test.java">
-      <node id="6170050146384276078" at="15,46,16,137" concept="1" />
-      <node id="6170050146384276078" at="16,137,17,117" concept="1" />
-      <node id="6170050146384276078" at="24,51,25,63" concept="1" />
-      <node id="6170050146384276108" at="25,63,26,35" concept="1" />
-      <node id="3694071247855998077" at="26,35,27,76" concept="1" />
-      <node id="6170050146384276078" at="12,0,14,0" concept="0" trace="Create_Test#()V" />
-      <node id="6170050146384276078" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276078" at="14,0,19,0" concept="2" trace="test_Create#()V" />
-      <node id="6170050146384276078" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276078" at="12,24,12,24" />
-      <scope id="6170050146384276078" at="21,23,21,23" />
-      <scope id="6170050146384276078" at="12,0,14,0" />
-      <scope id="6170050146384276078" at="15,46,17,117" />
-      <scope id="6170050146384276078" at="21,0,23,0" />
-      <scope id="6170050146384276078" at="24,51,27,76" />
-      <scope id="6170050146384276078" at="14,0,19,0" />
-      <scope id="6170050146384276078" at="23,0,29,0" />
-      <unit id="6170050146384276078" at="19,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test$TestBody" />
-      <unit id="6170050146384276078" at="10,0,31,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test" />
+      <node id="6170050146384276078" at="13,46,14,132" concept="0" />
+      <node id="6170050146384276078" at="14,132,15,112" concept="0" />
+      <node id="6170050146384276078" at="21,51,22,72" concept="0" />
+      <node id="6170050146384276108" at="22,72,23,30" concept="0" />
+      <node id="3694071247855998077" at="23,30,24,71" concept="0" />
+      <node id="6170050146384276078" at="12,0,17,0" concept="1" trace="test_Create#()V" />
+      <node id="6170050146384276078" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276078" at="13,46,15,112" />
+      <scope id="6170050146384276078" at="21,51,24,71" />
+      <scope id="6170050146384276078" at="12,0,17,0" />
+      <scope id="6170050146384276078" at="20,0,26,0" />
+      <unit id="6170050146384276078" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test$TestBody" />
+      <unit id="6170050146384276078" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276111">
     <file name="RemoveHeaderCell_Test.java">
-      <node id="6170050146384276111" at="15,56,16,137" concept="1" />
-      <node id="6170050146384276111" at="16,137,17,127" concept="1" />
-      <node id="6170050146384276111" at="24,51,25,63" concept="1" />
-      <node id="1315230867830196344" at="25,63,26,77" concept="1" />
-      <node id="1315230867830196347" at="26,77,27,77" concept="1" />
-      <node id="6170050146384276111" at="12,0,14,0" concept="0" trace="RemoveHeaderCell_Test#()V" />
-      <node id="6170050146384276111" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276111" at="14,0,19,0" concept="2" trace="test_RemoveHeaderCell#()V" />
-      <node id="6170050146384276111" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276111" at="12,34,12,34" />
-      <scope id="6170050146384276111" at="21,23,21,23" />
-      <scope id="6170050146384276111" at="12,0,14,0" />
-      <scope id="6170050146384276111" at="15,56,17,127" />
-      <scope id="6170050146384276111" at="21,0,23,0" />
-      <scope id="6170050146384276111" at="24,51,27,77" />
-      <scope id="6170050146384276111" at="14,0,19,0" />
-      <scope id="6170050146384276111" at="23,0,29,0" />
-      <unit id="6170050146384276111" at="19,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test$TestBody" />
-      <unit id="6170050146384276111" at="10,0,31,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test" />
+      <node id="6170050146384276111" at="13,56,14,132" concept="0" />
+      <node id="6170050146384276111" at="14,132,15,122" concept="0" />
+      <node id="6170050146384276111" at="21,51,22,72" concept="0" />
+      <node id="1315230867830196344" at="22,72,23,72" concept="0" />
+      <node id="1315230867830196347" at="23,72,24,72" concept="0" />
+      <node id="6170050146384276111" at="12,0,17,0" concept="1" trace="test_RemoveHeaderCell#()V" />
+      <node id="6170050146384276111" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276111" at="13,56,15,122" />
+      <scope id="6170050146384276111" at="21,51,24,72" />
+      <scope id="6170050146384276111" at="12,0,17,0" />
+      <scope id="6170050146384276111" at="20,0,26,0" />
+      <unit id="6170050146384276111" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test$TestBody" />
+      <unit id="6170050146384276111" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276164">
     <file name="RemoveRow_Test.java">
-      <node id="6170050146384276164" at="15,49,16,137" concept="1" />
-      <node id="6170050146384276164" at="16,137,17,120" concept="1" />
-      <node id="6170050146384276164" at="24,51,25,63" concept="1" />
-      <node id="1315230867830196350" at="25,63,26,77" concept="1" />
-      <node id="6170050146384276164" at="12,0,14,0" concept="0" trace="RemoveRow_Test#()V" />
-      <node id="6170050146384276164" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276164" at="14,0,19,0" concept="2" trace="test_RemoveRow#()V" />
-      <node id="6170050146384276164" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276164" at="12,27,12,27" />
-      <scope id="6170050146384276164" at="21,23,21,23" />
-      <scope id="6170050146384276164" at="12,0,14,0" />
-      <scope id="6170050146384276164" at="15,49,17,120" />
-      <scope id="6170050146384276164" at="21,0,23,0" />
-      <scope id="6170050146384276164" at="24,51,26,77" />
-      <scope id="6170050146384276164" at="14,0,19,0" />
-      <scope id="6170050146384276164" at="23,0,28,0" />
-      <unit id="6170050146384276164" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test$TestBody" />
-      <unit id="6170050146384276164" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test" />
+      <node id="6170050146384276164" at="13,49,14,132" concept="0" />
+      <node id="6170050146384276164" at="14,132,15,115" concept="0" />
+      <node id="6170050146384276164" at="21,51,22,72" concept="0" />
+      <node id="1315230867830196350" at="22,72,23,72" concept="0" />
+      <node id="6170050146384276164" at="12,0,17,0" concept="1" trace="test_RemoveRow#()V" />
+      <node id="6170050146384276164" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276164" at="13,49,15,115" />
+      <scope id="6170050146384276164" at="21,51,23,72" />
+      <scope id="6170050146384276164" at="12,0,17,0" />
+      <scope id="6170050146384276164" at="20,0,25,0" />
+      <unit id="6170050146384276164" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test$TestBody" />
+      <unit id="6170050146384276164" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276214">
     <file name="EditCell_Test.java">
-      <node id="6170050146384276214" at="15,48,16,137" concept="1" />
-      <node id="6170050146384276214" at="16,137,17,119" concept="1" />
-      <node id="6170050146384276214" at="24,51,25,63" concept="1" />
-      <node id="6170050146384276266" at="25,63,26,40" concept="1" />
-      <node id="6170050146384276214" at="12,0,14,0" concept="0" trace="EditCell_Test#()V" />
-      <node id="6170050146384276214" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276214" at="14,0,19,0" concept="2" trace="test_EditCell#()V" />
-      <node id="6170050146384276214" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276214" at="12,26,12,26" />
-      <scope id="6170050146384276214" at="21,23,21,23" />
-      <scope id="6170050146384276214" at="12,0,14,0" />
-      <scope id="6170050146384276214" at="15,48,17,119" />
-      <scope id="6170050146384276214" at="21,0,23,0" />
-      <scope id="6170050146384276214" at="24,51,26,40" />
-      <scope id="6170050146384276214" at="14,0,19,0" />
-      <scope id="6170050146384276214" at="23,0,28,0" />
-      <unit id="6170050146384276214" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test$TestBody" />
-      <unit id="6170050146384276214" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test" />
+      <node id="6170050146384276214" at="13,48,14,132" concept="0" />
+      <node id="6170050146384276214" at="14,132,15,114" concept="0" />
+      <node id="6170050146384276214" at="21,51,22,72" concept="0" />
+      <node id="6170050146384276266" at="22,72,23,35" concept="0" />
+      <node id="6170050146384276214" at="12,0,17,0" concept="1" trace="test_EditCell#()V" />
+      <node id="6170050146384276214" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276214" at="13,48,15,114" />
+      <scope id="6170050146384276214" at="21,51,23,35" />
+      <scope id="6170050146384276214" at="12,0,17,0" />
+      <scope id="6170050146384276214" at="20,0,25,0" />
+      <unit id="6170050146384276214" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test$TestBody" />
+      <unit id="6170050146384276214" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276267">
     <file name="EditHeaderCell_Test.java">
-      <node id="6170050146384276267" at="15,54,16,137" concept="1" />
-      <node id="6170050146384276267" at="16,137,17,125" concept="1" />
-      <node id="6170050146384276267" at="24,51,25,63" concept="1" />
-      <node id="6170050146384276319" at="25,63,26,35" concept="1" />
-      <node id="6170050146384276267" at="12,0,14,0" concept="0" trace="EditHeaderCell_Test#()V" />
-      <node id="6170050146384276267" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276267" at="14,0,19,0" concept="2" trace="test_EditHeaderCell#()V" />
-      <node id="6170050146384276267" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276267" at="12,32,12,32" />
-      <scope id="6170050146384276267" at="21,23,21,23" />
-      <scope id="6170050146384276267" at="12,0,14,0" />
-      <scope id="6170050146384276267" at="15,54,17,125" />
-      <scope id="6170050146384276267" at="21,0,23,0" />
-      <scope id="6170050146384276267" at="24,51,26,35" />
-      <scope id="6170050146384276267" at="14,0,19,0" />
-      <scope id="6170050146384276267" at="23,0,28,0" />
-      <unit id="6170050146384276267" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test$TestBody" />
-      <unit id="6170050146384276267" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test" />
+      <node id="6170050146384276267" at="13,54,14,132" concept="0" />
+      <node id="6170050146384276267" at="14,132,15,120" concept="0" />
+      <node id="6170050146384276267" at="21,51,22,72" concept="0" />
+      <node id="6170050146384276319" at="22,72,23,30" concept="0" />
+      <node id="6170050146384276267" at="12,0,17,0" concept="1" trace="test_EditHeaderCell#()V" />
+      <node id="6170050146384276267" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276267" at="13,54,15,120" />
+      <scope id="6170050146384276267" at="21,51,23,30" />
+      <scope id="6170050146384276267" at="12,0,17,0" />
+      <scope id="6170050146384276267" at="20,0,25,0" />
+      <unit id="6170050146384276267" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test$TestBody" />
+      <unit id="6170050146384276267" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276320">
     <file name="InsertRowAfterHeader_Test.java">
-      <node id="6170050146384276320" at="15,60,16,137" concept="1" />
-      <node id="6170050146384276320" at="16,137,17,131" concept="1" />
-      <node id="6170050146384276320" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162723" at="25,63,26,74" concept="1" />
-      <node id="6170050146384276320" at="12,0,14,0" concept="0" trace="InsertRowAfterHeader_Test#()V" />
-      <node id="6170050146384276320" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276320" at="14,0,19,0" concept="2" trace="test_InsertRowAfterHeader#()V" />
-      <node id="6170050146384276320" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276320" at="12,38,12,38" />
-      <scope id="6170050146384276320" at="21,23,21,23" />
-      <scope id="6170050146384276320" at="12,0,14,0" />
-      <scope id="6170050146384276320" at="15,60,17,131" />
-      <scope id="6170050146384276320" at="21,0,23,0" />
-      <scope id="6170050146384276320" at="24,51,26,74" />
-      <scope id="6170050146384276320" at="14,0,19,0" />
-      <scope id="6170050146384276320" at="23,0,28,0" />
-      <unit id="6170050146384276320" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test$TestBody" />
-      <unit id="6170050146384276320" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test" />
+      <node id="6170050146384276320" at="13,60,14,132" concept="0" />
+      <node id="6170050146384276320" at="14,132,15,126" concept="0" />
+      <node id="6170050146384276320" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162723" at="22,72,23,69" concept="0" />
+      <node id="6170050146384276320" at="12,0,17,0" concept="1" trace="test_InsertRowAfterHeader#()V" />
+      <node id="6170050146384276320" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276320" at="13,60,15,126" />
+      <scope id="6170050146384276320" at="21,51,23,69" />
+      <scope id="6170050146384276320" at="12,0,17,0" />
+      <scope id="6170050146384276320" at="20,0,25,0" />
+      <unit id="6170050146384276320" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test$TestBody" />
+      <unit id="6170050146384276320" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6170050146384276378">
     <file name="InsertRowAfter_Test.java">
-      <node id="6170050146384276378" at="15,54,16,137" concept="1" />
-      <node id="6170050146384276378" at="16,137,17,125" concept="1" />
-      <node id="6170050146384276378" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162721" at="25,63,26,74" concept="1" />
-      <node id="6170050146384276378" at="12,0,14,0" concept="0" trace="InsertRowAfter_Test#()V" />
-      <node id="6170050146384276378" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6170050146384276378" at="14,0,19,0" concept="2" trace="test_InsertRowAfter#()V" />
-      <node id="6170050146384276378" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6170050146384276378" at="12,32,12,32" />
-      <scope id="6170050146384276378" at="21,23,21,23" />
-      <scope id="6170050146384276378" at="12,0,14,0" />
-      <scope id="6170050146384276378" at="15,54,17,125" />
-      <scope id="6170050146384276378" at="21,0,23,0" />
-      <scope id="6170050146384276378" at="24,51,26,74" />
-      <scope id="6170050146384276378" at="14,0,19,0" />
-      <scope id="6170050146384276378" at="23,0,28,0" />
-      <unit id="6170050146384276378" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test$TestBody" />
-      <unit id="6170050146384276378" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test" />
+      <node id="6170050146384276378" at="13,54,14,132" concept="0" />
+      <node id="6170050146384276378" at="14,132,15,120" concept="0" />
+      <node id="6170050146384276378" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162721" at="22,72,23,69" concept="0" />
+      <node id="6170050146384276378" at="12,0,17,0" concept="1" trace="test_InsertRowAfter#()V" />
+      <node id="6170050146384276378" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6170050146384276378" at="13,54,15,120" />
+      <scope id="6170050146384276378" at="21,51,23,69" />
+      <scope id="6170050146384276378" at="12,0,17,0" />
+      <scope id="6170050146384276378" at="20,0,25,0" />
+      <unit id="6170050146384276378" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test$TestBody" />
+      <unit id="6170050146384276378" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6341395909949440712">
     <file name="InsertRowBefore_Test.java">
-      <node id="6341395909949440712" at="15,55,16,137" concept="1" />
-      <node id="6341395909949440712" at="16,137,17,126" concept="1" />
-      <node id="6341395909949440712" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162727" at="25,63,26,74" concept="1" />
-      <node id="6341395909949440712" at="12,0,14,0" concept="0" trace="InsertRowBefore_Test#()V" />
-      <node id="6341395909949440712" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6341395909949440712" at="14,0,19,0" concept="2" trace="test_InsertRowBefore#()V" />
-      <node id="6341395909949440712" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6341395909949440712" at="12,33,12,33" />
-      <scope id="6341395909949440712" at="21,23,21,23" />
-      <scope id="6341395909949440712" at="12,0,14,0" />
-      <scope id="6341395909949440712" at="15,55,17,126" />
-      <scope id="6341395909949440712" at="21,0,23,0" />
-      <scope id="6341395909949440712" at="24,51,26,74" />
-      <scope id="6341395909949440712" at="14,0,19,0" />
-      <scope id="6341395909949440712" at="23,0,28,0" />
-      <unit id="6341395909949440712" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test$TestBody" />
-      <unit id="6341395909949440712" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test" />
+      <node id="6341395909949440712" at="13,55,14,132" concept="0" />
+      <node id="6341395909949440712" at="14,132,15,121" concept="0" />
+      <node id="6341395909949440712" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162727" at="22,72,23,69" concept="0" />
+      <node id="6341395909949440712" at="12,0,17,0" concept="1" trace="test_InsertRowBefore#()V" />
+      <node id="6341395909949440712" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6341395909949440712" at="13,55,15,121" />
+      <scope id="6341395909949440712" at="21,51,23,69" />
+      <scope id="6341395909949440712" at="12,0,17,0" />
+      <scope id="6341395909949440712" at="20,0,25,0" />
+      <unit id="6341395909949440712" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test$TestBody" />
+      <unit id="6341395909949440712" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/6341395909949441235">
     <file name="InsertRowBeforeHeader_Test.java">
-      <node id="6341395909949441235" at="15,61,16,137" concept="1" />
-      <node id="6341395909949441235" at="16,137,17,132" concept="1" />
-      <node id="6341395909949441235" at="24,51,25,63" concept="1" />
-      <node id="4880455824535162729" at="25,63,26,74" concept="1" />
-      <node id="6341395909949441235" at="12,0,14,0" concept="0" trace="InsertRowBeforeHeader_Test#()V" />
-      <node id="6341395909949441235" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="6341395909949441235" at="14,0,19,0" concept="2" trace="test_InsertRowBeforeHeader#()V" />
-      <node id="6341395909949441235" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="6341395909949441235" at="12,39,12,39" />
-      <scope id="6341395909949441235" at="21,23,21,23" />
-      <scope id="6341395909949441235" at="12,0,14,0" />
-      <scope id="6341395909949441235" at="15,61,17,132" />
-      <scope id="6341395909949441235" at="21,0,23,0" />
-      <scope id="6341395909949441235" at="24,51,26,74" />
-      <scope id="6341395909949441235" at="14,0,19,0" />
-      <scope id="6341395909949441235" at="23,0,28,0" />
-      <unit id="6341395909949441235" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test$TestBody" />
-      <unit id="6341395909949441235" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test" />
+      <node id="6341395909949441235" at="13,61,14,132" concept="0" />
+      <node id="6341395909949441235" at="14,132,15,127" concept="0" />
+      <node id="6341395909949441235" at="21,51,22,72" concept="0" />
+      <node id="4880455824535162729" at="22,72,23,69" concept="0" />
+      <node id="6341395909949441235" at="12,0,17,0" concept="1" trace="test_InsertRowBeforeHeader#()V" />
+      <node id="6341395909949441235" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6341395909949441235" at="13,61,15,127" />
+      <scope id="6341395909949441235" at="21,51,23,69" />
+      <scope id="6341395909949441235" at="12,0,17,0" />
+      <scope id="6341395909949441235" at="20,0,25,0" />
+      <unit id="6341395909949441235" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test$TestBody" />
+      <unit id="6341395909949441235" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/8143909488490586222">
     <file name="RemoveHeaderRow_FromLastCell_Test.java">
-      <node id="8143909488490586222" at="17,68,18,137" concept="1" />
-      <node id="8143909488490586222" at="18,137,19,139" concept="1" />
-      <node id="8143909488490586222" at="26,51,27,63" concept="1" />
-      <node id="8143909488490603675" at="27,63,28,92" concept="1" />
-      <node id="8143909488490586222" at="14,0,16,0" concept="0" trace="RemoveHeaderRow_FromLastCell_Test#()V" />
-      <node id="8143909488490586222" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="8143909488490586222" at="16,0,21,0" concept="2" trace="test_RemoveHeaderRow_FromLastCell#()V" />
-      <node id="8143909488490586222" at="25,0,30,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8143909488490586222" at="14,46,14,46" />
-      <scope id="8143909488490586222" at="23,23,23,23" />
-      <scope id="8143909488490586222" at="14,0,16,0" />
-      <scope id="8143909488490586222" at="17,68,19,139" />
-      <scope id="8143909488490586222" at="23,0,25,0" />
-      <scope id="8143909488490586222" at="26,51,28,92" />
-      <scope id="8143909488490586222" at="16,0,21,0" />
-      <scope id="8143909488490586222" at="25,0,30,0" />
-      <unit id="8143909488490586222" at="21,0,31,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test$TestBody" />
-      <unit id="8143909488490586222" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test" />
+      <node id="8143909488490586222" at="15,68,16,132" concept="0" />
+      <node id="8143909488490586222" at="16,132,17,134" concept="0" />
+      <node id="8143909488490586222" at="23,51,24,72" concept="0" />
+      <node id="8143909488490603675" at="24,72,25,87" concept="0" />
+      <node id="8143909488490586222" at="14,0,19,0" concept="1" trace="test_RemoveHeaderRow_FromLastCell#()V" />
+      <node id="8143909488490586222" at="22,0,27,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8143909488490586222" at="15,68,17,134" />
+      <scope id="8143909488490586222" at="23,51,25,87" />
+      <scope id="8143909488490586222" at="14,0,19,0" />
+      <scope id="8143909488490586222" at="22,0,27,0" />
+      <unit id="8143909488490586222" at="20,0,28,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test$TestBody" />
+      <unit id="8143909488490586222" at="12,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/8143909488490605459">
     <file name="RemoveHeaderRow_FromFirstCell_Test.java">
-      <node id="8143909488490605459" at="17,69,18,137" concept="1" />
-      <node id="8143909488490605459" at="18,137,19,140" concept="1" />
-      <node id="8143909488490605459" at="26,51,27,63" concept="1" />
-      <node id="8143909488490605513" at="27,63,28,88" concept="1" />
-      <node id="8143909488490605459" at="14,0,16,0" concept="0" trace="RemoveHeaderRow_FromFirstCell_Test#()V" />
-      <node id="8143909488490605459" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="8143909488490605459" at="16,0,21,0" concept="2" trace="test_RemoveHeaderRow_FromFirstCell#()V" />
-      <node id="8143909488490605459" at="25,0,30,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8143909488490605459" at="14,47,14,47" />
-      <scope id="8143909488490605459" at="23,23,23,23" />
-      <scope id="8143909488490605459" at="14,0,16,0" />
-      <scope id="8143909488490605459" at="17,69,19,140" />
-      <scope id="8143909488490605459" at="23,0,25,0" />
-      <scope id="8143909488490605459" at="26,51,28,88" />
-      <scope id="8143909488490605459" at="16,0,21,0" />
-      <scope id="8143909488490605459" at="25,0,30,0" />
-      <unit id="8143909488490605459" at="21,0,31,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody" />
-      <unit id="8143909488490605459" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test" />
+      <node id="8143909488490605459" at="15,69,16,132" concept="0" />
+      <node id="8143909488490605459" at="16,132,17,135" concept="0" />
+      <node id="8143909488490605459" at="23,51,24,72" concept="0" />
+      <node id="8143909488490605513" at="24,72,25,83" concept="0" />
+      <node id="8143909488490605459" at="14,0,19,0" concept="1" trace="test_RemoveHeaderRow_FromFirstCell#()V" />
+      <node id="8143909488490605459" at="22,0,27,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8143909488490605459" at="15,69,17,135" />
+      <scope id="8143909488490605459" at="23,51,25,83" />
+      <scope id="8143909488490605459" at="14,0,19,0" />
+      <scope id="8143909488490605459" at="22,0,27,0" />
+      <unit id="8143909488490605459" at="20,0,28,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody" />
+      <unit id="8143909488490605459" at="12,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test" />
     </file>
   </root>
   <root nodeRef="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)/9025751233592076947">
     <file name="RemoveCell_Test.java">
-      <node id="9025751233592076947" at="15,50,16,137" concept="1" />
-      <node id="9025751233592076947" at="16,137,17,121" concept="1" />
-      <node id="9025751233592076947" at="24,51,25,63" concept="1" />
-      <node id="1315230867830196338" at="25,63,26,74" concept="1" />
-      <node id="1315230867830196341" at="26,74,27,74" concept="1" />
-      <node id="9025751233592112535" at="27,74,28,0" concept="3" />
-      <node id="9025751233592076947" at="12,0,14,0" concept="0" trace="RemoveCell_Test#()V" />
-      <node id="9025751233592076947" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="9025751233592076947" at="14,0,19,0" concept="2" trace="test_RemoveCell#()V" />
-      <node id="9025751233592076947" at="23,0,30,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="9025751233592076947" at="12,28,12,28" />
-      <scope id="9025751233592076947" at="21,23,21,23" />
-      <scope id="9025751233592076947" at="12,0,14,0" />
-      <scope id="9025751233592076947" at="15,50,17,121" />
-      <scope id="9025751233592076947" at="21,0,23,0" />
-      <scope id="9025751233592076947" at="24,51,28,0" />
-      <scope id="9025751233592076947" at="14,0,19,0" />
-      <scope id="9025751233592076947" at="23,0,30,0" />
-      <unit id="9025751233592076947" at="19,0,31,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test$TestBody" />
-      <unit id="9025751233592076947" at="10,0,32,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test" />
+      <node id="9025751233592076947" at="13,50,14,132" concept="0" />
+      <node id="9025751233592076947" at="14,132,15,116" concept="0" />
+      <node id="9025751233592076947" at="21,51,22,72" concept="0" />
+      <node id="1315230867830196338" at="22,72,23,69" concept="0" />
+      <node id="1315230867830196341" at="23,69,24,69" concept="0" />
+      <node id="9025751233592112535" at="24,69,25,0" concept="2" />
+      <node id="9025751233592076947" at="12,0,17,0" concept="1" trace="test_RemoveCell#()V" />
+      <node id="9025751233592076947" at="20,0,27,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="9025751233592076947" at="13,50,15,116" />
+      <scope id="9025751233592076947" at="21,51,25,0" />
+      <scope id="9025751233592076947" at="12,0,17,0" />
+      <scope id="9025751233592076947" at="20,0,27,0" />
+      <unit id="9025751233592076947" at="18,0,28,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test$TestBody" />
+      <unit id="9025751233592076947" at="10,0,29,0" name="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test" />
     </file>
   </root>
 </debug-info>

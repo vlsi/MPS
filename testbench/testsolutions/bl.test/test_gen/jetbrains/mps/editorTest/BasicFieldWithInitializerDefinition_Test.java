@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class BasicFieldWithInitializerDefinition_Test extends BaseTransformationTest {
-  public BasicFieldWithInitializerDefinition_Test() {
-  }
   @Test
   public void test_BasicFieldWithInitializerDefinition() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.BasicFieldWithInitializerDefinition_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.BasicFieldWithInitializerDefinition_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("284804022096670198", "284804022096670202");
-      this.typeString("public int bar=10;");
+      initEditorComponent("284804022096670198", "284804022096670202");
+      typeString("public int bar=10;");
     }
   }
 }

@@ -4,12 +4,13 @@ package jetbrains.mps.lang.test.runtime;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.DataManagerImpl;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ThreadUtils;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -21,7 +22,6 @@ import jetbrains.mps.lang.test.matcher.NodeDifference;
 import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Map;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.testbench.util.CachingAppender;
 import jetbrains.mps.testbench.junit.UncleanTestExecutionException;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
@@ -42,24 +42,39 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 
+/**
+ * Common ancestor for all generated EditorTestCase instances
+ * TODO must be moved up to the platform level: the MPSNodeEditor is availalbe only in ide
+ */
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
+
+  private EditorComponent myCurrentEditorComponent;
   protected Editor myEditor;
-  protected MPSFileNodeEditor myFileNodeEditor;
+  private MPSFileNodeEditor myFileNodeEditor;
   private SNode myBefore;
   private SNode myResult;
   protected CellReference myStart;
   protected CellReference myFinish;
 
-  public BaseEditorTestBody() {
-  }
+  public abstract void testMethodImpl() throws Exception;
 
+  /**
+   * 
+   * @deprecated use #initEditorComponent instead
+   */
+  @Deprecated
   protected Editor initEditor(final String before, final String after) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing editor");
@@ -87,34 +102,41 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
 
-    return this.myEditor;
+    return myEditor;
+  }
+
+  protected EditorComponent initEditorComponent(String before, String after) {
+    initEditor(before, after);
+    return myCurrentEditorComponent;
   }
 
   private void doInitEditor(final String before, final String after) throws Exception {
-    this.addNodeById(before);
+    addNodeById(before);
     if (!(after.equals(""))) {
-      this.addNodeById(after);
+      addNodeById(after);
     }
     myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
-        BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
-        if (BaseEditorTestBody.this.myStart == null) {
+        myBefore = getNodeById(before);
+        myStart = findCellReference(getRealNodeById(before));
+        if (myStart == null) {
           throw new IllegalStateException("Cannot find cell reference in the test case 'before'");
         }
         if (!(after.equals(""))) {
-          BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
-          BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
+          myResult = getNodeById(after);
+          myFinish = findCellReference(getRealNodeById(after));
         }
         myFileNodeEditor = openEditor();
         myEditor = myFileNodeEditor.getNodeEditor();
-        if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
-          EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
-          component.addNotify();
-          component.setSize(component.getPreferredSize());
-          component.validate();
+        myCurrentEditorComponent = myEditor.getCurrentEditorComponent();
+        if (!(myCurrentEditorComponent instanceof NodeEditorComponent)) {
+          throw new IllegalArgumentException("The component is not an instance of NodeEditorComponent: " + myCurrentEditorComponent);
         }
-        BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
+        NodeEditorComponent component = (NodeEditorComponent) myCurrentEditorComponent;
+        component.addNotify();
+        component.setSize(component.getPreferredSize());
+        component.validate();
+        myCurrentEditorComponent = myStart.setupSelection(component);
       }
     });
   }
@@ -124,7 +146,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     if (ListSequence.fromList(annotations).isEmpty()) {
       return null;
     }
-    return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
+    return new CellReference(getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), myMap);
   }
 
   protected void checkAssertion() throws Throwable {
@@ -135,14 +157,14 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         myProject.getModelAccess().runWriteAction(new Runnable() {
           public void run() {
-            if (BaseEditorTestBody.this.myResult != null) {
+            if (myResult != null) {
               try {
-                SNode editedNode = myEditor.getCurrentlyEditedNode().resolve(myProject.getRepository());
+                SNode editedNode = myBefore;
                 NodesMatcher nm = new NodesMatcher();
                 List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
                 Assert.assertEquals(null, diff);
                 if (myFinish != null) {
-                  myFinish.assertEditor(myEditor, (Map<SNode, SNode>) nm.getMap());
+                  myFinish.assertSelectionIsTheSame(myCurrentEditorComponent, (Map<SNode, SNode>) nm.getMap());
                 }
               } catch (Throwable t) {
                 throwable.value = t;
@@ -158,15 +180,11 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
-  private void flushEvents() {
-    ModelAccess.instance().flushEventQueue();
-  }
-
   public void testMethod() throws Throwable {
     CachingAppender appender = installAppender();
     try {
-      this.testMethodImpl();
-      this.checkAssertion();
+      testMethodImpl();
+      checkAssertion();
       dispose();
       appender.sealEvents();
       if (appender.isNotEmpty()) {
@@ -192,8 +210,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
-  public abstract void testMethodImpl() throws Exception;
-
   private void dispose() throws InterruptedException, InvocationTargetException {
     final Throwable[] ts = new Throwable[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -217,12 +233,21 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   private MPSFileNodeEditor openEditor() {
     assert ThreadUtils.isInEDT();
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
+    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore);
     return new MPSFileNodeEditor((MPSProject) myProject, file);
   }
 
-  protected EditorComponent getEditorComponent() {
-    return (EditorComponent) myEditor.getCurrentEditorComponent();
+  protected jetbrains.mps.nodeEditor.EditorComponent getEditorComponent() {
+    return (jetbrains.mps.nodeEditor.EditorComponent) myCurrentEditorComponent;
+  }
+
+  /**
+   * 
+   * @deprecated no need to refer the editor instance here -- EditorComponent is enough
+   */
+  @Deprecated
+  protected Editor getEditor() {
+    return myEditor;
   }
 
   protected Project getProject() {
@@ -252,13 +277,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
             try {
-              myEditor.getEditorContext().select(node);
+              myCurrentEditorComponent.getEditorContext().select(node);
               IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
               query.setCurrentNodeOnly(true);
-              Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myEditor.getEditorContext());
+              Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myCurrentEditorComponent.getEditorContext());
               for (Pair<IntentionExecutable, SNode> intention : intentions) {
                 if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
-                  intention.o1.execute(intention.o2, myEditor.getEditorContext());
+                  intention.o1.execute(intention.o2, myCurrentEditorComponent.getEditorContext());
                 }
               }
             } catch (Throwable t) {
@@ -293,6 +318,44 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     // flushing model events 
     flushEvents();
+  }
+
+  private void flushEvents() {
+    ModelAccess.instance().flushEventQueue();
+  }
+
+  protected void switchToInspector() throws InvocationTargetException, InterruptedException {
+    if (!(myCurrentEditorComponent instanceof NodeEditorComponent)) {
+      throw new IllegalArgumentException("Impossible to switch to inspector: the component is not a NodeEditorComponent: " + myCurrentEditorComponent);
+    }
+    myCurrentEditorComponent = ((NodeEditorComponent) myCurrentEditorComponent).getInspector();
+    if (myCurrentEditorComponent.getSelectionManager().getSelection() == null) {
+      selectFirstCellInInspector(myCurrentEditorComponent);
+    }
+  }
+
+  private void selectFirstCellInInspector(EditorComponent myCurrentEditorComponent) {
+    EditorCell toSelect = null;
+    EditorCell rootCell = myCurrentEditorComponent.getRootCell();
+    if (rootCell instanceof EditorCell_Collection) {
+      toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinderUtil.Finder.FIRST_EDITABLE, CellFinderUtil.Finder.FIRST_SELECTABLE_LEAF);
+      if (toSelect == null) {
+        toSelect = rootCell;
+      }
+    } else
+    if (rootCell != null && rootCell.isSelectable()) {
+      toSelect = rootCell;
+    }
+    if (toSelect != null) {
+      myCurrentEditorComponent.changeSelection(toSelect);
+    }
+  }
+
+  protected void switchBackFromInspector() {
+    if (!(myCurrentEditorComponent instanceof InspectorEditorComponent)) {
+      throw new IllegalArgumentException("Impossible to switch back from inspector: the component is not a InspectorEditorComponent: " + myCurrentEditorComponent);
+    }
+    myCurrentEditorComponent = myFileNodeEditor.getNodeEditor().getCurrentEditorComponent();
   }
 
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {

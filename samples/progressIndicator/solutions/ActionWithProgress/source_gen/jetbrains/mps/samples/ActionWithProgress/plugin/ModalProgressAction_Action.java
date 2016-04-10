@@ -15,6 +15,8 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.module.SRepository;
+import com.intellij.util.WaitForProgressToShow;
+import com.intellij.openapi.application.ModalityState;
 import java.util.concurrent.CyclicBarrier;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
@@ -56,10 +58,10 @@ public class ModalProgressAction_Action extends BaseAction {
     boolean canBeCanceled = true;
 
     // This is a common modal task. It can't be sent to the background, but can be canceled  
-    // Important thing - you need to implement the onCacel() method  
     // Your code needs to frequently check if the process has been canceled (between every calculation steps)  
     // and handle yourself all steps to revert the action 
     final Task.Modal modalTask = new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Modal cancelable task", canBeCanceled) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         final ProgressMonitorAdapter adapter = new ProgressMonitorAdapter(indicator);
         final SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
@@ -101,26 +103,6 @@ public class ModalProgressAction_Action extends BaseAction {
           return;
         }
 
-        // Command in step is ok 
-        repository.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            adapter.step("Do some work in command ...");
-            ModalProgressAction_Action.this.doWork(event);
-          }
-        });
-        adapter.advance(stepValue);
-        if (adapter.isCanceled()) {
-          return;
-        }
-
-
-
-
-        // All EDT calls will break normal progress behaviour, since they are scheduled to run in a different thread 
-        // Explicit synchronization is necessary in such cases 
-
-        final CyclicBarrier barrier = new CyclicBarrier(2);
-
         adapter.step("Now will try to do some work with Locks in EDT...");
         ModalProgressAction_Action.this.doWork(event);
         adapter.advance(stepValue);
@@ -128,7 +110,42 @@ public class ModalProgressAction_Action extends BaseAction {
           return;
         }
 
-        adapter.step("Do some work with Read Lock in EDT...");
+        // The correct way to call command with progress is as follows 
+        // The dialog might not show up if the method for the usual read & write locks are used 
+        adapter.step("Do some work in command in EDT...");
+        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+          public void run() {
+            repository.getModelAccess().executeCommand(new Runnable() {
+              public void run() {
+                ModalProgressAction_Action.this.doWork(event);
+              }
+            });
+          }
+        }, ModalityState.defaultModalityState());
+
+        adapter.advance(stepValue);
+        if (adapter.isCanceled()) {
+          return;
+        }
+
+        adapter.step("Do some work with Read Lock in EDT using IDEA API...");
+        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+          public void run() {
+            repository.getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                ModalProgressAction_Action.this.doWork(event);
+              }
+            });
+          }
+        });
+
+        adapter.advance(stepValue);
+        if (adapter.isCanceled()) {
+          return;
+        }
+
+        final CyclicBarrier barrier = new CyclicBarrier(2);
+        adapter.step("Do some work with Read Lock in EDT using jdk...");
         repository.getModelAccess().runReadInEDT(new Runnable() {
           public void run() {
             ModalProgressAction_Action.this.doWork(event);
@@ -143,12 +160,11 @@ public class ModalProgressAction_Action extends BaseAction {
         }
 
         // Any EDT access lock brokes normal progress behaviour 
-        adapter.step("Do some work with Write Lock in EDT...");
+        adapter.step("Do some work with Write Lock in EDT using jdk...");
         repository.getModelAccess().runWriteInEDT(new Runnable() {
           public void run() {
             ModalProgressAction_Action.this.doWork(event);
             ModalProgressAction_Action.this.block(barrier, event);
-
           }
         });
         ModalProgressAction_Action.this.block(barrier, event);
@@ -159,20 +175,6 @@ public class ModalProgressAction_Action extends BaseAction {
         }
 
         // Any EDT access lock brokes normal progress behaviour 
-        adapter.step("Do some work in command in EDT...");
-        repository.getModelAccess().executeCommandInEDT(new Runnable() {
-          public void run() {
-            ModalProgressAction_Action.this.doWork(event);
-            ModalProgressAction_Action.this.block(barrier, event);
-
-          }
-        });
-        ModalProgressAction_Action.this.block(barrier, event);
-
-        adapter.advance(stepValue);
-        if (adapter.isCanceled()) {
-          return;
-        }
 
         ModalProgressAction_Action.this.doWork(event);
 
@@ -185,6 +187,7 @@ public class ModalProgressAction_Action extends BaseAction {
 
         adapter.done();
       }
+
       @Override
       public void onCancel() {
         super.onCancel();

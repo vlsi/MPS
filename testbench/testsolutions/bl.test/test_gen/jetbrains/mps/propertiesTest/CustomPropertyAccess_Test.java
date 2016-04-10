@@ -15,14 +15,17 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class CustomPropertyAccess_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck6799807267508922004() throws Throwable {
-    this.initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)", false);
-    this.runTest("jetbrains.mps.propertiesTest.CustomPropertyAccess_Test$TestBody", "test_ErrorMessagesCheck6799807267508922004", true);
+    initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)", false);
+    runTest("jetbrains.mps.propertiesTest.CustomPropertyAccess_Test$TestBody", "test_ErrorMessagesCheck6799807267508922004", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_ErrorMessagesCheck6799807267508922004() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6799807267508922004"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
-      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6799807267502339007"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6799807267508922004"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, getRealNodeById("6799807267502339007"));
     }
+
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MissingTypeFocus4_Test extends BaseTransformationTest {
-  public MissingTypeFocus4_Test() {
-  }
   @Test
   public void test_MissingTypeFocus4() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MissingTypeFocus4_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MissingTypeFocus4_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8551480281481357224", "8551480281481357228");
-      this.typeString("final static foo;");
+      initEditorComponent("8551480281481357224", "8551480281481357228");
+      typeString("final static foo;");
     }
   }
 }

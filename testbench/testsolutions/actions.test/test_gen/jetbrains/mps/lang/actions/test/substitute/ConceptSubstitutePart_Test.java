@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ConceptSubstitutePart_Test extends BaseTransformationTest {
-  public ConceptSubstitutePart_Test() {
-  }
   @Test
   public void test_ConceptSubstitutePart() throws Throwable {
-    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    runTest("jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3213804652589456691", "3213804652589456739");
-      this.typeString("chil");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("3213804652589456691", "3213804652589456739");
+      typeString("chil");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

@@ -9,26 +9,23 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Post_ThisSettingClassConcept_Test extends BaseTransformationTest {
-  public Post_ThisSettingClassConcept_Test() {
-  }
   @Test
   public void test_Post_ThisSettingClassConcept() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("654795966042500703", "654795966042593528");
-      this.invokeAction("$Copy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("$Paste");
+      initEditorComponent("654795966042500703", "654795966042593528");
+      invokeAction("$Copy");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("$Paste");
     }
   }
 }

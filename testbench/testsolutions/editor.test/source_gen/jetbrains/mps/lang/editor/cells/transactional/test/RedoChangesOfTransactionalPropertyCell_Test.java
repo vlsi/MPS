@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RedoChangesOfTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public RedoChangesOfTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_RedoChangesOfTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoChangesOfTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoChangesOfTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2786154196593923926", "2786154196593923928");
-      this.typeString("tmpstr");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Redo");
+      initEditorComponent("2786154196593923926", "2786154196593923928");
+      typeString("tmpstr");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("$Undo");
+      invokeAction("$Redo");
     }
   }
 }

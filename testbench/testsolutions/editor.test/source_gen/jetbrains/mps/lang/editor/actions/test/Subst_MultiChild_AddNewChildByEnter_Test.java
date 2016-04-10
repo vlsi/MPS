@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Subst_MultiChild_AddNewChildByEnter_Test extends BaseTransformationTest {
-  public Subst_MultiChild_AddNewChildByEnter_Test() {
-  }
   @Test
   public void test_Subst_MultiChild_AddNewChildByEnter() throws Throwable {
-    this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
+    runTest("jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("9133079350911891055", "9133079350911891058");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditorComponent("9133079350911891055", "9133079350911891058");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

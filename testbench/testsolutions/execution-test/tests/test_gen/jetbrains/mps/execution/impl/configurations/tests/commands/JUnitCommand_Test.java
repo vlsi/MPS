@@ -30,14 +30,15 @@ import com.intellij.execution.ExecutionException;
 public class JUnitCommand_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
+    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
+    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleBTestCase() throws Exception {
@@ -46,8 +47,10 @@ public class JUnitCommand_Test extends BaseTransformationTest {
     public void test_startFailedBTestCase() throws Exception {
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(FailedBTestCase_Test.class.getSimpleName())));
     }
+
+
     public SModel getMyModel() {
-      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
+      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
     }
     public void checkTests(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failure) {
       try {

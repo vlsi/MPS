@@ -9,20 +9,17 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class TestNotApplicableConvertToTernaryOperatorIntention_Test extends BaseTransformationTest {
-  public TestNotApplicableConvertToTernaryOperatorIntention_Test() {
-  }
   @Test
   public void test_TestNotApplicableConvertToTernaryOperatorIntention() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7737741562085738724", "7737741562085870199");
+      initEditorComponent("7737741562085738724", "7737741562085870199");
       invokeIntention("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", myStart.getNode());
     }
   }

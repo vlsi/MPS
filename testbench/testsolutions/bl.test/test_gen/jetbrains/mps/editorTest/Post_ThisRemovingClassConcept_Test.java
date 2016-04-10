@@ -11,27 +11,24 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class Post_ThisRemovingClassConcept_Test extends BaseTransformationTest {
-  public Post_ThisRemovingClassConcept_Test() {
-  }
   @Test
   public void test_Post_ThisRemovingClassConcept() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.Post_ThisRemovingClassConcept_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.Post_ThisRemovingClassConcept_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2671731496587878891", "2671731496587878925");
-      this.invokeAction("$Copy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " HOME"));
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.invokeAction("$Paste");
+      initEditorComponent("2671731496587878891", "2671731496587878925");
+      invokeAction("$Copy");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " HOME"));
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      invokeAction("$Paste");
     }
   }
 }

@@ -9,25 +9,22 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MultiParens1_Test extends BaseTransformationTest {
-  public MultiParens1_Test() {
-  }
   @Test
   public void test_MultiParens1() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MultiParens1_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MultiParens1_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3237167448837878450", "3237167448837878461");
-      this.typeString("(");
-      this.typeString("(");
-      this.typeString("(");
-      this.typeString("(");
-      this.typeString("(");
+      initEditorComponent("3237167448837878450", "3237167448837878461");
+      typeString("(");
+      typeString("(");
+      typeString("(");
+      typeString("(");
+      typeString("(");
     }
   }
 }

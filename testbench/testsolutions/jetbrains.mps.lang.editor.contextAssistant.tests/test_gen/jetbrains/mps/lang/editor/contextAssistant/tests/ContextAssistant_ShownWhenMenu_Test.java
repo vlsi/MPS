@@ -13,21 +13,18 @@ import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
 
 @MPSLaunch
 public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest {
-  public ContextAssistant_ShownWhenMenu_Test() {
-  }
   @Test
   public void test_ContextAssistant_ShownWhenMenu() throws Throwable {
-    this.initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShownWhenMenu_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShownWhenMenu_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8865042036543828398", "");
-      ContextAssistantManager contextAssistantManager = this.getEditorComponent().getEditorContext().getContextAssistantManager();
+      initEditorComponent("8865042036543828398", "");
+      ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
       contextAssistantManager.updateImmediately();
 
       Assert.assertNotNull(contextAssistantManager.getActiveAssistant());

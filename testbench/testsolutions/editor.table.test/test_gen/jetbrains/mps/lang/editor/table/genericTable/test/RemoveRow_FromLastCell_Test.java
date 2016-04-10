@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveRow_FromLastCell_Test extends BaseTransformationTest {
-  public RemoveRow_FromLastCell_Test() {
-  }
   @Test
   public void test_RemoveRow_FromLastCell() throws Throwable {
-    this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromLastCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromLastCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6170050146384276466", "6170050146384276491");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("6170050146384276466", "6170050146384276491");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }
