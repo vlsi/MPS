@@ -156,6 +156,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     }
   }
 
+  // model removal doesn't affect list of models to publish. To unpublish a model, call #forgetModel() first
   public void removeModel(SModel md) {
     // FNF is poor in tracking transients models (unpublished models do not show up in a repository)
     // This code might need reconsideration once we have a distinct repository for transient modules (we'll either

@@ -424,6 +424,17 @@ class GenerationSession {
             // pretend inplace model outcome is from currentOutputModel
             changeModelReference(currentInputModel, currentOutputModel.getReference());
             // currentInputModel (with a model reference of current output) stays as input
+            //
+            // now, if we got here due to an error and not going to continue generation
+            if (generationFailed) {
+              // input model with in-place changes is published as output. Generally, there's no difference between
+              // intactInputModelClone and currentInputModel unless an error occurred in delta builder - we are in
+              // inplaceChange mode, all changes are applied at the very end, e.g. an exception in a query would get us here quite
+              // before any changes got a chance to show up in output. Nevertheless, it doesn't hurt to have an extra model here.
+              publishTransientModel(currentOutputModel.getReference());
+              // we shall discard instance of blank output model, as there's currentInputModel with its reference in the vault to get published
+              dropTransientModel(currentOutputModel);
+            }
           } else {
             dropTransientModel(intactInputModelClone);
           }
