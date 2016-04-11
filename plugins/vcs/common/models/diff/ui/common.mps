@@ -2,13 +2,13 @@
 <model ref="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="btf5" ref="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
@@ -78,6 +78,8 @@
     <import index="zbx9" ref="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)" />
     <import index="tp4s" ref="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
+    <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -256,7 +258,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -8306,14 +8308,15 @@
       </node>
     </node>
     <node concept="3clFbW" id="42hl10VHaz9" role="jymVt">
-      <node concept="3cqZAl" id="42hl10VHazb" role="3clF45" />
-      <node concept="3Tm1VV" id="42hl10VHaza" role="1B3o_S" />
-      <node concept="37vLTG" id="42hl10VHazc" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="3nxgM2zwO_k" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      <node concept="37vLTG" id="2crodf9S7vZ" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="2crodf9Safo" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~IProject" resolve="IProject" />
         </node>
       </node>
+      <node concept="3cqZAl" id="42hl10VHazb" role="3clF45" />
+      <node concept="3Tm1VV" id="42hl10VHaza" role="1B3o_S" />
       <node concept="37vLTG" id="42hl10VHaze" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="42hl10VHazf" role="1tU5fm" />
@@ -8324,8 +8327,13 @@
             <node concept="2ShNRf" id="42hl10VHazn" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazo" role="2ShVmc">
                 <ref role="37wK5l" node="6dXf3jYXvmm" resolve="DiffEditor.MainEditorComponent" />
-                <node concept="37vLTw" id="2BHiRxgm6tu" role="37wK5m">
-                  <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
+                <node concept="2OqwBi" id="2crodf9SbkQ" role="37wK5m">
+                  <node concept="37vLTw" id="2crodf9Sat3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2crodf9S7vZ" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="2crodf9SbN8" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~IProject.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
                 </node>
                 <node concept="3clFbT" id="1kYn6aTx4pV" role="37wK5m">
                   <property role="3clFbU" value="true" />
@@ -8348,8 +8356,13 @@
             <node concept="2ShNRf" id="42hl10VHazv" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazw" role="2ShVmc">
                 <ref role="37wK5l" to="zyr2:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean)" resolve="InspectorEditorComponent" />
-                <node concept="37vLTw" id="1clgIweMa5b" role="37wK5m">
-                  <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
+                <node concept="2OqwBi" id="2crodf9ScxV" role="37wK5m">
+                  <node concept="37vLTw" id="2crodf9Sc8H" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2crodf9S7vZ" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="2crodf9Sd05" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~IProject.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7oG" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
@@ -8373,6 +8386,18 @@
                       </node>
                       <node concept="37vLTw" id="2BHiRxgm8YB" role="2Oq$k0">
                         <ref role="3cqZAo" node="42hl10VHazH" resolve="ec" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="2crodf9Sdup" role="3cqZAp">
+                    <node concept="2YIFZM" id="2crodf9SdGM" role="3clFbG">
+                      <ref role="37wK5l" to="wvnl:~EditorExtensionUtil.extendUsingProject(jetbrains.mps.openapi.editor.EditorComponent,jetbrains.mps.project.IProject):void" resolve="extendUsingProject" />
+                      <ref role="1Pybhc" to="wvnl:~EditorExtensionUtil" resolve="EditorExtensionUtil" />
+                      <node concept="37vLTw" id="2crodf9SdUs" role="37wK5m">
+                        <ref role="3cqZAo" node="42hl10VHazH" resolve="ec" />
+                      </node>
+                      <node concept="37vLTw" id="2crodf9SefC" role="37wK5m">
+                        <ref role="3cqZAo" node="2crodf9S7vZ" resolve="project" />
                       </node>
                     </node>
                   </node>

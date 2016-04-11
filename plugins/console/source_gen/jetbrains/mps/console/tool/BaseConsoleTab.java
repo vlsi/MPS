@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Level;
@@ -150,6 +151,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         return super.getData(key);
       }
     };
+    EditorExtensionUtil.extendUsingProject(myEditor, myProject);
     myEditor.editNode(myRoot);
   }
 

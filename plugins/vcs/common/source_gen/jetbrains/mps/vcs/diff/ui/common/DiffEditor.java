@@ -10,11 +10,12 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.IProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -38,12 +40,13 @@ public class DiffEditor implements EditorMessageOwner {
   private JPanel myTopComponent;
   private InspectorEditorComponent myInspector;
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
-  public DiffEditor(SRepository repository, SNode node, String contentTitle, boolean isLeftEditor) {
-    myMainEditorComponent = new DiffEditor.MainEditorComponent(repository, true, isLeftEditor);
-    myInspector = new InspectorEditorComponent(repository, isLeftEditor);
+  public DiffEditor(final IProject project, SNode node, String contentTitle, boolean isLeftEditor) {
+    myMainEditorComponent = new DiffEditor.MainEditorComponent(project.getRepository(), true, isLeftEditor);
+    myInspector = new InspectorEditorComponent(project.getRepository(), isLeftEditor);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.setNoVirtualFile(true);
+        EditorExtensionUtil.extendUsingProject(ec, project);
       }
     });
 
