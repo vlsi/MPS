@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.xml.XMLPersistence;
@@ -33,6 +34,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.apache.log4j.LogManager;
@@ -41,6 +43,7 @@ import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.Attributes;
@@ -56,6 +59,7 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * ModelPersistence handles all persistences supported by current MPS version.
@@ -100,13 +104,12 @@ public class ModelPersistence {
   @Nullable
   public static IModelPersistence getPersistence(int version) {
     if (version == 8) {
-      //todo remove after 3.3
-      LOG.error("Model Persistence 8 has limited support in MPS 3.3 and will be completely removed in the next release.\n" +
-          "Please execute Main Menu->Migration->Migrations->Project Migrations->Migrate v8 Models");
       return new ModelPersistence8();
     }
 
-    if (version == 9) return new ModelPersistence9();
+    if (version == 9) {
+      return new ModelPersistence9();
+    }
 
     assert !isSupported(version) : "inconsistent ModelPersistence.isSupported and .getPersistence. Version=" + version;
     LOG.error("Unknown persistence version requested: " + version, new Throwable());
@@ -119,7 +122,7 @@ public class ModelPersistence {
       SModelHeader result = new SModelHeader();
       parseAndHandleExceptions(source, new HeaderOnlyHandler(result));
       return result;
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       Throwable th = ex.getCause() == null ? ex : ex.getCause();
       throw new ModelReadException(String.format("Failed to read model header: %s", th.getMessage()), th);
     }
@@ -143,8 +146,11 @@ public class ModelPersistence {
 
   private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
     int ver = header.getPersistenceVersion();
-    if (ver < 0) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    if (ver < 0) {
+      throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    }
 
+    ModelPersistence.checkV8(ver, header.getModelReference(), null);
     IModelPersistence mp = getPersistence(ver);
     if (mp == null) {
       String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
@@ -174,6 +180,7 @@ public class ModelPersistence {
     try {
       in = dataSource.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
+      ModelPersistence.checkV8(header.getPersistenceVersion(), header.getModelReference(), dataSource.getLocation());
       return readModel(header, source, state);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
@@ -189,10 +196,14 @@ public class ModelPersistence {
       parseAndHandleExceptions(new InputSource(new StringReader(content)), new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());
 
-      if (mp == null) return null;
+      if (mp == null) {
+        return null;
+      }
 
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
-      if (handler == null) return null;
+      if (handler == null) {
+        return null;
+      }
 
       parseAndHandleExceptions(new InputSource(new StringReader(content)), handler);
       return handler.getResult();
@@ -262,10 +273,18 @@ public class ModelPersistence {
     if (modelPersistence == null) {
       throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
     }
+    SModelBase md = model.getModelDescriptor();
+    String location = md == null ? null : md.getSource().getLocation();
+    ModelPersistence.checkV8(persistenceVersion, model.getReference(), location);
+
     if (persistenceVersion < 9) {
       model.getImplicitImportsSupport().calculateImplicitImports();
     }
-    return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
+    IModelWriter modelWriter = modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null);
+    if (modelWriter == null) {
+      throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
+    }
+    return modelWriter.saveModel(model);
   }
 
   public static Map<String, String> calculateHashes(String content) throws ModelReadException {
@@ -341,6 +360,33 @@ public class ModelPersistence {
       Throwable th = ex.getCause() == null ? ex : ex.getCause();
       throw new IOException(th);
     }
+  }
+
+  public static Set<String> ourReportedModels = new ConcurrentHashSet<String>();
+
+  public static void checkV8(int pv, @Nullable SModelReference ref, @Nullable String location) {
+    //todo remove after 3.3
+    if (pv != 8) {
+      return;
+    }
+
+    String mName = null;
+    if (ref != null) {
+      mName = ref.getModelName();
+    }
+
+    if (mName != null) {
+      if (ourReportedModels.contains(mName)) {
+        return;
+      } else {
+        ourReportedModels.add(mName);
+      }
+    }
+
+    LOG.error("Model Persistence 8 has limited support in MPS 3.3 and will be completely removed in the next release.\n" +
+        "To convert all project models, please execute Main Menu->Migration->Migrations->Project Migrations->Migrate v8 Models.\n" +
+        "Model " + (mName == null ? "" : mName) + (location == null ? "" : " in " + location));
+
   }
 
   private static class HeaderOnlyHandler extends DefaultHandler {
