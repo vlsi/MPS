@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.Computable;
@@ -91,7 +90,7 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  public static final int FIRST_SUPPORTED_VERSION = 8;
+  public static final int FIRST_SUPPORTED_VERSION = 9;
   public static final int LAST_VERSION = 9;
 
   public static boolean isSupported(int version) {
@@ -100,14 +99,9 @@ public class ModelPersistence {
 
   @Nullable
   public static IModelPersistence getPersistence(int version) {
-    if (version == 8) {
-      //todo remove after 3.3
-      LOG.error("Model Persistence 8 has limited support in MPS 3.3 and will be completely removed in the next release.\n" +
-          "Please execute Main Menu->Migration->Migrations->Project Migrations->Migrate v8 Models");
-      return new ModelPersistence8();
+    if (version == 9) {
+      return new ModelPersistence9();
     }
-
-    if (version == 9) return new ModelPersistence9();
 
     assert !isSupported(version) : "inconsistent ModelPersistence.isSupported and .getPersistence. Version=" + version;
     LOG.error("Unknown persistence version requested: " + version, new Throwable());
@@ -120,7 +114,7 @@ public class ModelPersistence {
       SModelHeader result = new SModelHeader();
       parseAndHandleExceptions(source, new HeaderOnlyHandler(result));
       return result;
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       Throwable th = ex.getCause() == null ? ex : ex.getCause();
       throw new ModelReadException(String.format("Failed to read model header: %s", th.getMessage()), th);
     }
@@ -144,7 +138,9 @@ public class ModelPersistence {
 
   private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
     int ver = header.getPersistenceVersion();
-    if (ver < 0) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    if (ver < 0) {
+      throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    }
 
     IModelPersistence mp = getPersistence(ver);
     if (mp == null) {
@@ -191,10 +187,14 @@ public class ModelPersistence {
       parseAndHandleExceptions(new InputSource(new StringReader(content)), new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());
 
-      if (mp == null) return null;
+      if (mp == null) {
+        return null;
+      }
 
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
-      if (handler == null) return null;
+      if (handler == null) {
+        return null;
+      }
 
       parseAndHandleExceptions(new InputSource(new StringReader(content)), handler);
       return handler.getResult();
@@ -264,10 +264,11 @@ public class ModelPersistence {
     if (modelPersistence == null) {
       throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
     }
-    if (persistenceVersion < 9) {
-      model.getImplicitImportsSupport().calculateImplicitImports();
+    IModelWriter writer = modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null);
+    if (writer == null) {
+      throw new IllegalArgumentException(String.format("Persistence has no writer. Version %d", persistenceVersion));
     }
-    return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
+    return writer.saveModel(model);
   }
 
   public static Map<String, String> calculateHashes(String content) throws ModelReadException {
@@ -336,7 +337,7 @@ public class ModelPersistence {
     // Both BufferedInputStream and ByteArrayInputStream do support marks, latter without limit.
     try {
       SModelHeader header = new SModelHeader();
-      data.mark(1<<16); // allow for huge headers
+      data.mark(1 << 16); // allow for huge headers
       InputSource source = new InputSource(new InputStreamReader(data, FileUtil.DEFAULT_CHARSET));
       parseAndHandleExceptions(source, new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());

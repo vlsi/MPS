@@ -38,6 +38,7 @@
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="l74a" ref="r:050eb90d-d917-47d4-8d74-cc37a63452a4(jetbrains.mps.smodel.persistence.def.v8)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -734,6 +735,25 @@
             </node>
             <node concept="3cmrfG" id="4BapoMDmVfk" role="3uHU7w">
               <property role="3cmrfH" value="7" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="31beu34dLhB" role="3cqZAp">
+          <node concept="3clFbS" id="31beu34dLhC" role="3clFbx">
+            <node concept="3cpWs6" id="31beu34dLhD" role="3cqZAp">
+              <node concept="2ShNRf" id="31beu34dLhE" role="3cqZAk">
+                <node concept="HV5vD" id="31beu34dRVT" role="2ShVmc">
+                  <ref role="HV5vE" to="l74a:31beu34diRt" resolve="ModelPersistence8" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="31beu34dLhG" role="3clFbw">
+            <node concept="37vLTw" id="31beu34dLhH" role="3uHU7B">
+              <ref role="3cqZAo" node="4BapoMDmOcB" resolve="version" />
+            </node>
+            <node concept="3cmrfG" id="31beu34dLwV" role="3uHU7w">
+              <property role="3cmrfH" value="8" />
             </node>
           </node>
         </node>

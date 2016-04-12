@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelHeader;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -122,6 +123,9 @@ public class VCSPersistenceSupport {
     }
     if (version == 7) {
       return new ModelPersistence7();
+    }
+    if (version == 8) {
+      return new ModelPersistence8();
     }
 
     // todo remove this after removing usages of VCSPersistenceSupport from everywhere except VCSPersistenceUtil 
