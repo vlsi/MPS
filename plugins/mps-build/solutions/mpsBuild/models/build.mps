@@ -30471,6 +30471,12 @@
           <ref role="3bR37D" node="6ifcnI8$2j3" resolve="jetbrains.mps.vcs.mergehints" />
         </node>
       </node>
+      <node concept="1SiIV0" id="31beu34fL0C" role="3bR37C">
+        <node concept="3bR9La" id="31beu34fL0D" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="3dkXFAFlpj8" resolve="jetbrains.mps.persistence" />
+        </node>
+      </node>
     </node>
     <node concept="13uUGR" id="6ifcnI8$2lq" role="1l3spa">
       <ref role="13uUGO" node="6eCuTcwOnJO" resolve="IDEA" />
