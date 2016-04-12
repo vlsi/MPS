@@ -844,7 +844,7 @@
           <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(jetbrains.mps.smodel.adapter.ids.SConceptId)" resolve="BaseConstraintsDescriptor" />
           <node concept="10Nm6u" id="23CHI7KI1sl" role="37wK5m">
             <node concept="xERo3" id="23CHI7KI21U" role="lGtFl">
-              <ref role="xH3mL" to="tp27:1TWFJuLByfo" resolve="reduce_ConDecl2Id" />
+              <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
               <node concept="3NFfHV" id="23CHI7KI22f" role="xEYEz">
                 <node concept="3clFbS" id="23CHI7KI22g" role="2VODD2">
                   <node concept="3clFbF" id="23CHI7KI23$" role="3cqZAp">

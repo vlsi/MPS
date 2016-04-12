@@ -57,6 +57,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   private final ConcurrentHashMap<SReferenceLinkId, ReferenceConstraintsDescriptor> referencesConstraints =
       new ConcurrentHashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public BaseConstraintsDescriptor(SConceptId conceptId) {
     this.myConcept = conceptId;
     calcInheritance();
