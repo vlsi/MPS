@@ -18,7 +18,6 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;

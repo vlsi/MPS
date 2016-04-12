@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.registry.AggregationLinkInfo;
 import jetbrains.mps.persistence.registry.AssociationLinkInfo;

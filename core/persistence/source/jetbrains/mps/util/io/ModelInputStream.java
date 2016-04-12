@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util.io;
 
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelReference;
