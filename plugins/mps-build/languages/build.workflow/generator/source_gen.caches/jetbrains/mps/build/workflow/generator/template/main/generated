@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9rw04oa2jbr08owrdcpsucncp6ouhdt">
+<dependencies version="2" modelHash="4gghs9qnemn7ey616xkm73zvug0q6h0">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -33,7 +33,7 @@
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-6h2u82japaswerosxaneg6oqho7add1" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-cs9q6uqzz7m5ssof7q0fsvuse5zchpj" />
-  <common hash="2pxizay2i02er13imuw9q6ggsqrg99p" dependsOnNodes="true">
+  <common hash="-di27wwrm0om3rvxczo32b6c1vbv3zts" dependsOnNodes="true">
     <dep root="1117643560963147795" />
     <dep root="2769948622284786809" />
     <dep root="2769948622284790861" />
@@ -81,7 +81,7 @@
   </source>
   <source id="2769948622284790861" name="antBuild.xml" hash="5ffsxnb8827aiemgbccqgiujh7lqbmx" />
   <source id="4755209551904406820" name="process_cycles" hash="74l23enp31wihfjydkqfoj3q1tbzj4r" />
-  <source id="7385586609667789438" name="step1_Structure" hash="500ewryho0j7i9p7tt4gcshhg9wzz61" />
+  <source id="7385586609667789438" name="step1_Structure" hash="-7l3ibqcjtu3na51y98edxz1y9eb0o7b" />
   <source id="6896005762093592212" name="build.properties" hash="-za4cl14176rzpgyydi6yhh0vknihfq" />
   <source id="1117643560963147795" name="import_libraries" hash="6d2cfmot7nbvhfa5m3ml4cwustw3cho" />
   <source id="6647099934207031466" name="reduce_JavaDep2TaskDep" hash="30o2tyheiyfh2eh6cygmrqiu5k061f2" />

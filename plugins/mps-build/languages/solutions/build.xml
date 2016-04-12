@@ -314,7 +314,7 @@
   <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
@@ -360,7 +360,7 @@
   <target name="java.compile.jetbrains.mps.build.tests" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.tests/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.tests/source_gen" />

@@ -289,7 +289,7 @@
   
   <target name="java.compile.jetbrains.mps.build.stripping.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/test_gen/" />
       <classpath>
@@ -351,7 +351,7 @@
   <target name="java.compile.jetbrains.mps.samples.Kaja" depends="java.compile.jetbrains.mps.samples.JavaKaja, fetchDependencies">
     <mkdir dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" />
@@ -399,7 +399,7 @@
   <target name="java.compile.jetbrains.mps.samples.Kaja#3265739055509559144" depends="java.compile.jetbrains.mps.samples.JavaKaja, java.compile.jetbrains.mps.samples.Kaja, fetchDependencies">
     <mkdir dir="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen" />
@@ -448,7 +448,7 @@
   <target name="java.compile.jetbrains.mps.samples.JavaKaja">
     <mkdir dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />

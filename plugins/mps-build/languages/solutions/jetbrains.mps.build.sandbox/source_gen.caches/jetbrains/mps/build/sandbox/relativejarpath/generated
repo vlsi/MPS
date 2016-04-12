@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ab53b0m0hzgcykutndned9wwp4qn32v" />
+<dependencies version="2" modelHash="ab53b0m0hzgcykutndned9wwp4qn32v">
+  <dep model="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="4gghs9qnemn7ey616xkm73zvug0q6h0" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="46k4j8lp7yj0owx5qjl3xv5uuyimyra" />
+  <common hash="a036jyqdeprvberzxtiems4bpaxggw7" />
+  <source id="867429721720070735" name="testjarpath" hash="-465s1dg4h0d6gabkmp7qxkdwyy6r50f">
+    <dep model="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" />
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+    <file name="testjarpath.xml" />
+  </source>
+</dependencies>
 

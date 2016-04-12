@@ -5,7 +5,7 @@
       <unit id="2769948622284624385" at="1,0,3,0" name="jetbrains.mps.build.sandbox.build2.myCore" />
     </file>
     <file name="myCore.xml">
-      <unit id="2769948622284624385" at="1,0,155,10" name="jetbrains.mps.build.sandbox.build2.myCore" />
+      <unit id="2769948622284624385" at="1,0,159,10" name="jetbrains.mps.build.sandbox.build2.myCore" />
     </file>
   </root>
 </debug-info>

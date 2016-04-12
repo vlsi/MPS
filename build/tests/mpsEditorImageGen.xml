@@ -251,7 +251,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.imageGen.testLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" />
@@ -292,7 +292,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.imageGen.testLanguage#5244026788026447518" depends="java.compile.jetbrains.mps.lang.editor.imageGen.testLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage#5244026788026447518" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage#5244026788026447518" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage#5244026788026447518" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/source_gen" />
@@ -333,7 +333,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.editor.imageGen.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/test_gen/" />
       <classpath>

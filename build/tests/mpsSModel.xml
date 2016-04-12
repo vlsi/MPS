@@ -261,7 +261,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.traceable.operations.test" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/traceable.operations.test/test_gen/" />
       <classpath>
@@ -320,7 +320,7 @@
   
   <target name="java.compile.jetbrains.mps.smodel.test" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.smodel.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.smodel.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.smodel.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/test_gen/" />
       <classpath>
@@ -382,7 +382,7 @@
   <target name="java.compile.jetbrains.mps.testRead" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testRead/resources" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.testRead" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testRead" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testRead" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testRead/resources" />

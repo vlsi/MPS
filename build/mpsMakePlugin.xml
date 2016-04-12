@@ -228,7 +228,7 @@
   <target name="java.compile.jetbrains.mps.ide.make" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mpsmake/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.make" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.make" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.make" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsmake/source_gen" />

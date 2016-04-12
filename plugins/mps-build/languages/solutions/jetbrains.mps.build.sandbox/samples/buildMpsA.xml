@@ -87,7 +87,7 @@
   <target name="java.compile.A" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/samples/buildD/src" />
     <mkdir dir="${build.tmp}/java/out/A" />
-    <javac destdir="${build.tmp}/java/out/A" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/A" fork="true" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildD/src" />
@@ -101,7 +101,7 @@
   <target name="java.compile.testImportJarReexport" depends="java.compile.A, fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/testImportJarReexport" />
-    <javac destdir="${build.tmp}/java/out/testImportJarReexport" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/testImportJarReexport" fork="true" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />

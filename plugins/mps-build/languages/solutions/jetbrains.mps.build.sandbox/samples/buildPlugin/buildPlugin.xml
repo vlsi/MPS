@@ -62,7 +62,7 @@
   
   <target name="java.compile.test1" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/test1" />
-    <javac destdir="${build.tmp}/java/out/test1" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/test1" fork="true" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src />
       <classpath>

@@ -191,7 +191,7 @@
   <target name="java.compile.jetbrains.mps.testActions" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testActions/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.testActions" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testActions" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testActions" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testActions/source_gen" />
