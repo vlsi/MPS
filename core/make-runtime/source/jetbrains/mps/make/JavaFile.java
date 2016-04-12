@@ -45,7 +45,7 @@ public class JavaFile {
   }
 
   String getContents() {
-    return FileUtil.read(myFile);
+    return FileUtil.read(myFile, FileUtil.DEFAULT_CHARSET_NAME);
   }
 
   public String toString() {
