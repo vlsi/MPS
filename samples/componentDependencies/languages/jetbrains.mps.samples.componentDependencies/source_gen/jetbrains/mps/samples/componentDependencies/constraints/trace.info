@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)/9095678365530422277">
     <file name="Dependency_Constraints.java">
-      <node id="9095678365530422277" at="28,35,29,98" concept="7" />
+      <node id="9095678365530422277" at="28,35,29,172" concept="7" />
       <node id="9095678365530422277" at="32,98,33,135" concept="4" />
       <node id="9095678365530422277" at="36,44,37,20" concept="5" />
       <node id="9095678365530422277" at="44,63,45,58" concept="5" />
@@ -33,7 +33,7 @@
       <node id="9095678365530422277" at="39,0,57,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="9095678365530422277" at="33,135,57,7" concept="2" />
       <node id="9095678365530422277" at="31,0,60,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="9095678365530422277" at="28,35,29,98" />
+      <scope id="9095678365530422277" at="28,35,29,172" />
       <scope id="9095678365530422277" at="36,44,37,20" />
       <scope id="9095678365530422277" at="44,63,45,58" />
       <scope id="9095678365530437365" at="50,50,51,357" />

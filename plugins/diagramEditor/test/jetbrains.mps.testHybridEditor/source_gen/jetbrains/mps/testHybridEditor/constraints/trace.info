@@ -13,23 +13,23 @@
   </root>
   <root nodeRef="r:90a861dc-3e8d-4722-8e7d-483ecda32980(jetbrains.mps.testHybridEditor.constraints)/9168054762590341487">
     <file name="MetaBlock_Constraints.java">
-      <node id="9168054762590341487" at="16,34,17,98" concept="5" />
-      <node id="4394877045816805258" at="19,48,20,64" concept="3" />
-      <node id="4394877045816813284" at="21,46,22,18" concept="4" />
-      <node id="4394877045817416347" at="23,5,24,238" concept="4" />
-      <node id="9168054762590341487" at="16,0,19,0" concept="0" trace="MetaBlock_Constraints#()V" />
-      <node id="4394877045816807010" at="20,64,23,5" concept="1" />
-      <node id="9168054762590341487" at="19,0,26,0" concept="2" trace="getAlternativeIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="9168054762590341487" at="16,34,17,98" />
-      <scope id="4394877045816807013" at="21,46,22,18" />
-      <scope id="9168054762590341487" at="16,0,19,0" />
-      <scope id="9168054762590341540" at="19,48,24,238">
+      <node id="9168054762590341487" at="15,34,16,158" concept="5" />
+      <node id="4394877045816805258" at="18,48,19,64" concept="3" />
+      <node id="4394877045816813284" at="20,46,21,18" concept="4" />
+      <node id="4394877045817416347" at="22,5,23,238" concept="4" />
+      <node id="9168054762590341487" at="15,0,18,0" concept="0" trace="MetaBlock_Constraints#()V" />
+      <node id="4394877045816807010" at="19,64,22,5" concept="1" />
+      <node id="9168054762590341487" at="18,0,25,0" concept="2" trace="getAlternativeIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="9168054762590341487" at="15,34,16,158" />
+      <scope id="4394877045816807013" at="20,46,21,18" />
+      <scope id="9168054762590341487" at="15,0,18,0" />
+      <scope id="9168054762590341540" at="18,48,23,238">
         <var name="module" id="4394877045816805259" />
       </scope>
-      <scope id="9168054762590341487" at="19,0,26,0">
+      <scope id="9168054762590341487" at="18,0,25,0">
         <var name="node" id="9168054762590341487" />
       </scope>
-      <unit id="9168054762590341487" at="15,0,27,0" name="jetbrains.mps.testHybridEditor.constraints.MetaBlock_Constraints" />
+      <unit id="9168054762590341487" at="14,0,26,0" name="jetbrains.mps.testHybridEditor.constraints.MetaBlock_Constraints" />
     </file>
   </root>
 </debug-info>

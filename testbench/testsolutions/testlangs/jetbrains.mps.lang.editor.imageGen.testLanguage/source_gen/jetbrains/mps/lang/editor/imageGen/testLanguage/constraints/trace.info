@@ -17,7 +17,7 @@
   </root>
   <root nodeRef="r:0ef2f444-056f-4c81-955a-1c2ea83ba701(jetbrains.mps.lang.editor.imageGen.testLanguage.constraints)/2442780630506687109">
     <file name="ExportAsImage_Constraints.java">
-      <node id="2442780630506687109" at="15,38,16,98" concept="9" />
+      <node id="2442780630506687109" at="15,38,16,179" concept="9" />
       <node id="2442780630506687109" at="19,43,20,16" concept="5" />
       <node id="2442780630506687109" at="23,200,24,96" concept="4" />
       <node id="2442780630506687109" at="24,96,25,0" concept="6" />
@@ -31,7 +31,7 @@
       <node id="2442780630506687109" at="32,0,35,0" concept="8" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="2442780630506687109" at="18,0,22,0" concept="3" trace="hasOwnCanBeChildMethod#()Z" />
       <node id="2442780630506687109" at="22,0,32,0" concept="3" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="2442780630506687109" at="15,38,16,98" />
+      <scope id="2442780630506687109" at="15,38,16,179" />
       <scope id="2442780630506687109" at="19,43,20,16" />
       <scope id="2442780630506687109" at="26,51,27,67" />
       <scope id="2442780630506687111" at="32,148,33,57" />

@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)/4022026349915821207">
     <file name="VariableReference_Constraints.java">
-      <node id="4022026349915821207" at="28,42,29,98" concept="7" />
+      <node id="4022026349915821207" at="28,42,29,172" concept="7" />
       <node id="4022026349915821207" at="32,98,33,135" concept="4" />
       <node id="4022026349915821207" at="36,44,37,20" concept="5" />
       <node id="7125334522320417177" at="44,142,45,267" concept="4" />
@@ -34,7 +34,7 @@
       <node id="4022026349915821207" at="39,0,58,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="4022026349915821207" at="33,135,58,7" concept="1" />
       <node id="4022026349915821207" at="31,0,61,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="4022026349915821207" at="28,42,29,98" />
+      <scope id="4022026349915821207" at="28,42,29,172" />
       <scope id="4022026349915821207" at="36,44,37,20" />
       <scope id="7125334522320417193" at="47,38,48,154" />
       <scope id="4022026349915821207" at="53,63,54,58" />

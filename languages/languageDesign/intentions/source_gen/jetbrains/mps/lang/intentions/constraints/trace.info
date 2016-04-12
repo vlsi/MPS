@@ -17,7 +17,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)/1227089946706">
     <file name="IntentionDeclaration_Constraints.java">
-      <node id="1227089946706" at="16,45,17,93" concept="9" />
+      <node id="1227089946706" at="16,45,17,163" concept="9" />
       <node id="1227089946706" at="20,42,21,16" concept="5" />
       <node id="1227089946706" at="24,120,25,55" concept="4" />
       <node id="1227089946706" at="25,55,26,0" concept="6" />
@@ -31,7 +31,7 @@
       <node id="1227089946706" at="33,0,36,0" concept="8" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="1227089946706" at="19,0,23,0" concept="3" trace="hasOwnCanBeRootMethod#()Z" />
       <node id="1227089946706" at="23,0,33,0" concept="3" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="1227089946706" at="16,45,17,93" />
+      <scope id="1227089946706" at="16,45,17,163" />
       <scope id="1227089946706" at="20,42,21,16" />
       <scope id="1227089946706" at="27,51,28,66" />
       <scope id="1227089959349" at="33,99,34,91" />
@@ -54,7 +54,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)/6263518417926802270">
     <file name="SurroundWithIntentionDeclaration_Constraints.java">
-      <node id="6263518417926802270" at="16,57,17,98" concept="9" />
+      <node id="6263518417926802270" at="16,57,17,180" concept="9" />
       <node id="6263518417926802270" at="20,42,21,16" concept="5" />
       <node id="6263518417926802270" at="24,120,25,55" concept="4" />
       <node id="6263518417926802270" at="25,55,26,0" concept="6" />
@@ -68,7 +68,7 @@
       <node id="6263518417926802270" at="33,0,36,0" concept="8" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="6263518417926802270" at="19,0,23,0" concept="3" trace="hasOwnCanBeRootMethod#()Z" />
       <node id="6263518417926802270" at="23,0,33,0" concept="3" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="6263518417926802270" at="16,57,17,98" />
+      <scope id="6263518417926802270" at="16,57,17,180" />
       <scope id="6263518417926802270" at="20,42,21,16" />
       <scope id="6263518417926802270" at="27,51,28,66" />
       <scope id="6263518417926802273" at="33,99,34,91" />

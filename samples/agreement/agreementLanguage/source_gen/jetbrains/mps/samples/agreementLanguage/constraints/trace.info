@@ -14,7 +14,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)/1214253504159">
     <file name="ValueReference_Constraints.java">
-      <node id="1214253504159" at="25,39,26,93" concept="6" />
+      <node id="1214253504159" at="25,39,26,167" concept="6" />
       <node id="1214253504159" at="29,98,30,135" concept="3" />
       <node id="1214253504159" at="33,44,34,20" concept="4" />
       <node id="1214253544836" at="41,142,42,246" concept="3" />
@@ -30,7 +30,7 @@
       <node id="1214253504159" at="36,0,51,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="1214253504159" at="30,135,51,7" concept="1" />
       <node id="1214253504159" at="28,0,54,0" concept="2" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="1214253504159" at="25,39,26,93" />
+      <scope id="1214253504159" at="25,39,26,167" />
       <scope id="1214253504159" at="33,44,34,20" />
       <scope id="1214253504159" at="46,63,47,58" />
       <scope id="1214253543335" at="41,142,43,49">
@@ -56,7 +56,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)/1214253593082">
     <file name="EventVariableReference_Constraints.java">
-      <node id="1214253593082" at="26,47,27,93" concept="6" />
+      <node id="1214253593082" at="26,47,27,175" concept="6" />
       <node id="1214253593082" at="30,98,31,135" concept="3" />
       <node id="1214253593082" at="34,44,35,20" concept="4" />
       <node id="1214253611993" at="42,142,43,398" concept="3" />
@@ -72,7 +72,7 @@
       <node id="1214253593082" at="37,0,52,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="1214253593082" at="31,135,52,7" concept="1" />
       <node id="1214253593082" at="29,0,55,0" concept="2" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="1214253593082" at="26,47,27,93" />
+      <scope id="1214253593082" at="26,47,27,175" />
       <scope id="1214253593082" at="34,44,35,20" />
       <scope id="1214253593082" at="47,63,48,58" />
       <scope id="1214253610430" at="42,142,44,54">

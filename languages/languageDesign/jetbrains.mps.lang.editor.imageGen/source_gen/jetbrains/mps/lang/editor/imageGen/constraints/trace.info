@@ -14,7 +14,7 @@
   </root>
   <root nodeRef="r:4e9a9958-f159-4048-9d34-aa57f65be511(jetbrains.mps.lang.editor.imageGen.constraints)/3245637733309668517">
     <file name="ImageGenerator_Constraints.java">
-      <node id="3245637733309668517" at="17,39,18,98" concept="6" />
+      <node id="3245637733309668517" at="17,39,18,167" concept="6" />
       <node id="3245637733309668517" at="21,88,22,123" concept="4" />
       <node id="3245637733309668517" at="25,37,26,20" concept="5" />
       <node id="3245637733309668517" at="29,42,30,37" concept="4" />
@@ -26,7 +26,7 @@
       <node id="3245637733309668517" at="28,0,33,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="3245637733309668517" at="22,123,33,7" concept="2" />
       <node id="3245637733309668517" at="20,0,36,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
-      <scope id="3245637733309668517" at="17,39,18,98" />
+      <scope id="3245637733309668517" at="17,39,18,167" />
       <scope id="3245637733309668517" at="25,37,26,20" />
       <scope id="3245637733309668522" at="30,37,31,190" />
       <scope id="3245637733309668517" at="29,42,31,190">

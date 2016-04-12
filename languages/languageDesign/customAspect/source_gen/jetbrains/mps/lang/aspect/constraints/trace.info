@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.aspect.constraints)/5386558680326427073">
     <file name="AspectMethodDescriptor_Constraints.java">
-      <node id="5386558680326427073" at="29,47,30,98" concept="7" />
+      <node id="5386558680326427073" at="29,47,30,166" concept="7" />
       <node id="5386558680326427073" at="33,98,34,135" concept="4" />
       <node id="5386558680326427073" at="37,44,38,20" concept="5" />
       <node id="5386558680326427073" at="45,63,46,58" concept="5" />
@@ -33,7 +33,7 @@
       <node id="5386558680326427073" at="40,0,59,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="5386558680326427073" at="34,135,59,7" concept="2" />
       <node id="5386558680326427073" at="32,0,62,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="5386558680326427073" at="29,47,30,98" />
+      <scope id="5386558680326427073" at="29,47,30,166" />
       <scope id="5386558680326427073" at="37,44,38,20" />
       <scope id="5386558680326427073" at="45,63,46,58" />
       <scope id="5386558680326437155" at="52,69,53,351" />

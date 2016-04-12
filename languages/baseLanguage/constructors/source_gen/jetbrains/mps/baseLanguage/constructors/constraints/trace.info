@@ -18,7 +18,7 @@
   </root>
   <root nodeRef="r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)/5379647004618378867">
     <file name="CustomConstructorParameterReference_Constraints.java">
-      <node id="5379647004618378867" at="29,60,30,97" concept="10" />
+      <node id="5379647004618378867" at="29,60,30,192" concept="10" />
       <node id="5379647004618378867" at="33,43,34,16" concept="6" />
       <node id="5379647004618378867" at="37,200,38,96" concept="5" />
       <node id="5379647004618378867" at="38,96,39,0" concept="7" />
@@ -64,7 +64,7 @@
       <node id="5379647004618378867" at="68,0,91,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="5379647004618378867" at="62,135,91,7" concept="2" />
       <node id="5379647004618378867" at="60,0,94,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="5379647004618378867" at="29,60,30,97" />
+      <scope id="5379647004618378867" at="29,60,30,192" />
       <scope id="5379647004618378867" at="33,43,34,16" />
       <scope id="5379647004618378867" at="40,51,41,67" />
       <scope id="5379647004618378867" at="47,44,48,16" />

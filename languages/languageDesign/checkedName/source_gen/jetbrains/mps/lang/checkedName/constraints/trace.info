@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)/4844813484172611610">
     <file name="PropertyRefExpression_Constraints.java">
-      <node id="4844813484172611610" at="28,46,29,98" concept="7" />
+      <node id="4844813484172611610" at="28,46,29,170" concept="7" />
       <node id="4844813484172611610" at="32,98,33,135" concept="4" />
       <node id="4844813484172611610" at="36,44,37,20" concept="5" />
       <node id="4844813484172611616" at="45,416,46,44" concept="5" />
@@ -32,7 +32,7 @@
       <node id="4844813484172611610" at="39,0,56,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="4844813484172611610" at="33,135,56,7" concept="1" />
       <node id="4844813484172611610" at="31,0,59,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="4844813484172611610" at="28,46,29,98" />
+      <scope id="4844813484172611610" at="28,46,29,170" />
       <scope id="4844813484172611610" at="36,44,37,20" />
       <scope id="4844813484172611615" at="45,416,46,44" />
       <scope id="4844813484172611610" at="51,63,52,58" />

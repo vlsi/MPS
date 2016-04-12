@@ -16,16 +16,16 @@
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/2161719505004861768">
     <file name="Applicability_Constraints.java">
-      <node id="2161719505004861768" at="9,38,10,98" concept="8" />
+      <node id="2161719505004861768" at="9,38,10,161" concept="8" />
       <node id="2161719505004861768" at="9,0,12,0" concept="1" trace="Applicability_Constraints#()V" />
-      <scope id="2161719505004861768" at="9,38,10,98" />
+      <scope id="2161719505004861768" at="9,38,10,161" />
       <scope id="2161719505004861768" at="9,0,12,0" />
       <unit id="2161719505004861768" at="8,0,13,0" name="jetbrains.mps.samples.heating.constraints.Applicability_Constraints" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/2161719505004867255">
     <file name="DailyPlan_Constraints.java">
-      <node id="2161719505004867255" at="18,34,19,98" concept="8" />
+      <node id="2161719505004867255" at="18,34,19,157" concept="8" />
       <node id="2161719505004867255" at="22,88,23,123" concept="4" />
       <node id="2161719505004867255" at="26,37,27,20" concept="5" />
       <node id="2161719505004867255" at="30,42,31,44" concept="4" />
@@ -37,7 +37,7 @@
       <node id="2161719505004867255" at="29,0,34,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="2161719505004867255" at="23,123,34,7" concept="2" />
       <node id="2161719505004867255" at="21,0,37,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
-      <scope id="2161719505004867255" at="18,34,19,98" />
+      <scope id="2161719505004867255" at="18,34,19,157" />
       <scope id="2161719505004867255" at="26,37,27,20" />
       <scope id="2161719505004867259" at="31,44,32,262" />
       <scope id="2161719505004867255" at="30,42,32,262">
@@ -58,41 +58,41 @@
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/5063359128232717451">
     <file name="ChangeEvent_Constraints.java">
-      <node id="5063359128232717451" at="16,36,17,98" concept="8" />
-      <node id="5063359128232717451" at="20,88,21,123" concept="4" />
-      <node id="5063359128232717451" at="24,40,25,20" concept="5" />
-      <node id="5063359128232717451" at="28,70,29,44" concept="4" />
-      <node id="5063359128232717451" at="29,44,30,126" concept="0" />
-      <node id="5063359128232934209" at="29,44,30,126" concept="5" />
-      <node id="5063359128232717451" at="32,7,33,22" concept="5" />
-      <node id="5063359128232717451" at="16,0,19,0" concept="1" trace="ChangeEvent_Constraints#()V" />
-      <node id="5063359128232717451" at="23,0,27,0" concept="3" trace="hasOwnValidator#()Z" />
-      <node id="5063359128232717451" at="27,0,32,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="5063359128232717451" at="21,123,32,7" concept="2" />
-      <node id="5063359128232717451" at="19,0,35,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
-      <scope id="5063359128232717451" at="16,36,17,98" />
-      <scope id="5063359128232717451" at="24,40,25,20" />
-      <scope id="5063359128232933522" at="29,44,30,126" />
-      <scope id="5063359128232717451" at="28,70,30,126">
+      <node id="5063359128232717451" at="17,36,18,159" concept="8" />
+      <node id="5063359128232717451" at="21,88,22,123" concept="4" />
+      <node id="5063359128232717451" at="25,40,26,20" concept="5" />
+      <node id="5063359128232717451" at="29,70,30,44" concept="4" />
+      <node id="5063359128232717451" at="30,44,31,126" concept="0" />
+      <node id="5063359128232934209" at="30,44,31,126" concept="5" />
+      <node id="5063359128232717451" at="33,7,34,22" concept="5" />
+      <node id="5063359128232717451" at="17,0,20,0" concept="1" trace="ChangeEvent_Constraints#()V" />
+      <node id="5063359128232717451" at="24,0,28,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="5063359128232717451" at="28,0,33,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="5063359128232717451" at="22,123,33,7" concept="2" />
+      <node id="5063359128232717451" at="20,0,36,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <scope id="5063359128232717451" at="17,36,18,159" />
+      <scope id="5063359128232717451" at="25,40,26,20" />
+      <scope id="5063359128232933522" at="30,44,31,126" />
+      <scope id="5063359128232717451" at="29,70,31,126">
         <var name="propertyName" id="5063359128232717451" />
       </scope>
-      <scope id="5063359128232717451" at="16,0,19,0" />
-      <scope id="5063359128232717451" at="23,0,27,0" />
-      <scope id="5063359128232717451" at="27,0,32,0">
+      <scope id="5063359128232717451" at="17,0,20,0" />
+      <scope id="5063359128232717451" at="24,0,28,0" />
+      <scope id="5063359128232717451" at="28,0,33,0">
         <var name="node" id="5063359128232717451" />
         <var name="propertyValue" id="5063359128232717451" />
       </scope>
-      <scope id="5063359128232717451" at="20,88,33,22">
+      <scope id="5063359128232717451" at="21,88,34,22">
         <var name="properties" id="5063359128232717451" />
       </scope>
-      <scope id="5063359128232717451" at="19,0,35,0" />
-      <unit id="5063359128232717451" at="22,129,32,5" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints$1" />
-      <unit id="5063359128232717451" at="15,0,36,0" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints" />
+      <scope id="5063359128232717451" at="20,0,36,0" />
+      <unit id="5063359128232717451" at="23,129,33,5" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints$1" />
+      <unit id="5063359128232717451" at="16,0,37,0" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/5726447348463760016">
     <file name="Slot_Constraints.java">
-      <node id="5726447348463760016" at="21,29,22,98" concept="8" />
+      <node id="5726447348463760016" at="21,29,22,152" concept="8" />
       <node id="5726447348463760016" at="25,88,26,123" concept="4" />
       <node id="5726447348463760016" at="29,40,30,20" concept="5" />
       <node id="5726447348463760016" at="33,82,34,38" concept="4" />
@@ -108,7 +108,7 @@
       <node id="5726447348463760016" at="32,0,41,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="5726447348463760016" at="26,123,41,7" concept="2" />
       <node id="5726447348463760016" at="24,0,44,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
-      <scope id="5726447348463760016" at="21,29,22,98" />
+      <scope id="5726447348463760016" at="21,29,22,152" />
       <scope id="5726447348463760016" at="29,40,30,20" />
       <scope id="5726447348463760813" at="36,43,37,279" />
       <scope id="5726447348463760821" at="44,82,45,46" />
@@ -140,7 +140,7 @@
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/935069066463107114">
     <file name="DailyPlanReference_Constraints.java">
-      <node id="935069066463107114" at="32,43,33,97" concept="8" />
+      <node id="935069066463107114" at="32,43,33,165" concept="8" />
       <node id="935069066463107114" at="36,98,37,135" concept="4" />
       <node id="935069066463107114" at="40,44,41,20" concept="5" />
       <node id="935069066463107114" at="48,44,49,24" concept="5" />
@@ -166,7 +166,7 @@
       <node id="935069066463107114" at="43,0,73,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="935069066463107114" at="37,135,73,7" concept="2" />
       <node id="935069066463107114" at="35,0,76,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="935069066463107114" at="32,43,33,97" />
+      <scope id="935069066463107114" at="32,43,33,165" />
       <scope id="935069066463107114" at="40,44,41,20" />
       <scope id="935069066463107114" at="48,44,49,24" />
       <scope id="935069066463204429" at="52,128,53,209" />

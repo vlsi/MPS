@@ -18,7 +18,7 @@
   </root>
   <root nodeRef="r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)/3374946611454212812">
     <file name="PrivateStaticMethodCall_Constraints.java">
-      <node id="3374946611454212812" at="32,48,33,98" concept="10" />
+      <node id="3374946611454212812" at="32,48,33,184" concept="10" />
       <node id="3374946611454212812" at="36,98,37,135" concept="5" />
       <node id="3374946611454212812" at="40,44,41,20" concept="6" />
       <node id="3374946611454212812" at="48,63,49,58" concept="6" />
@@ -41,7 +41,7 @@
       <node id="3374946611454212812" at="43,0,69,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="3374946611454212812" at="37,135,69,7" concept="2" />
       <node id="3374946611454212812" at="35,0,72,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="3374946611454212812" at="32,48,33,98" />
+      <scope id="3374946611454212812" at="32,48,33,184" />
       <scope id="3374946611454212812" at="40,44,41,20" />
       <scope id="3374946611454212812" at="48,63,49,58" />
       <scope id="6405552206792772960" at="54,253,55,40" />
@@ -75,7 +75,7 @@
   </root>
   <root nodeRef="r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)/4107550939057700059">
     <file name="PrivateStaticFieldReference_Constraints.java">
-      <node id="4107550939057700059" at="32,52,33,98" concept="10" />
+      <node id="4107550939057700059" at="32,52,33,188" concept="10" />
       <node id="4107550939057700059" at="36,98,37,135" concept="5" />
       <node id="4107550939057700059" at="40,44,41,20" concept="6" />
       <node id="4107550939057700059" at="48,63,49,58" concept="6" />
@@ -99,7 +99,7 @@
       <node id="4107550939057700059" at="43,0,70,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="4107550939057700059" at="37,135,70,7" concept="2" />
       <node id="4107550939057700059" at="35,0,73,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="4107550939057700059" at="32,52,33,98" />
+      <scope id="4107550939057700059" at="32,52,33,188" />
       <scope id="4107550939057700059" at="40,44,41,20" />
       <scope id="4107550939057700059" at="48,63,49,58" />
       <scope id="6405552206789985748" at="54,257,55,40" />
@@ -133,7 +133,7 @@
   </root>
   <root nodeRef="r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)/6825241477451043706">
     <file name="PrivateFieldReferenceOperation_Constraints.java">
-      <node id="6825241477451043706" at="34,55,35,98" concept="10" />
+      <node id="6825241477451043706" at="34,55,35,191" concept="10" />
       <node id="6825241477451043706" at="38,98,39,135" concept="5" />
       <node id="6825241477451043706" at="42,44,43,20" concept="6" />
       <node id="6825241477451043706" at="50,63,51,58" concept="6" />
@@ -163,7 +163,7 @@
       <node id="6825241477451043706" at="45,0,81,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="6825241477451043706" at="39,135,81,7" concept="2" />
       <node id="6825241477451043706" at="37,0,84,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="6825241477451043706" at="34,55,35,98" />
+      <scope id="6825241477451043706" at="34,55,35,191" />
       <scope id="6825241477451043706" at="42,44,43,20" />
       <scope id="6825241477451043706" at="50,63,51,58" />
       <scope id="6405552206789470834" at="57,224,58,40" />
@@ -204,7 +204,7 @@
   </root>
   <root nodeRef="r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)/6825241477451051015">
     <file name="PrivateInstanceMethodCallOperation_Constraints.java">
-      <node id="6825241477451051015" at="34,59,35,98" concept="10" />
+      <node id="6825241477451051015" at="34,59,35,195" concept="10" />
       <node id="6825241477451051015" at="38,98,39,135" concept="5" />
       <node id="6825241477451051015" at="42,44,43,20" concept="6" />
       <node id="6825241477451051015" at="50,63,51,58" concept="6" />
@@ -233,7 +233,7 @@
       <node id="6825241477451051015" at="45,0,80,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="6825241477451051015" at="39,135,80,7" concept="2" />
       <node id="6825241477451051015" at="37,0,83,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="6825241477451051015" at="34,59,35,98" />
+      <scope id="6825241477451051015" at="34,59,35,195" />
       <scope id="6825241477451051015" at="42,44,43,20" />
       <scope id="6825241477451051015" at="50,63,51,58" />
       <scope id="6825241477451051029" at="56,224,57,40" />

@@ -19,7 +19,7 @@
   </root>
   <root nodeRef="r:f7dd6374-5397-49db-8c5c-70e362e3e80b(jetbrains.mps.build.mps.runner.constraints)/2220861080745131150">
     <file name="BuildSolutionRunnerAspect_Constraints.java">
-      <node id="2220861080745131150" at="29,50,30,98" concept="11" />
+      <node id="2220861080745131150" at="29,50,30,174" concept="11" />
       <node id="2220861080745131150" at="33,43,34,16" concept="6" />
       <node id="2220861080745131150" at="37,200,38,96" concept="5" />
       <node id="2220861080745131150" at="38,96,39,0" concept="8" />
@@ -51,7 +51,7 @@
       <node id="2220861080745131150" at="54,0,71,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="2220861080745131150" at="48,135,71,7" concept="2" />
       <node id="2220861080745131150" at="46,0,74,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="2220861080745131150" at="29,50,30,98" />
+      <scope id="2220861080745131150" at="29,50,30,174" />
       <scope id="2220861080745131150" at="33,43,34,16" />
       <scope id="2220861080745131150" at="40,51,41,67" />
       <scope id="2220861080745131150" at="51,44,52,20" />

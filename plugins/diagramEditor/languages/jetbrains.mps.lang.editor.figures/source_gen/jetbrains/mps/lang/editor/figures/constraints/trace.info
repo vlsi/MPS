@@ -17,7 +17,7 @@
   </root>
   <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/1094405431463463167">
     <file name="ExternalViewFigure_Constraints.java">
-      <node id="1094405431463463167" at="29,43,30,98" concept="9" />
+      <node id="1094405431463463167" at="29,43,30,170" concept="9" />
       <node id="1094405431463463167" at="33,88,34,123" concept="6" />
       <node id="1094405431463463167" at="37,37,38,20" concept="7" />
       <node id="1094405431463463167" at="41,42,42,37" concept="6" />
@@ -43,7 +43,7 @@
       <node id="1094405431463463167" at="32,0,48,0" concept="5" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
       <node id="1094405431463463167" at="50,135,70,7" concept="2" />
       <node id="1094405431463463167" at="48,0,73,0" concept="5" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="1094405431463463167" at="29,43,30,98" />
+      <scope id="1094405431463463167" at="29,43,30,170" />
       <scope id="1094405431463463167" at="37,37,38,20" />
       <scope id="1094405431463463224" at="42,37,43,327" />
       <scope id="1094405431463463167" at="53,44,54,20" />
@@ -82,7 +82,7 @@
   </root>
   <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/1094405431463513183">
     <file name="ExternalViewFigureParameter_Constraints.java">
-      <node id="1094405431463513183" at="31,52,32,98" concept="9" />
+      <node id="1094405431463513183" at="31,52,32,179" concept="9" />
       <node id="1094405431463513183" at="35,88,36,123" concept="6" />
       <node id="1094405431463513183" at="39,37,40,20" concept="7" />
       <node id="1094405431463513183" at="43,42,44,37" concept="6" />
@@ -109,7 +109,7 @@
       <node id="1094405431463513183" at="58,0,75,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="1094405431463513183" at="52,135,75,7" concept="2" />
       <node id="1094405431463513183" at="50,0,78,0" concept="5" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="1094405431463513183" at="31,52,32,98" />
+      <scope id="1094405431463513183" at="31,52,32,179" />
       <scope id="1094405431463513183" at="39,37,40,20" />
       <scope id="1094405431463513187" at="44,37,45,333" />
       <scope id="1094405431463513183" at="55,44,56,20" />

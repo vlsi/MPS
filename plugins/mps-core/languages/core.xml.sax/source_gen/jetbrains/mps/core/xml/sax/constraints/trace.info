@@ -18,7 +18,7 @@
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/2264311582634140674">
     <file name="XMLSAXAttributeReference_Constraints.java">
-      <node id="2264311582634140674" at="29,49,30,98" concept="10" />
+      <node id="2264311582634140674" at="29,49,30,169" concept="10" />
       <node id="2264311582634140674" at="33,43,34,16" concept="6" />
       <node id="2264311582634140674" at="37,200,38,96" concept="5" />
       <node id="2264311582634140674" at="38,96,39,0" concept="7" />
@@ -54,7 +54,7 @@
       <node id="2264311582634140674" at="54,0,83,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="2264311582634140674" at="48,135,83,7" concept="2" />
       <node id="2264311582634140674" at="46,0,86,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="2264311582634140674" at="29,49,30,98" />
+      <scope id="2264311582634140674" at="29,49,30,169" />
       <scope id="2264311582634140674" at="33,43,34,16" />
       <scope id="2264311582634140674" at="40,51,41,67" />
       <scope id="2264311582634140674" at="51,44,52,20" />
@@ -113,7 +113,7 @@
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/2264311582634140739">
     <file name="XMLSAXFieldReference_Constraints.java">
-      <node id="2264311582634140739" at="26,45,27,98" concept="10" />
+      <node id="2264311582634140739" at="26,45,27,165" concept="10" />
       <node id="2264311582634140739" at="30,98,31,135" concept="5" />
       <node id="2264311582634140739" at="34,44,35,20" concept="6" />
       <node id="2264311582634140743" at="42,142,43,243" concept="5" />
@@ -131,7 +131,7 @@
       <node id="2264311582634140739" at="37,0,55,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="2264311582634140739" at="31,135,55,7" concept="2" />
       <node id="2264311582634140739" at="29,0,58,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="2264311582634140739" at="26,45,27,98" />
+      <scope id="2264311582634140739" at="26,45,27,165" />
       <scope id="2264311582634140739" at="34,44,35,20" />
       <scope id="2264311582634140753" at="44,30,45,407" />
       <scope id="2264311582634140739" at="50,63,51,58" />
@@ -158,37 +158,37 @@
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/2264311582634140768">
     <file name="XMLSAXLocatorExpression_Constraints.java">
-      <node id="2264311582634140768" at="16,48,17,98" concept="10" />
-      <node id="2264311582634140768" at="20,43,21,16" concept="6" />
-      <node id="2264311582634140768" at="24,200,25,96" concept="5" />
-      <node id="2264311582634140768" at="25,96,26,0" concept="7" />
-      <node id="2264311582634140768" at="27,51,28,67" concept="2" />
-      <node id="2264311582634140768" at="29,5,30,0" concept="7" />
-      <node id="2264311582634140768" at="30,0,31,18" concept="6" />
-      <node id="2264311582634140771" at="33,148,34,226" concept="6" />
-      <node id="2264311582634140768" at="36,0,37,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="2264311582634140768" at="16,0,19,0" concept="1" trace="XMLSAXLocatorExpression_Constraints#()V" />
-      <node id="2264311582634140768" at="26,0,29,5" concept="3" />
-      <node id="2264311582634140768" at="33,0,36,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="2264311582634140768" at="19,0,23,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
-      <node id="2264311582634140768" at="23,0,33,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="2264311582634140768" at="16,48,17,98" />
-      <scope id="2264311582634140768" at="20,43,21,16" />
-      <scope id="2264311582634140768" at="27,51,28,67" />
-      <scope id="2264311582634140770" at="33,148,34,226" />
-      <scope id="2264311582634140768" at="16,0,19,0" />
-      <scope id="2264311582634140768" at="33,0,36,0">
+      <node id="2264311582634140768" at="15,48,16,168" concept="10" />
+      <node id="2264311582634140768" at="19,43,20,16" concept="6" />
+      <node id="2264311582634140768" at="23,200,24,96" concept="5" />
+      <node id="2264311582634140768" at="24,96,25,0" concept="7" />
+      <node id="2264311582634140768" at="26,51,27,67" concept="2" />
+      <node id="2264311582634140768" at="28,5,29,0" concept="7" />
+      <node id="2264311582634140768" at="29,0,30,18" concept="6" />
+      <node id="2264311582634140771" at="32,148,33,226" concept="6" />
+      <node id="2264311582634140768" at="35,0,36,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="2264311582634140768" at="15,0,18,0" concept="1" trace="XMLSAXLocatorExpression_Constraints#()V" />
+      <node id="2264311582634140768" at="25,0,28,5" concept="3" />
+      <node id="2264311582634140768" at="32,0,35,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="2264311582634140768" at="18,0,22,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="2264311582634140768" at="22,0,32,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2264311582634140768" at="15,48,16,168" />
+      <scope id="2264311582634140768" at="19,43,20,16" />
+      <scope id="2264311582634140768" at="26,51,27,67" />
+      <scope id="2264311582634140770" at="32,148,33,226" />
+      <scope id="2264311582634140768" at="15,0,18,0" />
+      <scope id="2264311582634140768" at="32,0,35,0">
         <var name="childConcept" id="2264311582634140768" />
         <var name="link" id="2264311582634140768" />
         <var name="node" id="2264311582634140768" />
         <var name="operationContext" id="2264311582634140768" />
         <var name="parentNode" id="2264311582634140768" />
       </scope>
-      <scope id="2264311582634140768" at="19,0,23,0" />
-      <scope id="2264311582634140768" at="24,200,31,18">
+      <scope id="2264311582634140768" at="18,0,22,0" />
+      <scope id="2264311582634140768" at="23,200,30,18">
         <var name="result" id="2264311582634140768" />
       </scope>
-      <scope id="2264311582634140768" at="23,0,33,0">
+      <scope id="2264311582634140768" at="22,0,32,0">
         <var name="checkingNodeContext" id="2264311582634140768" />
         <var name="childConcept" id="2264311582634140768" />
         <var name="link" id="2264311582634140768" />
@@ -196,42 +196,42 @@
         <var name="operationContext" id="2264311582634140768" />
         <var name="parentNode" id="2264311582634140768" />
       </scope>
-      <unit id="2264311582634140768" at="15,0,38,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXLocatorExpression_Constraints" />
+      <unit id="2264311582634140768" at="14,0,37,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXLocatorExpression_Constraints" />
     </file>
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/2264311582634140779">
     <file name="XMLSAXBreakStatement_Constraints.java">
-      <node id="2264311582634140779" at="16,45,17,98" concept="10" />
-      <node id="2264311582634140779" at="20,43,21,16" concept="6" />
-      <node id="2264311582634140779" at="24,200,25,96" concept="5" />
-      <node id="2264311582634140779" at="25,96,26,0" concept="7" />
-      <node id="2264311582634140779" at="27,51,28,67" concept="2" />
-      <node id="2264311582634140779" at="29,5,30,0" concept="7" />
-      <node id="2264311582634140779" at="30,0,31,18" concept="6" />
-      <node id="2264311582634140782" at="33,148,34,234" concept="6" />
-      <node id="2264311582634140779" at="36,0,37,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="2264311582634140779" at="16,0,19,0" concept="1" trace="XMLSAXBreakStatement_Constraints#()V" />
-      <node id="2264311582634140779" at="26,0,29,5" concept="3" />
-      <node id="2264311582634140779" at="33,0,36,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="2264311582634140779" at="19,0,23,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
-      <node id="2264311582634140779" at="23,0,33,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="2264311582634140779" at="16,45,17,98" />
-      <scope id="2264311582634140779" at="20,43,21,16" />
-      <scope id="2264311582634140779" at="27,51,28,67" />
-      <scope id="2264311582634140781" at="33,148,34,234" />
-      <scope id="2264311582634140779" at="16,0,19,0" />
-      <scope id="2264311582634140779" at="33,0,36,0">
+      <node id="2264311582634140779" at="15,45,16,165" concept="10" />
+      <node id="2264311582634140779" at="19,43,20,16" concept="6" />
+      <node id="2264311582634140779" at="23,200,24,96" concept="5" />
+      <node id="2264311582634140779" at="24,96,25,0" concept="7" />
+      <node id="2264311582634140779" at="26,51,27,67" concept="2" />
+      <node id="2264311582634140779" at="28,5,29,0" concept="7" />
+      <node id="2264311582634140779" at="29,0,30,18" concept="6" />
+      <node id="2264311582634140782" at="32,148,33,234" concept="6" />
+      <node id="2264311582634140779" at="35,0,36,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="2264311582634140779" at="15,0,18,0" concept="1" trace="XMLSAXBreakStatement_Constraints#()V" />
+      <node id="2264311582634140779" at="25,0,28,5" concept="3" />
+      <node id="2264311582634140779" at="32,0,35,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="2264311582634140779" at="18,0,22,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="2264311582634140779" at="22,0,32,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2264311582634140779" at="15,45,16,165" />
+      <scope id="2264311582634140779" at="19,43,20,16" />
+      <scope id="2264311582634140779" at="26,51,27,67" />
+      <scope id="2264311582634140781" at="32,148,33,234" />
+      <scope id="2264311582634140779" at="15,0,18,0" />
+      <scope id="2264311582634140779" at="32,0,35,0">
         <var name="childConcept" id="2264311582634140779" />
         <var name="link" id="2264311582634140779" />
         <var name="node" id="2264311582634140779" />
         <var name="operationContext" id="2264311582634140779" />
         <var name="parentNode" id="2264311582634140779" />
       </scope>
-      <scope id="2264311582634140779" at="19,0,23,0" />
-      <scope id="2264311582634140779" at="24,200,31,18">
+      <scope id="2264311582634140779" at="18,0,22,0" />
+      <scope id="2264311582634140779" at="23,200,30,18">
         <var name="result" id="2264311582634140779" />
       </scope>
-      <scope id="2264311582634140779" at="23,0,33,0">
+      <scope id="2264311582634140779" at="22,0,32,0">
         <var name="checkingNodeContext" id="2264311582634140779" />
         <var name="childConcept" id="2264311582634140779" />
         <var name="link" id="2264311582634140779" />
@@ -239,12 +239,12 @@
         <var name="operationContext" id="2264311582634140779" />
         <var name="parentNode" id="2264311582634140779" />
       </scope>
-      <unit id="2264311582634140779" at="15,0,38,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXBreakStatement_Constraints" />
+      <unit id="2264311582634140779" at="14,0,37,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXBreakStatement_Constraints" />
     </file>
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/2264311582634140791">
     <file name="XMLSAXChildRule_Constraints.java">
-      <node id="2264311582634140791" at="24,40,25,98" concept="10" />
+      <node id="2264311582634140791" at="24,40,25,160" concept="10" />
       <node id="2264311582634140791" at="28,98,29,135" concept="5" />
       <node id="2264311582634140791" at="32,44,33,20" concept="6" />
       <node id="2264311582634140795" at="40,142,41,300" concept="6" />
@@ -259,7 +259,7 @@
       <node id="2264311582634140791" at="35,0,49,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="2264311582634140791" at="29,135,49,7" concept="2" />
       <node id="2264311582634140791" at="27,0,52,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="2264311582634140791" at="24,40,25,98" />
+      <scope id="2264311582634140791" at="24,40,25,160" />
       <scope id="2264311582634140791" at="32,44,33,20" />
       <scope id="2264311582634140794" at="40,142,41,300" />
       <scope id="2264311582634140791" at="44,63,45,58" />
@@ -283,7 +283,7 @@
   </root>
   <root nodeRef="r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)/4720003541456853028">
     <file name="XMLSAXNodeRuleParamRef_Constraints.java">
-      <node id="4720003541456853028" at="27,47,28,98" concept="10" />
+      <node id="4720003541456853028" at="27,47,28,167" concept="10" />
       <node id="4720003541456853028" at="31,43,32,16" concept="6" />
       <node id="4720003541456853028" at="35,200,36,96" concept="5" />
       <node id="4720003541456853028" at="36,96,37,0" concept="7" />
@@ -312,7 +312,7 @@
       <node id="4720003541456853028" at="52,0,69,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="4720003541456853028" at="46,135,69,7" concept="2" />
       <node id="4720003541456853028" at="44,0,72,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="4720003541456853028" at="27,47,28,98" />
+      <scope id="4720003541456853028" at="27,47,28,167" />
       <scope id="4720003541456853028" at="31,43,32,16" />
       <scope id="4720003541456853028" at="38,51,39,67" />
       <scope id="4720003541456853028" at="49,44,50,20" />
