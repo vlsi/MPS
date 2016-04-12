@@ -16,20 +16,37 @@
 package jetbrains.mps.smodel.runtime;
 
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class BasePropertyDescriptor implements PropertyDescriptor {
   private final SPropertyId myId;
   private final String myName;
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public BasePropertyDescriptor(SPropertyId id, String name) {
     myId = id;
     myName = name;
   }
 
+  public BasePropertyDescriptor(SProperty p) {
+    //todo store SProperty, not name/id pair
+    myId = MetaIdHelper.getProperty(p);
+    myName = p.getName();
+  }
+
   @Override
   public SPropertyId getId() {
     return myId;
+  }
+
+  @Override
+  public SProperty getProperty() {
+    return MetaAdapterFactory.getProperty(myId, myName);
   }
 
   @Override

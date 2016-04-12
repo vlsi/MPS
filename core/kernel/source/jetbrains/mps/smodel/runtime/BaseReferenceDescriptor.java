@@ -16,8 +16,12 @@
 package jetbrains.mps.smodel.runtime;
 
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class BaseReferenceDescriptor implements ReferenceDescriptor {
   private final SReferenceLinkId myId;
@@ -25,11 +29,26 @@ public class BaseReferenceDescriptor implements ReferenceDescriptor {
   private final SConceptId myTargetConcept;
   private final boolean myIsOptional;
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public BaseReferenceDescriptor(SReferenceLinkId id, String name, SConceptId targetConcept, boolean isOptional) {
     myId = id;
     myName = name;
     myTargetConcept = targetConcept;
     myIsOptional = isOptional;
+  }
+
+  public BaseReferenceDescriptor(SReferenceLink ref, SConceptId targetConcept, boolean isOptional) {
+    //todo store SReference, not name/id pair
+    myId = MetaIdHelper.getReference(ref);
+    myName = ref.getName();
+    myTargetConcept = targetConcept;
+    myIsOptional = isOptional;
+  }
+
+  @Override
+  public SReferenceLink getLink() {
+    return MetaAdapterFactory.getReferenceLink(myId, myName);
   }
 
   public SReferenceLinkId getId() {

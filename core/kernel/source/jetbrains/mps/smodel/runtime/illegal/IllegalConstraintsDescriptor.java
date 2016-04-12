@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterByI
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.*;
@@ -81,6 +83,16 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @Override
   public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
+    return null;
+  }
+
+  @Override
+  public PropertyConstraintsDescriptor getProperty(SProperty property) {
+    return null;
+  }
+
+  @Override
+  public ReferenceConstraintsDescriptor getReference(SReferenceLink referenceLink) {
     return null;
   }
 

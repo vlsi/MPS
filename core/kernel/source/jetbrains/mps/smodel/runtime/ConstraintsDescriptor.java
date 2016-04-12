@@ -44,11 +44,19 @@ public interface ConstraintsDescriptor {
 
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
+  PropertyConstraintsDescriptor getProperty(SProperty property);
+
+  @Deprecated
+  @ToRemove(version = 3.4)
   PropertyConstraintsDescriptor getProperty(SPropertyId property);
 
   @Deprecated
   PropertyConstraintsDescriptor getProperty(String name);
 
+  ReferenceConstraintsDescriptor getReference(SReferenceLink referenceLink);
+
+  @Deprecated
+  @ToRemove(version = 3.4)
   ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink);
 
   @Deprecated

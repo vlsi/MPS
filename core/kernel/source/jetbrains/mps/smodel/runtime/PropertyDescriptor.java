@@ -17,9 +17,15 @@ package jetbrains.mps.smodel.runtime;
 
 
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public interface PropertyDescriptor {
+  @Deprecated
+  @ToRemove(version = 3.4)
   SPropertyId getId();
+
+  SProperty getProperty();
 
   String getName();
 }

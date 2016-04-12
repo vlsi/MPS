@@ -18,8 +18,12 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public interface ReferenceDescriptor {
+  @Deprecated
+  @ToRemove(version = 3.4)
   SReferenceLinkId getId();
   
   String getName();
@@ -27,4 +31,6 @@ public interface ReferenceDescriptor {
   SConceptId getTargetConcept();
 
   boolean isOptional();
+
+  SReferenceLink getLink();
 }

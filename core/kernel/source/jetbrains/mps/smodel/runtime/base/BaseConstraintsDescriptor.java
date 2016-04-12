@@ -33,8 +33,11 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -69,37 +72,39 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     calcInheritance();
   }
 
-  protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
-    Map<String, PropertyConstraintsDescriptor> notDefaultProperties = getNotDefaultProperties();
-    Map<SPropertyId, PropertyConstraintsDescriptor> result = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    for (Entry<String, PropertyConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
+  protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
+    //body should be removed after 3.4
+    Map<SPropertyId, PropertyConstraintsDescriptor> notDefaultProperties = getNotDefaultSProperties();
+    Map<SProperty, PropertyConstraintsDescriptor> result = new HashMap<SProperty, PropertyConstraintsDescriptor>();
+    for (Entry<SPropertyId, PropertyConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
       ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
       PropertyDescriptor pd = concept.getPropertyDescriptor(entry.getKey());
-      result.put(pd.getId(), entry.getValue());
-    }
-    return result;
-  }
-
-  protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
-    Map<String, ReferenceConstraintsDescriptor> notDefaultProperties = getNotDefaultReferences();
-    Map<SReferenceLinkId, ReferenceConstraintsDescriptor> result = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    for (Entry<String, ReferenceConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
-      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
-      ReferenceDescriptor rd = concept.getRefDescriptor(entry.getKey());
-      result.put(rd.getId(), entry.getValue());
+      result.put(pd.getProperty(), entry.getValue());
     }
     return result;
   }
 
   @Deprecated
-  @ToRemove(version = 3.2)
-  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
+  @ToRemove(version = 3.4)
+  protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     return Collections.emptyMap();
   }
 
+  protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
+    //body should be removed after 3.4
+    Map<SReferenceLinkId, ReferenceConstraintsDescriptor> notDefaultProperties = getNotDefaultSReferenceLinks();
+    Map<SReferenceLink, ReferenceConstraintsDescriptor> result = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
+    for (Entry<SReferenceLinkId, ReferenceConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
+      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
+      ReferenceDescriptor rd = concept.getRefDescriptor(entry.getKey());
+      result.put(rd.getLink(), entry.getValue());
+    }
+    return result;
+  }
+
   @Deprecated
-  @ToRemove(version = 3.2)
-  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+  @ToRemove(version = 3.4)
+  protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     return Collections.emptyMap();
   }
 
@@ -200,7 +205,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeChildDescriptor == null) {
       return true;
     }
@@ -211,7 +217,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return canBeChildDescriptor.canBeChild(node, parentNode, link, childConcept, operationContext, checkingNodeContext);
   }
 
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     // compatibility method, should be overriden
     throw new UnsupportedOperationException();
   }
@@ -234,7 +241,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeParentDescriptor == null) {
       return true;
     }
@@ -245,13 +253,15 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return canBeParentDescriptor.canBeParent(node, childNode, childConcept, link, operationContext, checkingNodeContext);
   }
 
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     // compatibility method, should be overriden
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeAncestorDescriptor == null) {
       return true;
     }
@@ -270,9 +280,15 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @Override
   public PropertyConstraintsDescriptor getProperty(String propertyName) {
     PropertyDescriptor propertyDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName);
-    if (propertyDescriptor == null) return null;
+    if (propertyDescriptor == null) {
+      return null;
+    }
 
     return getProperty(propertyDescriptor.getId());
+  }
+
+  public PropertyConstraintsDescriptor getProperty(SProperty property) {
+    return getProperty(MetaIdHelper.getProperty(property));
   }
 
   @Override
@@ -288,6 +304,10 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     propertiesConstraints.put(property, new BasePropertyConstraintsDescriptor(property, this));
 
     return propertiesConstraints.get(property);
+  }
+
+  public ReferenceConstraintsDescriptor getReference(SReferenceLink ref) {
+    return getReference(MetaIdHelper.getReference(ref));
   }
 
   @Override
