@@ -51,10 +51,10 @@
     <import index="b02f" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.template(MPS.Core/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -38697,12 +38697,12 @@
                                     <node concept="2OqwBi" id="5WN7Ue4rX9t" role="2Oq$k0">
                                       <node concept="2OqwBi" id="5WN7Ue4rVGk" role="2Oq$k0">
                                         <node concept="2OqwBi" id="5WN7Ue4rUjB" role="2Oq$k0">
-                                          <node concept="2YIFZM" id="5WN7Ue4rS8p" role="2Oq$k0">
-                                            <ref role="37wK5l" to="pa15:~IdHelper.getPropertyId(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropertyId" />
-                                            <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                                            <node concept="2OqwBi" id="5WN7Ue4rFWN" role="37wK5m">
-                                              <node concept="30H73N" id="5WN7Ue4rFIn" role="2Oq$k0" />
-                                              <node concept="2qgKlT" id="5WN7Ue4rLSF" role="2OqNvi">
+                                          <node concept="2YIFZM" id="2u22WRjl55S" role="2Oq$k0">
+                                            <ref role="37wK5l" to="e8bb:~MetaIdHelper.getProperty(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getProperty" />
+                                            <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                                            <node concept="2OqwBi" id="2u22WRjl55T" role="37wK5m">
+                                              <node concept="30H73N" id="2u22WRjl55U" role="2Oq$k0" />
+                                              <node concept="2qgKlT" id="2u22WRjl55V" role="2OqNvi">
                                                 <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
                                               </node>
                                             </node>
@@ -38766,12 +38766,12 @@
                                           <node concept="liA8E" id="23CHI7KMy9p" role="2OqNvi">
                                             <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                           </node>
-                                          <node concept="2YIFZM" id="5WN7Ue4s2BM" role="2Oq$k0">
-                                            <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                                            <ref role="37wK5l" to="pa15:~IdHelper.getPropertyId(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropertyId" />
-                                            <node concept="2OqwBi" id="5WN7Ue4s2BN" role="37wK5m">
-                                              <node concept="30H73N" id="5WN7Ue4s2BO" role="2Oq$k0" />
-                                              <node concept="2qgKlT" id="5WN7Ue4s2BP" role="2OqNvi">
+                                          <node concept="2YIFZM" id="2u22WRjl5gM" role="2Oq$k0">
+                                            <ref role="37wK5l" to="e8bb:~MetaIdHelper.getProperty(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getProperty" />
+                                            <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                                            <node concept="2OqwBi" id="2u22WRjl5gN" role="37wK5m">
+                                              <node concept="30H73N" id="2u22WRjl5gO" role="2Oq$k0" />
+                                              <node concept="2qgKlT" id="2u22WRjl5gP" role="2OqNvi">
                                                 <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
                                               </node>
                                             </node>
@@ -38830,12 +38830,12 @@
                                       <node concept="liA8E" id="23CHI7KMv18" role="2OqNvi">
                                         <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                       </node>
-                                      <node concept="2YIFZM" id="5WN7Ue4s32D" role="2Oq$k0">
-                                        <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                                        <ref role="37wK5l" to="pa15:~IdHelper.getPropertyId(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropertyId" />
-                                        <node concept="2OqwBi" id="5WN7Ue4s32E" role="37wK5m">
-                                          <node concept="30H73N" id="5WN7Ue4s32F" role="2Oq$k0" />
-                                          <node concept="2qgKlT" id="5WN7Ue4s32G" role="2OqNvi">
+                                      <node concept="2YIFZM" id="2u22WRjl5rE" role="2Oq$k0">
+                                        <ref role="37wK5l" to="e8bb:~MetaIdHelper.getProperty(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getProperty" />
+                                        <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                                        <node concept="2OqwBi" id="2u22WRjl5rF" role="37wK5m">
+                                          <node concept="30H73N" id="2u22WRjl5rG" role="2Oq$k0" />
+                                          <node concept="2qgKlT" id="2u22WRjl5rH" role="2OqNvi">
                                             <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
                                           </node>
                                         </node>
@@ -38885,12 +38885,12 @@
                                     <node concept="liA8E" id="23CHI7KMoK0" role="2OqNvi">
                                       <ref role="37wK5l" to="e8bb:~SPropertyId.getIdValue():long" resolve="getIdValue" />
                                     </node>
-                                    <node concept="2YIFZM" id="5WN7Ue4s3tj" role="2Oq$k0">
-                                      <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                                      <ref role="37wK5l" to="pa15:~IdHelper.getPropertyId(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropertyId" />
-                                      <node concept="2OqwBi" id="5WN7Ue4s3tk" role="37wK5m">
-                                        <node concept="30H73N" id="5WN7Ue4s3tl" role="2Oq$k0" />
-                                        <node concept="2qgKlT" id="5WN7Ue4s3tm" role="2OqNvi">
+                                    <node concept="2YIFZM" id="2u22WRjl5A7" role="2Oq$k0">
+                                      <ref role="37wK5l" to="e8bb:~MetaIdHelper.getProperty(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getProperty" />
+                                      <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                                      <node concept="2OqwBi" id="2u22WRjl5A8" role="37wK5m">
+                                        <node concept="30H73N" id="2u22WRjl5A9" role="2Oq$k0" />
+                                        <node concept="2qgKlT" id="2u22WRjl5Aa" role="2OqNvi">
                                           <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
                                         </node>
                                       </node>
