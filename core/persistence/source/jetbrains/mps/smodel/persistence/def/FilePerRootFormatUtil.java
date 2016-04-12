@@ -29,6 +29,7 @@ import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
@@ -68,8 +69,12 @@ public class FilePerRootFormatUtil {
   }
 
   public static ModelLoadResult readModel(SModelHeader header, MultiStreamDataSource dataSource, ModelLoadingState targetState) throws ModelReadException {
+    ModelPersistence.checkV8(header.getPersistenceVersion(), header.getModelReference(), dataSource.getLocation());
+
     IModelPersistence mp = ModelPersistence.getPersistence(header.getPersistenceVersion());
-    if (mp == null) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    if (mp == null) {
+      throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    }
 
     // load .model file
     DefaultSModel result;
@@ -93,10 +98,14 @@ public class FilePerRootFormatUtil {
 
     // load roots
     List<String> streams = new ArrayList<String>();
-    for (String s : dataSource.getAvailableStreams()) streams.add(s);
+    for (String s : dataSource.getAvailableStreams()) {
+      streams.add(s);
+    }
     Collections.sort(streams);
     for (String stream : streams) {
-      if (!(stream.endsWith(FilePerRootDataSource.ROOT_EXTENSION))) continue;
+      if (!(stream.endsWith(FilePerRootDataSource.ROOT_EXTENSION))) {
+        continue;
+      }
 
       XMLSAXHandler<ModelLoadResult> rootHandler = mp.getModelReaderHandler(targetState, header);
       in = null;
@@ -165,12 +174,25 @@ public class FilePerRootFormatUtil {
     if (persistenceVersion < 9) {
       modelData.getImplicitImportsSupport().calculateImplicitImports();
     }
-    Map<String, Document> result = ModelPersistence.getPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
+    ModelPersistence.checkV8(persistenceVersion, modelHeader == null ? null : modelHeader.getModelReference(), source.getLocation());
+
+    IModelPersistence persistence = ModelPersistence.getPersistence(persistenceVersion);
+    if (persistence == null) {
+      return false;
+    }
+    IModelWriter writer = persistence.getModelWriter(modelHeader);
+    if (writer == null) {
+      return false;
+    }
+
+    Map<String, Document> result = writer.saveModelAsMultiStream(modelData);
 
     // write to storage
     Set<String> toRemove = new HashSet<String>();
     for (String s : source.getAvailableStreams()) {
-      if (!result.containsKey(s)) toRemove.add(s);
+      if (!result.containsKey(s)) {
+        toRemove.add(s);
+      }
     }
     for (Entry<String, Document> entry : result.entrySet()) {
       //if we have a file having a name, which differs in case only, we want to remove this file before writing to the new one
@@ -178,7 +200,7 @@ public class FilePerRootFormatUtil {
       String fnameLower = entry.getKey().toLowerCase();
       Set<String> removed = new HashSet<String>();
       for (String s : toRemove) {
-        if (s.toLowerCase().equals(fnameLower)){
+        if (s.toLowerCase().equals(fnameLower)) {
           source.delete(s);
           removed.add(s);
         }
@@ -222,11 +244,15 @@ public class FilePerRootFormatUtil {
   }
 
   private static String asFileName(String s) {
-    if (s == null) return "";
+    if (s == null) {
+      return "";
+    }
     StringBuilder sb = new StringBuilder(s.length());
     for (int i = 0; i < s.length(); i++) {
       int c = (int) s.charAt(i);
-      if (c < 32) continue;
+      if (c < 32) {
+        continue;
+      }
       if (c >= 127 && !Character.isLetterOrDigit(c)) {
         sb.append(Character.isWhitespace(c) ? ' ' : '_');
         continue;
