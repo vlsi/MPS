@@ -576,7 +576,7 @@
   <target name="java.compile.testAnnotatedType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testAnnotatedType" />
-    <javac2 destdir="${build.tmp}/java/out/testAnnotatedType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testAnnotatedType" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" />
@@ -621,7 +621,7 @@
   <target name="java.compile.testOverridingType" depends="java.compile.testAnnotatedType, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testOverridingType" />
-    <javac2 destdir="${build.tmp}/java/out/testOverridingType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testOverridingType" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" />
@@ -667,7 +667,7 @@
   <target name="java.compile.testWrappedType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testWrappedType" />
-    <javac2 destdir="${build.tmp}/java/out/testWrappedType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testWrappedType" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" />
@@ -712,7 +712,7 @@
   <target name="java.compile.testPrimitiveType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testPrimitiveType" />
-    <javac2 destdir="${build.tmp}/java/out/testPrimitiveType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testPrimitiveType" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" />
@@ -757,7 +757,7 @@
   <target name="java.compile.testSubtypingA" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSubtypingA" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingA" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSubtypingA" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" />
@@ -802,7 +802,7 @@
   <target name="java.compile.testSubtypingB" depends="java.compile.testSubtypingA, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSubtypingB" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingB" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSubtypingB" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" />
@@ -848,7 +848,7 @@
   <target name="java.compile.testSubstituteType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSubstituteType" />
-    <javac2 destdir="${build.tmp}/java/out/testSubstituteType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSubstituteType" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" />
@@ -912,7 +912,7 @@
   <target name="java.compile.testSubtypingTest" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSubtypingTest" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingTest" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSubtypingTest" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" />
@@ -976,7 +976,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.closures.test" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" />
@@ -1040,7 +1040,7 @@
   <target name="java.compile.tests.testDepViewer" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDepViewer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/tests.testDepViewer" />
-    <javac2 destdir="${build.tmp}/java/out/tests.testDepViewer" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/tests.testDepViewer" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDepViewer/source_gen" />

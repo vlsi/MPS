@@ -247,7 +247,7 @@
   
   <target name="java.compile.jetbrains.mps.build.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/test_gen/" />
       <classpath>
@@ -313,7 +313,7 @@
   
   <target name="java.compile.jetbrains.mps.build.mps.runner.test" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/test_gen/" />
       <classpath>

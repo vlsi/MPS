@@ -20,7 +20,7 @@ public class RedoInvalidTypingInTransactionalPropertyCell_Test extends BaseTrans
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2786154196593910689", "2786154196593910691");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("$Undo");
       invokeAction("$Redo");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");

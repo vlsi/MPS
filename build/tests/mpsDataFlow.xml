@@ -324,7 +324,7 @@
   <target name="java.compile.analyzers.test" depends="java.compile.testExtendingAnalyzer, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/analyzers.test" />
-    <javac2 destdir="${build.tmp}/java/out/analyzers.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/analyzers.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" />
@@ -389,7 +389,7 @@
   <target name="java.compile.testExtendingAnalyzer" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testExtendingAnalyzer" />
-    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" />
@@ -434,7 +434,7 @@
   <target name="java.compile.testCustomAnalyzer" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testCustomAnalyzer" />
-    <javac2 destdir="${build.tmp}/java/out/testCustomAnalyzer" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testCustomAnalyzer" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" />

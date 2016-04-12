@@ -572,7 +572,7 @@
   <target name="java.compile.execution-api" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/execution-api/source_gen" />
     <mkdir dir="${build.tmp}/java/out/execution-api" />
-    <javac2 destdir="${build.tmp}/java/out/execution-api" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/execution-api" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-api/source_gen" />
@@ -613,7 +613,7 @@
     <mkdir dir="${mps_home}/plugins/debugger-api/api/source_gen" />
     <mkdir dir="${mps_home}/plugins/debugger-api/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/debugger-api" />
-    <javac2 destdir="${build.tmp}/java/out/debugger-api" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/debugger-api" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/api/source_gen" />
@@ -658,7 +658,7 @@
     <mkdir dir="${mps_home}/plugins/debugger-java/runtime/source_gen" />
     <mkdir dir="${mps_home}/plugins/debugger-java/customViewers/source_gen" />
     <mkdir dir="${build.tmp}/java/out/debugger-java" />
-    <javac2 destdir="${build.tmp}/java/out/debugger-java" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/debugger-java" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/api/source_gen" />
@@ -704,7 +704,7 @@
   <target name="java.compile.jetbrains.mps.execution.settings" depends="java.compile.jetbrains.mps.execution.common, java.compile.execution-api, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/execution-api/languages/settings/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.settings" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-api/languages/settings/source_gen" />
@@ -760,7 +760,7 @@
   <target name="java.compile.jetbrains.mps.execution.settings#946964771156035778" depends="java.compile.jetbrains.mps.execution.common, java.compile.execution-api, java.compile.jetbrains.mps.execution.settings, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/execution-api/languages/settings/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.settings#946964771156035778" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings#946964771156035778" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.settings#946964771156035778" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-api/languages/settings/generator/source_gen" />
@@ -813,7 +813,7 @@
   <target name="java.compile.jetbrains.mps.execution.common" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/execution-api/languages/common/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.common" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.common" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.common" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/execution-api/languages/common/source_gen" />
@@ -860,7 +860,7 @@
   <target name="java.compile.jetbrains.mps.debugger.api.lang" depends="java.compile.execution-api, java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
@@ -919,7 +919,7 @@
   <target name="java.compile.jetbrains.mps.debugger.api.lang#1270798772176052788" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.jetbrains.mps.debugger.api.lang, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang#1270798772176052788" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang#1270798772176052788" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang#1270798772176052788" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen" />
@@ -977,7 +977,7 @@
   <target name="java.compile.jetbrains.mps.debugger.java.privateMembers" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
@@ -1022,7 +1022,7 @@
   <target name="java.compile.jetbrains.mps.debugger.java.customViewers" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.privateMembers, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
@@ -1083,7 +1083,7 @@
   <target name="java.compile.jetbrains.mps.debugger.java.customViewers#4089989733346806812" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.debugger.java.customViewers, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.privateMembers, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers#4089989733346806812" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers#4089989733346806812" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers#4089989733346806812" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/customViewers/generator/source_gen" />
@@ -1144,7 +1144,7 @@
   <target name="java.compile.jetbrains.mps.debugger.java.evaluation" depends="java.compile.jetbrains.mps.debugger.java.privateMembers, java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
@@ -1195,7 +1195,7 @@
   <target name="java.compile.jetbrains.mps.debugger.java.evaluation#1620955434532134778" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.privateMembers, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation#1620955434532134778" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation#1620955434532134778" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation#1620955434532134778" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/evaluation/generator/source_gen" />

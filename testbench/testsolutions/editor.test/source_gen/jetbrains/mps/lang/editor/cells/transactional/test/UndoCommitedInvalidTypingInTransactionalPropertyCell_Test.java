@@ -20,7 +20,7 @@ public class UndoCommitedInvalidTypingInTransactionalPropertyCell_Test extends B
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1758932278025075921", "1758932278025075923");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("$Undo");
       invokeAction("$Undo");

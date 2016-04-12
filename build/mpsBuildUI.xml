@@ -315,7 +315,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
@@ -366,7 +366,7 @@
   <target name="java.compile.jetbrains.mps.build.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" />
@@ -420,7 +420,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.testManifest.pluginSolution" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/pluginSolutions/build.mps.testManifest.pluginSolution/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.testManifest.pluginSolution" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.testManifest.pluginSolution" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.testManifest.pluginSolution" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-build/pluginSolutions/build.mps.testManifest.pluginSolution/source_gen" />

@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public enum MatrixNormKind {
   norm1("1", 0),
-  normInfty("\u221e", 1),
+  normInfty("∞", 1),
   norm2F("F", 2),
   normMax("max", 3);
 

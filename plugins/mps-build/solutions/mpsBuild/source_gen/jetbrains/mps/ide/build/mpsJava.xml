@@ -173,7 +173,7 @@
     <mkdir dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
     <mkdir dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-java-common" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java-common" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-java-common" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />

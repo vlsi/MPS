@@ -25,7 +25,7 @@ public class RedoIncorrectlyTypedValue_Test extends BaseTransformationTest {
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("$Undo");
       invokeAction("$Undo");
       invokeAction("$Undo");

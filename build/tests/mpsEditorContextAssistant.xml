@@ -281,7 +281,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.contextAssistant.testLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.testLanguage/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.testLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.testLanguage/source_gen" />
@@ -327,7 +327,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" depends="java.compile.jetbrains.mps.lang.editor.contextAssistant.testLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage/source_gen" />
@@ -368,7 +368,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.editor.contextAssistant.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.contextAssistant.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.contextAssistant.tests/test_gen/" />
       <classpath>

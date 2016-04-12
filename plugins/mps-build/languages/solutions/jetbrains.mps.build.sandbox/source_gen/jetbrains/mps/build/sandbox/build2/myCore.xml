@@ -52,7 +52,7 @@
   
   <target name="java.compile.java.modules.cycle.1">
     <mkdir dir="build/temp/temp/java.modules.cycle.1" />
-    <javac destdir="build/temp/temp/java.modules.cycle.1" fork="true" memorymaximumsize="512m" nowarn="true" includeantruntime="false">
+    <javac destdir="build/temp/temp/java.modules.cycle.1" fork="true" encoding="utf8" memorymaximumsize="512m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="module1/source" />
@@ -69,7 +69,7 @@
   
   <target name="java.compile.module1" depends="java.compile.java.modules.cycle.1">
     <mkdir dir="build/temp/module1" />
-    <javac destdir="build/temp/module1" fork="false" nowarn="true" includeantruntime="false" debug="true">
+    <javac destdir="build/temp/module1" fork="false" encoding="utf8" nowarn="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="module1/source" />
       <classpath>
@@ -86,7 +86,7 @@
   
   <target name="java.compile.module2" depends="java.compile.java.modules.cycle.1">
     <mkdir dir="build/temp/module2" />
-    <javac destdir="build/temp/module2" fork="false" includeantruntime="false">
+    <javac destdir="build/temp/module2" fork="false" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="module2/source" />
       <classpath>
@@ -99,7 +99,7 @@
   
   <target name="java.compile.java.modules.cycle.2" depends="java.compile.module1, java.compile.module2">
     <mkdir dir="build/temp/temp/java.modules.cycle.2" />
-    <javac destdir="build/temp/temp/java.modules.cycle.2" fork="true" nowarn="true" includeantruntime="false">
+    <javac destdir="build/temp/temp/java.modules.cycle.2" fork="true" encoding="utf8" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="module3/source" />
@@ -118,7 +118,7 @@
   
   <target name="java.compile.module3" depends="java.compile.module1, java.compile.module2, java.compile.java.modules.cycle.2">
     <mkdir dir="build/temp/module3" />
-    <javac destdir="build/temp/module3" fork="false" includeantruntime="false">
+    <javac destdir="build/temp/module3" fork="false" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src path="module3/source" />
       <classpath>
@@ -133,8 +133,12 @@
   
   <target name="java.compile.module4" depends="java.compile.java.modules.cycle.2">
     <mkdir dir="build/temp/module4" />
-    <javac destdir="build/temp/module4" fork="false" includeantruntime="false" source="1.6" target="1.6">
-      <compilerarg value="-Xmaxerrors 321 -Xmaxwarns 123 -g:none" />
+    <javac destdir="build/temp/module4" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
+      <compilerarg value="-Xmaxerrors" />
+      <compilerarg value="321" />
+      <compilerarg value="-Xmaxwarns" />
+      <compilerarg value="123" />
+      <compilerarg value="-g:none" />
       <src path="module4/source" />
       <classpath>
         <pathelement path="mo4.deps" />
@@ -146,7 +150,7 @@
   
   <target name="java.compile.module5" depends="java.compile.module4">
     <mkdir dir="build/temp/module5" />
-    <javac destdir="build/temp/module5" fork="false" includeantruntime="false" target="1.6">
+    <javac destdir="build/temp/module5" fork="false" encoding="utf8" includeantruntime="false" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="module5/source" />
       <classpath path="build/temp/module4" />

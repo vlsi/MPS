@@ -210,7 +210,7 @@
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
@@ -259,7 +259,7 @@
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.build">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
@@ -274,7 +274,7 @@
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.ideaPlugin">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" fork="false" encoding="utf8" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />

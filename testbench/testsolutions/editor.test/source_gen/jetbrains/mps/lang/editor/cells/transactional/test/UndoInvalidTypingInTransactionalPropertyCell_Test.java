@@ -20,7 +20,7 @@ public class UndoInvalidTypingInTransactionalPropertyCell_Test extends BaseTrans
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1758932278025063586", "1758932278025066308");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("$Undo");
     }
   }

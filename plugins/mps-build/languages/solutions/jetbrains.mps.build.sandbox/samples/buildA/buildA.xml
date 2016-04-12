@@ -61,7 +61,7 @@
   
   <target name="java.compile.module-A">
     <mkdir dir="${build.tmp}/java/out/module-A" />
-    <javac destdir="${build.tmp}/java/out/module-A" fork="false" nowarn="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/module-A" fork="false" encoding="utf8" nowarn="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/buildA/src" />
       <classpath refid="path.java.library.abcde-lib" />
@@ -74,7 +74,7 @@
   <target name="java.compile.modX">
     <mkdir dir="${basedir}/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/modX" />
-    <javac destdir="${build.tmp}/java/out/modX" fork="false" nowarn="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/modX" fork="false" encoding="utf8" nowarn="true" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildA/src" />

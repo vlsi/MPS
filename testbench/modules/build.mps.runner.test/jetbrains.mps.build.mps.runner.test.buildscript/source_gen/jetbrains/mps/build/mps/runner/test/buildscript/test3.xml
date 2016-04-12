@@ -151,7 +151,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test3" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test3/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test3" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test3" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test3" fork="true" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test3/source_gen" />

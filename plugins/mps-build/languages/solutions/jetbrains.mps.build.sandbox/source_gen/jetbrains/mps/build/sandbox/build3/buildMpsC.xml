@@ -39,7 +39,7 @@
   <target name="java.compile.testModuleWithAbcde">
     <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/testModuleWithAbcde" />
-    <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" encoding="utf8" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />

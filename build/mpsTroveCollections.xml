@@ -277,7 +277,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.collections.trove" depends="java.compile.collections_trove.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" />
@@ -326,7 +326,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" depends="java.compile.jetbrains.mps.baseLanguage.collections.trove, fetchDependencies">
     <mkdir dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" />
@@ -374,7 +374,7 @@
   <target name="java.compile.collections_trove.runtime" depends="fetchDependencies">
     <mkdir dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/collections_trove.runtime" />
-    <javac2 destdir="${build.tmp}/java/out/collections_trove.runtime" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/collections_trove.runtime" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" />

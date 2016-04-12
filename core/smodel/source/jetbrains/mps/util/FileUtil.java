@@ -27,6 +27,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -318,6 +319,14 @@ public class FileUtil {
   public static String read(File file) {
     try {
       return read(new FileReader(file));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static String read(File file, String charset) {
+    try {
+      return read(new InputStreamReader(new FileInputStream(file), charset));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

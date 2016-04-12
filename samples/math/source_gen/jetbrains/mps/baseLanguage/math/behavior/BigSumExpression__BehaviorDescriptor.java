@@ -32,7 +32,7 @@ public final class BigSumExpression__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   /*package*/ static String getOpName_id1653mnvAgoA(@NotNull SAbstractConcept __thisConcept__) {
-    return "\u2211";
+    return "∑";
   }
 
   /*package*/ BigSumExpression__BehaviorDescriptor() {
