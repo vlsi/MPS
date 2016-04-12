@@ -20,7 +20,7 @@
   <root nodeRef="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)/1236430656078">
     <file name="MathSymbolIndexReference_Constraints.java">
       <node id="1236430656078" at="26,49,27,169" concept="10" />
-      <node id="1236430656078" at="30,98,31,135" concept="5" />
+      <node id="1236430656078" at="30,90,31,131" concept="5" />
       <node id="1236430656078" at="34,44,35,20" concept="6" />
       <node id="1237828450002" at="42,142,43,242" concept="5" />
       <node id="1237825752846" at="43,242,44,100" concept="5" />
@@ -35,8 +35,8 @@
       <node id="1236430656078" at="41,0,48,0" concept="4" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="1236430656078" at="39,56,52,10" concept="6" />
       <node id="1236430656078" at="37,0,54,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="1236430656078" at="31,135,54,7" concept="2" />
-      <node id="1236430656078" at="29,0,57,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="1236430656078" at="31,131,54,7" concept="2" />
+      <node id="1236430656078" at="29,0,57,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="1236430656078" at="26,49,27,169" />
       <scope id="1236430656078" at="34,44,35,20" />
       <scope id="1236430656078" at="49,63,50,58" />
@@ -53,19 +53,19 @@
       </scope>
       <scope id="1236430656078" at="39,56,52,10" />
       <scope id="1236430656078" at="37,0,54,0" />
-      <scope id="1236430656078" at="30,98,55,22">
+      <scope id="1236430656078" at="30,90,55,22">
         <var name="references" id="1236430656078" />
       </scope>
       <scope id="1236430656078" at="29,0,57,0" />
       <unit id="1236430656078" at="40,19,52,9" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$2" />
-      <unit id="1236430656078" at="32,118,54,5" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1" />
+      <unit id="1236430656078" at="32,146,54,5" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1" />
       <unit id="1236430656078" at="25,0,59,0" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" />
     </file>
   </root>
   <root nodeRef="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)/6219660258344759919">
     <file name="MatrixInitializerIndexReference_Constraints.java">
       <node id="6219660258344759919" at="28,56,29,181" concept="10" />
-      <node id="6219660258344759919" at="32,98,33,135" concept="5" />
+      <node id="6219660258344759919" at="32,90,33,131" concept="5" />
       <node id="6219660258344759919" at="36,44,37,20" concept="6" />
       <node id="6219660258344773969" at="44,142,45,270" concept="5" />
       <node id="6219660258344773979" at="45,270,46,57" concept="5" />
@@ -102,8 +102,8 @@
       <node id="6219660258344759919" at="43,0,79,0" concept="4" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="6219660258344759919" at="41,56,83,10" concept="6" />
       <node id="6219660258344759919" at="39,0,85,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="6219660258344759919" at="33,135,85,7" concept="2" />
-      <node id="6219660258344759919" at="31,0,88,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="6219660258344759919" at="33,131,85,7" concept="2" />
+      <node id="6219660258344759919" at="31,0,88,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="6219660258344759919" at="28,56,29,181" />
       <scope id="6219660258344759919" at="36,44,37,20" />
       <scope id="6219660258345571153" at="54,62,55,260" />
@@ -142,12 +142,12 @@
       </scope>
       <scope id="6219660258344759919" at="41,56,83,10" />
       <scope id="6219660258344759919" at="39,0,85,0" />
-      <scope id="6219660258344759919" at="32,98,86,22">
+      <scope id="6219660258344759919" at="32,90,86,22">
         <var name="references" id="6219660258344759919" />
       </scope>
       <scope id="6219660258344759919" at="31,0,88,0" />
       <unit id="6219660258344759919" at="42,19,83,9" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$2" />
-      <unit id="6219660258344759919" at="34,128,85,5" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1" />
+      <unit id="6219660258344759919" at="34,153,85,5" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1" />
       <unit id="6219660258344759919" at="27,0,90,0" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints" />
     </file>
   </root>

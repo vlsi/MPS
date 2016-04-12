@@ -17,7 +17,7 @@
   <root nodeRef="r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)/8077936094962945057">
     <file name="ComeFromExpression_Constraints.java">
       <node id="8077936094962945057" at="30,43,31,162" concept="8" />
-      <node id="8077936094962945057" at="34,98,35,135" concept="4" />
+      <node id="8077936094962945057" at="34,90,35,131" concept="4" />
       <node id="8077936094962945057" at="38,44,39,20" concept="5" />
       <node id="8077936094962945057" at="46,63,47,58" concept="5" />
       <node id="8077936094962945827" at="51,13,52,41" concept="6" />
@@ -34,8 +34,8 @@
       <node id="8077936094962945057" at="49,0,63,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="8077936094962945057" at="43,56,63,10" concept="5" />
       <node id="8077936094962945057" at="41,0,65,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="8077936094962945057" at="35,135,65,7" concept="2" />
-      <node id="8077936094962945057" at="33,0,68,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="8077936094962945057" at="35,131,65,7" concept="2" />
+      <node id="8077936094962945057" at="33,0,68,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="8077936094962945057" at="30,43,31,162" />
       <scope id="8077936094962945057" at="38,44,39,20" />
       <scope id="8077936094962945057" at="46,63,47,58" />
@@ -56,13 +56,13 @@
       </scope>
       <scope id="8077936094962945057" at="43,56,63,10" />
       <scope id="8077936094962945057" at="41,0,65,0" />
-      <scope id="8077936094962945057" at="34,98,66,22">
+      <scope id="8077936094962945057" at="34,90,66,22">
         <var name="references" id="8077936094962945057" />
       </scope>
       <scope id="8077936094962945057" at="33,0,68,0" />
       <unit id="3050821798734714010" at="54,25,60,15" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$3" />
       <unit id="8077936094962945057" at="44,19,63,9" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$2" />
-      <unit id="8077936094962945057" at="36,128,65,5" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$1" />
+      <unit id="8077936094962945057" at="36,152,65,5" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$1" />
       <unit id="8077936094962945057" at="29,0,70,0" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints" />
     </file>
   </root>

@@ -26,7 +26,7 @@
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/2161719505004867255">
     <file name="DailyPlan_Constraints.java">
       <node id="2161719505004867255" at="18,34,19,157" concept="8" />
-      <node id="2161719505004867255" at="22,88,23,123" concept="4" />
+      <node id="2161719505004867255" at="22,84,23,119" concept="4" />
       <node id="2161719505004867255" at="26,37,27,20" concept="5" />
       <node id="2161719505004867255" at="30,42,31,44" concept="4" />
       <node id="2161719505004867255" at="31,44,32,262" concept="0" />
@@ -35,8 +35,8 @@
       <node id="2161719505004867255" at="18,0,21,0" concept="1" trace="DailyPlan_Constraints#()V" />
       <node id="2161719505004867255" at="25,0,29,0" concept="3" trace="hasOwnGetter#()Z" />
       <node id="2161719505004867255" at="29,0,34,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="2161719505004867255" at="23,123,34,7" concept="2" />
-      <node id="2161719505004867255" at="21,0,37,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <node id="2161719505004867255" at="23,119,34,7" concept="2" />
+      <node id="2161719505004867255" at="21,0,37,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="2161719505004867255" at="18,34,19,157" />
       <scope id="2161719505004867255" at="26,37,27,20" />
       <scope id="2161719505004867259" at="31,44,32,262" />
@@ -48,18 +48,18 @@
       <scope id="2161719505004867255" at="29,0,34,0">
         <var name="node" id="2161719505004867255" />
       </scope>
-      <scope id="2161719505004867255" at="22,88,35,22">
+      <scope id="2161719505004867255" at="22,84,35,22">
         <var name="properties" id="2161719505004867255" />
       </scope>
       <scope id="2161719505004867255" at="21,0,37,0" />
-      <unit id="2161719505004867255" at="24,129,34,5" name="jetbrains.mps.samples.heating.constraints.DailyPlan_Constraints$1" />
+      <unit id="2161719505004867255" at="24,154,34,5" name="jetbrains.mps.samples.heating.constraints.DailyPlan_Constraints$1" />
       <unit id="2161719505004867255" at="17,0,38,0" name="jetbrains.mps.samples.heating.constraints.DailyPlan_Constraints" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/5063359128232717451">
     <file name="ChangeEvent_Constraints.java">
       <node id="5063359128232717451" at="17,36,18,159" concept="8" />
-      <node id="5063359128232717451" at="21,88,22,123" concept="4" />
+      <node id="5063359128232717451" at="21,84,22,119" concept="4" />
       <node id="5063359128232717451" at="25,40,26,20" concept="5" />
       <node id="5063359128232717451" at="29,70,30,44" concept="4" />
       <node id="5063359128232717451" at="30,44,31,126" concept="0" />
@@ -68,8 +68,8 @@
       <node id="5063359128232717451" at="17,0,20,0" concept="1" trace="ChangeEvent_Constraints#()V" />
       <node id="5063359128232717451" at="24,0,28,0" concept="3" trace="hasOwnValidator#()Z" />
       <node id="5063359128232717451" at="28,0,33,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="5063359128232717451" at="22,123,33,7" concept="2" />
-      <node id="5063359128232717451" at="20,0,36,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <node id="5063359128232717451" at="22,119,33,7" concept="2" />
+      <node id="5063359128232717451" at="20,0,36,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="5063359128232717451" at="17,36,18,159" />
       <scope id="5063359128232717451" at="25,40,26,20" />
       <scope id="5063359128232933522" at="30,44,31,126" />
@@ -82,18 +82,18 @@
         <var name="node" id="5063359128232717451" />
         <var name="propertyValue" id="5063359128232717451" />
       </scope>
-      <scope id="5063359128232717451" at="21,88,34,22">
+      <scope id="5063359128232717451" at="21,84,34,22">
         <var name="properties" id="5063359128232717451" />
       </scope>
       <scope id="5063359128232717451" at="20,0,36,0" />
-      <unit id="5063359128232717451" at="23,129,33,5" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints$1" />
+      <unit id="5063359128232717451" at="23,154,33,5" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints$1" />
       <unit id="5063359128232717451" at="16,0,37,0" name="jetbrains.mps.samples.heating.constraints.ChangeEvent_Constraints" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/5726447348463760016">
     <file name="Slot_Constraints.java">
       <node id="5726447348463760016" at="21,29,22,152" concept="8" />
-      <node id="5726447348463760016" at="25,88,26,123" concept="4" />
+      <node id="5726447348463760016" at="25,84,26,119" concept="4" />
       <node id="5726447348463760016" at="29,40,30,20" concept="5" />
       <node id="5726447348463760016" at="33,82,34,38" concept="4" />
       <node id="5726447348463760814" at="36,43,37,279" concept="5" />
@@ -106,8 +106,8 @@
       <node id="5726447348463760016" at="34,38,39,11" concept="0" />
       <node id="5726447348463760801" at="34,38,39,11" concept="5" />
       <node id="5726447348463760016" at="32,0,41,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="5726447348463760016" at="26,123,41,7" concept="2" />
-      <node id="5726447348463760016" at="24,0,44,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <node id="5726447348463760016" at="26,119,41,7" concept="2" />
+      <node id="5726447348463760016" at="24,0,44,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="5726447348463760016" at="21,29,22,152" />
       <scope id="5726447348463760016" at="29,40,30,20" />
       <scope id="5726447348463760813" at="36,43,37,279" />
@@ -129,19 +129,19 @@
         <var name="node" id="5726447348463760016" />
         <var name="propertyValue" id="5726447348463760016" />
       </scope>
-      <scope id="5726447348463760016" at="25,88,42,22">
+      <scope id="5726447348463760016" at="25,84,42,22">
         <var name="properties" id="5726447348463760016" />
       </scope>
       <scope id="5726447348463760016" at="24,0,44,0" />
       <unit id="5726447348463760812" at="35,519,39,9" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$2" />
-      <unit id="5726447348463760016" at="27,129,41,5" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$1" />
+      <unit id="5726447348463760016" at="27,148,41,5" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$1" />
       <unit id="5726447348463760016" at="20,0,48,0" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/935069066463107114">
     <file name="DailyPlanReference_Constraints.java">
       <node id="935069066463107114" at="32,43,33,165" concept="8" />
-      <node id="935069066463107114" at="36,98,37,135" concept="4" />
+      <node id="935069066463107114" at="36,90,37,131" concept="4" />
       <node id="935069066463107114" at="40,44,41,20" concept="5" />
       <node id="935069066463107114" at="48,44,49,24" concept="5" />
       <node id="935069066463220907" at="52,128,53,209" concept="5" />
@@ -164,8 +164,8 @@
       <node id="935069066463107114" at="59,0,71,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="935069066463107114" at="45,56,71,10" concept="5" />
       <node id="935069066463107114" at="43,0,73,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="935069066463107114" at="37,135,73,7" concept="2" />
-      <node id="935069066463107114" at="35,0,76,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="935069066463107114" at="37,131,73,7" concept="2" />
+      <node id="935069066463107114" at="35,0,76,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="935069066463107114" at="32,43,33,165" />
       <scope id="935069066463107114" at="40,44,41,20" />
       <scope id="935069066463107114" at="48,44,49,24" />
@@ -200,14 +200,14 @@
       </scope>
       <scope id="935069066463107114" at="45,56,71,10" />
       <scope id="935069066463107114" at="43,0,73,0" />
-      <scope id="935069066463107114" at="36,98,74,22">
+      <scope id="935069066463107114" at="36,90,74,22">
         <var name="references" id="935069066463107114" />
       </scope>
       <scope id="935069066463107114" at="35,0,76,0" />
       <unit id="935069066463245362" at="61,454,65,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$4" />
       <unit id="935069066463194503" at="61,23,69,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$3" />
       <unit id="935069066463107114" at="46,19,71,9" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$2" />
-      <unit id="935069066463107114" at="38,126,73,5" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1" />
+      <unit id="935069066463107114" at="38,152,73,5" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1" />
       <unit id="935069066463107114" at="31,0,81,0" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints" />
     </file>
   </root>

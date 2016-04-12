@@ -116,7 +116,7 @@
   <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/682890046602395483">
     <file name="AdvanceWorkStatement_Constraints.java">
       <node id="682890046602395483" at="27,45,28,163" concept="9" />
-      <node id="682890046602395483" at="31,98,32,135" concept="4" />
+      <node id="682890046602395483" at="31,90,32,131" concept="4" />
       <node id="682890046602395483" at="35,44,36,20" concept="5" />
       <node id="682890046602395483" at="43,44,44,24" concept="5" />
       <node id="682890046602572854" at="47,128,48,204" concept="5" />
@@ -132,8 +132,8 @@
       <node id="682890046602395483" at="54,0,58,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="682890046602395483" at="40,56,58,10" concept="5" />
       <node id="682890046602395483" at="38,0,60,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="682890046602395483" at="32,135,60,7" concept="1" />
-      <node id="682890046602395483" at="30,0,63,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="682890046602395483" at="32,131,60,7" concept="1" />
+      <node id="682890046602395483" at="30,0,63,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="682890046602395483" at="27,45,28,163" />
       <scope id="682890046602395483" at="35,44,36,20" />
       <scope id="682890046602395483" at="43,44,44,24" />
@@ -154,19 +154,19 @@
       <scope id="682890046602395483" at="54,0,58,0" />
       <scope id="682890046602395483" at="40,56,58,10" />
       <scope id="682890046602395483" at="38,0,60,0" />
-      <scope id="682890046602395483" at="31,98,61,22">
+      <scope id="682890046602395483" at="31,90,61,22">
         <var name="references" id="682890046602395483" />
       </scope>
       <scope id="682890046602395483" at="30,0,63,0" />
       <unit id="682890046602395483" at="41,19,58,9" name="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints$2" />
-      <unit id="682890046602395483" at="33,126,60,5" name="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints$1" />
+      <unit id="682890046602395483" at="33,159,60,5" name="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints$1" />
       <unit id="682890046602395483" at="26,0,65,0" name="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints" />
     </file>
   </root>
   <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/682890046602397406">
     <file name="FinishWorkStatement_Constraints.java">
       <node id="682890046602397406" at="27,44,28,162" concept="9" />
-      <node id="682890046602397406" at="31,98,32,135" concept="4" />
+      <node id="682890046602397406" at="31,90,32,131" concept="4" />
       <node id="682890046602397406" at="35,44,36,20" concept="5" />
       <node id="682890046602397406" at="43,44,44,24" concept="5" />
       <node id="682890046602572864" at="47,128,48,204" concept="5" />
@@ -182,8 +182,8 @@
       <node id="682890046602397406" at="54,0,58,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="682890046602397406" at="40,56,58,10" concept="5" />
       <node id="682890046602397406" at="38,0,60,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="682890046602397406" at="32,135,60,7" concept="1" />
-      <node id="682890046602397406" at="30,0,63,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="682890046602397406" at="32,131,60,7" concept="1" />
+      <node id="682890046602397406" at="30,0,63,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="682890046602397406" at="27,44,28,162" />
       <scope id="682890046602397406" at="35,44,36,20" />
       <scope id="682890046602397406" at="43,44,44,24" />
@@ -204,12 +204,12 @@
       <scope id="682890046602397406" at="54,0,58,0" />
       <scope id="682890046602397406" at="40,56,58,10" />
       <scope id="682890046602397406" at="38,0,60,0" />
-      <scope id="682890046602397406" at="31,98,61,22">
+      <scope id="682890046602397406" at="31,90,61,22">
         <var name="references" id="682890046602397406" />
       </scope>
       <scope id="682890046602397406" at="30,0,63,0" />
       <unit id="682890046602397406" at="41,19,58,9" name="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints$2" />
-      <unit id="682890046602397406" at="33,126,60,5" name="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints$1" />
+      <unit id="682890046602397406" at="33,159,60,5" name="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints$1" />
       <unit id="682890046602397406" at="26,0,65,0" name="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints" />
     </file>
   </root>

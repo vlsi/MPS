@@ -16,7 +16,7 @@
   <root nodeRef="r:6ac9dcee-e5c4-42f1-9aa2-41caa61ece8e(jetbrains.mps.lang.generator.generationParameters.constraints)/3064182000795632365">
     <file name="DefaultGenerationParameterId_Constraints.java">
       <node id="3064182000795632365" at="26,53,27,196" concept="7" />
-      <node id="3064182000795632365" at="30,98,31,135" concept="4" />
+      <node id="3064182000795632365" at="30,90,31,131" concept="4" />
       <node id="3064182000795632365" at="34,44,35,20" concept="5" />
       <node id="3064182000795632381" at="43,56,44,376" concept="5" />
       <node id="3064182000795632398" at="45,13,46,73" concept="5" />
@@ -30,8 +30,8 @@
       <node id="3064182000795632365" at="41,0,48,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="3064182000795632365" at="39,56,52,10" concept="5" />
       <node id="3064182000795632365" at="37,0,54,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="3064182000795632365" at="31,135,54,7" concept="1" />
-      <node id="3064182000795632365" at="29,0,57,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="3064182000795632365" at="31,131,54,7" concept="1" />
+      <node id="3064182000795632365" at="29,0,57,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="3064182000795632365" at="26,53,27,196" />
       <scope id="3064182000795632365" at="34,44,35,20" />
       <scope id="3064182000795632374" at="43,56,44,376" />
@@ -46,12 +46,12 @@
       </scope>
       <scope id="3064182000795632365" at="39,56,52,10" />
       <scope id="3064182000795632365" at="37,0,54,0" />
-      <scope id="3064182000795632365" at="30,98,55,22">
+      <scope id="3064182000795632365" at="30,90,55,22">
         <var name="references" id="3064182000795632365" />
       </scope>
       <scope id="3064182000795632365" at="29,0,57,0" />
       <unit id="3064182000795632365" at="40,19,52,9" name="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$2" />
-      <unit id="3064182000795632365" at="32,128,54,5" name="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$1" />
+      <unit id="3064182000795632365" at="32,157,54,5" name="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints$1" />
       <unit id="3064182000795632365" at="25,0,59,0" name="jetbrains.mps.lang.generator.generationParameters.constraints.DefaultGenerationParameterId_Constraints" />
     </file>
   </root>

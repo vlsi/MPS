@@ -26,7 +26,7 @@
   <root nodeRef="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)/2687243112287755361">
     <file name="DistantConstantReference_Constraints.java">
       <node id="2687243112287755361" at="26,49,27,177" concept="8" />
-      <node id="2687243112287755361" at="30,98,31,135" concept="5" />
+      <node id="2687243112287755361" at="30,90,31,131" concept="5" />
       <node id="2687243112287755361" at="34,44,35,20" concept="6" />
       <node id="2687243112287755361" at="42,63,43,58" concept="6" />
       <node id="2687243112287883841" at="47,678,48,26" concept="6" />
@@ -41,8 +41,8 @@
       <node id="2687243112287755361" at="45,0,52,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="2687243112287755361" at="39,56,52,10" concept="6" />
       <node id="2687243112287755361" at="37,0,54,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="2687243112287755361" at="31,135,54,7" concept="2" />
-      <node id="2687243112287755361" at="29,0,57,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="2687243112287755361" at="31,131,54,7" concept="2" />
+      <node id="2687243112287755361" at="29,0,57,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="2687243112287755361" at="26,49,27,177" />
       <scope id="2687243112287755361" at="34,44,35,20" />
       <scope id="2687243112287755361" at="42,63,43,58" />
@@ -58,19 +58,19 @@
       </scope>
       <scope id="2687243112287755361" at="39,56,52,10" />
       <scope id="2687243112287755361" at="37,0,54,0" />
-      <scope id="2687243112287755361" at="30,98,55,22">
+      <scope id="2687243112287755361" at="30,90,55,22">
         <var name="references" id="2687243112287755361" />
       </scope>
       <scope id="2687243112287755361" at="29,0,57,0" />
       <unit id="2687243112287755361" at="40,19,52,9" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$2" />
-      <unit id="2687243112287755361" at="32,127,54,5" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$1" />
+      <unit id="2687243112287755361" at="32,155,54,5" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$1" />
       <unit id="2687243112287755361" at="25,0,59,0" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints" />
     </file>
   </root>
   <root nodeRef="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)/3990190717072399938">
     <file name="ConstantReference_Constraints.java">
       <node id="3990190717072399938" at="25,42,26,170" concept="8" />
-      <node id="3990190717072399938" at="29,98,30,135" concept="5" />
+      <node id="3990190717072399938" at="29,90,30,131" concept="5" />
       <node id="3990190717072399938" at="33,44,34,20" concept="6" />
       <node id="3990190717072399938" at="41,63,42,58" concept="6" />
       <node id="3990190717072399938" at="46,13,47,258" concept="5" />
@@ -84,8 +84,8 @@
       <node id="3990190717072399938" at="44,0,51,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="3990190717072399938" at="38,56,51,10" concept="6" />
       <node id="3990190717072399938" at="36,0,53,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="3990190717072399938" at="30,135,53,7" concept="2" />
-      <node id="3990190717072399938" at="28,0,56,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="3990190717072399938" at="30,131,53,7" concept="2" />
+      <node id="3990190717072399938" at="28,0,56,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="3990190717072399938" at="25,42,26,170" />
       <scope id="3990190717072399938" at="33,44,34,20" />
       <scope id="3990190717072399938" at="41,63,42,58" />
@@ -102,12 +102,12 @@
       </scope>
       <scope id="3990190717072399938" at="38,56,51,10" />
       <scope id="3990190717072399938" at="36,0,53,0" />
-      <scope id="3990190717072399938" at="29,98,54,22">
+      <scope id="3990190717072399938" at="29,90,54,22">
         <var name="references" id="3990190717072399938" />
       </scope>
       <scope id="3990190717072399938" at="28,0,56,0" />
       <unit id="3990190717072399938" at="39,19,51,9" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$2" />
-      <unit id="3990190717072399938" at="31,127,53,5" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1" />
+      <unit id="3990190717072399938" at="31,155,53,5" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1" />
       <unit id="3990190717072399938" at="24,0,58,0" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints" />
     </file>
   </root>

@@ -18,7 +18,7 @@
   <root nodeRef="r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)/6007318803035047592">
     <file name="Developer_Constraints.java">
       <node id="6007318803035047592" at="30,34,31,144" concept="9" />
-      <node id="6007318803035047592" at="34,98,35,135" concept="5" />
+      <node id="6007318803035047592" at="34,90,35,131" concept="5" />
       <node id="6007318803035047592" at="38,44,39,20" concept="6" />
       <node id="6007318803035047592" at="46,63,47,58" concept="6" />
       <node id="6007318803035147862" at="58,84,59,83" concept="5" />
@@ -49,8 +49,8 @@
       <node id="6007318803035047592" at="49,0,104,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="6007318803035047592" at="43,56,104,10" concept="6" />
       <node id="6007318803035047592" at="41,0,106,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="6007318803035047592" at="35,135,106,7" concept="2" />
-      <node id="6007318803035047592" at="33,0,109,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="6007318803035047592" at="35,131,106,7" concept="2" />
+      <node id="6007318803035047592" at="33,0,109,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="6007318803035047592" at="30,34,31,144" />
       <scope id="6007318803035047592" at="38,44,39,20" />
       <scope id="6007318803035047592" at="46,63,47,58" />
@@ -90,13 +90,13 @@
       </scope>
       <scope id="6007318803035047592" at="43,56,104,10" />
       <scope id="6007318803035047592" at="41,0,106,0" />
-      <scope id="6007318803035047592" at="34,98,107,22">
+      <scope id="6007318803035047592" at="34,90,107,22">
         <var name="references" id="6007318803035047592" />
       </scope>
       <scope id="6007318803035047592" at="33,0,109,0" />
       <unit id="6007318803035485231" at="51,23,102,13" name="testDefaultEditor.constraints.Developer_Constraints$3" />
       <unit id="6007318803035047592" at="44,19,104,9" name="testDefaultEditor.constraints.Developer_Constraints$2" />
-      <unit id="6007318803035047592" at="36,126,106,5" name="testDefaultEditor.constraints.Developer_Constraints$1" />
+      <unit id="6007318803035047592" at="36,156,106,5" name="testDefaultEditor.constraints.Developer_Constraints$1" />
       <unit id="6007318803035047592" at="29,0,111,0" name="testDefaultEditor.constraints.Developer_Constraints" />
     </file>
   </root>

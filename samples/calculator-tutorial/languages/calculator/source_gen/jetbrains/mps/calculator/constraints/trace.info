@@ -16,7 +16,7 @@
   <root nodeRef="r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)/1241364804758">
     <file name="InputFieldReference_Constraints.java">
       <node id="1241364804758" at="25,44,26,157" concept="7" />
-      <node id="1241364804758" at="29,98,30,135" concept="4" />
+      <node id="1241364804758" at="29,90,30,131" concept="4" />
       <node id="1241364804758" at="33,44,34,20" concept="5" />
       <node id="1241364804758" at="41,63,42,58" concept="5" />
       <node id="1241364804758" at="46,13,47,241" concept="4" />
@@ -30,8 +30,8 @@
       <node id="1241364804758" at="44,0,51,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="1241364804758" at="38,56,51,10" concept="5" />
       <node id="1241364804758" at="36,0,53,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="1241364804758" at="30,135,53,7" concept="2" />
-      <node id="1241364804758" at="28,0,56,0" concept="3" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="1241364804758" at="30,131,53,7" concept="2" />
+      <node id="1241364804758" at="28,0,56,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="1241364804758" at="25,44,26,157" />
       <scope id="1241364804758" at="33,44,34,20" />
       <scope id="1241364804758" at="41,63,42,58" />
@@ -48,12 +48,12 @@
       </scope>
       <scope id="1241364804758" at="38,56,51,10" />
       <scope id="1241364804758" at="36,0,53,0" />
-      <scope id="1241364804758" at="29,98,54,22">
+      <scope id="1241364804758" at="29,90,54,22">
         <var name="references" id="1241364804758" />
       </scope>
       <scope id="1241364804758" at="28,0,56,0" />
       <unit id="1241364804758" at="39,19,51,9" name="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints$2" />
-      <unit id="1241364804758" at="31,118,53,5" name="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints$1" />
+      <unit id="1241364804758" at="31,143,53,5" name="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints$1" />
       <unit id="1241364804758" at="24,0,58,0" name="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints" />
     </file>
   </root>

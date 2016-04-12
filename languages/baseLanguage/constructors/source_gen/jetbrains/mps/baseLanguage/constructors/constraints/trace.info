@@ -31,7 +31,7 @@
       <node id="5379647004618378867" at="54,51,55,68" concept="2" />
       <node id="5379647004618378867" at="56,5,57,0" concept="7" />
       <node id="5379647004618378867" at="57,0,58,18" concept="6" />
-      <node id="5379647004618378867" at="61,98,62,135" concept="5" />
+      <node id="5379647004618378867" at="61,90,62,131" concept="5" />
       <node id="5379647004618378867" at="65,44,66,20" concept="6" />
       <node id="3778783095369073642" at="73,142,74,424" concept="5" />
       <node id="4739047193854568224" at="75,219,76,58" concept="5" />
@@ -62,8 +62,8 @@
       <node id="5379647004618378867" at="72,0,85,0" concept="4" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="5379647004618378867" at="70,56,89,10" concept="6" />
       <node id="5379647004618378867" at="68,0,91,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="5379647004618378867" at="62,135,91,7" concept="2" />
-      <node id="5379647004618378867" at="60,0,94,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="5379647004618378867" at="62,131,91,7" concept="2" />
+      <node id="5379647004618378867" at="60,0,94,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="5379647004618378867" at="29,60,30,192" />
       <scope id="5379647004618378867" at="33,43,34,16" />
       <scope id="5379647004618378867" at="40,51,41,67" />
@@ -128,12 +128,12 @@
       </scope>
       <scope id="5379647004618378867" at="70,56,89,10" />
       <scope id="5379647004618378867" at="68,0,91,0" />
-      <scope id="5379647004618378867" at="61,98,92,22">
+      <scope id="5379647004618378867" at="61,90,92,22">
         <var name="references" id="5379647004618378867" />
       </scope>
       <scope id="5379647004618378867" at="60,0,94,0" />
       <unit id="5379647004618378867" at="71,19,89,9" name="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$2" />
-      <unit id="5379647004618378867" at="63,127,91,5" name="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />
+      <unit id="5379647004618378867" at="63,156,91,5" name="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />
       <unit id="5379647004618378867" at="28,0,104,0" name="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints" />
     </file>
   </root>

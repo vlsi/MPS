@@ -24,7 +24,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)/100821637069090025">
     <file name="FunctionType_Constraints.java">
       <node id="100821637069090025" at="28,37,29,161" concept="14" />
-      <node id="100821637069090025" at="32,98,33,135" concept="8" />
+      <node id="100821637069090025" at="32,90,33,131" concept="8" />
       <node id="100821637069090025" at="36,44,37,20" concept="9" />
       <node id="100821637069106778" at="46,48,47,124" concept="9" />
       <node id="100821637069090025" at="52,63,53,58" concept="9" />
@@ -38,8 +38,8 @@
       <node id="100821637069090025" at="43,0,51,0" concept="7" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="100821637069090025" at="41,56,55,10" concept="9" />
       <node id="100821637069090025" at="39,0,57,0" concept="7" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="100821637069090025" at="33,135,57,7" concept="4" />
-      <node id="100821637069090025" at="31,0,60,0" concept="7" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <node id="100821637069090025" at="33,131,57,7" concept="4" />
+      <node id="100821637069090025" at="31,0,60,0" concept="7" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="100821637069090025" at="28,37,29,161" />
       <scope id="100821637069090025" at="36,44,37,20" />
       <scope id="100821637069106775" at="46,48,47,124" />
@@ -57,13 +57,13 @@
       </scope>
       <scope id="100821637069090025" at="41,56,55,10" />
       <scope id="100821637069090025" at="39,0,57,0" />
-      <scope id="100821637069090025" at="32,98,58,22">
+      <scope id="100821637069090025" at="32,90,58,22">
         <var name="references" id="100821637069090025" />
       </scope>
       <scope id="100821637069090025" at="31,0,60,0" />
       <unit id="100821637069106774" at="45,252,49,13" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$3" />
       <unit id="100821637069090025" at="42,19,55,9" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$2" />
-      <unit id="100821637069090025" at="34,122,57,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
+      <unit id="100821637069090025" at="34,154,57,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
       <unit id="100821637069090025" at="27,0,62,0" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints" />
     </file>
   </root>
@@ -752,7 +752,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)/2684105348703956460">
     <file name="FunctionMethodDeclaration_Constraints.java">
       <node id="2684105348703956460" at="16,50,17,179" concept="14" />
-      <node id="2684105348703956460" at="20,88,21,123" concept="8" />
+      <node id="2684105348703956460" at="20,84,21,119" concept="8" />
       <node id="2684105348703956460" at="24,37,25,20" concept="9" />
       <node id="2684105348703956460" at="28,42,29,37" concept="8" />
       <node id="2411622665278491963" at="29,37,30,24" concept="9" />
@@ -767,9 +767,9 @@
       <node id="2684105348703956460" at="34,0,38,0" concept="7" trace="hasOwnGetter#()Z" />
       <node id="2684105348703956460" at="27,0,32,0" concept="7" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="2684105348703956460" at="38,0,43,0" concept="7" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="2684105348703956460" at="21,123,32,7" concept="4" />
+      <node id="2684105348703956460" at="21,119,32,7" concept="4" />
       <node id="2684105348703956460" at="32,7,43,7" concept="4" />
-      <node id="2684105348703956460" at="19,0,46,0" concept="7" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <node id="2684105348703956460" at="19,0,46,0" concept="7" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="2684105348703956460" at="16,50,17,179" />
       <scope id="2684105348703956460" at="24,37,25,20" />
       <scope id="2411622665278491648" at="29,37,30,24" />
@@ -790,12 +790,12 @@
       <scope id="2684105348703956460" at="38,0,43,0">
         <var name="node" id="2684105348703956460" />
       </scope>
-      <scope id="2684105348703956460" at="20,88,44,22">
+      <scope id="2684105348703956460" at="20,84,44,22">
         <var name="properties" id="2684105348703956460" />
       </scope>
       <scope id="2684105348703956460" at="19,0,46,0" />
-      <unit id="2684105348703956460" at="22,119,32,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$1" />
-      <unit id="2684105348703956460" at="33,118,43,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$2" />
+      <unit id="2684105348703956460" at="22,137,32,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$1" />
+      <unit id="2684105348703956460" at="33,142,43,5" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$2" />
       <unit id="2684105348703956460" at="15,0,47,0" name="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints" />
     </file>
   </root>

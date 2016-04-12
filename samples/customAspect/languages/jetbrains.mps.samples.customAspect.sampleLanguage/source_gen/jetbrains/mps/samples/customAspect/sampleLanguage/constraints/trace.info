@@ -15,7 +15,7 @@
   <root nodeRef="r:20942c20-14d5-48e1-91f2-c8a5ae539bb7(jetbrains.mps.samples.customAspect.sampleLanguage.constraints)/670382098842568493">
     <file name="DocumentedConcept_Constraints.java">
       <node id="670382098842568493" at="16,42,17,185" concept="6" />
-      <node id="670382098842568493" at="20,88,21,123" concept="4" />
+      <node id="670382098842568493" at="20,84,21,119" concept="4" />
       <node id="670382098842568493" at="24,37,25,20" concept="5" />
       <node id="670382098842568493" at="28,42,29,37" concept="4" />
       <node id="670382098842568493" at="29,37,30,32" concept="0" />
@@ -24,8 +24,8 @@
       <node id="670382098842568493" at="16,0,19,0" concept="1" trace="DocumentedConcept_Constraints#()V" />
       <node id="670382098842568493" at="23,0,27,0" concept="3" trace="hasOwnGetter#()Z" />
       <node id="670382098842568493" at="27,0,32,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="670382098842568493" at="21,123,32,7" concept="2" />
-      <node id="670382098842568493" at="19,0,35,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <node id="670382098842568493" at="21,119,32,7" concept="2" />
+      <node id="670382098842568493" at="19,0,35,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="670382098842568493" at="16,42,17,185" />
       <scope id="670382098842568493" at="24,37,25,20" />
       <scope id="670382098842568497" at="29,37,30,32" />
@@ -37,11 +37,11 @@
       <scope id="670382098842568493" at="27,0,32,0">
         <var name="node" id="670382098842568493" />
       </scope>
-      <scope id="670382098842568493" at="20,88,33,22">
+      <scope id="670382098842568493" at="20,84,33,22">
         <var name="properties" id="670382098842568493" />
       </scope>
       <scope id="670382098842568493" at="19,0,35,0" />
-      <unit id="670382098842568493" at="22,119,32,5" name="jetbrains.mps.samples.customAspect.sampleLanguage.constraints.DocumentedConcept_Constraints$1" />
+      <unit id="670382098842568493" at="22,137,32,5" name="jetbrains.mps.samples.customAspect.sampleLanguage.constraints.DocumentedConcept_Constraints$1" />
       <unit id="670382098842568493" at="15,0,36,0" name="jetbrains.mps.samples.customAspect.sampleLanguage.constraints.DocumentedConcept_Constraints" />
     </file>
   </root>
