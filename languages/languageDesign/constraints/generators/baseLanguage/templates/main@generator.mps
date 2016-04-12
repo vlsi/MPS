@@ -43,6 +43,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2092,13 +2093,13 @@
     <node concept="3clFb_" id="3g99cIN5ji3" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getNotDefaultSProperties" />
+      <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="3g99cIN5ji4" role="1B3o_S" />
       <node concept="3uibUv" id="3g99cIN5ji5" role="3clF45">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="1TWFJuLC$4k" role="11_B2D">
-          <ref role="3uigEE" to="e8bb:~SPropertyId" resolve="SPropertyId" />
+        <node concept="3uibUv" id="2u22WRjqdL3" role="11_B2D">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
         </node>
         <node concept="3uibUv" id="3g99cIN5ji7" role="11_B2D">
           <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
@@ -2110,8 +2111,8 @@
             <property role="TrG5h" value="properties" />
             <node concept="3uibUv" id="3g99cIN5jiO" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-              <node concept="3uibUv" id="1TWFJuLCRiN" role="11_B2D">
-                <ref role="3uigEE" to="e8bb:~SPropertyId" resolve="SPropertyId" />
+              <node concept="3uibUv" id="2u22WRjqdK_" role="11_B2D">
+                <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
               </node>
               <node concept="3uibUv" id="3g99cIN5jiQ" role="11_B2D">
                 <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
@@ -2120,8 +2121,8 @@
             <node concept="2ShNRf" id="3g99cIN5jiR" role="33vP2m">
               <node concept="1pGfFk" id="3g99cIN5jiS" role="2ShVmc">
                 <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-                <node concept="3uibUv" id="1TWFJuLCUn5" role="1pMfVU">
-                  <ref role="3uigEE" to="e8bb:~SPropertyId" resolve="SPropertyId" />
+                <node concept="3uibUv" id="2u22WRjqdKF" role="1pMfVU">
+                  <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
                 </node>
                 <node concept="3uibUv" id="1TWFJuLCWPa" role="1pMfVU">
                   <ref role="3uigEE" to="ze1i:~PropertyConstraintsDescriptor" resolve="PropertyConstraintsDescriptor" />
@@ -2139,7 +2140,7 @@
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
               <node concept="10Nm6u" id="23CHI7KNh94" role="37wK5m">
                 <node concept="xERo3" id="23CHI7KNjmV" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:1TWFJuLBK2f" resolve="reduce_Property2Id" />
+                  <ref role="xH3mL" to="tp27:5DcBNiM88Ty" resolve="reduce_PropertyDeclaration_SProperty" />
                   <node concept="3NFfHV" id="23CHI7KNkua" role="xEYEz">
                     <node concept="3clFbS" id="23CHI7KNkub" role="2VODD2">
                       <node concept="3clFbF" id="23CHI7KNkw1" role="3cqZAp">
@@ -2664,13 +2665,13 @@
     <node concept="3clFb_" id="3g99cIN5jo4" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getNotDefaultSReferenceLinks" />
+      <property role="TrG5h" value="getSpecifiedReferences" />
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="3g99cIN5jo5" role="1B3o_S" />
       <node concept="3uibUv" id="3g99cIN5jo6" role="3clF45">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="1TWFJuLDGos" role="11_B2D">
-          <ref role="3uigEE" to="e8bb:~SReferenceLinkId" resolve="SReferenceLinkId" />
+        <node concept="3uibUv" id="2u22WRjqdKL" role="11_B2D">
+          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
         </node>
         <node concept="3uibUv" id="3g99cIN5jo8" role="11_B2D">
           <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
@@ -2682,8 +2683,8 @@
             <property role="TrG5h" value="references" />
             <node concept="3uibUv" id="3g99cIN5jot" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-              <node concept="3uibUv" id="1TWFJuLDQN1" role="11_B2D">
-                <ref role="3uigEE" to="e8bb:~SReferenceLinkId" resolve="SReferenceLinkId" />
+              <node concept="3uibUv" id="2u22WRjqdKX" role="11_B2D">
+                <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
               </node>
               <node concept="3uibUv" id="3g99cIN5jov" role="11_B2D">
                 <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
@@ -2692,8 +2693,8 @@
             <node concept="2ShNRf" id="3g99cIN5jow" role="33vP2m">
               <node concept="1pGfFk" id="3g99cIN5jox" role="2ShVmc">
                 <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-                <node concept="3uibUv" id="1TWFJuLDTJ_" role="1pMfVU">
-                  <ref role="3uigEE" to="e8bb:~SReferenceLinkId" resolve="SReferenceLinkId" />
+                <node concept="3uibUv" id="2u22WRjqdKR" role="1pMfVU">
+                  <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
                 </node>
                 <node concept="3uibUv" id="1TWFJuLDX3J" role="1pMfVU">
                   <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
@@ -2711,7 +2712,7 @@
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
               <node concept="10Nm6u" id="23CHI7KNLM$" role="37wK5m">
                 <node concept="xERo3" id="23CHI7KNO5f" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:1TWFJuLBP0u" resolve="reduce_Link2Id" />
+                  <ref role="xH3mL" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
                   <node concept="3NFfHV" id="23CHI7KNPcP" role="xEYEz">
                     <node concept="3clFbS" id="23CHI7KNPcQ" role="2VODD2">
                       <node concept="3clFbF" id="1TWFJuLEg19" role="3cqZAp">
