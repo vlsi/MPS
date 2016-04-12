@@ -1,3 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-434sznrc416hsp0dz9h087s44ioomzv" />
+<dependencies version="2" modelHash="-434sznrc416hsp0dz9h087s44ioomzv">
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="47b2m142a3szdxv1vm0jabcyc6q3pdr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-elrnmahlxe9j5a0sqm40pl7c9jt2o7s" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-52ixwy4puf8fvcbw7ylgorfvuhomof2" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-ebws66fn9hp0jen36bh3plb8shs5i7h" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="5379654361813488285" name="UndoTypingInTransactionalPropertyCell" hash="-57q69drhdmobpddthzqib147p894uj0" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="UndoTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="5379654361813488289" hash="-dniqf5fbnkxc9as3tcy8xoyr3rba7dg" />
+  <source id="1758932278023383298" name="UndoChangesOfTransactionalPropertyCell" hash="-3af7cx0i8vr39svvvf45jvzmxq3qcgs" dependsOnNodes="true">
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="UndoChangesOfTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="1758932278025063584" name="UndoInvalidTypingInTransactionalPropertyCell" hash="-a6azk4fcq3a41hwx923otttmt5vbsto" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="UndoInvalidTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="1758932278025075920" name="UndoCommitedInvalidTypingInTransactionalPropertyCell" hash="-1l7e7t5hbjl3m3f8hodss0c2rrafjrq" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="UndoCommitedInvalidTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="5931285799429786231" name="RedoTypingInTransactionalPropertyCell" hash="dc5ad8g6v12czjndq51gww96nsf1tok" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="RedoTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="2786154196593910688" name="RedoInvalidTypingInTransactionalPropertyCell" hash="8b0l91an7894ennrtnet27gevbyv81f" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593923925" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="RedoInvalidTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="2786154196593923925" name="RedoChangesOfTransactionalPropertyCell" hash="17eo5qjfzi2knd73q1ofyyf9dbxap3p" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593934307" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="RedoChangesOfTransactionalPropertyCell_Test.java" />
+  </source>
+  <source id="2786154196593934307" name="RedoCommitedInvalidTypingInTransactionalPropertyCell" hash="-8hp3tm92k0hfejzxaosvwee6n7dbc9e" dependsOnNodes="true">
+    <dep root="1758932278023383298" />
+    <dep root="1758932278025063584" />
+    <dep root="1758932278025075920" />
+    <dep root="2786154196593910688" />
+    <dep root="2786154196593923925" />
+    <dep root="5379654361813488285" />
+    <dep root="5379654361813488289" />
+    <dep root="5931285799429786231" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="RedoCommitedInvalidTypingInTransactionalPropertyCell_Test.java" />
+  </source>
+</dependencies>
 

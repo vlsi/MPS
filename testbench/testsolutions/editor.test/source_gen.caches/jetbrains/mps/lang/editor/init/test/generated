@@ -1,3 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9x3qoe2e0gjrshx2e0177dqg2mm1dnr" />
+<dependencies version="2" modelHash="9x3qoe2e0gjrshx2e0177dqg2mm1dnr">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-elrnmahlxe9j5a0sqm40pl7c9jt2o7s" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-bn2ff4h2es9la3vrb9ykn9evjk39usb" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-52ixwy4puf8fvcbw7ylgorfvuhomof2" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="ahhvbg8qes60vpqq2q09rnxkcsj8fu6" dependsOnNodes="true">
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="8705753908477435260" name="ChildWithDirectCycle_card1n" hash="-c73hpq32giwbo4pwdikyvf9cznde0gt" dependsOnNodes="true">
+    <dep root="1578746599575947042" />
+    <dep root="7454474523886895226" />
+    <dep root="8705753908477461327" />
+    <dep root="8705753908477487693" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="ChildWithDirectCycle_card1n_Test.java" />
+  </source>
+  <source id="8705753908477461327" name="ChildWithIndirectCycle_card1" hash="-2dskqshfu1uaus9mgfpqhk84o4jgtkp" dependsOnNodes="true">
+    <dep root="1578746599575947042" />
+    <dep root="7454474523886895226" />
+    <dep root="8705753908477435260" />
+    <dep root="8705753908477487693" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ChildWithIndirectCycle_card1_Test.java" />
+  </source>
+  <source id="8705753908477487693" name="ChildWithIndirectCycle_card1n" hash="-39jmmvx7zjx8v1o508w2bl5aqyitrx7" dependsOnNodes="true">
+    <dep root="1578746599575947042" />
+    <dep root="7454474523886895226" />
+    <dep root="8705753908477435260" />
+    <dep root="8705753908477461327" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ChildWithIndirectCycle_card1n_Test.java" />
+  </source>
+  <source id="7454474523886895226" name="ChildWithTwoGrandChildrenInDifferentRoles" hash="7kyj2tw1w09y71fiys8xpyvza4emk8o" dependsOnNodes="true">
+    <dep root="1578746599575947042" />
+    <dep root="8705753908477435260" />
+    <dep root="8705753908477461327" />
+    <dep root="8705753908477487693" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ChildWithTwoGrandChildrenInDifferentRoles_Test.java" />
+  </source>
+  <source id="1578746599575947042" name="ChildWithDirectCycle_card1" hash="2t0ik6m3fj3mv3ygpardp7izngdu3mo" dependsOnNodes="true">
+    <dep root="7454474523886895226" />
+    <dep root="8705753908477435260" />
+    <dep root="8705753908477461327" />
+    <dep root="8705753908477487693" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ChildWithDirectCycle_card1_Test.java" />
+  </source>
+</dependencies>
 

@@ -127,7 +127,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "-\u221e";
+      return "-∞";
     }
   }
   private EditorCell createConstant_yq81ip_c0(EditorContext editorContext, SNode node) {
@@ -172,7 +172,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "+\u221e";
+      return "+∞";
     }
   }
   private EditorCell createReadOnlyModelAccessor_yq81ip_e0(final EditorContext editorContext, final SNode node) {

@@ -1,3 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3m5qmaijfnp5xqa8mzbabijd1thx1s8" />
+<dependencies version="2" modelHash="-3m5qmaijfnp5xqa8mzbabijd1thx1s8">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="80fy1f6m7lisfkwvhmt33f99bzgyja" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-elrnmahlxe9j5a0sqm40pl7c9jt2o7s" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-bn2ff4h2es9la3vrb9ykn9evjk39usb" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="2vfvoido12l0yqigiy7nlds3w7r6xcd" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-1pp6ozpzwf3uc2hhk154l3pqal0ltu2" dependsOnNodes="true">
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="12077399789561866" name="PropertiesTest_Test" hash="-31go12d1xgzeca7pe9wqtff0dup2lj7">
+    <dep root="12077399789561873" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="PropertiesTest_Test.java" />
+  </source>
+  <source id="12077399789561873" name="TestClass" hash="9xo5iuf3608fol6gmzmbz7zyl5b02tv">
+    <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="TestClass.java" />
+  </source>
+  <source id="7319542056806110576" name="BaseTestClass" hash="cq3epuqkfrp8plhbjacfqob353z8cyp">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <file name="BaseTestClass.java" />
+  </source>
+  <source id="6799807267502338718" name="CustomPropertyAccess" hash="1689iuijwdqzh33vhws3o0hl0m7ysb6" dependsOnNodes="true">
+    <dep root="12077399789561866" />
+    <dep root="12077399789561873" />
+    <dep root="418758558327350365" />
+    <dep root="6799807267508922150" />
+    <dep root="6799807267508942864" />
+    <dep root="6799807267508959428" />
+    <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="CustomPropertyAccess_Test.java" />
+  </source>
+  <source id="6799807267508922150" name="CustomPropertyReferences1" hash="-70iglvew0hk0tru1imtyglejyc0xlkt" dependsOnNodes="true">
+    <dep root="12077399789561866" />
+    <dep root="12077399789561873" />
+    <dep root="418758558327350365" />
+    <dep root="6799807267502338718" />
+    <dep root="6799807267508942864" />
+    <dep root="6799807267508959428" />
+    <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="CustomPropertyReferences1_Test.java" />
+  </source>
+  <source id="6799807267508942864" name="CustomPropertyReferences2" hash="9nm2i3snfzjvkhumyofultzwwwvxgbc" dependsOnNodes="true">
+    <dep root="12077399789561866" />
+    <dep root="12077399789561873" />
+    <dep root="418758558327350365" />
+    <dep root="6799807267502338718" />
+    <dep root="6799807267508922150" />
+    <dep root="6799807267508959428" />
+    <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="CustomPropertyReferences2_Test.java" />
+  </source>
+  <source id="6799807267508959428" name="CustomPropertyReferences3" hash="2dak6yydtw0mfvxcko2lheyf8n30jyn" dependsOnNodes="true">
+    <dep root="12077399789561866" />
+    <dep root="12077399789561873" />
+    <dep root="418758558327350365" />
+    <dep root="6799807267502338718" />
+    <dep root="6799807267508922150" />
+    <dep root="6799807267508942864" />
+    <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="CustomPropertyReferences3_Test.java" />
+  </source>
+  <source id="418758558327350365" hash="by3qad92ql9ptwh6craubvvas7g8369" />
+</dependencies>
 

@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="asw21eq22aenf5qbbbb4blzc96xe5en" />
+<dependencies version="2" modelHash="asw21eq22aenf5qbbbb4blzc96xe5en">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <common hash="40w23b9ldrtoacq4u7sdd522bwhfa8d" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="5257650213624905145" name="Clazz" hash="-5r9x60zv8mc7xyzpmv2ug9sh3ij73ra">
+    <file name="Clazz.java" />
+  </source>
+</dependencies>
 

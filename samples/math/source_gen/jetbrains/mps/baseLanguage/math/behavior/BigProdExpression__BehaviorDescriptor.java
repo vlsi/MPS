@@ -32,7 +32,7 @@ public final class BigProdExpression__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static String getOpName_id1653mnvAgoA(@NotNull SAbstractConcept __thisConcept__) {
-    return "\u220f";
+    return "∏";
   }
 
   /*package*/ BigProdExpression__BehaviorDescriptor() {

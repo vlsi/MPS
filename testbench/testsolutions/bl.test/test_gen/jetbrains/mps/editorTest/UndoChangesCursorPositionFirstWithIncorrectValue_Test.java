@@ -25,7 +25,7 @@ public class UndoChangesCursorPositionFirstWithIncorrectValue_Test extends BaseT
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");

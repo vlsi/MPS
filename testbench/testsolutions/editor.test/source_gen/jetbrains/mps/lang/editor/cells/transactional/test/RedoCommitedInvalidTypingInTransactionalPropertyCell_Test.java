@@ -20,7 +20,7 @@ public class RedoCommitedInvalidTypingInTransactionalPropertyCell_Test extends B
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2786154196593934308", "2786154196593934310");
-      typeString("\u00a7123");
+      typeString("§123");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("$Undo");
       invokeAction("$Undo");

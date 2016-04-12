@@ -34,7 +34,7 @@ public abstract class StringTextGen {
         result = stringBuilder.toString();
       }
     }
-    tgs.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(result, ctx));
+    tgs.append(result);
   }
   public static void compilableString(String s, SNodeTextGen ctx) {
     // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
@@ -45,25 +45,5 @@ public abstract class StringTextGen {
   protected static boolean isBadDoubleQuote(String s, int i, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     return s.charAt(i) == '"' && (i == 0 || s.charAt(i - 1) != '\\');
-  }
-  protected static String replaceNonAsciiSymbolsWithUnicodeSymbols(String s, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    StringBuilder result = new StringBuilder();
-    for (int i = 0; i < s.length(); i++) {
-      if (s.charAt(i) < 128) {
-        result.append(s.charAt(i));
-      } else {
-        result.append("\\u").append(StringTextGen.paddedHex(s.charAt(i), ctx));
-      }
-    }
-    return result.toString();
-  }
-  protected static String paddedHex(char c, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    String value = Integer.toString(c, 16);
-    while (value.length() < 4) {
-      value = "0" + value;
-    }
-    return value;
   }
 }

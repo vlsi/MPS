@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 
 public class LoggingProgressStrategy extends AbstractProgressStrategy {
   private static Logger LOG = LogManager.getLogger(LoggingProgressStrategy.class.getPackage().getName());
-  private static String TOTAL = "\u221e";
+  private static String TOTAL = "∞";
   private String lastInfo = null;
   private LoggingProgressStrategy.Log logger = new LoggingProgressStrategy.Log() {
     @Override

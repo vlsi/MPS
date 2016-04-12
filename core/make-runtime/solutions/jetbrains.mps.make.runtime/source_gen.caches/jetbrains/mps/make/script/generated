@@ -44,7 +44,6 @@
   </source>
   <source id="1291978361072214397" name="IResult" hash="-era04j0cep0awpsl8ambqb2hw9bziee">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IResult.java" />
   </source>

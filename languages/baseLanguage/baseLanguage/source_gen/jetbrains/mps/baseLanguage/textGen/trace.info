@@ -3711,35 +3711,20 @@
       <node id="1236014245681" at="28,48,29,40" concept="4" />
       <node id="1236014269317" at="30,18,31,46" concept="4" />
       <node id="1236014283646" at="33,9,34,42" concept="4" />
-      <node id="1237463992723" at="36,5,37,84" concept="4" />
+      <node id="1237463992723" at="36,5,37,23" concept="4" />
       <node id="1236013739107" at="39,67,40,88" concept="12" />
       <node id="1236013739107" at="40,88,41,102" concept="12" />
       <node id="1236013739107" at="41,102,42,101" concept="12" />
       <node id="1236013739107" at="42,101,43,28" concept="12" />
       <node id="1236013739107" at="45,88,46,55" concept="10" />
       <node id="1236013983077" at="46,55,47,69" concept="11" />
-      <node id="1236013739107" at="49,104,50,55" concept="10" />
-      <node id="1236014340226" at="50,55,51,47" concept="10" />
-      <node id="1236014392659" at="53,30,54,35" concept="4" />
-      <node id="1236014407550" at="55,14,56,79" concept="4" />
-      <node id="1236014516361" at="58,5,59,29" concept="11" />
-      <node id="1236013739107" at="61,71,62,55" concept="10" />
-      <node id="1236014437957" at="62,55,63,43" concept="10" />
-      <node id="1236014474716" at="64,32,65,26" concept="4" />
-      <node id="1236014489163" at="66,5,67,17" concept="11" />
       <node id="1236014267033" at="30,16,32,11" concept="1" />
-      <node id="1236014405157" at="55,12,57,7" concept="1" />
-      <node id="1236014463172" at="63,43,66,5" concept="17" />
       <node id="1236013947406" at="15,44,19,9" concept="8" />
       <node id="1236013739107" at="45,0,49,0" concept="15" trace="isBadDoubleQuote#(Ljava/lang/String;ILjetbrains/mps/text/rt/TextGenContext;)Z" />
-      <node id="1236014372096" at="52,42,57,7" concept="8" />
       <node id="1236013924713" at="14,36,20,7" concept="6" />
       <node id="1236013739107" at="39,0,45,0" concept="15" trace="compilableString#(Ljava/lang/String;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-      <node id="1236014353279" at="51,47,58,5" concept="6" />
-      <node id="1236013739107" at="61,0,69,0" concept="15" trace="paddedHex#(CLjetbrains/mps/text/rt/TextGenContext;)Ljava/lang/String;" />
       <node id="1236014145887" at="23,46,32,11" concept="8" />
       <node id="1236014127616" at="22,58,33,9" concept="6" />
-      <node id="1236013739107" at="49,0,61,0" concept="15" trace="replaceNonAsciiSymbolsWithUnicodeSymbols#(Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)Ljava/lang/String;" />
       <node id="1236014102743" at="20,7,35,7" concept="8" />
       <node id="1236013814844" at="12,22,36,5" concept="8" />
       <node id="1236013739107" at="10,0,39,0" concept="15" trace="compilableString#(Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)V" />
@@ -3747,9 +3732,6 @@
       <scope id="1236014181111" at="26,48,27,40" />
       <scope id="1236014229856" at="28,48,29,40" />
       <scope id="1236014267034" at="30,18,31,46" />
-      <scope id="1236014372097" at="53,30,54,35" />
-      <scope id="1236014405158" at="55,14,56,79" />
-      <scope id="1236014463174" at="64,32,65,26" />
       <scope id="1236013947407" at="16,112,18,16" />
       <scope id="1236013739107" at="45,88,47,69">
         <var name="tgs" id="1236013739107" />
@@ -3761,7 +3743,6 @@
         <var name="i" id="1236013975026" />
         <var name="s" id="1236013974056" />
       </scope>
-      <scope id="1236014353280" at="52,42,57,7" />
       <scope id="1236013924713" at="14,36,20,7">
         <var name="i" id="1236013924716" />
       </scope>
@@ -3769,28 +3750,9 @@
         <var name="ctx" id="1236013739107" />
         <var name="s" id="1236013769299" />
       </scope>
-      <scope id="1236013739107" at="61,71,67,17">
-        <var name="tgs" id="1236013739107" />
-        <var name="value" id="1236014437958" />
-      </scope>
-      <scope id="1236014353279" at="51,47,58,5">
-        <var name="i" id="1236014353282" />
-      </scope>
-      <scope id="1236013739107" at="61,0,69,0">
-        <var name="c" id="1236014433706" />
-        <var name="ctx" id="1236013739107" />
-      </scope>
       <scope id="1236014127617" at="23,46,32,11" />
-      <scope id="1236013739107" at="49,104,59,29">
-        <var name="result" id="1236014340227" />
-        <var name="tgs" id="1236013739107" />
-      </scope>
       <scope id="1236014127616" at="22,58,33,9">
         <var name="i" id="1236014127619" />
-      </scope>
-      <scope id="1236013739107" at="49,0,61,0">
-        <var name="ctx" id="1236013739107" />
-        <var name="s" id="1236014324036" />
       </scope>
       <scope id="1236014102744" at="21,26,34,42">
         <var name="stringBuilder" id="1236014109561" />
@@ -3798,7 +3760,7 @@
       <scope id="1236013814845" at="13,78,35,7">
         <var name="needsEscaping" id="1236013906426" />
       </scope>
-      <scope id="1236013739107" at="10,75,37,84">
+      <scope id="1236013739107" at="10,75,37,23">
         <var name="result" id="1236013791615" />
         <var name="tgs" id="1236013739107" />
       </scope>
@@ -3806,7 +3768,7 @@
         <var name="ctx" id="1236013739107" />
         <var name="s" id="1236013769299" />
       </scope>
-      <unit id="1236013739107" at="9,0,70,0" name="jetbrains.mps.baseLanguage.textGen.StringTextGen" />
+      <unit id="1236013739107" at="9,0,50,0" name="jetbrains.mps.baseLanguage.textGen.StringTextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1237807733680">
