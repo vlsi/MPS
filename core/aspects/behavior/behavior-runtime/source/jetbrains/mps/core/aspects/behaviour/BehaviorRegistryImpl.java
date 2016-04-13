@@ -36,6 +36,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
@@ -51,7 +52,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
 
   private final CachingMethodResolutionOrder myMRO = new C3StarMethodResolutionOrder();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
-  private final Map<SConceptId, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SConceptId, BHDescriptor>();
+  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
   public BehaviorRegistryImpl(LanguageRegistry languageRegistry) {
@@ -67,7 +68,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   @Override
   @NotNull
   public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
-    BHDescriptor descriptor = myBHDescriptors.get(MetaIdHelper.getConcept(concept));
+    BHDescriptor descriptor = myBHDescriptors.get(concept);
     if (descriptor != null) {
       return descriptor;
     }
@@ -107,7 +108,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
         LOG.error("Exception while behavior descriptor creating " + concept, e);
         descriptor = new IllegalBHDescriptor(concept);
       }
-      myBHDescriptors.put(MetaIdHelper.getConcept(concept), descriptor);
+      myBHDescriptors.put(concept, descriptor);
       return descriptor;
     } finally {
       myStorage.finishLoading(concept);
