@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -49,6 +50,11 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     if (myConcept instanceof SInterfaceConceptAdapterById) return ((SInterfaceConceptAdapterById) myConcept).getId();
     if (myConcept instanceof SConceptAdapterById) return ((SConceptAdapterById) myConcept).getId();
     return MetaIdFactory.INVALID_CONCEPT_ID;
+  }
+
+  @Override
+  public SAbstractConcept getConcept() {
+    return myConcept;
   }
 
   @Override

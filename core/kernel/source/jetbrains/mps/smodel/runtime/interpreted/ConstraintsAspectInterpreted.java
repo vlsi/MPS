@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ConstraintsAspectInterpreted implements ConstraintsAspectDescriptor {
   private static final ConstraintsAspectInterpreted INSTANCE = new ConstraintsAspectInterpreted();
@@ -31,8 +34,14 @@ public class ConstraintsAspectInterpreted implements ConstraintsAspectDescriptor
     return INSTANCE;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     return new BaseConstraintsDescriptor(conceptId);
+  }
+
+  public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
+    return new BaseConstraintsDescriptor(concept);
   }
 }

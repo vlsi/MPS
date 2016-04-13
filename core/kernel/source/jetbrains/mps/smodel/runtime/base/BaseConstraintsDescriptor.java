@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -47,7 +48,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
-  private final SConceptId myConcept;
+  private final SAbstractConcept myConcept;
 
   private ConstraintsDescriptor canBeChildDescriptor;
   private ConstraintsDescriptor canBeRootDescriptor;
@@ -64,12 +65,12 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @Deprecated
   @ToRemove(version = 3.4)
   public BaseConstraintsDescriptor(SConceptId conceptId) {
-    this.myConcept = conceptId;
+    this.myConcept = MetaAdapterFactory.getConcept(conceptId, "<BaseConstraintsDescriptor: this name must not be used>");
     calcInheritance();
   }
 
   public BaseConstraintsDescriptor(SAbstractConcept concept) {
-    this.myConcept = MetaIdHelper.getConcept(concept);
+    this.myConcept = concept;
     calcInheritance();
   }
 
@@ -202,6 +203,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   @Override
   public SConceptId getConceptId() {
+    return MetaIdHelper.getConcept(myConcept);
+  }
+
+  @Override
+  public SAbstractConcept getConcept() {
     return myConcept;
   }
 
