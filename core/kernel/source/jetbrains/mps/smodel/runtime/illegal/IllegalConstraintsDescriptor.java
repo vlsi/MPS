@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -45,6 +46,8 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return myConcept.getQualifiedName();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SConceptId getConceptId() {
     if (myConcept instanceof SInterfaceConceptAdapterById) return ((SInterfaceConceptAdapterById) myConcept).getId();
@@ -55,6 +58,11 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   @Override
   public SAbstractConcept getConcept() {
     return myConcept;
+  }
+
+  @Override
+  public SAbstractConcept getDefaultConcreteConcept() {
+    return getConcept();
   }
 
   @Override
@@ -117,6 +125,8 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return null;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SConceptId getDefaultConcreteConceptId() {
     return getConceptId();

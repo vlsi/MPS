@@ -39,13 +39,16 @@ public interface ConstraintsDescriptor {
 
   SAbstractConcept getConcept();
 
-  boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext);
 
   boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext);
 
   PropertyConstraintsDescriptor getProperty(SProperty property);
 
@@ -75,5 +78,9 @@ public interface ConstraintsDescriptor {
   @Nullable
   String getAlternativeIcon(SNode node);
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   SConceptId getDefaultConcreteConceptId();
+
+  SAbstractConcept getDefaultConcreteConcept();
 }

@@ -201,6 +201,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getConceptFqName();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SConceptId getConceptId() {
     return MetaIdHelper.getConcept(myConcept);
@@ -363,9 +365,16 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return null;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SConceptId getDefaultConcreteConceptId() {
     return getConceptId();
+  }
+
+  public SAbstractConcept getDefaultConcreteConcept() {
+    //this is for 3.3-compatibility, should be replaced with getConcept() after 3.4
+    return MetaAdapterFactory.getConcept(getDefaultConcreteConceptId(), "<BaseConstraintsDescriptor: this name must not be used (default concrete concept)>");
   }
 
   private interface InheritanceCalculateParameters {
