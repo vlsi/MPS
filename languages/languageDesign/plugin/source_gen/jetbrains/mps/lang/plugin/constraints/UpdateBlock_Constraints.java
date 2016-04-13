@@ -4,14 +4,13 @@ package jetbrains.mps.lang.plugin.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class UpdateBlock_Constraints extends BaseConstraintsDescriptor {
   public UpdateBlock_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b8325461L, "jetbrains.mps.lang.plugin.structure.UpdateBlock"));
   }
-  public SConceptId getDefaultConcreteConceptId() {
-    return MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L);
+  public SAbstractConcept getDefaultConcreteConcept() {
+    return MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L, "jetbrains.mps.lang.plugin.structure.IsApplicableBlock");
   }
 }
