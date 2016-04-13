@@ -60,8 +60,9 @@ public abstract class LanguageRuntime {
   /**
    * Generated LanguageRuntime classes shall override this method
    * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
-   * @since 3.2
+   *
    * @return 0 now
+   * @since 3.2
    */
   public abstract int getVersion();
 
@@ -70,15 +71,15 @@ public abstract class LanguageRuntime {
   /**
    * Provide aspect instance associated with the language. Aspect is instantiated only once, lazily (the first time asked)
    * and the same instance is returned for each subsequent calls.
-   *
+   * <p>
    * At the moment, sole mechanism to supply new aspect is code in generated language runtime subclass (i.e. there's no mechanism yet to
    * add aspects dynamically).
    *
+   * @param aspectClass identifies aspect to retrieve
+   * @param <T>         subtype of {@link jetbrains.mps.smodel.runtime.ILanguageAspect}
+   * @return instance of aspect implementation if there's one for the language
    * @see #createAspect(Class)
    * @see jetbrains.mps.smodel.runtime.ILanguageAspect
-   * @param aspectClass identifies aspect to retrieve
-   * @param <T> subtype of {@link jetbrains.mps.smodel.runtime.ILanguageAspect}
-   * @return instance of aspect implementation if there's one for the language
    */
   public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> aspectClass) {
     T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
@@ -96,7 +97,7 @@ public abstract class LanguageRuntime {
   }
 
   //body needed for compatibility with 3.2-generated classes, remove it after 3.3
-  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass){
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) {
       return aspectClass.cast(createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
     }
@@ -167,7 +168,10 @@ public abstract class LanguageRuntime {
     // AND there are no old LanguageRuntime classes (i.e. past MPS 3.3), the hack shall cease to exist.
     LanguageRuntime langCore = registry.getLanguage(BootstrapLanguages.getLangCore());
     assert langCore != null;
-    myExtendedLanguages.add(langCore);
+    if (this != langCore) {
+      myExtendedLanguages.add(langCore);
+      langCore.registerExtendingLanguage(this);
+    }
   }
 
   void deinitialize() {
