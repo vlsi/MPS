@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.JBUI;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
 import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
@@ -177,9 +178,9 @@ public class ContextAssistantPanel implements ActionItemExecutor {
       item.execute();
     } else {
       jumpToEditor(false);
-      myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
+      myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
         @Override
-        public void run() {
+        protected void doExecute() {
           item.execute();
         }
       });
