@@ -21,14 +21,18 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 public final class SLanguageAdapterById extends SLanguageAdapter {
+  public static final java.lang.String LANGUAGE_PREFIX = "l";
   private final SLanguageId myLanguage;
 
   public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
@@ -74,5 +78,21 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
   @Nullable
   public Language getSourceModule() {
     return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getIdValue())));
+  }
+
+  @Override
+  public String serialize() {
+    return LANGUAGE_PREFIX + ID_DELIM + myLanguage.serialize() + ID_DELIM + myLanguageFqName;
+  }
+
+  public static SLanguageAdapterById deserialize(String s) {
+    String marker = LANGUAGE_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split(ID_DELIM);
+    assert split.length == 2 : s;
+    SLanguage res = MetaAdapterFactory.getLanguage(SLanguageId.deserialize(split[0]), split[1]);
+    assert res instanceof SLanguageAdapterById : res.getClass().getName();
+    return (SLanguageAdapterById) res;
   }
 }

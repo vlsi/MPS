@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -39,6 +40,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class SLanguageAdapter implements SLanguage {
+  public static final String ID_DELIM = ":";
   protected final String myLanguageFqName;
 
   protected SLanguageAdapter(@NotNull String language) {
@@ -116,5 +118,17 @@ public abstract class SLanguageAdapter implements SLanguage {
   @Override
   public String toString() {
     return myLanguageFqName;
+  }
+
+  public abstract String serialize();
+
+  public static SLanguageAdapter deserialize(String s){
+    if (s.startsWith(SLanguageAdapterById.LANGUAGE_PREFIX)){
+      return SLanguageAdapterById.deserialize(s);
+    } else if (s.startsWith(InvalidLanguage.INVALID_PREFIX)){
+      return InvalidLanguage.deserialize(s);
+    } else{
+      throw new IllegalArgumentException("Illegal language type: "+s);
+    }
   }
 }

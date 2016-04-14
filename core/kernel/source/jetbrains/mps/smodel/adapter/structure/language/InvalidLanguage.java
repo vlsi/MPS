@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
  * See InvalidConcept doc
  */
 public final class InvalidLanguage extends SLanguageAdapter {
+  public static final java.lang.String INVALID_PREFIX = "invalid";
+
   public InvalidLanguage(@NotNull String fqName) {
     super(fqName);
   }
@@ -66,5 +69,16 @@ public final class InvalidLanguage extends SLanguageAdapter {
   @Nullable
   public Language getSourceModule() {
     return null;
+  }
+
+  @Override
+  public String serialize() {
+    return INVALID_PREFIX + ID_DELIM + myLanguageFqName;
+  }
+
+  public static InvalidLanguage deserialize(String s) {
+    String marker = INVALID_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    return new InvalidLanguage(s.substring(marker.length()));
   }
 }
