@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -32,12 +33,17 @@ import org.jetbrains.mps.openapi.model.SNode;
  * See InvalidConcept doc
  */
 public final class InvalidReferenceLink extends SReferenceLinkAdapter {
-  @Nullable
+  @NotNull
   private final String myConcept;
 
   public InvalidReferenceLink(@Nullable String concept, @NotNull String name) {
     super(name);
-    myConcept = concept;
+    if (concept != null) {
+      myConcept = concept;
+    } else {
+      //name is better to be a valid id. May be important on serialization
+      myConcept = "UnknownConceptWithRef" + NameUtil.capitalize(name);
+    }
   }
 
   @Override

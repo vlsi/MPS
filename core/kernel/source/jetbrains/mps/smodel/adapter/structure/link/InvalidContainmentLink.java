@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -33,17 +34,24 @@ import org.jetbrains.mps.openapi.model.SNode;
  * See InvalidConcept doc
  */
 public final class InvalidContainmentLink extends SContainmentLinkAdapter {
-  @Nullable
+  @NotNull
   private final String myConcept;
 
   public InvalidContainmentLink(@Nullable String concept, @NotNull String name) {
     super(name);
-    myConcept = concept;
+    if (concept != null) {
+      myConcept = concept;
+    } else {
+      //name is better to be a valid id. May be important on serialization
+      myConcept = "UnknownConceptWithLink" + NameUtil.capitalize(name);
+    }
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof InvalidContainmentLink)) return false;
+    if (!(obj instanceof InvalidContainmentLink)) {
+      return false;
+    }
     String otherId = ((InvalidContainmentLink) obj).myName;
     return myName.equals(otherId);
   }
@@ -60,7 +68,7 @@ public final class InvalidContainmentLink extends SContainmentLinkAdapter {
 
   @Override
   public String getRoleName() {
-      return myName;
+    return myName;
   }
 
   @Override
