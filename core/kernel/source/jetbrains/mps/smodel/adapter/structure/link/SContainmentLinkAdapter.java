@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.language.InvalidLanguage;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -29,6 +32,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SContainmentLinkAdapter implements SContainmentLink {
+  public static final String ID_DELIM = ":";
+
   protected String myName;
 
   protected SContainmentLinkAdapter(@NotNull String name) {
@@ -118,5 +123,17 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public String toString() {
     return myName;
+  }
+
+  public abstract String serialize();
+
+  public static SContainmentLinkAdapter deserialize(String s){
+    if (s.startsWith(SContainmentLinkAdapterById.LINK_PREFIX)){
+      return SContainmentLinkAdapterById.deserialize(s);
+    } else if (s.startsWith(InvalidContainmentLink.INVALID_PREFIX)){
+      return InvalidContainmentLink.deserialize(s);
+    } else{
+      throw new IllegalArgumentException("Illegal link type: "+s);
+    }
   }
 }

@@ -18,8 +18,12 @@ package jetbrains.mps.smodel.adapter.structure.link;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.InvalidLanguage;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -27,6 +31,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -34,6 +39,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * See InvalidConcept doc
  */
 public final class InvalidContainmentLink extends SContainmentLinkAdapter {
+  public static final java.lang.String INVALID_PREFIX = "i";
   @NotNull
   private final String myConcept;
 
@@ -86,5 +92,19 @@ public final class InvalidContainmentLink extends SContainmentLinkAdapter {
   @Override
   public SAbstractConcept getOwner() {
     return new InvalidConcept(myConcept);
+  }
+
+  @Override
+  public String serialize() {
+    return INVALID_PREFIX + ID_DELIM + myConcept + "." + myName;
+  }
+
+  public static InvalidContainmentLink deserialize(String s) {
+    String marker = INVALID_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split("\\.");
+    assert split.length == 2 : s;
+    return new InvalidContainmentLink(split[0], split[1]);
   }
 }
