@@ -193,18 +193,46 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return new Comparator<Object>() {
       @Override
       public int compare(final Object o1, final Object o2) {
-        if (isSortByType()) {
-          if (o1 instanceof SNode && o2 instanceof SNode) {
-            final SNode node1 = (SNode) o1;
-            final SNode node2 = (SNode) o2;
-            // (1) node.getConcept() doesn't require model read, nor concept.getQualifiedName
-            // (2) If we got SNode, we're are already in model read
-            String concept1 = node1.getConcept().getQualifiedName();
-            String concept2 = node2.getConcept().getQualifiedName();
-            return concept1.compareTo(concept2);
-          }
+        if (!(o1 instanceof SNode) || !(o2 instanceof SNode)) {
+          return 0;
         }
-        return 0;
+
+        final SNode node1 = (SNode) o1;
+        final SNode node2 = (SNode) o2;
+
+        if (!isSortByType()) {
+          return compareNames(node1, node2);
+        }
+
+        // (1) node.getConcept() doesn't require model read, nor concept.getQualifiedName
+        // (2) If we got SNode, we're are already in model read
+        int result = compareConceptFqNames(node1, node2);
+
+        if (result != 0) {
+          return result;
+        }
+
+        return compareNames(node1, node2);
+      }
+
+      private int compareConceptFqNames(SNode node1, SNode node2) {
+        String concept1 = node1.getConcept().getQualifiedName();
+        String concept2 = node2.getConcept().getQualifiedName();
+
+        return concept1.compareTo(concept2);
+      }
+
+      private int compareNames(SNode node1, SNode node2) {
+        String name1 = node1.getName();
+        String name2 = node2.getName();
+
+        if (name1 == null) {
+          return name2 == null ? 0 : 1;
+        }
+        if (name2 == null) {
+          return -1;
+        }
+        return name1.compareTo(name2);
       }
     };
   }
