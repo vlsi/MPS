@@ -43,16 +43,14 @@ import java.util.Set;
 
 public class HighlighterUpdateSession {
   private final IHighlighter myHighlighter;
-  private final boolean myEssentialOnly;
   private final Collection<EditorChecker> myCheckers;
   private final List<EditorComponent> myAllEditorComponents;
   @Nullable
   private final EditorComponent myInspector;
 
-  public HighlighterUpdateSession(IHighlighter highlighter, boolean essentialOnly, Collection<EditorChecker> checkers,
+  public HighlighterUpdateSession(IHighlighter highlighter, Collection<EditorChecker> checkers,
       List<EditorComponent> allEditorComponents, @Nullable EditorComponent inspector) {
     myHighlighter = highlighter;
-    myEssentialOnly = essentialOnly;
     myCheckers = checkers;
     myAllEditorComponents = allEditorComponents;
     myInspector = inspector;
@@ -151,7 +149,7 @@ public class HighlighterUpdateSession {
               if (myHighlighter.isPausedOrStopping()) return;
 
               for (EditorChecker checker : myCheckers) {
-                if (checker.needsUpdate(component) && (!myEssentialOnly || checker.isEssential())) {
+                if (checker.needsUpdate(component)) {
                   checkersToRecheck.add(checker);
                 }
               }
@@ -226,5 +224,11 @@ public class HighlighterUpdateSession {
     }
 
     return anyMessageChanged;
+  }
+
+  public void doneUpdating() {
+    for (EditorChecker checker : myCheckers) {
+      checker.doneUpdating();
+    }
   }
 }

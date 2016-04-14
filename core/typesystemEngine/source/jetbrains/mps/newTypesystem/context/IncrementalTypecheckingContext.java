@@ -20,6 +20,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
@@ -137,6 +138,12 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   public void runTypeCheckingAction(Runnable r) {
     synchronized (TYPECHECKING_LOCK) {
       r.run();
+    }
+  }
+
+  public <T> T runTypeCheckingAction(Computable<T> c) {
+    synchronized (TYPECHECKING_LOCK) {
+      return c.compute();
     }
   }
 

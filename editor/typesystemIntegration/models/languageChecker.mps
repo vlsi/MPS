@@ -11,6 +11,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -1315,8 +1316,8 @@
       <node concept="10P_77" id="6qi2OtU3ujO" role="3clF45" />
       <node concept="37vLTG" id="6qi2OtU3ujP" role="3clF46">
         <property role="TrG5h" value="checker" />
-        <node concept="3uibUv" id="6qi2OtU3ujQ" role="1tU5fm">
-          <ref role="3uigEE" to="n70j:~BaseEditorChecker" resolve="BaseEditorChecker" />
+        <node concept="3uibUv" id="1fzI02imahF" role="1tU5fm">
+          <ref role="3uigEE" to="n70j:~EditorChecker" resolve="EditorChecker" />
         </node>
       </node>
       <node concept="3clFbS" id="6qi2OtU3ujR" role="3clF47">
@@ -1337,25 +1338,58 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="60wM9d8BQCq" role="3cqZAp">
-          <node concept="3clFbS" id="60wM9d8BQCr" role="3clFbx">
-            <node concept="3cpWs6" id="60wM9d8BQCs" role="3cqZAp">
-              <node concept="3clFbT" id="60wM9d8BQCt" role="3cqZAk">
-                <property role="3clFbU" value="true" />
+        <node concept="3clFbJ" id="1fzI02imr3r" role="3cqZAp">
+          <node concept="3clFbS" id="1fzI02imr3t" role="3clFbx">
+            <node concept="3cpWs8" id="1fzI02imzp2" role="3cqZAp">
+              <node concept="3cpWsn" id="1fzI02imzp3" role="3cpWs9">
+                <property role="TrG5h" value="legacyChecker" />
+                <node concept="3uibUv" id="1fzI02imzp4" role="1tU5fm">
+                  <ref role="3uigEE" to="n70j:~LegacyEditorCheckerAdapter" resolve="LegacyEditorCheckerAdapter" />
+                </node>
+                <node concept="10QFUN" id="1fzI02imzMu" role="33vP2m">
+                  <node concept="3uibUv" id="1fzI02imzXb" role="10QFUM">
+                    <ref role="3uigEE" to="n70j:~LegacyEditorCheckerAdapter" resolve="LegacyEditorCheckerAdapter" />
+                  </node>
+                  <node concept="37vLTw" id="1fzI02imzr4" role="10QFUP">
+                    <ref role="3cqZAo" node="6qi2OtU3ujP" resolve="checker" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="1fzI02imzYB" role="3cqZAp">
+              <node concept="3clFbS" id="1fzI02imzYD" role="3clFbx">
+                <node concept="3cpWs6" id="1fzI02im$Jp" role="3cqZAp">
+                  <node concept="3clFbT" id="1fzI02im$JN" role="3cqZAk">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ZW3vV" id="1fzI02im$Dy" role="3clFbw">
+                <node concept="3uibUv" id="1fzI02im$Ie" role="2ZW6by">
+                  <ref role="3uigEE" node="4nkKl$KPUHv" resolve="AutoResolver" />
+                </node>
+                <node concept="2OqwBi" id="1fzI02im$83" role="2ZW6bz">
+                  <node concept="37vLTw" id="1fzI02imzZv" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1fzI02imzp3" resolve="legacyChecker" />
+                  </node>
+                  <node concept="liA8E" id="1fzI02im$r8" role="2OqNvi">
+                    <ref role="37wK5l" to="n70j:~LegacyEditorCheckerAdapter.getChecker():jetbrains.mps.nodeEditor.checking.BaseEditorChecker" resolve="getChecker" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="60wM9d8BQCu" role="3clFbw">
-            <node concept="3uibUv" id="60wM9d8BQCx" role="2ZW6by">
-              <ref role="3uigEE" node="4nkKl$KPUHv" resolve="AutoResolver" />
+          <node concept="2ZW3vV" id="1fzI02imwm_" role="3clFbw">
+            <node concept="3uibUv" id="1fzI02imzbN" role="2ZW6by">
+              <ref role="3uigEE" to="n70j:~LegacyEditorCheckerAdapter" resolve="LegacyEditorCheckerAdapter" />
             </node>
-            <node concept="37vLTw" id="2BHiRxglboi" role="2ZW6bz">
+            <node concept="37vLTw" id="1fzI02imvUs" role="2ZW6bz">
               <ref role="3cqZAo" node="6qi2OtU3ujP" resolve="checker" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6qi2OtU3ujZ" role="3cqZAp">
-          <node concept="3clFbT" id="6qi2OtU3uk0" role="3clFbG" />
+        <node concept="3cpWs6" id="1fzI02imDgj" role="3cqZAp">
+          <node concept="3clFbT" id="1fzI02imDgk" role="3cqZAk" />
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_t4A7" role="2AJF6D">
@@ -2449,8 +2483,8 @@
                   <ref role="3uigEE" to="exr9:~HighlighterMessage" resolve="HighlighterMessage" />
                 </node>
                 <node concept="2YIFZM" id="6se4BTU1$fb" role="33vP2m">
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.IErrorReporter,jetbrains.mps.nodeEditor.checking.BaseEditorChecker,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.IErrorReporter,jetbrains.mps.openapi.editor.message.EditorMessageOwner,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="37vLTw" id="1rlD583ji$A" role="37wK5m">
                     <ref role="3cqZAo" node="1rlD583ji$x" resolve="nodeWithError" />
                   </node>
@@ -3846,7 +3880,7 @@
                 <property role="TrG5h" value="message" />
                 <node concept="2YIFZM" id="3bq5tR0EFZN" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.message.EditorMessageOwner,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="2OqwBi" id="3bq5tR0EFZO" role="37wK5m">
                     <node concept="2GrUjf" id="3bq5tR0EFZP" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="2euxXH1_Fym" resolve="ref" />
@@ -4762,8 +4796,8 @@
       <node concept="10P_77" id="4nkKl$KPUN9" role="3clF45" />
       <node concept="37vLTG" id="4nkKl$KPUNa" role="3clF46">
         <property role="TrG5h" value="editorChecker" />
-        <node concept="3uibUv" id="4nkKl$KPUNb" role="1tU5fm">
-          <ref role="3uigEE" to="n70j:~BaseEditorChecker" resolve="BaseEditorChecker" />
+        <node concept="3uibUv" id="1fzI02il_co" role="1tU5fm">
+          <ref role="3uigEE" to="n70j:~EditorChecker" resolve="EditorChecker" />
         </node>
       </node>
       <node concept="3clFbS" id="4nkKl$KPUNc" role="3clF47">

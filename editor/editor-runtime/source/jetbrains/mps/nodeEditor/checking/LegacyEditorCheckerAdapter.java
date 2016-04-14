@@ -18,10 +18,12 @@ package jetbrains.mps.nodeEditor.checking;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,7 +44,7 @@ public class LegacyEditorCheckerAdapter implements EditorChecker {
 
   @Override
   public boolean isLaterThan(EditorChecker editorChecker) {
-    return editorChecker instanceof LegacyEditorCheckerAdapter && myChecker.isLaterThan(((LegacyEditorCheckerAdapter) editorChecker).myChecker);
+    return myChecker.isLaterThanProtected(editorChecker);
   }
 
   @Override
@@ -60,6 +62,7 @@ public class LegacyEditorCheckerAdapter implements EditorChecker {
     return myChecker.hasDramaticalEventProtected(myEvents);
   }
 
+  @NotNull
   @Override
   public Pair<Collection<EditorMessage>, Boolean> update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes,
       Cancellable cancellable) {
@@ -68,12 +71,16 @@ public class LegacyEditorCheckerAdapter implements EditorChecker {
           editorComponent.getEditorContext(), cancellable, applyQuickFixes);
 
       boolean changed = myChecker.areMessagesChangedProtected();
-      myEvents.clear();
       return new Pair<Collection<EditorMessage>, Boolean>(messages, changed);
     } catch (IndexNotReadyException e) {
       myChecker.clearProtected(editorComponent.getEditedNode(), editorComponent);
       throw e;
     }
+  }
+
+  @Override
+  public void doneUpdating() {
+    myEvents.clear();
   }
 
   @Override

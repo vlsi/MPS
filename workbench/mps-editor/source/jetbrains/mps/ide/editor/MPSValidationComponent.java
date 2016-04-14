@@ -20,6 +20,8 @@ import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.typesystem.checking.NonTypesystemEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
@@ -37,7 +39,7 @@ public class MPSValidationComponent implements ProjectComponent {
 
   private final MPSProject myProject;
   private final Highlighter myHighlighter;
-  private Stack<BaseEditorChecker> myCheckers = new Stack<BaseEditorChecker>();
+  private Stack<EditorChecker> myCheckers = new Stack<EditorChecker>();
 
   public MPSValidationComponent(MPSProject mpsProject, Highlighter highlighter) {
     myProject = mpsProject;
@@ -48,8 +50,12 @@ public class MPSValidationComponent implements ProjectComponent {
   public void initComponent() {
   }
 
-  private void addChecker(BaseEditorChecker checker) {
+  private void addChecker(EditorChecker checker) {
     myHighlighter.addChecker(myCheckers.push(checker));
+  }
+
+  private void addChecker(BaseEditorChecker checker) {
+    myHighlighter.addChecker(myCheckers.push(new LegacyEditorCheckerAdapter(checker)));
   }
 
   @Override
@@ -85,9 +91,11 @@ public class MPSValidationComponent implements ProjectComponent {
       @Override
       public void run() {
         while (!myCheckers.isEmpty()) {
-          BaseEditorChecker checker = myCheckers.pop();
+          EditorChecker checker = myCheckers.pop();
           myHighlighter.removeChecker(checker);
-          checker.dispose();
+          if (checker instanceof LegacyEditorCheckerAdapter) {
+            ((LegacyEditorCheckerAdapter) checker).getChecker().dispose();
+          }
         }
       }
     });

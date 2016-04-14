@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
@@ -149,7 +149,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     return model instanceof EditableSModel && !(model instanceof TransientSModel) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
   }
   @Override
-  public boolean isLaterThan(BaseEditorChecker editorChecker) {
+  public boolean isLaterThan(EditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
   }
   @Override

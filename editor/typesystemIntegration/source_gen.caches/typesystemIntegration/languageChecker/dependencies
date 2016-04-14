@@ -15,7 +15,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -86,6 +86,8 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.HighlighterMessage" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />

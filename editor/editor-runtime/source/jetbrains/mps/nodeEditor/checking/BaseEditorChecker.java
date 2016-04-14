@@ -53,7 +53,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
     return result[0];
   }
 
-  public final boolean isLaterThanProtected(final BaseEditorChecker editorChecker) {
+  public final boolean isLaterThanProtected(final EditorChecker editorChecker) {
     final boolean[] result = {false};
     performUninterruptableAction(new Runnable() {
       @Override
@@ -126,7 +126,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   /**
    * Priority of checking
    */
-  protected boolean isLaterThan(BaseEditorChecker editorChecker) {
+  protected boolean isLaterThan(EditorChecker editorChecker) {
     return false;
   }
 

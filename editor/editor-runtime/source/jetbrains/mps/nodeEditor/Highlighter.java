@@ -330,12 +330,15 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
-    processEvents();
-
     final Set<EditorChecker> checkers = new LinkedHashSet<EditorChecker>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
       // explicit update action (available in powerSafeMode only)
+      for (EditorChecker checker : myCheckers) {
+        if (checker.isEssential() || !essentialOnly) {
+          checkers.add(checker);
+        }
+      }
       checkers.addAll(myCheckers);
       myForceUpdateInPowerSaveModeFlag = false;
     }
@@ -349,7 +352,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     } else {
       myEditorTracker.markOnlyEditorsChecked(activeEditors);
     }
-    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, checkers, activeEditors, getInspector());
+    return new HighlighterUpdateSession(Highlighter.this, checkers, activeEditors, getInspector());
   }
 
   public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
@@ -388,13 +391,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
    * Feeds events collected at this point to all registered checkers for processing. Must be called on the highlighter thread because the collection of all
    * checkers is accessed.
    */
-  private void processEvents() {
+  private void beginUpdate() {
     assert Thread.currentThread() == myThread : "This method should be called on the highlighter thread";
 
     List<SModelEvent> events = myEventCollector.drainEvents();
-    if (events.isEmpty()) {
-      return;
-    }
 
     for (EditorChecker checker : myCheckers) {
       checker.processEvents(events);
@@ -499,8 +499,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
           try {
             boolean essentialOnly = !myCommandWatcher.isLargerGracePeriodExpired();
             if (!IMakeService.INSTANCE.isSessionActive()) {
+              beginUpdate();
               HighlighterUpdateSession updateSession = createUpdateSession(essentialOnly);
               updateSession.doUpdate();
+              updateSession.doneUpdating();
             }
           } catch (IndexNotReadyException ex) {
             myEditorTracker.markEverythingUnchecked();

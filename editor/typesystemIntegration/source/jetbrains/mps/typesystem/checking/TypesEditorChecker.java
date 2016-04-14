@@ -15,45 +15,58 @@
  */
 package jetbrains.mps.typesystem.checking;
 
-import jetbrains.mps.util.Cancellable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Cancellable;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Collection;
 
 public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
   private static final Logger LOG = LogManager.getLogger(TypesEditorChecker.class);
 
   @Override
-  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode,
-      final Set<EditorMessage> messages, Cancellable cancellable, final boolean applyQuickFixes) {
-    if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
+  public boolean isEssential() {
+    return true;
+  }
 
-    ((IncrementalTypecheckingContext)context).runTypeCheckingAction(new Runnable() {
+  @NotNull
+  @Override
+  protected Pair<Collection<EditorMessage>, Boolean> doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce,
+      final EditorContext editorContext, final SNode rootNode, Cancellable cancellable, final boolean applyQuickFixes) {
+    if (context == null || !(context instanceof IncrementalTypecheckingContext)) {
+      return CANCELLED;
+    }
+
+    return ((IncrementalTypecheckingContext) context).runTypeCheckingAction(new Computable<Pair<Collection<EditorMessage>, Boolean>>() {
       @Override
-      public void run() {
-        IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
+      public Pair<Collection<EditorMessage>, Boolean> compute() {
+        boolean messagesChanged = false;
+
         if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getEditorComponent().getClass())) {
+          IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
           try {
-            myMessagesChanged = true;
+            messagesChanged = true;
             context.checkIfNotChecked(rootNode, false);
           } catch (Throwable t) {
             LOG.error(null, t);
             typesComponent.setCheckedTypesystem();
-            return;
+            return CANCELLED;
           }
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages, true, applyQuickFixes);
+        Collection<EditorMessage> messages = collectMessagesForNodesWithErrors(context, editorContext, true, applyQuickFixes);
+        return new Pair<Collection<EditorMessage>, Boolean>(messages, messagesChanged);
       }
     });
   }
-
 }

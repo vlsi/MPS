@@ -21,10 +21,14 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Cancellable;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -35,28 +39,32 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
   private static final Logger LOG = LogManager.getLogger(NonTypesystemEditorChecker.class);
 
   @Override
-  protected boolean isEssential() {
+  public boolean isEssential() {
     return false;
   }
 
+  @NotNull
   @Override
-  protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode,
-      final Set<EditorMessage> messages, final Cancellable cancellable, final boolean applyQuickFixes) {
-    if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
-
-    if(cancellable.isCancelled()) {
-      return;
+  protected Pair<Collection<EditorMessage>, Boolean> doCreateMessages(final TypeCheckingContext context, final boolean incremental,
+      final EditorContext editorContext, SNode rootNode, final Cancellable cancellable, final boolean applyQuickFixes) {
+    if (context == null || !(context instanceof IncrementalTypecheckingContext)) {
+      return CANCELLED;
     }
 
-    ((IncrementalTypecheckingContext)context).runTypeCheckingAction(new Runnable() {
+    if (cancellable.isCancelled()) {
+      return CANCELLED;
+    }
+
+    return ((IncrementalTypecheckingContext) context).runTypeCheckingAction(new Computable<Pair<Collection<EditorMessage>, Boolean>>() {
       @Override
-      public void run() {
+      public Pair<Collection<EditorMessage>, Boolean> compute() {
         IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
+        boolean messagesChanged = false;
 
         //non-typesystem checks
-        if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
+        if (!incremental || !typesComponent.isCheckedNonTypesystem()) {
           try {
-            myMessagesChanged = true;
+            messagesChanged = true;
             context.setIsNonTypesystemComputation();
             if (typesComponent.applyNonTypesystemRulesToRoot(context, cancellable)) {
               typesComponent.setCheckedNonTypesystem();
@@ -70,7 +78,8 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages, false, applyQuickFixes);
+        Collection<EditorMessage> messages = collectMessagesForNodesWithErrors(context, editorContext, false, applyQuickFixes);
+        return new Pair<Collection<EditorMessage>, Boolean>(messages, messagesChanged);
       }
     });
   }

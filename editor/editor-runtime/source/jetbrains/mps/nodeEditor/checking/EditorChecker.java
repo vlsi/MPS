@@ -17,24 +17,40 @@ package jetbrains.mps.nodeEditor.checking;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public interface EditorChecker {
+  Pair<Collection<EditorMessage>, Boolean> CANCELLED = new Pair<Collection<EditorMessage>, Boolean>(Collections.<EditorMessage>emptyList(), false);
+
   boolean isLaterThan(EditorChecker editorChecker);
 
   boolean isEssential();
 
+  /**
+   * Invalidate internal state for editors affected by {@code events}.
+   *
+   * @param events events that occurred since the last call to this method (or since this instance was added to the highlighter)
+   */
   void processEvents(List<SModelEvent> events);
 
   boolean needsUpdate(EditorComponent editorComponent);
 
+  @NotNull
   Pair<Collection<EditorMessage>, Boolean> update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable);
+
+  /**
+   * Indicates that there will not be any more calls to {@link #needsUpdate} before another call to {@link #processEvents}.
+   */
+  void doneUpdating();
 
   void forceAutofix(EditorComponent editorComponent);
 

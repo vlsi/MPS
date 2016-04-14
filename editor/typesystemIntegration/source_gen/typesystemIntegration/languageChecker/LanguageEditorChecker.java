@@ -25,7 +25,9 @@ import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -185,12 +187,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return myMessagesChanged;
   }
   @Override
-  protected boolean isLaterThan(BaseEditorChecker checker) {
+  protected boolean isLaterThan(EditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
     }
-    if (checker instanceof AutoResolver) {
-      return true;
+    if (checker instanceof LegacyEditorCheckerAdapter) {
+      LegacyEditorCheckerAdapter legacyChecker = (LegacyEditorCheckerAdapter) checker;
+      if (legacyChecker.getChecker() instanceof AutoResolver) {
+        return true;
+      }
     }
     return false;
   }
