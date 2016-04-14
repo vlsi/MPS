@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -32,6 +35,8 @@ import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SReferenceLinkAdapter implements SReferenceLink {
+  public static final String ID_DELIM = ":";
+
   protected String myName;
 
   protected SReferenceLinkAdapter(@NotNull String name) {
@@ -158,4 +163,15 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     return myName;
   }
 
+  public abstract String serialize();
+
+  public static SReferenceLinkAdapter deserialize(String s){
+    if (s.startsWith(SReferenceLinkAdapterById.REF_PREFIX)){
+      return SReferenceLinkAdapterById.deserialize(s);
+    } else if (s.startsWith(InvalidReferenceLink.INVALID_PREFIX)){
+      return InvalidReferenceLink.deserialize(s);
+    } else{
+      throw new IllegalArgumentException("Illegal ref type: "+s);
+    }
+  }
 }

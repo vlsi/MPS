@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -33,6 +34,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * See InvalidConcept doc
  */
 public final class InvalidReferenceLink extends SReferenceLinkAdapter {
+  public static final java.lang.String INVALID_PREFIX = "i";
+
   @NotNull
   private final String myConcept;
 
@@ -83,5 +86,19 @@ public final class InvalidReferenceLink extends SReferenceLinkAdapter {
   @Override
   public SAbstractConcept getOwner() {
     return new InvalidConcept(myConcept);
+  }
+
+  @Override
+  public String serialize() {
+    return INVALID_PREFIX + ID_DELIM + myConcept + "." + myName;
+  }
+
+  public static InvalidReferenceLink deserialize(String s) {
+    String marker = INVALID_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split("\\.");
+    assert split.length == 2 : s;
+    return new InvalidReferenceLink(split[0], split[1]);
   }
 }

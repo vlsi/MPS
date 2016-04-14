@@ -20,15 +20,20 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
+  public static final java.lang.String REF_PREFIX = "r";
   private final SReferenceLinkId myRoleId;
   private final boolean myIsBootstrap;
 
@@ -47,7 +52,9 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SReferenceLinkAdapterById)) return false;
+    if (!(obj instanceof SReferenceLinkAdapterById)) {
+      return false;
+    }
     SReferenceLinkId otherId = ((SReferenceLinkAdapterById) obj).myRoleId;
     return myRoleId.equals(otherId);
   }
@@ -61,6 +68,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   public SReferenceLinkId getRoleId() {
     return myRoleId;
   }
+
   @Override
   public String getRoleName() {
     if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
@@ -78,7 +86,9 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   @Nullable
   public ReferenceDescriptor getReferenceDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
-    if (cd == null) return null;
+    if (cd == null) {
+      return null;
+    }
     return cd.getRefDescriptor(myRoleId);
   }
 
@@ -86,5 +96,21 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   protected SNode findInConcept(SNode cnode) {
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
+  }
+
+  @Override
+  public String serialize() {
+    return REF_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + myName;
+  }
+
+  public static SReferenceLinkAdapterById deserialize(String s) {
+    String marker = REF_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split(ID_DELIM);
+    assert split.length == 2 : s;
+    SReferenceLink res = MetaAdapterFactory.getReferenceLink(SReferenceLinkId.deserialize(split[0]), split[1]);
+    assert res instanceof SReferenceLinkAdapterById : res.getClass().getName();
+    return (SReferenceLinkAdapterById) res;
   }
 }
