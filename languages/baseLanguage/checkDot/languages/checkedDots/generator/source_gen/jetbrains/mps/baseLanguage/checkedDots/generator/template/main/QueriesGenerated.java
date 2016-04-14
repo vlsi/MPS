@@ -94,7 +94,11 @@ public class QueriesGenerated {
       //  see similar code and corresponding comment of return value 
       return operandType;
     }
-    return TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
+    SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
+    if (result == null) {
+      result = operandType;
+    }
+    return result;
   }
   public static SNode sourceNodeQuery_1392486827343609139(final SourceSubstituteMacroNodeContext _context) {
     SNode nodeType = TypeChecker.getInstance().getTypeOf(_context.getNode());
