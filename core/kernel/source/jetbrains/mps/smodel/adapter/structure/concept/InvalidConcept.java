@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.InvalidLanguage;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -40,6 +38,8 @@ import java.util.Collections;
  * to handle missing languages correctly in every subsystem
  */
 public class InvalidConcept extends SAbstractConceptAdapter implements SConcept, SInterfaceConcept {
+  public static final String INVALID_PREFIX = "invalid";
+
   public InvalidConcept(@NotNull String fqname) {
     super(fqname);
   }
@@ -51,7 +51,9 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof InvalidConcept)) return false;
+    if (!(obj instanceof InvalidConcept)) {
+      return false;
+    }
     return myFqName.equals(((InvalidConcept) obj).myFqName);
   }
 
@@ -97,5 +99,16 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     return Collections.emptyList();
+  }
+
+  @Override
+  public String serialize() {
+    return INVALID_PREFIX + ID_DELIM + myFqName;
+  }
+
+  public static InvalidConcept deserialize(String s) {
+    String marker = INVALID_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    return new InvalidConcept(s.substring(marker.length()));
   }
 }

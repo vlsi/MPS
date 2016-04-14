@@ -25,18 +25,21 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept, SAbstractConceptAdapterById {
+  public static final String INTERFACE_PREFIX = "i";
   private final SConceptId myConceptId;
   private final boolean myIsBootstrap;
 
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
     this(conceptId, fqname, false);
   }
+
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname, boolean bootstrap) {
     super(fqname);
     myConceptId = conceptId;
@@ -45,7 +48,9 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SInterfaceConceptAdapterById)) return false;
+    if (!(obj instanceof SInterfaceConceptAdapterById)) {
+      return false;
+    }
     SConceptId otherId = ((SInterfaceConceptAdapterById) obj).myConceptId;
     return myConceptId.equals(otherId);
   }
@@ -59,7 +64,9 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
     //this check is better to be moved to isValid as soon as we have ids in AbstractConceptAdapter
-    if (myConceptId.equals(MetaIdFactory.INVALID_CONCEPT_ID)) return null;
+    if (myConceptId.equals(MetaIdFactory.INVALID_CONCEPT_ID)) {
+      return null;
+    }
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
@@ -89,5 +96,21 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
   @Override
   protected SNode findInModel(SModel structureModel) {
     return structureModel.getNode(new Regular(myConceptId.getIdValue()));
+  }
+
+  @Override
+  public String serialize() {
+    return INTERFACE_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + myFqName;
+  }
+
+  public static SInterfaceConceptAdapterById deserialize(String s) {
+    String marker = INTERFACE_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split(ID_DELIM);
+    assert split.length == 2 : s;
+    SInterfaceConcept res = MetaAdapterFactory.getInterfaceConcept(SConceptId.deserialize(split[0]), split[1]);
+    assert res instanceof SInterfaceConceptAdapterById : res.getClass().getName();
+    return (SInterfaceConceptAdapterById) res;
   }
 }

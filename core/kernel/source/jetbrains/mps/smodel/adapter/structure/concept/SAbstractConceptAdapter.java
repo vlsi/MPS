@@ -73,6 +73,8 @@ import java.util.Collections;
  * (E.g. the method {@link #isSubConceptOf(SAbstractConcept)} works not as expected for such concepts)
  */
 public abstract class SAbstractConceptAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
+  public static final String ID_DELIM = ":";
+
   protected String myFqName;
 
   protected SAbstractConceptAdapter(String fqName) {
@@ -302,5 +304,19 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public String toString() {
     return myFqName;
+  }
+
+  public abstract String serialize();
+
+  public static SAbstractConcept deserialize(String s){
+    if (s.startsWith(SInterfaceConceptAdapterById.INTERFACE_PREFIX)){
+      return SInterfaceConceptAdapterById.deserialize(s);
+    } else if (s.startsWith(SConceptAdapterById.CONCEPT_PREFIX)){
+      return SConceptAdapterById.deserialize(s);
+    } else if (s.startsWith(InvalidConcept.INVALID_PREFIX)){
+      return InvalidConcept.deserialize(s);
+    } else{
+      throw new IllegalArgumentException("Illegal concept type: "+s);
+    }
   }
 }

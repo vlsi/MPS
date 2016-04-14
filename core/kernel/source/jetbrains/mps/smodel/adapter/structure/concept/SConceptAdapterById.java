@@ -25,12 +25,14 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public final class SConceptAdapterById extends SConceptAdapter implements SConcept, SAbstractConceptAdapterById {
+  public static final String CONCEPT_PREFIX = "c";
   private final SConceptId myConceptId;
   private final boolean myIsBootstrap;
 
@@ -56,7 +58,9 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SConceptAdapterById)) return false;
+    if (!(obj instanceof SConceptAdapterById)) {
+      return false;
+    }
     SConceptId otherId = ((SConceptAdapterById) obj).myConceptId;
     return myConceptId.equals(otherId);
   }
@@ -83,7 +87,9 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
     //this check is better to be moved to isValid as soon as we have ids in AbstractConceptAdapter
-    if (myConceptId.equals(MetaIdFactory.INVALID_CONCEPT_ID)) return null;
+    if (myConceptId.equals(MetaIdFactory.INVALID_CONCEPT_ID)) {
+      return null;
+    }
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
@@ -102,5 +108,21 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   @Override
   protected SNode findInModel(SModel structureModel) {
     return structureModel.getNode(new Regular(myConceptId.getIdValue()));
+  }
+
+  @Override
+  public String serialize() {
+    return CONCEPT_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + myFqName;
+  }
+
+  public static SConceptAdapterById deserialize(String s) {
+    String marker = CONCEPT_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split(ID_DELIM);
+    assert split.length == 2 : s;
+    SConcept res = MetaAdapterFactory.getConcept(SConceptId.deserialize(split[0]), split[1]);
+    assert res instanceof SConceptAdapterById : res.getClass().getName();
+    return (SConceptAdapterById) res;
   }
 }
