@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -32,6 +33,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * See InvalidConcept doc
  */
 public final class InvalidProperty extends SPropertyAdapter {
+  public static final java.lang.String INVALID_PREFIX = "i";
+
   @NotNull
   private final String myConcept;
 
@@ -86,5 +89,19 @@ public final class InvalidProperty extends SPropertyAdapter {
   @Override
   public SAbstractConcept getOwner() {
     return new InvalidConcept(myConcept);
+  }
+
+  @Override
+  public String serialize() {
+    return INVALID_PREFIX + ID_DELIM + myConcept + "." + myPropertyName;
+  }
+
+  public static InvalidProperty deserialize(String s) {
+    String marker = INVALID_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split("\\.");
+    assert split.length == 2 : s;
+    return new InvalidProperty(split[0], split[1]);
   }
 }

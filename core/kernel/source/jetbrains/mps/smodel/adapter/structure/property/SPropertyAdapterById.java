@@ -20,15 +20,19 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public final class SPropertyAdapterById extends SPropertyAdapter {
+  public static final java.lang.String PROP_PREFIX = "p";
   private final SPropertyId myPropertyId;
   private final boolean myIsBootstrap;
 
@@ -87,5 +91,21 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
   protected SNode findInConcept(SNode cnode) {
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myPropertyId.getIdValue()));
+  }
+
+  @Override
+  public String serialize() {
+    return PROP_PREFIX + ID_DELIM + myPropertyId.serialize() + ID_DELIM + myPropertyName;
+  }
+
+  public static SPropertyAdapterById deserialize(String s) {
+    String marker = PROP_PREFIX + ID_DELIM;
+    assert s.startsWith(marker) : s;
+    String data = s.substring(marker.length());
+    String[] split = data.split(ID_DELIM);
+    assert split.length == 2 : s;
+    SProperty res = MetaAdapterFactory.getProperty(SPropertyId.deserialize(split[0]), split[1]);
+    assert res instanceof SPropertyAdapterById : res.getClass().getName();
+    return (SPropertyAdapterById) res;
   }
 }

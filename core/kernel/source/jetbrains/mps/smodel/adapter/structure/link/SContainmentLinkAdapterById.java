@@ -94,6 +94,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
   }
+
   @Override
   public String serialize() {
     return LINK_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + myName;

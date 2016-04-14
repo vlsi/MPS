@@ -22,6 +22,9 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SDataTypeAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SPrimitiveDataTypeAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -36,6 +39,8 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SPropertyAdapter implements SProperty {
+  public static final String ID_DELIM = ":";
+
   protected String myPropertyName;
 
   public SPropertyAdapter(String name) {
@@ -102,5 +107,17 @@ public abstract class SPropertyAdapter implements SProperty {
   public boolean isValid(String string) {
     // TODO implement
     return true;
+  }
+
+  public abstract String serialize();
+
+  public static SPropertyAdapter deserialize(String s){
+    if (s.startsWith(SPropertyAdapterById.PROP_PREFIX)){
+      return SPropertyAdapterById.deserialize(s);
+    } else if (s.startsWith(InvalidProperty.INVALID_PREFIX)){
+      return InvalidProperty.deserialize(s);
+    } else{
+      throw new IllegalArgumentException("Illegal property type: "+s);
+    }
   }
 }
