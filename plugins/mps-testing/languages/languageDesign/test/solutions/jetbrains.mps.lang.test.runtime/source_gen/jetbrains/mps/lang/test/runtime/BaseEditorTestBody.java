@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ThreadUtils;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,7 +29,6 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -89,9 +89,18 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
       }
     });
+    try {
+      flushEDTEvents();
+    } catch (InvocationTargetException e) {
+      ts[0] = e;
+    } catch (InterruptedException e) {
+      ts[0] = e;
+    }
+
     if (ts[0] != null) {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
+
     return myEditor;
   }
 
@@ -124,6 +133,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
         NodeEditorComponent component = (NodeEditorComponent) myCurrentEditorComponent;
         component.addNotify();
+        component.setSize(component.getPreferredSize());
         component.validate();
         myCurrentEditorComponent = myStart.setupSelection(component);
       }
