@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -32,11 +33,6 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   private final ReferenceConstraintsDescriptor scopeProviderDescriptor;
   private final ReferenceConstraintsDescriptor onReferenceSetHandlerDescriptor;
-
-  @Deprecated
-  public BaseReferenceConstraintsDescriptor(String refName, ConstraintsDescriptor container) {
-    this(ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getRefDescriptor(refName).getId(), container);
-  }
 
   public BaseReferenceConstraintsDescriptor(SReferenceLinkId referenceLink, ConstraintsDescriptor container) {
     this.myReferenceLink = referenceLink;
@@ -54,7 +50,6 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
       onReferenceSetHandlerDescriptor = getSomethingUsingInheritance(getContainer().getConceptId(), referenceLink, ON_SET_HANDLER_INHERITANCE_PARAMETERS);
     }
   }
-
 
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(SConceptId concept, SReferenceLinkId referenceLinkId, InheritanceCalculateParameters parameters) {
