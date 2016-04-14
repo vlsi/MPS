@@ -29,19 +29,9 @@ public class BaseReferenceDescriptor implements ReferenceDescriptor {
   private final SConceptId myTargetConcept;
   private final boolean myIsOptional;
 
-  @Deprecated
-  @ToRemove(version = 3.4)
   public BaseReferenceDescriptor(SReferenceLinkId id, String name, SConceptId targetConcept, boolean isOptional) {
     myId = id;
     myName = name;
-    myTargetConcept = targetConcept;
-    myIsOptional = isOptional;
-  }
-
-  public BaseReferenceDescriptor(SReferenceLink ref, SConceptId targetConcept, boolean isOptional) {
-    //todo store SReference, not name/id pair
-    myId = MetaIdHelper.getReference(ref);
-    myName = ref.getName();
     myTargetConcept = targetConcept;
     myIsOptional = isOptional;
   }
