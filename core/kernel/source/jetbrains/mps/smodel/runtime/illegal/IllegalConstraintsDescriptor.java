@@ -20,19 +20,21 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.runtime.*;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   private final SAbstractConcept myConcept;

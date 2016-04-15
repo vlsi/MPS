@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -93,6 +94,11 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     return Collections.emptyList();
+  }
+
+  @Override
+  protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, SAbstractConcept anotherConcept) {
+    return false;
   }
 
   @Override

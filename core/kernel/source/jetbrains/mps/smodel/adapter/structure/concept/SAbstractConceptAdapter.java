@@ -214,12 +214,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return false;
     }
 
-    if (anotherConcept instanceof SAbstractConceptAdapterById) {
-      return descriptor.isAssignableTo(((SAbstractConceptAdapterById) anotherConcept).getId());
-    }
-
-    return descriptor.isAssignableTo(anotherConcept.getQualifiedName());
+    return isSubConceptOfSpecial(descriptor,anotherConcept);
   }
+
+  protected abstract boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, SAbstractConcept anotherConcept);
 
   @Override
   public boolean isAbstract() {

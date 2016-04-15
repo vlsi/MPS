@@ -87,6 +87,11 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
     return cd.getConceptFqName();
   }
 
+  @Override
+  protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, SAbstractConcept anotherConcept) {
+    return thisDescriptor.isAssignableTo(((SAbstractConceptAdapterById) anotherConcept).getId());
+  }
+
   @NotNull
   @Override
   public SLanguage getLanguage() {
