@@ -210,7 +210,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -21575,24 +21575,39 @@
         <node concept="1YBJjd" id="610WLfjPlLb" role="2OEOjV">
           <ref role="1YBMHb" node="610WLfjPkCn" resolve="classCreator" />
         </node>
-        <node concept="2OqwBi" id="610WLfjPlL2" role="2MkoU_">
-          <node concept="2OqwBi" id="610WLfjPlL3" role="2Oq$k0">
-            <node concept="2OqwBi" id="610WLfjPlL4" role="2Oq$k0">
-              <node concept="1YBJjd" id="610WLfjPlL5" role="2Oq$k0">
+        <node concept="22lmx$" id="2xtTpuzAUnT" role="2MkoU_">
+          <node concept="2OqwBi" id="2xtTpuzAV5x" role="3uHU7B">
+            <node concept="2OqwBi" id="2xtTpuzAUzz" role="2Oq$k0">
+              <node concept="1YBJjd" id="2xtTpuzAUpd" role="2Oq$k0">
                 <ref role="1YBMHb" node="610WLfjPkCn" resolve="classCreator" />
               </node>
-              <node concept="2qgKlT" id="610WLfjPlL6" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:6WzWPTX2vuB" resolve="getInstanceType" />
+              <node concept="1mfA1w" id="2xtTpuzAULy" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="2xtTpuzAViD" role="2OqNvi">
+              <node concept="chp4Y" id="2xtTpuzAViI" role="cj9EA">
+                <ref role="cht4Q" to="tpee:6kfBYRWHrp$" resolve="NestedNewExpression" />
               </node>
             </node>
-            <node concept="3TrEf2" id="610WLfjPlL7" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:g7uigIF" />
-            </node>
           </node>
-          <node concept="2qgKlT" id="610WLfjPlL8" role="2OqNvi">
-            <ref role="37wK5l" to="tpek:610WLfjPjne" resolve="canInstantiateIn" />
-            <node concept="1YBJjd" id="610WLfjPlL9" role="37wK5m">
-              <ref role="1YBMHb" node="610WLfjPkCn" resolve="classCreator" />
+          <node concept="2OqwBi" id="610WLfjPlL2" role="3uHU7w">
+            <node concept="2OqwBi" id="610WLfjPlL3" role="2Oq$k0">
+              <node concept="2OqwBi" id="610WLfjPlL4" role="2Oq$k0">
+                <node concept="1YBJjd" id="610WLfjPlL5" role="2Oq$k0">
+                  <ref role="1YBMHb" node="610WLfjPkCn" resolve="classCreator" />
+                </node>
+                <node concept="2qgKlT" id="610WLfjPlL6" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:6WzWPTX2vuB" resolve="getInstanceType" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="610WLfjPlL7" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:g7uigIF" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="610WLfjPlL8" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:610WLfjPjne" resolve="canInstantiateIn" />
+              <node concept="1YBJjd" id="610WLfjPlL9" role="37wK5m">
+                <ref role="1YBMHb" node="610WLfjPkCn" resolve="classCreator" />
+              </node>
             </node>
           </node>
         </node>
