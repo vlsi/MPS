@@ -87,9 +87,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
 
-  @NotNull
-  public abstract SConceptId getId();
-
   /**
    * a helper method to get a declaration node for this concept
    * in the case of the legacy concept resolving (by string id)

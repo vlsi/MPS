@@ -73,12 +73,6 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
     return null;
   }
 
-  @Override
-  @NotNull
-  public SConceptId getId() {
-    return MetaIdFactory.INVALID_CONCEPT_ID;
-  }
-
   @NotNull
   @Override
   public SLanguage getLanguage() {
