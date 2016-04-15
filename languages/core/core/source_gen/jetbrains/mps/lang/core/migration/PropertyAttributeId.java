@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
@@ -46,7 +47,7 @@ public class PropertyAttributeId extends MigrationScriptBase {
     });
     Sequence.fromIterable(propertyAttributes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode attribute) {
-        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), ((SPropertyAdapter) PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(attribute)).getId().serialize());
+        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), (MetaIdHelper.getProperty((SPropertyAdapter) PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(attribute))).serialize());
       }
     });
 
@@ -58,7 +59,7 @@ public class PropertyAttributeId extends MigrationScriptBase {
 
     Sequence.fromIterable(referenceAttributes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode attribute) {
-        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), ((SReferenceLinkAdapter) LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attribute)).getRoleId().serialize());
+        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), (MetaIdHelper.getReference((SReferenceLinkAdapter) LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attribute))).serialize());
       }
     });
     return null;
