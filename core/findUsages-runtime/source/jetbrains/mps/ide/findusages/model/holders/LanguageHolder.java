@@ -21,6 +21,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -29,8 +30,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
  * @author Artem Tikhomirov
  */
 public class LanguageHolder implements IHolder<SLanguage> {
-  private static final String ATTR1 = "langId";
-  private static final String ATTR2 = "langName";
+  private static final String ATTR1 = "lang";
   private SLanguage myLanguage;
 
   public LanguageHolder(@NotNull SLanguage language) {
@@ -50,13 +50,12 @@ public class LanguageHolder implements IHolder<SLanguage> {
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
-    final String langId = element.getAttributeValue(ATTR1);
-    final String langName = element.getAttributeValue(ATTR2);
-    if (langId == null || langName == null) {
+    final String lang = element.getAttributeValue(ATTR1);
+    if (lang == null) {
       throw new CantLoadSomethingException();
     }
     try {
-      myLanguage = MetaAdapterFactory.getLanguage(SLanguageId.deserialize(langId), langName);
+      myLanguage = SLanguageAdapter.deserialize(lang);
     } catch (Exception ex) {
       throw new CantLoadSomethingException(ex);
     }
@@ -64,7 +63,7 @@ public class LanguageHolder implements IHolder<SLanguage> {
 
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    element.setAttribute(ATTR1, MetaIdHelper.getLanguage(myLanguage).serialize());
-    element.setAttribute(ATTR2, myLanguage.getQualifiedName());
+    assert myLanguage instanceof SLanguageAdapter;
+    element.setAttribute(ATTR1, ((SLanguageAdapter) myLanguage).serialize());
   }
 }
