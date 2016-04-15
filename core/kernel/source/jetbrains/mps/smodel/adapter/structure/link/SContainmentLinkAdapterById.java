@@ -23,11 +23,13 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -66,6 +68,17 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   @NotNull
   public SContainmentLinkId getRoleId() {
     return myRoleId;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
+    SConceptId id = getRoleId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
+    String fqName = concept.getConceptFqName();
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, fqName) :
+        MetaAdapterFactory.getConcept(id, fqName);
   }
 
   @Override

@@ -67,11 +67,6 @@ public final class InvalidContainmentLink extends SContainmentLinkAdapter {
     return myName.hashCode();
   }
 
-  @NotNull
-  public SContainmentLinkId getRoleId() {
-    return MetaIdFactory.INVALID_LINK_ID;
-  }
-
   @Override
   public String getRoleName() {
     return myName;

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
@@ -69,6 +70,8 @@ public final class MetaIdHelper {
 
   @NotNull
   public static SContainmentLinkId getLink(SContainmentLink l) {
-    return ((SContainmentLinkAdapter) l).getRoleId();
+    //todo make serialization via serialize method
+    if (!(l instanceof SContainmentLinkAdapterById)) return MetaIdFactory.INVALID_LINK_ID;
+    return ((SContainmentLinkAdapterById) l).getRoleId();
   }
 }

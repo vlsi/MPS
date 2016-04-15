@@ -46,9 +46,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   protected abstract SNode findInConcept(SNode cnode);
 
   @NotNull
-  public abstract SContainmentLinkId getRoleId();
-
-  @NotNull
   @Override
   public String getName() {
     return getRoleName();
@@ -68,15 +65,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   @NotNull
-  @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getOwner() {
-    SConceptId id = getRoleId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    String fqName = concept.getConceptFqName();
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, fqName) :
-        MetaAdapterFactory.getConcept(id, fqName);
-  }
+  public abstract org.jetbrains.mps.openapi.language.SAbstractConcept getOwner();
 
   @NotNull
   @Override
