@@ -18,14 +18,17 @@ package jetbrains.mps.smodel.adapter.structure.property;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -54,9 +57,21 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
     return myPropertyId;
   }
 
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
+    SConceptId id = getId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
+  }
+
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SPropertyAdapterById)) return false;
+    if (!(obj instanceof SPropertyAdapterById)) {
+      return false;
+    }
     SPropertyId otherId = ((SPropertyAdapterById) obj).myPropertyId;
     return myPropertyId.equals(otherId);
   }
@@ -83,7 +98,9 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
   @Override
   public PropertyDescriptor getPropertyDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId());
-    if (cd == null) return null;
+    if (cd == null) {
+      return null;
+    }
     return cd.getPropertyDescriptor(myPropertyId);
   }
 

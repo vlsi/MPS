@@ -62,12 +62,6 @@ public final class InvalidProperty extends SPropertyAdapter {
     return myPropertyName.hashCode();
   }
 
-  @NotNull
-  @Override
-  public SPropertyId getId() {
-    return MetaIdFactory.INVALID_PROP_ID;
-  }
-
   @Nullable
   @Override
   public PropertyDescriptor getPropertyDescriptor() {

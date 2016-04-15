@@ -50,24 +50,16 @@ public abstract class SPropertyAdapter implements SProperty {
   protected abstract SNode findInConcept(SNode cnode);
 
   @NotNull
-  public abstract SPropertyId getId();
-
-  @NotNull
-  @Override
-  public SAbstractConcept getOwner() {
-    SConceptId id = getId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
-        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
-  }
+  public abstract SAbstractConcept getOwner();
 
   @Nullable
   public abstract PropertyDescriptor getPropertyDescriptor();
 
   public final SNode getDeclarationNode() {
     SNode cnode = getOwner().getDeclarationNode();
-    if (cnode == null) return null;
+    if (cnode == null) {
+      return null;
+    }
     return findInConcept(cnode);
   }
 
@@ -111,13 +103,13 @@ public abstract class SPropertyAdapter implements SProperty {
 
   public abstract String serialize();
 
-  public static SPropertyAdapter deserialize(String s){
-    if (s.startsWith(SPropertyAdapterById.PROP_PREFIX)){
+  public static SPropertyAdapter deserialize(String s) {
+    if (s.startsWith(SPropertyAdapterById.PROP_PREFIX)) {
       return SPropertyAdapterById.deserialize(s);
-    } else if (s.startsWith(InvalidProperty.INVALID_PREFIX)){
+    } else if (s.startsWith(InvalidProperty.INVALID_PREFIX)) {
       return InvalidProperty.deserialize(s);
-    } else{
-      throw new IllegalArgumentException("Illegal property type: "+s);
+    } else {
+      throw new IllegalArgumentException("Illegal property type: " + s);
     }
   }
 }

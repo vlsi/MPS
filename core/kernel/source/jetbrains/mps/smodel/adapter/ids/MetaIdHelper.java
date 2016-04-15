@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterByI
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -46,14 +47,16 @@ public final class MetaIdHelper {
 
   @NotNull
   public static SConceptId getConcept(SAbstractConcept c) {
-    //todo make serialization via concept.serialize
+    //todo make serialization via serialize method
     if (!(c instanceof SAbstractConceptAdapterById)) return MetaIdFactory.INVALID_CONCEPT_ID;
     return ((SAbstractConceptAdapterById) c).getId();
   }
 
   @NotNull
   public static SPropertyId getProperty(SProperty p) {
-    return ((SPropertyAdapter) p).getId();
+    //todo make serialization via serialize method
+    if (!(p instanceof SPropertyAdapterById)) return MetaIdFactory.INVALID_PROP_ID;
+    return ((SPropertyAdapterById) p).getId();
   }
 
   @NotNull
