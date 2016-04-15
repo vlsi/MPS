@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -50,28 +47,39 @@ public final class MetaIdHelper {
   @NotNull
   public static SConceptId getConcept(SAbstractConcept c) {
     //todo make serialization via serialize method
-    if (!(c instanceof SAbstractConceptAdapterById)) return MetaIdFactory.INVALID_CONCEPT_ID;
-    return ((SAbstractConceptAdapterById) c).getId();
+    if (c instanceof SConceptAdapterById) {
+      return ((SConceptAdapterById) c).getId();
+    }
+    if (c instanceof SInterfaceConceptAdapterById) {
+      return ((SInterfaceConceptAdapterById) c).getId();
+    }
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @NotNull
   public static SPropertyId getProperty(SProperty p) {
     //todo make serialization via serialize method
-    if (!(p instanceof SPropertyAdapterById)) return MetaIdFactory.INVALID_PROP_ID;
+    if (!(p instanceof SPropertyAdapterById)) {
+      return MetaIdFactory.INVALID_PROP_ID;
+    }
     return ((SPropertyAdapterById) p).getId();
   }
 
   @NotNull
   public static SReferenceLinkId getReference(SReferenceLink r) {
     //todo make serialization via serialize method
-    if (!(r instanceof SReferenceLinkAdapterById)) return MetaIdFactory.INVALID_REF_ID;
+    if (!(r instanceof SReferenceLinkAdapterById)) {
+      return MetaIdFactory.INVALID_REF_ID;
+    }
     return ((SReferenceLinkAdapterById) r).getRoleId();
   }
 
   @NotNull
   public static SContainmentLinkId getLink(SContainmentLink l) {
     //todo make serialization via serialize method
-    if (!(l instanceof SContainmentLinkAdapterById)) return MetaIdFactory.INVALID_LINK_ID;
+    if (!(l instanceof SContainmentLinkAdapterById)) {
+      return MetaIdFactory.INVALID_LINK_ID;
+    }
     return ((SContainmentLinkAdapterById) l).getRoleId();
   }
 }

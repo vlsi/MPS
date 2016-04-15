@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept, SAbstractConceptAdapterById {
+public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept {
   public static final String INTERFACE_PREFIX = "i";
   private final SConceptId myConceptId;
   private final boolean myIsBootstrap;

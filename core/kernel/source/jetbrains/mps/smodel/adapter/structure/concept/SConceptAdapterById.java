@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public final class SConceptAdapterById extends SConceptAdapter implements SConcept, SAbstractConceptAdapterById {
+public final class SConceptAdapterById extends SConceptAdapter implements SConcept {
   public static final String CONCEPT_PREFIX = "c";
   private final SConceptId myConceptId;
   private final boolean myIsBootstrap;
@@ -98,7 +98,6 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
-  @Override
   @NotNull
   public SConceptId getId() {
     return myConceptId;
