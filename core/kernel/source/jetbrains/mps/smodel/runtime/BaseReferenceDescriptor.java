@@ -16,11 +16,9 @@
 package jetbrains.mps.smodel.runtime;
 
 
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class BaseReferenceDescriptor implements ReferenceDescriptor {

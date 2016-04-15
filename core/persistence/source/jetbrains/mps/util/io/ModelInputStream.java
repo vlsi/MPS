@@ -44,7 +44,28 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-import static jetbrains.mps.util.io.ModelOutputStream.*;
+import static jetbrains.mps.util.io.ModelOutputStream.AGGREGATION;
+import static jetbrains.mps.util.io.ModelOutputStream.AGGREGATION_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.ASSOCIATION;
+import static jetbrains.mps.util.io.ModelOutputStream.ASSOCIATION_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.CONCEPT;
+import static jetbrains.mps.util.io.ModelOutputStream.CONCEPT_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.LANGUAGE;
+import static jetbrains.mps.util.io.ModelOutputStream.LANGUAGE_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.MODELID_FOREIGN;
+import static jetbrains.mps.util.io.ModelOutputStream.MODELID_INTEGER;
+import static jetbrains.mps.util.io.ModelOutputStream.MODELID_REGULAR;
+import static jetbrains.mps.util.io.ModelOutputStream.MODELID_STRING;
+import static jetbrains.mps.util.io.ModelOutputStream.MODELREF_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.MODULEID_FOREIGN;
+import static jetbrains.mps.util.io.ModelOutputStream.MODULEID_REGULAR;
+import static jetbrains.mps.util.io.ModelOutputStream.MODULEREF_INDEX;
+import static jetbrains.mps.util.io.ModelOutputStream.MODULEREF_MODULEID;
+import static jetbrains.mps.util.io.ModelOutputStream.NODEID_LONG;
+import static jetbrains.mps.util.io.ModelOutputStream.NODEID_STRING;
+import static jetbrains.mps.util.io.ModelOutputStream.NULL;
+import static jetbrains.mps.util.io.ModelOutputStream.PROPERTY;
+import static jetbrains.mps.util.io.ModelOutputStream.PROPERTY_INDEX;
 
 /**
  * Evgeny Gryaznov, Sep 27, 2010
