@@ -18,19 +18,13 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -102,7 +96,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public Collection<SReferenceLink> getReferenceLinks() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return Collections.emptyList();
+    if (d == null) {
+      return Collections.emptyList();
+    }
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
@@ -114,7 +110,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public Collection<SContainmentLink> getContainmentLinks() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return Collections.emptyList();
+    if (d == null) {
+      return Collections.emptyList();
+    }
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
@@ -127,7 +125,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Deprecated
   public SAbstractLink getLink(String role) {
     ConceptDescriptor nodeConcept = getConceptDescriptor();
-    if (nodeConcept == null) return null;
+    if (nodeConcept == null) {
+      return null;
+    }
 
     LinkDescriptor d = nodeConcept.getLinkDescriptor(role);
     if (d != null) {
@@ -135,7 +135,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return MetaAdapterFactory.getContainmentLink(linkId, role);
     } else {
       ReferenceDescriptor r = nodeConcept.getRefDescriptor(role);
-      if (r == null) return null;
+      if (r == null) {
+        return null;
+      }
 
       SReferenceLinkId linkId = r.getId();
       return MetaAdapterFactory.getReferenceLink(linkId, role);
@@ -146,7 +148,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   public Iterable<SAbstractLink> getLinks() {
     ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
     ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) return Collections.emptyList();
+    if (cd == null) {
+      return Collections.emptyList();
+    }
 
     for (SContainmentLinkId lid : cd.getLinkIds()) {
       LinkDescriptor ld = cd.getLinkDescriptor(lid);
@@ -159,10 +163,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Deprecated
   public SProperty getProperty(String name) {
     ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) return null;
+    if (cd == null) {
+      return null;
+    }
 
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
-    if (d == null) return new InvalidProperty(myFqName, name);
+    if (d == null) {
+      return new InvalidProperty(myFqName, name);
+    }
 
     SPropertyId pid = d.getId();
     return MetaAdapterFactory.getProperty(pid, name);
@@ -214,10 +222,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return false;
     }
 
-    return isSubConceptOfSpecial(descriptor,anotherConcept);
+    return isSubConceptOfSpecial(descriptor, anotherDescriptor, anotherConcept);
   }
 
-  protected abstract boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, SAbstractConcept anotherConcept);
+  protected abstract boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, ConceptDescriptor anotherDescriptor,
+      SAbstractConcept anotherConcept);
 
   @Override
   public boolean isAbstract() {
@@ -229,10 +238,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public SNode getDeclarationNode() {
     Language lang = ((Language) getLanguage().getSourceModule());
-    if (lang == null) return null;
+    if (lang == null) {
+      return null;
+    }
 
     SModel structureModel = LanguageAspect.STRUCTURE.get(lang);
-    if (structureModel == null) return null;
+    if (structureModel == null) {
+      return null;
+    }
 
     return findInModel(structureModel);
   }
@@ -241,7 +254,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public String getConceptAlias() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return "";
+    if (d == null) {
+      return "";
+    }
     return d.getConceptAlias();
   }
 
@@ -249,7 +264,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public String getShortDescription() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return "";
+    if (d == null) {
+      return "";
+    }
     return d.getConceptShortDescription();
   }
 
@@ -257,7 +274,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public String getHelpUrl() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return "";
+    if (d == null) {
+      return "";
+    }
     return d.getHelpUrl();
   }
 
@@ -273,16 +292,20 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public SProperty convertProperty(String propertyName) {
     for (SProperty p : getProperties()) {
-      if (p.getName().equals(propertyName)) return p;
+      if (p.getName().equals(propertyName)) {
+        return p;
+      }
     }
-    return new InvalidProperty(getQualifiedName(),propertyName);
+    return new InvalidProperty(getQualifiedName(), propertyName);
   }
 
   @NotNull
   @Override
   public SReferenceLink convertAssociation(String role) {
     for (SReferenceLink r : getReferenceLinks()) {
-      if (r.getName().equals(role)) return r;
+      if (r.getName().equals(role)) {
+        return r;
+      }
     }
     return new InvalidReferenceLink(getQualifiedName(), role);
   }
@@ -291,7 +314,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public SContainmentLink convertAggregation(String role) {
     for (SContainmentLink l : getContainmentLinks()) {
-      if (l.getName().equals(role)) return l;
+      if (l.getName().equals(role)) {
+        return l;
+      }
     }
     return new InvalidContainmentLink(getQualifiedName(), role);
   }
@@ -303,15 +328,15 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   public abstract String serialize();
 
-  public static SAbstractConcept deserialize(String s){
-    if (s.startsWith(SInterfaceConceptAdapterById.INTERFACE_PREFIX)){
+  public static SAbstractConcept deserialize(String s) {
+    if (s.startsWith(SInterfaceConceptAdapterById.INTERFACE_PREFIX)) {
       return SInterfaceConceptAdapterById.deserialize(s);
-    } else if (s.startsWith(SConceptAdapterById.CONCEPT_PREFIX)){
+    } else if (s.startsWith(SConceptAdapterById.CONCEPT_PREFIX)) {
       return SConceptAdapterById.deserialize(s);
-    } else if (s.startsWith(InvalidConcept.INVALID_PREFIX)){
+    } else if (s.startsWith(InvalidConcept.INVALID_PREFIX)) {
       return InvalidConcept.deserialize(s);
-    } else{
-      throw new IllegalArgumentException("Illegal concept type: "+s);
+    } else {
+      throw new IllegalArgumentException("Illegal concept type: " + s);
     }
   }
 }

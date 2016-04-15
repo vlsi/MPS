@@ -66,8 +66,8 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   }
 
   @Override
-  protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, SAbstractConcept anotherConcept) {
-    return thisDescriptor.isAssignableTo(((SAbstractConceptAdapterById) anotherConcept).getId());
+  protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, ConceptDescriptor anotherDescriptor, SAbstractConcept anotherConcept) {
+    return thisDescriptor.isAssignableTo(anotherDescriptor.getId());
   }
 
   @Override

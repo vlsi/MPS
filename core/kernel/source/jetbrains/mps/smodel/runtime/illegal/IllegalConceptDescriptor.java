@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -66,7 +65,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public SConceptId getId() {
     reportWarn();
-    if (myConcept instanceof SAbstractConceptAdapterById) return ((SAbstractConceptAdapterById) myConcept).getId();
     return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
