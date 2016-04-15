@@ -16,7 +16,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(35);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(36);
   /*package*/ final ConceptDescriptor myConceptAnalysisDirection = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "9177062368042220422")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzer = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x41dd50940e1dd4ddL, "initialFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L), false, false, false), new ConceptDescriptorBuilder.Link(0x41dd50940e1dcaccL, "mergeFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L), false, false, false), new ConceptDescriptorBuilder.Link(0x41dd50940e1dd4deL, "funFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L), false, false, false), new ConceptDescriptorBuilder.Link(0x7f5b799a00c2fb98L, "direction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L), false, false, false), new ConceptDescriptorBuilder.Link(0x7f5b799a00c51bbbL, "latticeElementType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false), new ConceptDescriptorBuilder.Link(0x2e25b6b7919ac138L, "instruction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL), true, true, false), new ConceptDescriptorBuilder.Link(0x376a4d52f8c2e303L, "constructorParameters", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L), true, true, false)).children(new String[]{"initialFunction", "mergeFunction", "funFunction", "direction", "latticeElementType", "instruction", "constructorParameters"}, new boolean[]{false, false, false, false, false, true, true}).rootable().sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "6618572076229093257")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerConstructorParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "3993089038373626032")).create();
@@ -24,6 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("fun", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4746038179140588745")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunParameterInput = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d4L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("input", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4746038179140588756")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunParameterProgramState = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d2L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("state", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4746038179140588754")).create();
+  /*package*/ final ConceptDescriptor myConceptAnalyzerFunParameterStateValues = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterStateValues", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7e9442f75769ab4eL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("stateValues", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "9120988775422995278")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunctionResultType = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c52fa7L)).super_("jetbrains.mps.baseLanguage.structure.Type").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).alias("lattice element type", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "9177062368042364839")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerInitialFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("initial", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4746038179140588744")).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerMergeFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("merge", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "6393434056522580745")).create();
@@ -61,39 +62,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptAnalyzerFunFunction.getId(), 4);
     myIndexMap.put(myConceptAnalyzerFunParameterInput.getId(), 5);
     myIndexMap.put(myConceptAnalyzerFunParameterProgramState.getId(), 6);
-    myIndexMap.put(myConceptAnalyzerFunctionResultType.getId(), 7);
-    myIndexMap.put(myConceptAnalyzerInitialFunction.getId(), 8);
-    myIndexMap.put(myConceptAnalyzerMergeFunction.getId(), 9);
-    myIndexMap.put(myConceptAnalyzerMergeParameterInput.getId(), 10);
-    myIndexMap.put(myConceptAnalyzerParameterProgram.getId(), 11);
-    myIndexMap.put(myConceptAnalyzerRunnerAnalyzeOperation.getId(), 12);
-    myIndexMap.put(myConceptAnalyzerRunnerClassKeeper.getId(), 13);
-    myIndexMap.put(myConceptAnalyzerRunnerCreator.getId(), 14);
-    myIndexMap.put(myConceptAnalyzerRunnerType.getId(), 15);
-    myIndexMap.put(myConceptAnalyzerTypeAnnotation.getId(), 16);
-    myIndexMap.put(myConceptApplicableCondition.getId(), 17);
-    myIndexMap.put(myConceptApplicableNodeReference.getId(), 18);
-    myIndexMap.put(myConceptBackwardDirection.getId(), 19);
-    myIndexMap.put(myConceptConceptCondition.getId(), 20);
-    myIndexMap.put(myConceptEmitInstruction.getId(), 21);
-    myIndexMap.put(myConceptForwardDirection.getId(), 22);
-    myIndexMap.put(myConceptInsertAfterPosition.getId(), 23);
-    myIndexMap.put(myConceptInsertBeforePosition.getId(), 24);
-    myIndexMap.put(myConceptInsertPosition.getId(), 25);
-    myIndexMap.put(myConceptInstruction.getId(), 26);
-    myIndexMap.put(myConceptInstructionClassKeeper.getId(), 27);
-    myIndexMap.put(myConceptInstructionParameter.getId(), 28);
-    myIndexMap.put(myConceptInstructionReference.getId(), 29);
-    myIndexMap.put(myConceptIsOperation.getId(), 30);
-    myIndexMap.put(myConceptPatternCondition.getId(), 31);
-    myIndexMap.put(myConceptProgramParameter.getId(), 32);
-    myIndexMap.put(myConceptRule.getId(), 33);
-    myIndexMap.put(myConceptRuleReference.getId(), 34);
+    myIndexMap.put(myConceptAnalyzerFunParameterStateValues.getId(), 7);
+    myIndexMap.put(myConceptAnalyzerFunctionResultType.getId(), 8);
+    myIndexMap.put(myConceptAnalyzerInitialFunction.getId(), 9);
+    myIndexMap.put(myConceptAnalyzerMergeFunction.getId(), 10);
+    myIndexMap.put(myConceptAnalyzerMergeParameterInput.getId(), 11);
+    myIndexMap.put(myConceptAnalyzerParameterProgram.getId(), 12);
+    myIndexMap.put(myConceptAnalyzerRunnerAnalyzeOperation.getId(), 13);
+    myIndexMap.put(myConceptAnalyzerRunnerClassKeeper.getId(), 14);
+    myIndexMap.put(myConceptAnalyzerRunnerCreator.getId(), 15);
+    myIndexMap.put(myConceptAnalyzerRunnerType.getId(), 16);
+    myIndexMap.put(myConceptAnalyzerTypeAnnotation.getId(), 17);
+    myIndexMap.put(myConceptApplicableCondition.getId(), 18);
+    myIndexMap.put(myConceptApplicableNodeReference.getId(), 19);
+    myIndexMap.put(myConceptBackwardDirection.getId(), 20);
+    myIndexMap.put(myConceptConceptCondition.getId(), 21);
+    myIndexMap.put(myConceptEmitInstruction.getId(), 22);
+    myIndexMap.put(myConceptForwardDirection.getId(), 23);
+    myIndexMap.put(myConceptInsertAfterPosition.getId(), 24);
+    myIndexMap.put(myConceptInsertBeforePosition.getId(), 25);
+    myIndexMap.put(myConceptInsertPosition.getId(), 26);
+    myIndexMap.put(myConceptInstruction.getId(), 27);
+    myIndexMap.put(myConceptInstructionClassKeeper.getId(), 28);
+    myIndexMap.put(myConceptInstructionParameter.getId(), 29);
+    myIndexMap.put(myConceptInstructionReference.getId(), 30);
+    myIndexMap.put(myConceptIsOperation.getId(), 31);
+    myIndexMap.put(myConceptPatternCondition.getId(), 32);
+    myIndexMap.put(myConceptProgramParameter.getId(), 33);
+    myIndexMap.put(myConceptRule.getId(), 34);
+    myIndexMap.put(myConceptRuleReference.getId(), 35);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerConstructorParameter, myConceptAnalyzerConstructorParameterReference, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptAnalyzerTypeAnnotation, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionClassKeeper, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptProgramParameter, myConceptRule, myConceptRuleReference);
+    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerConstructorParameter, myConceptAnalyzerConstructorParameterReference, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunParameterStateValues, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptAnalyzerTypeAnnotation, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionClassKeeper, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptProgramParameter, myConceptRule, myConceptRuleReference);
   }
 
   @Override
@@ -119,60 +121,62 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptAnalyzerFunParameterProgramState;
       case 7:
-        return myConceptAnalyzerFunctionResultType;
+        return myConceptAnalyzerFunParameterStateValues;
       case 8:
-        return myConceptAnalyzerInitialFunction;
+        return myConceptAnalyzerFunctionResultType;
       case 9:
-        return myConceptAnalyzerMergeFunction;
+        return myConceptAnalyzerInitialFunction;
       case 10:
-        return myConceptAnalyzerMergeParameterInput;
+        return myConceptAnalyzerMergeFunction;
       case 11:
-        return myConceptAnalyzerParameterProgram;
+        return myConceptAnalyzerMergeParameterInput;
       case 12:
-        return myConceptAnalyzerRunnerAnalyzeOperation;
+        return myConceptAnalyzerParameterProgram;
       case 13:
-        return myConceptAnalyzerRunnerClassKeeper;
+        return myConceptAnalyzerRunnerAnalyzeOperation;
       case 14:
-        return myConceptAnalyzerRunnerCreator;
+        return myConceptAnalyzerRunnerClassKeeper;
       case 15:
-        return myConceptAnalyzerRunnerType;
+        return myConceptAnalyzerRunnerCreator;
       case 16:
-        return myConceptAnalyzerTypeAnnotation;
+        return myConceptAnalyzerRunnerType;
       case 17:
-        return myConceptApplicableCondition;
+        return myConceptAnalyzerTypeAnnotation;
       case 18:
-        return myConceptApplicableNodeReference;
+        return myConceptApplicableCondition;
       case 19:
-        return myConceptBackwardDirection;
+        return myConceptApplicableNodeReference;
       case 20:
-        return myConceptConceptCondition;
+        return myConceptBackwardDirection;
       case 21:
-        return myConceptEmitInstruction;
+        return myConceptConceptCondition;
       case 22:
-        return myConceptForwardDirection;
+        return myConceptEmitInstruction;
       case 23:
-        return myConceptInsertAfterPosition;
+        return myConceptForwardDirection;
       case 24:
-        return myConceptInsertBeforePosition;
+        return myConceptInsertAfterPosition;
       case 25:
-        return myConceptInsertPosition;
+        return myConceptInsertBeforePosition;
       case 26:
-        return myConceptInstruction;
+        return myConceptInsertPosition;
       case 27:
-        return myConceptInstructionClassKeeper;
+        return myConceptInstruction;
       case 28:
-        return myConceptInstructionParameter;
+        return myConceptInstructionClassKeeper;
       case 29:
-        return myConceptInstructionReference;
+        return myConceptInstructionParameter;
       case 30:
-        return myConceptIsOperation;
+        return myConceptInstructionReference;
       case 31:
-        return myConceptPatternCondition;
+        return myConceptIsOperation;
       case 32:
-        return myConceptProgramParameter;
+        return myConceptPatternCondition;
       case 33:
-        return myConceptRule;
+        return myConceptProgramParameter;
       case 34:
+        return myConceptRule;
+      case 35:
         return myConceptRuleReference;
       default:
         throw new IllegalStateException();
