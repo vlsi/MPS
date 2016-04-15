@@ -24,7 +24,7 @@ import java.util.Collection;
 /**
  * A descriptor of a concept. Concepts define categories for AST nodes.
  * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
- * SConcept (and SAbstractConcept) can be obtained by their ids from SConceptRepository.
+ * SConcept (and SAbstractConcept) can be constructed using id/name pair or (better) be obtained from MetaAdapterFactory.
  * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept extends SNamedElement {
