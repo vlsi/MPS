@@ -7186,5 +7186,20 @@
       </node>
     </node>
   </node>
+  <node concept="3_zdsH" id="6kfBYRWJWI5">
+    <ref role="3_znuS" to="tpee:6kfBYRWHrp$" resolve="NestedNewExpression" />
+    <node concept="3__wT9" id="6kfBYRWJWI6" role="3_A6iZ">
+      <node concept="3clFbS" id="6kfBYRWJWI7" role="2VODD2">
+        <node concept="3AgYrR" id="6kfBYRWJX8G" role="3cqZAp">
+          <node concept="2OqwBi" id="6kfBYRWJXfC" role="3Ah4Yx">
+            <node concept="3__QtB" id="6kfBYRWJX8N" role="2Oq$k0" />
+            <node concept="3TrEf2" id="3fQ6dJ6gJd" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:gEShVi6" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

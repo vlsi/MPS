@@ -4295,5 +4295,15 @@
       <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6kfBYRWHrp$">
+    <property role="1pbfSe" value="1640322641" />
+    <property role="TrG5h" value="NestedNewExpression" />
+    <property role="34LRSv" value="new" />
+    <property role="R4oN_" value="nested instance creation expression" />
+    <ref role="1TJDcQ" node="gEShNN5" resolve="GenericNewExpression" />
+    <node concept="PrWs8" id="6kfBYRWHrp_" role="PzmwI">
+      <ref role="PrY4T" node="hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
 </model>
 

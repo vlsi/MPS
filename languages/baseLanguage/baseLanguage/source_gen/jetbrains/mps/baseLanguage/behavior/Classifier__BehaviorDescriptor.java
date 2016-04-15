@@ -189,7 +189,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     List<SNode> contextContainers = SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true);
 
     List<SNode> ancestors = SNodeOperations.getNodeAncestors(context, null, true);
-    if (ListSequence.fromList(ancestors).contains(SNodeOperations.getParent(__thisNode__)) || ListSequence.fromList(ancestors).contains(__thisNode__)) {
+    if (ListSequence.fromList(ancestors).contains(SNodeOperations.getParent(__thisNode__)) || ListSequence.fromList(ancestors).contains(__thisNode__) || (SNodeOperations.getNodeAncestor(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x650f9fedfcb5b664L, "jetbrains.mps.baseLanguage.structure.NestedNewExpression"), true, false) != null)) {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
 

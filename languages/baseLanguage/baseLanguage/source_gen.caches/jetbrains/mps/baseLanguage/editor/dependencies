@@ -2396,6 +2396,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LoopLabelReference_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LoopLabel_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LowerBoundType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NestedNewExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NullLiteral_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Number_Editor" />
@@ -3844,6 +3845,25 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.NestedNewExpression_Editor" file="NestedNewExpression_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" file="NotExpression_Editor.java">
     <classNode dependClassName="java.lang.Override" />
