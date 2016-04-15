@@ -53,17 +53,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   public abstract ReferenceDescriptor getReferenceDescriptor();
 
   @NotNull
-  public abstract SReferenceLinkId getRoleId();
-
-  @NotNull
-  @Override
-  public SAbstractConcept getOwner() {
-    SConceptId id = getRoleId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
-        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
-  }
+  public abstract SAbstractConcept getOwner();
 
   protected abstract SNode findInConcept(SNode cnode);
 

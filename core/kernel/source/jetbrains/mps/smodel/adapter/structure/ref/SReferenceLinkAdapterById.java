@@ -18,15 +18,18 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,6 +70,16 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   @NotNull
   public SReferenceLinkId getRoleId() {
     return myRoleId;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
+    SConceptId id = getRoleId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
   }
 
   @Override

@@ -61,11 +61,6 @@ public final class InvalidReferenceLink extends SReferenceLinkAdapter {
     return myName.hashCode();
   }
 
-  @NotNull
-  public SReferenceLinkId getRoleId() {
-    return MetaIdFactory.INVALID_REF_ID;
-  }
-
   @Override
   public String getRoleName() {
       return myName;
