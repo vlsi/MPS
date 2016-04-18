@@ -50,9 +50,15 @@ public abstract class PropertySupport {
    */
   @Deprecated
   public boolean canSetValue(SNode node, String propertyName, String value, boolean nullsAlwaysAllowed) {
-    if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
-    if (value == null) value = "";
-    if (!canSetValue(value)) return false;
+    if (value == null && nullsAlwaysAllowed) {
+      return true;  // can always remove property
+    }
+    if (value == null) {
+      value = "";
+    }
+    if (!canSetValue(value)) {
+      return false;
+    }
     PropertyConstraintsDescriptor descriptor =
         ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept()).getProperty(propertyName);
     if (descriptor == null) {
@@ -63,9 +69,15 @@ public abstract class PropertySupport {
   }
 
   public boolean canSetValue(SNode node, SProperty property, String value, boolean nullsAlwaysAllowed) {
-    if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
-    if (value == null) value = "";
-    if (!canSetValue(value)) return false;
+    if (value == null && nullsAlwaysAllowed) {
+      return true;  // can always remove property
+    }
+    if (value == null) {
+      value = "";
+    }
+    if (!canSetValue(value)) {
+      return false;
+    }
     PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
     if (descriptor == null) {
       LOG.error("No property constraints are available for property " + property.getName() + " in node " + node.getPresentation());
@@ -74,26 +86,27 @@ public abstract class PropertySupport {
     return canSetValue(descriptor, node, property, value);
   }
 
-  /*package*/ static PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
+  /*package*/
+  static PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
     ConstraintsDescriptor constraintsDescriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept());
 
     PropertyConstraintsDescriptor descriptor;
-    if (property instanceof SPropertyAdapterById) {
-      descriptor = constraintsDescriptor.getProperty(((SPropertyAdapterById) property).getId());
-    } else {
-      descriptor = constraintsDescriptor.getProperty(property.getName());
-    }
+    descriptor = constraintsDescriptor.getProperty(property);
     return descriptor;
   }
 
   @Deprecated
   public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value) {
-    if (value == null) value = "";
+    if (value == null) {
+      value = "";
+    }
     return descriptor.validateValue(node, value);
   }
 
   public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, SProperty property, String value) {
-    if (value == null) value = "";
+    if (value == null) {
+      value = "";
+    }
     return descriptor.validateValue(node, value);
   }
 
@@ -225,6 +238,7 @@ public abstract class PropertySupport {
 
   private static class IntegerPropertySupport extends PropertySupport {
     public static IntegerPropertySupport INSTANCE = new IntegerPropertySupport();
+
     @Override
     public boolean canSetValue(String value) {
       if (value != null && value.startsWith("+")) {
@@ -268,6 +282,7 @@ public abstract class PropertySupport {
   /**
    * TODO: remove in 3.3, replace with some generated code, probably in the StructureAspectDescriptor.
    * Preserving the cache, but starting to listen to the reloading events to keep the cache up-to-date
+   *
    * @deprecated
    */
   @Deprecated

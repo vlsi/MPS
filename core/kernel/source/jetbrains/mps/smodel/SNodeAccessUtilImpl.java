@@ -79,11 +79,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private static ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
     ConstraintsDescriptor constraintsDescriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept());
     ReferenceConstraintsDescriptor descriptor;
-    if (referenceLink instanceof SReferenceLinkAdapterById) {
-      descriptor = constraintsDescriptor.getReference(((SReferenceLinkAdapterById) referenceLink).getRoleId());
-    } else {
-      descriptor = constraintsDescriptor.getReference(referenceLink.getRoleName());
-    }
+    descriptor = constraintsDescriptor.getReference(referenceLink);
     return descriptor;
   }
 

@@ -294,7 +294,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return null;
     }
 
-    return getProperty(propertyDescriptor.getId());
+    return getProperty(MetaAdapterFactory.getProperty(propertyDescriptor.getId(), propertyName));
   }
 
   public PropertyConstraintsDescriptor getProperty(SProperty property) {
@@ -302,7 +302,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return propertiesConstraints.get(property);
     }
 
-    if (!((SAbstractConceptAdapter) myConcept).hasProperty(property)){
+    if (!((SAbstractConceptAdapter) myConcept).hasProperty(property)) {
       return null;
     }
 
@@ -324,7 +324,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return referencesConstraints.get(ref);
     }
 
-    if (!((SAbstractConceptAdapter) myConcept).hasReference(ref)){
+    if (!((SAbstractConceptAdapter) myConcept).hasReference(ref)) {
       return null;
     }
 
@@ -349,7 +349,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     if (refDescriptor == null) {
       return null;
     }
-    return getReference(refDescriptor.getId());
+    return getReference(MetaAdapterFactory.getReferenceLink(refDescriptor.getId(), role));
   }
 
   @Override
