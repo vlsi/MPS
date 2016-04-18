@@ -276,14 +276,14 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.0.Beta8-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta8-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.0.CR7-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.CR7-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
     </dependency>
     <!-- TODO: replace patched version ${idea.platform.version}.1 with default ${idea.platform.version} -->
-    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}.1">
+    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}">
       <artifact name="platform.src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="${idea.platform.version}">
@@ -349,8 +349,8 @@
     <dependency org="lib" name="commons-net-3.1.jar" rev="138.1980">
       <artifact name="commons-net-3.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="ecj-4.4.2.jar" rev="${idea.platform.version}">
-      <artifact name="ecj-4.4.2.jar" ext="jar"/>
+    <dependency org="lib" name="ecj-4.5.2.jar" rev="${idea.platform.version}">
+      <artifact name="ecj-4.5.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>
@@ -439,8 +439,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.0.Beta8.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta8.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.0.CR7.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.CR7.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -452,7 +452,7 @@
       <artifact name="platform-api.jar" ext="jar"/>
     </dependency>
     <!-- TODO: replace patched version ${idea.platform.version}.1 with default ${idea.platform.version} -->
-    <dependency org="lib" name="platform.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="platform.jar" rev="${idea.platform.version}">
       <artifact name="platform.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="proxy-vole_20131209.jar" rev="${idea.platform.version}">
