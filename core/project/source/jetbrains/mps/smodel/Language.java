@@ -103,7 +103,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     revalidateGenerators();
   }
 
-  public void addExtendedLanguage(SModuleReference langRef) {
+  public void addExtendedLanguage(@NotNull SModuleReference langRef) {
     if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);

@@ -13,8 +13,11 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class UpdateConceptReferencesParticipant extends UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference>, RefactoringParticipant.PersistentRefactoringParticipant<NamedNodeReference, NamedNodeReference, SNode, SNode> {
 
@@ -40,7 +43,11 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
   protected void doUpdateModelImport(SRepository repository, final SNode containingNode, final SReferenceLink role, SNodeReference newTarget) {
     super.doUpdateModelImport(repository, containingNode, role, newTarget);
     if (eq_m5uax2_a0a1a7(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) || eq_m5uax2_a0a1a7_0(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"))) {
-      ((Language) containingNode.getModel().getModule()).addExtendedLanguage(newTarget.getModelReference().getModuleReference());
+      SModule targetLanguage = check_m5uax2_a0a0b0h(check_m5uax2_a0a0a1a7(newTarget.getModelReference(), repository));
+      Language sourceLanguage = (Language) check_m5uax2_a0a1a1a7(containingNode.getModel());
+      if (sourceLanguage != null && targetLanguage != null) {
+        sourceLanguage.addExtendedLanguage(targetLanguage.getModuleReference());
+      }
     }
   }
 
@@ -49,7 +56,7 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     return new UpdateReferencesParticipant.MyMoveNodeRefactoringDataCollector() {
       @Override
       public NamedNodeReference beforeMove(SNode nodeToMove) {
-        if (!(SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) || !(nodeToMove.getModel().getModule() instanceof Language)) {
+        if (!(SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) || !(check_m5uax2_a0a0a0a0a0a0j(nodeToMove.getModel()) instanceof Language)) {
           return null;
         }
         return super.beforeMove(nodeToMove);
@@ -61,6 +68,30 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     };
   }
 
+  private static SModule check_m5uax2_a0a0b0h(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModel check_m5uax2_a0a0a1a7(SModelReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+  private static SModule check_m5uax2_a0a1a1a7(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModule check_m5uax2_a0a0a0a0a0a0j(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
   private static boolean eq_m5uax2_a0a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
