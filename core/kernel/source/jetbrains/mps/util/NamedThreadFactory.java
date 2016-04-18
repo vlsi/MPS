@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.util;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -24,6 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * This is merely a copy of Executors#DefaultThreadFactory, without security manager and a configurable prefix.
  */
 public class NamedThreadFactory implements ThreadFactory {
+  private final static Logger LOG = LogManager.getLogger(NamedThreadFactory.class);
   private final ThreadGroup group;
   private final AtomicInteger threadNumber = new AtomicInteger(1);
   private final String namePrefix;
@@ -34,12 +38,20 @@ public class NamedThreadFactory implements ThreadFactory {
   }
 
   @Override
-  public Thread newThread(final Runnable original) {
+  public Thread newThread(@NotNull final Runnable original) {
     Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
-    if (t.isDaemon())
+    if (t.isDaemon()) {
       t.setDaemon(false);
-    if (t.getPriority() != Thread.NORM_PRIORITY)
+    }
+    if (t.getPriority() != Thread.NORM_PRIORITY) {
       t.setPriority(Thread.NORM_PRIORITY);
+    }
+    t.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+      @Override
+      public void uncaughtException(@NotNull Thread t, @NotNull Throwable e) {
+        LOG.error("Thread " + t + " threw the exception ", e);
+      }
+    });
     return t;
   }
 }

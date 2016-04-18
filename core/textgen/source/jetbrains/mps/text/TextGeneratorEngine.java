@@ -106,7 +106,11 @@ public final class TextGeneratorEngine {
         @Override
         public void run() {
           // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
-          tu.generate();
+          try {
+            tu.generate();
+          } catch (Exception ex) {
+            myMessages.handle(new Message(MessageKind.ERROR, String.format("TextGen threw an exception for model %s", model.getName())).setException(ex));
+          }
           // once the last unit of the model is completed, notify consumer
           if (unitsCount.decrementAndGet() == 0) {
             try {
