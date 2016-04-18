@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -109,8 +111,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return result;
   }
 
-  public boolean hasReference(SReferenceLink r){
-    return getReferenceLinks().contains(r);
+  public boolean hasReference(SReferenceLink r) {
+    ConceptDescriptor d = getConceptDescriptor();
+    return d != null && d.getRefDescriptor(MetaIdHelper.getReference(r)) != null;
   }
 
   @Override
@@ -127,8 +130,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return result;
   }
 
-  public boolean hasLink(SContainmentLink l){
-    return getContainmentLinks().contains(l);
+  public boolean hasLink(SContainmentLink l) {
+    ConceptDescriptor d = getConceptDescriptor();
+    return d != null && d.getLinkDescriptor(MetaIdHelper.getLink(l)) != null;
   }
 
   @Override
@@ -186,8 +190,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return MetaAdapterFactory.getProperty(pid, name);
   }
 
-  public boolean hasProperty(SProperty p){
-    return getProperties().contains(p);
+  public boolean hasProperty(SProperty p) {
+    ConceptDescriptor d = getConceptDescriptor();
+    return d != null && d.getPropertyDescriptor(MetaIdHelper.getProperty(p)) != null;
   }
 
   @Override
