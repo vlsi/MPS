@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
@@ -24,7 +25,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConstraintsAspectInterpreted implements ConstraintsAspectDescriptor {
+public class ConstraintsAspectInterpreted extends BaseConstraintsAspectDescriptor {
   private static final ConstraintsAspectInterpreted INSTANCE = new ConstraintsAspectInterpreted();
 
   private ConstraintsAspectInterpreted() {
