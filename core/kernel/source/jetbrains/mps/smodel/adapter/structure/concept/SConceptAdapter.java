@@ -47,12 +47,12 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
       }
     }
 
-    SConceptId superConceptId = conceptDescriptor.getSuperConceptId();
-    if (superConceptId == null) {
-      return conceptDescriptor.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : baseConcept;
+    SConceptId superConcept = conceptDescriptor.getSuperConceptId();
+    if (superConcept == null) {
+      return equals(SNodeUtil.concept_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
     }
 
-    return MetaAdapterFactory.getConcept(superConceptId, conceptDescriptor.getSuperConcept());
+    return MetaAdapterFactory.getConcept(superConcept, conceptDescriptor.getSuperConcept());
   }
 
   @Override
