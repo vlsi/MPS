@@ -38,20 +38,21 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor conceptDescriptor = getConceptDescriptor();
+    SConcept baseConcept = SNodeUtil.concept_BaseConcept;
     if (conceptDescriptor == null) {
-      if (this != SNodeUtil.concept_BaseConcept) {
-        return SNodeUtil.concept_BaseConcept;
+      if (!this.equals(baseConcept)) {
+        return baseConcept;
       } else {
         return null;
       }
     }
 
-    SConceptId superConcept = conceptDescriptor.getSuperConceptId();
-    if (superConcept == null) {
-      return conceptDescriptor.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
+    SConceptId superConceptId = conceptDescriptor.getSuperConceptId();
+    if (superConceptId == null) {
+      return conceptDescriptor.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : baseConcept;
     }
 
-    return MetaAdapterFactory.getConcept(superConcept, conceptDescriptor.getSuperConcept());
+    return MetaAdapterFactory.getConcept(superConceptId, conceptDescriptor.getSuperConcept());
   }
 
   @Override
