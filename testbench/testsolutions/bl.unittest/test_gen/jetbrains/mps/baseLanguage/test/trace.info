@@ -1906,6 +1906,24 @@
       <unit id="290469496750208032" at="14,0,50,0" name="jetbrains.mps.baseLanguage.test.FloatLiteral_Test" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2908733373806051335">
+    <file name="NestedNewExpression_Test.java">
+      <node id="2908733373806051335" at="17,77,18,116" concept="3" />
+      <node id="2908733373806051335" at="18,116,19,133" concept="3" />
+      <node id="2908733373806051335" at="25,79,26,230" concept="5" />
+      <node id="2908733373806051335" at="26,230,27,124" concept="3" />
+      <node id="2908733373806051335" at="25,0,29,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
+      <node id="2908733373806051335" at="16,0,21,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
+      <scope id="2908733373806051335" at="17,77,19,133" />
+      <scope id="2908733373806051335" at="25,79,27,124">
+        <var name="operation" id="2908733373806051335" />
+      </scope>
+      <scope id="2908733373806051335" at="25,0,29,0" />
+      <scope id="2908733373806051335" at="16,0,21,0" />
+      <unit id="2908733373806051335" at="22,0,31,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody" />
+      <unit id="2908733373806051335" at="14,0,32,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2970924421778354240">
     <file name="typeParameterDuplicationAndMisorder_Test.java">
       <node id="2970924421778354240" at="17,91,18,116" concept="3" />

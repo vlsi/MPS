@@ -472,7 +472,7 @@
       <ref role="lpD7u" to="1xvu:7zh3gS0LeDd" resolve="ChildWithIndirectCycle_card1n" />
     </node>
     <node concept="lpD6D" id="6tNBhlZuPPN" role="lpD6w">
-      <ref role="lpD7u" to="1xvu:6tNBhlZu$1U" resolve="ChildWithTwoGrandCjhildrenIndifferentRoles" />
+      <ref role="lpD7u" to="1xvu:6tNBhlZu$1U" resolve="ChildWithTwoGrandChildrenInDifferentRoles" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
@@ -1265,7 +1265,7 @@
       <ref role="lpD7u" to="tpej:6UtDUq0tdsS" resolve="PrivateField" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HS" role="lpD6w">
-      <ref role="lpD7u" to="tpej:INLPXP3Q8f" resolve="FinalFieldWasAssigned" />
+      <ref role="lpD7u" to="tpej:INLPXP3Q8f" resolve="FinalFieldTests" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HT" role="lpD6w">
       <ref role="lpD7u" to="tpej:6eZEP_6P2cI" resolve="TestGenerationMode" />
@@ -1392,6 +1392,9 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT7a" role="lpD6w">
       <ref role="lpD7u" to="tpej:4yhXPMFqSwE" resolve="FloatConstant2" />
+    </node>
+    <node concept="lpD6D" id="2xtTpu$3p_S" role="lpD6w">
+      <ref role="lpD7u" to="tpej:2xtTpu$2807" resolve="NestedNewExpression" />
     </node>
     <node concept="lpD6D" id="rutuztYHtF" role="lpD6w">
       <ref role="lpD7u" to="tpej:rutuztWYnj" resolve="TestMigrateCommentBlock" />

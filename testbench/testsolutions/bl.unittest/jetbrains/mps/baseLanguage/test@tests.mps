@@ -130,6 +130,7 @@
       <concept id="1179360813171" name="jetbrains.mps.baseLanguage.structure.HexIntegerLiteral" flags="nn" index="2nou5x">
         <property id="1179360856892" name="value" index="2noCCI" />
       </concept>
+      <concept id="7282214966977214052" name="jetbrains.mps.baseLanguage.structure.NestedNewExpression" flags="ng" index="2pIyA9" />
       <concept id="4285773203949551198" name="jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation" flags="ng" index="2qdHTr">
         <child id="4285773203949552005" name="setAccessor" index="2qdM60" />
         <child id="4285773203949552004" name="getAccessor" index="2qdM61" />
@@ -28252,6 +28253,315 @@
           <node concept="3xONca" id="rutuztXCKy" role="JAdkl">
             <ref role="3xOPvv" node="rutuztX2PO" resolve="after" />
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="2xtTpu$2807">
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="NestedNewExpression" />
+    <node concept="1qefOq" id="2xtTpu$280Y" role="1SKRRt">
+      <node concept="312cEu" id="2xtTpu$2810" role="1qenE9">
+        <property role="2bfB8j" value="true" />
+        <property role="TrG5h" value="Container" />
+        <node concept="312cEu" id="2xtTpu$284t" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="A" />
+          <node concept="312cEu" id="2xtTpu$2896" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="AA" />
+            <node concept="3Tm1VV" id="2xtTpu$2897" role="1B3o_S" />
+          </node>
+          <node concept="312cEu" id="2xtTpu$2nYa" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="AAA" />
+            <node concept="3clFbW" id="2xtTpu$2oa_" role="jymVt">
+              <node concept="3cqZAl" id="2xtTpu$2oaB" role="3clF45" />
+              <node concept="3Tm1VV" id="2xtTpu$2oaC" role="1B3o_S" />
+              <node concept="3clFbS" id="2xtTpu$2oaD" role="3clF47" />
+              <node concept="37vLTG" id="2xtTpu$2ogt" role="3clF46">
+                <property role="TrG5h" value="i" />
+                <node concept="10Oyi0" id="2xtTpu$2ogs" role="1tU5fm" />
+              </node>
+            </node>
+            <node concept="3Tm1VV" id="2xtTpu$2nYb" role="1B3o_S" />
+          </node>
+          <node concept="312cEu" id="2xtTpu$28Ka" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="AAAA" />
+            <property role="1sVAO0" value="true" />
+            <node concept="3Tm1VV" id="2xtTpu$28Kb" role="1B3o_S" />
+          </node>
+          <node concept="3Tm1VV" id="2xtTpu$284u" role="1B3o_S" />
+        </node>
+        <node concept="312cEu" id="2xtTpu$28cF" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="B" />
+          <node concept="312cEu" id="2xtTpu$28Fu" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="BB" />
+            <node concept="3Tm1VV" id="2xtTpu$28Fv" role="1B3o_S" />
+          </node>
+          <node concept="312cEu" id="2xtTpu$2old" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="BBB" />
+            <node concept="3clFbW" id="2xtTpu$2owP" role="jymVt">
+              <node concept="3cqZAl" id="2xtTpu$2owR" role="3clF45" />
+              <node concept="3Tm1VV" id="2xtTpu$2owS" role="1B3o_S" />
+              <node concept="3clFbS" id="2xtTpu$2owT" role="3clF47" />
+              <node concept="37vLTG" id="2xtTpu$2oAH" role="3clF46">
+                <property role="TrG5h" value="i" />
+                <node concept="10Oyi0" id="2xtTpu$2oAG" role="1tU5fm" />
+              </node>
+            </node>
+            <node concept="3Tm1VV" id="2xtTpu$2ole" role="1B3o_S" />
+          </node>
+          <node concept="312cEu" id="2xtTpu$28PC" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="BBBB" />
+            <property role="1sVAO0" value="true" />
+            <node concept="3Tm1VV" id="2xtTpu$28PD" role="1B3o_S" />
+          </node>
+          <node concept="3HP615" id="2xtTpu$28Vc" role="jymVt">
+            <property role="2bfB8j" value="true" />
+            <property role="TrG5h" value="BBBBB" />
+            <node concept="3Tm1VV" id="2xtTpu$28Vd" role="1B3o_S" />
+          </node>
+          <node concept="3Tm1VV" id="2xtTpu$28cG" role="1B3o_S" />
+          <node concept="3uibUv" id="2xtTpu$28hE" role="1zkMxy">
+            <ref role="3uigEE" node="2xtTpu$284t" resolve="Container.A" />
+          </node>
+        </node>
+        <node concept="3HP615" id="2xtTpu$292g" role="jymVt">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="C" />
+          <node concept="3Tm1VV" id="2xtTpu$292h" role="1B3o_S" />
+        </node>
+        <node concept="2YIFZL" id="2xtTpu$296c" role="jymVt">
+          <property role="TrG5h" value="main" />
+          <node concept="37vLTG" id="2xtTpu$296d" role="3clF46">
+            <property role="TrG5h" value="args" />
+            <node concept="10Q1$e" id="2xtTpu$296e" role="1tU5fm">
+              <node concept="17QB3L" id="2xtTpu$296f" role="10Q1$1" />
+            </node>
+          </node>
+          <node concept="3cqZAl" id="2xtTpu$296g" role="3clF45" />
+          <node concept="3Tm1VV" id="2xtTpu$296h" role="1B3o_S" />
+          <node concept="3clFbS" id="2xtTpu$296i" role="3clF47">
+            <node concept="3cpWs8" id="2xtTpu$2mr$" role="3cqZAp">
+              <node concept="3cpWsn" id="2xtTpu$2mr_" role="3cpWs9">
+                <property role="TrG5h" value="c" />
+                <node concept="3uibUv" id="2xtTpu$2mrz" role="1tU5fm">
+                  <ref role="3uigEE" node="2xtTpu$2810" resolve="Container" />
+                </node>
+                <node concept="2ShNRf" id="2xtTpu$2mrA" role="33vP2m">
+                  <node concept="HV5vD" id="2xtTpu$2mrB" role="2ShVmc">
+                    <ref role="HV5vE" node="2xtTpu$2810" resolve="Container" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2m_V" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2n7q" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2mCV" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2m_T" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2mKX" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2n1y" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$284t" resolve="Container.A" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2nfq" role="2OqNvi">
+                  <node concept="HV5vD" id="2xtTpu$2nvV" role="2ShVmc">
+                    <ref role="HV5vE" node="2xtTpu$2896" resolve="Container.A.AA" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2oAL" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2oAM" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2oAN" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2oAO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2oAP" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2oAQ" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$284t" resolve="Container.A" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2oAR" role="2OqNvi">
+                  <node concept="1pGfFk" id="2xtTpu$2oSr" role="2ShVmc">
+                    <ref role="37wK5l" node="2xtTpu$2oa_" resolve="Container.A.AAA" />
+                    <node concept="3cmrfG" id="2xtTpu$2oVf" role="37wK5m">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2nw8" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2nw9" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2nwa" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2nwb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2nwc" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2nwd" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$284t" resolve="Container.A" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2nwe" role="2OqNvi">
+                  <node concept="YeOm9" id="2xtTpu$2nSr" role="2ShVmc">
+                    <node concept="1Y3b0j" id="2xtTpu$2nSu" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" node="2xtTpu$28Ka" resolve="Container.A.AAAA" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <node concept="3Tm1VV" id="2xtTpu$2nSv" role="1B3o_S" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2nzW" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2psS" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2nzY" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2nzZ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2n$0" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2pgm" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2pCm" role="2OqNvi">
+                  <node concept="HV5vD" id="2xtTpu$2pSX" role="2ShVmc">
+                    <ref role="HV5vE" node="2xtTpu$2896" resolve="Container.A.AA" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2pVj" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2pVk" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2pVl" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2pVm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2pVn" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2pVo" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2pVp" role="2OqNvi">
+                  <node concept="1pGfFk" id="2xtTpu$2qeO" role="2ShVmc">
+                    <ref role="37wK5l" node="2xtTpu$2oa_" resolve="Container.A.AAA" />
+                    <node concept="3cmrfG" id="2xtTpu$2qhE" role="37wK5m">
+                      <property role="3cmrfH" value="2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2pWM" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2pWN" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2pWO" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2pWP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2pWQ" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2pWR" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2pWS" role="2OqNvi">
+                  <node concept="YeOm9" id="2xtTpu$2qyq" role="2ShVmc">
+                    <node concept="1Y3b0j" id="2xtTpu$2qyt" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" node="2xtTpu$28Ka" resolve="Container.A.AAAA" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <node concept="3Tm1VV" id="2xtTpu$2qyu" role="1B3o_S" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2qyF" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2qyG" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2qyH" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2qyI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2qyJ" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2qyK" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2qyL" role="2OqNvi">
+                  <node concept="HV5vD" id="2xtTpu$2qWr" role="2ShVmc">
+                    <ref role="HV5vE" node="2xtTpu$28Fu" resolve="Container.B.BB" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2qWE" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2qWF" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2qWG" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2qWH" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2qWI" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2qWJ" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2qWK" role="2OqNvi">
+                  <node concept="1pGfFk" id="2xtTpu$2rfc" role="2ShVmc">
+                    <ref role="37wK5l" node="2xtTpu$2owP" resolve="Container.B.BBB" />
+                    <node concept="3cmrfG" id="2xtTpu$2ri3" role="37wK5m">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2xtTpu$2rip" role="3cqZAp">
+              <node concept="2OqwBi" id="2xtTpu$2riq" role="3clFbG">
+                <node concept="2OqwBi" id="2xtTpu$2rir" role="2Oq$k0">
+                  <node concept="37vLTw" id="2xtTpu$2ris" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xtTpu$2mr_" resolve="c" />
+                  </node>
+                  <node concept="2pIyA9" id="2xtTpu$2rit" role="2OqNvi">
+                    <node concept="HV5vD" id="2xtTpu$2riu" role="2ShVmc">
+                      <ref role="HV5vE" node="2xtTpu$28cF" resolve="Container.B" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pIyA9" id="2xtTpu$2riv" role="2OqNvi">
+                  <node concept="YeOm9" id="2xtTpu$2r_e" role="2ShVmc">
+                    <node concept="1Y3b0j" id="2xtTpu$2r_h" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" node="2xtTpu$28PC" resolve="Container.B.BBBB" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <node concept="2tJIrI" id="2xtTpu$2JpK" role="jymVt" />
+                      <node concept="3Tm1VV" id="2xtTpu$2r_i" role="1B3o_S" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="2xtTpu$2811" role="1B3o_S" />
+        <node concept="7CXmI" id="2xtTpu$3IuA" role="lGtFl">
+          <node concept="7OXhh" id="2xtTpu$3IuE" role="7EUXB" />
         </node>
       </node>
     </node>
