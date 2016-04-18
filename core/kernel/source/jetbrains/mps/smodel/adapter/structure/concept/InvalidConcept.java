@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
+import java.util.Set;
 
 /**
  * This adapter means that MPS needed to load some concept but was unable to find it.
@@ -97,6 +98,11 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   @Override
   protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, ConceptDescriptor anotherDescriptor, SAbstractConcept anotherConcept) {
     return false;
+  }
+
+  @Override
+  public Set<SAbstractConcept> getAllParents() {
+    return Collections.emptySet();
   }
 
   @Override

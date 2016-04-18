@@ -19,11 +19,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @see SAbstractConceptAdapter
@@ -34,7 +37,7 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   }
 
   @Override
-  public Iterable<SInterfaceConcept> getSuperInterfaces() {
+  public List<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -48,5 +51,10 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   @Override
   public final boolean isAbstract() {
     return true;
+  }
+
+  @Override
+  public Set<SAbstractConcept> getAllParents() {
+    return new HashSet<SAbstractConcept>(getSuperInterfaces());
   }
 }

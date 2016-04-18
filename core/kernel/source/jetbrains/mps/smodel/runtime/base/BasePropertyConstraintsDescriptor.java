@@ -124,15 +124,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SProperty property,
       InheritanceCalculateParameters parameters) {
-    Set<SAbstractConcept> parents = new HashSet<SAbstractConcept>();
-    if (concept instanceof SConcept) {
-      parents.addAll(IterableUtil.asCollection(((SConcept) concept).getSuperInterfaces()));
-      parents.add(((SConcept) concept).getSuperConcept());
-    } else if (concept instanceof SInterfaceConcept) {
-      parents.addAll(IterableUtil.asCollection(((SInterfaceConcept) concept).getSuperInterfaces()));
-    }
-
-    for (SAbstractConcept parent : parents) {
+    for (SAbstractConcept parent : ((SAbstractConceptAdapter) concept).getAllParents()) {
       if (!((SAbstractConceptAdapter) parent).hasProperty(property)) {
         continue;
       }

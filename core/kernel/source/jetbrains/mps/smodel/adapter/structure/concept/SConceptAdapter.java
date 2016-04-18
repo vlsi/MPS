@@ -20,12 +20,16 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @see SAbstractConceptAdapter
@@ -58,7 +62,9 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return Collections.emptyList();
+    if (d == null) {
+      return Collections.emptyList();
+    }
 
     if (d.isInterfaceConcept()) {
       return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(getConceptDescriptor().getId(), getConceptDescriptor().getConceptFqName()));
@@ -66,10 +72,21 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
-      if (id.equals(d.getSuperConceptId())) continue;
+      if (id.equals(d.getSuperConceptId())) {
+        continue;
+      }
       String name = ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName();
       res.add(MetaAdapterFactory.getInterfaceConcept(id, name));
     }
     return res;
+  }
+
+  @Override
+  public Set<SAbstractConcept> getAllParents() {
+    Set<SAbstractConcept> parents = new HashSet<SAbstractConcept>();
+    parents.addAll(IterableUtil.asCollection(getSuperInterfaces()));
+    parents.add(getSuperConcept());
+    parents.remove(null);
+    return parents;
   }
 }

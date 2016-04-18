@@ -150,15 +150,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   private ConstraintsDescriptor getMethodUsingInheritance(SAbstractConcept concept, InheritanceCalculateParameters parameters) {
-    Set<SAbstractConcept> parents = new HashSet<SAbstractConcept>();
-    if (concept instanceof SConcept) {
-      parents.addAll(IterableUtil.asCollection(((SConcept) concept).getSuperInterfaces()));
-      parents.add(((SConcept) concept).getSuperConcept());
-    } else if (concept instanceof SInterfaceConcept) {
-      parents.addAll(IterableUtil.asCollection(((SInterfaceConcept) concept).getSuperInterfaces()));
-    }
-
-    for (SAbstractConcept parent : parents) {
+    for (SAbstractConcept parent : ((SAbstractConceptAdapter) concept).getAllParents()) {
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
 
       ConstraintsDescriptor parentCalculated;
