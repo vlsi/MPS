@@ -24,13 +24,9 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.scope.ListScope;
@@ -76,16 +72,7 @@ public class DefaultClassCreator_Constraints extends BaseConstraintsDescriptor {
                 return null;
               }
 
-              Iterable<SNode> visibleInheritedNestedClassifiers = SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))).translate(new ITranslator2<SNode, SNode>() {
-                public Iterable<SNode> translate(SNode it) {
-                  return (Iterable<SNode>) Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(it);
-                }
-              }).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return VisibilityUtil.isVisible(_context.getContextNode(), it);
-                }
-              });
-              final Iterable<SNode> memberClasses = Sequence.fromIterable(SNodeOperations.ofConcept(visibleInheritedNestedClassifiers, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
+              final Iterable<SNode> memberClasses = Sequence.fromIterable(ClassifierScopeUtils.getVisibleNestedClassConceptsIncludingInherited(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return !((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it)) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) && DefaultConstructorUtils.containsDefaultConstructor(it);
                 }
