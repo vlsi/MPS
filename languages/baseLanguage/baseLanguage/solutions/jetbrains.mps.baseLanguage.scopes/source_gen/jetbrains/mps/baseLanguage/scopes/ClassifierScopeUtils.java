@@ -10,20 +10,22 @@ import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -59,6 +61,20 @@ public class ClassifierScopeUtils {
     }
     return getClassifierAndSuperClassifiersData(classifier).typeByTypeVariable;
   }
+
+  public static Iterable<SNode> getVisibleNestedClassConceptsIncludingInherited(@Nullable SNode type, final SNode contextNode) {
+    Iterable<SNode> visibleInheritedNestedClassifiers = SNodeOperations.ofConcept(SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return (Iterable<SNode>) Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(it);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return VisibilityUtil.isVisible(contextNode, it);
+      }
+    }), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return visibleInheritedNestedClassifiers;
+  }
+
   public static Set<SNode> getExtendedClassifiers(@Nullable SNode classifier) {
     if (classifier == null) {
       return Collections.emptySet();
@@ -72,7 +88,7 @@ public class ClassifierScopeUtils {
     return getClassifierAndSuperClassifiersData(classifier).isCyclic;
   }
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull final SNode classifier) {
-    if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientSModule) {
+    if (check_uu0vlb_a0a0j(SNodeOperations.getModel(classifier)) instanceof TransientSModule) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
     } else {
       return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
@@ -130,7 +146,7 @@ public class ClassifierScopeUtils {
       return false;
     }
   }
-  private static SModule check_uu0vlb_a0a0g(SModel checkedDotOperand) {
+  private static SModule check_uu0vlb_a0a0j(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
