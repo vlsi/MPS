@@ -106,7 +106,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
     SModel mig = LanguageAspect.MIGRATION.get(lang);
-    List<SNode> scripts = check_vsqebj_a0c0g(((SModel) mig));
+    List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
     if (ListSequence.fromList(scripts).isNotEmpty()) {
       int maxFrom = (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
@@ -144,7 +144,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       });
     }
   }
-  private static List<SNode> check_vsqebj_a0c0g(SModel checkedDotOperand) {
+  private static List<SNode> check_wnyb8b_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"));
     }

@@ -68,7 +68,7 @@ public class JUnit_Command {
     return this;
   }
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new JUnit_Command().setVirtualMachineParameter_String(check_ifael_a0a0a0a0a9(javaRunParameters)).setJrePath_String((check_ifael_a0a0a0a0a9_0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_ifael_a0a0a0a0a9_1(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
+    return new JUnit_Command().setVirtualMachineParameter_String(check_txeh3_a1a0a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
     if (tests == null) {
@@ -181,19 +181,19 @@ public class JUnit_Command {
     };
   }
   protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
-  private static String check_ifael_a0a0a0a0a9(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a1a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-  private static boolean check_ifael_a0a0a0a0a9_0(JavaRunParameters checkedDotOperand) {
+  private static boolean check_txeh3_a0c0a0a0(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (boolean) checkedDotOperand.useAlternativeJre();
     }
     return false;
   }
-  private static String check_ifael_a0a0a0a0a9_1(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
