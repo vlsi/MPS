@@ -20,6 +20,7 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.jdom.Element;
@@ -56,7 +57,7 @@ public class LanguageHolder implements IHolder<SLanguage> {
     }
     try {
       myLanguage = SLanguageAdapter.deserialize(lang);
-    } catch (Exception ex) {
+    } catch (FormatException ex) {
       throw new CantLoadSomethingException(ex);
     }
   }
