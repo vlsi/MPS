@@ -149,6 +149,9 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   }
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>() {
     public Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> beforeMove(SNode nodeToMove) {
+      if (!(SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) || !(SNodeOperations.getModel(nodeToMove).getModule() instanceof Language)) {
+        return null;
+      }
       Language language = ((Language) SNodeOperations.getModel(nodeToMove).getModule());
       return MultiTuple.<NamedNodeReference,WriteSubconceptMigrationParticipant.MigrationScriptRef>from(new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove)), new WriteSubconceptMigrationParticipant.MigrationScriptRef(language.getModuleReference(), language.getLanguageVersion()));
     }
