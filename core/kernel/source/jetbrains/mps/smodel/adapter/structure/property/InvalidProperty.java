@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.property;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
@@ -92,7 +93,9 @@ public final class InvalidProperty extends SPropertyAdapter {
 
   public static InvalidProperty deserialize(String s) {
     String marker = INVALID_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Invalid property should have prefix " + marker + ":" + s);
+    }
     String data = s.substring(marker.length());
     String[] split = data.split("\\.");
     assert split.length == 2 : s;

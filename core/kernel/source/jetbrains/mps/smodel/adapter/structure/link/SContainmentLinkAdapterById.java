@@ -21,7 +21,9 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -115,12 +117,18 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   public static SContainmentLinkAdapterById deserialize(String s) {
     String marker = LINK_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Serialized form should have prefix " + marker + ":" + s);
+    }
     String data = s.substring(marker.length());
     String[] split = data.split(ID_DELIM);
-    assert split.length == 2 : s;
+    if (split.length != 2) {
+      throw new FormatException("Serialized form should have 2 components: " + data);
+    }
     SContainmentLink res = MetaAdapterFactory.getContainmentLink(SContainmentLinkId.deserialize(split[0]), split[1]);
-    assert res instanceof SContainmentLinkAdapterById : res.getClass().getName();
+    if (!(res instanceof SContainmentLinkAdapterById)) {
+      throw new FormatException("Type differs from requested: "+res.getClass().getName());
+    }
     return (SContainmentLinkAdapterById) res;
   }
 }

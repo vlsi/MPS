@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.language.InvalidLanguage;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -105,7 +106,9 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
 
   public static InvalidConcept deserialize(String s) {
     String marker = INVALID_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Invalid concept should have prefix " + marker + ":" + s);
+    }
     return new InvalidConcept(s.substring(marker.length()));
   }
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SDataTypeAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SPrimitiveDataTypeAdapter;
@@ -109,7 +110,7 @@ public abstract class SPropertyAdapter implements SProperty {
     } else if (s.startsWith(InvalidProperty.INVALID_PREFIX)) {
       return InvalidProperty.deserialize(s);
     } else {
-      throw new IllegalArgumentException("Illegal property type: " + s);
+      throw new FormatException("Illegal property type: " + s);
     }
   }
 }

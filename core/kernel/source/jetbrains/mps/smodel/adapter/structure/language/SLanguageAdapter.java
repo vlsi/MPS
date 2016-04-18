@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -128,7 +129,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     } else if (s.startsWith(InvalidLanguage.INVALID_PREFIX)){
       return InvalidLanguage.deserialize(s);
     } else{
-      throw new IllegalArgumentException("Illegal language type: "+s);
+      throw new FormatException("Illegal language type: "+s);
     }
   }
 }

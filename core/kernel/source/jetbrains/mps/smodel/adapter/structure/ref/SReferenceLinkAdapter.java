@@ -19,6 +19,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
@@ -65,7 +66,9 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public boolean isOptional() {
     ReferenceDescriptor rd = getReferenceDescriptor();
-    if (rd == null) return true;
+    if (rd == null) {
+      return true;
+    }
 
     return rd.isOptional();
   }
@@ -98,7 +101,9 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public SNode getDeclarationNode() {
     SNode cnode = getOwner().getDeclarationNode();
-    if (cnode == null) return null;
+    if (cnode == null) {
+      return null;
+    }
     return findInConcept(cnode);
   }
 
@@ -155,13 +160,13 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   public abstract String serialize();
 
-  public static SReferenceLinkAdapter deserialize(String s){
-    if (s.startsWith(SReferenceLinkAdapterById.REF_PREFIX)){
+  public static SReferenceLinkAdapter deserialize(String s) {
+    if (s.startsWith(SReferenceLinkAdapterById.REF_PREFIX)) {
       return SReferenceLinkAdapterById.deserialize(s);
-    } else if (s.startsWith(InvalidReferenceLink.INVALID_PREFIX)){
+    } else if (s.startsWith(InvalidReferenceLink.INVALID_PREFIX)) {
       return InvalidReferenceLink.deserialize(s);
-    } else{
-      throw new IllegalArgumentException("Illegal ref type: "+s);
+    } else {
+      throw new FormatException("Illegal ref type: " + s);
     }
   }
 }

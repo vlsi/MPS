@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.link;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.InvalidLanguage;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
@@ -59,7 +60,9 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public boolean isOptional() {
     LinkDescriptor ld = getLinkDescriptor();
-    if (ld == null) return true;
+    if (ld == null) {
+      return true;
+    }
 
     return ld.isOptional();
   }
@@ -90,14 +93,18 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public boolean isMultiple() {
     LinkDescriptor ld = getLinkDescriptor();
-    if (ld == null) return true;
+    if (ld == null) {
+      return true;
+    }
 
     return ld.isMultiple();
   }
 
   public boolean isUnordered() {
     LinkDescriptor ld = getLinkDescriptor();
-    if (ld == null) return false;
+    if (ld == null) {
+      return false;
+    }
 
     return ld.isUnordered();
   }
@@ -105,7 +112,9 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public SNode getDeclarationNode() {
     SNode cnode = getOwner().getDeclarationNode();
-    if (cnode == null) return null;
+    if (cnode == null) {
+      return null;
+    }
     return findInConcept(cnode);
   }
 
@@ -116,13 +125,13 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   public abstract String serialize();
 
-  public static SContainmentLinkAdapter deserialize(String s){
-    if (s.startsWith(SContainmentLinkAdapterById.LINK_PREFIX)){
+  public static SContainmentLinkAdapter deserialize(String s) {
+    if (s.startsWith(SContainmentLinkAdapterById.LINK_PREFIX)) {
       return SContainmentLinkAdapterById.deserialize(s);
-    } else if (s.startsWith(InvalidContainmentLink.INVALID_PREFIX)){
+    } else if (s.startsWith(InvalidContainmentLink.INVALID_PREFIX)) {
       return InvalidContainmentLink.deserialize(s);
-    } else{
-      throw new IllegalArgumentException("Illegal link type: "+s);
+    } else {
+      throw new FormatException("Illegal link type: " + s);
     }
   }
 }

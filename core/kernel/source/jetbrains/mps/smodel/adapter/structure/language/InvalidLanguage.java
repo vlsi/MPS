@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -78,7 +79,9 @@ public final class InvalidLanguage extends SLanguageAdapter {
 
   public static InvalidLanguage deserialize(String s) {
     String marker = INVALID_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Invalid language should have prefix " + marker + ":" + s);
+    }
     return new InvalidLanguage(s.substring(marker.length()));
   }
 }

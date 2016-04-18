@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -96,7 +97,9 @@ public final class InvalidContainmentLink extends SContainmentLinkAdapter {
 
   public static InvalidContainmentLink deserialize(String s) {
     String marker = INVALID_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Invalid link should have prefix " + marker + ":" + s);
+    }
     String data = s.substring(marker.length());
     String[] split = data.split("\\.");
     assert split.length == 2 : s;

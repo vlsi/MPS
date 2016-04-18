@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
@@ -90,7 +91,9 @@ public final class InvalidReferenceLink extends SReferenceLinkAdapter {
 
   public static InvalidReferenceLink deserialize(String s) {
     String marker = INVALID_PREFIX + ID_DELIM;
-    assert s.startsWith(marker) : s;
+    if (!s.startsWith(marker)) {
+      throw new FormatException("Invalid reference should have prefix " + marker + ":" + s);
+    }
     String data = s.substring(marker.length());
     String[] split = data.split("\\.");
     assert split.length == 2 : s;

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
@@ -336,7 +337,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     } else if (s.startsWith(InvalidConcept.INVALID_PREFIX)) {
       return InvalidConcept.deserialize(s);
     } else {
-      throw new IllegalArgumentException("Illegal concept type: " + s);
+      throw new FormatException("Illegal concept type: " + s);
     }
   }
 }
