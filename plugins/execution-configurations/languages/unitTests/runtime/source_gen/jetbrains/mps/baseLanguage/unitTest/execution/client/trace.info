@@ -1613,7 +1613,7 @@
       <node id="6062668769034832918" at="61,5,62,16" concept="9" />
       <node id="6062668769034832918" at="65,35,66,49" concept="3" />
       <node id="6062668769034832918" at="67,5,68,16" concept="9" />
-      <node id="6062668769034832927" at="70,132,71,428" concept="9" />
+      <node id="6062668769034832927" at="70,132,71,418" concept="9" />
       <node id="6062668769034832975" at="74,24,75,61" concept="16" />
       <node id="6062668769034832980" at="76,5,77,147" concept="8" />
       <node id="6062668769034832997" at="78,59,79,67" concept="16" />
@@ -1680,9 +1680,9 @@
       <node id="7453534428490638902" at="155,0,158,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
       <node id="7453534428490729428" at="166,0,169,0" concept="7" trace="select#(Ljava/net/URL;)Ljava/lang/String;" />
       <node id="6062668769034833304" at="178,0,181,0" concept="7" trace="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-      <node id="6062668769034832932" at="184,85,187,5" concept="6" />
-      <node id="6062668769034832937" at="190,88,193,5" concept="6" />
-      <node id="6062668769034832953" at="196,87,199,5" concept="6" />
+      <node id="6062668769034832932" at="184,82,187,5" concept="6" />
+      <node id="6062668769034832937" at="190,84,193,5" concept="6" />
+      <node id="6062668769034832953" at="196,84,199,5" concept="6" />
       <node id="6062668769034832956" at="202,0,205,0" concept="13" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="2034046503361626352" at="205,0,208,0" concept="13" trace="eq_ifael_a0a0a0a0a0a0b0a0a0a0g0n#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2034046503361626370" at="208,0,211,0" concept="13" trace="neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a31#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -1701,9 +1701,9 @@
       <node id="6062668769034832918" at="58,0,64,0" concept="7" trace="setJrePath_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/JUnit_Command;" />
       <node id="6062668769034832918" at="64,0,70,0" concept="7" trace="setWorkingDirectory_File#(Ljava/io/File;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/JUnit_Command;" />
       <node id="2034046503361610672" at="147,0,153,0" concept="7" trace="run#()V" />
-      <node id="6062668769034832932" at="184,0,190,0" concept="13" trace="check_ifael_a0a0a0a0a9#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="6062668769034832937" at="190,0,196,0" concept="13" trace="check_ifael_a0a0a0a0a9_0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
-      <node id="6062668769034832953" at="196,0,202,0" concept="13" trace="check_ifael_a0a0a0a0a9_1#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="6062668769034832932" at="184,0,190,0" concept="13" trace="check_txeh3_a1a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="6062668769034832937" at="190,0,196,0" concept="13" trace="check_txeh3_a0c0a0a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
+      <node id="6062668769034832953" at="196,0,202,0" concept="13" trace="check_txeh3_a0a3a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
       <node id="2034046503361586311" at="89,0,96,0" concept="7" trace="run#()V" />
       <node id="2034046503361610668" at="145,83,153,7" concept="3" />
       <node id="2034046503361586307" at="87,87,96,7" concept="3" />
@@ -1723,7 +1723,7 @@
       <scope id="6062668769034832918" at="53,42,54,65" />
       <scope id="6062668769034832918" at="59,26,60,33" />
       <scope id="6062668769034832918" at="65,35,66,49" />
-      <scope id="6062668769034832926" at="70,132,71,428" />
+      <scope id="6062668769034832926" at="70,132,71,418" />
       <scope id="6062668769034832974" at="74,24,75,61" />
       <scope id="6062668769034832996" at="78,59,79,67" />
       <scope id="6062668769034832918" at="83,41,84,52" />
@@ -1804,9 +1804,9 @@
         <var name="testable" id="2034046503361610694" />
       </scope>
       <scope id="6062668769034833304" at="174,0,178,0" />
-      <scope id="6062668769034832932" at="184,85,188,16" />
-      <scope id="6062668769034832937" at="190,88,194,17" />
-      <scope id="6062668769034832953" at="196,87,200,16" />
+      <scope id="6062668769034832932" at="184,82,188,16" />
+      <scope id="6062668769034832937" at="190,84,194,17" />
+      <scope id="6062668769034832953" at="196,84,200,16" />
       <scope id="2034046503361586312" at="89,25,94,9" />
       <scope id="6062668769034832918" at="46,0,52,0">
         <var name="debuggerSettings" id="6062668769034832918" />
