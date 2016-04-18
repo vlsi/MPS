@@ -51,9 +51,6 @@ public abstract class SLanguageAdapter implements SLanguage {
   @Nullable
   public abstract LanguageRuntime getLanguageDescriptor();
 
-  @NotNull
-  public abstract SLanguageId getId();
-
   @Override
   @Nullable
   public abstract Language getSourceModule();

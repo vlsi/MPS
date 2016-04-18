@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.ids;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
@@ -41,7 +42,10 @@ public final class MetaIdHelper {
 
   @NotNull
   public static SLanguageId getLanguage(SLanguage l) {
-    return ((SLanguageAdapter) l).getId();
+    if (l instanceof SLanguageAdapterById) {
+      return ((SLanguageAdapterById) l).getId();
+    }
+    return MetaIdFactory.INVALID_LANGUAGE_ID;
   }
 
   @NotNull

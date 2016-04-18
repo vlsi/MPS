@@ -37,11 +37,6 @@ public final class InvalidLanguage extends SLanguageAdapter {
     super(fqName);
   }
 
-  @NotNull
-  public SLanguageId getId() {
-    return MetaIdFactory.INVALID_LANGUAGE_ID;
-  }
-
   @Override
   @NotNull
   public String getQualifiedName() {
