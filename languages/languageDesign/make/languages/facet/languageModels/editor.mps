@@ -778,7 +778,7 @@
               </node>
             </node>
             <node concept="3F0ifn" id="68RPrIba_aR" role="3EZMnx">
-              <property role="3F0ifm" value="Properies:" />
+              <property role="3F0ifm" value="Properties:" />
               <node concept="VPxyj" id="74hZdUqilM" role="3F10Kt">
                 <property role="VOm3f" value="false" />
               </node>

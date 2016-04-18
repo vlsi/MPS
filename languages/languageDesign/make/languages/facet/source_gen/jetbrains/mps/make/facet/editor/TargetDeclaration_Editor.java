@@ -480,7 +480,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x5912a2ab1cd41539L, "dependency"))).isNotEmpty();
   }
   private EditorCell createConstant_xfdsch_e1b7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Properies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Properties:");
     editorCell.setCellId("Constant_xfdsch_e1b7a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, 0, false);
