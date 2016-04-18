@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
@@ -83,7 +84,8 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   @Override
   public Iterable<SNode> getRoleAttributes() {
-    return AttributeOperations.getPropertyAttributes(getSNode(), myPropertyName);
+    //todo use SProperty here, do not store node with property declaration, instead, store a SProperty
+    return AttributeOperations.getPropertyAttributes(getSNode(), MetaAdapterByDeclaration.getProperty(myPropertyDeclaration));
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
