@@ -16,15 +16,20 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ReferenceConstraintsDescriptor {
-
   @Deprecated
   String getName();
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   SReferenceLinkId getReferenceLink();
+
+  SReferenceLink getReference();
 
   ConstraintsDescriptor getContainer();
 

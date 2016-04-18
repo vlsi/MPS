@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -108,6 +109,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return result;
   }
 
+  public boolean hasReference(SReferenceLink r){
+    return getReferenceLinks().contains(r);
+  }
+
   @Override
   public Collection<SContainmentLink> getContainmentLinks() {
     ConceptDescriptor d = getConceptDescriptor();
@@ -120,6 +125,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       result.add(MetaAdapterFactory.getContainmentLink(rid, d.getLinkDescriptor(rid).getName()));
     }
     return result;
+  }
+
+  public boolean hasLink(SContainmentLink l){
+    return getContainmentLinks().contains(l);
   }
 
   @Override
@@ -175,6 +184,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
     SPropertyId pid = d.getId();
     return MetaAdapterFactory.getProperty(pid, name);
+  }
+
+  public boolean hasProperty(SProperty p){
+    return getProperties().contains(p);
   }
 
   @Override

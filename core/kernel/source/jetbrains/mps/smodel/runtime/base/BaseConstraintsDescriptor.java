@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -301,12 +302,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return propertiesConstraints.get(property);
     }
 
-    SPropertyId pid = MetaIdHelper.getProperty(property);
-    if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(pid) == null) {
+    if (!((SAbstractConceptAdapter) myConcept).hasProperty(property)){
       return null;
     }
 
-    propertiesConstraints.put(property, new BasePropertyConstraintsDescriptor(pid, this));
+    propertiesConstraints.put(property, new BasePropertyConstraintsDescriptor(property, this));
 
     return propertiesConstraints.get(property);
   }
@@ -324,12 +324,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return referencesConstraints.get(ref);
     }
 
-    SReferenceLinkId rid = MetaIdHelper.getReference(ref);
-    if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getRefDescriptor(rid) == null) {
+    if (!((SAbstractConceptAdapter) myConcept).hasReference(ref)){
       return null;
     }
 
-    referencesConstraints.put(ref, new BaseReferenceConstraintsDescriptor(rid, this));
+    referencesConstraints.put(ref, new BaseReferenceConstraintsDescriptor(ref, this));
 
     return referencesConstraints.get(ref);
   }
