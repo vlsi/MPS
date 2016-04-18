@@ -32,9 +32,12 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -42,8 +45,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
@@ -116,36 +121,44 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     if (hasOwnCanBeChildMethod()) {
       canBeChildDescriptor = this;
     } else {
-      canBeChildDescriptor = getMethodUsingInheritance(getConceptId(), CAN_BE_CHILD_INHERITANCE_PARAMETERS);
+      canBeChildDescriptor = getMethodUsingInheritance(getConcept(), CAN_BE_CHILD_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnCanBeRootMethod()) {
       canBeRootDescriptor = this;
     } else {
-      canBeRootDescriptor = getMethodUsingInheritance(getConceptId(), CAN_BE_ROOT_INHERITANCE_PARAMETERS);
+      canBeRootDescriptor = getMethodUsingInheritance(getConcept(), CAN_BE_ROOT_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnCanBeParentMethod()) {
       canBeParentDescriptor = this;
     } else {
-      canBeParentDescriptor = getMethodUsingInheritance(getConceptId(), CAN_BE_PARENT_INHERITANCE_PARAMETERS);
+      canBeParentDescriptor = getMethodUsingInheritance(getConcept(), CAN_BE_PARENT_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnCanBeAncestorMethod()) {
       canBeAncestorDescriptor = this;
     } else {
-      canBeAncestorDescriptor = getMethodUsingInheritance(getConceptId(), CAN_BE_ANCESTOR_INHERITANCE_PARAMETERS);
+      canBeAncestorDescriptor = getMethodUsingInheritance(getConcept(), CAN_BE_ANCESTOR_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnDefaultScopeProvider()) {
       defaultScopeProviderDescriptor = this;
     } else {
-      defaultScopeProviderDescriptor = getMethodUsingInheritance(getConceptId(), DEFAULT_SCOPE_PROVIDER_INHERITANCE_PARAMETERS);
+      defaultScopeProviderDescriptor = getMethodUsingInheritance(getConcept(), DEFAULT_SCOPE_PROVIDER_INHERITANCE_PARAMETERS);
     }
   }
 
-  private ConstraintsDescriptor getMethodUsingInheritance(SConceptId concept, InheritanceCalculateParameters parameters) {
-    for (SConceptId parent : ConceptRegistry.getInstance().getConceptDescriptor(concept).getParentsIds()) {
+  private ConstraintsDescriptor getMethodUsingInheritance(SAbstractConcept concept, InheritanceCalculateParameters parameters) {
+    Set<SAbstractConcept> parents = new HashSet<SAbstractConcept>();
+    if (concept instanceof SConcept) {
+      parents.addAll(IterableUtil.asCollection(((SConcept) concept).getSuperInterfaces()));
+      parents.add(((SConcept) concept).getSuperConcept());
+    } else if (concept instanceof SInterfaceConcept) {
+      parents.addAll(IterableUtil.asCollection(((SInterfaceConcept) concept).getSuperInterfaces()));
+    }
+
+    for (SAbstractConcept parent : parents) {
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
 
       ConstraintsDescriptor parentCalculated;
