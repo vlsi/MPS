@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
@@ -62,11 +63,7 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
   @NotNull
   @Override
   public SAbstractConcept getOwner() {
-    SConceptId id = getId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
-        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
+    return ConceptFeatureHelper.getOwner(getId());
   }
 
   @Override

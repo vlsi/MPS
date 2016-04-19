@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
@@ -75,12 +76,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   @NotNull
   @Override
   public SAbstractConcept getOwner() {
-    SConceptId id = getRoleId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    String fqName = concept.getConceptFqName();
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, fqName) :
-        MetaAdapterFactory.getConcept(id, fqName);
+    return ConceptFeatureHelper.getOwner(getRoleId());
   }
 
   @Override
