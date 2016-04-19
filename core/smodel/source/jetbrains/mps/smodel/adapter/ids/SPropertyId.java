@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.annotations.NotNull;
 
-public final class SPropertyId {
+public final class SPropertyId  extends SConceptFeatureId{
   private final SConceptId myConceptId;
   private final long myPropertyId;
 

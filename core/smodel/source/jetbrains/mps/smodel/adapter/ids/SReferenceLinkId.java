@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.annotations.NotNull;
 
-public final class SReferenceLinkId {
+public final class SReferenceLinkId  extends SConceptFeatureId{
   protected final SConceptId myConceptId;
   private final long myRefLinkId;
 
