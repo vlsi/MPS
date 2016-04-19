@@ -90,7 +90,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   @Override
   @Nullable
   public ReferenceDescriptor getReferenceDescriptor() {
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
+    ConceptDescriptor cd = ConceptFeatureHelper.getOwnerDescriptor(getId());
     if (cd == null) {
       return null;
     }

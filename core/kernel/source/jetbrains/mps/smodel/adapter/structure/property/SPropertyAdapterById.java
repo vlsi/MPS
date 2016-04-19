@@ -96,7 +96,7 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
 
   @Override
   public PropertyDescriptor getPropertyDescriptor() {
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId());
+    ConceptDescriptor cd = ConceptFeatureHelper.getOwnerDescriptor(getId());
     if (cd == null) {
       return null;
     }

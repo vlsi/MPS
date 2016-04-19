@@ -88,7 +88,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   @Override
   @Nullable
   public LinkDescriptor getLinkDescriptor() {
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
+    ConceptDescriptor cd = ConceptFeatureHelper.getOwnerDescriptor(getId());
     if (cd == null) return null;
     return cd.getLinkDescriptor(myRoleId);
   }
