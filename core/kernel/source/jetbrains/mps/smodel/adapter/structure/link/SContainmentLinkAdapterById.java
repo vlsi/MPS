@@ -17,16 +17,10 @@ package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -34,7 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -69,14 +62,14 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   }
 
   @NotNull
-  public SContainmentLinkId getRoleId() {
+  public SContainmentLinkId getId() {
     return myRoleId;
   }
 
   @NotNull
   @Override
   public SAbstractConcept getOwner() {
-    return ConceptFeatureHelper.getOwner(getRoleId());
+    return ConceptFeatureHelper.getOwner(getId());
   }
 
   @Override

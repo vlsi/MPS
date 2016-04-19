@@ -18,8 +18,6 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -36,25 +34,20 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -125,7 +118,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
     assert r instanceof SReferenceLinkAdapterById : r.getClass().getName();
     ConceptDescriptor d = getConceptDescriptor();
-    return d != null && d.getRefDescriptor(((SReferenceLinkAdapterById) r).getRoleId()) != null;
+    return d != null && d.getRefDescriptor(((SReferenceLinkAdapterById) r).getId()) != null;
   }
 
   @Override
@@ -149,7 +142,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     assert l instanceof SContainmentLinkAdapterById : l.getClass().getName();
 
     ConceptDescriptor d = getConceptDescriptor();
-    return d != null && d.getLinkDescriptor(((SContainmentLinkAdapterById) l).getRoleId()) != null;
+    return d != null && d.getLinkDescriptor(((SContainmentLinkAdapterById) l).getId()) != null;
   }
 
   @Override

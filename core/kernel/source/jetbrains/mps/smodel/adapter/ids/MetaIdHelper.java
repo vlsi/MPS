@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.adapter.ids;
 
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
@@ -75,7 +74,7 @@ public final class MetaIdHelper {
     if (!(r instanceof SReferenceLinkAdapterById)) {
       return MetaIdFactory.INVALID_REF_ID;
     }
-    return ((SReferenceLinkAdapterById) r).getRoleId();
+    return ((SReferenceLinkAdapterById) r).getId();
   }
 
   @NotNull
@@ -84,6 +83,6 @@ public final class MetaIdHelper {
     if (!(l instanceof SContainmentLinkAdapterById)) {
       return MetaIdFactory.INVALID_LINK_ID;
     }
-    return ((SContainmentLinkAdapterById) l).getRoleId();
+    return ((SContainmentLinkAdapterById) l).getId();
   }
 }
