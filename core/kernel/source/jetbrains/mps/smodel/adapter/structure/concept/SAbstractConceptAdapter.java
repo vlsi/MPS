@@ -26,8 +26,11 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -117,8 +120,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   public boolean hasReference(SReferenceLink r) {
+    if (r instanceof InvalidReferenceLink) {
+      return false;
+    }
+    assert r instanceof SReferenceLinkAdapterById : r.getClass().getName();
     ConceptDescriptor d = getConceptDescriptor();
-    return d != null && d.getRefDescriptor(MetaIdHelper.getReference(r)) != null;
+    return d != null && d.getRefDescriptor(((SReferenceLinkAdapterById) r).getRoleId()) != null;
   }
 
   @Override
@@ -136,8 +143,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   public boolean hasLink(SContainmentLink l) {
+    if (l instanceof InvalidContainmentLink) {
+      return false;
+    }
+    assert l instanceof SContainmentLinkAdapterById : l.getClass().getName();
+
     ConceptDescriptor d = getConceptDescriptor();
-    return d != null && d.getLinkDescriptor(MetaIdHelper.getLink(l)) != null;
+    return d != null && d.getLinkDescriptor(((SContainmentLinkAdapterById) l).getRoleId()) != null;
   }
 
   @Override
@@ -196,8 +208,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   public boolean hasProperty(SProperty p) {
+    if (p instanceof InvalidProperty) {
+      return false;
+    }
+    assert p instanceof SPropertyAdapterById : p.getClass().getName();
+
+
     ConceptDescriptor d = getConceptDescriptor();
-    return d != null && d.getPropertyDescriptor(MetaIdHelper.getProperty(p)) != null;
+    return d != null && d.getPropertyDescriptor(((SPropertyAdapterById) p).getId()) != null;
   }
 
   @Override
