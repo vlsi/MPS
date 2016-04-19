@@ -353,6 +353,8 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   private static SModuleReference moduleRefForLanguage(SLanguage lang) {
     String name = lang.getQualifiedName();
+    //todo: this is used in changing "engaged on generation" languages. This should be at least be replaced with
+    //"engaged" generators set, so I don't rewrite this code to use SLanguages as it will also be not correct
     SLanguageId id = MetaIdHelper.getLanguage(lang);
     ModuleId moduleId = ModuleId.regular(id.getIdValue());
     return new ModuleReference(name, moduleId);
