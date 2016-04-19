@@ -16,7 +16,15 @@
 package jetbrains.mps.smodel.adapter.ids;
 
 public abstract class SConceptFeatureId {
-  public abstract SConceptId getConceptId();
+  private final SConceptId myConceptId;
+
+  public SConceptFeatureId(SConceptId conceptId) {
+    myConceptId = conceptId;
+  }
+
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
 
   public abstract long getIdValue();
 }

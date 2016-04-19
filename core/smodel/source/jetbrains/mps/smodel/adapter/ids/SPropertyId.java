@@ -18,16 +18,11 @@ package jetbrains.mps.smodel.adapter.ids;
 import org.jetbrains.annotations.NotNull;
 
 public final class SPropertyId  extends SConceptFeatureId{
-  private final SConceptId myConceptId;
   private final long myPropertyId;
 
   public SPropertyId(@NotNull SConceptId conceptId, long propertyId) {
-    myConceptId = conceptId;
+    super(conceptId);
     myPropertyId = propertyId;
-  }
-
-  public SConceptId getConceptId() {
-    return myConceptId;
   }
 
   public long getIdValue() {
@@ -42,20 +37,20 @@ public final class SPropertyId  extends SConceptFeatureId{
     SPropertyId that = (SPropertyId) o;
 
     if (myPropertyId != that.myPropertyId) return false;
-    if (!myConceptId.equals(that.myConceptId)) return false;
+    if (!getConceptId().equals(that.getConceptId())) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId.hashCode();
+    int result = getConceptId().hashCode();
     result = (int) (31 * result + myPropertyId);
     return result;
   }
 
   public String serialize() {
-    return myConceptId.serialize() + "/" + myPropertyId;
+    return getConceptId().serialize() + "/" + myPropertyId;
   }
 
   public static SPropertyId deserialize(String s) {

@@ -18,16 +18,11 @@ package jetbrains.mps.smodel.adapter.ids;
 import org.jetbrains.annotations.NotNull;
 
 public final class SReferenceLinkId  extends SConceptFeatureId{
-  protected final SConceptId myConceptId;
   private final long myRefLinkId;
 
   public SReferenceLinkId(@NotNull SConceptId conceptId, long refLinkId) {
-    myConceptId =conceptId;
+    super(conceptId);
     myRefLinkId = refLinkId;
-  }
-
-  public SConceptId getConceptId() {
-    return myConceptId;
   }
 
   public long getIdValue() {
@@ -42,20 +37,20 @@ public final class SReferenceLinkId  extends SConceptFeatureId{
     SReferenceLinkId that = (SReferenceLinkId) o;
 
     if (myRefLinkId != that.myRefLinkId) return false;
-    if (!myConceptId.equals(that.myConceptId)) return false;
+    if (!getConceptId().equals(that.getConceptId())) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId.hashCode();
+    int result = getConceptId().hashCode();
     result = 31 * result + (int) (myRefLinkId ^ (myRefLinkId >>> 32));
     return result;
   }
 
   public String serialize() {
-    return myConceptId.serialize() + "/" + myRefLinkId;
+    return getConceptId().serialize() + "/" + myRefLinkId;
   }
 
   public static SReferenceLinkId deserialize(String s) {
