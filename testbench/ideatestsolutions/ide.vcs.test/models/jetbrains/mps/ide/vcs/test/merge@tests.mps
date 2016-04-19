@@ -3316,19 +3316,19 @@
         <node concept="3cpWs3" id="7iTTs2Ugwuz" role="37wK5m">
           <node concept="3cpWs3" id="7iTTs2Ugx5d" role="3uHU7B">
             <node concept="2OqwBi" id="7iTTs2UhMUC" role="3uHU7w">
-              <node concept="2OqwBi" id="7iTTs2Ugz5B" role="2Oq$k0">
-                <node concept="1eOMI4" id="7iTTs2UgygE" role="2Oq$k0">
-                  <node concept="10QFUN" id="7iTTs2UgygB" role="1eOMHV">
-                    <node concept="3uibUv" id="7iTTs2Ugyrv" role="10QFUM">
-                      <ref role="3uigEE" to="vxxo:~SAbstractConceptAdapterById" resolve="SAbstractConceptAdapterById" />
-                    </node>
-                    <node concept="35c_gC" id="7iTTs2Ugx6n" role="10QFUP">
+              <node concept="2OqwBi" id="GHFifnTicQ" role="2Oq$k0">
+                <node concept="1eOMI4" id="GHFifnTkZw" role="2Oq$k0">
+                  <node concept="10QFUN" id="GHFifnTkZx" role="1eOMHV">
+                    <node concept="35c_gC" id="GHFifnTkZv" role="10QFUP">
                       <ref role="35c_gD" to="tpee:fz12cDC" resolve="FieldDeclaration" />
+                    </node>
+                    <node concept="3uibUv" id="GHFifnTn7s" role="10QFUM">
+                      <ref role="3uigEE" to="vxxo:~SConceptAdapterById" resolve="SConceptAdapterById" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="7iTTs2UgzIJ" role="2OqNvi">
-                  <ref role="37wK5l" to="vxxo:~SAbstractConceptAdapterById.getId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getId" />
+                <node concept="liA8E" id="GHFifnTpqQ" role="2OqNvi">
+                  <ref role="37wK5l" to="vxxo:~SConceptAdapterById.getId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getId" />
                 </node>
               </node>
               <node concept="liA8E" id="7iTTs2UhNdK" role="2OqNvi">
