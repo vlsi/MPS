@@ -32,7 +32,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -112,8 +111,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   @Override
   public Iterable<SNode> getRoleAttributes() {
-    //todo use SReference here, do not store node with reference declaration, instead, store a SReference
-    return AttributeOperations.getLinkAttributes(getSNode(), MetaAdapterByDeclaration.getReferenceLink(myLinkDeclaration));
+    return AttributeOperations.getLinkAttributes(getSNode(), myGenuineRole);
   }
 
   @Override
