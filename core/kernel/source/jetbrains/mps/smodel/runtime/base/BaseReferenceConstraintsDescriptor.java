@@ -116,6 +116,8 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
     return null;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SReferenceLinkId getReferenceLink() {
     return MetaIdHelper.getReference(myReferenceLink);

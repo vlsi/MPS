@@ -186,6 +186,8 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return myProperty.getName();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Override
   public SPropertyId getProperty() {
     return MetaIdHelper.getProperty(myProperty);
