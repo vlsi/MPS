@@ -192,7 +192,7 @@ public abstract class LanguageRuntime {
     // AND there are no old LanguageRuntime classes (i.e. past MPS 3.3), the hack shall cease to exist.
     LanguageRuntime langCore = registry.getLanguage(BootstrapLanguages.getLangCore());
     assert langCore != null;
-    if (this != langCore) {
+    if (this != langCore && !visitedLanguages.contains(langCore.getNamespace())) {
       myExtendedLanguages.add(langCore);
       langCore.registerExtendingLanguage(this);
     }
