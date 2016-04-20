@@ -125,49 +125,44 @@ public class HighlighterUpdateSession {
   }
 
   private boolean updateEditorComponent(final EditorComponent component, final boolean mainEditorMessagesChanged, final boolean applyQuickFixes) {
-    final HighlighterEditorTracker editorTracker = myHighlighter.getEditorTracker();
-    return editorTracker.runUpdateMessagesAction(new Computable<Boolean>() {
+    HighlighterEditorTracker editorTracker = myHighlighter.getEditorTracker();
+    boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            final SNode editedNode = component.getEditedNode();
-            return editedNode != null && SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
-          }
-        });
-        if (!needsUpdate) return false;
-
-        final Set<EditorChecker> checkersToRecheck = new LinkedHashSet<EditorChecker>();
-        boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
-        if (!rootWasCheckedOnce) {
-          checkersToRecheck.addAll(myCheckers);
-        } else {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              if (myHighlighter.isPausedOrStopping()) return;
-
-              for (EditorChecker checker : myCheckers) {
-                if (checker.needsUpdate(component)) {
-                  checkersToRecheck.add(checker);
-                }
-              }
-            }
-          });
-        }
-
-        if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) return false;
-
-        List<EditorChecker> checkersToRecheckList = new ArrayList<EditorChecker>(checkersToRecheck);
-        Collections.sort(checkersToRecheckList, new PriorityComparator());
-
-        boolean recreateInspectorMessages = mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated();
-        editorTracker.markCheckedOnce(component);
-
-        return updateEditor(component, rootWasCheckedOnce, checkersToRecheckList, recreateInspectorMessages, applyQuickFixes);
+        final SNode editedNode = component.getEditedNode();
+        return editedNode != null && SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
       }
     });
+    if (!needsUpdate) return false;
+
+    final Set<EditorChecker> checkersToRecheck = new LinkedHashSet<EditorChecker>();
+    boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
+    if (!rootWasCheckedOnce) {
+      checkersToRecheck.addAll(myCheckers);
+    } else {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          if (myHighlighter.isPausedOrStopping()) return;
+
+          for (EditorChecker checker : myCheckers) {
+            if (checker.needsUpdate(component)) {
+              checkersToRecheck.add(checker);
+            }
+          }
+        }
+      });
+    }
+
+    if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) return false;
+
+    List<EditorChecker> checkersToRecheckList = new ArrayList<EditorChecker>(checkersToRecheck);
+    Collections.sort(checkersToRecheckList, new PriorityComparator());
+
+    boolean recreateInspectorMessages = mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated();
+    editorTracker.markCheckedOnce(component);
+
+    return updateEditor(component, rootWasCheckedOnce, checkersToRecheckList, recreateInspectorMessages, applyQuickFixes);
   }
 
   private static final Pair<Collection<EditorMessage>, Boolean> CHECK_ABORTED = new Pair<Collection<EditorMessage>, Boolean>(

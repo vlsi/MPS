@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.highlighter;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface between {@link HighlighterUpdateSession} and {@link jetbrains.mps.nodeEditor.Highlighter}
@@ -33,6 +31,9 @@ public interface IHighlighter {
    */
   boolean isStopping();
 
+  /**
+   * Tracks editors that may be checked incrementally. Must only be accessed from the background thread.
+   */
   @NotNull
   HighlighterEditorTracker getEditorTracker();
 }

@@ -54,8 +54,10 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -105,12 +107,21 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
+      final List<SModelReference> referencesToRecheck = new ArrayList<SModelReference>(replacedModels.size());
       for (SModel sModel : replacedModels) {
-        if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
-          continue;
+        if (sModel.getRepository() != null) {
+          referencesToRecheck.add(sModel.getReference());
         }
-        myEditorTracker.markEditorsOfModelUnchecked(sModel);
       }
+
+      addPendingAction(new Runnable() {
+        @Override
+        public void run() {
+          for (SModelReference reference : referencesToRecheck) {
+            myEditorTracker.markEditorsOfModelUnchecked(reference);
+          }
+        }
+      });
     }
   };
 
@@ -118,6 +129,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private CommandWatcher myCommandWatcher = new CommandWatcher();
   private final HighlighterEditorList myEditorList;
   private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
+  // Keeps track of which editors may be checked incrementally. Must only be accessed from the highlighter background thread.
   private final HighlighterEditorTracker myEditorTracker = new HighlighterEditorTracker();
 
   /*
