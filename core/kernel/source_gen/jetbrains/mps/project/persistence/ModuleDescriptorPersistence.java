@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -17,11 +19,9 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
@@ -69,9 +69,17 @@ public class ModuleDescriptorPersistence {
     descriptor.setHasLanguageVersions(!(root.getChildren("languageVersions").isEmpty()));
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
       public void visit(Element it) {
-        SLanguageId id = SLanguageId.deserialize(it.getAttributeValue("id"));
-        String name = it.getAttributeValue("fqName");
-        descriptor.getLanguageVersions().put(MetaAdapterFactory.getLanguage(id, name), Integer.parseInt(it.getAttributeValue("version")));
+        String slang = it.getAttributeValue("slang");
+        SLanguage lang;
+        if (slang != null) {
+          lang = SLanguageAdapter.deserialize(slang);
+        } else {
+          // support old format using id+name pair, used before 3.4 
+          SLanguageId id = SLanguageId.deserialize(it.getAttributeValue("id"));
+          String name = it.getAttributeValue("fqName");
+          lang = MetaAdapterFactory.getLanguage(id, name);
+        }
+        descriptor.getLanguageVersions().put(lang, Integer.parseInt(it.getAttributeValue("version")));
       }
     });
     descriptor.setHasDependencyVersions(!(root.getChildren("dependencyVersions").isEmpty()));
@@ -123,8 +131,7 @@ public class ModuleDescriptorPersistence {
     Element languageVersions = new Element("languageVersions");
     for (SLanguage l : langs) {
       Element languageVersion = new Element("language");
-      languageVersion.setAttribute("id", MetaIdHelper.getLanguage(l).serialize());
-      languageVersion.setAttribute("fqName", l.getQualifiedName());
+      languageVersion.setAttribute("slang", ((SLanguageAdapter) l).serialize());
       languageVersion.setAttribute("version", String.valueOf(lver.get(l)));
       languageVersions.addContent(languageVersion);
     }
