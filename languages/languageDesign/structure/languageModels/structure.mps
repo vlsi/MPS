@@ -10,6 +10,7 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -324,8 +325,13 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="1o9qxtf9pgp" role="1TKVEl">
-      <property role="TrG5h" value="conceptId" />
+      <property role="TrG5h" value="intConceptId" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <node concept="asaX9" id="5OIo7_R7SMY" role="lGtFl" />
+    </node>
+    <node concept="1TJgyi" id="5OIo7_R7SN0" role="1TKVEl">
+      <property role="TrG5h" value="conceptId" />
+      <ref role="AX2Wp" to="tpee:3H1xM9LtLda" resolve="_LongType_String" />
     </node>
     <node concept="PrWs8" id="h0TBFkr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

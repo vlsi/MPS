@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.structure.util.ConceptIdUtil;
+import jetbrains.mps.lang.structure.util.ConceptIdHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -21,7 +21,7 @@ public class ConceptIdSetter {
         }
         return;
       }
-      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "conceptId"), "" + (ConceptIdUtil.generate(newNode, model)));
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(model) + "L");
     }
   }
   protected static Logger LOG = LogManager.getLogger(ConceptIdSetter.class);
