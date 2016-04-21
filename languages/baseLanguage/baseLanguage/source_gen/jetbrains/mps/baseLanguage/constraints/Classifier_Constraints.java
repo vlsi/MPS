@@ -43,7 +43,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-        return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getEnclosingNode());
+        return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getContextNode());
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
