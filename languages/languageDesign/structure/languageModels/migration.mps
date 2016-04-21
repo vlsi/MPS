@@ -15,8 +15,9 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -39,9 +40,6 @@
       </concept>
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
-      </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -154,7 +152,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -339,14 +336,26 @@
                         <node concept="37vLTI" id="5OIo7_R8TRk" role="3clFbG">
                           <node concept="3cpWs3" id="5OIo7_R92kQ" role="37vLTx">
                             <node concept="Xl_RD" id="5OIo7_R92l6" role="3uHU7w" />
-                            <node concept="2YIFZM" id="5OIo7_R90Zr" role="3uHU7B">
-                              <ref role="37wK5l" to="twe9:5OIo7_R8hLh" resolve="generate" />
-                              <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />
-                              <node concept="2OqwBi" id="5OIo7_R90Zt" role="37wK5m">
-                                <node concept="37vLTw" id="5OIo7_R90Zu" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="5OIo7_R8TRt" resolve="it" />
+                            <node concept="2OqwBi" id="2yMxTUHyk0x" role="3uHU7B">
+                              <node concept="1eOMI4" id="2yMxTUHykyb" role="2Oq$k0">
+                                <node concept="10QFUN" id="2yMxTUHykyc" role="1eOMHV">
+                                  <node concept="2OqwBi" id="2yMxTUHz1vJ" role="10QFUP">
+                                    <node concept="2JrnkZ" id="2yMxTUHz1vK" role="2Oq$k0">
+                                      <node concept="37vLTw" id="2yMxTUHz1vL" role="2JrQYb">
+                                        <ref role="3cqZAo" node="5OIo7_R8TRt" resolve="it" />
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="2yMxTUHz1vM" role="2OqNvi">
+                                      <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                                    </node>
+                                  </node>
+                                  <node concept="3uibUv" id="2yMxTUHyDIV" role="10QFUM">
+                                    <ref role="3uigEE" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
+                                  </node>
                                 </node>
-                                <node concept="I4A8Y" id="5OIo7_R90Zv" role="2OqNvi" />
+                              </node>
+                              <node concept="liA8E" id="2yMxTUHyEio" role="2OqNvi">
+                                <ref role="37wK5l" to="w1kc:~SNodeId$Regular.getId():long" resolve="getId" />
                               </node>
                             </node>
                           </node>

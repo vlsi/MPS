@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.structure.util.ConceptIdHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodeId;
 
 public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
   public GenerateConceptId_QuickFix() {
@@ -18,6 +17,6 @@ public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
     return "Generate ID";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]))) + "");
+    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ((SNodeId.Regular) ((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]).getNodeId()).getId() + "");
   }
 }
