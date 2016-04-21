@@ -21,7 +21,7 @@ public class ConceptIdSetter {
         }
         return;
       }
-      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(model) + "L");
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(model) + "");
     }
   }
   protected static Logger LOG = LogManager.getLogger(ConceptIdSetter.class);

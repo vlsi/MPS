@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
@@ -16,38 +17,38 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084197782722">
     <file name="Cardinality.java">
-      <node id="1084197782722" at="15,0,16,0" concept="2" trace="myName" />
-      <node id="1084197782722" at="16,27,17,18" concept="6" />
-      <node id="1084197782722" at="19,0,20,0" concept="2" trace="myValue" />
-      <node id="1084197782722" at="20,50,21,18" concept="1" />
-      <node id="1084197782722" at="21,18,22,20" concept="1" />
-      <node id="1084197782722" at="24,28,25,19" concept="6" />
-      <node id="1084197782722" at="27,36,28,19" concept="6" />
-      <node id="1084197782722" at="30,50,31,82" concept="5" />
-      <node id="1084197782722" at="31,82,32,62" concept="1" />
-      <node id="1084197782722" at="32,62,33,59" concept="1" />
-      <node id="1084197782722" at="33,59,34,62" concept="1" />
-      <node id="1084197782722" at="34,62,35,62" concept="1" />
-      <node id="1084197782722" at="35,62,36,16" concept="6" />
-      <node id="1084197782722" at="38,42,39,29" concept="6" />
-      <node id="1084197782722" at="42,24,43,38" concept="6" />
-      <node id="1084197782722" at="45,61,46,31" concept="6" />
-      <node id="1084197782722" at="48,58,49,28" concept="6" />
-      <node id="1084197782722" at="51,61,52,31" concept="6" />
-      <node id="1084197782722" at="54,61,55,31" concept="6" />
-      <node id="1084197782722" at="56,5,57,36" concept="6" />
-      <node id="1084197782722" at="16,0,19,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1084197782722" at="24,0,27,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1084197782722" at="27,0,30,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1084197782722" at="38,0,41,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/Cardinality;" />
-      <node id="1084197782722" at="41,54,44,5" concept="3" />
-      <node id="1084197782722" at="44,5,47,5" concept="3" />
-      <node id="1084197782722" at="47,5,50,5" concept="3" />
-      <node id="1084197782722" at="50,5,53,5" concept="3" />
-      <node id="1084197782722" at="53,5,56,5" concept="3" />
-      <node id="1084197782722" at="20,0,24,0" concept="0" trace="Cardinality#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1084197782722" at="30,0,38,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1084197782722" at="41,0,59,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/Cardinality;" />
+      <node id="1084197782722" at="15,0,16,0" concept="3" trace="myName" />
+      <node id="1084197782722" at="16,27,17,18" concept="7" />
+      <node id="1084197782722" at="19,0,20,0" concept="3" trace="myValue" />
+      <node id="1084197782722" at="20,50,21,18" concept="2" />
+      <node id="1084197782722" at="21,18,22,20" concept="2" />
+      <node id="1084197782722" at="24,28,25,19" concept="7" />
+      <node id="1084197782722" at="27,36,28,19" concept="7" />
+      <node id="1084197782722" at="30,50,31,82" concept="6" />
+      <node id="1084197782722" at="31,82,32,62" concept="2" />
+      <node id="1084197782722" at="32,62,33,59" concept="2" />
+      <node id="1084197782722" at="33,59,34,62" concept="2" />
+      <node id="1084197782722" at="34,62,35,62" concept="2" />
+      <node id="1084197782722" at="35,62,36,16" concept="7" />
+      <node id="1084197782722" at="38,42,39,29" concept="7" />
+      <node id="1084197782722" at="42,24,43,38" concept="7" />
+      <node id="1084197782722" at="45,61,46,31" concept="7" />
+      <node id="1084197782722" at="48,58,49,28" concept="7" />
+      <node id="1084197782722" at="51,61,52,31" concept="7" />
+      <node id="1084197782722" at="54,61,55,31" concept="7" />
+      <node id="1084197782722" at="56,5,57,36" concept="7" />
+      <node id="1084197782722" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1084197782722" at="24,0,27,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1084197782722" at="27,0,30,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1084197782722" at="38,0,41,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/Cardinality;" />
+      <node id="1084197782722" at="41,54,44,5" concept="4" />
+      <node id="1084197782722" at="44,5,47,5" concept="4" />
+      <node id="1084197782722" at="47,5,50,5" concept="4" />
+      <node id="1084197782722" at="50,5,53,5" concept="4" />
+      <node id="1084197782722" at="53,5,56,5" concept="4" />
+      <node id="1084197782722" at="20,0,24,0" concept="1" trace="Cardinality#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1084197782722" at="30,0,38,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1084197782722" at="41,0,59,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/Cardinality;" />
       <scope id="1084197782722" at="16,27,17,18" />
       <scope id="1084197782722" at="24,28,25,19" />
       <scope id="1084197782722" at="27,36,28,19" />
@@ -77,29 +78,29 @@
       <unit id="1084197782722" at="9,0,60,0" name="jetbrains.mps.lang.structure.structure.Cardinality" />
     </file>
     <file name="Cardinality_PropertySupport.java">
-      <node id="1084197782722" at="11,24,12,18" concept="6" />
-      <node id="1084197782722" at="13,5,14,99" concept="5" />
-      <node id="1084197782722" at="15,33,16,46" concept="5" />
-      <node id="1084197782722" at="17,45,18,20" concept="6" />
-      <node id="1084197782722" at="20,5,21,17" concept="6" />
-      <node id="1084197782722" at="24,24,25,18" concept="6" />
-      <node id="1084197782722" at="26,5,27,99" concept="5" />
-      <node id="1084197782722" at="28,33,29,46" concept="5" />
-      <node id="1084197782722" at="30,45,31,43" concept="6" />
-      <node id="1084197782722" at="33,5,34,16" concept="6" />
-      <node id="1084197782722" at="36,49,37,57" concept="5" />
-      <node id="1084197782722" at="38,27,39,32" concept="6" />
-      <node id="1084197782722" at="40,5,41,14" concept="6" />
-      <node id="1084197782722" at="10,44,13,5" concept="3" />
-      <node id="1084197782722" at="16,46,19,7" concept="3" />
-      <node id="1084197782722" at="23,47,26,5" concept="3" />
-      <node id="1084197782722" at="29,46,32,7" concept="3" />
-      <node id="1084197782722" at="37,57,40,5" concept="3" />
-      <node id="1084197782722" at="14,99,20,5" concept="8" />
-      <node id="1084197782722" at="27,99,33,5" concept="8" />
-      <node id="1084197782722" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1084197782722" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1084197782722" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1084197782722" at="11,24,12,18" concept="7" />
+      <node id="1084197782722" at="13,5,14,99" concept="6" />
+      <node id="1084197782722" at="15,33,16,46" concept="6" />
+      <node id="1084197782722" at="17,45,18,20" concept="7" />
+      <node id="1084197782722" at="20,5,21,17" concept="7" />
+      <node id="1084197782722" at="24,24,25,18" concept="7" />
+      <node id="1084197782722" at="26,5,27,99" concept="6" />
+      <node id="1084197782722" at="28,33,29,46" concept="6" />
+      <node id="1084197782722" at="30,45,31,43" concept="7" />
+      <node id="1084197782722" at="33,5,34,16" concept="7" />
+      <node id="1084197782722" at="36,49,37,57" concept="6" />
+      <node id="1084197782722" at="38,27,39,32" concept="7" />
+      <node id="1084197782722" at="40,5,41,14" concept="7" />
+      <node id="1084197782722" at="10,44,13,5" concept="4" />
+      <node id="1084197782722" at="16,46,19,7" concept="4" />
+      <node id="1084197782722" at="23,47,26,5" concept="4" />
+      <node id="1084197782722" at="29,46,32,7" concept="4" />
+      <node id="1084197782722" at="37,57,40,5" concept="4" />
+      <node id="1084197782722" at="14,99,20,5" concept="9" />
+      <node id="1084197782722" at="27,99,33,5" concept="9" />
+      <node id="1084197782722" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1084197782722" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1084197782722" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1084197782722" at="11,24,12,18" />
       <scope id="1084197782722" at="17,45,18,20" />
       <scope id="1084197782722" at="24,24,25,18" />
@@ -134,32 +135,32 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084199179703">
     <file name="LinkMetaclass.java">
-      <node id="1084199179703" at="13,0,14,0" concept="2" trace="myName" />
-      <node id="1084199179703" at="14,27,15,18" concept="6" />
-      <node id="1084199179703" at="17,0,18,0" concept="2" trace="myValue" />
-      <node id="1084199179703" at="18,52,19,18" concept="1" />
-      <node id="1084199179703" at="19,18,20,20" concept="1" />
-      <node id="1084199179703" at="22,28,23,19" concept="6" />
-      <node id="1084199179703" at="25,36,26,19" concept="6" />
-      <node id="1084199179703" at="28,52,29,86" concept="5" />
-      <node id="1084199179703" at="29,86,30,68" concept="1" />
-      <node id="1084199179703" at="30,68,31,70" concept="1" />
-      <node id="1084199179703" at="31,70,32,16" concept="6" />
-      <node id="1084199179703" at="34,44,35,35" concept="6" />
-      <node id="1084199179703" at="38,24,39,40" concept="6" />
-      <node id="1084199179703" at="41,67,42,37" concept="6" />
-      <node id="1084199179703" at="44,69,45,39" concept="6" />
-      <node id="1084199179703" at="46,5,47,38" concept="6" />
-      <node id="1084199179703" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1084199179703" at="22,0,25,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1084199179703" at="25,0,28,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1084199179703" at="34,0,37,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/LinkMetaclass;" />
-      <node id="1084199179703" at="37,56,40,5" concept="3" />
-      <node id="1084199179703" at="40,5,43,5" concept="3" />
-      <node id="1084199179703" at="43,5,46,5" concept="3" />
-      <node id="1084199179703" at="18,0,22,0" concept="0" trace="LinkMetaclass#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1084199179703" at="28,0,34,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1084199179703" at="37,0,49,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/LinkMetaclass;" />
+      <node id="1084199179703" at="13,0,14,0" concept="3" trace="myName" />
+      <node id="1084199179703" at="14,27,15,18" concept="7" />
+      <node id="1084199179703" at="17,0,18,0" concept="3" trace="myValue" />
+      <node id="1084199179703" at="18,52,19,18" concept="2" />
+      <node id="1084199179703" at="19,18,20,20" concept="2" />
+      <node id="1084199179703" at="22,28,23,19" concept="7" />
+      <node id="1084199179703" at="25,36,26,19" concept="7" />
+      <node id="1084199179703" at="28,52,29,86" concept="6" />
+      <node id="1084199179703" at="29,86,30,68" concept="2" />
+      <node id="1084199179703" at="30,68,31,70" concept="2" />
+      <node id="1084199179703" at="31,70,32,16" concept="7" />
+      <node id="1084199179703" at="34,44,35,35" concept="7" />
+      <node id="1084199179703" at="38,24,39,40" concept="7" />
+      <node id="1084199179703" at="41,67,42,37" concept="7" />
+      <node id="1084199179703" at="44,69,45,39" concept="7" />
+      <node id="1084199179703" at="46,5,47,38" concept="7" />
+      <node id="1084199179703" at="14,0,17,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1084199179703" at="22,0,25,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1084199179703" at="25,0,28,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1084199179703" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/LinkMetaclass;" />
+      <node id="1084199179703" at="37,56,40,5" concept="4" />
+      <node id="1084199179703" at="40,5,43,5" concept="4" />
+      <node id="1084199179703" at="43,5,46,5" concept="4" />
+      <node id="1084199179703" at="18,0,22,0" concept="1" trace="LinkMetaclass#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1084199179703" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1084199179703" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/LinkMetaclass;" />
       <scope id="1084199179703" at="14,27,15,18" />
       <scope id="1084199179703" at="22,28,23,19" />
       <scope id="1084199179703" at="25,36,26,19" />
@@ -187,29 +188,29 @@
       <unit id="1084199179703" at="9,0,50,0" name="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
     </file>
     <file name="LinkMetaclass_PropertySupport.java">
-      <node id="1084199179703" at="11,24,12,18" concept="6" />
-      <node id="1084199179703" at="13,5,14,103" concept="5" />
-      <node id="1084199179703" at="15,33,16,48" concept="5" />
-      <node id="1084199179703" at="17,45,18,20" concept="6" />
-      <node id="1084199179703" at="20,5,21,17" concept="6" />
-      <node id="1084199179703" at="24,24,25,18" concept="6" />
-      <node id="1084199179703" at="26,5,27,103" concept="5" />
-      <node id="1084199179703" at="28,33,29,48" concept="5" />
-      <node id="1084199179703" at="30,45,31,43" concept="6" />
-      <node id="1084199179703" at="33,5,34,16" concept="6" />
-      <node id="1084199179703" at="36,49,37,61" concept="5" />
-      <node id="1084199179703" at="38,27,39,32" concept="6" />
-      <node id="1084199179703" at="40,5,41,14" concept="6" />
-      <node id="1084199179703" at="10,44,13,5" concept="3" />
-      <node id="1084199179703" at="16,48,19,7" concept="3" />
-      <node id="1084199179703" at="23,47,26,5" concept="3" />
-      <node id="1084199179703" at="29,48,32,7" concept="3" />
-      <node id="1084199179703" at="37,61,40,5" concept="3" />
-      <node id="1084199179703" at="14,103,20,5" concept="8" />
-      <node id="1084199179703" at="27,103,33,5" concept="8" />
-      <node id="1084199179703" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1084199179703" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1084199179703" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1084199179703" at="11,24,12,18" concept="7" />
+      <node id="1084199179703" at="13,5,14,103" concept="6" />
+      <node id="1084199179703" at="15,33,16,48" concept="6" />
+      <node id="1084199179703" at="17,45,18,20" concept="7" />
+      <node id="1084199179703" at="20,5,21,17" concept="7" />
+      <node id="1084199179703" at="24,24,25,18" concept="7" />
+      <node id="1084199179703" at="26,5,27,103" concept="6" />
+      <node id="1084199179703" at="28,33,29,48" concept="6" />
+      <node id="1084199179703" at="30,45,31,43" concept="7" />
+      <node id="1084199179703" at="33,5,34,16" concept="7" />
+      <node id="1084199179703" at="36,49,37,61" concept="6" />
+      <node id="1084199179703" at="38,27,39,32" concept="7" />
+      <node id="1084199179703" at="40,5,41,14" concept="7" />
+      <node id="1084199179703" at="10,44,13,5" concept="4" />
+      <node id="1084199179703" at="16,48,19,7" concept="4" />
+      <node id="1084199179703" at="23,47,26,5" concept="4" />
+      <node id="1084199179703" at="29,48,32,7" concept="4" />
+      <node id="1084199179703" at="37,61,40,5" concept="4" />
+      <node id="1084199179703" at="14,103,20,5" concept="9" />
+      <node id="1084199179703" at="27,103,33,5" concept="9" />
+      <node id="1084199179703" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1084199179703" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1084199179703" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1084199179703" at="11,24,12,18" />
       <scope id="1084199179703" at="17,45,18,20" />
       <scope id="1084199179703" at="24,24,25,18" />
@@ -244,35 +245,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1197590884613">
     <file name="EnumerationMemberIdentifierPolicy.java">
-      <node id="1197590884613" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="1197590884613" at="15,27,16,18" concept="6" />
-      <node id="1197590884613" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="1197590884613" at="19,72,20,18" concept="1" />
-      <node id="1197590884613" at="20,18,21,20" concept="1" />
-      <node id="1197590884613" at="23,28,24,19" concept="6" />
-      <node id="1197590884613" at="26,36,27,19" concept="6" />
-      <node id="1197590884613" at="29,72,30,126" concept="5" />
-      <node id="1197590884613" at="30,126,31,103" concept="1" />
-      <node id="1197590884613" at="31,103,32,105" concept="1" />
-      <node id="1197590884613" at="32,105,33,85" concept="1" />
-      <node id="1197590884613" at="33,85,34,16" concept="6" />
-      <node id="1197590884613" at="36,64,37,70" concept="6" />
-      <node id="1197590884613" at="40,24,41,60" concept="6" />
-      <node id="1197590884613" at="43,102,44,72" concept="6" />
-      <node id="1197590884613" at="46,104,47,74" concept="6" />
-      <node id="1197590884613" at="49,84,50,54" concept="6" />
-      <node id="1197590884613" at="51,5,52,58" concept="6" />
-      <node id="1197590884613" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1197590884613" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1197590884613" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1197590884613" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/EnumerationMemberIdentifierPolicy;" />
-      <node id="1197590884613" at="39,76,42,5" concept="3" />
-      <node id="1197590884613" at="42,5,45,5" concept="3" />
-      <node id="1197590884613" at="45,5,48,5" concept="3" />
-      <node id="1197590884613" at="48,5,51,5" concept="3" />
-      <node id="1197590884613" at="19,0,23,0" concept="0" trace="EnumerationMemberIdentifierPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1197590884613" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1197590884613" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/EnumerationMemberIdentifierPolicy;" />
+      <node id="1197590884613" at="14,0,15,0" concept="3" trace="myName" />
+      <node id="1197590884613" at="15,27,16,18" concept="7" />
+      <node id="1197590884613" at="18,0,19,0" concept="3" trace="myValue" />
+      <node id="1197590884613" at="19,72,20,18" concept="2" />
+      <node id="1197590884613" at="20,18,21,20" concept="2" />
+      <node id="1197590884613" at="23,28,24,19" concept="7" />
+      <node id="1197590884613" at="26,36,27,19" concept="7" />
+      <node id="1197590884613" at="29,72,30,126" concept="6" />
+      <node id="1197590884613" at="30,126,31,103" concept="2" />
+      <node id="1197590884613" at="31,103,32,105" concept="2" />
+      <node id="1197590884613" at="32,105,33,85" concept="2" />
+      <node id="1197590884613" at="33,85,34,16" concept="7" />
+      <node id="1197590884613" at="36,64,37,70" concept="7" />
+      <node id="1197590884613" at="40,24,41,60" concept="7" />
+      <node id="1197590884613" at="43,102,44,72" concept="7" />
+      <node id="1197590884613" at="46,104,47,74" concept="7" />
+      <node id="1197590884613" at="49,84,50,54" concept="7" />
+      <node id="1197590884613" at="51,5,52,58" concept="7" />
+      <node id="1197590884613" at="15,0,18,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1197590884613" at="23,0,26,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1197590884613" at="26,0,29,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1197590884613" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/EnumerationMemberIdentifierPolicy;" />
+      <node id="1197590884613" at="39,76,42,5" concept="4" />
+      <node id="1197590884613" at="42,5,45,5" concept="4" />
+      <node id="1197590884613" at="45,5,48,5" concept="4" />
+      <node id="1197590884613" at="48,5,51,5" concept="4" />
+      <node id="1197590884613" at="19,0,23,0" concept="1" trace="EnumerationMemberIdentifierPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1197590884613" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1197590884613" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/EnumerationMemberIdentifierPolicy;" />
       <scope id="1197590884613" at="15,27,16,18" />
       <scope id="1197590884613" at="23,28,24,19" />
       <scope id="1197590884613" at="26,36,27,19" />
@@ -301,29 +302,29 @@
       <unit id="1197590884613" at="9,0,55,0" name="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy" />
     </file>
     <file name="EnumerationMemberIdentifierPolicy_PropertySupport.java">
-      <node id="1197590884613" at="11,24,12,18" concept="6" />
-      <node id="1197590884613" at="13,5,14,143" concept="5" />
-      <node id="1197590884613" at="15,33,16,68" concept="5" />
-      <node id="1197590884613" at="17,45,18,20" concept="6" />
-      <node id="1197590884613" at="20,5,21,17" concept="6" />
-      <node id="1197590884613" at="24,24,25,18" concept="6" />
-      <node id="1197590884613" at="26,5,27,143" concept="5" />
-      <node id="1197590884613" at="28,33,29,68" concept="5" />
-      <node id="1197590884613" at="30,45,31,43" concept="6" />
-      <node id="1197590884613" at="33,5,34,16" concept="6" />
-      <node id="1197590884613" at="36,49,37,101" concept="5" />
-      <node id="1197590884613" at="38,27,39,32" concept="6" />
-      <node id="1197590884613" at="40,5,41,14" concept="6" />
-      <node id="1197590884613" at="10,44,13,5" concept="3" />
-      <node id="1197590884613" at="16,68,19,7" concept="3" />
-      <node id="1197590884613" at="23,47,26,5" concept="3" />
-      <node id="1197590884613" at="29,68,32,7" concept="3" />
-      <node id="1197590884613" at="37,101,40,5" concept="3" />
-      <node id="1197590884613" at="14,143,20,5" concept="8" />
-      <node id="1197590884613" at="27,143,33,5" concept="8" />
-      <node id="1197590884613" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1197590884613" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1197590884613" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1197590884613" at="11,24,12,18" concept="7" />
+      <node id="1197590884613" at="13,5,14,143" concept="6" />
+      <node id="1197590884613" at="15,33,16,68" concept="6" />
+      <node id="1197590884613" at="17,45,18,20" concept="7" />
+      <node id="1197590884613" at="20,5,21,17" concept="7" />
+      <node id="1197590884613" at="24,24,25,18" concept="7" />
+      <node id="1197590884613" at="26,5,27,143" concept="6" />
+      <node id="1197590884613" at="28,33,29,68" concept="6" />
+      <node id="1197590884613" at="30,45,31,43" concept="7" />
+      <node id="1197590884613" at="33,5,34,16" concept="7" />
+      <node id="1197590884613" at="36,49,37,101" concept="6" />
+      <node id="1197590884613" at="38,27,39,32" concept="7" />
+      <node id="1197590884613" at="40,5,41,14" concept="7" />
+      <node id="1197590884613" at="10,44,13,5" concept="4" />
+      <node id="1197590884613" at="16,68,19,7" concept="4" />
+      <node id="1197590884613" at="23,47,26,5" concept="4" />
+      <node id="1197590884613" at="29,68,32,7" concept="4" />
+      <node id="1197590884613" at="37,101,40,5" concept="4" />
+      <node id="1197590884613" at="14,143,20,5" concept="9" />
+      <node id="1197590884613" at="27,143,33,5" concept="9" />
+      <node id="1197590884613" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1197590884613" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1197590884613" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1197590884613" at="11,24,12,18" />
       <scope id="1197590884613" at="17,45,18,20" />
       <scope id="1197590884613" at="24,24,25,18" />
@@ -358,35 +359,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/3220559764717766993">
     <file name="ChildrenIncomingReferencesPolicy.java">
-      <node id="3220559764717766993" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="3220559764717766993" at="15,27,16,18" concept="6" />
-      <node id="3220559764717766993" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="3220559764717766993" at="19,71,20,18" concept="1" />
-      <node id="3220559764717766993" at="20,18,21,20" concept="1" />
-      <node id="3220559764717766993" at="23,28,24,19" concept="6" />
-      <node id="3220559764717766993" at="26,36,27,19" concept="6" />
-      <node id="3220559764717766993" at="29,71,30,124" concept="5" />
-      <node id="3220559764717766993" at="30,124,31,85" concept="1" />
-      <node id="3220559764717766993" at="31,85,32,83" concept="1" />
-      <node id="3220559764717766993" at="32,83,33,87" concept="1" />
-      <node id="3220559764717766993" at="33,87,34,16" concept="6" />
-      <node id="3220559764717766993" at="36,63,37,52" concept="6" />
-      <node id="3220559764717766993" at="40,24,41,59" concept="6" />
-      <node id="3220559764717766993" at="43,84,44,54" concept="6" />
-      <node id="3220559764717766993" at="46,82,47,52" concept="6" />
-      <node id="3220559764717766993" at="49,86,50,56" concept="6" />
-      <node id="3220559764717766993" at="51,5,52,57" concept="6" />
-      <node id="3220559764717766993" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="3220559764717766993" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="3220559764717766993" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="3220559764717766993" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/ChildrenIncomingReferencesPolicy;" />
-      <node id="3220559764717766993" at="39,75,42,5" concept="3" />
-      <node id="3220559764717766993" at="42,5,45,5" concept="3" />
-      <node id="3220559764717766993" at="45,5,48,5" concept="3" />
-      <node id="3220559764717766993" at="48,5,51,5" concept="3" />
-      <node id="3220559764717766993" at="19,0,23,0" concept="0" trace="ChildrenIncomingReferencesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3220559764717766993" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="3220559764717766993" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/ChildrenIncomingReferencesPolicy;" />
+      <node id="3220559764717766993" at="14,0,15,0" concept="3" trace="myName" />
+      <node id="3220559764717766993" at="15,27,16,18" concept="7" />
+      <node id="3220559764717766993" at="18,0,19,0" concept="3" trace="myValue" />
+      <node id="3220559764717766993" at="19,71,20,18" concept="2" />
+      <node id="3220559764717766993" at="20,18,21,20" concept="2" />
+      <node id="3220559764717766993" at="23,28,24,19" concept="7" />
+      <node id="3220559764717766993" at="26,36,27,19" concept="7" />
+      <node id="3220559764717766993" at="29,71,30,124" concept="6" />
+      <node id="3220559764717766993" at="30,124,31,85" concept="2" />
+      <node id="3220559764717766993" at="31,85,32,83" concept="2" />
+      <node id="3220559764717766993" at="32,83,33,87" concept="2" />
+      <node id="3220559764717766993" at="33,87,34,16" concept="7" />
+      <node id="3220559764717766993" at="36,63,37,52" concept="7" />
+      <node id="3220559764717766993" at="40,24,41,59" concept="7" />
+      <node id="3220559764717766993" at="43,84,44,54" concept="7" />
+      <node id="3220559764717766993" at="46,82,47,52" concept="7" />
+      <node id="3220559764717766993" at="49,86,50,56" concept="7" />
+      <node id="3220559764717766993" at="51,5,52,57" concept="7" />
+      <node id="3220559764717766993" at="15,0,18,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="3220559764717766993" at="23,0,26,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="3220559764717766993" at="26,0,29,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3220559764717766993" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/ChildrenIncomingReferencesPolicy;" />
+      <node id="3220559764717766993" at="39,75,42,5" concept="4" />
+      <node id="3220559764717766993" at="42,5,45,5" concept="4" />
+      <node id="3220559764717766993" at="45,5,48,5" concept="4" />
+      <node id="3220559764717766993" at="48,5,51,5" concept="4" />
+      <node id="3220559764717766993" at="19,0,23,0" concept="1" trace="ChildrenIncomingReferencesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3220559764717766993" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="3220559764717766993" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/ChildrenIncomingReferencesPolicy;" />
       <scope id="3220559764717766993" at="15,27,16,18" />
       <scope id="3220559764717766993" at="23,28,24,19" />
       <scope id="3220559764717766993" at="26,36,27,19" />
@@ -415,29 +416,29 @@
       <unit id="3220559764717766993" at="9,0,55,0" name="jetbrains.mps.lang.structure.structure.ChildrenIncomingReferencesPolicy" />
     </file>
     <file name="ChildrenIncomingReferencesPolicy_PropertySupport.java">
-      <node id="3220559764717766993" at="11,24,12,18" concept="6" />
-      <node id="3220559764717766993" at="13,5,14,141" concept="5" />
-      <node id="3220559764717766993" at="15,33,16,67" concept="5" />
-      <node id="3220559764717766993" at="17,45,18,20" concept="6" />
-      <node id="3220559764717766993" at="20,5,21,17" concept="6" />
-      <node id="3220559764717766993" at="24,24,25,18" concept="6" />
-      <node id="3220559764717766993" at="26,5,27,141" concept="5" />
-      <node id="3220559764717766993" at="28,33,29,67" concept="5" />
-      <node id="3220559764717766993" at="30,45,31,43" concept="6" />
-      <node id="3220559764717766993" at="33,5,34,16" concept="6" />
-      <node id="3220559764717766993" at="36,49,37,99" concept="5" />
-      <node id="3220559764717766993" at="38,27,39,32" concept="6" />
-      <node id="3220559764717766993" at="40,5,41,14" concept="6" />
-      <node id="3220559764717766993" at="10,44,13,5" concept="3" />
-      <node id="3220559764717766993" at="16,67,19,7" concept="3" />
-      <node id="3220559764717766993" at="23,47,26,5" concept="3" />
-      <node id="3220559764717766993" at="29,67,32,7" concept="3" />
-      <node id="3220559764717766993" at="37,99,40,5" concept="3" />
-      <node id="3220559764717766993" at="14,141,20,5" concept="8" />
-      <node id="3220559764717766993" at="27,141,33,5" concept="8" />
-      <node id="3220559764717766993" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="3220559764717766993" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="3220559764717766993" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3220559764717766993" at="11,24,12,18" concept="7" />
+      <node id="3220559764717766993" at="13,5,14,141" concept="6" />
+      <node id="3220559764717766993" at="15,33,16,67" concept="6" />
+      <node id="3220559764717766993" at="17,45,18,20" concept="7" />
+      <node id="3220559764717766993" at="20,5,21,17" concept="7" />
+      <node id="3220559764717766993" at="24,24,25,18" concept="7" />
+      <node id="3220559764717766993" at="26,5,27,141" concept="6" />
+      <node id="3220559764717766993" at="28,33,29,67" concept="6" />
+      <node id="3220559764717766993" at="30,45,31,43" concept="7" />
+      <node id="3220559764717766993" at="33,5,34,16" concept="7" />
+      <node id="3220559764717766993" at="36,49,37,99" concept="6" />
+      <node id="3220559764717766993" at="38,27,39,32" concept="7" />
+      <node id="3220559764717766993" at="40,5,41,14" concept="7" />
+      <node id="3220559764717766993" at="10,44,13,5" concept="4" />
+      <node id="3220559764717766993" at="16,67,19,7" concept="4" />
+      <node id="3220559764717766993" at="23,47,26,5" concept="4" />
+      <node id="3220559764717766993" at="29,67,32,7" concept="4" />
+      <node id="3220559764717766993" at="37,99,40,5" concept="4" />
+      <node id="3220559764717766993" at="14,141,20,5" concept="9" />
+      <node id="3220559764717766993" at="27,141,33,5" concept="9" />
+      <node id="3220559764717766993" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3220559764717766993" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="3220559764717766993" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="3220559764717766993" at="11,24,12,18" />
       <scope id="3220559764717766993" at="17,45,18,20" />
       <scope id="3220559764717766993" at="24,24,25,18" />
@@ -470,37 +471,57 @@
       <unit id="3220559764717766993" at="9,0,44,0" name="jetbrains.mps.lang.structure.structure.ChildrenIncomingReferencesPolicy_PropertySupport" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/4269842503726207818">
+    <file name="NumberString_PropertySupport.java">
+      <node id="4269842503726207818" at="8,44,9,28" concept="6" />
+      <node id="4269842503726207818" at="10,24,11,21" concept="2" />
+      <node id="4269842503726207818" at="12,12,13,24" concept="2" />
+      <node id="4269842503726207818" at="14,5,15,41" concept="7" />
+      <node id="4269842503726207818" at="12,10,14,5" concept="0" />
+      <node id="4269842503726207818" at="9,28,14,5" concept="4" />
+      <node id="4269842503726207818" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="4269842503726207818" at="10,24,11,21" />
+      <scope id="4269842503726207818" at="12,12,13,24" />
+      <scope id="4269842503726207818" at="8,44,15,41">
+        <var name="testValue" id="4269842503726207818" />
+      </scope>
+      <scope id="4269842503726207818" at="8,0,17,0">
+        <var name="value" id="4269842503726207818" />
+      </scope>
+      <unit id="4269842503726207818" at="7,0,18,0" name="jetbrains.mps.lang.structure.structure.NumberString_PropertySupport" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/5404671619616246759">
     <file name="StaticScope.java">
-      <node id="5404671619616246759" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="5404671619616246759" at="15,27,16,18" concept="6" />
-      <node id="5404671619616246759" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="5404671619616246759" at="19,50,20,18" concept="1" />
-      <node id="5404671619616246759" at="20,18,21,20" concept="1" />
-      <node id="5404671619616246759" at="23,28,24,19" concept="6" />
-      <node id="5404671619616246759" at="26,36,27,19" concept="6" />
-      <node id="5404671619616246759" at="29,50,30,82" concept="5" />
-      <node id="5404671619616246759" at="30,82,31,63" concept="1" />
-      <node id="5404671619616246759" at="31,63,32,61" concept="1" />
-      <node id="5404671619616246759" at="32,61,33,61" concept="1" />
-      <node id="5404671619616246759" at="33,61,34,16" concept="6" />
-      <node id="5404671619616246759" at="36,42,37,30" concept="6" />
-      <node id="5404671619616246759" at="40,24,41,38" concept="6" />
-      <node id="5404671619616246759" at="43,62,44,32" concept="6" />
-      <node id="5404671619616246759" at="46,60,47,30" concept="6" />
-      <node id="5404671619616246759" at="49,60,50,30" concept="6" />
-      <node id="5404671619616246759" at="51,5,52,36" concept="6" />
-      <node id="5404671619616246759" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="5404671619616246759" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="5404671619616246759" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="5404671619616246759" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/StaticScope;" />
-      <node id="5404671619616246759" at="39,54,42,5" concept="3" />
-      <node id="5404671619616246759" at="42,5,45,5" concept="3" />
-      <node id="5404671619616246759" at="45,5,48,5" concept="3" />
-      <node id="5404671619616246759" at="48,5,51,5" concept="3" />
-      <node id="5404671619616246759" at="19,0,23,0" concept="0" trace="StaticScope#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="5404671619616246759" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="5404671619616246759" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/StaticScope;" />
+      <node id="5404671619616246759" at="14,0,15,0" concept="3" trace="myName" />
+      <node id="5404671619616246759" at="15,27,16,18" concept="7" />
+      <node id="5404671619616246759" at="18,0,19,0" concept="3" trace="myValue" />
+      <node id="5404671619616246759" at="19,50,20,18" concept="2" />
+      <node id="5404671619616246759" at="20,18,21,20" concept="2" />
+      <node id="5404671619616246759" at="23,28,24,19" concept="7" />
+      <node id="5404671619616246759" at="26,36,27,19" concept="7" />
+      <node id="5404671619616246759" at="29,50,30,82" concept="6" />
+      <node id="5404671619616246759" at="30,82,31,63" concept="2" />
+      <node id="5404671619616246759" at="31,63,32,61" concept="2" />
+      <node id="5404671619616246759" at="32,61,33,61" concept="2" />
+      <node id="5404671619616246759" at="33,61,34,16" concept="7" />
+      <node id="5404671619616246759" at="36,42,37,30" concept="7" />
+      <node id="5404671619616246759" at="40,24,41,38" concept="7" />
+      <node id="5404671619616246759" at="43,62,44,32" concept="7" />
+      <node id="5404671619616246759" at="46,60,47,30" concept="7" />
+      <node id="5404671619616246759" at="49,60,50,30" concept="7" />
+      <node id="5404671619616246759" at="51,5,52,36" concept="7" />
+      <node id="5404671619616246759" at="15,0,18,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="5404671619616246759" at="23,0,26,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="5404671619616246759" at="26,0,29,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="5404671619616246759" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/StaticScope;" />
+      <node id="5404671619616246759" at="39,54,42,5" concept="4" />
+      <node id="5404671619616246759" at="42,5,45,5" concept="4" />
+      <node id="5404671619616246759" at="45,5,48,5" concept="4" />
+      <node id="5404671619616246759" at="48,5,51,5" concept="4" />
+      <node id="5404671619616246759" at="19,0,23,0" concept="1" trace="StaticScope#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="5404671619616246759" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="5404671619616246759" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/StaticScope;" />
       <scope id="5404671619616246759" at="15,27,16,18" />
       <scope id="5404671619616246759" at="23,28,24,19" />
       <scope id="5404671619616246759" at="26,36,27,19" />
@@ -529,29 +550,29 @@
       <unit id="5404671619616246759" at="9,0,55,0" name="jetbrains.mps.lang.structure.structure.StaticScope" />
     </file>
     <file name="StaticScope_PropertySupport.java">
-      <node id="5404671619616246759" at="11,24,12,18" concept="6" />
-      <node id="5404671619616246759" at="13,5,14,99" concept="5" />
-      <node id="5404671619616246759" at="15,33,16,46" concept="5" />
-      <node id="5404671619616246759" at="17,45,18,20" concept="6" />
-      <node id="5404671619616246759" at="20,5,21,17" concept="6" />
-      <node id="5404671619616246759" at="24,24,25,18" concept="6" />
-      <node id="5404671619616246759" at="26,5,27,99" concept="5" />
-      <node id="5404671619616246759" at="28,33,29,46" concept="5" />
-      <node id="5404671619616246759" at="30,45,31,43" concept="6" />
-      <node id="5404671619616246759" at="33,5,34,16" concept="6" />
-      <node id="5404671619616246759" at="36,49,37,57" concept="5" />
-      <node id="5404671619616246759" at="38,27,39,32" concept="6" />
-      <node id="5404671619616246759" at="40,5,41,14" concept="6" />
-      <node id="5404671619616246759" at="10,44,13,5" concept="3" />
-      <node id="5404671619616246759" at="16,46,19,7" concept="3" />
-      <node id="5404671619616246759" at="23,47,26,5" concept="3" />
-      <node id="5404671619616246759" at="29,46,32,7" concept="3" />
-      <node id="5404671619616246759" at="37,57,40,5" concept="3" />
-      <node id="5404671619616246759" at="14,99,20,5" concept="8" />
-      <node id="5404671619616246759" at="27,99,33,5" concept="8" />
-      <node id="5404671619616246759" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="5404671619616246759" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="5404671619616246759" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5404671619616246759" at="11,24,12,18" concept="7" />
+      <node id="5404671619616246759" at="13,5,14,99" concept="6" />
+      <node id="5404671619616246759" at="15,33,16,46" concept="6" />
+      <node id="5404671619616246759" at="17,45,18,20" concept="7" />
+      <node id="5404671619616246759" at="20,5,21,17" concept="7" />
+      <node id="5404671619616246759" at="24,24,25,18" concept="7" />
+      <node id="5404671619616246759" at="26,5,27,99" concept="6" />
+      <node id="5404671619616246759" at="28,33,29,46" concept="6" />
+      <node id="5404671619616246759" at="30,45,31,43" concept="7" />
+      <node id="5404671619616246759" at="33,5,34,16" concept="7" />
+      <node id="5404671619616246759" at="36,49,37,57" concept="6" />
+      <node id="5404671619616246759" at="38,27,39,32" concept="7" />
+      <node id="5404671619616246759" at="40,5,41,14" concept="7" />
+      <node id="5404671619616246759" at="10,44,13,5" concept="4" />
+      <node id="5404671619616246759" at="16,46,19,7" concept="4" />
+      <node id="5404671619616246759" at="23,47,26,5" concept="4" />
+      <node id="5404671619616246759" at="29,46,32,7" concept="4" />
+      <node id="5404671619616246759" at="37,57,40,5" concept="4" />
+      <node id="5404671619616246759" at="14,99,20,5" concept="9" />
+      <node id="5404671619616246759" at="27,99,33,5" concept="9" />
+      <node id="5404671619616246759" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5404671619616246759" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="5404671619616246759" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="5404671619616246759" at="11,24,12,18" />
       <scope id="5404671619616246759" at="17,45,18,20" />
       <scope id="5404671619616246759" at="24,24,25,18" />
@@ -586,35 +607,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/8087047305080774904">
     <file name="InstanceIncomingReferencesPolicy.java">
-      <node id="8087047305080774904" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="8087047305080774904" at="15,27,16,18" concept="6" />
-      <node id="8087047305080774904" at="18,0,19,0" concept="2" trace="myValue" />
-      <node id="8087047305080774904" at="19,71,20,18" concept="1" />
-      <node id="8087047305080774904" at="20,18,21,20" concept="1" />
-      <node id="8087047305080774904" at="23,28,24,19" concept="6" />
-      <node id="8087047305080774904" at="26,36,27,19" concept="6" />
-      <node id="8087047305080774904" at="29,71,30,124" concept="5" />
-      <node id="8087047305080774904" at="30,124,31,85" concept="1" />
-      <node id="8087047305080774904" at="31,85,32,83" concept="1" />
-      <node id="8087047305080774904" at="32,83,33,87" concept="1" />
-      <node id="8087047305080774904" at="33,87,34,16" concept="6" />
-      <node id="8087047305080774904" at="36,63,37,52" concept="6" />
-      <node id="8087047305080774904" at="40,24,41,59" concept="6" />
-      <node id="8087047305080774904" at="43,84,44,54" concept="6" />
-      <node id="8087047305080774904" at="46,82,47,52" concept="6" />
-      <node id="8087047305080774904" at="49,86,50,56" concept="6" />
-      <node id="8087047305080774904" at="51,5,52,57" concept="6" />
-      <node id="8087047305080774904" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="8087047305080774904" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="8087047305080774904" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="8087047305080774904" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/InstanceIncomingReferencesPolicy;" />
-      <node id="8087047305080774904" at="39,75,42,5" concept="3" />
-      <node id="8087047305080774904" at="42,5,45,5" concept="3" />
-      <node id="8087047305080774904" at="45,5,48,5" concept="3" />
-      <node id="8087047305080774904" at="48,5,51,5" concept="3" />
-      <node id="8087047305080774904" at="19,0,23,0" concept="0" trace="InstanceIncomingReferencesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="8087047305080774904" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="8087047305080774904" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/InstanceIncomingReferencesPolicy;" />
+      <node id="8087047305080774904" at="14,0,15,0" concept="3" trace="myName" />
+      <node id="8087047305080774904" at="15,27,16,18" concept="7" />
+      <node id="8087047305080774904" at="18,0,19,0" concept="3" trace="myValue" />
+      <node id="8087047305080774904" at="19,71,20,18" concept="2" />
+      <node id="8087047305080774904" at="20,18,21,20" concept="2" />
+      <node id="8087047305080774904" at="23,28,24,19" concept="7" />
+      <node id="8087047305080774904" at="26,36,27,19" concept="7" />
+      <node id="8087047305080774904" at="29,71,30,124" concept="6" />
+      <node id="8087047305080774904" at="30,124,31,85" concept="2" />
+      <node id="8087047305080774904" at="31,85,32,83" concept="2" />
+      <node id="8087047305080774904" at="32,83,33,87" concept="2" />
+      <node id="8087047305080774904" at="33,87,34,16" concept="7" />
+      <node id="8087047305080774904" at="36,63,37,52" concept="7" />
+      <node id="8087047305080774904" at="40,24,41,59" concept="7" />
+      <node id="8087047305080774904" at="43,84,44,54" concept="7" />
+      <node id="8087047305080774904" at="46,82,47,52" concept="7" />
+      <node id="8087047305080774904" at="49,86,50,56" concept="7" />
+      <node id="8087047305080774904" at="51,5,52,57" concept="7" />
+      <node id="8087047305080774904" at="15,0,18,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="8087047305080774904" at="23,0,26,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="8087047305080774904" at="26,0,29,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="8087047305080774904" at="36,0,39,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/structure/structure/InstanceIncomingReferencesPolicy;" />
+      <node id="8087047305080774904" at="39,75,42,5" concept="4" />
+      <node id="8087047305080774904" at="42,5,45,5" concept="4" />
+      <node id="8087047305080774904" at="45,5,48,5" concept="4" />
+      <node id="8087047305080774904" at="48,5,51,5" concept="4" />
+      <node id="8087047305080774904" at="19,0,23,0" concept="1" trace="InstanceIncomingReferencesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8087047305080774904" at="29,0,36,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="8087047305080774904" at="39,0,54,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/structure/structure/InstanceIncomingReferencesPolicy;" />
       <scope id="8087047305080774904" at="15,27,16,18" />
       <scope id="8087047305080774904" at="23,28,24,19" />
       <scope id="8087047305080774904" at="26,36,27,19" />
@@ -643,29 +664,29 @@
       <unit id="8087047305080774904" at="9,0,55,0" name="jetbrains.mps.lang.structure.structure.InstanceIncomingReferencesPolicy" />
     </file>
     <file name="InstanceIncomingReferencesPolicy_PropertySupport.java">
-      <node id="8087047305080774904" at="11,24,12,18" concept="6" />
-      <node id="8087047305080774904" at="13,5,14,141" concept="5" />
-      <node id="8087047305080774904" at="15,33,16,67" concept="5" />
-      <node id="8087047305080774904" at="17,45,18,20" concept="6" />
-      <node id="8087047305080774904" at="20,5,21,17" concept="6" />
-      <node id="8087047305080774904" at="24,24,25,18" concept="6" />
-      <node id="8087047305080774904" at="26,5,27,141" concept="5" />
-      <node id="8087047305080774904" at="28,33,29,67" concept="5" />
-      <node id="8087047305080774904" at="30,45,31,43" concept="6" />
-      <node id="8087047305080774904" at="33,5,34,16" concept="6" />
-      <node id="8087047305080774904" at="36,49,37,99" concept="5" />
-      <node id="8087047305080774904" at="38,27,39,32" concept="6" />
-      <node id="8087047305080774904" at="40,5,41,14" concept="6" />
-      <node id="8087047305080774904" at="10,44,13,5" concept="3" />
-      <node id="8087047305080774904" at="16,67,19,7" concept="3" />
-      <node id="8087047305080774904" at="23,47,26,5" concept="3" />
-      <node id="8087047305080774904" at="29,67,32,7" concept="3" />
-      <node id="8087047305080774904" at="37,99,40,5" concept="3" />
-      <node id="8087047305080774904" at="14,141,20,5" concept="8" />
-      <node id="8087047305080774904" at="27,141,33,5" concept="8" />
-      <node id="8087047305080774904" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="8087047305080774904" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="8087047305080774904" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8087047305080774904" at="11,24,12,18" concept="7" />
+      <node id="8087047305080774904" at="13,5,14,141" concept="6" />
+      <node id="8087047305080774904" at="15,33,16,67" concept="6" />
+      <node id="8087047305080774904" at="17,45,18,20" concept="7" />
+      <node id="8087047305080774904" at="20,5,21,17" concept="7" />
+      <node id="8087047305080774904" at="24,24,25,18" concept="7" />
+      <node id="8087047305080774904" at="26,5,27,141" concept="6" />
+      <node id="8087047305080774904" at="28,33,29,67" concept="6" />
+      <node id="8087047305080774904" at="30,45,31,43" concept="7" />
+      <node id="8087047305080774904" at="33,5,34,16" concept="7" />
+      <node id="8087047305080774904" at="36,49,37,99" concept="6" />
+      <node id="8087047305080774904" at="38,27,39,32" concept="7" />
+      <node id="8087047305080774904" at="40,5,41,14" concept="7" />
+      <node id="8087047305080774904" at="10,44,13,5" concept="4" />
+      <node id="8087047305080774904" at="16,67,19,7" concept="4" />
+      <node id="8087047305080774904" at="23,47,26,5" concept="4" />
+      <node id="8087047305080774904" at="29,67,32,7" concept="4" />
+      <node id="8087047305080774904" at="37,99,40,5" concept="4" />
+      <node id="8087047305080774904" at="14,141,20,5" concept="9" />
+      <node id="8087047305080774904" at="27,141,33,5" concept="9" />
+      <node id="8087047305080774904" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8087047305080774904" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="8087047305080774904" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="8087047305080774904" at="11,24,12,18" />
       <scope id="8087047305080774904" at="17,45,18,20" />
       <scope id="8087047305080774904" at="24,24,25,18" />

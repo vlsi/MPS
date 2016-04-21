@@ -338,9 +338,7 @@
                       <node concept="3clFbF" id="5OIo7_R8TRj" role="3cqZAp">
                         <node concept="37vLTI" id="5OIo7_R8TRk" role="3clFbG">
                           <node concept="3cpWs3" id="5OIo7_R92kQ" role="37vLTx">
-                            <node concept="Xl_RD" id="5OIo7_R92l6" role="3uHU7w">
-                              <property role="Xl_RC" value="L" />
-                            </node>
+                            <node concept="Xl_RD" id="5OIo7_R92l6" role="3uHU7w" />
                             <node concept="2YIFZM" id="5OIo7_R90Zr" role="3uHU7B">
                               <ref role="37wK5l" to="twe9:5OIo7_R8hLh" resolve="generate" />
                               <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />

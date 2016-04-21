@@ -72,8 +72,16 @@
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
+      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
+        <child id="1164879758292" name="body" index="SfCbr" />
+        <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
@@ -910,6 +918,49 @@
                 <ref role="37wK5l" to="wyt6:~String.matches(java.lang.String):boolean" resolve="matches" />
                 <node concept="Xl_RD" id="4rXzdWLTH1Q" role="37wK5m">
                   <property role="Xl_RC" value="[a-zA-Z[_]][a-zA-Z0-9$[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="EnEH3" id="5w5a4OfWTDI" role="1MhHOB">
+      <ref role="EomxK" to="tpce:5OIo7_R7SN0" resolve="conceptId" />
+      <node concept="QB0g5" id="5w5a4OfWTOH" role="QCWH9">
+        <node concept="3clFbS" id="5w5a4OfWTOI" role="2VODD2">
+          <node concept="SfApY" id="5w5a4OfWXx_" role="3cqZAp">
+            <node concept="3clFbS" id="5w5a4OfWXxB" role="SfCbr">
+              <node concept="3clFbF" id="5w5a4OfWU5p" role="3cqZAp">
+                <node concept="2YIFZM" id="5w5a4OfWUcJ" role="3clFbG">
+                  <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                  <ref role="37wK5l" to="wyt6:~Long.parseLong(java.lang.String):long" resolve="parseLong" />
+                  <node concept="2OqwBi" id="5w5a4OfWV1p" role="37wK5m">
+                    <node concept="EsrRn" id="5w5a4OfWUCE" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="5w5a4OfWVFw" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpce:5OIo7_R7SN0" resolve="conceptId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="5w5a4OfWY8h" role="3cqZAp">
+                <node concept="3clFbT" id="5w5a4OfWYs5" role="3cqZAk">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+            <node concept="TDmWw" id="5w5a4OfWXxC" role="TEbGg">
+              <node concept="3cpWsn" id="5w5a4OfWXxE" role="TDEfY">
+                <property role="TrG5h" value="e" />
+                <node concept="3uibUv" id="5w5a4OfWYA5" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~NumberFormatException" resolve="NumberFormatException" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="5w5a4OfWXxI" role="TDEfX">
+                <node concept="3cpWs6" id="5w5a4OfWZ4g" role="3cqZAp">
+                  <node concept="3clFbT" id="5w5a4OfWZor" role="3cqZAk">
+                    <property role="3clFbU" value="false" />
+                  </node>
                 </node>
               </node>
             </node>

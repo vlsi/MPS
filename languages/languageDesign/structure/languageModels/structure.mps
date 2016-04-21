@@ -24,6 +24,9 @@
         <reference id="1083241965437" name="defaultMember" index="Qgau1" />
         <child id="1083172003582" name="member" index="M5hS2" />
       </concept>
+      <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
+        <property id="1083066089218" name="constraint" index="FLfZY" />
+      </concept>
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
         <property id="1192116978809" name="javaIdentifier" index="2fHolG" />
         <property id="1083923523172" name="externalValue" index="1uS6qo" />
@@ -38,7 +41,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+        <property id="1587916991969465369" name="intConceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -331,7 +334,7 @@
     </node>
     <node concept="1TJgyi" id="5OIo7_R7SN0" role="1TKVEl">
       <property role="TrG5h" value="conceptId" />
-      <ref role="AX2Wp" to="tpee:3H1xM9LtLda" resolve="_LongType_String" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
     </node>
     <node concept="PrWs8" id="h0TBFkr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -562,6 +565,10 @@
     <property role="3GE5qa" value="scope" />
     <property role="TrG5h" value="AggregationLinkDeclarationScopeKind" />
     <property role="1pbfSe" value="1461195391" />
+  </node>
+  <node concept="Az7Fb" id="3H1xM9LtLda">
+    <property role="TrG5h" value="NumberString" />
+    <property role="FLfZY" value="-?[0-9]+" />
   </node>
 </model>
 

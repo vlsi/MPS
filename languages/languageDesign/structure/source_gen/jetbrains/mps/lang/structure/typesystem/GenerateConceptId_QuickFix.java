@@ -18,6 +18,6 @@ public class GenerateConceptId_QuickFix extends QuickFix_Runtime {
     return "Generate ID";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]))) + "L");
+    SPropertyOperations.set(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), ConceptIdHelper.generate(SNodeOperations.getModel(((SNode) GenerateConceptId_QuickFix.this.getField("c")[0]))) + "");
   }
 }
