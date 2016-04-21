@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.ids;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -35,9 +36,23 @@ public class MetaIdByDeclaration {
   }
 
   public static SConceptId getConceptId(@NotNull SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id = ((SNodeId.Regular) nodeId).getId();
+    Long id = null;
+
+    String prop = c.getProperty(SNodeUtil.property_AbstractConcept_Id);
+    if (prop!=null){
+      try {
+        id = Long.parseLong(prop);
+      } catch (NumberFormatException e){
+        //id is still null
+      }
+    }
+
+    if (id==null){
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
+      assert nodeId instanceof SNodeId.Regular;
+      id = ((SNodeId.Regular) nodeId).getId();
+    }
+
     return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
   }
 
