@@ -136,6 +136,10 @@
       <property role="TrG5h" value="unordered" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="dqwjwHwEj$" role="1TKVEl">
+      <property role="TrG5h" value="linkId" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
+    </node>
     <node concept="1TJgyj" id="fA0ks94" role="1TKVEi">
       <property role="20kJfa" value="specializedLink" />
       <property role="20lbJX" value="0..1" />
@@ -160,6 +164,10 @@
     <property role="TrG5h" value="PropertyDeclaration" />
     <property role="1pbfSe" value="2042431844" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="dqwjwHwEjp" role="1TKVEl">
+      <property role="TrG5h" value="propertyId" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
+    </node>
     <node concept="PrWs8" id="50$LP2ztBgn" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>

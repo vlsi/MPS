@@ -821,7 +821,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_ueqr71_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept ID: ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ID: ");
     editorCell.setCellId("Constant_ueqr71_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;

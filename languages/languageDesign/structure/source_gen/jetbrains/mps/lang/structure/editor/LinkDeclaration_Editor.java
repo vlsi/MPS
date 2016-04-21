@@ -362,23 +362,62 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x213ed46fe94fc232L, "unordered"));
   }
   private EditorCell createCollection_6h6dhy_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a_0");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_6h6dhy_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_6h6dhy_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_6h6dhy_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6h6dhy_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_6h6dhy_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_6h6dhy_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6h6dhy_b0a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_6h6dhy_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ID: ");
+    editorCell.setCellId("Constant_6h6dhy_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_6h6dhy_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("linkId");
+    provider.setNoTargetText("<no id>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_linkId");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createCollection_6h6dhy_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_6h6dhy_b0");
+    editorCell.addEditorCell(this.createConstant_6h6dhy_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6h6dhy_b1a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_6h6dhy_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
-    editorCell.setCellId("Constant_6h6dhy_a0");
+    editorCell.setCellId("Constant_6h6dhy_a1a");
     Style style = new StyleImpl();
     structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_6h6dhy_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6h6dhy_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("unordered");
     provider.setNoTargetText("<no unordered>");
