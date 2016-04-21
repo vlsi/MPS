@@ -20,7 +20,7 @@
         <property id="2864063292004103235" name="modelRef" index="2pBcow" />
         <property id="2864063292004103247" name="nodeId" index="2pBcoG" />
       </concept>
-      <concept id="7431903976166007326" name="jetbrains.mps.lang.migration.structure.MoveNode" flags="ng" index="Z4OXk">
+      <concept id="7431903976166007326" name="jetbrains.mps.lang.migration.structure.MoveNodeMigrationPart" flags="ng" index="Z4OXk">
         <child id="3116305438947564633" name="specialization" index="7agGg" />
         <child id="7431903976166276375" name="toNode" index="Z5P1t" />
         <child id="7431903976166276373" name="fromNode" index="Z5P1v" />

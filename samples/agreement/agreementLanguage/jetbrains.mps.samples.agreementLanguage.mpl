@@ -90,7 +90,7 @@
     <language slang="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" version="2" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:144f7012-c2d5-43be-be2b-4bfb7dff6503:jetbrains.mps.samples.agreementLanguage" version="0" />
-    <language slang="l:b1a9bc47-8a26-4792-8b68-4660c531090a:jetbrains.mps.samples.formulaLanguage" version="-1" />
+    <language slang="l:b1a9bc47-8a26-4792-8b68-4660c531090a:jetbrains.mps.samples.formulaLanguage" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />

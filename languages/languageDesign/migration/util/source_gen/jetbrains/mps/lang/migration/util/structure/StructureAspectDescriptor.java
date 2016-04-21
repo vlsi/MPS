@@ -14,20 +14,18 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
-  /*package*/ final ConceptDescriptor myConceptMigrationScriptReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f83bcaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x66eed171c5f90222L, "fromVersion"), new ConceptDescriptorBuilder.Prop(0x66eed171c602da74L, "module")).properties("fromVersion", "module").create();
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
   /*package*/ final ConceptDescriptor myConceptStepData = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.StepData", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x1b62b551c10bc5f4L, "script")).properties("script").childDescriptors(new ConceptDescriptorBuilder.Link(0x66eed171c5f90226L, "data", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false)).children(new String[]{"data"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptStringData = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.util.structure.StringData", MetaIdFactory.conceptId(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2c90e78b233c3efeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x2c90e78b233c3f0aL, "data")).properties("data").create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptMigrationScriptReference.getId(), 0);
-    myIndexMap.put(myConceptStepData.getId(), 1);
-    myIndexMap.put(myConceptStringData.getId(), 2);
+    myIndexMap.put(myConceptStepData.getId(), 0);
+    myIndexMap.put(myConceptStringData.getId(), 1);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMigrationScriptReference, myConceptStepData, myConceptStringData);
+    return Arrays.asList(myConceptStepData, myConceptStringData);
   }
 
   @Override
@@ -39,10 +37,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptMigrationScriptReference;
-      case 1:
         return myConceptStepData;
-      case 2:
+      case 1:
         return myConceptStringData;
       default:
         throw new IllegalStateException();
