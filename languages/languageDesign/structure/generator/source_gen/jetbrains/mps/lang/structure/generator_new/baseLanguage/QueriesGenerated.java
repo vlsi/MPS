@@ -142,7 +142,18 @@ public class QueriesGenerated {
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829506(final PropertyMacroContext _context) {
-    long id = ((SNodeId.Regular) _context.getNode().getNodeId()).getId();
+    long id;
+    if (isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")))) {
+      _context.showWarningMessage(_context.getNode(), "Concept id not set for concept declaration");
+      id = ((SNodeId.Regular) _context.getNode().getNodeId()).getId();
+    } else {
+      try {
+        id = Long.parseLong(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")));
+      } catch (NumberFormatException e) {
+        _context.showErrorMessage(_context.getNode(), "Concept id can't be converted to long");
+        id = ((SNodeId.Regular) _context.getNode().getNodeId()).getId();
+      }
+    }
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_3002767456621441149(final PropertyMacroContext _context) {
@@ -422,6 +433,9 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
