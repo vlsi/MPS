@@ -4,10 +4,7 @@ package jetbrains.mps.migration.component.util;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,22 +17,14 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.migration.RefactoringLogApplied;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.smodel.SLanguageHierarchy;
 
 public class MigrationsUtil {
   public static Iterable<SModule> getMigrateableModulesFromProject(Project p) {
-    Iterable<? extends SModule> modules = p.getModulesWithGenerators();
-    return Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return MigrationsUtil.isModuleMigrateable(it);
-      }
-    }).ofType(SModule.class);
+    return MigrationModuleUtil.getMigrateableModulesFromProject(p);
   }
 
   public static boolean isModuleMigrateable(SModule m) {
-    return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly()));
+    return MigrationModuleUtil.isModuleMigrateable(m);
   }
 
   public static Iterable<ScriptApplied.ScriptAppliedReference> getAllSteps(SModule module) {
@@ -65,11 +54,9 @@ public class MigrationsUtil {
     return result;
   }
   public static Set<SModule> getModuleDependencies(SModule module) {
-    Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
-    SetSequence.fromSet(dependencies).addElement(module);
-    return dependencies;
+    return MigrationModuleUtil.getModuleDependencies(module);
   }
   public static Set<SLanguage> getUsedLanguages(SModule module) {
-    return new SLanguageHierarchy(module.getUsedLanguages()).getExtended();
+    return MigrationModuleUtil.getUsedLanguages(module);
   }
 }

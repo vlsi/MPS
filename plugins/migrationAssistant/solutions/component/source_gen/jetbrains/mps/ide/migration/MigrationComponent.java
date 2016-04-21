@@ -54,6 +54,7 @@ import jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -314,7 +315,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     RefactoringLog script = sa.getScript();
     AbstractModule module = ((AbstractModule) sa.getModule());
     SModule fromModule = script.getDescriptor().getModule();
-    Integer importedVersion = module.getModuleDescriptor().getDependencyVersions().get(fromModule.getModuleReference());
+    int importedVersion = MigrationModuleUtil.getDepVersion(module, fromModule.getModuleReference());
     importedVersion = Math.max(importedVersion, 0);
     assert importedVersion == script.getDescriptor().getFromVersion();
     try {
@@ -327,8 +328,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
 
     int toVersion = script.getDescriptor().getFromVersion() + 1;
-    module.getModuleDescriptor().getDependencyVersions().put(fromModule.getModuleReference(), toVersion);
-    module.setChanged();
+    MigrationModuleUtil.setDepVersion(module, fromModule.getModuleReference(), toVersion);
 
     // todo: versions in models 
     return true;
