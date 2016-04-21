@@ -2,7 +2,7 @@
 <model ref="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
   </languages>
   <imports>
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
@@ -11,11 +11,11 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -26,6 +26,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -41,12 +42,13 @@
     <property role="TrG5h" value="XmlLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="xml literal" />
-    <property role="1pbfSe" value="1832568958" />
+    <property role="EcuMT" value="9152904044274328259" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7W5DrJIdib4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="element" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="9152904044274328260" />
       <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
     </node>
   </node>
@@ -55,12 +57,13 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="TextMacro" />
     <property role="34LRSv" value="${" />
-    <property role="1pbfSe" value="1832710300" />
+    <property role="EcuMT" value="9152904044274469601" />
     <ref role="1TJDcQ" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
     <node concept="1TJgyj" id="7W5DrJIdOFy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="9152904044274469602" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -70,12 +73,13 @@
     <property role="R4oN_" value="element macro" />
     <property role="TrG5h" value="ElementMacro" />
     <property role="34LRSv" value="$${" />
-    <property role="1pbfSe" value="1832758821" />
+    <property role="EcuMT" value="9152904044274518122" />
     <ref role="1TJDcQ" to="iuxj:5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyj" id="7W5DrJIe0xK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="9152904044274518128" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>

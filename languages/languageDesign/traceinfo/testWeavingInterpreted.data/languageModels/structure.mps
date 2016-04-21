@@ -2,7 +2,7 @@
 <model ref="r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -10,7 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -25,6 +25,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -36,7 +37,7 @@
   </registry>
   <node concept="1TIwiD" id="5nqBR0spfes">
     <property role="TrG5h" value="ChildConceptWeave" />
-    <property role="1pbfSe" value="1916769036" />
+    <property role="EcuMT" value="6186432342008329116" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0spfet" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -44,7 +45,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0spfeq">
     <property role="TrG5h" value="ChildConceptWeaveEach" />
-    <property role="1pbfSe" value="1916769034" />
+    <property role="EcuMT" value="6186432342008329114" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0spfer" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -52,7 +53,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0sq15z">
     <property role="TrG5h" value="ChildConceptWeaveEachMany" />
-    <property role="1pbfSe" value="1916973267" />
+    <property role="EcuMT" value="6186432342008533347" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0sq15$" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -60,7 +61,7 @@
   </node>
   <node concept="1TIwiD" id="5nqBR0sq15p">
     <property role="TrG5h" value="ChildConceptWeaveMany" />
-    <property role="1pbfSe" value="1916973257" />
+    <property role="EcuMT" value="6186432342008533337" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5nqBR0sq15q" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -69,7 +70,7 @@
   <node concept="1TIwiD" id="5nqBR0spcFc">
     <property role="TrG5h" value="RootConcept" />
     <property role="19KtqR" value="true" />
-    <property role="1pbfSe" value="1916758588" />
+    <property role="EcuMT" value="6186432342008318668" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5cZH5y4cil0" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -78,24 +79,28 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="weave" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="6186432342008329118" />
       <ref role="20lvS9" node="5nqBR0spfes" resolve="ChildConceptWeave" />
     </node>
     <node concept="1TJgyj" id="5nqBR0spfev" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="weaveEach" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="6186432342008329119" />
       <ref role="20lvS9" node="5nqBR0spfeq" resolve="ChildConceptWeaveEach" />
     </node>
     <node concept="1TJgyj" id="5nqBR0sq15I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="weaveMany" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="6186432342008533358" />
       <ref role="20lvS9" node="5nqBR0sq15p" resolve="ChildConceptWeaveMany" />
     </node>
     <node concept="1TJgyj" id="5nqBR0sq15J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="weaveEachMany" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="6186432342008533359" />
       <ref role="20lvS9" node="5nqBR0sq15z" resolve="ChildConceptWeaveEachMany" />
     </node>
   </node>

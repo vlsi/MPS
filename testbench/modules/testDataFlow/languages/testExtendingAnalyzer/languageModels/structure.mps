@@ -2,7 +2,7 @@
 <model ref="r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -11,8 +11,8 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -27,13 +27,13 @@
   <node concept="1TIwiD" id="1eGlc3_lXCI">
     <property role="TrG5h" value="NullUnsafeDotExpression" />
     <property role="34LRSv" value="unsafe" />
-    <property role="1pbfSe" value="117166354" />
+    <property role="EcuMT" value="1417601170173057582" />
     <ref role="1TJDcQ" to="tpee:hqOqwz4" resolve="DotExpression" />
   </node>
   <node concept="1TIwiD" id="1eGlc3_lXKD">
     <property role="TrG5h" value="NullSafeDotExpression" />
     <property role="34LRSv" value="safe" />
-    <property role="1pbfSe" value="117165847" />
+    <property role="EcuMT" value="1417601170173058089" />
     <ref role="1TJDcQ" to="tpee:hqOqwz4" resolve="DotExpression" />
   </node>
 </model>

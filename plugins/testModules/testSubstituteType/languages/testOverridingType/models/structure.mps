@@ -2,7 +2,7 @@
 <model ref="r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,8 +20,8 @@
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -29,12 +29,14 @@
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
         <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -49,39 +51,42 @@
   </registry>
   <node concept="1TIwiD" id="5GQb1e$A8ul">
     <property role="TrG5h" value="OverridingPrimNumConstant" />
-    <property role="1pbfSe" value="3230808" />
+    <property role="EcuMT" value="6572489169071277973" />
     <ref role="1TJDcQ" to="tp5x:1hDKT6wA_VJ" resolve="PrimNumConstant" />
     <node concept="1TJgyi" id="5GQb1e$A8_r" role="1TKVEl">
       <property role="TrG5h" value="isOverriding" />
+      <property role="IQ2nx" value="6572489169071278427" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="5GQb1e$AjnL">
     <property role="TrG5h" value="OverridingPrimIntType" />
     <property role="34LRSv" value="_int_overridden" />
-    <property role="1pbfSe" value="3186172" />
+    <property role="EcuMT" value="6572489169071322609" />
     <ref role="1TJDcQ" to="tp5x:5zzawu2JA2u" resolve="PrimIntType" />
   </node>
   <node concept="1TIwiD" id="5GQb1e$Ajo4">
     <property role="TrG5h" value="OverridingPrimFloatType" />
     <property role="34LRSv" value="_float_overridden" />
-    <property role="1pbfSe" value="3186153" />
+    <property role="EcuMT" value="6572489169071322628" />
     <ref role="1TJDcQ" to="tp5x:5zzawu2JF6X" resolve="PrimFloatType" />
   </node>
   <node concept="1TIwiD" id="3$lifF380rk">
     <property role="TrG5h" value="OverrideAnnotation" />
-    <property role="1pbfSe" value="63615026" />
+    <property role="EcuMT" value="4113274076525496020" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyj" id="5zzawu2JF6U" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="substitute" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6405009306797650362" />
       <ref role="20lvS9" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
     </node>
     <node concept="1TJgyj" id="5zzawu2JF74" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6405009306797650372" />
       <ref role="20lvS9" to="tp5x:5zzawu2JF77" resolve="PresenceCondition" />
     </node>
     <node concept="M6xJ_" id="3$lifF380rl" role="lGtFl">
@@ -93,7 +98,7 @@
   </node>
   <node concept="1TIwiD" id="1BNF4XJawka">
     <property role="TrG5h" value="UnconditionalOverrideAnnotation" />
-    <property role="1pbfSe" value="1994542759" />
+    <property role="EcuMT" value="1870027727456306442" />
     <ref role="1TJDcQ" node="3$lifF380rk" resolve="OverrideAnnotation" />
     <node concept="M6xJ_" id="1BNF4XJawkb" role="lGtFl">
       <property role="Hh88m" value="unconditionalOverride" />
@@ -105,7 +110,7 @@
   <node concept="1TIwiD" id="1BNF4XJaBX0">
     <property role="TrG5h" value="ErrorType" />
     <property role="34LRSv" value="error" />
-    <property role="1pbfSe" value="1994511473" />
+    <property role="EcuMT" value="1870027727456337728" />
     <ref role="1TJDcQ" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
   </node>
 </model>

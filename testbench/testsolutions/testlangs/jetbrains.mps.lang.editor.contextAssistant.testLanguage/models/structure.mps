@@ -2,7 +2,7 @@
 <model ref="r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -11,8 +11,8 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -27,6 +27,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -40,16 +41,17 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="4PEyPcYoaDd">
-    <property role="1pbfSe" value="1949616736" />
     <property role="3GE5qa" value="contextAssistant" />
     <property role="TrG5h" value="Parent" />
     <property role="34LRSv" value="parent" />
     <property role="19KtqR" value="true" />
+    <property role="EcuMT" value="5578424278096849485" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4PEyPcYoaDo" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="children" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="5578424278096849496" />
       <ref role="20lvS9" node="4PEyPcYoaCM" resolve="Child" />
     </node>
     <node concept="PrWs8" id="4PEyPcYozTB" role="PzmwI">
@@ -57,19 +59,19 @@
     </node>
   </node>
   <node concept="1TIwiD" id="4PEyPcYoaCM">
-    <property role="1pbfSe" value="1949616763" />
     <property role="TrG5h" value="Child" />
     <property role="3GE5qa" value="contextAssistant" />
     <property role="34LRSv" value="child" />
+    <property role="EcuMT" value="5578424278096849458" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4PEyPcYoaCN" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="1H9M4VxN7gV">
-    <property role="1pbfSe" value="48874359" />
     <property role="3GE5qa" value="contextAssistant" />
     <property role="TrG5h" value="SubconceptOfChild" />
+    <property role="EcuMT" value="1966322953445209147" />
     <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
   </node>
 </model>

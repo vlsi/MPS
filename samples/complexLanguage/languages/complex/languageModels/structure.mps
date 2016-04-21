@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="ff24ab03-965e-4d15-9aed-52dc276658f4" name="jetbrains.mps.samples.complex" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -13,11 +13,11 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -28,6 +28,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -43,7 +44,7 @@
     <property role="TrG5h" value="ComplexType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="complex" />
-    <property role="1pbfSe" value="2036317376" />
+    <property role="EcuMT" value="1196259557930" />
     <ref role="1TJDcQ" to="tpee:gWaQbR$" resolve="PrimitiveType" />
   </node>
   <node concept="1TIwiD" id="hq6G_uh">
@@ -52,7 +53,7 @@
     <property role="TrG5h" value="ReExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="re" />
-    <property role="1pbfSe" value="2035132249" />
+    <property role="EcuMT" value="1196260743057" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6GVit">
@@ -60,11 +61,12 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="SingleComplexExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="1pbfSe" value="2035042893" />
+    <property role="EcuMT" value="1196260832413" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hq6Ha21" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="complexExpression" />
+      <property role="IQ2ns" value="1196260892801" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -74,7 +76,7 @@
     <property role="TrG5h" value="ArgExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="arg" />
-    <property role="1pbfSe" value="2032032206" />
+    <property role="EcuMT" value="1196263843100" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6T8Yv">
@@ -83,7 +85,7 @@
     <property role="TrG5h" value="AbsExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="abs" />
-    <property role="1pbfSe" value="2031841099" />
+    <property role="EcuMT" value="1196264034207" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6KPYo">
@@ -92,7 +94,7 @@
     <property role="TrG5h" value="ImExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="im" />
-    <property role="1pbfSe" value="2034016082" />
+    <property role="EcuMT" value="1196261859224" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hqg7PvO">
@@ -101,7 +103,7 @@
     <property role="TrG5h" value="ConjugateComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="conj" />
-    <property role="1pbfSe" value="1876993782" />
+    <property role="EcuMT" value="1196418881524" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hqgj$nO">
@@ -110,12 +112,13 @@
     <property role="TrG5h" value="DegreeComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="deg" />
-    <property role="1pbfSe" value="1873918198" />
+    <property role="EcuMT" value="1196421957108" />
     <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
     <node concept="1TJgyj" id="hqgjTti" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="degree" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1196422043474" />
       <ref role="20lvS9" to="tpee:hanubx6" resolve="IntegerLiteral" />
     </node>
   </node>
@@ -126,7 +129,7 @@
     <property role="TrG5h" value="ImaginaryUnit" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="i" />
-    <property role="1pbfSe" value="1861874185" />
+    <property role="EcuMT" value="1196434001121" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>

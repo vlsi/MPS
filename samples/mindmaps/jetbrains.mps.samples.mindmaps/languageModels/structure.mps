@@ -2,7 +2,7 @@
 <model ref="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -11,10 +11,10 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -27,12 +27,14 @@
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
         <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -45,18 +47,20 @@
   <node concept="1TIwiD" id="4pxCBZ57mf">
     <property role="TrG5h" value="MindMap" />
     <property role="19KtqR" value="true" />
-    <property role="1pbfSe" value="3013656" />
+    <property role="EcuMT" value="79242395703866767" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4pxCBZ5cnm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="thoughts" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="79242395703887318" />
       <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
     <node concept="1TJgyj" id="4pxCBZ5cnr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="relationships" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="79242395703887323" />
       <ref role="20lvS9" node="4pxCBZ5bFj" resolve="Relationship" />
     </node>
     <node concept="PrWs8" id="4pxCBZ5bF6" role="PzmwI">
@@ -66,7 +70,7 @@
   <node concept="1TIwiD" id="4pxCBZ5bF8">
     <property role="TrG5h" value="Thought" />
     <property role="34LRSv" value="thought" />
-    <property role="1pbfSe" value="3031377" />
+    <property role="EcuMT" value="79242395703884488" />
     <ref role="1TJDcQ" node="4pxCBZ5sCA" resolve="VisualBox" />
     <node concept="PrWs8" id="55Vum9nr8wc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -75,18 +79,20 @@
   <node concept="1TIwiD" id="4pxCBZ5bFj">
     <property role="TrG5h" value="Relationship" />
     <property role="34LRSv" value="relationship" />
-    <property role="1pbfSe" value="3031388" />
+    <property role="EcuMT" value="79242395703884499" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="55Vum9nqrEu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="source" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="5871420002487876254" />
       <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
     <node concept="1TJgyj" id="4pxCBZ5cnv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="79242395703887327" />
       <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
   </node>
@@ -94,30 +100,33 @@
     <property role="TrG5h" value="VisualBox" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="1pbfSe" value="3100847" />
+    <property role="EcuMT" value="79242395703953958" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4pxCBZ5sCB" role="1TKVEl">
       <property role="TrG5h" value="x" />
+      <property role="IQ2nx" value="79242395703953959" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4pxCBZ5sCD" role="1TKVEl">
       <property role="TrG5h" value="y" />
+      <property role="IQ2nx" value="79242395703953961" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="55Vum9nofwy" role="1TKVEl">
       <property role="TrG5h" value="myIsClicked" />
+      <property role="IQ2nx" value="5871420002487302178" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="4oNuVmrIUx1">
     <property role="TrG5h" value="Specializes" />
-    <property role="1pbfSe" value="504421386" />
+    <property role="EcuMT" value="5058522826399262785" />
     <ref role="1TJDcQ" node="4pxCBZ5bFj" resolve="Relationship" />
   </node>
   <node concept="1TIwiD" id="4oNuVmrJe1k">
     <property role="TrG5h" value="CoreThrought" />
     <property role="34LRSv" value="core thought" />
-    <property role="1pbfSe" value="504341495" />
+    <property role="EcuMT" value="5058522826399342676" />
     <ref role="1TJDcQ" node="4pxCBZ5bF8" resolve="Thought" />
   </node>
 </model>

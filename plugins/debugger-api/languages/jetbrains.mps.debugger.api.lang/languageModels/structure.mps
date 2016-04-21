@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -19,10 +19,10 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -36,12 +36,14 @@
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
         <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -62,51 +64,58 @@
     <property role="TrG5h" value="BreakpointCreator" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="breakpoint creators" />
-    <property role="1pbfSe" value="1397739964" />
+    <property role="EcuMT" value="3157158168562217892" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="16yMc0kzA8N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="breakpointableConcepts" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="1270798772176052787" />
       <ref role="20lvS9" node="2JguE20RV$R" resolve="BreakpointableNodeItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="2JguE20RV$R">
     <property role="TrG5h" value="BreakpointableNodeItem" />
     <property role="3GE5qa" value="breakpoints" />
-    <property role="1pbfSe" value="1397738537" />
+    <property role="EcuMT" value="3157158168562219319" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2JguE20RV$S" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="createBreakpoint" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="3157158168562219320" />
       <ref role="20lvS9" node="2JguE20RV$U" resolve="ConceptFunction_CreateBreakpoint" />
     </node>
     <node concept="1TJgyj" id="7_Oswe9bkNl" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="isApplicable" />
+      <property role="IQ2ns" value="8751745335399632085" />
       <ref role="20lvS9" node="7_Oswe9bkN9" resolve="ConceptFunction_IsApplicableToConcept" />
       <node concept="asaX9" id="2Gmwjaanh0X" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="2Gmwjaanh7Q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="isApplicableBreakpoint" />
+      <property role="IQ2ns" value="3104811047188238838" />
       <ref role="20lvS9" node="2GmwjaankH$" resolve="ConceptFunction_IsApplicableBreakpoint" />
     </node>
     <node concept="1TJgyj" id="51oHb9yZXnw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conceptsToCreateBreakpoint" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="5789575999242884576" />
       <ref role="20lvS9" node="51oHb9yZXnu" resolve="ConceptDeclarationReference" />
     </node>
     <node concept="1TJgyj" id="2JguE20RV$T" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="3157158168562219321" />
       <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
     <node concept="1TJgyi" id="7_Oswe9bkNm" role="1TKVEl">
       <property role="TrG5h" value="isComplex" />
+      <property role="IQ2nx" value="8751745335399632086" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
@@ -114,7 +123,7 @@
     <property role="TrG5h" value="ConceptFunction_CreateBreakpoint" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
-    <property role="1pbfSe" value="1397738534" />
+    <property role="EcuMT" value="3157158168562219322" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="16yMc0kzAac">
@@ -124,7 +133,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="project" />
-    <property role="1pbfSe" value="640756556" />
+    <property role="EcuMT" value="1270798772176052876" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="16yMc0kzAag">
@@ -134,18 +143,19 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="debuggableNode" />
-    <property role="1pbfSe" value="640756560" />
+    <property role="EcuMT" value="1270798772176052880" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="51oHb9yZXnu">
     <property role="TrG5h" value="ConceptDeclarationReference" />
     <property role="3GE5qa" value="breakpoints" />
-    <property role="1pbfSe" value="1286042992" />
+    <property role="EcuMT" value="5789575999242884574" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="51oHb9yZXnv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="5789575999242884575" />
       <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
   </node>
@@ -156,10 +166,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger type" />
-    <property role="1pbfSe" value="140854667" />
+    <property role="EcuMT" value="1104094430779063683" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyi" id="2eCkIB4f4lH" role="1TKVEl">
       <property role="TrG5h" value="name" />
+      <property role="IQ2nx" value="2569394751388009837" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
@@ -170,10 +181,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger" />
-    <property role="1pbfSe" value="140859737" />
+    <property role="EcuMT" value="1104094430779068753" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="Xiy0zT4H5l" role="1TKVEl">
       <property role="TrG5h" value="debuggerName" />
+      <property role="IQ2nx" value="1104094430779068757" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
@@ -184,29 +196,33 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="create breakpoint" />
-    <property role="1pbfSe" value="404480558" />
+    <property role="EcuMT" value="2569394751387978473" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2eCkIB4eWFE" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
     <node concept="1TJgyi" id="2eCkIB4eWFF" role="1TKVEl">
       <property role="TrG5h" value="kindName" />
+      <property role="IQ2nx" value="2569394751387978475" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2eCkIB4eWFG" role="1TKVEl">
       <property role="TrG5h" value="kindPresentation" />
+      <property role="IQ2nx" value="2569394751387978476" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="2eCkIB4eWFW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeExpression" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2569394751387978492" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="2eCkIB4eWFX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="projectExpression" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2569394751387978493" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -217,24 +233,26 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="get debugger settings" />
-    <property role="1pbfSe" value="2123198717" />
+    <property role="EcuMT" value="6720907903633266914" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="5P5ty4$bhrP">
     <property role="TrG5h" value="DebuggerConfiguration" />
     <property role="3GE5qa" value="settings" />
-    <property role="1pbfSe" value="2123199210" />
+    <property role="EcuMT" value="6720907903633266421" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5P5ty4$bhzw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="debugger" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6720907903633266912" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="5P5ty4$bhzx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="getSettings" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6720907903633266913" />
       <ref role="20lvS9" node="5P5ty4$bhzy" resolve="GetDebuggerSettings_Function" />
     </node>
   </node>
@@ -245,7 +263,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="isApplicable" />
-    <property role="1pbfSe" value="44154572" />
+    <property role="EcuMT" value="8751745335399632073" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="7_Oswe9bkNd">
@@ -255,7 +273,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="concept" />
-    <property role="1pbfSe" value="44154576" />
+    <property role="EcuMT" value="8751745335399632077" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="2GmwjaankH$">
@@ -265,7 +283,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="isApplicable" />
-    <property role="1pbfSe" value="1250702186" />
+    <property role="EcuMT" value="3104811047188253540" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>

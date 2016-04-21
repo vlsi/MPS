@@ -2,7 +2,7 @@
 <model ref="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -23,10 +23,10 @@
         <child id="7588428831955550186" name="multiple" index="HhnKV" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
@@ -42,6 +42,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -58,24 +59,26 @@
     <property role="TrG5h" value="Figure" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="1pbfSe" value="2027744866" />
+    <property role="EcuMT" value="785823818609017605" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="1SVBbIvt9f2">
     <property role="TrG5h" value="ExternalViewFigure" />
     <property role="19KtqR" value="true" />
-    <property role="1pbfSe" value="1112526723" />
+    <property role="EcuMT" value="2178507174411801538" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1SVBbIvt9h0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="fields" />
+      <property role="IQ2ns" value="2178507174411801664" />
       <ref role="20lvS9" node="1SVBbIvt9g6" resolve="ExternalViewFigureParameter" />
     </node>
     <node concept="1TJgyj" id="1SVBbIvt9fR" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="classifier" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2178507174411801591" />
       <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="PrWs8" id="WK6Z46COzI" role="PzmwI">
@@ -87,12 +90,13 @@
   </node>
   <node concept="1TIwiD" id="1SVBbIvt9g6">
     <property role="TrG5h" value="ExternalViewFigureParameter" />
-    <property role="1pbfSe" value="1112526655" />
+    <property role="EcuMT" value="2178507174411801606" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1SVBbIvt9gL" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2178507174411801649" />
       <ref role="20lvS9" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     </node>
     <node concept="PrWs8" id="WK6Z46D0Kp" role="PzmwI">
@@ -105,7 +109,7 @@
   <node concept="1TIwiD" id="4H19mAw_rm$">
     <property role="TrG5h" value="FigureAttribute" />
     <property role="34LRSv" value="@Figure" />
-    <property role="1pbfSe" value="338240755" />
+    <property role="EcuMT" value="5422656561926747556" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="4H19mAw_rop" role="lGtFl">
       <property role="Hh88m" value="figure" />
@@ -120,7 +124,7 @@
   <node concept="1TIwiD" id="4H19mAwLpfx">
     <property role="TrG5h" value="FigureParameterAttribute" />
     <property role="R5$K7" value="true" />
-    <property role="1pbfSe" value="335103670" />
+    <property role="EcuMT" value="5422656561929884641" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="4H19mAwLpfY" role="lGtFl">
       <node concept="tn0Fv" id="4H19mAwLyse" role="HhnKV">
@@ -133,7 +137,7 @@
   </node>
   <node concept="1TIwiD" id="1NIE5SZPp_k">
     <property role="TrG5h" value="FigureParameterAttributeMethod" />
-    <property role="1pbfSe" value="1556365746" />
+    <property role="EcuMT" value="2084788800270473556" />
     <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="1NIE5SZPynB" role="lGtFl">
       <property role="Hh88m" value="figureParameterMethod" />
@@ -144,7 +148,7 @@
   </node>
   <node concept="1TIwiD" id="1NIE5SZPp_Q">
     <property role="TrG5h" value="FigureParameterAttributeField" />
-    <property role="1pbfSe" value="1556365780" />
+    <property role="EcuMT" value="2084788800270473590" />
     <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="1NIE5SZPp_R" role="lGtFl">
       <property role="Hh88m" value="figureParameterField" />
@@ -155,7 +159,7 @@
   </node>
   <node concept="1TIwiD" id="6mlphA0CvzG">
     <property role="TrG5h" value="FigureParameterAttributeViewProperty" />
-    <property role="1pbfSe" value="432579067" />
+    <property role="EcuMT" value="7319867929567295724" />
     <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="6mlphA0CRGr" role="lGtFl">
       <property role="Hh88m" value="figureParameterPropertySpecification" />
@@ -166,7 +170,7 @@
   </node>
   <node concept="PlHQZ" id="iZqVFYvB5l">
     <property role="TrG5h" value="FigureParameter" />
-    <property role="1pbfSe" value="54385935" />
+    <property role="EcuMT" value="342110547581235541" />
   </node>
 </model>
 

@@ -2,7 +2,7 @@
 <model ref="r:e4cb768c-551e-430a-8374-9cbd0ea2f656(references.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -13,7 +13,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -27,6 +27,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -41,12 +42,13 @@
   </registry>
   <node concept="1TIwiD" id="6FZb119cEr9">
     <property role="TrG5h" value="NewComponentRef" />
-    <property role="1pbfSe" value="1271803175" />
+    <property role="EcuMT" value="7709929535540733641" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6FZb119cEra" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="7709929535540733642" />
       <ref role="20lvS9" to="alxt:6FZb119cDPL" resolve="NewComponent" />
     </node>
     <node concept="PrWs8" id="14sMr$jSf5e" role="PzmwI">
@@ -55,12 +57,13 @@
   </node>
   <node concept="1TIwiD" id="6FZb119cltd">
     <property role="TrG5h" value="OldComponentRef" />
-    <property role="1pbfSe" value="1271889059" />
+    <property role="EcuMT" value="7709929535540647757" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6FZb119cEqq" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="7709929535540733594" />
       <ref role="20lvS9" to="alxt:6FZb119cmNq" resolve="OldComponent" />
     </node>
     <node concept="PrWs8" id="14sMr$jSf5i" role="PzmwI">

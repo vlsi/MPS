@@ -2,7 +2,7 @@
 <model ref="r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -12,7 +12,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -25,12 +25,14 @@
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
         <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -43,12 +45,13 @@
   <node concept="1TIwiD" id="7OJukvJ5je_">
     <property role="TrG5h" value="LanguageDescriptor" />
     <property role="19KtqR" value="true" />
-    <property role="1pbfSe" value="1816440044" />
+    <property role="EcuMT" value="9020561928507175845" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1uh_eNRS9kV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1698302279987270971" />
       <ref role="20lvS9" to="hypd:5xDtKQA7vSv" resolve="Language" />
     </node>
     <node concept="PrWs8" id="7BqJJVi3vjI" role="PzmwI">
@@ -57,28 +60,31 @@
   </node>
   <node concept="1TIwiD" id="4r8JClTlfX1">
     <property role="TrG5h" value="GeneratorInternal_Aspect" />
-    <property role="1pbfSe" value="1071792698" />
+    <property role="EcuMT" value="5100536058472628033" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4r8JClTlfXJ" role="1TKVEl">
       <property role="TrG5h" value="implClass" />
+      <property role="IQ2nx" value="5100536058472628079" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="4r8JClTlfXA" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="interfaceClass" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="5100536058472628070" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="3pzUVOrWgq3">
-    <property role="1pbfSe" value="1381298752" />
     <property role="TrG5h" value="GeneratorDescriptor" />
     <property role="19KtqR" value="true" />
+    <property role="EcuMT" value="3919235298192590467" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3pzUVOrWgq4" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="generator" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="3919235298192590468" />
       <ref role="20lvS9" to="hypd:5xDtKQA7vSx" resolve="Generator" />
     </node>
     <node concept="PrWs8" id="eB6_hfARLz" role="PzmwI">

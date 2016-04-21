@@ -2,7 +2,7 @@
 <model ref="r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,8 +12,8 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -28,6 +28,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <property id="241647608299431140" name="linkId" index="IQ2ns" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -41,12 +42,13 @@
     <property role="TrG5h" value="TestModuleManifest" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Test Module" />
-    <property role="1pbfSe" value="984748853" />
+    <property role="EcuMT" value="3298469228705179778" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="vgcurbAYi0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="563004820749542528" />
       <ref role="20lvS9" to="tp25:3wj3sjzR1ta" resolve="LanguageReferenceExpression" />
     </node>
     <node concept="PrWs8" id="2R6x4Any92e" role="PzmwI">
@@ -57,7 +59,7 @@
     <property role="TrG5h" value="TestProjectConfiguration" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Test Project Configuration" />
-    <property role="1pbfSe" value="984748850" />
+    <property role="EcuMT" value="3298469228705179781" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2R6x4Anyb5Z" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -66,22 +68,25 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="manifest" />
       <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="3298469228705274820" />
       <ref role="20lvS9" node="2R6x4Anyc74" resolve="TestModuleManifestRef" />
     </node>
     <node concept="1TJgyj" id="6DW_AMA$3Cx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="target" />
+      <property role="IQ2ns" value="7673173258527586849" />
       <ref role="20lvS9" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="2R6x4Anyc74">
     <property role="TrG5h" value="TestModuleManifestRef" />
-    <property role="1pbfSe" value="984660467" />
+    <property role="EcuMT" value="3298469228705268164" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2R6x4Anyc75" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="manifest" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="3298469228705268165" />
       <ref role="20lvS9" node="2R6x4AnxQy2" resolve="TestModuleManifest" />
     </node>
   </node>

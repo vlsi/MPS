@@ -2,13 +2,13 @@
 <model ref="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
   </languages>
   <imports />
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+        <property id="6714410169261853888" name="conceptId" index="EcuMT" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
     </language>
@@ -24,17 +24,17 @@
   <node concept="PlHQZ" id="4pl5GY7LKmy">
     <property role="TrG5h" value="ScopeConcept" />
     <property role="3GE5qa" value="traceInfo" />
-    <property role="1pbfSe" value="837018511" />
+    <property role="EcuMT" value="5067982036267369890" />
   </node>
   <node concept="PlHQZ" id="4pl5GY7LKmz">
     <property role="TrG5h" value="TraceableConcept" />
     <property role="3GE5qa" value="traceInfo" />
-    <property role="1pbfSe" value="837018510" />
+    <property role="EcuMT" value="5067982036267369891" />
   </node>
   <node concept="PlHQZ" id="4pl5GY7LKm$">
     <property role="TrG5h" value="UnitConcept" />
     <property role="3GE5qa" value="traceInfo" />
-    <property role="1pbfSe" value="837018509" />
+    <property role="EcuMT" value="5067982036267369892" />
   </node>
 </model>
 
