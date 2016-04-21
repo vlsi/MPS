@@ -57,23 +57,65 @@ public class MetaIdByDeclaration {
   }
 
   public static SContainmentLinkId getLinkId(@NotNull SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id = ((SNodeId.Regular) nodeId).getId();
+    Long id = null;
+
+    String prop = c.getProperty(SNodeUtil.property_Link_Id);
+    if (prop!=null){
+      try {
+        id = Long.parseLong(prop);
+      } catch (NumberFormatException e){
+        //id is still null
+      }
+    }
+
+    if (id==null){
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
+      assert nodeId instanceof SNodeId.Regular;
+      id = ((SNodeId.Regular) nodeId).getId();
+    }
+
     return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
   public static SReferenceLinkId getRefRoleId(@NotNull SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id = ((SNodeId.Regular) nodeId).getId();
+    Long id = null;
+
+    String prop = c.getProperty(SNodeUtil.property_Link_Id);
+    if (prop!=null){
+      try {
+        id = Long.parseLong(prop);
+      } catch (NumberFormatException e){
+        //id is still null
+      }
+    }
+
+    if (id==null){
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
+      assert nodeId instanceof SNodeId.Regular;
+      id = ((SNodeId.Regular) nodeId).getId();
+    }
+
     return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
   public static SPropertyId getPropId(@NotNull SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id = ((SNodeId.Regular) nodeId).getId();
+    Long id = null;
+
+    String prop = c.getProperty(SNodeUtil.property_Property_Id);
+    if (prop!=null){
+      try {
+        id = Long.parseLong(prop);
+      } catch (NumberFormatException e){
+        //id is still null
+      }
+    }
+
+    if (id==null){
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
+      assert nodeId instanceof SNodeId.Regular;
+      id = ((SNodeId.Regular) nodeId).getId();
+    }
+
     return new SPropertyId(getConceptId(c.getContainingRoot()), id);
   }
 

@@ -1337,6 +1337,30 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
+    <node concept="Wx3nA" id="dqwjwH$T_7" role="jymVt">
+      <property role="TrG5h" value="property_Property_Id" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="dqwjwH$T_8" role="1B3o_S" />
+      <node concept="355D3s" id="dqwjwH$T_9" role="33vP2m">
+        <ref role="355D3t" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+        <ref role="355D3u" to="tpce:dqwjwHwEjp" resolve="propertyId" />
+      </node>
+      <node concept="3uibUv" id="dqwjwH$T_a" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="dqwjwH$TMI" role="jymVt">
+      <property role="TrG5h" value="property_Link_Id" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="dqwjwH$TMJ" role="1B3o_S" />
+      <node concept="355D3s" id="dqwjwH$TMK" role="33vP2m">
+        <ref role="355D3t" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+        <ref role="355D3u" to="tpce:dqwjwHwEj$" resolve="linkId" />
+      </node>
+      <node concept="3uibUv" id="dqwjwH$TML" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="7BIvS$tLduj" role="jymVt" />
     <node concept="Wx3nA" id="7BIvS$tLokT" role="jymVt">
       <property role="TrG5h" value="conceptId_BaseConcept" />
