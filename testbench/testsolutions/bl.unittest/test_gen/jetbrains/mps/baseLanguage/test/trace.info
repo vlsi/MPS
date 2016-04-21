@@ -1910,30 +1910,54 @@
     <file name="NestedNewExpression_Test.java">
       <node id="2908733373806051335" at="17,73,18,116" concept="3" />
       <node id="2908733373806051335" at="18,116,19,129" concept="3" />
-      <node id="2908733373806051335" at="22,77,23,116" concept="3" />
-      <node id="2908733373806051335" at="23,116,24,133" concept="3" />
-      <node id="2908733373806051335" at="30,75,31,230" concept="5" />
-      <node id="2908733373806051335" at="31,230,32,124" concept="3" />
-      <node id="2908733373806051335" at="34,79,35,230" concept="5" />
-      <node id="2908733373806051335" at="35,230,36,124" concept="3" />
-      <node id="2908733373806051335" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck2908733373809544465#()V" />
-      <node id="2908733373806051335" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
+      <node id="2908733373806051335" at="22,73,23,116" concept="3" />
+      <node id="2908733373806051335" at="23,116,24,129" concept="3" />
+      <node id="2908733373806051335" at="27,73,28,116" concept="3" />
+      <node id="2908733373806051335" at="28,116,29,129" concept="3" />
+      <node id="2908733373806051335" at="32,77,33,116" concept="3" />
+      <node id="2908733373806051335" at="33,116,34,133" concept="3" />
+      <node id="2908733373806051335" at="40,75,41,230" concept="5" />
+      <node id="2908733373806051335" at="41,230,42,124" concept="3" />
+      <node id="2908733373806051335" at="44,75,45,230" concept="5" />
+      <node id="2908733373806051335" at="45,230,46,124" concept="3" />
+      <node id="2908733373806051335" at="48,75,49,230" concept="5" />
+      <node id="2908733373806051335" at="49,230,50,124" concept="3" />
+      <node id="2908733373806051335" at="52,79,53,230" concept="5" />
+      <node id="2908733373806051335" at="53,230,54,124" concept="3" />
+      <node id="2908733373806051335" at="40,0,44,0" concept="4" trace="test_NodeErrorCheck2908733373809544465#()V" />
+      <node id="2908733373806051335" at="44,0,48,0" concept="4" trace="test_NodeErrorCheck1628645464085513077#()V" />
+      <node id="2908733373806051335" at="48,0,52,0" concept="4" trace="test_NodeErrorCheck1628645464087305021#()V" />
+      <node id="2908733373806051335" at="52,0,56,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
       <node id="2908733373806051335" at="16,0,21,0" concept="4" trace="test_NodeErrorCheck2908733373809544465#()V" />
-      <node id="2908733373806051335" at="21,0,26,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
+      <node id="2908733373806051335" at="21,0,26,0" concept="4" trace="test_NodeErrorCheck1628645464085513077#()V" />
+      <node id="2908733373806051335" at="26,0,31,0" concept="4" trace="test_NodeErrorCheck1628645464087305021#()V" />
+      <node id="2908733373806051335" at="31,0,36,0" concept="4" trace="test_ErrorMessagesCheck2908733373806471082#()V" />
       <scope id="2908733373806051335" at="17,73,19,129" />
-      <scope id="2908733373806051335" at="22,77,24,133" />
-      <scope id="2908733373806051335" at="30,75,32,124">
+      <scope id="2908733373806051335" at="22,73,24,129" />
+      <scope id="2908733373806051335" at="27,73,29,129" />
+      <scope id="2908733373806051335" at="32,77,34,133" />
+      <scope id="2908733373806051335" at="40,75,42,124">
         <var name="operation" id="2908733373806051335" />
       </scope>
-      <scope id="2908733373806051335" at="34,79,36,124">
+      <scope id="2908733373806051335" at="44,75,46,124">
         <var name="operation" id="2908733373806051335" />
       </scope>
-      <scope id="2908733373806051335" at="30,0,34,0" />
-      <scope id="2908733373806051335" at="34,0,38,0" />
+      <scope id="2908733373806051335" at="48,75,50,124">
+        <var name="operation" id="2908733373806051335" />
+      </scope>
+      <scope id="2908733373806051335" at="52,79,54,124">
+        <var name="operation" id="2908733373806051335" />
+      </scope>
+      <scope id="2908733373806051335" at="40,0,44,0" />
+      <scope id="2908733373806051335" at="44,0,48,0" />
+      <scope id="2908733373806051335" at="48,0,52,0" />
+      <scope id="2908733373806051335" at="52,0,56,0" />
       <scope id="2908733373806051335" at="16,0,21,0" />
       <scope id="2908733373806051335" at="21,0,26,0" />
-      <unit id="2908733373806051335" at="27,0,40,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody" />
-      <unit id="2908733373806051335" at="14,0,41,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test" />
+      <scope id="2908733373806051335" at="26,0,31,0" />
+      <scope id="2908733373806051335" at="31,0,36,0" />
+      <unit id="2908733373806051335" at="37,0,58,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test$TestBody" />
+      <unit id="2908733373806051335" at="14,0,59,0" name="jetbrains.mps.baseLanguage.test.NestedNewExpression_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2970924421778354240">

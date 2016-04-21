@@ -57970,5 +57970,106 @@
       <ref role="1YaFvo" to="tpee:6kfBYRWHrp$" resolve="NestedNewExpression" />
     </node>
   </node>
+  <node concept="18kY7G" id="1qq76IJB$0p">
+    <property role="TrG5h" value="check_NonStaticInnerDefaultClassCreation" />
+    <node concept="3clFbS" id="1qq76IJB$0q" role="18ibNy">
+      <node concept="2Mj0R9" id="1qq76IJB$0r" role="3cqZAp">
+        <node concept="Xl_RD" id="1qq76IJB$0s" role="2MkJ7o">
+          <property role="Xl_RC" value="Can't instantiate here" />
+        </node>
+        <node concept="1YBJjd" id="1qq76IJB$0t" role="2OEOjV">
+          <ref role="1YBMHb" node="1qq76IJB$0H" resolve="defaultClassCreator" />
+        </node>
+        <node concept="22lmx$" id="1qq76IJB$0u" role="2MkoU_">
+          <node concept="2OqwBi" id="1qq76IJB$0v" role="3uHU7B">
+            <node concept="2OqwBi" id="1qq76IJB$0w" role="2Oq$k0">
+              <node concept="1YBJjd" id="1qq76IJB$0x" role="2Oq$k0">
+                <ref role="1YBMHb" node="1qq76IJB$0H" resolve="defaultClassCreator" />
+              </node>
+              <node concept="1mfA1w" id="1qq76IJB$0y" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="1qq76IJB$0z" role="2OqNvi">
+              <node concept="chp4Y" id="1qq76IJB$0$" role="cj9EA">
+                <ref role="cht4Q" to="tpee:6kfBYRWHrp$" resolve="NestedNewExpression" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1qq76IJB$0_" role="3uHU7w">
+            <node concept="2OqwBi" id="1qq76IJB$0A" role="2Oq$k0">
+              <node concept="1YBJjd" id="1qq76IJB$0C" role="2Oq$k0">
+                <ref role="1YBMHb" node="1qq76IJB$0H" resolve="defaultClassCreator" />
+              </node>
+              <node concept="3TrEf2" id="1qq76IJId$h" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:2s$p4KaM3eA" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="1qq76IJB$0F" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:610WLfjPjne" resolve="canInstantiateIn" />
+              <node concept="1YBJjd" id="1qq76IJB$0G" role="37wK5m">
+                <ref role="1YBMHb" node="1qq76IJB$0H" resolve="defaultClassCreator" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1qq76IJB$0H" role="1YuTPh">
+      <property role="TrG5h" value="defaultClassCreator" />
+      <ref role="1YaFvo" to="tpee:2s$p4KaM3e_" resolve="DefaultClassCreator" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1qq76IJNkJL">
+    <property role="TrG5h" value="check_NonStaticAnonymousClassCreation" />
+    <node concept="3clFbS" id="1qq76IJNkJM" role="18ibNy">
+      <node concept="2Mj0R9" id="1qq76IJNkJN" role="3cqZAp">
+        <node concept="Xl_RD" id="1qq76IJNkJO" role="2MkJ7o">
+          <property role="Xl_RC" value="Can't instantiate here" />
+        </node>
+        <node concept="1YBJjd" id="1qq76IJNkJP" role="2OEOjV">
+          <ref role="1YBMHb" node="1qq76IJNkK3" resolve="anonymousClassCreator" />
+        </node>
+        <node concept="22lmx$" id="1qq76IJNkJQ" role="2MkoU_">
+          <node concept="2OqwBi" id="1qq76IJNkJR" role="3uHU7B">
+            <node concept="2OqwBi" id="1qq76IJNkJS" role="2Oq$k0">
+              <node concept="1YBJjd" id="1qq76IJNkJT" role="2Oq$k0">
+                <ref role="1YBMHb" node="1qq76IJNkK3" resolve="anonymousClassCreator" />
+              </node>
+              <node concept="1mfA1w" id="1qq76IJNkJU" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="1qq76IJNkJV" role="2OqNvi">
+              <node concept="chp4Y" id="1qq76IJNkJW" role="cj9EA">
+                <ref role="cht4Q" to="tpee:6kfBYRWHrp$" resolve="NestedNewExpression" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1qq76IJNkJX" role="3uHU7w">
+            <node concept="2OqwBi" id="1qq76IJNlM5" role="2Oq$k0">
+              <node concept="2OqwBi" id="1qq76IJNkJY" role="2Oq$k0">
+                <node concept="1YBJjd" id="1qq76IJNkJZ" role="2Oq$k0">
+                  <ref role="1YBMHb" node="1qq76IJNkK3" resolve="anonymousClassCreator" />
+                </node>
+                <node concept="3TrEf2" id="1qq76IJNkZ8" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:hcYeSH9" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="1qq76IJNm$x" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:h1Y3Xaw" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="1qq76IJNkK1" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:610WLfjPjne" resolve="canInstantiateIn" />
+              <node concept="1YBJjd" id="1qq76IJNkK2" role="37wK5m">
+                <ref role="1YBMHb" node="1qq76IJNkK3" resolve="anonymousClassCreator" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1qq76IJNkK3" role="1YuTPh">
+      <property role="TrG5h" value="anonymousClassCreator" />
+      <ref role="1YaFvo" to="tpee:hcYeOiq" resolve="AnonymousClassCreator" />
+    </node>
+  </node>
 </model>
 
