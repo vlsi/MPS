@@ -10,6 +10,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
@@ -47,6 +48,10 @@ public class MappingDialog extends DialogWrapper {
     @Override
     protected MPSTreeNode rebuild() {
       return MappingDialog.this.rebuildTree();
+    }
+    @Override
+    protected void doInit(MPSTreeNode node, Runnable runnable) {
+      super.doInit(node, new ModelReadRunnable(myProject.getRepository().getModelAccess(), runnable));
     }
   };
   public MappingDialog(final com.intellij.openapi.project.Project project, Language language) {

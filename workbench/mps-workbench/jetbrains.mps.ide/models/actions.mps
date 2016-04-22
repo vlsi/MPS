@@ -16863,6 +16863,60 @@
                 <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
+            <node concept="3clFb_" id="9zqR67YKa3" role="jymVt">
+              <property role="1EzhhJ" value="false" />
+              <property role="TrG5h" value="doInit" />
+              <property role="DiZV1" value="false" />
+              <property role="od$2w" value="false" />
+              <node concept="3Tmbuc" id="9zqR67YKa4" role="1B3o_S" />
+              <node concept="3cqZAl" id="9zqR67YKa6" role="3clF45" />
+              <node concept="37vLTG" id="9zqR67YKa7" role="3clF46">
+                <property role="TrG5h" value="node" />
+                <node concept="3uibUv" id="9zqR67YKa8" role="1tU5fm">
+                  <ref role="3uigEE" to="7e8u:~MPSTreeNode" resolve="MPSTreeNode" />
+                </node>
+              </node>
+              <node concept="37vLTG" id="9zqR67YKa9" role="3clF46">
+                <property role="TrG5h" value="runnable" />
+                <node concept="3uibUv" id="9zqR67YKaa" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="9zqR67YKac" role="3clF47">
+                <node concept="3clFbF" id="9zqR67YKah" role="3cqZAp">
+                  <node concept="3nyPlj" id="9zqR67YKag" role="3clFbG">
+                    <ref role="37wK5l" to="7e8u:~MPSTree.doInit(jetbrains.mps.ide.ui.tree.MPSTreeNode,java.lang.Runnable):void" resolve="doInit" />
+                    <node concept="37vLTw" id="9zqR67YKae" role="37wK5m">
+                      <ref role="3cqZAo" node="9zqR67YKa7" resolve="node" />
+                    </node>
+                    <node concept="2ShNRf" id="9zqR67Zida" role="37wK5m">
+                      <node concept="1pGfFk" id="9zqR67ZWAD" role="2ShVmc">
+                        <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                        <node concept="2OqwBi" id="9zqR6803uY" role="37wK5m">
+                          <node concept="2OqwBi" id="9zqR6802wh" role="2Oq$k0">
+                            <node concept="37vLTw" id="9zqR6800pS" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2gG7g4cXFLe" resolve="myProject" />
+                            </node>
+                            <node concept="liA8E" id="9zqR6803g_" role="2OqNvi">
+                              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="9zqR6803KN" role="2OqNvi">
+                            <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="9zqR6805L5" role="37wK5m">
+                          <ref role="3cqZAo" node="9zqR67YKa9" resolve="runnable" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2AHcQZ" id="9zqR67YKad" role="2AJF6D">
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
