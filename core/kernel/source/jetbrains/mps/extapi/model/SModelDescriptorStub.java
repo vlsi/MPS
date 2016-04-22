@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -377,13 +378,8 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public final boolean updateSModelReferences() {
-    return getSModel().updateSModelReferences();
-  }
-
-  @Override
-  public final boolean updateModuleReferences() {
-    return getSModel().updateModuleReferences();
+  public final boolean updateExternalReferences(@NotNull SRepository repo) {
+    return getSModel().updateExternalReferences(getRepository());
   }
 
   @Override

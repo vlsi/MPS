@@ -779,18 +779,24 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     e.printStackTrace();
   }
 
+  // FIXME why updateSModelReferences() is separate from updateModuleReferences()?
+  // there's only 1 place (ForcedSaveAll action) that doesn't invoke them together. On purpose?
   public void updateSModelReferences() {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null) return;
-    if (moduleDescriptor.updateModelRefs()) {
+    if (moduleDescriptor == null || getRepository() == null) {
+      return;
+    }
+    if (moduleDescriptor.updateModelRefs(getRepository())) {
       setChanged();
     }
   }
 
   public void updateModuleReferences() {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null) return;
-    if (moduleDescriptor.updateModuleRefs()) {
+    if (moduleDescriptor == null || getRepository() == null) {
+      return;
+    }
+    if (moduleDescriptor.updateModuleRefs(getRepository())) {
       setChanged();
     }
   }

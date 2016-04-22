@@ -73,7 +73,7 @@ public final class ImplicitImportsLegacyHolder {
     for (ImportElement e : myImplicitImports) {
       jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.getModelReference();
       jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
+      if (jetbrains.mps.smodel.SModelReference.differs(e.getModelReference(), newRef)) {
         changed = true;
         e.setModelReference(newRef);
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.util.LinkedHashSet;
@@ -48,12 +49,13 @@ public class DevkitDescriptor extends ModuleDescriptor {
   }
 
   @Override
-  public boolean updateModuleRefs() {
+  public boolean updateModuleRefs(SRepository repository) {
+    RefUpdateUtil uu = new RefUpdateUtil(repository);
     return RefUpdateUtil.composeUpdates(
-      super.updateModuleRefs(),
-      RefUpdateUtil.updateModuleRefs(myExportedLanguages),
-      RefUpdateUtil.updateModuleRefs(myExportedSolutions),
-      RefUpdateUtil.updateModuleRefs(myExtendedDevkits)
+      super.updateModuleRefs(repository),
+      uu.updateModuleRefs(myExportedLanguages),
+      uu.updateModuleRefs(myExportedSolutions),
+      uu.updateModuleRefs(myExtendedDevkits)
     );
   }
 

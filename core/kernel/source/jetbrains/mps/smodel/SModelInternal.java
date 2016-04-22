@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 
@@ -105,9 +106,11 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void removeEngagedOnGenerationLanguage(SLanguage lang);
 
-  boolean updateSModelReferences();
+  /**
+   * Model has a chance to bring its external dependencies to a state manifested by supplied repository
+   * @return <code>true</code> if anything has been changed
+   */
+  boolean updateExternalReferences(@NotNull SRepository repository);
 
   void changeModelReference(SModelReference newModelReference);
-
-  boolean updateModuleReferences();
 }

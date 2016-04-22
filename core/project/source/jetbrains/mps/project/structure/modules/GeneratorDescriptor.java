@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -79,14 +79,15 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   /**
    * Expects at least model read access (although likely no reason to invoke in any other case but from write that modified smth)
+   * @param repository
    */
   @Override
-  public boolean updateModuleRefs() {
-    // FIXME pass SRepository to resolve references in from outside (AbstractModule)
+  public boolean updateModuleRefs(SRepository repository) {
+    RefUpdateUtil uu = new RefUpdateUtil(repository);
     return RefUpdateUtil.composeUpdates(
-      super.updateModuleRefs(),
-      RefUpdateUtil.updateModuleRefs(myDepGenerators),
-      RefUpdateUtil.updateMappingPriorityRules(myPriorityRules, MPSModuleRepository.getInstance()));
+      super.updateModuleRefs(repository),
+      uu.updateModuleRefs(myDepGenerators),
+      uu.updateMappingPriorityRules(myPriorityRules));
   }
 
   @Override
