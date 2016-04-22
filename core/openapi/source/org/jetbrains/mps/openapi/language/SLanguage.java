@@ -58,6 +58,9 @@ public interface SLanguage {
   @Nullable
   SModule getSourceModule();
 
+  //todo try to make @NotNull
+  SModuleReference getSourceModuleReference();
+
   /**
    * Version of the referenced language.
    * Version is an integer indicating state of a language. It is changed when the structure of this language changes.

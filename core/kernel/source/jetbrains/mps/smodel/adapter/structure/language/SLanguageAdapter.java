@@ -56,6 +56,12 @@ public abstract class SLanguageAdapter implements SLanguage {
   public abstract Language getSourceModule();
 
   @Override
+  public SModuleReference getSourceModuleReference() {
+    Language sm = getSourceModule();
+    return sm == null ? null : sm.getModuleReference();
+  }
+
+  @Override
   @NotNull
   public String getQualifiedName() {
     return myLanguageFqName;
@@ -120,13 +126,13 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   public abstract String serialize();
 
-  public static SLanguageAdapter deserialize(String s){
-    if (s.startsWith(SLanguageAdapterById.LANGUAGE_PREFIX)){
+  public static SLanguageAdapter deserialize(String s) {
+    if (s.startsWith(SLanguageAdapterById.LANGUAGE_PREFIX)) {
       return SLanguageAdapterById.deserialize(s);
-    } else if (s.startsWith(InvalidLanguage.INVALID_PREFIX)){
+    } else if (s.startsWith(InvalidLanguage.INVALID_PREFIX)) {
       return InvalidLanguage.deserialize(s);
-    } else{
-      throw new FormatException("Illegal language type: "+s);
+    } else {
+      throw new FormatException("Illegal language type: " + s);
     }
   }
 }
