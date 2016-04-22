@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.TreeUIHelper;
+import com.intellij.util.ui.tree.WideSelectionTreeUI;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
@@ -39,6 +40,7 @@ import javax.swing.ToolTipManager;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeWillExpandListener;
+import javax.swing.plaf.TreeUI;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.ExpandVetoException;
 import javax.swing.tree.TreeNode;
@@ -319,15 +321,42 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return null;
   }
 
+  private boolean insideTreeItemsArea(int y) {
+    Rectangle rowBounds = getRowBounds(getRowCount() - 1);
+    if (rowBounds == null) {
+      return false;
+    }
+    double lastItemBottomLine = rowBounds.getMaxY();
+    return y <= lastItemBottomLine;
+  }
+
+  private boolean isWideSelectionUI() {
+    TreeUI ui = getUI();
+    return ui instanceof WideSelectionTreeUI && ((WideSelectionTreeUI) ui).isWideSelection();
+  }
+
   private void showPopup(int x, int y) {
-    TreePath path = getPathForLocation(x, y);
+    if (!insideTreeItemsArea(y)) {
+      return;
+    }
+
+    TreePath closestPath = getClosestPathForLocation(x, y);
+    TreePath path;
+    if (isWideSelectionUI()) {
+      path = closestPath;
+    } else {
+      path = getPathForLocation(x, y);
+    }
+
+    // Always select the closest path, even if the tree does not have wide selection, or the node doesn't have a menu.
+    if (closestPath != null && !isPathSelected(closestPath)) {
+      setSelectionPath(path);
+    }
+
     final MPSTreeNode node = getNodeFromPath(path);
     if (node != null) {
       JPopupMenu menu = createPopupMenu(node);
       if (menu != null) {
-        if (!isPathSelected(path)) {
-          setSelectionPath(path);
-        }
         menu.show(this, x, y);
         return;
       }
