@@ -68,6 +68,11 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   @Override
+  public boolean isValid() {
+    return getLanguageDescriptor() != null;
+  }
+
+  @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = getLanguageDescriptor();
     if (runtime == null) {

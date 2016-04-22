@@ -44,6 +44,13 @@ public interface SLanguage {
   Iterable<SAbstractConcept> getConcepts();
 
   /**
+   * Returns true if this language is fully-functional.
+   * Typically, user code should not care about this
+   * Can return false, for example, if the language is absent
+   */
+  boolean isValid();
+
+  /**
    * All the runtime dependencies that a language needs after generation to run the generated code.
    * These will be resolved from the user repository.
    * Empty sequence in case language is invalid/missing.
