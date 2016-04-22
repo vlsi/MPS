@@ -117,7 +117,6 @@
       <concept id="1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" flags="ln" index="34QqEe" />
       <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt" />
       <concept id="1233823429331" name="jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem" flags="ln" index="15ARfc" />
-      <concept id="8313721352726366579" name="jetbrains.mps.lang.editor.structure.CellModel_Empty" flags="ng" index="35HoNQ" />
       <concept id="1165253627126" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup" flags="ng" index="1exORT">
         <property id="1165254125954" name="presentation" index="1ezIyd" />
         <child id="1165253890469" name="parameterObjectType" index="1eyP2E" />
@@ -1856,8 +1855,9 @@
             </node>
           </node>
         </node>
-        <node concept="35HoNQ" id="7grjD_UZd7l" role="2ruayu">
-          <node concept="VPM3Z" id="7grjD_UZd9G" role="3F10Kt">
+        <node concept="3EZMnI" id="1MbrQ$SSFNf" role="2ruayu">
+          <node concept="l2Vlx" id="1MbrQ$SSFNk" role="2iSdaV" />
+          <node concept="VPM3Z" id="1MbrQ$SSFNl" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
         </node>
@@ -2343,8 +2343,9 @@
             </node>
           </node>
         </node>
-        <node concept="35HoNQ" id="7grjD_UZyvP" role="2ruayu">
-          <node concept="VPM3Z" id="7grjD_UZyyb" role="3F10Kt">
+        <node concept="3EZMnI" id="1MbrQ$SSFWI" role="2ruayu">
+          <node concept="l2Vlx" id="1MbrQ$SSFWJ" role="2iSdaV" />
+          <node concept="VPM3Z" id="1MbrQ$SSFWK" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
         </node>
@@ -2558,8 +2559,9 @@
         <node concept="34QqEe" id="3IKDaVZoWAI" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="35HoNQ" id="7grjD_UWxuw" role="2ruayu">
-          <node concept="VPM3Z" id="7grjD_UX_i7" role="3F10Kt">
+        <node concept="3EZMnI" id="1MbrQ$SRUEz" role="2ruayu">
+          <node concept="l2Vlx" id="1MbrQ$SRUEC" role="2iSdaV" />
+          <node concept="VPM3Z" id="1MbrQ$SRUED" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
         </node>

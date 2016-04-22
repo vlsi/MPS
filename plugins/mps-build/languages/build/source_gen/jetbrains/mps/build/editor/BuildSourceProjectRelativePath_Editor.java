@@ -21,15 +21,13 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
@@ -117,13 +115,11 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createEmpty_698n2d_a2a(editorContext, node);
+      return this.createCollection_698n2d_a2a(editorContext, node);
     }
-    private EditorCell createEmpty_698n2d_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("Empty_698n2d_a2a");
+    private EditorCell createCollection_698n2d_a2a(EditorContext editorContext, SNode node) {
+      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+      editorCell.setCellId("Collection_698n2d_a2a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);

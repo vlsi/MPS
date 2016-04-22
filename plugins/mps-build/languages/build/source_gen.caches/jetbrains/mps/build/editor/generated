@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="12u1kxotilg26jklcwr0xthuoo0z8qe">
+<dependencies version="2" modelHash="-cyzthboynyixj0ri15piew2f02h9lkd">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.cells(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/)" />
@@ -48,7 +48,7 @@
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-6h2u82japaswerosxaneg6oqho7add1" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-cs9q6uqzz7m5ssof7q0fsvuse5zchpj" />
-  <common hash="7222atyyb5qlzuzhtayqqpklpwffvdy" dependsOnNodes="true">
+  <common hash="-6q1gpceijqvc49e3uhmtvhidvug4p47" dependsOnNodes="true">
     <dep root="103203307808601011" />
     <dep root="1222746468862108406" />
     <dep root="1251221292903960371" />
@@ -371,7 +371,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildMacro_Editor.java" />
   </source>
-  <source id="7389400916848153119" name="BuildSourceMacroRelativePath_Editor" hash="-5hsbanjdpkmpviboaojzg3rzhd8glcv">
+  <source id="7389400916848153119" name="BuildSourceMacroRelativePath_Editor" hash="q0cpfcduag8cy1tu0rddvf0gia30pp">
     <dep root="7389400916848057604" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/)" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
@@ -550,7 +550,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="complete_Path.java" />
   </source>
-  <source id="5481553824944787381" name="BuildSourceProjectRelativePath_Editor" hash="-d0ak427w9gyiopmyrh0kcrg55anv2yk">
+  <source id="5481553824944787381" name="BuildSourceProjectRelativePath_Editor" hash="3faww0vecirczye3cbabckiufdn6teb">
     <dep root="7389400916848057604" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
@@ -574,7 +574,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildSourceProjectRelativePath_Editor.java" />
   </source>
-  <source id="8618885170173601780" name="BuildCompositePath_Editor" hash="6l1jue9zyithojrqgsb2i7gxuqhcnag">
+  <source id="8618885170173601780" name="BuildCompositePath_Editor" hash="-bszi2y8xv2isc0ydgmtxy27hwlxgjt1">
     <dep root="103203307808601011" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/)" />

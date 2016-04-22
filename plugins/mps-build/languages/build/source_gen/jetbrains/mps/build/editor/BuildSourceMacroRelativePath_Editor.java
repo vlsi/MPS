@@ -26,9 +26,6 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
@@ -170,13 +167,11 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createEmpty_3is4rg_a3a(editorContext, node);
+      return this.createCollection_3is4rg_a3a(editorContext, node);
     }
-    private EditorCell createEmpty_3is4rg_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-      editorCell.setCellId("Empty_3is4rg_a3a");
+    private EditorCell createCollection_3is4rg_a3a(EditorContext editorContext, SNode node) {
+      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+      editorCell.setCellId("Collection_3is4rg_a3a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
