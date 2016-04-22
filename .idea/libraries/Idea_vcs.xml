@@ -19,6 +19,7 @@
       <root url="jar://$PROJECT_DIR$/plugins/svn4idea/lib/svnkit.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/svn4idea/lib/trilead.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/git4idea/lib/remote-servers-git.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/git4idea/lib/git4idea-rt.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -28,6 +29,7 @@
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/git4idea" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/svn4idea" />
       <root url="jar://$PROJECT_DIR$/plugins/svn4idea/lib/svnkit-javahl16.zip!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/git4idea-rt" />
     </SOURCES>
   </library>
 </component>
