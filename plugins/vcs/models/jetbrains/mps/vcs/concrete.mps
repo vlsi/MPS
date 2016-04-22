@@ -8,8 +8,8 @@
   <imports>
     <import index="4hos" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.vcs(MPS.Workbench/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="hr4p" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea(jetbrains.mps.vcs.platform/)" />
-    <import index="l8al" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea.commands(jetbrains.mps.vcs.platform/)" />
+    <import index="hr4p" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea(jetbrains.mps.ide.vcs.platform/)" />
+    <import index="l8al" ref="6fd1293f-7f65-4ffd-99dc-4719eca7c171/java:git4idea.commands(jetbrains.mps.ide.vcs.platform/)" />
     <import index="4rb9" ref="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />

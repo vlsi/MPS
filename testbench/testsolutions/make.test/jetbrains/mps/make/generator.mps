@@ -16,12 +16,12 @@
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
     <import index="gffh" ref="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
-    <import index="mg6i" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock()" />
-    <import index="atif" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.syntax()" />
-    <import index="5wnq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.api()" />
-    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect()" />
-    <import index="9r38" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.integration.junit4()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="mg6i" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="atif" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.syntax(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="5wnq" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.api(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
+    <import index="9r38" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.jmock.integration.junit4(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="cvlm" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
