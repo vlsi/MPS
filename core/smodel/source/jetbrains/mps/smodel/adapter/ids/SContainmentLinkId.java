@@ -25,6 +25,12 @@ public final class SContainmentLinkId extends SConceptFeatureId {
     myLinkId = linkId;
   }
 
+  //we need it here for mbeddr to have time to migrate
+  //todo remove
+  public SConceptId getConceptId() {
+    return super.getConceptId();
+  }
+
   public long getIdValue () {
     return myLinkId;
   }
