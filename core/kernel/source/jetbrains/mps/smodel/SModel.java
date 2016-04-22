@@ -895,26 +895,25 @@ public class SModel implements SModelData {
     for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
-        if (oldReference == null) continue;
-        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
-        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-        if (jetbrains.mps.smodel.SModelReference.differs(newRef, oldSRef)) {
+        if (oldReference == null || !(reference instanceof SReferenceBase)) {
+          continue;
+        }
+        // there's RefUpdateUtil.updateModelRef() that could have been used here, it it was in [smodel].
+        // But it's in [project] now, and needs refactoring to relocate.
+        final org.jetbrains.mps.openapi.model.SModel resolved = oldReference.resolve(repository);
+        if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), oldReference)) {
           changed = true;
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
+          ((SReferenceBase) reference).setTargetSModelReference(resolved.getReference());
         }
       }
     }
 
     for (ImportElement e : myImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (jetbrains.mps.smodel.SModelReference.differs(newRef, oldSRef)) {
+      final org.jetbrains.mps.openapi.model.SModel resolved = e.getModelReference().resolve(repository);
+      if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), e.getModelReference())) {
         changed = true;
-        e.myModelReference = newRef;
+        e.myModelReference = resolved.getReference();
       }
-    }
-    if (myLegacyImplicitImports != null) {
-      changed |= myLegacyImplicitImports.updateSModelReferences();
     }
 
     if (updateRefs(myDevKits)) {

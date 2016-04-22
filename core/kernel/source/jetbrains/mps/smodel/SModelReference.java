@@ -308,18 +308,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   /**
-   * @deprecated factory method that requires cast to implementation. why not API way to do the same?
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModelReference update() {
-    SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
-    if (sm == null) return this;
-    SModelReference reference = (SModelReference) sm.getReference();
-    return new SModelReference(reference.getModuleReference(), reference.getModelId(), reference.getModelName());
-  }
-
-  /**
    * @see jetbrains.mps.project.structure.modules.ModuleReference#differs(SModuleReference, SModuleReference)
    */
   public static boolean differs(org.jetbrains.mps.openapi.model.SModelReference ref1, org.jetbrains.mps.openapi.model.SModelReference ref2) {
