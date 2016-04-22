@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -83,8 +84,8 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
         addDevkitItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
       }
 
-      for(SModuleReference moduleReference : devkitDescriptor.getExportedLanguages()) {
-        addLanguageItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
+      for(SModuleReference lang : devkitDescriptor.getExportedLanguages()) {
+        addLanguageItem(new Dependency(lang, SDependencyScope.EXTENDS));
       }
 
       for(SModuleReference moduleReference : devkitDescriptor.getExportedSolutions()) {
@@ -113,9 +114,14 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     else if(myItem instanceof DevkitDescriptor) {
       DevkitDescriptor devkitDescriptor = (DevkitDescriptor) myItem;
 
-      equals = equals && devkitDescriptor.getExtendedDevkits().containsAll(getModulesByType(ModuleType.DEVKIT)) && getModulesByType(ModuleType.DEVKIT).containsAll(devkitDescriptor.getExtendedDevkits());
-      equals = equals && devkitDescriptor.getExportedLanguages().containsAll(getModulesByType(ModuleType.LANGUAGE)) && getModulesByType(ModuleType.LANGUAGE).containsAll(devkitDescriptor.getExportedLanguages());
-      equals = equals && devkitDescriptor.getExportedSolutions().containsAll(getModulesByType(ModuleType.SOLUTION)) && getModulesByType(ModuleType.SOLUTION).containsAll(devkitDescriptor.getExportedSolutions());
+      equals &= devkitDescriptor.getExtendedDevkits().containsAll(getModulesByType(ModuleType.DEVKIT));
+      equals &= getModulesByType(ModuleType.DEVKIT).containsAll(devkitDescriptor.getExtendedDevkits());
+
+      equals &= devkitDescriptor.getExportedLanguages().containsAll(getModulesByType(ModuleType.LANGUAGE));
+      equals &= getModulesByType(ModuleType.LANGUAGE).containsAll(devkitDescriptor.getExportedLanguages());
+
+      equals &= devkitDescriptor.getExportedSolutions().containsAll(getModulesByType(ModuleType.SOLUTION));
+      equals &= getModulesByType(ModuleType.SOLUTION).containsAll(devkitDescriptor.getExportedSolutions());
     }
 
     return !equals;
