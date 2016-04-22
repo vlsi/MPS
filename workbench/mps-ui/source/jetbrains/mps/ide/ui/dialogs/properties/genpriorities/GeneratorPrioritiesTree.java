@@ -169,8 +169,6 @@ public class GeneratorPrioritiesTree {
 
   private void setCheckedStateForModel(CheckedTreeNodeEx node, MappingConfig_SimpleRef mapping) {
     SModelReference modRef = PersistenceFacade.getInstance().createModelReference(mapping.getModelUID());
-    // WTF?
-    ((jetbrains.mps.smodel.SModelReference) modRef).update();
 
     Enumeration children = node.children();
     while (children.hasMoreElements()) {

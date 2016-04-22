@@ -4840,23 +4840,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3tOCygy4TK4" role="3cqZAp">
-          <node concept="2OqwBi" id="3tOCygy4TK5" role="3clFbG">
-            <node concept="1eOMI4" id="2eAVmslAQQy" role="2Oq$k0">
-              <node concept="10QFUN" id="2eAVmslAQQz" role="1eOMHV">
-                <node concept="3uibUv" id="2eAVmslAQQ$" role="10QFUM">
-                  <ref role="3uigEE" to="w1kc:~SModelReference" resolve="SModelReference" />
-                </node>
-                <node concept="37vLTw" id="3GM_nagTvez" role="10QFUP">
-                  <ref role="3cqZAo" node="3tOCygy4TJY" resolve="modRef" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="3tOCygy4TK7" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelReference.update():jetbrains.mps.smodel.SModelReference" resolve="update" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3tOCygy4TK8" role="3cqZAp">
           <node concept="3cpWsn" id="3tOCygy4TK9" role="3cpWs9">
             <property role="TrG5h" value="children" />
@@ -4922,28 +4905,6 @@
                   <node concept="3uibUv" id="3tOCygy4TKy" role="10QFUM">
                     <ref role="3uigEE" node="3tOCygy4T_2" resolve="MappingSelectTree.ModelRefNodeData" />
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="3tOCygy4TKz" role="3cqZAp">
-              <node concept="2OqwBi" id="3tOCygy4TK$" role="3clFbG">
-                <node concept="1eOMI4" id="2eAVmslAZUQ" role="2Oq$k0">
-                  <node concept="10QFUN" id="2eAVmslAZUR" role="1eOMHV">
-                    <node concept="3uibUv" id="2eAVmslAZUS" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~SModelReference" resolve="SModelReference" />
-                    </node>
-                    <node concept="2OqwBi" id="2eAVmslAZUT" role="10QFUP">
-                      <node concept="37vLTw" id="3GM_nagTzjU" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3tOCygy4TKs" resolve="childData" />
-                      </node>
-                      <node concept="liA8E" id="2eAVmslAZUV" role="2OqNvi">
-                        <ref role="37wK5l" node="3tOCygy4T_c" resolve="getObject" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="3tOCygy4TKC" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelReference.update():jetbrains.mps.smodel.SModelReference" resolve="update" />
                 </node>
               </node>
             </node>

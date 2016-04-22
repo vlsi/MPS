@@ -16,9 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -306,20 +308,15 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   /**
-   * @deprecated factory method that requires cast to implementation. why not API way to do the same?
+   * @see jetbrains.mps.project.structure.modules.ModuleReference#differs(SModuleReference, SModuleReference)
    */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModelReference update() {
-    SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
-    if (sm == null) return this;
-    SModelReference reference = (SModelReference) sm.getReference();
-    return new SModelReference(reference.getModuleReference(), reference.getModelId(), reference.getModelName());
-  }
-
-  public boolean differs(SModelReference that) {
-    if (!this.equals(that)) return true;
-    if (!myModelName.equals(that.myModelName)) return true;
-    return false;
+  public static boolean differs(org.jetbrains.mps.openapi.model.SModelReference ref1, org.jetbrains.mps.openapi.model.SModelReference ref2) {
+    if (ref1 == null || ref2 == null) {
+      return ref1 != ref2;
+    }
+    if (ModuleReference.differs(ref1.getModuleReference(), ref2.getModuleReference())) {
+      return true;
+    }
+    return !(EqualUtil.equals(ref1.getModelId(), ref2.getModelId()) && EqualUtil.equals(ref1.getModelName(), ref2.getModelName()));
   }
 }

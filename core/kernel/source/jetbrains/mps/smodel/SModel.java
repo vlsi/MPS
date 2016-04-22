@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
@@ -33,7 +29,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -890,7 +885,9 @@ public class SModel implements SModelData {
 
   //---------refactorings--------
 
-  public boolean updateSModelReferences() {
+  // To allow update of models not yet attached to a repo (e.g. when we read a model and are going to attach it in with
+  // refreshed state, rather than attach first and then refresh), we pass repository from outside rather than using this.getRepository()
+  public boolean updateExternalReferences(@NotNull SRepository repository) {
     assertLegalChange();
     enforceFullLoad();
 
@@ -898,36 +895,26 @@ public class SModel implements SModelData {
     for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
-        if (oldReference == null) continue;
-        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
-        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-        if (newRef.differs(oldSRef)) {
+        if (oldReference == null || !(reference instanceof SReferenceBase)) {
+          continue;
+        }
+        // there's RefUpdateUtil.updateModelRef() that could have been used here, it it was in [smodel].
+        // But it's in [project] now, and needs refactoring to relocate.
+        final org.jetbrains.mps.openapi.model.SModel resolved = oldReference.resolve(repository);
+        if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), oldReference)) {
           changed = true;
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
+          ((SReferenceBase) reference).setTargetSModelReference(resolved.getReference());
         }
       }
     }
 
     for (ImportElement e : myImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
+      final org.jetbrains.mps.openapi.model.SModel resolved = e.getModelReference().resolve(repository);
+      if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), e.getModelReference())) {
         changed = true;
-        e.myModelReference = newRef;
+        e.myModelReference = resolved.getReference();
       }
     }
-    if (myLegacyImplicitImports != null) {
-      changed |= myLegacyImplicitImports.updateSModelReferences();
-    }
-
-    return changed;
-  }
-
-  public boolean updateModuleReferences() {
-    assertLegalChange();
-
-
-    boolean changed = false;
 
     if (updateRefs(myDevKits)) {
       changed = true;
@@ -952,7 +939,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public boolean updateRefs(List<SModuleReference> refs) {
+  private boolean updateRefs(List<SModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       SModuleReference ref = refs.get(i);

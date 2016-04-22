@@ -17,10 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -53,7 +51,7 @@ public class ForcedSaveAll_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+    Iterable<SModule> modules = (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModulesWithGenerators();
     List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -64,16 +62,12 @@ public class ForcedSaveAll_Action extends BaseAction {
       }
     }).toListSequence();
 
-    for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
-      for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
-        generator.updateModuleReferences();
+    for (AbstractModule module : Sequence.fromIterable(modules).ofType(AbstractModule.class)) {
+      module.updateExternalReferences();
+      if (!(module instanceof Generator)) {
+        // generators are saved as part of owning Language's save, no need to do it twice 
+        module.save();
       }
-      language.updateSModelReferences();
-      language.save();
-    }
-    for (Solution solution : Sequence.fromIterable(modules).ofType(Solution.class)) {
-      solution.updateSModelReferences();
-      solution.save();
     }
 
     for (EditableSModel model : ListSequence.fromList(allModels)) {
@@ -90,7 +84,7 @@ public class ForcedSaveAll_Action extends BaseAction {
         }
       } catch (Exception ex) {
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Error re-saving model " + model.getModelName(), ex);
+          LOG.error("Error re-saving model " + model.getName(), ex);
         }
       }
     }

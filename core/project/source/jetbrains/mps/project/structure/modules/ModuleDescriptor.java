@@ -26,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -210,15 +211,16 @@ public class ModuleDescriptor {
     myDeploymentDescriptor = deploymentDescriptor;
   }
 
-  public boolean updateModelRefs() {
+  public boolean updateModelRefs(SRepository repository) {
     return false;
   }
 
-  public boolean updateModuleRefs() {
+  public boolean updateModuleRefs(SRepository repository) {
+    RefUpdateUtil uu = new RefUpdateUtil(repository);
     return RefUpdateUtil.composeUpdates(
-      RefUpdateUtil.updateModuleRefs(myUsedLanguages),
-      RefUpdateUtil.updateModuleRefs(myUsedDevkits),
-      RefUpdateUtil.updateDependencies(myDependencies)
+      uu.updateModuleRefs(myUsedLanguages),
+      uu.updateModuleRefs(myUsedDevkits),
+      uu.updateDependencies(myDependencies)
     );
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,10 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -49,18 +46,20 @@ public class Renamer {
     repo.getModelAccess().checkWriteAccess();
 
     for (SModule m : repo.getModules()) {
-      if (m.isReadOnly()) continue;
-      if (!(m instanceof AbstractModule)) continue;
+      if (m.isReadOnly() || !(m instanceof AbstractModule)) {
+        continue;
+      }
 
       AbstractModule module = (AbstractModule) m;
-      module.updateSModelReferences();
-      module.updateModuleReferences();
+      module.updateExternalReferences();
 
       for (SModel sm : m.getModels()) {
-        if (sm.isReadOnly()) continue;
+        if (sm.isReadOnly()) {
+          continue;
+        }
 
         final SModelInternal model = (SModelInternal) sm;
-        if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModel)) {
+        if ((sm instanceof EditableSModel) && model.updateExternalReferences(repo)) {
           ((EditableSModel) sm).setChanged(true);
         }
       }

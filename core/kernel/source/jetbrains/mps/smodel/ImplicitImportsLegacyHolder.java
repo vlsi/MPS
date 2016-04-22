@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -32,7 +30,6 @@ import java.util.List;
  * With v9, we don't keep implicit imports and re-construct them before save as needed.
  */
 public final class ImplicitImportsLegacyHolder {
-  private static final Logger LOG = LogManager.getLogger(SModel.class);
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
   @NotNull
   private final SModel myModel;
@@ -66,18 +63,5 @@ public final class ImplicitImportsLegacyHolder {
       }
     }
     return null;
-  }
-
-  /*package*/ boolean updateSModelReferences() {
-    boolean changed = false;
-    for (ImportElement e : myImplicitImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.getModelReference();
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
-        changed = true;
-        e.setModelReference(newRef);
-      }
-    }
-    return changed;
   }
 }

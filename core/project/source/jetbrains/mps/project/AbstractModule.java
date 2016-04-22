@@ -544,8 +544,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void onModuleLoad() {
-    updateSModelReferences();
-    updateModuleReferences();
+    updateExternalReferences();
   }
 
   @Override
@@ -779,18 +778,19 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     e.printStackTrace();
   }
 
-  public void updateSModelReferences() {
+  // unlike similar method in SModel, doesn't take SRepository now
+  // according to present use cases, we iterate modules of a repository and update them,
+  // hence it's superficial  to pass repository in here (although might add one for consistency)
+  public void updateExternalReferences() {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null) return;
-    if (moduleDescriptor.updateModelRefs()) {
+    final SRepository repository = getRepository();
+    if (moduleDescriptor == null || repository == null) {
+      return;
+    }
+    if (moduleDescriptor.updateModelRefs(repository)) {
       setChanged();
     }
-  }
-
-  public void updateModuleReferences() {
-    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null) return;
-    if (moduleDescriptor.updateModuleRefs()) {
+    if (moduleDescriptor.updateModuleRefs(repository)) {
       setChanged();
     }
   }

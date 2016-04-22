@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       DefaultSModel model = new DefaultSModel(getReference(), myHeader);
-      return new ModelLoadResult((SModel) model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
     ModelLoadResult result;
@@ -75,12 +75,12 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       LOG.warning(String.format("Failed to load model %s: %s", getSource().getLocation(), e.toString()));
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       InvalidDefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
-      return new ModelLoadResult((SModel) newModel, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
     jetbrains.mps.smodel.SModel model = result.getModel();
-    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+    if (result.getState() == ModelLoadingState.FULLY_LOADED && getRepository() != null) {
+      boolean needToSave = model.updateExternalReferences(getRepository());
 
       if (needToSave && !source.isReadOnly()) {
         setChanged(true);
@@ -127,9 +127,10 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    // if we do save model, ensure we write proper references. It's not the best possible solution, see MPS-22440 for details
-    smodel.updateSModelReferences();
-    smodel.updateModuleReferences();
+    if (getRepository() != null) {
+      // if we do save model, ensure we write proper references. It's not the best possible solution, see MPS-22440 for details
+      smodel.updateExternalReferences(getRepository());
+    }
     boolean upgraded = myPersistence.doesSaveUpgradePersistence(myHeader);
     myPersistence.saveModel(myHeader, smodel);
     return upgraded;

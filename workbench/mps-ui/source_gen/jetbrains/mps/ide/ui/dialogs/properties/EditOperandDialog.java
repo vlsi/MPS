@@ -164,12 +164,10 @@ public class EditOperandDialog extends DialogWrapper {
   }
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
     SModelReference modRef = PersistenceFacade.getInstance().createModelReference(operand.getModelUID());
-    ((jetbrains.mps.smodel.SModelReference) modRef).update();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = (DefaultMutableTreeNode) children.nextElement();
       MappingSelectTree.ModelRefNodeData childData = (MappingSelectTree.ModelRefNodeData) child.getUserObject();
-      ((jetbrains.mps.smodel.SModelReference) childData.getObject()).update();
       if (childData.getObject().equals(modRef)) {
         if (operand.getNodeID().equals("*")) {
           childData.setSelected(true);
