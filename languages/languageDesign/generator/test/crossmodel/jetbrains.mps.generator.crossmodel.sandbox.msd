@@ -11,9 +11,9 @@
     <dependency reexport="false">dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</dependency>
   </dependencies>
   <languageVersions>
-    <language id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" fqName="jetbrains.mps.generator.test.crossmodel.entity" version="0" />
-    <language id="dc1cc948-6f43-4687-90cb-17dd5cb27219" fqName="jetbrains.mps.generator.test.crossmodel.property" version="0" />
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
+    <language slang="l:4d14758c-3ecb-486d-b8c8-ea5beb8ae408:jetbrains.mps.generator.test.crossmodel.entity" version="0" />
+    <language slang="l:dc1cc948-6f43-4687-90cb-17dd5cb27219:jetbrains.mps.generator.test.crossmodel.property" version="0" />
+    <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
