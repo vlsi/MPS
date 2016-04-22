@@ -544,8 +544,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void onModuleLoad() {
-    updateSModelReferences();
-    updateModuleReferences();
+    updateExternalReferences();
   }
 
   @Override
@@ -779,24 +778,19 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     e.printStackTrace();
   }
 
-  // FIXME why updateSModelReferences() is separate from updateModuleReferences()?
-  // there's only 1 place (ForcedSaveAll action) that doesn't invoke them together. On purpose?
-  public void updateSModelReferences() {
+  // unlike similar method in SModel, doesn't take SRepository now
+  // according to present use cases, we iterate modules of a repository and update them,
+  // hence it's superficial  to pass repository in here (although might add one for consistency)
+  public void updateExternalReferences() {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null || getRepository() == null) {
+    final SRepository repository = getRepository();
+    if (moduleDescriptor == null || repository == null) {
       return;
     }
-    if (moduleDescriptor.updateModelRefs(getRepository())) {
+    if (moduleDescriptor.updateModelRefs(repository)) {
       setChanged();
     }
-  }
-
-  public void updateModuleReferences() {
-    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
-    if (moduleDescriptor == null || getRepository() == null) {
-      return;
-    }
-    if (moduleDescriptor.updateModuleRefs(getRepository())) {
+    if (moduleDescriptor.updateModuleRefs(repository)) {
       setChanged();
     }
   }

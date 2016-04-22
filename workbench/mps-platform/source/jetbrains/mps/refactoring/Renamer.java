@@ -17,13 +17,10 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -54,8 +51,7 @@ public class Renamer {
       }
 
       AbstractModule module = (AbstractModule) m;
-      module.updateSModelReferences();
-      module.updateModuleReferences();
+      module.updateExternalReferences();
 
       for (SModel sm : m.getModels()) {
         if (sm.isReadOnly()) {
