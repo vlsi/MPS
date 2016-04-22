@@ -388,7 +388,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return myNullTextLine;
   }
 
-  TextLine getRenderedTextLine() {
+  public TextLine getRenderedTextLine() {
     TextLine textLine;
     if (myNoTextSet && myTextLine.getText().length() == 0) {
       textLine = myNullTextLine;
