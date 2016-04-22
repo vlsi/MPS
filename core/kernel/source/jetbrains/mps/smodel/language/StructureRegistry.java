@@ -84,8 +84,6 @@ public class StructureRegistry implements CoreAspectRegistry {
   }
 
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.4)
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     String cname = "<StructureRegistry: this name must not be used>";
 
