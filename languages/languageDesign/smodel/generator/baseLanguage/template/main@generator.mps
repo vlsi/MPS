@@ -12272,7 +12272,7 @@
                             <node concept="30H73N" id="23CHI7KMsCK" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMsCM" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KMsCN" role="2OqNvi">
@@ -12333,7 +12333,7 @@
                             <node concept="30H73N" id="23CHI7KMy9n" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMy9p" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KMy9q" role="2OqNvi">
@@ -12392,7 +12392,7 @@
                         <node concept="30H73N" id="23CHI7KMv16" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KMv18" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="23CHI7KMv19" role="2OqNvi">
@@ -12520,7 +12520,7 @@
                             <node concept="30H73N" id="23CHI7KLVPE" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLVPG" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KLVPH" role="2OqNvi">
@@ -12581,7 +12581,7 @@
                             <node concept="30H73N" id="23CHI7KLYrO" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLYrQ" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KLYrR" role="2OqNvi">
@@ -12640,7 +12640,7 @@
                         <node concept="30H73N" id="23CHI7KM6sT" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KM6sV" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="23CHI7KM6sW" role="2OqNvi">
@@ -12783,7 +12783,7 @@
                                   <node concept="30H73N" id="23CHI7KMhJJ" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KMhJL" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="23CHI7KMhJM" role="2OqNvi">
@@ -12844,7 +12844,7 @@
                                   <node concept="30H73N" id="23CHI7KMeup" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KMeur" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="23CHI7KMeus" role="2OqNvi">
@@ -12903,7 +12903,7 @@
                               <node concept="30H73N" id="23CHI7KMbjZ" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="23CHI7KMbk1" role="2OqNvi">
-                              <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                              <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                             </node>
                           </node>
                           <node concept="liA8E" id="23CHI7KMbk2" role="2OqNvi">
@@ -13585,7 +13585,7 @@
                             <node concept="30H73N" id="23CHI7KMGOn" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMGOp" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KMGOq" role="2OqNvi">
@@ -13646,7 +13646,7 @@
                             <node concept="30H73N" id="23CHI7KMJnM" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMJnO" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KMJnP" role="2OqNvi">
@@ -13705,7 +13705,7 @@
                         <node concept="30H73N" id="23CHI7KMAk$" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KMAkA" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="23CHI7KMAkB" role="2OqNvi">
@@ -13814,7 +13814,7 @@
                             <node concept="30H73N" id="23CHI7KKPP4" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KKPP6" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KKPP7" role="2OqNvi">
@@ -13875,7 +13875,7 @@
                             <node concept="30H73N" id="23CHI7KKVJm" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KKVJo" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KKVJp" role="2OqNvi">
@@ -13934,7 +13934,7 @@
                         <node concept="30H73N" id="23CHI7KKZDE" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KKZDG" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="23CHI7KKZDH" role="2OqNvi">
@@ -14058,7 +14058,7 @@
                                   <node concept="30H73N" id="23CHI7KL7ea" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KL7ec" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="23CHI7KL7ed" role="2OqNvi">
@@ -14119,7 +14119,7 @@
                                   <node concept="30H73N" id="23CHI7KL9LM" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KL9LO" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="23CHI7KL9LP" role="2OqNvi">
@@ -14178,7 +14178,7 @@
                               <node concept="30H73N" id="23CHI7KLecG" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="23CHI7KLecI" role="2OqNvi">
-                              <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                              <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                             </node>
                           </node>
                           <node concept="liA8E" id="23CHI7KLecJ" role="2OqNvi">
@@ -14537,7 +14537,7 @@
                             <node concept="30H73N" id="2epClk4_RTy" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="2epClk4_RTz" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="2epClk4_RT$" role="2OqNvi">
@@ -14598,7 +14598,7 @@
                             <node concept="30H73N" id="2epClk4_RTU" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="2epClk4_RTV" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="2epClk4_RTW" role="2OqNvi">
@@ -14657,7 +14657,7 @@
                         <node concept="30H73N" id="2epClk4_RUg" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="2epClk4_RUh" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="2epClk4_RUi" role="2OqNvi">
@@ -14785,7 +14785,7 @@
                             <node concept="30H73N" id="2epClk4AqMm" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="2epClk4AqMn" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="2epClk4AqMo" role="2OqNvi">
@@ -14846,7 +14846,7 @@
                             <node concept="30H73N" id="2epClk4AqMI" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="2epClk4AqMJ" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="2epClk4AqMK" role="2OqNvi">
@@ -14905,7 +14905,7 @@
                         <node concept="30H73N" id="2epClk4AqN4" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="2epClk4AqN5" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="2epClk4AqN6" role="2OqNvi">
@@ -15048,7 +15048,7 @@
                                   <node concept="30H73N" id="2epClk4AqO1" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="2epClk4AqO2" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="2epClk4AqO3" role="2OqNvi">
@@ -15109,7 +15109,7 @@
                                   <node concept="30H73N" id="2epClk4AqOp" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="2epClk4AqOq" role="2OqNvi">
-                                  <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                  <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="2epClk4AqOr" role="2OqNvi">
@@ -15168,7 +15168,7 @@
                               <node concept="30H73N" id="2epClk4AqOJ" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="2epClk4AqOK" role="2OqNvi">
-                              <ref role="37wK5l" to="e8bb:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                              <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                             </node>
                           </node>
                           <node concept="liA8E" id="2epClk4AqOL" role="2OqNvi">
