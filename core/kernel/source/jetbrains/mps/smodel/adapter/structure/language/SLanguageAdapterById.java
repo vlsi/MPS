@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -31,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public final class SLanguageAdapterById extends SLanguageAdapter {
   public static final java.lang.String LANGUAGE_PREFIX = "l";
@@ -79,6 +81,11 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
   @Nullable
   public Language getSourceModule() {
     return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getIdValue())));
+  }
+
+  @Override
+  public SModuleReference getSourceModuleReference() {
+    return new ModuleReference(getQualifiedName(), ModuleId.regular(myLanguage.getIdValue()));
   }
 
   @Override

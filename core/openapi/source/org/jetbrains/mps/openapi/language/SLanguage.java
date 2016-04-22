@@ -65,6 +65,10 @@ public interface SLanguage {
   @Nullable
   SModule getSourceModule();
 
+  /**
+   * The optional reference to a module containing the sources for the language. This is useful, for example, when showing
+   * the definition of a concept for a used language element.
+   */
   //todo try to make @NotNull
   SModuleReference getSourceModuleReference();
 

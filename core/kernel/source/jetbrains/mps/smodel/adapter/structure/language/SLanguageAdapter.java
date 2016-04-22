@@ -56,10 +56,7 @@ public abstract class SLanguageAdapter implements SLanguage {
   public abstract Language getSourceModule();
 
   @Override
-  public SModuleReference getSourceModuleReference() {
-    Language sm = getSourceModule();
-    return sm == null ? null : sm.getModuleReference();
-  }
+  public abstract SModuleReference getSourceModuleReference();
 
   @Override
   @NotNull
@@ -84,7 +81,7 @@ public abstract class SLanguageAdapter implements SLanguage {
       return Collections.emptyList();
     }
     ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
-    for (ConceptDescriptor cd : ((BaseStructureAspectDescriptor) struc).getDescriptors()) {
+    for (ConceptDescriptor cd : struc.getDescriptors()) {
       if (cd.isInterfaceConcept()) {
         result.add(new SInterfaceConceptAdapterById(cd.getId(), cd.getConceptFqName()));
       } else {

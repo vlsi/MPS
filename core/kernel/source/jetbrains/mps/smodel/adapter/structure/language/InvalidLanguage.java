@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
  * See InvalidConcept doc
@@ -64,6 +65,11 @@ public final class InvalidLanguage extends SLanguageAdapter {
   @Override
   @Nullable
   public Language getSourceModule() {
+    return null;
+  }
+
+  @Override
+  public SModuleReference getSourceModuleReference() {
     return null;
   }
 
