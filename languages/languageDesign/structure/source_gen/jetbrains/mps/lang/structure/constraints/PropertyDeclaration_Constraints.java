@@ -40,7 +40,7 @@ public class PropertyDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "propertyId";
         try {
-          Long.parseLong(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")));
+          Long.parseLong((SPropertyOperations.getString(propertyValue)));
           return true;
         } catch (NumberFormatException e) {
           return false;

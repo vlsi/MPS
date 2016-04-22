@@ -64,7 +64,7 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "conceptId";
         try {
-          Long.parseLong(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")));
+          Long.parseLong((SPropertyOperations.getString(propertyValue)));
           return true;
         } catch (NumberFormatException e) {
           return false;
