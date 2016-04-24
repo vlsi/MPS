@@ -32,8 +32,9 @@ public final class ReflectionNodeReference__BehaviorDescriptor extends BaseBHDes
   public static final SMethod<SNodeReference> getNodeReference_id4uVwhQyQbdz = new SMethodBuilder<SNodeReference>(new SJavaCompoundTypeImpl(SNodeReference.class)).name("getNodeReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyQbdz").registry(REGISTRY).build();
   public static final SMethod<SNode> tryToFindNode_id6szrkDoc2K7 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("tryToFindNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6szrkDoc2K7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SRepository.class, ""));
   public static final SMethod<Boolean> isSameTarget_id6szrkDoc2JJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSameTarget").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6szrkDoc2JJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SReference.class, ""));
+  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getNodeReference_id4uVwhQyQbdz, tryToFindNode_id6szrkDoc2K7, isSameTarget_id6szrkDoc2JJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getNodeReference_id4uVwhQyQbdz, tryToFindNode_id6szrkDoc2K7, isSameTarget_id6szrkDoc2JJ, getPresentation_idhEwIMiw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -55,6 +56,9 @@ public final class ReflectionNodeReference__BehaviorDescriptor extends BaseBHDes
   /*package*/ static boolean isSameTarget_id6szrkDoc2JJ(@NotNull SNode __thisNode__, SReference reference) {
     SNodeReference myReference = AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(__thisNode__);
     return myReference != null && myReference.equals(reference.getTargetNodeReference());
+  }
+  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"));
   }
 
   /*package*/ ReflectionNodeReference__BehaviorDescriptor() {
@@ -79,6 +83,8 @@ public final class ReflectionNodeReference__BehaviorDescriptor extends BaseBHDes
         return (T) ((SNode) tryToFindNode_id6szrkDoc2K7(node, (SRepository) parameters[0]));
       case 2:
         return (T) ((Boolean) isSameTarget_id6szrkDoc2JJ(node, (SReference) parameters[0]));
+      case 3:
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

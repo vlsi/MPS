@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -31,8 +32,9 @@ public final class DirectNodeReference__BehaviorDescriptor extends BaseBHDescrip
   public static final SMethod<Boolean> isSameTarget_id6szrkDoc2JJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSameTarget").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6szrkDoc2JJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SReference.class, ""));
   public static final SMethod<SNodeReference> getNodeReference_id4uVwhQyQbdz = new SMethodBuilder<SNodeReference>(new SJavaCompoundTypeImpl(SNodeReference.class)).name("getNodeReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyQbdz").registry(REGISTRY).build();
   public static final SMethod<SNode> tryToFindNode_id6szrkDoc2K7 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("tryToFindNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6szrkDoc2K7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SRepository.class, ""));
+  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isSameTarget_id6szrkDoc2JJ, getNodeReference_id4uVwhQyQbdz, tryToFindNode_id6szrkDoc2K7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isSameTarget_id6szrkDoc2JJ, getNodeReference_id4uVwhQyQbdz, tryToFindNode_id6szrkDoc2K7, getPresentation_idhEwIMiw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -45,6 +47,9 @@ public final class DirectNodeReference__BehaviorDescriptor extends BaseBHDescrip
   }
   /*package*/ static SNode tryToFindNode_id6szrkDoc2K7(@NotNull SNode __thisNode__, SRepository repository) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target"));
+  }
+  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
+    return NodeReferenceUtil.getNodePresentation(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target")));
   }
 
   /*package*/ DirectNodeReference__BehaviorDescriptor() {
@@ -69,6 +74,8 @@ public final class DirectNodeReference__BehaviorDescriptor extends BaseBHDescrip
         return (T) ((SNodeReference) getNodeReference_id4uVwhQyQbdz(node));
       case 2:
         return (T) ((SNode) tryToFindNode_id6szrkDoc2K7(node, (SRepository) parameters[0]));
+      case 3:
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -131,6 +131,9 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
+      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
+        <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -851,7 +854,21 @@
       <node concept="1iCGBv" id="6szrkDocqNI" role="3EZMnx">
         <ref role="1NtTu8" to="53vh:6szrkDoc3Cg" />
         <node concept="1sVBvm" id="6szrkDocqNK" role="1sWHZn">
-          <node concept="3SHvHV" id="6szrkDocqNU" role="2wV5jI" />
+          <node concept="1HlG4h" id="2Lknp0zF9kR" role="2wV5jI">
+            <node concept="1HfYo3" id="2Lknp0zF9kT" role="1HlULh">
+              <node concept="3TQlhw" id="2Lknp0zF9kV" role="1Hhtcw">
+                <node concept="3clFbS" id="2Lknp0zF9kX" role="2VODD2">
+                  <node concept="3clFbF" id="2Lknp0zFa95" role="3cqZAp">
+                    <node concept="2YIFZM" id="2Lknp0zFamc" role="3clFbG">
+                      <ref role="37wK5l" to="5jto:2SJclOrQoBE" resolve="getNodePresentation" />
+                      <ref role="1Pybhc" to="5jto:2GZlO$G5IXQ" resolve="NodeReferenceUtil" />
+                      <node concept="pncrf" id="2Lknp0zFazs" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3F0ifn" id="6szrkDocqDF" role="3EZMnx">
