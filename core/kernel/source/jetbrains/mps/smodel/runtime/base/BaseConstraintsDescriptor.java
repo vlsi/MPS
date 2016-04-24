@@ -376,7 +376,15 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   public SAbstractConcept getDefaultConcreteConcept() {
     //this is for 3.3-compatibility, should be replaced with getConcept() after 3.4
-    return MetaAdapterFactory.getConcept(getDefaultConcreteConceptId(), "<BaseConstraintsDescriptor: this name must not be used (default concrete concept)>");
+
+    SConceptId defaultConcreteConceptId = getDefaultConcreteConceptId();
+    SConcept result =
+        MetaAdapterFactory.getConcept(defaultConcreteConceptId, "<BaseConstraintsDescriptor: this name must not be used (default concrete concept)>");
+    if (result.equals(myConcept)) {
+      return myConcept;
+    } else {
+      return result;
+    }
   }
 
   private interface InheritanceCalculateParameters {
