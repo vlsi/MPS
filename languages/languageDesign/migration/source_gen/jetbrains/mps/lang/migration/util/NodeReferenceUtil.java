@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.NotNull;
 
 public class NodeReferenceUtil {
   public static SNode makeReflection(SNodeReference nodeReference, String presentation) {
@@ -40,7 +41,7 @@ public class NodeReferenceUtil {
     int nodeId = ((jetbrains.mps.smodel.SNode) node).getNodeId().hashCode();
     return SNodeOperations.getConcept(node).getName() + "@" + ((nodeId >>> 16) + (nodeId << 16 >>> 16));
   }
-  public static SNode makeReflection(SNode targetNode) {
+  public static SNode makeReflection(@NotNull SNode targetNode) {
     return makeReflection(targetNode.getReference(), getNodePresentation(targetNode));
   }
   public static SNode makeDirect(SNode targetNode) {

@@ -133,14 +133,14 @@ public class RefactoringProcessor {
             if (getFinalObject == null) {
               return;
             }
-            for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantChanges : MapSequence.fromMap(changes)) {
-              participantChanges.value().doRefactor(ListSequence.fromList(nodes).select(new ISelector<T, S>() {
-                public S select(T it) {
-                  return getFinalObject.invoke(it);
-                }
-              }).toListSequence(), project.getRepository(), refactoringSession);
-            }
             try {
+              for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantChanges : MapSequence.fromMap(changes)) {
+                participantChanges.value().doRefactor(ListSequence.fromList(nodes).select(new ISelector<T, S>() {
+                  public S select(T it) {
+                    return getFinalObject.invoke(it);
+                  }
+                }).toListSequence(), project.getRepository(), refactoringSession);
+              }
               refactoringSession.commit();
             } catch (RuntimeException exception) {
               if (LOG.isEnabledFor(Level.ERROR)) {

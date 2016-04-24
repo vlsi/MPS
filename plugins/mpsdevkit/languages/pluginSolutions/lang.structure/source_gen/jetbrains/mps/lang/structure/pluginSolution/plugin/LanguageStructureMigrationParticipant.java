@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -132,7 +133,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
         }
       });
     }
-    public void addPart(SNode initialStateNode, SNode finalStateNode, SNode specialization) {
+    public void addPart(@NotNull SNode initialStateNode, @NotNull SNode finalStateNode, SNode specialization) {
       addPart(createMoveNodeMigrationPart_kz6lmo_a0a0e11(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(finalStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"))));
     }
     public void addPart(SNode migrationPart) {
