@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;

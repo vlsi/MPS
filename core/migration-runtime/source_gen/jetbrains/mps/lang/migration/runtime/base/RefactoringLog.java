@@ -8,5 +8,5 @@ public interface RefactoringLog {
   String getCaption();
   RefactoringLogReference getDescriptor();
   Iterable<RefactoringLogReference> getExecuteAfter();
-  void execute(SModule module);
+  void execute(SModule module, RefactoringSession refactoringSession);
 }

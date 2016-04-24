@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;

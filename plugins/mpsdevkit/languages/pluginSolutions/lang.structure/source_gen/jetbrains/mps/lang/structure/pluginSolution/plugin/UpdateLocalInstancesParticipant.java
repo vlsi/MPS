@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 

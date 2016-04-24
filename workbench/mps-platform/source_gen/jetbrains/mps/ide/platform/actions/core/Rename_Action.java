@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;

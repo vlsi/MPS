@@ -27,9 +27,9 @@ public class RefactoringStepImpl implements RefactoringLog {
   public Iterable<RefactoringLogReference> getExecuteAfter() {
     return myExecuteAfter;
   }
-  public void execute(SModule module) {
+  public void execute(SModule module, RefactoringSession refactoringSession) {
     for (RefactoringPart part : ListSequence.fromList(myParts)) {
-      part.execute(module);
+      part.execute(module, refactoringSession);
     }
   }
 }

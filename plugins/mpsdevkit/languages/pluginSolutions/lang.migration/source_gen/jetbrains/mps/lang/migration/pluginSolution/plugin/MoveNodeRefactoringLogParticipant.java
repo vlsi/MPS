@@ -11,7 +11,7 @@ import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;

@@ -145,17 +145,36 @@
       <unit id="3875289449857737973" at="6,0,21,0" name="jetbrains.mps.lang.migration.runtime.base.Problem" />
     </file>
   </root>
+  <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/4331048896013535311">
+    <file name="RefactoringSession.java">
+      <node id="4331048896013601674" at="8,0,9,0" concept="6" trace="putObject#(Ljava/lang/String;Ljava/lang/Object;)V" />
+      <node id="4331048896013599198" at="9,0,10,0" concept="6" trace="getObject#(Ljava/lang/String;)Ljava/lang/Object;" />
+      <node id="4331048896013536732" at="11,0,12,0" concept="6" trace="registerChange#(Ljava/lang/Runnable;)V" />
+      <scope id="4331048896013601674" at="8,0,9,0">
+        <var name="id" id="4331048896013601678" />
+        <var name="object" id="4331048896013602339" />
+      </scope>
+      <scope id="4331048896013599198" at="9,0,10,0">
+        <var name="id" id="4331048896013600089" />
+      </scope>
+      <scope id="4331048896013536732" at="11,0,12,0">
+        <var name="change" id="4331048896013540946" />
+      </scope>
+      <unit id="4331048896013535311" at="6,0,13,0" name="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
+    </file>
+  </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5168866961623736013">
     <file name="RefactoringLog.java">
       <node id="5168866961623736014" at="8,0,9,0" concept="6" trace="getCaption#()Ljava/lang/String;" />
       <node id="5168866961623736018" at="9,0,10,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/RefactoringLogReference;" />
       <node id="5168866961623736022" at="10,0,11,0" concept="6" trace="getExecuteAfter#()Ljava/lang/Iterable;" />
-      <node id="5168866961623736039" at="11,0,12,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="5168866961623736039" at="11,0,12,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
       <scope id="5168866961623736014" at="8,0,9,0" />
       <scope id="5168866961623736018" at="9,0,10,0" />
       <scope id="5168866961623736022" at="10,0,11,0" />
       <scope id="5168866961623736039" at="11,0,12,0">
         <var name="module" id="5168866961623736040" />
+        <var name="refactoringSession" id="3194280909370692799" />
       </scope>
       <unit id="5168866961623736013" at="7,0,13,0" name="jetbrains.mps.lang.migration.runtime.base.RefactoringLog" />
     </file>
@@ -221,27 +240,28 @@
       <node id="5168866961623784072" at="21,30,22,21" concept="8" />
       <node id="5168866961623801223" at="24,50,25,24" concept="8" />
       <node id="5168866961623801346" at="27,62,28,26" concept="8" />
-      <node id="5168866961623812686" at="31,65,32,27" concept="2" />
+      <node id="5168866961623812686" at="31,65,32,47" concept="2" />
       <node id="5168866961623781700" at="21,0,24,0" concept="6" trace="getCaption#()Ljava/lang/String;" />
       <node id="5168866961623781705" at="24,0,27,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/RefactoringLogReference;" />
       <node id="5168866961623781712" at="27,0,30,0" concept="6" trace="getExecuteAfter#()Ljava/lang/Iterable;" />
-      <node id="5168866961623812374" at="30,39,33,5" concept="4" />
-      <node id="5168866961623781718" at="30,0,35,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="5168866961623812374" at="30,78,33,5" concept="4" />
+      <node id="5168866961623781718" at="30,0,35,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
       <node id="5168866961623814733" at="15,0,21,0" concept="1" trace="RefactoringStepImpl#(Ljava/lang/String;Ljetbrains/mps/lang/migration/runtime/base/RefactoringLogReference;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
       <scope id="5168866961623781704" at="21,30,22,21" />
       <scope id="5168866961623781709" at="24,50,25,24" />
       <scope id="5168866961623781717" at="27,62,28,26" />
-      <scope id="5168866961623812376" at="31,65,32,27" />
+      <scope id="5168866961623812376" at="31,65,32,47" />
       <scope id="5168866961623781700" at="21,0,24,0" />
       <scope id="5168866961623781705" at="24,0,27,0" />
       <scope id="5168866961623781712" at="27,0,30,0" />
-      <scope id="5168866961623781724" at="30,39,33,5" />
-      <scope id="5168866961623812374" at="30,39,33,5">
+      <scope id="5168866961623781724" at="30,78,33,5" />
+      <scope id="5168866961623812374" at="30,78,33,5">
         <var name="part" id="5168866961623812375" />
       </scope>
       <scope id="5168866961623814737" at="15,163,19,87" />
       <scope id="5168866961623781718" at="30,0,35,0">
         <var name="module" id="5168866961623781719" />
+        <var name="refactoringSession" id="3194280909370698619" />
       </scope>
       <scope id="5168866961623814733" at="15,0,21,0">
         <var name="caption" id="5168866961623815231" />
@@ -254,9 +274,10 @@
   </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5168866961623802317">
     <file name="RefactoringPart.java">
-      <node id="5168866961623808579" at="8,0,9,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="5168866961623808579" at="8,0,9,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
       <scope id="5168866961623808579" at="8,0,9,0">
         <var name="module" id="5168866961623813208" />
+        <var name="refactoringSession" id="3194280909368028301" />
       </scope>
       <unit id="5168866961623802317" at="7,0,10,0" name="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" />
     </file>

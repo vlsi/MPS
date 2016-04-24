@@ -26,7 +26,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class RenameReferencesParticipant extends RefactoringParticipantBase<SNodeReference, String, SNode, String> implements RenameNodeRefactoringParticipant<SNodeReference, String> {

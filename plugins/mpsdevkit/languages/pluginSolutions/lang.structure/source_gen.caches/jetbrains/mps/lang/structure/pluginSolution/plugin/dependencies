@@ -122,6 +122,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
@@ -183,6 +184,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -244,14 +246,15 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -605,6 +608,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -625,6 +629,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -657,14 +662,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />

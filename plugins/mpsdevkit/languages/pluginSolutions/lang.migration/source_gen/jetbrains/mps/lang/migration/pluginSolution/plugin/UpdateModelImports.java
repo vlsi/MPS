@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;

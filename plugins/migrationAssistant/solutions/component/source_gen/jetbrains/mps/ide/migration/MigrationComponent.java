@@ -32,7 +32,7 @@ import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -50,11 +50,11 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -238,11 +238,10 @@ public class MigrationComponent extends AbstractProjectComponent {
     }), MapSequence.fromMap(participants).select(new ISelector<IMapping<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringPart>() {
       public RefactoringPart select(final IMapping<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participant) {
         return new RefactoringPart() {
-          public void execute(SModule module) {
-            RefactoringSessionImpl session = new RefactoringSessionImpl();
+          public void execute(SModule module, RefactoringSession refactoringSession) {
             List<SNode> participantParts = ListSequence.fromList(SLinkOperations.getChildren(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_gd1mrb_a0a0a0a0a0a0b0a0a0a0a0a0a3a0a7a22(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.key());
+                return eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0a0a3a0a7a22(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.key());
               }
             }).toListSequence();
             doRefactor(participant.value(), ListSequence.fromList(participantParts).where(new IWhereFilter<SNode>() {
@@ -261,8 +260,7 @@ public class MigrationComponent extends AbstractProjectComponent {
               public SNode select(SNode it) {
                 return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"));
               }
-            }).toListSequence(), SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), myMpsProject.getRepository(), new ModulesScope(module), session);
-            session.commit();
+            }).toListSequence(), SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), myMpsProject.getRepository(), new ModulesScope(module), refactoringSession);
           }
         };
       }
@@ -319,7 +317,9 @@ public class MigrationComponent extends AbstractProjectComponent {
     importedVersion = Math.max(importedVersion, 0);
     assert importedVersion == script.getDescriptor().getFromVersion();
     try {
-      script.execute(module);
+      RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+      script.execute(module, refactoringSession);
+      refactoringSession.commit();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Could not execute script", e);
@@ -341,7 +341,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
     return null;
   }
-  private static boolean eq_gd1mrb_a0a0a0a0a0a0b0a0a0a0a0a0a3a0a7a22(Object a, Object b) {
+  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0a0a3a0a7a22(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

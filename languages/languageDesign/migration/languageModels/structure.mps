@@ -475,7 +475,7 @@
     <node concept="1TJgyj" id="39r_V8zIueI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="finalState" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="3628660716136424366" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
@@ -565,17 +565,17 @@
     </node>
   </node>
   <node concept="1TIwiD" id="2pO6eqPKF$2">
-    <property role="1pbfSe" value="600387096" />
     <property role="TrG5h" value="PureMigrationPart" />
     <property role="3GE5qa" value="refactoring" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="600387096" />
   </node>
   <node concept="1TIwiD" id="2pO6eqPKF$3">
-    <property role="1pbfSe" value="600387095" />
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="IncludeMigrationPart" />
     <property role="34LRSv" value="include" />
+    <property role="1pbfSe" value="600387095" />
     <ref role="1TJDcQ" node="2pO6eqPKF$2" resolve="PureMigrationPart" />
     <node concept="1TJgyj" id="2pO6eqPKF_w" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -585,9 +585,9 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3oob4NQ8SMl">
-    <property role="1pbfSe" value="742111457" />
     <property role="3GE5qa" value="refactoring.reference" />
     <property role="TrG5h" value="ConceptMigrationReference" />
+    <property role="1pbfSe" value="742111457" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3oob4NQ8SMm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

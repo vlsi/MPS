@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;

@@ -37,7 +37,7 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 

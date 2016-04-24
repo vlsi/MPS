@@ -5,5 +5,5 @@ package jetbrains.mps.lang.migration.runtime.base;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface RefactoringPart {
-  void execute(SModule module);
+  void execute(SModule module, RefactoringSession refactoringSession);
 }

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;

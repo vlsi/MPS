@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelOperations;

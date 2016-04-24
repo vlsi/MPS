@@ -73,7 +73,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.RefactoringLogApplied" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -92,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLog" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

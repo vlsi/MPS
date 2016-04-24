@@ -34,7 +34,7 @@
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
@@ -1895,7 +1895,7 @@
                         <node concept="37vLTG" id="1xRmxf63uFM" role="3clF46">
                           <property role="TrG5h" value="refactoringSession" />
                           <node concept="3uibUv" id="1xRmxf63uFN" role="1tU5fm">
-                            <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+                            <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="1xRmxf63uFO" role="3clF47">
@@ -1905,7 +1905,7 @@
                                 <ref role="3cqZAo" node="1xRmxf63uFM" resolve="refactoringSession" />
                               </node>
                               <node concept="liA8E" id="1xRmxf63uFS" role="2OqNvi">
-                                <ref role="37wK5l" to="lfzw:3KqYwoBJ0Rs" resolve="registerChange" />
+                                <ref role="37wK5l" to="6f4m:3KqYwoBJ0Rs" resolve="registerChange" />
                                 <node concept="1bVj0M" id="1xRmxf63uFT" role="37wK5m">
                                   <node concept="3clFbS" id="1xRmxf63uFU" role="1bW5cS">
                                     <node concept="3clFbJ" id="4qkYgnA3gT_" role="3cqZAp">
@@ -2181,7 +2181,7 @@
       <node concept="37vLTG" id="4qkYgnA2Vi_" role="3clF46">
         <property role="TrG5h" value="refactoringSession" />
         <node concept="3uibUv" id="4qkYgnA2ViA" role="1tU5fm">
-          <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+          <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
         </node>
       </node>
       <node concept="3clFbS" id="4qkYgnA2ViB" role="3clF47">
@@ -3157,7 +3157,7 @@
                     <ref role="3cqZAo" node="3r9sVr9T4$V" resolve="session" />
                   </node>
                   <node concept="liA8E" id="3r9sVr9Tqex" role="2OqNvi">
-                    <ref role="37wK5l" to="lfzw:3KqYwoBJg7u" resolve="getObject" />
+                    <ref role="37wK5l" to="6f4m:3KqYwoBJg7u" resolve="getObject" />
                     <node concept="37vLTw" id="3r9sVr9Tqey" role="37wK5m">
                       <ref role="3cqZAo" node="3r9sVr9T4ZE" resolve="myId" />
                     </node>
@@ -3199,7 +3199,7 @@
                     <ref role="3cqZAo" node="3r9sVr9T4$V" resolve="session" />
                   </node>
                   <node concept="liA8E" id="3r9sVr9T63u" role="2OqNvi">
-                    <ref role="37wK5l" to="lfzw:3KqYwoBJgIa" resolve="putObject" />
+                    <ref role="37wK5l" to="6f4m:3KqYwoBJgIa" resolve="putObject" />
                     <node concept="37vLTw" id="3r9sVr9T64l" role="37wK5m">
                       <ref role="3cqZAo" node="3r9sVr9T4ZE" resolve="myId" />
                     </node>
@@ -3303,7 +3303,7 @@
         <node concept="37vLTG" id="3r9sVr9T4$V" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="3r9sVr9T4$U" role="1tU5fm">
-            <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+            <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
           </node>
         </node>
         <node concept="37vLTG" id="3r9sVr9Tmjb" role="3clF46">
@@ -3379,7 +3379,7 @@
                 <ref role="3cqZAo" node="3r9sVr9TaS8" resolve="session" />
               </node>
               <node concept="liA8E" id="3r9sVr9Tlky" role="2OqNvi">
-                <ref role="37wK5l" to="lfzw:3KqYwoBJ0Rs" resolve="registerChange" />
+                <ref role="37wK5l" to="6f4m:3KqYwoBJ0Rs" resolve="registerChange" />
                 <node concept="1bVj0M" id="3r9sVr9Twqe" role="37wK5m">
                   <node concept="3clFbS" id="3r9sVr9Twqf" role="1bW5cS">
                     <node concept="3cpWs8" id="3r9sVr9TwNA" role="3cqZAp">
@@ -3603,7 +3603,7 @@
         <node concept="37vLTG" id="3r9sVr9TaS8" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="3r9sVr9TaS7" role="1tU5fm">
-            <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+            <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
           </node>
         </node>
         <node concept="37vLTG" id="3r9sVr9Tu1$" role="3clF46">
@@ -4369,7 +4369,7 @@
                     <node concept="37vLTG" id="361hHoA2jAe" role="3clF46">
                       <property role="TrG5h" value="refactoringSession" />
                       <node concept="3uibUv" id="361hHoA2jAf" role="1tU5fm">
-                        <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+                        <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="361hHoA2jAg" role="3clF47">
@@ -4518,7 +4518,7 @@
                                 <ref role="3cqZAo" node="361hHoA2jAe" resolve="refactoringSession" />
                               </node>
                               <node concept="liA8E" id="4JlWzK6PT4k" role="2OqNvi">
-                                <ref role="37wK5l" to="lfzw:3KqYwoBJ0Rs" resolve="registerChange" />
+                                <ref role="37wK5l" to="6f4m:3KqYwoBJ0Rs" resolve="registerChange" />
                                 <node concept="1bVj0M" id="4JlWzK6PTgV" role="37wK5m">
                                   <node concept="3clFbS" id="4JlWzK6PTgW" role="1bW5cS">
                                     <node concept="3cpWs8" id="4JlWzK6PWtC" role="3cqZAp">
@@ -5131,7 +5131,7 @@
                       <node concept="37vLTG" id="2aY$7DLS_Ap" role="3clF46">
                         <property role="TrG5h" value="refactoringSession" />
                         <node concept="3uibUv" id="2aY$7DLS_Aq" role="1tU5fm">
-                          <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+                          <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
                         </node>
                       </node>
                       <node concept="3clFbS" id="2aY$7DLS_Ar" role="3clF47">
@@ -5141,7 +5141,7 @@
                               <ref role="3cqZAo" node="2aY$7DLS_Ap" resolve="refactoringSession" />
                             </node>
                             <node concept="liA8E" id="2aY$7DLS_Av" role="2OqNvi">
-                              <ref role="37wK5l" to="lfzw:3KqYwoBJ0Rs" resolve="registerChange" />
+                              <ref role="37wK5l" to="6f4m:3KqYwoBJ0Rs" resolve="registerChange" />
                               <node concept="1bVj0M" id="2aY$7DLS_Aw" role="37wK5m">
                                 <node concept="3clFbS" id="2aY$7DLS_Ax" role="1bW5cS">
                                   <node concept="3cpWs8" id="2aY$7DLMwfx" role="3cqZAp">
@@ -6109,7 +6109,7 @@
                                     <node concept="37vLTG" id="4B0FDdRJCvT" role="3clF46">
                                       <property role="TrG5h" value="refactoringSession" />
                                       <node concept="3uibUv" id="4B0FDdRJCvU" role="1tU5fm">
-                                        <ref role="3uigEE" to="lfzw:3KqYwoBJ0xf" resolve="RefactoringSession" />
+                                        <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
                                       </node>
                                     </node>
                                     <node concept="3clFbS" id="4B0FDdRJCvV" role="3clF47">
@@ -6119,7 +6119,7 @@
                                             <ref role="3cqZAo" node="4B0FDdRJCvT" resolve="refactoringSession" />
                                           </node>
                                           <node concept="liA8E" id="4B0FDdRJCvZ" role="2OqNvi">
-                                            <ref role="37wK5l" to="lfzw:3KqYwoBJ0Rs" resolve="registerChange" />
+                                            <ref role="37wK5l" to="6f4m:3KqYwoBJ0Rs" resolve="registerChange" />
                                             <node concept="1bVj0M" id="4B0FDdRJCw0" role="37wK5m">
                                               <node concept="3clFbS" id="4B0FDdRJCw1" role="1bW5cS">
                                                 <node concept="3cpWs8" id="4B0FDdRJCw2" role="3cqZAp">
