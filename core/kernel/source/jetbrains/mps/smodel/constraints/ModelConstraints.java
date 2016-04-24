@@ -177,6 +177,9 @@ public class ModelConstraints {
   }
 
   public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {
+    if (!concept.isValid()) {
+      return MetaAdapterByDeclaration.asInstanceConcept(concept);
+    }
     ConceptDescriptor descriptor =
         ConceptRegistry.getInstance().getConceptDescriptor(ConceptRegistryUtil.getConstraintsDescriptor(concept).getDefaultConcreteConcept());
     return MetaAdapterByDeclaration.asInstanceConcept(MetaAdapterFactory.getAbstractConcept(descriptor));
