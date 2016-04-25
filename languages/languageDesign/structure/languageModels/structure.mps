@@ -150,7 +150,7 @@
     <node concept="1TJgyi" id="dqwjwHwEj$" role="1TKVEl">
       <property role="TrG5h" value="linkId" />
       <property role="IQ2nx" value="241647608299431140" />
-      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="IDNumber" />
     </node>
     <node concept="1TJgyj" id="fA0ks94" role="1TKVEi">
       <property role="20kJfa" value="specializedLink" />
@@ -181,7 +181,7 @@
     <node concept="1TJgyi" id="dqwjwHwEjp" role="1TKVEl">
       <property role="TrG5h" value="propertyId" />
       <property role="IQ2nx" value="241647608299431129" />
-      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="IDNumber" />
     </node>
     <node concept="PrWs8" id="50$LP2ztBgn" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
@@ -375,7 +375,7 @@
     <node concept="1TJgyi" id="5OIo7_R7SN0" role="1TKVEl">
       <property role="TrG5h" value="conceptId" />
       <property role="IQ2nx" value="6714410169261853888" />
-      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="NumberString" />
+      <ref role="AX2Wp" node="3H1xM9LtLda" resolve="IDNumber" />
     </node>
     <node concept="PrWs8" id="h0TBFkr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -619,7 +619,7 @@
     <property role="EcuMT" value="5717188120689019441" />
   </node>
   <node concept="Az7Fb" id="3H1xM9LtLda">
-    <property role="TrG5h" value="NumberString" />
+    <property role="TrG5h" value="IDNumber" />
     <property role="FLfZY" value="-?[0-9]+" />
   </node>
 </model>

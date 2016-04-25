@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 
-public class NumberString_PropertySupport extends PropertySupport {
+public class IDNumber_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     String testValue = null;
     if (value == null) {
