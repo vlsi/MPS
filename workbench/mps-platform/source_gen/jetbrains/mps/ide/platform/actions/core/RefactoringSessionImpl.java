@@ -29,7 +29,7 @@ public class RefactoringSessionImpl implements RefactoringSession {
     ListSequence.fromList(myChanges).addElement(change);
   }
 
-  public void commit() {
+  public void close() {
     for (Runnable change : ListSequence.fromList(myChanges)) {
       try {
         change.run();

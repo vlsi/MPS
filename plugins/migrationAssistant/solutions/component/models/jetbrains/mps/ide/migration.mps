@@ -7486,7 +7486,7 @@
                   <ref role="3cqZAo" node="2Lknp0zQ_gZ" resolve="refactoringSession" />
                 </node>
                 <node concept="liA8E" id="2Lknp0zQMjD" role="2OqNvi">
-                  <ref role="37wK5l" to="lfzw:3KqYwoBJ10q" resolve="commit" />
+                  <ref role="37wK5l" to="lfzw:3KqYwoBJ10q" resolve="close" />
                 </node>
               </node>
             </node>

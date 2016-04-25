@@ -41352,8 +41352,8 @@
         <node concept="3clFbH" id="43e76yODYuA" role="3cqZAp" />
         <node concept="3clFbF" id="43e76yOCo9m" role="3cqZAp">
           <node concept="2YIFZM" id="43e76yOCoHv" role="3clFbG">
-            <ref role="37wK5l" to="lfzw:76O06llVMad" resolve="performRefactoring" />
             <ref role="1Pybhc" to="lfzw:5dWUYKKJ14W" resolve="RefactoringProcessor" />
+            <ref role="37wK5l" to="lfzw:4N6D1IQ3HBX" resolve="performRefactoring" />
             <node concept="2OqwBi" id="43e76yOCr4Z" role="37wK5m">
               <node concept="2WthIp" id="43e76yOCr52" role="2Oq$k0" />
               <node concept="1DTwFV" id="43e76yOCr54" role="2OqNvi">

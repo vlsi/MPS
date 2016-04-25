@@ -319,7 +319,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     try {
       RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
       script.execute(module, refactoringSession);
-      refactoringSession.commit();
+      refactoringSession.close();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Could not execute script", e);
