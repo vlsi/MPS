@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,31 +25,32 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
+  private final SRepository myRepository;
 
-  public ModuleDependTableModel(ModuleDescriptor descriptor) {
+  public ModuleDependTableModel(@NotNull SRepository repository, ModuleDescriptor descriptor) {
     super(descriptor);
+    myRepository = repository;
   }
 
   @Override
   public void init() {
     if(!(myItem instanceof DevkitDescriptor)) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           for(Dependency dependency : myItem.getDependencies()) {
             SModuleReference moduleReference = dependency.getModuleRef();
-            final SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName());
+            final SModule module = moduleReference.resolve(myRepository);
             if(module instanceof Language) {
               addLanguageItem(dependency);
             } else if(module instanceof Generator) {

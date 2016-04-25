@@ -447,7 +447,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected DependTableModel getDependTableModel() {
-      return new ModuleDependTableModel(myModuleDescriptor);
+      return new ModuleDependTableModel(myProject.getRepository(), myModuleDescriptor);
     }
 
     @Override
