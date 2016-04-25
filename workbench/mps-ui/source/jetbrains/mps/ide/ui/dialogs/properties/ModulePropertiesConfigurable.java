@@ -471,7 +471,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected DependTableModel getDependTableModel() {
-      return new ModuleDependTableModel(myProject.getRepository(), myModuleDescriptor);
+      final ModuleDependTableModel rv = new ModuleDependTableModel(myProject.getRepository(), myModuleDescriptor);
+      rv.init();
+      return rv;
     }
 
     @Override
@@ -647,6 +649,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       runtimeTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myRuntimeTableModel = new RuntimeTableModel();
+      myRuntimeTableModel.init();
       runtimeTable.setModel(myRuntimeTableModel);
 
       final SRepository contextRepo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
@@ -695,6 +698,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myAccessoriesModelsTableModel = new AccessoriesModelsTableModel();
+      myAccessoriesModelsTableModel.init();
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
       accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(myProject.getRepository()));
@@ -741,8 +745,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       private List<SModuleReference> myTableItems = new LinkedList<SModuleReference>();
 
       public RuntimeTableModel() {
-        super();
-        init();
       }
 
       @Override
@@ -811,8 +813,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       private List<SModelReference> myTableItems = new LinkedList<SModelReference>();
 
       public AccessoriesModelsTableModel() {
-        super();
-        init();
       }
 
       @Override

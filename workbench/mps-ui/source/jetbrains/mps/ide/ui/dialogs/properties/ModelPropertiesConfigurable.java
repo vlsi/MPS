@@ -197,6 +197,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies,
           PropertiesBundle.message("mps.properties.dependencies.tip"));
       myImportedModels = new ModelImportedModelsTableModel(myModelProperties);
+      myImportedModels.init();
     }
 
     protected boolean confirmRemove(final Object value) {
