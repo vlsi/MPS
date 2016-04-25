@@ -12,6 +12,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
@@ -53,9 +54,15 @@ public class DevkitDescriptorPersistence {
               result_raojav_a0a0c0a0b.getExportedSolutions().add(PersistenceFacade.getInstance().createModuleReference(xse.getText()));
             }
           }
+          Element genPlanElement;
+          if ((genPlanElement = root.getChild("generation-plan")) != null) {
+            final SModelReference result_raojav_a0a11a0a0c0a0b = PersistenceFacade.getInstance().createModelReference(genPlanElement.getAttributeValue("model"));
+            result_raojav_a0a0c0a0b.setAssociatedPlan(result_raojav_a0a11a0a0c0a0b);
+          }
           return result_raojav_a0a0c0a0b;
         }
       }.invoke();
+
 
       ModuleDescriptorPersistence.setTimestamp(descriptor, file);
       return descriptor;
@@ -116,6 +123,12 @@ public class DevkitDescriptorPersistence {
               return result_raojav_a0a0a0a7a0a0a0c;
             }
           }.invoke());
+        }
+
+        if (descriptor.getAssociatedGenPlan() != null) {
+          Element genPlanElement = new Element("generation-plan");
+          genPlanElement.setAttribute("model", PersistenceFacade.getInstance().asString(descriptor.getAssociatedGenPlan()));
+          result_raojav_a0a0a0c.addContent(genPlanElement);
         }
 
         return result_raojav_a0a0a0c;

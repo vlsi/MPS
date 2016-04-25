@@ -788,6 +788,65 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3cpWs8" id="3WEebTSGtSe" role="3cqZAp">
+                        <node concept="3cpWsn" id="3WEebTSGtSf" role="3cpWs9">
+                          <property role="TrG5h" value="genPlanElement" />
+                          <node concept="3uibUv" id="3WEebTSGtSg" role="1tU5fm">
+                            <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="3WEebTSGrjG" role="3cqZAp">
+                        <node concept="3clFbS" id="3WEebTSGrjI" role="3clFbx">
+                          <node concept="g8Q5y" id="3WEebTSGxIN" role="3cqZAp">
+                            <node concept="3clFbS" id="3WEebTSGxIP" role="GGjiV" />
+                            <node concept="3tyRfN" id="3WEebTSGxIJ" role="GIGjv">
+                              <ref role="3tyRfW" to="w0gx:~DevkitDescriptor.setAssociatedPlan(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="setAssociatedPlan" />
+                              <node concept="2OqwBi" id="3WEebTSGzb2" role="3tyRfI">
+                                <node concept="2YIFZM" id="3WEebTSGyXH" role="2Oq$k0">
+                                  <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                                </node>
+                                <node concept="liA8E" id="3WEebTSGzlg" role="2OqNvi">
+                                  <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
+                                  <node concept="2OqwBi" id="3WEebTSGybB" role="37wK5m">
+                                    <node concept="37vLTw" id="3WEebTSGy16" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="3WEebTSGtSf" resolve="genPlanElement" />
+                                    </node>
+                                    <node concept="liA8E" id="3WEebTSGyo8" role="2OqNvi">
+                                      <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                                      <node concept="Xl_RD" id="3WEebTSGyus" role="37wK5m">
+                                        <property role="Xl_RC" value="model" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3y3z36" id="3WEebTSGv9v" role="3clFbw">
+                          <node concept="10Nm6u" id="3WEebTSGvh0" role="3uHU7w" />
+                          <node concept="1eOMI4" id="3WEebTSGvok" role="3uHU7B">
+                            <node concept="37vLTI" id="3WEebTSGvVx" role="1eOMHV">
+                              <node concept="37vLTw" id="3WEebTSGvJH" role="37vLTJ">
+                                <ref role="3cqZAo" node="3WEebTSGtSf" resolve="genPlanElement" />
+                              </node>
+                              <node concept="2OqwBi" id="3WEebTSGs5Y" role="37vLTx">
+                                <node concept="37vLTw" id="3WEebTSGrQy" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1Tieq1ii5hO" resolve="root" />
+                                </node>
+                                <node concept="liA8E" id="3WEebTSGsjA" role="2OqNvi">
+                                  <ref role="37wK5l" to="mmaq:~Element.getChild(java.lang.String):org.jdom.Element" resolve="getChild" />
+                                  <node concept="Xl_RD" id="3WEebTSGsuL" role="37wK5m">
+                                    <property role="Xl_RC" value="generation-plan" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node concept="1b09fh" id="IMUMWuHQss" role="GIGjv">
                       <ref role="1b09fg" node="7OuC_CamAgc" resolve="devkitDescriptor" />
@@ -796,6 +855,7 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="3WEebTSGqeS" role="3cqZAp" />
             <node concept="3clFbH" id="IMUMWuHQst" role="3cqZAp" />
             <node concept="3clFbF" id="1yoijmglIZS" role="3cqZAp">
               <node concept="2YIFZM" id="1yoijmglIZU" role="3clFbG">
@@ -1149,6 +1209,79 @@
                         </node>
                         <node concept="liA8E" id="IMUMWuHQul" role="2OqNvi">
                           <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="3WEebTSGbOa" role="3cqZAp" />
+                  <node concept="3clFbJ" id="3WEebTSGf5V" role="3cqZAp">
+                    <node concept="3clFbS" id="3WEebTSGf5X" role="3clFbx">
+                      <node concept="3cpWs8" id="3WEebTSGmMX" role="3cqZAp">
+                        <node concept="3cpWsn" id="3WEebTSGmMY" role="3cpWs9">
+                          <property role="TrG5h" value="genPlanElement" />
+                          <node concept="3uibUv" id="3WEebTSGmMV" role="1tU5fm">
+                            <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+                          </node>
+                          <node concept="2ShNRf" id="3WEebTSGmMZ" role="33vP2m">
+                            <node concept="1pGfFk" id="3WEebTSGmN0" role="2ShVmc">
+                              <ref role="37wK5l" to="mmaq:~Element.&lt;init&gt;(java.lang.String)" resolve="Element" />
+                              <node concept="Xl_RD" id="3WEebTSGmUQ" role="37wK5m">
+                                <property role="Xl_RC" value="generation-plan" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="3WEebTSGndd" role="3cqZAp">
+                        <node concept="2OqwBi" id="3WEebTSGnmO" role="3clFbG">
+                          <node concept="37vLTw" id="3WEebTSGndb" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3WEebTSGmMY" resolve="genPlanElement" />
+                          </node>
+                          <node concept="liA8E" id="3WEebTSGn$x" role="2OqNvi">
+                            <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+                            <node concept="Xl_RD" id="3WEebTSGn_x" role="37wK5m">
+                              <property role="Xl_RC" value="model" />
+                            </node>
+                            <node concept="2OqwBi" id="3WEebTSGpV0" role="37wK5m">
+                              <node concept="2YIFZM" id="3WEebTSGpNf" role="2Oq$k0">
+                                <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                                <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                              </node>
+                              <node concept="liA8E" id="3WEebTSGq7g" role="2OqNvi">
+                                <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="asString" />
+                                <node concept="2OqwBi" id="3WEebTSGo1h" role="37wK5m">
+                                  <node concept="37vLTw" id="3WEebTSGnXJ" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="IMUMWuHQvu" resolve="descriptor" />
+                                  </node>
+                                  <node concept="liA8E" id="3WEebTSGobG" role="2OqNvi">
+                                    <ref role="37wK5l" to="w0gx:~DevkitDescriptor.getAssociatedGenPlan():org.jetbrains.mps.openapi.model.SModelReference" resolve="getAssociatedGenPlan" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="3WEebTSGfFB" role="3cqZAp">
+                        <node concept="2OqwBi" id="3WEebTSGfKR" role="3clFbG">
+                          <node concept="1bf8Ab" id="3WEebTSGfF_" role="2Oq$k0" />
+                          <node concept="liA8E" id="3WEebTSGfS7" role="2OqNvi">
+                            <ref role="37wK5l" to="mmaq:~Element.addContent(org.jdom.Element):org.jdom.Element" resolve="addContent" />
+                            <node concept="37vLTw" id="3WEebTSGmN1" role="37wK5m">
+                              <ref role="3cqZAo" node="3WEebTSGmMY" resolve="genPlanElement" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3y3z36" id="3WEebTSGfCX" role="3clFbw">
+                      <node concept="10Nm6u" id="3WEebTSGfEh" role="3uHU7w" />
+                      <node concept="2OqwBi" id="3WEebTSGfxO" role="3uHU7B">
+                        <node concept="37vLTw" id="3WEebTSGfsR" role="2Oq$k0">
+                          <ref role="3cqZAo" node="IMUMWuHQvu" resolve="descriptor" />
+                        </node>
+                        <node concept="liA8E" id="3WEebTSGf_p" role="2OqNvi">
+                          <ref role="37wK5l" to="w0gx:~DevkitDescriptor.getAssociatedGenPlan():org.jetbrains.mps.openapi.model.SModelReference" resolve="getAssociatedGenPlan" />
                         </node>
                       </node>
                     </node>

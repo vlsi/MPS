@@ -54,6 +54,7 @@ import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.generator.GenPlanPickPanel;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -83,6 +84,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -261,6 +263,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JTextField myGenOut;
     private JSpinner myLanguageVersion;
     private JSpinner myModuleVersion;
+    private GenPlanPickPanel myPlanPanel;
 
     @Override
     protected String getConfigItemName() {
@@ -360,6 +363,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         }
 
         return panel;
+      } else if (myModule instanceof DevKit) {
+        myPlanPanel = new GenPlanPickPanel(myProject, myModule.getScope(), "Generation plan for models using this devkit");
+        myPlanPanel.setPlanModel(((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan());
+        return myPlanPanel;
       }
       return null;
     }
@@ -371,10 +378,26 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      if (super.isModified()) return true;
-      if (myModule instanceof DevKit && myModuleDependenciesTab.isModified()) return true;
-      if (!(myModule instanceof DevKit) && myEntriesEditor.isModified()) return true;
-      if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) return true;
+      if (super.isModified()) {
+        return true;
+      }
+      if (myModule instanceof DevKit) {
+        if (myModuleDependenciesTab.isModified()) {
+          return true;
+        }
+        SModelReference currentPlan = ((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan();
+        final SModelReference uiPlanValue = myPlanPanel.getPlanModel();
+        if (currentPlan == null ? uiPlanValue != null : !currentPlan.equals(uiPlanValue)) {
+          return true;
+        }
+        // fall-through
+      }
+      if (!(myModule instanceof DevKit) && myEntriesEditor.isModified()) {
+        return true;
+      }
+      if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
+        return true;
+      }
 
       if (myLanguageVersion != null) {
         try {
@@ -401,9 +424,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (super.isModified()) {
         myModuleDescriptor.setNamespace(myTextFieldName.getText());
       }
-      if (myModule instanceof DevKit)
+      if (myModule instanceof DevKit) {
         myModuleDependenciesTab.apply();
-      else {
+        ((DevkitDescriptor) myModuleDescriptor).setAssociatedPlan(myPlanPanel.getPlanModel());
+      } else {
         if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
           if (myModule instanceof Language) {
             ((LanguageDescriptor) myModule.getModuleDescriptor()).setGenPath(

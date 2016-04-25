@@ -17,6 +17,8 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -28,6 +30,7 @@ public class DevkitDescriptor extends ModuleDescriptor {
   private Set<SModuleReference> myExportedLanguages;
   private Set<SModuleReference> myExportedSolutions;
   private Set<SModuleReference> myExtendedDevkits;
+  private SModelReference myAssociatedGenerationPlan;
 
   public DevkitDescriptor() {
     super();
@@ -64,6 +67,27 @@ public class DevkitDescriptor extends ModuleDescriptor {
     return 0xabcd8765;
   }
 
+  /**
+   * This is provisional code while we investigate approaches how to associate custom generation plans
+   * with a model. We've tried <code>CustomGenerationModuleFacet</code> which is not quite satisfying,
+   * as we need to give Language Designer control over plan activation, and less (no) burden for Language Practitioner
+   * to pick a plan for his model.
+   *
+   * XXX It's indeed a hack to return model reference here, but it's the only way to move forward quickly.
+   * I can't afford to spend time now to build a facet mechanism for devkits, or to introduce GenerationPlanIdentity
+   * to reference deployed plans which could be kept here (and supplied from extension point or any other similar mechanism).
+   * At the end of the day, there'd be some compiled representation of the plan, we we can identify and assign here (if we stick
+   * to plans at devkits approach, which is not yet 100% sure thing).
+   */
+  @Nullable
+  public SModelReference getAssociatedGenPlan() {
+    return myAssociatedGenerationPlan;
+  }
+
+  public void setAssociatedPlan(@Nullable SModelReference planModel) {
+    myAssociatedGenerationPlan = planModel;
+  }
+
   @Override
   public void save(ModelOutputStream stream) throws IOException {
     stream.writeInt(getHeaderMarker());
@@ -84,13 +108,16 @@ public class DevkitDescriptor extends ModuleDescriptor {
     for (SModuleReference ref : myExtendedDevkits) {
       stream.writeModuleReference(ref);
     }
+    stream.writeModelReference(myAssociatedGenerationPlan);
 
     stream.writeByte(0x1e);
   }
 
   @Override
   public void load(ModelInputStream stream) throws IOException {
-    if (stream.readInt() != getHeaderMarker()) throw new IOException("bad stream: no module descriptor start marker");
+    if (stream.readInt() != getHeaderMarker()) {
+      throw new IOException("bad stream: no module descriptor start marker");
+    }
     setId(stream.readModuleID());
     setNamespace(stream.readString());
 
@@ -109,6 +136,10 @@ public class DevkitDescriptor extends ModuleDescriptor {
       myExtendedDevkits.add(stream.readModuleReference());
     }
 
-    if (stream.readByte() != 0x1e) throw new IOException("bad stream: no module descriptor end marker");
+    myAssociatedGenerationPlan = stream.readModelReference();
+
+    if (stream.readByte() != 0x1e) {
+      throw new IOException("bad stream: no module descriptor end marker");
+    }
   }
 }
