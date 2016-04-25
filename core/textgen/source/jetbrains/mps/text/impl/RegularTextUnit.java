@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.text.impl;
 
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextBuffer;
@@ -32,6 +33,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.nio.charset.Charset;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -146,6 +149,16 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   @Override
   public Status getState() {
     return myState;
+  }
+
+  /**
+   * Until I decide whether to pass IMessageList into TU for it to report errors, or to supply
+   * collection of messages to outer world, I don't want to expose this method in TextUnit API, and thus keep it here.
+   * @return all the messages (anything that TU has reported to date) in order from older to newer.
+   */
+  @NotNull
+  public List<IMessage> getMessages() {
+    return myLegacyBuffer == null ? Collections.<IMessage>emptyList() : myLegacyBuffer.problems();
   }
 
   @Nullable

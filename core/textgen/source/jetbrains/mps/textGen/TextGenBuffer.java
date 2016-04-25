@@ -23,7 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +51,7 @@ public final class TextGenBuffer {
     return myContainsErrors;
   }
 
-  public Collection<IMessage> problems() {
+  public List<IMessage> problems() {
     return Collections.unmodifiableList(myErrors);
   }
 
