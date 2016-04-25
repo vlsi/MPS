@@ -196,7 +196,7 @@
       <property role="2_GNGf" value="true" />
       <property role="2_GNG2" value="512" />
       <property role="2_Ic$B" value="true" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
     </node>
     <node concept="PiPfp" id="2xHpXR_dnC3" role="3989C9">
       <property role="TrG5h" value="abcde-lib" />

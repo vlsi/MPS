@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -120,7 +120,7 @@
     <property role="2DA0ip" value="../../" />
     <property role="TrG5h" value="xmlPersistencePlugin" />
     <node concept="2_Ic$z" id="3pzB6wN3opQ" role="3989C9">
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
     </node>
     <node concept="55IIr" id="7ZoWiKceyVB" role="auvoZ" />
     <node concept="1l3spV" id="7ZoWiKceyVC" role="1l3spN">

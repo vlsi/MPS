@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -466,7 +466,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="6Za9XhmfePk" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -1634,7 +1634,7 @@
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
       <property role="2_Ic$y" value="withoutXmls" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="WgHS__ALjO" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -13088,7 +13088,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="6Za9XhmfePi" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -13133,7 +13133,7 @@
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
       <property role="2_Ic$y" value="mps-workbench-specific" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="79wGYVsEpzE" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14544,7 +14544,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="6Za9XhmfePj" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -17821,7 +17821,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="568PkTlP_GO" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -18032,7 +18032,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="5yMuYWFN8Pp" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -19791,7 +19791,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="4zojEE2AHSE" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -20485,7 +20485,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="1lMM4owFq50" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -20999,7 +20999,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="4zojEE2AHSB" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -22780,7 +22780,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="4zojEE2AHS$" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -24903,7 +24903,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="11P3qAhCOBG" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -25372,7 +25372,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="78GwwOvE677" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -25643,7 +25643,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="256" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="63lu3g6CXxu" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -26063,7 +26063,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="5bqL32jZKzy" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -26440,7 +26440,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="6mtDI7J_9Bm" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -27523,7 +27523,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="5rNMDvYzelX" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -27786,7 +27786,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="5vOCSNwz_Ir" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -28129,7 +28129,7 @@
     <property role="2DA0ip" value="../../../../" />
     <node concept="2_Ic$z" id="7jI34hpV1mB" role="3989C9">
       <property role="2_Ic$$" value="true" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
     </node>
     <node concept="398b33" id="2aRSPSKEe9G" role="3989C9">
       <property role="TrG5h" value="test-util" />
@@ -29335,7 +29335,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="3J16QdQGuhe" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -29788,7 +29788,7 @@
       <property role="2_Ic$B" value="true" />
       <property role="2_GNG2" value="1024" />
       <property role="3fwGa$" value="IntelliJ" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="25y4WSoTpRX" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -30329,7 +30329,7 @@
       <property role="3fwGa$" value="IntelliJ" />
       <property role="2_Ic$B" value="true" />
       <property role="2_Ic$$" value="true" />
-      <property role="TZNOO" value="1.6" />
+      <property role="TZNOO" value="" />
       <node concept="3qWCbU" id="7YkAA_ihEsb" role="2_Ic$A">
         <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
