@@ -2429,6 +2429,78 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6YS4exLGDoZ" role="3cqZAp">
+                <node concept="37vLTI" id="6YS4exLGEb6" role="3clFbG">
+                  <node concept="3y3z36" id="6YS4exLGSta" role="37vLTx">
+                    <node concept="3cmrfG" id="6YS4exLGSzC" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="1eOMI4" id="6YS4exLGShD" role="3uHU7B">
+                      <node concept="pVHWs" id="6YS4exLGShE" role="1eOMHV">
+                        <node concept="10M0yZ" id="6YS4exLGShF" role="3uHU7w">
+                          <ref role="1PxDUh" to="k8ye:~Opcodes" resolve="Opcodes" />
+                          <ref role="3cqZAo" to="k8ye:~Opcodes.ACC_ABSTRACT" resolve="ACC_ABSTRACT" />
+                        </node>
+                        <node concept="2OqwBi" id="6YS4exLGShG" role="3uHU7B">
+                          <node concept="37vLTw" id="6YS4exLGShH" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3Eq_PkM71kX" resolve="myClassReader" />
+                          </node>
+                          <node concept="liA8E" id="6YS4exLGShI" role="2OqNvi">
+                            <ref role="37wK5l" to="k8ye:~ClassReader.getAccess():int" resolve="getAccess" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6YS4exLGDxf" role="37vLTJ">
+                    <node concept="1PxgMI" id="6YS4exLGDqa" role="2Oq$k0">
+                      <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      <node concept="37vLTw" id="6YS4exLGDoX" role="1PxMeX">
+                        <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="6YS4exLGE7l" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpee:fDsVARU" resolve="abstractClass" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6YS4exLGEei" role="3cqZAp">
+                <node concept="37vLTI" id="6YS4exLGEej" role="3clFbG">
+                  <node concept="2OqwBi" id="6YS4exLGEel" role="37vLTJ">
+                    <node concept="1PxgMI" id="6YS4exLGEem" role="2Oq$k0">
+                      <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      <node concept="37vLTw" id="6YS4exLGEen" role="1PxMeX">
+                        <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="6YS4exLGE$F" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpee:hLEXba4" resolve="isFinal" />
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="6YS4exLGSD4" role="37vLTx">
+                    <node concept="3cmrfG" id="6YS4exLGSD5" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="1eOMI4" id="6YS4exLGSD6" role="3uHU7B">
+                      <node concept="pVHWs" id="6YS4exLGSD7" role="1eOMHV">
+                        <node concept="10M0yZ" id="6YS4exLGSD8" role="3uHU7w">
+                          <ref role="1PxDUh" to="k8ye:~Opcodes" resolve="Opcodes" />
+                          <ref role="3cqZAo" to="k8ye:~Opcodes.ACC_FINAL" resolve="ACC_FINAL" />
+                        </node>
+                        <node concept="2OqwBi" id="6YS4exLGSD9" role="3uHU7B">
+                          <node concept="37vLTw" id="6YS4exLGSDa" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3Eq_PkM71kX" resolve="myClassReader" />
+                          </node>
+                          <node concept="liA8E" id="6YS4exLGSDb" role="2OqNvi">
+                            <ref role="37wK5l" to="k8ye:~ClassReader.getAccess():int" resolve="getAccess" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3zACq4" id="3Eq_PkM82dJ" role="3cqZAp" />
             </node>
           </node>
@@ -2544,6 +2616,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="6YS4exLGz5_" role="3cqZAp" />
         <node concept="3clFbJ" id="3Eq_PkM9AK9" role="3cqZAp">
           <node concept="3clFbS" id="3Eq_PkM9AKb" role="3clFbx">
             <node concept="3SKdUt" id="3Eq_PkM9LmY" role="3cqZAp">
@@ -2791,7 +2864,7 @@
             </node>
             <node concept="2ShNRf" id="3Eq_PkM8rCS" role="33vP2m">
               <node concept="1pGfFk" id="3Eq_PkM8s0V" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
                 <node concept="3uibUv" id="3Eq_PkM8s2N" role="1pMfVU">
                   <ref role="3uigEE" node="3X3rDwN7qLn" resolve="ClassifierLoader" />
                 </node>
