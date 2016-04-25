@@ -615,7 +615,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @NotNull
   public SearchScope getScope() {
-    assertCanRead();
+//    assertCanRead(); what's the reason to guard access to the field?
     return myScope;
   }
 
