@@ -29,7 +29,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
 import java.util.Map;
@@ -72,19 +71,20 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
 
   protected void ensureInitialized() {
     if (myDescriptors != null) return;
-    synchronized (this) {
-      if (myDescriptors != null) return;
+    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        if (myDescriptors != null) return;
+        synchronized (this) {
+          if (myDescriptors != null) return;
 
-      final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
-      if (structureModel == null) {
-        LOG.warn("Structure aspect is null in the language " + myLanguage);
-        myDescriptorByName = new ConcurrentHashMap<String, ConceptDescriptor>();
-        myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
-        return;
-      }
-      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
+          final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
+          if (structureModel == null) {
+            LOG.warn("Structure aspect is null in the language " + myLanguage);
+            myDescriptorByName = new ConcurrentHashMap<String, ConceptDescriptor>();
+            myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+            return;
+          }
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
           ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
           for (SNode root : structureModel.getRootNodes()) {
@@ -103,8 +103,8 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
           myDescriptorByName = descriptorsByName;
           myDescriptors = descriptors;
         }
-      });
-    }
+      }
+    });
   }
 
   //this allows to get concept fq name w/o trying constraints
