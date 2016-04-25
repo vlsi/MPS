@@ -12,6 +12,62 @@
       <unit at="11,0,17,0" name="jetbrains.mps.build.mps.migration.MigrationDescriptorImpl" />
     </file>
   </root>
+  <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/3764290790035333274">
+    <file name="BuildJavaVersionMigration_JDKDefault.java">
+      <node id="3764290790035333274" at="20,30,21,66" concept="5" />
+      <node id="3764290790035333274" at="24,33,25,17" concept="5" />
+      <node id="3764290790035333359" at="27,41,28,44" concept="4" />
+      <node id="3764290790035333375" at="30,54,31,196" concept="5" />
+      <node id="3764290790035333388" at="34,59,35,385" concept="4" />
+      <node id="3764290790035333412" at="37,41,38,193" concept="5" />
+      <node id="3764290790035333401" at="40,11,41,177" concept="0" />
+      <node id="3764290790035333274" at="43,5,44,16" concept="5" />
+      <node id="3764290790035333274" at="46,51,47,143" concept="5" />
+      <node id="3764290790035333274" at="20,0,23,0" concept="3" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3764290790035333373" at="30,0,33,0" concept="3" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
+      <node id="3764290790035333410" at="37,0,40,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3764290790035333274" at="46,0,49,0" concept="3" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="3764290790035333274" at="23,0,27,0" concept="3" trace="isRerunnable#()Z" />
+      <node id="3764290790035333366" at="28,44,33,7" concept="4" />
+      <node id="3764290790035333398" at="35,385,42,7" concept="1" />
+      <node id="3764290790035333385" at="33,7,43,5" concept="1" />
+      <node id="3764290790035333274" at="27,0,46,0" concept="3" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3764290790035333274" at="20,30,21,66" />
+      <scope id="3764290790035333274" at="24,33,25,17" />
+      <scope id="3764290790035333374" at="30,54,31,196" />
+      <scope id="3764290790035333411" at="37,41,38,193" />
+      <scope id="3764290790035333400" at="40,11,41,177" />
+      <scope id="3764290790035333274" at="46,51,47,143" />
+      <scope id="3764290790035333274" at="20,0,23,0" />
+      <scope id="3764290790035333373" at="30,0,33,0">
+        <var name="model" id="3764290790035333373" />
+      </scope>
+      <scope id="3764290790035333410" at="37,0,40,0">
+        <var name="it" id="3764290790035333410" />
+      </scope>
+      <scope id="3764290790035333274" at="46,0,49,0" />
+      <scope id="3764290790035333274" at="23,0,27,0" />
+      <scope id="3764290790035333398" at="35,385,42,7">
+        <var name="javaOptions" id="3764290790035333399" />
+      </scope>
+      <scope id="3764290790035333387" at="34,59,42,7">
+        <var name="javaOptionsSeq" id="3764290790035333389" />
+      </scope>
+      <scope id="3764290790035333385" at="33,7,43,5">
+        <var name="project" id="3764290790035333386" />
+      </scope>
+      <scope id="3764290790035333274" at="27,41,44,16">
+        <var name="models" id="3764290790035333360" />
+        <var name="projects" id="3764290790035333367" />
+      </scope>
+      <scope id="3764290790035333274" at="27,0,46,0">
+        <var name="m" id="3764290790035333274" />
+      </scope>
+      <unit id="3764290790035333373" at="29,75,33,5" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration_JDKDefault$1" />
+      <unit id="3764290790035333410" at="36,79,40,7" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration_JDKDefault$2" />
+      <unit id="3764290790035333274" at="19,0,51,0" name="jetbrains.mps.build.mps.migration.BuildJavaVersionMigration_JDKDefault" />
+    </file>
+  </root>
   <root nodeRef="r:6b4c7cba-3f3c-4384-aa02-e68ac5ea8ee8(jetbrains.mps.build.mps.migration)/7498587351967223969">
     <file name="BuildJavaVersionMigration.java">
       <node id="7498587351967223969" at="23,30,24,88" concept="5" />

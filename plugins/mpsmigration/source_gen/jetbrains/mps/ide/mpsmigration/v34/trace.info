@@ -171,5 +171,51 @@
       <unit id="7485988173703007654" at="28,0,131,0" name="jetbrains.mps.ide.mpsmigration.v34.CleanExportsMigration" />
     </file>
   </root>
+  <root nodeRef="r:4099ae6a-b0c8-49a5-b9ee-903d1af7c247(jetbrains.mps.ide.mpsmigration.v34)/892827193598582982">
+    <file name="ProjectJavaVersionMigration_JDKDefault.java">
+      <node id="892827193598583785" at="14,0,15,0" concept="9" trace="ID" />
+      <node id="892827193598586934" at="15,51,16,14" concept="11" />
+      <node id="892827193598640789" at="18,45,19,51" concept="7" />
+      <node id="892827193598642823" at="20,29,21,19" concept="8" />
+      <node id="892827193598583800" at="22,5,23,79" concept="7" />
+      <node id="3764290790035465554" at="24,190,25,18" concept="8" />
+      <node id="892827193598583813" at="26,5,27,98" concept="7" />
+      <node id="892827193598583816" at="27,98,28,33" concept="2" />
+      <node id="892827193598583819" at="28,33,29,72" concept="2" />
+      <node id="892827193598583825" at="29,72,30,16" concept="8" />
+      <node id="892827193598583831" at="32,34,33,53" concept="8" />
+      <node id="892827193598583867" at="37,36,38,48" concept="8" />
+      <node id="3764290790035465858" at="41,64,42,46" concept="8" />
+      <node id="892827193598583789" at="15,0,18,0" concept="1" trace="ProjectJavaVersionMigration_JDKDefault#()V" />
+      <node id="892827193598640894" at="19,51,22,5" concept="5" />
+      <node id="3764290790035410273" at="23,79,26,5" concept="5" />
+      <node id="892827193598583829" at="32,0,35,0" concept="6" trace="getDescription#()Ljava/lang/String;" />
+      <node id="3764290790035465858" at="41,0,44,0" concept="10" trace="eq_h13tkv_a0a0d0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="892827193598583863" at="35,0,40,0" concept="6" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="892827193598583795" at="18,0,32,0" concept="6" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
+      <scope id="892827193598583791" at="15,51,16,14" />
+      <scope id="892827193598640896" at="20,29,21,19" />
+      <scope id="3764290790035410275" at="24,190,25,18" />
+      <scope id="892827193598583830" at="32,34,33,53" />
+      <scope id="892827193598583866" at="37,36,38,48" />
+      <scope id="3764290790035465858" at="41,64,42,46" />
+      <scope id="892827193598583789" at="15,0,18,0" />
+      <scope id="892827193598583829" at="32,0,35,0" />
+      <scope id="3764290790035465858" at="41,0,44,0">
+        <var name="a" id="3764290790035465858" />
+        <var name="b" id="3764290790035465858" />
+      </scope>
+      <scope id="892827193598583863" at="35,0,40,0" />
+      <scope id="892827193598583798" at="18,45,30,16">
+        <var name="ideaProject" id="892827193598583799" />
+        <var name="mpsProject" id="892827193598640790" />
+        <var name="state" id="892827193598583812" />
+      </scope>
+      <scope id="892827193598583795" at="18,0,32,0">
+        <var name="project" id="892827193598583796" />
+      </scope>
+      <unit id="892827193598582982" at="13,0,45,0" name="jetbrains.mps.ide.mpsmigration.v34.ProjectJavaVersionMigration_JDKDefault" />
+    </file>
+  </root>
 </debug-info>
 

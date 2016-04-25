@@ -11,7 +11,9 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tken" ref="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -105,6 +107,9 @@
       </concept>
     </language>
     <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
+      <concept id="8880393040217246788" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodParameterInstance" flags="ig" index="ffn8J">
+        <reference id="8880393040217294897" name="decl" index="ffrpq" />
+      </concept>
       <concept id="3751132065236767083" name="jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance" flags="ig" index="q3mfm">
         <reference id="3751132065236767084" name="decl" index="q3mfh" />
         <reference id="9097849371505568270" name="point" index="1QQUv3" />
@@ -585,6 +590,205 @@
         <ref role="q3mfh" to="slm6:4F5w8gPXEEe" />
         <ref role="1QQUv3" node="6wglnuBf_2D" resolve="execute" />
       </node>
+    </node>
+  </node>
+  <node concept="3SyAh_" id="3gXsCubla2q">
+    <property role="qMTe8" value="1" />
+    <property role="TrG5h" value="BuildJavaVersionMigration_JDKDefault" />
+    <node concept="3Tm1VV" id="3gXsCubla2r" role="1B3o_S" />
+    <node concept="3tTeZs" id="3gXsCubla2s" role="jymVt">
+      <property role="3tTeZt" value="&lt;no execute after&gt;" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
+    </node>
+    <node concept="3tTeZs" id="3gXsCubla2t" role="jymVt">
+      <property role="3tTeZt" value="&lt;no required data&gt;" />
+      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" resolve="requires data" />
+    </node>
+    <node concept="3tTeZs" id="3gXsCubla2u" role="jymVt">
+      <property role="3tTeZt" value="&lt;no produced data&gt;" />
+      <ref role="3tTeZr" to="slm6:536fTXa4WHO" resolve="produces data" />
+    </node>
+    <node concept="2tJIrI" id="3gXsCubla2v" role="jymVt" />
+    <node concept="3tTeZs" id="3gXsCubla2w" role="jymVt">
+      <property role="3tTeZt" value="&lt;migration is not rerunnable&gt;" />
+      <ref role="3tTeZr" to="slm6:1JWcQ2VeWIs" resolve="isRerunnable" />
+    </node>
+    <node concept="3tYpXE" id="3gXsCublaZ4" role="jymVt">
+      <property role="TrG5h" value="description" />
+      <property role="3tYpXF" value="set default java target version to all build scripts" />
+      <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
+      <node concept="3Tm1VV" id="3gXsCublaZ6" role="1B3o_S" />
+      <node concept="17QB3L" id="3gXsCublaZ7" role="1tU5fm" />
+    </node>
+    <node concept="q3mfD" id="3gXsCubla2y" role="jymVt">
+      <property role="TrG5h" value="execute" />
+      <ref role="2VtyIY" to="slm6:4ubqdNOF9cA" resolve="execute" />
+      <node concept="3Tm1VV" id="3gXsCubla2$" role="1B3o_S" />
+      <node concept="3clFbS" id="3gXsCubla2A" role="3clF47">
+        <node concept="3cpWs8" id="3gXsCubla3J" role="3cqZAp">
+          <node concept="3cpWsn" id="3gXsCubla3K" role="3cpWs9">
+            <property role="TrG5h" value="models" />
+            <node concept="2OqwBi" id="3gXsCubla3L" role="33vP2m">
+              <node concept="37vLTw" id="3gXsCubla3M" role="2Oq$k0">
+                <ref role="3cqZAo" node="3gXsCubla2C" resolve="m" />
+              </node>
+              <node concept="liA8E" id="3gXsCubla3N" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+              </node>
+            </node>
+            <node concept="A3Dl8" id="3gXsCubla3O" role="1tU5fm">
+              <node concept="3uibUv" id="3gXsCubla3P" role="A3Ik2">
+                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3gXsCubla3Q" role="3cqZAp">
+          <node concept="3cpWsn" id="3gXsCubla3R" role="3cpWs9">
+            <property role="TrG5h" value="projects" />
+            <node concept="A3Dl8" id="3gXsCubla3S" role="1tU5fm">
+              <node concept="3Tqbb2" id="3gXsCubla3T" role="A3Ik2">
+                <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3gXsCubla3U" role="33vP2m">
+              <node concept="37vLTw" id="3gXsCubla3V" role="2Oq$k0">
+                <ref role="3cqZAo" node="3gXsCubla3K" resolve="models" />
+              </node>
+              <node concept="3goQfb" id="3gXsCubla3W" role="2OqNvi">
+                <node concept="1bVj0M" id="3gXsCubla3X" role="23t8la">
+                  <node concept="3clFbS" id="3gXsCubla3Y" role="1bW5cS">
+                    <node concept="3clFbF" id="3gXsCubla3Z" role="3cqZAp">
+                      <node concept="2OqwBi" id="3gXsCubla40" role="3clFbG">
+                        <node concept="1eOMI4" id="3gXsCubla41" role="2Oq$k0">
+                          <node concept="10QFUN" id="3gXsCubla42" role="1eOMHV">
+                            <node concept="37vLTw" id="3gXsCubla43" role="10QFUP">
+                              <ref role="3cqZAo" node="3gXsCubla47" resolve="model" />
+                            </node>
+                            <node concept="H_c77" id="3gXsCubla44" role="10QFUM" />
+                          </node>
+                        </node>
+                        <node concept="2SmgA7" id="3gXsCubla45" role="2OqNvi">
+                          <node concept="chp4Y" id="3gXsCubla46" role="1dBWTz">
+                            <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="3gXsCubla47" role="1bW2Oz">
+                    <property role="TrG5h" value="model" />
+                    <node concept="2jxLKc" id="3gXsCubla48" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="3gXsCubla49" role="3cqZAp">
+          <node concept="2GrKxI" id="3gXsCubla4a" role="2Gsz3X">
+            <property role="TrG5h" value="project" />
+          </node>
+          <node concept="3clFbS" id="3gXsCubla4b" role="2LFqv$">
+            <node concept="3cpWs8" id="3gXsCubla4c" role="3cqZAp">
+              <node concept="3cpWsn" id="3gXsCubla4d" role="3cpWs9">
+                <property role="TrG5h" value="javaOptionsSeq" />
+                <node concept="A3Dl8" id="3gXsCubla4e" role="1tU5fm">
+                  <node concept="3Tqbb2" id="3gXsCubla4f" role="A3Ik2">
+                    <ref role="ehGHo" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3gXsCubla4g" role="33vP2m">
+                  <node concept="2OqwBi" id="3gXsCubla4h" role="2Oq$k0">
+                    <node concept="2GrUjf" id="3gXsCubla4i" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="3gXsCubla4a" resolve="project" />
+                    </node>
+                    <node concept="3Tsc0h" id="3gXsCubla4j" role="2OqNvi">
+                      <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" />
+                    </node>
+                  </node>
+                  <node concept="v3k3i" id="3gXsCubla4k" role="2OqNvi">
+                    <node concept="chp4Y" id="3gXsCubla4l" role="v3oSu">
+                      <ref role="cht4Q" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Gpval" id="3gXsCubla4m" role="3cqZAp">
+              <node concept="2GrKxI" id="3gXsCubla4n" role="2Gsz3X">
+                <property role="TrG5h" value="javaOptions" />
+              </node>
+              <node concept="3clFbS" id="3gXsCubla4o" role="2LFqv$">
+                <node concept="3clFbF" id="3gXsCubla4p" role="3cqZAp">
+                  <node concept="37vLTI" id="3gXsCubla4q" role="3clFbG">
+                    <node concept="2OqwBi" id="3gXsCubla4r" role="37vLTJ">
+                      <node concept="2GrUjf" id="3gXsCubla4s" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="3gXsCubla4n" resolve="javaOptions" />
+                      </node>
+                      <node concept="3TrcHB" id="3gXsCubla4t" role="2OqNvi">
+                        <ref role="3TsBF5" to="3ior:64wWIxoRWZs" resolve="javaLevel" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3gXsCubla4u" role="37vLTx" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3gXsCubla4v" role="2GsD0m">
+                <node concept="37vLTw" id="3gXsCubla4w" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3gXsCubla4d" resolve="javaOptionsSeq" />
+                </node>
+                <node concept="3zZkjj" id="3gXsCubla4x" role="2OqNvi">
+                  <node concept="1bVj0M" id="3gXsCubla4y" role="23t8la">
+                    <node concept="3clFbS" id="3gXsCubla4z" role="1bW5cS">
+                      <node concept="3clFbF" id="3gXsCubla4$" role="3cqZAp">
+                        <node concept="2OqwBi" id="3gXsCubla4_" role="3clFbG">
+                          <node concept="2OqwBi" id="3gXsCubla4A" role="2Oq$k0">
+                            <node concept="37vLTw" id="3gXsCubla4B" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3gXsCubla4F" resolve="it" />
+                            </node>
+                            <node concept="3TrcHB" id="3gXsCubla4C" role="2OqNvi">
+                              <ref role="3TsBF5" to="3ior:64wWIxoRWZs" resolve="javaLevel" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="3gXsCubla4D" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <node concept="Xl_RD" id="3gXsCubla4E" role="37wK5m">
+                              <property role="Xl_RC" value="1.6" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="3gXsCubla4F" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="3gXsCubla4G" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="3gXsCubla4H" role="2GsD0m">
+            <ref role="3cqZAo" node="3gXsCubla3R" resolve="projects" />
+          </node>
+        </node>
+      </node>
+      <node concept="ffn8J" id="3gXsCubla2C" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <ref role="ffrpq" to="slm6:7fCCGqboj9J" resolve="m" />
+        <node concept="3uibUv" id="3gXsCubla2B" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="q3mfm" id="3gXsCubla2D" role="3clF45">
+        <ref role="q3mfh" to="slm6:4F5w8gPXEEe" />
+        <ref role="1QQUv3" node="3gXsCubla2y" resolve="execute" />
+      </node>
+    </node>
+    <node concept="3tTeZs" id="3gXsCubla2E" role="jymVt">
+      <property role="3tTeZt" value="&lt;no result checking&gt;" />
+      <ref role="3tTeZr" to="slm6:1JWcQ2VeXpD" resolve="check" />
     </node>
   </node>
 </model>
