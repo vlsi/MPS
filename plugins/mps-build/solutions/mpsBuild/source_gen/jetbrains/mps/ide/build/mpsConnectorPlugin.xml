@@ -67,7 +67,7 @@
     <mkdir dir="${mps_home}/MPSPlugin/source" />
     <mkdir dir="${mps_home}/MPSPlugin/source-api" />
     <mkdir dir="${build.tmp}/java/out/MPS-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/MPS-plugin" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/MPS-plugin" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/MPSPlugin/source" />

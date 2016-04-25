@@ -158,7 +158,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
@@ -264,7 +264,7 @@
   
   <target name="java.compile.vcs-core" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs-core" />
-    <javac2 destdir="${build.tmp}/java/out/vcs-core" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/vcs-core" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/plugins/vcs-core/core/source_gen" />
       <classpath>
@@ -295,7 +295,7 @@
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
@@ -337,7 +337,7 @@
   <target name="java.compile.jetbrains.mps.vcs.mergehints" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />

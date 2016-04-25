@@ -146,7 +146,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -238,7 +238,7 @@
   <target name="java.compile.testPackagedLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testPackagedLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
@@ -279,7 +279,7 @@
   
   <target name="java.compile.testPackagedLanguage.test" depends="java.compile.testPackagedLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/testPackagedLanguage.test" />
-    <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage.test" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage.test" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen/" />
       <classpath>

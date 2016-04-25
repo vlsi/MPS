@@ -180,7 +180,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -285,7 +285,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.figures.sandbox" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.sandbox" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.sandbox" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.sandbox" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" />
@@ -341,7 +341,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.editor.diagram.tests" depends="java.compile.jetbrains.mps.lang.editor.diagram.testLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/test_gen/" />
       <classpath>
@@ -420,7 +420,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.diagram.testLanguage" depends="java.compile.jetbrains.mps.lang.editor.figures.sandbox, fetchDependencies">
     <mkdir dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />

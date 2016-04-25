@@ -136,7 +136,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -219,7 +219,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.unittest" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/bl.unittest/test_gen/" />
       <classpath>
@@ -278,7 +278,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.closures.unittest" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" fork="false" encoding="utf8" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/bl.closures.unittest/test_gen/" />
       <classpath>
