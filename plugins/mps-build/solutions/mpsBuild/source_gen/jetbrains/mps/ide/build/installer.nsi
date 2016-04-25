@@ -24,6 +24,7 @@
 !include MUI.nsh
 
 #************************************ Installation Properties *********************************************#
+SetCompressor lzma
 Name "${APP_NAME}"
 OutFile "${PRODUCT_VERSION}-windows.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}"
