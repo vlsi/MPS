@@ -7,7 +7,8 @@
   <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="MPS" value="MPS-${build.number}" />
-  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="environment" value="env" />
+  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.java.library.apache-collections">

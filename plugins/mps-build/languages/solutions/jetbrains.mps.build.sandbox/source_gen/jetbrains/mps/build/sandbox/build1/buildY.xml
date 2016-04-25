@@ -3,7 +3,8 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildY" />
   <property name="build.layout" location="${build.dir}/artifacts/buildY" />
-  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="environment" value="env" />
+  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes">

@@ -3118,38 +3118,79 @@
         <node concept="2VaFvD" id="1Mjrj7j4Bzg" role="1Koe22">
           <property role="TrG5h" value="aaaa" />
           <property role="1LnyFq" value="aaaa" />
-          <node concept="1_4tnW" id="1VaRiz_CjIm" role="2VaxJS">
-            <property role="TrG5h" value="env.JAVA_HOME" />
-            <property role="1_4tnY" value="${java.home}/.." />
-            <node concept="raruj" id="1VaRiz_CuRr" role="lGtFl" />
-            <node concept="1W57fq" id="1VaRiz_C_RO" role="lGtFl">
-              <node concept="3IZrLx" id="1VaRiz_C_RQ" role="3IZSJc">
-                <node concept="3clFbS" id="1VaRiz_C_RS" role="2VODD2">
-                  <node concept="3clFbF" id="1VaRiz_CA_1" role="3cqZAp">
-                    <node concept="2OqwBi" id="1VaRiz_CA_3" role="3clFbG">
-                      <node concept="2OqwBi" id="1VaRiz_CA_4" role="2Oq$k0">
-                        <node concept="30H73N" id="1VaRiz_CA_5" role="2Oq$k0" />
-                        <node concept="2TvwIu" id="1VaRiz_CA_6" role="2OqNvi" />
+          <node concept="1_4tnW" id="41I$9K04mxp" role="2VaxJS">
+            <property role="TrG5h" value="environment" />
+            <property role="1_4tnY" value="env" />
+            <node concept="raruj" id="41I$9K04mxq" role="lGtFl" />
+            <node concept="1W57fq" id="41I$9K04mxr" role="lGtFl">
+              <node concept="3IZrLx" id="41I$9K04mxs" role="3IZSJc">
+                <node concept="3clFbS" id="41I$9K04mxt" role="2VODD2">
+                  <node concept="3clFbF" id="41I$9K04mxu" role="3cqZAp">
+                    <node concept="2OqwBi" id="41I$9K04mxv" role="3clFbG">
+                      <node concept="2OqwBi" id="41I$9K04mxw" role="2Oq$k0">
+                        <node concept="30H73N" id="41I$9K04mxx" role="2Oq$k0" />
+                        <node concept="2TvwIu" id="41I$9K04mxy" role="2OqNvi" />
                       </node>
-                      <node concept="2HwmR7" id="1VaRiz_CA_7" role="2OqNvi">
-                        <node concept="1bVj0M" id="1VaRiz_CA_8" role="23t8la">
-                          <node concept="3clFbS" id="1VaRiz_CA_9" role="1bW5cS">
-                            <node concept="3clFbF" id="1VaRiz_CA_a" role="3cqZAp">
-                              <node concept="2OqwBi" id="1VaRiz_CA_c" role="3clFbG">
-                                <node concept="37vLTw" id="1VaRiz_CA_d" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1VaRiz_CA_n" resolve="it" />
+                      <node concept="2HwmR7" id="41I$9K04mxz" role="2OqNvi">
+                        <node concept="1bVj0M" id="41I$9K04mx$" role="23t8la">
+                          <node concept="3clFbS" id="41I$9K04mx_" role="1bW5cS">
+                            <node concept="3clFbF" id="41I$9K04mxA" role="3cqZAp">
+                              <node concept="2OqwBi" id="41I$9K04mxB" role="3clFbG">
+                                <node concept="37vLTw" id="41I$9K04mxC" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="41I$9K04mxF" resolve="it" />
                                 </node>
-                                <node concept="1mIQ4w" id="1VaRiz_CA_e" role="2OqNvi">
-                                  <node concept="chp4Y" id="1VaRiz_CA_f" role="cj9EA">
+                                <node concept="1mIQ4w" id="41I$9K04mxD" role="2OqNvi">
+                                  <node concept="chp4Y" id="41I$9K04mxE" role="cj9EA">
                                     <ref role="cht4Q" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="Rh6nW" id="1VaRiz_CA_n" role="1bW2Oz">
+                          <node concept="Rh6nW" id="41I$9K04mxF" role="1bW2Oz">
                             <property role="TrG5h" value="it" />
-                            <node concept="2jxLKc" id="1VaRiz_CA_o" role="1tU5fm" />
+                            <node concept="2jxLKc" id="41I$9K04mxG" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1_4tnW" id="41I$9JZZ8HL" role="2VaxJS">
+            <property role="TrG5h" value="${env.JAVA_HOME}" />
+            <property role="1_4tnY" value="${java.home}/.." />
+            <node concept="raruj" id="41I$9JZZ8HM" role="lGtFl" />
+            <node concept="1W57fq" id="41I$9JZZ8HN" role="lGtFl">
+              <node concept="3IZrLx" id="41I$9JZZ8HO" role="3IZSJc">
+                <node concept="3clFbS" id="41I$9JZZ8HP" role="2VODD2">
+                  <node concept="3clFbF" id="41I$9JZZ8HQ" role="3cqZAp">
+                    <node concept="2OqwBi" id="41I$9JZZ8HR" role="3clFbG">
+                      <node concept="2OqwBi" id="41I$9JZZ8HS" role="2Oq$k0">
+                        <node concept="30H73N" id="41I$9JZZ8HT" role="2Oq$k0" />
+                        <node concept="2TvwIu" id="41I$9JZZ8HU" role="2OqNvi" />
+                      </node>
+                      <node concept="2HwmR7" id="41I$9JZZ8HV" role="2OqNvi">
+                        <node concept="1bVj0M" id="41I$9JZZ8HW" role="23t8la">
+                          <node concept="3clFbS" id="41I$9JZZ8HX" role="1bW5cS">
+                            <node concept="3clFbF" id="41I$9JZZ8HY" role="3cqZAp">
+                              <node concept="2OqwBi" id="41I$9JZZ8HZ" role="3clFbG">
+                                <node concept="37vLTw" id="41I$9JZZ8I0" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="41I$9JZZ8I3" resolve="it" />
+                                </node>
+                                <node concept="1mIQ4w" id="41I$9JZZ8I1" role="2OqNvi">
+                                  <node concept="chp4Y" id="41I$9JZZ8I2" role="cj9EA">
+                                    <ref role="cht4Q" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="41I$9JZZ8I3" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="41I$9JZZ8I4" role="1tU5fm" />
                           </node>
                         </node>
                       </node>
@@ -3461,7 +3502,7 @@
               <node concept="2pNUuL" id="6Eoy9qioAjT" role="2pNNFR">
                 <property role="2pNUuO" value="path" />
                 <node concept="2pMdtt" id="6Eoy9qioAjV" role="2pMdts">
-                  <property role="2pMdty" value="${java.home}/../Classes/classes.jar" />
+                  <property role="2pMdty" value="${jdk.home}/Classes/classes.jar" />
                 </node>
               </node>
             </node>
@@ -3483,14 +3524,14 @@
                 <node concept="2pNUuL" id="4qDlYxPbExN" role="2pNNFR">
                   <property role="2pNUuO" value="name" />
                   <node concept="2pMdtt" id="4qDlYxPbEOR" role="2pMdts">
-                    <property role="2pMdty" value="lib/*.jar" />
+                    <property role="2pMdty" value="jre/lib/*.jar" />
                   </node>
                 </node>
               </node>
               <node concept="2pNUuL" id="4qDlYxPbDl8" role="2pNNFR">
                 <property role="2pNUuO" value="dir" />
                 <node concept="2pMdtt" id="4qDlYxPbExL" role="2pMdts">
-                  <property role="2pMdty" value="${java.home}" />
+                  <property role="2pMdty" value="${jdk.home}" />
                 </node>
               </node>
             </node>

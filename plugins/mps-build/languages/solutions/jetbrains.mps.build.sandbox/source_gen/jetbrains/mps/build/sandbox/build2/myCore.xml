@@ -5,7 +5,8 @@
   <property name="aaa" location="${aaa.relative}" />
   <property name="bbb" value="./bbbb" />
   <property name="ccc" location="./cccc" />
-  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="environment" value="env" />
+  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.path1">
