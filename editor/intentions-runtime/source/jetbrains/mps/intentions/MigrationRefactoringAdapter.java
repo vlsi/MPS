@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,9 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -33,15 +31,6 @@ public class MigrationRefactoringAdapter extends OldBaseIntentionFactory {
   private final String myPresentation;
   private final String myLanguageName;
 
-  /**
-   * @deprecated left for compatibility with MPS 3.2, just in case
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MigrationRefactoringAdapter(SModuleReference languageReference, AbstractMigrationRefactoring refactoring, SNodeReference migrationReference) {
-    this(languageReference.getModuleName(), refactoring, migrationReference);
-  }
-
   /*package*/ MigrationRefactoringAdapter(String  languageName, AbstractMigrationRefactoring refactoring, @Nullable SNodeReference migrationReference) {
     myLanguageName = languageName;
     myRefactoring = refactoring;
@@ -51,11 +40,6 @@ public class MigrationRefactoringAdapter extends OldBaseIntentionFactory {
 
   /*package*/ AbstractMigrationRefactoring getRefactoring() {
     return myRefactoring;
-  }
-
-  @Override
-  public String getConcept() {
-    return myRefactoring.getApplicableConcept().getQualifiedName();
   }
 
   @Override

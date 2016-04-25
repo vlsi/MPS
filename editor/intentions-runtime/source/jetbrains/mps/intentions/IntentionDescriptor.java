@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,14 +28,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public interface IntentionDescriptor {
   /**
-   * @deprecated concept is implied by {@link IntentionAspectDescriptor#getIntentions(SConceptId)}
-   * @return qualified name of the concept this intention is activated with
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  String getConcept();
-
-  /**
    * @return name of the intention visible in general UI (without any context, as opposed to {@link IntentionExecutable#getDescription(SNode, EditorContext)})
    */
   String getPresentation();
@@ -46,6 +38,7 @@ public interface IntentionDescriptor {
    * @deprecated we don't use this value to filter out intentions, language is implied by aspect which provides the intention.
    * @return name of the language this intention is active for.
    * IMPORTANT Does not necessarily match that of applicable concept (e.g. intentions in lang.generator for core.BaseConcept)
+   * FIXME the only use is to group intentions in UI now. IntentionsManager shall do better job about access to intention origin
    */
   @Deprecated
   @ToRemove(version = 3.3)
