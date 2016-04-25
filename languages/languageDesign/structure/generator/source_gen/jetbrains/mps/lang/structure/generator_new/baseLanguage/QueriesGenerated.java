@@ -21,7 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.structure.generator_new.util.IdGenerationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -142,28 +142,16 @@ public class QueriesGenerated {
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829506(final PropertyMacroContext _context) {
-    long id;
-    if (isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")))) {
-      _context.showWarningMessage(_context.getNode(), "Concept id not set for concept declaration");
-      id = ((SNodeId.Regular) _context.getNode().getNodeId()).getId();
-    } else {
-      try {
-        id = Long.parseLong(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")));
-      } catch (NumberFormatException e) {
-        _context.showErrorMessage(_context.getNode(), "Concept id can't be converted to long");
-        id = ((SNodeId.Regular) _context.getNode().getNodeId()).getId();
-      }
-    }
-    return "0x" + Long.toHexString(id) + "L";
+    return "0x" + Long.toHexString(IdGenerationUtil.getConceptId(_context, _context.getNode())) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_3002767456621441149(final PropertyMacroContext _context) {
-    return ((SNodeId.Regular) _context.getNode().getNodeId()).getId() + "L";
+    return "0x" + Long.toHexString(IdGenerationUtil.getPropertyId(_context, _context.getNode())) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_5466719438543156881(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5466719438543211455(final PropertyMacroContext _context) {
-    return ((SNodeId.Regular) _context.getNode().getNodeId()).getId() + "L";
+    return "0x" + Long.toHexString(IdGenerationUtil.getLinkId(_context, _context.getNode())) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_5466719438543211471(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
@@ -172,7 +160,7 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1");
   }
   public static Object propertyMacro_GetPropertyValue_5466719438543278041(final PropertyMacroContext _context) {
-    return ((SNodeId.Regular) _context.getNode().getNodeId()).getId() + "L";
+    return "0x" + Long.toHexString(IdGenerationUtil.getLinkId(_context, _context.getNode())) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_5466719438543278057(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
@@ -433,9 +421,6 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

@@ -9,15 +9,52 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptIdHelper {
-  public static long generate(SModel m) {
+  public static long generateConceptId(SModel m) {
     while (true) {
       final long result = ((long) (Math.random() * Long.MAX_VALUE));
       if (ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           try {
             return Long.parseLong(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"))) == result;
+          } catch (NumberFormatException e) {
+            return false;
+          }
+        }
+      })) {
+        continue;
+      }
+      return result;
+    }
+  }
+
+  public static long generatePropertyId(SNode c) {
+    while (true) {
+      final long result = ((long) (Math.random() * Long.MAX_VALUE));
+      if (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          try {
+            return Long.parseLong(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId"))) == result;
+          } catch (NumberFormatException e) {
+            return false;
+          }
+        }
+      })) {
+        continue;
+      }
+      return result;
+    }
+  }
+
+  public static long generateLinkId(SNode c) {
+    while (true) {
+      final long result = ((long) (Math.random() * Long.MAX_VALUE));
+      if (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          try {
+            return Long.parseLong(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId"))) == result;
           } catch (NumberFormatException e) {
             return false;
           }
