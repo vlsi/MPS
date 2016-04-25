@@ -10934,14 +10934,14 @@
               <node concept="Xl_RD" id="dqwjwHC_p1" role="3uHU7w">
                 <property role="Xl_RC" value="" />
               </node>
-              <node concept="2YIFZM" id="dqwjwHATHZ" role="3uHU7B">
-                <ref role="37wK5l" to="twe9:5OIo7_R8hLh" resolve="generate" />
-                <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />
-                <node concept="2OqwBi" id="dqwjwHATI1" role="37wK5m">
-                  <node concept="37vLTw" id="dqwjwHATI2" role="2Oq$k0">
+              <node concept="2OqwBi" id="5hUt6kOB2qz" role="3uHU7B">
+                <node concept="2JrnkZ" id="5hUt6kOB2gy" role="2Oq$k0">
+                  <node concept="37vLTw" id="5hUt6kOB1bF" role="2JrQYb">
                     <ref role="3cqZAo" node="5YKiRiBuwq1" resolve="concept" />
                   </node>
-                  <node concept="I4A8Y" id="dqwjwHATI3" role="2OqNvi" />
+                </node>
+                <node concept="liA8E" id="5hUt6kOB2FH" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                 </node>
               </node>
             </node>
