@@ -98,8 +98,8 @@
       <concept id="1174657487114" name="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" flags="nn" index="1Z2H0r">
         <child id="1174657509053" name="term" index="1Z2MuG" />
       </concept>
-      <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
+        <property id="1206359757216" name="checkOnly" index="3wDh2S" />
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
@@ -234,28 +234,29 @@
     <property role="TrG5h" value="typeof_BaseExecuteCommandStatement" />
     <property role="3GE5qa" value="Command" />
     <node concept="3clFbS" id="1eZSuKdVolA" role="18ibNy">
-      <node concept="1Z5TYs" id="1eZSuKdVoC2" role="3cqZAp">
-        <node concept="mw_s8" id="1eZSuKdVoCq" role="1ZfhKB">
-          <node concept="2pJPEk" id="1eZSuKdVoCm" role="mwGJk">
-            <node concept="2pJPED" id="1eZSuKdVoC_" role="2pJPEn">
-              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
-              <node concept="2pIpSj" id="1eZSuKdVoDv" role="2pJxcM">
-                <ref role="2pIpSl" to="tpee:g7uigIF" />
-                <node concept="36bGnv" id="1eZSuKdVoE6" role="2pJxcZ">
-                  <ref role="36bGnp" to="lui2:~SRepository" resolve="SRepository" />
-                </node>
+      <node concept="1ZobV4" id="4N6D1IQ0ORX" role="3cqZAp">
+        <property role="3wDh2S" value="false" />
+        <node concept="mw_s8" id="4N6D1IQ0ORZ" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4N6D1IQ0OS0" role="mwGJk">
+            <node concept="2OqwBi" id="4N6D1IQ0OS1" role="1Z2MuG">
+              <node concept="1YBJjd" id="4N6D1IQ0OS2" role="2Oq$k0">
+                <ref role="1YBMHb" node="1eZSuKdVolC" resolve="baseExecuteCommandStatement" />
+              </node>
+              <node concept="3TrEf2" id="4N6D1IQ0OS3" role="2OqNvi">
+                <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="1eZSuKdVoC5" role="1ZfhK$">
-          <node concept="1Z2H0r" id="1eZSuKdVolG" role="mwGJk">
-            <node concept="2OqwBi" id="1eZSuKdVooZ" role="1Z2MuG">
-              <node concept="1YBJjd" id="1eZSuKdVom8" role="2Oq$k0">
-                <ref role="1YBMHb" node="1eZSuKdVolC" resolve="baseExecuteCommandStatement" />
-              </node>
-              <node concept="3TrEf2" id="1eZSuKdVo_f" role="2OqNvi">
-                <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+        <node concept="mw_s8" id="4N6D1IQ0OS4" role="1ZfhKB">
+          <node concept="2pJPEk" id="4N6D1IQ0OS5" role="mwGJk">
+            <node concept="2pJPED" id="4N6D1IQ0OS6" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="4N6D1IQ0OS7" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="4N6D1IQ0OS8" role="2pJxcZ">
+                  <ref role="36bGnp" to="lui2:~SRepository" resolve="SRepository" />
+                </node>
               </node>
             </node>
           </node>
