@@ -204,6 +204,7 @@
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
       <concept id="1210784285454" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" flags="ng" index="3Cnw8n">
+        <property id="1216127910019" name="applyImmediately" index="ARO6o" />
         <reference id="1216388525179" name="quickFix" index="QpYPw" />
         <child id="1210784493590" name="actualArgument" index="3Coj4f" />
       </concept>
@@ -3295,6 +3296,7 @@
         <node concept="3clFbS" id="1o9qxtfa_CI" role="3clFbx">
           <node concept="2MkqsV" id="1o9qxtfaAuy" role="3cqZAp">
             <node concept="3Cnw8n" id="1o9qxtfbeWt" role="2OEOjU">
+              <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptIds" />
               <node concept="3CnSsL" id="1o9qxtfbf0V" role="3Coj4f">
                 <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
@@ -3362,6 +3364,7 @@
             <node concept="3clFbS" id="dqwjwHx5sM" role="3clFbx">
               <node concept="2MkqsV" id="dqwjwHx6XQ" role="3cqZAp">
                 <node concept="3Cnw8n" id="dqwjwHx6XR" role="2OEOjU">
+                  <property role="ARO6o" value="true" />
                   <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptIds" />
                   <node concept="3CnSsL" id="dqwjwHx6XS" role="3Coj4f">
                     <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
@@ -3420,6 +3423,7 @@
             <node concept="3clFbS" id="dqwjwHx8JU" role="3clFbx">
               <node concept="2MkqsV" id="dqwjwHx8JV" role="3cqZAp">
                 <node concept="3Cnw8n" id="dqwjwHx8JW" role="2OEOjU">
+                  <property role="ARO6o" value="true" />
                   <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptIds" />
                   <node concept="3CnSsL" id="dqwjwHx8JX" role="3Coj4f">
                     <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
