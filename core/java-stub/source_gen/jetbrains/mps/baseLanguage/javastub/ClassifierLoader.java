@@ -11,8 +11,8 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.org.objectweb.asm.Opcodes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
@@ -65,6 +65,8 @@ public class ClassifierLoader {
     switch (kind) {
       case CLASS:
         lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), nodeId);
+        SPropertyOperations.set(SNodeOperations.cast(lazyRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), "" + ((myClassReader.getAccess() & Opcodes.ACC_ABSTRACT) != 0));
+        SPropertyOperations.set(SNodeOperations.cast(lazyRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), "" + ((myClassReader.getAccess() & Opcodes.ACC_FINAL) != 0));
         break;
       case INTERFACE:
         lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), nodeId);
@@ -81,6 +83,7 @@ public class ClassifierLoader {
     }
     SNode rv = SNodeOperations.as(lazyRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), shortName);
+
     if (myInnerClassDescriptor != null) {
       // static, protected, private are accessible from inner class structure only, 
       // JLS 4.7.6, table 4.8 
@@ -90,9 +93,9 @@ public class ClassifierLoader {
       // public, final, abstract are taken from the class, JLS 4.1, table 4.1 
       SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic"), "" + (!(isStatic)));
       if (isProtected) {
-        SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createProtectedVisibility_eoyrbu_a0a0h0k0m());
+        SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createProtectedVisibility_eoyrbu_a0a0h0l0m());
       } else if (isPrivate) {
-        SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createPrivateVisibility_eoyrbu_a0a0a7a01a21());
+        SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createPrivateVisibility_eoyrbu_a0a0a7a11a21());
       }
     }
     return rv;
@@ -140,7 +143,7 @@ public class ClassifierLoader {
 
   public void updateClassifier(SNode classifier, ReferenceFactory refFactory) {
     assert myClassReader != null;
-    ASMClass ac = new ASMClass(myClassReader);
+    ASMClass ac = new ASMClass(myClassReader, true);
     new ClassifierUpdater(ac, mySkipPrivate, refFactory).update(classifier);
     for (ClassifierLoader innerLoader : getInnerClassifiers(ac)) {
       SNode inner = innerLoader.createClassifier();
@@ -178,12 +181,12 @@ public class ClassifierLoader {
     String name = file.getName();
     return name.substring(0, name.indexOf('.'));
   }
-  private static SNode createProtectedVisibility_eoyrbu_a0a0h0k0m() {
+  private static SNode createProtectedVisibility_eoyrbu_a0a0h0l0m() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"), null, null, false);
     return n1;
   }
-  private static SNode createPrivateVisibility_eoyrbu_a0a0a7a01a21() {
+  private static SNode createPrivateVisibility_eoyrbu_a0a0a7a11a21() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"), null, null, false);
     return n1;

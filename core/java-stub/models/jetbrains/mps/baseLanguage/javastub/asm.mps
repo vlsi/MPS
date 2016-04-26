@@ -7266,6 +7266,10 @@
           <ref role="3uigEE" to="k8ye:~ClassReader" resolve="ClassReader" />
         </node>
       </node>
+      <node concept="37vLTG" id="7ZQX3Te_4UH" role="3clF46">
+        <property role="TrG5h" value="needParamNames" />
+        <node concept="10P_77" id="7ZQX3Te_63H" role="1tU5fm" />
+      </node>
       <node concept="3clFbS" id="6hYzBiUOvvM" role="3clF47">
         <node concept="3clFbF" id="6hYzBiUOvvN" role="3cqZAp">
           <node concept="37vLTI" id="6hYzBiUOvvO" role="3clFbG">
@@ -7292,19 +7296,29 @@
                     <ref role="3cqZAo" node="6hYzBiUOvv1" resolve="myNode" />
                   </node>
                   <node concept="pVOtf" id="7sAt0z3f$8X" role="37wK5m">
-                    <node concept="pVOtf" id="7sAt0z3fzPi" role="3uHU7B">
-                      <node concept="10M0yZ" id="6hYzBiUOvw2" role="3uHU7B">
-                        <ref role="1PxDUh" to="k8ye:~ClassReader" resolve="ClassReader" />
-                        <ref role="3cqZAo" to="k8ye:~ClassReader.SKIP_CODE" resolve="SKIP_CODE" />
-                      </node>
-                      <node concept="10M0yZ" id="6hYzBiUOvw3" role="3uHU7w">
-                        <ref role="1PxDUh" to="k8ye:~ClassReader" resolve="ClassReader" />
-                        <ref role="3cqZAo" to="k8ye:~ClassReader.SKIP_DEBUG" resolve="SKIP_DEBUG" />
-                      </node>
-                    </node>
                     <node concept="10M0yZ" id="1wxNQgEU1Wr" role="3uHU7w">
                       <ref role="1PxDUh" to="k8ye:~ClassReader" resolve="ClassReader" />
                       <ref role="3cqZAo" to="k8ye:~ClassReader.SKIP_FRAMES" resolve="SKIP_FRAMES" />
+                    </node>
+                    <node concept="1eOMI4" id="7ZQX3Te_6$T" role="3uHU7B">
+                      <node concept="3K4zz7" id="7ZQX3Te_6M7" role="1eOMHV">
+                        <node concept="3cmrfG" id="7ZQX3Te_6U0" role="3K4E3e">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="37vLTw" id="7ZQX3Te_6Dr" role="3K4Cdx">
+                          <ref role="3cqZAo" node="7ZQX3Te_4UH" resolve="needParamNames" />
+                        </node>
+                        <node concept="pVOtf" id="7sAt0z3fzPi" role="3K4GZi">
+                          <node concept="10M0yZ" id="6hYzBiUOvw2" role="3uHU7B">
+                            <ref role="1PxDUh" to="k8ye:~ClassReader" resolve="ClassReader" />
+                            <ref role="3cqZAo" to="k8ye:~ClassReader.SKIP_CODE" resolve="SKIP_CODE" />
+                          </node>
+                          <node concept="10M0yZ" id="6hYzBiUOvw3" role="3uHU7w">
+                            <ref role="3cqZAo" to="k8ye:~ClassReader.SKIP_DEBUG" resolve="SKIP_DEBUG" />
+                            <ref role="1PxDUh" to="k8ye:~ClassReader" resolve="ClassReader" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

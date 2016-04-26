@@ -54,7 +54,7 @@ public class StubModelsIndexer implements ApplicationComponent {
         }
         return Collections.emptyMap();
       }
-      ASMClass ac = new ASMClass(reader);
+      ASMClass ac = new ASMClass(reader, false);
       String fqName = ac.getFqName();
       if (AbstractClassPathItem.isAnonymous(NameUtil.namespaceFromLongName(fqName))) {
         return Collections.emptyMap();

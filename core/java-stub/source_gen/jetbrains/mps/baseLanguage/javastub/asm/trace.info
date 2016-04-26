@@ -1259,8 +1259,8 @@
       <node id="7241381882860009440" at="25,0,26,0" concept="3" trace="myConstructors" />
       <node id="7241381882860009447" at="26,0,27,0" concept="3" trace="myAnnotations" />
       <node id="7241381882860009451" at="27,0,28,0" concept="3" trace="myGenericSuperclass" />
-      <node id="7241381882860009459" at="28,39,29,29" concept="2" />
-      <node id="7241381882860009466" at="30,9,31,102" concept="2" />
+      <node id="7241381882860009459" at="28,63,29,29" concept="2" />
+      <node id="7241381882860009466" at="30,9,31,127" concept="2" />
       <node id="5058383315259648551" at="32,34,33,23" concept="10" />
       <node id="5058383315259597914" at="33,23,34,13" concept="9" />
       <node id="7241381882860009537" at="36,35,37,73" concept="8" />
@@ -1358,9 +1358,9 @@
       <node id="7241381882860009547" at="37,73,59,9" concept="2" />
       <node id="7241381882860009399" at="159,0,183,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860009476" at="35,5,67,5" concept="6" />
-      <node id="7241381882860009454" at="28,0,99,0" concept="1" trace="ASMClass#(Lorg/jetbrains/org/objectweb/asm/ClassReader;)V" />
+      <node id="7241381882860009454" at="28,0,99,0" concept="1" trace="ASMClass#(Lorg/jetbrains/org/objectweb/asm/ClassReader;Z)V" />
       <scope id="7241381882860009987" at="154,41,154,41" />
-      <scope id="5058383315259429774" at="30,9,31,102" />
+      <scope id="5058383315259429774" at="30,9,31,127" />
       <scope id="7241381882860009494" at="61,37,62,83" />
       <scope id="7241381882860009522" at="64,61,65,75" />
       <scope id="7241381882860009568" at="68,35,69,81" />
@@ -1474,8 +1474,9 @@
       <scope id="7241381882860009399" at="159,0,183,0">
         <var name="wildcard" id="7241381882860009402" />
       </scope>
-      <scope id="7241381882860009458" at="28,39,97,5" />
+      <scope id="7241381882860009458" at="28,63,97,5" />
       <scope id="7241381882860009454" at="28,0,99,0">
+        <var name="needParamNames" id="9220825835531161261" />
         <var name="reader" id="7241381882860009456" />
       </scope>
       <unit id="7241381882860010111" at="41,21,47,11" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
