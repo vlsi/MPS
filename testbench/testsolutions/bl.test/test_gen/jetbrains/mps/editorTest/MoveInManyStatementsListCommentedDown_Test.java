@@ -19,7 +19,7 @@ public class MoveInManyStatementsListCommentedDown_Test extends BaseTransformati
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("5938462602860217358", "5938462602860217374");
+      initEditorComponent("5938462602860217358", "5034326942596345622");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
