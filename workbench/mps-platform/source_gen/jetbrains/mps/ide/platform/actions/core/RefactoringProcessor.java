@@ -84,8 +84,12 @@ public class RefactoringProcessor {
       RefactoringAccessEx.getInstance().showRefactoringView(myProject.getProject(), new RefactoringViewAction() {
         public void performAction(RefactoringViewItem refactoringViewItem) {
           try {
-            myProject.getRepository().getModelAccess().executeCommand(task);
-            refactoringSession.close();
+            myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
+              public void run() {
+                task.run();
+                refactoringSession.close();
+              }
+            });
           } catch (RuntimeException exception) {
             if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Exception during refactoring: ", exception);
