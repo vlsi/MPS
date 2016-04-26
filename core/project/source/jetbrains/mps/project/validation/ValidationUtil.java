@@ -51,6 +51,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -189,12 +190,9 @@ public class ValidationUtil {
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
     }
-    if (model instanceof TransientSModel) return;
-
-    //todo replace those two by a check for accessibility in repo
-    // XXX should not they go after InvalidSModel check, so that we could get problems of invalid model before we try to find out whether the model is registered?
-    if (model.getModule() == null) return;
-    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return;
+    if (model instanceof TransientSModel) {
+      return;
+    }
 
     if (model instanceof InvalidSModel) {
       Iterable<SModel.Problem> problems = model.getProblems();
@@ -212,6 +210,15 @@ public class ValidationUtil {
         }
       }
       return;
+    }
+
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
+      processor.process(new ValidationProblem(Severity.ERROR, "Model is disposed, validation aborted"));
+      return; // force return
+    }
+    if (model.getModule() == null) {
+      processor.process(new ValidationProblem(Severity.ERROR, "Model is not part of a module, validation aborted"));
+      return; // force return
     }
 
     if (!model.isReadOnly() && model instanceof PersistenceVersionAware) {
@@ -237,8 +244,13 @@ public class ValidationUtil {
 
     if (repository == null) {
       processor.process(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"));
-      return;
+      return; // force return
     }
+    if (model.getReference().resolve(repository) == null) {
+      processor.process(new ValidationProblem(Severity.ERROR, "Model's repository could not resolve the model by reference"));
+      return; // force return
+    }
+
 
     SModule module = model.getModule();
     final SModelReference modelToValidateRef = model.getReference();
@@ -267,10 +279,22 @@ public class ValidationUtil {
       }
     }
 
+    Pair<DevKit, SModelReference> devkitAssociatedPlan = null;
     for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
-      if (repository.getModule(devKit.getModuleId()) == null) {
+      final SModule devkitModule = devKit.resolve(repository);
+      if (devkitModule == null) {
         if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
           return;
+        }
+      } else if (devkitModule instanceof DevKit){
+        final SModelReference plan = ((DevKit) devkitModule).getModuleDescriptor().getAssociatedGenPlan();
+        if (plan != null) {
+          if (devkitAssociatedPlan == null) {
+            devkitAssociatedPlan = new Pair<DevKit, SModelReference>((DevKit) devkitModule, plan);
+          } else {
+            String m = String.format("Both devkit %s and %s supply generation plan, ", devkitModule.getModuleName(), devkitAssociatedPlan.o1.getModuleName());
+            processor.process(new ValidationProblem(Severity.ERROR, m));
+          }
         }
       }
     }
