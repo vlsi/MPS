@@ -7,22 +7,18 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import javax.swing.tree.TreeNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.model.SModel;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.SModuleOperations;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
@@ -43,10 +39,10 @@ public class NewSubTestModel_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
+    if (!(event.getData(MPSCommonDataKeys.TREE_NODE) instanceof SModelTreeNode)) {
       return false;
     }
-    return !(((SModel) MapSequence.fromMap(_params).get("model")).getName().hasStereotype()) && ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot().canCreateModel(new SModelName(((SModel) MapSequence.fromMap(_params).get("model")).getName().getLongName(), SModelStereotype.TESTS).getValue());
+    return !(event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getName().hasStereotype()) && event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getModelRoot().canCreateModel(new SModelName(event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getName().getLongName(), SModelStereotype.TESTS).getValue());
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -59,28 +55,24 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-      MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
         return false;
       }
     }
     {
       TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
-      MapSequence.fromMap(_params).put("treeNode", p);
       if (p == null) {
         return false;
       }
@@ -89,37 +81,33 @@ public class NewSubTestModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Wrappers._T<SModel> createdModel = new Wrappers._T<SModel>(null);
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().executeCommand(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        SModelName testModelName = new SModelName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
-        createdModel.value = SModuleOperations.createModelWithAdjustments(testModelName.getValue(), ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot());
-        if (createdModel.value == null) {
+        SModelName testModelName = new SModelName(NewSubTestModel_Action.this.getTestModelName(event), SModelStereotype.TESTS);
+        SModel parentModel = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+        SModel createdModel = SModuleOperations.createModelWithAdjustments(testModelName.getValue(), parentModel.getModelRoot());
+        if (createdModel == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
-            LOG.warn("Can't create submodel " + testModelName + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getName());
+            LOG.warn("Can't create submodel " + testModelName + " for model " + parentModel.getName());
           }
           return;
         }
-        ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
-        for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedModels()) {
-          ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
-        }
-        for (SLanguage importedLanguage : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
-          ((SModelInternal) createdModel.value).addLanguage(importedLanguage);
-        }
-        for (SModuleReference devKit : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedDevkits()) {
-          ((SModelInternal) createdModel.value).addDevKit(devKit);
-        }
-        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(createdModel.value, false);
+        ModelImports imports = new ModelImports(createdModel);
+        imports.addModelImport(parentModel.getReference());
+        imports.copyImportedModelsFrom(parentModel);
+        imports.copyUsedLanguagesFrom(parentModel);
+        imports.copyEmployedDevKitsFrom(parentModel);
+        imports.copyLanguageEngagedOnGeneration(parentModel);
+        ProjectPane.getInstance(event.getData(CommonDataKeys.PROJECT)).selectModel(createdModel, false);
       }
     });
   }
-  /*package*/ String getTestModelName(final Map<String, Object> _params) {
+  /*package*/ String getTestModelName(final AnActionEvent event) {
     StringBuilder builder = new StringBuilder();
-    String modelBaseName = ((SModel) MapSequence.fromMap(_params).get("model")).getName().getLongName();
+    String modelBaseName = event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getName().getLongName();
     builder.append(modelBaseName);
     int testModelCount = 0;
-    List<SModel> models = IterableUtil.asList(((SModel) MapSequence.fromMap(_params).get("model")).getModule().getModels());
+    List<SModel> models = IterableUtil.asList(event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getModule().getModels());
     List<SModel> sortedModels = SortUtil.sortModels(models);
     for (SModel md : sortedModels) {
       if (!(SModelStereotype.isTestModel(md))) {

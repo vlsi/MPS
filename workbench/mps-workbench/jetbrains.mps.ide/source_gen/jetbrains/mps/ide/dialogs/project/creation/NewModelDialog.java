@@ -13,8 +13,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -37,6 +36,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Arrays;
+import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.ui.ColoredListCellRenderer;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -50,11 +50,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -97,18 +93,20 @@ public class NewModelDialog extends DialogWrapper {
     init();
   }
   public NewModelDialog(Project project, SModel cloneModel) {
-    this(project, (AbstractModule) cloneModel.getModule(), null, SModelStereotype.getStereotype(cloneModel), false);
+    this(project, (AbstractModule) cloneModel.getModule(), null, cloneModel.getName().getStereotype(), false);
     myClone = cloneModel;
     myPreserveIds = false;
-    setTitle("Clone Model " + NameUtil.getModelLongName(myClone));
-    myModelName.setText(myClone.getModelName() + "_clone");
+    SModelName originalName = myClone.getName();
+    setTitle(String.format("Clone Model %s", originalName.getValue()));
+    myModelName.setText(new SModelName(originalName.getLongName() + "_clone").getValue());
   }
   public NewModelDialog(Project project, AbstractModule module, SModel cloneModel) {
-    this(project, module, null, SModelStereotype.getStereotype(cloneModel), false);
+    this(project, module, null, cloneModel.getName().getStereotype(), false);
     myClone = cloneModel;
     myPreserveIds = true;
-    setTitle("Move Model " + NameUtil.getModelLongName(myClone));
-    myModelName.setText(myClone.getModelName());
+    SModelName originalName = myClone.getName();
+    setTitle(String.format("Move Model %s", originalName.getValue()));
+    myModelName.setText(originalName.getValue());
   }
   public static String getNamespace(SModel model) {
     SModule module = model.getModule();
@@ -308,18 +306,11 @@ public class NewModelDialog extends DialogWrapper {
         if (myClone == null) {
           return result;
         }
-        for (SModelReference ref : SModelOperations.getImportedModelUIDs(myClone)) {
-          ((SModelInternal) result).addModelImport(ref, false);
-        }
-        for (SLanguage ref : ((SModelInternal) myClone).importedLanguageIds()) {
-          ((SModelInternal) result).addLanguage(ref);
-        }
-        for (SModuleReference ref : ((SModelInternal) myClone).importedDevkits()) {
-          ((SModelInternal) result).addDevKit(ref);
-        }
-        for (SModuleReference ref : ((SModelInternal) myClone).engagedOnGenerationLanguages()) {
-          ((SModelInternal) result).addEngagedOnGenerationLanguage(ref);
-        }
+        ModelImports imports = new ModelImports(result);
+        imports.copyImportedModelsFrom(myClone);
+        imports.copyUsedLanguagesFrom(myClone);
+        imports.copyEmployedDevKitsFrom(myClone);
+        imports.copyLanguageEngagedOnGeneration(myClone);
         if (myPreserveIds) {
           CopyUtil.copyModelContentAndPreserveIds(myClone, result);
         } else {

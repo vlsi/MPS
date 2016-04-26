@@ -22,19 +22,16 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class CloneUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
@@ -71,17 +68,10 @@ public class CloneUtil {
   public void cloneModelWithImports() {
     //copy model with imports, used languages and devkits
     cloneModel();
-    SModelInternal inputModel = (jetbrains.mps.smodel.SModelInternal) myInputModel;
-    SModelInternal outputModel = (jetbrains.mps.smodel.SModelInternal) myOutputModel;
-    for (ImportElement model : inputModel.importedModels()) {
-      outputModel.addModelImport(model.getModelReference(), false);
-    }
-    for (SModuleReference devKit : inputModel.importedDevkits()) {
-      outputModel.addDevKit(devKit);
-    }
-    for (SLanguage lang : inputModel.importedLanguageIds()) {
-      outputModel.addLanguage(lang);
-    }
+    final ModelImports modelImports = new ModelImports(myOutputModel);
+    modelImports.copyImportedModelsFrom(myInputModel);
+    modelImports.copyEmployedDevKitsFrom(myInputModel);
+    modelImports.copyUsedLanguagesFrom(myInputModel);
   }
 
   /**
