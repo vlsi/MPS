@@ -23,6 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -69,8 +71,16 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
+          public boolean hasPresentation() {
+            return true;
+          }
+          @Override
+          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
+            return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getContextNode());
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1;
+            return breakingNode_amrbnf_a0a2a0a0a1a0b0a2a1;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -82,5 +92,5 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
   private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
-  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
+  private static SNodePointer breakingNode_amrbnf_a0a2a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
 }

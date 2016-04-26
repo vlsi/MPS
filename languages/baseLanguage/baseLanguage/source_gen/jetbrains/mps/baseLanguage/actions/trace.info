@@ -1285,7 +1285,7 @@
       <node id="1177397398637" at="1407,98,1408,272" concept="12" />
       <node id="1177397418383" at="1408,272,1409,182" concept="6" />
       <node id="1177397442803" at="1409,182,1410,30" concept="13" />
-      <node id="1177397022478" at="1412,61,1413,181" concept="13" />
+      <node id="1177397022478" at="1412,61,1413,145" concept="13" />
       <node id="1177396179719" at="1415,68,1416,48" concept="13" />
       <node id="1215707195402" at="1418,64,1419,88" concept="13" />
       <node id="1177396179719" at="1425,5,1426,18" concept="13" />
@@ -1308,7 +1308,7 @@
       <node id="1177396179719" at="1381,0,1428,0" concept="17" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177396179719#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1381111177093726990" at="1391,53,1392,276" />
       <scope id="1381111177098009840" at="1397,45,1398,188" />
-      <scope id="1177397021319" at="1412,61,1413,181" />
+      <scope id="1177397021319" at="1412,61,1413,145" />
       <scope id="1177396179719" at="1415,68,1416,48" />
       <scope id="1177397032668" at="1418,64,1419,88" />
       <scope id="1381111177098009839" at="1397,0,1400,0">

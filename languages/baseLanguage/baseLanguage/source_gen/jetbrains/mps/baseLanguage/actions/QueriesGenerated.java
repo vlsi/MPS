@@ -1410,7 +1410,7 @@ public class QueriesGenerated {
                 return result;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".";
+                return Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke((item), _context.getCurrentTargetNode()) + ".";
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
