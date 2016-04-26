@@ -176,7 +176,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -378,8 +378,8 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -2460,11 +2460,15 @@
                   <node concept="2OqwBi" id="6YS4exLGDxf" role="37vLTJ">
                     <node concept="1PxgMI" id="6YS4exLGDqa" role="2Oq$k0">
                       <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="37vLTw" id="6YS4exLGDoX" role="1PxMeX">
                         <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
                       </node>
+                      <node concept="37vLTw" id="2tncHzxN5W2" role="1m5AlR">
+                        <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
+                      </node>
                     </node>
-                    <node concept="3TrcHB" id="6YS4exLGE7l" role="2OqNvi">
+                    <node concept="3TrcHB" id="2tncHzxN8Cd" role="2OqNvi">
                       <ref role="3TsBF5" to="tpee:fDsVARU" resolve="abstractClass" />
                     </node>
                   </node>
@@ -2475,11 +2479,15 @@
                   <node concept="2OqwBi" id="6YS4exLGEel" role="37vLTJ">
                     <node concept="1PxgMI" id="6YS4exLGEem" role="2Oq$k0">
                       <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="37vLTw" id="6YS4exLGEen" role="1PxMeX">
                         <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
                       </node>
+                      <node concept="37vLTw" id="2tncHzxN6Eg" role="1m5AlR">
+                        <ref role="3cqZAo" node="3Eq_PkM82dt" resolve="lazyRoot" />
+                      </node>
                     </node>
-                    <node concept="3TrcHB" id="6YS4exLGE$F" role="2OqNvi">
+                    <node concept="3TrcHB" id="2tncHzxN7PU" role="2OqNvi">
                       <ref role="3TsBF5" to="tpee:hLEXba4" resolve="isFinal" />
                     </node>
                   </node>
