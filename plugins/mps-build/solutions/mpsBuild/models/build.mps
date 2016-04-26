@@ -28693,6 +28693,9 @@
     <node concept="2DRAP_" id="1w81suM7oNI" role="2DRAPQ">
       <property role="2DPR8u" value="#************************************ Installation Properties *********************************************#" />
     </node>
+    <node concept="2DRAP_" id="6sSHf9dPidt" role="2DRAPQ">
+      <property role="2DPR8u" value="SetCompressor lzma" />
+    </node>
     <node concept="2DRAP_" id="1w81suM7oO7" role="2DRAPQ">
       <property role="2DPR8u" value="Name &quot;${APP_NAME}&quot;" />
     </node>
