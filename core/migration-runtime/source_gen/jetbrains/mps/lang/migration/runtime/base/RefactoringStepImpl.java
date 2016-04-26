@@ -12,7 +12,7 @@ public class RefactoringStepImpl implements RefactoringLog {
   private RefactoringLogReference myDescriptor;
   private List<RefactoringLogReference> myExecuteAfter;
   private List<RefactoringPart> myParts;
-  public RefactoringStepImpl(String caption, RefactoringLogReference descriptor, Iterable<RefactoringLogReference> executeAfter, Iterable<RefactoringPart> parts) {
+  public RefactoringStepImpl(String caption, RefactoringLogReference descriptor, List<RefactoringLogReference> executeAfter, List<RefactoringPart> parts) {
     myCaption = caption;
     myDescriptor = descriptor;
     myExecuteAfter = ListSequence.fromListWithValues(new ArrayList<RefactoringLogReference>(), executeAfter);
