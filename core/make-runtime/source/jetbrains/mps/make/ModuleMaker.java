@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.make;
 
+import com.intellij.compiler.instrumentation.FailSafeClassReader;
+import com.intellij.compiler.instrumentation.InstrumentationClassFinder;
+import com.intellij.compiler.instrumentation.InstrumenterClassWriter;
+import com.intellij.compiler.notNullVerification.NotNullVerifyingInstrumenter;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.MPSExtentions;
@@ -32,6 +35,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -47,10 +51,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.org.objectweb.asm.ClassWriter;
+import org.jetbrains.org.objectweb.asm.Opcodes;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -235,10 +245,10 @@ public class ModuleMaker {
       return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet());
     }
 
-    JavaCompiler compiler = new JavaCompiler();
     boolean hasJavaToCompile = false;
     boolean hasFilesToCopyOrDelete = false;
 
+    JavaCompiler compiler = new JavaCompiler();
     myTracer.push("preparing to compile", false);
     Set<SModule> modulesWithRemovals = new HashSet<SModule>();
     for (SModule m : modules) {
@@ -292,6 +302,7 @@ public class ModuleMaker {
       } else {
         compiler.compile(classPathItems, compilerOptions);
       }
+      listener.writeClasses();
       myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);
@@ -358,7 +369,7 @@ public class ModuleMaker {
       }
     }
 
-    return result.toString();
+    return result.toString().trim();
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
@@ -455,11 +466,19 @@ public class ModuleMaker {
     private IClassPathItem myClassPathItems;
     private List<IMessage> myMessages;
     private Set<SModule> myChangedModules = new HashSet<SModule>();
+    private final Set<ClassFile> myCompiledClassFiles = new HashSet<ClassFile>();
+    private final List<CompilationResult> myResults = new ArrayList<CompilationResult>();
 
     public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<IMessage> messages) {
       myModules = modules;
       myClassPathItems = classPathItems;
       myMessages = messages;
+      myFinder = createInstrumentationClassFinder(classPathItems);
+    }
+
+    @Override
+    public void onClass(ClassFile f) {
+      myCompiledClassFiles.add(f);
     }
 
     @Override
@@ -471,97 +490,144 @@ public class ModuleMaker {
 
     @Override
     public void onCompilationResult(CompilationResult cr) {
-      Set<String> classesWithErrors = new HashSet<String>();
-      if (cr.getErrors() != null) {
-        myTracer.push("handling errors", false);
-        for (final CategorizedProblem cp : cr.getErrors()) {
-          String fileName = new String(cp.getOriginatingFileName());
-          final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
-          classesWithErrors.add(fqName);
+      myResults.add(cr);
+    }
 
-          SModule containingModule = myContainingModules.get(fqName);
-          assert containingModule != null;
-          JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
+    private final InstrumentationClassFinder myFinder;
 
-          String messageString = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+    @NotNull
+    private byte[] instrumentNotNull(@NotNull byte[] classContent, int version, IClassPathItem classPath) throws MalformedURLException {
+      FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
+      ClassWriter writer = new InstrumenterClassWriter(reader, getAsmClassWriterFlags(version), myFinder);
+      NotNullVerifyingInstrumenter.processClassFile(reader, writer);
+      return writer.toByteArray();
+    }
 
-          //final SNode nodeToShow = getNodeByLine(cp, fqName);
+    private int getAsmClassWriterFlags(int version) {
+      return version >= Opcodes.V1_6 && version != Opcodes.V1_1 ? ClassWriter.COMPUTE_FRAMES : ClassWriter.COMPUTE_MAXS;
+    }
 
-          Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
-
-          String errMsg = messageString + " (line: " + cp.getSourceLineNumber() + ")";
-          if (cp.isWarning()) {
-            myMessages.add(createMessage(MessageKind.WARNING, errMsg, hintObject));
-          } else {
-            if (myOutputtedErrors == 0) {
-              myMessages.add(createMessage(MessageKind.ERROR, "Compilation problems", null));
-              myMessages.add(createMessage(MessageKind.INFORMATION, "Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n", null));
-            }
-            if (myOutputtedErrors < MAX_ERRORS) {
-              myOutputtedErrors++;
-              myMessages.add(createMessage(MessageKind.ERROR, errMsg, hintObject));
-            }
-          }
-        }
-        myTracer.pop();
-
-        myErrorCount += cr.getErrors().length;
-      }
-
-      myTracer.push("storing files", false);
-      for (ClassFile cf : cr.getClassFiles()) {
-        String fqName = convertCompoundToFqName(cf.getCompoundName());
-        String containerClassName = fqName;
-        if (containerClassName.contains("$")) {
-          int index = containerClassName.indexOf('$');
-          containerClassName = containerClassName.substring(0, index);
-        }
-        if (myContainingModules.containsKey(containerClassName)) {
-          SModule m = myContainingModules.get(containerClassName);
-          myChangedModules.add(m);
-          File classesGen = new File(getJavaFacet(m).getClassesGen().getPath());
-          String packageName = NameUtil.namespaceFromLongName(fqName);
-          File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
-          if (!outputDir.exists()) {
-            if (!outputDir.mkdirs()) {
-              throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
-            }
-          }
-          String className = NameUtil.shortNameFromLongName(fqName);
-          File output = new File(outputDir, className + ".class");
-          if (!classesWithErrors.contains(containerClassName)) {
-            FileOutputStream os = null;
-            try {
-              os = new FileOutputStream(output);
-              os.write(cf.getBytes());
-            } catch (IOException e) {
-              String errMsg = "Can't write to " + output.getAbsolutePath();
-              myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
-            } finally {
-              if (os != null) {
-                try {
-                  os.close();
-                } catch (IOException e) {
-                  myHandler.handle(createMessage(MessageKind.ERROR, e.toString(), e));
-                }
-              }
-            }
-          } else {
-            if (output.exists() && !(output.delete())) {
-              String errMsg = "Can't delete " + output.getPath();
-              myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
-            }
-          }
-        } else {
-          String errMsg = "I don't know in which module's output path I should place class file for " + fqName;
-          myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
+    @NotNull
+    private InstrumentationClassFinder createInstrumentationClassFinder(final IClassPathItem classPath) {
+      final List<URL> urls = new ArrayList<URL>();
+      for (RealClassPathItem flatten : classPath.flatten()) {
+        try {
+          urls.add(new File(flatten.getPath()).toURI().toURL());
+        } catch (MalformedURLException e) {
+          e.printStackTrace();
         }
       }
-      myTracer.pop();
+      final URL[] urlsArr = urls.toArray(new URL[urls.size()]);
+      return new InstrumentationClassFinder(urlsArr) {
+        @Override
+        protected InputStream lookupClassBeforeClasspath(String internalClassName) {
+          for (ClassFile cf : myCompiledClassFiles) {
+            String fqName = NameUtil.pathFromNamespace(convertCompoundToFqName(cf.getCompoundName()));
+            if (internalClassName.equals(fqName)) {
+              return new ByteArrayInputStream(cf.getBytes());
+            }
+          }
+          return null;
+        }
+      };
     }
 
     public int getErrorCount() {
       return myErrorCount;
+    }
+
+    public void writeClasses() {
+      for (CompilationResult cr : myResults) {
+        Set<String> classesWithErrors = new HashSet<String>();
+        if (cr.getErrors() != null) {
+          myTracer.push("handling errors", false);
+          for (final CategorizedProblem cp : cr.getErrors()) {
+            String fileName = new String(cp.getOriginatingFileName());
+            final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
+            classesWithErrors.add(fqName);
+
+            SModule containingModule = myContainingModules.get(fqName);
+            assert containingModule != null;
+            JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
+
+            String messageString = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+
+            //final SNode nodeToShow = getNodeByLine(cp, fqName);
+
+            Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
+
+            String errMsg = messageString + " (line: " + cp.getSourceLineNumber() + ")";
+            if (cp.isWarning()) {
+              myMessages.add(createMessage(MessageKind.WARNING, errMsg, hintObject));
+            } else {
+              if (myOutputtedErrors == 0) {
+                myMessages.add(createMessage(MessageKind.ERROR, "Compilation problems", null));
+                myMessages.add(createMessage(MessageKind.INFORMATION, "Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n", null));
+              }
+              if (myOutputtedErrors < MAX_ERRORS) {
+                myOutputtedErrors++;
+                myMessages.add(createMessage(MessageKind.ERROR, errMsg, hintObject));
+              }
+            }
+          }
+          myTracer.pop();
+
+          myErrorCount += cr.getErrors().length;
+        }
+
+        myTracer.push("storing files", false);
+        for (ClassFile cf : cr.getClassFiles()) {
+          String fqName = convertCompoundToFqName(cf.getCompoundName());
+          String containerClassName = fqName;
+          if (containerClassName.contains("$")) {
+            int index = containerClassName.indexOf('$');
+            containerClassName = containerClassName.substring(0, index);
+          }
+          if (myContainingModules.containsKey(containerClassName)) {
+            SModule m = myContainingModules.get(containerClassName);
+            myChangedModules.add(m);
+            File classesGen = new File(getJavaFacet(m).getClassesGen().getPath());
+            String packageName = NameUtil.namespaceFromLongName(fqName);
+            File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
+            if (!outputDir.exists()) {
+              if (!outputDir.mkdirs()) {
+                throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
+              }
+            }
+            String className = NameUtil.shortNameFromLongName(fqName);
+            File output = new File(outputDir, className + ".class");
+            if (!classesWithErrors.contains(containerClassName)) {
+              FileOutputStream os = null;
+              try {
+                os = new FileOutputStream(output);
+                byte[] classContent = instrumentNotNull(cf.getBytes(), Opcodes.V1_6, myClassPathItems);
+                os.write(classContent);
+              } catch (IOException e) {
+                String errMsg = "Can't write to " + output.getAbsolutePath();
+                myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
+              } finally {
+                if (os != null) {
+                  try {
+                    os.close();
+                  } catch (IOException e) {
+                    myHandler.handle(createMessage(MessageKind.ERROR, e.toString(), e));
+                  }
+                }
+              }
+            } else {
+              if (output.exists() && !(output.delete())) {
+                String errMsg = "Can't delete " + output.getPath();
+                myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
+              }
+            }
+          } else {
+            String errMsg = "I don't know in which module's output path I should place class file for " + fqName;
+            myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
+          }
+        }
+        myTracer.pop();
+
+      }
     }
   }
 
