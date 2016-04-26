@@ -143,7 +143,7 @@ public class ClassifierLoader {
 
   public void updateClassifier(SNode classifier, ReferenceFactory refFactory) {
     assert myClassReader != null;
-    ASMClass ac = new ASMClass(myClassReader);
+    ASMClass ac = new ASMClass(myClassReader, true);
     new ClassifierUpdater(ac, mySkipPrivate, refFactory).update(classifier);
     for (ClassifierLoader innerLoader : getInnerClassifiers(ac)) {
       SNode inner = innerLoader.createClassifier();

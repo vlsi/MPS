@@ -2864,7 +2864,7 @@
             </node>
             <node concept="2ShNRf" id="3Eq_PkM8rCS" role="33vP2m">
               <node concept="1pGfFk" id="3Eq_PkM8s0V" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
                 <node concept="3uibUv" id="3Eq_PkM8s2N" role="1pMfVU">
                   <ref role="3uigEE" node="3X3rDwN7qLn" resolve="ClassifierLoader" />
                 </node>
@@ -3175,6 +3175,9 @@
                 <ref role="37wK5l" to="45y3:6hYzBiUOvvI" resolve="ASMClass" />
                 <node concept="37vLTw" id="3Eq_PkM8btW" role="37wK5m">
                   <ref role="3cqZAo" node="3Eq_PkM71kX" resolve="myClassReader" />
+                </node>
+                <node concept="3clFbT" id="7ZQX3Te_qaU" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>

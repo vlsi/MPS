@@ -25,10 +25,10 @@ public class ASMClass {
   private List<ASMMethod> myConstructors = new ArrayList<ASMMethod>();
   private List<ASMAnnotation> myAnnotations;
   private ASMType myGenericSuperclass;
-  public ASMClass(ClassReader reader) {
+  public ASMClass(ClassReader reader, boolean needParamNames) {
     myNode = new ClassNode();
     try {
-      reader.accept(myNode, ClassReader.SKIP_CODE | ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
+      reader.accept(myNode, ((needParamNames ? 0 : ClassReader.SKIP_CODE | ClassReader.SKIP_DEBUG)) | ClassReader.SKIP_FRAMES);
     } catch (RuntimeException e) {
       // see MPS-17590 
       return;
