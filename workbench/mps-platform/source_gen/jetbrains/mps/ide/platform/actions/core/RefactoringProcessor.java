@@ -38,13 +38,15 @@ public class RefactoringProcessor {
     void prepare(Runnable task);
     void runSearch(final _FunctionTypes._void_P1_E0<? super ProgressMonitor> task);
     List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> options);
-    void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, RefactoringSessionImpl refactoringSession);
+    void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults);
   }
 
   public static class RefactoringUIImpl implements RefactoringProcessor.RefactoringUI {
     private MPSProject myProject;
-    public RefactoringUIImpl(MPSProject project) {
+    private RefactoringSessionImpl myRefactoringSession;
+    public RefactoringUIImpl(MPSProject project, RefactoringSessionImpl refactoringSession) {
       myProject = project;
+      myRefactoringSession = refactoringSession;
     }
     public void runSearch(final _FunctionTypes._void_P1_E0<? super ProgressMonitor> task) {
       ProgressManager.getInstance().run(new Task.Modal(myProject.getProject(), "Refactoring", true) {
@@ -80,14 +82,14 @@ public class RefactoringProcessor {
       }).toListSequence();
     }
 
-    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, final RefactoringSessionImpl refactoringSession) {
+    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults) {
       RefactoringAccessEx.getInstance().showRefactoringView(myProject.getProject(), new RefactoringViewAction() {
         public void performAction(RefactoringViewItem refactoringViewItem) {
           try {
             myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
               public void run() {
                 task.run();
-                refactoringSession.close();
+                myRefactoringSession.close();
               }
             });
           } catch (RuntimeException exception) {
@@ -158,10 +160,10 @@ public class RefactoringProcessor {
 
   public static <IP, FP> void performRefactoring(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends FP, ? super IP>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor) {
     RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), new RefactoringProcessor.RefactoringUIImpl(project), refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, doRefactor);
+    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), new RefactoringProcessor.RefactoringUIImpl(project, refactoringSession), refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, doRefactor);
   }
 
-  public static <IP, FP, IS, FS> void performRefactoring(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSessionImpl refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends FS, ? super IS>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>>, ? super RefactoringSession> doRefactor) {
+  public static <IP, FP, IS, FS> void performRefactoring(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSession refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends FS, ? super IS>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>>, ? super RefactoringSession> doRefactor) {
     final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> changes = askParticipantChanges(factory, refactoringUI, repository, scope, participants, initialStates);
     if (changes == null) {
       return;
@@ -191,7 +193,7 @@ public class RefactoringProcessor {
           }).toListSequence(), repository, refactoringSession);
         }
       }
-    }, refactoringName, searchResults, refactoringSession);
+    }, refactoringName, searchResults);
   }
 
   protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
