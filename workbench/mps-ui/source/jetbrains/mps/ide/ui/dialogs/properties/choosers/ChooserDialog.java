@@ -48,17 +48,44 @@ final class ChooserDialog<T> extends DialogWrapper {
     myChooser = MpsPopupFactory.createPanelForPackage(myProject, data, hasExtraScope);
     // Although it's odd to have invoke() in the cons, we shall invoke it prior to super.init() otherwise there's no panel in the dialog
     myChooser.invoke(new MultiElementsCallback() {
+      private int myDialogExitCode = CANCEL_EXIT_CODE;
       @Override
       public void elementsChosen(List<Object> elements) {
         if (!myOkDone) {
+          // I've got no idea why do we guard with this flag, and what's use of its protected visibility
           myOkDone = true;
           mySelectedElements = elements;
           myIsCancelled = false;
-          doOKAction();
+          // according to ChooseByNamePopup, elementsChosen are invoked when selection
+          // has to be processed (it was hard to express this contract in the method javadoc, one has to guess it from sources)
+          // while callback.onClose() is invoked regardless of selection.
+          myDialogExitCode = OK_EXIT_CODE;
         }
+      }
+
+      @Override
+      public void onClose() {
+        ChooserDialog.this.close(myDialogExitCode);
       }
     }, ModalityState.current(), multiSelection);
     init();
+  }
+
+  /*
+   * handle Ok dialog button. Proper way to do this would be custom actions
+   * from createActions, that would delegate to myChooser. However, it's impossible
+   * to figure out whether myChooser.close() or .doClose() need to be invoked. Both are
+   * protected in ChooseByNameBase. Latter does much more cleanup and seems the right one, however,
+   * ChooseByNamePopup (which we extend through myChooser's ChooseByNamePanel) makes #close() public
+   * and uses it directly when it needs to close previously opened popup. That's why I've picked
+   * this wrong approach here (duplicates code, and ignores the fact ok action may be disabled, see
+   * method impl in superclass)
+   */
+  @Override
+  protected void doOKAction() {
+    myIsCancelled = false;
+    mySelectedElements = myChooser.getChosenElements();
+    super.doOKAction();
   }
 
   @NotNull

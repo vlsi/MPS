@@ -502,7 +502,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             @Override
             public void run() {
               for (SModuleReference moduleReference : list) {
-                final SModule module = moduleReference.resolve(MPSModuleRepository.getInstance());
+                final SModule module = moduleReference.resolve(myProject.getRepository());
                 final Dependency dep;
                 if (isDevkit) {
                   dep = new Dependency(moduleReference, SDependencyScope.EXTENDS);
