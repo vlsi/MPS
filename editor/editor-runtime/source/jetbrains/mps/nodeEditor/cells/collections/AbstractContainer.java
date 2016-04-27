@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells.collections;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.TreeIterator;
 
+import java.math.BigInteger;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -27,20 +28,92 @@ import java.util.NoSuchElementException;
  * Date: 10/02/16
  */
 abstract class AbstractContainer<T> implements Container<T> {
-  private volatile int myModCount = 0;
-  // todo why not to add myLast?
+  private static final BigInteger MAX_INT = BigInteger.valueOf(Integer.MAX_VALUE);
+
+  private Object myModificationId = new Object();
   private Entry<T> myFirst;
   private int mySize = 0;
+  private BigInteger myBigIntSize = null;
 
-  protected abstract Entry<T> getEntry(T item);
+  /**
+   * Returning Entry instance associated with specified item in this container.
+   * <p>
+   * Returning null if this container does not associate any Entry with the specified item.
+   *
+   * @param item the item from this container
+   * @return Entry or null if this item was not associated with any Entry in this container
+   */
+  protected abstract Entry<T> getEntry(@NotNull T item);
 
-  protected abstract void setEntry(T item, Entry<T> entry);
+  /**
+   * Creating new Entry and associating it with the specified item in this container.
+   * <p>
+   * Returning null if this container already associates another Entry with the specified item.
+   * In this case existing association will not be modified.
+   *
+   * @param item the item from this container
+   * @return Entry or null if this item was already added to this container
+   */
+  protected abstract Entry<T> createEntry(@NotNull T item);
 
+  /**
+   * Dissociating specified Entry from associated item in this container.
+   * <p>
+   * Return null if this container does not associate specified Entry with any item
+   * (if <code>getEntry(entry.myItem) == null</code>)
+   *
+   * @param entry dissociated entry
+   */
+  protected abstract Entry<T> deleteEntry(@NotNull Entry<T> entry);
+
+  private Entry<T> getAnchorEntry(T anchor) {
+    return anchor == null ? null : getExistingEntry(anchor);
+  }
+
+  @NotNull
+  private Entry<T> getExistingEntry(@NotNull T item) {
+    Entry<T> anchorEntry = getEntry(item);
+    if (anchorEntry == null) {
+      throw new NoSuchElementException();
+    }
+    return anchorEntry;
+  }
+
+  // TODO: @NotNull result
   protected abstract Iterator<T> getChildIterator(T result);
 
   @Override
   public int size() {
     return mySize;
+  }
+
+  private void incSize() {
+    myModificationId = new Object();
+    if (myBigIntSize != null) {
+      myBigIntSize = myBigIntSize.add(BigInteger.ONE);
+    } else if (mySize == Integer.MAX_VALUE) {
+      myBigIntSize = MAX_INT.add(BigInteger.ONE);
+    } else {
+      mySize++;
+    }
+  }
+
+  private void decSize() {
+    myModificationId = new Object();
+    if (myBigIntSize == null) {
+      mySize--;
+      assert mySize >= 0;
+    } else {
+      myBigIntSize = myBigIntSize.subtract(BigInteger.ONE);
+      if (myBigIntSize.equals(MAX_INT)) {
+        myBigIntSize = null;
+      }
+    }
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return getFirstEntry() == null;
   }
 
   @Override
@@ -50,12 +123,17 @@ abstract class AbstractContainer<T> implements Container<T> {
 
   @Override
   public T addBefore(@NotNull T item, T anchor) {
-    return addEntryBefore(item, anchor == null ? null : getEntry(anchor)).myItem;
+    Entry<T> entry = createEntry(item);
+    if (entry == null) {
+      throw new IllegalArgumentException();
+    }
+    return addEntryBefore(entry, getAnchorEntry(anchor)).myItem;
   }
 
   @Override
-  public void remove(@NotNull T item) {
-    removeEntry(getEntry(item));
+  public T remove(@NotNull T item) {
+    removeEntry(getExistingEntry(item));
+    return item;
   }
 
   @NotNull
@@ -67,10 +145,25 @@ abstract class AbstractContainer<T> implements Container<T> {
   @NotNull
   @Override
   public Iterator<T> iterator(T anchor, boolean forward) {
-    if (size() == 0) {
+    if (isEmpty()) {
+      if (anchor != null) {
+        throw new NoSuchElementException();
+      }
       return EmptyIterator.getInstance();
     }
-    return new ContentsIterator(anchor == null ? null : getEntry(anchor), forward);
+    return new ContentsIterator(getAnchorEntry(anchor), forward);
+  }
+
+  @Override
+  public T getFirst() {
+    // TODO: implement contract / throw exception if empty
+    return isEmpty() ? null : getFirstEntry().myItem;
+  }
+
+  @Override
+  public T getLast() {
+    // TODO: implement contract / throw exception if empty
+    return isEmpty() ? null : getLastEntry().myItem;
   }
 
   @NotNull
@@ -84,71 +177,58 @@ abstract class AbstractContainer<T> implements Container<T> {
     };
   }
 
-  @Override
-  public T getFirst() {
-    return size() == 0 ? null : getFirstEntry().myItem;
-  }
-
-  @Override
-  public T getLast() {
-    return size() == 0 ? null : getLastEntry().myItem;
-  }
-
   Entry<T> getFirstEntry() {
     return myFirst;
   }
 
   private Entry<T> getLastEntry() {
-    //todo check for myFirst == null or assert size != null
-    //todo see iterator getNextEntry()
-    return myFirst.myPrev;
+    return isEmpty() ? null : getFirstEntry().myPrev;
   }
 
-  //todo is it "addItemBefore"?
-  protected Entry<T> addEntryBefore(T item, Entry<T> anchor) {
-    Entry<T> result = new Entry<T>(item);
-    setEntry(item, result);
-    myModCount++;
-    mySize++;
+  protected Entry<T> addEntryBefore(@NotNull Entry<T> entry, Entry<T> anchor) {
+    assert entry.myPrev == null;
+    assert entry.myNext == null;
 
-    if (myFirst == null) {
-      assert anchor == null;
-      myFirst = result;
-      result.myNext = null;
-      result.myPrev = result;
-      return result;
+    Entry<T> firstEntry = getFirstEntry();
+    // anchor should be null for empty containers
+    assert firstEntry != null || anchor == null;
+    Entry<T> lastEntry = getLastEntry();
+    // lastEntry should not be null for non-empty containers
+    assert firstEntry == null || lastEntry != null;
+
+    incSize();
+    if (firstEntry == null) {
+      myFirst = entry;
+      entry.myNext = null;
+      entry.myPrev = entry;
+      return entry;
     }
 
     if (anchor == null) {
-      result.myNext = null;
-      result.myPrev = getLastEntry();
-      myFirst.myPrev = result;
-      result.myPrev.myNext = result;
-      return result;
+      entry.myNext = null;
+      entry.myPrev = lastEntry;
+      firstEntry.myPrev = entry;
+      lastEntry.myNext = entry;
+      return entry;
     }
 
-    result.myNext = anchor;
-    result.myPrev = anchor.myPrev;
+    entry.myNext = anchor;
+    entry.myPrev = anchor.myPrev;
     if (anchor != myFirst) {
-      anchor.myPrev.myNext = result;
+      anchor.myPrev.myNext = entry;
     } else {
-      myFirst = result;
+      myFirst = entry;
     }
-    anchor.myPrev = result;
-    return result;
+    anchor.myPrev = entry;
+    return entry;
   }
 
-  protected void removeEntry(Entry<T> entry) {
-    //todo cell container will fail here because asserts for null
-    if (getEntry(entry.myItem) == null) {
-      // entry was already removed from this container
-      throw new IllegalArgumentException();
-    }
+  protected void removeEntry(@NotNull Entry<T> entry) {
+    assert deleteEntry(entry) != null;
+    decSize();
 
-    setEntry(entry.myItem, null);
-    myModCount++;
-    mySize--;
-    if (myFirst == entry) {
+    Entry<T> firstEntry = getFirstEntry();
+    if (firstEntry == entry) {
       myFirst = entry.myNext;
       if (myFirst != null) {
         myFirst.myPrev = entry.myPrev;
@@ -161,17 +241,18 @@ abstract class AbstractContainer<T> implements Container<T> {
         myFirst.myPrev = entry.myPrev;
       }
     }
+    entry.myPrev = entry.myNext = null;
   }
 
   private class ContentsIterator implements Iterator<T> {
-    private int myExpectedModCount;
+    private Object myExpectedModificationId;
     private Entry<T> myCurrentEntry;
     private final boolean myForward;
 
     private ContentsIterator(Entry<T> start, boolean forward) {
       myCurrentEntry = start;
       myForward = forward;
-      myExpectedModCount = myModCount;
+      myExpectedModificationId = myModificationId;
     }
 
     @Override
@@ -182,11 +263,9 @@ abstract class AbstractContainer<T> implements Container<T> {
 
     private Entry<T> getNextEntry() {
       if (myCurrentEntry == null) {
-        //todo last entry will fail here if myFirst == null
         return myForward ? getFirstEntry() : getLastEntry();
       }
-      //todo same to myCurrentEntry == myFirst?
-      if (!myForward && myCurrentEntry.myPrev == getLastEntry()) {
+      if (!myForward && myCurrentEntry == getFirstEntry()) {
         return null;
       }
       return myForward ? myCurrentEntry.myNext : myCurrentEntry.myPrev;
@@ -205,12 +284,17 @@ abstract class AbstractContainer<T> implements Container<T> {
     @Override
     public void remove() {
       checkForComodification();
+      if (getEntry(myCurrentEntry.myItem) == null) {
+        // entry was already removed from this container
+        throw new IllegalStateException();
+      }
+
       removeEntry(myCurrentEntry);
-      myExpectedModCount = myModCount;
+      myExpectedModificationId = myModificationId;
     }
 
     private void checkForComodification() {
-      if (myModCount != myExpectedModCount) {
+      if (myModificationId != myExpectedModificationId) {
         throw new ConcurrentModificationException();
       }
     }

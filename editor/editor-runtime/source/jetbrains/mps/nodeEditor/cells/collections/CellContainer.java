@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells.collections;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 
@@ -31,16 +32,27 @@ public class CellContainer extends AbstractContainer<EditorCell> {
   }
 
   @Override
-  protected Entry<EditorCell> getEntry(EditorCell item) {
+  protected Entry<EditorCell> getEntry(@NotNull EditorCell item) {
     //noinspection unchecked
-    Entry<EditorCell> entry = (Entry<EditorCell>) item.getUserObject(this);
-    //todo check AbstractContainer.removeEntry()
-    assert entry != null;
+    return (Entry<EditorCell>) item.getUserObject(this);
+  }
+
+  @Override
+  protected Entry<EditorCell> createEntry(@NotNull EditorCell item) {
+    if (item.getUserObject(this) != null) {
+      return null;
+    }
+    Entry<EditorCell> entry = new Entry<EditorCell>(item);
+    item.putUserObject(this, entry);
     return entry;
   }
 
   @Override
-  protected void setEntry(EditorCell item, Entry<EditorCell> entry) {
-    item.putUserObject(this, entry);
+  protected Entry<EditorCell> deleteEntry(@NotNull Entry<EditorCell> entry) {
+    if (entry.myItem.getUserObject(this) != entry) {
+      return null;
+    }
+    entry.myItem.putUserObject(this, null);
+    return entry;
   }
 }

@@ -18,7 +18,8 @@ package jetbrains.mps.nodeEditor.cells.collections;
 import java.util.Iterator;
 
 /**
- * TODO: move to org.jetbrains.mps.util
+ * TODO: move to org.jetbrains.mps.util ?
+ * <p>
  * User: shatalin
  * Date: 10/02/16
  */

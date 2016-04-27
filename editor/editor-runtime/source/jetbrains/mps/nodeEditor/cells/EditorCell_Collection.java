@@ -78,19 +78,21 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   private Container<EditorCell> myEditorCells = new CellContainer() {
     @Override
-    protected Entry<EditorCell> addEntryBefore(EditorCell item, Entry<EditorCell> anchor) {
-      ((EditorCell_Basic) item).setParent(EditorCell_Collection.this);
-      EditorCell_Collection.this.getStyle().add(item.getStyle());
+    protected Entry<EditorCell> addEntryBefore(@NotNull Entry<EditorCell> entry, Entry<EditorCell> anchor) {
+      EditorCell cell = entry.getItem();
+      // TODO: remove cast to EditorCell_Basic
+      ((EditorCell_Basic) cell).setParent(EditorCell_Collection.this);
+      EditorCell_Collection.this.getStyle().add(cell.getStyle());
 
       if (EditorCell_Collection.this.isInTree()) {
-        ((EditorCell_Basic) item).onAdd();
+        ((EditorCell_Basic) cell).onAdd();
       }
 
-      return super.addEntryBefore(item, anchor);
+      return super.addEntryBefore(entry, anchor);
     }
 
     @Override
-    protected void removeEntry(Entry<EditorCell> entry) {
+    protected void removeEntry(@NotNull Entry<EditorCell> entry) {
       super.removeEntry(entry);
       ((EditorCell_Basic) entry.getItem()).setParent(null);
       EditorCell_Collection.this.getStyle().remove(entry.getItem().getStyle());
@@ -275,7 +277,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   public String getCellNodesRole() {
-    if (myCellListHandler == null) return null;
+    if (myCellListHandler == null) {
+      return null;
+    }
     return myCellListHandler.getElementRole();
   }
 
@@ -322,7 +326,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public boolean isAncestorOf(EditorCell cell) {
     while (cell != null) {
       cell = cell.getParent();
-      if (cell == this) return true;
+      if (cell == this) {
+        return true;
+      }
     }
     return false;
   }
@@ -441,7 +447,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
             @Override
             public EditorCell next() {
-              if (!hasNext()) throw new NoSuchElementException();
+              if (!hasNext()) {
+                throw new NoSuchElementException();
+              }
               EditorCell result = myNext;
               myNext = myIterator.next();
               return result;
@@ -454,7 +462,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
           };
         }
       };
-    } else return this;
+    } else {
+      return this;
+    }
   }
 
   @Override
@@ -1188,7 +1198,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
     @Override
     protected void paintContent(Graphics g, ParentSettings parentSettings) {
-      if (!myIsEnabled) return;
+      if (!myIsEnabled) {
+        return;
+      }
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();
       int overlapping = getOverlapping();
@@ -1237,7 +1249,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     @Override
     public EditorCell findCell(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
       EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
-      if (!(cell instanceof EditorCell_Collection)) return null;
+      if (!(cell instanceof EditorCell_Collection)) {
+        return null;
+      }
       EditorCell_Collection parent = (EditorCell_Collection) cell;
       if (myOpeningBrace) {
         return parent.myOpeningBrace;
@@ -1251,7 +1265,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     public boolean equals(Object o) {
-      if (!(o instanceof BraceCellInfo)) return false;
+      if (!(o instanceof BraceCellInfo)) {
+        return false;
+      }
       BraceCellInfo cellInfo = ((BraceCellInfo) o);
       return myCollectionCellInfo.equals(cellInfo.myCollectionCellInfo) && myOpeningBrace == cellInfo.myOpeningBrace;
     }

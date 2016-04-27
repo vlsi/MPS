@@ -37,6 +37,11 @@ class UnmodifiableContainer<T> implements Container<T> {
   }
 
   @Override
+  public boolean isEmpty() {
+    return myContainer.isEmpty();
+  }
+
+  @Override
   public T add(@NotNull T item) {
     throw new UnsupportedOperationException();
   }
@@ -47,7 +52,7 @@ class UnmodifiableContainer<T> implements Container<T> {
   }
 
   @Override
-  public void remove(@NotNull T item) {
+  public T remove(@NotNull T item) {
     throw new UnsupportedOperationException();
   }
 

@@ -15,19 +15,23 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * User: shatalin
  * Date: 10/02/16
  */
 public class Entry<T> {
+  @NotNull
   final T myItem;
   Entry<T> myNext; // == null only for the last child in the list
   Entry<T> myPrev; // notNull, myFirst.myPrev = the last child
 
-  Entry(T item) {
+  Entry(@NotNull T item) {
     myItem = item;
   }
 
+  @NotNull
   public T getItem() {
     return myItem;
   }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Iterator;
 
 /**
@@ -36,12 +38,18 @@ public class EmptyContainer<T> extends AbstractContainer<T> {
   }
 
   @Override
-  protected Entry<T> getEntry(T item) {
-    throw new UnsupportedOperationException();
+  protected Entry<T> getEntry(@NotNull T item) {
+    return null;
   }
 
   @Override
-  protected void setEntry(T item, Entry<T> entry) {
+  protected Entry<T> createEntry(@NotNull T item) {
+    return null;
+  }
+
+  @Override
+  protected Entry<T> deleteEntry(@NotNull Entry<T> entry) {
+    return null;
   }
 
   @Override
