@@ -43,6 +43,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -681,7 +682,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   private void addUnfoldingListenerForChildren() {
-    for (TreeIterator<EditorCell> iterator = getEditorCells().treeIterator(); iterator.hasNext(); ) {
+    for (TreeIterator<EditorCell> iterator = new CellTreeIterable(this, this, true).skipStart().iterator(); iterator.hasNext(); ) {
       EditorCell child = iterator.next();
       if (child instanceof EditorCell_WithComponent) {
         ((EditorCell_WithComponent) child).getComponent().setVisible(true);
@@ -697,7 +698,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   private void removeFoldingListenerForChildren() {
-    for (TreeIterator<EditorCell> iterator = getEditorCells().treeIterator(); iterator.hasNext(); ) {
+    for (TreeIterator<EditorCell> iterator = new CellTreeIterable(this, this, true).skipStart().iterator(); iterator.hasNext(); ) {
       EditorCell child = iterator.next();
       if (child instanceof EditorCell_WithComponent) {
         ((EditorCell_WithComponent) child).getComponent().setVisible(false);

@@ -26,9 +26,7 @@ public interface TreeIterator<T> extends Iterator<T> {
   /**
    * Skip children of the last element returned by the iterator.
    *
-   * @exception IllegalStateException if the <tt>next</tt> method has not yet been called
+   * @throws IllegalStateException if the <tt>next</tt> method has not yet been called
    */
-  //todo more strong contract of hasNext() and skipChildren()
-  //todo different implementations have different behaviours now
   void skipChildren();
 }

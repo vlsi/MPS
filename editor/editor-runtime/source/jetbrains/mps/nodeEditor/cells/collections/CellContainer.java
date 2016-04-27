@@ -16,21 +16,13 @@
 package jetbrains.mps.nodeEditor.cells.collections;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Iterator;
 
 /**
  * User: shatalin
  * Date: 10/02/16
  */
 public class CellContainer extends AbstractContainer<EditorCell> {
-  @Override
-  protected Iterator<EditorCell> getChildIterator(EditorCell result) {
-    return result instanceof EditorCell_Collection ? ((EditorCell_Collection) result).iterator() : null;
-  }
-
   @Override
   protected Entry<EditorCell> getEntry(@NotNull EditorCell item) {
     //noinspection unchecked

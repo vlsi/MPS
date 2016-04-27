@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells.collections;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.math.BigInteger;
 import java.util.ConcurrentModificationException;
@@ -78,9 +77,6 @@ abstract class AbstractContainer<T> implements Container<T> {
     }
     return anchorEntry;
   }
-
-  // TODO: @NotNull result
-  protected abstract Iterator<T> getChildIterator(T result);
 
   @Override
   public int size() {
@@ -164,17 +160,6 @@ abstract class AbstractContainer<T> implements Container<T> {
   public T getLast() {
     // TODO: implement contract / throw exception if empty
     return isEmpty() ? null : getLastEntry().myItem;
-  }
-
-  @NotNull
-  @Override
-  public TreeIterator<T> treeIterator() {
-    return new AbstractTreeIterator<T>(iterator()) {
-      @Override
-      protected Iterator<T> getChildIterator(T result) {
-        return AbstractContainer.this.getChildIterator(result);
-      }
-    };
   }
 
   Entry<T> getFirstEntry() {

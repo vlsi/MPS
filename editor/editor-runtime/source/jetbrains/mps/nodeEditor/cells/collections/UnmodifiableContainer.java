@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells.collections;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.util.Iterator;
 
@@ -76,11 +75,5 @@ class UnmodifiableContainer<T> implements Container<T> {
   @Override
   public T getLast() {
     return myContainer.getLast();
-  }
-
-  @NotNull
-  @Override
-  public TreeIterator<T> treeIterator() {
-    return new UnmodifiableTreeIterator<T>(myContainer.treeIterator());
   }
 }

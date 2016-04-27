@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells.collections;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.util.Iterator;
 
@@ -121,8 +120,4 @@ public interface Container<T> extends Iterable<T> {
    */
   @Nullable
   T getLast();
-
-  // TODO: remove this iterator, replace it with recursive method call
-  @NotNull
-  TreeIterator<T> treeIterator();
 }
