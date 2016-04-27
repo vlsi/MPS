@@ -20,12 +20,12 @@
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/2770867049910688328">
     <file name="QueriesGenerated.java">
-      <node id="2770867049910968314" at="132,112,133,447" concept="5" />
+      <node id="2770867049910968314" at="132,112,133,500" concept="5" />
       <node id="2770867049910688370" at="306,103,307,220" concept="5" />
       <node id="2770867049910688379" at="309,103,310,218" concept="5" />
       <node id="2770867049910688362" at="383,120,384,200" concept="5" />
       <node id="2770867049910688356" at="389,102,390,30" concept="5" />
-      <scope id="2770867049910967908" at="132,112,133,447" />
+      <scope id="2770867049910967908" at="132,112,133,500" />
       <scope id="2770867049910688369" at="306,103,307,220" />
       <scope id="2770867049910688378" at="309,103,310,218" />
       <scope id="2770867049910688361" at="383,120,384,200" />
@@ -34,12 +34,12 @@
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/2770867049910694188">
     <file name="QueriesGenerated.java">
-      <node id="2770867049911054296" at="135,112,136,447" concept="5" />
+      <node id="2770867049911054296" at="135,112,136,500" concept="5" />
       <node id="2770867049910697924" at="312,103,313,220" concept="5" />
       <node id="2770867049910697933" at="315,103,316,218" concept="5" />
       <node id="2770867049910697949" at="386,120,387,200" concept="5" />
       <node id="2770867049910697943" at="392,102,393,30" concept="5" />
-      <scope id="2770867049911054295" at="135,112,136,447" />
+      <scope id="2770867049911054295" at="135,112,136,500" />
       <scope id="2770867049910697923" at="312,103,313,220" />
       <scope id="2770867049910697932" at="315,103,316,218" />
       <scope id="2770867049910697948" at="386,120,387,200" />
@@ -138,7 +138,7 @@
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/3842191445091624729">
     <file name="QueriesGenerated.java">
       <node id="5712848521226169645" at="80,112,81,193" concept="5" />
-      <node id="3571469069288516998" at="83,112,84,164" concept="5" />
+      <node id="3571469069288516998" at="83,112,84,184" concept="5" />
       <node id="4546754412408612262" at="86,112,87,66" concept="4" />
       <node id="1987432259747992382" at="87,66,88,96" concept="4" />
       <node id="2895173168663463366" at="92,43,93,58" concept="1" />
@@ -151,7 +151,7 @@
       <node id="1987432259748021993" at="90,0,97,0" concept="3" trace="visit#(Ljetbrains/mps/internal/collections/runtime/IMapping;)V" />
       <node id="4546754412408493931" at="88,96,97,7" concept="1" />
       <scope id="5712848521226167742" at="80,112,81,193" />
-      <scope id="5712848521226184888" at="83,112,84,164" />
+      <scope id="5712848521226184888" at="83,112,84,184" />
       <scope id="1987432259748160071" at="92,43,93,58" />
       <scope id="5198027307802093398" at="369,39,370,181" />
       <scope id="1987432259748160070" at="92,0,95,0">
