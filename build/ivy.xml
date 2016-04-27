@@ -198,9 +198,6 @@
     <dependency org="lib.src" name="Xerces-J-src.2.11.0.zip" rev="${idea.platform.version}">
       <artifact name="Xerces-J-src.2.11.0.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="asm-src.zip" rev="${idea.platform.version}">
-      <artifact name="asm-src.zip" ext="zip"/>
-    </dependency>
     <dependency org="lib.src" name="asm5-src.zip" rev="${idea.platform.version}">
       <artifact name="asm5-src.zip" ext="zip"/>
     </dependency>
@@ -311,12 +308,6 @@
     lib-->
     <dependency org="lib" name="annotations.jar" rev="${idea.platform.version}">
       <artifact name="annotations.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="asm-commons.jar" rev="${idea.platform.version}">
-      <artifact name="asm-commons.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="asm.jar" rev="${idea.platform.version}">
-      <artifact name="asm.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="asm-all.jar" rev="${idea.platform.version}">
       <artifact name="asm-all.jar" ext="jar"/>
