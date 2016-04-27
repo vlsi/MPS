@@ -212,8 +212,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     });
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
-    RefactoringProcessor.performRefactoring(project, "Move nodes", participants, allNodes.value, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringSession>() {
-      public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> changes, RefactoringSession refactoringSession) {
+    RefactoringProcessor.performRefactoring(project, "Move nodes", participants, allNodes.value, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
+      public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode>> changes, RefactoringSession refactoringSession) {
         if (initRefactoringSession != null) {
           initRefactoringSession.invoke(refactoringSession);
         }
@@ -231,8 +231,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         for (IMapping<MoveNodesDefault.NodeProcessor, List<SNode>> mapping : MapSequence.fromMap(nodeProcessors)) {
           mapping.key().process(mapping.value(), ListSequence.fromList(mapping.value()).where(new IWhereFilter<SNode>() {
             public boolean accept(final SNode moveRoot) {
-              boolean shouldKeep = Sequence.fromIterable(MapSequence.fromMap(changes).values()).any(new IWhereFilter<RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>() {
-                public boolean accept(final RefactoringParticipant.ParticipantState<?, ?, SNode, SNode> participantState) {
+              boolean shouldKeep = Sequence.fromIterable(MapSequence.fromMap(changes).values()).any(new IWhereFilter<RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode>>() {
+                public boolean accept(final RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode> participantState) {
                   return ListSequence.fromList(SNodeOperations.getNodeDescendants(moveRoot, null, true, new SAbstractConcept[]{})).any(new IWhereFilter<SNode>() {
                     public boolean accept(SNode desc) {
                       return ListSequence.fromList(participantState.getChanges()).any(new IWhereFilter<List<? extends RefactoringParticipant.Change<?, ?>>>() {

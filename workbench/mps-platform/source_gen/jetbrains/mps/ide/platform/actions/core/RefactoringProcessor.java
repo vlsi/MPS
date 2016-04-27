@@ -101,17 +101,17 @@ public class RefactoringProcessor {
     }
   }
 
-  public static <T, S> Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> askParticipantChanges(RefactoringProcessor.RefactoringUI refactoringUI, final SRepository repository, final SearchScope searchScope, final Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, final List<T> nodes) {
+  public static <IP, FP, IS, FS> Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> askParticipantChanges(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final SRepository repository, final SearchScope searchScope, final Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> nodes) {
 
-    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> changes = MapSequence.fromMap(new HashMap<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>());
+    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> changes = MapSequence.fromMap(new HashMap<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>>());
     final Wrappers._T<List<RefactoringParticipant.Option>> options = new Wrappers._T<List<RefactoringParticipant.Option>>();
     refactoringUI.prepare(new Runnable() {
       public void run() {
-        for (RefactoringParticipant<?, ?, T, S> participant : Sequence.fromIterable(participants)) {
-          MapSequence.fromMap(changes).put(participant, RefactoringParticipant.ParticipantState.create(participant, nodes));
+        for (RefactoringParticipant<?, ?, IP, FP> participant : Sequence.fromIterable(participants)) {
+          MapSequence.fromMap(changes).put(participant, RefactoringParticipant.ParticipantState.create(factory, participant, nodes));
         }
-        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>, RefactoringParticipant.Option>() {
-          public Iterable<RefactoringParticipant.Option> translate(IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> it) {
+        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>>, RefactoringParticipant.Option>() {
+          public Iterable<RefactoringParticipant.Option> translate(IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> it) {
             return it.value().getAvaliableOptions(repository);
           }
         }).distinct().sort(new ISelector<RefactoringParticipant.Option, String>() {
@@ -131,7 +131,7 @@ public class RefactoringProcessor {
       public void invoke(ProgressMonitor progressMonitor) {
         int steps = MapSequence.fromMap(changes).count();
         progressMonitor.start("Searching for usages", steps);
-        for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantStates : MapSequence.fromMap(changes)) {
+        for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> participantStates : MapSequence.fromMap(changes)) {
           try {
             participantStates.value().findChanges(repository, selectedOptions, searchScope, progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
           } catch (RuntimeException e) {
@@ -156,21 +156,21 @@ public class RefactoringProcessor {
     return changes;
   }
 
-  public static <T, S> void performRefactoring(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, final List<T> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends S, ? super T>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>, ? super RefactoringSession> doRefactor) {
+  public static <IP, FP> void performRefactoring(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends FP, ? super IP>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor) {
     RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-    performRefactoring(new RefactoringProcessor.RefactoringUIImpl(project), refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, doRefactor);
+    performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), new RefactoringProcessor.RefactoringUIImpl(project), refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, doRefactor);
   }
 
-  public static <T, S> void performRefactoring(RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSessionImpl refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, final List<T> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends S, ? super T>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>, ? super RefactoringSession> doRefactor) {
-    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> changes = askParticipantChanges(refactoringUI, repository, scope, participants, initialStates);
+  public static <IP, FP, IS, FS> void performRefactoring(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSessionImpl refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends FS, ? super IS>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>>, ? super RefactoringSession> doRefactor) {
+    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> changes = askParticipantChanges(factory, refactoringUI, repository, scope, participants, initialStates);
     if (changes == null) {
       return;
     }
 
     SearchResults searchResults = new SearchResults();
-    for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantState : MapSequence.fromMap(changes)) {
-      List<? extends List<? extends RefactoringParticipant.Change<?, ?>>> partivipantChanges = participantState.value().getChanges();
-      for (List<? extends RefactoringParticipant.Change<?, ?>> nodeChanges : ListSequence.fromList(partivipantChanges)) {
+    for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> participantState : MapSequence.fromMap(changes)) {
+      List<? extends List<? extends RefactoringParticipant.Change<?, ?>>> participantChanges = participantState.value().getChanges();
+      for (List<? extends RefactoringParticipant.Change<?, ?>> nodeChanges : ListSequence.fromList(participantChanges)) {
         for (RefactoringParticipant.Change<?, ?> change : ListSequence.fromList(nodeChanges)) {
           searchResults.addAll(change.getSearchResults());
         }
@@ -179,13 +179,13 @@ public class RefactoringProcessor {
 
     refactoringUI.runRefactoring(new Runnable() {
       public void run() {
-        final _FunctionTypes._return_P1_E0<? extends S, ? super T> getFinalObject = doRefactor.invoke(changes, refactoringSession);
+        final _FunctionTypes._return_P1_E0<? extends FS, ? super IS> getFinalObject = doRefactor.invoke(changes, refactoringSession);
         if (getFinalObject == null) {
           return;
         }
-        for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantChanges : MapSequence.fromMap(changes)) {
-          participantChanges.value().doRefactor(ListSequence.fromList(initialStates).select(new ISelector<T, S>() {
-            public S select(T it) {
+        for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS>> participantChanges : MapSequence.fromMap(changes)) {
+          participantChanges.value().doRefactor(ListSequence.fromList(initialStates).select(new ISelector<IS, FS>() {
+            public FS select(IS it) {
               return getFinalObject.invoke(it);
             }
           }).toListSequence(), repository, refactoringSession);

@@ -15,13 +15,13 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject, Initia
 
   List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor, Iterable<RefactoringParticipant.ParticipantState> parents);
 
-  class RecursiveParticipantState<I, F, IP, FP> extends RefactoringParticipant.ParticipantState<I, F, IP, FP> {
+  class RecursiveParticipantState<I, F, IP, FP> extends RefactoringParticipant.ParticipantState<I, F, IP, FP, IP, FP> {
     private Iterable<RefactoringParticipant.ParticipantState> myParents;
     public static <I, F, IP, FP> RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes, Iterable<RefactoringParticipant.ParticipantState> parents) {
       return new RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP>(participant, oldNodes, parents);
     }
     private RecursiveParticipantState(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes, Iterable<RefactoringParticipant.ParticipantState> parents) {
-      super(participant, oldNodes);
+      super(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), participant, oldNodes);
       myParents = parents;
     }
     @Override

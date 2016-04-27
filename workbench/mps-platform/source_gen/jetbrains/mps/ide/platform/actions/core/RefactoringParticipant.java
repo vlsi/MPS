@@ -80,10 +80,34 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     FinalDataObject deserializeFinalState(SNode serialized);
   }
 
-  class ParticipantState<I, F, IP, FP> {
+  abstract class ParticipantStateFactory<IP, FP, IS, FS> {
+    public abstract <I, F> I getInitial(RefactoringParticipant<I, F, IP, FP> participant, IS oldNode);
+    public abstract <I, F> F getFinal(RefactoringParticipant<I, F, IP, FP> participant, FS newNode);
+  }
+
+  class CollectingParticipantStateFactory<IP, FP> extends RefactoringParticipant.ParticipantStateFactory<IP, FP, IP, FP> {
+    public <I, F> I getInitial(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode) {
+      return participant.getDataCollector().beforeMove(oldNode);
+    }
+    public <I, F> F getFinal(RefactoringParticipant<I, F, IP, FP> participant, FP oldNode) {
+      return participant.getDataCollector().afterMove(oldNode);
+    }
+  }
+
+  class DeserializingParticipantStateFactory<IP, FP> extends RefactoringParticipant.ParticipantStateFactory<IP, FP, SNode, SNode> {
+    public <I, F> I getInitial(RefactoringParticipant<I, F, IP, FP> participant, SNode serializedInitial) {
+      return ((RefactoringParticipant.PersistentRefactoringParticipant<I, F, IP, FP>) participant).deserializeInitialState(serializedInitial);
+    }
+    public <I, F> F getFinal(RefactoringParticipant<I, F, IP, FP> participant, SNode serializedFinal) {
+      return ((RefactoringParticipant.PersistentRefactoringParticipant<I, F, IP, FP>) participant).deserializeFinalState(serializedFinal);
+    }
+  }
+
+  class ParticipantState<I, F, IP, FP, IS, FS> {
     private RefactoringParticipant<I, F, IP, FP> myParticipant;
     private List<I> myInitialStates;
     private List<List<RefactoringParticipant.Change<I, F>>> changes;
+    private RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> myFactory;
     public List<List<RefactoringParticipant.Change<I, F>>> getChanges() {
       return changes;
     }
@@ -93,14 +117,15 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     public List<I> getInitialStates() {
       return myInitialStates;
     }
-    public static <I, F, IP, FP> RefactoringParticipant.ParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNode) {
-      return new RefactoringParticipant.ParticipantState<I, F, IP, FP>(participant, oldNode);
+    public static <I, F, IP, FP, IS, FS> RefactoringParticipant.ParticipantState<I, F, IP, FP, IS, FS> create(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
+      return new RefactoringParticipant.ParticipantState<I, F, IP, FP, IS, FS>(factory, participant, oldNodes);
     }
-    public ParticipantState(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes) {
+    public ParticipantState(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, final RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
+      myFactory = factory;
       this.myParticipant = participant;
-      myInitialStates = ListSequence.fromList(oldNodes).select(new ISelector<IP, I>() {
-        public I select(IP oldNode) {
-          return ParticipantState.this.myParticipant.getDataCollector().beforeMove(oldNode);
+      myInitialStates = ListSequence.fromList(oldNodes).select(new ISelector<IS, I>() {
+        public I select(IS it) {
+          return factory.getInitial(participant, it);
         }
       }).toListSequence();
     }
@@ -134,16 +159,16 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
         }
       });
     }
-    public void doRefactor(List<FP> newNodes, final SRepository repository, final RefactoringSession session) {
+    public void doRefactor(List<FS> newNodes, final SRepository repository, final RefactoringSession session) {
       {
         Iterator<List<RefactoringParticipant.Change<I, F>>> nodeChanges_it = ListSequence.fromList(this.changes).iterator();
-        Iterator<FP> newNode_it = ListSequence.fromList(newNodes).iterator();
+        Iterator<FS> newNode_it = ListSequence.fromList(newNodes).iterator();
         List<RefactoringParticipant.Change<I, F>> nodeChanges_var;
-        FP newNode_var;
+        FS newNode_var;
         while (nodeChanges_it.hasNext() && newNode_it.hasNext()) {
           nodeChanges_var = nodeChanges_it.next();
           newNode_var = newNode_it.next();
-          final F finalState = this.myParticipant.getDataCollector().afterMove(newNode_var);
+          final F finalState = myFactory.getFinal(myParticipant, newNode_var);
           ListSequence.fromList(nodeChanges_var).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
             public void visit(RefactoringParticipant.Change<I, F> it) {
               it.confirm(finalState, repository, session);
