@@ -3628,98 +3628,55 @@
                               <node concept="3Tm1VV" id="9HhvY0Q3ny" role="1B3o_S" />
                               <node concept="3cqZAl" id="9HhvY0Q3n$" role="3clF45" />
                               <node concept="3clFbS" id="9HhvY0Q3n_" role="3clF47">
+                                <node concept="3cpWs8" id="sT86IN_9S1" role="3cqZAp">
+                                  <node concept="3cpWsn" id="sT86IN_9S2" role="3cpWs9">
+                                    <property role="TrG5h" value="planExtractor" />
+                                    <node concept="3uibUv" id="sT86IN_9S3" role="1tU5fm">
+                                      <ref role="3uigEE" to="ap4t:~GenPlanExtractor" resolve="GenPlanExtractor" />
+                                    </node>
+                                    <node concept="2ShNRf" id="sT86IN_a0G" role="33vP2m">
+                                      <node concept="1pGfFk" id="sT86IN_avs" role="2ShVmc">
+                                        <ref role="37wK5l" to="ap4t:~GenPlanExtractor.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.GenerationOptions$OptionsBuilder)" resolve="GenPlanExtractor" />
+                                        <node concept="2OqwBi" id="sT86IN_ew9" role="37wK5m">
+                                          <node concept="37vLTw" id="sT86IN_en3" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="5jLBleAj03m" resolve="mpsProject" />
+                                          </node>
+                                          <node concept="liA8E" id="sT86IN_eEv" role="2OqNvi">
+                                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                          </node>
+                                        </node>
+                                        <node concept="2bn25q" id="sT86IN_d7R" role="37wK5m">
+                                          <node concept="2bn25r" id="sT86IN_d7P" role="2Oq$k0">
+                                            <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
+                                          </node>
+                                          <node concept="2sxana" id="sT86IN_d7Q" role="2OqNvi">
+                                            <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="2Gpval" id="9HhvY0Q1yt" role="3cqZAp">
                                   <node concept="2GrKxI" id="9HhvY0Q1yv" role="2Gsz3X">
                                     <property role="TrG5h" value="res" />
                                   </node>
                                   <node concept="3clFbS" id="9HhvY0Q1yx" role="2LFqv$">
-                                    <node concept="3cpWs8" id="9HhvY0Q1V2" role="3cqZAp">
-                                      <node concept="3cpWsn" id="9HhvY0Q1V3" role="3cpWs9">
-                                        <property role="TrG5h" value="facet" />
-                                        <node concept="3uibUv" id="9HhvY0Q1UL" role="1tU5fm">
-                                          <ref role="3uigEE" to="ap4t:~CustomGenerationModuleFacet" resolve="CustomGenerationModuleFacet" />
-                                        </node>
-                                        <node concept="2OqwBi" id="9HhvY0Q1V4" role="33vP2m">
-                                          <node concept="2OqwBi" id="9HhvY0Q1V5" role="2Oq$k0">
-                                            <node concept="2GrUjf" id="9HhvY0Q1V6" role="2Oq$k0">
-                                              <ref role="2Gs0qQ" node="9HhvY0Q1yv" resolve="res" />
-                                            </node>
-                                            <node concept="2sxana" id="9HhvY0Q1V7" role="2OqNvi">
-                                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadL" resolve="module" />
-                                            </node>
-                                          </node>
-                                          <node concept="liA8E" id="9HhvY0Q1V8" role="2OqNvi">
-                                            <ref role="37wK5l" to="lui2:~SModule.getFacet(java.lang.Class):org.jetbrains.mps.openapi.module.SModuleFacet" resolve="getFacet" />
-                                            <node concept="3VsKOn" id="9HhvY0Q1V9" role="37wK5m">
-                                              <ref role="3VsUkX" to="ap4t:~CustomGenerationModuleFacet" resolve="CustomGenerationModuleFacet" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="3clFbJ" id="9HhvY0Q1Bi" role="3cqZAp">
-                                      <node concept="3clFbS" id="9HhvY0Q1Bj" role="3clFbx">
-                                        <node concept="3N13vt" id="9HhvY0Q21x" role="3cqZAp" />
-                                      </node>
-                                      <node concept="3clFbC" id="9HhvY0Q1YU" role="3clFbw">
-                                        <node concept="10Nm6u" id="9HhvY0Q21g" role="3uHU7w" />
-                                        <node concept="37vLTw" id="9HhvY0Q1Va" role="3uHU7B">
-                                          <ref role="3cqZAo" node="9HhvY0Q1V3" resolve="facet" />
-                                        </node>
-                                      </node>
-                                    </node>
                                     <node concept="2Gpval" id="9HhvY0Q2cc" role="3cqZAp">
                                       <node concept="2GrKxI" id="9HhvY0Q2ce" role="2Gsz3X">
                                         <property role="TrG5h" value="m" />
                                       </node>
                                       <node concept="3clFbS" id="9HhvY0Q2cg" role="2LFqv$">
-                                        <node concept="3cpWs8" id="9HhvY0Q3CN" role="3cqZAp">
-                                          <node concept="3cpWsn" id="9HhvY0Q3CO" role="3cpWs9">
-                                            <property role="TrG5h" value="plan" />
-                                            <node concept="3uibUv" id="9HhvY0Q3Cg" role="1tU5fm">
-                                              <ref role="3uigEE" to="ap4t:~ModelGenerationPlan" resolve="ModelGenerationPlan" />
+                                        <node concept="3clFbF" id="sT86IN_dW4" role="3cqZAp">
+                                          <node concept="2OqwBi" id="sT86IN_e3H" role="3clFbG">
+                                            <node concept="37vLTw" id="sT86IN_dW2" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="sT86IN_9S2" resolve="planExtractor" />
                                             </node>
-                                            <node concept="2OqwBi" id="9HhvY0Q3CP" role="33vP2m">
-                                              <node concept="37vLTw" id="9HhvY0Q3CQ" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="9HhvY0Q1V3" resolve="facet" />
+                                            <node concept="liA8E" id="sT86IN_e7$" role="2OqNvi">
+                                              <ref role="37wK5l" to="ap4t:~GenPlanExtractor.configurePlanFor(org.jetbrains.mps.openapi.model.SModel):void" resolve="configurePlanFor" />
+                                              <node concept="2GrUjf" id="sT86IN_e8Z" role="37wK5m">
+                                                <ref role="2Gs0qQ" node="9HhvY0Q2ce" resolve="m" />
                                               </node>
-                                              <node concept="liA8E" id="9HhvY0Q3CR" role="2OqNvi">
-                                                <ref role="37wK5l" to="ap4t:~CustomGenerationModuleFacet.getPlan(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.generator.ModelGenerationPlan" resolve="getPlan" />
-                                                <node concept="2GrUjf" id="9HhvY0Q3CS" role="37wK5m">
-                                                  <ref role="2Gs0qQ" node="9HhvY0Q2ce" resolve="m" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3clFbJ" id="9HhvY0Q3H$" role="3cqZAp">
-                                          <node concept="3clFbS" id="9HhvY0Q3HA" role="3clFbx">
-                                            <node concept="3clFbF" id="9HhvY0Q4b4" role="3cqZAp">
-                                              <node concept="2OqwBi" id="9HhvY0Q4kD" role="3clFbG">
-                                                <node concept="2bn25q" id="9HhvY0Q4fn" role="2Oq$k0">
-                                                  <node concept="2bn25r" id="9HhvY0Q4fl" role="2Oq$k0">
-                                                    <ref role="2bn25l" node="5L5h3brvz8m" resolve="configure" />
-                                                  </node>
-                                                  <node concept="2sxana" id="9HhvY0Q4fm" role="2OqNvi">
-                                                    <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
-                                                  </node>
-                                                </node>
-                                                <node concept="liA8E" id="9HhvY0Q4lT" role="2OqNvi">
-                                                  <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.customPlan(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.generator.ModelGenerationPlan):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="customPlan" />
-                                                  <node concept="2GrUjf" id="9HhvY0Q4nO" role="37wK5m">
-                                                    <ref role="2Gs0qQ" node="9HhvY0Q2ce" resolve="m" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="9HhvY0Q4xp" role="37wK5m">
-                                                    <ref role="3cqZAo" node="9HhvY0Q3CO" resolve="plan" />
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="3y3z36" id="9HhvY0Q498" role="3clFbw">
-                                            <node concept="10Nm6u" id="9HhvY0Q49L" role="3uHU7w" />
-                                            <node concept="37vLTw" id="9HhvY0Q3M1" role="3uHU7B">
-                                              <ref role="3cqZAo" node="9HhvY0Q3CO" resolve="plan" />
                                             </node>
                                           </node>
                                         </node>

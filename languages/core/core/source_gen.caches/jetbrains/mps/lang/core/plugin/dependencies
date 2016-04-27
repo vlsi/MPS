@@ -41,9 +41,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._5" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
-    <classNode dependClassName="jetbrains.mps.generator.CustomGenerationModuleFacet" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultGenerationParametersProvider" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultTaskBuilder" />
+    <classNode dependClassName="jetbrains.mps.generator.GenPlanExtractor" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />

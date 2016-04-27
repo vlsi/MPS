@@ -43,7 +43,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.generator.CustomGenerationModuleFacet;
+import jetbrains.mps.generator.GenPlanExtractor;
 import jetbrains.mps.generator.GenerationTaskRecorder;
 import jetbrains.mps.generator.GeneratorTask;
 import jetbrains.mps.messages.IMessageHandler;
@@ -442,16 +442,10 @@ public class Generate_Facet extends IFacet.Stub {
               if (Generate_Facet.Target_configure.vars(pa.global()).customPlan() == null) {
                 mpsProject.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
+                    GenPlanExtractor planExtractor = new GenPlanExtractor(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions());
                     for (MResource res : Sequence.fromIterable(input)) {
-                      CustomGenerationModuleFacet facet = res.module().getFacet(CustomGenerationModuleFacet.class);
-                      if (facet == null) {
-                        continue;
-                      }
                       for (SModel m : Sequence.fromIterable(res.models())) {
-                        ModelGenerationPlan plan = facet.getPlan(m);
-                        if (plan != null) {
-                          Generate_Facet.Target_configure.vars(pa.global()).generationOptions().customPlan(m, plan);
-                        }
+                        planExtractor.configurePlanFor(m);
                       }
                     }
                   }
