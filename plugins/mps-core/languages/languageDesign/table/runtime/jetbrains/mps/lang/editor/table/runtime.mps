@@ -6209,7 +6209,7 @@
             <property role="TrG5h" value="editorCell" />
             <node concept="2OqwBi" id="6asZ_IpevtK" role="33vP2m">
               <node concept="liA8E" id="6asZ_IpevtM" role="2OqNvi">
-                <ref role="37wK5l" to="g51k:~CellInfo.findCell(jetbrains.mps.nodeEditor.EditorComponent):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findCell" />
+                <ref role="37wK5l" to="g51k:~CellInfo.findCell(jetbrains.mps.openapi.editor.EditorComponent):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findCell" />
                 <node concept="10QFUN" id="2TtwAs917nz" role="37wK5m">
                   <node concept="3uibUv" id="2TtwAs91bli" role="10QFUM">
                     <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />

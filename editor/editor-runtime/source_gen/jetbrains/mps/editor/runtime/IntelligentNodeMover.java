@@ -298,7 +298,7 @@ public class IntelligentNodeMover {
     return (link instanceof SContainmentLink ? ((SContainmentLink) link) : null);
   }
   private boolean isSimilarLink(@NotNull SContainmentLink link) {
-    return eq_9l6nqc_a0a0a53_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a53(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
+    return eq_9l6nqc_a0a0a63_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a63(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
   }
 
   private static class PlaceToMove {
@@ -347,10 +347,10 @@ public class IntelligentNodeMover {
     }
     return node.getContainmentLink();
   }
-  private static boolean eq_9l6nqc_a0a0a53(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a63(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_9l6nqc_a0a0a53_0(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a63_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
