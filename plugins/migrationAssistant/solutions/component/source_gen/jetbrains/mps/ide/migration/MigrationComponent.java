@@ -41,7 +41,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -190,9 +190,12 @@ public class MigrationComponent extends AbstractProjectComponent {
       }).toListSequence(), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, SNode, SNode>>, RefactoringSession>() {
         public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, IP, FP, SNode, SNode>> changes, RefactoringSession refactoringSession) {
           return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-            public SNode invoke(SNode serializedInitial) {
-              SNode serializedFinal = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
-              return serializedFinal;
+            public SNode invoke(final SNode serializedInitial) {
+              return SLinkOperations.getTarget(ListSequence.fromList(myParts).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState")) == serializedInitial;
+                }
+              }).first(), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"));
             }
           };
         }
@@ -200,7 +203,28 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
   }
 
-  private class MigrationRefactoringUI implements RefactoringProcessor.RefactoringUI {
+  private static class RefactoringSessionTaskQueue {
+    private static final String myId = "refactoringSession.migrationAssistant.taskQueue";
+    private List<Runnable> myTasks = ListSequence.fromList(new ArrayList<Runnable>());
+    public static MigrationComponent.RefactoringSessionTaskQueue getInstance(RefactoringSession session) {
+      MigrationComponent.RefactoringSessionTaskQueue result = ((MigrationComponent.RefactoringSessionTaskQueue) session.getObject(myId));
+      if (result == null) {
+        result = new MigrationComponent.RefactoringSessionTaskQueue();
+        session.putObject(myId, result);
+      }
+      return result;
+    }
+    public void putTask(Runnable task) {
+      ListSequence.fromList(myTasks).addElement(task);
+    }
+    public void runAll() {
+      for (Runnable task : ListSequence.fromList(myTasks)) {
+        task.run();
+      }
+    }
+  }
+
+  private static class MigrationRefactoringUI implements RefactoringProcessor.RefactoringUI {
     private List<RefactoringParticipant.Option> mySelectedOptions;
     private MigrationRefactoringUI(List<RefactoringParticipant.Option> selectedOptions) {
       mySelectedOptions = selectedOptions;
@@ -214,8 +238,8 @@ public class MigrationComponent extends AbstractProjectComponent {
     public List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> availableOptions) {
       return (mySelectedOptions == null ? availableOptions : mySelectedOptions);
     }
-    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults) {
-      task.run();
+    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, RefactoringSession refactoringSession) {
+      MigrationComponent.RefactoringSessionTaskQueue.getInstance(refactoringSession).putTask(task);
     }
   }
 
@@ -256,7 +280,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       public RefactoringPart select(final RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> participant) {
         List<SNode> participantParts = ListSequence.fromList(SLinkOperations.getChildren(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0y(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
+            return eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0ab(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
           }
         }).toListSequence();
         return ((RefactoringPart) new MigrationComponent.RefactoringPartImpl(SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), participantParts, participant));
@@ -317,6 +341,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     try {
       RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
       script.execute(module, refactoringSession);
+      MigrationComponent.RefactoringSessionTaskQueue.getInstance(refactoringSession).runAll();
       refactoringSession.close();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -339,7 +364,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
     return null;
   }
-  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0y(Object a, Object b) {
+  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0ab(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

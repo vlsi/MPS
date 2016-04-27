@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -28,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -38,7 +38,7 @@ public class RefactoringProcessor {
     void prepare(Runnable task);
     void runSearch(final _FunctionTypes._void_P1_E0<? super ProgressMonitor> task);
     List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> options);
-    void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults);
+    void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, RefactoringSession session);
   }
 
   public static class RefactoringUIImpl implements RefactoringProcessor.RefactoringUI {
@@ -82,7 +82,7 @@ public class RefactoringProcessor {
       }).toListSequence();
     }
 
-    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults) {
+    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, RefactoringSession refactoringSession) {
       RefactoringAccessEx.getInstance().showRefactoringView(myProject.getProject(), new RefactoringViewAction() {
         public void performAction(RefactoringViewItem refactoringViewItem) {
           try {
@@ -193,7 +193,7 @@ public class RefactoringProcessor {
           }).toListSequence(), repository, refactoringSession);
         }
       }
-    }, refactoringName, searchResults);
+    }, refactoringName, searchResults, refactoringSession);
   }
 
   protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
