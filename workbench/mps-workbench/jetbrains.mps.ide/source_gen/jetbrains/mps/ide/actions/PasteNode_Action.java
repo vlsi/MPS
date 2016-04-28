@@ -116,7 +116,7 @@ public class PasteNode_Action extends BaseAction {
         }
         if (((SNode) MapSequence.fromMap(_params).get("node")) == null) {
           NodePaster paster = new NodePaster(pasteNodes);
-          if (!(paster.canPasteAsRoots())) {
+          if (!(paster.canPasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel"))))) {
             return;
           }
           paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), PasteNode_Action.this.getContextPackage(_params));

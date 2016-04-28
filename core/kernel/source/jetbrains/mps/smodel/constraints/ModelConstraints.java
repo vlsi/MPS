@@ -100,7 +100,13 @@ public class ModelConstraints {
     return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
   }
 
-  public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
+  //if last parameter is null, canBeRoot from constraints aspect is not checked
+  //the point is that we now have two "constraints":
+  //model-independent is the rootable property in structure (which will be moved to constraints)
+  //model-dependent is the canBeRoot method in constraints aspect
+  //our constraints is actually a "non-typesystem" check, which can be pre-checked (mostly by the editor) not to show "illegal" choices to the user
+  //the idea of this method is to pre-check as much as possible. Returning true does not guarantee anything, returning false means some error is already present.
+  public static boolean canBeRoot(@NotNull SAbstractConcept concept, @Nullable SModel model) {
     if (concept.isAbstract()) {
       return false;
     }
@@ -108,6 +114,10 @@ public class ModelConstraints {
     if (conceptDecl != null && !SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl)) {
       return false;
     }
+    if (model == null) {
+      return true;
+    }
+
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
     return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
   }

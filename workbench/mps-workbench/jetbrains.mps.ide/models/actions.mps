@@ -520,7 +520,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -12669,7 +12669,13 @@
                               <ref role="3cqZAo" node="4NbzjXXKNR9" resolve="paster" />
                             </node>
                             <node concept="liA8E" id="4NbzjXXKNRF" role="2OqNvi">
-                              <ref role="37wK5l" to="1i7y:~NodePaster.canPasteAsRoots():boolean" resolve="canPasteAsRoots" />
+                              <ref role="37wK5l" to="1i7y:~NodePaster.canPasteAsRoots(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canPasteAsRoots" />
+                              <node concept="2OqwBi" id="6BNPii3ZtWy" role="37wK5m">
+                                <node concept="2WthIp" id="6BNPii3ZtW_" role="2Oq$k0" />
+                                <node concept="1DTwFV" id="6BNPii3ZtWB" role="2OqNvi">
+                                  <ref role="2WH_rO" node="4NbzjXXKNEl" resolve="contextModel" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>

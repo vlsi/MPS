@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -58,7 +59,9 @@ public class NodePaster {
   public boolean canPaste(EditorCell targetCell) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
-    if (pasteTarget == null) return false;
+    if (pasteTarget == null) {
+      return false;
+    }
     return canPaste(pasteTarget, role, PasteEnv.NODE_EDITOR) != PASTE_N_A;
   }
 
@@ -125,10 +128,9 @@ public class NodePaster {
     }
   }
 
-  public boolean canPasteAsRoots() {
+  public boolean canPasteAsRoots(@Nullable SModel model) {
     for (SNode pasteNode : myPasteNodes) {
-      SNode nodeConcept = new SNodeLegacy(pasteNode).getConceptDeclarationNode();
-      if (!SNodeUtil.isInstanceOfConceptDeclaration(nodeConcept) || !SNodeUtil.getConceptDeclaration_IsRootable(nodeConcept)) {
+      if (!ModelConstraints.canBeRoot(pasteNode.getConcept(), model)) {
         return false;
       }
     }
@@ -154,7 +156,7 @@ public class NodePaster {
 
     String role_ = role != null ? role : pasteTarget.getRoleInParent();
 
-    boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(); // root selected and ..
+    boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(pasteTarget.getModel()); // root selected and ..
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_, true);
 
     if (pasteEnv == PasteEnv.PROJECT_TREE) {
@@ -308,13 +310,19 @@ public class NodePaster {
 
   private String getRoleFromCell(EditorCell targetCell) {
     String role = targetCell.getRole();
-    if (role != null) return role;
+    if (role != null) {
+      return role;
+    }
 
     EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection) ? (EditorCell_Collection) targetCell : targetCell.getParent();
-    if (actualCollection != null) role = ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) actualCollection).getCellNodesRole();
+    if (actualCollection != null) {
+      role = ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) actualCollection).getCellNodesRole();
+    }
     while (actualCollection != null && role == null) {
       actualCollection = actualCollection.getParent();
-      if (actualCollection == null) break;
+      if (actualCollection == null) {
+        break;
+      }
       role = ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) actualCollection).getCellNodesRole();
     }
 
