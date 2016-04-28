@@ -88,84 +88,85 @@
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/3402736933910154624">
     <file name="ClassLikes_ActionGroup.java">
-      <node id="3402736933910154624" at="33,0,34,0" concept="11" trace="ID" />
-      <node id="3402736933910154624" at="34,0,35,0" concept="3" trace="myPlaces" />
-      <node id="3402736933910154624" at="35,35,36,28" concept="13" />
-      <node id="3402736933910154624" at="36,28,37,30" concept="2" />
-      <node id="3402736933910154624" at="37,30,38,25" concept="2" />
-      <node id="1910216689115792000" at="40,45,41,75" concept="7" />
-      <node id="3402736933910607751" at="42,54,43,13" concept="8" />
-      <node id="4497478346159656557" at="44,5,45,74" concept="9" />
-      <node id="3402736933910618632" at="45,74,46,88" concept="7" />
-      <node id="3402736933910761994" at="48,43,49,36" concept="8" />
-      <node id="3402736933910762016" at="52,54,53,39" concept="8" />
-      <node id="3402736933910762025" at="56,51,57,216" concept="8" />
-      <node id="4601407620868443110" at="60,39,61,518" concept="8" />
-      <node id="3402736933910782520" at="63,7,64,0" concept="10" />
-      <node id="3402736933910944072" at="64,0,65,44" concept="2" />
-      <node id="3402736933910785349" at="66,55,67,172" concept="2" />
-      <node id="3402736933910154624" at="69,70,70,39" concept="2" />
-      <node id="3402736933910154624" at="73,81,74,109" concept="2" />
-      <node id="3402736933910154624" at="76,29,77,17" concept="8" />
-      <node id="3402736933910605209" at="41,75,44,5" concept="5" />
-      <node id="3402736933910761992" at="48,0,51,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/language/SLanguage;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="3402736933910762014" at="52,0,55,0" concept="6" trace="translate#(Ljetbrains/mps/smodel/Language;)Ljava/lang/Iterable;" />
-      <node id="3402736933910762023" at="56,0,59,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-      <node id="4601407620868441946" at="60,0,63,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3402736933910771378" at="65,44,68,5" concept="4" />
-      <node id="3402736933910154624" at="68,5,71,5" concept="4" />
-      <node id="3402736933910154624" at="73,0,76,0" concept="6" trace="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
-      <node id="3402736933910154624" at="76,0,79,0" concept="6" trace="isStrict#()Z" />
-      <node id="3402736933910154624" at="35,0,40,0" concept="1" trace="ClassLikes_ActionGroup#()V" />
-      <node id="3402736933910761984" at="46,88,63,7" concept="7" />
-      <node id="3402736933910154624" at="40,0,73,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="3402736933910605212" at="42,54,43,13" />
-      <scope id="3402736933910761993" at="48,43,49,36" />
-      <scope id="3402736933910762015" at="52,54,53,39" />
-      <scope id="3402736933910762024" at="56,51,57,216" />
-      <scope id="4601407620868441947" at="60,39,61,518" />
-      <scope id="3402736933910771393" at="66,55,67,172" />
-      <scope id="3402736933910154624" at="69,70,70,39" />
-      <scope id="3402736933910154624" at="73,81,74,109" />
-      <scope id="3402736933910154624" at="76,29,77,17" />
-      <scope id="3402736933910154624" at="35,35,38,25" />
-      <scope id="3402736933910761992" at="48,0,51,0">
+      <node id="3402736933910154624" at="34,0,35,0" concept="11" trace="ID" />
+      <node id="3402736933910154624" at="35,0,36,0" concept="3" trace="myPlaces" />
+      <node id="3402736933910154624" at="36,35,37,28" concept="13" />
+      <node id="3402736933910154624" at="37,28,38,30" concept="2" />
+      <node id="3402736933910154624" at="38,30,39,25" concept="2" />
+      <node id="1910216689115792000" at="41,45,42,81" concept="7" />
+      <node id="3402736933910607751" at="43,54,44,13" concept="8" />
+      <node id="4497478346159656557" at="45,5,46,74" concept="9" />
+      <node id="3402736933910618632" at="46,74,47,88" concept="7" />
+      <node id="3402736933910761994" at="49,43,50,36" concept="8" />
+      <node id="3402736933910762016" at="53,54,54,39" concept="8" />
+      <node id="3402736933910762025" at="57,51,58,216" concept="8" />
+      <node id="1234465673301711755" at="61,39,62,90" concept="9" />
+      <node id="4601407620868443110" at="62,90,63,433" concept="8" />
+      <node id="3402736933910782520" at="65,7,66,0" concept="10" />
+      <node id="3402736933910944072" at="66,0,67,44" concept="2" />
+      <node id="3402736933910785349" at="68,55,69,172" concept="2" />
+      <node id="3402736933910154624" at="71,70,72,39" concept="2" />
+      <node id="3402736933910154624" at="75,81,76,109" concept="2" />
+      <node id="3402736933910154624" at="78,29,79,17" concept="8" />
+      <node id="3402736933910605209" at="42,81,45,5" concept="5" />
+      <node id="3402736933910761992" at="49,0,52,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/language/SLanguage;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="3402736933910762014" at="53,0,56,0" concept="6" trace="translate#(Ljetbrains/mps/smodel/Language;)Ljava/lang/Iterable;" />
+      <node id="3402736933910762023" at="57,0,60,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
+      <node id="3402736933910771378" at="67,44,70,5" concept="4" />
+      <node id="3402736933910154624" at="70,5,73,5" concept="4" />
+      <node id="3402736933910154624" at="75,0,78,0" concept="6" trace="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
+      <node id="3402736933910154624" at="78,0,81,0" concept="6" trace="isStrict#()Z" />
+      <node id="4601407620868441946" at="61,0,65,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3402736933910154624" at="36,0,41,0" concept="1" trace="ClassLikes_ActionGroup#()V" />
+      <node id="3402736933910761984" at="47,88,65,7" concept="7" />
+      <node id="3402736933910154624" at="41,0,75,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="3402736933910605212" at="43,54,44,13" />
+      <scope id="3402736933910761993" at="49,43,50,36" />
+      <scope id="3402736933910762015" at="53,54,54,39" />
+      <scope id="3402736933910762024" at="57,51,58,216" />
+      <scope id="3402736933910771393" at="68,55,69,172" />
+      <scope id="3402736933910154624" at="71,70,72,39" />
+      <scope id="3402736933910154624" at="75,81,76,109" />
+      <scope id="3402736933910154624" at="78,29,79,17" />
+      <scope id="4601407620868441947" at="61,39,63,433" />
+      <scope id="3402736933910154624" at="36,35,39,25" />
+      <scope id="3402736933910761992" at="49,0,52,0">
         <var name="it" id="3402736933910761992" />
       </scope>
-      <scope id="3402736933910762014" at="52,0,55,0">
+      <scope id="3402736933910762014" at="53,0,56,0">
         <var name="it" id="3402736933910762014" />
       </scope>
-      <scope id="3402736933910762023" at="56,0,59,0">
+      <scope id="3402736933910762023" at="57,0,60,0">
         <var name="it" id="3402736933910762023" />
       </scope>
-      <scope id="4601407620868441946" at="60,0,63,0">
-        <var name="it" id="4601407620868441946" />
-      </scope>
-      <scope id="3402736933910771378" at="65,44,68,5">
+      <scope id="3402736933910771378" at="67,44,70,5">
         <var name="descr" id="3402736933910771383" />
       </scope>
-      <scope id="3402736933910154624" at="68,5,71,5">
+      <scope id="3402736933910154624" at="70,5,73,5">
         <var name="p" id="3402736933910154624" />
       </scope>
-      <scope id="3402736933910154624" at="73,0,76,0">
+      <scope id="3402736933910154624" at="75,0,78,0">
         <var name="cond" id="3402736933910154624" />
         <var name="place" id="3402736933910154624" />
       </scope>
-      <scope id="3402736933910154624" at="76,0,79,0" />
-      <scope id="3402736933910154624" at="35,0,40,0" />
-      <scope id="3402736933910154624" at="40,45,71,5">
+      <scope id="3402736933910154624" at="78,0,81,0" />
+      <scope id="4601407620868441946" at="61,0,65,0">
+        <var name="it" id="4601407620868441946" />
+      </scope>
+      <scope id="3402736933910154624" at="36,0,41,0" />
+      <scope id="3402736933910154624" at="41,45,73,5">
         <var name="descrs" id="3402736933910761985" />
         <var name="langs" id="3402736933910618633" />
         <var name="model" id="1910216689115792001" />
       </scope>
-      <scope id="3402736933910154624" at="40,0,73,0">
+      <scope id="3402736933910154624" at="41,0,75,0">
         <var name="event" id="3402736933910154624" />
       </scope>
-      <unit id="3402736933910761992" at="47,69,51,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$1" />
-      <unit id="3402736933910762014" at="51,44,55,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$2" />
-      <unit id="3402736933910762023" at="55,21,59,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$3" />
-      <unit id="4601407620868441946" at="59,17,63,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$4" />
-      <unit id="3402736933910154624" at="32,0,80,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup" />
+      <unit id="3402736933910761992" at="48,69,52,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$1" />
+      <unit id="3402736933910762014" at="52,44,56,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$2" />
+      <unit id="3402736933910762023" at="56,21,60,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$3" />
+      <unit id="4601407620868441946" at="60,17,65,5" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup$4" />
+      <unit id="3402736933910154624" at="33,0,82,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup" />
     </file>
   </root>
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)/3402736933910478500">
