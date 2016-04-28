@@ -6,7 +6,6 @@
   </languages>
   <imports>
     <import index="e4tq" ref="r:d1664c60-f6de-4b25-a874-54417df516ea(jetbrains.mps.ide.vcs.modelmetadata.structure)" />
-    <import index="wr1s" ref="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -21,10 +20,21 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
+        <child id="1186402402630" name="styleClass" index="V601i" />
+      </concept>
+      <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
+        <property id="1186403713874" name="color" index="Vb096" />
+      </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
+        <property id="1186403771423" name="style" index="Vbekb" />
+      </concept>
+      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
+      <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt" />
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
@@ -51,6 +61,11 @@
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
   </registry>
   <node concept="24kQdi" id="444ZSQ068xR">
     <ref role="1XX52x" to="e4tq:7gTJ_yqjx5H" resolve="Model" />
@@ -58,7 +73,7 @@
       <node concept="l2Vlx" id="UHCFRHQMhk" role="2iSdaV" />
       <node concept="3F0ifn" id="UHCFRHQMhl" role="3EZMnx">
         <property role="3F0ifm" value="model" />
-        <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+        <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
       </node>
       <node concept="3F0A7n" id="UHCFRHQMhm" role="3EZMnx">
         <ref role="1NtTu8" to="e4tq:7gTJ_yqjx7A" resolve="longname" />
@@ -79,7 +94,7 @@
         </node>
         <node concept="3F0ifn" id="444ZSQ069lP" role="3EZMnx">
           <property role="3F0ifm" value="doNotGenerate" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
         </node>
         <node concept="3F0ifn" id="444ZSQ069lQ" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -95,8 +110,8 @@
           </node>
         </node>
         <node concept="3F0ifn" id="UHCFRHQMhW" role="3EZMnx">
-          <property role="3F0ifm" value="imported languages" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <property role="3F0ifm" value="used languages" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
         </node>
         <node concept="3F0ifn" id="UHCFRHQMhX" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -127,7 +142,7 @@
         </node>
         <node concept="3F0ifn" id="UHCFRHQMi7" role="3EZMnx">
           <property role="3F0ifm" value="languages engaged on generation" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
         </node>
         <node concept="3F0ifn" id="UHCFRHQMi8" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -158,7 +173,7 @@
         </node>
         <node concept="3F0ifn" id="UHCFRHQMit" role="3EZMnx">
           <property role="3F0ifm" value="devkits" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
         </node>
         <node concept="3F0ifn" id="UHCFRHQMiu" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -189,7 +204,7 @@
         </node>
         <node concept="3F0ifn" id="UHCFRHQMiC" role="3EZMnx">
           <property role="3F0ifm" value="imports" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="keyword" />
         </node>
         <node concept="3F0ifn" id="UHCFRHQMiD" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -232,6 +247,18 @@
     <ref role="1XX52x" to="e4tq:3B8MzHTEEZx" resolve="ModuleReference" />
     <node concept="3F0A7n" id="3B8MzHTERc_" role="2wV5jI">
       <ref role="1NtTu8" to="e4tq:3B8MzHTEEZy" resolve="stringValue" />
+    </node>
+  </node>
+  <node concept="V5hpn" id="4TP40tZYswY">
+    <property role="TrG5h" value="MyStyles" />
+    <node concept="14StLt" id="eY0iPzB7gM" role="V601i">
+      <property role="TrG5h" value="keyword" />
+      <node concept="VechU" id="eY0iPzB7gN" role="3F10Kt">
+        <property role="Vb096" value="DARK_BLUE" />
+      </node>
+      <node concept="Vb9p2" id="eY0iPzB7gO" role="3F10Kt">
+        <property role="Vbekb" value="BOLD" />
+      </node>
     </node>
   </node>
 </model>

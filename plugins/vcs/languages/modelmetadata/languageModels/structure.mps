@@ -50,7 +50,7 @@
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="4685150495576720950" />
-      <ref role="20lvS9" node="3B8MzHTEEZx" resolve="ModuleReference" />
+      <ref role="20lvS9" node="6o5s9kYTtqT" resolve="LanguageDependency" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -109,6 +109,16 @@
     <node concept="1TJgyi" id="3B8MzHTEEZy" role="1TKVEl">
       <property role="TrG5h" value="stringValue" />
       <property role="IQ2nx" value="4163800212297134050" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6o5s9kYTtqT">
+    <property role="EcuMT" value="7351405753059890873" />
+    <property role="TrG5h" value="LanguageDependency" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6o5s9kYTtFv" role="1TKVEl">
+      <property role="IQ2nx" value="7351405753059891935" />
+      <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
