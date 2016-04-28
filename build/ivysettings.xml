@@ -3,10 +3,10 @@
   <settings defaultResolver="main" />
   <caches defaultCacheDir="${mps.ivy.home}/.ivy2/cache" />
   <!--Authentication required for publishing (deployment). 'Artifactory Realm' is the realm used by Artifactory so don't change it.-->
-  <credentials host="repository.jetbrains.com" realm="Artifactory Realm" username="mps" passwd="" />
+  <credentials host="repo.labs.intellij.net" realm="Artifactory Realm" username="mps" passwd="" />
   <resolvers>
     <chain name="main">
-      <ibiblio name="public" m2compatible="true" root="http://repository.jetbrains.com/repo" />
+      <ibiblio name="public" m2compatible="true" root="http://repo.labs.intellij.net/repo" />
     </chain>
   </resolvers>
 </ivy-settings>
