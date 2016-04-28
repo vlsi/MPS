@@ -2,7 +2,7 @@
 <model ref="r:a2bc1c51-b81b-4f90-a208-04e6bd08c9c2(jetbrains.mps.generator.xmodel.test.m1)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="b2d9d19b-9a47-47a4-93f4-0c9390001bf2" name="jetbrains.mps.generator.test.xmodel.lang1" version="0" />
+    <devkit ref="b04c0af8-5334-4ab7-8f34-739bfd22ae88(jetbrains.mps.generator.xmodel-sample)" />
   </languages>
   <imports />
   <registry>

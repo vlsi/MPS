@@ -94,6 +94,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_E
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -364,7 +365,17 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         return panel;
       } else if (myModule instanceof DevKit) {
-        myPlanPanel = new GenPlanPickPanel(myProject, myModule.getScope(), "Generation plan for models using this devkit");
+        myPlanPanel = new GenPlanPickPanel(myProject, new DefaultScope() {
+          @Override
+          protected Set<SModule> getInitialModules() {
+            return new HashSet<SModule>(((DevKit) myModule).getExportedSolutions());
+          }
+
+          @Override
+          protected Collection<Language> getInitialUsedLanguages() {
+            return ((DevKit) myModule).getExportedLanguages();
+          }
+        }, "Generation plan for models using this devkit");
         myPlanPanel.setPlanModel(((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan());
         return myPlanPanel;
       }
