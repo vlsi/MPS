@@ -157,14 +157,20 @@ abstract class AbstractContainer<T> implements Container<T> {
 
   @Override
   public T getFirst() {
-    // TODO: implement contract / throw exception if empty
-    return isEmpty() ? null : getFirstEntry().myItem;
+    Entry<T> firstEntry = getFirstEntry();
+    if (firstEntry == null) {
+      throw new NoSuchElementException();
+    }
+    return firstEntry.myItem;
   }
 
   @Override
   public T getLast() {
-    // TODO: implement contract / throw exception if empty
-    return isEmpty() ? null : getLastEntry().myItem;
+    Entry<T> lastEntry = getLastEntry();
+    if (lastEntry == null) {
+      throw new NoSuchElementException();
+    }
+    return lastEntry.myItem;
   }
 
   Entry<T> getFirstEntry() {
@@ -172,7 +178,7 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   private Entry<T> getLastEntry() {
-    return isEmpty() ? null : getFirstEntry().myPrev;
+    return myFirst == null ? null : myFirst.myPrev;
   }
 
   protected Entry<T> addEntryBefore(@NotNull Entry<T> entry, Entry<T> anchor) {
@@ -204,7 +210,7 @@ abstract class AbstractContainer<T> implements Container<T> {
 
     entry.myNext = anchor;
     entry.myPrev = anchor.myPrev;
-    if (anchor != myFirst) {
+    if (anchor != firstEntry) {
       anchor.myPrev.myNext = entry;
     } else {
       myFirst = entry;
@@ -228,7 +234,7 @@ abstract class AbstractContainer<T> implements Container<T> {
       if (entry.myNext != null) {
         entry.myNext.myPrev = entry.myPrev;
       } else {
-        myFirst.myPrev = entry.myPrev;
+        firstEntry.myPrev = entry.myPrev;
       }
     }
     entry.myPrev = entry.myNext = null;

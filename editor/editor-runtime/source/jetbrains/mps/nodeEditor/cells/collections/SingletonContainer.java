@@ -33,7 +33,8 @@ public class SingletonContainer<T> extends AbstractContainer<T> {
 
   @Override
   protected Entry<T> getEntry(@NotNull T item) {
-    return isEmpty() || getFirstEntry().myItem != item ? null : getFirstEntry();
+    Entry<T> firstEntry = getFirstEntry();
+    return firstEntry == null || firstEntry.myItem != item ? null : firstEntry;
   }
 
   @Override
