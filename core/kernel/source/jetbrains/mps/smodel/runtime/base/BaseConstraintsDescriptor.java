@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -237,14 +238,29 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeRoot(@Nullable SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (myConcept.isAbstract()) {
+      return false;
+    }
+
+    SNode conceptDecl = myConcept.getDeclarationNode();
+    if (conceptDecl != null && !SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl)) {
+      return false;
+    }
+
+    if (model == null) {
+      return true;
+    }
+
     if (canBeRootDescriptor == null) {
       return true;
     }
+
     if (canBeRootDescriptor == this) {
       // in new version it's impossible! - canBeChild in this case overriden!
       return canBeRoot(operationContext, model, checkingNodeContext);
     }
+
     return canBeRootDescriptor.canBeRoot(model, operationContext, checkingNodeContext);
   }
 
