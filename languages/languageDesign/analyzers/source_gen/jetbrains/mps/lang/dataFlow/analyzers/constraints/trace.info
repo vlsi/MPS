@@ -276,76 +276,20 @@
   </root>
   <root nodeRef="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)/8337746954995822243">
     <file name="Rule_Constraints.java">
-      <node id="8337746954995822243" at="16,29,17,159" concept="11" />
-      <node id="8337746954995822243" at="20,42,21,16" concept="7" />
-      <node id="8337746954995822243" at="24,120,25,55" concept="6" />
-      <node id="8337746954995822243" at="25,55,26,0" concept="8" />
-      <node id="8337746954995822243" at="27,51,28,66" concept="2" />
-      <node id="8337746954995822243" at="29,5,30,0" concept="8" />
-      <node id="8337746954995822243" at="30,0,31,18" concept="7" />
-      <node id="1227090211300" at="33,99,34,90" concept="7" />
-      <node id="8337746954995822243" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
-      <node id="8337746954995822243" at="16,0,19,0" concept="1" trace="Rule_Constraints#()V" />
-      <node id="8337746954995822243" at="26,0,29,5" concept="4" />
-      <node id="8337746954995822243" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="8337746954995822243" at="19,0,23,0" concept="5" trace="hasOwnCanBeRootMethod#()Z" />
-      <node id="8337746954995822243" at="23,0,33,0" concept="5" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="8337746954995822243" at="16,29,17,159" />
-      <scope id="8337746954995822243" at="20,42,21,16" />
-      <scope id="8337746954995822243" at="27,51,28,66" />
-      <scope id="8337746954995822394" at="33,99,34,90" />
-      <scope id="8337746954995822243" at="16,0,19,0" />
-      <scope id="8337746954995822243" at="33,0,36,0">
-        <var name="model" id="8337746954995822243" />
-        <var name="operationContext" id="8337746954995822243" />
-      </scope>
-      <scope id="8337746954995822243" at="19,0,23,0" />
-      <scope id="8337746954995822243" at="24,120,31,18">
-        <var name="result" id="8337746954995822243" />
-      </scope>
-      <scope id="8337746954995822243" at="23,0,33,0">
-        <var name="checkingNodeContext" id="8337746954995822243" />
-        <var name="context" id="8337746954995822243" />
-        <var name="model" id="8337746954995822243" />
-      </scope>
-      <unit id="8337746954995822243" at="15,0,38,0" name="jetbrains.mps.lang.dataFlow.analyzers.constraints.Rule_Constraints" />
+      <node id="8337746954995822243" at="9,29,10,159" concept="11" />
+      <node id="8337746954995822243" at="9,0,12,0" concept="1" trace="Rule_Constraints#()V" />
+      <scope id="8337746954995822243" at="9,29,10,159" />
+      <scope id="8337746954995822243" at="9,0,12,0" />
+      <unit id="8337746954995822243" at="8,0,13,0" name="jetbrains.mps.lang.dataFlow.analyzers.constraints.Rule_Constraints" />
     </file>
   </root>
   <root nodeRef="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)/8337746954995823600">
     <file name="Analyzer_Constraints.java">
-      <node id="8337746954995823600" at="16,33,17,164" concept="11" />
-      <node id="8337746954995823600" at="20,42,21,16" concept="7" />
-      <node id="8337746954995823600" at="24,120,25,55" concept="6" />
-      <node id="8337746954995823600" at="25,55,26,0" concept="8" />
-      <node id="8337746954995823600" at="27,51,28,66" concept="2" />
-      <node id="8337746954995823600" at="29,5,30,0" concept="8" />
-      <node id="8337746954995823600" at="30,0,31,18" concept="7" />
-      <node id="8337746954995823793" at="33,99,34,90" concept="7" />
-      <node id="8337746954995823600" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
-      <node id="8337746954995823600" at="16,0,19,0" concept="1" trace="Analyzer_Constraints#()V" />
-      <node id="8337746954995823600" at="26,0,29,5" concept="4" />
-      <node id="8337746954995823600" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="8337746954995823600" at="19,0,23,0" concept="5" trace="hasOwnCanBeRootMethod#()Z" />
-      <node id="8337746954995823600" at="23,0,33,0" concept="5" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="8337746954995823600" at="16,33,17,164" />
-      <scope id="8337746954995823600" at="20,42,21,16" />
-      <scope id="8337746954995823600" at="27,51,28,66" />
-      <scope id="8337746954995823602" at="33,99,34,90" />
-      <scope id="8337746954995823600" at="16,0,19,0" />
-      <scope id="8337746954995823600" at="33,0,36,0">
-        <var name="model" id="8337746954995823600" />
-        <var name="operationContext" id="8337746954995823600" />
-      </scope>
-      <scope id="8337746954995823600" at="19,0,23,0" />
-      <scope id="8337746954995823600" at="24,120,31,18">
-        <var name="result" id="8337746954995823600" />
-      </scope>
-      <scope id="8337746954995823600" at="23,0,33,0">
-        <var name="checkingNodeContext" id="8337746954995823600" />
-        <var name="context" id="8337746954995823600" />
-        <var name="model" id="8337746954995823600" />
-      </scope>
-      <unit id="8337746954995823600" at="15,0,38,0" name="jetbrains.mps.lang.dataFlow.analyzers.constraints.Analyzer_Constraints" />
+      <node id="8337746954995823600" at="9,33,10,164" concept="11" />
+      <node id="8337746954995823600" at="9,0,12,0" concept="1" trace="Analyzer_Constraints#()V" />
+      <scope id="8337746954995823600" at="9,33,10,164" />
+      <scope id="8337746954995823600" at="9,0,12,0" />
+      <unit id="8337746954995823600" at="8,0,13,0" name="jetbrains.mps.lang.dataFlow.analyzers.constraints.Analyzer_Constraints" />
     </file>
   </root>
   <root nodeRef="r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)/8424563347437838493">

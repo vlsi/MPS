@@ -4,34 +4,9 @@ package jetbrains.mps.lang.intentions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class SurroundWithIntentionDeclaration_Constraints extends BaseConstraintsDescriptor {
   public SurroundWithIntentionDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"));
   }
-  @Override
-  public boolean hasOwnCanBeRootMethod() {
-    return true;
-  }
-  @Override
-  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeARoot(model, context);
-
-    if (!(result) && checkingNodeContext != null) {
-      checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
-    }
-
-    return result;
-  }
-  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.INTENTIONS.is(model) || SModelStereotype.isGeneratorModel(model);
-  }
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "6263518417926802272");
 }
