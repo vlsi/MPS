@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   private final SNode myNode;
+  private final SNodeReference myConceptDeclaration;
 
   public ConceptTreeNode(SNode node) {
     myNode = node;
@@ -32,6 +33,8 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
     SConcept concept = myNode.getConcept();
     setIcon(IconManager.getIcon(concept));
     setNodeIdentifier(concept.getName());
+    final SNode conceptDecl = concept.getDeclarationNode();
+    myConceptDeclaration = conceptDecl == null ? null : conceptDecl.getReference();
   }
 
   @Override
@@ -43,7 +46,6 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
   @Override
   public SNodeReference getNavigationTarget() {
     // navigate to concept declaration, if any
-    SNode conceptNode = myNode.getConcept().getDeclarationNode();
-    return conceptNode == null ? myNode.getReference() : conceptNode.getReference();
+    return myConceptDeclaration;
   }
 }
