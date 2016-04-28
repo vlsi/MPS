@@ -101,12 +101,30 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
           return scope;
         }
       };
-      // todo: interfaces 
-      List<SNode> subConcepts = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+      List<SNode> subConcepts = ListSequence.fromList(new ArrayList<SNode>());
+      ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_8k3jue_a0a0a0a0a0a0d0c0k(check_8k3jue_a0a0a0a0a1a2a01(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"))), initialState._0().reference());
+          return eq_8k3jue_a0a0a0a0a0a0a3a2a01(check_8k3jue_a0a0a0a0a0b0c0k(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"))), initialState._0().reference());
         }
-      }).toListSequence();
+      }).toListSequence());
+      ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a01(it.getReference(), initialState._0().reference());
+            }
+          });
+        }
+      }).toListSequence());
+      ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a01(it.getReference(), initialState._0().reference());
+            }
+          });
+        }
+      }).toListSequence());
       List<Language> subModules = ListSequence.fromList(subConcepts).select(new ISelector<SNode, SModule>() {
         public SModule select(SNode it) {
           return SNodeOperations.getModel(it).getModule();
@@ -125,7 +143,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
             }
             public void confirm(Void finalState, SRepository repository, RefactoringSession refactoringSession) {
               LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder = LanguageStructureMigrationParticipant.MigrationBuilder.getBuilder(refactoringSession, subModule);
-              migrationBuilder.addPart(createIncludeMigrationPart_8k3jue_a0a1a2a0a0a0a0a0d0c0k(SNodeOperations.cast(initialState._1().resolve(repository), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"))));
+              migrationBuilder.addPart(createIncludeMigrationPart_8k3jue_a0a1a2a0a0a0a0a0f0c0k(SNodeOperations.cast(initialState._1().resolve(repository), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"))));
             }
           };
         }
@@ -162,13 +180,13 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> getDataCollector() {
     return myDataCollector;
   }
-  private static SNodeReference check_8k3jue_a0a0a0a0a1a2a01(SNode checkedDotOperand) {
+  private static SNodeReference check_8k3jue_a0a0a0a0a0b0c0k(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNode createIncludeMigrationPart_8k3jue_a0a1a2a0a0a0a0a0d0c0k(Object p0) {
+  private static SNode createIncludeMigrationPart_8k3jue_a0a1a2a0a0a0a0a0f0c0k(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, "jetbrains.mps.lang.migration.structure.IncludeMigrationPart"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, 0x267418e6b5c2b960L, "target"), (SNode) p0);
@@ -188,7 +206,13 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
     }
     return n1;
   }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0d0c0k(Object a, Object b) {
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a3a2a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
