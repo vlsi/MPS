@@ -282,7 +282,7 @@
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}.1">
+    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}">
       <artifact name="platform.src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="${idea.platform.version}">
@@ -462,10 +462,10 @@
     <dependency org="lib" name="resolver.jar" rev="${idea.platform.version}">
       <artifact name="resolver.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}">
       <artifact name="resources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}">
       <artifact name="resources_en.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="sanselan-0.98-snapshot.jar" rev="${idea.platform.version}">
