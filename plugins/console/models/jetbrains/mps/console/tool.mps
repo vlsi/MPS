@@ -5524,15 +5524,42 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="7jPdBzQCbfO" role="3cqZAp">
+              <node concept="3clFbS" id="7jPdBzQCbfP" role="3clFbx">
+                <node concept="3N13vt" id="7jPdBzQCbfQ" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="7jPdBzQCbfR" role="3clFbw">
+                <node concept="37vLTw" id="7jPdBzQCbfS" role="3uHU7B">
+                  <ref role="3cqZAo" node="3DVVPRJBnQu" resolve="sourceLangModule" />
+                </node>
+                <node concept="10Nm6u" id="7jPdBzQCbfT" role="3uHU7w" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="7jPdBzQCaGb" role="3cqZAp">
+              <node concept="3cpWsn" id="7jPdBzQCaGc" role="3cpWs9">
+                <property role="TrG5h" value="structureModel" />
+                <node concept="3uibUv" id="7jPdBzQCaFF" role="1tU5fm">
+                  <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                </node>
+                <node concept="2OqwBi" id="7jPdBzQCaGd" role="33vP2m">
+                  <node concept="37vLTw" id="7jPdBzQCaGe" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3DVVPRJBnQu" resolve="sourceLangModule" />
+                  </node>
+                  <node concept="liA8E" id="7jPdBzQCaGf" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="3DVVPRJBov1" role="3cqZAp">
               <node concept="3clFbS" id="3DVVPRJBov3" role="3clFbx">
                 <node concept="3N13vt" id="3DVVPRJBpk7" role="3cqZAp" />
               </node>
               <node concept="3clFbC" id="3DVVPRJBp94" role="3clFbw">
-                <node concept="10Nm6u" id="3DVVPRJBpd3" role="3uHU7w" />
-                <node concept="37vLTw" id="3DVVPRJBoZV" role="3uHU7B">
-                  <ref role="3cqZAo" node="3DVVPRJBnQu" resolve="sourceLangModule" />
+                <node concept="37vLTw" id="7jPdBzQCcjR" role="3uHU7B">
+                  <ref role="3cqZAo" node="7jPdBzQCaGc" resolve="structureModel" />
                 </node>
+                <node concept="10Nm6u" id="3DVVPRJBpd3" role="3uHU7w" />
               </node>
             </node>
             <node concept="3clFbF" id="6ysF3v1j_ab" role="3cqZAp">
@@ -5543,13 +5570,8 @@
                 <node concept="liA8E" id="6ysF3v1j_aj" role="2OqNvi">
                   <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
                   <node concept="2OqwBi" id="6ysF3v1j_ak" role="37wK5m">
-                    <node concept="2OqwBi" id="6ysF3v1j_al" role="2Oq$k0">
-                      <node concept="37vLTw" id="3DVVPRJBpsU" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3DVVPRJBnQu" resolve="sourceLangModule" />
-                      </node>
-                      <node concept="liA8E" id="6ysF3v1j_an" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
-                      </node>
+                    <node concept="37vLTw" id="7jPdBzQCaGh" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7jPdBzQCaGc" resolve="structureModel" />
                     </node>
                     <node concept="liA8E" id="6ysF3v1j_ao" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />

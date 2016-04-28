@@ -236,7 +236,11 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       if (sourceLangModule == null) {
         continue;
       }
-      modelInternal.addModelImport(sourceLangModule.getStructureModelDescriptor().getReference(), false);
+      SModel structureModel = sourceLangModule.getStructureModelDescriptor();
+      if (structureModel == null) {
+        continue;
+      }
+      modelInternal.addModelImport(structureModel.getReference(), false);
       ((AbstractModule) myModel.getModule()).addDependency(sourceLangModule.getModuleReference(), false);
     }
     modelInternal.addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
