@@ -32,6 +32,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -246,6 +248,11 @@ public class MergeConflictsBuilder {
     collectConflictingRootAdds();
 
     collectSymmetricImportedModelChanges();
+    collectSymmetricChanges(new _FunctionTypes._return_P1_E0<SLanguage, UsedLanguageChange>() {
+      public SLanguage invoke(UsedLanguageChange udc) {
+        return udc.getLanguage();
+      }
+    }, UsedLanguageChange.class);
     collectSymmetricModuleDependencyChanges();
   }
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {

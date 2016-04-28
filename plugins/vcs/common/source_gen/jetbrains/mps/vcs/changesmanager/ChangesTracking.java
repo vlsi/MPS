@@ -73,8 +73,11 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.event.SModelImportEvent;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -556,7 +559,21 @@ public class ChangesTracking {
     }
     @Override
     public void visitLanguageEvent(SModelLanguageEvent event) {
-      moduleDependencyEvent(event, event.getLanguageNamespace(), ModuleDependencyChange.DependencyType.USED_LANG, event.isAdded());
+      final SLanguage eventLang = MetaAdapterFactory.getLanguage(event.getLanguageNamespace());
+      final boolean deleted = !(event.isAdded());
+      runUpdateTask(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          // XXX I have no idea why we skip adding a change object if we successfully removed one or more queued earlier. 
+          //  just kept it the way it is in #moduleDependencyEvent 
+          if (removeChanges(null, UsedLanguageChange.class, new _FunctionTypes._return_P1_E0<Boolean, UsedLanguageChange>() {
+            public Boolean invoke(UsedLanguageChange ulc) {
+              return eventLang.equals(ulc.getLanguage());
+            }
+          }) == 0) {
+            addChange(new UsedLanguageChange(myDifference.getChangeSet(), deleted, eventLang));
+          }
+        }
+      }, null, event);
     }
     @Override
     public void visitDevKitEvent(SModelDevKitEvent event) {

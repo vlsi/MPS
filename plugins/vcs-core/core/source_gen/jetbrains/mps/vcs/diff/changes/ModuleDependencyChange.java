@@ -41,15 +41,6 @@ public class ModuleDependencyChange extends DependencyChange {
     return myType;
   }
   public static   enum DependencyType {
-    USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
-      public void invoke(SModel model, SModuleReference module) {
-        ((SModelBase) model).addLanguage(module);
-      }
-    }, new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
-      public void invoke(SModel model, SModuleReference module) {
-        ((SModelBase) model).deleteLanguage(module);
-      }
-    }),
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
         ((SModelBase) model).addDevKit(module);

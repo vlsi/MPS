@@ -2241,6 +2241,68 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="4TP40tZZPfv" role="jymVt">
+      <property role="TrG5h" value="buildForUsedLanguages" />
+      <node concept="3cqZAl" id="4TP40tZZPfx" role="3clF45" />
+      <node concept="3Tm6S6" id="4TP40tZZROF" role="1B3o_S" />
+      <node concept="3clFbS" id="4TP40tZZPfz" role="3clF47">
+        <node concept="3clFbF" id="4TP40u00iPg" role="3cqZAp">
+          <node concept="1rXfSq" id="4TP40u00iPf" role="3clFbG">
+            <ref role="37wK5l" node="42hl10VHbnK" resolve="buildAddedAndDeletedDependencies" />
+            <node concept="1bVj0M" id="4TP40u00iYV" role="37wK5m">
+              <node concept="37vLTG" id="4TP40u00jPV" role="1bW2Oz">
+                <property role="TrG5h" value="m" />
+                <node concept="3uibUv" id="4TP40u00k1S" role="1tU5fm">
+                  <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4TP40u00iYW" role="1bW5cS">
+                <node concept="3clFbF" id="4TP40u00ky_" role="3cqZAp">
+                  <node concept="2OqwBi" id="4TP40u00l1$" role="3clFbG">
+                    <node concept="37vLTw" id="4TP40u00ky$" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4TP40u00jPV" resolve="m" />
+                    </node>
+                    <node concept="liA8E" id="4TP40u00lXz" role="2OqNvi">
+                      <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1bVj0M" id="4TP40u00m8v" role="37wK5m">
+              <node concept="37vLTG" id="4TP40u00mg4" role="1bW2Oz">
+                <property role="TrG5h" value="l" />
+                <node concept="3uibUv" id="4TP40u00mnI" role="1tU5fm">
+                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+                </node>
+              </node>
+              <node concept="37vLTG" id="4TP40u00m$G" role="1bW2Oz">
+                <property role="TrG5h" value="deleted" />
+                <node concept="10P_77" id="4TP40u00mLq" role="1tU5fm" />
+              </node>
+              <node concept="3clFbS" id="4TP40u00m8x" role="1bW5cS">
+                <node concept="3clFbF" id="4TP40u00s5G" role="3cqZAp">
+                  <node concept="2ShNRf" id="4TP40u00s5E" role="3clFbG">
+                    <node concept="1pGfFk" id="4TP40u00s$5" role="2ShVmc">
+                      <ref role="37wK5l" to="btf5:4TP40tZZlb4" resolve="UsedLanguageChange" />
+                      <node concept="37vLTw" id="4TP40u00sM3" role="37wK5m">
+                        <ref role="3cqZAo" node="42hl10VHbu$" resolve="myChangeSet" />
+                      </node>
+                      <node concept="37vLTw" id="4TP40u00ti5" role="37wK5m">
+                        <ref role="3cqZAo" node="4TP40u00m$G" resolve="deleted" />
+                      </node>
+                      <node concept="37vLTw" id="4TP40u00tK7" role="37wK5m">
+                        <ref role="3cqZAo" node="4TP40u00mg4" resolve="l" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="42hl10VHbq7" role="jymVt">
       <property role="TrG5h" value="buildForMetadata" />
       <node concept="3cqZAl" id="42hl10VHbq8" role="3clF45" />
@@ -2251,33 +2313,10 @@
             <ref role="37wK5l" node="42hl10VHboI" resolve="buildForImports" />
           </node>
         </node>
-        <node concept="3clFbH" id="42hl10VHbqd" role="3cqZAp" />
-        <node concept="3clFbF" id="42hl10VHbqe" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyzeNE" role="3clFbG">
-            <ref role="37wK5l" node="42hl10VHbp_" resolve="buildForDependencies" />
-            <node concept="Rm8GO" id="42hl10VHbqg" role="37wK5m">
-              <ref role="Rm8GQ" to="btf5:4LCuQ2Vx_lf" resolve="USED_LANG" />
-              <ref role="1Px2BO" to="btf5:4LCuQ2Vx_l7" resolve="ModuleDependencyChange.DependencyType" />
-            </node>
-            <node concept="1bVj0M" id="42hl10VHbqh" role="37wK5m">
-              <node concept="3clFbS" id="42hl10VHbqi" role="1bW5cS">
-                <node concept="3clFbF" id="42hl10VHbqj" role="3cqZAp">
-                  <node concept="2YIFZM" id="419l6RFsJDP" role="3clFbG">
-                    <ref role="37wK5l" to="unno:3IONCthJ3TP" resolve="getUsedLanguages" />
-                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                    <node concept="37vLTw" id="419l6RFsJWx" role="37wK5m">
-                      <ref role="3cqZAo" node="42hl10VHbqo" resolve="model" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="37vLTG" id="42hl10VHbqo" role="1bW2Oz">
-                <property role="TrG5h" value="model" />
-                <node concept="3uibUv" id="5OnZ9cknfTJ" role="1tU5fm">
-                  <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbH" id="4TP40u00vXB" role="3cqZAp" />
+        <node concept="3clFbF" id="4TP40u00uxe" role="3cqZAp">
+          <node concept="1rXfSq" id="4TP40u00uxc" role="3clFbG">
+            <ref role="37wK5l" node="4TP40tZZPfv" resolve="buildForUsedLanguages" />
           </node>
         </node>
         <node concept="3clFbF" id="42hl10VHbqq" role="3cqZAp">

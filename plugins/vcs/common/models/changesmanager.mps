@@ -51,6 +51,7 @@
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -8716,31 +8717,132 @@
         <node concept="3cqZAl" id="2QnDi8QvcfN" role="3clF45" />
         <node concept="3Tm1VV" id="4W4PrCD32F9" role="1B3o_S" />
         <node concept="3clFbS" id="2QnDi8QvcfP" role="3clF47">
-          <node concept="3clFbF" id="2QnDi8QvB3f" role="3cqZAp">
-            <node concept="1rXfSq" id="4hiugqyz8nW" role="3clFbG">
-              <ref role="37wK5l" node="2QnDi8QvB2h" resolve="moduleDependencyEvent" />
-              <node concept="37vLTw" id="2BHiRxgm6uS" role="37wK5m">
+          <node concept="3cpWs8" id="4TP40u00Dz2" role="3cqZAp">
+            <node concept="3cpWsn" id="4TP40u00Dz3" role="3cpWs9">
+              <property role="TrG5h" value="eventLang" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="4TP40u00Dz4" role="1tU5fm">
+                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+              </node>
+              <node concept="2YIFZM" id="4TP40u010i4" role="33vP2m">
+                <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+                <node concept="2OqwBi" id="4TP40u00WeU" role="37wK5m">
+                  <node concept="37vLTw" id="4TP40u00W1P" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
+                  </node>
+                  <node concept="liA8E" id="4TP40u00WBo" role="2OqNvi">
+                    <ref role="37wK5l" to="j9co:~SModelLanguageEvent.getLanguageNamespace():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getLanguageNamespace" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="4TP40u00TwR" role="3cqZAp">
+            <node concept="3cpWsn" id="4TP40u00TwP" role="3cpWs9">
+              <property role="3TUv4t" value="true" />
+              <property role="TrG5h" value="deleted" />
+              <node concept="10P_77" id="4TP40u00TEk" role="1tU5fm" />
+              <node concept="3fqX7Q" id="4TP40u00UtS" role="33vP2m">
+                <node concept="2OqwBi" id="4TP40u00UtU" role="3fr31v">
+                  <node concept="37vLTw" id="4TP40u00UtV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
+                  </node>
+                  <node concept="liA8E" id="4TP40u00UtW" role="2OqNvi">
+                    <ref role="37wK5l" to="j9co:~SModelLanguageEvent.isAdded():boolean" resolve="isAdded" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4TP40u00zTQ" role="3cqZAp">
+            <node concept="1rXfSq" id="4TP40u00zTR" role="3clFbG">
+              <ref role="37wK5l" node="1XuTulVDIKV" resolve="runUpdateTask" />
+              <node concept="1bVj0M" id="4TP40u00zTS" role="37wK5m">
+                <node concept="3clFbS" id="4TP40u00zTT" role="1bW5cS">
+                  <node concept="3SKdUt" id="4TP40u00EML" role="3cqZAp">
+                    <node concept="3SKdUq" id="4TP40u00EMN" role="3SKWNk">
+                      <property role="3SKdUp" value="XXX I have no idea why we skip adding a change object if we successfully removed one or more queued earlier." />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="4TP40u00KZi" role="3cqZAp">
+                    <node concept="3SKdUq" id="4TP40u00KZk" role="3SKWNk">
+                      <property role="3SKdUp" value=" just kept it the way it is in #moduleDependencyEvent" />
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="4TP40u00zTU" role="3cqZAp">
+                    <node concept="3clFbS" id="4TP40u00zTV" role="3clFbx">
+                      <node concept="3clFbF" id="4TP40u00zTW" role="3cqZAp">
+                        <node concept="1rXfSq" id="4TP40u00zTX" role="3clFbG">
+                          <ref role="37wK5l" node="5pmMiWv$OQ7" resolve="addChange" />
+                          <node concept="2ShNRf" id="4TP40u00zTY" role="37wK5m">
+                            <node concept="1pGfFk" id="4TP40u00zTZ" role="2ShVmc">
+                              <ref role="37wK5l" to="btf5:4TP40tZZlb4" resolve="UsedLanguageChange" />
+                              <node concept="2OqwBi" id="4TP40u00zU0" role="37wK5m">
+                                <node concept="37vLTw" id="4TP40u00zU1" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2JwSLRbzlkK" resolve="myDifference" />
+                                </node>
+                                <node concept="liA8E" id="4TP40u00zU2" role="2OqNvi">
+                                  <ref role="37wK5l" node="2JwSLRbzn5Q" resolve="getChangeSet" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="4TP40u00US9" role="37wK5m">
+                                <ref role="3cqZAo" node="4TP40u00TwP" resolve="deleted" />
+                              </node>
+                              <node concept="37vLTw" id="4TP40u00Vhz" role="37wK5m">
+                                <ref role="3cqZAo" node="4TP40u00Dz3" resolve="eventLang" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbC" id="4TP40u00zU7" role="3clFbw">
+                      <node concept="3cmrfG" id="4TP40u00zU8" role="3uHU7w">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="1rXfSq" id="4TP40u00zU9" role="3uHU7B">
+                        <ref role="37wK5l" node="35ve9_LJept" resolve="removeChanges" />
+                        <node concept="10Nm6u" id="4TP40u00zUa" role="37wK5m" />
+                        <node concept="3VsKOn" id="4TP40u00zUb" role="37wK5m">
+                          <ref role="3VsUkX" to="btf5:4TP40tZZeAv" resolve="UsedLanguageChange" />
+                        </node>
+                        <node concept="1bVj0M" id="4TP40u00zUc" role="37wK5m">
+                          <node concept="37vLTG" id="4TP40u00zUd" role="1bW2Oz">
+                            <property role="TrG5h" value="ulc" />
+                            <node concept="3uibUv" id="4TP40u00CAs" role="1tU5fm">
+                              <ref role="3uigEE" to="btf5:4TP40tZZeAv" resolve="UsedLanguageChange" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="4TP40u00zUf" role="1bW5cS">
+                            <node concept="3clFbF" id="4TP40u00zUg" role="3cqZAp">
+                              <node concept="2OqwBi" id="4TP40u00zUn" role="3clFbG">
+                                <node concept="37vLTw" id="4TP40u00Epx" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4TP40u00Dz3" resolve="eventLang" />
+                                </node>
+                                <node concept="liA8E" id="4TP40u00zUp" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                                  <node concept="2OqwBi" id="4TP40u00zUq" role="37wK5m">
+                                    <node concept="37vLTw" id="4TP40u00zUr" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4TP40u00zUd" resolve="ulc" />
+                                    </node>
+                                    <node concept="liA8E" id="4TP40u00zUs" role="2OqNvi">
+                                      <ref role="37wK5l" to="btf5:4TP40tZZAXd" resolve="getLanguage" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="10Nm6u" id="4TP40u00zUt" role="37wK5m" />
+              <node concept="37vLTw" id="4TP40u00zUu" role="37wK5m">
                 <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
-              </node>
-              <node concept="2OqwBi" id="2QnDi8QvB3i" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgmaHH" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
-                </node>
-                <node concept="liA8E" id="2QnDi8QvB3k" role="2OqNvi">
-                  <ref role="37wK5l" to="j9co:~SModelLanguageEvent.getLanguageNamespace():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getLanguageNamespace" />
-                </node>
-              </node>
-              <node concept="Rm8GO" id="2QnDi8QvB3l" role="37wK5m">
-                <ref role="Rm8GQ" to="btf5:4LCuQ2Vx_lf" resolve="USED_LANG" />
-                <ref role="1Px2BO" to="btf5:4LCuQ2Vx_l7" resolve="ModuleDependencyChange.DependencyType" />
-              </node>
-              <node concept="2OqwBi" id="7lBk6gHthhO" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgmGdn" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2QnDi8QvcfQ" resolve="event" />
-                </node>
-                <node concept="liA8E" id="7lBk6gHthhU" role="2OqNvi">
-                  <ref role="37wK5l" to="j9co:~SModelLanguageEvent.isAdded():boolean" resolve="isAdded" />
-                </node>
               </node>
             </node>
           </node>
