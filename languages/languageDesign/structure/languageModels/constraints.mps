@@ -31,9 +31,6 @@
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -214,7 +211,6 @@
         <child id="1152963095733" name="propertySetter" index="1LXaQT" />
       </concept>
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
-      <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
@@ -225,7 +221,6 @@
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="3754598629525415384" name="alternativeIcon" index="2B7epn" />
-        <child id="1227085062429" name="canBeRoot" index="2NY200" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
@@ -412,31 +407,6 @@
               <ref role="1Pybhc" node="6dmIS6MscR9" resolve="Scopes" />
               <node concept="3kakTB" id="50vK5YarJRw" role="37wK5m" />
               <node concept="2rP1CM" id="50vK5YarK1B" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2NXJUA" id="hQO6qak" role="2NY200">
-      <node concept="3clFbS" id="hQO6qal" role="2VODD2">
-        <node concept="3clFbF" id="hQO6HK_" role="3cqZAp">
-          <node concept="22lmx$" id="1KFbmnBQpT$" role="3clFbG">
-            <node concept="2OqwBi" id="hQO6Jh4" role="3uHU7B">
-              <node concept="Rm8GO" id="hQO6IpC" role="2Oq$k0">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-              </node>
-              <node concept="liA8E" id="hQO6JUC" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2JrnkZ" id="6MGyrQSoNbg" role="37wK5m">
-                  <node concept="1Q6Npb" id="hQO6Kct" role="2JrQYb" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="1KFbmnBQr8p" role="3uHU7w">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="1KFbmnBQr8r" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -845,59 +815,9 @@
         </node>
       </node>
     </node>
-    <node concept="2NXJUA" id="hQO839z" role="2NY200">
-      <node concept="3clFbS" id="hQO839$" role="2VODD2">
-        <node concept="3clFbF" id="hQO839_" role="3cqZAp">
-          <node concept="22lmx$" id="1KFbmnBQs$Z" role="3clFbG">
-            <node concept="2OqwBi" id="hQO839A" role="3uHU7B">
-              <node concept="Rm8GO" id="hQO839B" role="2Oq$k0">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-              </node>
-              <node concept="liA8E" id="hQO839C" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2JrnkZ" id="6MGyrQSoPGg" role="37wK5m">
-                  <node concept="1Q6Npb" id="hQO839D" role="2JrQYb" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="1KFbmnBQs_5" role="3uHU7w">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="1KFbmnBQs_6" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="1M2fIO" id="hQO7YQv">
     <ref role="1M2myG" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
-    <node concept="2NXJUA" id="hQO7Zg8" role="2NY200">
-      <node concept="3clFbS" id="hQO7Zg9" role="2VODD2">
-        <node concept="3clFbF" id="hQO7Zga" role="3cqZAp">
-          <node concept="22lmx$" id="1KFbmnBQs$w" role="3clFbG">
-            <node concept="2OqwBi" id="hQO7Zgb" role="3uHU7B">
-              <node concept="Rm8GO" id="hQO7Zgc" role="2Oq$k0">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-              </node>
-              <node concept="liA8E" id="hQO7Zgd" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2JrnkZ" id="6MGyrQSoQUe" role="37wK5m">
-                  <node concept="1Q6Npb" id="hQO7Zge" role="2JrQYb" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="1KFbmnBQs$A" role="3uHU7w">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="1KFbmnBQs$B" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3EP7_v" id="7FGHIxrAOof" role="1MtirG">
       <node concept="13QW63" id="7FGHIxrAOoj" role="3EP$qY">
         <node concept="3clFbS" id="7FGHIxrAOol" role="2VODD2">
@@ -917,31 +837,6 @@
   </node>
   <node concept="1M2fIO" id="hQO85Jr">
     <ref role="1M2myG" to="tpce:fKAz7CR" resolve="ConstrainedDataTypeDeclaration" />
-    <node concept="2NXJUA" id="hQO866S" role="2NY200">
-      <node concept="3clFbS" id="hQO866T" role="2VODD2">
-        <node concept="3clFbF" id="hQO866U" role="3cqZAp">
-          <node concept="22lmx$" id="1KFbmnBQs_u" role="3clFbG">
-            <node concept="2OqwBi" id="hQO866V" role="3uHU7B">
-              <node concept="Rm8GO" id="hQO866W" role="2Oq$k0">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-              </node>
-              <node concept="liA8E" id="hQO866X" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2JrnkZ" id="6MGyrQSoOnc" role="37wK5m">
-                  <node concept="1Q6Npb" id="hQO866Y" role="2JrQYb" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="1KFbmnBQs_$" role="3uHU7w">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="1KFbmnBQs__" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="1M2fIO" id="4rXzdWLTGLv">
     <ref role="1M2myG" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
