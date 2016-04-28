@@ -36,7 +36,7 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
 
   @Override
   protected boolean shouldUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, SNode movingNode, RefactoringSession refactoringSession) {
-    return eq_m5uax2_a0a0a0f(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) || eq_m5uax2_a0a0a0f_0(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc")) || eq_m5uax2_a0a0a5(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
+    return eq_m5uax2_a0a0a5(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) || eq_m5uax2_a0a0a5_0(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
   }
 
   @Override
@@ -92,13 +92,10 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     }
     return null;
   }
-  private static boolean eq_m5uax2_a0a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_m5uax2_a0a0a0f_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_m5uax2_a0a0a5(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_m5uax2_a0a0a5_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_m5uax2_a0a1a7(Object a, Object b) {
