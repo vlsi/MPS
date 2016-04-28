@@ -53,6 +53,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -5585,93 +5586,7 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="3IONCthJ3TP" role="jymVt">
-      <property role="TrG5h" value="getUsedLanguages" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <node concept="2AHcQZ" id="3TEgbCBO2QE" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="3TEgbCBO2TI" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="2iZvIBbzBGG" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="2iZvIBbzBHj" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
-        <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
-            <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
-          <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
-            <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
-          </node>
-        </node>
-        <node concept="TZ5HI" id="3TEgbCBO2QC" role="3nqlJM">
-          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
-            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
-              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
-            </node>
-            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="3IONCthJkW6" role="3clF45">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="3IONCthJnNh" role="11_B2D">
-          <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3IONCthJ3TR" role="3clF47">
-        <node concept="3cpWs8" id="3IONCthJL71" role="3cqZAp">
-          <node concept="3cpWsn" id="3IONCthJL72" role="3cpWs9">
-            <property role="TrG5h" value="languages" />
-            <node concept="2OqwBi" id="rUhaVnKdY0" role="33vP2m">
-              <node concept="liA8E" id="rUhaVnKg2b" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguages():java.util.List" resolve="importedLanguages" />
-              </node>
-              <node concept="1eOMI4" id="rUhaVnK90p" role="2Oq$k0">
-                <node concept="10QFUN" id="rUhaVnK90q" role="1eOMHV">
-                  <node concept="3uibUv" id="rUhaVnKbOt" role="10QFUM">
-                    <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
-                  </node>
-                  <node concept="37vLTw" id="rUhaVnK90o" role="10QFUP">
-                    <ref role="3cqZAo" node="3IONCthJ3Uh" resolve="model" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="A3Dl8" id="3IONCthJMb6" role="1tU5fm">
-              <node concept="3uibUv" id="rUhaVnKjME" role="A3Ik2">
-                <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="3IONCthJO2V" role="3cqZAp">
-          <node concept="2OqwBi" id="3IONCthKiXx" role="3cqZAk">
-            <node concept="37vLTw" id="3IONCthJPNX" role="2Oq$k0">
-              <ref role="3cqZAo" node="3IONCthJL72" resolve="languages" />
-            </node>
-            <node concept="ANE8D" id="3IONCthKlVZ" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3IONCthJ3Ug" role="1B3o_S" />
-      <node concept="37vLTG" id="3IONCthJ3Uh" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="3uibUv" id="3IONCthJ3Ui" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="4TP40u02VQa" role="jymVt" />
     <node concept="2YIFZL" id="5SJ0jl3ijkK" role="jymVt">
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="isModelDisposed" />

@@ -449,7 +449,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hzB$syd" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addLanguage" />
+              <ref role="37wK5l" to="w1kc:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
               <node concept="Xl_RD" id="h1ZVAYy" role="37wK5m">
                 <property role="Xl_RC" value="..." />
               </node>

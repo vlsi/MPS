@@ -36,14 +36,9 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   ModelDependenciesManager getModelDepsManager();
 
+  // FIXME there's single use in mbeddr, core.base/pluginSolution
   @Deprecated
   List<SModuleReference> importedLanguages();
-
-  @Deprecated
-  void deleteLanguage(@NotNull SModuleReference ref);
-
-  @Deprecated
-  void addLanguage(SModuleReference ref);
 
   // FIXME rename to importedLanguages once original is removed
   java.util.Collection<SLanguage> importedLanguageIds();
