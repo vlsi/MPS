@@ -132,6 +132,11 @@ abstract class AbstractContainer<T> implements Container<T> {
     return item;
   }
 
+  @Override
+  public boolean contains(@NotNull T item) {
+    return getEntry(item) != null;
+  }
+
   @NotNull
   @Override
   public Iterator<T> iterator() {

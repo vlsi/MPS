@@ -55,6 +55,11 @@ class UnmodifiableContainer<T> implements Container<T> {
     throw new UnsupportedOperationException();
   }
 
+  @Override
+  public boolean contains(@NotNull T item) {
+    return myContainer.contains(item);
+  }
+
   @NotNull
   @Override
   public Iterator<T> iterator() {

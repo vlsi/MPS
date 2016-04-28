@@ -48,7 +48,7 @@ public interface Container<T> extends Iterable<T> {
    * @param item element to be appended to this container
    * @return added element
    * @throws IllegalArgumentException      if the specified element already present in this container
-   * @throws UnsupportedOperationException if the <tt>add</tt> operation is not supported by this container
+   * @throws UnsupportedOperationException if the {@code add} operation is not supported by this container
    */
   T add(@NotNull T item);
 
@@ -64,7 +64,7 @@ public interface Container<T> extends Iterable<T> {
    * @return added element
    * @throws java.util.NoSuchElementException is specified anchor element was not found in this container
    * @throws IllegalArgumentException         if the specified element already present in this container
-   * @throws UnsupportedOperationException    if the <tt>add</tt> operation is not supported by this container
+   * @throws UnsupportedOperationException    if the {@code add} operation is not supported by this container
    */
   T addBefore(@NotNull T item, T anchor);
 
@@ -76,12 +76,17 @@ public interface Container<T> extends Iterable<T> {
    * @param item the element to be removed
    * @return removed element
    * @throws java.util.NoSuchElementException is specified element was not found in this container
-   * @throws UnsupportedOperationException    if the <tt>remove</tt> operation is not supported by this container
+   * @throws UnsupportedOperationException    if the {@code remove} operation is not supported by this container
    */
   T remove(@NotNull T item);
 
-  // TODO: implement
-  //boolean contains(@NotNull T item);
+  /**
+   * Returns true if this container contains the specified element.
+   *
+   * @param item element whose presence in this container is to be tested
+   * @return true if this container contains specified element.
+   */
+  boolean contains(@NotNull T item);
 
   /**
    * @return an iterator over the elements in this container in proper sequence
