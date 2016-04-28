@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.generator.GenPlanExtractor;
 import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.generator.CustomGenerationModuleFacet;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.console.ideCommands.util.PartitioningHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -44,7 +44,8 @@ public final class ShowGenPlan__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
-    SModel model = ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), context.getProject().getRepository());
+    SRepository repo = context.getProject().getRepository();
+    SModel model = ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), repo);
     if (model == null) {
       return;
     }
@@ -52,13 +53,8 @@ public final class ShowGenPlan__BehaviorDescriptor extends BaseBHDescriptor {
     // by default, show generation plan as Make/Generate would see it. 
     // If forced, however, may ignore context and show default (model content based) plan. 
 
-    SModule module = model.getModule();
-    final ModelGenerationPlan externalPlan;
-    if (module != null && module.getFacet(CustomGenerationModuleFacet.class) != null) {
-      externalPlan = module.getFacet(CustomGenerationModuleFacet.class).getPlan(model);
-    } else {
-      externalPlan = null;
-    }
+    GenPlanExtractor gpExtractor = new GenPlanExtractor(repo);
+    final ModelGenerationPlan externalPlan = (gpExtractor.hasPlan(model) ? gpExtractor.getPlan(model) : null);
 
     MessagesViewTool messagesView = context.getProject().getComponent(MessagesViewTool.class);
     PartitioningHelper helper = new PartitioningHelper(messagesView, console);
@@ -66,9 +62,10 @@ public final class ShowGenPlan__BehaviorDescriptor extends BaseBHDescriptor {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x2c510b378f8ce5ddL, "ignoreExternalPlan"))) {
       gp = new GenerationPlan(model);
       if (externalPlan != null) {
-        console.addText("Model has alternative plan configured though facet, ingored\n");
+        console.addText("Model has alternative plan configured externally, ingored\n");
       }
     } else if (externalPlan != null) {
+      console.addText("Model uses custom plan configured externally\n");
       gp = externalPlan;
     } else {
       // regular sequence, do not ignore external plan, but there's none 

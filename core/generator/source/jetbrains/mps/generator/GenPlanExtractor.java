@@ -48,6 +48,10 @@ public final class GenPlanExtractor {
   // null value indicates there's no plan associated with devkit (or the plan couldn't get instantiated).
   private final Map<SModuleReference, ModelGenerationPlan> myDevkitToPlan = new HashMap<SModuleReference, ModelGenerationPlan>();
 
+  public GenPlanExtractor(@NotNull SRepository repository) {
+    myRepository = repository;
+    myOptions = null;
+  }
 
   public GenPlanExtractor(@NotNull SRepository repository, @NotNull GenerationOptions.OptionsBuilder options) {
     myRepository = repository;
@@ -136,6 +140,7 @@ public final class GenPlanExtractor {
   }
 
   public void configurePlanFor(@NotNull SModel model) {
+    assert myOptions != null;
     if (!hasPlan(model)) {
       return;
     }
