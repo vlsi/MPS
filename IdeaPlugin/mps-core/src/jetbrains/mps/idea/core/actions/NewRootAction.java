@@ -109,6 +109,9 @@ public class NewRootAction extends AnAction {
     myProject = e.getData(PlatformDataKeys.PROJECT);
 
     final SModel model = MPSCommonDataKeys.CONTEXT_MODEL.getData(e.getDataContext());
+    if (model != null && model.isReadOnly()) {
+      return;
+    }
     if (model instanceof EditableSModel) {
       myModel = (EditableSModel) model;
     }
