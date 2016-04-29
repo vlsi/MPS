@@ -38,10 +38,10 @@ import java.util.List;
  * Attempts to look up context assistant menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it
  * is returned. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default menu.
  */
-class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMenuProvider {
+public class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMenuProvider {
   private final ModelAccessHelper myModelAccessHelper;
 
-  ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
+  public ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
     myModelAccessHelper = new ModelAccessHelper(modelAccess);
   }
 

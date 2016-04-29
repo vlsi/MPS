@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.plugin)/6294660000051114314">
+    <file name="ContextActionsTool_ProjectPlugin.java">
+      <node id="6294660000051114314" at="15,56,16,76" concept="6" />
+      <node id="6294660000051114314" at="16,76,17,82" concept="1" />
+      <node id="6294660000051114314" at="17,82,18,17" concept="7" />
+      <node id="6294660000051114314" at="13,0,15,0" concept="0" trace="ContextActionsTool_ProjectPlugin#()V" />
+      <node id="6294660000051114314" at="15,0,20,0" concept="5" trace="initAllTools1#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
+      <scope id="6294660000051114314" at="13,45,13,45" />
+      <scope id="6294660000051114314" at="13,0,15,0" />
+      <scope id="6294660000051114314" at="15,56,18,17">
+        <var name="tools" id="6294660000051114314" />
+      </scope>
+      <scope id="6294660000051114314" at="15,0,20,0">
+        <var name="project" id="6294660000051114314" />
+      </scope>
+      <unit id="6294660000051114314" at="12,0,21,0" name="jetbrains.mps.editor.contextActionsTool.plugin.ContextActionsTool_ProjectPlugin" />
+    </file>
+  </root>
+  <root nodeRef="r:e1663f0e-a433-4acc-be78-d50e0f2be978(jetbrains.mps.editor.contextActionsTool.plugin)/6294660000051114344">
+    <file name="ContextActionsTool_Tool.java">
+      <node id="6294660000051114344" at="23,0,24,0" concept="9" trace="ICON" />
+      <node id="6294660000051138132" at="24,0,25,0" concept="2" trace="myComponent" />
+      <node id="8532164657612867886" at="25,0,26,0" concept="2" trace="myController" />
+      <node id="6294660000051114344" at="26,51,27,79" concept="10" />
+      <node id="6294660000051114344" at="29,37,30,24" concept="1" />
+      <node id="979234276368106930" at="30,24,31,70" concept="6" />
+      <node id="8819548362878453213" at="31,70,32,67" concept="6" />
+      <node id="8819548362878467651" at="33,29,34,74" concept="11" />
+      <node id="8819548362878469344" at="35,5,36,0" concept="8" />
+      <node id="6294660000051139892" at="36,0,37,71" concept="1" />
+      <node id="2112251309117629586" at="37,71,38,223" concept="1" />
+      <node id="8645458101904182178" at="38,223,39,0" concept="8" />
+      <node id="8645458101904132484" at="39,0,40,121" concept="1" />
+      <node id="8819548362878638098" at="40,121,41,0" concept="8" />
+      <node id="979234276368085875" at="43,25,44,34" concept="1" />
+      <node id="8532164657612892831" at="48,25,49,56" concept="1" />
+      <node id="6294660000051114344" at="49,56,50,20" concept="1" />
+      <node id="4103857878012134023" at="52,54,53,66" concept="6" />
+      <node id="4103857878012134031" at="54,45,55,96" concept="1" />
+      <node id="4103857878012134042" at="56,5,57,27" concept="7" />
+      <node id="6294660000051167774" at="59,36,60,52" concept="7" />
+      <node id="6294660000051114344" at="26,0,29,0" concept="0" trace="ContextActionsTool_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="8819548362878465129" at="32,67,35,5" concept="4" />
+      <node id="979234276368085638" at="43,0,46,0" concept="5" trace="run#()V" />
+      <node id="4103857878012134028" at="53,66,56,5" concept="3" />
+      <node id="6294660000051114344" at="59,0,62,0" concept="5" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="6294660000051114344" at="48,0,52,0" concept="5" trace="dispose#()V" />
+      <node id="979234276368085572" at="41,0,46,7" concept="1" />
+      <node id="4103857878012134046" at="52,0,59,0" concept="5" trace="createGearActionGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
+      <node id="6294660000051114344" at="29,0,48,0" concept="5" trace="init#(Lcom/intellij/openapi/project/Project;)V" />
+      <scope id="6294660000051114344" at="26,51,27,79" />
+      <scope id="8819548362878465131" at="33,29,34,74" />
+      <scope id="979234276368085639" at="43,25,44,34" />
+      <scope id="4103857878012134030" at="54,45,55,96" />
+      <scope id="6294660000051114346" at="59,36,60,52" />
+      <scope id="6294660000051114344" at="48,25,50,20" />
+      <scope id="6294660000051114344" at="26,0,29,0">
+        <var name="project" id="6294660000051114344" />
+      </scope>
+      <scope id="979234276368085638" at="43,0,46,0" />
+      <scope id="4103857878012134028" at="53,66,56,5">
+        <var name="type" id="4103857878012134029" />
+      </scope>
+      <scope id="6294660000051114344" at="59,0,62,0" />
+      <scope id="6294660000051114344" at="48,0,52,0" />
+      <scope id="4103857878012134020" at="52,54,57,27">
+        <var name="gearActionGroup" id="4103857878012134024" />
+      </scope>
+      <scope id="4103857878012134046" at="52,0,59,0" />
+      <scope id="6294660000051114344" at="29,37,46,7">
+        <var name="mpsProject" id="8819548362878453214" />
+        <var name="tool" id="979234276368106931" />
+      </scope>
+      <scope id="6294660000051114344" at="29,0,48,0">
+        <var name="project" id="6294660000051114344" />
+      </scope>
+      <unit id="979234276368085638" at="42,40,46,5" name="jetbrains.mps.editor.contextActionsTool.plugin.ContextActionsTool_Tool$1" />
+      <unit id="6294660000051114344" at="22,0,63,0" name="jetbrains.mps.editor.contextActionsTool.plugin.ContextActionsTool_Tool" />
+    </file>
+  </root>
+</debug-info>
+

@@ -251,6 +251,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/solutions/jetbrains.mps.editor.contextActionsTool/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/solutions/jetbrains.mps.editor.contextActionsTool/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/common/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/source_gen" includeSubdirectories="true" />
