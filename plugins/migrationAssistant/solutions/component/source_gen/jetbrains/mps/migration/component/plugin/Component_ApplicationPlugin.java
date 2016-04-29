@@ -16,11 +16,13 @@ public class Component_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new ExecuteMigrationAssistant_Action());
     addAction(new ExecuteRerunnableMigrations_Action());
+    addAction(new FindMetaCreationCode_Action());
     addAction(new RunPreUpdateCheck_Action());
     addAction(new ShowDeprecatedStuff_Action());
     addAction(new ShowDeprecatedUsages_Action());
     // groups 
     addGroup(new LanguageMigrations_ActionGroup());
+    addGroup(new MigrationUtils_ActionGroup());
     addGroup(new MigrationsMenu_ActionGroup());
     addGroup(new Migrations_ActionGroup());
     addGroup(new ProjectMigrations_ActionGroup());
@@ -30,7 +32,8 @@ public class Component_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(LanguageMigrations_ActionGroup.ID, Migrations_ActionGroup.ID, Migrations_ActionGroup.LABEL_ID_languageMigrations);
     insertGroupIntoAnother(ProjectMigrations_ActionGroup.ID, Migrations_ActionGroup.ID, Migrations_ActionGroup.LABEL_ID_projectMigrations);
+    insertGroupIntoAnother(MigrationUtils_ActionGroup.ID, MigrationsMenu_ActionGroup.ID, MigrationsMenu_ActionGroup.LABEL_ID_utils);
     insertGroupIntoAnother(MigrationsMenu_ActionGroup.ID, "Migration", null);
-    insertGroupIntoAnother(Migrations_ActionGroup.ID, MigrationsMenu_ActionGroup.ID, null);
+    insertGroupIntoAnother(Migrations_ActionGroup.ID, MigrationsMenu_ActionGroup.ID, MigrationsMenu_ActionGroup.LABEL_ID_migrations);
   }
 }
