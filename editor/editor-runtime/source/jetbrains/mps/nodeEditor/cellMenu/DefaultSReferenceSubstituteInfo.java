@@ -19,9 +19,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.DefaultSReferenceSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -78,25 +82,22 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
 
   @Override
   public List<SubstituteAction> createActions() {
-    SConcept concept = mySourceNode.getConcept();
-    SLanguage primaryLanguage = concept.getLanguage();
-    if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + concept.getName());
-      return Collections.emptyList();
-    }
     SReference reference = mySourceNode.getReference(myLink);
     return createActions(reference == null ? null : reference.getTargetNode());
   }
 
   private List<SubstituteAction> createActions(SNode targetNode) {
     final SAbstractConcept referentConcept = myLink.getTargetConcept();
-    if (referentConcept == null) {
-      return Collections.emptyList();
-    }
     //todo use myLink.getScope
     //Iterable<SNode> nodes = myLink.getScope(mySourceNode).getAvailableElements(null);
-    Iterable<SNode> nodes = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink).getScope().getAvailableElements(null);
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
+    Scope scope = ModelConstraints.getReferenceDescriptor(mySourceNode, myLink).getScope();
+    Iterable<SNode> nodes;
+    if (!(scope instanceof ErrorScope)) {
+      nodes = scope.getAvailableElements(null);
+    } else {
+      nodes = new ModelPlusImportedScope(mySourceNode.getModel(), false, referentConcept).getAvailableElements(null);
+    }
+    List<SubstituteAction> actions = new ArrayList<>();
     for (SNode node : nodes) {
       if (node == null) {
         continue;
