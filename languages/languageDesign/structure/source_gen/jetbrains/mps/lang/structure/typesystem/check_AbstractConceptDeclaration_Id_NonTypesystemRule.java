@@ -26,7 +26,7 @@ public class check_AbstractConceptDeclaration_Id_NonTypesystemRule extends Abstr
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Concept id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this concept was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1587916991969781666", null, errorTarget);
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", true);
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", false);
           intentionProvider.putArgument("c", acd);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
@@ -39,7 +39,7 @@ public class check_AbstractConceptDeclaration_Id_NonTypesystemRule extends Abstr
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Property id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this property was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299548534", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", true);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", false);
             intentionProvider.putArgument("c", acd);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
@@ -53,7 +53,7 @@ public class check_AbstractConceptDeclaration_Id_NonTypesystemRule extends Abstr
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Link id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this link was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299555835", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", true);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", false);
             intentionProvider.putArgument("c", acd);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
