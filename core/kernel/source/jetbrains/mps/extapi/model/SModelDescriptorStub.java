@@ -183,7 +183,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   /**
-   * Use {@link SModelBase#getModelData()} wherever possible
+   * Use {@link SModelBase#getModelData()} wherever possible.
+   * Use this method when accessing implementation aspects of smodel.SModel that are not exposed
+   * through SModelInternal interface (for latter, use {@link #getSModelInternal()} until ceased).
    */
   public jetbrains.mps.smodel.SModel getSModel() {
     return getSModelInternal();
@@ -199,9 +201,8 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   //
 
-  @Override
   public final ModelDependenciesManager getModelDepsManager() {
-    return getSModelInternal().getModelDepsManager();
+    return getSModel().getModelDepsManager();
   }
 
   @Override

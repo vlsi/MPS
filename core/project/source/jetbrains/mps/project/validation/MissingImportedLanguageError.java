@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,39 +18,44 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class MissingImportedLanguageError extends ValidationProblem {
+public final class MissingImportedLanguageError extends ValidationProblem {
   private final SModel myModel;
-  private final SModuleReference myLang;
+  private final SLanguage myLang;
 
-  public MissingImportedLanguageError(SModel model, SModuleReference lang) {
-    super(Severity.ERROR, "Can't find language: " + lang.getModuleName());
+  public MissingImportedLanguageError(@NotNull SModel model, @NotNull SLanguage lang) {
+    super(Severity.ERROR, String.format("Can't find language: %s", lang.getQualifiedName()));
     myModel = model;
     myLang = lang;
+  }
+
+  public MissingImportedLanguageError(SModel model, SModuleReference lang) {
+    super(Severity.ERROR, String.format("Can't find language: %s", lang.getModuleName()));
+    myModel = model;
+    myLang = MetaAdapterFactory.getLanguage(lang);;
   }
 
   public SModel getModel() {
     return myModel;
   }
 
-  public SModuleReference getLang() {
+  public SLanguage getLang() {
     return myLang;
   }
 
   @Override
   public boolean canFix() {
-    SLanguage slang = MetaAdapterFactory.getLanguage(myLang);
     ModelDependencyScanner scanner = new ModelDependencyScanner().crossModelReferences(false);
-    boolean langUsed = scanner.walk(myModel).getUsedLanguages().contains(slang);
-    return !langUsed && ((SModelInternal) myModel).importedLanguageIds().contains(slang);
+    boolean langUsed = scanner.walk(myModel).getUsedLanguages().contains(myLang);
+    return !langUsed && ((SModelInternal) myModel).importedLanguageIds().contains(myLang);
   }
 
   @Override
   public void fix() {
-    SLanguage slang = MetaAdapterFactory.getLanguage(myLang);
-    ((SModelInternal) myModel).deleteLanguageId(slang);
+    ((SModelInternal) myModel).deleteLanguageId(myLang);
   }
 }

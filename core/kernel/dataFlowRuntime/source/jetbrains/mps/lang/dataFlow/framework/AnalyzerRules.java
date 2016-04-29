@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,11 @@ package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -65,13 +64,12 @@ public class AnalyzerRules {
     }
     SNode first = myNodesToApply.iterator().next();
     SModel model = first.getModel();
-    if (!(model instanceof SModelInternal)) {
-      LOG.warning(model == null ? "Checking node which is not attached to the model: " + first.getPresentation() + " " + first.getNodeId()
-                                : "Model " + model.getModelName() + " is not instance of SModelInternal");
+    if (model == null) {
+      LOG.warning("Checking node which is not attached to the model: " + first.getPresentation() + " " + first.getNodeId());
       return;
     }
-    SModelInternal modelInternal = (SModelInternal) model;
-    for (SLanguage language : modelInternal.getModelDepsManager().getAllImportedLanguagesIds()) {
+    // XXX could I demand here that model has to be attached to a repository, so that I can use one to obtain LanguageRegistry?
+    for (SLanguage language : SModelOperations.getAllLanguageImports(model)) {
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
       if (languageRuntime == null) {
         continue;

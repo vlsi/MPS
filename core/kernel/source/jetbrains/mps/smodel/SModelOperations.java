@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SModelDescriptorStub;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -136,7 +138,7 @@ public class SModelOperations {
    */
   @NotNull
   public static Set<SModuleReference> getAllImportedLanguages(SModel model) {
-    return new HashSet<SModuleReference>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguages());
+    return new HashSet<>(((SModelDescriptorStub) model).getModelDepsManager().getAllImportedLanguages());
   }
 
   /**
@@ -149,7 +151,12 @@ public class SModelOperations {
    */
   @NotNull
   public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
-    return new HashSet<SLanguage>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguagesIds());
+    if (model instanceof SModelDescriptorStub) {
+      // if it's our implementation, use cached value
+      return new HashSet<>(((SModelDescriptorStub) model).getModelDepsManager().getAllImportedLanguagesIds());
+    }
+    // otherwise, just calculate it
+    return new HashSet<>(new ModelDependenciesManager(model).getAllImportedLanguagesIds());
   }
 
   //todo rewrite using iterators

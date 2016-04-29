@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
-import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -33,8 +32,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  ModelDependenciesManager getModelDepsManager();
 
   // FIXME there's single use in mbeddr, core.base/pluginSolution
   @Deprecated

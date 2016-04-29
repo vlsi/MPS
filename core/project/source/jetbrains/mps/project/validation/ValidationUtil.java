@@ -43,6 +43,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -268,11 +269,16 @@ public class ValidationUtil {
       }
     }
 
-    List<SModuleReference> langsToCheck = new ArrayList<SModuleReference>();
-    langsToCheck.addAll(SModelOperations.getAllImportedLanguages(model));
-    langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
-    for (final SModuleReference lang : langsToCheck) {
-      if (repository.getModule(lang.getModuleId()) == null) {
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
+    for (SLanguage lang : ((SModelInternal) model).importedLanguageIds()) {
+      if (languageRegistry.getLanguage(lang) == null) {
+        if (!processor.process(new MissingImportedLanguageError(model, lang))) {
+          return;
+        }
+      }
+    }
+    for (SModuleReference lang : ((SModelInternal) model).engagedOnGenerationLanguages()) {
+      if (lang.resolve(repository) == null) {
         if (!processor.process(new MissingImportedLanguageError(model, lang))) {
           return;
         }
@@ -280,7 +286,7 @@ public class ValidationUtil {
     }
 
     Pair<DevKit, SModelReference> devkitAssociatedPlan = null;
-    for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
+    for (SModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
       final SModule devkitModule = devKit.resolve(repository);
       if (devkitModule == null) {
         if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
