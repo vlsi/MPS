@@ -56,7 +56,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
       if (isEmptyString(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Property id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this property was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299548534", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(p, "Property id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this property was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299548534", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", false);
             intentionProvider.putArgument("c", acd);
@@ -71,7 +71,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
         })) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Duplicate property id.\n" + "Please invoke the \"Correct ID\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5424895381998286923", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(p, "Duplicate property id.\n" + "Please invoke the \"Correct ID\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5424895381998286923", null, errorTarget);
             {
               BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.CorrectDuplicateId_QuickFix", false);
               intentionProvider.putArgument("p", p);
@@ -86,7 +86,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
       if (isEmptyString(SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Link id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this link was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299555835", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(l, "Link id is not defined.\n" + "Please run MainMenu->Migration->Migrations->Language Migrations->j.m.lang.structure->Set Ids\n" + "If this link was created manually, invoke the \"Generate IDs\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "241647608299555835", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix", false);
             intentionProvider.putArgument("c", acd);
@@ -101,7 +101,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
         })) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(acd, "Duplicate link id.\n" + "Please invoke the \"Correct ID\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5424895381998288260", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(l, "Duplicate link id.\n" + "Please invoke the \"Correct ID\" intention on it", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5424895381998288260", null, errorTarget);
             {
               BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.CorrectDuplicateId_QuickFix", false);
               intentionProvider.putArgument("l", l);
