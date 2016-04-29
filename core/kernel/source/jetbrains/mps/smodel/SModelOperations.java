@@ -20,8 +20,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -84,6 +85,7 @@ public class SModelOperations {
     Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
+    // XXX why allImportedModels? it gives models from used language accessories, is it what we really need here?
     for (SModel sm : allImportedModels(model)) {
       importedModels.add(sm.getReference());
     }
@@ -114,31 +116,33 @@ public class SModelOperations {
   /**
    * All languages visible for the model, including imported and languages they extend
    * @deprecated 'visible' is vague, whether it's module dependencies or used languages; use SLanguage instead of Language; replace with <code>new SLanguageHierarchy(SModelOperations.getAllLanguageImports()).getExtended()</code>
+   * MPS 3.4 note: despite being deprecated for 1.5 years to date, there are uses of the method. Those in actions are likely to fade away with
+   * new generated code (RT aspects), others deserve attention of the change architect (i.e. accessory models vs language runtime).
    */
   @NotNull
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<Language> getLanguages(SModel model) {
-    Set<Language> languages = new LinkedHashSet<Language>();
+    ArrayList<Language> languages = new ArrayList<>();
+    SRepository repository = model.getRepository();
+    if (repository == null) {
+      // FIXME generator does #validateLanguagesAndImports for detached models, that's why I have to resort to global instance for now.
+      repository = MPSModuleRepository.getInstance();
+//      throw new IllegalArgumentException("Can't figure out modules for languages of a detached model. Context repository missing");
+    }
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
 
-    for (SModuleReference lang : getAllImportedLanguages(model)) {
-      Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
-      if (language == null) {
+    for (SLanguage lang : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(model)).getExtended()) {
+      final SModuleReference sourceModuleRef = lang.getSourceModuleReference();
+      if (sourceModuleRef == null) {
         continue;
       }
-      languages.add(language);
-      languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
+      final SModule sourceModule = sourceModuleRef.resolve(repository);
+      if (sourceModule instanceof Language) {
+        languages.add((Language) sourceModule);
+      }
     }
-    return new ArrayList<Language>(languages);
-  }
-
-  /**
-   * All languages imported to the model, either as explicit import or through devkits.
-   * Note, languages extended by these imported languages (although visible) are not reported.
-   */
-  @NotNull
-  public static Set<SModuleReference> getAllImportedLanguages(SModel model) {
-    return new HashSet<>(((SModelDescriptorStub) model).getModelDepsManager().getAllImportedLanguages());
+    return languages;
   }
 
   /**
