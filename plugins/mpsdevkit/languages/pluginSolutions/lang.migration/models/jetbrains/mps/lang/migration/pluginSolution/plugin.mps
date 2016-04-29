@@ -5436,12 +5436,11 @@
             <node concept="3clFbJ" id="5z_gLGem_MR" role="3cqZAp">
               <node concept="3fqX7Q" id="5z_gLGem_MS" role="3clFbw">
                 <node concept="2OqwBi" id="5z_gLGem_MT" role="3fr31v">
-                  <node concept="2OqwBi" id="5z_gLGem_MU" role="2Oq$k0">
-                    <node concept="37vLTw" id="5z_gLGemYa6" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5z_gLGemXD2" resolve="modelInternal" />
-                    </node>
-                    <node concept="liA8E" id="5z_gLGem_MW" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModelInternal.importedModels():java.util.List" resolve="importedModels" />
+                  <node concept="2YIFZM" id="4H92mBGZsX$" role="2Oq$k0">
+                    <ref role="37wK5l" to="w1kc:~SModelOperations.getImportedModelUIDs(org.jetbrains.mps.openapi.model.SModel):java.util.List" resolve="getImportedModelUIDs" />
+                    <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
+                    <node concept="37vLTw" id="4H92mBGZtg9" role="37wK5m">
+                      <ref role="3cqZAo" node="5z_gLGemPzl" resolve="model" />
                     </node>
                   </node>
                   <node concept="liA8E" id="5z_gLGem_MX" role="2OqNvi">

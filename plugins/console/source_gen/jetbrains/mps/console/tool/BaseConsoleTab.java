@@ -41,10 +41,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import javax.swing.KeyStroke;
@@ -62,11 +65,11 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -82,7 +85,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public abstract class BaseConsoleTab extends JPanel implements Disposable {
@@ -265,17 +267,29 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     final SModelInternal modelInternal = (SModelInternal) myModel;
     final AbstractModule module = ((AbstractModule) myModel.getModule());
     final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
-    for (SNode subNode : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}))) {
-      SLanguage usedLanguage = subNode.getConcept().getLanguage();
-      if (!(importedLanguages.contains(usedLanguage))) {
-        modelInternal.addLanguage(usedLanguage);
+    ModelDependencyScanner scan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
+    scan.walk(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}));
+    HashSet<SLanguage> languagesToImport = new HashSet<SLanguage>(scan.getUsedLanguages());
+    languagesToImport.removeAll(importedLanguages);
+    for (SLanguage usedLanguage : SetSequence.fromSet(languagesToImport)) {
+      modelInternal.addLanguage(usedLanguage);
+    }
+
+    HashSet<SModelReference> modelsToImport = new HashSet<SModelReference>(scan.getCrossModelReferences());
+    modelsToImport.removeAll(SModelOperations.getImportedModelUIDs(myModel));
+    for (SModelReference ref : SetSequence.fromSet(modelsToImport)) {
+      modelInternal.addModelImport(ref, false);
+      SModuleReference moduleRef;
+      if (ref.getModuleReference() != null) {
+        moduleRef = ref.getModuleReference();
+      } else {
+        // models with global identity may omit module reference, however, we still need to add their owning module 
+        // into dependencies to get the code compiled 
+        SModel usedModel = ref.resolve(myProject.getRepository());
+        moduleRef = (usedModel == null ? null : usedModel.getModule().getModuleReference());
       }
-      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(subNode))) {
-        SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
-        if (usedModel != null && !(modelInternal.importedModels().contains(usedModel))) {
-          modelInternal.addModelImport(usedModel.getReference(), false);
-          module.addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
-        }
+      if (moduleRef != null) {
+        module.addDependency(moduleRef, false);
       }
     }
   }
@@ -366,7 +380,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
     try {
       final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
-      ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(it.getConcept().isValid());
         }

@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 
 public class UpdateModelImports extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
@@ -104,7 +105,7 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
     AbstractModule module = (AbstractModule) model.getModule();
     SModule targetModule = targetModel.getModule();
     if (targetModel != model) {
-      if (!(modelInternal.importedModels().contains(targetModel.getReference()))) {
+      if (!(SModelOperations.getImportedModelUIDs(model).contains(targetModel.getReference()))) {
         modelInternal.addModelImport(targetModel.getReference(), true);
       }
     }
