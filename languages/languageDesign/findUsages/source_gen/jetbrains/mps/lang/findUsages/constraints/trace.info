@@ -189,11 +189,39 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)/1227089325743">
     <file name="FinderDeclaration_Constraints.java">
-      <node id="1227089325743" at="9,42,10,160" concept="9" />
-      <node id="1227089325743" at="9,0,12,0" concept="0" trace="FinderDeclaration_Constraints#()V" />
-      <scope id="1227089325743" at="9,42,10,160" />
-      <scope id="1227089325743" at="9,0,12,0" />
-      <unit id="1227089325743" at="8,0,13,0" name="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
+      <node id="1227089325743" at="16,42,17,160" concept="9" />
+      <node id="1227089325743" at="20,42,21,16" concept="5" />
+      <node id="1227089325743" at="24,120,25,55" concept="4" />
+      <node id="1227089325743" at="25,55,26,0" concept="6" />
+      <node id="1227089325743" at="27,51,28,66" concept="1" />
+      <node id="1227089325743" at="29,5,30,0" concept="6" />
+      <node id="1227089325743" at="30,0,31,18" concept="5" />
+      <node id="1227089330683" at="33,99,34,92" concept="5" />
+      <node id="1227089325743" at="36,0,37,0" concept="7" trace="canBeRootBreakingPoint" />
+      <node id="1227089325743" at="16,0,19,0" concept="0" trace="FinderDeclaration_Constraints#()V" />
+      <node id="1227089325743" at="26,0,29,5" concept="2" />
+      <node id="1227089325743" at="33,0,36,0" concept="8" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1227089325743" at="19,0,23,0" concept="3" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="1227089325743" at="23,0,33,0" concept="3" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1227089325743" at="16,42,17,160" />
+      <scope id="1227089325743" at="20,42,21,16" />
+      <scope id="1227089325743" at="27,51,28,66" />
+      <scope id="1227089327526" at="33,99,34,92" />
+      <scope id="1227089325743" at="16,0,19,0" />
+      <scope id="1227089325743" at="33,0,36,0">
+        <var name="model" id="1227089325743" />
+        <var name="operationContext" id="1227089325743" />
+      </scope>
+      <scope id="1227089325743" at="19,0,23,0" />
+      <scope id="1227089325743" at="24,120,31,18">
+        <var name="result" id="1227089325743" />
+      </scope>
+      <scope id="1227089325743" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1227089325743" />
+        <var name="context" id="1227089325743" />
+        <var name="model" id="1227089325743" />
+      </scope>
+      <unit id="1227089325743" at="15,0,38,0" name="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
     </file>
   </root>
 </debug-info>

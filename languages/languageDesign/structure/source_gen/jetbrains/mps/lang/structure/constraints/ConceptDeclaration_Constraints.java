@@ -12,13 +12,17 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -46,6 +50,20 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     };
   }
   @Override
+  public boolean hasOwnCanBeRootMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeARoot(model, context);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
+    }
+
+    return result;
+  }
+  @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
     references.put(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL), this) {
@@ -59,7 +77,7 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_8geshg_a0a0a0a0a1a0b0a1a4;
+            return breakingNode_8geshg_a0a0a0a0a1a0b0a1a6;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -71,6 +89,10 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
+  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
+  }
   private static SNodePointer breakingNode_8geshg_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216515363");
-  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
+  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
 }

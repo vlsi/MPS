@@ -4,9 +4,34 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConstrainedDataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConstrainedDataTypeDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"));
   }
+  @Override
+  public boolean hasOwnCanBeRootMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeARoot(model, context);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
+    }
+
+    return result;
+  }
+  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
+  }
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087700408");
 }

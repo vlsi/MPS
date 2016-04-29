@@ -25,8 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +38,7 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
   }
   public void doUpdate(AnActionEvent event) {
-    final SModel model = MPSCommonDataKeys.MODEL.getData(event.getDataContext());
+    SModel model = MPSCommonDataKeys.MODEL.getData(event.getDataContext());
     if (!(model instanceof DefaultSModelDescriptor)) {
       return;
     }
@@ -59,8 +58,7 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        // asConcept here should be replaced when the language will use no interpretation 
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")) != null) && ModelConstraints.canBeRoot(SNodeOperations.asSConcept(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept"))), model);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")) != null) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
       }
     });
 

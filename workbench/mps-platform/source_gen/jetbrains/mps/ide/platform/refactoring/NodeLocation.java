@@ -10,11 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public interface NodeLocation {
   boolean canInsert(SRepository repository, SNode nodeToMove);
@@ -51,20 +51,19 @@ public interface NodeLocation {
     }
   }
   class NodeLocationRoot implements NodeLocation {
-    private SModelReference myModelRef;
+    private SModelReference model;
     public NodeLocationRoot(SModel model) {
-      this.myModelRef = model.getReference();
+      this.model = model.getReference();
     }
     public boolean canInsert(SRepository repository, SNode nodeToMove) {
-      SModel model = myModelRef.resolve(repository);
-      return model != null && ModelConstraints.canBeRoot(SNodeOperations.getConcept(nodeToMove), model);
+      return model.resolve(repository) != null && SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(nodeToMove)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
     }
     public void insertNode(SRepository repository, SNode nodeToMove) {
       SModel oldModel = nodeToMove.getModel();
       if (oldModel != null) {
         oldModel.removeRootNode(nodeToMove);
       }
-      myModelRef.resolve(repository).addRootNode(nodeToMove);
+      model.resolve(repository).addRootNode(nodeToMove);
     }
   }
   class NodeLocationRootWithAspectModelCreation implements NodeLocation {
@@ -75,8 +74,7 @@ public interface NodeLocation {
       myAspect = aspect;
     }
     public boolean canInsert(SRepository repository, SNode nodeToMove) {
-      SModule lang = myLanguage.resolve(repository);
-      return lang instanceof Language && ModelConstraints.canBeRoot(SNodeOperations.getConcept(nodeToMove), myAspect.get(((Language) lang)));
+      return myLanguage.resolve(repository) instanceof Language && SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(nodeToMove)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
     }
     public void insertNode(SRepository repository, SNode nodeToMove) {
       SModel model = myAspect.getOrCreate(((Language) myLanguage.resolve(repository)));

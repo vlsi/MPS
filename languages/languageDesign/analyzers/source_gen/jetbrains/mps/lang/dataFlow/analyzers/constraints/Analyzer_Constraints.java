@@ -4,9 +4,34 @@ package jetbrains.mps.lang.dataFlow.analyzers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Analyzer_Constraints extends BaseConstraintsDescriptor {
   public Analyzer_Constraints() {
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"));
   }
+  @Override
+  public boolean hasOwnCanBeRootMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeARoot(model, context);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
+    }
+
+    return result;
+  }
+  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+    return LanguageAspect.DATA_FLOW.is(model) || SModelStereotype.isGeneratorModel(model);
+  }
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "8337746954995823601");
 }

@@ -4,6 +4,10 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -13,10 +17,27 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptTextGenDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
+  }
+  @Override
+  public boolean hasOwnCanBeRootMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeARoot(model, context);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
+    }
+
+    return result;
   }
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
@@ -34,4 +55,8 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
     });
     return properties;
   }
+  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+    return LanguageAspect.TEXT_GEN.is(model) || SModelStereotype.isGeneratorModel(model);
+  }
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1233758188295");
 }

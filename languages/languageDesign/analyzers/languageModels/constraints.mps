@@ -21,6 +21,8 @@
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -28,11 +30,18 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -83,9 +92,11 @@
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
       <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
+      <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="1227085062429" name="canBeRoot" index="2NY200" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213106463729" name="canBeChild" index="1MLUbF" />
       </concept>
@@ -118,6 +129,9 @@
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
@@ -438,10 +452,60 @@
   <node concept="1M2fIO" id="7ePCaSBBIUz">
     <property role="3GE5qa" value="Rules" />
     <ref role="1M2myG" to="bj1v:nUEAIXlVr8" resolve="Rule" />
+    <node concept="2NXJUA" id="7ePCaSBBIWT" role="2NY200">
+      <node concept="3clFbS" id="7ePCaSBBIWU" role="2VODD2">
+        <node concept="3clFbF" id="hQOhF7$" role="3cqZAp">
+          <node concept="22lmx$" id="1KFbmnBQvjo" role="3clFbG">
+            <node concept="2OqwBi" id="hQOhFqa" role="3uHU7B">
+              <node concept="Rm8GO" id="7ePCaSBBJ94" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="hQOhFPz" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="6MGyrQSoDan" role="37wK5m">
+                  <node concept="1Q6Npb" id="hQOhG0k" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1KFbmnBQr8p" role="3uHU7w">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <node concept="1Q6Npb" id="1KFbmnBQr8r" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="1M2fIO" id="7ePCaSBBJfK">
     <property role="3GE5qa" value="Analyzer" />
     <ref role="1M2myG" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
+    <node concept="2NXJUA" id="7ePCaSBBJfL" role="2NY200">
+      <node concept="3clFbS" id="7ePCaSBBJfM" role="2VODD2">
+        <node concept="3clFbF" id="7ePCaSBBJiL" role="3cqZAp">
+          <node concept="22lmx$" id="7ePCaSBBJiM" role="3clFbG">
+            <node concept="2OqwBi" id="7ePCaSBBJiN" role="3uHU7B">
+              <node concept="Rm8GO" id="7ePCaSBBJmW" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="7ePCaSBBJiO" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="7ePCaSBBJiP" role="37wK5m">
+                  <node concept="1Q6Npb" id="7ePCaSBBJiQ" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="7ePCaSBBJiR" role="3uHU7w">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <node concept="1Q6Npb" id="7ePCaSBBJiS" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="1M2fIO" id="3tEjlbSL859">
     <property role="3GE5qa" value="Analyzer" />

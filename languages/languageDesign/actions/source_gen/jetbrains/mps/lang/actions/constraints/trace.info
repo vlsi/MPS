@@ -176,38 +176,150 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1227088772782">
     <file name="NodeFactories_Constraints.java">
-      <node id="1227088772782" at="9,38,10,153" concept="11" />
-      <node id="1227088772782" at="9,0,12,0" concept="1" trace="NodeFactories_Constraints#()V" />
-      <scope id="1227088772782" at="9,38,10,153" />
-      <scope id="1227088772782" at="9,0,12,0" />
-      <unit id="1227088772782" at="8,0,13,0" name="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints" />
+      <node id="1227088772782" at="16,38,17,153" concept="11" />
+      <node id="1227088772782" at="20,42,21,16" concept="6" />
+      <node id="1227088772782" at="24,120,25,55" concept="5" />
+      <node id="1227088772782" at="25,55,26,0" concept="8" />
+      <node id="1227088772782" at="27,51,28,66" concept="2" />
+      <node id="1227088772782" at="29,5,30,0" concept="8" />
+      <node id="1227088772782" at="30,0,31,18" concept="6" />
+      <node id="1227088774989" at="33,99,34,88" concept="6" />
+      <node id="1227088772782" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
+      <node id="1227088772782" at="16,0,19,0" concept="1" trace="NodeFactories_Constraints#()V" />
+      <node id="1227088772782" at="26,0,29,5" concept="3" />
+      <node id="1227088772782" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1227088772782" at="19,0,23,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="1227088772782" at="23,0,33,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1227088772782" at="16,38,17,153" />
+      <scope id="1227088772782" at="20,42,21,16" />
+      <scope id="1227088772782" at="27,51,28,66" />
+      <scope id="1227088774550" at="33,99,34,88" />
+      <scope id="1227088772782" at="16,0,19,0" />
+      <scope id="1227088772782" at="33,0,36,0">
+        <var name="model" id="1227088772782" />
+        <var name="operationContext" id="1227088772782" />
+      </scope>
+      <scope id="1227088772782" at="19,0,23,0" />
+      <scope id="1227088772782" at="24,120,31,18">
+        <var name="result" id="1227088772782" />
+      </scope>
+      <scope id="1227088772782" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1227088772782" />
+        <var name="context" id="1227088772782" />
+        <var name="model" id="1227088772782" />
+      </scope>
+      <unit id="1227088772782" at="15,0,38,0" name="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1227088788504">
     <file name="NodeSubstituteActions_Constraints.java">
-      <node id="1227088788504" at="9,46,10,161" concept="11" />
-      <node id="1227088788504" at="9,0,12,0" concept="1" trace="NodeSubstituteActions_Constraints#()V" />
-      <scope id="1227088788504" at="9,46,10,161" />
-      <scope id="1227088788504" at="9,0,12,0" />
-      <unit id="1227088788504" at="8,0,13,0" name="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints" />
+      <node id="1227088788504" at="16,46,17,161" concept="11" />
+      <node id="1227088788504" at="20,42,21,16" concept="6" />
+      <node id="1227088788504" at="24,120,25,55" concept="5" />
+      <node id="1227088788504" at="25,55,26,0" concept="8" />
+      <node id="1227088788504" at="27,51,28,66" concept="2" />
+      <node id="1227088788504" at="29,5,30,0" concept="8" />
+      <node id="1227088788504" at="30,0,31,18" concept="6" />
+      <node id="1227088789867" at="33,99,34,88" concept="6" />
+      <node id="1227088788504" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
+      <node id="1227088788504" at="16,0,19,0" concept="1" trace="NodeSubstituteActions_Constraints#()V" />
+      <node id="1227088788504" at="26,0,29,5" concept="3" />
+      <node id="1227088788504" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1227088788504" at="19,0,23,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="1227088788504" at="23,0,33,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1227088788504" at="16,46,17,161" />
+      <scope id="1227088788504" at="20,42,21,16" />
+      <scope id="1227088788504" at="27,51,28,66" />
+      <scope id="1227088789866" at="33,99,34,88" />
+      <scope id="1227088788504" at="16,0,19,0" />
+      <scope id="1227088788504" at="33,0,36,0">
+        <var name="model" id="1227088788504" />
+        <var name="operationContext" id="1227088788504" />
+      </scope>
+      <scope id="1227088788504" at="19,0,23,0" />
+      <scope id="1227088788504" at="24,120,31,18">
+        <var name="result" id="1227088788504" />
+      </scope>
+      <scope id="1227088788504" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1227088788504" />
+        <var name="context" id="1227088788504" />
+        <var name="model" id="1227088788504" />
+      </scope>
+      <unit id="1227088788504" at="15,0,38,0" name="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1227088799046">
     <file name="PasteWrappers_Constraints.java">
-      <node id="1227088799046" at="9,38,10,153" concept="11" />
-      <node id="1227088799046" at="9,0,12,0" concept="1" trace="PasteWrappers_Constraints#()V" />
-      <scope id="1227088799046" at="9,38,10,153" />
-      <scope id="1227088799046" at="9,0,12,0" />
-      <unit id="1227088799046" at="8,0,13,0" name="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints" />
+      <node id="1227088799046" at="16,38,17,153" concept="11" />
+      <node id="1227088799046" at="20,42,21,16" concept="6" />
+      <node id="1227088799046" at="24,120,25,55" concept="5" />
+      <node id="1227088799046" at="25,55,26,0" concept="8" />
+      <node id="1227088799046" at="27,51,28,66" concept="2" />
+      <node id="1227088799046" at="29,5,30,0" concept="8" />
+      <node id="1227088799046" at="30,0,31,18" concept="6" />
+      <node id="1227088800236" at="33,99,34,88" concept="6" />
+      <node id="1227088799046" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
+      <node id="1227088799046" at="16,0,19,0" concept="1" trace="PasteWrappers_Constraints#()V" />
+      <node id="1227088799046" at="26,0,29,5" concept="3" />
+      <node id="1227088799046" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1227088799046" at="19,0,23,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="1227088799046" at="23,0,33,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1227088799046" at="16,38,17,153" />
+      <scope id="1227088799046" at="20,42,21,16" />
+      <scope id="1227088799046" at="27,51,28,66" />
+      <scope id="1227088800235" at="33,99,34,88" />
+      <scope id="1227088799046" at="16,0,19,0" />
+      <scope id="1227088799046" at="33,0,36,0">
+        <var name="model" id="1227088799046" />
+        <var name="operationContext" id="1227088799046" />
+      </scope>
+      <scope id="1227088799046" at="19,0,23,0" />
+      <scope id="1227088799046" at="24,120,31,18">
+        <var name="result" id="1227088799046" />
+      </scope>
+      <scope id="1227088799046" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1227088799046" />
+        <var name="context" id="1227088799046" />
+        <var name="model" id="1227088799046" />
+      </scope>
+      <unit id="1227088799046" at="15,0,38,0" name="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1227088806632">
     <file name="SideTransformHintSubstituteActions_Constraints.java">
-      <node id="1227088806632" at="9,59,10,174" concept="11" />
-      <node id="1227088806632" at="9,0,12,0" concept="1" trace="SideTransformHintSubstituteActions_Constraints#()V" />
-      <scope id="1227088806632" at="9,59,10,174" />
-      <scope id="1227088806632" at="9,0,12,0" />
-      <unit id="1227088806632" at="8,0,13,0" name="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints" />
+      <node id="1227088806632" at="16,59,17,174" concept="11" />
+      <node id="1227088806632" at="20,42,21,16" concept="6" />
+      <node id="1227088806632" at="24,120,25,55" concept="5" />
+      <node id="1227088806632" at="25,55,26,0" concept="8" />
+      <node id="1227088806632" at="27,51,28,66" concept="2" />
+      <node id="1227088806632" at="29,5,30,0" concept="8" />
+      <node id="1227088806632" at="30,0,31,18" concept="6" />
+      <node id="1227088809668" at="33,99,34,88" concept="6" />
+      <node id="1227088806632" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
+      <node id="1227088806632" at="16,0,19,0" concept="1" trace="SideTransformHintSubstituteActions_Constraints#()V" />
+      <node id="1227088806632" at="26,0,29,5" concept="3" />
+      <node id="1227088806632" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1227088806632" at="19,0,23,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="1227088806632" at="23,0,33,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1227088806632" at="16,59,17,174" />
+      <scope id="1227088806632" at="20,42,21,16" />
+      <scope id="1227088806632" at="27,51,28,66" />
+      <scope id="1227088809667" at="33,99,34,88" />
+      <scope id="1227088806632" at="16,0,19,0" />
+      <scope id="1227088806632" at="33,0,36,0">
+        <var name="model" id="1227088806632" />
+        <var name="operationContext" id="1227088806632" />
+      </scope>
+      <scope id="1227088806632" at="19,0,23,0" />
+      <scope id="1227088806632" at="24,120,31,18">
+        <var name="result" id="1227088806632" />
+      </scope>
+      <scope id="1227088806632" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1227088806632" />
+        <var name="context" id="1227088806632" />
+        <var name="model" id="1227088806632" />
+      </scope>
+      <unit id="1227088806632" at="15,0,38,0" name="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1235053871244">
@@ -343,11 +455,39 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/5948027493682790754">
     <file name="CopyPasteHandlers_Constraints.java">
-      <node id="5948027493682790754" at="9,42,10,162" concept="11" />
-      <node id="5948027493682790754" at="9,0,12,0" concept="1" trace="CopyPasteHandlers_Constraints#()V" />
-      <scope id="5948027493682790754" at="9,42,10,162" />
-      <scope id="5948027493682790754" at="9,0,12,0" />
-      <unit id="5948027493682790754" at="8,0,13,0" name="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints" />
+      <node id="5948027493682790754" at="16,42,17,162" concept="11" />
+      <node id="5948027493682790754" at="20,42,21,16" concept="6" />
+      <node id="5948027493682790754" at="24,120,25,55" concept="5" />
+      <node id="5948027493682790754" at="25,55,26,0" concept="8" />
+      <node id="5948027493682790754" at="27,51,28,66" concept="2" />
+      <node id="5948027493682790754" at="29,5,30,0" concept="8" />
+      <node id="5948027493682790754" at="30,0,31,18" concept="6" />
+      <node id="5948027493682790757" at="33,99,34,88" concept="6" />
+      <node id="5948027493682790754" at="36,0,37,0" concept="9" trace="canBeRootBreakingPoint" />
+      <node id="5948027493682790754" at="16,0,19,0" concept="1" trace="CopyPasteHandlers_Constraints#()V" />
+      <node id="5948027493682790754" at="26,0,29,5" concept="3" />
+      <node id="5948027493682790754" at="33,0,36,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="5948027493682790754" at="19,0,23,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="5948027493682790754" at="23,0,33,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="5948027493682790754" at="16,42,17,162" />
+      <scope id="5948027493682790754" at="20,42,21,16" />
+      <scope id="5948027493682790754" at="27,51,28,66" />
+      <scope id="5948027493682790756" at="33,99,34,88" />
+      <scope id="5948027493682790754" at="16,0,19,0" />
+      <scope id="5948027493682790754" at="33,0,36,0">
+        <var name="model" id="5948027493682790754" />
+        <var name="operationContext" id="5948027493682790754" />
+      </scope>
+      <scope id="5948027493682790754" at="19,0,23,0" />
+      <scope id="5948027493682790754" at="24,120,31,18">
+        <var name="result" id="5948027493682790754" />
+      </scope>
+      <scope id="5948027493682790754" at="23,0,33,0">
+        <var name="checkingNodeContext" id="5948027493682790754" />
+        <var name="context" id="5948027493682790754" />
+        <var name="model" id="5948027493682790754" />
+      </scope>
+      <unit id="5948027493682790754" at="15,0,38,0" name="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints" />
     </file>
   </root>
 </debug-info>

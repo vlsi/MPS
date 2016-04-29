@@ -42,13 +42,7 @@ public interface ConstraintsDescriptor {
   boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
-  //if last parameter is null, canBeRoot from constraints aspect is not checked
-  //the point is that we now have two "constraints":
-  //model-independent is the rootable property in structure (which will be moved to constraints)
-  //model-dependent is the canBeRoot method in constraints aspect
-  //our constraints is actually a "non-typesystem" check, which can be pre-checked (mostly by the editor) not to show "illegal" choices to the user
-  //the idea of this method is to pre-check as much as possible. Returning true does not guarantee anything, returning false means some error is already present.
-  boolean canBeRoot(@Nullable SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
   boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);

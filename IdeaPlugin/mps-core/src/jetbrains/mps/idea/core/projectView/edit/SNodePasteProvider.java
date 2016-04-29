@@ -101,7 +101,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
         }
 
         NodePaster pasteProcessor = new NodePaster(nodesToPaste);
-        if (!(pasteProcessor.canPasteAsRoots(myModel))) {
+        if (!(pasteProcessor.canPasteAsRoots())) {
           return;
         }
         pasteProcessor.pasteAsRoots(myModel, "");

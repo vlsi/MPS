@@ -10,6 +10,39 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/1830259054206300940">
+    <file name="SConstraintsUtil.java">
+      <node id="7381022956662462464" at="16,0,17,0" concept="7" trace="concept_ConceptConstraints" />
+      <node id="1830259054206300953" at="20,71,21,178" concept="5" />
+      <node id="1830259054206332557" at="23,68,24,170" concept="5" />
+      <node id="1830259054206332567" at="26,69,27,171" concept="5" />
+      <node id="1830259054206332577" at="29,67,30,169" concept="5" />
+      <node id="1830259054206300942" at="17,0,20,0" concept="0" trace="SConstraintsUtil#()V" />
+      <node id="1830259054206300946" at="20,0,23,0" concept="8" trace="getConceptConstraints_CanBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1830259054206332553" at="23,0,26,0" concept="8" trace="getConceptConstraints_CanBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1830259054206332563" at="26,0,29,0" concept="8" trace="getConceptConstraints_CanBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1830259054206332573" at="29,0,32,0" concept="8" trace="getConceptConstraints_CanBeRoot#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1830259054206300945" at="18,29,18,29" />
+      <scope id="1830259054206300949" at="20,71,21,178" />
+      <scope id="1830259054206332556" at="23,68,24,170" />
+      <scope id="1830259054206332566" at="26,69,27,171" />
+      <scope id="1830259054206332576" at="29,67,30,169" />
+      <scope id="1830259054206300942" at="17,0,20,0" />
+      <scope id="1830259054206300946" at="20,0,23,0">
+        <var name="node" id="1830259054206300951" />
+      </scope>
+      <scope id="1830259054206332553" at="23,0,26,0">
+        <var name="node" id="1830259054206332561" />
+      </scope>
+      <scope id="1830259054206332563" at="26,0,29,0">
+        <var name="node" id="1830259054206332571" />
+      </scope>
+      <scope id="1830259054206332573" at="29,0,32,0">
+        <var name="node" id="1830259054206332581" />
+      </scope>
+      <unit id="1830259054206300940" at="13,0,33,0" name="jetbrains.mps.smodel.SConstraintsUtil" />
+    </file>
+  </root>
   <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/2274990519051114059">
     <file name="SNodeUtil.java">
       <node id="4639682374901816442" at="33,0,34,0" concept="7" trace="property_AbstractConcept_Id" />

@@ -44,6 +44,10 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -147,6 +151,7 @@
       </concept>
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
+      <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="1159285995602" name="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" flags="ng" index="3EP7_v">
@@ -154,6 +159,7 @@
       </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="1227085062429" name="canBeRoot" index="2NY200" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
@@ -176,6 +182,9 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
@@ -246,6 +255,31 @@
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2NXJUA" id="hX1HZc7" role="2NY200">
+      <node concept="3clFbS" id="hX1HZc8" role="2VODD2">
+        <node concept="3clFbF" id="hX1I31h" role="3cqZAp">
+          <node concept="22lmx$" id="1KFbmnBQEhf" role="3clFbG">
+            <node concept="2OqwBi" id="hX1I31i" role="3uHU7B">
+              <node concept="Rm8GO" id="hX1I4ni" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="hX1I31k" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="6MGyrQSoSu0" role="37wK5m">
+                  <node concept="1Q6Npb" id="hX1I31l" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1KFbmnBQr8p" role="3uHU7w">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <node concept="1Q6Npb" id="1KFbmnBQr8r" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -494,6 +528,31 @@
   </node>
   <node concept="1M2fIO" id="hXbWqCF">
     <ref role="1M2myG" to="2omo:hXbsvkv" resolve="LanguageTextGenDeclaration" />
+    <node concept="2NXJUA" id="hXbWrgv" role="2NY200">
+      <node concept="3clFbS" id="hXbWrgw" role="2VODD2">
+        <node concept="3clFbF" id="hXbWtE_" role="3cqZAp">
+          <node concept="22lmx$" id="1KFbmnBQEhI" role="3clFbG">
+            <node concept="2OqwBi" id="hXbWtEA" role="3uHU7B">
+              <node concept="Rm8GO" id="hXbWtEB" role="2Oq$k0">
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
+              </node>
+              <node concept="liA8E" id="hXbWtEC" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="6MGyrQSoTOK" role="37wK5m">
+                  <node concept="1Q6Npb" id="hXbWtED" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1KFbmnBQEhO" role="3uHU7w">
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <node concept="1Q6Npb" id="1KFbmnBQEhP" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="1M2fIO" id="i0fgbtF">
     <ref role="1M2myG" to="2omo:hXJqxz$" resolve="UtilityMethodDeclaration" />

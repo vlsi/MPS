@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -80,8 +79,7 @@ public final class CreateFromUsageUtil {
    */
   @ToRemove(version = 3.3)
   @Deprecated
-  public static void showCreateNewRootMenu(jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter,
-      Setter<SNode> newRootHandler) {
+  public static void showCreateNewRootMenu(jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter, Setter<SNode> newRootHandler) {
     Condition<SConcept> cf = null;
     if (conceptsFilter != null) {
       cf = new Condition<SConcept>() {
@@ -95,8 +93,7 @@ public final class CreateFromUsageUtil {
     showCreateNewRootMenu(editorContext, newRootHandler, cf);
   }
 
-  public static void showCreateNewRootMenu(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, @Nullable Setter<SNode> newRootHandler,
-      @Nullable Condition<SConcept> conceptsFilter) {
+  public static void showCreateNewRootMenu(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, @Nullable Setter<SNode> newRootHandler, @Nullable Condition<SConcept> conceptsFilter) {
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();
     int y = selectedCell.getY();
@@ -122,7 +119,7 @@ public final class CreateFromUsageUtil {
           continue;
         }
         final SConcept concept = (SConcept) ac;
-        if (ModelConstraints.canBeRoot(ac, model) && conceptsFilter.met(concept)) {
+        if (SNodeUtil.getConceptDeclaration_IsRootable(ac.getDeclarationNode()) && conceptsFilter.met(concept)) {
           group.add(new AddNewRootAction(model, concept, newRootHandler));
           hasChildren = true;
         }
@@ -134,7 +131,7 @@ public final class CreateFromUsageUtil {
     }
 
     ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
-        group, dataContext, JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
+            group, dataContext, JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
 //    popup.showInBestPositionFor(dataContext);
     popup.show(new RelativePoint(editorComponent, new Point(x, y)));
   }
