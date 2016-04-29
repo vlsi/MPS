@@ -181,18 +181,13 @@ public class SModelOperations {
   //todo rewrite using iterators
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
-    List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sModel).importedModels()) {
-      references.add(importElement.getModelReference());
-    }
-    return Collections.unmodifiableList(references);
+    return new ArrayList<>(new ModelImports(sModel).getImportedModels());
   }
 
   @NotNull
   private static List<SModel> importedModels(final SModel model) {
     List<SModel> modelsList = new ArrayList<SModel>();
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
-      SModelReference modelReference = importElement.getModelReference();
+    for (SModelReference modelReference : new ModelImports(model).getImportedModels()) {
       SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
 
       if (modelDescriptor != null) {

@@ -18,7 +18,13 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Auxiliary facility to deal with model imports without knowledge
@@ -41,8 +47,25 @@ public final class ModelImports {
     myModel = (SModelInternal) model;
   }
 
+
+  /**
+   * @return nothing but snapshot of models explicitly listed as imports of the initial model, in no particular order.
+   * XXX and likely without null values.
+   */
+  public Collection<SModelReference> getImportedModels() {
+    List<SModelReference> references = new ArrayList<SModelReference>();
+    for (ImportElement importElement : myModel.importedModels()) {
+      references.add(importElement.getModelReference());
+    }
+    return Collections.unmodifiableList(references);
+  }
+
   public void addModelImport(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelToImport) {
     myModel.addModelImport(modelToImport, false);
+  }
+
+  public void removeModelImport(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelToRemove) {
+    myModel.deleteModelImport(modelToRemove);
   }
 
   /**
@@ -51,8 +74,8 @@ public final class ModelImports {
    * @param other model to copy imports from
    */
   public void copyImportedModelsFrom(@NotNull org.jetbrains.mps.openapi.model.SModel other) {
-    for (ImportElement model : ((SModelInternal) other).importedModels()) {
-      myModel.addModelImport(model.getModelReference(), false);
+    for (org.jetbrains.mps.openapi.model.SModelReference model : new ModelImports(other).getImportedModels()) {
+      myModel.addModelImport(model, false);
     }
   }
 
@@ -84,6 +107,24 @@ public final class ModelImports {
   public void copyLanguageEngagedOnGeneration(@NotNull org.jetbrains.mps.openapi.model.SModel other) {
     for (SModuleReference ref : ((SModelInternal) other).engagedOnGenerationLanguages()) {
       myModel.addEngagedOnGenerationLanguage(ref);
+    }
+  }
+
+  public void clearImportedModels() {
+    for (SModelReference ref : getImportedModels()) {
+      myModel.deleteModelImport(ref);
+    }
+  }
+
+  public void clearEmployedDevKits() {
+    for (SModuleReference ref : new ArrayList<>(myModel.importedDevkits())) {
+      myModel.deleteDevKit(ref);
+    }
+  }
+
+  public void clearUsedLanguages() {
+    for (SLanguage ref : new ArrayList<>(myModel.importedLanguageIds())) {
+      myModel.deleteLanguageId(ref);
     }
   }
 }

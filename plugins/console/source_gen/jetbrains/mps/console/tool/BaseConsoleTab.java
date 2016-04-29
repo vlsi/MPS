@@ -35,12 +35,12 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -67,6 +67,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -234,31 +236,27 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     SModelInternal modelInternal = ((SModelInternal) myModel);
     for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {
       modelInternal.addLanguage(l);
-      Language sourceLangModule = (Language) l.getSourceModule();
-      if (sourceLangModule == null) {
+      SModuleReference langSourceModuleRef = l.getSourceModuleReference();
+      SModule langSrcModule = (langSourceModuleRef == null ? null : langSourceModuleRef.resolve(myProject.getRepository()));
+      if (!(langSrcModule instanceof Language)) {
         continue;
       }
-      SModel structureModel = sourceLangModule.getStructureModelDescriptor();
+      SModel structureModel = ((Language) langSrcModule).getStructureModelDescriptor();
       if (structureModel == null) {
         continue;
       }
       modelInternal.addModelImport(structureModel.getReference(), false);
-      ((AbstractModule) myModel.getModule()).addDependency(sourceLangModule.getModuleReference(), false);
+      ((AbstractModule) myModel.getModule()).addDependency(langSrcModule.getModuleReference(), false);
     }
     modelInternal.addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
   }
 
   protected void validateImports() {
-    SModelInternal modelInternal = (SModelInternal) myModel;
-    for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), modelInternal.importedDevkits())) {
-      modelInternal.deleteDevKit(devKit);
-    }
-    for (SLanguage language : ListSequence.fromListWithValues(new ArrayList<SLanguage>(), modelInternal.importedLanguageIds())) {
-      modelInternal.deleteLanguageId(language);
-    }
-    for (jetbrains.mps.smodel.SModel.ImportElement model : ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), modelInternal.importedModels())) {
-      modelInternal.deleteModelImport(model.getModelReference());
-    }
+    ModelImports modelImports = new ModelImports(myModel);
+    modelImports.clearEmployedDevKits();
+    modelImports.clearUsedLanguages();
+    modelImports.clearImportedModels();
+    // XXX why don't we clear engagedOnGeneration as well? 
     addBuiltInImports();
     TemporaryModels.getInstance().addMissingImports(myModel);
   }

@@ -68,6 +68,9 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void deleteDevKit(@NotNull SModuleReference ref);
 
+  // there's single place in MPS that has the right to call this method until I remove it altogether.
+  // And this would be ModelImports utility. Note, similar method from smodel.SModel could be invoked by the code
+  // that knows its SModel implementation (like TransientModel impl).
   List<ImportElement> importedModels();
 
   void addModelImport(SModelReference modelReference, boolean firstVersion);

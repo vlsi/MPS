@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -145,21 +144,18 @@ public class ModuleRenameHandler extends ModuleAdapter {
   // todo reuse from PackageRenameListener
   private void renameUsages(Set<SModelReference> renamedModels, Set<SModel> modelUsages, Function<SModelReference, SModelReference> renameFunc) {
     for (SModel model : modelUsages) {
-      assert model instanceof SModelInternal;
+      ModelImports modelImports = new ModelImports(model);
 
       Map<SModelReference, SModelReference> changes = new HashMap<SModelReference, SModelReference>();
 
-      List<ImportElement> importElements = new ArrayList<ImportElement>(((SModelInternal) model).importedModels());
-      for (ImportElement imp : importElements) {
-        SModelReference mref = imp.getModelReference();
+      for (SModelReference mref : modelImports.getImportedModels()) {
         if (!renamedModels.contains(mref)) {
           continue;
         }
 
         SModelReference newModelRef = renameFunc.fun(mref);
-        ImportElement newImport = new ImportElement(newModelRef, imp.getReferenceID());
-        ((SModelInternal) model).deleteModelImport(mref);
-        ((SModelInternal) model).addModelImport(newImport);
+        modelImports.removeModelImport(mref);
+        modelImports.addModelImport(newModelRef);
         changes.put(mref, newModelRef);
       }
 

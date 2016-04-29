@@ -32,8 +32,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.Nullable;
@@ -113,20 +112,18 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
           @Override
           public void run() {
             for (SModel model : models) {
-              assert model instanceof SModelInternal;
+              ModelImports modelImports = new ModelImports(model);
 
               Map<SModelReference, SModelReference> changes = new HashMap<SModelReference, SModelReference>();
 
-              for (ImportElement imp: ((SModelInternal) model).importedModels()) {
-                SModelReference mref = imp.getModelReference();
+              for (SModelReference mref : modelImports.getImportedModels()) {
                 if (!modelRefs.contains(mref)) {
                   continue;
                 }
                 SModule module = mref.getModuleReference().resolve(repository);
                 SModelReference newModelRef = new JavaPackageNameStub(newPkgName).asModelReference(module.getModuleReference());
-                ImportElement newImport = new ImportElement(newModelRef, imp.getReferenceID());
-                ((SModelInternal) model).deleteModelImport(mref);
-                ((SModelInternal) model).addModelImport(newImport);
+                modelImports.removeModelImport(mref);
+                modelImports.addModelImport(newModelRef);
                 changes.put(mref, newModelRef);
               }
 
