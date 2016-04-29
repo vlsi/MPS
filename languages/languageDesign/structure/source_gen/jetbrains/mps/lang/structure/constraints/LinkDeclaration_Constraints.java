@@ -67,6 +67,9 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "linkId";
+        if (isEmptyString((SPropertyOperations.getString(propertyValue)))) {
+          return true;
+        }
         try {
           Long.parseLong((SPropertyOperations.getString(propertyValue)));
           return true;
@@ -120,6 +123,9 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
     });
     return references;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
   private static SNodePointer breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841302");
 }

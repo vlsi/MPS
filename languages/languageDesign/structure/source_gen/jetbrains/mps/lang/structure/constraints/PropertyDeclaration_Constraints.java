@@ -39,6 +39,9 @@ public class PropertyDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "propertyId";
+        if (isEmptyString((SPropertyOperations.getString(propertyValue)))) {
+          return true;
+        }
         try {
           Long.parseLong((SPropertyOperations.getString(propertyValue)));
           return true;
@@ -48,5 +51,8 @@ public class PropertyDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
     });
     return properties;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }
