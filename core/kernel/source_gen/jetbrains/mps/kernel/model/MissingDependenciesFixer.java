@@ -11,12 +11,11 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.SModelOperations;
 
 /**
+ * Utility to update imports of a module to respect imports of a given model.
+ * 
  * Methods of this class shall be invoked within command/model write lock
  */
 public class MissingDependenciesFixer {
@@ -26,21 +25,16 @@ public class MissingDependenciesFixer {
     myModel = modelDescriptor;
   }
 
+  /**
+   * For each import of the model with module not in model's module dependencies, add a new one.
+   */
   public void fixModuleDependencies() {
-    fixDependencies(false);
-  }
-
-  public void fixAllDependencies() {
-    fixDependencies(true);
-  }
-
-  private void fixDependencies(boolean fixImplicit) {
     SRepository repository = myModel.getRepository();
     assert repository != null;
     AbstractModule module = (AbstractModule) myModel.getModule();
     assert module != null;
 
-    List<SModelReference> existingImports = getExistingImports(fixImplicit);
+    List<SModelReference> existingImports = getExistingImports();
     fixImports(module, existingImports);
     if (module instanceof ReloadableModule) {
       ((ReloadableModule) module).reload();
@@ -66,19 +60,7 @@ public class MissingDependenciesFixer {
     }
   }
 
-  private List<SModelReference> getExistingImports(boolean implicit) {
-    List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
-
-    if (implicit) {
-      if (myModel instanceof SModelBase) {
-        for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(((SModelBase) myModel).getSModel())) {
-          ListSequence.fromList(models).addElement(impElem.getModelReference());
-        }
-      }
-    } else {
-      ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.getImportedModelUIDs(myModel)));
-    }
-    return models;
+  private List<SModelReference> getExistingImports() {
+    return SModelOperations.getImportedModelUIDs(myModel);
   }
-
 }

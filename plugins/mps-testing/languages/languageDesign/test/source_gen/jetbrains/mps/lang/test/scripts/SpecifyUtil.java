@@ -36,7 +36,7 @@ public class SpecifyUtil {
       NodeOperationsContainer__BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);
     }
-    new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixAllDependencies();
+    new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixModuleDependencies();
   }
 
   public static void attachNewContainer(SNode node) {

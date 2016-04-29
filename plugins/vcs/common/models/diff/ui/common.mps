@@ -12949,7 +12949,7 @@
               </node>
             </node>
             <node concept="liA8E" id="7SVrflNKrz$" role="2OqNvi">
-              <ref role="37wK5l" to="iwwu:1rN1WcMFLcK" resolve="fixAllDependencies" />
+              <ref role="37wK5l" to="iwwu:1rN1WcMFNeG" resolve="fixModuleDependencies" />
             </node>
           </node>
         </node>

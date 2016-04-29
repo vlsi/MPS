@@ -204,17 +204,6 @@ public class SModelOperations {
 
   //-----------------------------------------------------
 
-  /*
-   * Todo this is a duplication occurred because of the fact we don't have model dependencies API. Should be removed ASAP
-   */
-
-  @NotNull
-  public static List<ImportElement> getAllImportElements(jetbrains.mps.smodel.SModel model) {
-    // FIXME uses of this method shall be refactored to use SModelInternal rather than smodel.SModel directly
-    // there are uses of the method in RefactoringFacade in MissingDependenciesFixed, but otherwise this method shall be package-local
-    return model.getAllImportElements();
-  }
-
   @Nullable
   /*package*/ static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull SModelReference modelReference) {
     for (ImportElement importElement : model.importedModels()) {
