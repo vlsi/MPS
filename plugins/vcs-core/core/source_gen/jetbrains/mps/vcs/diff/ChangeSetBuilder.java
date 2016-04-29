@@ -34,7 +34,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.DependencyChange;
-import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -43,7 +43,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Set;
@@ -187,13 +186,9 @@ public class ChangeSetBuilder {
     }));
   }
   private void buildForImports() {
-    _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModelBase> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModelBase>() {
-      public ISequence<SModelReference> invoke(SModelBase model) {
-        return ListSequence.fromList(((List<jetbrains.mps.smodel.SModel.ImportElement>) model.importedModels())).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
-          public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement ie) {
-            return ie.getModelReference();
-          }
-        });
+    _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModelBase> importedModelsExtractor = new _FunctionTypes._return_P1_E0<List<SModelReference>, SModelBase>() {
+      public List<SModelReference> invoke(SModelBase model) {
+        return SModelOperations.getImportedModelUIDs(model);
       }
     };
     _FunctionTypes._return_P2_E0<? extends ImportedModelChange, ? super SModelReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ImportedModelChange, SModelReference, Boolean>() {
@@ -244,7 +239,7 @@ public class ChangeSetBuilder {
     }
   }
   private void build(boolean withOpposite) {
-    Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.roots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.roots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
+    Iterable<SNodeId> allRootIds = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(myOldModel, null)).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();
       }

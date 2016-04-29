@@ -26,8 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
@@ -38,6 +37,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -120,15 +120,11 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
               return it.getTargetSModelReference();
             }
           }).distinct()) {
-            if (!(ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), sm.importedModels())).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
-              public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement it) {
-                return it.getModelReference();
-              }
-            }).contains(reference))) {
+            if (!(SModelOperations.getImportedModelUIDs(migrationModel).contains(reference))) {
               sm.addModelImport(reference, true);
             }
           }
-          SModelOperations.addRootNode(migrationModel, myRefactoringStep);
+          jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.addRootNode(migrationModel, myRefactoringStep);
           language.setLanguageVersion(languageVersion + 1);
         }
       });

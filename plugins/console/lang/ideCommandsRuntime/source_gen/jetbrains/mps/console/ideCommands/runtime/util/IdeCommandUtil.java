@@ -12,12 +12,13 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
@@ -65,15 +66,15 @@ public class IdeCommandUtil {
           do {
             dependencies = Sequence.fromIterable(dependencies).translate(new ITranslator2<SModel, SModel>() {
               public Iterable<SModel> translate(SModel it) {
-                return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0(it, SModelInternal.class).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModel>() {
-                  public SModel select(jetbrains.mps.smodel.SModel.ImportElement it) {
-                    return it.getModelReference().resolve(MPSModuleRepository.getInstance());
+                return Sequence.fromIterable(((Iterable<SModelReference>) SModelOperations.getImportedModelUIDs(it))).select(new ISelector<SModelReference, SModel>() {
+                  public SModel select(SModelReference it) {
+                    return it.resolve(project.getRepository());
                   }
                 });
               }
             }).where(new IWhereFilter<SModel>() {
               public boolean accept(SModel it) {
-                return SNodeOperations.isGeneratable(it);
+                return GenerationFacade.canGenerate(it);
               }
             }).distinct().subtract(ListSequence.fromList(modelsToGenerate.value)).toListSequence();
             oldSize = ListSequence.fromList(modelsToGenerate.value).count();
@@ -245,8 +246,5 @@ public class IdeCommandUtil {
       return checkedDotOperand.getClassesGen();
     }
     return null;
-  }
-  private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

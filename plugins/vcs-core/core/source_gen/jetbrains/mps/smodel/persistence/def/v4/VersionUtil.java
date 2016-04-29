@@ -5,11 +5,6 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelVersionsInfo;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.model.SModelBase;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class VersionUtil {
   private static final char VERSION_SEPARATOR_CHAR = ':';
@@ -87,13 +82,6 @@ public class VersionUtil {
     }
     return linkRole;
   }
-  public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
-    if (targetModelReference == null) {
-      return -1;
-    }
-    // target model reference is nullable in postponed references 
-    return VersionUtil.getUsedVersion(node.getModel(), targetModelReference);
-  }
   public static String getTargetNodeId(String targetId, String role, SNode node, SModelVersionsInfo versionsInfo) {
     final String linkRole = getBeforeSeparator(targetId);
     int version = parseVersionedString(targetId);
@@ -101,30 +89,5 @@ public class VersionUtil {
       versionsInfo.addLinkTargetIdVersion(node, role, version);
     }
     return linkRole;
-  }
-  /*package*/ static int getUsedVersion(SModel sModel, SModelReference sModelReference) {
-    jetbrains.mps.smodel.SModel.ImportElement importElement = getImportElement(sModel, sModelReference);
-    if (importElement == null) {
-      if (sModel instanceof SModelBase) {
-        return getLanguageAspectModelVersion(((SModelBase) sModel).getSModel(), sModelReference);
-      }
-      return -1;
-    }
-    return importElement.getUsedVersion();
-  }
-  /*package*/ static jetbrains.mps.smodel.SModel.ImportElement getImportElement(SModel model, @NotNull SModelReference modelReference) {
-    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) model).importedModels()) {
-      if (importElement.getModelReference().equals(modelReference)) {
-        return importElement;
-      }
-    }
-    return null;
-  }
-  /*package*/ static int getLanguageAspectModelVersion(jetbrains.mps.smodel.SModel sModel, SModelReference sModelReference) {
-    jetbrains.mps.smodel.SModel.ImportElement importElement = sModel.getImplicitImportsSupport().find(sModelReference);
-    if (importElement == null) {
-      return -1;
-    }
-    return importElement.getUsedVersion();
   }
 }

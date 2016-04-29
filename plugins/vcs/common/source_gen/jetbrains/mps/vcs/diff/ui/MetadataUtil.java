@@ -20,16 +20,15 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MetadataUtil {
   public MetadataUtil() {
@@ -65,7 +64,7 @@ public class MetadataUtil {
     for (SModuleReference devkit : ListSequence.fromList(modelBase.importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863bL, "devkit"))).addElement(createModuleRefNode(devkit));
     }
-    for (jetbrains.mps.smodel.SModel.ImportElement impmodel : ListSequence.fromList(modelBase.importedModels())) {
+    for (SModelReference impmodel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(modelBase))) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863fL, "import"))).addElement(createModelRefNode(impmodel));
     }
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Model Properties");
@@ -100,9 +99,8 @@ public class MetadataUtil {
   private static SModuleReference getModuleReference(SNode node) {
     return PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue")));
   }
-  private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
+  private static SNode createModelRefNode(SModelReference modelReference) {
     SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference")));
-    SModelReference modelReference = impModel.getModelReference();
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"), PersistenceFacade.getInstance().asString(modelReference));
     ((jetbrains.mps.smodel.SNode) node).setId(new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"))));
     return node;
@@ -172,11 +170,7 @@ public class MetadataUtil {
       }
     });
 
-    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (modelBase.importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
-      public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement it) {
-        return it.getModelReference();
-      }
-    }));
+    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(model));
     Set<SModelReference> imports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863fL, "import"))).select(new ISelector<SNode, SModelReference>() {
       public SModelReference select(SNode it) {
         return getModelReference(it);

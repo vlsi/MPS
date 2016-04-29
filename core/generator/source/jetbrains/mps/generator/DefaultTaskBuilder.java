@@ -16,8 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GeneratorTask.Factory;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.GraphUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -81,11 +80,11 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
     for (int i = 0, x = inputModels.size(); i < x; i++) {
       SModel inputModel = inputModels.get(i);
       int j = 0;
-      for (ImportElement ie : ((SModelInternal) inputModel).importedModels()) {
-        if (!vertex2Index.containsKey(ie.getModelReference())) {
+      for (SModelReference ie : SModelOperations.getImportedModelUIDs(inputModel)) {
+        if (!vertex2Index.containsKey(ie)) {
           continue;
         }
-        tmp[j++] = vertex2Index.get(ie.getModelReference());
+        tmp[j++] = vertex2Index.get(ie);
       }
       graph[i] = new int[j];
       System.arraycopy(tmp, 0, graph[i], 0, j);

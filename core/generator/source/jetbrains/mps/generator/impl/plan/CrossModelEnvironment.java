@@ -18,9 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -157,8 +155,8 @@ public class CrossModelEnvironment {
         // Note that the cycle above drops only relevant cp model (compares checkpoint name).
         for (Iterator<CheckpointState> it = cpStates.iterator(); it.hasNext(); ) {
           CheckpointState next = it.next();
-          for (ImportElement importElement : ((SModelInternal) next.getCheckpointModel()).importedModels()) {
-            if (forgottenCheckpoints.contains(importElement.getModelReference())) {
+          for (SModelReference importElement : SModelOperations.getImportedModelUIDs(next.getCheckpointModel())) {
+            if (forgottenCheckpoints.contains(importElement)) {
               it.remove();
               break; // skip other imports, check another state
             }
