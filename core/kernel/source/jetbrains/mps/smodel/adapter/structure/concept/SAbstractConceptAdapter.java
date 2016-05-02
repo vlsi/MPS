@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -44,6 +45,8 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -91,6 +94,20 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
    * in the case of the legacy concept resolving (by string id)
    */
   protected abstract SNode findInModel(SModel structureModel);
+
+  @Nullable
+  @Override
+  public SNode getSourceNode(SRepository repo) {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) {
+      return null;
+    }
+    SNodeReference sn = d.getSourceNode();
+    if (sn == null) {
+      return null;
+    }
+    return sn.resolve(repo);
+  }
 
   @NotNull
   @Override
@@ -271,6 +288,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Nullable
   @Override
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getDeclarationNode() {
     Language lang = ((Language) getLanguage().getSourceModule());
     if (lang == null) {

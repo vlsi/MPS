@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 
@@ -68,11 +69,19 @@ public interface SAbstractConcept extends SNamedElement {
 
   /**
    * Returns the declaration node in case sources for this concept are present in IDE
+   * Will be removed after 3.4, use getSourceNode() instead
    */
+  @Deprecated
   @Nullable
   SNode getDeclarationNode();
 
   /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
+  @Nullable
+  SNode getSourceNode(SRepository repo);
+
+   /**
    * Returns true if this concept is fully-functional. Typically, user code should not care about this
    * Can return false, for example, if the containing language is absent
    */
