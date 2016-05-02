@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,8 @@ public class GoToConceptDeclaration_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getDeclarationNode() != null;
+    SNodeReference sn = SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getSourceNode();
+    return sn != null && sn.resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()) != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -56,7 +58,6 @@ public class GoToConceptDeclaration_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
-    SNode concept = ((SNode) SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getDeclarationNode());
-    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), concept, true, true);
+    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getSourceNode().resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()), true, true);
   }
 }

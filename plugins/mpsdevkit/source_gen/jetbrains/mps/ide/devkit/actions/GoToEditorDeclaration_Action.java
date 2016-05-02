@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
@@ -17,12 +16,13 @@ import java.awt.Frame;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.Language;
-import javax.swing.SwingUtilities;
-import javax.swing.JOptionPane;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.LanguageAspect;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.Language;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Editor;
@@ -37,7 +37,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).isValid();
+    return GoToEditorDeclaration_Action.this.findNodeEditorDeclaration(((SNode) MapSequence.fromMap(_params).get("node")), _params) != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -81,31 +81,26 @@ public class GoToEditorDeclaration_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.editorDeclaration");
-
-    SAbstractConcept concept = SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node")));
-    Language l = ((Language) concept.getLanguage().getSourceModule());
-
-    if (l == null) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).getQualifiedName(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-      });
-      return;
-    }
-
-    SNode conceptNode = (SNode) concept.getDeclarationNode();
-    SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(((MPSProject) MapSequence.fromMap(_params).get("project")), l, conceptNode);
-    if (editorModel == null) {
-      return;
-    }
-
-    final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(((MPSProject) MapSequence.fromMap(_params).get("project")), editorModel, conceptNode, ((SNode) MapSequence.fromMap(_params).get("node")));
-    if (editorNode == null) {
-      return;
-    }
-
+    final SNode editorNode = GoToEditorDeclaration_Action.this.findNodeEditorDeclaration(((SNode) MapSequence.fromMap(_params).get("node")), _params);
     NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, true, true);
     NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, false);
+  }
+  /*package*/ SNode findNodeEditorDeclaration(SNode forNode, final Map<String, Object> _params) {
+    SNodeReference sn = SNodeOperations.getConcept(((SNode) MapSequence.fromMap(_params).get("node"))).getSourceNode();
+    if (sn == null) {
+      return null;
+    }
+    SNode conceptNode = sn.resolve(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+    if (!(SNodeOperations.isInstanceOf(conceptNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+      return null;
+    }
+    if (!(LanguageAspect.STRUCTURE.is(SNodeOperations.getModel(conceptNode)))) {
+      return null;
+    }
+    SModel editorModel = LanguageAspect.EDITOR.get(((Language) SNodeOperations.getModel(conceptNode).getModule()));
+    if (editorModel == null) {
+      return null;
+    }
+    return GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptNode);
   }
 }
