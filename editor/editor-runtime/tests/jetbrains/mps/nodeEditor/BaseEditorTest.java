@@ -15,27 +15,23 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.editor.runtime.HeadlessEditorComponent;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.After;
 import org.junit.Before;
 
-public class BaseEditorTest extends CoreMpsTest {
-  protected EditorContext myEditorContext;
+public class BaseEditorTest {
+  private EditorContext myEditorContext;
+  private EditorComponent myEditorComponent;
 
   @Before
   public void initContext() throws Exception {
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        SRepository repository = MPSModuleRepository.getInstance();
-        EditorComponent component = new HeadlessEditorComponent(null, repository);
-        myEditorContext = new jetbrains.mps.nodeEditor.EditorContext(component, null, repository);
-      }
+    Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
+      myEditorComponent = new TestEditorComponent();
+      myEditorContext = myEditorComponent.getEditorContext();
     });
     if (exception != null) {
       throw exception;
@@ -44,14 +40,35 @@ public class BaseEditorTest extends CoreMpsTest {
 
   @After
   public void disposeContext() throws Exception {
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        myEditorContext.getEditorComponent().dispose();
-      }
+    Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
+      myEditorComponent.dispose();
+      myEditorComponent = null;
+      myEditorContext = null;
     });
     if (exception != null) {
       throw exception;
+    }
+  }
+
+  protected EditorContext getEditorContext() {
+    return myEditorContext;
+  }
+
+  protected EditorComponent getEditorComponent() {
+    return myEditorComponent;
+  }
+
+  private static class TestEditorComponent extends HeadlessEditorComponent {
+    private TestEditorComponent() {
+      super(null, new MPSModuleRepository());
+    }
+
+    @Override
+    protected void acquireTypeCheckingContext() {
+    }
+
+    @Override
+    protected void releaseTypeCheckingContext() {
     }
   }
 }

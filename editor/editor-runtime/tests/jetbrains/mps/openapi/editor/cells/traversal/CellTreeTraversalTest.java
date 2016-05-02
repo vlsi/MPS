@@ -208,8 +208,7 @@ public class CellTreeTraversalTest extends BaseEditorTest {
   }
 
   private EditorCell_Collection newNode(String name, EditorCell... children) {
-    jetbrains.mps.nodeEditor.cells.EditorCell_Collection cell =
-        new jetbrains.mps.nodeEditor.cells.EditorCell_Collection(myEditorContext, null, new CellLayout_Indent(), null);
+    EditorCell_Collection cell = new jetbrains.mps.nodeEditor.cells.EditorCell_Collection(getEditorContext(), null, new CellLayout_Indent(), null);
     cell.setCellId(name);
 
     for (EditorCell child : children) {
