@@ -80,7 +80,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      AttributeOperations.setChildLink(attribute, myLink);
+      AttributeOperations.setLink(attribute, myLink);
     }
   }
   class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {

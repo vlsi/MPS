@@ -1766,7 +1766,7 @@
                 <ref role="3cqZAo" node="6Gg5Klvux$l" resolve="metaLink" />
               </node>
               <node concept="liA8E" id="6Gg5Klvuyzf" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SReferenceLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
             <node concept="2OqwBi" id="6Gg5KlvuxAn" role="37vLTJ">
@@ -1780,15 +1780,15 @@
         <node concept="3clFbF" id="6Gg5KlvuyM8" role="3cqZAp">
           <node concept="37vLTI" id="6Gg5Klvuzn8" role="3clFbG">
             <node concept="2OqwBi" id="6Gg5KlvuzSa" role="37vLTx">
-              <node concept="2YIFZM" id="2u22WRjkwtU" role="2Oq$k0">
-                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getReference" />
+              <node concept="2YIFZM" id="3HmgCTBoA5x" role="2Oq$k0">
+                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAssociation(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getAssociation" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                <node concept="37vLTw" id="2u22WRjkwtV" role="37wK5m">
+                <node concept="37vLTw" id="3HmgCTBoA5y" role="37wK5m">
                   <ref role="3cqZAo" node="6Gg5Klvux$l" resolve="metaLink" />
                 </node>
               </node>
               <node concept="liA8E" id="6Gg5Klvu$8C" role="2OqNvi">
-                <ref role="37wK5l" to="e8bb:~SReferenceLinkId.toString():java.lang.String" resolve="toString" />
+                <ref role="37wK5l" to="e8bb:~SReferenceLinkId.serialize():java.lang.String" resolve="serialize" />
               </node>
             </node>
             <node concept="2OqwBi" id="6Gg5KlvuyOS" role="37vLTJ">
@@ -1901,7 +1901,7 @@
                 <ref role="3cqZAo" node="BpxLfMir$7" resolve="metaLink" />
               </node>
               <node concept="liA8E" id="BpxLfMirzU" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
             <node concept="2OqwBi" id="BpxLfMirzV" role="37vLTJ">
@@ -1915,15 +1915,15 @@
         <node concept="3clFbF" id="BpxLfMirzY" role="3cqZAp">
           <node concept="37vLTI" id="BpxLfMirzZ" role="3clFbG">
             <node concept="2OqwBi" id="BpxLfMir$0" role="37vLTx">
-              <node concept="2YIFZM" id="2u22WRjkwij" role="2Oq$k0">
-                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLink(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLink" />
+              <node concept="2YIFZM" id="3HmgCTBo_xs" role="2Oq$k0">
+                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAggregation(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getAggregation" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
-                <node concept="37vLTw" id="2u22WRjkwik" role="37wK5m">
+                <node concept="37vLTw" id="3HmgCTBo_xt" role="37wK5m">
                   <ref role="3cqZAo" node="BpxLfMir$7" resolve="metaLink" />
                 </node>
               </node>
               <node concept="liA8E" id="BpxLfMir$3" role="2OqNvi">
-                <ref role="37wK5l" to="e8bb:~SContainmentLinkId.toString():java.lang.String" resolve="toString" />
+                <ref role="37wK5l" to="e8bb:~SContainmentLinkId.serialize():java.lang.String" resolve="serialize" />
               </node>
             </node>
             <node concept="2OqwBi" id="BpxLfMir$4" role="37vLTJ">

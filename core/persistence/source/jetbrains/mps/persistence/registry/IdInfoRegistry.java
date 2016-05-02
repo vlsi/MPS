@@ -121,12 +121,12 @@ public class IdInfoRegistry {
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AssociationLinkInfo find(@NotNull SReferenceLink link) {
-    SReferenceLinkId id = MetaIdHelper.getReference(link);
+    SReferenceLinkId id = MetaIdHelper.getAssociation(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
   public AggregationLinkInfo find(@NotNull SContainmentLink link) {
-    SContainmentLinkId id = MetaIdHelper.getLink(link);
+    SContainmentLinkId id = MetaIdHelper.getAggregation(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }

@@ -186,10 +186,10 @@
       <node id="4927972719736137615" at="144,25,145,106" concept="11" />
       <node id="4927972719736137630" at="146,5,147,68" concept="10" />
       <node id="4927972719736137635" at="147,68,148,64" concept="11" />
-      <node id="1341860900489812159" at="150,68,151,197" concept="5" />
-      <node id="1341860900489802296" at="151,197,152,174" concept="5" />
-      <node id="11692214889279425" at="154,75,155,190" concept="5" />
-      <node id="11692214889279434" at="155,190,156,172" concept="5" />
+      <node id="1341860900489812159" at="150,68,151,199" concept="5" />
+      <node id="1341860900489802296" at="151,199,152,170" concept="5" />
+      <node id="11692214889279425" at="154,70,155,197" concept="5" />
+      <node id="11692214889279434" at="155,197,156,168" concept="5" />
       <node id="1603552250726500488" at="160,57,161,44" concept="11" />
       <node id="1341860900489271358" at="163,56,164,176" concept="10" />
       <node id="1341860900489271366" at="164,176,165,180" concept="10" />
@@ -275,7 +275,7 @@
       <node id="9062000705415657774" at="110,0,114,0" concept="15" trace="createAndSetAttrbiute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="9062000705415691263" at="123,0,127,0" concept="15" trace="createAndAddAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1341860900488638854" at="150,0,154,0" concept="15" trace="setLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
-      <node id="11692214889279421" at="154,0,158,0" concept="15" trace="setChildLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
+      <node id="11692214889279421" at="154,0,158,0" concept="15" trace="setLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
       <node id="1341860900489815559" at="172,0,176,0" concept="15" trace="setProperty#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
       <node id="6407023681583065639" at="262,0,266,0" concept="3" trace="AttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)V" />
       <node id="6407023681583065681" at="266,0,270,0" concept="9" trace="insertAfter#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -372,8 +372,8 @@
       <scope id="9062000705415691267" at="123,117,125,113">
         <var name="model" id="9062000705415691269" />
       </scope>
-      <scope id="1341860900488638857" at="150,68,152,174" />
-      <scope id="11692214889279424" at="154,75,156,172" />
+      <scope id="1341860900488638857" at="150,68,152,170" />
+      <scope id="11692214889279424" at="154,70,156,168" />
       <scope id="1341860900489815562" at="172,71,174,178" />
       <scope id="6407023681583065642" at="262,77,264,41" />
       <scope id="6407023681583007505" at="34,0,37,0">
@@ -653,7 +653,7 @@
       <node id="2400273019711937010" at="73,90,74,34" concept="16" />
       <node id="2400273019711937012" at="74,34,75,20" concept="5" />
       <node id="2400273019711937050" at="78,52,79,118" concept="11" />
-      <node id="2400273019711937104" at="82,50,83,58" concept="5" />
+      <node id="2400273019711937104" at="82,50,83,53" concept="5" />
       <node id="6407023681583030752" at="87,0,88,0" concept="6" trace="myProperty" />
       <node id="1341860900488250732" at="88,99,89,34" concept="16" />
       <node id="1341860900488252078" at="89,34,90,28" concept="5" />
@@ -695,7 +695,7 @@
       <scope id="6407023681583030626" at="59,52,60,113" />
       <scope id="1471603834690505821" at="65,125,66,132" />
       <scope id="2400273019711937049" at="78,52,79,118" />
-      <scope id="2400273019711937071" at="82,50,83,58" />
+      <scope id="2400273019711937071" at="82,50,83,53" />
       <scope id="6407023681583030775" at="102,52,103,125" />
       <scope id="1471603834690495606" at="108,129,109,135" />
       <scope id="6407023681583030604" at="45,87,47,20" />

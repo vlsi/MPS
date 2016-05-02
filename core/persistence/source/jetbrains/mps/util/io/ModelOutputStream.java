@@ -278,7 +278,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SReferenceLinkId id = MetaIdHelper.getReference(link);
+    final SReferenceLinkId id = MetaIdHelper.getAssociation(link);
     assert id != null : "Can't get identity of association " + link;
     if (myAssociation2Index.containsKey(id)) {
       writeByte(ASSOCIATION_INDEX);
@@ -296,7 +296,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(NULL);
       return;
     }
-    final SContainmentLinkId id = MetaIdHelper.getLink(link);
+    final SContainmentLinkId id = MetaIdHelper.getAggregation(link);
     assert id != null : "Can't get identity of aggregation " + link;
     if (myAggregation2Index.containsKey(id)) {
       writeByte(AGGREGATION_INDEX);

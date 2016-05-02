@@ -69,7 +69,7 @@ public final class MetaIdHelper {
   }
 
   @NotNull
-  public static SReferenceLinkId getReference(SReferenceLink r) {
+  public static SReferenceLinkId getAssociation(SReferenceLink r) {
     //todo make serialization via serialize method
     if (!(r instanceof SReferenceLinkAdapterById)) {
       return MetaIdFactory.INVALID_REF_ID;
@@ -78,7 +78,7 @@ public final class MetaIdHelper {
   }
 
   @NotNull
-  public static SContainmentLinkId getLink(SContainmentLink l) {
+  public static SContainmentLinkId getAggregation(SContainmentLink l) {
     //todo make serialization via serialize method
     if (!(l instanceof SContainmentLinkAdapterById)) {
       return MetaIdFactory.INVALID_LINK_ID;

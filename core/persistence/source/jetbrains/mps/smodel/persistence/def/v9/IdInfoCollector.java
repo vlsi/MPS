@@ -100,7 +100,7 @@ public class IdInfoCollector {
   private void fillAssociations(SNode n) {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
-      SReferenceLinkId linkId = MetaIdHelper.getReference(l);
+      SReferenceLinkId linkId = MetaIdHelper.getAssociation(l);
       assert linkId != null : String.format("Can't get identity of association %s of node %s", l, n.getReference());
       SConceptId conceptId = linkId.getConceptId();
       final ConceptInfo conceptInfo = registerConcept(conceptId);
@@ -113,7 +113,7 @@ public class IdInfoCollector {
   // unlike association, records link to parent node
   private void fillAggregation(SNode n) {
     final SContainmentLink l = n.getContainmentLink();
-    SContainmentLinkId linkId = MetaIdHelper.getLink(l);
+    SContainmentLinkId linkId = MetaIdHelper.getAggregation(l);
     assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
     SConceptId conceptId = linkId.getConceptId();
     final ConceptInfo conceptInfo = registerConcept(conceptId);

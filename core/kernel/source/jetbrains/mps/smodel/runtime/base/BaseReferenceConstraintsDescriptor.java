@@ -120,7 +120,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   @ToRemove(version = 3.4)
   @Override
   public SReferenceLinkId getReferenceLink() {
-    return MetaIdHelper.getReference(myReferenceLink);
+    return MetaIdHelper.getAssociation(myReferenceLink);
   }
 
   @Override
