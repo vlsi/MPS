@@ -341,6 +341,12 @@
     <property role="TrG5h" value="AbstractConceptDeclaration" />
     <property role="EcuMT" value="1169125787135" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4mSE8vfOBGG" role="1TKVEi">
+      <property role="IQ2ns" value="5023950685592517420" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="sourceNode" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
     <node concept="1TJgyi" id="28RKVM5GRls" role="1TKVEl">
       <property role="TrG5h" value="helpURL" />
       <property role="IQ2nx" value="2465654535473034588" />
