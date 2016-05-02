@@ -78,8 +78,6 @@ public class SModelOperations {
    * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9)
    */
   public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
-    ModelChange.assertLegalChange_new(model);
-
     final SModule module = model.getModule();
     final Collection<SModule> moduleDeclaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);

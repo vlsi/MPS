@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 class ModelChange {
   static void assertLegalNodeRegistration(SModel model, SNode node) {
@@ -30,16 +29,6 @@ class ModelChange {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeOperations.getDebugText(
           node));
-    }
-  }
-
-  /**
-   * Models that are 'public' (published in a repository) need an actual write command to deem a change legal
-   */
-  static void assertLegalChange_new(org.jetbrains.mps.openapi.model.SModel model) {
-    SRepository repo = model.getRepository();
-    if (repo != null && model.isLoaded() && !repo.getModelAccess().canWrite()) {
-      throw new IllegalModelChangeError("You can change model only inside write actions");
     }
   }
 }
