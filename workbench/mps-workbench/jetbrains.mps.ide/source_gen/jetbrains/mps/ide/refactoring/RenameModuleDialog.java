@@ -55,7 +55,7 @@ public class RenameModuleDialog extends RenameDialog {
         } else {
           Renamer.renameModule(myModule, fqName);
         }
-        RenameModuleDialog.super.toString();
+        RenameModuleDialog.super.doRefactoringAction();
       }
     });
   }

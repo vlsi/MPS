@@ -896,6 +896,9 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_6344340345427365081(final ReferenceMacroContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
   }
+  public static Object referenceMacro_GetReferent_4407367782446017551(final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+  }
   public static Object referenceMacro_GetReferent_7001216437968760495(final ReferenceMacroContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
   }

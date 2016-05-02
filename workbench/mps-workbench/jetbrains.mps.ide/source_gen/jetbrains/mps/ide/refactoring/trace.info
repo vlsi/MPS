@@ -335,7 +335,7 @@
       <node id="1259651549063504461" at="52,93,53,104" concept="7" />
       <node id="6436802671382224291" at="53,104,54,54" concept="2" />
       <node id="2690439479784290612" at="55,16,56,49" concept="2" />
-      <node id="5785077206510640674" at="57,9,58,44" concept="2" />
+      <node id="5785077206510640674" at="57,9,58,55" concept="2" />
       <node id="2690439479784269452" at="55,14,57,9" concept="0" />
       <node id="8084508253880372128" at="35,48,39,11" concept="5" />
       <node id="2482360940803573310" at="19,0,25,0" concept="1" trace="RenameModuleDialog#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/project/AbstractModule;)V" />
@@ -363,7 +363,7 @@
         <var name="smp" id="2690439479784244231" />
         <var name="virtualFolder" id="1259651549063458708" />
       </scope>
-      <scope id="8474866949349261767" at="29,25,58,44">
+      <scope id="8474866949349261767" at="29,25,58,55">
         <var name="fqName" id="100674607554485406" />
       </scope>
       <scope id="8474866949349261750" at="29,0,60,0" />
