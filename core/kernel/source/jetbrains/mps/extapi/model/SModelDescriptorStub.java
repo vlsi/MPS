@@ -203,68 +203,80 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   @Deprecated
   public final List<SModuleReference> importedLanguages() {
+    assertCanRead();
     return new SModelLegacy(getSModelInternal()).importedLanguages();
   }
 
   @Override
   public java.util.Collection<SLanguage> importedLanguageIds() {
+    assertCanRead();
     return getSModelInternal().usedLanguages();
   }
 
   @Override
   public void deleteLanguageId(@NotNull SLanguage ref) {
+    assertCanChange();
     getSModel().deleteLanguage(ref);
     validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(Language language) {
+    assertCanChange();
     new SModelLegacy(getSModel()).addLanguage(language);
     validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(@NotNull SLanguage language) {
+    assertCanChange();
     getSModel().addLanguage(language);
     validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(@NotNull SLanguage language, int version) {
+    assertCanChange();
     getSModel().addLanguage(language, version);
     validateModuleLanguageVersions();
   }
 
   @Override
   public void setLanguageImportVersion(@NotNull SLanguage language, int version) {
+    assertCanChange();
     getSModel().setLanguageImportVersion(language, version);
     validateModuleLanguageVersions();
   }
 
   @Override
   public int getLanguageImportVersion(SLanguage lang) {
-    return getSModelInternal().getLanguageImportVersion(lang);
+    assertCanRead();
+    return getSModel().getLanguageImportVersion(lang);
   }
 
   @Override
   public void addLanguageId(SLanguage ref, int version) {
-    getSModelInternal().addLanguage(ref, version);
+    assertCanChange();
+    getSModel().addLanguage(ref, version);
     validateModuleLanguageVersions();
   }
 
   @Override
   public List<SModuleReference> importedDevkits() {
+    assertCanRead();
     return getSModel().importedDevkits();
   }
 
   @Override
   public final void addDevKit(SModuleReference ref) {
+    assertCanChange();
     getSModel().addDevKit(ref);
     validateModuleLanguageVersions();
   }
 
   @Override
   public final void deleteDevKit(@NotNull SModuleReference ref) {
+    assertCanChange();
     getSModel().deleteDevKit(ref);
     validateModuleLanguageVersions();
   }
@@ -290,64 +302,85 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final List<ImportElement> importedModels() {
+    assertCanRead();
     return getSModel().importedModels();
   }
 
   @Override
   public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
+    assertCanChange();
     new SModelLegacy(getSModel()).addModelImport(modelReference, firstVersion);
   }
 
   @Override
   public final void addModelImport(ImportElement importElement) {
+    assertCanChange();
     getSModel().addModelImport(importElement);
   }
 
   @Override
   public final void deleteModelImport(SModelReference modelReference) {
+    assertCanChange();
     getSModel().deleteModelImport(modelReference);
   }
 
   @Override
   @Deprecated
   public final List<SModuleReference> engagedOnGenerationLanguages() {
+    assertCanRead();
     return new SModelLegacy(getSModel()).engagedOnGenerationLanguages();
   }
 
   @NotNull
   @Override
   public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
-    // assertCanRead
+    assertCanRead();
     return getSModel().getLanguagesEngagedOnGeneration();
   }
 
   @Override
   @Deprecated
   public final void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    // assertCanChange
+    assertCanChange();
     new SModelLegacy(getSModel()).addEngagedOnGenerationLanguage(ref);
   }
 
   @Override
   public final void addEngagedOnGenerationLanguage(SLanguage lang) {
-    // assertCanChange
+    assertCanChange();
     getSModel().addEngagedOnGenerationLanguage(lang);
   }
 
   @Override
   @Deprecated
   public final void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    // assertCanChange
+    assertCanChange();
     new SModelLegacy(getSModel()).removeEngagedOnGenerationLanguage(ref);
   }
 
   @Override
   public final void removeEngagedOnGenerationLanguage(SLanguage lang) {
-    // assertCanChange
+    assertCanChange();
     getSModel().removeEngagedOnGenerationLanguage(lang);
   }
 
-  @Override
+  /**
+   * Invoked to check if it's legal to read from the model.
+   * By default, is no-op, subclasses shall override to enforce proper policy
+   */
+  protected void assertCanRead() {
+    // intentionally no-op
+  }
+
+  /**
+   * Invoked to check if it's legal to modify the model.
+   * By default, is no-op, subclasses shall override to enforce proper policy
+   */
+  protected void assertCanChange() {
+    // intentionally no-op
+  }
+
+    @Override
   public boolean isDisposed() {
     return getDisposedStacktrace() != null;
   }
@@ -365,11 +398,13 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final boolean updateExternalReferences(@NotNull SRepository repo) {
+    assertCanChange();
     return getSModel().updateExternalReferences(getRepository());
   }
 
   @Override
   public void changeModelReference(SModelReference newModelReference) {
+    assertCanChange();
     getSModel().changeModelReference(newModelReference);
   }
 }

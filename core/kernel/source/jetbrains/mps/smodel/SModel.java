@@ -331,8 +331,9 @@ public class SModel implements SModelData {
   }
 
   public void dispose() {
-    assertLegalChange();
-    if (myDisposed) return;
+    if (myDisposed) {
+      return;
+    }
 
     myDisposed = true;
     myDisposedStacktrace = new Throwable().getStackTrace();
@@ -345,8 +346,9 @@ public class SModel implements SModelData {
   }
 
   private void checkNotDisposed() {
-    if (!myDisposed) return;
-    LOG.error(new IllegalModelAccessError("accessing disposed model"));
+    if (myDisposed) {
+      LOG.error(new IllegalModelAccessError("accessing disposed model"));
+    }
   }
 
   private List<SModelListener> getModelListeners() {
@@ -357,7 +359,9 @@ public class SModel implements SModelData {
   }
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelDevKitEvent event = new SModelDevKitEvent(getModelDescriptor(), ref, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -369,7 +373,9 @@ public class SModel implements SModelData {
   }
 
   private void fireDevKitRemovedEvent(@NotNull SModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelDevKitEvent event = new SModelDevKitEvent(getModelDescriptor(), ref, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -634,14 +640,8 @@ public class SModel implements SModelData {
     return Collections.unmodifiableSet(myLanguagesIds.keySet());
   }
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Map<SLanguage, Integer> usedLanguagesWithVersions() {
-    return Collections.unmodifiableMap(myLanguagesIds);
-  }
-
   public int getLanguageImportVersion(SLanguage lang) {
-    Integer res = usedLanguagesWithVersions().get(lang);
+    Integer res = myLanguagesIds.get(lang);
     if (res == null) {
       LOG.error("Model " + getModelDescriptor().getModelName() + ": version for language " + lang.getQualifiedName() + " not found. Using last version instead.");
       return lang.getLanguageVersion();
@@ -650,7 +650,6 @@ public class SModel implements SModelData {
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
-    assertLegalChange();
     if (myLanguagesIds.remove(id) != null) {
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
@@ -688,7 +687,6 @@ public class SModel implements SModelData {
   }
 
   private void setLanguageVersionInternal(SLanguage language, int version) {
-    assertLegalChange();
     myLanguagesIds.put(language, version);
     invalidateModelDepsManager();
     fireLanguageAddedEvent(language);
@@ -702,8 +700,6 @@ public class SModel implements SModelData {
   }
 
   public void addDevKit(SModuleReference ref) {
-    assertLegalChange();
-
     if (myDevKits.add(ref)) {
       invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
@@ -712,8 +708,6 @@ public class SModel implements SModelData {
   }
 
   public void deleteDevKit(@NotNull SModuleReference ref) {
-    assertLegalChange();
-
     if (myDevKits.remove(ref)) {
       invalidateModelDepsManager();
       fireDevKitRemovedEvent(ref);
@@ -728,16 +722,12 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(ImportElement importElement) {
-    assertLegalChange();
-
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
     markChanged();
   }
 
   public void deleteModelImport(SModelReference modelReference) {
-    assertLegalChange();
-
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
@@ -807,8 +797,6 @@ public class SModel implements SModelData {
   }
 
   public void addEngagedOnGenerationLanguage(SLanguage ref) {
-    assertLegalChange();
-
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
@@ -819,8 +807,6 @@ public class SModel implements SModelData {
   }
 
   public void removeEngagedOnGenerationLanguage(SLanguage ref) {
-    assertLegalChange();
-
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
@@ -882,23 +868,11 @@ public class SModel implements SModelData {
     return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
   }
 
-  private void assertLegalChange() {
-    if (isUpdateMode()) {
-      return;
-    }
-    if (myModelDescriptor != null) {
-      // FIXME in fact, all modification methods are accessed through SModelInternal iface, and SModelDescriptorStub shall
-      // check for legal write instead of SModel itself.
-      ModelChange.assertLegalChange_new(myModelDescriptor);
-    }
-  }
-
   //---------refactorings--------
 
   // To allow update of models not yet attached to a repo (e.g. when we read a model and are going to attach it in with
   // refreshed state, rather than attach first and then refresh), we pass repository from outside rather than using this.getRepository()
   public boolean updateExternalReferences(@NotNull SRepository repository) {
-    assertLegalChange();
     enforceFullLoad();
 
     boolean changed = false;

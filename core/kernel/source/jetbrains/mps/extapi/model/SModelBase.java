@@ -420,6 +420,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  @Override
   protected void assertCanRead() {
     final SRepository repo = myRepository;
     if (repo != null) {
@@ -427,6 +428,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  @Override
   protected void assertCanChange() {
     final SRepository repo = myRepository;
     if (repo != null) {

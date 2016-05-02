@@ -387,9 +387,17 @@ public class ModulesReloadTest extends ModuleMpsTest {
         Assert.assertTrue(classIsLoadableFromModule(runtime.get()));
       }
     });
-    language.set(createLanguage(runtime.get().getModuleReference()));
-    solution.set(createSolution(SolutionKind.PLUGIN_OTHER));
-    addUsedLanguage(solution.get(), language.get());
+    // contents of the run() method used to execute without write action, Alex, please check if it's correct to have it in model command.
+    // I need it because add language to attached module requires model access, besides, creation of solutions/languages in the test
+    // happens inside a command, thus I don't see reason to do it otherwise here.
+    getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        language.set(createLanguage(runtime.get().getModuleReference()));
+        solution.set(createSolution(SolutionKind.PLUGIN_OTHER));
+        addUsedLanguage(solution.get(), language.get());
+      }
+    });
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
