@@ -97,16 +97,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Nullable
   @Override
-  public SNode getSourceNode(SRepository repo) {
+  public SNodeReference getSourceNode() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
       return null;
     }
-    SNodeReference sn = d.getSourceNode();
-    if (sn == null) {
-      return null;
-    }
-    return sn.resolve(repo);
+    return d.getSourceNode();
   }
 
   @NotNull
