@@ -1064,6 +1064,12 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (item));
                 return result;
               }
+              public String getMatchingText(String pattern) {
+                return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke((item), _context.getCurrentTargetNode());
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
+              }
             });
           }
         }
@@ -1093,6 +1099,12 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (item));
                 return result;
               }
+              public String getMatchingText(String pattern) {
+                return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke((item), _context.getCurrentTargetNode());
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
+              }
             });
           }
         }
@@ -1121,6 +1133,12 @@ public class QueriesGenerated {
                 SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), null);
                 SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (item));
                 return result;
+              }
+              public String getMatchingText(String pattern) {
+                return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke((item), _context.getCurrentTargetNode());
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
               }
             });
           }
