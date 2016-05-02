@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 import java.util.Set;
@@ -53,6 +54,9 @@ public interface ConceptDescriptor {
   String getConceptShortDescription(); // since 3.0
 
   String getHelpUrl(); // since 3.0
+
+  @Nullable
+  SNodeReference getSourceNode();
 
   //------------ hierarchy
 

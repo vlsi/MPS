@@ -32,6 +32,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
 import java.util.List;
@@ -200,6 +201,12 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public String getHelpUrl() {
     reportWarn();
     return "";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return null;
   }
 
   @Nullable
