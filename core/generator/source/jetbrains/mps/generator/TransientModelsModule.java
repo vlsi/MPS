@@ -316,6 +316,16 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       return mySModel;
     }
 
+    @Override
+    protected void assertCanChange() {
+      // This model descriptor, unlike others, supports 'unloading' of model data.
+      // IOW, has special handling for models that are already attached to a repository but its model data
+      // could be restored and updated on load. Thus, we allow model modifications unless completely loaded.
+      if (isLoaded()) {
+        super.assertCanChange();
+      }
+    }
+
     private jetbrains.mps.smodel.SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
