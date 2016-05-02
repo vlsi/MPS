@@ -32,7 +32,6 @@ abstract class AbstractContainer<T> implements Container<T> {
   private Object myModificationId = new Object();
   private Entry<T> myFirst;
   private int mySize = 0;
-  private BigInteger myBigIntSize = null;
 
   /**
    * Returning Entry instance associated with specified item in this container.
@@ -85,26 +84,15 @@ abstract class AbstractContainer<T> implements Container<T> {
 
   private void incSize() {
     myModificationId = new Object();
-    if (myBigIntSize != null) {
-      myBigIntSize = myBigIntSize.add(BigInteger.ONE);
-    } else if (mySize == Integer.MAX_VALUE) {
-      myBigIntSize = MAX_INT.add(BigInteger.ONE);
-    } else {
-      mySize++;
+    if (mySize == Integer.MAX_VALUE) {
+      throw new OutOfMemoryError("Maximum size of this Container is " + Integer.MAX_VALUE);
     }
+    mySize++;
   }
 
   private void decSize() {
     myModificationId = new Object();
-    if (myBigIntSize == null) {
-      mySize--;
-      assert mySize >= 0;
-    } else {
-      myBigIntSize = myBigIntSize.subtract(BigInteger.ONE);
-      if (myBigIntSize.equals(MAX_INT)) {
-        myBigIntSize = null;
-      }
-    }
+    mySize--;
   }
 
   @Override

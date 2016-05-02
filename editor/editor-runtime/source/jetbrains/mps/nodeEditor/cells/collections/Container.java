@@ -29,7 +29,6 @@ public interface Container<T> extends Iterable<T> {
   /**
    * Returns the number of elements in this container.
    * <p>
-   * If this container contains more than {@link Integer#MAX_VALUE} elements, returns {@link Integer#MAX_VALUE}.
    *
    * @return the number of elements in this container
    */

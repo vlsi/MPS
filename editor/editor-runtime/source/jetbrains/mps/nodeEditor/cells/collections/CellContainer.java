@@ -34,7 +34,7 @@ public class CellContainer extends AbstractContainer<EditorCell> {
     if (item.getUserObject(this) != null) {
       return null;
     }
-    Entry<EditorCell> entry = new Entry<EditorCell>(item);
+    Entry<EditorCell> entry = new Entry<>(item);
     item.putUserObject(this, entry);
     return entry;
   }
