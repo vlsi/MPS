@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,6 +59,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String myConceptShortDescription;
   private final String myHelpUrl;
   private final StaticScope myStaticScope;
+  private SNodeReference mySourceNodeRef;
   private final Object myLock = "";
   // to be initialized
   private Set<String> ancestors;
@@ -87,7 +89,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String conceptAlias,
       String shortDescription,
       String helpUrl,
-      StaticScope staticScope) {
+      StaticScope staticScope, SNodeReference sourceNodeRef) {
     myId = id;
     myConceptFqName = conceptFqName;
     mySuperConceptId = superConceptId;
@@ -108,6 +110,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myStaticScope = staticScope;
 
     // todo: common with StructureAspectInterpreted to new class!
+    mySourceNodeRef = sourceNodeRef;
   }
 
   private void init() {
@@ -269,6 +272,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return myHelpUrl;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return mySourceNodeRef;
   }
 
   @NotNull

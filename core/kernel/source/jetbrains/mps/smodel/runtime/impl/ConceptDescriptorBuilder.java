@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,7 @@ public class ConceptDescriptorBuilder {
   private StaticScope staticScope;
   private SConceptId superConceptId;
   private SConceptId[] parentIds;
+  private SNodeReference sourceNodeRef;
   private List<PropertyDescriptor> ownProperties = new ArrayList<PropertyDescriptor>();
   private List<ReferenceDescriptor> ownReferences = new ArrayList<ReferenceDescriptor>();
   private List<LinkDescriptor> ownLinks = new ArrayList<LinkDescriptor>();
@@ -158,6 +160,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder sourceNode(SNodeReference value) {
+    this.sourceNodeRef = value;
+    return this;
+  }
+
   public ConceptDescriptor create() {
     return new CompiledConceptDescriptor(
         id,
@@ -173,7 +180,8 @@ public class ConceptDescriptorBuilder {
         isAbstract || isInterfaceConcept, isFinal,
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
-        staticScope == null ? StaticScope.GLOBAL : staticScope);
+        staticScope == null ? StaticScope.GLOBAL : staticScope,
+        sourceNodeRef);
   }
 
   public static class Link {

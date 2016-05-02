@@ -39,6 +39,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,6 +86,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, PropertyDescriptor> directPropertiesByName = new HashMap<String, PropertyDescriptor>();
   private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
   private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
+  private SNodeReference mySourceNodeRef;
 
   InterpretedConceptDescriptor(final SNode declaration, @NotNull SConceptId id, @NotNull final String qualifiedName) {
     myId = id;
@@ -214,6 +216,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             directLinksByName.put(role, pd);
           }
         }
+
+        mySourceNodeRef = declaration.getReference();
       }
     });
   }
@@ -364,6 +368,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return helpURL;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return mySourceNodeRef;
   }
 
   @NotNull
