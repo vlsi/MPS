@@ -9,13 +9,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass", MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass", MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L)).interface_().sourceNode(new SNodePointer("r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)", "4666195181811081429")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptIMainClass.getId(), 0);

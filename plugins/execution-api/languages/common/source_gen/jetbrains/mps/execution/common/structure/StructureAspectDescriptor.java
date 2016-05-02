@@ -9,13 +9,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptIGeneratedToClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.common.structure.IGeneratedToClass", MetaIdFactory.conceptId(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).create();
+  /*package*/ final ConceptDescriptor myConceptIGeneratedToClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.common.structure.IGeneratedToClass", MetaIdFactory.conceptId(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).sourceNode(new SNodePointer("r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)", "946964771156905387")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptIGeneratedToClass.getId(), 0);

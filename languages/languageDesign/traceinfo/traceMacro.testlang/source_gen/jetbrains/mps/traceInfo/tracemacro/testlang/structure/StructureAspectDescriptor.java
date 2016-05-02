@@ -10,13 +10,14 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:9250e562-77b8-46ca-b96b-24ddc8274461(jetbrains.mps.traceInfo.tracemacro.testlang.structure)", "7980748436587788162")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptGeneratedForeach.getId(), 0);

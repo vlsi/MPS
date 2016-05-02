@@ -9,13 +9,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint", MetaIdFactory.conceptId(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x75c17d085c8e0dbaL, "hint")).properties("hint").create();
+  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint", MetaIdFactory.conceptId(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x75c17d085c8e0dbaL, "hint")).properties("hint").sourceNode(new SNodePointer("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)", "7313573869697839898")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptMergeHint.getId(), 0);

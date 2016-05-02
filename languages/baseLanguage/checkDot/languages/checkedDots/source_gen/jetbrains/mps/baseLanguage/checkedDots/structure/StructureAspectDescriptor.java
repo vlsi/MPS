@@ -10,13 +10,14 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", MetaIdFactory.conceptId(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", MetaIdFactory.conceptId(0x774bf8a062e541e1L, 0xaf63f4812e60e48bL, 0x389ce13592c3023bL)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)", "4079382982702596667")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptCheckedDotExpression.getId(), 0);
