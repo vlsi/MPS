@@ -216,8 +216,8 @@
     <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="ecjsrc-4.3.2.jar" rev="${idea.platform.version}">
-      <artifact name="ecjsrc-4.3.2.jar" ext="jar"/>
+    <dependency org="lib.src" name="ecjsrc-4.4.jar" rev="${idea.platform.version}">
+      <artifact name="ecjsrc-4.4.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="gson-2.2.4-sources.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.2.4-sources.jar" ext="jar"/>
@@ -348,8 +348,8 @@
     <dependency org="lib" name="commons-net-3.1.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="ecj-4.3.2.jar" rev="${idea.platform.version}">
-      <artifact name="ecj-4.3.2.jar" ext="jar"/>
+    <dependency org="lib" name="ecj-4.4.jar" rev="${idea.platform.version}">
+      <artifact name="ecj-4.4.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>
