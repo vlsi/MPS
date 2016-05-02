@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
+import jetbrains.mps.vcs.diff.changes.EngagedLanguageChange;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -217,6 +218,18 @@ public class ChangeSetBuilder {
       }
     });
   }
+  private void buildForLanguagesEngagedOnGeneration() {
+    buildAddedAndDeletedDependencies(new _FunctionTypes._return_P1_E0<Collection<SLanguage>, SModelBase>() {
+      public Collection<SLanguage> invoke(SModelBase m) {
+        return m.getLanguagesEngagedOnGeneration();
+      }
+    }, new _FunctionTypes._return_P2_E0<EngagedLanguageChange, SLanguage, Boolean>() {
+      public EngagedLanguageChange invoke(SLanguage l, Boolean deleted) {
+        return new EngagedLanguageChange(myChangeSet, deleted, l);
+      }
+    });
+  }
+
   private void buildForMetadata() {
     buildForImports();
 
@@ -226,11 +239,7 @@ public class ChangeSetBuilder {
         return model.importedDevkits();
       }
     });
-    buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModelBase>() {
-      public List<SModuleReference> invoke(SModelBase model) {
-        return model.engagedOnGenerationLanguages();
-      }
-    });
+    buildForLanguagesEngagedOnGeneration();
 
     if (myNewModel instanceof GeneratableSModel && myOldModel instanceof GeneratableSModel) {
       if (((GeneratableSModel) myNewModel).isDoNotGenerate() != ((GeneratableSModel) myOldModel).isDoNotGenerate()) {
@@ -272,7 +281,7 @@ public class ChangeSetBuilder {
     return MultiTuple.<Iterable<D>,Iterable<D>>from(SetSequence.fromSet(newSet).subtract(SetSequence.fromSet(oldSet)), SetSequence.fromSet(oldSet).subtract(SetSequence.fromSet(newSet)));
   }
   private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModelBase> itemsExtractor) {
-    return getAddedAndDeleted(itemsExtractor.invoke(as_nbyrtw_a0a0a0w(myOldModel, SModelBase.class)), itemsExtractor.invoke(as_nbyrtw_a0b0a0w(myNewModel, SModelBase.class)));
+    return getAddedAndDeleted(itemsExtractor.invoke(as_nbyrtw_a0a0a0y(myOldModel, SModelBase.class)), itemsExtractor.invoke(as_nbyrtw_a0b0a0y(myNewModel, SModelBase.class)));
   }
   public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
     return buildChangeSet(oldModel, newModel, false);
@@ -359,10 +368,10 @@ public class ChangeSetBuilder {
     }
     return null;
   }
-  private static <T> T as_nbyrtw_a0a0a0w(Object o, Class<T> type) {
+  private static <T> T as_nbyrtw_a0a0a0y(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_nbyrtw_a0b0a0w(Object o, Class<T> type) {
+  private static <T> T as_nbyrtw_a0b0a0y(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

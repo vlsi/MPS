@@ -2271,6 +2271,69 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="5UKxCD6LNgV" role="jymVt">
+      <property role="TrG5h" value="buildForLanguagesEngagedOnGeneration" />
+      <node concept="3cqZAl" id="5UKxCD6LNgX" role="3clF45" />
+      <node concept="3Tm6S6" id="5UKxCD6LQ6S" role="1B3o_S" />
+      <node concept="3clFbS" id="5UKxCD6LNgZ" role="3clF47">
+        <node concept="3clFbF" id="5UKxCD6LCv5" role="3cqZAp">
+          <node concept="1rXfSq" id="5UKxCD6LCv3" role="3clFbG">
+            <ref role="37wK5l" node="42hl10VHbnK" resolve="buildAddedAndDeletedDependencies" />
+            <node concept="1bVj0M" id="5UKxCD6LD5e" role="37wK5m">
+              <node concept="3clFbS" id="5UKxCD6LD5f" role="1bW5cS">
+                <node concept="3clFbF" id="5UKxCD6LDvs" role="3cqZAp">
+                  <node concept="2OqwBi" id="5UKxCD6LDU1" role="3clFbG">
+                    <node concept="37vLTw" id="5UKxCD6LDvr" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5UKxCD6LD7q" resolve="m" />
+                    </node>
+                    <node concept="liA8E" id="5UKxCD6LG0j" role="2OqNvi">
+                      <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getLanguagesEngagedOnGeneration():java.util.Collection" resolve="getLanguagesEngagedOnGeneration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTG" id="5UKxCD6LD7q" role="1bW2Oz">
+                <property role="TrG5h" value="m" />
+                <node concept="3uibUv" id="5UKxCD6LD7p" role="1tU5fm">
+                  <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+                </node>
+              </node>
+            </node>
+            <node concept="1bVj0M" id="5UKxCD6LGmx" role="37wK5m">
+              <node concept="3clFbS" id="5UKxCD6LGmz" role="1bW5cS">
+                <node concept="3clFbF" id="5UKxCD6LHxC" role="3cqZAp">
+                  <node concept="2ShNRf" id="5UKxCD6LHxA" role="3clFbG">
+                    <node concept="1pGfFk" id="5UKxCD6LI0F" role="2ShVmc">
+                      <ref role="37wK5l" to="btf5:5UKxCD6L8eO" resolve="EngagedLanguageChange" />
+                      <node concept="37vLTw" id="5UKxCD6LIfh" role="37wK5m">
+                        <ref role="3cqZAo" node="42hl10VHbu$" resolve="myChangeSet" />
+                      </node>
+                      <node concept="37vLTw" id="5UKxCD6LINS" role="37wK5m">
+                        <ref role="3cqZAo" node="5UKxCD6LGI4" resolve="deleted" />
+                      </node>
+                      <node concept="37vLTw" id="5UKxCD6LJj_" role="37wK5m">
+                        <ref role="3cqZAo" node="5UKxCD6LGuL" resolve="l" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTG" id="5UKxCD6LGuL" role="1bW2Oz">
+                <property role="TrG5h" value="l" />
+                <node concept="3uibUv" id="5UKxCD6LGuK" role="1tU5fm">
+                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+                </node>
+              </node>
+              <node concept="37vLTG" id="5UKxCD6LGI4" role="1bW2Oz">
+                <property role="TrG5h" value="deleted" />
+                <node concept="10P_77" id="5UKxCD6LGVq" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5UKxCD6LKr2" role="jymVt" />
     <node concept="3clFb_" id="42hl10VHbq7" role="jymVt">
       <property role="TrG5h" value="buildForMetadata" />
       <node concept="3cqZAl" id="42hl10VHbq8" role="3clF45" />
@@ -2316,33 +2379,9 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="42hl10VHbqA" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyTu2" role="3clFbG">
-            <ref role="37wK5l" node="42hl10VHbp_" resolve="buildForDependencies" />
-            <node concept="Rm8GO" id="42hl10VHbqC" role="37wK5m">
-              <ref role="Rm8GQ" to="btf5:4LCuQ2Vx_lh" resolve="LANG_ENGAGED_ON_GENERATION" />
-              <ref role="1Px2BO" to="btf5:4LCuQ2Vx_l7" resolve="ModuleDependencyChange.DependencyType" />
-            </node>
-            <node concept="1bVj0M" id="42hl10VHbqD" role="37wK5m">
-              <node concept="3clFbS" id="42hl10VHbqE" role="1bW5cS">
-                <node concept="3clFbF" id="42hl10VHbqF" role="3cqZAp">
-                  <node concept="2OqwBi" id="42hl10VHbqG" role="3clFbG">
-                    <node concept="37vLTw" id="7uQYadQc$oI" role="2Oq$k0">
-                      <ref role="3cqZAo" node="42hl10VHbqK" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="42hl10VHbqJ" role="2OqNvi">
-                      <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.engagedOnGenerationLanguages():java.util.List" resolve="engagedOnGenerationLanguages" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="37vLTG" id="42hl10VHbqK" role="1bW2Oz">
-                <property role="TrG5h" value="model" />
-                <node concept="3uibUv" id="5OnZ9ckplrw" role="1tU5fm">
-                  <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbF" id="5UKxCD6MCsv" role="3cqZAp">
+          <node concept="1rXfSq" id="5UKxCD6MCst" role="3clFbG">
+            <ref role="37wK5l" node="5UKxCD6LNgV" resolve="buildForLanguagesEngagedOnGeneration" />
           </node>
         </node>
         <node concept="3clFbH" id="42hl10VHbqM" role="3cqZAp" />

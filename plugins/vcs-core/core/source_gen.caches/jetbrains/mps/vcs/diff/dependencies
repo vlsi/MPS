@@ -48,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.EngagedLanguageChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ImportedModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />

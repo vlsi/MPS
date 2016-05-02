@@ -57,7 +57,7 @@
       <property role="20kJfa" value="languageEngagedOnGeneration" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="4685150495576720952" />
-      <ref role="20lvS9" node="3B8MzHTEEZx" resolve="ModuleReference" />
+      <ref role="20lvS9" node="6o5s9kYTtqT" resolve="LanguageDependency" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

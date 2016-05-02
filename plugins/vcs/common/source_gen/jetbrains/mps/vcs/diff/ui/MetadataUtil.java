@@ -58,8 +58,8 @@ public class MetadataUtil {
     for (SLanguage language : CollectionSequence.fromCollection(modelBase.importedLanguageIds())) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).addElement(createLanguageNode(language));
     }
-    for (SModuleReference genlanguage : ListSequence.fromList(modelBase.engagedOnGenerationLanguages())) {
-      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188638L, "languageEngagedOnGeneration"))).addElement(createModuleRefNode(genlanguage));
+    for (SLanguage genlanguage : CollectionSequence.fromCollection(modelBase.getLanguagesEngagedOnGeneration())) {
+      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188638L, "languageEngagedOnGeneration"))).addElement(createLanguageNode(genlanguage));
     }
     for (SModuleReference devkit : ListSequence.fromList(modelBase.importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863bL, "devkit"))).addElement(createModuleRefNode(devkit));
@@ -136,19 +136,19 @@ public class MetadataUtil {
       }
     });
 
-    Set<SModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), modelBase.engagedOnGenerationLanguages());
-    Set<SModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188638L, "languageEngagedOnGeneration"))).select(new ISelector<SNode, SModuleReference>() {
-      public SModuleReference select(SNode it) {
-        return getModuleReference(it);
+    Set<SLanguage> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<SLanguage>(), modelBase.getLanguagesEngagedOnGeneration());
+    Set<SLanguage> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<SLanguage>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188638L, "languageEngagedOnGeneration"))).select(new ISelector<SNode, SLanguage>() {
+      public SLanguage select(SNode it) {
+        return getLanguage(it);
       }
     }));
-    SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<SModuleReference>() {
-      public void visit(SModuleReference it) {
+    SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<SLanguage>() {
+      public void visit(SLanguage it) {
         modelBase.removeEngagedOnGenerationLanguage(it);
       }
     });
-    SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<SModuleReference>() {
-      public void visit(SModuleReference it) {
+    SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<SLanguage>() {
+      public void visit(SLanguage it) {
         modelBase.addEngagedOnGenerationLanguage(it);
       }
     });

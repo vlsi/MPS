@@ -49,15 +49,6 @@ public class ModuleDependencyChange extends DependencyChange {
       public void invoke(SModel model, SModuleReference module) {
         ((SModelBase) model).deleteDevKit(module);
       }
-    }),
-    LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
-      public void invoke(SModel model, SModuleReference module) {
-        ((SModelBase) model).addEngagedOnGenerationLanguage(module);
-      }
-    }, new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
-      public void invoke(SModel model, SModuleReference module) {
-        ((SModelBase) model).removeEngagedOnGenerationLanguage(module);
-      }
     });
 
     private String myName;
