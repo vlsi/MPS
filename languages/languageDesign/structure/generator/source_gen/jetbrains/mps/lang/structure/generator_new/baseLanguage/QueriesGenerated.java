@@ -182,6 +182,9 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5096292688183698224(final ReferenceMacroContext _context) {
     return (SPropertyOperations.hasValue(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null) ? "NONE" : "ROOT");
   }
+  public static Object referenceMacro_GetReferent_5023950685592203880(final ReferenceMacroContext _context) {
+    return _context.getNode();
+  }
   public static Object referenceMacro_GetReferent_4630900134062377776(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "conceptFieldDecl");
   }
