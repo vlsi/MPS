@@ -77,7 +77,9 @@ public interface SAbstractConcept extends SNamedElement {
   SNode getDeclarationNode();
 
   /**
-   * Returns the declaration node in case sources for this concept are present in IDE
+   * Returns reference to the node, which was generated to this concept.
+   * The target node's concept can be different form AbstractConceptDeclaration.
+   * Generally, this method should be only used for "go to concept declaration".
    */
   @Nullable
   SNodeReference getSourceNode();
