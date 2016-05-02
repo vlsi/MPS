@@ -24,6 +24,12 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
@@ -92,27 +98,30 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   }
 
   private void checkNode(List<SearchResult<ModelCheckerIssue>> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
-    SNode conceptDecl = SNodeOperations.as(node.getConcept().getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-    if (conceptDecl == null) {
+    SAbstractConcept cncpt = SNodeOperations.getConcept(node);
+    if (!((cncpt.isValid()))) {
       SpecificChecker.addIssue(results, node, "No concept found for " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
+      return;
     }
-    if (SNodeOperations.isInstanceOf(conceptDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      SNode decl = SNodeOperations.cast(conceptDecl, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-
-      if (isAncestor) {
-        if (SNodeOperations.isInstanceOf(decl, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2ea65c0b397bd5beL, "jetbrains.mps.lang.core.structure.ScopeFacade")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(refNode, null, true)).contains(node))) {
-          SpecificChecker.addIssue(results, anchor, "Reference from outside to a node under ScopeFacade: facade=" + SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
-        }
-      } else {
-
-        if (SPropertyOperations.hasValue(decl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null)) {
-          SpecificChecker.addIssue(results, anchor, "Reference to a non-referenceable node found: " + SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
-        } else if (SPropertyOperations.hasValue(decl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null) && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
-          SpecificChecker.addIssue(results, anchor, "Cross-root reference to a locally referenceable node found: " + SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node", null);
-        }
+    if (cncpt instanceof SInterfaceConcept) {
+      SpecificChecker.addIssue(results, node, "Interface instance found! " + node.toString(), ModelChecker.SEVERITY_ERROR, "interface instance", null);
+      return;
+    }
+    if (cncpt.isAbstract()) {
+      SpecificChecker.addIssue(results, node, "Abstract concept instance found! " + node.toString(), ModelChecker.SEVERITY_ERROR, "abstract concept instance", null);
+      return;
+    }
+    if (isAncestor) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2ea65c0b397bd5beL, "jetbrains.mps.lang.core.structure.ScopeFacade")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(refNode, null, true)).contains(node))) {
+        SpecificChecker.addIssue(results, anchor, "Reference from outside to a node under ScopeFacade: facade=" + cncpt.getName(), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
       }
     } else {
-      SpecificChecker.addIssue(results, node, "Interface instance found! " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
+      ConceptDescriptor cd = ((SAbstractConceptAdapter) cncpt).getConceptDescriptor();
+      if (cd.getStaticScope() == StaticScope.NONE) {
+        SpecificChecker.addIssue(results, anchor, "Reference to a non-referenceable node found: " + cncpt.getName(), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
+      } else if (cd.getStaticScope() == StaticScope.NONE && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
+        SpecificChecker.addIssue(results, anchor, "Cross-root reference to a locally referenceable node found: " + cncpt.getName(), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node", null);
+      }
     }
   }
 
