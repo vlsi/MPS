@@ -70,7 +70,7 @@ public class SModel implements SModelData {
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
   private boolean myDisposed;
-  private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
+  private List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<SLanguage>();
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
@@ -784,8 +784,14 @@ public class SModel implements SModelData {
     return result;
   }
 
+  /**
+   * @deprecated though it's our internal API, there's 1 use in mbeddr of this exact method we need to fix first.
+   *             Once mbeddr use and 2 uses in our model persistence gone, remove the method
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public List<SModuleReference> engagedOnGenerationLanguages() {
-    return myLanguagesEngagedOnGeneration;
+    return new SModelLegacy(this).engagedOnGenerationLanguages();
   }
 
   private void markChanged() {
@@ -796,7 +802,11 @@ public class SModel implements SModelData {
     }
   }
 
-  public void addEngagedOnGenerationLanguage(SModuleReference ref) {
+  public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
+    return myLanguagesEngagedOnGeneration;
+  }
+
+  public void addEngagedOnGenerationLanguage(SLanguage ref) {
     assertLegalChange();
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -808,7 +818,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
+  public void removeEngagedOnGenerationLanguage(SLanguage ref) {
     assertLegalChange();
 
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -919,10 +929,6 @@ public class SModel implements SModelData {
     if (updateRefs(myDevKits)) {
       changed = true;
     }
-    if (updateRefs(myLanguagesEngagedOnGeneration)) {
-      changed = true;
-    }
-
     return changed;
   }
 
@@ -972,7 +978,7 @@ public class SModel implements SModelData {
     for (SLanguage lang : usedLanguages()) {
       to.addLanguage(lang);
     }
-    for (SModuleReference mr : engagedOnGenerationLanguages()) {
+    for (SLanguage mr : getLanguagesEngagedOnGeneration()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
   }

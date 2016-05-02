@@ -16,19 +16,13 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -45,6 +39,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -224,7 +219,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public void addLanguage(Language language) {
-    getSModel().addLanguage(MetaAdapterByDeclaration.getLanguage(language));
+    new SModelLegacy(getSModel()).addLanguage(language);
     validateModuleLanguageVersions();
   }
 
@@ -259,18 +254,18 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public List<SModuleReference> importedDevkits() {
-    return getSModelInternal().importedDevkits();
+    return getSModel().importedDevkits();
   }
 
   @Override
   public final void addDevKit(SModuleReference ref) {
-    getSModelInternal().addDevKit(ref);
+    getSModel().addDevKit(ref);
     validateModuleLanguageVersions();
   }
 
   @Override
   public final void deleteDevKit(@NotNull SModuleReference ref) {
-    getSModelInternal().deleteDevKit(ref);
+    getSModel().deleteDevKit(ref);
     validateModuleLanguageVersions();
   }
 
@@ -295,7 +290,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final List<ImportElement> importedModels() {
-    return getSModelInternal().importedModels();
+    return getSModel().importedModels();
   }
 
   @Override
@@ -305,46 +300,51 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void addModelImport(ImportElement importElement) {
-    getSModelInternal().addModelImport(importElement);
+    getSModel().addModelImport(importElement);
   }
 
   @Override
   public final void deleteModelImport(SModelReference modelReference) {
-    getSModelInternal().deleteModelImport(modelReference);
+    getSModel().deleteModelImport(modelReference);
   }
 
   @Override
+  @Deprecated
   public final List<SModuleReference> engagedOnGenerationLanguages() {
-    return getSModelInternal().engagedOnGenerationLanguages();
+    return new SModelLegacy(getSModel()).engagedOnGenerationLanguages();
+  }
+
+  @NotNull
+  @Override
+  public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
+    // assertCanRead
+    return getSModel().getLanguagesEngagedOnGeneration();
   }
 
   @Override
+  @Deprecated
   public final void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    getSModel().addEngagedOnGenerationLanguage(ref);
+    // assertCanChange
+    new SModelLegacy(getSModel()).addEngagedOnGenerationLanguage(ref);
   }
 
   @Override
   public final void addEngagedOnGenerationLanguage(SLanguage lang) {
-    addEngagedOnGenerationLanguage(moduleRefForLanguage(lang));
+    // assertCanChange
+    getSModel().addEngagedOnGenerationLanguage(lang);
   }
 
   @Override
+  @Deprecated
   public final void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    getSModel().removeEngagedOnGenerationLanguage(ref);
+    // assertCanChange
+    new SModelLegacy(getSModel()).removeEngagedOnGenerationLanguage(ref);
   }
 
   @Override
   public final void removeEngagedOnGenerationLanguage(SLanguage lang) {
-    removeEngagedOnGenerationLanguage(moduleRefForLanguage(lang));
-  }
-
-  private static SModuleReference moduleRefForLanguage(SLanguage lang) {
-    String name = lang.getQualifiedName();
-    //todo: this is used in changing "engaged on generation" languages. This should be at least be replaced with
-    //"engaged" generators set, so I don't rewrite this code to use SLanguages as it will also be not correct
-    SLanguageId id = MetaIdHelper.getLanguage(lang);
-    ModuleId moduleId = ModuleId.regular(id.getIdValue());
-    return new ModuleReference(name, moduleId);
+    // assertCanChange
+    getSModel().removeEngagedOnGenerationLanguage(lang);
   }
 
   @Override

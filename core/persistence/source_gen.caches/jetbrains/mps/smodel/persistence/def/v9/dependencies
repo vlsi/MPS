@@ -33,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.InterfaceSNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelLegacy" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

@@ -58,7 +58,7 @@ public class ModelReader4 implements IModelReader {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(VCSPersistenceSupport.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
+      new SModelLegacy(model).addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
     }
     // devkits 
     List devkits = rootElement.getChildren(VCSPersistenceSupport.DEVKIT);

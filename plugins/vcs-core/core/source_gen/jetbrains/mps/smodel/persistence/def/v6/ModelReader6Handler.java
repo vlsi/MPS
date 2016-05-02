@@ -216,7 +216,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_7319439566871678410(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      my_modelField.addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
+      new SModelLegacy(my_modelField).addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_7319439566871678419(Object resultObject, Object value) throws SAXException {
       String child = (String) value;

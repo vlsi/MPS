@@ -25,7 +25,7 @@ public class ModelProperties {
   private final List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
   private final List<SLanguage> myUsedLanguages = new ArrayList<SLanguage>();
   private final List<SModuleReference> myUsedDevKits = new ArrayList<SModuleReference>();
-  private final List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
+  private final List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<SLanguage>();
   private SModel myModelDescriptor;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
@@ -35,7 +35,7 @@ public class ModelProperties {
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(((SModelInternal) model).importedLanguageIds());
     myUsedDevKits.addAll(((SModelInternal) model).importedDevkits());
-    myLanguagesEngagedOnGeneration.addAll(((SModelInternal) model).engagedOnGenerationLanguages());
+    myLanguagesEngagedOnGeneration.addAll(((SModelInternal) model).getLanguagesEngagedOnGeneration());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
@@ -52,7 +52,7 @@ public class ModelProperties {
   public List<SModuleReference> getUsedDevKits() {
     return myUsedDevKits;
   }
-  public List<SModuleReference> getLanguagesEngagedOnGeneration() {
+  public List<SLanguage> getLanguagesEngagedOnGeneration() {
     return myLanguagesEngagedOnGeneration;
   }
   public boolean isDoNotGenerate() {
@@ -77,8 +77,8 @@ public class ModelProperties {
     updateUsedLanguages();
     addNewDevKits();
     removeUnusedDevKits();
-    addNewEngagedOnGenerationLanguages();
-    removeUnusedEngagedOnGenerationLanguages();
+    saveEngagedOnGenerationLanguages();
+
     if (myModelDescriptor instanceof GeneratableSModel) {
       GeneratableSModel dmd = (GeneratableSModel) myModelDescriptor;
       if (dmd.isDoNotGenerate() != myDoNotGenerate) {
@@ -137,22 +137,23 @@ public class ModelProperties {
     }
 
   }
-  private void addNewEngagedOnGenerationLanguages() {
-    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
-    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
-    languagesInProps.removeAll(languagesInModel);
-    for (SModuleReference namespace : languagesInProps) {
-      ((SModelInternal) myModelDescriptor).addEngagedOnGenerationLanguage(namespace);
+
+  private void saveEngagedOnGenerationLanguages() {
+    final SModelInternal modelInternal = (SModelInternal) myModelDescriptor;
+    Set<SLanguage> languagesInModel = new HashSet<SLanguage>((modelInternal).getLanguagesEngagedOnGeneration());
+    Set<SLanguage> languagesInProps = new HashSet<SLanguage>(getLanguagesEngagedOnGeneration());
+    for (SLanguage l : languagesInModel) {
+      // remove if not from actual state 
+      if (!(languagesInProps.remove(l))) {
+        modelInternal.removeEngagedOnGenerationLanguage(l);
+      }
+    }
+    // add those left 
+    for (SLanguage l : languagesInProps) {
+      modelInternal.addEngagedOnGenerationLanguage(l);
     }
   }
-  private void removeUnusedEngagedOnGenerationLanguages() {
-    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
-    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
-    languagesInModel.removeAll(languagesInProps);
-    for (SModuleReference ref : languagesInModel) {
-      ((SModelInternal) myModelDescriptor).removeEngagedOnGenerationLanguage(ref);
-    }
-  }
+
   private void addNewModels() {
     Set<SModelReference> modelsInProps = new HashSet<SModelReference>(getImportedModels());
     SModel smodel = myModelDescriptor;

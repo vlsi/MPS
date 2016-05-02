@@ -277,8 +277,8 @@ public class ValidationUtil {
         }
       }
     }
-    for (SModuleReference lang : ((SModelInternal) model).engagedOnGenerationLanguages()) {
-      if (lang.resolve(repository) == null) {
+    for (SLanguage lang : ((SModelInternal) model).getLanguagesEngagedOnGeneration()) {
+      if (languageRegistry.getLanguage(lang) == null) {
         if (!processor.process(new MissingImportedLanguageError(model, lang))) {
           return;
         }

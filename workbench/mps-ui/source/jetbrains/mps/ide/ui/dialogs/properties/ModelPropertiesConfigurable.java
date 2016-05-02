@@ -62,7 +62,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
@@ -512,9 +511,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
       myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), PropertiesBundle.message("model.info.engaged.title"));
       ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
-      for (SModuleReference moduleReference : myModelProperties.getLanguagesEngagedOnGeneration()) {
-        engagedLanguages.add(MetaAdapterFactory.getLanguage(moduleReference));
-      }
+      engagedLanguages.addAll(myModelProperties.getLanguagesEngagedOnGeneration());
       myEngagedLanguagesModel.init(engagedLanguages, Collections.<SModuleReference>emptyList());
       languagesTable.setModel(myEngagedLanguagesModel);
 
@@ -567,12 +564,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
       myEngagedLanguagesModel.fillResult(engagedLanguages, new ArrayList<SModuleReference>()/*ignored, shall be empty*/);
-      final List<SModuleReference> l = myModelProperties.getLanguagesEngagedOnGeneration();
-      l.clear();
-      // FIXME engaged languages shall use SLanguage, not SModule
-      for (SLanguage item : engagedLanguages) {
-        l.add(item.getSourceModule().getModuleReference());
-      }
+      myModelProperties.getLanguagesEngagedOnGeneration().clear();
+      myModelProperties.getLanguagesEngagedOnGeneration().addAll(engagedLanguages);
     }
   }
 

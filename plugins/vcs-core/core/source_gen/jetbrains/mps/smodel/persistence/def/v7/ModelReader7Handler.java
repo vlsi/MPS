@@ -231,7 +231,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addEngagedOnGenerationLanguage(child);
+      new SModelLegacy(my_modelField).addEngagedOnGenerationLanguage(child);
     }
     private void handleChild_286176397450364101(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

@@ -2815,11 +2815,16 @@
             </node>
             <node concept="3clFbF" id="p9Lm3R6GhD" role="3cqZAp">
               <node concept="2OqwBi" id="p9Lm3R6GZx" role="3clFbG">
-                <node concept="37vLTw" id="p9Lm3R6GZw" role="2Oq$k0">
-                  <ref role="3cqZAo" node="p9Lm3R6Ggs" resolve="model" />
+                <node concept="2ShNRf" id="3hW_iNb_MX" role="2Oq$k0">
+                  <node concept="1pGfFk" id="3hW_iNbAqG" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~SModelLegacy.&lt;init&gt;(jetbrains.mps.smodel.SModel)" resolve="SModelLegacy" />
+                    <node concept="37vLTw" id="3hW_iNbAsf" role="37wK5m">
+                      <ref role="3cqZAo" node="p9Lm3R6Ggs" resolve="model" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="liA8E" id="p9Lm3R6GZy" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModel.addEngagedOnGenerationLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addEngagedOnGenerationLanguage" />
+                  <ref role="37wK5l" to="w1kc:~SModelLegacy.addEngagedOnGenerationLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addEngagedOnGenerationLanguage" />
                   <node concept="2OqwBi" id="p9Lm3R6GhF" role="37wK5m">
                     <node concept="2YIFZM" id="p9Lm3R6GZ_" role="2Oq$k0">
                       <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -52,6 +56,10 @@ public final class SModelLegacy {
     myModel.addLanguage(MetaAdapterFactory.getLanguage(ref));
   }
 
+  public void addLanguage(Language language) {
+    myModel.addLanguage(MetaAdapterByDeclaration.getLanguage(language));
+  }
+
   public void addModelImport(org.jetbrains.mps.openapi.model.SModelReference ref, boolean firstVersion) {
     ImportElement importElement = SModelOperations.getImportElement(myModel, ref);
     if (importElement != null) {
@@ -73,6 +81,35 @@ public final class SModelLegacy {
       }
     }
     return rv;
+  }
+
+  public List<SModuleReference> engagedOnGenerationLanguages() {
+    final Collection<SLanguage> langs = myModel.getLanguagesEngagedOnGeneration();
+    ArrayList<SModuleReference> rv = new ArrayList<>(langs.size());
+    for (SLanguage l : langs) {
+      rv.add(moduleRefForLanguage(l));
+    }
+    return rv;
+  }
+
+
+  public void addEngagedOnGenerationLanguage(SModuleReference ref) {
+    myModel.addEngagedOnGenerationLanguage(MetaAdapterFactory.getLanguage(ref));
+  }
+
+  public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
+    myModel.removeEngagedOnGenerationLanguage(MetaAdapterFactory.getLanguage(ref));
+  }
+
+  private static SModuleReference moduleRefForLanguage(SLanguage lang) {
+    String name = lang.getQualifiedName();
+    //todo: this is used in changing "engaged on generation" languages. This should be at least be replaced with
+    //"engaged" generators set, so I don't rewrite this code to use SLanguages as it will also be not correct
+    //   [artem] I have no idea what the comment above is talking about (comes from 6ccc1cf020c2ee9e093f25ae2e83d977a9410799),
+    //   engaged languages would rather cease altogether than got replaced with generators.
+    SLanguageId id = MetaIdHelper.getLanguage(lang);
+    ModuleId moduleId = ModuleId.regular(id.getIdValue());
+    return new ModuleReference(name, moduleId);
   }
 
 }

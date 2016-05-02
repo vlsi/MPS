@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.InterfaceSNode;
@@ -376,7 +377,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_5480414999147804036(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
-      my_modelField.addEngagedOnGenerationLanguage(child);
+      new SModelLegacy(my_modelField).addEngagedOnGenerationLanguage(child);
     }
     private void handleChild_5480414999147804044(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

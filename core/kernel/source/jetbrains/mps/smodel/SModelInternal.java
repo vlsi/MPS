@@ -25,8 +25,10 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collection;
 import java.util.List;
 
+// XXX move to [smodel] once ImportElement and Language dependencies gone
 public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addModelListener(@NotNull SModelListener listener);
@@ -43,7 +45,12 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   // FIXME refactor, rename to removeLanguage(SLanguage), expose in SModel
   void deleteLanguageId(@NotNull SLanguage ref);
 
-  void addLanguage(Language language);
+  /**
+   * @deprecated use {@link #addLanguage(SLanguage)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
+  void addLanguage(Language language); // 2 uses in mbeddr
 
   void addLanguage(@NotNull SLanguage language);
 
@@ -79,7 +86,18 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void deleteModelImport(SModelReference modelReference);
 
+  /**
+   * @deprecated use {@link #getLanguagesEngagedOnGeneration()} or {@link SModelLegacy#engagedOnGenerationLanguages()} for transition.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   List<SModuleReference> engagedOnGenerationLanguages();
+
+  /**
+   * @since 3.4
+   */
+  @NotNull
+  Collection<SLanguage> getLanguagesEngagedOnGeneration();
 
   /**
    * @deprecated use {@link #addEngagedOnGenerationLanguage(SLanguage)} instead

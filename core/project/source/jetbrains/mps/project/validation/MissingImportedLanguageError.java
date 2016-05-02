@@ -17,11 +17,9 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public final class MissingImportedLanguageError extends ValidationProblem {
   private final SModel myModel;
@@ -31,12 +29,6 @@ public final class MissingImportedLanguageError extends ValidationProblem {
     super(Severity.ERROR, String.format("Can't find language: %s", lang.getQualifiedName()));
     myModel = model;
     myLang = lang;
-  }
-
-  public MissingImportedLanguageError(SModel model, SModuleReference lang) {
-    super(Severity.ERROR, String.format("Can't find language: %s", lang.getModuleName()));
-    myModel = model;
-    myLang = MetaAdapterFactory.getLanguage(lang);;
   }
 
   public SModel getModel() {

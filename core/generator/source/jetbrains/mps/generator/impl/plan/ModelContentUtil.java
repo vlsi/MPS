@@ -18,11 +18,9 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -35,9 +33,7 @@ public class ModelContentUtil {
 
   public static Collection<SLanguage> getUsedLanguages(@NotNull SModel model) {
     Set<SLanguage> namespaces = new HashSet<SLanguage>();
-    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
-      namespaces.add(MetaAdapterFactory.getLanguage(ref));
-    }
+    namespaces.addAll(((jetbrains.mps.smodel.SModelInternal) model).getLanguagesEngagedOnGeneration());
     if (SModelStereotype.isGeneratorModel(model)) {
       ModelScanner templateModelScanner = new ModelScanner();
       templateModelScanner.scanInLegacyMode(model);

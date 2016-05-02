@@ -447,12 +447,17 @@
           <node concept="3clFbS" id="fSGYFh8kiV" role="2VODD2">
             <node concept="3clFbF" id="fSGYFh8kiW" role="3cqZAp">
               <node concept="2OqwBi" id="fSGYFh8kiX" role="3clFbG">
-                <node concept="CQp63" id="62HG2toyapY" role="2Oq$k0">
-                  <ref role="CQp62" node="fSGYFh8kiv" resolve="model" />
-                </node>
                 <node concept="liA8E" id="fSGYFh8kj1" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModel.addEngagedOnGenerationLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addEngagedOnGenerationLanguage" />
+                  <ref role="37wK5l" to="w1kc:~SModelLegacy.addEngagedOnGenerationLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addEngagedOnGenerationLanguage" />
                   <node concept="CQp6Q" id="4wWMt5c5gNZ" role="37wK5m" />
+                </node>
+                <node concept="2ShNRf" id="3hW_iNb_MX" role="2Oq$k0">
+                  <node concept="1pGfFk" id="3hW_iNbAqG" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~SModelLegacy.&lt;init&gt;(jetbrains.mps.smodel.SModel)" resolve="SModelLegacy" />
+                    <node concept="CQp63" id="3hW_iNbHlB" role="37wK5m">
+                      <ref role="CQp62" node="fSGYFh8kiv" resolve="model" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

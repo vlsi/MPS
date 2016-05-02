@@ -105,7 +105,7 @@ public final class ModelImports {
    * @param other model to copy engaged languages from
    */
   public void copyLanguageEngagedOnGeneration(@NotNull org.jetbrains.mps.openapi.model.SModel other) {
-    for (SModuleReference ref : ((SModelInternal) other).engagedOnGenerationLanguages()) {
+    for (SLanguage ref : ((SModelInternal) other).getLanguagesEngagedOnGeneration()) {
       myModel.addEngagedOnGenerationLanguage(ref);
     }
   }

@@ -32,6 +32,7 @@ import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -266,8 +267,13 @@ public final class BinaryPersistence {
 
     loadUsedLanguages(is);
 
-    for (SModuleReference ref : loadModuleRefList(is)) myModelData.addEngagedOnGenerationLanguage(ref);
-    for (SModuleReference ref : loadModuleRefList(is)) myModelData.addDevKit(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) {
+      // FIXME add temporary code to read both module ref and SLanguage in 3.4 (write SLangugae, read both)
+      new SModelLegacy(myModelData).addEngagedOnGenerationLanguage(ref);
+    }
+    for (SModuleReference ref : loadModuleRefList(is)) {
+      myModelData.addDevKit(ref);
+    }
 
     for (ImportElement imp : loadImports(is)) myModelData.addModelImport(imp);
 
