@@ -169,9 +169,6 @@ public class SModel implements SModelData {
   @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalNodeRegistration(this, node);
-    }
     enforceFullLoad();
     if (myRoots.contains(node)) {
       // why not warn?
@@ -198,9 +195,6 @@ public class SModel implements SModelData {
   @Override
   public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalNodeUnRegistration(this, node);
-    }
     enforceFullLoad();
     if (myRoots.contains(node)) {
       myNodeOwner.fireBeforeNodeRemove(null, null, (SNode) node, null);
