@@ -47,6 +47,8 @@ import jetbrains.mps.generator.GenPlanExtractor;
 import jetbrains.mps.generator.GenerationTaskRecorder;
 import jetbrains.mps.generator.GeneratorTask;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.DefaultTaskBuilder;
 import jetbrains.mps.generator.GeneratorTaskBase;
@@ -457,20 +459,25 @@ public class Generate_Facet extends IFacet.Stub {
 
               progressMonitor.start("Generating", 110);
               try {
-                List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
-                  public Iterable<SModel> translate(MResource in) {
-                    return in.models();
-                  }
-                }).toListSequence();
-                DefaultTaskBuilder<GeneratorTaskBase> tb = new DefaultTaskBuilder<GeneratorTaskBase>(new GeneratorTask.Factory<GeneratorTaskBase>() {
-                  public GeneratorTaskBase create(SModel model) {
-                    return new GeneratorTaskBase(model);
+                List<GeneratorTask> tasks = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<GeneratorTask>>() {
+                  public List<GeneratorTask> compute() {
+                    List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
+                      public Iterable<SModel> translate(MResource in) {
+                        return in.models();
+                      }
+                    }).toListSequence();
+                    DefaultTaskBuilder<GeneratorTask> tb = new DefaultTaskBuilder<GeneratorTask>(new GeneratorTask.Factory<GeneratorTask>() {
+                      public GeneratorTask create(SModel model) {
+                        return new GeneratorTaskBase(model);
+                      }
+                    });
+                    tb.addAll(models);
+                    return tb.getResult();
                   }
                 });
-                tb.addAll(models);
                 GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
                 genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
-                genFacade.process(progressMonitor.subTask(100), tb.getResult());
+                genFacade.process(progressMonitor.subTask(100), tasks);
 
                 for (GenerationStatus genStatus : taskHandler.getAllRecorded()) {
                   if (!(genStatus.isOk())) {
