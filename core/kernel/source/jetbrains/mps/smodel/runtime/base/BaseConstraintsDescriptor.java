@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import javax.swing.Icon;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -364,6 +365,12 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   @Override
   public String getAlternativeIcon(SNode node) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public Icon getInstanceIcon(SNode node) {
     return null;
   }
 

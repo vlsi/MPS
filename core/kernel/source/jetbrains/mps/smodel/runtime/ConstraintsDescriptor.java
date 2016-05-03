@@ -29,6 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
+
 public interface ConstraintsDescriptor {
   @Deprecated
   String getConceptFqName();
@@ -77,6 +79,9 @@ public interface ConstraintsDescriptor {
   // null if icon not alternative
   @Nullable
   String getAlternativeIcon(SNode node);
+
+  @Nullable
+  Icon getInstanceIcon(SNode node);
 
   @Deprecated
   @ToRemove(version = 3.4)
