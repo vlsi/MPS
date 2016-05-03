@@ -1042,7 +1042,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5OVd5tVrn$1">
-    <property role="TrG5h" value="ContextAssistantMenuUtil" />
+    <property role="TrG5h" value="TransformationMenuUtil" />
     <node concept="2YIFZL" id="5OVd5tVrqT4" role="jymVt">
       <property role="TrG5h" value="getDefaultMenusAndContributions" />
       <property role="od$2w" value="false" />
@@ -1054,7 +1054,7 @@
             <property role="TrG5h" value="menus" />
             <node concept="2OqwBi" id="4Sf$XywRmqY" role="33vP2m">
               <node concept="2RRcyG" id="4Sf$XywRmqZ" role="2OqNvi">
-                <ref role="2RRcyH" to="tpc2:1qY_lWSjJNx" resolve="ContextAssistantMenu_Default" />
+                <ref role="2RRcyH" to="tpc2:1qY_lWSjJNx" resolve="TransformationMenu_Default" />
               </node>
               <node concept="37vLTw" id="5OVd5tVrr6M" role="2Oq$k0">
                 <ref role="3cqZAo" node="5OVd5tVrqTk" resolve="inputModel" />
@@ -1062,7 +1062,7 @@
             </node>
             <node concept="A3Dl8" id="4Sf$XywRtpM" role="1tU5fm">
               <node concept="3Tqbb2" id="4Sf$XywRtCL" role="A3Ik2">
-                <ref role="ehGHo" to="tpc2:1qY_lWSjJNx" resolve="ContextAssistantMenu_Default" />
+                <ref role="ehGHo" to="tpc2:1qY_lWSjJNx" resolve="TransformationMenu_Default" />
               </node>
             </node>
           </node>
@@ -1076,7 +1076,7 @@
                   <ref role="3cqZAo" node="5OVd5tVrqTk" resolve="inputModel" />
                 </node>
                 <node concept="2RRcyG" id="4Sf$XywRoqS" role="2OqNvi">
-                  <ref role="2RRcyH" to="tpc2:4Sf$XywKgZK" resolve="ContextAssistantMenuContribution" />
+                  <ref role="2RRcyH" to="tpc2:4Sf$XywKgZK" resolve="TransformationMenuContribution" />
                 </node>
               </node>
               <node concept="3zZkjj" id="4Sf$XywRqPX" role="2OqNvi">
@@ -1094,7 +1094,7 @@
                         </node>
                         <node concept="1mIQ4w" id="4Sf$XywRsif" role="2OqNvi">
                           <node concept="chp4Y" id="5OVd5tVrloA" role="cj9EA">
-                            <ref role="cht4Q" to="tpc2:5OVd5tVffWc" resolve="ContextAssistantMenuReference_Default" />
+                            <ref role="cht4Q" to="tpc2:5OVd5tVffWc" resolve="TransformationMenuReference_Default" />
                           </node>
                         </node>
                       </node>
@@ -1109,7 +1109,7 @@
             </node>
             <node concept="A3Dl8" id="4Sf$XywRu96" role="1tU5fm">
               <node concept="3Tqbb2" id="4Sf$XywRuqs" role="A3Ik2">
-                <ref role="ehGHo" to="tpc2:4Sf$XywKgZK" resolve="ContextAssistantMenuContribution" />
+                <ref role="ehGHo" to="tpc2:4Sf$XywKgZK" resolve="TransformationMenuContribution" />
               </node>
             </node>
           </node>
@@ -1130,7 +1130,7 @@
       <node concept="3Tm1VV" id="5OVd5tVrqCv" role="1B3o_S" />
       <node concept="A3Dl8" id="5OVd5tVrqSg" role="3clF45">
         <node concept="3Tqbb2" id="5OVd5tVrqSo" role="A3Ik2">
-          <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+          <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenuOrContribution" />
         </node>
       </node>
       <node concept="37vLTG" id="5OVd5tVrqTk" role="3clF46">
@@ -1149,7 +1149,7 @@
             <property role="TrG5h" value="menus" />
             <node concept="2OqwBi" id="5OVd5tVrslY" role="33vP2m">
               <node concept="2RRcyG" id="5OVd5tVrslZ" role="2OqNvi">
-                <ref role="2RRcyH" to="tpc2:4Sf$XywF4VC" resolve="ContextAssistantMenu_Named" />
+                <ref role="2RRcyH" to="tpc2:4Sf$XywF4VC" resolve="TransformationMenu_Named" />
               </node>
               <node concept="37vLTw" id="5OVd5tVrsm0" role="2Oq$k0">
                 <ref role="3cqZAo" node="5OVd5tVrslG" resolve="inputModel" />
@@ -1157,7 +1157,7 @@
             </node>
             <node concept="A3Dl8" id="5OVd5tVrsm1" role="1tU5fm">
               <node concept="3Tqbb2" id="5OVd5tVrsm2" role="A3Ik2">
-                <ref role="ehGHo" to="tpc2:4Sf$XywF4VC" resolve="ContextAssistantMenu_Named" />
+                <ref role="ehGHo" to="tpc2:4Sf$XywF4VC" resolve="TransformationMenu_Named" />
               </node>
             </node>
           </node>
@@ -1171,7 +1171,7 @@
                   <ref role="3cqZAo" node="5OVd5tVrslG" resolve="inputModel" />
                 </node>
                 <node concept="2RRcyG" id="5OVd5tVrsm8" role="2OqNvi">
-                  <ref role="2RRcyH" to="tpc2:4Sf$XywKgZK" resolve="ContextAssistantMenuContribution" />
+                  <ref role="2RRcyH" to="tpc2:4Sf$XywKgZK" resolve="TransformationMenuContribution" />
                 </node>
               </node>
               <node concept="3zZkjj" id="5OVd5tVrsm9" role="2OqNvi">
@@ -1189,7 +1189,7 @@
                         </node>
                         <node concept="1mIQ4w" id="5OVd5tVrsmh" role="2OqNvi">
                           <node concept="chp4Y" id="5OVd5tVrsHm" role="cj9EA">
-                            <ref role="cht4Q" to="tpc2:5OVd5tVffW9" resolve="ContextAssistantMenuReference_Named" />
+                            <ref role="cht4Q" to="tpc2:5OVd5tVffW9" resolve="TransformationMenuReference_Named" />
                           </node>
                         </node>
                       </node>
@@ -1204,7 +1204,7 @@
             </node>
             <node concept="A3Dl8" id="5OVd5tVrsml" role="1tU5fm">
               <node concept="3Tqbb2" id="5OVd5tVrsmm" role="A3Ik2">
-                <ref role="ehGHo" to="tpc2:4Sf$XywKgZK" resolve="ContextAssistantMenuContribution" />
+                <ref role="ehGHo" to="tpc2:4Sf$XywKgZK" resolve="TransformationMenuContribution" />
               </node>
             </node>
           </node>
@@ -1225,7 +1225,7 @@
       <node concept="3Tm1VV" id="5OVd5tVrsjI" role="1B3o_S" />
       <node concept="A3Dl8" id="5OVd5tVrsk$" role="3clF45">
         <node concept="3Tqbb2" id="5OVd5tVrskI" role="A3Ik2">
-          <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+          <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenuOrContribution" />
         </node>
       </node>
       <node concept="37vLTG" id="5OVd5tVrslG" role="3clF46">

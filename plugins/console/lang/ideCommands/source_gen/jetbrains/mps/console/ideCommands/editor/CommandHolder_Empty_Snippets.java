@@ -8,7 +8,6 @@ import jetbrains.mps.lang.editor.transformationMenus.MenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,39 +23,27 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   protected List<MenuPart> getParts() {
     return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
       @Override
-      protected String getText(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
+      protected String getText(TransformationMenuContext _context) {
         return "Modify instances by condition";
       }
 
       @Override
-      protected void execute(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
-        {
-          SNode command = createBLExpression_vryvy0_a0a0a0();
-          SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
-          editorContext.select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
-        }
+      protected void execute(TransformationMenuContext _context) {
+        SNode command = createBLExpression_vryvy0_a0a0a0();
+        SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
+        _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
       }
     }, new ActionItemMenuPart() {
       @Override
-      protected String getText(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
+      protected String getText(TransformationMenuContext _context) {
         return "Find instances by condition";
       }
 
       @Override
-      protected void execute(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
-        {
-          SNode command = createBLExpression_vryvy0_a0a0a1();
-          SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
-          editorContext.select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
-        }
+      protected void execute(TransformationMenuContext _context) {
+        SNode command = createBLExpression_vryvy0_a0a0a1();
+        SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
+        _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
       }
     });
   }

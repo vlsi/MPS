@@ -84,8 +84,8 @@
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommentLine_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Drop_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.East_Editor" />
-    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_ContextAssistantMenu" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Heading_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IfStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IsFull_Editor" />
@@ -113,7 +113,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_ContextAssistantMenu" file="EmptyLine_ContextAssistantMenu.java">
+  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" file="EmptyLine_TransformationMenu.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -135,23 +152,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Heading_Editor" file="Heading_Editor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -318,7 +318,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ConditionalMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.lang.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -29,11 +27,11 @@ public abstract class SubMenuMenuPart extends SingleItemMenuPart {
   @Override
   protected MenuItem createItem(TransformationMenuContext context) {
     final List<MenuItem> items = new CompositeMenuPart(getParts()).createItems(context);
-    String text = getText(context.getEditorContext(), context.getNode());
+    String text = getText(context);
     return new SubMenu(text, items);
   }
 
-  protected abstract String getText(EditorContext editorContext, SNode node);
+  protected abstract String getText(TransformationMenuContext context);
 
   protected abstract List<MenuPart> getParts();
 }

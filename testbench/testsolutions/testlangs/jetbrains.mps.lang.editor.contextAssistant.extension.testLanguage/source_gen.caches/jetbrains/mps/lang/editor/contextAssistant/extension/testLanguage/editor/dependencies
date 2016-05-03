@@ -7,11 +7,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor.Child_MoreNamedActions" file="Child_MoreNamedActions.java">
@@ -21,9 +19,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">

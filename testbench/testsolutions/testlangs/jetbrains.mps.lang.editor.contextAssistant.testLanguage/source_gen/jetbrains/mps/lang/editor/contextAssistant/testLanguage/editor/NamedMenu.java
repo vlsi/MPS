@@ -8,24 +8,18 @@ import jetbrains.mps.lang.editor.transformationMenus.MenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class NamedMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
     return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
       @Override
-      protected String getText(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
+      protected String getText(TransformationMenuContext _context) {
         return "defined in named menu";
       }
 
       @Override
-      protected void execute(TransformationMenuContext context) {
-        final EditorContext editorContext = context.getEditorContext();
-        final SNode node = context.getNode();
+      protected void execute(TransformationMenuContext _context) {
       }
     });
   }

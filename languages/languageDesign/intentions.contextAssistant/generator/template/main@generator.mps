@@ -83,11 +83,11 @@
     <property role="TrG5h" value="main" />
   </node>
   <node concept="jVnub" id="20qY$3H7bKG">
-    <property role="TrG5h" value="switch_ContextAssistantMenuPart_Intention" />
-    <ref role="phYkn" to="tpc3:20qY$3H6Q0h" resolve="switch_ContextAssistantMenuPart" />
+    <property role="TrG5h" value="switch_TransformationMenuPart_Intention" />
+    <ref role="phYkn" to="tpc3:20qY$3H6Q0h" resolve="switch_TransformationMenuPart" />
     <node concept="3aamgX" id="20qY$3HaxgD" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="a1gu:2ytFvC$HnDh" resolve="ContextAssistantMenuPart_Intention" />
+      <ref role="30HIoZ" to="a1gu:2ytFvC$HnDh" resolve="TransformationMenuPart_Intention" />
       <node concept="gft3U" id="5rpTYcLd6I4" role="1lVwrX">
         <node concept="2ShNRf" id="5rpTYcLd6I8" role="gfFT$">
           <node concept="1pGfFk" id="5rpTYcLd6I9" role="2ShVmc">

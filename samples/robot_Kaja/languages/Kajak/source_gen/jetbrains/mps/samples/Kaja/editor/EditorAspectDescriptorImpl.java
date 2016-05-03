@@ -171,7 +171,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<TransformationMenu>singletonList(new EmptyLine_ContextAssistantMenu());
+            return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
           }
           break;
         default:

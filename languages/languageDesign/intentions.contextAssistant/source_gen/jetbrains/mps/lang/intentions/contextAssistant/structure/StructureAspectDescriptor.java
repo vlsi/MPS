@@ -16,15 +16,15 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_Intention = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.contextAssistant.structure.ContextAssistantMenuPart_Intention", MetaIdFactory.conceptId(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x289dadfa24b57a52L, "intention", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L), false)).references("intention").alias("intention", "").sourceNode(new SNodePointer("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)", "2926686622729992785")).create();
+  /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_Intention = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention", MetaIdFactory.conceptId(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L)).super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.TransformationMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x289dadfa24b57a52L, "intention", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L), false)).references("intention").alias("intention", "").sourceNode(new SNodePointer("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)", "2926686622729992785")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptContextAssistantMenuPart_Intention.getId(), 0);
+    myIndexMap.put(myConceptTransformationMenuPart_Intention.getId(), 0);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptContextAssistantMenuPart_Intention);
+    return Arrays.asList(myConceptTransformationMenuPart_Intention);
   }
 
   @Override
@@ -36,7 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptContextAssistantMenuPart_Intention;
+        return myConceptTransformationMenuPart_Intention;
       default:
         throw new IllegalStateException();
     }

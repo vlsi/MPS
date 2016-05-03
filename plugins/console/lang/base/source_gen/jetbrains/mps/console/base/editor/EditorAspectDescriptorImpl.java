@@ -158,7 +158,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<TransformationMenu>singletonList(new BLCommand_ContextAssistantMenu());
+            return Collections.<TransformationMenu>singletonList(new BLCommand_TransformationMenu());
           }
           break;
         default:

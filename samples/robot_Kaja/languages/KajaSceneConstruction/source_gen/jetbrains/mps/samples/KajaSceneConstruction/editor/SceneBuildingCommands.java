@@ -7,10 +7,9 @@ import java.util.List;
 import jetbrains.mps.lang.editor.transformationMenus.MenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.transformationMenus.SubMenuMenuPart;
-import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -20,80 +19,56 @@ public class SceneBuildingCommands extends TransformationMenuBase {
   protected List<MenuPart> getParts() {
     return Arrays.<MenuPart>asList(new SubMenuMenuPart() {
       @Override
-      protected String getText(EditorContext context, SNode node) {
+      protected String getText(TransformationMenuContext _context) {
         return "Scene builder";
       }
 
       @Override
       protected List<MenuPart> getParts() {
-        return Arrays.<MenuPart>asList(new MenuPart[]{new ActionItemMenuPart() {
+        return Arrays.asList(new MenuPart[]{new ActionItemMenuPart() {
           @Override
-          protected String getText(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
+          protected String getText(TransformationMenuContext _context) {
             return "Build wall";
           }
 
           @Override
-          protected void execute(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
-            {
-              SNode inserted = SNodeOperations.insertPrevSiblingChild(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall")), null));
-              editorContext.selectWRTFocusPolicy(inserted);
-            }
+          protected void execute(TransformationMenuContext _context) {
+            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall")), null));
+            _context.getEditorContext().selectWRTFocusPolicy(inserted);
           }
         }, new ActionItemMenuPart() {
           @Override
-          protected String getText(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
+          protected String getText(TransformationMenuContext _context) {
             return "Destroy wall";
           }
 
           @Override
-          protected void execute(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
-            {
-              SNode inserted = SNodeOperations.insertPrevSiblingChild(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L, "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall")), null));
-              editorContext.selectWRTFocusPolicy(inserted);
+          protected void execute(TransformationMenuContext _context) {
+            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L, "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall")), null));
+            _context.getEditorContext().selectWRTFocusPolicy(inserted);
 
-            }
           }
         }, new ActionItemMenuPart() {
           @Override
-          protected String getText(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
+          protected String getText(TransformationMenuContext _context) {
             return "Drop mark";
           }
 
           @Override
-          protected void execute(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
-            {
-              SNode inserted = SNodeOperations.insertPrevSiblingChild(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark")), null));
-              editorContext.selectWRTFocusPolicy(inserted);
-            }
+          protected void execute(TransformationMenuContext _context) {
+            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark")), null));
+            _context.getEditorContext().selectWRTFocusPolicy(inserted);
           }
         }, new ActionItemMenuPart() {
           @Override
-          protected String getText(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
+          protected String getText(TransformationMenuContext _context) {
             return "Pick mark";
           }
 
           @Override
-          protected void execute(TransformationMenuContext context) {
-            final EditorContext editorContext = context.getEditorContext();
-            final SNode node = context.getNode();
-            {
-              SNode inserted = SNodeOperations.insertPrevSiblingChild(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
-              editorContext.selectWRTFocusPolicy(inserted);
-            }
+          protected void execute(TransformationMenuContext _context) {
+            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
+            _context.getEditorContext().selectWRTFocusPolicy(inserted);
           }
         }});
       }
