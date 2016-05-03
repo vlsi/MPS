@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
@@ -79,7 +78,7 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
       return result;
     }
     for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = getEditorAspectDescriptor(extendingLanguage);
+      EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(extendingLanguage);
       if (editorAspect == null) {
         continue;
       }
@@ -93,17 +92,6 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
       container.addAll(getDeclaredContributions(editorAspect, key));
     } catch (NoClassDefFoundError error) {
       LOG.error("Failed to get contributions from editor aspect descriptor " + editorAspect, error);
-    }
-  }
-
-  @Nullable
-  private EditorAspectDescriptor getEditorAspectDescriptor(LanguageRuntime languageRuntime) {
-    try {
-      return languageRuntime.getAspect(EditorAspectDescriptor.class);
-    } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get editor aspect descriptor for language: " +
-          languageRuntime.getNamespace() + ". Editors of this language will not be taken into account", error);
-      return null;
     }
   }
 

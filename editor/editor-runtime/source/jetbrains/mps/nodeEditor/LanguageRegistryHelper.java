@@ -15,29 +15,34 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 public class LanguageRegistryHelper {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(LanguageRegistryHelper.class));
+  private static final Logger LOG = Logger.getLogger(LanguageRegistryHelper.class);
 
   public static EditorAspectDescriptor getEditorAspectDescriptor(LanguageRegistry languageRegistry, SLanguage language) {
     LanguageRuntime languageRuntime = languageRegistry.getLanguage(language);
     if (languageRuntime == null) {
-      LOG.warning("No language runtime found for language: " + language + ". Declarations in this language will not be taken into account");
+      LOG.warn("No language runtime found for language: " + language + ". Declarations in this language will not be taken into account");
       return null;
     }
 
+    return getEditorAspectDescriptor(languageRuntime);
+  }
+
+  @Nullable
+  static EditorAspectDescriptor getEditorAspectDescriptor(LanguageRuntime languageRuntime) {
     try {
       return languageRuntime.getAspect(EditorAspectDescriptor.class);
     } catch (NoClassDefFoundError error) {
       LOG.error("Failed to get editor aspect descriptor for language: " +
           languageRuntime.getNamespace() + ". Declarations in this language will not be taken into account", error);
+      return null;
     }
-    return null;
   }
 }
