@@ -4,7 +4,7 @@
   <languages>
     <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="0" />
     <use id="82fb751d-f7fb-4b58-a16e-303356f8e0af" name="jetbrains.mps.samples.generator_demo.demoLang6" version="0" />
-    <generationPart ref="594bd850-39e3-46a5-9ef2-40c70d782c8c(jetbrains.mps.samples.generator_demo.demoLang5)" />
+    <engage id="594bd850-39e3-46a5-9ef2-40c70d782c8c" name="jetbrains.mps.samples.generator_demo.demoLang5" />
   </languages>
   <imports />
   <registry>
