@@ -25,6 +25,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
@@ -118,7 +119,8 @@ public class CreateGroupsBuilder {
     private final RelationDescriptor myDescriptor;
 
     public CreateAction(SNode concept, RelationDescriptor descriptor) {
-      super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConcept(concept));
+      //todo pass concepts instead of nodes
+      super(getConceptAlias(concept).replaceAll("_", "__"), "", MetaAdapterByDeclaration.getConcept(concept).getIcon());
       myConcept = concept;
       myDescriptor = descriptor;
     }

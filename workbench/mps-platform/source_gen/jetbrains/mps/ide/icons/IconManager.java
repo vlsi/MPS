@@ -14,6 +14,7 @@ import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -25,12 +26,8 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
@@ -76,35 +73,22 @@ public final class IconManager {
   };
   private IconManager() {
   }
-  public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
-    return getIconFor(node, true);
-  }
   public static Icon getIconFor(@NotNull final SNode node) {
-    return getIconFor(node, false);
-  }
-  public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
-    Icon mainIcon = null;
-    if (!(node.getConcept().isValid())) {
+    if (!(SNodeOperations.getConcept(node).isValid())) {
       return IdeIcons.UNKNOWN_ICON;
     }
-    SNode concept = SNodeOperations.asNode(SNodeOperations.getConcept(node));
-    if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      Icon alternativeIcon = null;
-      try {
-        String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
-        if (alternativeIconPath != null) {
-          alternativeIcon = IconManager.getIconForConcept(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), alternativeIconPath);
-        }
-      } catch (Exception ignore) {
-      }
+
+    Icon mainIcon = SNodeOperations.getConcept(node).getIcon();
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      Icon alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
       if (alternativeIcon != null) {
         mainIcon = alternativeIcon;
       } else {
-        mainIcon = IconManager.getIconForConcept(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
+        mainIcon = SNodeOperations.getConcept(node).getIcon();
       }
     }
     if (mainIcon == null) {
-      if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
+      if ((SNodeOperations.getParent(node) == null)) {
         return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
         return IdeIcons.DEFAULT_NODE_ICON;
@@ -119,9 +103,7 @@ public final class IconManager {
     }
     RowIcon result = new RowIcon(2);
     result.setIcon(mainIcon, 0);
-    if (!(withoutAdditional)) {
-      result.setIcon(((Icon) BHReflection.invoke(node, SMethodTrimmedId.create("getAdditionalIcon", null, "4mxbjAOAE$e"))), 1);
-    }
+    result.setIcon(((Icon) BHReflection.invoke(node, SMethodTrimmedId.create("getAdditionalIcon", null, "4mxbjAOAE$e"))), 1);
     List<Icon> markIcons = ((List<Icon>) BHReflection.invoke(node, SMethodTrimmedId.create("getMarkIcons", null, "3pOfV45ExLD")));
     if (markIcons != null) {
       LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
@@ -133,31 +115,8 @@ public final class IconManager {
     }
     return result;
   }
-  public static Icon getIconForConcept(SNode concept) {
-    while (concept != null) {
-      Icon icon = getIconForConcept(concept, SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
-      if (icon != null) {
-        return icon;
-      }
-      concept = SLinkOperations.getTarget(concept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
-    }
-    return null;
-  }
-  private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
-    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
-    if (language != null) {
-      String iconPath = MacrosFactory.forModule(language).expandPath(path);
-      if (iconPath != null) {
-        Icon icon = loadIcon(iconPath, true);
-        if (icon != null) {
-          return icon;
-        }
-      }
-    }
-    return null;
-  }
   public static Icon getIcon(SAbstractConcept concept) {
-    return getIconForConcept(((SNode) concept.getDeclarationNode()));
+    return concept.getIcon();
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";

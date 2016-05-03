@@ -46,7 +46,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -334,6 +333,24 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   public Icon getIcon() {
     return null;
+    /*
+    if (node.concept.isSubConceptOf(ConceptDeclaration).<operation>) {
+  Icon alternativeIcon = null;
+  try {
+    string alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(node.concept).getAlternativeIcon(node);
+    if (alternativeIconPath != null) {
+      alternativeIcon = IconManager.getIconForConcept(concept : ConceptDeclaration, alternativeIconPath);
+    }
+  } catch (Exception ignore) {
+    <no statements>
+  }
+  if (alternativeIcon != null) {
+    mainIcon = alternativeIcon;
+  } else {
+    mainIcon = IconManager.getIconForConcept(concept : ConceptDeclaration);
+  }
+}
+     */
   }
 
   /**

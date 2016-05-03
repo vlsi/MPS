@@ -40510,12 +40510,9 @@
               </node>
               <node concept="2YIFZM" id="_dGddVVY2G" role="37vLTx">
                 <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
-                <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode,boolean):javax.swing.Icon" resolve="getIconFor" />
+                <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode):javax.swing.Icon" resolve="getIconFor" />
                 <node concept="37vLTw" id="_dGddVVXrr" role="37wK5m">
                   <ref role="3cqZAo" node="_dGddVVXqY" resolve="node" />
-                </node>
-                <node concept="3clFbT" id="_dGddVVXrs" role="37wK5m">
-                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>

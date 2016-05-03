@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import javax.swing.Icon;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,8 +31,8 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
     Icon icon;
     SNode iconNode = mySubstituteAction.getIconNode("");
     if (iconNode != null) {
-
-      icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((mySubstituteAction.isReferentPresentation()))) ? IconManager.getIconForConcept(((SNode) iconNode)) : IconManager.getIconFor(iconNode));
+      // todo should pass concept here, not concept node 
+      icon = ((SNodeOperations.isInstanceOf(iconNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && !((mySubstituteAction.isReferentPresentation()))) ? SNodeOperations.asSConcept(((SNode) iconNode)).getIcon() : IconManager.getIconFor(iconNode));
     } else {
       icon = IdeIcons.DEFAULT_ICON;
     }
