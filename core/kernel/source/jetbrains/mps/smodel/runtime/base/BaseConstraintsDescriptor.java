@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -32,7 +33,6 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -368,6 +368,22 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @Nullable
   @Override
   public Icon getInstanceIcon(SNode node) {
+    //compatibility code introduced before 3.4
+    //we can remove this code when users migrate to new method in constraints
+    return getIconForConcept(node.getConcept().getDeclarationNode(), getAlternativeIcon(node));
+  }
+
+  private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
+    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
+    if (language != null) {
+      String iconPath = MacrosFactory.forModule(language).expandPath(path);
+      if (iconPath != null) {
+        Icon icon = ConceptIconLoader.loadIcon(iconPath, true);
+        if (icon != null) {
+          return icon;
+        }
+      }
+    }
     return null;
   }
 

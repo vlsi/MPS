@@ -9365,13 +9365,13 @@
                     <node concept="3clFbS" id="2diPio0Ihe6" role="3clFbx">
                       <node concept="3clFbF" id="2diPio0Ifxf" role="3cqZAp">
                         <node concept="37vLTI" id="2diPio0Ifxh" role="3clFbG">
-                          <node concept="2YIFZM" id="2diPio0IeRO" role="37vLTx">
-                            <ref role="37wK5l" to="sn11:277Nzj6qTN_" resolve="loadIcon" />
-                            <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                            <node concept="37vLTw" id="2diPio0Ih3$" role="37wK5m">
+                          <node concept="2YIFZM" id="5vfjF5cfa7J" role="37vLTx">
+                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
+                            <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
+                            <node concept="37vLTw" id="5vfjF5cfa7K" role="37wK5m">
                               <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
                             </node>
-                            <node concept="3clFbT" id="7up3O4XwBNg" role="37wK5m">
+                            <node concept="3clFbT" id="5vfjF5cfa7L" role="37wK5m">
                               <property role="3clFbU" value="false" />
                             </node>
                           </node>
