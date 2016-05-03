@@ -61,7 +61,7 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
       name = nodeConcept.getName();
     }
     getTemplatePresentation().setText(name);
-    Icon icon = IconManager.getIcon(nodeConcept);
+    Icon icon = nodeConcept.getIcon();
     getTemplatePresentation().setIcon(icon);
     setExecuteOutsideCommand(true);
   }

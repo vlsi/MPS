@@ -26,7 +26,6 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
@@ -114,9 +113,6 @@ public final class IconManager {
       return layeredIcon;
     }
     return result;
-  }
-  public static Icon getIcon(SAbstractConcept concept) {
-    return concept.getIcon();
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
