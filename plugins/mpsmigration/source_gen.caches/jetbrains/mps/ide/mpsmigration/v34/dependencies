@@ -28,9 +28,22 @@
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
     <classNode extendsClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.mpsmigration.v34.EngagedLanguagesImports" file="EngagedLanguagesImports.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.v34.Migrations34" file="Migrations34.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v34.CleanExportsMigration" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v34.EngagedLanguagesImports" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v34.ProjectJavaVersionMigration_JDKDefault" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />

@@ -30,6 +30,8 @@
     <import index="biux" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.compiler(MPS.Platform/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -179,6 +181,7 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
@@ -213,6 +216,7 @@
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -285,6 +289,11 @@
           <node concept="2ShNRf" id="LzXpCCgxMt" role="3g7hyw">
             <node concept="1pGfFk" id="LzXpCCgz3O" role="2ShVmc">
               <ref role="37wK5l" node="LzXpCCgafH" resolve="ProjectJavaVersionMigration_JDKDefault" />
+            </node>
+          </node>
+          <node concept="2ShNRf" id="7ctwrlptkI" role="3g7hyw">
+            <node concept="1pGfFk" id="7ctwrlpuSV" role="2ShVmc">
+              <ref role="37wK5l" node="7ctwrlp2ZU" resolve="EngagedLanguagesImports" />
             </node>
           </node>
           <node concept="3uibUv" id="25gV4Ls$Naj" role="3g7fb8">
@@ -1194,6 +1203,228 @@
     <node concept="3Tm1VV" id="LzXpCCga37" role="1B3o_S" />
     <node concept="3uibUv" id="LzXpCCgabi" role="1zkMxy">
       <ref role="3uigEE" to="bdll:~BaseProjectMigration" resolve="BaseProjectMigration" />
+    </node>
+  </node>
+  <node concept="312cEu" id="7ctwrlp1pJ">
+    <property role="TrG5h" value="EngagedLanguagesImports" />
+    <node concept="2tJIrI" id="7ctwrlp2DW" role="jymVt" />
+    <node concept="3clFbW" id="7ctwrlp2ZU" role="jymVt">
+      <node concept="3cqZAl" id="7ctwrlp2ZW" role="3clF45" />
+      <node concept="3Tm1VV" id="7ctwrlp2ZX" role="1B3o_S" />
+      <node concept="3clFbS" id="7ctwrlp2ZY" role="3clF47">
+        <node concept="XkiVB" id="7ctwrlp326" role="3cqZAp">
+          <ref role="37wK5l" to="bdll:~BaseProjectMigration.&lt;init&gt;(java.lang.String)" resolve="BaseProjectMigration" />
+          <node concept="2OqwBi" id="7ctwrlp3lc" role="37wK5m">
+            <node concept="3VsKOn" id="7ctwrlp354" role="2Oq$k0">
+              <ref role="3VsUkX" node="7ctwrlp1pJ" resolve="EngagedLanguagesImports" />
+            </node>
+            <node concept="liA8E" id="7ctwrlp4bd" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7ctwrlp4fG" role="jymVt" />
+    <node concept="3clFb_" id="7ctwrlp4ik" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7ctwrlp4il" role="1B3o_S" />
+      <node concept="3uibUv" id="7ctwrlp4in" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="7ctwrlp4iq" role="3clF47">
+        <node concept="3cpWs6" id="7ctwrlp4s_" role="3cqZAp">
+          <node concept="Xl_RD" id="7ctwrlp4t8" role="3cqZAk">
+            <property role="Xl_RC" value="Update model with languages engaged on generation to use SLanguage" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7ctwrlp4nE" role="jymVt" />
+    <node concept="3clFb_" id="7ctwrlp2E5" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isRerunnable" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7ctwrlp2E6" role="1B3o_S" />
+      <node concept="10P_77" id="7ctwrlp2E8" role="3clF45" />
+      <node concept="3clFbS" id="7ctwrlp2E9" role="3clF47">
+        <node concept="3cpWs6" id="7ctwrlp8m4" role="3cqZAp">
+          <node concept="3clFbT" id="7ctwrlp8pw" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7ctwrlp2Ea" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7ctwrlp8JA" role="jymVt" />
+    <node concept="3clFb_" id="7ctwrlp8Ob" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doExecute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7ctwrlp8Oc" role="1B3o_S" />
+      <node concept="10P_77" id="7ctwrlp8Oe" role="3clF45" />
+      <node concept="37vLTG" id="7ctwrlp8Of" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="7ctwrlp8Og" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="7ctwrlp8Oh" role="3clF47">
+        <node concept="2Gpval" id="7ctwrlpaXg" role="3cqZAp">
+          <node concept="2GrKxI" id="7ctwrlpaXi" role="2Gsz3X">
+            <property role="TrG5h" value="module" />
+          </node>
+          <node concept="3clFbS" id="7ctwrlpaXm" role="2LFqv$">
+            <node concept="2Gpval" id="7ctwrlpb7h" role="3cqZAp">
+              <node concept="2GrKxI" id="7ctwrlpb7i" role="2Gsz3X">
+                <property role="TrG5h" value="m" />
+              </node>
+              <node concept="2OqwBi" id="7ctwrlpbi3" role="2GsD0m">
+                <node concept="2GrUjf" id="7ctwrlpbcc" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="7ctwrlpaXi" resolve="module" />
+                </node>
+                <node concept="liA8E" id="7ctwrlpbyG" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="7ctwrlpb7k" role="2LFqv$">
+                <node concept="3clFbJ" id="7ctwrlpbAg" role="3cqZAp">
+                  <node concept="1Wc70l" id="7ctwrlpolT" role="3clFbw">
+                    <node concept="2ZW3vV" id="7ctwrlpr1l" role="3uHU7w">
+                      <node concept="3uibUv" id="7ctwrlprd3" role="2ZW6by">
+                        <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
+                      </node>
+                      <node concept="2GrUjf" id="7ctwrlpovu" role="2ZW6bz">
+                        <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                      </node>
+                    </node>
+                    <node concept="1Wc70l" id="7ctwrlpdvs" role="3uHU7B">
+                      <node concept="3fqX7Q" id="7ctwrlpcnd" role="3uHU7B">
+                        <node concept="2OqwBi" id="7ctwrlpcnf" role="3fr31v">
+                          <node concept="2GrUjf" id="7ctwrlpcng" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                          </node>
+                          <node concept="liA8E" id="7ctwrlpcnh" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2ZW3vV" id="7ctwrlpfzA" role="3uHU7w">
+                        <node concept="3uibUv" id="7ctwrlpfHQ" role="2ZW6by">
+                          <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                        </node>
+                        <node concept="2GrUjf" id="7ctwrlpdDE" role="2ZW6bz">
+                          <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="7ctwrlpbAi" role="3clFbx">
+                    <node concept="3clFbJ" id="7ctwrlpfXy" role="3cqZAp">
+                      <node concept="3clFbS" id="7ctwrlpfX$" role="3clFbx">
+                        <node concept="3N13vt" id="7ctwrlpiZs" role="3cqZAp" />
+                      </node>
+                      <node concept="2OqwBi" id="7ctwrlphQK" role="3clFbw">
+                        <node concept="2OqwBi" id="7ctwrlpgZV" role="2Oq$k0">
+                          <node concept="1eOMI4" id="7ctwrlpgsl" role="2Oq$k0">
+                            <node concept="10QFUN" id="7ctwrlpgsi" role="1eOMHV">
+                              <node concept="3uibUv" id="7ctwrlpg$a" role="10QFUM">
+                                <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
+                              </node>
+                              <node concept="2GrUjf" id="7ctwrlpgRJ" role="10QFUP">
+                                <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="7ctwrlphqb" role="2OqNvi">
+                            <ref role="37wK5l" to="w1kc:~SModelInternal.getLanguagesEngagedOnGeneration():java.util.Collection" resolve="getLanguagesEngagedOnGeneration" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="7ctwrlpiOQ" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="7ctwrlprnc" role="3cqZAp">
+                      <node concept="2OqwBi" id="7ctwrlprDw" role="3clFbG">
+                        <node concept="1eOMI4" id="7ctwrlprna" role="2Oq$k0">
+                          <node concept="10QFUN" id="7ctwrlprn7" role="1eOMHV">
+                            <node concept="3uibUv" id="7ctwrlprwB" role="10QFUM">
+                              <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                            </node>
+                            <node concept="2GrUjf" id="7ctwrlprz9" role="10QFUP">
+                              <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="7ctwrlps5q" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~EditableSModel.setChanged(boolean):void" resolve="setChanged" />
+                          <node concept="3clFbT" id="7ctwrlps66" role="37wK5m">
+                            <property role="3clFbU" value="true" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="7ctwrlpsgi" role="3cqZAp">
+                      <node concept="2OqwBi" id="7ctwrlpsgj" role="3clFbG">
+                        <node concept="1eOMI4" id="7ctwrlpsgk" role="2Oq$k0">
+                          <node concept="10QFUN" id="7ctwrlpsgl" role="1eOMHV">
+                            <node concept="3uibUv" id="7ctwrlpsgm" role="10QFUM">
+                              <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                            </node>
+                            <node concept="2GrUjf" id="7ctwrlpsgn" role="10QFUP">
+                              <ref role="2Gs0qQ" node="7ctwrlpb7i" resolve="m" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="7ctwrlpsgo" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~EditableSModel.save():void" resolve="save" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7ctwrlpaal" role="2GsD0m">
+            <node concept="37vLTw" id="7ctwrlp9L2" role="2Oq$k0">
+              <ref role="3cqZAo" node="7ctwrlp8Of" resolve="project" />
+            </node>
+            <node concept="liA8E" id="7ctwrlparw" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7ctwrlp8Oj" role="3cqZAp">
+          <node concept="3clFbT" id="7ctwrlp8Oi" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7ctwrlp1pK" role="1B3o_S" />
+    <node concept="3uibUv" id="7ctwrlp24f" role="1zkMxy">
+      <ref role="3uigEE" to="bdll:~BaseProjectMigration" resolve="BaseProjectMigration" />
+    </node>
+    <node concept="3UR2Jj" id="7ctwrlpvfr" role="lGtFl">
+      <node concept="TZ5HA" id="7ctwrlpvfs" role="TZ5H$">
+        <node concept="1dT_AC" id="7ctwrlpvft" role="1dT_Ay">
+          <property role="1dT_AB" value="With engaged languages exposed as SLanguage rather than SModuleReference, the way we persist these imports" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ctwrlpvkV" role="TZ5H$">
+        <node concept="1dT_AC" id="7ctwrlpvkW" role="1dT_Ay">
+          <property role="1dT_AB" value="in model files has changed. This migration marks models with engaged languages as changed and re-saves them." />
+        </node>
+      </node>
     </node>
   </node>
 </model>

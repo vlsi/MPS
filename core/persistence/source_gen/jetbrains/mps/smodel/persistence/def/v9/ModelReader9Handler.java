@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -41,6 +42,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader9Handler.Registry_aggregationElementHandler registry_aggregationHandler = new ModelReader9Handler.Registry_aggregationElementHandler();
   private ModelReader9Handler.LanguagesElementHandler languagesHandler = new ModelReader9Handler.LanguagesElementHandler();
   private ModelReader9Handler.Used_languageElementHandler used_languageHandler = new ModelReader9Handler.Used_languageElementHandler();
+  private ModelReader9Handler.Engaged_languageElementHandler engaged_languageHandler = new ModelReader9Handler.Engaged_languageElementHandler();
   private ModelReader9Handler.Module_referenceElementHandler module_referenceHandler = new ModelReader9Handler.Module_referenceElementHandler();
   private ModelReader9Handler.ImportsElementHandler importsHandler = new ModelReader9Handler.ImportsElementHandler();
   private ModelReader9Handler.Model_importElementHandler model_importHandler = new ModelReader9Handler.Model_importElementHandler();
@@ -355,6 +357,10 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(null);
         return used_languageHandler;
       }
+      if ("engage".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return engaged_languageHandler;
+      }
       if ("generationPart".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
@@ -377,6 +383,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_5480414999147804036(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
+      // FIXME this is transition code to support pre-MPS 3.4 engaged languages as SModuleReference 
+      // for contemporary SLanguage dependency, there's engage tag, above 
       new SModelLegacy(my_modelField).addEngagedOnGenerationLanguage(child);
     }
     private void handleChild_5480414999147804044(Object resultObject, Object value) throws SAXException {
@@ -392,7 +400,23 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       SLanguageId langId = my_idEncoderField.parseLanguageId(attrs.getValue("id"));
       int langVersion = Integer.parseInt(attrs.getValue("version"));
-      my_modelField.addLanguage(my_readHelperParam.getLanguage(langId, attrs.getValue("name")), langVersion);
+      SLanguage lang = my_readHelperParam.getLanguage(langId, attrs.getValue("name"));
+      my_modelField.addLanguage(lang);
+      my_modelField.setLanguageImportVersion(lang, langVersion);
+      return null;
+    }
+  }
+  public class Engaged_languageElementHandler extends ModelReader9Handler.ElementHandler {
+    public Engaged_languageElementHandler() {
+      setRequiredAttributes("id", "name");
+    }
+    @Override
+    protected Object createObject(Attributes attrs) throws SAXException {
+      SLanguageId langId = my_idEncoderField.parseLanguageId(attrs.getValue("id"));
+      // use of read helper is not 100% clean code (as well as in used_languages above) 
+      // as readHelper deals with registry information, but doesn't use it for this particular call (serving merely as a factory). 
+      SLanguage lang = my_readHelperParam.getLanguage(langId, attrs.getValue("name"));
+      my_modelField.addEngagedOnGenerationLanguage(lang);
       return null;
     }
   }

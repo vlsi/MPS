@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
 
   public static final String LANGUAGES = "languages";
   public static final String USED_LANGUAGE = "use";
-  public static final String ENGAGED_ON_GENERATION_LANGUAGE = "generationPart";
+  public static final String ENGAGE_LANGUAGE = "engage";
   public static final String DEVKIT = "devkit";
   public static final String IMPORTS = "imports";
   public static final String IMPORT = "import";

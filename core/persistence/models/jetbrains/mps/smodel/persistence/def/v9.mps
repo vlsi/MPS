@@ -1510,11 +1510,25 @@
         <property role="CQp6T" value="use" />
         <ref role="CQp6Z" node="4Kem6uXVnmj" resolve="used_language" />
       </node>
+      <node concept="CQp6V" id="7jbRZXwpTeB" role="CQp6m">
+        <property role="CQp6T" value="engage" />
+        <ref role="CQp6Z" node="7jbRZXwpRhU" resolve="engaged_language" />
+      </node>
       <node concept="CQp6V" id="4Kem6uXVnm3" role="CQp6m">
         <property role="CQp6T" value="generationPart" />
         <ref role="CQp6Z" node="4Kem6uXVnmC" resolve="module_reference" />
         <node concept="CQp6L" id="4Kem6uXVnm4" role="CQp6U">
           <node concept="3clFbS" id="4Kem6uXVnm5" role="2VODD2">
+            <node concept="3SKdUt" id="7jbRZXwpTiw" role="3cqZAp">
+              <node concept="3SKdUq" id="7jbRZXwpTiy" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME this is transition code to support pre-MPS 3.4 engaged languages as SModuleReference" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7jbRZXwpT$I" role="3cqZAp">
+              <node concept="3SKdUq" id="7jbRZXwpT$K" role="3SKWNk">
+                <property role="3SKdUp" value="for contemporary SLanguage dependency, there's engage tag, above" />
+              </node>
+            </node>
             <node concept="3clFbF" id="4Kem6uXVnm6" role="3cqZAp">
               <node concept="2OqwBi" id="4Kem6uXVnm7" role="3clFbG">
                 <node concept="liA8E" id="4Kem6uXVnm9" role="2OqNvi">
@@ -1606,28 +1620,52 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="7jbRZXwpQmf" role="3cqZAp">
+            <node concept="3cpWsn" id="7jbRZXwpQmg" role="3cpWs9">
+              <property role="TrG5h" value="lang" />
+              <node concept="3uibUv" id="7jbRZXwpQm9" role="1tU5fm">
+                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+              </node>
+              <node concept="2OqwBi" id="7jbRZXwpQmh" role="33vP2m">
+                <node concept="CQp63" id="7jbRZXwpQmi" role="2Oq$k0">
+                  <ref role="CQp62" node="4Kem6uXVngW" resolve="readHelper" />
+                </node>
+                <node concept="liA8E" id="7jbRZXwpQmj" role="2OqNvi">
+                  <ref role="37wK5l" to="mw71:~IdInfoReadHelper.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                  <node concept="37vLTw" id="7jbRZXwpQmk" role="37wK5m">
+                    <ref role="3cqZAo" node="4Kem6uXVFMB" resolve="langId" />
+                  </node>
+                  <node concept="CQp6E" id="7jbRZXwpQml" role="37wK5m">
+                    <ref role="CQp6D" node="T2d52N4HO6" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1AqOJyntgGZ" role="3cqZAp">
             <node concept="2OqwBi" id="1AqOJyntgNI" role="3clFbG">
               <node concept="CQp63" id="1AqOJyntgGX" role="2Oq$k0">
                 <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
               </node>
               <node concept="liA8E" id="1AqOJynth2O" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="addLanguage" />
-                <node concept="2OqwBi" id="1AqOJyntq2i" role="37wK5m">
-                  <node concept="CQp63" id="1AqOJyntpX2" role="2Oq$k0">
-                    <ref role="CQp62" node="4Kem6uXVngW" resolve="readHelper" />
-                  </node>
-                  <node concept="liA8E" id="1AqOJyntqaR" role="2OqNvi">
-                    <ref role="37wK5l" to="mw71:~IdInfoReadHelper.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                    <node concept="37vLTw" id="1AqOJyntqf_" role="37wK5m">
-                      <ref role="3cqZAo" node="4Kem6uXVFMB" resolve="langId" />
-                    </node>
-                    <node concept="CQp6E" id="T2d52N4NLj" role="37wK5m">
-                      <ref role="CQp6D" node="T2d52N4HO6" resolve="name" />
-                    </node>
-                  </node>
+                <ref role="37wK5l" to="w1kc:~SModel.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
+                <node concept="37vLTw" id="7jbRZXwpQmm" role="37wK5m">
+                  <ref role="3cqZAo" node="7jbRZXwpQmg" resolve="lang" />
                 </node>
-                <node concept="37vLTw" id="5ahcYX$nVNR" role="37wK5m">
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7jbRZXwpPNt" role="3cqZAp">
+            <node concept="2OqwBi" id="7jbRZXwpPVS" role="3clFbG">
+              <node concept="CQp63" id="7jbRZXwpPNr" role="2Oq$k0">
+                <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
+              </node>
+              <node concept="liA8E" id="7jbRZXwpQ9t" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~SModel.setLanguageImportVersion(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="setLanguageImportVersion" />
+                <node concept="37vLTw" id="7jbRZXwpQVM" role="37wK5m">
+                  <ref role="3cqZAo" node="7jbRZXwpQmg" resolve="lang" />
+                </node>
+                <node concept="37vLTw" id="7jbRZXwpRax" role="37wK5m">
                   <ref role="3cqZAo" node="4Kem6uXVLYn" resolve="langVersion" />
                 </node>
               </node>
@@ -1637,6 +1675,92 @@
             <node concept="10Nm6u" id="4Kem6uXVQF0" role="3cqZAk" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="CQp6h" id="7jbRZXwpRhU" role="CQp1B">
+      <property role="CQp6p" value="true" />
+      <property role="TrG5h" value="engaged_language" />
+      <node concept="CQp6C" id="7jbRZXwpROi" role="CQp6n">
+        <property role="TrG5h" value="id" />
+        <property role="CQp6J" value="true" />
+      </node>
+      <node concept="CQp6C" id="7jbRZXwpROk" role="CQp6n">
+        <property role="TrG5h" value="name" />
+        <property role="CQp6J" value="true" />
+      </node>
+      <node concept="CQp6c" id="7jbRZXwpROn" role="CQp6k">
+        <node concept="3clFbS" id="7jbRZXwpROo" role="2VODD2">
+          <node concept="3cpWs8" id="7jbRZXwpRVU" role="3cqZAp">
+            <node concept="3cpWsn" id="7jbRZXwpRVV" role="3cpWs9">
+              <property role="TrG5h" value="langId" />
+              <node concept="3uibUv" id="7jbRZXwpRVW" role="1tU5fm">
+                <ref role="3uigEE" to="e8bb:~SLanguageId" resolve="SLanguageId" />
+              </node>
+              <node concept="2OqwBi" id="7jbRZXwpRVX" role="33vP2m">
+                <node concept="CQp63" id="7jbRZXwpRVY" role="2Oq$k0">
+                  <ref role="CQp62" node="5$D2sKZJIcP" resolve="idEncoder" />
+                </node>
+                <node concept="liA8E" id="7jbRZXwpRVZ" role="2OqNvi">
+                  <ref role="37wK5l" to="mw71:~IdEncoder.parseLanguageId(java.lang.String):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="parseLanguageId" />
+                  <node concept="CQp6E" id="7jbRZXwpSgA" role="37wK5m">
+                    <ref role="CQp6D" node="7jbRZXwpROi" resolve="id" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="7jbRZXwpS$b" role="3cqZAp">
+            <node concept="3SKdUq" id="7jbRZXwpS$d" role="3SKWNk">
+              <property role="3SKdUp" value="use of read helper is not 100% clean code (as well as in used_languages above)" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="7jbRZXwpSQk" role="3cqZAp">
+            <node concept="3SKdUq" id="7jbRZXwpSQm" role="3SKWNk">
+              <property role="3SKdUp" value="as readHelper deals with registry information, but doesn't use it for this particular call (serving merely as a factory)." />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="7jbRZXwpRW6" role="3cqZAp">
+            <node concept="3cpWsn" id="7jbRZXwpRW7" role="3cpWs9">
+              <property role="TrG5h" value="lang" />
+              <node concept="3uibUv" id="7jbRZXwpRW8" role="1tU5fm">
+                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+              </node>
+              <node concept="2OqwBi" id="7jbRZXwpRW9" role="33vP2m">
+                <node concept="CQp63" id="7jbRZXwpRWa" role="2Oq$k0">
+                  <ref role="CQp62" node="4Kem6uXVngW" resolve="readHelper" />
+                </node>
+                <node concept="liA8E" id="7jbRZXwpRWb" role="2OqNvi">
+                  <ref role="37wK5l" to="mw71:~IdInfoReadHelper.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                  <node concept="37vLTw" id="7jbRZXwpRWc" role="37wK5m">
+                    <ref role="3cqZAo" node="7jbRZXwpRVV" resolve="langId" />
+                  </node>
+                  <node concept="CQp6E" id="7jbRZXwpRWd" role="37wK5m">
+                    <ref role="CQp6D" node="7jbRZXwpROk" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7jbRZXwq7Qq" role="3cqZAp">
+            <node concept="2OqwBi" id="7jbRZXwq805" role="3clFbG">
+              <node concept="CQp63" id="7jbRZXwq7Qo" role="2Oq$k0">
+                <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
+              </node>
+              <node concept="liA8E" id="7jbRZXwq884" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~SModel.addEngagedOnGenerationLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addEngagedOnGenerationLanguage" />
+                <node concept="37vLTw" id="7jbRZXwq8es" role="37wK5m">
+                  <ref role="3cqZAo" node="7jbRZXwpRW7" resolve="lang" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="7jbRZXwpRQ6" role="3cqZAp">
+            <node concept="10Nm6u" id="7jbRZXwpRS5" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="7jbRZXwq178" role="CQp6g">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
     <node concept="CQp6h" id="4Kem6uXVnmC" role="CQp1B">
