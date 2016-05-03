@@ -334,7 +334,16 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Nullable
   public Icon getIcon() {
-    //compatibility code, can be removed after 3.4, return null by default
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      return null;
+    }
+    Icon icon = cd.getIcon();
+    if (icon != null) {
+      return icon;
+    }
+
+    //compatibility code, can be removed after 3.4
     return ConceptIconLoader.loadIcon(getDeclarationNode().getProperty(SNodeUtil.property_Concept_Icon), true);
   }
 

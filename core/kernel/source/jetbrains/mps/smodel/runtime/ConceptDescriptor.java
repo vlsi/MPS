@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.List;
 import java.util.Set;
 
@@ -54,6 +55,8 @@ public interface ConceptDescriptor {
   String getConceptShortDescription(); // since 3.0
 
   String getHelpUrl(); // since 3.0
+
+  Icon getIcon();
 
   @Nullable
   SNodeReference getSourceNode();
