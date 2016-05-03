@@ -31,11 +31,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -161,28 +159,6 @@ public final class IconManager {
   public static Icon getIcon(SAbstractConcept concept) {
     return getIconForConcept(((SNode) concept.getDeclarationNode()));
   }
-  /**
-   * 
-   * @deprecated use#getIcon(SAbstractConcept) instead
-   */
-  @Deprecated
-  public static Icon getIconForConceptFQName(String conceptFQName) {
-    SNode acd = SModelUtil.findConceptDeclaration(conceptFQName);
-    SNode cd = null;
-    Icon icon = null;
-    if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
-      cd = SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-      icon = getIconForConcept(cd);
-    }
-    if (icon == null) {
-      if (cd != null && jetbrains.mps.util.SNodeOperations.isRoot(cd)) {
-        return IdeIcons.DEFAULT_ROOT_ICON;
-      } else {
-        return IdeIcons.DEFAULT_NODE_ICON;
-      }
-    }
-    return icon;
-  }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
@@ -212,17 +188,6 @@ public final class IconManager {
       LOG.error(null, e);
     }
     return EMPTY_ICON;
-  }
-  public static Icon getIconForModelReference(@NotNull SModelReference modelReference) {
-    String stereotype = SModelStereotype.getStereotype(modelReference.getModelName());
-    if (stereotype != null) {
-      if (SModelStereotype.isGeneratorModelStereotype(stereotype)) {
-        return IdeIcons.TEMPLATES_MODEL_ICON;
-      } else if (SModelStereotype.isTestModelStereotype(stereotype)) {
-        return IdeIcons.TEST_MODEL_ICON;
-      }
-    }
-    return IdeIcons.MODEL_ICON;
   }
   public static Icon getIconFor(SModel model) {
     if (model == null) {
