@@ -20,7 +20,7 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;

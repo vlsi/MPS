@@ -8,8 +8,8 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
-import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
@@ -163,7 +163,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
       Integer preIndex = indices_xbvbvu_a0e.get(cncpt);
@@ -171,17 +171,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<ContextAssistantMenu>singletonList(new EmptyLine_ContextAssistantMenu());
+            return Collections.<TransformationMenu>singletonList(new EmptyLine_ContextAssistantMenu());
           }
           break;
         default:
       }
     }
-    return Collections.<ContextAssistantMenu>emptyList();
+    return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+  public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId) {
     {
       SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
       Integer preIndex = indices_xbvbvu_a0f.get(cncpt);
@@ -191,7 +191,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a5, menuId.getFqName())) {
               case 0:
-                return Arrays.asList(new ContextAssistantMenu[]{new OtherCommands()});
+                return Arrays.asList(new TransformationMenu[]{new OtherCommands()});
               default:
             }
           }
@@ -200,7 +200,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       }
     }
 
-    return Collections.<ContextAssistantMenu>emptyList();
+    return Collections.<TransformationMenu>emptyList();
   }
 
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
 
 interface ActionItemExecutor {
   void executeActionItem(ActionItem item);

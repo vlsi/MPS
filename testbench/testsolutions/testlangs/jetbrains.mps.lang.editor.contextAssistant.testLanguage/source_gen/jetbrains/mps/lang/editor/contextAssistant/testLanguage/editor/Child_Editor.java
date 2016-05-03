@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.editor.contextAssistant.NamedMenuLookup;
+import jetbrains.mps.lang.editor.transformationMenus.NamedMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -52,14 +52,14 @@ public class Child_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xbt7a0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "named menu is here");
     editorCell.setCellId("Constant_xbt7a0_c0");
-    editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu"));
+    editorCell.setTransformationMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu"));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_xbt7a0_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "recursive menu is here");
     editorCell.setCellId("Constant_xbt7a0_d0");
-    editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive"));
+    editorCell.setTransformationMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive"));
     editorCell.setDefaultText("");
     return editorCell;
   }

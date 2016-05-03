@@ -13,23 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItemBase;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class ActionItemMenuPart extends SingleItemMenuPart {
 
   @Nullable
   @Override
-  public MenuItem createItem(final Context context) {
+  public MenuItem createItem(final TransformationMenuContext context) {
     try {
-      return new ActionItem(ActionItemMenuPart.this.getText(context)) {
+      final String text = ActionItemMenuPart.this.getText(context);
+      return new ActionItemBase() {
+        @Nullable
         @Override
-        public void execute() {
+        public String getLabelText(@NotNull String pattern) {
+          return text;
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
           ActionItemMenuPart.this.execute(context);
         }
       };
@@ -39,7 +47,7 @@ public abstract class ActionItemMenuPart extends SingleItemMenuPart {
     }
   }
 
-  protected abstract String getText(Context context);
+  protected abstract String getText(TransformationMenuContext context);
 
-  protected abstract void execute(Context context);
+  protected abstract void execute(TransformationMenuContext context);
 }

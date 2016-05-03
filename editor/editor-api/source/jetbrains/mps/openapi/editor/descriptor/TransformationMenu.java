@@ -13,19 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.contextAssistant.menu;
+package jetbrains.mps.openapi.editor.descriptor;
+
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class SubMenu extends MenuItem {
-  private final List<MenuItem> myItems;
-
-  public SubMenu(String text, List<MenuItem> items) {
-    super(text);
-    myItems = items;
-  }
-
-  public List<MenuItem> getItems() {
-    return myItems;
-  }
+public interface TransformationMenu {
+  @NotNull
+  List<MenuItem> createMenuItems(TransformationMenuContext context);
 }

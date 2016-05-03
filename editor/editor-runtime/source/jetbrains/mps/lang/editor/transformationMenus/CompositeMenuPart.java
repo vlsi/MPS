@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class CompositeMenuPart implements MenuPart {
 
   @NotNull
   @Override
-  public List<MenuItem> createItems(Context context) {
+  public List<MenuItem> createItems(TransformationMenuContext context) {
     List<MenuItem> items = new ArrayList<MenuItem>();
 
     for (MenuPart part : myParts) {

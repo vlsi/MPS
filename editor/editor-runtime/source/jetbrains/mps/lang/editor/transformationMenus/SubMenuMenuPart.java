@@ -13,22 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.SubMenu;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class SubMenuMenuPart extends SingleItemMenuPart {
   @NotNull
   @Override
-  protected MenuItem createItem(Context context) {
+  protected MenuItem createItem(TransformationMenuContext context) {
     final List<MenuItem> items = new CompositeMenuPart(getParts()).createItems(context);
     String text = getText(context.getEditorContext(), context.getNode());
     return new SubMenu(text, items);

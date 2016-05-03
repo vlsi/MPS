@@ -39,7 +39,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -102,7 +102,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNode myNode;
   private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
-  private ContextAssistantMenuLookup myContextAssistantMenuLookup;
+  private TransformationMenuLookup myTransformationMenuLookup;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
   private Style myStyle = new StyleImpl();
@@ -624,12 +624,12 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Nullable
-  public ContextAssistantMenuLookup getContextAssistantMenuLookup() {
-    return myContextAssistantMenuLookup;
+  public TransformationMenuLookup getTransformationMenuLookup() {
+    return myTransformationMenuLookup;
   }
 
-  public void setContextAssistantMenuLookup(@Nullable ContextAssistantMenuLookup contextAssistantMenuLookup) {
-    myContextAssistantMenuLookup = contextAssistantMenuLookup;
+  public void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup) {
+    myTransformationMenuLookup = transformationMenuLookup;
   }
 
   @Override

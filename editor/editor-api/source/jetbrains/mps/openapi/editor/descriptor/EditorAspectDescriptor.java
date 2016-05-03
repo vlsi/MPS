@@ -72,7 +72,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<ContextAssistantMenu> getDefaultContextAssistantMenus(SAbstractConcept concept);
+  Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept);
 
   /**
    * Returns the default context assistant menu for a concept and/or any contributions to that menu that are declared in this language.
@@ -80,7 +80,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept);
+  Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept);
 
   /**
    * Returns a named context assistant menu together with any additions to it contributed by extending languages.
@@ -88,7 +88,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<ContextAssistantMenu> getNamedContextAssistantMenus(NamedContextAssistantMenuId menuId);
+  Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId);
 
   /**
    * Returns a named context assistant menu together with any additions to it declared in this language
@@ -96,5 +96,5 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId);
+  Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId);
 }

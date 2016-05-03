@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DefaultMenuLookup implements ContextAssistantMenuLookup {
+public class DefaultMenuLookup implements TransformationMenuLookup {
   @NotNull
   private final LanguageRegistry myLanguageRegistry;
   @NotNull
@@ -62,14 +62,14 @@ public class DefaultMenuLookup implements ContextAssistantMenuLookup {
   }
 
   @Override
-  public Collection<ContextAssistantMenu> lookup() {
+  public Collection<TransformationMenu> lookup() {
     Set<SAbstractConcept> processedConcepts = new HashSet<SAbstractConcept>();
     for (SAbstractConcept next : new BreadthConceptHierarchyIterator(myConcept)) {
       if (!processedConcepts.add(next)) {
         continue;
       }
 
-      Collection<ContextAssistantMenu> conceptMenu = getForConcept(next);
+      Collection<TransformationMenu> conceptMenu = getForConcept(next);
       if (!conceptMenu.isEmpty()) {
         return conceptMenu;
       }
@@ -79,12 +79,12 @@ public class DefaultMenuLookup implements ContextAssistantMenuLookup {
   }
 
   @NotNull
-  private Collection<ContextAssistantMenu> getForConcept(SAbstractConcept concept) {
+  private Collection<TransformationMenu> getForConcept(SAbstractConcept concept) {
     EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, concept.getLanguage());
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
 
-    return aspectDescriptor.getDefaultContextAssistantMenus(concept);
+    return aspectDescriptor.getDefaultTransformationMenus(concept);
   }
 }

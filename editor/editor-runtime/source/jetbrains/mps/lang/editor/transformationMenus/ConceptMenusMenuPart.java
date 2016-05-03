@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -33,7 +33,7 @@ public class ConceptMenusMenuPart implements MenuPart {
 
   @NotNull
   @Override
-  public List<MenuItem> createItems(Context context) {
+  public List<MenuItem> createItems(TransformationMenuContext context) {
     List<MenuItem> result = new ArrayList<MenuItem>();
     for (SAbstractConcept concept : myConcepts) {
       result.addAll(context.getMenuItemFactory().createItems(

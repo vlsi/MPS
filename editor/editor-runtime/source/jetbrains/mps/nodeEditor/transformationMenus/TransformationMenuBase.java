@@ -13,35 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.nodeEditor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
-import org.apache.log4j.Logger;
+import jetbrains.mps.lang.editor.transformationMenus.CompositeMenuPart;
+import jetbrains.mps.lang.editor.transformationMenus.MenuPart;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
 import java.util.List;
 
-public abstract class ConditionalMenuPart implements MenuPart {
-  @NotNull
-  @Override
-  public List<MenuItem> createItems(Context context) {
-    try {
-      if (!isApplicable(context)) {
-        return Collections.emptyList();
-      }
-    } catch (RuntimeException e) {
-      Logger.getLogger(getClass()).warn("Exception when evaluating applicability", e);
-      return Collections.emptyList();
-    }
-
-    return new CompositeMenuPart(getParts()).createItems(context);
-  }
-
-  protected boolean isApplicable(Context context) {
-    return true;
-  }
+public abstract class TransformationMenuBase implements TransformationMenu {
 
   protected abstract List<MenuPart> getParts();
+
+  @NotNull
+  @Override
+  public List<MenuItem> createMenuItems(TransformationMenuContext context) {
+    return new CompositeMenuPart(getParts()).createItems(context);
+  }
 }

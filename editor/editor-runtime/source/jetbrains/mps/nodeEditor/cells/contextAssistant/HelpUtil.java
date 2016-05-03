@@ -24,7 +24,8 @@ import com.intellij.openapi.ui.popup.Balloon.Position;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,16 +47,21 @@ class HelpUtil {
     return new WhatsThisActionItem(anchor);
   }
 
-  private static class WhatsThisActionItem extends ActionItem {
+  private static class WhatsThisActionItem extends ActionItemBase {
     private final JComponent myAnchor;
 
-    public WhatsThisActionItem(JComponent anchor) {
-      super("What's this?");
+    WhatsThisActionItem(JComponent anchor) {
       myAnchor = anchor;
     }
 
+    @Nullable
     @Override
-    public void execute() {
+    public String getLabelText(String pattern) {
+      return "What's this?";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
       String shortcutText = getShortcutText();
 
       String bodyBeginning = "This menu shows available suggestions for the current editor position.";

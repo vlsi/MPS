@@ -13,8 +13,8 @@
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="5bxt" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.contextAssistant.menu(MPS.Editor/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
+    <import index="hota" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.transformationMenus(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -178,8 +178,8 @@
           <property role="TrG5h" value="activeItems" />
           <node concept="3uibUv" id="5ngDOM8uWhv" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
-            <node concept="3uibUv" id="5ngDOM8uWlP" role="11_B2D">
-              <ref role="3uigEE" to="5bxt:~MenuItem" resolve="MenuItem" />
+            <node concept="3uibUv" id="4WIuR9Il5OG" role="11_B2D">
+              <ref role="3uigEE" to="hota:~MenuItem" resolve="MenuItem" />
             </node>
           </node>
           <node concept="2OqwBi" id="jKDdcutlDu" role="33vP2m">

@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.editor.cells;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.Nullable;
@@ -184,9 +184,9 @@ public interface EditorCell {
   SubstituteInfo getSubstituteInfo();
 
   @Nullable
-  ContextAssistantMenuLookup getContextAssistantMenuLookup();
+  TransformationMenuLookup getTransformationMenuLookup();
 
-  void setContextAssistantMenuLookup(@Nullable ContextAssistantMenuLookup contextAssistantMenuLookup);
+  void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup);
 
   TextBuilder renderText();
 

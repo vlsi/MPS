@@ -25,7 +25,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.contextAssistant.NamedMenuLookup;
+import jetbrains.mps.lang.editor.transformationMenus.NamedMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
@@ -144,7 +144,7 @@ public class Parent_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
-      editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu"));
+      editorCell.setTransformationMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu"));
       editorCell.setDefaultText("");
       return editorCell;
     }

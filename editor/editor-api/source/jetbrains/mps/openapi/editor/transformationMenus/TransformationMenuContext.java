@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.openapi.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.List;
-
-public interface MenuPart {
+public interface TransformationMenuContext {
   @NotNull
-  List<MenuItem> createItems(ContextAssistantMenu.Context context);
+  SNode getNode();
+
+  @NotNull
+  EditorContext getEditorContext();
+
+  /**
+   * Returns a factory object that can be used to create items from other menus.
+   */
+  @NotNull
+  TransformationMenuItemFactory getMenuItemFactory();
 }

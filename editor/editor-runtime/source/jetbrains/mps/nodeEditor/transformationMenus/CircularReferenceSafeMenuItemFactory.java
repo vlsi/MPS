@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.contextAssistant;
+package jetbrains.mps.nodeEditor.transformationMenus;
 
-import jetbrains.mps.lang.editor.contextAssistant.DefaultMenuLookup;
+import jetbrains.mps.lang.editor.transformationMenus.DefaultMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantMenuItemFactory;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuItemFactory;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -35,15 +35,15 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Creates a list of {@link MenuItem}s given a {@link ContextAssistantMenuLookup} and a {@link SNode} (both optional). Tracks used keys: if the items for a given
+ * Creates a list of {@link MenuItem}s given a {@link TransformationMenuLookup} and a {@link SNode} (both optional). Tracks used keys: if the items for a given
  * key are requested twice, it emits a warning and returns an empty list of items.
  */
-class CircularReferenceSafeMenuItemFactory implements ContextAssistantMenuItemFactory {
+public class CircularReferenceSafeMenuItemFactory implements TransformationMenuItemFactory {
   private static final Logger LOG = Logger.getLogger(CircularReferenceSafeMenuItemFactory.class);
 
   private final EditorContext myEditorContext;
 
-  private final ArrayDeque<ContextAssistantMenuLookup> myKeyStack = new ArrayDeque<ContextAssistantMenuLookup>();
+  private final ArrayDeque<TransformationMenuLookup> myKeyStack = new ArrayDeque<TransformationMenuLookup>();
 
   public CircularReferenceSafeMenuItemFactory(EditorContext editorContext) {
     myEditorContext = editorContext;
@@ -51,7 +51,7 @@ class CircularReferenceSafeMenuItemFactory implements ContextAssistantMenuItemFa
 
   @NotNull
   @Override
-  public List<MenuItem> createItems(@Nullable ContextAssistantMenuLookup menuLookup, @Nullable SNode node) {
+  public List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup, @Nullable SNode node) {
     if (node == null) {
       return Collections.emptyList();
     }
@@ -75,23 +75,23 @@ class CircularReferenceSafeMenuItemFactory implements ContextAssistantMenuItemFa
   }
 
   @NotNull
-  private List<MenuItem> createItemsInternal(@NotNull ContextAssistantMenuLookup menuLookup, @Nullable SNode node) {
-    Collection<ContextAssistantMenu> menus = menuLookup.lookup();
+  private List<MenuItem> createItemsInternal(@NotNull TransformationMenuLookup menuLookup, @Nullable SNode node) {
+    Collection<TransformationMenu> menus = menuLookup.lookup();
 
     if (menus.isEmpty()) {
       return Collections.emptyList();
     }
 
-    Context context = new ContextForNode(node);
+    TransformationMenuContext context = new ContextForNode(node);
 
     List<MenuItem> result = new ArrayList<MenuItem>();
-    for (ContextAssistantMenu menu : menus) {
+    for (TransformationMenu menu : menus) {
       result.addAll(menu.createMenuItems(context));
     }
     return result;
   }
 
-  private class ContextForNode implements Context {
+  private class ContextForNode implements TransformationMenuContext {
     private final SNode myNode;
 
     public ContextForNode(SNode node) {
@@ -112,7 +112,7 @@ class CircularReferenceSafeMenuItemFactory implements ContextAssistantMenuItemFa
 
     @NotNull
     @Override
-    public ContextAssistantMenuItemFactory getMenuItemFactory() {
+    public TransformationMenuItemFactory getMenuItemFactory() {
       return CircularReferenceSafeMenuItemFactory.this;
     }
   }

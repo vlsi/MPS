@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.contextAssistant;
 
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

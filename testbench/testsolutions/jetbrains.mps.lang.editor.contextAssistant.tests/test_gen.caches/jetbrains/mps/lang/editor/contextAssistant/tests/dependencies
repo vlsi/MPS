@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.MenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />

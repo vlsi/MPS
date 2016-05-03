@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -71,7 +71,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
       Integer preIndex = indices_xbvbvu_a0f.get(cncpt);
@@ -79,13 +79,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<ContextAssistantMenu>singletonList(new SceneBuildingCommands());
+            return Collections.<TransformationMenu>singletonList(new SceneBuildingCommands());
           }
           break;
         default:
       }
     }
-    return Collections.<ContextAssistantMenu>emptyList();
+    return Collections.<TransformationMenu>emptyList();
   }
 
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

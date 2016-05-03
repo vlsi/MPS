@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.contextAssistant;
+package jetbrains.mps.openapi.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-
-public interface ContextAssistant {
-  void showMenu(@NotNull List<MenuItem> items);
-  void hideMenu();
-
-  void focusMenu();
-
-  /**
-   * Returns {@code true} if the shown menu has keyboard focus
-   */
-  boolean hasFocus();
+public interface MenuItemVisitor<ResultT> {
+  ResultT visit(ActionItem actionItem);
+  ResultT visit(SubMenu subMenu);
 }

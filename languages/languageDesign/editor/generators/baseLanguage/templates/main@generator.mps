@@ -32,7 +32,6 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="i5c6" ref="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)" />
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
-    <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <import index="5ueo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -42,7 +41,6 @@
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="qrny" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.desctiptor(MPS.Editor/)" />
     <import index="wgdr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.generator.internal(MPS.Editor/)" />
@@ -55,7 +53,6 @@
     <import index="kcid" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="iwf0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.descriptor(MPS.Editor/)" />
-    <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" />
     <import index="mqtv" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.attribute(MPS.Editor/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -71,14 +68,10 @@
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="la0d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.keymaps(MPS.Editor/)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <import index="nh4" ref="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)" />
-    <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
-    <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="rzvg" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.contextAssistant(MPS.Editor/)" />
-    <import index="5bxt" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.contextAssistant.menu(MPS.Editor/)" />
-    <import index="zn88" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.contextAssistant(MPS.Editor/)" />
-    <import index="bkti" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.contextAssistant(MPS.Editor/)" />
+    <import index="jkd0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.transformationMenus(MPS.Editor/)" />
+    <import index="vlnm" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.transformationMenus(MPS.Editor/)" />
+    <import index="hota" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.transformationMenus(MPS.Editor/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -17133,7 +17126,7 @@
                 <ref role="3cqZAo" node="4v1iCryNEJY" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="4Sf$XywIo$R" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setContextAssistantMenuLookup(jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup):void" resolve="setContextAssistantMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="4Sf$XywQlfB" role="37wK5m">
                   <node concept="1sPUBX" id="3DiRZz_UMb5" role="lGtFl">
                     <ref role="v9R2y" node="5OVd5tVfkL1" resolve="switch_ContextAssistantMenuReference" />
@@ -22265,14 +22258,14 @@
     </node>
     <node concept="3clFb_" id="323iKSTYij3" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getDeclaredDefaultContextAssistantMenus" />
+      <property role="TrG5h" value="getDeclaredDefaultTransformationMenus" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="323iKSTYij4" role="1B3o_S" />
       <node concept="3uibUv" id="323iKSTYij6" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="3uibUv" id="1GnLfSMRO0F" role="11_B2D">
-          <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+        <node concept="3uibUv" id="1MawgH3_aDa" role="11_B2D">
+          <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
         </node>
       </node>
       <node concept="2AHcQZ" id="323iKSTYija" role="2AJF6D">
@@ -22292,8 +22285,8 @@
                 <node concept="2YIFZM" id="323iKSTYBWs" role="3cqZAk">
                   <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                   <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
-                  <node concept="3uibUv" id="1GnLfSMRQcR" role="3PaCim">
-                    <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+                  <node concept="3uibUv" id="1MawgH3_c1h" role="3PaCim">
+                    <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
                   </node>
                   <node concept="1W57fq" id="323iKSTYBWu" role="lGtFl">
                     <node concept="3IZrLx" id="323iKSTYBWv" role="3IZSJc">
@@ -22322,8 +22315,8 @@
                         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                         <node concept="2ShNRf" id="323iKSTYBWF" role="37wK5m">
                           <node concept="3g6Rrh" id="323iKSTYBWG" role="2ShVmc">
-                            <node concept="3uibUv" id="1GnLfSMRQEB" role="3g7fb8">
-                              <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+                            <node concept="3uibUv" id="1MawgH3_d5f" role="3g7fb8">
+                              <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
                             </node>
                             <node concept="2ShNRf" id="323iKSTYBWI" role="3g7hyw">
                               <node concept="1WS0z7" id="323iKSTYBWJ" role="lGtFl">
@@ -22557,8 +22550,8 @@
           <node concept="2YIFZM" id="323iKSTYiUT" role="3cqZAk">
             <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <node concept="3uibUv" id="1GnLfSMRQRf" role="3PaCim">
-              <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+            <node concept="3uibUv" id="1MawgH3_aWU" role="3PaCim">
+              <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
             </node>
           </node>
         </node>
@@ -22589,20 +22582,20 @@
     </node>
     <node concept="3clFb_" id="4Sf$XywNMzO" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getDeclaredNamedContextAssistantMenus" />
+      <property role="TrG5h" value="getDeclaredNamedTransformationMenus" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="4Sf$XywNMzP" role="1B3o_S" />
       <node concept="3uibUv" id="4Sf$XywNMzQ" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="3uibUv" id="1GnLfSMRRk6" role="11_B2D">
-          <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+        <node concept="3uibUv" id="1MawgH3_doM" role="11_B2D">
+          <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
         </node>
       </node>
       <node concept="37vLTG" id="4Sf$XywNMzS" role="3clF46">
         <property role="TrG5h" value="menuId" />
-        <node concept="3uibUv" id="1GnLfSMRRuE" role="1tU5fm">
-          <ref role="3uigEE" to="iwf0:~NamedContextAssistantMenuId" resolve="NamedContextAssistantMenuId" />
+        <node concept="3uibUv" id="1MawgH3_dGx" role="1tU5fm">
+          <ref role="3uigEE" to="iwf0:~NamedTransformationMenuId" resolve="NamedTransformationMenuId" />
         </node>
       </node>
       <node concept="2AHcQZ" id="4Sf$XywNMzU" role="2AJF6D">
@@ -22643,8 +22636,8 @@
                         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                         <node concept="2ShNRf" id="4Sf$XywQwmp" role="37wK5m">
                           <node concept="3g6Rrh" id="4Sf$XywQOmB" role="2ShVmc">
-                            <node concept="3uibUv" id="1GnLfSMRRPQ" role="3g7fb8">
-                              <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+                            <node concept="3uibUv" id="1MawgH3_e8L" role="3g7fb8">
+                              <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
                             </node>
                             <node concept="2ShNRf" id="4Sf$XywQOQb" role="3g7hyw">
                               <node concept="HV5vD" id="4Sf$XywQQiL" role="2ShVmc">
@@ -22852,7 +22845,7 @@
                     <ref role="3cqZAo" node="4Sf$XywNMzS" resolve="menuId" />
                   </node>
                   <node concept="liA8E" id="4Sf$XywQz0X" role="2OqNvi">
-                    <ref role="37wK5l" to="iwf0:~NamedContextAssistantMenuId.getFqName():java.lang.String" resolve="getFqName" />
+                    <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getFqName():java.lang.String" resolve="getFqName" />
                   </node>
                 </node>
               </node>
@@ -23017,7 +23010,7 @@
                 <ref role="3cqZAo" node="4Sf$XywNMzS" resolve="menuId" />
               </node>
               <node concept="liA8E" id="4Sf$XywQp4I" role="2OqNvi">
-                <ref role="37wK5l" to="iwf0:~NamedContextAssistantMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
               </node>
             </node>
           </node>
@@ -23027,8 +23020,8 @@
           <node concept="2YIFZM" id="4Sf$XywNMAa" role="3cqZAk">
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
             <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
-            <node concept="3uibUv" id="1GnLfSMRSnY" role="3PaCim">
-              <ref role="3uigEE" to="iwf0:~ContextAssistantMenu" resolve="ContextAssistantMenu" />
+            <node concept="3uibUv" id="1MawgH3_qlW" role="3PaCim">
+              <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
             </node>
           </node>
         </node>
@@ -29328,7 +29321,7 @@
                 <ref role="3cqZAo" node="5DTV$TR_6Fe" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="25llCucbGVV" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setContextAssistantMenuLookup(jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup):void" resolve="setContextAssistantMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="25llCucbGVW" role="37wK5m">
                   <node concept="1sPUBX" id="25llCucbGVX" role="lGtFl">
                     <node concept="3NFfHV" id="25llCucbGVY" role="1sPUBK">
@@ -30452,8 +30445,8 @@
       <node concept="YeOm9" id="5eSk$t60hR0" role="2ShVmc">
         <node concept="1Y3b0j" id="5eSk$t60hR1" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="bkti:~IncludeMenuMenuPart" resolve="IncludeMenuMenuPart" />
-          <ref role="37wK5l" to="bkti:~IncludeMenuMenuPart.&lt;init&gt;()" resolve="IncludeMenuMenuPart" />
+          <ref role="1Y3XeK" to="jkd0:~IncludeMenuMenuPart" resolve="IncludeMenuMenuPart" />
+          <ref role="37wK5l" to="jkd0:~IncludeMenuMenuPart.&lt;init&gt;()" resolve="IncludeMenuMenuPart" />
           <node concept="3Tm1VV" id="5eSk$t60hR2" role="1B3o_S" />
           <node concept="3clFb_" id="5eSk$t60joW" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -30464,8 +30457,8 @@
             <node concept="2AHcQZ" id="5eSk$t60joZ" role="2AJF6D">
               <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
             </node>
-            <node concept="3uibUv" id="7_xM8AGbgoO" role="3clF45">
-              <ref role="3uigEE" to="iwf0:~ContextAssistantMenuLookup" resolve="ContextAssistantMenuLookup" />
+            <node concept="3uibUv" id="1MawgH3zzt2" role="3clF45">
+              <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
             </node>
             <node concept="3clFbS" id="5eSk$t60jp2" role="3clF47">
               <node concept="3cpWs8" id="7_xM8AGbgHR" role="3cqZAp">
@@ -30480,7 +30473,7 @@
                       <ref role="3cqZAo" node="7_xM8AGbgyT" resolve="context" />
                     </node>
                     <node concept="liA8E" id="7_xM8AGbgHW" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -30497,7 +30490,7 @@
                       <ref role="3cqZAo" node="7_xM8AGbgyT" resolve="context" />
                     </node>
                     <node concept="liA8E" id="7_xM8AGbgI2" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -30545,8 +30538,8 @@
             </node>
             <node concept="37vLTG" id="7_xM8AGbgyT" role="3clF46">
               <property role="TrG5h" value="context" />
-              <node concept="3uibUv" id="7_xM8AGbgyS" role="1tU5fm">
-                <ref role="3uigEE" to="iwf0:~ContextAssistantMenu$Context" resolve="ContextAssistantMenu.Context" />
+              <node concept="3uibUv" id="1MawgH3zzS7" role="1tU5fm">
+                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
           </node>
@@ -30564,8 +30557,8 @@
             </node>
             <node concept="37vLTG" id="5eSk$t60jpb" role="3clF46">
               <property role="TrG5h" value="context" />
-              <node concept="3uibUv" id="1GnLfSMSF$2" role="1tU5fm">
-                <ref role="3uigEE" to="iwf0:~ContextAssistantMenu$Context" resolve="ContextAssistantMenu.Context" />
+              <node concept="3uibUv" id="1MawgH3z$2f" role="1tU5fm">
+                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3clFbS" id="5eSk$t60jpe" role="3clF47">
@@ -30581,7 +30574,7 @@
                       <ref role="3cqZAo" node="5eSk$t60jpb" resolve="context" />
                     </node>
                     <node concept="liA8E" id="5eSk$t60o8p" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -30598,7 +30591,7 @@
                       <ref role="3cqZAo" node="5eSk$t60jpb" resolve="context" />
                     </node>
                     <node concept="liA8E" id="5eSk$t60oQJ" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -30766,8 +30759,8 @@
       <node concept="YeOm9" id="6srdxdHksfv" role="2ShVmc">
         <node concept="1Y3b0j" id="6srdxdHksfw" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="bkti:~ConditionalMenuPart" resolve="ConditionalMenuPart" />
-          <ref role="37wK5l" to="bkti:~ConditionalMenuPart.&lt;init&gt;()" resolve="ConditionalMenuPart" />
+          <ref role="1Y3XeK" to="jkd0:~ConditionalMenuPart" resolve="ConditionalMenuPart" />
+          <ref role="37wK5l" to="jkd0:~ConditionalMenuPart.&lt;init&gt;()" resolve="ConditionalMenuPart" />
           <node concept="3Tm1VV" id="6srdxdHksfx" role="1B3o_S" />
           <node concept="3clFb_" id="6srdxdHkwzN" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -30778,8 +30771,8 @@
             <node concept="10P_77" id="6srdxdHkwzQ" role="3clF45" />
             <node concept="37vLTG" id="6srdxdHkwzR" role="3clF46">
               <property role="TrG5h" value="context" />
-              <node concept="3uibUv" id="6srdxdHkwzS" role="1tU5fm">
-                <ref role="3uigEE" to="iwf0:~ContextAssistantMenu$Context" resolve="ContextAssistantMenu.Context" />
+              <node concept="3uibUv" id="1MawgH3zyWp" role="1tU5fm">
+                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3clFbS" id="6srdxdHkwzU" role="3clF47">
@@ -30795,7 +30788,7 @@
                       <ref role="3cqZAo" node="6srdxdHkwzR" resolve="context" />
                     </node>
                     <node concept="liA8E" id="6srdxdHkxZQ" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -30810,7 +30803,7 @@
                       <ref role="3cqZAo" node="6srdxdHkwzR" resolve="context" />
                     </node>
                     <node concept="liA8E" id="6srdxdHkyml" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -30853,8 +30846,8 @@
             <node concept="3Tmbuc" id="25llCubrT_v" role="1B3o_S" />
             <node concept="3uibUv" id="25llCubrT_x" role="3clF45">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="25llCubrT_y" role="11_B2D">
-                <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+              <node concept="3uibUv" id="4WIuR9I6m6i" role="11_B2D">
+                <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
               </node>
             </node>
             <node concept="3clFbS" id="25llCubrT_$" role="3clF47">
@@ -30881,8 +30874,8 @@
                       <ref role="v9R2y" node="20qY$3H6Q0h" resolve="switch_ContextAssistantMenuPart" />
                     </node>
                   </node>
-                  <node concept="3uibUv" id="25llCubCvq_" role="3PaCim">
-                    <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+                  <node concept="3uibUv" id="4WIuR9I6mel" role="3PaCim">
+                    <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
                   </node>
                 </node>
               </node>
@@ -30912,7 +30905,7 @@
             <node concept="3clFbF" id="7_xM8AG2h5S" role="3cqZAp">
               <node concept="2ShNRf" id="7_xM8AG2h5Q" role="3clFbG">
                 <node concept="1pGfFk" id="7_xM8AG2C$U" role="2ShVmc">
-                  <ref role="37wK5l" to="bkti:~DefaultMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultMenuLookup" />
+                  <ref role="37wK5l" to="jkd0:~DefaultMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultMenuLookup" />
                   <node concept="2YIFZM" id="7_xM8AG2C_B" role="37wK5m">
                     <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                     <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
@@ -30949,8 +30942,8 @@
               </node>
             </node>
           </node>
-          <node concept="3uibUv" id="7_xM8AG2h5A" role="3clF45">
-            <ref role="3uigEE" to="iwf0:~ContextAssistantMenuLookup" resolve="ContextAssistantMenuLookup" />
+          <node concept="3uibUv" id="1MawgH3zAm5" role="3clF45">
+            <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
           </node>
           <node concept="3Tm1VV" id="7_xM8AG1Qts" role="1B3o_S" />
           <node concept="37vLTG" id="7_xM8AG2h5G" role="3clF46">
@@ -30968,15 +30961,15 @@
       <node concept="1Koe21" id="7_xM8AG2CKU" role="1lVwrX">
         <node concept="3clFb_" id="7_xM8AG2CSj" role="1Koe22">
           <property role="TrG5h" value="lookup" />
-          <node concept="3uibUv" id="7_xM8AG2DiR" role="3clF45">
-            <ref role="3uigEE" to="iwf0:~ContextAssistantMenuLookup" resolve="ContextAssistantMenuLookup" />
+          <node concept="3uibUv" id="1MawgH3zAvu" role="3clF45">
+            <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
           </node>
           <node concept="3Tm1VV" id="7_xM8AG2CSm" role="1B3o_S" />
           <node concept="3clFbS" id="7_xM8AG2CSn" role="3clF47">
             <node concept="3clFbF" id="7_xM8AG2CSt" role="3cqZAp">
               <node concept="2ShNRf" id="5OVd5tVfPNw" role="3clFbG">
                 <node concept="1pGfFk" id="5OVd5tVfQBM" role="2ShVmc">
-                  <ref role="37wK5l" to="bkti:~NamedMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedMenuLookup" />
+                  <ref role="37wK5l" to="jkd0:~NamedMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedMenuLookup" />
                   <node concept="2YIFZM" id="7_xM8AG2Dcv" role="37wK5m">
                     <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
                     <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
@@ -31097,7 +31090,7 @@
     <ref role="3gUMe" to="tpc2:7l1m754O$tN" resolve="ContextAssistantMenuPart_Super" />
     <node concept="2ShNRf" id="3Cl5TgsTiws" role="13RCb5">
       <node concept="1pGfFk" id="3Cl5TgsTjuG" role="2ShVmc">
-        <ref role="37wK5l" to="bkti:~ConceptMenusMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept[])" resolve="ConceptMenusMenuPart" />
+        <ref role="37wK5l" to="jkd0:~ConceptMenusMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept[])" resolve="ConceptMenusMenuPart" />
         <node concept="35c_gC" id="3Cl5TgsTjO4" role="37wK5m">
           <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
           <node concept="1ZhdrF" id="3Cl5TgsTjO5" role="lGtFl">
@@ -31152,8 +31145,8 @@
       <node concept="YeOm9" id="3Cl5TgsTepM" role="2ShVmc">
         <node concept="1Y3b0j" id="3Cl5TgsTepP" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="bkti:~SubMenuMenuPart" resolve="SubMenuMenuPart" />
-          <ref role="37wK5l" to="bkti:~SubMenuMenuPart.&lt;init&gt;()" resolve="SubMenuMenuPart" />
+          <ref role="1Y3XeK" to="jkd0:~SubMenuMenuPart" resolve="SubMenuMenuPart" />
+          <ref role="37wK5l" to="jkd0:~SubMenuMenuPart.&lt;init&gt;()" resolve="SubMenuMenuPart" />
           <node concept="3Tm1VV" id="3Cl5TgsTepQ" role="1B3o_S" />
           <node concept="3clFb_" id="3Cl5TgsTetZ" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -31213,8 +31206,8 @@
             <node concept="3Tmbuc" id="3Cl5TgsThcF" role="1B3o_S" />
             <node concept="3uibUv" id="25llCubsl4l" role="3clF45">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="25llCubsllH" role="11_B2D">
-                <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+              <node concept="3uibUv" id="4WIuR9I6nKr" role="11_B2D">
+                <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
               </node>
             </node>
             <node concept="3clFbS" id="3Cl5TgsThcK" role="3clF47">
@@ -31243,13 +31236,13 @@
                           <ref role="v9R2y" node="20qY$3H6Q0h" resolve="switch_ContextAssistantMenuPart" />
                         </node>
                       </node>
-                      <node concept="3uibUv" id="1GnLfSMSGio" role="3g7fb8">
-                        <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+                      <node concept="3uibUv" id="4WIuR9I6o5v" role="3g7fb8">
+                        <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
                       </node>
                     </node>
                   </node>
-                  <node concept="3uibUv" id="25llCubCvK2" role="3PaCim">
-                    <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+                  <node concept="3uibUv" id="4WIuR9I6nQA" role="3PaCim">
+                    <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
                   </node>
                 </node>
               </node>
@@ -31274,8 +31267,8 @@
       <node concept="3Tmbuc" id="1GnLfSMQAU$" role="1B3o_S" />
       <node concept="3uibUv" id="1GnLfSMQAUA" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="1GnLfSMQAUB" role="11_B2D">
-          <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+        <node concept="3uibUv" id="4WIuR9I6jWi" role="11_B2D">
+          <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
         </node>
       </node>
       <node concept="3clFbS" id="1GnLfSMQAUC" role="3clF47">
@@ -31283,8 +31276,8 @@
           <node concept="2YIFZM" id="3Cl5TgsSHzT" role="3clFbG">
             <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
             <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-            <node concept="3uibUv" id="1GnLfSMQBfi" role="3PaCim">
-              <ref role="3uigEE" to="bkti:~MenuPart" resolve="MenuPart" />
+            <node concept="3uibUv" id="4WIuR9I6kiq" role="3PaCim">
+              <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
             </node>
             <node concept="10Nm6u" id="3Cl5TgsT5j7" role="37wK5m">
               <node concept="1WS0z7" id="20qY$3H7blt" role="lGtFl">
@@ -31332,8 +31325,8 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="1GnLfSMQAI_" role="1zkMxy">
-      <ref role="3uigEE" to="zn88:~ContextAssistantMenuBase" resolve="ContextAssistantMenuBase" />
+    <node concept="3uibUv" id="1MawgH3zxck" role="1zkMxy">
+      <ref role="3uigEE" to="vlnm:~TransformationMenuBase" resolve="TransformationMenuBase" />
     </node>
   </node>
   <node concept="bUwia" id="1qY_lWStOiY">
@@ -31363,8 +31356,8 @@
       <node concept="YeOm9" id="3Cl5TgsT6Xh" role="2ShVmc">
         <node concept="1Y3b0j" id="3Cl5TgsT6Xk" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="bkti:~ActionItemMenuPart" resolve="ActionItemMenuPart" />
-          <ref role="37wK5l" to="bkti:~ActionItemMenuPart.&lt;init&gt;()" resolve="ActionItemMenuPart" />
+          <ref role="1Y3XeK" to="jkd0:~ActionItemMenuPart" resolve="ActionItemMenuPart" />
+          <ref role="37wK5l" to="jkd0:~ActionItemMenuPart.&lt;init&gt;()" resolve="ActionItemMenuPart" />
           <node concept="3Tm1VV" id="3Cl5TgsT6Xl" role="1B3o_S" />
           <node concept="3clFb_" id="3Cl5TgsT6XK" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -31373,8 +31366,8 @@
             <property role="od$2w" value="false" />
             <node concept="37vLTG" id="3fQueTd2ATp" role="3clF46">
               <property role="TrG5h" value="context" />
-              <node concept="3uibUv" id="1GnLfSMRVGp" role="1tU5fm">
-                <ref role="3uigEE" to="iwf0:~ContextAssistantMenu$Context" resolve="ContextAssistantMenu.Context" />
+              <node concept="3uibUv" id="1MawgH3zxMR" role="1tU5fm">
+                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3Tmbuc" id="3Cl5TgsT6XL" role="1B3o_S" />
@@ -31395,7 +31388,7 @@
                       <ref role="3cqZAo" node="3fQueTd2ATp" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3fQueTd2A2Q" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -31410,7 +31403,7 @@
                       <ref role="3cqZAo" node="3fQueTd2ATp" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3fQueTd2A2W" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -31453,8 +31446,8 @@
             <property role="od$2w" value="false" />
             <node concept="37vLTG" id="3fQueTd2CNu" role="3clF46">
               <property role="TrG5h" value="context" />
-              <node concept="3uibUv" id="1GnLfSMRVH5" role="1tU5fm">
-                <ref role="3uigEE" to="iwf0:~ContextAssistantMenu$Context" resolve="ContextAssistantMenu.Context" />
+              <node concept="3uibUv" id="1MawgH3zxWM" role="1tU5fm">
+                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3Tmbuc" id="3Cl5TgsT6XX" role="1B3o_S" />
@@ -31475,7 +31468,7 @@
                       <ref role="3cqZAo" node="3fQueTd2CNu" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3fQueTd2BP0" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -31490,7 +31483,7 @@
                       <ref role="3cqZAo" node="3fQueTd2CNu" resolve="context" />
                     </node>
                     <node concept="liA8E" id="3fQueTd2BP6" role="2OqNvi">
-                      <ref role="37wK5l" to="iwf0:~ContextAssistantMenu$Context.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>

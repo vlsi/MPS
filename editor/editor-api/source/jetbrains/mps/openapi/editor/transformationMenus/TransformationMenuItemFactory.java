@@ -13,29 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.openapi.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
 import java.util.List;
 
-/**
- * Convenience implementation of {@link MenuPart} for parts that create at most one menu item.
- */
-public abstract class SingleItemMenuPart implements MenuPart {
+public interface TransformationMenuItemFactory {
+  /**
+   * Create menu items by key and node. If node is null, returns an empty list. If menuLookup is null, creates default menu of the node's concept.
+   *
+   * @param menuLookup a menu reference, may be null
+   * @param node a node, may be null
+   * @return menu items for the node, not null but possibly empty
+   */
   @NotNull
-  @Override
-  public List<MenuItem> createItems(Context context) {
-    MenuItem item = createItem(context);
-    if (item == null) return Collections.emptyList();
-
-    return Collections.singletonList(item);
-  }
-
-  @Nullable
-  protected abstract MenuItem createItem(Context context);
+  List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup, @Nullable SNode node);
 }

@@ -17,10 +17,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -75,25 +74,25 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDefaultContextAssistantMenus(SAbstractConcept concept) {
+  public Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept) {
     return myDefaultContextAssistantMenusCache.get(concept);
   }
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
     return Collections.emptyList();
   }
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+  public Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId) {
     return myNamedContextAssistantMenusCache.get(menuId);
   }
 
   @NotNull
   @Override
-  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+  public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId) {
     return Collections.emptyList();
   }
 
@@ -142,7 +141,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     }
   }
 
-  private class DefaultContextAssistantMenusCache extends EditorAspectContributionsCache<SAbstractConcept, ContextAssistantMenu> {
+  private class DefaultContextAssistantMenusCache extends EditorAspectContributionsCache<SAbstractConcept, TransformationMenu> {
     public DefaultContextAssistantMenusCache() {
       super(EditorAspectDescriptorBase.this);
     }
@@ -154,25 +153,25 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
 
     @NotNull
     @Override
-    protected Collection<ContextAssistantMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, SAbstractConcept key) {
-      return descriptor.getDeclaredDefaultContextAssistantMenus(key);
+    protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, SAbstractConcept key) {
+      return descriptor.getDeclaredDefaultTransformationMenus(key);
     }
   }
 
-  private class NamedContextAssistantMenusCache extends EditorAspectContributionsCache<NamedContextAssistantMenuId, ContextAssistantMenu> {
+  private class NamedContextAssistantMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
     public NamedContextAssistantMenusCache() {
       super(EditorAspectDescriptorBase.this);
     }
 
     @Override
-    protected SLanguage getLanguage(NamedContextAssistantMenuId key) {
+    protected SLanguage getLanguage(NamedTransformationMenuId key) {
       return key.getConcept().getLanguage();
     }
 
     @NotNull
     @Override
-    protected Collection<ContextAssistantMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedContextAssistantMenuId key) {
-      return descriptor.getDeclaredNamedContextAssistantMenus(key);
+    protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedTransformationMenuId key) {
+      return descriptor.getDeclaredNamedTransformationMenus(key);
     }
   }
 }

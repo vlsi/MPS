@@ -18,9 +18,10 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.popup.ClosableByLeftArrow;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.SubMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -38,7 +39,19 @@ class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableBy
   @NotNull
   @Override
   public String getTextFor(MenuItem value) {
-    return value.getText();
+    return value.accept(new MenuItemVisitor<String>() {
+      @Override
+      public String visit(ActionItem actionItem) {
+        String labelText = actionItem.getLabelText("");
+        if (labelText == null) return "";
+        return labelText;
+      }
+
+      @Override
+      public String visit(SubMenu subMenu) {
+        return subMenu.getText();
+      }
+    });
   }
 
   @Override

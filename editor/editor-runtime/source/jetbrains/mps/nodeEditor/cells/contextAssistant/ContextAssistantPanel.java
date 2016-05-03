@@ -20,9 +20,10 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.SubMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 
 import javax.swing.AbstractAction;
@@ -108,7 +109,7 @@ public class ContextAssistantPanel implements ActionItemExecutor {
   public void showMenu(List<MenuItem> items) {
     List<MenuItem> itemsWithHelp;
     if (HelpUtil.shouldShowHelp()) {
-      itemsWithHelp = new ArrayList<MenuItem>(items);
+      itemsWithHelp = new ArrayList<>(items);
       itemsWithHelp.add(myHelpAction);
     } else {
       itemsWithHelp = items;
@@ -155,33 +156,34 @@ public class ContextAssistantPanel implements ActionItemExecutor {
   }
 
   private JButton createBaseButton(final MenuItem item) {
-    if (item instanceof ActionItem) {
-      return new JButton(new AbstractAction(item.getText()) {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          executeActionItem((ActionItem) item);
-        }
-      });
-    } else if (item instanceof SubMenu) {
-      return new StepComboBoxButton(item.getText(), new MenuItemListStep(this, ((SubMenu) item).getItems()));
-    } else {
-      JButton button = new JButton(item.getText());
-      button.setEnabled(false);
-      return button;
-    }
-  }
+    return item.accept(new MenuItemVisitor<JButton>() {
+      @Override
+      public JButton visit(ActionItem actionItem) {
+        return new JButton(new AbstractAction(actionItem.getLabelText("")) {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            executeActionItem(actionItem);
+          }
+        });
+      }
 
+      @Override
+      public JButton visit(SubMenu subMenu) {
+        return new StepComboBoxButton(subMenu.getText(), new MenuItemListStep(ContextAssistantPanel.this, subMenu.getItems()));
+      }
+    });
+  }
 
   @Override
   public void executeActionItem(final ActionItem item) {
     if (HelpUtil.isHelpAction(item)) {
-      item.execute();
+      item.execute("");
     } else {
       jumpToEditor(false);
       myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
         @Override
         protected void doExecute() {
-          item.execute();
+          item.execute("");
         }
       });
       myEditorContext.getContextAssistantManager().scheduleUpdate();

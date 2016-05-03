@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.contextAssistant.menu;
+package jetbrains.mps.lang.editor.transformationMenus;
 
-public abstract class ActionItem extends MenuItem {
-  public ActionItem(String text) {
-    super(text);
-  }
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import org.jetbrains.annotations.NotNull;
 
-  public abstract void execute();
+import java.util.List;
+
+public interface MenuPart {
+  @NotNull
+  List<MenuItem> createItems(TransformationMenuContext context);
 }

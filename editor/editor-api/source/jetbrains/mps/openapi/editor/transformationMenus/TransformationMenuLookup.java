@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.contextAssistant.menu;
+package jetbrains.mps.openapi.editor.transformationMenus;
 
-public class MenuItem {
-  private final String myText;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 
-  public MenuItem(String text) {
-    myText = text;
-  }
+import java.util.Collection;
 
-  public String getText() {
-    return myText;
-  }
-
-  @Override
-  public String toString() {
-    return getText();
-  }
+/**
+ * Looks up a collection of menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
+ */
+public interface TransformationMenuLookup {
+  Collection<TransformationMenu> lookup();
 }

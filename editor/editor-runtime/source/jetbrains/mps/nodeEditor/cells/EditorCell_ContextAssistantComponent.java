@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantPanel;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 

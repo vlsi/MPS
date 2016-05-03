@@ -34,12 +34,12 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTool" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.ActionItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.editor.BLCommand_Editor" file="BLCommand_Editor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.NamedMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.NamedMenuLookup" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
@@ -144,8 +144,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.MenuPart" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.editor.ConsoleRoot_Editor" file="ConsoleRoot_Editor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -206,8 +206,8 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.TextResponseItem_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

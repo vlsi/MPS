@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -27,17 +27,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collection;
 import java.util.Collections;
 
-public class NamedMenuLookup implements ContextAssistantMenuLookup {
+public class NamedMenuLookup implements TransformationMenuLookup {
   @NotNull
   private final LanguageRegistry myLanguageRegistry;
   @NotNull
-  private final NamedContextAssistantMenuId myId;
+  private final NamedTransformationMenuId myId;
 
   public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull SAbstractConcept concept, @NotNull String fqName) {
-    this(languageRegistry, new NamedContextAssistantMenuId(concept, fqName));
+    this(languageRegistry, new NamedTransformationMenuId(concept, fqName));
   }
 
-  public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull NamedContextAssistantMenuId id) {
+  public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull NamedTransformationMenuId id) {
     myLanguageRegistry = languageRegistry;
     myId = id;
   }
@@ -64,12 +64,12 @@ public class NamedMenuLookup implements ContextAssistantMenuLookup {
   }
 
   @Override
-  public Collection<ContextAssistantMenu> lookup() {
+  public Collection<TransformationMenu> lookup() {
     EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myId.getConcept().getLanguage());
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
 
-    return aspectDescriptor.getNamedContextAssistantMenus(myId);
+    return aspectDescriptor.getNamedTransformationMenus(myId);
   }
 }

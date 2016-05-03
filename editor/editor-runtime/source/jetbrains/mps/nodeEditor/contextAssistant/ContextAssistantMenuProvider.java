@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.contextAssistant;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

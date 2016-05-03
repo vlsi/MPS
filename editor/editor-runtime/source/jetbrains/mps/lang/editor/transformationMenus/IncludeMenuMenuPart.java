@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.contextAssistant;
+package jetbrains.mps.lang.editor.transformationMenus;
 
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu.Context;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,17 +27,17 @@ import java.util.List;
 public abstract class IncludeMenuMenuPart implements MenuPart {
   @NotNull
   @Override
-  public List<MenuItem> createItems(Context context) {
+  public List<MenuItem> createItems(TransformationMenuContext context) {
     return context.getMenuItemFactory().createItems(getMenuLookup(context), getNode(context));
   }
 
   @Nullable
-  protected ContextAssistantMenuLookup getMenuLookup(Context context) {
+  protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
     return null;
   }
 
   @Nullable
-  protected SNode getNode(Context context) {
+  protected SNode getNode(TransformationMenuContext context) {
     return context.getNode();
   }
 }

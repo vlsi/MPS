@@ -6,12 +6,13 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.ActionItemBase" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.MenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.editor.contextAssistant.SingleItemMenuPart" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.transformationMenus.SingleItemMenuPart" />
   </dependency>
 </dependenciesRoot>
 

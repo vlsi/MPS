@@ -9,7 +9,7 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import junit.framework.Assert;
 import java.util.List;
-import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 
 @MPSLaunch
 public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest {
