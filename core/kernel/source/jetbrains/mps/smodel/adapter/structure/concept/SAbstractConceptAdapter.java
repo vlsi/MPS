@@ -344,7 +344,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     //compatibility code, can be removed after 3.4
-    return ConceptIconLoader.loadIcon(getDeclarationNode().getProperty(SNodeUtil.property_Concept_Icon), true);
+    SNode dn = getDeclarationNode();
+    if (dn == null) {
+      return null;
+    }
+    return ConceptIconLoader.getIconForConcept(dn);
   }
 
   /**

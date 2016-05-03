@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -33,7 +35,45 @@ public class ConceptIconLoader {
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
 
-  public static Icon getIconFor(IFile file) {
+  @Deprecated
+  //for compatibility purposes only
+  public static Icon getIconForConcept(org.jetbrains.mps.openapi.model.SNode concept) {
+    while (concept != null) {
+      Icon icon = loadIcon(concept, concept.getProperty(SNodeUtil.property_Concept_Icon));
+      if (icon != null) {
+        return icon;
+      }
+      concept = concept.getReferenceTarget(SNodeUtil.link_ConceptDeclaration_extends);
+    }
+    return null;
+  }
+
+  @Deprecated
+  //for compatibility purposes only
+  public static Icon loadIcon(org.jetbrains.mps.openapi.model.SNode anchorNode, String path) {
+    String iconPath = MacrosFactory.forModule((AbstractModule) anchorNode.getModel().getModule()).expandPath(path);
+    if (iconPath != null) {
+      Icon icon = loadIcon(iconPath, true);
+      if (icon != null) {
+        return icon;
+      }
+    }
+    return null;
+  }
+
+  public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
+    Icon icon = ourPathsToIcons.get(iconPath);
+    if (icon == null) {
+      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
+      icon = getIconFor(file);
+      if (icon != null && cache) {
+        ourPathsToIcons.put(iconPath, icon);
+      }
+    }
+    return icon;
+  }
+
+  private static Icon getIconFor(IFile file) {
     ImageIcon icon = null;
     if (file.exists()) {
       byte[] image = new byte[(int) file.length()];
@@ -63,18 +103,6 @@ public class ConceptIconLoader {
       icon = new ImageIcon(image);
       if ((icon.getImageLoadStatus() & IMAGE_LOADED) == 0) {
         icon = null;
-      }
-    }
-    return icon;
-  }
-
-  public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
-    Icon icon = ourPathsToIcons.get(iconPath);
-    if (icon == null) {
-      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
-      icon = getIconFor(file);
-      if (icon != null && cache) {
-        ourPathsToIcons.put(iconPath, icon);
       }
     }
     return icon;

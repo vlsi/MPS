@@ -370,21 +370,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   public Icon getInstanceIcon(SNode node) {
     //compatibility code introduced before 3.4
     //we can remove this code when users migrate to new method in constraints
-    return getIconForConcept(node.getConcept().getDeclarationNode(), getAlternativeIcon(node));
-  }
-
-  private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
-    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
-    if (language != null) {
-      String iconPath = MacrosFactory.forModule(language).expandPath(path);
-      if (iconPath != null) {
-        Icon icon = ConceptIconLoader.loadIcon(iconPath, true);
-        if (icon != null) {
-          return icon;
-        }
-      }
-    }
-    return null;
+    return ConceptIconLoader.loadIcon(node.getConcept().getDeclarationNode(), getAlternativeIcon(node));
   }
 
   @Deprecated

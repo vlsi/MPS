@@ -220,7 +220,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           }
         }
 
-        myIcon = ConceptIconLoader.loadIcon(declaration.getProperty(SNodeUtil.property_Concept_Icon), true);
+        myIcon = ConceptIconLoader.getIconForConcept(declaration);
         mySourceNodeRef = declaration.getReference();
       }
     });
