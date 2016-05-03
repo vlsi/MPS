@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -331,26 +332,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   }
 
   @Override
+  @Nullable
   public Icon getIcon() {
-    return null;
-    /*
-    if (node.concept.isSubConceptOf(ConceptDeclaration).<operation>) {
-  Icon alternativeIcon = null;
-  try {
-    string alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(node.concept).getAlternativeIcon(node);
-    if (alternativeIconPath != null) {
-      alternativeIcon = IconManager.getIconForConcept(concept : ConceptDeclaration, alternativeIconPath);
-    }
-  } catch (Exception ignore) {
-    <no statements>
-  }
-  if (alternativeIcon != null) {
-    mainIcon = alternativeIcon;
-  } else {
-    mainIcon = IconManager.getIconForConcept(concept : ConceptDeclaration);
-  }
-}
-     */
+    //compatibility code, can be removed after 3.4, return null by default
+    return ConceptIconLoader.loadIcon(getDeclarationNode().getProperty(SNodeUtil.property_Concept_Icon), true);
   }
 
   /**
