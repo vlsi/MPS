@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import javax.swing.Icon;
 import java.util.Collection;
 
 /**
@@ -104,6 +105,8 @@ public interface SAbstractConcept extends SNamedElement {
 
   @NotNull
   String getHelpUrl();
+
+  Icon getIcon();
 
   //----------deprecated------------
 

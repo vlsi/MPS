@@ -48,6 +48,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -328,6 +329,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return "";
     }
     return d.getHelpUrl();
+  }
+
+  @Override
+  public Icon getIcon() {
+    return null;
   }
 
   /**
