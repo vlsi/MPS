@@ -25,7 +25,7 @@ import org.junit.runners.model.RunnerBuilder;
 
 /**
  * These are the tests which DO NOT require the idea platform
- *
+ * <p>
  * NB: the test which prints errors to output (apache Logger#error) is considered failed.
  * Further the level will be lowered so that any warning will fail the test.
  */
@@ -68,7 +68,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.repo.RepoListenerTest.class,
     jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class,
-    jetbrains.mps.workbench.ProjectMpsTest.class
+    jetbrains.mps.workbench.ProjectMpsTest.class,
+    jetbrains.mps.nodeEditor.EditorTestSuite.class
 })
 public class CoreTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time
