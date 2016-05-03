@@ -41,10 +41,10 @@ public class CellContainer extends AbstractContainer<EditorCell> {
 
   @Override
   protected Entry<EditorCell> deleteEntry(@NotNull Entry<EditorCell> entry) {
-    if (entry.myItem.getUserObject(this) != entry) {
+    if (entry.getItem().getUserObject(this) != entry) {
       return null;
     }
-    entry.myItem.putUserObject(this, null);
+    entry.getItem().putUserObject(this, null);
     return entry;
   }
 }

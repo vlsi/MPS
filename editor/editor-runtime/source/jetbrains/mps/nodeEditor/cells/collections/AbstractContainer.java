@@ -111,7 +111,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     if (entry == null) {
       throw new IllegalArgumentException();
     }
-    return addEntryBefore(entry, getAnchorEntry(anchor)).myItem;
+    return addEntryBefore(entry, getAnchorEntry(anchor)).getItem();
   }
 
   @Override
@@ -149,7 +149,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     if (firstEntry == null) {
       throw new NoSuchElementException();
     }
-    return firstEntry.myItem;
+    return firstEntry.getItem();
   }
 
   @Override
@@ -158,7 +158,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     if (lastEntry == null) {
       throw new NoSuchElementException();
     }
-    return lastEntry.myItem;
+    return lastEntry.getItem();
   }
 
   Entry<T> getFirstEntry() {
@@ -166,12 +166,12 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   private Entry<T> getLastEntry() {
-    return myFirst == null ? null : myFirst.myPrev;
+    return myFirst == null ? null : myFirst.getPrev();
   }
 
   protected Entry<T> addEntryBefore(@NotNull Entry<T> entry, Entry<T> anchor) {
-    assert entry.myPrev == null;
-    assert entry.myNext == null;
+    assert entry.getPrev() == null;
+    assert entry.getNext() == null;
 
     Entry<T> firstEntry = getFirstEntry();
     // anchor should be null for empty containers
@@ -183,27 +183,27 @@ abstract class AbstractContainer<T> implements Container<T> {
     incSize();
     if (firstEntry == null) {
       myFirst = entry;
-      entry.myNext = null;
-      entry.myPrev = entry;
+      entry.setNext(null);
+      entry.setPrev(entry);
       return entry;
     }
 
     if (anchor == null) {
-      entry.myNext = null;
-      entry.myPrev = lastEntry;
-      firstEntry.myPrev = entry;
-      lastEntry.myNext = entry;
+      entry.setNext(null);
+      entry.setPrev(lastEntry);
+      firstEntry.setPrev(entry);
+      lastEntry.setNext(entry);
       return entry;
     }
 
-    entry.myNext = anchor;
-    entry.myPrev = anchor.myPrev;
+    entry.setNext(anchor);
+    entry.setPrev(anchor.getPrev());
     if (anchor != firstEntry) {
-      anchor.myPrev.myNext = entry;
+      anchor.getPrev().setNext(entry);
     } else {
       myFirst = entry;
     }
-    anchor.myPrev = entry;
+    anchor.setPrev(entry);
     return entry;
   }
 
@@ -213,19 +213,20 @@ abstract class AbstractContainer<T> implements Container<T> {
 
     Entry<T> firstEntry = getFirstEntry();
     if (firstEntry == entry) {
-      myFirst = entry.myNext;
+      myFirst = entry.getNext();
       if (myFirst != null) {
-        myFirst.myPrev = entry.myPrev;
+        myFirst.setPrev(entry.getPrev());
       }
     } else {
-      entry.myPrev.myNext = entry.myNext;
-      if (entry.myNext != null) {
-        entry.myNext.myPrev = entry.myPrev;
+      entry.getPrev().setNext(entry.getNext());
+      if (entry.getNext() != null) {
+        entry.getNext().setPrev(entry.getPrev());
       } else {
-        firstEntry.myPrev = entry.myPrev;
+        firstEntry.setPrev(entry.getPrev());
       }
     }
-    entry.myPrev = entry.myNext = null;
+    entry.setPrev(null);
+    entry.setNext(null);
   }
 
   private class ContentsIterator implements Iterator<T> {
@@ -252,7 +253,7 @@ abstract class AbstractContainer<T> implements Container<T> {
       if (!myForward && myCurrentEntry == getFirstEntry()) {
         return null;
       }
-      return myForward ? myCurrentEntry.myNext : myCurrentEntry.myPrev;
+      return myForward ? myCurrentEntry.getNext() : myCurrentEntry.getPrev();
     }
 
     @Override
@@ -262,13 +263,13 @@ abstract class AbstractContainer<T> implements Container<T> {
       if (nextEntry == null) {
         throw new NoSuchElementException();
       }
-      return (myCurrentEntry = nextEntry).myItem;
+      return (myCurrentEntry = nextEntry).getItem();
     }
 
     @Override
     public void remove() {
       checkForComodification();
-      if (getEntry(myCurrentEntry.myItem) == null) {
+      if (getEntry(myCurrentEntry.getItem()) == null) {
         // entry was already removed from this container
         throw new IllegalStateException();
       }

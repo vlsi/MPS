@@ -22,10 +22,9 @@ import org.jetbrains.annotations.NotNull;
  * Date: 10/02/16
  */
 public class Entry<T> {
-  @NotNull
-  final T myItem;
-  Entry<T> myNext; // == null only for the last child in the list
-  Entry<T> myPrev; // notNull, myFirst.myPrev = the last child
+  private final T myItem;
+  private Entry<T> myNext; // == null only for the last child in the list
+  private Entry<T> myPrev; // notNull, myFirst.myPrev = the last child
 
   Entry(@NotNull T item) {
     myItem = item;
@@ -34,5 +33,21 @@ public class Entry<T> {
   @NotNull
   public T getItem() {
     return myItem;
+  }
+
+  Entry<T> getNext() {
+    return myNext;
+  }
+
+  void setNext(Entry<T> next) {
+    myNext = next;
+  }
+
+  Entry<T> getPrev() {
+    return myPrev;
+  }
+
+  void setPrev(Entry<T> prev) {
+    myPrev = prev;
   }
 }
