@@ -2,13 +2,20 @@
 <model ref="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -20,9 +27,9 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -123,7 +130,6 @@
   </node>
   <node concept="1TIwiD" id="CgolD_s2Yx">
     <property role="TrG5h" value="Connector" />
-    <property role="MwhBj" value="${module}/icons/connector.png" />
     <property role="EcuMT" value="725186580883451809" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="CgolD_s30k" role="1TKVEi">
@@ -142,6 +148,9 @@
     </node>
     <node concept="PrWs8" id="CgolD_s4bp" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iKgB" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/connector.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="CgolD_s2YO">
@@ -164,7 +173,6 @@
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="MetaBlock" />
     <property role="3GE5qa" value="newBlocks" />
-    <property role="MwhBj" value="${module}/icons/block.png" />
     <property role="EcuMT" value="2353136177973871304" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7WVujHHtGfg" role="1TKVEl">
@@ -193,6 +201,9 @@
     </node>
     <node concept="PrWs8" id="22C1ebGgfKN" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iKgC" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/block.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="22C1ebGgfLt">
@@ -248,7 +259,6 @@
   <node concept="1TIwiD" id="22C1ebGh1km">
     <property role="3GE5qa" value="newBlocks" />
     <property role="TrG5h" value="ConnectorInstance" />
-    <property role="MwhBj" value="${module}/icons/connector.png" />
     <property role="EcuMT" value="2353136177974088982" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7WVujHHxC_2" role="1TKVEl">
@@ -269,6 +279,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5288989961863964102" />
       <ref role="20lvS9" node="4_Ah5$pwyhx" resolve="ConnectorEndInstance" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iKgD" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/connector.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4_Ah5$pwyhx">

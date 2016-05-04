@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2645,11 +2645,6 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="PlHQZ" id="7c$ruAHVa5N">
-    <property role="EcuMT" value="8296877263936070003" />
-    <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="GeneratorIdentity" />
-  </node>
   <node concept="1TIwiD" id="7c$ruAHVbwd">
     <property role="EcuMT" value="8296877263936075789" />
     <property role="3GE5qa" value="identity" />
@@ -2666,6 +2661,11 @@
     <node concept="PrWs8" id="7c$ruAHVbwe" role="PzmwI">
       <ref role="PrY4T" node="7c$ruAHVa5N" resolve="GeneratorIdentity" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="7c$ruAHVa5N">
+    <property role="EcuMT" value="8296877263936070003" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="GeneratorIdentity" />
   </node>
 </model>
 

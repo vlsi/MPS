@@ -2,7 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -14,6 +15,12 @@
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
@@ -49,9 +56,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -338,7 +345,6 @@
   </node>
   <node concept="1TIwiD" id="hHlH9T6">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/nodesTest.png" />
     <property role="TrG5h" value="NodesTestCase" />
     <property role="EcuMT" value="1216913645126" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -376,6 +382,9 @@
       <property role="TrG5h" value="needsNoWriteAction" />
       <property role="IQ2nx" value="6339244025081158986" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJSw" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/nodesTest.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hHlHkQ8">
@@ -532,7 +541,6 @@
   </node>
   <node concept="1TIwiD" id="hSLiM3w">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/nodesTest.png" />
     <property role="TrG5h" value="EditorTestCase" />
     <property role="3GE5qa" value="editor" />
     <property role="EcuMT" value="1229187653856" />
@@ -588,6 +596,9 @@
     </node>
     <node concept="PrWs8" id="54ZfFHb0Nwm" role="PzmwI">
       <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJSv" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/nodesTest.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hSLIFSi">

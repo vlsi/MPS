@@ -2,13 +2,20 @@
 <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="356a" ref="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
@@ -53,9 +60,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -114,7 +121,6 @@
   <node concept="1TIwiD" id="fz12cDA">
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Class declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/class.png" />
     <property role="TrG5h" value="ClassConcept" />
     <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="34LRSv" value="class" />
@@ -214,10 +220,12 @@
     <node concept="PrWs8" id="4VKhzNI3q_" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS1" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/class.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fz7vLUk">
     <property role="R4oN_" value="parameter" />
-    <property role="MwhBj" value="${language_descriptor}/icons/parameter.png" />
     <property role="TrG5h" value="ParameterDeclaration" />
     <property role="2_RsDV" value="root" />
     <property role="3GE5qa" value="variables" />
@@ -231,6 +239,9 @@
     </node>
     <node concept="PrWs8" id="4VKhzNI9f8" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS6" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/parameter.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fz3vP1H">
@@ -250,7 +261,6 @@
   </node>
   <node concept="1TIwiD" id="fzclF7W">
     <property role="R5$K7" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/method.png" />
     <property role="TrG5h" value="BaseMethodDeclaration" />
     <property role="3GE5qa" value="" />
     <property role="EcuMT" value="1068580123132" />
@@ -331,6 +341,9 @@
     </node>
     <node concept="PrWs8" id="19gBtYEvnx1" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEvilR" resolve="ImplementationContainer" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRU" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/method.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzclF80">
@@ -462,7 +475,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="fzclF8t">
-    <property role="MwhBj" value="${language_descriptor}/icons/method.png" />
     <property role="TrG5h" value="InstanceMethodDeclaration" />
     <property role="3GE5qa" value="classifiers.members" />
     <property role="34LRSv" value="method" />
@@ -481,6 +493,9 @@
     </node>
     <node concept="PrWs8" id="4VKhzNI6z5" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS4" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/method.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcmrck">
@@ -502,7 +517,6 @@
   </node>
   <node concept="1TIwiD" id="fzcpWvJ">
     <property role="R4oN_" value="local variable declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/variable.png" />
     <property role="TrG5h" value="LocalVariableDeclaration" />
     <property role="2_RsDV" value="root" />
     <property role="3GE5qa" value="variables" />
@@ -523,6 +537,9 @@
     </node>
     <node concept="PrWs8" id="2j5FokKL0Rg" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRZ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/variable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvK">
@@ -632,7 +649,6 @@
   </node>
   <node concept="1TIwiD" id="f$Wx3kv">
     <property role="R4oN_" value="static field declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/field.png" />
     <property role="TrG5h" value="StaticFieldDeclaration" />
     <property role="3GE5qa" value="classifiers.members" />
     <property role="34LRSv" value="static field" />
@@ -668,6 +684,9 @@
     </node>
     <node concept="PrWs8" id="3h7Obdma0_T" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS5" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/field.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="f$XkiSu">
@@ -1092,7 +1111,6 @@
   <node concept="1TIwiD" id="fKQs72_">
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Enumeration class declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/enum.png" />
     <property role="TrG5h" value="EnumClass" />
     <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="34LRSv" value="enum" />
@@ -1104,6 +1122,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1083245396908" />
       <ref role="20lvS9" node="fKQsSyN" resolve="EnumConstantDeclaration" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRV" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/enum.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fKQsSyN">
@@ -1195,7 +1216,6 @@
   </node>
   <node concept="1TIwiD" id="g76ryKb">
     <property role="R5$K7" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/parameter.png" />
     <property role="TrG5h" value="ConceptFunctionParameter" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="ext.conceptFunction" />
@@ -1206,6 +1226,9 @@
     </node>
     <node concept="PrWs8" id="1653mnvB6eC" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS0" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/parameter.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="g7pOWCK">
@@ -1319,7 +1342,6 @@
   <node concept="1TIwiD" id="g7HP654">
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Interface declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/interfaceType.png" />
     <property role="TrG5h" value="Interface" />
     <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="34LRSv" value="interface" />
@@ -1340,6 +1362,9 @@
     </node>
     <node concept="PrWs8" id="4VKhzNIrTX" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRY" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/interfaceType.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="g96euPO">
@@ -1977,7 +2002,6 @@
   <node concept="1TIwiD" id="h1Y3b43">
     <property role="19KtqR" value="false" />
     <property role="R4oN_" value="anonymous class" />
-    <property role="MwhBj" value="${language_descriptor}/icons/anonymousClass.png" />
     <property role="TrG5h" value="AnonymousClass" />
     <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="EcuMT" value="1170345865475" />
@@ -2036,6 +2060,9 @@
     </node>
     <node concept="PrWs8" id="1653mnvAlHa" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRX" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/anonymousClass.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3qTviz">
@@ -2277,7 +2304,6 @@
   <node concept="1TIwiD" id="hiABswc">
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Annotation declaration" />
-    <property role="MwhBj" value="${language_descriptor}/icons/annotationtype.png" />
     <property role="TrG5h" value="Annotation" />
     <property role="3GE5qa" value="classifiers.classifiers" />
     <property role="34LRSv" value="@interface" />
@@ -2290,6 +2316,9 @@
       <property role="IQ2ns" value="1188206594042" />
       <ref role="20ksaX" node="g7MN44b" />
       <ref role="20lvS9" node="hiACnCB" resolve="AnnotationMethodDeclaration" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRT" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/annotationtype.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hiACnCB">
@@ -2710,7 +2739,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="hzKIgBR">
-    <property role="MwhBj" value="${language_descriptor}/icons/classInitializer.png" />
     <property role="TrG5h" value="InstanceInitializer" />
     <property role="3GE5qa" value="classifiers.members" />
     <property role="34LRSv" value="{" />
@@ -2731,6 +2759,9 @@
     </node>
     <node concept="PrWs8" id="19gBtYEAhjf" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS2" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/classInitializer.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="h$IvvRh">
@@ -2867,7 +2898,6 @@
     <property role="EcuMT" value="1221393582612" />
   </node>
   <node concept="1TIwiD" id="hLPe0et">
-    <property role="MwhBj" value="${language_descriptor}/icons/classInitializer.png" />
     <property role="TrG5h" value="StaticInitializer" />
     <property role="3GE5qa" value="classifiers.members" />
     <property role="34LRSv" value="static {" />
@@ -2888,6 +2918,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1221737317278" />
       <ref role="20lvS9" node="fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJS3" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/classInitializer.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="hMfh4pO">
@@ -3714,7 +3747,6 @@
     <property role="EcuMT" value="7405920559687237502" />
   </node>
   <node concept="1TIwiD" id="fz12cDC">
-    <property role="MwhBj" value="${language_descriptor}/icons/field.png" />
     <property role="TrG5h" value="FieldDeclaration" />
     <property role="3GE5qa" value="classifiers.members" />
     <property role="34LRSv" value="field" />
@@ -3744,6 +3776,9 @@
     </node>
     <node concept="PrWs8" id="4VKhzNI6mJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRW" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/field.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzclF84">

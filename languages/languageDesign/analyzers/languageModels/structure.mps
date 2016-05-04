@@ -3,7 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -13,6 +14,12 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
@@ -37,9 +44,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
@@ -63,7 +70,6 @@
   </registry>
   <node concept="1TIwiD" id="5JpT3MjX6u9">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/DataFlowAnalyser.png" />
     <property role="TrG5h" value="Analyzer" />
     <property role="3GE5qa" value="Analyzer" />
     <property role="EcuMT" value="6618572076229093257" />
@@ -119,6 +125,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="3993089038373544707" />
       <ref role="20lvS9" node="3tEjlbSL22K" resolve="AnalyzerConstructorParameter" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQA" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/DataFlowAnalyser.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="5JpT3MjX6ua">
@@ -245,7 +254,6 @@
   </node>
   <node concept="1TIwiD" id="nUEAIXlVr8">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/DataFlowRule.png" />
     <property role="TrG5h" value="Rule" />
     <property role="3GE5qa" value="Rules" />
     <property role="EcuMT" value="430844094082168520" />
@@ -273,6 +281,9 @@
     </node>
     <node concept="PrWs8" id="2S_HFuhBowU" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQ_" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/DataFlowRule.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="nUEAIXm3Ew">
