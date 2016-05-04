@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -60,8 +61,8 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_BaseEmitJumpStatement_cellMenu_bs8xw7_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BaseEmitJumpStatement_cellMenu_bs8xw7_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement");
     }
   }
   private EditorCell createRefNode_bs8xw7_c0(EditorContext editorContext, SNode node) {

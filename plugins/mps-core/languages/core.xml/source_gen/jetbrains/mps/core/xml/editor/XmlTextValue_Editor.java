@@ -17,6 +17,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class XmlTextValue_Editor extends DefaultNodeEditor {
@@ -72,8 +74,8 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.core.xml.structure.XmlValuePart";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart");
     }
   }
   private EditorCell createProperty_qyzwn3_a0a_0(EditorContext editorContext, SNode node) {
@@ -100,8 +102,8 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.core.xml.structure.XmlValuePart";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart");
     }
   }
   private EditorCell createConstant_qyzwn3_b0(EditorContext editorContext, SNode node) {
