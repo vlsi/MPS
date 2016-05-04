@@ -26,9 +26,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
-import jetbrains.mps.kernel.model.SModelUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -101,9 +101,9 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       }
     }) != null;
   }
-  private ILocationBreakpoint createBreakpoint(SNode concept, SNode node, Project project) {
+  private ILocationBreakpoint createBreakpoint(SAbstractConcept concept, SNode node, Project project) {
     for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(myCreators)) {
-      if (creator._0().invoke(concept, node)) {
+      if (creator._0().invoke(concept.getDeclarationNode(), node)) {
         _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project> function = creator._1();
         if (function == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
@@ -118,18 +118,17 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   }
   @Nullable
   public ILocationBreakpoint createBreakpoint(SNode node, Project project) {
-    ILocationBreakpoint breakpoint = createBreakpoint(SNodeOperations.getConceptDeclaration(node), node, project);
+    ILocationBreakpoint breakpoint = createBreakpoint(MetaAdapterByDeclaration.getConcept(node), node, project);
     if (breakpoint != null) {
       return breakpoint;
     }
 
     TraceablePositionInfo position = TraceInfo.getPositionForNode(node);
     if (position != null) {
-      String conceptFqName = position.getConceptFqName();
-      if (conceptFqName == null) {
+      SAbstractConcept concept = position.getConcept();
+      if (concept == null) {
         return null;
       }
-      SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName);
       return createBreakpoint(concept, node, project);
     }
     return null;

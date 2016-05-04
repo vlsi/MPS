@@ -16,9 +16,11 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ import java.util.TreeSet;
 
 /**
  * New serialization format for trace.info files
+ *
  * @author Artem Tikhomirov
  */
 final class SerializeSupport {
@@ -55,13 +58,18 @@ final class SerializeSupport {
     Element top = new Element(ELEMENT_DEBUG_INFO);
 
     DebugInfoRoot[] roots = sortedRoots(debugInfo);
-    TreeSet<String> allConcepts = new TreeSet<String>();
+    TreeSet<SAbstractConcept> allConcepts = new TreeSet<SAbstractConcept>(new Comparator<SAbstractConcept>() {
+      @Override
+      public int compare(SAbstractConcept o1, SAbstractConcept o2) {
+        return o1.getQualifiedName().compareTo(o2.getQualifiedName());
+      }
+    });
     collectAllConcepts(roots, allConcepts);
     int i = 0;
-    HashMap<String, Integer> conceptsOrder = new HashMap<String, Integer>();
-    for (String concept : allConcepts) {
+    HashMap<SAbstractConcept, Integer> conceptsOrder = new HashMap<SAbstractConcept, Integer>();
+    for (SAbstractConcept concept : allConcepts) {
       conceptsOrder.put(concept, i++);
-      top.addContent(new Element(CONCEPT).setAttribute(ATTR_FQN, concept));
+      top.addContent(new Element(CONCEPT).setAttribute(ATTR_FQN, ((SAbstractConceptAdapter) concept).serialize()));
     }
     for (DebugInfoRoot dr : roots) {
       Element r = new Element(ELEMENT_ROOT);
@@ -82,9 +90,9 @@ final class SerializeSupport {
     }
     DebugInfo rv = new DebugInfo();
     int i = 0;
-    HashMap<Integer, String> conceptsOrder = new HashMap<Integer, String>();
+    HashMap<Integer, SAbstractConcept> conceptsOrder = new HashMap<Integer, SAbstractConcept>();
     for (Element c : top.getChildren(CONCEPT)) {
-      conceptsOrder.put(i++, c.getAttributeValue(ATTR_FQN));
+      conceptsOrder.put(i++, SAbstractConceptAdapter.deserialize(c.getAttributeValue(ATTR_FQN)));
     }
     for (Element r : top.getChildren(ELEMENT_ROOT)) {
       String nr = r.getAttributeValue(ATTR_NODE_REF);
@@ -97,7 +105,11 @@ final class SerializeSupport {
           pi.setFileName(filename);
           restore(e, pi);
           String conceptAttr = e.getAttributeValue(CONCEPT);
-          pi.setConceptFqName(conceptAttr == null ? null : conceptsOrder.get(Integer.parseInt(conceptAttr)));
+          SAbstractConcept conc = null;
+          if (conceptAttr != null) {
+            conc = conceptsOrder.get(Integer.parseInt(conceptAttr));
+          }
+          pi.setConcept(conc);
           pi.setPropertyString(e.getAttributeValue(ATTR_TRACEABLE_PROP));
           dr.addPosition(pi);
         }
@@ -125,7 +137,7 @@ final class SerializeSupport {
     return rv;
   }
 
-  private static List<Element> serialize(DebugInfoRoot debugRoot, HashMap<String, Integer> conceptsOrder) {
+  private static List<Element> serialize(DebugInfoRoot debugRoot, HashMap<SAbstractConcept, Integer> conceptsOrder) {
     MultiMap<String, TraceablePositionInfo> p1 = new MultiMap<String, TraceablePositionInfo>();
     MultiMap<String, ScopePositionInfo> p2 = new MultiMap<String, ScopePositionInfo>();
     MultiMap<String, UnitPositionInfo> p3 = new MultiMap<String, UnitPositionInfo>();
@@ -153,9 +165,9 @@ final class SerializeSupport {
         Element e = new Element(ELEMENT_NODE_INFO);
         fileElement.addContent(e);
         serialize(pi, e);
-        if (pi.getConceptFqName() != null) {
-          assert conceptsOrder.containsKey(pi.getConceptFqName());
-          e.setAttribute(CONCEPT, conceptsOrder.get(pi.getConceptFqName()).toString());
+        if (pi.getConcept() != null) {
+          assert conceptsOrder.containsKey(pi.getConcept());
+          e.setAttribute(CONCEPT, conceptsOrder.get(pi.getConcept()).toString());
         }
         if (pi.getPropertyString() != null) {
           e.setAttribute(ATTR_TRACEABLE_PROP, pi.getPropertyString());
@@ -230,12 +242,12 @@ final class SerializeSupport {
     return rv.toArray(new DebugInfoRoot[rv.size()]);
   }
 
-  private static void collectAllConcepts(DebugInfoRoot[] roots, Set<String> concepts) {
+  private static void collectAllConcepts(DebugInfoRoot[] roots, Set<SAbstractConcept> concepts) {
     for (DebugInfoRoot r : roots) {
       for (TraceablePositionInfo pi : r.getPositions()) {
-        final String conceptFqName = pi.getConceptFqName();
-        if (conceptFqName != null) {
-          concepts.add(conceptFqName);
+        final SAbstractConcept concept = pi.getConcept();
+        if (concept != null) {
+          concepts.add(concept);
         }
       }
     }

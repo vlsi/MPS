@@ -406,8 +406,8 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
         <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
@@ -1594,11 +1594,11 @@
                                               <ref role="3cqZAo" node="4RRGlPmofWK" resolve="position" />
                                             </node>
                                             <node concept="liA8E" id="7mvYbwTBpan" role="2OqNvi">
-                                              <ref role="37wK5l" to="fwk:~TraceablePositionInfo.getConceptFqName():java.lang.String" resolve="getConceptFqName" />
+                                              <ref role="37wK5l" to="fwk:~TraceablePositionInfo.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
                                             </node>
                                           </node>
-                                          <node concept="3nh3qo" id="7mvYbwTBpaz" role="3uHU7w">
-                                            <ref role="3nh3qp" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+                                          <node concept="35c_gC" id="5XBRz5LT59A" role="3uHU7w">
+                                            <ref role="35c_gD" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
                                           </node>
                                         </node>
                                       </node>
