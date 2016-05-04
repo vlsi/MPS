@@ -16,18 +16,17 @@
 package jetbrains.mps.nodeEditor.contextAssistant;
 
 import jetbrains.mps.lang.editor.transformationMenus.DefaultMenuLookup;
-import jetbrains.mps.nodeEditor.transformationMenus.CircularReferenceSafeMenuItemFactory;
+import jetbrains.mps.nodeEditor.transformationMenus.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
@@ -35,40 +34,43 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Attempts to look up context assistant menu by traversing cell hierarchy upwards from the currently selected cell. If any cell has a menu defined, it is
- * returned. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default menu.
+ * Attempts to look up context assistant menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it
+ * is returned. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default menu.
  */
 class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMenuProvider {
   private final ModelAccessHelper myModelAccessHelper;
 
-  public ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
+  ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
     myModelAccessHelper = new ModelAccessHelper(modelAccess);
   }
 
   @NotNull
   @Override
-  public List<MenuItem> getMenuItems(@NotNull EditorCell selectedCell) {
-    final Pair<TransformationMenuLookup, SNode> menuLookupAndNode = getMenuLookupAndNode(selectedCell);
+  public List<MenuItem> getMenuItems(@NotNull Selection selection) {
+    EditorCell selectedCell = ContextAssistantSelectionUtil.getSingleSelectedCell(selection);
+    if (selectedCell == null) return Collections.emptyList();
 
-    if (menuLookupAndNode == null) return Collections.emptyList();
+    final Pair<TransformationMenuLookup, EditorCell> menuLookupAndCell = getMenuLookupAndCell(selectedCell);
 
-    final CircularReferenceSafeMenuItemFactory factory = new CircularReferenceSafeMenuItemFactory(selectedCell.getContext());
+    if (menuLookupAndCell == null) return Collections.emptyList();
 
-    return myModelAccessHelper.runReadAction(new Computable<List<MenuItem>>() {
-      @Override
-      public List<MenuItem> compute() {
-        return factory.createItems(menuLookupAndNode.o1, menuLookupAndNode.o2);
-      }
-    });
+    EditorCell editorCell = menuLookupAndCell.o2;
+    if (editorCell == null || editorCell.getSNode() == null) {
+      return Collections.emptyList();
+    }
+
+    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2);
+
+    return myModelAccessHelper.runReadAction(() -> context.getMenuItemFactory().createItems(menuLookupAndCell.o1));
   }
 
   @Nullable
-  private Pair<TransformationMenuLookup, SNode> getMenuLookupAndNode(EditorCell selectedCell) {
+  private Pair<TransformationMenuLookup, EditorCell> getMenuLookupAndCell(EditorCell selectedCell) {
     EditorCell cell = selectedCell;
     while (cell != null) {
       TransformationMenuLookup key = cell.getTransformationMenuLookup();
       if (key != null) {
-        return new Pair<TransformationMenuLookup, SNode>(key, cell.getSNode());
+        return new Pair<>(key, cell);
       }
 
       if (cell.isBig()) {
@@ -76,7 +78,7 @@ class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMe
         Collection<TransformationMenu> defaultMenu = menuLookup.lookup();
         boolean hasDefaultMenu = !defaultMenu.isEmpty();
         if (hasDefaultMenu) {
-          return new Pair<TransformationMenuLookup, SNode>(menuLookup, cell.getSNode());
+          return new Pair<>(menuLookup, cell);
         }
       }
 

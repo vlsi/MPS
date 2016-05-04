@@ -20,10 +20,10 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import org.jetbrains.annotations.NotNull;
@@ -123,9 +123,8 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   public void updateImmediately() {
     Selection selection = mySelectionManager.getSelection();
 
-    EditorCell selectedCell = getSingleSelectedCell(selection);
-    ContextAssistant newAssistant = selectedCell == null ? null : myAssistantFinder.findAssistant(selectedCell);
-    List<MenuItem> newItems = newAssistant == null ? Collections.<MenuItem>emptyList() : myMenuProvider.getMenuItems(selectedCell);
+    ContextAssistant newAssistant = selection == null ? null : myAssistantFinder.findAssistant(selection);
+    List<MenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
 
     update(newAssistant, newItems);
   }
@@ -139,13 +138,6 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   @Override
   public List<MenuItem> getActiveMenuItems() {
     return myActiveMenuItems;
-  }
-
-  @Nullable
-  private EditorCell getSingleSelectedCell(@Nullable Selection selection) {
-    if (selection == null) return null;
-    List<EditorCell> selectedCells = selection.getSelectedCells();
-    return selectedCells.size() == 1 ? selectedCells.get(0) : null;
   }
 
   private void update(@Nullable ContextAssistant newAssistant, @NotNull List<MenuItem> newItems) {
@@ -183,8 +175,8 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   private class ScheduleUpdateListener implements SelectionListener, UpdaterListener {
     @Override
     public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-      EditorCell oldCell = getSingleSelectedCell(oldSelection);
-      EditorCell newCell = getSingleSelectedCell(newSelection);
+      EditorCell oldCell = ContextAssistantSelectionUtil.getSingleSelectedCell(oldSelection);
+      EditorCell newCell = ContextAssistantSelectionUtil.getSingleSelectedCell(newSelection);
       // Skip uninteresting changes - either within a single cell or from multiple cells to multiple cells.
       if (oldCell == newCell) return;
 

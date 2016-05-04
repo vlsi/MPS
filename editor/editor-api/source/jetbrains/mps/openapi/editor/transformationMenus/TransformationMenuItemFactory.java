@@ -25,12 +25,11 @@ import java.util.List;
 
 public interface TransformationMenuItemFactory {
   /**
-   * Create menu items by key and node. If node is null, returns an empty list. If menuLookup is null, creates default menu of the node's concept.
+   * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu of the current node's concept.
    *
    * @param menuLookup a menu reference, may be null
-   * @param node a node, may be null
    * @return menu items for the node, not null but possibly empty
    */
   @NotNull
-  List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup, @Nullable SNode node);
+  List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
 }

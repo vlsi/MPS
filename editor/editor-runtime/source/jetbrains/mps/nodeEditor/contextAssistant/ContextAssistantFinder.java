@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.contextAssistant;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -24,5 +25,5 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface ContextAssistantFinder {
   @Nullable
-  ContextAssistant findAssistant(EditorCell cell);
+  ContextAssistant findAssistant(@NotNull Selection selection);
 }

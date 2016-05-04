@@ -16,7 +16,9 @@
 package jetbrains.mps.openapi.editor.transformationMenus;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface TransformationMenuContext {
@@ -31,4 +33,11 @@ public interface TransformationMenuContext {
    */
   @NotNull
   TransformationMenuItemFactory getMenuItemFactory();
+
+  /**
+   * Returns a context similar to the current one but with node changed to {@code node}. May return this instance if {@code node} is the same as the current
+   * node.
+   */
+  @NotNull
+  TransformationMenuContext withNode(@NotNull SNode node);
 }

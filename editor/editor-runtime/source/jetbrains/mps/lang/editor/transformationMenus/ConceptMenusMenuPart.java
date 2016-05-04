@@ -37,7 +37,7 @@ public class ConceptMenusMenuPart implements MenuPart {
     List<MenuItem> result = new ArrayList<MenuItem>();
     for (SAbstractConcept concept : myConcepts) {
       result.addAll(context.getMenuItemFactory().createItems(
-          new DefaultMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept), context.getNode()));
+          new DefaultMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept)));
     }
     return result;
   }

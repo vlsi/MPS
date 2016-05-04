@@ -18,18 +18,20 @@ package jetbrains.mps.nodeEditor.contextAssistant;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayDeque;
-
 /**
- * Looks for a context assistant placeholder by checking the cell and its descendants which are not big cells (i.e. belong to the same node as the cell).
+ * Looks for a context assistant placeholder by checking the single selected cell and its descendants which are not big cells (i.e. belong to the same node as
+ * the cell).
  */
 class ParentOrSmallCellContextAssistantFinder implements ContextAssistantFinder {
   @Nullable
   @Override
-  public ContextAssistant findAssistant(@Nullable EditorCell cell) {
+  public ContextAssistant findAssistant(@NotNull Selection selection) {
+    EditorCell cell = ContextAssistantSelectionUtil.getSingleSelectedCell(selection);
+
     EditorCell last = null;
     while (cell != null) {
       ContextAssistant assistant = findAssistantInSubTree(cell, last);

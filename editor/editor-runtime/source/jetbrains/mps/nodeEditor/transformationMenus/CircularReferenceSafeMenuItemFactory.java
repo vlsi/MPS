@@ -16,10 +16,8 @@
 package jetbrains.mps.nodeEditor.transformationMenus;
 
 import jetbrains.mps.lang.editor.transformationMenus.DefaultMenuLookup;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuItemFactory;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -35,85 +33,78 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Creates a list of {@link MenuItem}s given a {@link TransformationMenuLookup} and a {@link SNode} (both optional). Tracks used keys: if the items for a given
- * key are requested twice, it emits a warning and returns an empty list of items.
+ * Creates a list of {@link MenuItem}s given a {@link TransformationMenuContext} and a {@link TransformationMenuLookup}. Tracks used combinations of lookup and
+ * context node: if the items for a given combination are requested twice, it emits a warning and returns an empty list of items.
  */
-public class CircularReferenceSafeMenuItemFactory implements TransformationMenuItemFactory {
+class CircularReferenceSafeMenuItemFactory {
   private static final Logger LOG = Logger.getLogger(CircularReferenceSafeMenuItemFactory.class);
-
-  private final EditorContext myEditorContext;
-
-  private final ArrayDeque<TransformationMenuLookup> myKeyStack = new ArrayDeque<TransformationMenuLookup>();
-
-  public CircularReferenceSafeMenuItemFactory(EditorContext editorContext) {
-    myEditorContext = editorContext;
-  }
+  private final ArrayDeque<Key> myKeyStack = new ArrayDeque<>();
 
   @NotNull
-  @Override
-  public List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup, @Nullable SNode node) {
-    if (node == null) {
-      return Collections.emptyList();
-    }
+  public List<MenuItem> createItems(@NotNull TransformationMenuContext context, @NotNull TransformationMenuLookup menuLookup) {
+    Key key = new Key(menuLookup, context.getNode());
 
-    if (menuLookup == null) {
-      menuLookup = new DefaultMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), node.getConcept());
-    }
-
-    if (myKeyStack.contains(menuLookup)) {
-      LOG.error("Menu for key '" + menuLookup + "' requested more than once, returning empty menu to prevent endless recursion");
+    if (myKeyStack.contains(key)) {
+      LOG.error("Menu for key '" + key + "' requested more than once, returning empty menu to prevent endless recursion");
       LOG.error("Current menu key stack: " + myKeyStack);
       return Collections.emptyList();
     }
 
-    myKeyStack.addLast(menuLookup);
+    myKeyStack.addLast(key);
 
-    List<MenuItem> result = createItemsInternal(menuLookup, node);
+    try {
+      Collection<TransformationMenu> menus = menuLookup.lookup();
 
-    myKeyStack.removeLast();
-    return result;
+      if (menus.isEmpty()) {
+        return Collections.emptyList();
+      }
+
+      List<MenuItem> result = new ArrayList<>();
+      for (TransformationMenu menu : menus) {
+        result.addAll(menu.createMenuItems(context));
+      }
+      return result;
+    } finally {
+      myKeyStack.removeLast();
+    }
   }
 
-  @NotNull
-  private List<MenuItem> createItemsInternal(@NotNull TransformationMenuLookup menuLookup, @Nullable SNode node) {
-    Collection<TransformationMenu> menus = menuLookup.lookup();
-
-    if (menus.isEmpty()) {
-      return Collections.emptyList();
-    }
-
-    TransformationMenuContext context = new ContextForNode(node);
-
-    List<MenuItem> result = new ArrayList<MenuItem>();
-    for (TransformationMenu menu : menus) {
-      result.addAll(menu.createMenuItems(context));
-    }
-    return result;
-  }
-
-  private class ContextForNode implements TransformationMenuContext {
+  private static class Key {
+    @NotNull
+    private final TransformationMenuLookup myLookup;
+    @NotNull
     private final SNode myNode;
 
-    public ContextForNode(SNode node) {
+    public Key(@NotNull TransformationMenuLookup lookup, @NotNull SNode node) {
+      myLookup = lookup;
       myNode = node;
     }
 
-    @NotNull
     @Override
-    public SNode getNode() {
-      return myNode;
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+
+      Key key = (Key) o;
+
+      return myLookup.equals(key.myLookup) && myNode.equals(key.myNode);
     }
 
-    @NotNull
     @Override
-    public EditorContext getEditorContext() {
-      return CircularReferenceSafeMenuItemFactory.this.myEditorContext;
+    public int hashCode() {
+      int result = myLookup.hashCode();
+      result = 31 * result + myNode.hashCode();
+      return result;
     }
 
-    @NotNull
     @Override
-    public TransformationMenuItemFactory getMenuItemFactory() {
-      return CircularReferenceSafeMenuItemFactory.this;
+    public String toString() {
+      return "(lookup=" + myLookup +
+          ", node=" + myNode + ')';
     }
   }
 }

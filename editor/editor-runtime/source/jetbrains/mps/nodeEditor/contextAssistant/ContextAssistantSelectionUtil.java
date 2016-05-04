@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,20 @@
  */
 package jetbrains.mps.nodeEditor.contextAssistant;
 
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public interface ContextAssistantMenuProvider {
-  @NotNull
-  List<MenuItem> getMenuItems(@NotNull Selection selection);
+class ContextAssistantSelectionUtil {
+  /**
+   * Returns the single selected cell if {@code selection} is non-null and only contains one cell, otherwise returns null.
+   */
+  @Nullable
+  static EditorCell getSingleSelectedCell(@Nullable Selection selection) {
+    if (selection == null) return null;
+    List<EditorCell> selectedCells = selection.getSelectedCells();
+    return selectedCells.size() == 1 ? selectedCells.get(0) : null;
+  }
 }

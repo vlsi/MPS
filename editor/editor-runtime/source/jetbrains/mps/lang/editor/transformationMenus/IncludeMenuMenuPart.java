@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.transformationMenus;
 
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
@@ -28,7 +29,11 @@ public abstract class IncludeMenuMenuPart implements MenuPart {
   @NotNull
   @Override
   public List<MenuItem> createItems(TransformationMenuContext context) {
-    return context.getMenuItemFactory().createItems(getMenuLookup(context), getNode(context));
+    SNode newNode = getNode(context);
+
+    TransformationMenuContext newContext = newNode == null ? context : context.withNode(newNode);
+
+    return newContext.getMenuItemFactory().createItems(getMenuLookup(context));
   }
 
   @Nullable
