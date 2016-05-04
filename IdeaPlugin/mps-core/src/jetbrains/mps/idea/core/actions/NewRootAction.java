@@ -74,7 +74,7 @@ public class NewRootAction extends AnAction {
         for (Map.Entry<String, SAbstractConcept> entry : myConceptFqNameToNodePointerMap.entrySet()) {
           String conceptFqName = entry.getKey();
           SAbstractConcept concept = entry.getValue();
-          dialog.getKindCombo().addItem(concept.getConceptAlias(), IconManager.getIcon(concept), conceptFqName);
+          dialog.getKindCombo().addItem(concept.getConceptAlias(), concept.getIcon(), conceptFqName);
           dialog.setTemplateKindComponentsVisible(true);
         }
       }
