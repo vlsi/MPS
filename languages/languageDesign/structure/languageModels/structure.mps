@@ -6,6 +6,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -115,6 +116,12 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1169129564478" />
       <ref role="20lvS9" node="h0PrWoo" resolve="InterfaceConceptReference" />
+    </node>
+    <node concept="1TJgyj" id="5vfjF5cjTVP" role="1TKVEi">
+      <property role="IQ2ns" value="6327362524875300597" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
     </node>
   </node>
   <node concept="1TIwiD" id="f_TJgxE">
