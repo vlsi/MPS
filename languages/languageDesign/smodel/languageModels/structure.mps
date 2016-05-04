@@ -2645,5 +2645,27 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
+  <node concept="PlHQZ" id="7c$ruAHVa5N">
+    <property role="EcuMT" value="8296877263936070003" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="GeneratorIdentity" />
+  </node>
+  <node concept="1TIwiD" id="7c$ruAHVbwd">
+    <property role="EcuMT" value="8296877263936075789" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="GeneratorModulePointer" />
+    <property role="R4oN_" value="As long as there's no runtime identity for generators (like SLanguage for language), GeneratorIdentity doesn't specify any behaviour methods, and we use SModuleReference here." />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7c$ruAHVbxO" role="1TKVEi">
+      <property role="IQ2ns" value="8296877263936075892" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="module" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="nJmxU5cSyN" resolve="ModulePointer" />
+    </node>
+    <node concept="PrWs8" id="7c$ruAHVbwe" role="PzmwI">
+      <ref role="PrY4T" node="7c$ruAHVa5N" resolve="GeneratorIdentity" />
+    </node>
+  </node>
 </model>
 

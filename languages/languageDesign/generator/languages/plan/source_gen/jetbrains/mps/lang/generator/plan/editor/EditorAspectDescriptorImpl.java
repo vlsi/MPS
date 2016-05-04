@@ -22,15 +22,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new Checkpoint_Editor());
+            return Collections.<ConceptEditor>singletonList(new ApplyGenerators_Editor());
           }
           break;
         case 1:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+            return Collections.<ConceptEditor>singletonList(new Checkpoint_Editor());
           }
           break;
         case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+          }
+          break;
+        case 3:
           if (true) {
             return Collections.<ConceptEditor>singletonList(new Transform_Editor());
           }
@@ -52,5 +57,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L, "jetbrains.mps.lang.generator.plan.structure.Checkpoint"), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, "jetbrains.mps.lang.generator.plan.structure.Plan"), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L, "jetbrains.mps.lang.generator.plan.structure.Transform"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators"), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L, "jetbrains.mps.lang.generator.plan.structure.Checkpoint"), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, "jetbrains.mps.lang.generator.plan.structure.Plan"), MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L, "jetbrains.mps.lang.generator.plan.structure.Transform"));
 }

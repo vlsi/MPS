@@ -15,22 +15,24 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(4);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(5);
+  /*package*/ final ConceptDescriptor myConceptApplyGenerators = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.plan.structure.ApplyGenerators", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L)).super_("jetbrains.mps.lang.generator.plan.structure.Step").super_(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).parents("jetbrains.mps.lang.generator.plan.structure.Step").parentIds(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x73246de9adf5a45cL, "generator", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adeca173L), false, true, false)).children(new String[]{"generator"}, new boolean[]{true}).alias("", "Collection of generators to apply directly").sourceNode(new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "8296877263936070001")).create();
   /*package*/ final ConceptDescriptor myConceptCheckpoint = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.plan.structure.Checkpoint", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L)).super_("jetbrains.mps.lang.generator.plan.structure.Step").super_(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).parents("jetbrains.mps.lang.generator.plan.structure.Step", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).alias("", "Synchronization point of a generation plan").sourceNode(new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "1820634577908471809")).create();
   /*package*/ final ConceptDescriptor myConceptPlan = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.plan.structure.Plan", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x19443180a2071807L, "steps", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL), false, true, false)).children(new String[]{"steps"}, new boolean[]{true}).alias("", "Sequence of transformation steps").sourceNode(new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "1820634577908471803")).create();
   /*package*/ final ConceptDescriptor myConceptStep = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.plan.structure.Step", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "1820634577908471804")).create();
   /*package*/ final ConceptDescriptor myConceptTransform = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.plan.structure.Transform", MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L)).super_("jetbrains.mps.lang.generator.plan.structure.Step").super_(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).parents("jetbrains.mps.lang.generator.plan.structure.Step").parentIds(MetaIdFactory.conceptId(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x28dd6d5a7549fa8dL, "languages", MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L), false, true, false)).children(new String[]{"languages"}, new boolean[]{true}).alias("", "Collection of languages to reduce (iow, generators to apply)").sourceNode(new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "1820634577908471810")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptCheckpoint.getId(), 0);
-    myIndexMap.put(myConceptPlan.getId(), 1);
-    myIndexMap.put(myConceptStep.getId(), 2);
-    myIndexMap.put(myConceptTransform.getId(), 3);
+    myIndexMap.put(myConceptApplyGenerators.getId(), 0);
+    myIndexMap.put(myConceptCheckpoint.getId(), 1);
+    myIndexMap.put(myConceptPlan.getId(), 2);
+    myIndexMap.put(myConceptStep.getId(), 3);
+    myIndexMap.put(myConceptTransform.getId(), 4);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCheckpoint, myConceptPlan, myConceptStep, myConceptTransform);
+    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptPlan, myConceptStep, myConceptTransform);
   }
 
   @Override
@@ -42,12 +44,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptCheckpoint;
+        return myConceptApplyGenerators;
       case 1:
-        return myConceptPlan;
+        return myConceptCheckpoint;
       case 2:
-        return myConceptStep;
+        return myConceptPlan;
       case 3:
+        return myConceptStep;
+      case 4:
         return myConceptTransform;
       default:
         throw new IllegalStateException();

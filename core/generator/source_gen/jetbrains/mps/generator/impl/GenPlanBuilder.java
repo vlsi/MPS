@@ -17,9 +17,14 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.RigidGenerationPlan;
 
 public class GenPlanBuilder {
   private final LanguageRegistry myLanguageRegistry;
@@ -42,17 +47,34 @@ public class GenPlanBuilder {
             continue;
           }
           for (GeneratorRuntime gr : lr.getGenerators()) {
-            if (!(gr instanceof TemplateModule)) {
-              continue;
-            }
-            for (TemplateModel tm : ((TemplateModule) gr).getModels()) {
-              mc.addAll(tm.getConfigurations());
-            }
+            fillMC(gr, mc);
           }
+        }
+        steps.add(new ModelGenerationPlan.Transform(mc));
+      } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators"))) {
+        SRepository repository = SNodeOperations.getModel(plan).getRepository();
+        ArrayList<TemplateMappingConfiguration> mc = new ArrayList<TemplateMappingConfiguration>();
+        for (SNode generator : Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators")), MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0x73246de9adf5a45cL, "generator")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer")))) {
+          SModuleReference mr = ((SModuleReference) BHReflection.invoke(SLinkOperations.getTarget(generator, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module")), SMethodTrimmedId.create("getModuleReference", null, "nJmxU5cSSU")));
+          SModule module = (mr == null ? null : mr.resolve(repository));
+          if (!(module instanceof Generator)) {
+            continue;
+          }
+          GeneratorRuntime gr = myLanguageRegistry.getGenerator((Generator) module);
+          fillMC(gr, mc);
         }
         steps.add(new ModelGenerationPlan.Transform(mc));
       }
     }
     return new RigidGenerationPlan(steps);
+  }
+
+  private static void fillMC(GeneratorRuntime gr, List<TemplateMappingConfiguration> mc) {
+    if (!(gr instanceof TemplateModule)) {
+      return;
+    }
+    for (TemplateModel tm : ((TemplateModule) gr).getModels()) {
+      mc.addAll(tm.getConfigurations());
+    }
   }
 }

@@ -26,16 +26,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
 
 public class Transform_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5ya0vk_a(editorContext, node);
+  }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_5ya0vk_a(editorContext, node);
   }
   private EditorCell createCollection_5ya0vk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
@@ -101,7 +104,7 @@ public class Transform_Editor extends DefaultNodeEditor {
     public Transform_languages_cellMenu_5ya0vk_a0a1a() {
     }
     public List<?> createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext, EditorContext editorContext) {
-      Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
+      Collection<SLanguage> allLanguages = LanguageRegistry.getInstance(SNodeOperations.getModel(node).getRepository()).getAllLanguages();
       return new ArrayList<SLanguage>(allLanguages);
     }
     public boolean isCustomCreateChildNode() {
@@ -118,5 +121,12 @@ public class Transform_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return false;
     }
+  }
+  private EditorCell createConstant_5ya0vk_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Apply generators of specified languages");
+    editorCell.setCellId("Constant_5ya0vk_a");
+    editorCell.setBig(true);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }

@@ -633,63 +633,93 @@
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/2944629966652225698">
     <file name="GenPlanBuilder.java">
-      <node id="5038033525303454470" at="25,0,26,0" concept="5" trace="myLanguageRegistry" />
-      <node id="5038033525303454474" at="27,60,28,42" concept="4" />
-      <node id="2944629966652246295" at="31,49,32,85" concept="10" />
-      <node id="2944629966652252609" at="34,203,35,381" concept="4" />
-      <node id="2944629966652267181" at="36,209,37,203" concept="10" />
-      <node id="2944629966652262526" at="37,203,38,99" concept="10" />
-      <node id="5038033525303465194" at="39,199,40,163" concept="10" />
-      <node id="5038033525303465875" at="41,27,42,21" concept="3" />
-      <node id="5038033525303468915" at="45,50,46,23" concept="3" />
-      <node id="5038033525303472826" at="48,72,49,48" concept="4" />
+      <node id="5038033525303454470" at="30,0,31,0" concept="5" trace="myLanguageRegistry" />
+      <node id="5038033525303454474" at="32,60,33,42" concept="4" />
+      <node id="2944629966652246295" at="36,49,37,85" concept="10" />
+      <node id="2944629966652252609" at="39,203,40,381" concept="4" />
+      <node id="2944629966652267181" at="41,209,42,203" concept="10" />
+      <node id="2944629966652262526" at="42,203,43,99" concept="10" />
+      <node id="5038033525303465194" at="44,199,45,163" concept="10" />
+      <node id="5038033525303465875" at="46,27,47,21" concept="3" />
+      <node id="8296877263937474940" at="49,58,50,27" concept="4" />
       <node id="2944629966652258739" at="52,9,53,57" concept="4" />
-      <node id="2944629966652233430" at="55,5,56,42" concept="11" />
-      <node id="5038033525303454285" at="27,0,30,0" concept="2" trace="GenPlanBuilder#(Ljetbrains/mps/smodel/language/LanguageRegistry;)V" />
-      <node id="5038033525303465415" at="40,163,43,11" concept="8" />
-      <node id="5038033525303468608" at="44,58,47,13" concept="8" />
-      <node id="5038033525303469350" at="47,13,50,13" concept="7" />
-      <node id="5038033525303467929" at="43,11,51,11" concept="7" />
-      <node id="5038033525303458426" at="38,99,52,9" concept="7" />
-      <node id="2944629966652251681" at="33,194,54,7" concept="8" />
-      <node id="2944629966652248301" at="32,85,55,5" concept="7" />
-      <node id="2944629966652233387" at="31,0,58,0" concept="9" trace="create#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/ModelGenerationPlan;" />
-      <scope id="5038033525303454289" at="27,60,28,42" />
-      <scope id="2944629966652251683" at="34,203,35,381" />
-      <scope id="5038033525303465417" at="41,27,42,21" />
-      <scope id="5038033525303468609" at="45,50,46,23" />
-      <scope id="5038033525303469352" at="48,72,49,48" />
-      <scope id="5038033525303454285" at="27,0,30,0">
+      <node id="8296877263937437878" at="54,215,55,80" concept="10" />
+      <node id="8296877263937481006" at="55,80,56,99" concept="10" />
+      <node id="8296877263937429398" at="57,590,58,311" concept="10" />
+      <node id="8296877263937444766" at="58,311,59,72" concept="10" />
+      <node id="8296877263937435753" at="60,47,61,21" concept="3" />
+      <node id="8296877263937462057" at="62,11,63,84" concept="10" />
+      <node id="8296877263937478366" at="63,84,64,25" concept="4" />
+      <node id="8296877263937483673" at="65,9,66,57" concept="4" />
+      <node id="2944629966652233430" at="68,5,69,42" concept="11" />
+      <node id="8296877263937474012" at="73,42,74,13" concept="11" />
+      <node id="8296877263937473214" at="76,64,77,40" concept="4" />
+      <node id="5038033525303454285" at="32,0,35,0" concept="2" trace="GenPlanBuilder#(Ljetbrains/mps/smodel/language/LanguageRegistry;)V" />
+      <node id="5038033525303465415" at="45,163,48,11" concept="8" />
+      <node id="5038033525303467929" at="48,11,51,11" concept="7" />
+      <node id="8296877263937430907" at="59,72,62,11" concept="8" />
+      <node id="8296877263937473205" at="72,90,75,5" concept="8" />
+      <node id="8296877263937473212" at="75,5,78,5" concept="7" />
+      <node id="8296877263937488022" at="72,0,80,0" concept="15" trace="fillMC#(Ljetbrains/mps/smodel/language/GeneratorRuntime;Ljava/util/List;)V" />
+      <node id="5038033525303458426" at="43,99,52,9" concept="7" />
+      <node id="8296877263937409489" at="56,99,65,9" concept="7" />
+      <node id="2944629966652251681" at="38,194,67,7" concept="8" />
+      <node id="2944629966652248301" at="37,85,68,5" concept="7" />
+      <node id="2944629966652233387" at="36,0,71,0" concept="9" trace="create#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/ModelGenerationPlan;" />
+      <scope id="5038033525303454289" at="32,60,33,42" />
+      <scope id="2944629966652251683" at="39,203,40,381" />
+      <scope id="5038033525303465417" at="46,27,47,21" />
+      <scope id="5038033525303467931" at="49,58,50,27" />
+      <scope id="8296877263937430909" at="60,47,61,21" />
+      <scope id="8296877263937473206" at="73,42,74,13" />
+      <scope id="8296877263937473213" at="76,64,77,40" />
+      <scope id="5038033525303454285" at="32,0,35,0">
         <var name="languageRegistry" id="5038033525303454459" />
       </scope>
-      <scope id="5038033525303469350" at="47,13,50,13">
-        <var name="tm" id="5038033525303469354" />
-      </scope>
-      <scope id="5038033525303467931" at="44,58,50,13" />
-      <scope id="5038033525303467929" at="43,11,51,11">
+      <scope id="5038033525303467929" at="48,11,51,11">
         <var name="gr" id="5038033525303467933" />
       </scope>
-      <scope id="5038033525303458428" at="39,199,51,11">
+      <scope id="8296877263937473212" at="75,5,78,5">
+        <var name="tm" id="8296877263937473221" />
+      </scope>
+      <scope id="8296877263937469554" at="72,90,78,5" />
+      <scope id="5038033525303458428" at="44,199,51,11">
         <var name="lr" id="5038033525303465195" />
       </scope>
-      <scope id="5038033525303458426" at="38,99,52,9">
+      <scope id="8296877263937409495" at="57,590,64,25">
+        <var name="gr" id="8296877263937462058" />
+        <var name="module" id="8296877263937444767" />
+        <var name="mr" id="8296877263937429399" />
+      </scope>
+      <scope id="8296877263937488022" at="72,0,80,0">
+        <var name="gr" id="8296877263937470867" />
+        <var name="mc" id="8296877263937471999" />
+      </scope>
+      <scope id="5038033525303458426" at="43,99,52,9">
         <var name="lid" id="5038033525303458430" />
       </scope>
-      <scope id="2944629966652257928" at="36,209,53,57">
+      <scope id="8296877263937409489" at="56,99,65,9">
+        <var name="generator" id="8296877263937409491" />
+      </scope>
+      <scope id="2944629966652257928" at="41,209,53,57">
         <var name="mc" id="2944629966652262527" />
         <var name="trStep" id="2944629966652267184" />
       </scope>
-      <scope id="2944629966652248303" at="33,194,54,7" />
-      <scope id="2944629966652248301" at="32,85,55,5">
+      <scope id="8296877263937389915" at="54,215,66,57">
+        <var name="mc" id="8296877263937481007" />
+        <var name="repository" id="8296877263937437879" />
+      </scope>
+      <scope id="2944629966652248303" at="38,194,67,7" />
+      <scope id="2944629966652248301" at="37,85,68,5">
         <var name="stepNode" id="2944629966652248304" />
       </scope>
-      <scope id="2944629966652233390" at="31,49,56,42">
+      <scope id="2944629966652233390" at="36,49,69,42">
         <var name="steps" id="2944629966652246296" />
       </scope>
-      <scope id="2944629966652233387" at="31,0,58,0">
+      <scope id="2944629966652233387" at="36,0,71,0">
         <var name="plan" id="2944629966652233403" />
       </scope>
-      <unit id="2944629966652225698" at="24,0,59,0" name="jetbrains.mps.generator.impl.GenPlanBuilder" />
+      <unit id="2944629966652225698" at="29,0,81,0" name="jetbrains.mps.generator.impl.GenPlanBuilder" />
     </file>
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/3864140621130068067">

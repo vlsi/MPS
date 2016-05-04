@@ -86,5 +86,18 @@
       <ref role="20lvS9" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7c$ruAHVa5L">
+    <property role="EcuMT" value="8296877263936070001" />
+    <property role="TrG5h" value="ApplyGenerators" />
+    <property role="R4oN_" value="Collection of generators to apply directly" />
+    <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
+    <node concept="1TJgyj" id="7c$ruAHXqhs" role="1TKVEi">
+      <property role="IQ2ns" value="8296877263936660572" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="generator" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" to="tp25:7c$ruAHVa5N" resolve="GeneratorIdentity" />
+    </node>
+  </node>
 </model>
 
