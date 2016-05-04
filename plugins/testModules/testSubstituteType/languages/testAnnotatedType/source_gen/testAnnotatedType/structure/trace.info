@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,73,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
+      <unit at="17,0,74,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

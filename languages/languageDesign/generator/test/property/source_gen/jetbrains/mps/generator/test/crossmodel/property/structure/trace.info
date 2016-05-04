@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,53,0" name="jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor" />
+      <unit at="17,0,54,0" name="jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

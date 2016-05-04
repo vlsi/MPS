@@ -15,6 +15,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
   /*package*/ final ConceptDescriptor myConceptVarVariableDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration", MetaIdFactory.conceptId(0x515552c7fcc04ab4L, 0x97892f3c49344e85L, 0x11ff0aa3699L)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).alias("var", "var definition").sourceNode(new SNodePointer("r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)", "1236693300889")).create();
 
