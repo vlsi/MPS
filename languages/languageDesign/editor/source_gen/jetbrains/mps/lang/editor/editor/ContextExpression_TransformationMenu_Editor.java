@@ -12,23 +12,23 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class ContextExpression_TransformationMenu_Condition_Editor extends DefaultNodeEditor {
+public class ContextExpression_TransformationMenu_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_hyr8bs_a(editorContext, node);
+    return this.createCollection_vidw86_a(editorContext, node);
   }
-  private EditorCell createCollection_hyr8bs_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vidw86_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_hyr8bs_a");
+    editorCell.setCellId("Collection_vidw86_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_hyr8bs_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vidw86_a0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createRefNode_hyr8bs_a0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new ContextExpression_TransformationMenu_Condition_Editor.expressionSingleRoleHandler_hyr8bs_a0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL, 0x794cf8ea9e29183bL, "expression"), editorContext);
+  private EditorCell createRefNode_vidw86_a0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new ContextExpression_TransformationMenu_Editor.expressionSingleRoleHandler_vidw86_a0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6e030e20f28ac25dL, 0x6e030e20f28ac25eL, "expression"), editorContext);
     return provider.createCell();
   }
-  private class expressionSingleRoleHandler_hyr8bs_a0 extends SingleRoleCellProvider {
-    public expressionSingleRoleHandler_hyr8bs_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class expressionSingleRoleHandler_vidw86_a0 extends SingleRoleCellProvider {
+    public expressionSingleRoleHandler_vidw86_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {

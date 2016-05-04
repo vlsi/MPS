@@ -79,7 +79,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -4121,33 +4120,38 @@
       <ref role="1YaFvo" to="tpc2:7_cYeEu4pYp" resolve="ContextVariable" />
     </node>
   </node>
-  <node concept="1YbPZF" id="7_cYeEuahzo">
-    <property role="TrG5h" value="typeof_ContextExpression_TransformationMenu_Condition" />
+  <node concept="1YbPZF" id="6S33y3MySG0">
+    <property role="TrG5h" value="typeof_ContextExpression_TransformationMenu" />
     <property role="3GE5qa" value="TransformationMenu" />
-    <node concept="3clFbS" id="7_cYeEuahzp" role="18ibNy">
-      <node concept="1ZobV4" id="7_cYeEuai7_" role="3cqZAp">
-        <node concept="mw_s8" id="7_cYeEuai84" role="1ZfhKB">
-          <node concept="2c44tf" id="7_cYeEuai80" role="mwGJk">
-            <node concept="10P_77" id="7_cYeEuai89" role="2c44tc" />
+    <node concept="3clFbS" id="6S33y3MySG1" role="18ibNy">
+      <node concept="1ZobV4" id="6S33y3MySG2" role="3cqZAp">
+        <node concept="mw_s8" id="6S33y3MySG6" role="1ZfhK$">
+          <node concept="1Z2H0r" id="6S33y3MySG7" role="mwGJk">
+            <node concept="2OqwBi" id="6S33y3MySG8" role="1Z2MuG">
+              <node concept="1YBJjd" id="6S33y3MySG9" role="2Oq$k0">
+                <ref role="1YBMHb" node="6S33y3MySGb" resolve="node" />
+              </node>
+              <node concept="3TrEf2" id="6S33y3MyTC0" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:6S33y3MyG9u" />
+              </node>
+            </node>
           </node>
         </node>
-        <node concept="mw_s8" id="7_cYeEuai7C" role="1ZfhK$">
-          <node concept="1Z2H0r" id="7_cYeEuahzs" role="mwGJk">
-            <node concept="2OqwBi" id="7_cYeEuahH2" role="1Z2MuG">
-              <node concept="1YBJjd" id="7_cYeEuahAM" role="2Oq$k0">
-                <ref role="1YBMHb" node="7_cYeEuahzr" resolve="node" />
-              </node>
-              <node concept="3TrEf2" id="7_cYeEuahOE" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:7_cYeEuahwV" />
-              </node>
+        <node concept="mw_s8" id="6S33y3MyT65" role="1ZfhKB">
+          <node concept="2OqwBi" id="6S33y3MyTde" role="mwGJk">
+            <node concept="1YBJjd" id="6S33y3MyT63" role="2Oq$k0">
+              <ref role="1YBMHb" node="6S33y3MySGb" resolve="node" />
+            </node>
+            <node concept="2qgKlT" id="6S33y3MyTpQ" role="2OqNvi">
+              <ref role="37wK5l" to="tpcb:6S33y3MySW8" resolve="getType" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="7_cYeEuahzr" role="1YuTPh">
+    <node concept="1YaCAy" id="6S33y3MySGb" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <ref role="1YaFvo" to="tpc2:7_cYeEuahwU" resolve="ContextExpression_TransformationMenu_Condition" />
+      <ref role="1YaFvo" to="tpc2:6S33y3MyG9t" resolve="ContextExpression_TransformationMenu" />
     </node>
   </node>
 </model>

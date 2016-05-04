@@ -16,32 +16,25 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public final class ContextExpression_TransformationMenu_Condition__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL, "jetbrains.mps.lang.editor.structure.ContextExpression_TransformationMenu_Condition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getApplicableConcept_id7_cYeEu4lWA = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7_cYeEu4lWA").registry(REGISTRY).build();
-  public static final SMethod<Boolean> usesParameterObjectFor_idaxxf7pcYuV = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObjectFor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("axxf7pcYuV").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getType_id6S33y3MySW8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6S33y3MySW8").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConcept_id7_cYeEu4lWA, usesParameterObjectFor_idaxxf7pcYuV);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id6S33y3MySW8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SNode getApplicableConcept_id7_cYeEu4lWA(@NotNull SNode __thisNode__) {
-    SNode menuOrContribution = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), true, false);
-    if ((menuOrContribution == null)) {
-      return null;
-    }
-    return ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(menuOrContribution);
-  }
-  /*package*/ static boolean usesParameterObjectFor_idaxxf7pcYuV(@NotNull SNode __thisNode__, SNode variable) {
-    return true;
+  /*package*/ static SNode getType_id6S33y3MySW8(@NotNull SNode __thisNode__) {
+    return _quotation_createNode_3j6qka_a0a0();
   }
 
   /*package*/ ContextExpression_TransformationMenu_Condition__BehaviorDescriptor() {
@@ -61,9 +54,7 @@ public final class ContextExpression_TransformationMenu_Condition__BehaviorDescr
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((SNode) getApplicableConcept_id7_cYeEu4lWA(node));
-      case 1:
-        return (T) ((Boolean) usesParameterObjectFor_idaxxf7pcYuV(node, (SNode) parameters[0]));
+        return (T) ((SNode) getType_id6S33y3MySW8(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -91,5 +82,11 @@ public final class ContextExpression_TransformationMenu_Condition__BehaviorDescr
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static SNode _quotation_createNode_3j6qka_a0a0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), null, null, false);
+    return quotedNode_1;
   }
 }

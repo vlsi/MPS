@@ -116,12 +116,12 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
-      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
         <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
-      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
@@ -272,7 +272,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -30782,14 +30782,14 @@
                       <node concept="3clFbS" id="7_cYeEucJnl" role="2VODD2">
                         <node concept="3clFbF" id="7_cYeEucJnr" role="3cqZAp">
                           <node concept="2OqwBi" id="7_cYeEucJMA" role="3clFbG">
+                            <node concept="3TrEf2" id="6S33y3MAXgW" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpc2:6S33y3MyG9u" />
+                            </node>
                             <node concept="2OqwBi" id="7_cYeEucJnm" role="2Oq$k0">
                               <node concept="3TrEf2" id="7_cYeEucJnp" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpc2:6srdxdH8$1d" />
                               </node>
                               <node concept="30H73N" id="7_cYeEucJnq" role="2Oq$k0" />
-                            </node>
-                            <node concept="3TrEf2" id="7_cYeEucKbR" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpc2:7_cYeEuahwV" />
                             </node>
                           </node>
                         </node>
@@ -30870,6 +30870,7 @@
           <node concept="3clFbS" id="7_xM8AG1Qtp" role="3clF47">
             <node concept="3clFbF" id="7_xM8AG2h5S" role="3cqZAp">
               <node concept="2ShNRf" id="7_xM8AG2h5Q" role="3clFbG">
+                <node concept="raruj" id="3xPkyY3ZdgQ" role="lGtFl" />
                 <node concept="1pGfFk" id="7_xM8AG2C$U" role="2ShVmc">
                   <ref role="37wK5l" to="jkd0:~DefaultMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultMenuLookup" />
                   <node concept="2YIFZM" id="7_xM8AG2C_B" role="37wK5m">
@@ -30904,7 +30905,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="raruj" id="3xPkyY3ZdgQ" role="lGtFl" />
               </node>
             </node>
           </node>
