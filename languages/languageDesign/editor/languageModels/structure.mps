@@ -4661,17 +4661,10 @@
   <node concept="1TIwiD" id="7l1m754O$tN">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuPart_Super" />
-    <property role="34LRSv" value="superconcept menu" />
-    <property role="R4oN_" value="superconcept menu" />
+    <property role="34LRSv" value="superconcepts menu" />
+    <property role="R4oN_" value="superconcepts menu" />
     <property role="EcuMT" value="8449131619432941427" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
-  </node>
-  <node concept="1TIwiD" id="FyOJSsBmSI">
-    <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_TargetNode" />
-    <property role="34LRSv" value="targetNode" />
-    <property role="EcuMT" value="784421273959493166" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="4Sf$XywKgZK">
     <property role="3GE5qa" value="TransformationMenu" />
@@ -4905,6 +4898,13 @@
     <property role="3GE5qa" value="QueryExpression" />
     <property role="TrG5h" value="IContextVariableProvider" />
     <property role="EcuMT" value="189578833592126798" />
+  </node>
+  <node concept="1TIwiD" id="FyOJSsBmSI">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_TargetNode" />
+    <property role="34LRSv" value="targetNode" />
+    <property role="EcuMT" value="784421273959493166" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="6S33y3MyG9t">
     <property role="3GE5qa" value="TransformationMenu" />
