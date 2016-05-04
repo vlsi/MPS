@@ -33,6 +33,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.AbstractModule;
@@ -180,6 +182,9 @@ public final class IconManager {
       return IdeIcons.DEVKIT_ICON;
     }
     return IdeIcons.DEFAULT_ICON;
+  }
+  public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
+    return ConceptIconLoader.loadIcon(iconPath, cache);
   }
   public static Icon getIconFor(MPSModuleOwner owner) {
     if (owner instanceof MPSProject) {

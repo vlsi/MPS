@@ -1411,6 +1411,44 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="5XBRz5LKZRC" role="jymVt">
+      <property role="TrG5h" value="loadIcon" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="5XBRz5LKZRD" role="3clF46">
+        <property role="TrG5h" value="iconPath" />
+        <property role="3TUv4t" value="false" />
+        <node concept="2AHcQZ" id="5XBRz5LKZRE" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+        </node>
+        <node concept="3uibUv" id="5XBRz5LKZRF" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5XBRz5LKZRG" role="3clF46">
+        <property role="TrG5h" value="cache" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10P_77" id="5XBRz5LKZRH" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="5XBRz5LKZRI" role="3clF47">
+        <node concept="3clFbF" id="5XBRz5LL0gq" role="3cqZAp">
+          <node concept="2YIFZM" id="5XBRz5LL0CO" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
+            <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
+            <node concept="37vLTw" id="5XBRz5LL0CP" role="37wK5m">
+              <ref role="3cqZAo" node="5XBRz5LKZRD" resolve="iconPath" />
+            </node>
+            <node concept="37vLTw" id="5XBRz5LL0CQ" role="37wK5m">
+              <ref role="3cqZAo" node="5XBRz5LKZRG" resolve="cache" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5XBRz5LKZRJ" role="1B3o_S" />
+      <node concept="3uibUv" id="5XBRz5LKZRK" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+    </node>
     <node concept="2YIFZL" id="277Nzj6qTLb" role="jymVt">
       <property role="TrG5h" value="getIconFor" />
       <node concept="3Tm1VV" id="277Nzj6qTLc" role="1B3o_S" />
