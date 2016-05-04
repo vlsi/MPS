@@ -4648,7 +4648,7 @@
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7429591467341004877" />
-      <ref role="20lvS9" node="7_cYeEuahwU" resolve="ContextExpression_TransformationMenu_Condition" />
+      <ref role="20lvS9" node="5DJl6Ftwolg" resolve="QueryFunction_TransformationMenu_Condition" />
     </node>
     <node concept="1TJgyj" id="6srdxdH8$18" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -4926,6 +4926,13 @@
     <node concept="PrWs8" id="6S33y3MyG9w" role="PzmwI">
       <ref role="PrY4T" node="7_cYeEu4k3N" resolve="INodeProvider" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5DJl6Ftwolg">
+    <property role="EcuMT" value="6516520003787916624" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
+    <property role="34LRSv" value="condition" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
 </model>
 

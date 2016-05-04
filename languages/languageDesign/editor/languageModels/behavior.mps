@@ -207,7 +207,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -17416,7 +17416,7 @@
   </node>
   <node concept="13h7C7" id="1oFY2ohYOEa">
     <property role="3GE5qa" value="TransformationMenu" />
-    <ref role="13h7C2" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenuOrContribution" />
+    <ref role="13h7C2" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
     <node concept="13i0hz" id="5OVd5tVoadE" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
@@ -17876,14 +17876,14 @@
           <node concept="3cpWsn" id="6S33y3MyRn4" role="3cpWs9">
             <property role="TrG5h" value="menuOrContribution" />
             <node concept="3Tqbb2" id="6S33y3MyRn5" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenuOrContribution" />
+              <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
             </node>
             <node concept="2OqwBi" id="6S33y3MyRn6" role="33vP2m">
               <node concept="13iPFW" id="6S33y3MyRn7" role="2Oq$k0" />
               <node concept="2Xjw5R" id="6S33y3MyRn8" role="2OqNvi">
                 <node concept="1xMEDy" id="6S33y3MyRn9" role="1xVPHs">
                   <node concept="chp4Y" id="6S33y3MyRna" role="ri$Ld">
-                    <ref role="cht4Q" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenuOrContribution" />
+                    <ref role="cht4Q" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
                   </node>
                 </node>
                 <node concept="1xIGOp" id="6S33y3MyRnb" role="1xVPHs" />
@@ -17928,6 +17928,29 @@
         <ref role="ehGHo" to="tpck:hYa1RjM" resolve="IType" />
       </node>
       <node concept="3clFbS" id="6S33y3MySWb" role="3clF47" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5DJl6Ftwolh">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="13h7C2" to="tpc2:5DJl6Ftwolg" resolve="QueryFunction_TransformationMenu_Condition" />
+    <node concept="13hLZK" id="5DJl6Ftwoli" role="13h7CW">
+      <node concept="3clFbS" id="5DJl6Ftwolj" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5DJl6Ftwols" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="5DJl6Ftwolw" role="1B3o_S" />
+      <node concept="3clFbS" id="5DJl6Ftwoly" role="3clF47">
+        <node concept="3clFbF" id="5DJl6Ftwote" role="3cqZAp">
+          <node concept="2c44tf" id="5DJl6Ftwot4" role="3clFbG">
+            <node concept="10P_77" id="5DJl6Ftwouk" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5DJl6Ftwolz" role="3clF45" />
     </node>
   </node>
 </model>

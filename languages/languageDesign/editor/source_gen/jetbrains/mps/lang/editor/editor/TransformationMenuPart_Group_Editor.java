@@ -81,12 +81,6 @@ public class TransformationMenuPart_Group_Editor extends DefaultNodeEditor {
       if (editorCell.getRole() == null) {
         editorCell.setRole("condition");
       }
-      Style style = new StyleImpl();
-      SNode node = myOwnerNode;
-      EditorContext editorContext = myEditorContext;
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {

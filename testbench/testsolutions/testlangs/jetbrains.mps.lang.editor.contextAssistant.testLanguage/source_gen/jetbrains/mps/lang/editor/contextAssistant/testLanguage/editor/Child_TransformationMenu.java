@@ -8,7 +8,6 @@ import jetbrains.mps.lang.editor.transformationMenus.MenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.transformationMenus.ConditionalMenuPart;
 import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart;
@@ -28,15 +27,11 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart> getParts() {
     return Arrays.<MenuPart>asList(new ConditionalMenuPart() {
       @Override
-      protected boolean isApplicable(final TransformationMenuContext _context) {
-        return new _FunctionTypes._return_P0_E0<Boolean>() {
-          public Boolean invoke() {
-            if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-              throw new RuntimeException("Intentional exception - ignore this");
-            }
-            return true;
-          }
-        }.invoke();
+      protected boolean isApplicable(TransformationMenuContext _context) {
+        if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+          throw new RuntimeException("Intentional exception - ignore this");
+        }
+        return true;
       }
 
       @Override
