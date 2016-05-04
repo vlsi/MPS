@@ -33,6 +33,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
   public EnumerationDataTypeDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
@@ -85,7 +86,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_8h501v_a0a1a0a0a1a0b0a1a4;
+            return breakingNode_8h501v_a0a1a0a0a1a0b0a1a5;
           }
         };
       }
@@ -96,5 +97,5 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087688291");
-  private static SNodePointer breakingNode_8h501v_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847177");
+  private static SNodePointer breakingNode_8h501v_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847177");
 }

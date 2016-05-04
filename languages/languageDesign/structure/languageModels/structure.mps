@@ -98,6 +98,7 @@
       <property role="TrG5h" value="iconPath" />
       <property role="IQ2nx" value="1160488491229" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="4qBHWh_rs8W" role="lGtFl" />
     </node>
     <node concept="1TJgyi" id="4G1g3fIR8D8" role="1TKVEl">
       <property role="TrG5h" value="staticScope" />

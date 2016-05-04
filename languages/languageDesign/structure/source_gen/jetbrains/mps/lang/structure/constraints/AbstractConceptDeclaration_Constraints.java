@@ -24,6 +24,7 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
   public AbstractConceptDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -33,7 +34,7 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_c1kwet_a0a0a0a0a2;
+        return breakingNode_c1kwet_a0a0a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -79,5 +80,5 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNodePointer breakingNode_c1kwet_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216499631");
+  private static SNodePointer breakingNode_c1kwet_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216499631");
 }
