@@ -16,6 +16,7 @@ public class CommandHolder_Constraints extends BaseConstraintsDescriptor {
   public CommandHolder_Constraints() {
     super(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"));
   }
+
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;

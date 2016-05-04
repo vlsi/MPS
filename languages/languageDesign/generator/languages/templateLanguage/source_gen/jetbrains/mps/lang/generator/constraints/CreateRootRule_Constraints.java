@@ -22,6 +22,7 @@ public class CreateRootRule_Constraints extends BaseConstraintsDescriptor {
   public CreateRootRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,12 +41,12 @@ public class CreateRootRule_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_j7rnig_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_j7rnig_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_j7rnig_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "1213104840279");
+  private static SNodePointer breakingNode_j7rnig_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "1213104840279");
 }

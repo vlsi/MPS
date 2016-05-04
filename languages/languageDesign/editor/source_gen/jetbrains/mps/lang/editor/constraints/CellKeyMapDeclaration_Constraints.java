@@ -16,6 +16,7 @@ public class CellKeyMapDeclaration_Constraints extends BaseConstraintsDescriptor
   public CellKeyMapDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

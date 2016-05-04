@@ -14,6 +14,7 @@ public class ValueInlineDocTag_Constraints extends BaseConstraintsDescriptor {
   public ValueInlineDocTag_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

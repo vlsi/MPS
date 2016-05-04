@@ -15,6 +15,7 @@ public class BuildVariableMacroInitValue_Constraints extends BaseConstraintsDesc
   public BuildVariableMacroInitValue_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

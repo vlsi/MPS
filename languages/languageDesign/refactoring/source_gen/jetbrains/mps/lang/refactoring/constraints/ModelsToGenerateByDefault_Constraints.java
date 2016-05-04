@@ -15,6 +15,7 @@ public class ModelsToGenerateByDefault_Constraints extends BaseConstraintsDescri
   public ModelsToGenerateByDefault_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x3c55f2dab56d441dL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

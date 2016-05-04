@@ -29,6 +29,7 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
   public TemplateArgumentLinkPatternRefExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de8L, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -52,12 +53,12 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4816349095291149871");
+  private static SNodePointer breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4816349095291149871");
 }

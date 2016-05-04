@@ -16,6 +16,7 @@ public class NodeSubstituteActions_Constraints extends BaseConstraintsDescriptor
   public NodeSubstituteActions_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

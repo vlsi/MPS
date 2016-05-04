@@ -16,6 +16,7 @@ public class ExecuteFinderExpression_Constraints extends BaseConstraintsDescript
   public ExecuteFinderExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

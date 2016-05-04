@@ -18,6 +18,7 @@ public class InvokeFunctionOperation_Constraints extends BaseConstraintsDescript
   public InvokeFunctionOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

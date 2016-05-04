@@ -15,6 +15,7 @@ public class TemplateArgumentQueryExpression_Constraints extends BaseConstraints
   public TemplateArgumentQueryExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

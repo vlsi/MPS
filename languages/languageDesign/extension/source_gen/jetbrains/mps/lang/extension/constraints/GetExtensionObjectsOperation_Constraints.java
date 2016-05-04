@@ -18,6 +18,7 @@ public class GetExtensionObjectsOperation_Constraints extends BaseConstraintsDes
   public GetExtensionObjectsOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142ef747L, "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -16,6 +16,7 @@ public class LanguageTextGenDeclaration_Constraints extends BaseConstraintsDescr
   public LanguageTextGenDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

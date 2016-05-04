@@ -15,6 +15,7 @@ public class SubstituteMenuPart_Constraints extends BaseConstraintsDescriptor {
   public SubstituteMenuPart_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

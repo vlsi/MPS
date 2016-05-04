@@ -18,6 +18,7 @@ public class BuildMps_Group_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_Group_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

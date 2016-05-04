@@ -14,6 +14,7 @@ public class InternalSuperMethodCallOperation_Constraints extends BaseConstraint
   public InternalSuperMethodCallOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

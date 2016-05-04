@@ -15,6 +15,7 @@ public class XmlDeclaration_Constraints extends BaseConstraintsDescriptor {
   public XmlDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

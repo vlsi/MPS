@@ -31,6 +31,7 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
   public IStyle_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -67,9 +68,9 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_56bmov_a0a1a0a0a2;
+        return breakingNode_56bmov_a0a1a0a0a3;
       }
     };
   }
-  private static SNodePointer breakingNode_56bmov_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
+  private static SNodePointer breakingNode_56bmov_a0a1a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
 }

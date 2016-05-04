@@ -17,6 +17,7 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
   public TypeExtension_Constraints() {
     super(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

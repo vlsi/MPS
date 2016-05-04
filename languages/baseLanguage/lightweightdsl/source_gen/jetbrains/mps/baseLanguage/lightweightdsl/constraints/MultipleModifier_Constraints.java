@@ -15,6 +15,7 @@ public class MultipleModifier_Constraints extends BaseConstraintsDescriptor {
   public MultipleModifier_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x1db73bac2eaf51eeL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

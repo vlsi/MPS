@@ -22,6 +22,7 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
   public ConceptEditorHintDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

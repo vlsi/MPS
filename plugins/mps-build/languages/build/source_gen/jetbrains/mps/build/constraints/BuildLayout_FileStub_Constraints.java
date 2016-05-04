@@ -15,6 +15,7 @@ public class BuildLayout_FileStub_Constraints extends BaseConstraintsDescriptor 
   public BuildLayout_FileStub_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, "jetbrains.mps.build.structure.BuildLayout_FileStub"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -32,6 +32,7 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
   public DirectMethodSpecification_Constraints() {
     super(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,7 +47,7 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_xwijc_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_xwijc_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -74,5 +75,5 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-  private static SNodePointer breakingNode_xwijc_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "338341484719582769");
+  private static SNodePointer breakingNode_xwijc_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "338341484719582769");
 }

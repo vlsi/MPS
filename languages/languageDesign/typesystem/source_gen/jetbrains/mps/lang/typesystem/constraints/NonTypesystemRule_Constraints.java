@@ -16,6 +16,7 @@ public class NonTypesystemRule_Constraints extends BaseConstraintsDescriptor {
   public NonTypesystemRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164853e0faL, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

@@ -16,6 +16,7 @@ public class OperationOnAddress_Constraints extends BaseConstraintsDescriptor {
   public OperationOnAddress_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L, "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

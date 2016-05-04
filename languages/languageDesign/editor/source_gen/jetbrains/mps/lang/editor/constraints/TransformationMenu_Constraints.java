@@ -16,6 +16,7 @@ public class TransformationMenu_Constraints extends BaseConstraintsDescriptor {
   public TransformationMenu_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

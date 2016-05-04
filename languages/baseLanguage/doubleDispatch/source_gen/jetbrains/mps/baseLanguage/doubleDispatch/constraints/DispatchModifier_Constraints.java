@@ -15,6 +15,7 @@ public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
   public DispatchModifier_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7db4447f913e4b81L, 0xbd75c9a473319ac6L, 0x21592d9e737fa6f9L, "jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

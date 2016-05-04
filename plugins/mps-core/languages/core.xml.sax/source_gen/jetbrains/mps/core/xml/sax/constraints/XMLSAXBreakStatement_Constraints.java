@@ -15,6 +15,7 @@ public class XMLSAXBreakStatement_Constraints extends BaseConstraintsDescriptor 
   public XMLSAXBreakStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cfL, "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

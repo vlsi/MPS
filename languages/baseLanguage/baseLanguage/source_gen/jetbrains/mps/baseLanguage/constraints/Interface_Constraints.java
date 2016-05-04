@@ -23,6 +23,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
   public Interface_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -32,7 +33,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_y7fug_a0a0a0a0a2;
+        return breakingNode_y7fug_a0a0a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -61,6 +62,6 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
-  private static SNodePointer breakingNode_y7fug_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
+  private static SNodePointer breakingNode_y7fug_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
 }

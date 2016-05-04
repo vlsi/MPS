@@ -15,6 +15,7 @@ public class ExtractStatementListInnerExpression_Constraints extends BaseConstra
   public ExtractStatementListInnerExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b763512c9L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

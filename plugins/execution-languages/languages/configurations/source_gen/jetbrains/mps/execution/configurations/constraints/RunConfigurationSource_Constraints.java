@@ -15,6 +15,7 @@ public class RunConfigurationSource_Constraints extends BaseConstraintsDescripto
   public RunConfigurationSource_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84af96L, "jetbrains.mps.execution.configurations.structure.RunConfigurationSource"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

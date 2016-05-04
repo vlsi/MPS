@@ -19,6 +19,7 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
   public EditableModel_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ecd9810833251a2L, "jetbrains.mps.lang.plugin.structure.EditableModel"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

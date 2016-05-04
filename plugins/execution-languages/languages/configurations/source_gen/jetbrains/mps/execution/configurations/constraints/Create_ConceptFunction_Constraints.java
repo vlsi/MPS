@@ -15,6 +15,7 @@ public class Create_ConceptFunction_Constraints extends BaseConstraintsDescripto
   public Create_ConceptFunction_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L, "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -14,6 +14,7 @@ public class StartProcessHandlerStatement_Constraints extends BaseConstraintsDes
   public StartProcessHandlerStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

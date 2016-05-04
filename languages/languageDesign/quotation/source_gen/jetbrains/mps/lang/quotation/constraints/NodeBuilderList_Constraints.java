@@ -19,6 +19,7 @@ public class NodeBuilderList_Constraints extends BaseConstraintsDescriptor {
   public NodeBuilderList_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a2df32L, "jetbrains.mps.lang.quotation.structure.NodeBuilderList"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

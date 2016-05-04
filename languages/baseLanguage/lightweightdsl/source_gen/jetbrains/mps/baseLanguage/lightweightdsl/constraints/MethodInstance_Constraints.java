@@ -16,6 +16,7 @@ public class MethodInstance_Constraints extends BaseConstraintsDescriptor {
   public MethodInstance_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -30,6 +30,7 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -58,7 +59,7 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cfy36u_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_cfy36u_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -86,5 +87,5 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
     return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213619162021");
-  private static SNodePointer breakingNode_cfy36u_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137648");
+  private static SNodePointer breakingNode_cfy36u_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137648");
 }

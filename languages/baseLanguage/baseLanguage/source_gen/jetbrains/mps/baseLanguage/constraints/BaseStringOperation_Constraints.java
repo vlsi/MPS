@@ -18,6 +18,7 @@ public class BaseStringOperation_Constraints extends BaseConstraintsDescriptor {
   public BaseStringOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dc8da1L, "jetbrains.mps.baseLanguage.structure.BaseStringOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

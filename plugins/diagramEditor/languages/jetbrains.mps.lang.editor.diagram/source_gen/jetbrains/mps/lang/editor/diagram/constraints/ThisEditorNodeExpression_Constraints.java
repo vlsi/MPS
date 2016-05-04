@@ -16,6 +16,7 @@ public class ThisEditorNodeExpression_Constraints extends BaseConstraintsDescrip
   public ThisEditorNodeExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL, "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -29,6 +29,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
   public CustomConstructorParameterReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b745ce64L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -84,7 +85,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5;
+            return breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a6;
           }
         };
       }
@@ -99,5 +100,5 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369207575");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369352259");
-  private static SNodePointer breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");
+  private static SNodePointer breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a6 = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");
 }

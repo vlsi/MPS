@@ -18,6 +18,7 @@ public class BuildMps_Generator_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_Generator_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

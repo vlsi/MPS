@@ -19,6 +19,7 @@ public class ConceptCondition_Constraints extends BaseConstraintsDescriptor {
   public ConceptCondition_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0xe9375051ff52781L, "jetbrains.mps.lang.plugin.structure.ConceptCondition"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

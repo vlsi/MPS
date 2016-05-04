@@ -26,6 +26,7 @@ public class BuildSource_JavaLibrary_Constraints extends BaseConstraintsDescript
   public BuildSource_JavaLibrary_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

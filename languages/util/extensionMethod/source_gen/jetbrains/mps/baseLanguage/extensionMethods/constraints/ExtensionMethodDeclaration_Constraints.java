@@ -17,6 +17,7 @@ public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescr
   public ExtensionMethodDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

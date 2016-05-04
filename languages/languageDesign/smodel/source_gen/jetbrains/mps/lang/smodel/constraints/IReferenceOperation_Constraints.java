@@ -18,6 +18,7 @@ public class IReferenceOperation_Constraints extends BaseConstraintsDescriptor {
   public IReferenceOperation_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53df2L, "jetbrains.mps.lang.smodel.structure.IReferenceOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

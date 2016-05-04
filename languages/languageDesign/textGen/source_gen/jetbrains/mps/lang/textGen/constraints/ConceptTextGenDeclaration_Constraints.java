@@ -25,6 +25,7 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
   public ConceptTextGenDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

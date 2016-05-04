@@ -31,6 +31,7 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
   public BuildMpsLayout_TestModuleGroup_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -59,7 +60,7 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -83,5 +84,5 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "8574011380873424208");
-  private static SNodePointer breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "4005526075816137908");
+  private static SNodePointer breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "4005526075816137908");
 }

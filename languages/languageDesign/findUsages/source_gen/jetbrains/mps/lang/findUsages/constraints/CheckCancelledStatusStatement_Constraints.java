@@ -15,6 +15,7 @@ public class CheckCancelledStatusStatement_Constraints extends BaseConstraintsDe
   public CheckCancelledStatusStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

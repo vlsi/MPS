@@ -9,4 +9,5 @@ public class XmlContent_Constraints extends BaseConstraintsDescriptor {
   public XmlContent_Constraints() {
     super(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"));
   }
+
 }

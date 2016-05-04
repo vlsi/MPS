@@ -29,6 +29,7 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public SuperNodeExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -79,7 +80,7 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -90,5 +91,5 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
     return ConstraintsUtil.isInsideOfNonStaticBehaviorContext(parentNode);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "2043122710974691050");
-  private static SNodePointer breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "5299096511375909194");
+  private static SNodePointer breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "5299096511375909194");
 }

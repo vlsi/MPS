@@ -23,6 +23,7 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
   public ConfigurationFromExecutorReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -15,6 +15,7 @@ public class RefactoringAction_Constraints extends BaseConstraintsDescriptor {
   public RefactoringAction_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x2cfffca8ff395f2fL, "jetbrains.mps.lang.refactoring.structure.RefactoringAction"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

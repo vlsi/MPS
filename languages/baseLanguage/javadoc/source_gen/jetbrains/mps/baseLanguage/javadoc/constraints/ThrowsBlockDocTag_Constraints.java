@@ -15,6 +15,7 @@ public class ThrowsBlockDocTag_Constraints extends BaseConstraintsDescriptor {
   public ThrowsBlockDocTag_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

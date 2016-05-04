@@ -18,6 +18,7 @@ public class GetAmount_Constraints extends BaseConstraintsDescriptor {
   public GetAmount_Constraints() {
     super(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913c339L, "org.jetbrains.mps.samples.Money.structure.GetAmount"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

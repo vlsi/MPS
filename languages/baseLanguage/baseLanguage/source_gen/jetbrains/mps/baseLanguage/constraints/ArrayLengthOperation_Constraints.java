@@ -18,6 +18,7 @@ public class ArrayLengthOperation_Constraints extends BaseConstraintsDescriptor 
   public ArrayLengthOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

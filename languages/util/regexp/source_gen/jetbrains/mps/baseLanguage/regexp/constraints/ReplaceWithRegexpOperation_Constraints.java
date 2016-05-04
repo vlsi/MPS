@@ -18,6 +18,7 @@ public class ReplaceWithRegexpOperation_Constraints extends BaseConstraintsDescr
   public ReplaceWithRegexpOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c94680172L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

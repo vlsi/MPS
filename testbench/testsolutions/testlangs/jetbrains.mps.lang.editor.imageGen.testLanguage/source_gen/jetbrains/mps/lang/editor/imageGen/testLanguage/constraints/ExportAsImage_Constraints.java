@@ -15,6 +15,7 @@ public class ExportAsImage_Constraints extends BaseConstraintsDescriptor {
   public ExportAsImage_Constraints() {
     super(MetaAdapterFactory.getConcept(0x9bcd3d4bc7894f70L, 0x85e4038ea20762b9L, 0x21e6800a818d97ecL, "jetbrains.mps.lang.editor.imageGen.testLanguage.structure.ExportAsImage"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

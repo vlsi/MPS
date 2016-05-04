@@ -9,4 +9,5 @@ public class AsTypeBuilder_Constraints extends BaseConstraintsDescriptor {
   public AsTypeBuilder_Constraints() {
     super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d721d314L, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"));
   }
+
 }

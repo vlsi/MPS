@@ -15,6 +15,7 @@ public class ActionGroupDeclaration_Constraints extends BaseConstraintsDescripto
   public ActionGroupDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

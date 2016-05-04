@@ -16,6 +16,7 @@ public class SurroundWithIntentionDeclaration_Constraints extends BaseConstraint
   public SurroundWithIntentionDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

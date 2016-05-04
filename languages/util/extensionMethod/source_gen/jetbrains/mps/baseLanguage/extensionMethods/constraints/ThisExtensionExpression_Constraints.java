@@ -15,6 +15,7 @@ public class ThisExtensionExpression_Constraints extends BaseConstraintsDescript
   public ThisExtensionExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

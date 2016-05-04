@@ -27,6 +27,7 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
   public BuildLayout_CompileOutputOf_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd24L, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -55,7 +56,7 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_yp60el_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_yp60el_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -73,5 +74,5 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2591537044435952572");
-  private static SNodePointer breakingNode_yp60el_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
+  private static SNodePointer breakingNode_yp60el_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
 }

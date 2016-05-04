@@ -18,6 +18,7 @@ public class CommandPartLengthOperation_Constraints extends BaseConstraintsDescr
   public CommandPartLengthOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x166dfef127134569L, "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -29,7 +29,7 @@
       <scope id="9168054762590341487" at="18,0,25,0">
         <var name="node" id="9168054762590341487" />
       </scope>
-      <unit id="9168054762590341487" at="14,0,26,0" name="jetbrains.mps.testHybridEditor.constraints.MetaBlock_Constraints" />
+      <unit id="9168054762590341487" at="14,0,27,0" name="jetbrains.mps.testHybridEditor.constraints.MetaBlock_Constraints" />
     </file>
   </root>
 </debug-info>

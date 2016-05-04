@@ -16,6 +16,7 @@ public class PasteWrappers_Constraints extends BaseConstraintsDescriptor {
   public PasteWrappers_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51553d4eL, "jetbrains.mps.lang.actions.structure.PasteWrappers"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

@@ -15,6 +15,7 @@ public class AllConstant_Constraints extends BaseConstraintsDescriptor {
   public AllConstant_Constraints() {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

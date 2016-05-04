@@ -16,6 +16,7 @@ public class AddElementStatement_Constraints extends BaseConstraintsDescriptor {
   public AddElementStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

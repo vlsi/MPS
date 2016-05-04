@@ -14,6 +14,7 @@ public class InternalPartialInstanceMethodCall_Constraints extends BaseConstrain
   public InternalPartialInstanceMethodCall_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

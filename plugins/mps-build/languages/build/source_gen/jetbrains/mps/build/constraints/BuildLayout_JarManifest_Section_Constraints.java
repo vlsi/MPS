@@ -15,6 +15,7 @@ public class BuildLayout_JarManifest_Section_Constraints extends BaseConstraints
   public BuildLayout_JarManifest_Section_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

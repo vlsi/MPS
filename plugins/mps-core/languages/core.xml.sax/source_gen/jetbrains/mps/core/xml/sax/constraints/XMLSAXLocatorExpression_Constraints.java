@@ -15,6 +15,7 @@ public class XMLSAXLocatorExpression_Constraints extends BaseConstraintsDescript
   public XMLSAXLocatorExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2edL, "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -22,6 +22,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
   public CheckedModuleReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, "jetbrains.mps.lang.smodel.structure.CheckedModuleReference"));
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

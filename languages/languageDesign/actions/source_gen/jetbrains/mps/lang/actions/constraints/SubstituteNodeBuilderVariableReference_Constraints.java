@@ -25,6 +25,7 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
   public SubstituteNodeBuilderVariableReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112668f8fe4L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_vdmjo3_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_vdmjo3_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +54,5 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
     });
     return references;
   }
-  private static SNodePointer breakingNode_vdmjo3_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "7945085613657854145");
+  private static SNodePointer breakingNode_vdmjo3_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "7945085613657854145");
 }
