@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
-import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

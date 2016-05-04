@@ -18,10 +18,10 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.popup.ClosableByLeftArrow;
-import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItemVisitor;
-import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

@@ -2005,8 +2005,8 @@
       <node id="69343502268559276" at="18,68,19,39" concept="7" />
       <node id="69343502268725687" at="23,66,24,122" concept="6" />
       <node id="69343502268719192" at="24,122,25,61" concept="2" />
-      <node id="69343502268559053" at="17,0,21,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="69343502268559053" at="22,0,27,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)V" />
+      <node id="69343502268559053" at="17,0,21,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="69343502268559053" at="22,0,27,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
       <node id="69343502268559053" at="15,39,27,7" concept="7" />
       <node id="69343502268559053" at="14,0,29,0" concept="5" trace="getParts#()Ljava/util/List;" />
       <scope id="69343502268559195" at="18,68,19,39" />

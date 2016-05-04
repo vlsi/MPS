@@ -10,7 +10,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantSettings;
-import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
+import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 
 public class JumpToContextAssistant_Action extends BaseAction {
   private static final Icon ICON = null;

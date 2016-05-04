@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantPanel;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
+import jetbrains.mps.openapi.editor.assist.ContextAssistant;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 

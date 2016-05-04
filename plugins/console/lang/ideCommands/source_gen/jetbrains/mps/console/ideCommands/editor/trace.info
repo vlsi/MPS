@@ -2170,8 +2170,8 @@
       <node id="8190804541713110787" at="195,9,196,157" concept="2" />
       <node id="8190804541713110787" at="197,7,198,159" concept="2" />
       <node id="8190804541713110787" at="199,5,200,14" concept="7" />
-      <node id="9041541628639360365" at="25,0,29,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="9041541628639360365" at="37,0,41,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="9041541628639360365" at="25,0,29,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="9041541628639360365" at="37,0,41,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
       <node id="8190804541713110048" at="65,248,69,15" concept="0" />
       <node id="8190804541713110787" at="158,248,162,15" concept="0" />
       <node id="8190804541713110048" at="82,244,87,17" concept="0" />
@@ -2181,8 +2181,8 @@
       <node id="8190804541713110048" at="127,262,132,13" concept="0" />
       <node id="8190804541713110787" at="175,244,180,17" concept="0" />
       <node id="8190804541713110787" at="184,264,189,15" concept="0" />
-      <node id="9041541628639360365" at="30,0,36,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)V" />
-      <node id="9041541628639360365" at="42,0,48,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)V" />
+      <node id="9041541628639360365" at="30,0,36,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="9041541628639360365" at="42,0,48,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
       <node id="8190804541713110048" at="63,245,71,13" concept="0" />
       <node id="8190804541713110787" at="156,245,164,13" concept="0" />
       <node id="8190804541713110048" at="116,230,125,13" concept="0" />

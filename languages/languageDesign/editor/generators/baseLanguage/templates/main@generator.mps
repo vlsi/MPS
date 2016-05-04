@@ -66,9 +66,9 @@
     <import index="la0d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.keymaps(MPS.Editor/)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="jkd0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.transformationMenus(MPS.Editor/)" />
-    <import index="hota" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.transformationMenus(MPS.Editor/)" />
-    <import index="vlnm" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.transformationMenus(MPS.Editor/)" />
+    <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
+    <import index="9eyi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus.transformation(MPS.Editor/)" />
+    <import index="u59o" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus.transformation(MPS.Editor/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -17128,7 +17128,7 @@
                 <ref role="3cqZAo" node="4v1iCryNEJY" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="4Sf$XywIo$R" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="4Sf$XywQlfB" role="37wK5m">
                   <node concept="1sPUBX" id="3DiRZz_UMb5" role="lGtFl">
                     <ref role="v9R2y" node="5OVd5tVfkL1" resolve="switch_TransformationMenuReference" />
@@ -29318,7 +29318,7 @@
                 <ref role="3cqZAo" node="5DTV$TR_6Fe" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="25llCucbGVV" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="25llCucbGVW" role="37wK5m">
                   <node concept="1sPUBX" id="25llCucbGVX" role="lGtFl">
                     <ref role="v9R2y" node="5OVd5tVfkL1" resolve="switch_TransformationMenuReference" />
@@ -30443,8 +30443,8 @@
       <node concept="YeOm9" id="5eSk$t60hR0" role="2ShVmc">
         <node concept="1Y3b0j" id="5eSk$t60hR1" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="jkd0:~IncludeMenuMenuPart" resolve="IncludeMenuMenuPart" />
-          <ref role="37wK5l" to="jkd0:~IncludeMenuMenuPart.&lt;init&gt;()" resolve="IncludeMenuMenuPart" />
+          <ref role="1Y3XeK" to="9eyi:~IncludeMenuMenuPart" resolve="IncludeMenuMenuPart" />
+          <ref role="37wK5l" to="9eyi:~IncludeMenuMenuPart.&lt;init&gt;()" resolve="IncludeMenuMenuPart" />
           <node concept="3Tm1VV" id="5eSk$t60hR2" role="1B3o_S" />
           <node concept="3clFb_" id="5eSk$t60joW" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -30456,7 +30456,7 @@
               <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
             </node>
             <node concept="3uibUv" id="5TTFgSOqdbc" role="3clF45">
-              <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
+              <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
             </node>
             <node concept="3clFbS" id="5eSk$t60jp2" role="3clF47">
               <node concept="3cpWs8" id="7_xM8AGbgHR" role="3cqZAp">
@@ -30471,7 +30471,7 @@
                       <ref role="3cqZAo" node="7_xM8AGbgyT" resolve="context" />
                     </node>
                     <node concept="liA8E" id="7_xM8AGbgHW" role="2OqNvi">
-                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="uddc:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -30488,7 +30488,7 @@
                       <ref role="3cqZAo" node="7_xM8AGbgyT" resolve="context" />
                     </node>
                     <node concept="liA8E" id="7_xM8AGbgI2" role="2OqNvi">
-                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -30537,7 +30537,7 @@
             <node concept="37vLTG" id="7_xM8AGbgyT" role="3clF46">
               <property role="TrG5h" value="context" />
               <node concept="3uibUv" id="5TTFgSOqdAf" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
           </node>
@@ -30556,7 +30556,7 @@
             <node concept="37vLTG" id="5eSk$t60jpb" role="3clF46">
               <property role="TrG5h" value="context" />
               <node concept="3uibUv" id="1MawgH3z$2f" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3clFbS" id="5eSk$t60jpe" role="3clF47">
@@ -30572,7 +30572,7 @@
                       <ref role="3cqZAo" node="5eSk$t60jpb" resolve="context" />
                     </node>
                     <node concept="liA8E" id="5eSk$t60o8p" role="2OqNvi">
-                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                      <ref role="37wK5l" to="uddc:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -30589,7 +30589,7 @@
                       <ref role="3cqZAo" node="5eSk$t60jpb" resolve="context" />
                     </node>
                     <node concept="liA8E" id="5eSk$t60oQJ" role="2OqNvi">
-                      <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -30757,8 +30757,8 @@
       <node concept="YeOm9" id="6srdxdHksfv" role="2ShVmc">
         <node concept="1Y3b0j" id="6srdxdHksfw" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="jkd0:~ConditionalMenuPart" resolve="ConditionalMenuPart" />
-          <ref role="37wK5l" to="jkd0:~ConditionalMenuPart.&lt;init&gt;()" resolve="ConditionalMenuPart" />
+          <ref role="1Y3XeK" to="9eyi:~ConditionalMenuPart" resolve="ConditionalMenuPart" />
+          <ref role="37wK5l" to="9eyi:~ConditionalMenuPart.&lt;init&gt;()" resolve="ConditionalMenuPart" />
           <node concept="3Tm1VV" id="6srdxdHksfx" role="1B3o_S" />
           <node concept="3clFb_" id="6srdxdHkwzN" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -30770,7 +30770,7 @@
             <node concept="37vLTG" id="6srdxdHkwzR" role="3clF46">
               <property role="TrG5h" value="_context" />
               <node concept="3uibUv" id="5TTFgSOqK_S" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3clFbS" id="6srdxdHkwzU" role="3clF47">
@@ -30813,7 +30813,7 @@
             <node concept="3uibUv" id="25llCubrT_x" role="3clF45">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="25llCubrT_y" role="11_B2D">
-                <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+                <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
               </node>
             </node>
             <node concept="3clFbS" id="25llCubrT_$" role="3clF47">
@@ -30841,7 +30841,7 @@
                     </node>
                   </node>
                   <node concept="3uibUv" id="25llCubCvq_" role="3PaCim">
-                    <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+                    <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
                   </node>
                 </node>
               </node>
@@ -30872,7 +30872,7 @@
               <node concept="2ShNRf" id="7_xM8AG2h5Q" role="3clFbG">
                 <node concept="raruj" id="3xPkyY3ZdgQ" role="lGtFl" />
                 <node concept="1pGfFk" id="7_xM8AG2C$U" role="2ShVmc">
-                  <ref role="37wK5l" to="jkd0:~DefaultMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultMenuLookup" />
+                  <ref role="37wK5l" to="9eyi:~DefaultMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultMenuLookup" />
                   <node concept="2YIFZM" id="7_xM8AG2C_B" role="37wK5m">
                     <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                     <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
@@ -30909,7 +30909,7 @@
             </node>
           </node>
           <node concept="3uibUv" id="5TTFgSOxRi6" role="3clF45">
-            <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
+            <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
           </node>
           <node concept="3Tm1VV" id="7_xM8AG1Qts" role="1B3o_S" />
           <node concept="37vLTG" id="7_xM8AG2h5G" role="3clF46">
@@ -30928,14 +30928,14 @@
         <node concept="3clFb_" id="7_xM8AG2CSj" role="1Koe22">
           <property role="TrG5h" value="lookup" />
           <node concept="3uibUv" id="5TTFgSOxSbv" role="3clF45">
-            <ref role="3uigEE" to="hota:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
+            <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
           </node>
           <node concept="3Tm1VV" id="7_xM8AG2CSm" role="1B3o_S" />
           <node concept="3clFbS" id="7_xM8AG2CSn" role="3clF47">
             <node concept="3clFbF" id="7_xM8AG2CSt" role="3cqZAp">
               <node concept="2ShNRf" id="5OVd5tVfPNw" role="3clFbG">
                 <node concept="1pGfFk" id="5OVd5tVfQBM" role="2ShVmc">
-                  <ref role="37wK5l" to="jkd0:~NamedMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedMenuLookup" />
+                  <ref role="37wK5l" to="9eyi:~NamedMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedMenuLookup" />
                   <node concept="2YIFZM" id="7_xM8AG2Dcv" role="37wK5m">
                     <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
                     <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
@@ -31056,7 +31056,7 @@
     <ref role="3gUMe" to="tpc2:7l1m754O$tN" resolve="TransformationMenuPart_Super" />
     <node concept="2ShNRf" id="3Cl5TgsTiws" role="13RCb5">
       <node concept="1pGfFk" id="3Cl5TgsTjuG" role="2ShVmc">
-        <ref role="37wK5l" to="jkd0:~ConceptMenusMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept[])" resolve="ConceptMenusMenuPart" />
+        <ref role="37wK5l" to="9eyi:~ConceptMenusMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept[])" resolve="ConceptMenusMenuPart" />
         <node concept="35c_gC" id="3Cl5TgsTjO4" role="37wK5m">
           <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
           <node concept="1ZhdrF" id="3Cl5TgsTjO5" role="lGtFl">
@@ -31111,8 +31111,8 @@
       <node concept="YeOm9" id="3Cl5TgsTepM" role="2ShVmc">
         <node concept="1Y3b0j" id="3Cl5TgsTepP" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="jkd0:~SubMenuMenuPart" resolve="SubMenuMenuPart" />
-          <ref role="37wK5l" to="jkd0:~SubMenuMenuPart.&lt;init&gt;()" resolve="SubMenuMenuPart" />
+          <ref role="1Y3XeK" to="9eyi:~SubMenuMenuPart" resolve="SubMenuMenuPart" />
+          <ref role="37wK5l" to="9eyi:~SubMenuMenuPart.&lt;init&gt;()" resolve="SubMenuMenuPart" />
           <node concept="3Tm1VV" id="3Cl5TgsTepQ" role="1B3o_S" />
           <node concept="3clFb_" id="3Cl5TgsTetZ" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -31124,7 +31124,7 @@
             <node concept="37vLTG" id="3Cl5TgsTeu3" role="3clF46">
               <property role="TrG5h" value="_context" />
               <node concept="3uibUv" id="2xIH9bgxE4a" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3clFbS" id="3Cl5TgsTeu8" role="3clF47">
@@ -31167,7 +31167,7 @@
             <node concept="3uibUv" id="25llCubsl4l" role="3clF45">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="5TTFgSOqfhZ" role="11_B2D">
-                <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+                <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
               </node>
             </node>
             <node concept="3clFbS" id="3Cl5TgsThcK" role="3clF47">
@@ -31197,7 +31197,7 @@
                         </node>
                       </node>
                       <node concept="3uibUv" id="1GnLfSMSGio" role="3g7fb8">
-                        <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+                        <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
                       </node>
                     </node>
                   </node>
@@ -31225,7 +31225,7 @@
       <node concept="3uibUv" id="1GnLfSMQAUA" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="4WIuR9I6jWi" role="11_B2D">
-          <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+          <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
         </node>
       </node>
       <node concept="3clFbS" id="1GnLfSMQAUC" role="3clF47">
@@ -31234,7 +31234,7 @@
             <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
             <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
             <node concept="3uibUv" id="4WIuR9I6kiq" role="3PaCim">
-              <ref role="3uigEE" to="jkd0:~MenuPart" resolve="MenuPart" />
+              <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
             </node>
             <node concept="10Nm6u" id="3Cl5TgsT5j7" role="37wK5m">
               <node concept="1WS0z7" id="20qY$3H7blt" role="lGtFl">
@@ -31282,8 +31282,8 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="5TTFgSOu7Jy" role="1zkMxy">
-      <ref role="3uigEE" to="vlnm:~TransformationMenuBase" resolve="TransformationMenuBase" />
+    <node concept="3uibUv" id="3gl$rADDe$V" role="1zkMxy">
+      <ref role="3uigEE" to="u59o:~TransformationMenuBase" resolve="TransformationMenuBase" />
     </node>
   </node>
   <node concept="bUwia" id="1qY_lWStOiY">
@@ -31319,8 +31319,8 @@
       <node concept="YeOm9" id="3Cl5TgsT6Xh" role="2ShVmc">
         <node concept="1Y3b0j" id="3Cl5TgsT6Xk" role="YeSDq">
           <property role="2bfB8j" value="true" />
-          <ref role="1Y3XeK" to="jkd0:~ActionItemMenuPart" resolve="ActionItemMenuPart" />
-          <ref role="37wK5l" to="jkd0:~ActionItemMenuPart.&lt;init&gt;()" resolve="ActionItemMenuPart" />
+          <ref role="1Y3XeK" to="9eyi:~ActionItemMenuPart" resolve="ActionItemMenuPart" />
+          <ref role="37wK5l" to="9eyi:~ActionItemMenuPart.&lt;init&gt;()" resolve="ActionItemMenuPart" />
           <node concept="3Tm1VV" id="3Cl5TgsT6Xl" role="1B3o_S" />
           <node concept="3clFb_" id="3Cl5TgsT6XK" role="jymVt">
             <property role="1EzhhJ" value="false" />
@@ -31329,8 +31329,8 @@
             <property role="od$2w" value="false" />
             <node concept="37vLTG" id="3fQueTd2ATp" role="3clF46">
               <property role="TrG5h" value="_context" />
-              <node concept="3uibUv" id="5TTFgSOqaN$" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+              <node concept="3uibUv" id="4vIOBih9kMY" role="1tU5fm">
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3Tmbuc" id="3Cl5TgsT6XL" role="1B3o_S" />
@@ -31374,7 +31374,7 @@
             <node concept="37vLTG" id="3fQueTd2CNu" role="3clF46">
               <property role="TrG5h" value="_context" />
               <node concept="3uibUv" id="5TTFgSOqaZa" role="1tU5fm">
-                <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
               </node>
             </node>
             <node concept="3Tmbuc" id="3Cl5TgsT6XX" role="1B3o_S" />

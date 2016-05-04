@@ -7,11 +7,10 @@
   <imports>
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="iwf0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.descriptor(MPS.Editor/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="hota" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.transformationMenus(MPS.Editor/)" />
-    <import index="jkd0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.transformationMenus(MPS.Editor/)" />
+    <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
+    <import index="9eyi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus.transformation(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -165,13 +164,13 @@
       <node concept="2AHcQZ" id="2ytFvC$HFSR" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
-      <node concept="3uibUv" id="4WIuR9Il6LA" role="3clF45">
-        <ref role="3uigEE" to="hota:~MenuItem" resolve="MenuItem" />
+      <node concept="3uibUv" id="5OSb6qWMnq1" role="3clF45">
+        <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
       </node>
       <node concept="37vLTG" id="2ytFvC$HFST" role="3clF46">
         <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="5DG_gGLZJTu" role="1tU5fm">
-          <ref role="3uigEE" to="hota:~TransformationMenuContext" resolve="TransformationMenuContext" />
+        <node concept="3uibUv" id="5OSb6qWMnux" role="1tU5fm">
+          <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
         </node>
       </node>
       <node concept="3clFbS" id="2ytFvC$HFSV" role="3clF47">
@@ -187,7 +186,7 @@
                 <ref role="3cqZAo" node="2ytFvC$HFST" resolve="context" />
               </node>
               <node concept="liA8E" id="2ytFvC$HjTD" role="2OqNvi">
-                <ref role="37wK5l" to="hota:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                <ref role="37wK5l" to="uddc:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
               </node>
             </node>
           </node>
@@ -204,7 +203,7 @@
                 <ref role="3cqZAo" node="2ytFvC$HFST" resolve="context" />
               </node>
               <node concept="liA8E" id="2ytFvC$HjNP" role="2OqNvi">
-                <ref role="37wK5l" to="hota:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
               </node>
             </node>
           </node>
@@ -279,8 +278,8 @@
             <node concept="YeOm9" id="2ytFvC$Hmkp" role="2ShVmc">
               <node concept="1Y3b0j" id="2ytFvC$Hmks" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" to="hota:~ActionItemBase" resolve="ActionItemBase" />
-                <ref role="37wK5l" to="hota:~ActionItemBase.&lt;init&gt;()" resolve="ActionItemBase" />
+                <ref role="1Y3XeK" to="uddc:~ActionItemBase" resolve="ActionItemBase" />
+                <ref role="37wK5l" to="uddc:~ActionItemBase.&lt;init&gt;()" resolve="ActionItemBase" />
                 <node concept="3clFb_" id="5DG_gGLZSjO" role="jymVt">
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getLabelText" />
@@ -356,8 +355,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="2ytFvC$Hjd0" role="1B3o_S" />
-    <node concept="3uibUv" id="4WIuR9Il72O" role="1zkMxy">
-      <ref role="3uigEE" to="jkd0:~SingleItemMenuPart" resolve="SingleItemMenuPart" />
+    <node concept="3uibUv" id="5OSb6qWMnxm" role="1zkMxy">
+      <ref role="3uigEE" to="9eyi:~SingleItemMenuPart" resolve="SingleItemMenuPart" />
     </node>
   </node>
 </model>
