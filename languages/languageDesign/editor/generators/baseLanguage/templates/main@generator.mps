@@ -9774,37 +9774,23 @@
           <ref role="2sdACS" node="hG00Hig" resolve="generatedClass" />
         </node>
         <node concept="3clFb_" id="heOvmXo" role="jymVt">
-          <property role="TrG5h" value="getReplacementConceptName" />
+          <property role="TrG5h" value="getReplacementConcept" />
+          <node concept="3bZ5Sz" id="5XBRz5LMBvv" role="3clF45" />
           <node concept="3Tm1VV" id="heOvmXu" role="1B3o_S" />
           <node concept="3clFbS" id="heOvmXp" role="3clF47">
             <node concept="3cpWs6" id="heOvmXq" role="3cqZAp">
-              <node concept="Xl_RD" id="heOvmXr" role="3cqZAk">
-                <property role="Xl_RC" value="replacement_concept_fq_name" />
-                <node concept="17Uvod" id="heOvmXs" role="lGtFl">
-                  <property role="2qtEX9" value="value" />
-                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                  <node concept="3zFVjK" id="hu00uya" role="3zH0cK">
-                    <node concept="3clFbS" id="hu00uyb" role="2VODD2">
-                      <node concept="3cpWs8" id="hu00_HV" role="3cqZAp">
-                        <node concept="3cpWsn" id="hu00_HW" role="3cpWs9">
-                          <property role="TrG5h" value="replacementConcept" />
-                          <node concept="3Tqbb2" id="hu00_HX" role="1tU5fm">
-                            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-                          </node>
-                          <node concept="2OqwBi" id="hxx$Yn8" role="33vP2m">
-                            <node concept="30H73N" id="hu00_HZ" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="hu00_I0" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpc2:gWUl1JU" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs6" id="hu00Bgr" role="3cqZAp">
-                        <node concept="2YIFZM" id="hu00DMl" role="3cqZAk">
-                          <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                          <ref role="37wK5l" to="18ew:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                          <node concept="37vLTw" id="3GM_nagTzUI" role="37wK5m">
-                            <ref role="3cqZAo" node="hu00_HW" resolve="replacementConcept" />
+              <node concept="35c_gC" id="5XBRz5LMBY7" role="3cqZAk">
+                <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                <node concept="1ZhdrF" id="5XBRz5LMBYj" role="lGtFl">
+                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                  <property role="2qtEX8" value="conceptDeclaration" />
+                  <node concept="3$xsQk" id="5XBRz5LMBYk" role="3$ytzL">
+                    <node concept="3clFbS" id="5XBRz5LMBYl" role="2VODD2">
+                      <node concept="3clFbF" id="5XBRz5LMBYv" role="3cqZAp">
+                        <node concept="2OqwBi" id="hxx$Yn8" role="3clFbG">
+                          <node concept="30H73N" id="hu00_HZ" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="hu00_I0" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpc2:gWUl1JU" />
                           </node>
                         </node>
                       </node>
@@ -9814,7 +9800,6 @@
               </node>
             </node>
           </node>
-          <node concept="17QB3L" id="hP36AYU" role="3clF45" />
         </node>
       </node>
       <node concept="3Tm1VV" id="heOvlE0" role="1B3o_S" />
