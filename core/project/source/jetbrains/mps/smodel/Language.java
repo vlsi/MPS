@@ -116,8 +116,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public Set<SModuleReference> getExtendedLanguageRefs() {
     HashSet<SModuleReference> res = new HashSet<SModuleReference>(myLanguageDescriptor.getExtendedLanguages());
-    //this is needed now as we don't force the user to have an explicit dependency on core
-    res.add(BootstrapLanguages.coreLanguageRef());
+    if (!BootstrapLanguages.coreLanguageRef().equals(getModuleReference())) {
+      //this is needed now as we don't force the user to have an explicit dependency on core
+      res.add(BootstrapLanguages.coreLanguageRef());
+    }
     return res;
   }
 

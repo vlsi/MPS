@@ -17,13 +17,9 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -32,8 +28,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.HashSet;
 
 /**
  * Checks for Language (source) module.
@@ -62,34 +58,66 @@ public class LanguageValidator {
       return;
     }
 
+    ArrayDeque<Language> extendedLanguages = new ArrayDeque<>();
     for (SModuleReference el : myLanguage.getExtendedLanguageRefs()) {
-      if (el.resolve(myRepository) != null) {
+      final SModule resolved = el.resolve(myRepository);
+      if (resolved instanceof Language) {
+        extendedLanguages.add((Language) resolved);
         continue;
       }
-      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, "Can't find extended language: " + el.getModuleName()))) {
+      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format(resolved == null ? "Can't find extended language: %s" : "Module %s is not a language, can't extend it", el.getModuleName())))) {
         return;
       }
     }
 
-    for (Language l : LanguageDependenciesManager.getAllExtendedLanguages(myLanguage)) {
-      SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
-      if (descriptor != null) continue;
-      if (!myProcessor.process(new ValidationProblem(Severity.ERROR,
-          myLanguage == l ? "Behavior aspect is absent" : "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
+    // XXX why it's essential to have behavior aspects in extended languages?
+    HashSet<Language> visited = new HashSet<>();
+    if (LanguageAspect.BEHAVIOR.get(myLanguage) == null) {
+      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, "Behavior aspect is absent"))) {
         return;
       }
     }
+    visited.add(myLanguage);
+
+    while (!extendedLanguages.isEmpty()) {
+      Language l = extendedLanguages.removeFirst();
+      if (l == myLanguage) {
+        if (!myProcessor.process(new ValidationProblem(Severity.WARNING, "Cycle in extended language hierarchy"))) {
+          return;
+        }
+      }
+      if (!visited.add(l)) {
+        continue;
+      }
+      for (SModuleReference el : l.getExtendedLanguageRefs()) {
+        final SModule resolved = el.resolve(myRepository);
+        if (resolved instanceof Language) {
+          extendedLanguages.add((Language) resolved);
+        }
+      }
+      SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
+      if (descriptor != null) {
+        continue;
+      }
+      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
+        return;
+      }
+    }
+
 
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       SModule runtimeModule = mr.resolve(myRepository);
       if (runtimeModule == null) {
+        if (!myProcessor.process(new ValidationProblem(Severity.WARNING, String.format("Missing runtime module %s", mr.getModuleName())))) {
+          return;
+        }
         continue;
       }
-      if ((runtimeModule instanceof Solution)) {
+      if (runtimeModule instanceof Solution) {
         continue;
       }
 
-      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, "Runtime module " + runtimeModule + " is not a solution"))) {
+      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format("Runtime module %s is not a solution", runtimeModule)))) {
         return;
       }
     }
@@ -97,52 +125,19 @@ public class LanguageValidator {
     for (SModelReference accessory : myLanguage.getModuleDescriptor().getAccessoryModels()) {
       //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
       //but I'll not delete it until accessories removal just to have some warning on project consistency
-      org.jetbrains.mps.openapi.model.SModel accModel = accessory.resolve(MPSModuleRepository.getInstance());
+      SModel accModel = accessory.resolve(myRepository);
       if (accModel == null) {
+        if (!myProcessor.process(new ValidationProblem(Severity.WARNING, String.format("Missing accessory model %s", accessory.getModelName())))) {
+          return;
+        }
         continue;
       }
-
       if (VisibilityUtil.isVisible(myLanguage, accModel)) {
         continue;
       }
-      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, "Can't find accessory model: " + accessory.getModelName()))) {
+      if (!myProcessor.process(new ValidationProblem(Severity.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
         return;
       }
     }
-
-    if (!checkCyclicInheritance(myLanguage)) {
-      myProcessor.process(new ValidationProblem(Severity.WARNING, "Cyclic language hierarchy"));
-    }
-  }
-
-  private static boolean checkCyclicInheritance(Language lang) {
-    List<Language> frontier = refsToLanguages(lang.getExtendedLanguageRefs());
-    ArrayList<Language> passed = new ArrayList<Language>();
-    while (!frontier.isEmpty()) {
-      List<Language> newFrontier = new ArrayList<Language>();
-      for (Language extendedLang : frontier) {
-        if (extendedLang == lang && lang != BootstrapLanguages.coreLanguage()) {
-          return false;
-        }
-        if (!passed.contains(extendedLang)) {
-          newFrontier.addAll(refsToLanguages(extendedLang.getExtendedLanguageRefs()));
-        }
-        passed.add(extendedLang);
-      }
-      frontier = newFrontier;
-    }
-    return true;
-  }
-
-  private static List<Language> refsToLanguages(Iterable<SModuleReference> refs) {
-    List<Language> result = new ArrayList<Language>();
-    for (SModuleReference ref : refs) {
-      Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
-      if (l != null) {
-        result.add(l);
-      }
-    }
-
-    return result;
   }
 }
