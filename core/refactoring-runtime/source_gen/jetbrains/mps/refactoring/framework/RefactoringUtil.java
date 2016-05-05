@@ -22,12 +22,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Arrays;
-import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Project;
-import java.util.LinkedHashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RefactoringUtil {
   private static final Logger LOG = LogManager.getLogger(RefactoringUtil.class);
@@ -159,29 +153,7 @@ public class RefactoringUtil {
     boolean disabled = (targetList.isEmpty() || RefactoringUtil.getApplicability(refactoring, targetList).lessThan(RefactoringUtil.Applicability.APPLICABLE));
     return !(disabled);
   }
-  public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
-    final Map<SModule, List<SModel>> langs = new LinkedHashMap<SModule, List<SModel>>();
-    fillLanguageAndItsExtendingLanguageModels(language, langs);
-    return langs;
-  }
-  public static void fillLanguageAndItsExtendingLanguageModels(Language language, Map<SModule, List<SModel>> toFill) {
-    Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
-    toFill.put(language, RefactoringUtil.getLanguageModelsList(language));
-    for (Language l : extendingLangs) {
-      if (!(toFill.containsKey(language))) {
-        toFill.put(l, RefactoringUtil.getLanguageModelsList(l));
-      }
-    }
-  }
-  public static List<SModel> getLanguageModelsList(Language l) {
-    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    ListSequence.fromList(models).addSequence(ListSequence.fromList(l.getModels()));
-    return ListSequence.fromList(models).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return SNodeOperations.isGeneratable(it);
-      }
-    }).toListSequence();
-  }
+
   public static   enum Applicability {
     APPLICABLE() {
       public boolean lessThan(RefactoringUtil.Applicability level) {
