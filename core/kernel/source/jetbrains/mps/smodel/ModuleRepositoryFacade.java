@@ -188,9 +188,13 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   /**
    * Find language modules directly <em>extending</em> the one supplied.
-   * @see jetbrains.mps.project.dependency.modules.LanguageDependenciesManager for <em>extended</em> languages
-   * Shall merge the code (perhaps even into third class, i.e. Language), it's stupid to keep two locations.
+   * There's {@link Language#getAllExtendedLanguages()} <em>extended</em> languages.
+   * Though it's stupid to keep two locations, this method didn't relocate next to it as there are no uses in MPS and it shall cease to exist
+   * @deprecated If there's need for extending language, shall add <code>Language.getDirectlyExtendingLanguage</code>.
+   * There's single use in mbeddr.
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public Collection<Language> getAllExtendingLanguages(Language l) {
     final SModuleReference lRef = l.getModuleReference();
     List<Language> result = new LinkedList<Language>();
