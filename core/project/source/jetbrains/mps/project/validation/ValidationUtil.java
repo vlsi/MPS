@@ -25,22 +25,17 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.dependency.VisibilityUtil;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
@@ -77,7 +72,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -316,7 +310,7 @@ public class ValidationUtil {
     if (m instanceof DevKit) {
       validateDevkit((DevKit) m, processor);
     } else if (m instanceof Language) {
-      validateLanguage((Language) m, processor);
+      new LanguageValidator((Language) m, m.getRepository(), processor).validate();
     } else if (m instanceof Generator) {
       validateGenerator((Generator) m, processor);
     } else if (m instanceof Solution) {
@@ -345,85 +339,6 @@ public class ValidationUtil {
       if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) continue;
       if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expSol.getModuleName()))) return;
     }
-  }
-
-  private static void validateLanguage(final Language language, Processor<ValidationProblem> processor) {
-    if (!validateAbstractModule(language, processor)) return;
-
-    for (SModuleReference el : language.getExtendedLanguageRefs()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(el) != null) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find extended language: " + el.getModuleName()))) {
-        return;
-      }
-    }
-
-    for (Language l : LanguageDependenciesManager.getAllExtendedLanguages(language)) {
-      SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
-      if (descriptor != null) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR,
-          language == l ? "Behavior aspect is absent" : "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
-        return;
-      }
-    }
-
-    for (SModuleReference mr : language.getRuntimeModulesReferences()) {
-      SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(mr);
-      if (runtimeModule == null) continue;
-      if ((runtimeModule instanceof Solution)) continue;
-
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Runtime module " + runtimeModule + " is not a solution"))) {
-        return;
-      }
-    }
-
-    for (SModelReference accessory : language.getModuleDescriptor().getAccessoryModels()) {
-      //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
-      //but I'll not delete it until accessories removal just to have some warning on project consistency
-      org.jetbrains.mps.openapi.model.SModel accModel = accessory.resolve(MPSModuleRepository.getInstance());
-      if (accModel == null) continue;
-
-      if (VisibilityUtil.isVisible(language, accModel)) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find accessory model: " + accessory.getModelName()))) {
-        return;
-      }
-    }
-
-    if (!checkCyclicInheritance(language)) {
-      if (!processor.process(new ValidationProblem(Severity.WARNING, "Cyclic language hierarchy"))) {
-        return;
-      }
-    }
-  }
-
-  private static boolean checkCyclicInheritance(Language lang) {
-    List<Language> frontier = refsToLanguages(lang.getExtendedLanguageRefs());
-    ArrayList<Language> passed = new ArrayList<Language>();
-    while (!frontier.isEmpty()) {
-      List<Language> newFrontier = new ArrayList<Language>();
-      for (Language extendedLang : frontier) {
-        if (extendedLang == lang && lang != BootstrapLanguages.coreLanguage()) {
-          return false;
-        }
-        if (!passed.contains(extendedLang)) {
-          newFrontier.addAll(refsToLanguages(extendedLang.getExtendedLanguageRefs()));
-        }
-        passed.add(extendedLang);
-      }
-      frontier = newFrontier;
-    }
-    return true;
-  }
-
-  private static List<Language> refsToLanguages(Iterable<SModuleReference> refs) {
-    List<Language> result = new ArrayList<Language>();
-    for (SModuleReference ref : refs) {
-      Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
-      if (l != null) {
-        result.add(l);
-      }
-    }
-
-    return result;
   }
 
   private static void validateGenerator(final Generator generator, Processor<ValidationProblem> processor) {
@@ -568,7 +483,8 @@ public class ValidationUtil {
   }
 
   //returns true to continue analysing, false to stop
-  private static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
+  // package-local until extracted into AbstractModuleValidator superclass to get subclassed by validators of particular module kind
+  /*package*/ static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
     Throwable loadException = module.getModuleDescriptor().getLoadException();
     if (loadException != null) {
       return processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load module: " + loadException.getMessage()));
