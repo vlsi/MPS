@@ -608,7 +608,7 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantSettings" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistant" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>

@@ -20,10 +20,10 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItem;
-import jetbrains.mps.openapi.editor.transformationMenus.MenuItemVisitor;
-import jetbrains.mps.openapi.editor.transformationMenus.SubMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 
 import javax.swing.AbstractAction;

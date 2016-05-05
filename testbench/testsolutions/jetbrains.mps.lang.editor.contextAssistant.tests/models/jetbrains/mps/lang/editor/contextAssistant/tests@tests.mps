@@ -9,12 +9,12 @@
     <use id="9a629f9a-abc9-4c29-b1b8-db7f349f7fbc" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage" version="0" />
   </languages>
   <imports>
-    <import index="rzvg" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.contextAssistant(MPS.Editor/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
-    <import index="hota" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.transformationMenus(MPS.Editor/)" />
+    <import index="2rdi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.assist(MPS.Editor/)" />
+    <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -136,7 +136,7 @@
         <node concept="3cpWsn" id="2T54UntRcHS" role="3cpWs9">
           <property role="TrG5h" value="contextAssistantManager" />
           <node concept="3uibUv" id="2T54UntRcHO" role="1tU5fm">
-            <ref role="3uigEE" to="rzvg:~ContextAssistantManager" resolve="ContextAssistantManager" />
+            <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
           </node>
           <node concept="2OqwBi" id="2T54UntRcHT" role="33vP2m">
             <node concept="2OqwBi" id="2T54UntRcHU" role="2Oq$k0">
@@ -146,7 +146,7 @@
               </node>
             </node>
             <node concept="liA8E" id="2T54UntRcHX" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager" resolve="getContextAssistantManager" />
+              <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
             </node>
           </node>
         </node>
@@ -157,7 +157,7 @@
             <ref role="3cqZAo" node="2T54UntRcHS" resolve="contextAssistantManager" />
           </node>
           <node concept="liA8E" id="7G6Xcdz6trl" role="2OqNvi">
-            <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+            <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
           </node>
         </node>
       </node>
@@ -168,7 +168,7 @@
             <ref role="3cqZAo" node="2T54UntRcHS" resolve="contextAssistantManager" />
           </node>
           <node concept="liA8E" id="5ngDOM8uVul" role="2OqNvi">
-            <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+            <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
           </node>
         </node>
       </node>
@@ -178,8 +178,8 @@
           <property role="TrG5h" value="activeItems" />
           <node concept="3uibUv" id="5ngDOM8uWhv" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
-            <node concept="3uibUv" id="4WIuR9Il5OG" role="11_B2D">
-              <ref role="3uigEE" to="hota:~MenuItem" resolve="MenuItem" />
+            <node concept="3uibUv" id="4vIOBiht1Fj" role="11_B2D">
+              <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
             </node>
           </node>
           <node concept="2OqwBi" id="jKDdcutlDu" role="33vP2m">
@@ -187,7 +187,7 @@
               <ref role="3cqZAo" node="2T54UntRcHS" resolve="contextAssistantManager" />
             </node>
             <node concept="liA8E" id="jKDdcutlFZ" role="2OqNvi">
-              <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+              <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
             </node>
           </node>
         </node>
@@ -232,7 +232,7 @@
         <node concept="3cpWsn" id="6cnCU_HRZkX" role="3cpWs9">
           <property role="TrG5h" value="contextAssistantManager" />
           <node concept="3uibUv" id="6cnCU_HRZkT" role="1tU5fm">
-            <ref role="3uigEE" to="rzvg:~ContextAssistantManager" resolve="ContextAssistantManager" />
+            <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
           </node>
           <node concept="2OqwBi" id="6cnCU_HRZkY" role="33vP2m">
             <node concept="2OqwBi" id="6cnCU_HRZkZ" role="2Oq$k0">
@@ -242,7 +242,7 @@
               </node>
             </node>
             <node concept="liA8E" id="6cnCU_HRZl2" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager" resolve="getContextAssistantManager" />
+              <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
             </node>
           </node>
         </node>
@@ -253,7 +253,7 @@
             <ref role="3cqZAo" node="6cnCU_HRZkX" resolve="contextAssistantManager" />
           </node>
           <node concept="liA8E" id="6cnCU_HRZik" role="2OqNvi">
-            <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+            <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
           </node>
         </node>
       </node>
@@ -263,7 +263,7 @@
             <ref role="3cqZAo" node="6cnCU_HRZkX" resolve="contextAssistantManager" />
           </node>
           <node concept="liA8E" id="6cnCU_HRZpb" role="2OqNvi">
-            <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+            <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
           </node>
         </node>
       </node>
@@ -326,14 +326,14 @@
                   <node concept="3cpWsn" id="5ngDOM8uhV8" role="3cpWs9">
                     <property role="TrG5h" value="contextAssistantManager" />
                     <node concept="3uibUv" id="5ngDOM8uhV9" role="1tU5fm">
-                      <ref role="3uigEE" to="rzvg:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                      <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
                     </node>
                     <node concept="2OqwBi" id="5ngDOM8uhVa" role="33vP2m">
                       <node concept="37vLTw" id="5ngDOM8vhqA" role="2Oq$k0">
                         <ref role="3cqZAo" node="5ngDOM8vhqx" resolve="editorContext" />
                       </node>
                       <node concept="liA8E" id="5ngDOM8uhVe" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager" resolve="getContextAssistantManager" />
+                        <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
                       </node>
                     </node>
                   </node>
@@ -344,7 +344,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8uhVi" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
                     </node>
                   </node>
                 </node>
@@ -354,7 +354,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8uUN8" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
                     </node>
                   </node>
                 </node>
@@ -364,7 +364,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8ulCH" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
                     </node>
                   </node>
                 </node>
@@ -392,7 +392,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8uluS" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
                     </node>
                   </node>
                 </node>
@@ -403,7 +403,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8uUE$" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
                     </node>
                   </node>
                 </node>
@@ -413,7 +413,7 @@
                       <ref role="3cqZAo" node="5ngDOM8uhV8" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="5ngDOM8ulKZ" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
                     </node>
                   </node>
                 </node>
@@ -501,15 +501,15 @@
                 <node concept="3cpWs8" id="1H9M4VxNiQr" role="3cqZAp">
                   <node concept="3cpWsn" id="1H9M4VxNiQs" role="3cpWs9">
                     <property role="TrG5h" value="contextAssistantManager" />
-                    <node concept="3uibUv" id="1H9M4VxNiQt" role="1tU5fm">
-                      <ref role="3uigEE" to="rzvg:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                    <node concept="3uibUv" id="4vIOBiht0um" role="1tU5fm">
+                      <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
                     </node>
                     <node concept="2OqwBi" id="1H9M4VxNiQu" role="33vP2m">
                       <node concept="37vLTw" id="1H9M4VxNiQv" role="2Oq$k0">
                         <ref role="3cqZAo" node="1H9M4VxNiQc" resolve="editorContext" />
                       </node>
                       <node concept="liA8E" id="1H9M4VxNiQw" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager" resolve="getContextAssistantManager" />
+                        <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
                       </node>
                     </node>
                   </node>
@@ -537,7 +537,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNiQ$" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
                     </node>
                   </node>
                 </node>
@@ -547,7 +547,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNneu" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
                     </node>
                   </node>
                 </node>
@@ -557,7 +557,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNney" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
                     </node>
                   </node>
                 </node>
@@ -584,7 +584,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNmTx" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
                     </node>
                   </node>
                 </node>
@@ -594,7 +594,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNiQY" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant" resolve="getActiveAssistant" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
                     </node>
                   </node>
                 </node>
@@ -604,7 +604,7 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNiR2" role="2OqNvi">
-                      <ref role="37wK5l" to="rzvg:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
                     </node>
                   </node>
                 </node>

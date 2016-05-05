@@ -89,15 +89,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ContextExpression_ContextAssistantCondition_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ContextExpression_TransformationMenu_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_EditorContextExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_NodeExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ContextVariable_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -105,7 +101,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_QueryFunction_ContextAssistant_node_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_QueryFunction_TransformationMenu_node_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -165,7 +161,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultContextAssistantMenu_isInConceptLanguage_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultTransformationMenu_isInConceptLanguage_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -181,7 +177,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_INamedContextAssistantItems_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ITransformationMenu_hasUniqueName_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

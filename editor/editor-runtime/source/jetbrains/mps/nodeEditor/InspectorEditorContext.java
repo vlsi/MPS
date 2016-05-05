@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
+import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;

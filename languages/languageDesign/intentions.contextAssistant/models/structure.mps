@@ -34,10 +34,10 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="2ytFvC$HnDh">
-    <property role="TrG5h" value="ContextAssistantMenuPart_Intention" />
+    <property role="TrG5h" value="TransformationMenuPart_Intention" />
     <property role="34LRSv" value="intention" />
     <property role="EcuMT" value="2926686622729992785" />
-    <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="2ytFvC$HnDi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="intention" />

@@ -24,8 +24,8 @@ import com.intellij.openapi.ui.popup.Balloon.Position;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action;
-import jetbrains.mps.openapi.editor.transformationMenus.ActionItem;
-import jetbrains.mps.openapi.editor.transformationMenus.ActionItemBase;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

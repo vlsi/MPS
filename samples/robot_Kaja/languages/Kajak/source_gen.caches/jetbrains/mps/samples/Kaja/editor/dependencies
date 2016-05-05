@@ -84,8 +84,8 @@
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommentLine_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Drop_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.East_Editor" />
-    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_ContextAssistantMenu" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Heading_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IfStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IsFull_Editor" />
@@ -113,29 +113,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_ContextAssistantMenu" file="EmptyLine_ContextAssistantMenu.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ConditionalMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.IncludeMenuMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.NamedMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.SubMenuMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -152,6 +129,29 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" file="EmptyLine_TransformationMenu.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Heading_Editor" file="Heading_Editor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -314,16 +314,15 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ActionItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.ConditionalMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.transformationMenus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.transformationMenus.TransformationMenuBase" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Pick_Editor" file="Pick_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />

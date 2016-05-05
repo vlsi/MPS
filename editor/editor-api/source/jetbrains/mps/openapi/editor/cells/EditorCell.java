@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.editor.cells;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.transformationMenus.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.Nullable;

@@ -56,12 +56,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Arrays.asList(new TransformationMenu[]{new Child_ContextAssistantMenu(), new DefaultMenuContribution()});
+            return Arrays.asList(new TransformationMenu[]{new Child_TransformationMenu(), new DefaultMenuContribution()});
           }
           break;
         case 1:
           if (true) {
-            return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_ContextAssistantMenu());
+            return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
           }
           break;
         default:

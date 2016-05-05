@@ -2001,42 +2001,28 @@
     </file>
   </root>
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/69343502268559053">
-    <file name="BLCommand_ContextAssistantMenu.java">
-      <node id="69343502268559053" at="20,67,21,71" concept="6" />
-      <node id="69343502268559053" at="21,71,22,45" concept="6" />
-      <node id="69343502268559053" at="22,45,23,39" concept="0" />
-      <node id="69343502268559276" at="22,45,23,39" concept="7" />
-      <node id="69343502268559053" at="27,65,28,71" concept="6" />
-      <node id="69343502268559053" at="28,71,29,45" concept="6" />
-      <node id="69343502268725687" at="30,9,31,110" concept="6" />
-      <node id="69343502268719192" at="31,110,32,63" concept="2" />
-      <node id="69343502268559053" at="29,45,33,9" concept="0" />
-      <node id="69343502268559053" at="19,0,25,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="69343502268559053" at="26,0,35,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/transformationMenus/TransformationMenuContext;)V" />
-      <node id="69343502268559053" at="17,39,35,7" concept="7" />
-      <node id="69343502268559053" at="16,0,37,0" concept="5" trace="getParts#()Ljava/util/List;" />
-      <scope id="69343502268559195" at="22,45,23,39" />
-      <scope id="69343502268559199" at="30,9,32,63">
+    <file name="BLCommand_TransformationMenu.java">
+      <node id="69343502268559276" at="18,68,19,39" concept="7" />
+      <node id="69343502268725687" at="23,66,24,122" concept="6" />
+      <node id="69343502268719192" at="24,122,25,61" concept="2" />
+      <node id="69343502268559053" at="17,0,21,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="69343502268559053" at="22,0,27,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="69343502268559053" at="15,39,27,7" concept="7" />
+      <node id="69343502268559053" at="14,0,29,0" concept="5" trace="getParts#()Ljava/util/List;" />
+      <scope id="69343502268559195" at="18,68,19,39" />
+      <scope id="69343502268559199" at="23,66,25,61">
         <var name="tool" id="69343502268725688" />
       </scope>
-      <scope id="69343502268559053" at="20,67,23,39">
-        <var name="editorContext" id="69343502268559053" />
-        <var name="node" id="69343502268559053" />
+      <scope id="69343502268559053" at="17,0,21,0">
+        <var name="_context" id="69343502268559053" />
       </scope>
-      <scope id="69343502268559053" at="19,0,25,0">
-        <var name="context" id="69343502268559053" />
+      <scope id="69343502268559053" at="22,0,27,0">
+        <var name="_context" id="69343502268559053" />
       </scope>
-      <scope id="69343502268559053" at="27,65,33,9">
-        <var name="editorContext" id="69343502268559053" />
-        <var name="node" id="69343502268559053" />
-      </scope>
-      <scope id="69343502268559053" at="26,0,35,0">
-        <var name="context" id="69343502268559053" />
-      </scope>
-      <scope id="69343502268559053" at="17,39,35,7" />
-      <scope id="69343502268559053" at="16,0,37,0" />
-      <unit id="69343502268559053" at="18,39,35,5" name="jetbrains.mps.console.base.editor.BLCommand_ContextAssistantMenu$1" />
-      <unit id="69343502268559053" at="15,0,38,0" name="jetbrains.mps.console.base.editor.BLCommand_ContextAssistantMenu" />
+      <scope id="69343502268559053" at="15,39,27,7" />
+      <scope id="69343502268559053" at="14,0,29,0" />
+      <unit id="69343502268559053" at="16,39,27,5" name="jetbrains.mps.console.base.editor.BLCommand_TransformationMenu$1" />
+      <unit id="69343502268559053" at="13,0,30,0" name="jetbrains.mps.console.base.editor.BLCommand_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/7409036893176441835">
