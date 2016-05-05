@@ -38,7 +38,7 @@ import java.util.TreeSet;
  * @author Artem Tikhomirov
  */
 final class SerializeSupport {
-  private static final String ELEMENT_DEBUG_INFO = "debug-info";
+  private static final String ELEMENT_DEBUG_INFO = "debug-info-v2";
   private static final String ELEMENT_ROOT = "root";
   private static final String ELEMENT_FILE = "file";
   private static final String ELEMENT_NODE_INFO = "node";
