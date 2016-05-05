@@ -216,9 +216,6 @@
     <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="ecjsrc-4.4.jar" rev="${idea.platform.version}">
-      <artifact name="ecjsrc-4.4.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib.src" name="gson-2.2.4-sources.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.2.4-sources.jar" ext="jar"/>
     </dependency>
@@ -276,8 +273,8 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-5.0.0.Alpha2-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-5.0.0.Alpha2-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.0.Alpha1-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Alpha1-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -323,6 +320,9 @@
     </dependency>
     <dependency org="lib" name="asm.jar" rev="${idea.platform.version}">
       <artifact name="asm.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="asm4-all.jar" rev="${idea.platform.version}">
+      <artifact name="asm4-all.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="automaton.jar" rev="${idea.platform.version}">
       <artifact name="automaton.jar" ext="jar"/>
@@ -438,8 +438,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-5.0.0.Alpha2.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-5.0.0.Alpha2.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.0.Alpha1.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Alpha1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -480,7 +480,7 @@
     <dependency org="lib" name="trove4j.jar" rev="${idea.platform.version}">
       <artifact name="trove4j.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="util.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="util.jar" rev="${idea.platform.version}">
       <artifact name="util.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="velocity.jar" rev="${idea.platform.version}">
