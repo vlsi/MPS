@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Set;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,7 +35,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     if (language == null) {
       return;
     }
-    Set<Language> extendedLanguages = LanguageDependenciesManager.getAllExtendedLanguages(language);
+    Set<Language> extendedLanguages = language.getAllExtendedLanguages();
     List<SNode> superConcepts = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(cd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       ListSequence.fromList(superConcepts).addElement(SLinkOperations.getTarget(SNodeOperations.as(cd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")));

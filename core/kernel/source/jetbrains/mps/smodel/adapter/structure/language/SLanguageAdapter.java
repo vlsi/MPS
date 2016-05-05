@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,11 @@
 package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
-import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -98,7 +94,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     if (sourceModule == null) {
       return Collections.emptyList();
     }
-    for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
+    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
       runtimes.addAll(language.getRuntimeModulesReferences());
       // GeneratesInto doesn't qualify as 'true' language runtime, it's rather generator aspect, however, for the time being,
       // while we transit from using 'Extends' between languages to 'GenerateInto' to grab runtime modules, keep them together

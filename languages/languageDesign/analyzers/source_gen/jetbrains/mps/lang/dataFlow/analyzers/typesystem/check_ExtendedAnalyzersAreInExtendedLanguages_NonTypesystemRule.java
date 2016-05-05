@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.Set;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -33,7 +32,7 @@ public class check_ExtendedAnalyzersAreInExtendedLanguages_NonTypesystemRule ext
       return;
     }
     Language ruleLanguage = ((Language) module);
-    Set<Language> extendedLanguages = LanguageDependenciesManager.getAllExtendedLanguages(ruleLanguage);
+    Set<Language> extendedLanguages = ruleLanguage.getAllExtendedLanguages();
     SNode analyzer = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer"));
     if (analyzer == null) {
       return;

@@ -24,7 +24,6 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -56,6 +55,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -136,19 +136,43 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   /**
-   * @deprecated towards consistent approach to language/language runtime 'extends' dependencies - minimize number of ways to
-   * find out these dependencies. Use {@link jetbrains.mps.project.dependency.modules.LanguageDependenciesManager} instead
-   * This method is not intrinsically bad (in fact, quite the opposite, imo), but I decided to remove it
-   * as its counterpart #getExtendedLanguages() has been deprecated since 2.5 (Muhin 987b8942 30.4.12)
-   * and I assume the idea was to keep/calculate closure of module's extends dependencies elsewhere. At the moment,
-   * there's LanguageDependenciesManager to build the closure.
-   * NOTE, perhaps it makes sense to do other way round, let Language build the closure (it's OOP, after all). Need to be careful about
-   * repository boundaries, though (i.e. letuse supply repository or use one from this.getRepository()).
+   * All the language modules extended by this one within the same repository this module is attached to.
+   * For detached module, the set returned is empty. To access 'raw' information about extended languages,
+   * one could use {@link #getExtendedLanguageRefs()}.
+   *
+   * This method requires model read access as it resolves modules.
+   *
+   * IMPORTANT: if any extended language is missing from the repository of the module, it's simply ignored and not included into outcome
+   * (nor the closure of its extended languages).
+   *
+   * NOTE, implementation hides cyclic dependencies between languages, e.g if "A extends B extends A",
+   * you'd get "A extends B" for A and "B extends A" for B.
    */
-  @Deprecated
-  @ToRemove(version = 3.2)
+  @NotNull
   public Set<Language> getAllExtendedLanguages() {
-    return LanguageDependenciesManager.getAllExtendedLanguages(this);
+    HashSet<Language> langs = new HashSet<Language>();
+    final SRepository repository = getRepository();
+    if (repository == null) {
+      return langs;
+    }
+
+    ArrayDeque<Language> queue = new ArrayDeque<Language>();
+    queue.add(this);
+
+    do {
+      Language current = queue.poll();
+      if (!langs.add(current)) {
+        continue;
+      }
+      for (SModuleReference lr : current.getExtendedLanguageRefs()) {
+        final SModule l = lr.resolve(repository);
+        if (l instanceof Language) {
+          queue.add((Language) l);
+        }
+      }
+    } while (!queue.isEmpty());
+
+    return langs;
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {

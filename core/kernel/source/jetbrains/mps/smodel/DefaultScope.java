@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -163,7 +162,7 @@ public abstract class DefaultScope extends BaseScope {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new ArrayList<Language>(myUsedLanguages)) {
-      myUsedLanguages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(l));
+      myUsedLanguages.addAll(l.getAllExtendedLanguages());
     }
   }
 
