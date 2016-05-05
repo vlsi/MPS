@@ -6,21 +6,40 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 
 public class NamedMenuContribution extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "contributed to named menu in same language";
-      }
+    return Arrays.asList(new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a());
+  }
 
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-      }
-    });
+  private static class TransformationMenuPart_Action_xtomck_a extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new NamedMenuContribution.ActionItem_xtomck_a(context);
+    }
+  }
+  private static class ActionItem_xtomck_a extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_xtomck_a(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "contributed to named menu in same language";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+    }
   }
 }

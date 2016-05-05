@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Convenience implementation of {@link MenuPart} for parts that create at most one menu item.
  */
-public abstract class SingleItemMenuPart implements MenuPart {
+public class SingleItemMenuPart implements MenuPart {
   @NotNull
   @Override
   public List<MenuItem> createItems(TransformationMenuContext context) {
@@ -37,5 +37,7 @@ public abstract class SingleItemMenuPart implements MenuPart {
   }
 
   @Nullable
-  protected abstract MenuItem createItem(TransformationMenuContext context);
+  protected MenuItem createItem(TransformationMenuContext context) {
+    return null;
+  }
 }

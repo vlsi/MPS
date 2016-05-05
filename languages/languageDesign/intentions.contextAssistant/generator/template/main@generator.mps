@@ -39,7 +39,10 @@
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia" />
+      <concept id="1202776937179" name="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" flags="lg" index="b5Tf3" />
+      <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
+        <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
+      </concept>
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
         <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
@@ -79,12 +82,9 @@
       </concept>
     </language>
   </registry>
-  <node concept="bUwia" id="2ytFvC$HjcY">
-    <property role="TrG5h" value="main" />
-  </node>
   <node concept="jVnub" id="20qY$3H7bKG">
-    <property role="TrG5h" value="switch_TransformationMenuPart_Intention" />
-    <ref role="phYkn" to="tpc3:20qY$3H6Q0h" resolve="switch_TransformationMenuPart" />
+    <property role="TrG5h" value="switch_createTransformationMenuPart_Intention" />
+    <ref role="phYkn" to="tpc3:20qY$3H6Q0h" resolve="switch_createTransformationMenuPart" />
     <node concept="3aamgX" id="20qY$3HaxgD" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="a1gu:2ytFvC$HnDh" resolve="TransformationMenuPart_Intention" />
@@ -119,6 +119,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="bUwia" id="2ytFvC$HjcY">
+    <property role="TrG5h" value="main" />
+    <node concept="3aamgX" id="4sA1wzj7EuC" role="3acgRq">
+      <ref role="30HIoZ" to="a1gu:2ytFvC$HnDh" resolve="TransformationMenuPart_Intention" />
+      <node concept="b5Tf3" id="4sA1wzj7EuG" role="1lVwrX" />
     </node>
   </node>
 </model>

@@ -6,8 +6,12 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -15,7 +19,6 @@ import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
@@ -24,113 +27,202 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 public class EmptyLine_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Step forward";
-      }
-
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-        SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step")), null));
-      }
-    }, new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Turn left";
-      }
-
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-        SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn")), null));
-      }
-    }, new ConditionalMenuPart() {
-      @Override
-      protected boolean isApplicable(TransformationMenuContext _context) {
-        return eq_supj5f_a0a0a0a2a0a0(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
-      }
-
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Define a routine";
-          }
-
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        });
-      }
-    }, new SubMenuMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Control flow";
-      }
-
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.asList(new MenuPart[]{new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Repeat";
-          }
-
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, "jetbrains.mps.samples.Kaja.structure.Repeat")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "While";
-          }
-
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "If";
-          }
-
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        }});
-      }
-    }, new SubMenuMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Other actions";
-      }
-
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.asList(new MenuPart[]{new IncludeMenuMenuPart() {
-          @Nullable
-          @Override
-          protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
-            final SNode node = context.getNode();
-            final EditorContext editorContext = context.getEditorContext();
-
-            return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), "jetbrains.mps.samples.Kaja.editor.OtherCommands");
-          }
-        }});
-      }
-    });
+    return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a(), new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b(), new EmptyLine_TransformationMenu.TransformationMenuPart_Group_supj5f_c(), new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_d(), new EmptyLine_TransformationMenu.TransformationMenuPart_SubMenu_supj5f_e());
   }
-  private static boolean eq_supj5f_a0a0a0a2a0a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+
+  private static class TransformationMenuPart_Action_supj5f_a extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_a(context);
+    }
+  }
+  private static class ActionItem_supj5f_a extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_a(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Step forward";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step")), null));
+    }
+  }
+  private static class TransformationMenuPart_Action_supj5f_b extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_b(context);
+    }
+  }
+  private static class ActionItem_supj5f_b extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_b(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Turn left";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn")), null));
+    }
+  }
+  public static class TransformationMenuPart_Group_supj5f_c extends ConditionalMenuPart {
+    @Override
+    protected boolean isApplicable(TransformationMenuContext _context) {
+      return eq_supj5f_a0a0a6(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
+    }
+
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2());
+    }
+    private static boolean eq_supj5f_a0a0a6(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+  }
+  private static class TransformationMenuPart_Action_supj5f_a2 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_a2(context);
+    }
+  }
+  private static class ActionItem_supj5f_a2 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_a2(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Define a routine";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
+  }
+  public static class TransformationMenuPart_SubMenu_supj5f_d extends SubMenuMenuPart {
+    @Override
+    protected String getText(TransformationMenuContext _context) {
+      return "Control flow";
+    }
+
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a3(), new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b3(), new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_c3());
+    }
+  }
+  private static class TransformationMenuPart_Action_supj5f_a3 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_a3(context);
+    }
+  }
+  private static class ActionItem_supj5f_a3 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_a3(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Repeat";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, "jetbrains.mps.samples.Kaja.structure.Repeat")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+
+    }
+  }
+  private static class TransformationMenuPart_Action_supj5f_b3 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_b3(context);
+    }
+  }
+  private static class ActionItem_supj5f_b3 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_b3(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "While";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
+  }
+  private static class TransformationMenuPart_Action_supj5f_c3 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new EmptyLine_TransformationMenu.ActionItem_supj5f_c3(context);
+    }
+  }
+  private static class ActionItem_supj5f_c3 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_supj5f_c3(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "If";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
+  }
+  public static class TransformationMenuPart_SubMenu_supj5f_e extends SubMenuMenuPart {
+    @Override
+    protected String getText(TransformationMenuContext _context) {
+      return "Other actions";
+    }
+
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_IncludeMenu_supj5f_a4());
+    }
+  }
+  public static class TransformationMenuPart_IncludeMenu_supj5f_a4 extends IncludeMenuMenuPart {
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), "jetbrains.mps.samples.Kaja.editor.OtherCommands");
+    }
   }
 }

@@ -6,27 +6,46 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class Child_MoreDefaultActions extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "contributed action";
-      }
+    return Arrays.asList(new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a());
+  }
 
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-        if (LOG.isInfoEnabled()) {
-          LOG.info("contributed action");
-        }
+  private static class TransformationMenuPart_Action_ch35tm_a extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_MoreDefaultActions.ActionItem_ch35tm_a(context);
+    }
+  }
+  private static class ActionItem_ch35tm_a extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_ch35tm_a(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "contributed action";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("contributed action");
       }
-    });
+    }
   }
   protected static Logger LOG = LogManager.getLogger(Child_MoreDefaultActions.class);
 }

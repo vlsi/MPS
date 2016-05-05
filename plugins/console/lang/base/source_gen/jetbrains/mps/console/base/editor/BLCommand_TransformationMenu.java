@@ -6,24 +6,43 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.console.tool.ConsoleTool;
 
 public class BLCommand_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Evaluate (Ctrl+Enter)";
-      }
+    return Arrays.asList(new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a());
+  }
 
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-        ConsoleTool tool = _context.getEditorContext().getOperationContext().getProject().getComponent(ConsoleTool.class);
-        tool.getCurrentEditableTab().executeCurrentCommand();
-      }
-    });
+  private static class TransformationMenuPart_Action_bzpwar_a extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new BLCommand_TransformationMenu.ActionItem_bzpwar_a(context);
+    }
+  }
+  private static class ActionItem_bzpwar_a extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_bzpwar_a(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Evaluate (Ctrl+Enter)";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      ConsoleTool tool = _context.getEditorContext().getOperationContext().getProject().getComponent(ConsoleTool.class);
+      tool.getCurrentEditableTab().executeCurrentCommand();
+    }
   }
 }

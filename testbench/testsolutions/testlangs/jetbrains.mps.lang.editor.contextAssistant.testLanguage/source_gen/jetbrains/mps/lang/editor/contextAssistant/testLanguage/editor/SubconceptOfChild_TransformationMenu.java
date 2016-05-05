@@ -10,6 +10,7 @@ import java.util.Arrays;
 public class SubconceptOfChild_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList();
+    return Arrays.asList();
   }
+
 }

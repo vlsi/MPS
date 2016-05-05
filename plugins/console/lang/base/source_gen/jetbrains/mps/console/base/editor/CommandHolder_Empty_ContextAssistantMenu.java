@@ -10,6 +10,7 @@ import java.util.Arrays;
 public class CommandHolder_Empty_ContextAssistantMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList();
+    return Arrays.asList();
   }
+
 }

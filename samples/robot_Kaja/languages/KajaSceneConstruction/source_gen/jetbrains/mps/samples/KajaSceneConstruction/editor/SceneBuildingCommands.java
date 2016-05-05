@@ -8,7 +8,11 @@ import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -17,61 +21,119 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class SceneBuildingCommands extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new SubMenuMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "Scene builder";
-      }
+    return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a());
+  }
 
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.asList(new MenuPart[]{new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Build wall";
-          }
+  public static class TransformationMenuPart_SubMenu_572eic_a extends SubMenuMenuPart {
+    @Override
+    protected String getText(TransformationMenuContext _context) {
+      return "Scene builder";
+    }
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Destroy wall";
-          }
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_Action_572eic_a0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_b0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_c0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_d0());
+    }
+  }
+  private static class TransformationMenuPart_Action_572eic_a0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new SceneBuildingCommands.ActionItem_572eic_a0(context);
+    }
+  }
+  private static class ActionItem_572eic_a0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L, "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    public ActionItem_572eic_a0(TransformationMenuContext context) {
+      _context = context;
+    }
 
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Drop mark";
-          }
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Build wall";
+    }
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "Pick mark";
-          }
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
+  }
+  private static class TransformationMenuPart_Action_572eic_b0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new SceneBuildingCommands.ActionItem_572eic_b0(context);
+    }
+  }
+  private static class ActionItem_572eic_b0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
-            _context.getEditorContext().selectWRTFocusPolicy(inserted);
-          }
-        }});
-      }
-    });
+    public ActionItem_572eic_b0(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Destroy wall";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L, "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+
+    }
+  }
+  private static class TransformationMenuPart_Action_572eic_c0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new SceneBuildingCommands.ActionItem_572eic_c0(context);
+    }
+  }
+  private static class ActionItem_572eic_c0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_572eic_c0(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Drop mark";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
+  }
+  private static class TransformationMenuPart_Action_572eic_d0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new SceneBuildingCommands.ActionItem_572eic_d0(context);
+    }
+  }
+  private static class ActionItem_572eic_d0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_572eic_d0(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Pick mark";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
+      _context.getEditorContext().selectWRTFocusPolicy(inserted);
+    }
   }
 }

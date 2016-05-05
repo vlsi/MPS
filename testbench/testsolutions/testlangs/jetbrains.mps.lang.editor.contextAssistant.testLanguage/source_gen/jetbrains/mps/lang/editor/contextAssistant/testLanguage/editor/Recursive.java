@@ -19,15 +19,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class Recursive extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new IncludeMenuMenuPart() {
-      @Nullable
-      @Override
-      protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
-        final SNode node = context.getNode();
-        final EditorContext editorContext = context.getEditorContext();
+    return Arrays.asList(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a());
+  }
 
-        return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive");
-      }
-    });
+  public static class TransformationMenuPart_IncludeMenu_q7lcll_a extends IncludeMenuMenuPart {
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive");
+    }
   }
 }

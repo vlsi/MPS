@@ -10,13 +10,16 @@ import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
@@ -25,128 +28,232 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 public class Child_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ConditionalMenuPart() {
-      @Override
-      protected boolean isApplicable(TransformationMenuContext _context) {
-        if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-          throw new RuntimeException("Intentional exception - ignore this");
-        }
-        return true;
+    return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b(), new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e(), new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f());
+  }
+
+  public static class TransformationMenuPart_Group_qk1e79_a extends ConditionalMenuPart {
+    @Override
+    protected boolean isApplicable(TransformationMenuContext _context) {
+      if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+        throw new RuntimeException("Intentional exception - ignore this");
       }
+      return true;
+    }
 
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "exception 1";
-          }
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0());
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_a0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_a0(context);
+    }
+  }
+  private static class ActionItem_qk1e79_a0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-          }
-        });
-      }
-    }, new ActionItemMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "exception 2";
-      }
+    public ActionItem_qk1e79_a0(TransformationMenuContext context) {
+      _context = context;
+    }
 
-      @Override
-      protected void execute(TransformationMenuContext _context) {
-        throw new RuntimeException("Intentional exception from 'execute'");
-      }
-    }, new SubMenuMenuPart() {
-      @Override
-      protected String getText(TransformationMenuContext _context) {
-        return "tree operations";
-      }
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "exception 1";
+    }
 
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.asList(new MenuPart[]{new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "delete node";
-          }
+    @Override
+    public void execute(@NotNull String pattern) {
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_b extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_b(context);
+    }
+  }
+  private static class ActionItem_qk1e79_b extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNodeOperations.deleteNode(_context.getNode());
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "add sibling before";
-          }
+    public ActionItem_qk1e79_b(TransformationMenuContext context) {
+      _context = context;
+    }
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child")), null);
-            SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
-            _context.getEditorContext().selectWRTFocusPolicy(newNode);
-          }
-        }});
-      }
-    }, new ConditionalMenuPart() {
-      @Override
-      protected boolean isApplicable(TransformationMenuContext _context) {
-        return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
-      }
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "exception 2";
+    }
 
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "remove all 'a's";
-          }
+    @Override
+    public void execute(@NotNull String pattern) {
+      throw new RuntimeException("Intentional exception from 'execute'");
+    }
+  }
+  public static class TransformationMenuPart_SubMenu_qk1e79_c extends SubMenuMenuPart {
+    @Override
+    protected String getText(TransformationMenuContext _context) {
+      return "tree operations";
+    }
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
-          }
-        }, new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "another ";
-          }
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2());
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_a2 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_a2(context);
+    }
+  }
+  private static class ActionItem_qk1e79_a2 extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-          }
-        });
-      }
-    }, new ConditionalMenuPart() {
-      @Override
-      protected boolean isApplicable(TransformationMenuContext _context) {
-        return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
-      }
+    public ActionItem_qk1e79_a2(TransformationMenuContext context) {
+      _context = context;
+    }
 
-      @Override
-      protected List<MenuPart> getParts() {
-        return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
-          @Override
-          protected String getText(TransformationMenuContext _context) {
-            return "ensure name ends with 'a'";
-          }
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "delete node";
+    }
 
-          @Override
-          protected void execute(TransformationMenuContext _context) {
-            SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
-          }
-        });
-      }
-    }, new IncludeMenuMenuPart() {
-      @Nullable
-      @Override
-      protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
-        final SNode node = context.getNode();
-        final EditorContext editorContext = context.getEditorContext();
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNodeOperations.deleteNode(_context.getNode());
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_b2 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_b2(context);
+    }
+  }
+  private static class ActionItem_qk1e79_b2 extends ActionItemBase {
+    private final TransformationMenuContext _context;
 
-        return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu");
-      }
-    });
+    public ActionItem_qk1e79_b2(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "add sibling before";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child")), null);
+      SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
+      _context.getEditorContext().selectWRTFocusPolicy(newNode);
+    }
+  }
+  public static class TransformationMenuPart_Group_qk1e79_d extends ConditionalMenuPart {
+    @Override
+    protected boolean isApplicable(TransformationMenuContext _context) {
+      return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
+    }
+
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3());
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_a3 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_a3(context);
+    }
+  }
+  private static class ActionItem_qk1e79_a3 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_qk1e79_a3(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "remove all 'a's";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_b3 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_b3(context);
+    }
+  }
+  private static class ActionItem_qk1e79_b3 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_qk1e79_b3(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "another ";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+    }
+  }
+  public static class TransformationMenuPart_Group_qk1e79_e extends ConditionalMenuPart {
+    @Override
+    protected boolean isApplicable(TransformationMenuContext _context) {
+      return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
+    }
+
+    @Override
+    protected List<MenuPart> getParts() {
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4());
+    }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_a4 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_a4(context);
+    }
+  }
+  private static class ActionItem_qk1e79_a4 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_qk1e79_a4(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "ensure name ends with 'a'";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
+    }
+  }
+  public static class TransformationMenuPart_IncludeMenu_qk1e79_f extends IncludeMenuMenuPart {
+    @Nullable
+    @Override
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu");
+    }
   }
 }
