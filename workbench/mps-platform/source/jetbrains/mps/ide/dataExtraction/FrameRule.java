@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.ide.dataExtraction;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.dataRules.GetDataRule;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.Nullable;
 
 public class FrameRule implements GetDataRule {
   @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    Project project = MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    Project project = CommonDataKeys.PROJECT.getData(dataProvider);
     if (project == null) {
       IdeFrame[] frames = WindowManager.getInstance().getAllProjectFrames();
       return frames.length == 0 ? null : frames[0];

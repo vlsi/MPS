@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,28 +15,36 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.search.AbstractSearchPanel;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.search.AbstractSearchPanel;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,6 +53,7 @@ public class SearchPanel extends AbstractSearchPanel {
   private List<SearchEntry> mySearchEntries = new ArrayList<SearchEntry>();
   private NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myOwner;
+  private SearchHistoryStorage mySearchHistory;
 
   public SearchPanel(EditorComponent editor) {
     super();
@@ -53,11 +62,16 @@ public class SearchPanel extends AbstractSearchPanel {
 
   @Override
   protected SearchHistoryStorage getSearchHistory() {
-    IOperationContext operationContext = myEditor.getOperationContext();
-    if (operationContext == null) {
-      return new SearchHistoryComponent();
+    if (mySearchHistory == null) {
+      final MPSProject p = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext(myEditor));
+      if (p != null) {
+        mySearchHistory = p.getComponent(SearchHistoryComponent.class);
+      }
+      if (mySearchHistory == null) {
+        mySearchHistory = new SearchHistoryComponent();
+      }
     }
-    return operationContext.getProject().getComponent(SearchHistoryComponent.class);
+    return mySearchHistory;
   }
 
   private Pair<List<EditorCell_Label>, String> allCellsAndContent() {
