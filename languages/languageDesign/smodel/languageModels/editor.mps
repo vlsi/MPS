@@ -32,7 +32,6 @@
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
-      <concept id="1161622753914" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" flags="nn" index="1Q79dO" />
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
@@ -5525,14 +5524,9 @@
                   </node>
                   <node concept="2OqwBi" id="1t9Fffgeqtb" role="1DdaDG">
                     <node concept="2OqwBi" id="1t9Fffgeqtc" role="2Oq$k0">
-                      <node concept="2OqwBi" id="1t9Fffgeqtd" role="2Oq$k0">
-                        <node concept="1Q79dO" id="1t9Fffgeqte" role="2Oq$k0" />
-                        <node concept="liA8E" id="1t9Fffgeqtf" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                        </node>
-                      </node>
+                      <node concept="1Q80Hx" id="3Z93mP$_dv2" role="2Oq$k0" />
                       <node concept="liA8E" id="1t9Fffgeqtg" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                       </node>
                     </node>
                     <node concept="liA8E" id="1t9Fffgeqth" role="2OqNvi">
@@ -5693,7 +5687,7 @@
   </node>
   <node concept="24kQdi" id="7c$ruAHVbyC">
     <property role="3GE5qa" value="identity" />
-    <ref role="1XX52x" to="tp25:7c$ruAHVbwd" resolve="GeneratorModule" />
+    <ref role="1XX52x" to="tp25:7c$ruAHVbwd" resolve="GeneratorModulePointer" />
     <node concept="3EZMnI" id="7c$ruAHVbyT" role="2wV5jI">
       <node concept="3F0ifn" id="7c$ruAHVbz2" role="3EZMnx">
         <property role="3F0ifm" value="Generator" />

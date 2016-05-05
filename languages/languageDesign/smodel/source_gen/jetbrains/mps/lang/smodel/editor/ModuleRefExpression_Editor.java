@@ -99,7 +99,7 @@ public class ModuleRefExpression_Editor extends DefaultNodeEditor {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
-      for (SModule m : operationContext.getProject().getRepository().getModules()) {
+      for (SModule m : editorContext.getRepository().getModules()) {
         rv.add(m.getModuleReference());
       }
       return rv;
