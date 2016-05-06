@@ -58,13 +58,6 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="7926701909975931629" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="core-libraries" />
-      <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryCP" typeId="3ior.3717132724152913083" id="6343863109988600233" nodeInfo="ng">
-        <node role="classpath" roleId="3ior.3717132724152913085" type="3ior.BuildSource_JavaLibraryExternalJar" typeId="3ior.5610619299014446503" id="6343863109988600229" nodeInfo="ng">
-          <node role="extJar" roleId="3ior.5610619299014446504" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="6343863109988600254" nodeInfo="ng">
-            <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="6343863109988590599" />
-          </node>
-        </node>
-      </node>
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryCP" typeId="3ior.3717132724152913083" id="4810592009297781485" nodeInfo="ng">
         <node role="classpath" roleId="3ior.3717132724152913085" type="3ior.BuildSource_JavaLibraryExternalJar" typeId="3ior.5610619299014446503" id="4810592009297781481" nodeInfo="ng">
           <node role="extJar" roleId="3ior.5610619299014446504" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="4810592009297785229" nodeInfo="ng">
@@ -11624,13 +11617,6 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="ant-launcher.jar" />
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_FileStub" typeId="3ior.7181125477683370806" id="6343863109988590599" nodeInfo="ng">
-        <node role="fileName" roleId="3ior.7181125477683370900" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="6343863109988590601" nodeInfo="ng">
-          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6343863109988590944" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="ecj-4.3.2.jar" />
           </node>
         </node>
       </node>
