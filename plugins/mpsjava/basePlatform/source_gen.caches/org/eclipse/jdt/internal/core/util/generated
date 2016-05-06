@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="45twr5rul5p5c286efuk0nedte14m2p">
+<dependencies version="2" modelHash="gqlcfbjqj21vqke5w2ssrlji4kp9xi">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="dwb771j3vjbdcddsyy82pnqmkl60dyh" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="1218034168005181764" name="CommentRecorderParser" hash="-2vzrbaqg2o912k697x24vng0c66gvo0">
+  <source id="1218034168005181764" name="CommentRecorderParser" hash="-910668ngovvr0aitc6zbr40p47fobz1">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommentRecorderParser.java" />
   </source>
   <source id="1218034168005183012" name="RecordedParsingInformation" hash="2fun4t880vnr9blewvhigfevhvroxz">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="RecordedParsingInformation.java" />
   </source>
-  <source id="1218034168005183146" name="CodeSnippetParsingUtil" hash="-e3wghhop3fcfmdi1pzkx68kzl5nzeg0">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+  <source id="1218034168005183146" name="CodeSnippetParsingUtil" hash="-84w40lp87pmnoy8syt7n1moefvh6uh2">
     <file name="CodeSnippetParsingUtil.java" />
   </source>
 </dependencies>
