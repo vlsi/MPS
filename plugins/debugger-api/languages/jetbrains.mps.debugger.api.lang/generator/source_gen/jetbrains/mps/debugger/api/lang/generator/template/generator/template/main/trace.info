@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
       <unit at="23,0,98,0" name="jetbrains.mps.debugger.api.lang.generator.template.generator.template.main.QueriesGenerated" />
@@ -29,12 +29,12 @@
       <node id="933053558709995186" at="40,111,41,271" concept="0" />
       <node id="4872068395590485474" at="43,109,44,200" concept="0" />
       <node id="4030433165042041061" at="46,94,47,759" concept="0" />
-      <node id="7796501636717933068" at="49,94,50,602" concept="0" />
+      <node id="7796501636717933068" at="49,94,50,402" concept="0" />
       <node id="7796501636717933374" at="52,94,53,759" concept="0" />
       <node id="1018031474355522791" at="55,94,56,194" concept="0" />
       <node id="4030433165041918964" at="64,108,65,348" concept="0" />
       <node id="4030433165042041097" at="67,108,68,348" concept="0" />
-      <node id="7796501636717933150" at="70,108,71,888" concept="0" />
+      <node id="6407279111254034509" at="70,108,71,354" concept="0" />
       <node id="7796501636717933347" at="73,108,74,348" concept="0" />
       <node id="7796501636717933410" at="76,108,77,348" concept="0" />
       <node id="933053558709993766" at="82,119,83,212" concept="0" />
@@ -44,12 +44,12 @@
       <scope id="933053558709995185" at="40,111,41,271" />
       <scope id="4872068395590484360" at="43,109,44,200" />
       <scope id="4030433165042041059" at="46,94,47,759" />
-      <scope id="7796501636717933061" at="49,94,50,602" />
+      <scope id="7796501636717933061" at="49,94,50,402" />
       <scope id="7796501636717933371" at="52,94,53,759" />
       <scope id="1018031474355522789" at="55,94,56,194" />
       <scope id="4030433165041918963" at="64,108,65,348" />
       <scope id="4030433165042041096" at="67,108,68,348" />
-      <scope id="7796501636717933149" at="70,108,71,888" />
+      <scope id="7796501636717933149" at="70,108,71,354" />
       <scope id="7796501636717933346" at="73,108,74,348" />
       <scope id="7796501636717933409" at="76,108,77,348" />
       <scope id="933053558709993765" at="82,119,83,212" />
@@ -66,5 +66,5 @@
       <scope id="4675583320452253264" at="94,120,95,496" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 
