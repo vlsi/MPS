@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
+import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -95,7 +97,9 @@ public class NodeEditorComponent extends EditorComponent {
 
   private void inspect(final SNode toSelect) {
     myLastInspectedNode = toSelect;
-    if (getInspector() == null) return;
+    if (getInspector() == null) {
+      return;
+    }
 
     DataContext dataContext = DataManager.getInstance().getDataContext(this);
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
@@ -111,13 +115,19 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public EditorComponent getInspector() {
-    if (getInspectorTool() == null) return null;
+    if (getInspectorTool() == null) {
+      return null;
+    }
     return getInspectorTool().getInspector();
   }
 
+  @Nullable
   public InspectorTool getInspectorTool() {
-    if (getOperationContext().getProject().isDisposed()) return null;
-    return getOperationContext().getComponent(InspectorTool.class);
+    final Project p = getCurrentProject();
+    if (p == null || p.isDisposed()) {
+      return null;
+    }
+    return p.getComponent(InspectorTool.class);
   }
 
   @Override

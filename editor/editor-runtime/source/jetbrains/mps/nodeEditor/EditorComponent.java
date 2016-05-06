@@ -127,6 +127,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -993,13 +994,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void updateStatusBarMessage() {
-    if (!isFocusOwner()) return;
+    if (!isFocusOwner()) {
+      return;
+    }
     getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
-        if (!isFocusOwner()) return;
-        if (getOperationContext() == null || getOperationContext().getProject() == null) return;
-        if (isProjectDisposed()) return;
+        if (!isFocusOwner() || getCurrentProject() == null || isProjectDisposed()) {
+          return;
+        }
 
         jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
         String info = "";
@@ -1010,7 +1013,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
 
-        jetbrains.mps.project.Project project = getOperationContext().getProject();
+        jetbrains.mps.project.Project project = getCurrentProject();
         IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
         StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
@@ -2478,7 +2481,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void update() {
-    final Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
+    final jetbrains.mps.project.Project p = getCurrentProject();
+    final Highlighter highlighter = p == null ? null : p.getComponent(Highlighter.class);
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -2587,9 +2591,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return r.getResult();
   }
 
-
-  private jetbrains.mps.project.Project getCurrentProject() {
-    return ProjectHelper.getProject(myRepository);
+  @Nullable
+  protected final jetbrains.mps.project.Project getCurrentProject() {
+    // there's no need in MPSProject, there's just no key for generic MPS project in MPSCommonDataKeys.
+    final MPSProject p = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext(this));
+    return p != null ? p : ProjectHelper.getProject(myRepository);
   }
 
   public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern) {
@@ -2968,7 +2974,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isProjectDisposed() {
-    return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
+    final jetbrains.mps.project.Project p = getCurrentProject();
+    // XXX NOTE, we check the project is there, i.e. missing project is not treated as disposed. Is it right?
+    return p != null && p.isDisposed();
   }
 
   private boolean isNodeDisposed() {
