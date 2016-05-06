@@ -652,13 +652,8 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(@NotNull SLanguage language) {
-    addLanguage(language, language.getLanguageVersion());
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //use setLanguageVersion
-  public void addLanguage(SLanguage language, int version) {
+    // FIXME where to take version value to put into myLanguagesIds if not from deprecated method???
+    final int version = language.getLanguageVersion();
     Integer existingVersion = myLanguagesIds.get(language);
     if (existingVersion != null) {
       if (version == -1 || existingVersion == version) {

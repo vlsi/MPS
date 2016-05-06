@@ -203,16 +203,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  @Deprecated
-  public final List<SModuleReference> importedLanguages() {
-    assertCanRead();
-    return new SModelLegacy(getSModelInternal()).importedLanguages();
-  }
-
-  @Override
   public java.util.Collection<SLanguage> importedLanguageIds() {
     assertCanRead();
-    return getSModelInternal().usedLanguages();
+    return getSModel().usedLanguages();
   }
 
   @Override
@@ -237,13 +230,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public void addLanguage(@NotNull SLanguage language, int version) {
-    assertCanChange();
-    getSModel().addLanguage(language, version);
-    validateModuleLanguageVersions();
-  }
-
-  @Override
   public void setLanguageImportVersion(@NotNull SLanguage language, int version) {
     assertCanChange();
     getSModel().setLanguageImportVersion(language, version);
@@ -254,13 +240,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public int getLanguageImportVersion(SLanguage lang) {
     assertCanRead();
     return getSModel().getLanguageImportVersion(lang);
-  }
-
-  @Override
-  public void addLanguageId(SLanguage ref, int version) {
-    assertCanChange();
-    getSModel().addLanguage(ref, version);
-    validateModuleLanguageVersions();
   }
 
   @Override

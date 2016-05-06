@@ -26,7 +26,6 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.FastNodeFinderManager;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -146,8 +145,8 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     myModelVault.forget(modelReference);
     if (forgetDependants) {
       for (TransientSModelDescriptor tm : myModelVault.allModels()) {
-        for (ImportElement importElement : tm.importedModels()) {
-          if (modelReference.equals(importElement.getModelReference())) {
+        for (SModelReference importElement : tm.getModelImports()) {
+          if (modelReference.equals(importElement)) {
             myModelVault.forget(tm.getReference());
             break;
           }

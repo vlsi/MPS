@@ -35,7 +35,8 @@ import java.util.List;
  * We are not yet confident about API to add model dependencies (languages, models and alike), that's why we keep this
  * separate, non-{@code openapi} interface. Questions, among others, include whether we shall demand all models to support
  * imports editing, how to specify dependencies (extra composite Dependency objects or plain SModelReference/SLanguage is ok),
- * if this interface is intrinsic part of openapi.SModel or just comes with a help thereof (i.e. model.getDependencies() manager object).
+ * if this interface is intrinsic part of openapi.SModel or just comes with a help thereof (i.e. model.getDependencies() manager object),
+ * and how to dispatch change notifications.
  */
 // XXX move to [smodel] once ImportElement and Language dependencies gone
 public interface SModelInternal extends ModelWithDisposeInfo  {
@@ -43,10 +44,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  // FIXME there's single use in mbeddr, core.base/pluginSolution
-  @Deprecated
-  List<SModuleReference> importedLanguages();
 
   // FIXME rename to importedLanguages once original is removed
   java.util.Collection<SLanguage> importedLanguageIds();
@@ -63,20 +60,9 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addLanguage(@NotNull SLanguage language);
 
-  @Deprecated //use setLanguageVersion
-  @ToRemove(version = 3.3)
-  void addLanguage(@NotNull SLanguage language, int version);
-
   void setLanguageImportVersion(@NotNull SLanguage language, int version);
 
   int getLanguageImportVersion(SLanguage lang);
-
-  /**
-   * SLanguage is the reference to a language, and it bears version (SLanguage.getLanguageVersion()), no need to specify it explicitly here
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void addLanguageId(SLanguage ref, int version);
 
   List<SModuleReference> importedDevkits();
 
