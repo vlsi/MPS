@@ -5,12 +5,14 @@ package jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
 
 public class ParentNamedMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList();
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    return result;
   }
 
 }

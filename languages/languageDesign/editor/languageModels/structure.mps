@@ -4627,6 +4627,13 @@
       <property role="IQ2ns" value="1638911550608610281" />
       <ref role="20lvS9" node="1qY_lWSjTnI" resolve="QueryFunction_TransformationMenu_Execute" />
     </node>
+    <node concept="1TJgyj" id="7L5lpRJINkn" role="1TKVEi">
+      <property role="IQ2ns" value="8954657570916349207" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="features" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7L5lpRJH$E_" resolve="TransformationFeature" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1qY_lWSjJZY">
     <property role="3GE5qa" value="TransformationMenu" />
@@ -4707,10 +4714,10 @@
     </node>
     <node concept="1TJgyj" id="1qY_lWSjJZW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="items" />
+      <property role="20kJfa" value="sections" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1638911550608572412" />
-      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+      <ref role="20lvS9" node="6V0bp$oHeYW" resolve="TransformationMenuSection" />
     </node>
   </node>
   <node concept="1TIwiD" id="1qY_lWSjJNx">
@@ -4933,6 +4940,95 @@
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
     <property role="34LRSv" value="condition" />
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJH$E_">
+    <property role="EcuMT" value="8954657570916027045" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationFeature" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJH$EA">
+    <property role="EcuMT" value="8954657570916027046" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationLocation" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJILF7">
+    <property role="EcuMT" value="8954657570916342471" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationFeature_Icon" />
+    <property role="34LRSv" value="icon" />
+    <ref role="1TJDcQ" node="7L5lpRJH$E_" resolve="TransformationFeature" />
+    <node concept="1TJgyj" id="7L5lpRJILQz" role="1TKVEi">
+      <property role="IQ2ns" value="8954657570916343203" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L5lpRJILFa" resolve="QueryFunction_TransformationMenu_Icon" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJILFa">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Icon" />
+    <property role="34LRSv" value="query" />
+    <property role="R4oN_" value="a block of code" />
+    <property role="EcuMT" value="8954657570916342474" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJILQ_">
+    <property role="EcuMT" value="8954657570916343205" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationFeature_Tooltip" />
+    <property role="34LRSv" value="tooltip" />
+    <ref role="1TJDcQ" node="7L5lpRJH$E_" resolve="TransformationFeature" />
+    <node concept="1TJgyj" id="7L5lpRJILQA" role="1TKVEi">
+      <property role="IQ2ns" value="8954657570916343206" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_Text" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJILQC">
+    <property role="EcuMT" value="8954657570916343208" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationLocation_Sidebar" />
+    <property role="34LRSv" value="sidebar" />
+    <property role="R4oN_" value="context actions tool window" />
+    <ref role="1TJDcQ" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+  </node>
+  <node concept="1TIwiD" id="7L5lpRJOAJb">
+    <property role="EcuMT" value="8954657570917870539" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationLocation_ContextAssistant" />
+    <property role="34LRSv" value="context assistant" />
+    <property role="R4oN_" value="in-editor context assistant" />
+    <ref role="1TJDcQ" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+  </node>
+  <node concept="1TIwiD" id="6V0bp$oHeYW">
+    <property role="EcuMT" value="7980428675268276156" />
+    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="TrG5h" value="TransformationMenuSection" />
+    <property role="34LRSv" value="section" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6V0bp$oHeYX" role="1TKVEi">
+      <property role="IQ2ns" value="7980428675268276157" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="locations" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+    </node>
+    <node concept="1TJgyj" id="6V0bp$oHeYZ" role="1TKVEi">
+      <property role="IQ2ns" value="7980428675268276159" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parts" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    </node>
   </node>
 </model>
 

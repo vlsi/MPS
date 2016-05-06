@@ -5,11 +5,12 @@ package jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Logger;
@@ -17,20 +18,24 @@ import org.apache.log4j.LogManager;
 
 public class Child_MoreDefaultActions extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a0());
+    }
+    return result;
   }
 
-  private static class TransformationMenuPart_Action_ch35tm_a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_ch35tm_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_MoreDefaultActions.ActionItem_ch35tm_a(context);
+      return new Child_MoreDefaultActions.ActionItem_ch35tm_a0(context);
     }
   }
-  private static class ActionItem_ch35tm_a extends ActionItemBase {
+  private static class ActionItem_ch35tm_a0 extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_ch35tm_a(TransformationMenuContext context) {
+    public ActionItem_ch35tm_a0(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -46,6 +51,7 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
         LOG.info("contributed action");
       }
     }
+
   }
   protected static Logger LOG = LogManager.getLogger(Child_MoreDefaultActions.class);
 }

@@ -5,11 +5,12 @@ package jetbrains.mps.console.ideCommands.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,20 +25,25 @@ import jetbrains.mps.smodel.SReference;
 
 public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a(), new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a0());
+      result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b0());
+    }
+    return result;
   }
 
-  private static class TransformationMenuPart_Action_vryvy0_a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_vryvy0_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_a(context);
+      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_a0(context);
     }
   }
-  private static class ActionItem_vryvy0_a extends ActionItemBase {
+  private static class ActionItem_vryvy0_a0 extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_vryvy0_a(TransformationMenuContext context) {
+    public ActionItem_vryvy0_a0(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -49,11 +55,12 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
 
     @Override
     public void execute(@NotNull String pattern) {
-      SNode command = createBLExpression_vryvy0_a0a0a0();
+      SNode command = createBLExpression_vryvy0_a0a0a0a();
       SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
       _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
     }
-    private static SNode createBLExpression_vryvy0_a0a0a0() {
+
+    private static SNode createBLExpression_vryvy0_a0a0a0a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), null, null, false);
       {
@@ -147,16 +154,16 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
       return n1;
     }
   }
-  private static class TransformationMenuPart_Action_vryvy0_b extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_vryvy0_b0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_b(context);
+      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_b0(context);
     }
   }
-  private static class ActionItem_vryvy0_b extends ActionItemBase {
+  private static class ActionItem_vryvy0_b0 extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_vryvy0_b(TransformationMenuContext context) {
+    public ActionItem_vryvy0_b0(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -168,11 +175,12 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
 
     @Override
     public void execute(@NotNull String pattern) {
-      SNode command = createBLExpression_vryvy0_a0a0a1();
+      SNode command = createBLExpression_vryvy0_a0a0a1a();
       SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
       _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
     }
-    private static SNode createBLExpression_vryvy0_a0a0a1() {
+
+    private static SNode createBLExpression_vryvy0_a0a0a1a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), null, null, false);
       {

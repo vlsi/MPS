@@ -26,11 +26,11 @@ import java.util.List;
 
 public abstract class TransformationMenuBase implements TransformationMenu {
 
-  protected abstract List<MenuPart> getParts();
+  protected abstract List<MenuPart> getParts(TransformationMenuContext context);
 
   @NotNull
   @Override
   public List<MenuItem> createMenuItems(TransformationMenuContext context) {
-    return new CompositeMenuPart(getParts()).createItems(context);
+    return new CompositeMenuPart(getParts(context)).createItems(context);
   }
 }

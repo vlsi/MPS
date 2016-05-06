@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class TransformationMenuContribution_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -100,9 +101,9 @@ public class TransformationMenuContribution_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createRefNodeList_jff63u_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TransformationMenuContribution_Editor.itemsListHandler_jff63u_e0(node, "items", editorContext);
+    AbstractCellListHandler handler = new TransformationMenuContribution_Editor.sectionsListHandler_jff63u_e0(node, "sections", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_items");
+    editorCell.setCellId("refNodeList_sections");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
@@ -111,8 +112,8 @@ public class TransformationMenuContribution_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class itemsListHandler_jff63u_e0 extends RefNodeListHandler {
-    public itemsListHandler_jff63u_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sectionsListHandler_jff63u_e0 extends RefNodeListHandler {
+    public sectionsListHandler_jff63u_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -126,9 +127,12 @@ public class TransformationMenuContribution_Editor extends DefaultNodeEditor {
     }
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_jff63u_a4a(editorContext, node);
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
@@ -141,6 +145,15 @@ public class TransformationMenuContribution_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+    private EditorCell createConstant_jff63u_a4a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no items>");
+      editorCell.setCellId("Constant_jff63u_a4a");
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
+      editorCell.getStyle().putAll(style);
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
 }

@@ -5,30 +5,35 @@ package jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 
 public class NamedMenuContribution extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a0());
+    }
+    return result;
   }
 
-  private static class TransformationMenuPart_Action_xtomck_a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_xtomck_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new NamedMenuContribution.ActionItem_xtomck_a(context);
+      return new NamedMenuContribution.ActionItem_xtomck_a0(context);
     }
   }
-  private static class ActionItem_xtomck_a extends ActionItemBase {
+  private static class ActionItem_xtomck_a0 extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_xtomck_a(TransformationMenuContext context) {
+    public ActionItem_xtomck_a0(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -41,5 +46,6 @@ public class NamedMenuContribution extends TransformationMenuBase {
     @Override
     public void execute(@NotNull String pattern) {
     }
+
   }
 }

@@ -36,23 +36,32 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @NotNull
   private final CircularReferenceSafeMenuItemFactory myMenuItemFactory;
   @NotNull
+  private final String myMenuLocation;
+  @NotNull
   private final EditorContext myEditorContext;
   @NotNull
   private final SNode myNode;
 
-  public static DefaultTransformationMenuContext createInitialContextForCell(@NotNull EditorCell cell) {
+  public static DefaultTransformationMenuContext createInitialContextForCell(@NotNull EditorCell cell, @NotNull String menuLocation) {
     if (cell.getSNode() == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);
     }
 
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), cell.getContext(), cell.getSNode());
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), menuLocation, cell.getContext(), cell.getSNode());
   }
 
-  private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory menuItemFactory, @NotNull EditorContext editorContext,
-      @NotNull SNode node) {
+  private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory menuItemFactory, @NotNull String menuLocation,
+      @NotNull EditorContext editorContext, @NotNull SNode node) {
     myMenuItemFactory = menuItemFactory;
+    myMenuLocation = menuLocation;
     myEditorContext = editorContext;
     myNode = node;
+  }
+
+  @NotNull
+  @Override
+  public String getMenuLocation() {
+    return myMenuLocation;
   }
 
   @NotNull
@@ -80,7 +89,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
       return this;
     }
 
-    return new DefaultTransformationMenuContext(myMenuItemFactory, myEditorContext, node);
+    return new DefaultTransformationMenuContext(myMenuItemFactory, myMenuLocation, myEditorContext, node);
   }
 
   @NotNull

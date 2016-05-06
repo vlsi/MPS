@@ -5,9 +5,11 @@ package jetbrains.mps.samples.KajaSceneConstruction.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -20,11 +22,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SceneBuildingCommands extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0());
+    }
+    return result;
   }
 
-  public static class TransformationMenuPart_SubMenu_572eic_a extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_572eic_a0 extends SubMenuMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Scene builder";
@@ -32,19 +38,19 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_Action_572eic_a0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_b0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_c0(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_d0());
+      return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_Action_572eic_a0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_b0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_c0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_d0a());
     }
   }
-  private static class TransformationMenuPart_Action_572eic_a0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_a0a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new SceneBuildingCommands.ActionItem_572eic_a0(context);
+      return new SceneBuildingCommands.ActionItem_572eic_a0a(context);
     }
   }
-  private static class ActionItem_572eic_a0 extends ActionItemBase {
+  private static class ActionItem_572eic_a0a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_572eic_a0(TransformationMenuContext context) {
+    public ActionItem_572eic_a0a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -59,17 +65,18 @@ public class SceneBuildingCommands extends TransformationMenuBase {
       SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall")), null));
       _context.getEditorContext().selectWRTFocusPolicy(inserted);
     }
+
   }
-  private static class TransformationMenuPart_Action_572eic_b0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_b0a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new SceneBuildingCommands.ActionItem_572eic_b0(context);
+      return new SceneBuildingCommands.ActionItem_572eic_b0a(context);
     }
   }
-  private static class ActionItem_572eic_b0 extends ActionItemBase {
+  private static class ActionItem_572eic_b0a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_572eic_b0(TransformationMenuContext context) {
+    public ActionItem_572eic_b0a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -85,17 +92,18 @@ public class SceneBuildingCommands extends TransformationMenuBase {
       _context.getEditorContext().selectWRTFocusPolicy(inserted);
 
     }
+
   }
-  private static class TransformationMenuPart_Action_572eic_c0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_c0a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new SceneBuildingCommands.ActionItem_572eic_c0(context);
+      return new SceneBuildingCommands.ActionItem_572eic_c0a(context);
     }
   }
-  private static class ActionItem_572eic_c0 extends ActionItemBase {
+  private static class ActionItem_572eic_c0a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_572eic_c0(TransformationMenuContext context) {
+    public ActionItem_572eic_c0a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -110,17 +118,18 @@ public class SceneBuildingCommands extends TransformationMenuBase {
       SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark")), null));
       _context.getEditorContext().selectWRTFocusPolicy(inserted);
     }
+
   }
-  private static class TransformationMenuPart_Action_572eic_d0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_d0a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new SceneBuildingCommands.ActionItem_572eic_d0(context);
+      return new SceneBuildingCommands.ActionItem_572eic_d0a(context);
     }
   }
-  private static class ActionItem_572eic_d0 extends ActionItemBase {
+  private static class ActionItem_572eic_d0a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_572eic_d0(TransformationMenuContext context) {
+    public ActionItem_572eic_d0a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -135,5 +144,6 @@ public class SceneBuildingCommands extends TransformationMenuBase {
       SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
       _context.getEditorContext().selectWRTFocusPolicy(inserted);
     }
+
   }
 }

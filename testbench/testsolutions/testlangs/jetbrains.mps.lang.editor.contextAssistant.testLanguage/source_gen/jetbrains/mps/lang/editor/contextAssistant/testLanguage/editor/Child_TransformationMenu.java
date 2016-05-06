@@ -5,11 +5,13 @@ package jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -27,11 +29,21 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class Child_TransformationMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b(), new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e(), new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g0());
+    }
+    return result;
   }
 
-  public static class TransformationMenuPart_Group_qk1e79_a extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_qk1e79_a0 extends ConditionalMenuPart {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
@@ -42,19 +54,19 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0());
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0a());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a0a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_a0(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_a0a(context);
     }
   }
-  private static class ActionItem_qk1e79_a0 extends ActionItemBase {
+  private static class ActionItem_qk1e79_a0a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_a0(TransformationMenuContext context) {
+    public ActionItem_qk1e79_a0a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -67,17 +79,18 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     @Override
     public void execute(@NotNull String pattern) {
     }
+
   }
-  private static class TransformationMenuPart_Action_qk1e79_b extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_b(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_b0(context);
     }
   }
-  private static class ActionItem_qk1e79_b extends ActionItemBase {
+  private static class ActionItem_qk1e79_b0 extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_b(TransformationMenuContext context) {
+    public ActionItem_qk1e79_b0(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -91,8 +104,9 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     public void execute(@NotNull String pattern) {
       throw new RuntimeException("Intentional exception from 'execute'");
     }
+
   }
-  public static class TransformationMenuPart_SubMenu_qk1e79_c extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_qk1e79_c0 extends SubMenuMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "tree operations";
@@ -100,19 +114,19 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2());
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2a());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a2 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a2a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_a2(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_a2a(context);
     }
   }
-  private static class ActionItem_qk1e79_a2 extends ActionItemBase {
+  private static class ActionItem_qk1e79_a2a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_a2(TransformationMenuContext context) {
+    public ActionItem_qk1e79_a2a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -126,17 +140,18 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     public void execute(@NotNull String pattern) {
       SNodeOperations.deleteNode(_context.getNode());
     }
+
   }
-  private static class TransformationMenuPart_Action_qk1e79_b2 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b2a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_b2(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_b2a(context);
     }
   }
-  private static class ActionItem_qk1e79_b2 extends ActionItemBase {
+  private static class ActionItem_qk1e79_b2a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_b2(TransformationMenuContext context) {
+    public ActionItem_qk1e79_b2a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -152,8 +167,9 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
       _context.getEditorContext().selectWRTFocusPolicy(newNode);
     }
+
   }
-  public static class TransformationMenuPart_Group_qk1e79_d extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_qk1e79_d0 extends ConditionalMenuPart {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
@@ -161,19 +177,19 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3());
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3a());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a3 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a3a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_a3(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_a3a(context);
     }
   }
-  private static class ActionItem_qk1e79_a3 extends ActionItemBase {
+  private static class ActionItem_qk1e79_a3a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_a3(TransformationMenuContext context) {
+    public ActionItem_qk1e79_a3a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -187,17 +203,18 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     public void execute(@NotNull String pattern) {
       SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
     }
+
   }
-  private static class TransformationMenuPart_Action_qk1e79_b3 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b3a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_b3(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_b3a(context);
     }
   }
-  private static class ActionItem_qk1e79_b3 extends ActionItemBase {
+  private static class ActionItem_qk1e79_b3a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_b3(TransformationMenuContext context) {
+    public ActionItem_qk1e79_b3a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -210,8 +227,9 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     @Override
     public void execute(@NotNull String pattern) {
     }
+
   }
-  public static class TransformationMenuPart_Group_qk1e79_e extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_qk1e79_e0 extends ConditionalMenuPart {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
@@ -219,19 +237,19 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4());
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4a());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a4 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a4a extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.ActionItem_qk1e79_a4(context);
+      return new Child_TransformationMenu.ActionItem_qk1e79_a4a(context);
     }
   }
-  private static class ActionItem_qk1e79_a4 extends ActionItemBase {
+  private static class ActionItem_qk1e79_a4a extends ActionItemBase {
     private final TransformationMenuContext _context;
 
-    public ActionItem_qk1e79_a4(TransformationMenuContext context) {
+    public ActionItem_qk1e79_a4a(TransformationMenuContext context) {
       _context = context;
     }
 
@@ -245,8 +263,9 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     public void execute(@NotNull String pattern) {
       SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
     }
+
   }
-  public static class TransformationMenuPart_IncludeMenu_qk1e79_f extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_qk1e79_f0 extends IncludeMenuMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -255,5 +274,29 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
       return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu");
     }
+  }
+  private static class TransformationMenuPart_Action_qk1e79_g0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.ActionItem_qk1e79_g0(context);
+    }
+  }
+  private static class ActionItem_qk1e79_g0 extends ActionItemBase {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_qk1e79_g0(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "Sidebar action";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+    }
+
   }
 }

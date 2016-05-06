@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -41,7 +42,7 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_s529lh_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context assistant menu");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transformation menu");
     editorCell.setCellId("Constant_s529lh_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -117,9 +118,9 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createRefNodeList_s529lh_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TransformationMenu_Named_Editor.itemsListHandler_s529lh_e0(node, "items", editorContext);
+    AbstractCellListHandler handler = new TransformationMenu_Named_Editor.sectionsListHandler_s529lh_e0(node, "sections", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_items");
+    editorCell.setCellId("refNodeList_sections");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
@@ -128,8 +129,8 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class itemsListHandler_s529lh_e0 extends RefNodeListHandler {
-    public itemsListHandler_s529lh_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sectionsListHandler_s529lh_e0 extends RefNodeListHandler {
+    public sectionsListHandler_s529lh_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -143,9 +144,12 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
     }
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_s529lh_a4a(editorContext, node);
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
@@ -158,6 +162,15 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+    private EditorCell createConstant_s529lh_a4a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no items>");
+      editorCell.setCellId("Constant_s529lh_a4a");
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
+      editorCell.getStyle().putAll(style);
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
 }

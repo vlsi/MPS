@@ -11,23 +11,28 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
-      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default" flags="ng" index="A1WHr">
+      <concept id="8954657570917870539" name="jetbrains.mps.lang.editor.structure.TransformationLocation_ContextAssistant" flags="ng" index="2j_NTm" />
+      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr">
         <reference id="6718020819487620877" name="concept" index="A1WHq" />
       </concept>
-      <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named" flags="ng" index="A1WHu">
+      <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
-      <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantExecuteFunction" flags="ig" index="IWg2L" />
-      <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action" flags="ng" index="IWgqT">
+      <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
+      <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
-      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantText" flags="ig" index="1hCUdq" />
-      <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.INamedContextAssistantItems" flags="ng" index="3INCJE">
-        <child id="1638911550608572412" name="items" index="IW6Ez" />
+      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="1hCUdq" />
+      <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
+        <child id="1638911550608572412" name="sections" index="IW6Ez" />
       </concept>
-      <concept id="5624877018228264944" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution" flags="ng" index="3INDKC">
+      <concept id="5624877018228264944" name="jetbrains.mps.lang.editor.structure.TransformationMenuContribution" flags="ng" index="3INDKC">
         <child id="6718020819489956031" name="menuReference" index="AmTjC" />
+      </concept>
+      <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
+        <child id="7980428675268276157" name="locations" index="1Qtc8$" />
+        <child id="7980428675268276159" name="parts" index="1Qtc8A" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -58,22 +63,25 @@
   </registry>
   <node concept="3INDKC" id="4Sf$XywNH2W">
     <property role="TrG5h" value="Child_MoreDefaultActions" />
-    <node concept="IWgqT" id="4Sf$XywNH33" role="IW6Ez">
-      <node concept="1hCUdq" id="4Sf$XywNH35" role="1hCUd6">
-        <node concept="3clFbS" id="4Sf$XywNH37" role="2VODD2">
-          <node concept="3clFbF" id="4Sf$XywNH3S" role="3cqZAp">
-            <node concept="Xl_RD" id="4Sf$XywNH3R" role="3clFbG">
-              <property role="Xl_RC" value="contributed action" />
+    <node concept="1Qtc8_" id="6V0bp$oQR2I" role="IW6Ez">
+      <node concept="2j_NTm" id="6V0bp$oQRbV" role="1Qtc8$" />
+      <node concept="IWgqT" id="4Sf$XywNH33" role="1Qtc8A">
+        <node concept="1hCUdq" id="4Sf$XywNH35" role="1hCUd6">
+          <node concept="3clFbS" id="4Sf$XywNH37" role="2VODD2">
+            <node concept="3clFbF" id="4Sf$XywNH3S" role="3cqZAp">
+              <node concept="Xl_RD" id="4Sf$XywNH3R" role="3clFbG">
+                <property role="Xl_RC" value="contributed action" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="IWg2L" id="4Sf$XywNH39" role="IWgqQ">
-        <node concept="3clFbS" id="4Sf$XywNH3b" role="2VODD2">
-          <node concept="34ab3g" id="4Sf$XywNHej" role="3cqZAp">
-            <property role="35gtTG" value="info" />
-            <node concept="Xl_RD" id="4Sf$XywNHel" role="34bqiv">
-              <property role="Xl_RC" value="contributed action" />
+        <node concept="IWg2L" id="4Sf$XywNH39" role="IWgqQ">
+          <node concept="3clFbS" id="4Sf$XywNH3b" role="2VODD2">
+            <node concept="34ab3g" id="4Sf$XywNHej" role="3cqZAp">
+              <property role="35gtTG" value="info" />
+              <node concept="Xl_RD" id="4Sf$XywNHel" role="34bqiv">
+                <property role="Xl_RC" value="contributed action" />
+              </node>
             </node>
           </node>
         </node>
@@ -85,22 +93,25 @@
   </node>
   <node concept="3INDKC" id="5CFnWxxhZO1">
     <property role="TrG5h" value="Child_MoreNamedActions" />
-    <node concept="IWgqT" id="67q8fiOz1_2" role="IW6Ez">
-      <node concept="1hCUdq" id="67q8fiOz1_4" role="1hCUd6">
-        <node concept="3clFbS" id="67q8fiOz1_6" role="2VODD2">
-          <node concept="3clFbF" id="67q8fiOz1An" role="3cqZAp">
-            <node concept="Xl_RD" id="67q8fiOz1Am" role="3clFbG">
-              <property role="Xl_RC" value="contributed from extending language" />
+    <node concept="A1WHu" id="5OVd5tVsX$w" role="AmTjC">
+      <ref role="A1WHt" to="iqcb:6iEu7ikuMlI" resolve="NamedMenu" />
+    </node>
+    <node concept="1Qtc8_" id="6V0bp$oQRkC" role="IW6Ez">
+      <node concept="2j_NTm" id="6V0bp$oQRtQ" role="1Qtc8$" />
+      <node concept="IWgqT" id="67q8fiOz1_2" role="1Qtc8A">
+        <node concept="1hCUdq" id="67q8fiOz1_4" role="1hCUd6">
+          <node concept="3clFbS" id="67q8fiOz1_6" role="2VODD2">
+            <node concept="3clFbF" id="67q8fiOz1An" role="3cqZAp">
+              <node concept="Xl_RD" id="67q8fiOz1Am" role="3clFbG">
+                <property role="Xl_RC" value="contributed from extending language" />
+              </node>
             </node>
           </node>
         </node>
+        <node concept="IWg2L" id="67q8fiOz1_8" role="IWgqQ">
+          <node concept="3clFbS" id="67q8fiOz1_a" role="2VODD2" />
+        </node>
       </node>
-      <node concept="IWg2L" id="67q8fiOz1_8" role="IWgqQ">
-        <node concept="3clFbS" id="67q8fiOz1_a" role="2VODD2" />
-      </node>
-    </node>
-    <node concept="A1WHu" id="5OVd5tVsX$w" role="AmTjC">
-      <ref role="A1WHt" to="iqcb:6iEu7ikuMlI" resolve="NamedMenu" />
     </node>
   </node>
 </model>

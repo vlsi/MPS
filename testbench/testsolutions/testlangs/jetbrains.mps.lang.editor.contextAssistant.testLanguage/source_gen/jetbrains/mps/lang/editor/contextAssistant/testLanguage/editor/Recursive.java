@@ -5,11 +5,12 @@ package jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
@@ -18,11 +19,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class Recursive extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.asList(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a());
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+      result.add(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a0());
+    }
+    return result;
   }
 
-  public static class TransformationMenuPart_IncludeMenu_q7lcll_a extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeMenuMenuPart {
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
