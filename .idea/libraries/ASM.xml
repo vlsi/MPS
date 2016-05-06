@@ -4,6 +4,7 @@
       <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/asm-commons.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/asm4-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/asm-all.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -321,6 +321,9 @@
     <dependency org="lib" name="asm.jar" rev="${idea.platform.version}">
       <artifact name="asm.jar" ext="jar"/>
     </dependency>
+    <dependency org="lib" name="asm-all.jar" rev="${idea.platform.version}">
+      <artifact name="asm-all.jar" ext="jar"/>
+    </dependency>
     <dependency org="lib" name="asm4-all.jar" rev="${idea.platform.version}">
       <artifact name="asm4-all.jar" ext="jar"/>
     </dependency>
