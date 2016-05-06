@@ -40,6 +40,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpcg" ref="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
+    <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -202,7 +203,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -17013,6 +17014,18 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4sA1wzjBnf_" role="3cqZAp">
+          <node concept="2OqwBi" id="4sA1wzjBpbD" role="3clFbG">
+            <node concept="37vLTw" id="4sA1wzjBnfz" role="2Oq$k0">
+              <ref role="3cqZAo" node="FyOJSsBr_W" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4sA1wzjBuTa" role="2OqNvi">
+              <node concept="3B5_sB" id="4sA1wzjBuX4" role="25WWJ7">
+                <ref role="3B5MYn" to="tpdg:h8ub8Bh" resolve="ConceptFunctionParameter_pattern" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="FyOJSsBrAc" role="3cqZAp">
           <node concept="37vLTw" id="FyOJSsBrAd" role="3cqZAk">
             <ref role="3cqZAo" node="FyOJSsBr_W" resolve="result" />
@@ -17025,22 +17038,40 @@
         </node>
       </node>
     </node>
-    <node concept="13i0hz" id="axxf7pawk5" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
+    <node concept="13i0hz" id="4sA1wzjBjcY" role="13h7CS">
       <property role="13i0is" value="false" />
-      <property role="TrG5h" value="usesParameterObject" />
+      <property role="TrG5h" value="usesParameterObjectFor" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpek:1653mnvAgq0" resolve="usesParameterObject" />
-      <node concept="3Tm1VV" id="axxf7pawk6" role="1B3o_S" />
-      <node concept="3clFbS" id="axxf7pawkb" role="3clF47">
-        <node concept="3clFbF" id="axxf7paws2" role="3cqZAp">
-          <node concept="3clFbT" id="axxf7paws1" role="3clFbG">
-            <property role="3clFbU" value="true" />
+      <ref role="13i0hy" to="tpek:hEwIGRw" resolve="usesParameterObjectFor" />
+      <node concept="3Tm1VV" id="4sA1wzjBjd9" role="1B3o_S" />
+      <node concept="3clFbS" id="4sA1wzjBjda" role="3clF47">
+        <node concept="3cpWs6" id="4sA1wzjBm97" role="3cqZAp">
+          <node concept="3fqX7Q" id="4sA1wzjBmfY" role="3cqZAk">
+            <node concept="2OqwBi" id="4sA1wzjBmg0" role="3fr31v">
+              <node concept="2OqwBi" id="4sA1wzjBmg1" role="2Oq$k0">
+                <node concept="37vLTw" id="4sA1wzjBmg2" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4sA1wzjBjdb" resolve="parameter" />
+                </node>
+                <node concept="2yIwOk" id="4sA1wzjBmg3" role="2OqNvi" />
+              </node>
+              <node concept="liA8E" id="4sA1wzjBmg4" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="35c_gC" id="4sA1wzjBmg5" role="37wK5m">
+                  <ref role="35c_gD" to="tpdg:h8ub8Bh" resolve="ConceptFunctionParameter_pattern" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
-      <node concept="10P_77" id="axxf7pawkc" role="3clF45" />
+      <node concept="37vLTG" id="4sA1wzjBjdb" role="3clF46">
+        <property role="TrG5h" value="parameter" />
+        <node concept="3Tqbb2" id="4sA1wzjBjdc" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node concept="10P_77" id="4sA1wzjBjdd" role="3clF45" />
     </node>
     <node concept="13hLZK" id="FyOJSsBryd" role="13h7CW">
       <node concept="3clFbS" id="FyOJSsBrye" role="2VODD2" />
