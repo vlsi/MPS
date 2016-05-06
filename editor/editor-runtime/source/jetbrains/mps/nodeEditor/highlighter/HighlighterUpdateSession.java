@@ -22,8 +22,8 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.PriorityComparator;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -32,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -126,11 +127,12 @@ public class HighlighterUpdateSession {
 
   private boolean updateEditorComponent(final EditorComponent component, final boolean mainEditorMessagesChanged, final boolean applyQuickFixes) {
     HighlighterEditorTracker editorTracker = myHighlighter.getEditorTracker();
-    boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    final SRepository repository = component.getEditorContext().getRepository();
+    boolean needsUpdate = new ModelAccessHelper(repository).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        return editedNode != null && SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
+        return editedNode != null && SNodeUtil.isAccessible(editedNode, repository);
       }
     });
     if (!needsUpdate) return false;
@@ -140,7 +142,7 @@ public class HighlighterUpdateSession {
     if (!rootWasCheckedOnce) {
       checkersToRecheck.addAll(myCheckers);
     } else {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      repository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           if (myHighlighter.isPausedOrStopping()) return;
@@ -180,16 +182,14 @@ public class HighlighterUpdateSession {
         public Pair<Collection<EditorMessage>, Boolean> compute() {
           if (myHighlighter.isPausedOrStopping()) return CHECK_ABORTED;
 
-          SNode node = editor.getEditedNode();
-          if (node == null) return CHECK_ABORTED;
-          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
+          SNode node = editor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
+          if (node == null) {
+            return CHECK_ABORTED;
+          }
+          if (!SNodeUtil.isAccessible(node, editor.getEditorContext().getRepository())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;
-          }
-
-          if (!editor.getOperationContext().isValid()) {
-            return CHECK_ABORTED;
           }
 
           try {

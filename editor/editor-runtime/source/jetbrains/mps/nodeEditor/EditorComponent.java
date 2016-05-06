@@ -72,6 +72,7 @@ import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
 import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
+import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
@@ -89,7 +90,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -105,6 +105,8 @@ import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.ActionHandler;
+import jetbrains.mps.openapi.editor.assist.ContextAssistant;
+import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
@@ -114,8 +116,6 @@ import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
-import jetbrains.mps.openapi.editor.assist.ContextAssistant;
-import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -1732,9 +1732,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().executeCommand(new EditorCommand(getCommandContext()) {
         @Override
         protected void doExecute() {
-          jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
-          if (!editorContext.getOperationContext().isValid()) return;
-          action.execute(editorContext);
+          action.execute(getEditorContext());
         }
       });
       return true;
