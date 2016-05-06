@@ -10,80 +10,96 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.generator.impl.TemplateModelScanner;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class GeneratorTemplatesChecker extends SpecificChecker {
+  private List<SearchResult<ModelCheckerIssue>> myResults;
+
   public GeneratorTemplatesChecker() {
   }
+
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor progressMonitor) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor progressMonitor) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
       return Collections.emptyList();
     }
 
-    final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    myResults = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     if (progressMonitor.isCanceled()) {
-      return results;
+      return myResults;
     }
-    progressMonitor.start("cross-templates references", 1);
+    progressMonitor.start("cross-templates references", ListSequence.fromList(SModelOperations.roots(model, null)).count());
 
-    new TemplateModelScanner(model) {
-      @Override
-      public void scan() {
-        for (SNode root : SModelOperations.roots(model, null)) {
-          if (progressMonitor.isCanceled()) {
-            return;
-          }
-          if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
-            scanTemplateNode(root);
-          }
-        }
+    for (SNode root : ListSequence.fromList(SModelOperations.roots(model, null))) {
+      if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
+        scanTemplateNode(root, progressMonitor);
       }
-      @Override
-      protected void scanTemplateNode(SNode node) {
-        if (node == null) {
-          return;
-        }
-
-        try {
-          for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
-            if (progressMonitor.isCanceled()) {
-              return;
-            }
-            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref.getLink())) != null)) {
-              continue;
-            }
-            SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
-            if (target == null) {
-              continue;
-            }
-            if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(target)))) {
-              continue;
-            }
-            SNode root = SNodeOperations.getContainingRoot(target);
-            if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null) {
-              continue;
-            }
-            if (root == SNodeOperations.getContainingRoot(node)) {
-              continue;
-            }
-
-            SpecificChecker.addIssue(results, node, "Reference across root templates in role `" + SLinkOperations.getRole(ref) + "', use mapping label or reference macro", ModelChecker.SEVERITY_WARNING, "reference across templates", null);
-          }
-
-        } catch (Exception ex) {
-        }
-        super.scanTemplateNode(node);
+      if (progressMonitor.isCanceled()) {
+        return myResults;
       }
-    }.scan();
-    return results;
+      progressMonitor.advance(1);
+    }
+
+    progressMonitor.done();
+    return myResults;
+  }
+
+  private void scanTemplateNode(SNode root, ProgressMonitor progressMonitor) {
+    DescendantsTreeIterator it = new DescendantsTreeIterator(root);
+    while (it.hasNext()) {
+      if (progressMonitor.isCanceled()) {
+        return;
+      }
+      SNode node = it.next();
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"))) {
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, 0x1163aea5803L, "alternativeConsequence")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
+          // afaik IF/ELSE consequence is the only place we need to treat in a distinct way 
+          scanTemplateNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, 0x1163aea5803L, "alternativeConsequence")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, 0x112103ebf76L, "templateNode")), progressMonitor);
+        }
+        it.skipChildren();
+        continue;
+      }
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"))) {
+        // it's unlikely to see TF under root template (impossible?) but does it hurt to have it excluded here? 
+        it.skipChildren();
+        continue;
+      }
+      checkReferences(node);
+    }
+  }
+
+  private void checkReferences(SNode node) {
+    for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+      // there's macro to adjust the reference, don't care 
+      if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref.getLink())) != null)) {
+        continue;
+      }
+      SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
+      if (target == null) {
+        continue;
+      }
+      // if reference points to a generator model... 
+      if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(target)))) {
+        continue;
+      }
+      SNode root = SNodeOperations.getContainingRoot(target);
+      //  and it's a root template in the generator model... 
+      if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null) {
+        continue;
+      }
+      if (root == SNodeOperations.getContainingRoot(node)) {
+        continue;
+      }
+
+      SpecificChecker.addIssue(myResults, node, String.format("Reference across root templates in role '%s', use mapping label or reference macro", ref.getLink().getName()), ModelChecker.SEVERITY_WARNING, "Cross-template reference", null);
+    }
   }
 }

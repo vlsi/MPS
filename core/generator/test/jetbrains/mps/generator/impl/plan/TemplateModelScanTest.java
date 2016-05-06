@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -31,9 +29,6 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
 import java.io.File;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -56,8 +51,15 @@ public class TemplateModelScanTest {
     ourEnvironment.release();
   }
 
+  /**
+   * The test used to compare old and new template model scanner implementation.
+   * With removal of the legacy scanner, there's nothing to match against, hence the test basically
+   * is a rudimentary check there's any result at all from the new scanner.
+   * I don't want to remove it altogether as there's some stats about performance and as well there might be need
+   * to make more thorough check (e.g. hardcode expected target/query language for each model to check against).
+   */
   @Test
-  public void compareLegacyAndNewScanner() {
+  public void newScannerYieldsAnyResults() {
     final Project mpsProject = ourEnvironment.openProject(new File(System.getProperty("user.dir")));
     final String[] templateModels2Test = {
         "r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)",
@@ -89,9 +91,7 @@ public class TemplateModelScanTest {
     System.out.println("Total template models:" + templateModels2Test.length);
     */
     try {
-      final TemplateModelScanner[] s1 = new TemplateModelScanner[templateModels2Test.length];
       final ModelScanner[] s2 = new ModelScanner[templateModels2Test.length];
-      final long[] s1Dur = new long[s1.length];
       final long[] s2Dur = new long[s2.length];
       Runnable cmd = new Runnable() {
         @Override
@@ -100,22 +100,18 @@ public class TemplateModelScanTest {
             final SModelReference mr = PersistenceFacade.getInstance().createModelReference(templateModels2Test[i]);
             SModel m = mr.resolve(mpsProject.getRepository());
             final long start = System.nanoTime();
-            s1[i] = new TemplateModelScanner(m);
-            s1[i].scan();
-            final long stop1 = System.nanoTime();
             s2[i] = new ModelScanner();
             s2[i].scan(m);
 //            s2[i].scanInLegacyMode(m);
             final long end = System.nanoTime();
-            s1Dur[i] = stop1 - start;
-            s2Dur[i] = end - stop1;
+            s2Dur[i] = end - start;
           }
         }
       };
       mpsProject.getModelAccess().runReadAction(cmd);
       for (int i = 0; i < templateModels2Test.length; i++) {
-        myErrors.checkThat("Query languages for model " + templateModels2Test[i], language2name(s2[i].getQueryLanguages()), equalTo(s1[i].getQueryLanguages()));
-        myErrors.checkThat("Template languages for model " + templateModels2Test[i], language2name(s2[i].getTargetLanguages()), equalTo(s1[i].getTargetLanguages()));
+        myErrors.checkThat("Query languages for model " + templateModels2Test[i], s2[i].getQueryLanguages().isEmpty(), equalTo(false));
+        myErrors.checkThat("Template languages for model " + templateModels2Test[i], s2[i].getTargetLanguages().isEmpty(), equalTo(false));
       }
       /*  Performance dump (old code - TemplateModelScanner, new code - ModelScanner, backed with FNF)
       Arrays.fill(s1Dur, 0);
@@ -140,13 +136,5 @@ public class TemplateModelScanTest {
     } finally {
       mpsProject.dispose();
     }
-  }
-
-  private static Set<String> language2name(Collection<SLanguage> languages) {
-    HashSet<String> rv = new HashSet<String>();
-    for (SLanguage l : languages) {
-      rv.add(l.getQualifiedName());
-    }
-    return rv;
   }
 }
