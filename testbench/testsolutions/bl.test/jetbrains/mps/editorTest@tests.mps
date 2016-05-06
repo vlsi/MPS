@@ -47,6 +47,7 @@
     <import index="pzbl" ref="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -103,6 +104,7 @@
       <concept id="1101347953350122758" name="jetbrains.mps.lang.test.structure.BootstrapActionReference" flags="ng" index="3iKlGA">
         <property id="1101347953350127918" name="actionId" index="3iKnse" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -3784,44 +3786,23 @@
     <property role="TrG5h" value="DefaultCellInfoTest" />
     <property role="3GE5qa" value="cellInfo" />
     <node concept="3clFbS" id="5cbv2b04kqs" role="LjaKd">
-      <node concept="3cpWs8" id="4H2MDin3wK9" role="3cqZAp">
-        <node concept="3cpWsn" id="4H2MDin3wKa" role="3cpWs9">
-          <property role="TrG5h" value="operationContext" />
-          <node concept="3uibUv" id="70zXtXI7rCO" role="1tU5fm">
-            <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-          </node>
-          <node concept="2OqwBi" id="4H2MDin3wKc" role="33vP2m">
-            <node concept="2OqwBi" id="4H2MDin3wKd" role="2Oq$k0">
-              <node concept="1Miqr6" id="4H2MDin3wKe" role="2Oq$k0" />
-              <node concept="liA8E" id="4H2MDin3wKf" role="2OqNvi">
-                <ref role="37wK5l" to="cj4x:~Editor.getCurrentEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getCurrentEditorComponent" />
-              </node>
-            </node>
-            <node concept="liA8E" id="4H2MDin3wKg" role="2OqNvi">
-              <ref role="37wK5l" to="cj4x:~EditorComponent.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="3cpWs8" id="4H2MDin3xbO" role="3cqZAp">
         <node concept="3cpWsn" id="4H2MDin3xbP" role="3cpWs9">
           <property role="TrG5h" value="inspector" />
           <node concept="3uibUv" id="4H2MDin3xbQ" role="1tU5fm">
             <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
           </node>
-          <node concept="2OqwBi" id="4H2MDin3xbR" role="33vP2m">
-            <node concept="2OqwBi" id="4H2MDin3xbS" role="2Oq$k0">
-              <node concept="37vLTw" id="4H2MDin3xbT" role="2Oq$k0">
-                <ref role="3cqZAo" node="4H2MDin3wKa" resolve="operationContext" />
-              </node>
-              <node concept="liA8E" id="4H2MDin3xbU" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="4H2MDin3xbV" role="37wK5m">
+          <node concept="2OqwBi" id="R5v_Dt5Rq6" role="33vP2m">
+            <node concept="2OqwBi" id="R5v_Dt5QNF" role="2Oq$k0">
+              <node concept="1jxXqW" id="R5v_Dt5Qz3" role="2Oq$k0" />
+              <node concept="liA8E" id="R5v_Dt5RaP" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="R5v_Dt5Rbd" role="37wK5m">
                   <ref role="3VsUkX" to="exr9:~InspectorTool" resolve="InspectorTool" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="4H2MDin3xbW" role="2OqNvi">
+            <node concept="liA8E" id="R5v_Dt5SnR" role="2OqNvi">
               <ref role="37wK5l" to="exr9:~InspectorTool.getInspector():jetbrains.mps.nodeEditor.EditorComponent" resolve="getInspector" />
             </node>
           </node>

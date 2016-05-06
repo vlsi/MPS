@@ -8635,33 +8635,31 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6249787563914683642">
     <file name="DefaultCellInfoTest_Test.java">
-      <node id="6249787563914683642" at="19,59,20,102" concept="3" />
-      <node id="6249787563914683642" at="20,102,21,95" concept="3" />
-      <node id="6249787563914683642" at="27,51,28,72" concept="3" />
-      <node id="5423119640845749257" at="28,72,29,105" concept="7" />
-      <node id="5423119640845751028" at="29,105,30,100" concept="7" />
-      <node id="5423119640845780913" at="33,42,34,47" concept="8" />
-      <node id="3349229934431906055" at="36,9,37,63" concept="3" />
-      <node id="403806536168445080" at="37,63,38,71" concept="3" />
-      <node id="5423119640845780907" at="32,0,36,0" concept="6" trace="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
-      <node id="6249787563914683642" at="18,0,23,0" concept="6" trace="test_DefaultCellInfoTest#()V" />
-      <node id="5423119640845780895" at="30,100,36,9" concept="7" />
-      <node id="6249787563914683642" at="26,0,40,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="5423119640845780912" at="33,42,34,47" />
-      <scope id="6249787563914683642" at="19,59,21,95" />
-      <scope id="5423119640845780907" at="32,0,36,0">
+      <node id="6249787563914683642" at="18,59,19,102" concept="3" />
+      <node id="6249787563914683642" at="19,102,20,95" concept="3" />
+      <node id="6249787563914683642" at="26,51,27,72" concept="3" />
+      <node id="5423119640845751028" at="27,72,28,93" concept="7" />
+      <node id="5423119640845780913" at="31,42,32,47" concept="8" />
+      <node id="3349229934431906055" at="34,9,35,63" concept="3" />
+      <node id="403806536168445080" at="35,63,36,71" concept="3" />
+      <node id="5423119640845780907" at="30,0,34,0" concept="6" trace="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+      <node id="6249787563914683642" at="17,0,22,0" concept="6" trace="test_DefaultCellInfoTest#()V" />
+      <node id="5423119640845780895" at="28,93,34,9" concept="7" />
+      <node id="6249787563914683642" at="25,0,38,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5423119640845780912" at="31,42,32,47" />
+      <scope id="6249787563914683642" at="18,59,20,95" />
+      <scope id="5423119640845780907" at="30,0,34,0">
         <var name="c" id="5423119640845780910" />
       </scope>
-      <scope id="6249787563914683642" at="18,0,23,0" />
-      <scope id="6249787563914683642" at="27,51,38,71">
+      <scope id="6249787563914683642" at="17,0,22,0" />
+      <scope id="6249787563914683642" at="26,51,36,71">
         <var name="editorCell" id="5423119640845780896" />
         <var name="inspector" id="5423119640845751029" />
-        <var name="operationContext" id="5423119640845749258" />
       </scope>
-      <scope id="6249787563914683642" at="26,0,40,0" />
-      <unit id="5423119640845780905" at="31,71,36,7" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
-      <unit id="6249787563914683642" at="24,0,41,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
-      <unit id="6249787563914683642" at="16,0,42,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
+      <scope id="6249787563914683642" at="25,0,38,0" />
+      <unit id="5423119640845780905" at="29,71,34,7" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
+      <unit id="6249787563914683642" at="23,0,39,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
+      <unit id="6249787563914683642" at="15,0,40,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6386137884199284577">

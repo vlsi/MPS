@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -26,8 +25,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5560058483159205760", "5560058483159208304");
-      IOperationContext operationContext = getEditor().getCurrentEditorComponent().getOperationContext();
-      EditorComponent inspector = operationContext.getComponent(InspectorTool.class).getInspector();
+      EditorComponent inspector = myProject.getComponent(InspectorTool.class).getInspector();
       EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
         @Override
         public boolean met(EditorCell c) {
