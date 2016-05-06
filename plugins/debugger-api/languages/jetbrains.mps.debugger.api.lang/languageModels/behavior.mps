@@ -96,13 +96,13 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -353,7 +353,7 @@
       <node concept="3clFbS" id="4IGpg_YjLG6" role="3clF47">
         <node concept="3cpWs6" id="4IGpg_YjLG7" role="3cqZAp">
           <node concept="2c44tf" id="4IGpg_YjLG3" role="3cqZAk">
-            <node concept="3THzug" id="7_Oswe9bkNg" role="2c44tc" />
+            <node concept="3bZ5Sz" id="5zFeAub55sr" role="2c44tc" />
           </node>
         </node>
       </node>
