@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +27,16 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Collection;
 import java.util.List;
 
+
+/**
+ * Provisional interface our openapi.SModel implementations shall provide in order to manage model dependencies
+ * and internal housekeeping tasks (also for legacy model listeners, pending removal).
+ *
+ * We are not yet confident about API to add model dependencies (languages, models and alike), that's why we keep this
+ * separate, non-{@code openapi} interface. Questions, among others, include whether we shall demand all models to support
+ * imports editing, how to specify dependencies (extra composite Dependency objects or plain SModelReference/SLanguage is ok),
+ * if this interface is intrinsic part of openapi.SModel or just comes with a help thereof (i.e. model.getDependencies() manager object).
+ */
 // XXX move to [smodel] once ImportElement and Language dependencies gone
 public interface SModelInternal extends ModelWithDisposeInfo  {
 
@@ -75,14 +84,24 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void deleteDevKit(@NotNull SModuleReference ref);
 
-  // there's single place in MPS that has the right to call this method until I remove it altogether.
-  // And this would be ModelImports utility. Note, similar method from smodel.SModel could be invoked by the code
-  // that knows its SModel implementation (like TransientModel impl).
-  List<ImportElement> importedModels();
+  /**
+   * @return collection of models this one depends from.
+   */
+  @NotNull
+  Collection<SModelReference> getModelImports();
 
+  /**
+   * Tell one model depends from another.
+   * @since 3.4
+   */
+  void addModelImport(@NotNull SModelReference modelReference);
+
+  /**
+   * @deprecated use {@link #addModelImport(SModelReference)} instead, second argument of this method is legacy.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void addModelImport(SModelReference modelReference, boolean firstVersion);
-
-  void addModelImport(ImportElement importElement);
 
   void deleteModelImport(SModelReference modelReference);
 

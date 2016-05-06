@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
@@ -95,13 +95,11 @@ public abstract class MPSPsiJavaRef extends MPSPsiRef {
             SModel model = sourceNode.getModel();
             SModelReference newTargetModel = newNode.getModelReference();
 
-            assert model instanceof SModelInternal;
-            assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
-
-            ((SModelInternal) model).addModelImport(newTargetModel, true);
+            ModelImports modelImports = new ModelImports(model);
+            modelImports.addModelImport(newTargetModel);
 
             if (oldNode.getModelReference().resolve(MPSModuleRepository.getInstance()) == null) {
-              ((SModelInternal) model).deleteModelImport(oldNode.getModelReference());
+              modelImports.removeModelImport(oldNode.getModelReference());
             }
           }
         }

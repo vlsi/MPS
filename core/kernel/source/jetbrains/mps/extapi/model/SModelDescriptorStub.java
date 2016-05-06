@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -300,10 +302,26 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
-  @Override
+  /**
+   * @deprecated ImportElement is implementation detail of SModelData impl we are using, use {@link #getModelImports()} instead.
+   * It's our implementation code, remove as soon as all usages are gone
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public final List<ImportElement> importedModels() {
     assertCanRead();
     return getSModel().importedModels();
+  }
+
+  @NotNull
+  @Override
+  public Collection<SModelReference> getModelImports() {
+    assertCanRead();
+    ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
+    for (ImportElement ie : getSModel().importedModels()) {
+      rv.add(ie.getModelReference());
+    }
+    return rv;
   }
 
   @Override
@@ -313,15 +331,20 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public final void addModelImport(ImportElement importElement) {
+  public final void addModelImport(@NotNull SModelReference ref) {
     assertCanChange();
-    getSModel().addModelImport(importElement);
+    getSModel().addModelImport(new ImportElement(ref));
   }
 
   @Override
   public final void deleteModelImport(SModelReference modelReference) {
     assertCanChange();
-    getSModel().deleteModelImport(modelReference);
+    final jetbrains.mps.smodel.SModel modelData = getSModel();
+    for (ImportElement importElement : modelData.importedModels()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        modelData.deleteModelImport(importElement);
+      }
+    }
   }
 
   @Override

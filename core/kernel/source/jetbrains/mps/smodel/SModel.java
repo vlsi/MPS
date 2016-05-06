@@ -716,20 +716,19 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(ImportElement importElement) {
-    myImports.add(importElement);
-    fireImportAddedEvent(importElement.getModelReference());
-    markChanged();
+    if (myImports.add(importElement)) {
+      fireImportAddedEvent(importElement.getModelReference());
+      markChanged();
+    }
   }
 
-  public void deleteModelImport(SModelReference modelReference) {
-    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
-    if (importElement != null) {
-      myImports.remove(importElement);
+  public void deleteModelImport(ImportElement importElement) {
+    if (myImports.remove(importElement)) {
       if (myLegacyImplicitImports != null) {
         // shall keep only if we do track implicit imports
         myLegacyImplicitImports.addAdditionalModelVersion(importElement);  // to save version and ID if model was imported implicitly
       }
-      fireImportRemovedEvent(modelReference);
+      fireImportRemovedEvent(importElement.getModelReference());
       markChanged();
     }
   }
@@ -951,7 +950,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public static class ImportElement {
+  public static final class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index
     private int myUsedVersion;

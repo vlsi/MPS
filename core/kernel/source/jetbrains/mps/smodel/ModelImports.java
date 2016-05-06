@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -24,7 +23,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Auxiliary facility to deal with model imports without knowledge
@@ -37,6 +35,8 @@ import java.util.List;
  *
  * @implNote This class is deemed as low-level API to model imports, contrary to
  * <code>jetbrains.mps.project.ModelImporter</code> that focuses on user interaction and input check.
+ * OTOH, don't get confused with 'low-level'. This class is intended for SModel clients, not for SModel implementers, don't
+ * use it from within {@link jetbrains.mps.extapi.model.SModelDescriptorStub} or {@link jetbrains.mps.extapi.model.SModelBase}.
  *
  * @author Artem Tikhomirov
  * @since 3.4
@@ -53,15 +53,11 @@ public final class ModelImports {
    * XXX and likely without null values.
    */
   public Collection<SModelReference> getImportedModels() {
-    List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : myModel.importedModels()) {
-      references.add(importElement.getModelReference());
-    }
-    return Collections.unmodifiableList(references);
+    return myModel.getModelImports();
   }
 
   public void addModelImport(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelToImport) {
-    myModel.addModelImport(modelToImport, false);
+    myModel.addModelImport(modelToImport);
   }
 
   public void removeModelImport(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelToRemove) {
@@ -75,7 +71,7 @@ public final class ModelImports {
    */
   public void copyImportedModelsFrom(@NotNull org.jetbrains.mps.openapi.model.SModel other) {
     for (org.jetbrains.mps.openapi.model.SModelReference model : new ModelImports(other).getImportedModels()) {
-      myModel.addModelImport(model, false);
+      myModel.addModelImport(model);
     }
   }
 

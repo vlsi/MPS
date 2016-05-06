@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -61,7 +62,7 @@ public final class SModelLegacy {
   }
 
   public void addModelImport(org.jetbrains.mps.openapi.model.SModelReference ref, boolean firstVersion) {
-    ImportElement importElement = SModelOperations.getImportElement(myModel, ref);
+    ImportElement importElement = getImportElement(ref);
     if (importElement != null) {
       return;
     }
@@ -110,6 +111,16 @@ public final class SModelLegacy {
     SLanguageId id = MetaIdHelper.getLanguage(lang);
     ModuleId moduleId = ModuleId.regular(id.getIdValue());
     return new ModuleReference(name, moduleId);
+  }
+
+  @Nullable
+  private ImportElement getImportElement(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+    for (ImportElement importElement : myModel.importedModels()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
   }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -148,10 +148,7 @@ public class IdPrefixReference implements PsiReference {
       SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
       SModelReference newTargetModel = newNode.getSModelReference();
 
-      assert model instanceof SModelInternal;
-      assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
-
-      ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
+      new ModelImports(model).addModelImport(newTargetModel);
     }
   }
 

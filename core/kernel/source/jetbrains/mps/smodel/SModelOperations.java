@@ -20,7 +20,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +74,7 @@ public class SModelOperations {
    * Populate given model with proper imports/languages according to actual model content (i.e. nodes)
    * @param model model to populate with language/import dependencies
    * @param updateModuleImports <code>true</code> to update imports of model's module (if any)
-   * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9)
+   * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9), value is ignored
    */
   public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
     final SModule module = model.getModule();
@@ -105,7 +104,7 @@ public class SModelOperations {
             ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
           }
         }
-        ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference, firstVersion);
+        ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference);
       }
     }
     importedModels.clear();
@@ -196,14 +195,4 @@ public class SModelOperations {
   }
 
   //-----------------------------------------------------
-
-  @Nullable
-  /*package*/ static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull SModelReference modelReference) {
-    for (ImportElement importElement : model.importedModels()) {
-      if (importElement.getModelReference().equals(modelReference)) {
-        return importElement;
-      }
-    }
-    return null;
-  }
 }
