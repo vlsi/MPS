@@ -55,7 +55,7 @@
     <language slang="l:698a8d22-a104-47a0-ba8d-10e3ec237f13:jetbrains.mps.build.workflow" version="0" />
     <language slang="l:58f98fef-90ad-4b72-a390-fad66ec7005a:jetbrains.mps.core.properties" version="0" />
     <language slang="l:479c7a8c-02f9-43b5-9139-d910cb22f298:jetbrains.mps.core.xml" version="0" />
-    <language slang="l:fbc14279-5e2a-4c87-a5d1-5f7061e6c456:jetbrains.mps.debugger.api.lang" version="0" />
+    <language slang="l:fbc14279-5e2a-4c87-a5d1-5f7061e6c456:jetbrains.mps.debugger.api.lang" version="1" />
     <language slang="l:f3347d8a-0e79-4f35-8ac9-1574f25c986f:jetbrains.mps.execution.commands" version="0" />
     <language slang="l:73c1a490-99fa-4d0d-8292-b8985697c74b:jetbrains.mps.execution.common" version="0" />
     <language slang="l:22e72e4c-0f69-46ce-8403-6750153aa615:jetbrains.mps.execution.configurations" version="0" />
