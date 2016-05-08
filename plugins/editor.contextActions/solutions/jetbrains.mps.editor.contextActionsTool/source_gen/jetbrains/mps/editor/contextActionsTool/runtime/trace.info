@@ -511,7 +511,7 @@
   <root nodeRef="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.contextActionsTool.runtime)/5417717107921676866">
     <file name="ContextMenuController.java">
       <node id="6948436543298581587" at="21,0,22,0" concept="4" trace="myMenuProvider" />
-      <node id="5417717107921676881" at="22,122,23,34" concept="14" />
+      <node id="5417717107921676881" at="22,115,23,34" concept="14" />
       <node id="6948436543298584578" at="23,34,24,34" concept="3" />
       <node id="6948436543298473056" at="28,80,29,100" concept="8" />
       <node id="2112251309117597434" at="29,100,30,0" concept="11" />
@@ -525,61 +525,64 @@
       <node id="4103857878011937612" at="47,68,48,22" concept="9" />
       <node id="5417717107921764513" at="55,0,56,0" concept="4" trace="myActionItem" />
       <node id="5417717107921780739" at="56,0,57,0" concept="4" trace="myFolderName" />
-      <node id="5417717107921765286" at="60,59,61,32" concept="3" />
-      <node id="5417717107921786560" at="61,32,62,32" concept="3" />
-      <node id="4103857878012010302" at="62,32,63,0" concept="11" />
-      <node id="4103857878012055002" at="64,54,65,73" concept="8" />
-      <node id="4103857878012064073" at="65,73,66,39" concept="3" />
-      <node id="4103857878012033214" at="67,14,68,22" concept="3" />
-      <node id="5417717107921772043" at="73,30,74,43" concept="9" />
-      <node id="5074183758720091338" at="77,27,78,20" concept="9" />
-      <node id="5417717107921796675" at="81,35,82,26" concept="9" />
-      <node id="5417717107921799727" at="85,32,86,43" concept="9" />
-      <node id="5417717107921766130" at="89,32,90,18" concept="9" />
-      <node id="5417717107921942542" at="93,27,94,31" concept="3" />
+      <node id="5417717107921765286" at="62,59,63,32" concept="3" />
+      <node id="5417717107921786560" at="63,32,64,32" concept="3" />
+      <node id="4103857878012010302" at="64,32,65,0" concept="11" />
+      <node id="4103857878012055002" at="66,54,67,73" concept="8" />
+      <node id="4103857878012064073" at="67,73,68,39" concept="3" />
+      <node id="6917971026853530140" at="68,39,69,49" concept="3" />
+      <node id="4103857878012033214" at="70,14,71,22" concept="3" />
+      <node id="6917971026853544607" at="71,22,72,25" concept="3" />
+      <node id="5417717107921772043" at="77,30,78,43" concept="9" />
+      <node id="5074183758720091338" at="81,27,82,20" concept="9" />
+      <node id="5417717107921796675" at="85,35,86,26" concept="9" />
+      <node id="5417717107921799727" at="89,32,90,23" concept="9" />
+      <node id="5417717107921766130" at="93,32,94,18" concept="9" />
+      <node id="5417717107921942542" at="97,27,98,31" concept="3" />
       <node id="5074183758720080227" at="57,0,59,0" concept="4" trace="myIcon" />
-      <node id="4103857878012030633" at="67,12,69,7" concept="0" />
-      <node id="5417717107921676871" at="22,0,26,0" concept="1" trace="ContextMenuController#(Ljetbrains/mps/project/IProject;Ljetbrains/mps/editor/contextActionsTool/runtime/ToolComponent;Ljetbrains/mps/nodeEditor/assist/ContextAssistantMenuProvider;)V" />
-      <node id="5417717107921766102" at="72,0,76,0" concept="7" trace="getLabel#()Ljava/lang/String;" />
-      <node id="5417717107921766107" at="76,0,80,0" concept="7" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="5417717107921766114" at="80,0,84,0" concept="7" trace="getFolderName#()Ljava/lang/String;" />
-      <node id="5417717107921766119" at="84,0,88,0" concept="7" trace="getTooltip#()Ljava/lang/String;" />
-      <node id="5417717107921766124" at="88,0,92,0" concept="7" trace="isVisible#()Z" />
-      <node id="5417717107921766145" at="92,0,96,0" concept="7" trace="execute#()V" />
+      <node id="6917971026853520583" at="59,0,61,0" concept="4" trace="myTooltip" />
+      <node id="4103857878012030633" at="70,12,73,7" concept="0" />
+      <node id="5417717107921676871" at="22,0,26,0" concept="1" trace="ContextMenuController#(Ljetbrains/mps/project/IProject;Ljetbrains/mps/editor/contextActionsTool/runtime/ToolComponent;Ljetbrains/mps/nodeEditor/assist/SelectionMenuProvider;)V" />
+      <node id="5417717107921766102" at="76,0,80,0" concept="7" trace="getLabel#()Ljava/lang/String;" />
+      <node id="5417717107921766107" at="80,0,84,0" concept="7" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="5417717107921766114" at="84,0,88,0" concept="7" trace="getFolderName#()Ljava/lang/String;" />
+      <node id="5417717107921766119" at="88,0,92,0" concept="7" trace="getTooltip#()Ljava/lang/String;" />
+      <node id="5417717107921766124" at="92,0,96,0" concept="7" trace="isVisible#()Z" />
+      <node id="5417717107921766145" at="96,0,100,0" concept="7" trace="execute#()V" />
       <node id="4103857878011924064" at="39,0,44,0" concept="7" trace="visit#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;)Ljava/lang/Void;" />
       <node id="4103857878011924072" at="44,0,50,0" concept="7" trace="visit#(Ljetbrains/mps/openapi/editor/menus/transformation/SubMenu;)Ljava/lang/Void;" />
-      <node id="4103857878012013025" at="63,0,69,7" concept="6" />
       <node id="5417717107921676889" at="27,0,35,0" concept="7" trace="queryItems#(Ljetbrains/mps/openapi/editor/selection/Selection;)Ljava/util/List;" />
-      <node id="5417717107921765278" at="60,0,71,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;)V" />
+      <node id="4103857878012013025" at="65,0,73,7" concept="6" />
       <node id="4103857878011825354" at="37,60,50,9" concept="3" />
+      <node id="5417717107921765278" at="62,0,75,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;)V" />
       <node id="2112251309117407218" at="36,120,51,5" concept="5" />
       <node id="2112251309117397468" at="36,0,53,0" concept="7" trace="convertItems#(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)V" />
-      <scope id="4103857878012030634" at="67,14,68,22" />
-      <scope id="5417717107921766106" at="73,30,74,43" />
-      <scope id="5417717107921766111" at="77,27,78,20" />
-      <scope id="5417717107921766118" at="81,35,82,26" />
-      <scope id="5417717107921766123" at="85,32,86,43" />
-      <scope id="5417717107921766128" at="89,32,90,18" />
-      <scope id="5417717107921766149" at="93,27,94,31" />
-      <scope id="5417717107921676880" at="22,122,24,34" />
+      <scope id="5417717107921766106" at="77,30,78,43" />
+      <scope id="5417717107921766111" at="81,27,82,20" />
+      <scope id="5417717107921766118" at="85,35,86,26" />
+      <scope id="5417717107921766123" at="89,32,90,23" />
+      <scope id="5417717107921766128" at="93,32,94,18" />
+      <scope id="5417717107921766149" at="97,27,98,31" />
+      <scope id="5417717107921676880" at="22,115,24,34" />
       <scope id="4103857878011924070" at="40,50,42,22" />
-      <scope id="4103857878012013027" at="64,54,66,39">
-        <var name="sidebarItem" id="4103857878012055003" />
-      </scope>
+      <scope id="4103857878012030634" at="70,14,72,25" />
       <scope id="4103857878011924078" at="45,44,48,22">
         <var name="subfolderName" id="4103857878011931734" />
+      </scope>
+      <scope id="4103857878012013027" at="66,54,69,49">
+        <var name="sidebarItem" id="4103857878012055003" />
       </scope>
       <scope id="5417717107921676871" at="22,0,26,0">
         <var name="menuProvider" id="6948436543298582577" />
         <var name="project" id="5417717107921676874" />
         <var name="toolComponent" id="5417717107921676876" />
       </scope>
-      <scope id="5417717107921766102" at="72,0,76,0" />
-      <scope id="5417717107921766107" at="76,0,80,0" />
-      <scope id="5417717107921766114" at="80,0,84,0" />
-      <scope id="5417717107921766119" at="84,0,88,0" />
-      <scope id="5417717107921766124" at="88,0,92,0" />
-      <scope id="5417717107921766145" at="92,0,96,0" />
+      <scope id="5417717107921766102" at="76,0,80,0" />
+      <scope id="5417717107921766107" at="80,0,84,0" />
+      <scope id="5417717107921766114" at="84,0,88,0" />
+      <scope id="5417717107921766119" at="88,0,92,0" />
+      <scope id="5417717107921766124" at="92,0,96,0" />
+      <scope id="5417717107921766145" at="96,0,100,0" />
       <scope id="5417717107921676895" at="28,80,33,19">
         <var name="uiItems" id="6948436543298473062" />
       </scope>
@@ -592,12 +595,12 @@
       <scope id="5417717107921676889" at="27,0,35,0">
         <var name="selection" id="5417717107921676893" />
       </scope>
-      <scope id="5417717107921765282" at="60,59,69,7" />
-      <scope id="5417717107921765278" at="60,0,71,0">
+      <scope id="5417717107921765282" at="62,59,73,7" />
+      <scope id="2112251309117407221" at="37,60,50,9" />
+      <scope id="5417717107921765278" at="62,0,75,0">
         <var name="actionItem" id="5417717107921765285" />
         <var name="folderName" id="5417717107921782746" />
       </scope>
-      <scope id="2112251309117407221" at="37,60,50,9" />
       <scope id="2112251309117397471" at="36,120,51,5" />
       <scope id="2112251309117407218" at="36,120,51,5">
         <var name="inItem" id="2112251309117407219" />
@@ -608,8 +611,8 @@
         <var name="outItems" id="2112251309117401880" />
       </scope>
       <unit id="4103857878011924062" at="38,24,50,7" name="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController$1" />
-      <unit id="5417717107921750411" at="54,0,97,0" name="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController$Item" />
-      <unit id="5417717107921676866" at="20,0,98,0" name="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController" />
+      <unit id="5417717107921750411" at="54,0,101,0" name="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController$Item" />
+      <unit id="5417717107921676866" at="20,0,102,0" name="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController" />
     </file>
   </root>
   <root nodeRef="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.contextActionsTool.runtime)/5786526509877849882">

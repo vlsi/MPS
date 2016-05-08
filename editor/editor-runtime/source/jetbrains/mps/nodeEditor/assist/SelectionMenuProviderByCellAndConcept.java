@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup;
-import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
@@ -35,14 +34,17 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Attempts to look up context assistant menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it
- * is returned. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default menu.
+ * Attempts to look up a transformation menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it is
+ * used. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default
+ * menu. In case when no cell or more than one cell is selected, returns an empty list of items.
  */
-public class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMenuProvider {
+public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvider {
   private final ModelAccessHelper myModelAccessHelper;
+  private String myMenuLocation;
 
-  public ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
+  public SelectionMenuProviderByCellAndConcept(ModelAccess modelAccess, String menuLocation) {
     myModelAccessHelper = new ModelAccessHelper(modelAccess);
+    myMenuLocation = menuLocation;
   }
 
   @NotNull
@@ -61,7 +63,7 @@ public class ContextAssistantMenuProviderByCellAndConcept implements ContextAssi
     }
 
     DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
-        MenuLocations.CONTEXT_ASSISTANT);
+        myMenuLocation);
 
     return myModelAccessHelper.runReadAction(() -> context.getMenuItemFactory().createItems(menuLookupAndCell.o1));
   }

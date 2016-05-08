@@ -21,7 +21,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public interface ContextAssistantMenuProvider {
+/**
+ * Returns menu items to show based on the current selection
+ */
+public interface SelectionMenuProvider {
   @NotNull
   List<MenuItem> getMenuItems(@NotNull Selection selection);
 }

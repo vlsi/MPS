@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.assist;
 
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -35,7 +36,7 @@ import java.util.List;
 
 /**
  * Activates the appropriate context assistant when selection changes. Uses {@link ContextAssistantFinder} to determine which assistant to activate and
- * {@link ContextAssistantMenuProvider} to build the menu to show.
+ * {@link SelectionMenuProvider} to build the menu to show.
  */
 public class DefaultContextAssistantManager implements ContextAssistantManager {
   private static final long UPDATE_DELAY = 1000L;
@@ -45,7 +46,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   private final SelectionManager mySelectionManager;
   private final Updater myUpdater;
   private final ContextAssistantFinder myAssistantFinder;
-  private final ContextAssistantMenuProvider myMenuProvider;
+  private final SelectionMenuProvider myMenuProvider;
 
   private int myAssistantCount;
   private ScheduleUpdateDelayedRunnable myScheduleUpdateDelayedRunnable;
@@ -55,11 +56,11 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
 
   public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
     this(component.getSelectionManager(), component.getUpdater(), new ParentOrSmallCellContextAssistantFinder(),
-        new ContextAssistantMenuProviderByCellAndConcept(repository.getModelAccess()));
+        new SelectionMenuProviderByCellAndConcept(repository.getModelAccess(), MenuLocations.CONTEXT_ASSISTANT));
   }
 
   public DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,
-      ContextAssistantMenuProvider menuProvider) {
+      SelectionMenuProvider menuProvider) {
     mySelectionManager = selectionManager;
     myUpdater = updater;
     myAssistantFinder = assistantFinder;

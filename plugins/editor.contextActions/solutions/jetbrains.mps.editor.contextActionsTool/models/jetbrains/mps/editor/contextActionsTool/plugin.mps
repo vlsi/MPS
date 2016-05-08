@@ -17,6 +17,7 @@
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
     <import index="v8cy" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.assist(MPS.Editor/)" />
+    <import index="9eyi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus.transformation(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
@@ -76,6 +77,9 @@
       </concept>
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -295,7 +299,7 @@
                 </node>
                 <node concept="2ShNRf" id="1PgelZsjSV5" role="37wK5m">
                   <node concept="1pGfFk" id="7kAP1VuNkdb" role="2ShVmc">
-                    <ref role="37wK5l" to="v8cy:~ContextAssistantMenuProviderByCellAndConcept.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ContextAssistantMenuProviderByCellAndConcept" />
+                    <ref role="37wK5l" to="v8cy:~SelectionMenuProviderByCellAndConcept.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.String)" resolve="SelectionMenuProviderByCellAndConcept" />
                     <node concept="2OqwBi" id="1y$BkzWoDiA" role="37wK5m">
                       <node concept="2OqwBi" id="7kAP1VuNkL3" role="2Oq$k0">
                         <node concept="37vLTw" id="7kAP1VuNkl1" role="2Oq$k0">
@@ -308,6 +312,10 @@
                       <node concept="liA8E" id="1y$BkzWoDG8" role="2OqNvi">
                         <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                       </node>
+                    </node>
+                    <node concept="10M0yZ" id="3zNPfWNAHR6" role="37wK5m">
+                      <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
+                      <ref role="3cqZAo" to="9eyi:~MenuLocations.CONTEXT_ACTIONS_TOOL" resolve="CONTEXT_ACTIONS_TOOL" />
                     </node>
                   </node>
                 </node>

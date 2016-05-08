@@ -7663,8 +7663,8 @@
       <property role="TrG5h" value="myMenuProvider" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="61HNzz3DUI_" role="1B3o_S" />
-      <node concept="3uibUv" id="3OuQJr5VEf0" role="1tU5fm">
-        <ref role="3uigEE" to="v8cy:~ContextAssistantMenuProvider" resolve="ContextAssistantMenuProvider" />
+      <node concept="3uibUv" id="3zNPfWNAIQU" role="1tU5fm">
+        <ref role="3uigEE" to="v8cy:~SelectionMenuProvider" resolve="SelectionMenuProvider" />
       </node>
     </node>
     <node concept="3clFbW" id="4GJAg5veAD7" role="jymVt">
@@ -7684,8 +7684,8 @@
       </node>
       <node concept="37vLTG" id="61HNzz3DVwL" role="3clF46">
         <property role="TrG5h" value="menuProvider" />
-        <node concept="3uibUv" id="3OuQJr5VEmo" role="1tU5fm">
-          <ref role="3uigEE" to="v8cy:~ContextAssistantMenuProvider" resolve="ContextAssistantMenuProvider" />
+        <node concept="3uibUv" id="3zNPfWNAJ22" role="1tU5fm">
+          <ref role="3uigEE" to="v8cy:~SelectionMenuProvider" resolve="SelectionMenuProvider" />
         </node>
       </node>
       <node concept="3clFbS" id="4GJAg5veADg" role="3clF47">
@@ -7756,7 +7756,7 @@
                 <ref role="3cqZAo" node="61HNzz3DVhj" resolve="myMenuProvider" />
               </node>
               <node concept="liA8E" id="7kAP1VuQud7" role="2OqNvi">
-                <ref role="37wK5l" to="v8cy:~ContextAssistantMenuProvider.getMenuItems(jetbrains.mps.openapi.editor.selection.Selection):java.util.List" resolve="getMenuItems" />
+                <ref role="37wK5l" to="v8cy:~SelectionMenuProvider.getMenuItems(jetbrains.mps.openapi.editor.selection.Selection):java.util.List" resolve="getMenuItems" />
                 <node concept="37vLTw" id="7kAP1VuQud8" role="37wK5m">
                   <ref role="3cqZAo" node="4GJAg5veADt" resolve="selection" />
                 </node>
@@ -8010,6 +8010,17 @@
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
         </node>
       </node>
+      <node concept="312cEg" id="601$vVQ36j7" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="myTooltip" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="601$vVQ35AD" role="1B3o_S" />
+        <node concept="17QB3L" id="601$vVQ36dN" role="1tU5fm" />
+        <node concept="2AHcQZ" id="601$vVQ37bH" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+      </node>
       <node concept="2tJIrI" id="4GJAg5veWdb" role="jymVt" />
       <node concept="3Tm6S6" id="2F9zMHpKZyA" role="1B3o_S" />
       <node concept="3uibUv" id="4GJAg5veSL9" role="EKbjA">
@@ -8073,6 +8084,21 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="601$vVQ38Cs" role="3cqZAp">
+                <node concept="37vLTI" id="601$vVQ39mm" role="3clFbG">
+                  <node concept="2OqwBi" id="601$vVQ3am9" role="37vLTx">
+                    <node concept="37vLTw" id="601$vVQ39MY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3zNPfWNAcRr" resolve="sidebarItem" />
+                    </node>
+                    <node concept="liA8E" id="601$vVQ3aU4" role="2OqNvi">
+                      <ref role="37wK5l" to="uahq:~SidebarActionItem.getTooltipText():java.lang.String" resolve="getTooltipText" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="601$vVQ38Cq" role="37vLTJ">
+                    <ref role="3cqZAo" node="601$vVQ36j7" resolve="myTooltip" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="2ZW3vV" id="3zNPfWNA3MT" role="3clFbw">
               <node concept="3uibUv" id="3zNPfWNA6SO" role="2ZW6by">
@@ -8089,6 +8115,14 @@
                     <node concept="10Nm6u" id="3zNPfWNA8_z" role="37vLTx" />
                     <node concept="37vLTw" id="3zNPfWNA7yX" role="37vLTJ">
                       <ref role="3cqZAo" node="4pF7NUf$h_z" resolve="myIcon" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="601$vVQ3cav" role="3cqZAp">
+                  <node concept="37vLTI" id="601$vVQ3cQ6" role="3clFbG">
+                    <node concept="10Nm6u" id="601$vVQ3deG" role="37vLTx" />
+                    <node concept="37vLTw" id="601$vVQ3cat" role="37vLTJ">
+                      <ref role="3cqZAo" node="601$vVQ36j7" resolve="myTooltip" />
                     </node>
                   </node>
                 </node>
@@ -8177,14 +8211,8 @@
         <node concept="17QB3L" id="4GJAg5veWrE" role="3clF45" />
         <node concept="3clFbS" id="4GJAg5veWrF" role="3clF47">
           <node concept="3clFbF" id="4GJAg5vf4CJ" role="3cqZAp">
-            <node concept="2OqwBi" id="4GJAg5vgeuD" role="3clFbG">
-              <node concept="37vLTw" id="4GJAg5vgdXC" role="2Oq$k0">
-                <ref role="3cqZAo" node="4GJAg5veW2x" resolve="myActionItem" />
-              </node>
-              <node concept="liA8E" id="4GJAg5vgeUj" role="2OqNvi">
-                <ref role="37wK5l" to="uddc:~ActionItem.getLabelText(java.lang.String):java.lang.String" resolve="getLabelText" />
-                <node concept="Xl_RD" id="4pF7NUf$aIy" role="37wK5m" />
-              </node>
+            <node concept="37vLTw" id="601$vVQ3e9z" role="3clFbG">
+              <ref role="3cqZAo" node="601$vVQ36j7" resolve="myTooltip" />
             </node>
           </node>
         </node>

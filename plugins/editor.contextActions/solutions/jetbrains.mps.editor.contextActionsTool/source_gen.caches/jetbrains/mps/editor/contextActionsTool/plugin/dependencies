@@ -25,7 +25,8 @@
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ViewType" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.assist.ContextAssistantMenuProviderByCellAndConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.assist.SelectionMenuProviderByCellAndConcept" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
   </dependency>
