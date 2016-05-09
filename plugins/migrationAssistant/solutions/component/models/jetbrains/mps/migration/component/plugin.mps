@@ -178,7 +178,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Migration Assistant" />
     <property role="9BnSO" value="139.1" />
-    <property role="9BnSK" value="3.2.3" />
+    <property role="9BnSK" value="3.2.4" />
     <node concept="2zDL_w" id="mKSGn8$SCP" role="2zDKky">
       <node concept="2zDL_x" id="mKSGn8$SUS" role="2zDL_s">
         <ref role="2zDL_u" node="6MUcJMtBJD9" resolve="MigationAssistantActions" />
