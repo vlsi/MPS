@@ -264,8 +264,8 @@
     <dependency org="lib.src" name="serviceMessages_279xxx_src.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages_279xxx_src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="snappy-java-1.0.5-M2-src.zip" rev="${idea.platform.version}">
-      <artifact name="snappy-java-1.0.5-M2-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="snappy-java-1.0.4.1-src.zip" rev="${idea.platform.version}">
+      <artifact name="snappy-java-1.0.4.1-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="trove4j_src.jar" rev="${idea.platform.version}">
       <artifact name="trove4j_src.jar" ext="jar"/>
@@ -420,8 +420,8 @@
     <dependency org="lib" name="serviceMessages.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="snappy-java-1.0.5-M2.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-java-1.0.5-M2.jar" ext="jar"/>
+    <dependency org="lib" name="snappy-java-1.0.4.1.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-java-1.0.4.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="swingx-core-1.6.2.jar" rev="${idea.platform.version}">
       <artifact name="swingx-core-1.6.2.jar" ext="jar"/>
