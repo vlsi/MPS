@@ -30939,15 +30939,6 @@
       <ref role="30HIoZ" to="tpc2:7l1m754O$tN" resolve="TransformationMenuPart_Super" />
       <node concept="b5Tf3" id="4sA1wzj7Eet" role="1lVwrX" />
     </node>
-    <node concept="3aamgX" id="Z45Y15hY9a" role="3acgRq">
-      <ref role="30HIoZ" to="tpc2:7L5lpRJOAJb" resolve="TransformationLocation_ContextAssistant" />
-      <node concept="gft3U" id="Z45Y15hY9u" role="1lVwrX">
-        <node concept="10M0yZ" id="Z45Y15hYdz" role="gfFT$">
-          <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
-          <ref role="3cqZAo" to="9eyi:~MenuLocations.CONTEXT_ASSISTANT" resolve="CONTEXT_ASSISTANT" />
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="6V0bp$oIFe$" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
       <node concept="j$656" id="6V0bp$oIFf1" role="1lVwrX">
@@ -31296,20 +31287,23 @@
           </node>
         </node>
         <node concept="2tJIrI" id="4sA1wzjmEak" role="jymVt" />
-        <node concept="2tJIrI" id="4sA1wzjmETO" role="jymVt">
-          <node concept="2b32R4" id="4sA1wzjmFDm" role="lGtFl">
-            <node concept="3JmXsc" id="4sA1wzjmFDp" role="2P8S$">
-              <node concept="3clFbS" id="4sA1wzjmFDq" role="2VODD2">
-                <node concept="3clFbF" id="4sA1wzjmFDw" role="3cqZAp">
-                  <node concept="2OqwBi" id="4sA1wzjmFDr" role="3clFbG">
-                    <node concept="3Tsc0h" id="4sA1wzjmFDu" role="2OqNvi">
+        <node concept="2tJIrI" id="3EZUZhmVbLP" role="jymVt">
+          <node concept="1WS0z7" id="3EZUZhmVcCY" role="lGtFl">
+            <node concept="3JmXsc" id="3EZUZhmVcD1" role="3Jn$fo">
+              <node concept="3clFbS" id="3EZUZhmVcD2" role="2VODD2">
+                <node concept="3clFbF" id="3EZUZhmVcD8" role="3cqZAp">
+                  <node concept="2OqwBi" id="3EZUZhmVcD3" role="3clFbG">
+                    <node concept="3Tsc0h" id="3EZUZhmVcD6" role="2OqNvi">
                       <ref role="3TtcxE" to="tpc2:7L5lpRJINkn" />
                     </node>
-                    <node concept="30H73N" id="4sA1wzjmFDv" role="2Oq$k0" />
+                    <node concept="30H73N" id="3EZUZhmVcD7" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="1sPUBX" id="3EZUZhmVcVV" role="lGtFl">
+            <ref role="v9R2y" node="3EZUZhmVbaP" resolve="switch_TransformationFeature_declare" />
           </node>
         </node>
         <node concept="raruj" id="4sA1wziWjzG" role="lGtFl" />
@@ -31961,7 +31955,9 @@
             <node concept="2OqwBi" id="6V0bp$oI_R3" role="3clFbw">
               <node concept="Xl_RD" id="6V0bp$oI_sQ" role="2Oq$k0">
                 <property role="Xl_RC" value="location" />
-                <node concept="29HgVG" id="6V0bp$oIERX" role="lGtFl" />
+                <node concept="1sPUBX" id="3EZUZhmTYFx" role="lGtFl">
+                  <ref role="v9R2y" node="3EZUZhmTWq7" resolve="switch_TransformationLocation_asString" />
+                </node>
               </node>
               <node concept="liA8E" id="6V0bp$oIAyw" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
@@ -32030,6 +32026,23 @@
       </node>
       <node concept="3Tm1VV" id="6V0bp$oIETJ" role="1B3o_S" />
     </node>
+  </node>
+  <node concept="jVnub" id="3EZUZhmTWq7">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="switch_TransformationLocation_asString" />
+    <node concept="3aamgX" id="Z45Y15hY9a" role="3aUrZf">
+      <ref role="30HIoZ" to="tpc2:7L5lpRJOAJb" resolve="TransformationLocation_ContextAssistant" />
+      <node concept="gft3U" id="Z45Y15hY9u" role="1lVwrX">
+        <node concept="10M0yZ" id="Z45Y15hYdz" role="gfFT$">
+          <ref role="3cqZAo" to="9eyi:~MenuLocations.CONTEXT_ASSISTANT" resolve="CONTEXT_ASSISTANT" />
+          <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="3EZUZhmVbaP">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="switch_TransformationFeature_declare" />
   </node>
 </model>
 

@@ -13,6 +13,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.editor.contextActionsTool.runtime.SidebarActionItem;
+import javax.swing.Icon;
+import jetbrains.mps.icons.MPSIcons;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DefaultMenuContribution extends TransformationMenuBase {
   @Override
@@ -20,6 +25,9 @@ public class DefaultMenuContribution extends TransformationMenuBase {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
       result.add(new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a0());
+    }
+    if (jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations.CONTEXT_ACTIONS_TOOL.equals(_context.getMenuLocation())) {
+      result.add(new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a1());
     }
     return result;
   }
@@ -48,4 +56,40 @@ public class DefaultMenuContribution extends TransformationMenuBase {
     }
 
   }
+  private static class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new DefaultMenuContribution.ActionItem_qwzmaw_a1(context);
+    }
+  }
+  private static class ActionItem_qwzmaw_a1 extends ActionItemBase implements SidebarActionItem {
+    private final TransformationMenuContext _context;
+
+    public ActionItem_qwzmaw_a1(TransformationMenuContext context) {
+      _context = context;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(String pattern) {
+      return "sidebar-only action";
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("sidebar-only action executed");
+      }
+    }
+
+    @Override
+    public Icon getIcon() {
+      return MPSIcons.Nodes.Action;
+    }
+    @Override
+    public String getTooltipText() {
+      return "tooltip of sidebar-only action";
+    }
+  }
+  protected static Logger LOG = LogManager.getLogger(DefaultMenuContribution.class);
 }

@@ -2,17 +2,14 @@
 <model ref="r:1001eaaf-b3eb-45aa-8fc4-05df7efd348d(jetbrains.mps.editor.contextActions.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActions" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="9eyi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus.transformation(MPS.Editor/)" />
     <import index="1ne1" ref="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.contextActionsTool.runtime)" />
+    <import index="tpc3" ref="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -77,13 +74,15 @@
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
-      <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
-        <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
-      </concept>
+      <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia" />
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
         <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
+      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+        <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
+      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
@@ -124,27 +123,6 @@
   </registry>
   <node concept="bUwia" id="601$vVQ3qGr">
     <property role="TrG5h" value="main" />
-    <node concept="3aamgX" id="4sA1wzjmFV7" role="3acgRq">
-      <ref role="30HIoZ" to="s5fb:7L5lpRJILF7" resolve="TransformationFeature_Icon" />
-      <node concept="j$656" id="4sA1wzjmFVp" role="1lVwrX">
-        <ref role="v9R2y" node="4sA1wzjmFVn" resolve="reduce_TransformationFeature_Icon" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="4sA1wzjrvV$" role="3acgRq">
-      <ref role="30HIoZ" to="s5fb:7L5lpRJILQ_" resolve="TransformationFeature_Tooltip" />
-      <node concept="j$656" id="4sA1wzjrvVQ" role="1lVwrX">
-        <ref role="v9R2y" node="4sA1wzjmIDY" resolve="reduce_TransformationFeature_Tooltip" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="Z45Y15hYdX" role="3acgRq">
-      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
-      <node concept="gft3U" id="Z45Y15hYek" role="1lVwrX">
-        <node concept="10M0yZ" id="Z45Y15hYel" role="gfFT$">
-          <ref role="1PxDUh" to="1ne1:69nPU$vWSqd" resolve="MenuLocations" />
-          <ref role="3cqZAo" to="1ne1:69nPU$vX00o" resolve="CONTEXT_ACTIONS_TOOL" />
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="13MO4I" id="4sA1wzjmFVn">
     <property role="TrG5h" value="reduce_TransformationFeature_Icon" />
@@ -303,6 +281,37 @@
       <node concept="3Tm1VV" id="4sA1wzjmIEh" role="1B3o_S" />
       <node concept="3uibUv" id="601$vVQgMp9" role="EKbjA">
         <ref role="3uigEE" to="1ne1:601$vVQgJ24" resolve="SidebarActionItem" />
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="3EZUZhmTZF3">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="switch_TransformationLocation_Sidebar_asString" />
+    <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asString" />
+    <node concept="3aamgX" id="Z45Y15hYdX" role="3aUrZf">
+      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
+      <node concept="gft3U" id="Z45Y15hYek" role="1lVwrX">
+        <node concept="10M0yZ" id="Z45Y15hYel" role="gfFT$">
+          <ref role="1PxDUh" to="1ne1:69nPU$vWSqd" resolve="MenuLocations" />
+          <ref role="3cqZAo" to="1ne1:69nPU$vX00o" resolve="CONTEXT_ACTIONS_TOOL" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="3EZUZhmVe0b">
+    <property role="3GE5qa" value="TransformationMenu.Features" />
+    <property role="TrG5h" value="switch_TransformationFeature_IconAndTooltip_declare" />
+    <ref role="phYkn" to="tpc3:3EZUZhmVbaP" resolve="switch_TransformationFeature_declare" />
+    <node concept="3aamgX" id="4sA1wzjmFV7" role="3aUrZf">
+      <ref role="30HIoZ" to="s5fb:7L5lpRJILF7" resolve="TransformationFeature_Icon" />
+      <node concept="j$656" id="4sA1wzjmFVp" role="1lVwrX">
+        <ref role="v9R2y" node="4sA1wzjmFVn" resolve="reduce_TransformationFeature_Icon" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="4sA1wzjrvV$" role="3aUrZf">
+      <ref role="30HIoZ" to="s5fb:7L5lpRJILQ_" resolve="TransformationFeature_Tooltip" />
+      <node concept="j$656" id="4sA1wzjrvVQ" role="1lVwrX">
+        <ref role="v9R2y" node="4sA1wzjmIDY" resolve="reduce_TransformationFeature_Tooltip" />
       </node>
     </node>
   </node>

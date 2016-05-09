@@ -6,6 +6,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActions" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,6 +15,7 @@
     <import index="hsq4" ref="r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -47,6 +49,7 @@
       <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
+        <child id="8954657570916349207" name="features" index="2jZA2a" />
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
@@ -130,6 +133,9 @@
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -176,8 +182,24 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
     </language>
+    <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActions">
+      <concept id="8954657570916343208" name="jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar" flags="ng" index="2jZ$wP" />
+      <concept id="8954657570916343205" name="jetbrains.mps.editor.contextActions.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
+        <child id="8954657570916343206" name="query" index="2jZ$wV" />
+      </concept>
+      <concept id="8954657570916342474" name="jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
+      <concept id="8954657570916342471" name="jetbrains.mps.editor.contextActions.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
+        <child id="8954657570916343203" name="query" index="2jZ$wY" />
+      </concept>
+    </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
       <concept id="5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" flags="nn" index="2fJWfE" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
@@ -204,7 +226,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="4PEyPcYohiN">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="hsq4:4PEyPcYoaDd" resolve="Parent" />
     <node concept="3EZMnI" id="4PEyPcYohiP" role="2wV5jI">
       <node concept="2iRkQZ" id="4PEyPcYooDs" role="2iSdaV" />
@@ -254,7 +276,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4PEyPcYoaCP">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     <node concept="3EZMnI" id="4PEyPcYoaCR" role="2wV5jI">
       <node concept="l2Vlx" id="4PEyPcYoaCS" role="2iSdaV" />
@@ -279,7 +301,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="4PEyPcYooEb">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <ref role="7LAce" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     <node concept="1Qtc8_" id="6V0bp$oQ_Uz" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQAm7" role="1Qtc8$" />
@@ -604,7 +626,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="6iEu7ikuMlI">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NamedMenu" />
     <ref role="7LAce" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     <node concept="1Qtc8_" id="6V0bp$oQRS7" role="IW6Ez">
@@ -626,7 +648,7 @@
     </node>
   </node>
   <node concept="3INDKC" id="6iEu7ikuPRD">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="DefaultMenuContribution" />
     <node concept="1Qtc8_" id="6V0bp$oQRAz" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQRJq" role="1Qtc8$" />
@@ -645,12 +667,59 @@
         </node>
       </node>
     </node>
+    <node concept="1Qtc8_" id="3EZUZhmTHbp" role="IW6Ez">
+      <node concept="2jZ$wP" id="3EZUZhmTHgE" role="1Qtc8$" />
+      <node concept="IWgqT" id="3EZUZhmTHgH" role="1Qtc8A">
+        <node concept="1hCUdq" id="3EZUZhmTHgJ" role="1hCUd6">
+          <node concept="3clFbS" id="3EZUZhmTHgL" role="2VODD2">
+            <node concept="3clFbF" id="3EZUZhmTHpq" role="3cqZAp">
+              <node concept="Xl_RD" id="3EZUZhmTHpp" role="3clFbG">
+                <property role="Xl_RC" value="sidebar-only action" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="3EZUZhmTHgN" role="IWgqQ">
+          <node concept="3clFbS" id="3EZUZhmTHgP" role="2VODD2">
+            <node concept="34ab3g" id="3EZUZhmTImb" role="3cqZAp">
+              <property role="35gtTG" value="info" />
+              <node concept="Xl_RD" id="3EZUZhmTImd" role="34bqiv">
+                <property role="Xl_RC" value="sidebar-only action executed" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2jZ$Xq" id="3EZUZhmTIn1" role="2jZA2a">
+          <node concept="2jZ$Xn" id="3EZUZhmTJa4" role="2jZ$wY">
+            <node concept="3clFbS" id="3EZUZhmTJa5" role="2VODD2">
+              <node concept="3clFbF" id="3EZUZhmTSoV" role="3cqZAp">
+                <node concept="10M0yZ" id="3EZUZhmTSrW" role="3clFbG">
+                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Action" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2jZ$wS" id="3EZUZhmTIn2" role="2jZA2a">
+          <node concept="1hCUdq" id="3EZUZhmTIn8" role="2jZ$wV">
+            <node concept="3clFbS" id="3EZUZhmTIn9" role="2VODD2">
+              <node concept="3clFbF" id="3EZUZhmTIvy" role="3cqZAp">
+                <node concept="Xl_RD" id="3EZUZhmTIvx" role="3clFbG">
+                  <property role="Xl_RC" value="tooltip of sidebar-only action" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="A1WHr" id="5OVd5tVsX$u" role="AmTjC">
       <ref role="A1WHq" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     </node>
   </node>
   <node concept="3INDKC" id="6iEu7ikuPRE">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NamedMenuContribution" />
     <node concept="1Qtc8_" id="6V0bp$oQS9F" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQSiG" role="1Qtc8$" />
@@ -674,7 +743,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="4jyvufE3F$4">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="Recursive" />
     <ref role="7LAce" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     <node concept="1Qtc8_" id="6V0bp$oQSiJ" role="IW6Ez">
@@ -687,18 +756,18 @@
     </node>
   </node>
   <node concept="IW6AY" id="1H9M4VxN7gW">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <ref role="7LAce" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
   </node>
   <node concept="24kQdi" id="1H9M4VxNevw">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
     <node concept="3F0ifn" id="1H9M4VxNevy" role="2wV5jI">
       <property role="3F0ifm" value="subconcept of child" />
     </node>
   </node>
   <node concept="3ICXOK" id="3DiRZzA2QOR">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ParentNamedMenu" />
     <ref role="7LAce" to="hsq4:4PEyPcYoaDd" resolve="Parent" />
   </node>

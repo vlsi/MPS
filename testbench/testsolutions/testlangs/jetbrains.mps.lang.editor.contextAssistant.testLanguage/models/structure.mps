@@ -41,7 +41,7 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="4PEyPcYoaDd">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="Parent" />
     <property role="34LRSv" value="parent" />
     <property role="19KtqR" value="true" />
@@ -60,7 +60,7 @@
   </node>
   <node concept="1TIwiD" id="4PEyPcYoaCM">
     <property role="TrG5h" value="Child" />
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="child" />
     <property role="EcuMT" value="5578424278096849458" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -69,7 +69,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1H9M4VxN7gV">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="SubconceptOfChild" />
     <property role="EcuMT" value="1966322953445209147" />
     <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
