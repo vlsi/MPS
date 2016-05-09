@@ -222,7 +222,7 @@
     <dependency org="lib.src" name="commons-logging-1.1.3-src.zip" rev="${idea.platform.version}">
       <artifact name="commons-logging-1.1.3-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="138.1980">
+    <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="gson-2.2.4-sources.jar" rev="${idea.platform.version}">
@@ -351,10 +351,10 @@
     <dependency org="lib" name="commons-logging-1.1.3.jar" rev="${idea.platform.version}">
       <artifact name="commons-logging-1.1.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="commons-net-3.1.jar" rev="138.1980">
+    <dependency org="lib" name="commons-net-3.1.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="ecj-4.4.jar" rev="138.1980">
+    <dependency org="lib" name="ecj-4.4.jar" rev="${idea.platform.version}">
       <artifact name="ecj-4.4.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
