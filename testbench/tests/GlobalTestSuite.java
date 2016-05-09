@@ -44,7 +44,7 @@ import org.junit.runners.Suite;
 //  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled]
     jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
-    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
+//    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class
