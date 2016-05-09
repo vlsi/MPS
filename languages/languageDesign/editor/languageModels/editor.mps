@@ -13972,34 +13972,6 @@
       <node concept="Vb9p2" id="4sA1wzjqloO" role="3F10Kt" />
     </node>
   </node>
-  <node concept="24kQdi" id="7L5lpRJMQqP">
-    <property role="3GE5qa" value="TransformationMenu.Locations" />
-    <ref role="1XX52x" to="tpc2:7L5lpRJILF7" resolve="TransformationFeature_Icon" />
-    <node concept="3EZMnI" id="7L5lpRJNrgZ" role="2wV5jI">
-      <node concept="l2Vlx" id="7L5lpRJNrh0" role="2iSdaV" />
-      <node concept="PMmxH" id="7L5lpRJNrhc" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F1sOY" id="7L5lpRJMQqR" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;none&gt;" />
-        <ref role="1NtTu8" to="tpc2:7L5lpRJILQz" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="7L5lpRJMQr0">
-    <property role="3GE5qa" value="TransformationMenu.Locations" />
-    <ref role="1XX52x" to="tpc2:7L5lpRJILQ_" resolve="TransformationFeature_Tooltip" />
-    <node concept="3EZMnI" id="7L5lpRJNrhf" role="2wV5jI">
-      <node concept="l2Vlx" id="7L5lpRJNrhg" role="2iSdaV" />
-      <node concept="PMmxH" id="7L5lpRJNrhu" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F1sOY" id="7L5lpRJMQr5" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;none&gt;" />
-        <ref role="1NtTu8" to="tpc2:7L5lpRJILQA" />
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="6V0bp$oHeZ8">
     <property role="3GE5qa" value="TransformationMenu.Locations" />
     <ref role="1XX52x" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />

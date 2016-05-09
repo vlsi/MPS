@@ -94,6 +94,7 @@
     <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsContextActionsTool.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mps.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
@@ -266,6 +267,10 @@
       <target name="assemble" />
     </ant>
     <ant antfile="../../../../build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsContextActionsTool.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>

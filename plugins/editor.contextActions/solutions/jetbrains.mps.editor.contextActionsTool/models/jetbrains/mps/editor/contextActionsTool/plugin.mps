@@ -314,8 +314,8 @@
                       </node>
                     </node>
                     <node concept="10M0yZ" id="3zNPfWNAHR6" role="37wK5m">
-                      <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
-                      <ref role="3cqZAo" to="9eyi:~MenuLocations.CONTEXT_ACTIONS_TOOL" resolve="CONTEXT_ACTIONS_TOOL" />
+                      <ref role="1PxDUh" to="1ne1:69nPU$vWSqd" resolve="MenuLocations" />
+                      <ref role="3cqZAo" to="1ne1:69nPU$vX00o" resolve="CONTEXT_ACTIONS_TOOL" />
                     </node>
                   </node>
                 </node>

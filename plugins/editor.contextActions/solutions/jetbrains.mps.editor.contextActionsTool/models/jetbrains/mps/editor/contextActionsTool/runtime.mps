@@ -41,11 +41,9 @@
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
     <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
-    <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
     <import index="v8cy" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.assist(MPS.Editor/)" />
     <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
     <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
-    <import index="uahq" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation.sidebar(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -116,7 +114,10 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
@@ -265,7 +266,9 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
+      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
+        <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -8056,12 +8059,12 @@
               <node concept="3cpWs8" id="3zNPfWNAcRq" role="3cqZAp">
                 <node concept="3cpWsn" id="3zNPfWNAcRr" role="3cpWs9">
                   <property role="TrG5h" value="sidebarItem" />
-                  <node concept="3uibUv" id="3zNPfWNAcRs" role="1tU5fm">
-                    <ref role="3uigEE" to="uahq:~SidebarActionItem" resolve="SidebarActionItem" />
+                  <node concept="3uibUv" id="601$vVQgK8g" role="1tU5fm">
+                    <ref role="3uigEE" node="601$vVQgJ24" resolve="SidebarActionItem" />
                   </node>
                   <node concept="10QFUN" id="3zNPfWNAe8C" role="33vP2m">
-                    <node concept="3uibUv" id="3zNPfWNAeq3" role="10QFUM">
-                      <ref role="3uigEE" to="uahq:~SidebarActionItem" resolve="SidebarActionItem" />
+                    <node concept="3uibUv" id="601$vVQgKkY" role="10QFUM">
+                      <ref role="3uigEE" node="601$vVQgJ24" resolve="SidebarActionItem" />
                     </node>
                     <node concept="37vLTw" id="3zNPfWNAdDg" role="10QFUP">
                       <ref role="3cqZAo" node="4GJAg5veW2x" resolve="myActionItem" />
@@ -8076,7 +8079,7 @@
                       <ref role="3cqZAo" node="3zNPfWNAcRr" resolve="sidebarItem" />
                     </node>
                     <node concept="liA8E" id="3zNPfWNAhHo" role="2OqNvi">
-                      <ref role="37wK5l" to="uahq:~SidebarActionItem.getIcon():javax.swing.Icon" resolve="getIcon" />
+                      <ref role="37wK5l" node="601$vVQgJ2b" resolve="getIcon" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3zNPfWNAf57" role="37vLTJ">
@@ -8091,7 +8094,7 @@
                       <ref role="3cqZAo" node="3zNPfWNAcRr" resolve="sidebarItem" />
                     </node>
                     <node concept="liA8E" id="601$vVQ3aU4" role="2OqNvi">
-                      <ref role="37wK5l" to="uahq:~SidebarActionItem.getTooltipText():java.lang.String" resolve="getTooltipText" />
+                      <ref role="37wK5l" node="601$vVQgJ27" resolve="getTooltipText" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="601$vVQ38Cq" role="37vLTJ">
@@ -8101,8 +8104,8 @@
               </node>
             </node>
             <node concept="2ZW3vV" id="3zNPfWNA3MT" role="3clFbw">
-              <node concept="3uibUv" id="3zNPfWNA6SO" role="2ZW6by">
-                <ref role="3uigEE" to="uahq:~SidebarActionItem" resolve="SidebarActionItem" />
+              <node concept="3uibUv" id="601$vVQgLzh" role="2ZW6by">
+                <ref role="3uigEE" node="601$vVQgJ24" resolve="SidebarActionItem" />
               </node>
               <node concept="37vLTw" id="3zNPfWNA3qz" role="2ZW6bz">
                 <ref role="3cqZAo" node="4GJAg5veW2x" resolve="myActionItem" />
@@ -8267,6 +8270,58 @@
     <node concept="3uibUv" id="4GJAg5veAF0" role="1zkMxy">
       <ref role="3uigEE" node="7pClCNY9qN8" resolve="ToolController" />
     </node>
+  </node>
+  <node concept="3HP615" id="601$vVQgJ24">
+    <property role="TrG5h" value="SidebarActionItem" />
+    <property role="2bfB8j" value="true" />
+    <node concept="3Tm1VV" id="601$vVQgJ25" role="1B3o_S" />
+    <node concept="3uibUv" id="601$vVQgJ26" role="3HQHJm">
+      <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+    </node>
+    <node concept="3clFb_" id="601$vVQgJ27" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getTooltipText" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="601$vVQgJ28" role="1B3o_S" />
+      <node concept="3clFbS" id="601$vVQgJ29" role="3clF47" />
+      <node concept="3uibUv" id="601$vVQgJ2a" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="601$vVQgJ2b" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getIcon" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="601$vVQgJ2c" role="1B3o_S" />
+      <node concept="3clFbS" id="601$vVQgJ2d" role="3clF47" />
+      <node concept="3uibUv" id="601$vVQgJ2e" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="69nPU$vWSqd">
+    <property role="TrG5h" value="MenuLocations" />
+    <property role="1EXbeo" value="false" />
+    <node concept="3clFbW" id="69nPU$vWZRZ" role="jymVt">
+      <node concept="3cqZAl" id="69nPU$vWZS0" role="3clF45" />
+      <node concept="3clFbS" id="69nPU$vWZS2" role="3clF47" />
+      <node concept="3Tm6S6" id="69nPU$vWZOG" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="69nPU$vWZSj" role="jymVt" />
+    <node concept="Wx3nA" id="69nPU$vX00o" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="CONTEXT_ACTIONS_TOOL" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="69nPU$vWZUs" role="1B3o_S" />
+      <node concept="17QB3L" id="69nPU$vX00k" role="1tU5fm" />
+      <node concept="Xl_RD" id="69nPU$vX06x" role="33vP2m">
+        <property role="Xl_RC" value="jetbrains.mps.editor.contextActionsTool.CONTEXT_ACTIONS_TOOL" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="69nPU$vWSqe" role="1B3o_S" />
   </node>
 </model>
 

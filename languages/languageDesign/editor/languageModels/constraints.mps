@@ -2175,7 +2175,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4sA1wzjz4Ef">
-    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="3GE5qa" value="TransformationMenu" />
     <ref role="1M2myG" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
     <node concept="nKS2y" id="4sA1wzjz4Eg" role="1MLUbF">
       <node concept="3clFbS" id="4sA1wzjz4Eh" role="2VODD2">

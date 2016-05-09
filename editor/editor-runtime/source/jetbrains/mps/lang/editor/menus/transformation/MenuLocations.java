@@ -17,7 +17,6 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 public class MenuLocations {
   public static final String CONTEXT_ASSISTANT = "jetbrains.mps.lang.editor.CONTEXT_ASSISTANT";
-  public static final String CONTEXT_ACTIONS_TOOL = "jetbrains.mps.lang.editor.CONTEXT_ACTIONS_TOOL";
 
   private MenuLocations() { }
 }

@@ -12,7 +12,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController;
 import jetbrains.mps.nodeEditor.assist.SelectionMenuProviderByCellAndConcept;
-import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations;
 import com.intellij.openapi.wm.ex.ToolWindowEx;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;

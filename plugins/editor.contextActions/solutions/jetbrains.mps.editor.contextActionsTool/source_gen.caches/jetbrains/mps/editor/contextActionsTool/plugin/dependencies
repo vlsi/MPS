@@ -20,12 +20,12 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ChangeViewAction" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ContextMenuController" />
+    <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ToolComponent" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ToolController" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.runtime.ViewType" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.assist.SelectionMenuProviderByCellAndConcept" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
