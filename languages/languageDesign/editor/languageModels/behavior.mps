@@ -7,6 +7,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18134,15 +18135,13 @@
         <ref role="2I9WkF" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
       </node>
     </node>
-    <node concept="13i0hz" id="6V0bp$oMYR5" role="13h7CS">
+    <node concept="13i0hz" id="6kJcyCQjy2b" role="13h7CS">
       <property role="TrG5h" value="getMissingFeatures" />
-      <node concept="3Tm1VV" id="6V0bp$oMYR6" role="1B3o_S" />
-      <node concept="A3Dl8" id="6V0bp$oMYUB" role="3clF45">
-        <node concept="3bZ5Sz" id="6V0bp$oMYUO" role="A3Ik2">
-          <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="6V0bp$oMYR8" role="3clF47">
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6kJcyCQjeiA" resolve="getMissingFeatures" />
+      <node concept="3Tm1VV" id="6kJcyCQjy2c" role="1B3o_S" />
+      <node concept="3clFbS" id="6kJcyCQjy2g" role="3clF47">
         <node concept="3cpWs8" id="4sA1wzjywel" role="3cqZAp">
           <node concept="3cpWsn" id="4sA1wzjyweo" role="3cpWs9">
             <property role="TrG5h" value="required" />
@@ -18242,53 +18241,9 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="13h7C7" id="3EZUZhn6ndm">
-    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
-    <ref role="13h7C2" to="tpc2:3EZUZhn6cs4" resolve="QueryFunctionParameter_TransformationMenu_parameterObject" />
-    <node concept="13hLZK" id="3EZUZhn6ndn" role="13h7CW">
-      <node concept="3clFbS" id="3EZUZhn6ndo" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="3EZUZhn6ndx" role="13h7CS">
-      <property role="TrG5h" value="getType" />
-      <node concept="3Tm1VV" id="3EZUZhn6ndy" role="1B3o_S" />
-      <node concept="3Tqbb2" id="3EZUZhn6ndX" role="3clF45">
-        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
-      <node concept="3clFbS" id="3EZUZhn6nd$" role="3clF47">
-        <node concept="3cpWs8" id="3EZUZhn6nep" role="3cqZAp">
-          <node concept="3cpWsn" id="3EZUZhn6nes" role="3cpWs9">
-            <property role="TrG5h" value="parameterizable" />
-            <node concept="3Tqbb2" id="3EZUZhn6neo" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
-            </node>
-            <node concept="2OqwBi" id="3EZUZhn6nwY" role="33vP2m">
-              <node concept="13iPFW" id="3EZUZhn6nnm" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="3EZUZhn6nVa" role="2OqNvi">
-                <node concept="1xMEDy" id="3EZUZhn6nVc" role="1xVPHs">
-                  <node concept="chp4Y" id="3EZUZhn6nVM" role="ri$Ld">
-                    <ref role="cht4Q" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3EZUZhn6nWV" role="3cqZAp">
-          <node concept="2OqwBi" id="3EZUZhn6otD" role="3clFbG">
-            <node concept="2OqwBi" id="3EZUZhn6o41" role="2Oq$k0">
-              <node concept="37vLTw" id="3EZUZhn6nWT" role="2Oq$k0">
-                <ref role="3cqZAo" node="3EZUZhn6nes" resolve="parameterizable" />
-              </node>
-              <node concept="2qgKlT" id="3EZUZhn6oiB" role="2OqNvi">
-                <ref role="37wK5l" node="3EZUZhmYaOQ" resolve="getParameterizer" />
-              </node>
-            </node>
-            <node concept="3TrEf2" id="3EZUZhn6oEg" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpc2:3EZUZhmYcxv" />
-            </node>
-          </node>
+      <node concept="A3Dl8" id="6kJcyCQjy2h" role="3clF45">
+        <node concept="3bZ5Sz" id="6kJcyCQjy2i" role="A3Ik2">
+          <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
         </node>
       </node>
     </node>
@@ -18382,6 +18337,74 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="3EZUZhmYcxS" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3EZUZhn6ndm">
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <ref role="13h7C2" to="tpc2:3EZUZhn6cs4" resolve="QueryFunctionParameter_TransformationMenu_parameterObject" />
+    <node concept="13hLZK" id="3EZUZhn6ndn" role="13h7CW">
+      <node concept="3clFbS" id="3EZUZhn6ndo" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3EZUZhn6ndx" role="13h7CS">
+      <property role="TrG5h" value="getType" />
+      <node concept="3Tm1VV" id="3EZUZhn6ndy" role="1B3o_S" />
+      <node concept="3Tqbb2" id="3EZUZhn6ndX" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+      </node>
+      <node concept="3clFbS" id="3EZUZhn6nd$" role="3clF47">
+        <node concept="3cpWs8" id="3EZUZhn6nep" role="3cqZAp">
+          <node concept="3cpWsn" id="3EZUZhn6nes" role="3cpWs9">
+            <property role="TrG5h" value="parameterizable" />
+            <node concept="3Tqbb2" id="3EZUZhn6neo" role="1tU5fm">
+              <ref role="ehGHo" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+            </node>
+            <node concept="2OqwBi" id="3EZUZhn6nwY" role="33vP2m">
+              <node concept="13iPFW" id="3EZUZhn6nnm" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="3EZUZhn6nVa" role="2OqNvi">
+                <node concept="1xMEDy" id="3EZUZhn6nVc" role="1xVPHs">
+                  <node concept="chp4Y" id="3EZUZhn6nVM" role="ri$Ld">
+                    <ref role="cht4Q" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3EZUZhn6nWV" role="3cqZAp">
+          <node concept="2OqwBi" id="3EZUZhn6otD" role="3clFbG">
+            <node concept="2OqwBi" id="3EZUZhn6o41" role="2Oq$k0">
+              <node concept="37vLTw" id="3EZUZhn6nWT" role="2Oq$k0">
+                <ref role="3cqZAo" node="3EZUZhn6nes" resolve="parameterizable" />
+              </node>
+              <node concept="2qgKlT" id="3EZUZhn6oiB" role="2OqNvi">
+                <ref role="37wK5l" node="3EZUZhmYaOQ" resolve="getParameterizer" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="3EZUZhn6oEg" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:3EZUZhmYcxv" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="6kJcyCQjeir">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="13h7C2" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+    <node concept="13i0hz" id="6kJcyCQjeiA" role="13h7CS">
+      <property role="TrG5h" value="getMissingFeatures" />
+      <property role="13i0it" value="true" />
+      <property role="13i0iv" value="true" />
+      <node concept="3Tm1VV" id="6kJcyCQjeiB" role="1B3o_S" />
+      <node concept="A3Dl8" id="6kJcyCQjeiC" role="3clF45">
+        <node concept="3bZ5Sz" id="6kJcyCQjeiD" role="A3Ik2">
+          <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6kJcyCQjeiE" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="6kJcyCQjeis" role="13h7CW">
+      <node concept="3clFbS" id="6kJcyCQjeit" role="2VODD2" />
     </node>
   </node>
 </model>

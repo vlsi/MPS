@@ -2187,8 +2187,8 @@
         <node concept="3clFbJ" id="4sA1wzjz4Lp" role="3cqZAp">
           <node concept="3clFbC" id="4sA1wzjz59n" role="3clFbw">
             <node concept="28GBK8" id="4sA1wzjz6T0" role="3uHU7w">
-              <ref role="28GBKb" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
               <ref role="28H3Ia" to="tpc2:7L5lpRJINkn" />
+              <ref role="28GBKb" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
             </node>
             <node concept="oXsJc" id="4sA1wzjz4SE" role="3uHU7B" />
           </node>
@@ -2202,7 +2202,7 @@
               <node concept="2OqwBi" id="4sA1wzjzk9z" role="3cqZAk">
                 <node concept="2OqwBi" id="4sA1wzjz9G0" role="2Oq$k0">
                   <node concept="1PxgMI" id="4sA1wzjz8Fb" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
+                    <ref role="1m5ApE" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
                     <node concept="nLn13" id="4sA1wzjz7ui" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="4sA1wzjzgvF" role="2OqNvi">

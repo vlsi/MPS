@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.editor.behavior.TransformationMenuPart_Action__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,11 +20,11 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class check_TransformationFeaturesMatchLocations_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_TransformationFeaturesMatchLocations_NonTypesystemRule() {
+public class check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule() {
   }
   public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Iterable<SConcept> missingFeatures = TransformationMenuPart_Action__BehaviorDescriptor.getMissingFeatures_id6V0bp$oMYR5.invoke(part);
+    Iterable<SConcept> missingFeatures = IExtensibleMenuPart__BehaviorDescriptor.getMissingFeatures_id6kJcyCQjeiA.invoke(part);
 
     if (Sequence.fromIterable(missingFeatures).isNotEmpty()) {
       {
@@ -46,7 +46,7 @@ public class check_TransformationFeaturesMatchLocations_NonTypesystemRule extend
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action");
+    return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

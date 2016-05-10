@@ -27,25 +27,26 @@ public class Child_MoreNamedActions extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_9jyvr2_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_MoreNamedActions.ActionItem_9jyvr2_a0(context);
-    }
-  }
-  private static class ActionItem_9jyvr2_a0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_9jyvr2_a0(TransformationMenuContext context) {
-      _context = context;
+      return new Child_MoreNamedActions.TransformationMenuPart_Action_9jyvr2_a0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "contributed from extending language";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "contributed from extending language";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+      }
+
+    }
   }
 }

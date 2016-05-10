@@ -33,9 +33,9 @@ public class TransformationFeature_Constraints extends BaseConstraintsDescriptor
     return result;
   }
   public static boolean static_canBeAChild(final SNode node, SNode parentNode, SNode link, final SNode childConcept, final IOperationContext operationContext) {
-    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, 0x7c45559defbb3517L, "features"))) {
+    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))) {
       // Allow only one instance of a particular feature concept 
-      return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, 0x7c45559defbb3517L, "features"))).all(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parentNode, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return it == node || !(SNodeOperations.asSConcept(childConcept).equals(SNodeOperations.getConcept(it)));
         }

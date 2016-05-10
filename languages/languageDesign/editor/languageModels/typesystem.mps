@@ -4177,7 +4177,7 @@
   </node>
   <node concept="18kY7G" id="4sA1wzjtZet">
     <property role="3GE5qa" value="TransformationMenu.Locations" />
-    <property role="TrG5h" value="check_TransformationFeaturesMatchLocations" />
+    <property role="TrG5h" value="check_IExtensibleMenuPart_hasAllRequiredFeatures" />
     <node concept="3clFbS" id="4sA1wzjtZeu" role="18ibNy">
       <node concept="3cpWs8" id="6V0bp$oMeZF" role="3cqZAp">
         <node concept="3cpWsn" id="6V0bp$oMeZI" role="3cpWs9">
@@ -4186,8 +4186,8 @@
             <node concept="1YBJjd" id="6V0bp$oNjkN" role="2Oq$k0">
               <ref role="1YBMHb" node="4sA1wzjtZew" resolve="part" />
             </node>
-            <node concept="2qgKlT" id="6V0bp$oNlHe" role="2OqNvi">
-              <ref role="37wK5l" to="tpcb:6V0bp$oMYR5" resolve="getMissingFeatures" />
+            <node concept="2qgKlT" id="6kJcyCQj$ZY" role="2OqNvi">
+              <ref role="37wK5l" to="tpcb:6kJcyCQjeiA" resolve="getMissingFeatures" />
             </node>
           </node>
           <node concept="A3Dl8" id="6V0bp$oNpr6" role="1tU5fm">
@@ -4308,7 +4308,7 @@
     </node>
     <node concept="1YaCAy" id="4sA1wzjtZew" role="1YuTPh">
       <property role="TrG5h" value="part" />
-      <ref role="1YaFvo" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
+      <ref role="1YaFvo" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
     </node>
   </node>
   <node concept="Q5z_Y" id="4sA1wzjvWy5">
@@ -4320,10 +4320,10 @@
           <node concept="3cpWsn" id="4sA1wzjwcKn" role="3cpWs9">
             <property role="TrG5h" value="part" />
             <node concept="3Tqbb2" id="4sA1wzjwcKT" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
+              <ref role="ehGHo" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
             </node>
             <node concept="1PxgMI" id="4sA1wzjwdsP" role="33vP2m">
-              <ref role="1m5ApE" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
+              <ref role="1m5ApE" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
               <node concept="Q6c8r" id="4sA1wzjwcMj" role="1m5AlR" />
             </node>
           </node>
@@ -4337,8 +4337,8 @@
             <node concept="37vLTw" id="6V0bp$oNavm" role="2Oq$k0">
               <ref role="3cqZAo" node="4sA1wzjwcKn" resolve="part" />
             </node>
-            <node concept="2qgKlT" id="6V0bp$oNbiC" role="2OqNvi">
-              <ref role="37wK5l" to="tpcb:6V0bp$oMYR5" resolve="getMissingFeatures" />
+            <node concept="2qgKlT" id="6kJcyCQjuV5" role="2OqNvi">
+              <ref role="37wK5l" to="tpcb:6kJcyCQjeiA" resolve="getMissingFeatures" />
             </node>
           </node>
           <node concept="3clFbS" id="4sA1wzjwh1e" role="2LFqv$">

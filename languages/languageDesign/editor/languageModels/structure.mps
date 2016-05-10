@@ -4627,15 +4627,11 @@
       <property role="IQ2ns" value="1638911550608610281" />
       <ref role="20lvS9" node="1qY_lWSjTnI" resolve="QueryFunction_TransformationMenu_Execute" />
     </node>
-    <node concept="1TJgyj" id="7L5lpRJINkn" role="1TKVEi">
-      <property role="IQ2ns" value="8954657570916349207" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="features" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7L5lpRJH$E_" resolve="TransformationFeature" />
-    </node>
     <node concept="PrWs8" id="3EZUZhna5Bj" role="PzmwI">
       <ref role="PrY4T" node="3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+    </node>
+    <node concept="PrWs8" id="6kJcyCQj9Dc" role="PzmwI">
+      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="1qY_lWSjJZY">
@@ -5033,6 +5029,18 @@
     <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_parameterObject" />
     <property role="34LRSv" value="parameterObject" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="PlHQZ" id="6kJcyCQj9CC">
+    <property role="EcuMT" value="7291101478617127464" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="IExtensibleMenuPart" />
+    <node concept="1TJgyj" id="7L5lpRJINkn" role="1TKVEi">
+      <property role="IQ2ns" value="8954657570916349207" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="features" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7L5lpRJH$E_" resolve="TransformationFeature" />
+    </node>
   </node>
 </model>
 
