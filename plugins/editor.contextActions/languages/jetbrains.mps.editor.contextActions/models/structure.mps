@@ -61,7 +61,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tpc2:4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_Text" />
+      <ref role="20lvS9" node="6kJcyCQ_seG" resolve="QueryFunction_TransformationMenu_Tooltip" />
     </node>
   </node>
   <node concept="1TIwiD" id="7L5lpRJILQC">
@@ -78,7 +78,15 @@
     <property role="34LRSv" value="query" />
     <property role="R4oN_" value="a block of code" />
     <property role="EcuMT" value="8954657570916342474" />
-    <ref role="1TJDcQ" to="tpc2:FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+    <ref role="1TJDcQ" to="tpc2:6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
+  <node concept="1TIwiD" id="6kJcyCQ_seG">
+    <property role="EcuMT" value="7291101478621922220" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Tooltip" />
+    <property role="34LRSv" value="query" />
+    <property role="R4oN_" value="a block of code" />
+    <ref role="1TJDcQ" to="tpc2:6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
 </model>
 

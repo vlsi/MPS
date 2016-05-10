@@ -24,7 +24,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lo76ij_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_lo76ij_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_lo76ij_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lo76ij_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_lo76ij_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lo76ij_d0(editorContext, node));
@@ -33,10 +33,8 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createCollection_lo76ij_g0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_lo76ij_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterized menu part");
-    editorCell.setCellId("Constant_lo76ij_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_lo76ij_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
   private EditorCell createConstant_lo76ij_b0(EditorContext editorContext, SNode node) {

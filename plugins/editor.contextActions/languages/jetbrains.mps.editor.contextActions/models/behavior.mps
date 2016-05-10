@@ -12,7 +12,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="1ne1" ref="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.contextActionsTool.runtime)" />
-    <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)" implicit="true" />
+    <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -36,6 +36,7 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -184,6 +185,29 @@
           <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="6kJcyCQ_seH">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="13h7C2" to="s5fb:6kJcyCQ_seG" resolve="QueryFunction_TransformationMenu_Tooltip" />
+    <node concept="13hLZK" id="6kJcyCQ_seI" role="13h7CW">
+      <node concept="3clFbS" id="6kJcyCQ_seJ" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="4VZjoGvneYY" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="4VZjoGvneYZ" role="1B3o_S" />
+      <node concept="3clFbS" id="4VZjoGvneZ0" role="3clF47">
+        <node concept="3clFbF" id="4VZjoGvneZ1" role="3cqZAp">
+          <node concept="2c44tf" id="4VZjoGvneZ2" role="3clFbG">
+            <node concept="17QB3L" id="4VZjoGvnmRe" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="4VZjoGvneZ4" role="3clF45" />
     </node>
   </node>
 </model>

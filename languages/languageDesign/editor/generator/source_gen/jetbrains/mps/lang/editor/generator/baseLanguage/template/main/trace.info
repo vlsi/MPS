@@ -2100,13 +2100,13 @@
       <node id="4233361609420236936" at="924,112,925,115" concept="6" />
       <node id="4233361609418897902" at="1237,39,1238,207" concept="6" />
       <node id="4233361609416304610" at="2229,108,2230,346" concept="6" />
-      <node id="4233361609419281902" at="2232,108,2233,188" concept="6" />
+      <node id="2468431357014019464" at="2232,108,2233,188" concept="6" />
       <node id="4233361609418895289" at="1237,0,1240,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4233361609418860337" at="1235,109,1240,7" concept="6" />
       <scope id="4233361609420232110" at="924,112,925,115" />
       <scope id="4233361609418895290" at="1237,39,1238,207" />
       <scope id="4233361609416304604" at="2229,108,2230,346" />
-      <scope id="4233361609419281896" at="2232,108,2233,188" />
+      <scope id="2468431357014017123" at="2232,108,2233,188" />
       <scope id="4233361609418895289" at="1237,0,1240,0">
         <var name="it" id="4233361609418895289" />
       </scope>
@@ -2673,7 +2673,7 @@
         <var name="it" id="5126791860783295517" />
       </scope>
       <scope id="5126791860783272378" at="2482,120,2487,18" />
-      <unit id="5126791860783295517" at="2483,152,2487,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$36" />
+      <unit id="5126791860783295517" at="2483,142,2487,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$36" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/5126791860775669354">
@@ -2681,11 +2681,11 @@
       <node id="5126791860780658718" at="915,112,916,115" concept="6" />
       <node id="5126791860780648950" at="2217,108,2218,341" concept="6" />
       <node id="5126791860780648969" at="2489,120,2490,191" concept="6" />
-      <node id="5126791860775670930" at="2492,120,2493,191" concept="6" />
+      <node id="2468431357013483958" at="2492,120,2493,191" concept="6" />
       <scope id="5126791860780655923" at="915,112,916,115" />
       <scope id="5126791860780648949" at="2217,108,2218,341" />
       <scope id="5126791860780648968" at="2489,120,2490,191" />
-      <scope id="5126791860775670924" at="2492,120,2493,191" />
+      <scope id="2468431357013483957" at="2492,120,2493,191" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/5126791860775889965">
@@ -2693,11 +2693,11 @@
       <node id="5126791860781453200" at="918,112,919,115" concept="6" />
       <node id="5126791860781445493" at="2220,108,2221,344" concept="6" />
       <node id="5126791860781445514" at="2495,120,2496,191" concept="6" />
-      <node id="5126791860775889972" at="2498,120,2499,191" concept="6" />
+      <node id="2468431357013200478" at="2498,120,2499,191" concept="6" />
       <scope id="5126791860781449339" at="918,112,919,115" />
       <scope id="5126791860781445492" at="2220,108,2221,344" />
       <scope id="5126791860781445513" at="2495,120,2496,191" />
-      <scope id="5126791860775889971" at="2498,120,2499,191" />
+      <scope id="2468431357013200477" at="2498,120,2499,191" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/5126791860781666526">
@@ -2953,8 +2953,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/7980428675268652652">
     <file name="QueriesGenerated.java">
-      <node id="7980428675268652688" at="2507,120,2508,191" concept="6" />
-      <scope id="7980428675268652682" at="2507,120,2508,191" />
+      <node id="2468431357012860603" at="2507,120,2508,191" concept="6" />
+      <scope id="2468431357012856764" at="2507,120,2508,191" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/7991857262602250026">

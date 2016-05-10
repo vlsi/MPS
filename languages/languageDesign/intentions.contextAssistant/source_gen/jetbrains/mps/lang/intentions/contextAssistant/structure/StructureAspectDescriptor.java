@@ -15,16 +15,18 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_Intention = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention", MetaIdFactory.conceptId(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L)).super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.TransformationMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x289dadfa24b57a52L, "intention", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L), false)).references("intention").alias("intention", "").sourceNode(new SNodePointer("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)", "2926686622729992785")).create();
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
+  /*package*/ final ConceptDescriptor myConceptQueryFunctionParameter_IntentionExecutable = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable", MetaIdFactory.conceptId(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x2241a13dab46cce9L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("intentionExecutable", "the runtime representation of the intention").sourceNode(new SNodePointer("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)", "2468431357014363369")).create();
+  /*package*/ final ConceptDescriptor myConceptTransformationMenuPart_Intention = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention", MetaIdFactory.conceptId(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L)).super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.TransformationMenuPart", "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart", "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad24L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x289dadfa24b57a52L, "intention", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L), false)).references("intention").alias("intention", "").sourceNode(new SNodePointer("r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)", "2926686622729992785")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptTransformationMenuPart_Intention.getId(), 0);
+    myIndexMap.put(myConceptQueryFunctionParameter_IntentionExecutable.getId(), 0);
+    myIndexMap.put(myConceptTransformationMenuPart_Intention.getId(), 1);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTransformationMenuPart_Intention);
+    return Arrays.asList(myConceptQueryFunctionParameter_IntentionExecutable, myConceptTransformationMenuPart_Intention);
   }
 
   @Override
@@ -36,6 +38,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
+        return myConceptQueryFunctionParameter_IntentionExecutable;
+      case 1:
         return myConceptTransformationMenuPart_Intention;
       default:
         throw new IllegalStateException();

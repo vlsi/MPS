@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated" />
+      <unit at="18,0,37,0" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated" />
     </file>
   </root>
-  <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)/2313436515371105324">
+  <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)/7291101478621738963">
     <file name="QueriesGenerated.java">
-      <node id="6258288120177126286" at="13,112,14,282" concept="0" />
-      <scope id="6258288120177126285" at="13,112,14,282" />
+      <node id="7291101478621741018" at="20,112,21,282" concept="1" />
+      <node id="7291101478621741113" at="23,112,24,115" concept="1" />
+      <node id="4233361609414462024" at="26,120,27,194" concept="1" />
+      <node id="7291101478621823409" at="31,50,32,125" concept="1" />
+      <node id="7291101478621823407" at="31,0,34,0" concept="0" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="7291101478621823400" at="29,120,34,18" concept="1" />
+      <scope id="7291101478621741017" at="20,112,21,282" />
+      <scope id="7291101478621741112" at="23,112,24,115" />
+      <scope id="4233361609414462018" at="26,120,27,194" />
+      <scope id="7291101478621823408" at="31,50,32,125" />
+      <scope id="7291101478621823407" at="31,0,34,0">
+        <var name="it" id="7291101478621823407" />
+      </scope>
+      <scope id="7291101478621823399" at="29,120,34,18" />
+      <unit id="7291101478621823407" at="30,142,34,5" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated$1" />
     </file>
   </root>
 </debug-info>

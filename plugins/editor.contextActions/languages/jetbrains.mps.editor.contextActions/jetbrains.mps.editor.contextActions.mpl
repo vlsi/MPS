@@ -81,6 +81,7 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">28583149-5b6e-4663-9c02-b9a8fa3cb099(jetbrains.mps.editor.contextActionsTool)</dependency>
+    <dependency reexport="false">b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba(jetbrains.mps.editor.contextActions)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>

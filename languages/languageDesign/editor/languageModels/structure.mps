@@ -4994,6 +4994,8 @@
     <property role="EcuMT" value="4233361609415240997" />
     <property role="3GE5qa" value="TransformationMenu.Parameterized" />
     <property role="TrG5h" value="TransformationMenuPart_Parameterized" />
+    <property role="34LRSv" value="parameterized" />
+    <property role="R4oN_" value="parameterized menu part" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="3EZUZhmYcxv" role="1TKVEi">
       <property role="IQ2ns" value="4233361609415247967" />
@@ -5041,6 +5043,13 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7L5lpRJH$E_" resolve="TransformationFeature" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6kJcyCQ_LoK">
+    <property role="EcuMT" value="7291101478622008880" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Extensible" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
 </model>
 

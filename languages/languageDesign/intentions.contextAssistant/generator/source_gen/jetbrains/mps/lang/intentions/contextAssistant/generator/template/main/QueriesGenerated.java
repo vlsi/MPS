@@ -7,10 +7,30 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor;
 
 @Generated
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_6258288120177126284(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7291101478621741016(final PropertyMacroContext _context) {
     return (String) BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedId_id2ytFvC$HDcE.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, 0x289dadfa24b57a52L, "intention")));
+  }
+  public static Object propertyMacro_GetPropertyValue_7291101478621741111(final PropertyMacroContext _context) {
+    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), _context.getNode());
+  }
+  public static Iterable<SNode> sourceNodesQuery_4233361609414462017(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"));
+  }
+  public static Iterable<SNode> sourceNodesQuery_7291101478621823398(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(IExtensibleMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return (Iterable<SNode>) TransformationLocation__BehaviorDescriptor.getActionItemInterfaces_id4sA1wzjmzSN.invoke(it);
+      }
+    }).distinct();
   }
 }

@@ -14014,8 +14014,8 @@
     <property role="3GE5qa" value="TransformationMenu.Parameterized" />
     <ref role="1XX52x" to="tpc2:3EZUZhmYaO_" resolve="TransformationMenuPart_Parameterized" />
     <node concept="3EZMnI" id="3EZUZhmZu2V" role="2wV5jI">
-      <node concept="3F0ifn" id="3EZUZhmZu32" role="3EZMnx">
-        <property role="3F0ifm" value="parameterized menu part" />
+      <node concept="PMmxH" id="291CjQF0FTx" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0ifn" id="3EZUZhmZu38" role="3EZMnx">
         <property role="3F0ifm" value="parameter type:" />

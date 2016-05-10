@@ -8,6 +8,8 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.intentions.IntentionAspectDescriptor;
+import jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -35,6 +37,9 @@ public class Language extends LanguageRuntime {
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
+    }
+    if (aspectClass == IntentionAspectDescriptor.class) {
+      return (T) new IntentionsDescriptor();
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.StructureAspectDescriptor();

@@ -12,6 +12,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myQueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor = new QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_TransformationMenu_Icon__BehaviorDescriptor = new QueryFunction_TransformationMenu_Icon__BehaviorDescriptor();
   private final BHDescriptor myTransformationLocation_Sidebar__BehaviorDescriptor = new TransformationLocation_Sidebar__BehaviorDescriptor();
 
@@ -22,7 +23,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0f.get(cncpt);
+      Integer preIndex = indices_846f5o_a0g.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -31,6 +32,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
           }
           break;
         case 1:
+          if (true) {
+            return myQueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor;
+          }
+          break;
+        case 2:
           if (true) {
             return myTransformationLocation_Sidebar__BehaviorDescriptor;
           }
@@ -49,5 +55,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1acaL, "jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1acaL, "jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x652f322a3695c3acL, "jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Tooltip"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar"));
 }

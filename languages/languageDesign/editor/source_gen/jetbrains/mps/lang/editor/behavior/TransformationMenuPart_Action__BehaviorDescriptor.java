@@ -7,26 +7,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
-import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
-import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,31 +20,12 @@ public final class TransformationMenuPart_Action__BehaviorDescriptor extends Bas
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getLocations_id6V0bp$oM1WF = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6V0bp$oM1WF").registry(REGISTRY).build();
-  public static final SMethod<Iterable<SConcept>> getMissingFeatures_id6kJcyCQjeiA = new SMethodBuilder<Iterable<SConcept>>(new SJavaCompoundTypeImpl((Class<Iterable<SConcept>>) ((Class) Object.class))).name("getMissingFeatures").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6kJcyCQjeiA").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLocations_id6V0bp$oM1WF, getMissingFeatures_id6kJcyCQjeiA);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getLocations_id6V0bp$oM1WF(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"), false, false), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"));
-  }
-  /*package*/ static Iterable<SConcept> getMissingFeatures_id6kJcyCQjeiA(@NotNull SNode __thisNode__) {
-    Set<SConcept> required = SetSequence.fromSetWithValues(new HashSet<SConcept>(), ListSequence.fromList(TransformationMenuPart_Action__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(__thisNode__)).translate(new ITranslator2<SNode, SConcept>() {
-      public Iterable<SConcept> translate(SNode it) {
-        return (Collection<SConcept>) TransformationLocation__BehaviorDescriptor.getRequiredFeatures_id7L5lpRJHK_w.invoke(it);
-      }
-    }));
-    Iterable<SConcept> present = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).select(new ISelector<SNode, SConcept>() {
-      public SConcept select(SNode it) {
-        return SNodeOperations.getConcept(it);
-      }
-    });
-    SetSequence.fromSet(required).removeSequence(Sequence.fromIterable(present));
-    return required;
-  }
 
   /*package*/ TransformationMenuPart_Action__BehaviorDescriptor() {
     super(REGISTRY);
@@ -77,10 +43,6 @@ public final class TransformationMenuPart_Action__BehaviorDescriptor extends Bas
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 0:
-        return (T) ((List<SNode>) getLocations_id6V0bp$oM1WF(node));
-      case 1:
-        return (T) ((Iterable<SConcept>) getMissingFeatures_id6kJcyCQjeiA(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

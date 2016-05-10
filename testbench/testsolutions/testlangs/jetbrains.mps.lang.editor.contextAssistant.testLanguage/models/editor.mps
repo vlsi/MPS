@@ -7,6 +7,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActions" version="0" />
+    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16,6 +17,8 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
+    <import index="7e53" ref="r:e11988ca-dd7b-49ce-b283-28b999b925ea(jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions)" />
+    <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -65,8 +68,8 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="1hCUdq" />
-      <concept id="7291101478617127464" name="jetbrains.mps.lang.editor.structure.null" flags="ng" index="1joUw2">
-        <child id="8954657570916349207" name="" index="2jZA2a" />
+      <concept id="7291101478617127464" name="jetbrains.mps.lang.editor.structure.IExtensibleMenuPart" flags="ng" index="1joUw2">
+        <child id="8954657570916349207" name="features" index="2jZA2a" />
       </concept>
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
@@ -203,6 +206,13 @@
       <concept id="8954657570916342474" name="jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
       <concept id="8954657570916342471" name="jetbrains.mps.editor.contextActions.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
         <child id="8954657570916343203" name="query" index="2jZ$wY" />
+      </concept>
+      <concept id="7291101478621922220" name="jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Tooltip" flags="ig" index="1jIJ66" />
+    </language>
+    <language id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant">
+      <concept id="2468431357014363369" name="jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
+      <concept id="2926686622729992785" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
+        <reference id="2926686622729992786" name="intention" index="caduC" />
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
@@ -722,9 +732,9 @@
           </node>
         </node>
         <node concept="2jZ$wS" id="3EZUZhmTIn2" role="2jZA2a">
-          <node concept="1hCUdq" id="3EZUZhmTIn8" role="2jZ$wV">
-            <node concept="3clFbS" id="3EZUZhmTIn9" role="2VODD2">
-              <node concept="3clFbF" id="3EZUZhmTIvy" role="3cqZAp">
+          <node concept="1jIJ66" id="291CjQFiQq5" role="2jZ$wV">
+            <node concept="3clFbS" id="291CjQFiQq6" role="2VODD2">
+              <node concept="3clFbF" id="291CjQFiQyu" role="3cqZAp">
                 <node concept="Xl_RD" id="3EZUZhmTIvx" role="3clFbG">
                   <property role="Xl_RC" value="tooltip of sidebar-only action" />
                 </node>
@@ -841,6 +851,38 @@
           </node>
           <node concept="2jZ$Xq" id="3EZUZhnb0Rd" role="2jZA2a" />
           <node concept="2jZ$wS" id="3EZUZhnb0Re" role="2jZA2a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3INDKC" id="291CjQF0FRp">
+    <property role="TrG5h" value="Intentions" />
+    <node concept="A1WHr" id="291CjQF0FRr" role="AmTjC">
+      <ref role="A1WHq" to="hsq4:4PEyPcYoaCM" resolve="Child" />
+    </node>
+    <node concept="1Qtc8_" id="291CjQF0FRu" role="IW6Ez">
+      <node concept="2jZ$wP" id="291CjQF0Nzh" role="1Qtc8$" />
+      <node concept="caduF" id="291CjQF0Nze" role="1Qtc8A">
+        <ref role="caduC" to="7e53:6kJcyCQ$05o" resolve="AddLetterToName" />
+        <node concept="2jZ$Xq" id="291CjQFbOnv" role="2jZA2a" />
+        <node concept="2jZ$wS" id="291CjQFbOnw" role="2jZA2a">
+          <node concept="1jIJ66" id="291CjQFhOyl" role="2jZ$wV">
+            <node concept="3clFbS" id="291CjQFhOym" role="2VODD2">
+              <node concept="3clFbF" id="291CjQFiAru" role="3cqZAp">
+                <node concept="2OqwBi" id="291CjQFiBDr" role="3clFbG">
+                  <node concept="2OqwBi" id="291CjQFiAED" role="2Oq$k0">
+                    <node concept="291QRk" id="291CjQFiArt" role="2Oq$k0" />
+                    <node concept="liA8E" id="291CjQFiBrn" role="2OqNvi">
+                      <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="291CjQFiCHQ" role="2OqNvi">
+                    <ref role="37wK5l" to="91lp:~IntentionDescriptor.getPresentation():java.lang.String" resolve="getPresentation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

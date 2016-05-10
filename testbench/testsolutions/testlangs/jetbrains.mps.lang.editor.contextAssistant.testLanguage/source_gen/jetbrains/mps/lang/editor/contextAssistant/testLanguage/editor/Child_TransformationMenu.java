@@ -54,7 +54,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0a());
+      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0a());
     }
   }
   private static class TransformationMenuPart_Action_qk1e79_a0a extends SingleItemMenuPart {
@@ -181,7 +181,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3a());
+      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3a());
     }
   }
   private static class TransformationMenuPart_Action_qk1e79_a3a extends SingleItemMenuPart {
@@ -243,7 +243,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4a());
+      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4a());
     }
   }
   private static class TransformationMenuPart_Action_qk1e79_a4a extends SingleItemMenuPart {

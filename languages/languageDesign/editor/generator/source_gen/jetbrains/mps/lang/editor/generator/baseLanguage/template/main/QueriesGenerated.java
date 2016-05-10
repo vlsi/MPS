@@ -59,7 +59,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.behavior.TransformationMenuPart_Action__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
@@ -2229,7 +2229,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4233361609416304603(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, 0x3abfebf456f8ad28L, "parameterQuery")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
   }
-  public static SNode sourceNodeQuery_4233361609419281895(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2468431357014017122(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, 0x3abfebf456f8ad26L, "part"));
   }
   public static Object templateArgumentQuery_8382384506219714495(final TemplateQueryContext _context) {
@@ -2480,7 +2480,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"));
   }
   public static Iterable<SNode> sourceNodesQuery_5126791860783272374(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(TransformationMenuPart_Action__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(IExtensibleMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return (Iterable<SNode>) TransformationLocation__BehaviorDescriptor.getActionItemInterfaces_id4sA1wzjmzSN.invoke(it);
       }
@@ -2489,13 +2489,13 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5126791860780648967(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d224048L, "parts"));
   }
-  public static Iterable<SNode> sourceNodesQuery_5126791860775670923(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2468431357013483956(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d224048L, "parts"));
   }
   public static Iterable<SNode> sourceNodesQuery_5126791860781445512(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x384b3925671e9a02L, "items"));
   }
-  public static Iterable<SNode> sourceNodesQuery_5126791860775889970(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2468431357013200476(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x384b3925671e9a02L, "items"));
   }
   public static Iterable<SNode> sourceNodesQuery_7980428675268617124(final SourceSubstituteMacroNodesContext _context) {
@@ -2504,7 +2504,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7980428675268638106(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"));
   }
-  public static Iterable<SNode> sourceNodesQuery_7980428675268652681(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2468431357012856756(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_5011379379534052739(final WeavingMappingRuleContext _context) {
