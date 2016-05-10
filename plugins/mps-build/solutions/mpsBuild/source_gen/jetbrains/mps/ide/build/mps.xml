@@ -52,7 +52,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="2.3" eap="false" update-channel="MPS32" />
+        <version codename="MPS" major="3" minor="2.4" eap="false" update-channel="MPS32" />
         <build date="${date}" number="${build.number}" />
         <logo url="/splash.png" textcolor="002387" />
         <about url="/mpsAbout.png" />
