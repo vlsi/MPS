@@ -10,7 +10,7 @@
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="lpry" ref="r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)" />
     <import index="g5uf" ref="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)" />
-    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
@@ -216,7 +216,7 @@
     <node concept="3EZMnI" id="57sEyAnjWDA" role="2wV5jI">
       <node concept="3F0ifn" id="57sEyAnjWDH" role="3EZMnx">
         <property role="3F0ifm" value="square" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0ifn" id="57sEyAnjX5l" role="3EZMnx">
         <property role="3F0ifm" value="x:" />
@@ -260,7 +260,7 @@
     <node concept="3EZMnI" id="57sEyAnjZBA" role="2wV5jI">
       <node concept="3F0ifn" id="57sEyAnjZBH" role="3EZMnx">
         <property role="3F0ifm" value="circle" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0ifn" id="57sEyAnjZBN" role="3EZMnx">
         <property role="3F0ifm" value="x:" />
@@ -326,7 +326,7 @@
     <node concept="3EZMnI" id="3u6SZi0viVn" role="2wV5jI">
       <node concept="3F0ifn" id="3u6SZi0viVo" role="3EZMnx">
         <property role="3F0ifm" value="circle" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0ifn" id="3u6SZi0viVp" role="3EZMnx">
         <property role="3F0ifm" value="x:" />
@@ -580,7 +580,7 @@
     <node concept="3EZMnI" id="3u6SZi0vt0o" role="2wV5jI">
       <node concept="3F0ifn" id="3u6SZi0vt0p" role="3EZMnx">
         <property role="3F0ifm" value="square" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0ifn" id="3u6SZi0vt0q" role="3EZMnx">
         <property role="3F0ifm" value="x:" />

@@ -9,10 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.structure.editor.structure_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,7 +41,7 @@ public class Repeat_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_b86mo8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
@@ -68,7 +69,7 @@ public class Repeat_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "times");
     editorCell.setCellId("Constant_b86mo8_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, Repeat_Editor._StyleParameter_QueryFunction_b86mo8_a0c0(editorContext, node));
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, Repeat_Editor._StyleParameter_QueryFunction_b86mo8_a1c0(editorContext, node));
     style.set(StyleAttributes.MATCHING_LABEL, 0, "block");
@@ -122,7 +123,7 @@ public class Repeat_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_b86mo8_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

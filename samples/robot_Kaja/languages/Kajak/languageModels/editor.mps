@@ -10,6 +10,7 @@
     <import index="c2kz" ref="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
   </imports>
@@ -259,7 +260,7 @@
     <node concept="3EZMnI" id="2Pif5TcL5tf" role="2wV5jI">
       <node concept="3F0ifn" id="2Pif5TcL5ti" role="3EZMnx">
         <property role="3F0ifm" value="Script" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0A7n" id="2Pif5TcL5tk" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -316,7 +317,7 @@
       </node>
       <node concept="3F0ifn" id="2RDssu5WraN" role="3EZMnx">
         <property role="3F0ifm" value="end" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="pVoyu" id="2RDssu5WraO" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -352,7 +353,7 @@
     <node concept="3EZMnI" id="2RDssu5V9Za" role="2wV5jI">
       <node concept="3F0ifn" id="2RDssu5V9Zd" role="3EZMnx">
         <property role="3F0ifm" value="if" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="VPxyj" id="JFO1DNuEtK" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -365,7 +366,7 @@
       </node>
       <node concept="3F0ifn" id="5M_y76suJvb" role="3EZMnx">
         <property role="3F0ifm" value="do" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="11LMrY" id="5M_y76suLnb" role="3F10Kt">
           <property role="VOm3f" value="true" />
           <node concept="3nzxsE" id="5M_y76suLne" role="3n$kyP">
@@ -427,7 +428,7 @@
       </node>
       <node concept="3F0ifn" id="2RDssu5WBrL" role="3EZMnx">
         <property role="3F0ifm" value="end" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="3mYdg7" id="2RDssu5WBrM" role="3F10Kt">
           <property role="1413C4" value="block" />
         </node>
@@ -441,11 +442,11 @@
         </node>
         <node concept="3F0ifn" id="2RDssu5Va0y" role="3EZMnx">
           <property role="3F0ifm" value="else" />
-          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         </node>
         <node concept="3F0ifn" id="6tmz5v65FRi" role="3EZMnx">
           <property role="3F0ifm" value="do" />
-          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
           <node concept="ljvvj" id="6tmz5v65FRj" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -485,7 +486,7 @@
         </node>
         <node concept="3F0ifn" id="2RDssu5X9ON" role="3EZMnx">
           <property role="3F0ifm" value="end" />
-          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
           <node concept="3mYdg7" id="2RDssu5X9OO" role="3F10Kt">
             <property role="1413C4" value="else_block" />
           </node>
@@ -532,7 +533,7 @@
     <node concept="3EZMnI" id="2RDssu5Vd5k" role="2wV5jI">
       <node concept="PMmxH" id="2Kq7O$TUg2s" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="VPxyj" id="2Kq7O$TUg55" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -543,7 +544,7 @@
       </node>
       <node concept="3F0ifn" id="5M_y76sw_JZ" role="3EZMnx">
         <property role="3F0ifm" value="times" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="11LMrY" id="5M_y76sw_Mg" role="3F10Kt">
           <property role="VOm3f" value="true" />
           <node concept="3nzxsE" id="5M_y76swDya" role="3n$kyP">
@@ -605,7 +606,7 @@
       </node>
       <node concept="3F0ifn" id="2RDssu5Vd5_" role="3EZMnx">
         <property role="3F0ifm" value="end" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="3mYdg7" id="2RDssu5WBrU" role="3F10Kt">
           <property role="1413C4" value="block" />
         </node>
@@ -619,7 +620,7 @@
     <node concept="3EZMnI" id="2RDssu5VeNB" role="2wV5jI">
       <node concept="PMmxH" id="2Kq7O$TUgvZ" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="2V7CMv" id="2Kq7O$TUgx6" role="3F10Kt">
           <property role="2V7CMs" value="ext_3_RTransform" />
         </node>
@@ -632,7 +633,7 @@
       </node>
       <node concept="3F0ifn" id="5M_y76sw5a8" role="3EZMnx">
         <property role="3F0ifm" value="do" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="11LMrY" id="5M_y76sw5b4" role="3F10Kt">
           <property role="VOm3f" value="true" />
           <node concept="3nzxsE" id="5M_y76sw8hj" role="3n$kyP">
@@ -694,7 +695,7 @@
       </node>
       <node concept="3F0ifn" id="2RDssu5VeNR" role="3EZMnx">
         <property role="3F0ifm" value="end" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="3mYdg7" id="2RDssu5WBrX" role="3F10Kt">
           <property role="1413C4" value="block" />
         </node>
@@ -1079,7 +1080,7 @@
     <node concept="3EZMnI" id="3NWQyev6tcr" role="2wV5jI">
       <node concept="3F0ifn" id="3NWQyev6tcu" role="3EZMnx">
         <property role="3F0ifm" value="Library" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F0A7n" id="3NWQyev6tcw" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -1087,7 +1088,7 @@
       </node>
       <node concept="3F0ifn" id="3NWQyev6tcH" role="3EZMnx">
         <property role="3F0ifm" value="defines" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="ljvvj" id="3NWQyev6tcI" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -1110,7 +1111,7 @@
       </node>
       <node concept="3F0ifn" id="3NWQyev6tcD" role="3EZMnx">
         <property role="3F0ifm" value="end" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
         <node concept="3mYdg7" id="3NWQyev6tcE" role="3F10Kt">
           <property role="1413C4" value="library-block" />
         </node>
