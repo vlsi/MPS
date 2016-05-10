@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,23 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.DataSourceListener;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
+ * @deprecated there's single use of this class, PsiJavaStubModelDescriptor, which doesn't use its 'reloadable' nature nor
+ *             timestamp tracking facilities anyway.
+ *
  * DO NOT USE
  * This class is in the process of deprecation and its DataSource change tracking functionality has been extracted into
  * ModelSourceChangeTracker (intention is to split EditableSModelBase and reload functionality)
  * evgeny, 3/21/13
  */
+@Deprecated
+@ToRemove(version = 0)
 public abstract class ReloadableSModelBase extends SModelBase implements ModelSourceChangeTracker.ReloadCallback {
 
   protected final ModelSourceChangeTracker myTimestampTracker;
