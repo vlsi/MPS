@@ -56,7 +56,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Arrays.asList(new TransformationMenu[]{new Child_TransformationMenu(), new DefaultMenuContribution()});
+            return Arrays.asList(new TransformationMenu[]{new Child_TransformationMenu(), new DefaultMenuContribution(), new Parameterized()});
           }
           break;
         case 1:

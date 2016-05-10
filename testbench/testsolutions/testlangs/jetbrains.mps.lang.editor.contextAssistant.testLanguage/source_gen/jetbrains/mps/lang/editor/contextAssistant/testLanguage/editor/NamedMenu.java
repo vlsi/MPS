@@ -27,25 +27,26 @@ public class NamedMenu extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new NamedMenu.ActionItem_qsw3kc_a0(context);
-    }
-  }
-  private static class ActionItem_qsw3kc_a0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_qsw3kc_a0(TransformationMenuContext context) {
-      _context = context;
+      return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "defined in named menu";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "defined in named menu";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+      }
+
+    }
   }
 }

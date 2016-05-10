@@ -35,60 +35,62 @@ public class DefaultMenuContribution extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_qwzmaw_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new DefaultMenuContribution.ActionItem_qwzmaw_a0(context);
-    }
-  }
-  private static class ActionItem_qwzmaw_a0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_qwzmaw_a0(TransformationMenuContext context) {
-      _context = context;
+      return new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "contributed from same language";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "contributed from same language";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+      }
+
+    }
   }
   private static class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new DefaultMenuContribution.ActionItem_qwzmaw_a1(context);
-    }
-  }
-  private static class ActionItem_qwzmaw_a1 extends ActionItemBase implements SidebarActionItem {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_qwzmaw_a1(TransformationMenuContext context) {
-      _context = context;
+      return new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a1.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "sidebar-only action";
-    }
+    private class Item extends ActionItemBase implements SidebarActionItem {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("sidebar-only action executed");
+      private Item(TransformationMenuContext context) {
+        _context = context;
       }
-    }
 
-    @Override
-    public Icon getIcon() {
-      return MPSIcons.Nodes.Action;
-    }
-    @Override
-    public String getTooltipText() {
-      return "tooltip of sidebar-only action";
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "sidebar-only action";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        if (LOG.isInfoEnabled()) {
+          LOG.info("sidebar-only action executed");
+        }
+      }
+
+      @Override
+      public Icon getIcon() {
+        return MPSIcons.Nodes.Action;
+      }
+      @Override
+      public String getTooltipText() {
+        return "tooltip of sidebar-only action";
+      }
     }
   }
   protected static Logger LOG = LogManager.getLogger(DefaultMenuContribution.class);

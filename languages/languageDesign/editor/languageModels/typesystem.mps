@@ -251,6 +251,7 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
+        <property id="1206359757216" name="checkOnly" index="3wDh2S" />
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
@@ -4373,6 +4374,36 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3EZUZhn6Cwz">
+    <property role="TrG5h" value="typeof_QueryFunctionParameter_TransformationMenu_parameterObject" />
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <node concept="3clFbS" id="3EZUZhn6Cw$" role="18ibNy">
+      <node concept="1ZobV4" id="3EZUZhn6Dda" role="3cqZAp">
+        <property role="3wDh2S" value="false" />
+        <node concept="mw_s8" id="3EZUZhn6Ddg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3EZUZhn6Ddh" role="mwGJk">
+            <node concept="1YBJjd" id="3EZUZhn6Ddi" role="1Z2MuG">
+              <ref role="1YBMHb" node="3EZUZhn6CwA" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3EZUZhn6Ddc" role="1ZfhKB">
+          <node concept="2OqwBi" id="3EZUZhn6Ddd" role="mwGJk">
+            <node concept="1YBJjd" id="3EZUZhn6Dde" role="2Oq$k0">
+              <ref role="1YBMHb" node="3EZUZhn6CwA" resolve="node" />
+            </node>
+            <node concept="2qgKlT" id="3EZUZhn6Ddf" role="2OqNvi">
+              <ref role="37wK5l" to="tpcb:3EZUZhn6ndx" resolve="getType" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3EZUZhn6CwA" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tpc2:3EZUZhn6cs4" resolve="QueryFunctionParameter_TransformationMenu_parameterObject" />
     </node>
   </node>
 </model>

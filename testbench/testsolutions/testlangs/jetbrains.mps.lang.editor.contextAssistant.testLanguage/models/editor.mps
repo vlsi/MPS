@@ -91,6 +91,13 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="4233361609415247331" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Parameter" flags="ig" index="1GhMSn" />
+      <concept id="4233361609415240997" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized" flags="ng" index="1GhOrh">
+        <child id="4233361609415247967" name="parameterType" index="1GhMeF" />
+        <child id="4233361609415240998" name="part" index="1GhOri" />
+        <child id="4233361609415241000" name="parameterQuery" index="1GhOrs" />
+      </concept>
+      <concept id="4233361609417344772" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_parameterObject" flags="ng" index="1HDMNK" />
       <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
         <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
@@ -136,6 +143,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -160,6 +168,9 @@
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -223,6 +234,13 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
     </language>
   </registry>
   <node concept="24kQdi" id="4PEyPcYohiN">
@@ -770,6 +788,60 @@
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ParentNamedMenu" />
     <ref role="7LAce" to="hsq4:4PEyPcYoaDd" resolve="Parent" />
+  </node>
+  <node concept="3INDKC" id="3EZUZhn6InV">
+    <property role="TrG5h" value="Parameterized" />
+    <node concept="A1WHr" id="3EZUZhn6InX" role="AmTjC">
+      <ref role="A1WHq" to="hsq4:4PEyPcYoaCM" resolve="Child" />
+    </node>
+    <node concept="1Qtc8_" id="3EZUZhn6Io0" role="IW6Ez">
+      <node concept="2jZ$wP" id="3EZUZhnb0R7" role="1Qtc8$" />
+      <node concept="1GhOrh" id="3EZUZhn6Io9" role="1Qtc8A">
+        <node concept="10Oyi0" id="3EZUZhn6Io$" role="1GhMeF" />
+        <node concept="1GhMSn" id="3EZUZhn6Ioc" role="1GhOrs">
+          <node concept="3clFbS" id="3EZUZhn6Ioe" role="2VODD2">
+            <node concept="3clFbF" id="3EZUZhn9dDC" role="3cqZAp">
+              <node concept="2ShNRf" id="3EZUZhn9dDA" role="3clFbG">
+                <node concept="Tc6Ow" id="3EZUZhn9dM0" role="2ShVmc">
+                  <node concept="10Oyi0" id="3EZUZhn9edk" role="HW$YZ" />
+                  <node concept="3cmrfG" id="3EZUZhn9erF" role="HW$Y0">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="3cmrfG" id="3EZUZhn9eCQ" role="HW$Y0">
+                    <property role="3cmrfH" value="2" />
+                  </node>
+                  <node concept="3cmrfG" id="3EZUZhn9eJG" role="HW$Y0">
+                    <property role="3cmrfH" value="3" />
+                  </node>
+                  <node concept="3cmrfG" id="3EZUZhn9eXf" role="HW$Y0">
+                    <property role="3cmrfH" value="4" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWgqT" id="3EZUZhnagke" role="1GhOri">
+          <node concept="1hCUdq" id="3EZUZhnagkg" role="1hCUd6">
+            <node concept="3clFbS" id="3EZUZhnagki" role="2VODD2">
+              <node concept="3clFbF" id="3EZUZhnaYlg" role="3cqZAp">
+                <node concept="3cpWs3" id="3EZUZhnb03o" role="3clFbG">
+                  <node concept="1HDMNK" id="3EZUZhnb0bY" role="3uHU7w" />
+                  <node concept="Xl_RD" id="3EZUZhnaZsU" role="3uHU7B">
+                    <property role="Xl_RC" value="parameterized action " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="IWg2L" id="3EZUZhnagkk" role="IWgqQ">
+            <node concept="3clFbS" id="3EZUZhnagkm" role="2VODD2" />
+          </node>
+          <node concept="2jZ$Xq" id="3EZUZhnb0Rd" role="2jZA2a" />
+          <node concept="2jZ$wS" id="3EZUZhnb0Re" role="2jZA2a" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

@@ -4634,6 +4634,9 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7L5lpRJH$E_" resolve="TransformationFeature" />
     </node>
+    <node concept="PrWs8" id="3EZUZhna5Bj" role="PzmwI">
+      <ref role="PrY4T" node="3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1qY_lWSjJZY">
     <property role="3GE5qa" value="TransformationMenu" />
@@ -4985,6 +4988,51 @@
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="3EZUZhmYaO$">
+    <property role="EcuMT" value="4233361609415240996" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="IParameterizableMenuPart" />
+  </node>
+  <node concept="1TIwiD" id="3EZUZhmYaO_">
+    <property role="EcuMT" value="4233361609415240997" />
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <property role="TrG5h" value="TransformationMenuPart_Parameterized" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="3EZUZhmYcxv" role="1TKVEi">
+      <property role="IQ2ns" value="4233361609415247967" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="3EZUZhmYaOC" role="1TKVEi">
+      <property role="IQ2ns" value="4233361609415241000" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterQuery" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3EZUZhmYcnz" resolve="QueryFunction_TransformationMenu_Parameter" />
+    </node>
+    <node concept="1TJgyj" id="3EZUZhmYaOA" role="1TKVEi">
+      <property role="IQ2ns" value="4233361609415240998" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="part" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3EZUZhmYcnz">
+    <property role="EcuMT" value="4233361609415247331" />
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Parameter" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="3EZUZhn6cs4">
+    <property role="EcuMT" value="4233361609417344772" />
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_parameterObject" />
+    <property role="34LRSv" value="parameterObject" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 
