@@ -98,7 +98,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2a());
+      return Arrays.<MenuPart>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2a());
     }
     private static boolean eq_supj5f_a0a0a6(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);

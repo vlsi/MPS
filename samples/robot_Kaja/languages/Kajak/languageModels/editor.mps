@@ -21,6 +21,7 @@
       <concept id="1176897764478" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory" flags="in" index="4$FPG" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
+      <concept id="2468431357014947084" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="293xgL" />
       <concept id="7429591467341004871" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group" flags="ng" index="aenpk">
         <child id="7429591467341004872" name="parts" index="aenpr" />
         <child id="7429591467341004877" name="condition" index="aenpu" />
@@ -1349,8 +1350,8 @@
         </node>
       </node>
       <node concept="1vlq3a" id="u67o_MSLT1" role="1Qtc8A">
-        <node concept="1hCUdq" id="u67o_MSLT3" role="1hCDOS">
-          <node concept="3clFbS" id="u67o_MSLT5" role="2VODD2">
+        <node concept="293xgL" id="291CjQFAO3B" role="1hCDOS">
+          <node concept="3clFbS" id="291CjQFAO3C" role="2VODD2">
             <node concept="3clFbF" id="u67o_MSLXH" role="3cqZAp">
               <node concept="Xl_RD" id="u67o_MSLXG" role="3clFbG">
                 <property role="Xl_RC" value="Control flow" />
@@ -1499,8 +1500,8 @@
         </node>
       </node>
       <node concept="1vlq3a" id="u67o_MSLDF" role="1Qtc8A">
-        <node concept="1hCUdq" id="u67o_MSLDH" role="1hCDOS">
-          <node concept="3clFbS" id="u67o_MSLDJ" role="2VODD2">
+        <node concept="293xgL" id="291CjQFAOKG" role="1hCDOS">
+          <node concept="3clFbS" id="291CjQFAOKH" role="2VODD2">
             <node concept="3clFbF" id="u67o_MSLIe" role="3cqZAp">
               <node concept="Xl_RD" id="u67o_MSLId" role="3clFbG">
                 <property role="Xl_RC" value="Other actions" />

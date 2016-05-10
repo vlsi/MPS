@@ -90,7 +90,7 @@ public class OtherCommands extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart> getParts() {
-      return Arrays.asList(new OtherCommands.TransformationMenuPart_Action_uewb7w_a2a());
+      return Arrays.<MenuPart>asList(new OtherCommands.TransformationMenuPart_Action_uewb7w_a2a());
     }
     private static boolean eq_uewb7w_a0a0a6(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);

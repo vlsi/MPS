@@ -4618,7 +4618,7 @@
       <property role="20kJfa" value="textFunction" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5692353713941573325" />
-      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_Text" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_ActionLabelText" />
     </node>
     <node concept="1TJgyj" id="1qY_lWSjTfD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -4698,7 +4698,7 @@
   </node>
   <node concept="1TIwiD" id="4VZjoGvneVh">
     <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_Text" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_ActionLabelText" />
     <property role="34LRSv" value="query" />
     <property role="R4oN_" value="a block of code" />
     <property role="EcuMT" value="5692353713941573329" />
@@ -4805,7 +4805,7 @@
       <property role="20kJfa" value="textFunction" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5692353713941631155" />
-      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_Text" />
+      <ref role="20lvS9" node="291CjQFjVkc" resolve="QueryFunction_TransformationMenu_Text" />
     </node>
     <node concept="1TJgyj" id="3xbeilB7DC2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -5023,7 +5023,7 @@
     <property role="EcuMT" value="4233361609415247331" />
     <property role="3GE5qa" value="TransformationMenu.Parameterized" />
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Parameter" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="3EZUZhn6cs4">
     <property role="EcuMT" value="4233361609417344772" />
@@ -5049,6 +5049,14 @@
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Extensible" />
     <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+  </node>
+  <node concept="1TIwiD" id="291CjQFjVkc">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Text" />
+    <property role="34LRSv" value="query" />
+    <property role="R4oN_" value="a block of code" />
+    <property role="EcuMT" value="2468431357014947084" />
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
 </model>

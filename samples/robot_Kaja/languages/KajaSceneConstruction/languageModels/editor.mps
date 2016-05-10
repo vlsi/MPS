@@ -17,6 +17,7 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
+      <concept id="2468431357014947084" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="293xgL" />
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="8954657570917870539" name="jetbrains.mps.lang.editor.structure.TransformationLocation_ContextAssistant" flags="ng" index="2j_NTm" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
@@ -35,7 +36,7 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="1hCUdq" />
+      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
@@ -209,15 +210,6 @@
     <node concept="1Qtc8_" id="6V0bp$oQV9l" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQVBS" role="1Qtc8$" />
       <node concept="1vlq3a" id="u67o_MUpVL" role="1Qtc8A">
-        <node concept="1hCUdq" id="u67o_MUpVN" role="1hCDOS">
-          <node concept="3clFbS" id="u67o_MUpVP" role="2VODD2">
-            <node concept="3clFbF" id="u67o_MUq0W" role="3cqZAp">
-              <node concept="Xl_RD" id="u67o_MUq0V" role="3clFbG">
-                <property role="Xl_RC" value="Scene builder" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="IWgqT" id="u67o_MSMyc" role="1vlqcB">
           <node concept="1hCUdq" id="u67o_MSMyd" role="1hCUd6">
             <node concept="3clFbS" id="u67o_MSMye" role="2VODD2">
@@ -399,6 +391,15 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="293xgL" id="291CjQFAPDJ" role="1hCDOS">
+          <node concept="3clFbS" id="291CjQFAPDK" role="2VODD2">
+            <node concept="3clFbF" id="u67o_MUq0W" role="3cqZAp">
+              <node concept="Xl_RD" id="u67o_MUq0V" role="3clFbG">
+                <property role="Xl_RC" value="Scene builder" />
               </node>
             </node>
           </node>
