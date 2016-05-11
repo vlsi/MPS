@@ -482,13 +482,16 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 //      }
   }
 
-  // FIXME likely, shall become final. It's LazyEditableSModelBase which prevents me from doing that now.
+  /**
+   * Generally, shall be protected (as well as {@link #setLoadingState(ModelLoadingState)}, but made public for uses in
+   * {@code PartialModelDataSupport} aka {@code jetbrains.mps.smodel.loading.UpdateableModel}.
+   */
   @NotNull
-  protected ModelLoadingState getLoadingState() {
+  public final ModelLoadingState getLoadingState() {
     return myModelLoadState;
   }
 
-  protected final void setLoadingState(@NotNull ModelLoadingState modelLoadState) {
+  public final void setLoadingState(@NotNull ModelLoadingState modelLoadState) {
     myModelLoadState = modelLoadState;
   }
 
