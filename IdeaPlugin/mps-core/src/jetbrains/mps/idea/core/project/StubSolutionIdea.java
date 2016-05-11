@@ -246,7 +246,7 @@ public abstract class StubSolutionIdea extends StubSolution {
       if (myBaseJdk == null) return Collections.emptySet();
 
       Solution baseJdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getSdkSolution(myBaseJdk);
-      return Collections.<SDependency>singleton(new SDependencyImpl(baseJdkSolution, SDependencyScope.DEFAULT, false));
+      return Collections.<SDependency>singleton(new SDependencyImpl(baseJdkSolution, SDependencyScope.DEFAULT, true));
     }
   }
 
