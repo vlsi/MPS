@@ -14,6 +14,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 
 public class IntentionMenuPartBase implements MenuPart {
   private final String myIntentionId;
@@ -42,4 +43,26 @@ public class IntentionMenuPartBase implements MenuPart {
   protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
     return null;
   }
+
+  protected static class ItemBase extends ActionItemBase {
+    protected final TransformationMenuContext _context;
+    protected final IntentionExecutable myExecutable;
+
+    protected ItemBase(TransformationMenuContext context, IntentionExecutable executable) {
+      _context = context;
+      myExecutable = executable;
+    }
+
+    @Nullable
+    @Override
+    public String getLabelText(@NotNull String pattern) {
+      return myExecutable.getDescription(_context.getNode(), _context.getEditorContext());
+    }
+
+    @Override
+    public void execute(@NotNull String pattern) {
+      myExecutable.execute(_context.getNode(), _context.getEditorContext());
+    }
+  }
+
 }

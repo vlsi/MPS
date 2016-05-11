@@ -25,6 +25,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
             return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Intention_Editor());
           }
           break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Refactoring_Editor());
+          }
+          break;
         default:
       }
     }
@@ -42,5 +47,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, "jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, "jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention"), MetaAdapterFactory.getConcept(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, "jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Refactoring"));
 }

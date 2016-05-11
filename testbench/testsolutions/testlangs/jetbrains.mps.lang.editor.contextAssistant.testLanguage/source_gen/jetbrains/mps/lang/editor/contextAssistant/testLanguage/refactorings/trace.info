@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeRef="r:938571aa-9d7b-41d5-a017-4298d540d66c(jetbrains.mps.lang.editor.contextAssistant.testLanguage.refactorings)/4736696158596280783">
+    <file name="AppendOneToName.java">
+      <node id="4736696158596280783" at="14,52,15,40" concept="4" />
+      <node id="4736696158596280783" at="17,39,18,30" concept="4" />
+      <node id="4736696158596280815" at="20,69,21,377" concept="1" />
+      <node id="4736696158596280783" at="12,0,14,0" concept="0" trace="AppendOneToName#()V" />
+      <node id="4736696158596280783" at="14,0,17,0" concept="3" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+      <node id="4736696158596280783" at="17,0,20,0" concept="3" trace="getUserFriendlyName#()Ljava/lang/String;" />
+      <node id="4736696158596280783" at="20,0,23,0" concept="3" trace="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+      <scope id="4736696158596280783" at="12,28,12,28" />
+      <scope id="4736696158596280783" at="14,52,15,40" />
+      <scope id="4736696158596280783" at="17,39,18,30" />
+      <scope id="4736696158596280786" at="20,69,21,377" />
+      <scope id="4736696158596280783" at="12,0,14,0" />
+      <scope id="4736696158596280783" at="14,0,17,0" />
+      <scope id="4736696158596280783" at="17,0,20,0" />
+      <scope id="4736696158596280783" at="20,0,23,0">
+        <var name="refactoringContext" id="4736696158596280783" />
+      </scope>
+      <unit id="4736696158596280783" at="11,0,24,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.refactorings.AppendOneToName" />
+    </file>
+    <file name="AppendOneToName_Target.java">
+      <node id="4736696158596280805" at="13,52,14,46" concept="4" />
+      <node id="4736696158596280805" at="16,41,17,17" concept="4" />
+      <node id="4736696158596280805" at="19,64,20,227" concept="4" />
+      <node id="4736696158596280805" at="23,51,24,19" concept="4" />
+      <node id="4736696158596280805" at="25,5,26,16" concept="4" />
+      <node id="4736696158596280805" at="11,0,13,0" concept="0" trace="AppendOneToName_Target#()V" />
+      <node id="4736696158596280805" at="13,0,16,0" concept="3" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="4736696158596280805" at="16,0,19,0" concept="3" trace="allowMultipleTargets#()Z" />
+      <node id="4736696158596280805" at="19,0,22,0" concept="3" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="4736696158596280805" at="22,52,25,5" concept="2" />
+      <node id="4736696158596280805" at="22,0,28,0" concept="3" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="4736696158596280805" at="11,35,11,35" />
+      <scope id="4736696158596280805" at="13,52,14,46" />
+      <scope id="4736696158596280805" at="16,41,17,17" />
+      <scope id="4736696158596280805" at="19,64,20,227" />
+      <scope id="4736696158596280805" at="23,51,24,19" />
+      <scope id="4736696158596280805" at="11,0,13,0" />
+      <scope id="4736696158596280805" at="13,0,16,0" />
+      <scope id="4736696158596280805" at="16,0,19,0" />
+      <scope id="4736696158596280805" at="19,0,22,0">
+        <var name="entity" id="4736696158596280805" />
+      </scope>
+      <scope id="4736696158596280805" at="22,52,26,16" />
+      <scope id="4736696158596280805" at="22,0,28,0">
+        <var name="entity" id="4736696158596280805" />
+      </scope>
+      <unit id="4736696158596280805" at="10,0,29,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.refactorings.AppendOneToName_Target" />
+    </file>
+  </root>
+</debug-info>
+

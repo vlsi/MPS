@@ -4,26 +4,45 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="18,0,37,0" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated" />
+      <unit at="19,0,54,0" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)/4736696158595700338">
+    <file name="QueriesGenerated.java">
+      <node id="4736696158595700435" at="27,112,28,264" concept="1" />
+      <node id="4736696158595700559" at="30,112,31,115" concept="1" />
+      <node id="4736696158595700527" at="43,120,44,194" concept="1" />
+      <node id="4736696158595700547" at="48,50,49,125" concept="1" />
+      <node id="4736696158595700545" at="48,0,51,0" concept="0" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="4736696158595700538" at="46,120,51,18" concept="1" />
+      <scope id="4736696158595700434" at="27,112,28,264" />
+      <scope id="4736696158595700558" at="30,112,31,115" />
+      <scope id="4736696158595700526" at="43,120,44,194" />
+      <scope id="4736696158595700546" at="48,50,49,125" />
+      <scope id="4736696158595700545" at="48,0,51,0">
+        <var name="it" id="4736696158595700545" />
+      </scope>
+      <scope id="4736696158595700537" at="46,120,51,18" />
+      <unit id="4736696158595700545" at="47,142,51,5" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated$2" />
     </file>
   </root>
   <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)/7291101478621738963">
     <file name="QueriesGenerated.java">
-      <node id="7291101478621741018" at="20,112,21,282" concept="1" />
-      <node id="7291101478621741113" at="23,112,24,115" concept="1" />
-      <node id="4233361609414462024" at="26,120,27,194" concept="1" />
-      <node id="7291101478621823409" at="31,50,32,125" concept="1" />
-      <node id="7291101478621823407" at="31,0,34,0" concept="0" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="7291101478621823400" at="29,120,34,18" concept="1" />
-      <scope id="7291101478621741017" at="20,112,21,282" />
-      <scope id="7291101478621741112" at="23,112,24,115" />
-      <scope id="4233361609414462018" at="26,120,27,194" />
-      <scope id="7291101478621823408" at="31,50,32,125" />
-      <scope id="7291101478621823407" at="31,0,34,0">
+      <node id="7291101478621741018" at="21,112,22,282" concept="1" />
+      <node id="7291101478621741113" at="24,112,25,115" concept="1" />
+      <node id="4233361609414462024" at="33,120,34,194" concept="1" />
+      <node id="7291101478621823409" at="38,50,39,125" concept="1" />
+      <node id="7291101478621823407" at="38,0,41,0" concept="0" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="7291101478621823400" at="36,120,41,18" concept="1" />
+      <scope id="7291101478621741017" at="21,112,22,282" />
+      <scope id="7291101478621741112" at="24,112,25,115" />
+      <scope id="4233361609414462018" at="33,120,34,194" />
+      <scope id="7291101478621823408" at="38,50,39,125" />
+      <scope id="7291101478621823407" at="38,0,41,0">
         <var name="it" id="7291101478621823407" />
       </scope>
-      <scope id="7291101478621823399" at="29,120,34,18" />
-      <unit id="7291101478621823407" at="30,142,34,5" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated$1" />
+      <scope id="7291101478621823399" at="36,120,41,18" />
+      <unit id="7291101478621823407" at="37,142,41,5" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated$1" />
     </file>
   </root>
 </debug-info>

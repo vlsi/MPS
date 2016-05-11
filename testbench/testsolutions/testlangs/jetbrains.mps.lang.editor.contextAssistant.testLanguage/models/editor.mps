@@ -18,6 +18,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="7e53" ref="r:e11988ca-dd7b-49ce-b283-28b999b925ea(jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions)" />
+    <import index="8cjv" ref="r:938571aa-9d7b-41d5-a017-4298d540d66c(jetbrains.mps.lang.editor.contextAssistant.testLanguage.refactorings)" />
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -214,6 +215,9 @@
       <concept id="2468431357014363369" name="jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
       <concept id="2926686622729992785" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
         <reference id="2926686622729992786" name="intention" index="caduC" />
+      </concept>
+      <concept id="4736696158595695479" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
+        <reference id="4736696158595695482" name="refactoring" index="BGudP" />
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
@@ -857,12 +861,38 @@
     </node>
   </node>
   <node concept="3INDKC" id="291CjQF0FRp">
-    <property role="TrG5h" value="Intentions" />
+    <property role="TrG5h" value="Extras" />
     <node concept="A1WHr" id="291CjQF0FRr" role="AmTjC">
       <ref role="A1WHq" to="hsq4:4PEyPcYoaCM" resolve="Child" />
     </node>
     <node concept="1Qtc8_" id="291CjQF0FRu" role="IW6Ez">
       <node concept="2jZ$wP" id="291CjQF0Nzh" role="1Qtc8$" />
+      <node concept="BGudS" id="46W80XA5HTP" role="1Qtc8A">
+        <ref role="BGudP" to="8cjv:46W80XA5F7f" resolve="AppendOneToName" />
+        <node concept="2jZ$Xq" id="46W80XA5HU6" role="2jZA2a">
+          <node concept="2jZ$Xn" id="46W80XA5HX3" role="2jZ$wY">
+            <node concept="3clFbS" id="46W80XA5HX4" role="2VODD2">
+              <node concept="3clFbF" id="46W80XA5HZX" role="3cqZAp">
+                <node concept="10M0yZ" id="46W80XA5Ii8" role="3clFbG">
+                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Refactoring" resolve="Refactoring" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2jZ$wS" id="46W80XA5HU7" role="2jZA2a">
+          <node concept="1jIJ66" id="46W80XA5IpY" role="2jZ$wV">
+            <node concept="3clFbS" id="46W80XA5IpZ" role="2VODD2">
+              <node concept="3clFbF" id="46W80XA5Iyo" role="3cqZAp">
+                <node concept="Xl_RD" id="46W80XA5Iyn" role="3clFbG">
+                  <property role="Xl_RC" value="A refactoring" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="caduF" id="291CjQF0Nze" role="1Qtc8A">
         <ref role="caduC" to="7e53:6kJcyCQ$05o" resolve="AddLetterToName" />
         <node concept="2jZ$Xq" id="291CjQFbOnv" role="2jZA2a" />

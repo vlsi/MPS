@@ -9,6 +9,7 @@
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="tp1h" ref="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -43,6 +44,7 @@
     <property role="TrG5h" value="TransformationMenuPart_Intention" />
     <property role="34LRSv" value="intention" />
     <property role="EcuMT" value="2926686622729992785" />
+    <property role="R4oN_" value="performs an intention" />
     <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="2ytFvC$HnDi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -61,6 +63,23 @@
     <property role="34LRSv" value="intentionExecutable" />
     <property role="R4oN_" value="the runtime representation of the intention" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="46W80XA3sdR">
+    <property role="EcuMT" value="4736696158595695479" />
+    <property role="TrG5h" value="TransformationMenuPart_Refactoring" />
+    <property role="34LRSv" value="refactoring" />
+    <property role="R4oN_" value="performs a refactoring" />
+    <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="PrWs8" id="46W80XA3sdS" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+    </node>
+    <node concept="1TJgyj" id="46W80XA3sdU" role="1TKVEi">
+      <property role="IQ2ns" value="4736696158595695482" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="refactoring" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
+    </node>
   </node>
 </model>
 

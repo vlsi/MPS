@@ -95,5 +95,40 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="46W80XA3se5">
+    <ref role="1XX52x" to="a1gu:46W80XA3sdR" resolve="TransformationMenuPart_Refactoring" />
+    <node concept="3EZMnI" id="46W80XA3se7" role="2wV5jI">
+      <node concept="PMmxH" id="46W80XA3se8" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="1iCGBv" id="46W80XA3se9" role="3EZMnx">
+        <ref role="1NtTu8" to="a1gu:46W80XA3sdU" />
+        <node concept="1sVBvm" id="46W80XA3sea" role="1sWHZn">
+          <node concept="3F0A7n" id="46W80XA3seb" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="46W80XA3sec" role="2iSdaV" />
+      <node concept="3F2HdR" id="46W80XA3sed" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" />
+        <node concept="l2Vlx" id="46W80XA3see" role="2czzBx" />
+        <node concept="pVoyu" id="46W80XA3sef" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="46W80XA3seg" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="46W80XA3seh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="46W80XA3sei" role="2czzBI">
+          <property role="3F0ifm" value="no additional features" />
+          <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
