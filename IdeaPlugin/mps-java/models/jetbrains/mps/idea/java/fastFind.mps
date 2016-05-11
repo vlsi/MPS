@@ -9,24 +9,23 @@
   </languages>
   <imports>
     <import index="wvgn" ref="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)" />
-    <import index="efw8" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.psi()" />
+    <import index="efw8" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.psi(mps-core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="fpru" ref="~IDEA IC/java:com.intellij.psi.search(IDEA IC/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="4nm9" ref="~IDEA IC/java:com.intellij.openapi.project(IDEA IC/)" />
     <import index="mies" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence.java.library(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
-    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="1m72" ref="~IDEA IC/java:com.intellij.openapi.components(IDEA IC/)" />
     <import index="mhfm" ref="~IDEA IC/java:org.jetbrains.annotations(IDEA IC/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dj18" ref="~IDEA IC/java:com.intellij.psi(IDEA IC/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="2k9e" ref="~mps-core-jar/java:jetbrains.mps.smodel.adapter.structure(mps-core-jar/)" />
+    <import index="mhbf" ref="~mps-openapi/java:org.jetbrains.mps.openapi.model(mps-openapi/)" />
+    <import index="dush" ref="~mps-openapi/java:org.jetbrains.mps.openapi.persistence(mps-openapi/)" />
+    <import index="yyf4" ref="~mps-openapi/java:org.jetbrains.mps.openapi.util(mps-openapi/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring()" implicit="true" />
+    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring(mps-core/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="qwe6" ref="~IDEA IC/java:com.intellij.navigation(IDEA IC/)" implicit="true" />
   </imports>
@@ -696,7 +695,7 @@
         </node>
         <node concept="3cpWs6" id="16bZt0jgjIj" role="3cqZAp">
           <node concept="2ZW3vV" id="16bZt0jgjJS" role="3cqZAk">
-            <node concept="3uibUv" id="3if7C7H06rP" role="2ZW6by">
+            <node concept="3uibUv" id="56VbpuSKmX$" role="2ZW6by">
               <ref role="3uigEE" to="mies:~JavaClassStubModelDescriptor" resolve="JavaClassStubModelDescriptor" />
             </node>
             <node concept="37vLTw" id="16bZt0jgjIu" role="2ZW6bz">
