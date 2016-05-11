@@ -284,6 +284,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
+  @Deprecated
   public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
     assertCanChange();
     new SModelLegacy(getSModel()).addModelImport(modelReference, firstVersion);
@@ -299,7 +300,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public final void deleteModelImport(SModelReference modelReference) {
     assertCanChange();
     final jetbrains.mps.smodel.SModel modelData = getSModel();
-    for (ImportElement importElement : modelData.importedModels()) {
+    for (ImportElement importElement : new ArrayList<>(modelData.importedModels())) {
       if (importElement.getModelReference().equals(modelReference)) {
         modelData.deleteModelImport(importElement);
       }
