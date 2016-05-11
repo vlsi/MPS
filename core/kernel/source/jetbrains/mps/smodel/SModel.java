@@ -807,6 +807,9 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   //aspects / additional
 
+  /**
+   * update mode means we are attaching newly loaded children
+   */
   public boolean isUpdateMode() {
     return myFullLoadMode.isLocked();
   }
@@ -819,39 +822,6 @@ public class SModel implements SModelData, UpdateModeSupport {
   @Override
   public void leaveUpdateMode() {
     myFullLoadMode.unlock();
-  }
-
-  /**
-   * update mode means we are attaching newly loaded children
-   * @deprecated use {@link #enterUpdateMode()} or {@link #leaveUpdateMode()} with new contract. do not mix the two
-   * old method kept, with the contract of single call with <code>false</code> that clears any number of calls with (<code>true</code>).
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void setUpdateMode(boolean value) {
-    if (value) {
-      // enter update mode
-      if (myFullLoadMode.isLocked()) {
-        if (!myFullLoadMode.isHeldByCurrentThread()) {
-          throw new IllegalStateException("attempt to update model which is being updated from another thread");
-        }
-        // fall-through, i don't want to use re-enter feature of the lock - to mimic simple boolean which is
-        // 'unlocked' with a singe false value regardless of number of 'true' values. This might need to change
-        // once we have better approach to updatable models.
-      } else {
-        enterUpdateMode();
-      }
-    } else {
-      // clean update mode
-      if (myFullLoadMode.isLocked()) {
-        if (!myFullLoadMode.isHeldByCurrentThread()) {
-          throw new IllegalStateException("attempt to clear update mode flag from a thread that didn't initiate the mode");
-        }
-        leaveUpdateMode();
-      } else {
-        throw  new IllegalStateException("attempt to clear update mode flag while not in the update mode");
-      }
-    }
   }
 
   //to use only from SNode
