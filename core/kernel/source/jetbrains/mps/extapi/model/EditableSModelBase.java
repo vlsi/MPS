@@ -18,6 +18,8 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
+import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
@@ -31,6 +33,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -40,17 +43,39 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
+ * Editable model (generally) backed up by file. Implicitly bound to files due to
+ * rename and changeModelFile methods, for a generic editable model, see {@link jetbrains.mps.smodel.EditableModelDescriptor}
  * evgeny, 11/21/12
  */
-public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel {
+public abstract class EditableSModelBase extends SModelBase implements EditableSModel {
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditableSModelBase.class));
+  protected final ModelSourceChangeTracker myTimestampTracker;
 
   private boolean myChanged = false;
 
   protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
+    myTimestampTracker = new ModelSourceChangeTracker(new ReloadCallback() {
+      @Override
+      public void reloadFromDiskSafe() {
+        doReloadFromDiskSafe();
+      }
+    });
   }
+
+  @Override
+  public void attach(@NotNull SRepository repository) {
+    super.attach(repository);
+    myTimestampTracker.attach(this);
+  }
+
+  @Override
+  public void detach() {
+    myTimestampTracker.detach(this);
+    super.detach();
+  }
+
 
   @Override
   public boolean isChanged() {
@@ -113,8 +138,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     LOG.assertLog(!needsReloading());
   }
 
-  @Override
-  public void reloadFromDiskSafe() {
+  /*package*/ void doReloadFromDiskSafe() {
     assertCanChange();
     if (isChanged()) {
       resolveDiskConflict();

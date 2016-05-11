@@ -75,7 +75,11 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected void updateCollection(SModelReference modelRef, SReference sref, Collection<Pair<SNodeDescriptor, String>> collection) {
         SNode src = sref.getSourceNode();
         String role = sref.getRole();
-        SNodeDescriptor descriptor = new SNodeDescriptor(src);
+        // XXX despite the fact indexer reads model and it's not attached to any repository, we can't use
+        // node.getName() here (nor any other code that access properties through SNodeAccessUtil, as it uses
+        // constraints code, which may navigate references and access nodes from external models. Due to the
+        // magic in StaticReference yet to be deleted, targets get resolved and subsequently fail with model access error.
+        SNodeDescriptor descriptor = new SNodeDescriptor(getSNodeName(src), src.getConcept(), src.getReference());
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
