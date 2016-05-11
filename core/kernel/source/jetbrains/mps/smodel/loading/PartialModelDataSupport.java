@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.loading;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelLoadResult;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
@@ -71,44 +70,40 @@ public final class PartialModelDataSupport {
     }
     myLoading = true;  //this is for elimination of infinite recursion
     try {
-      ModelLoadResult<SModel> res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult<SModel>>() {
+      // FIXME I'm quite uncertain whether it's necessary to run non-undo action here, but got no chance to figure out the right way, left intact.
+      ModelLoadResult<SModel> res = UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult<SModel>>() {
         @Override
         public ModelLoadResult<SModel> compute() {
-          return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult<SModel>>() {
-            @Override
-            public ModelLoadResult<SModel> compute() {
-              if (state == ModelLoadingState.NOT_LOADED) {
-                // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
-                return new ModelLoadResult<SModel>(null, ModelLoadingState.NOT_LOADED);
-              }
-              if (state == ModelLoadingState.INTERFACE_LOADED) {
-                ModelLoadResult<jetbrains.mps.smodel.SModel> result = myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
-                if (result.getModelData() != null) {
-                  result.getModelData().setModelDescriptor(myModelDescriptor);
-                }
-                return result;
-              }
-              if (state == ModelLoadingState.FULLY_LOADED) {
-                ModelLoadResult<SModel> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
-                if (myModel == null) {
-                  if (fullModel.getModelData() != null) {
-                    fullModel.getModelData().setModelDescriptor(myModelDescriptor);
-                  }
-                  return fullModel;
-                }
-                if (fullModel.getModelData() == null) {
-                  return fullModel;
-                }
-                myModel.enterUpdateMode();   //not to send events on changes
-                fullModel.getModelData().enterUpdateMode();
-                new PartialModelUpdateFacility(myModel, fullModel.getModelData(), myModelDescriptor).update();
-                fullModel.getModelData().leaveUpdateMode();
-                myModel.leaveUpdateMode();  //enable events
-                return new ModelLoadResult<SModel>(myModel, fullModel.getState());
-              }
-              throw new UnsupportedOperationException();
+          if (state == ModelLoadingState.NOT_LOADED) {
+            // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
+            return new ModelLoadResult<SModel>(null, ModelLoadingState.NOT_LOADED);
+          }
+          if (state == ModelLoadingState.INTERFACE_LOADED) {
+            ModelLoadResult<jetbrains.mps.smodel.SModel> result = myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
+            if (result.getModelData() != null) {
+              result.getModelData().setModelDescriptor(myModelDescriptor);
             }
-          });
+            return result;
+          }
+          if (state == ModelLoadingState.FULLY_LOADED) {
+            ModelLoadResult<SModel> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
+            if (myModel == null) {
+              if (fullModel.getModelData() != null) {
+                fullModel.getModelData().setModelDescriptor(myModelDescriptor);
+              }
+              return fullModel;
+            }
+            if (fullModel.getModelData() == null) {
+              return fullModel;
+            }
+            myModel.enterUpdateMode();   //not to send events on changes
+            fullModel.getModelData().enterUpdateMode();
+            new PartialModelUpdateFacility(myModel, fullModel.getModelData(), myModelDescriptor).update();
+            fullModel.getModelData().leaveUpdateMode();
+            myModel.leaveUpdateMode();  //enable events
+            return new ModelLoadResult<SModel>(myModel, fullModel.getState());
+          }
+          throw new UnsupportedOperationException();
         }
       });
       doReplace(res.getModelData(), res.getState());
