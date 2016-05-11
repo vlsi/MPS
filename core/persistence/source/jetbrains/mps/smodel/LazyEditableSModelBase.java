@@ -46,24 +46,12 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   @Override
   public final SModel getSModelInternal() {
     ModelLoadingState oldState = getLoadingState();
-    if (oldState.ordinal() >= ModelLoadingState.INTERFACE_LOADED.ordinal()) {
-      return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+    SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+    if (res == null) {
+      return null; // this is when we are in recursion
     }
-    // FIXME UpdatableModel does synchronize(this) in getModel and replaceWith. What do we accomplish here with synchronize?
-    synchronized (myModel) {
-      final SModel currentModel = myModel.getModel(null);
-      if (currentModel instanceof InvalidSModel) {
-        return currentModel;
-      }
-
-      oldState = getLoadingState();
-      SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
-      if (res == null) {
-        return null; // this is when we are in recursion
-      }
-    }
-    fireModelStateChanged(oldState, getLoadingState());
-    return myModel.getModel(null);
+    fireModelStateChanged(oldState, getLoadingState()); // doesn't dispatch if state is the same
+    return res;
   }
 
   @Override

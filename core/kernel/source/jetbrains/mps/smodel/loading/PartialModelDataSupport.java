@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.UndoHelper;
@@ -52,20 +52,25 @@ public final class PartialModelDataSupport {
     if (state == null) {
       return myModel;
     }
-    if (!ModelAccess.instance().canWrite()) {
-      synchronized (this) {
-        if (state.ordinal() > myModelDescriptor.getLoadingState().ordinal()) {
-            ensureLoadedTo(state);
-        }
-      }
-    } else {
-      ensureLoadedTo(state);
+    ModelLoadingState oldState = myModelDescriptor.getLoadingState();
+    if (state.ordinal() < oldState.ordinal()) {
+      return myModel;
     }
-    return myModel;
+    if (myModel instanceof InvalidSModel) {
+      return myModel;
+    }
+
+    synchronized (this) {
+      oldState = myModelDescriptor.getLoadingState();
+      if (state.ordinal() > oldState.ordinal()) {
+        ensureLoadedTo(state);
+      }
+      return myModel;
+    }
   }
 
   private void ensureLoadedTo(final ModelLoadingState state) {
-    if (state.ordinal() <= myModelDescriptor.getLoadingState().ordinal() || myLoading) {
+    if (myLoading) {
       return;
     }
     myLoading = true;  //this is for elimination of infinite recursion
@@ -113,11 +118,7 @@ public final class PartialModelDataSupport {
   }
 
   public void replaceWith(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
-    if (!ModelAccess.instance().canWrite()) {
-      synchronized (this) {
-        doReplace(newModel, state);
-      }
-    } else {
+    synchronized (this) {
       doReplace(newModel, state);
     }
   }
