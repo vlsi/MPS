@@ -264,7 +264,42 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void load() {
     // perhaps, both load() and unload() shall be left to implementors?
-    getSModelInternal();
+    getModelData();
+  }
+
+  /**
+   * Dispose model data, change model's {@link #getLoadingState() loading state} and
+   * dispatch {@link #fireModelStateChanged(ModelLoadingState, ModelLoadingState) state change event}.
+   * Base implementation does nothing if there's no {@link #getCurrentModelInternal() initialized model data}.
+   * Generally, subclasses shall override {@link #doUnload()} to perform actual cleanup of instance fields.
+   */
+  @Override
+  public void unload() {
+    assertCanChange();
+
+    if (getCurrentModelInternal() == null) {
+      return;
+    }
+
+    final ModelLoadingState oldState = getLoadingState();
+    doUnload();
+    fireModelStateChanged(oldState, getLoadingState());
+
+  }
+
+  /**
+   * Perform actual dispose of model data and {@link #setLoadingState(ModelLoadingState)} changes loading state}.
+   * No loading state event is sent (responsibility of {@link #unload()}. Subclasses shall override to
+   * clean instance fields and generally shall delegate to this implementation first to dispose model data.
+   */
+  protected void doUnload() {
+    jetbrains.mps.smodel.SModel modelData = getCurrentModelInternal();
+    if (modelData == null) {
+      return;
+    }
+    modelData.setModelDescriptor(null);
+    modelData.dispose();
+    setLoadingState(ModelLoadingState.NOT_LOADED);
   }
 
   @Override

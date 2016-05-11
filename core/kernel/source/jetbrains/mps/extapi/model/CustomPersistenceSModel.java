@@ -111,12 +111,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected void doUnload() {
-    final jetbrains.mps.smodel.SModel oldSModel = myModel;
-
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-      myModel = null;
-    }
+    super.doUnload();
+    myModel = null;
   }
 
   @Override
