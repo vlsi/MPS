@@ -16,17 +16,16 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelLoadResult;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /*
- * Wrap SModelData (smodel.SModel now) with support code to facilitate gradual/partial loading of a model data.
- * Can be rewritten to deal with any SModelData subclass.
+ * Wrap SModelData with support code to facilitate gradual/partial loading of a model data.
  * At the moment deals with two loading states only, INTERFACE and FULL.
  *
  * The aim of the class
@@ -35,20 +34,20 @@ import org.jetbrains.annotations.Nullable;
  * that can change model is loading/replacing.
  * This class has an aim to synchronize all loading processes
  */
-public final class PartialModelDataSupport {
+public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupport> {
   private final SModelBase myModelDescriptor;
-  private final ModelLoader myLoader;
-  private volatile jetbrains.mps.smodel.SModel myModel = null;
+  private final ModelLoader<T> myLoader;
+  private volatile T myModel = null;
   private boolean myLoading = false;
 
-  public PartialModelDataSupport(@NotNull SModelBase modelDescriptor, @NotNull ModelLoader loader) {
+  public PartialModelDataSupport(@NotNull SModelBase modelDescriptor, @NotNull ModelLoader<T> loader) {
     myModelDescriptor = modelDescriptor;
     myLoader = loader;
   }
 
   //null in parameter means "give me the current model, don't attempt to load"
   //with null parameter, no synch should occur
-  public jetbrains.mps.smodel.SModel getModel(@Nullable ModelLoadingState state) {
+  public T getModel(@Nullable ModelLoadingState state) {
     if (state == null) {
       return myModel;
     }
@@ -76,29 +75,19 @@ public final class PartialModelDataSupport {
     myLoading = true;  //this is for elimination of infinite recursion
     try {
       // FIXME I'm quite uncertain whether it's necessary to run non-undo action here, but got no chance to figure out the right way, left intact.
-      ModelLoadResult<SModel> res = UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult<SModel>>() {
+      ModelLoadResult<T> res = UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult<T>>() {
         @Override
-        public ModelLoadResult<SModel> compute() {
+        public ModelLoadResult<T> compute() {
           if (state == ModelLoadingState.NOT_LOADED) {
             // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
-            return new ModelLoadResult<SModel>(null, ModelLoadingState.NOT_LOADED);
+            return new ModelLoadResult<T>(null, ModelLoadingState.NOT_LOADED);
           }
           if (state == ModelLoadingState.INTERFACE_LOADED) {
-            ModelLoadResult<jetbrains.mps.smodel.SModel> result = myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
-            if (result.getModelData() != null) {
-              result.getModelData().setModelDescriptor(myModelDescriptor);
-            }
-            return result;
+            return myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
           }
           if (state == ModelLoadingState.FULLY_LOADED) {
-            ModelLoadResult<SModel> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
-            if (myModel == null) {
-              if (fullModel.getModelData() != null) {
-                fullModel.getModelData().setModelDescriptor(myModelDescriptor);
-              }
-              return fullModel;
-            }
-            if (fullModel.getModelData() == null) {
+            ModelLoadResult<T> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
+            if (myModel == null || fullModel.getModelData() == null) {
               return fullModel;
             }
             myModel.enterUpdateMode();   //not to send events on changes
@@ -106,7 +95,7 @@ public final class PartialModelDataSupport {
             new PartialModelUpdateFacility(myModel, fullModel.getModelData(), myModelDescriptor).update();
             fullModel.getModelData().leaveUpdateMode();
             myModel.leaveUpdateMode();  //enable events
-            return new ModelLoadResult<SModel>(myModel, fullModel.getState());
+            return new ModelLoadResult<T>(myModel, fullModel.getState());
           }
           throw new UnsupportedOperationException();
         }
@@ -117,23 +106,23 @@ public final class PartialModelDataSupport {
     }
   }
 
-  public void replaceWith(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
+  public void replaceWith(T newModel, ModelLoadingState state) {
     synchronized (this) {
       doReplace(newModel, state);
     }
   }
 
-  private void doReplace(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
+  private void doReplace(T newModel, ModelLoadingState state) {
     myModel = newModel;
     myModelDescriptor.setLoadingState(state);
   }
 
-  public interface ModelLoader {
+  public interface ModelLoader<U extends SModelData & UpdateModeSupport> {
     /**
      * @param state one of {@link ModelLoadingState}, except for {@link ModelLoadingState#NOT_LOADED}
      * @return model data loaded to the specified state at least.
      */
     @NotNull
-    jetbrains.mps.smodel.ModelLoadResult<jetbrains.mps.smodel.SModel> doLoad(ModelLoadingState state);
+    jetbrains.mps.smodel.ModelLoadResult<U> doLoad(ModelLoadingState state);
   }
 }

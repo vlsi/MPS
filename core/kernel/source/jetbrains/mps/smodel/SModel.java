@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.loading.UpdateModeSupport;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -58,7 +59,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SModel implements SModelData {
+public class SModel implements SModelData, UpdateModeSupport {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
   private static AtomicLong ourCounter = new AtomicLong();
 
@@ -810,10 +811,12 @@ public class SModel implements SModelData {
     return myFullLoadMode.isLocked();
   }
 
+  @Override
   public void enterUpdateMode() {
     myFullLoadMode.lock();
   }
 
+  @Override
   public void leaveUpdateMode() {
     myFullLoadMode.unlock();
   }

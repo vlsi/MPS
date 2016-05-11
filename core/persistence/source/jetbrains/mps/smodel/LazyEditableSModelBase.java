@@ -19,7 +19,6 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.PartialModelDataSupport;
-import jetbrains.mps.smodel.loading.PartialModelDataSupport.ModelLoader;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -29,17 +28,17 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
  * evgeny, 6/6/13
  */
 public abstract class LazyEditableSModelBase extends EditableSModelBase {
-  private final PartialModelDataSupport myModel;
+  private final PartialModelDataSupport<SModel> myModel;
 
   public LazyEditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    myModel = new PartialModelDataSupport(this, new ModelLoader() {
-      @NotNull
-      @Override
-      public jetbrains.mps.smodel.ModelLoadResult<SModel> doLoad(ModelLoadingState state) {
-        ModelLoadResult result = loadSModel(state);
-        return new jetbrains.mps.smodel.ModelLoadResult<SModel>(result.getModel(), result.getState());
+    myModel = new PartialModelDataSupport<>(this, state -> {
+      // FIXME need a new loadSModel(state) that return proper ModelLoadResult, and deprecate the old one.
+      ModelLoadResult result = loadSModel(state);
+      if (result.getModel() != null) {
+        result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
       }
+      return new jetbrains.mps.smodel.ModelLoadResult<>(result.getModel(), result.getState());
     });
   }
 
