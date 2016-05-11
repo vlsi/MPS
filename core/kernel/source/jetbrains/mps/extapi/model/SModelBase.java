@@ -442,6 +442,8 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * Seems reasonable to dispatch proper modelUnloaded/modelLoaded events in addition to modelReplaced as there are listeners that
    * expect either, not both. Especially, in case if load level is changed due to replacement (i.e. was FULL, became INTERFACE)
    * FIXME it's synchronized, do we still need that (with RegularModelDescriptor using distinct lock object)
+   * XXX there are two uses in subclasses of not-so-nice EditableSModelBase (lazy and custom) that can't get replaced readily with
+   * nice and convenient RegularModelDescriptor.replace() call.
    */
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {

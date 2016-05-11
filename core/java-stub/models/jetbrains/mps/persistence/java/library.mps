@@ -1174,30 +1174,11 @@
             <property role="3SKdUp" value="XXX shall I synchronize(myLoadLock) so that unload and subsequent partial load are from the same thread? I'm in the write anyway." />
           </node>
         </node>
-        <node concept="3clFbF" id="4P9E75_maBf" role="3cqZAp">
-          <node concept="1rXfSq" id="4P9E75_maBd" role="3clFbG">
-            <ref role="37wK5l" to="g3l6:~SModelBase.unload():void" resolve="unload" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4P9E75_mbj1" role="3cqZAp">
-          <node concept="3cpWsn" id="4P9E75_mbj2" role="3cpWs9">
-            <property role="TrG5h" value="newModel" />
-            <node concept="3uibUv" id="4P9E75_mbj0" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-            </node>
-            <node concept="1rXfSq" id="4P9E75_mbj3" role="33vP2m">
-              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="GRPX9Erp7R" role="3cqZAp">
-          <node concept="1rXfSq" id="GRPX9Erp7P" role="3clFbG">
-            <ref role="37wK5l" to="g3l6:~SModelBase.replaceModelAndFireEvent(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel):void" resolve="replaceModelAndFireEvent" />
-            <node concept="37vLTw" id="4P9E75_mcJm" role="37wK5m">
-              <ref role="3cqZAo" node="GRPX9ErnNt" resolve="oldModel" />
-            </node>
-            <node concept="37vLTw" id="4P9E75_mcLR" role="37wK5m">
-              <ref role="3cqZAo" node="4P9E75_mbj2" resolve="newModel" />
+        <node concept="3clFbF" id="7t7VYEsuP4u" role="3cqZAp">
+          <node concept="1rXfSq" id="7t7VYEsuP4s" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
+            <node concept="1rXfSq" id="7t7VYEsuPv_" role="37wK5m">
+              <ref role="37wK5l" node="5JsnGMj1qeh" resolve="createModel" />
             </node>
           </node>
         </node>

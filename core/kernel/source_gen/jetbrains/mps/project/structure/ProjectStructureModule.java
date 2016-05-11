@@ -268,11 +268,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (oldModel == null) {
         return;
       }
-      unload();
       // since we know the module is still there (just has been changed), tell those not caring about unload 
-      // that the content of the model is new (instead of a null, could pass getSModelInternal(), but see no reason 
+      // that the content of the model is new (instead of a MLResult with null, could pass createModel() but see no reason 
       // to read module file unless needed) 
-      replaceModelAndFireEvent(oldModel, null);
+      replace(new ModelLoadResult<jetbrains.mps.smodel.SModel>(null, ModelLoadingState.NOT_LOADED));
     }
   }
 }

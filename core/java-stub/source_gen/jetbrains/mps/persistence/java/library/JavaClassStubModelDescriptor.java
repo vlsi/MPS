@@ -144,8 +144,6 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
       return;
     }
     // XXX shall I synchronize(myLoadLock) so that unload and subsequent partial load are from the same thread? I'm in the write anyway. 
-    unload();
-    SModel newModel = getSModelInternal();
-    replaceModelAndFireEvent(oldModel, newModel);
+    replace(createModel());
   }
 }

@@ -5,19 +5,13 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
-    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="k9t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.internal.collections.runtime(MPS.Core/)" />
     <import index="tzbx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.nodeidmap(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -2199,11 +2193,6 @@
               <node concept="3cpWs6" id="4fSpAVAUjtY" role="3cqZAp" />
             </node>
           </node>
-          <node concept="3clFbF" id="5PsyNHNgy5r" role="3cqZAp">
-            <node concept="1rXfSq" id="5PsyNHNgy5p" role="3clFbG">
-              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.unload():void" resolve="unload" />
-            </node>
-          </node>
           <node concept="3SKdUt" id="5PsyNHNgBZF" role="3cqZAp">
             <node concept="3SKdUq" id="5PsyNHNgC0T" role="3SKWNk">
               <property role="3SKdUp" value="since we know the module is still there (just has been changed), tell those not caring about unload" />
@@ -2211,7 +2200,7 @@
           </node>
           <node concept="3SKdUt" id="5PsyNHNgC4w" role="3cqZAp">
             <node concept="3SKdUq" id="5PsyNHNgC5I" role="3SKWNk">
-              <property role="3SKdUp" value="that the content of the model is new (instead of a null, could pass getSModelInternal(), but see no reason" />
+              <property role="3SKdUp" value="that the content of the model is new (instead of a MLResult with null, could pass createModel() but see no reason" />
             </node>
           </node>
           <node concept="3SKdUt" id="5PsyNHNgC9r" role="3cqZAp">
@@ -2219,13 +2208,22 @@
               <property role="3SKdUp" value="to read module file unless needed)" />
             </node>
           </node>
-          <node concept="3clFbF" id="4fSpAVAUju7" role="3cqZAp">
-            <node concept="1rXfSq" id="4fSpAVAUju8" role="3clFbG">
-              <ref role="37wK5l" to="g3l6:~SModelBase.replaceModelAndFireEvent(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel):void" resolve="replaceModelAndFireEvent" />
-              <node concept="37vLTw" id="5PsyNHNgyaq" role="37wK5m">
-                <ref role="3cqZAo" node="5PsyNHNgxN2" resolve="oldModel" />
+          <node concept="3clFbF" id="3UXK0muVih6" role="3cqZAp">
+            <node concept="1rXfSq" id="3UXK0muVih4" role="3clFbG">
+              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
+              <node concept="2ShNRf" id="3UXK0muVilq" role="37wK5m">
+                <node concept="1pGfFk" id="3UXK0muVnMh" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
+                  <node concept="3uibUv" id="3UXK0muVnSW" role="1pMfVU">
+                    <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+                  </node>
+                  <node concept="10Nm6u" id="3UXK0muVnYk" role="37wK5m" />
+                  <node concept="Rm8GO" id="3UXK0muVodo" role="37wK5m">
+                    <ref role="Rm8GQ" to="4it6:~ModelLoadingState.NOT_LOADED" resolve="NOT_LOADED" />
+                    <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                  </node>
+                </node>
               </node>
-              <node concept="10Nm6u" id="4fSpAVAUjua" role="37wK5m" />
             </node>
           </node>
         </node>
