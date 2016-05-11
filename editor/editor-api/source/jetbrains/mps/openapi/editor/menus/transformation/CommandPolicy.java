@@ -15,33 +15,17 @@
  */
 package jetbrains.mps.openapi.editor.menus.transformation;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+/**
+ * Specifies how an action should be executed with regard to commands.
+ */
+public enum CommandPolicy {
+  /**
+   * The action must be executed in a command.
+   */
+  COMMAND_REQUIRED,
 
-public class ActionItemBase implements ActionItem {
-  @Nullable
-  @Override
-  public String getLabelText(String pattern) {
-    return null;
-  }
-
-  @Override
-  public boolean canExecute(@NotNull String pattern) {
-    return true;
-  }
-
-  @Override
-  public void execute(@NotNull String pattern) {
-  }
-
-  @NotNull
-  @Override
-  public CommandPolicy getCommandPolicy() {
-    return CommandPolicy.COMMAND_REQUIRED;
-  }
-
-  @Override
-  public <ResultT> ResultT accept(MenuItemVisitor<ResultT> visitor) {
-    return visitor.visit(this);
-  }
+  /**
+   * The action must be executed outside a command.
+   */
+  COMMAND_UNSUPPORTED
 }

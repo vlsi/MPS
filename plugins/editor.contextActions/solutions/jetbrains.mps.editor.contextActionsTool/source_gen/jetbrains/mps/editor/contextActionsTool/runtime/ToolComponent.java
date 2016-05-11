@@ -24,6 +24,8 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import com.intellij.openapi.wm.ToolWindow;
 
 public class ToolComponent extends JComponent {
@@ -216,6 +218,8 @@ public class ToolComponent extends JComponent {
     String getTooltip();
 
     boolean isVisible();
+    @NotNull
+    CommandPolicy getCommandPolicy();
     void execute();
   }
   private static boolean check_cnbxua_a0a61(ToolWindow checkedDotOperand) {

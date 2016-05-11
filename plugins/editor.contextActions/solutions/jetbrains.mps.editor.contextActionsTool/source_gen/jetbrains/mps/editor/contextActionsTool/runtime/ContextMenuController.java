@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
+import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 
 public class ContextMenuController extends ToolController {
   private final SelectionMenuProvider myMenuProvider;
@@ -95,6 +96,10 @@ public class ContextMenuController extends ToolController {
     @Override
     public void execute() {
       myActionItem.execute("");
+    }
+    @NotNull
+    public CommandPolicy getCommandPolicy() {
+      return myActionItem.getCommandPolicy();
     }
   }
 }

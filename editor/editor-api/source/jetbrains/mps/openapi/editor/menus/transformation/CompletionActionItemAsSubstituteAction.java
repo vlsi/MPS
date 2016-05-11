@@ -110,6 +110,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode substitute(@Nullable EditorContext context, String pattern) {
+    assert myActionItem.getCommandPolicy() == CommandPolicy.COMMAND_REQUIRED : "Cannot execute a substitute action outside of command";
     myActionItem.execute(pattern);
     // myActionItem should change selection itself, so return null here
     return null;
