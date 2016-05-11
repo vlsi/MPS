@@ -239,8 +239,16 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * @return node storage. Generally, shall not return <code>null</code> (FIXME revisit contract, enforce)
    */
   public SModelData getModelData() {
-    return getSModelInternal();
+    return getSModel();
   }
+
+  /**
+   * Likely, shall return SModelData eventually
+   *
+   * @return actual model data or <code>null</code> if not initialized yet
+   */
+  @Nullable
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   @NotNull
   @Override
