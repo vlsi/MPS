@@ -37,29 +37,30 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_vryvy0_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_a0(context);
-    }
-  }
-  private static class ActionItem_vryvy0_a0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_vryvy0_a0(TransformationMenuContext context) {
-      _context = context;
+      return new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "Modify instances by condition";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-      SNode command = createBLExpression_vryvy0_a0a0a0a();
-      SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
-      _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "Modify instances by condition";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SNode command = createBLExpression_vryvy0_a0a0a0a();
+        SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
+        _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
+      }
+
+    }
     private static SNode createBLExpression_vryvy0_a0a0a0a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), null, null, false);
@@ -157,29 +158,30 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_vryvy0_b0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new CommandHolder_Empty_Snippets.ActionItem_vryvy0_b0(context);
-    }
-  }
-  private static class ActionItem_vryvy0_b0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_vryvy0_b0(TransformationMenuContext context) {
-      _context = context;
+      return new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "Find instances by condition";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-      SNode command = createBLExpression_vryvy0_a0a0a1a();
-      SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
-      _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "Find instances by condition";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SNode command = createBLExpression_vryvy0_a0a0a1a();
+        SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), command);
+        _context.getEditorContext().select(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(command, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), false, new SAbstractConcept[]{})).first(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, 0x6b643f33718aa10eL, "conceptArg")));
+      }
+
+    }
     private static SNode createBLExpression_vryvy0_a0a0a1a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), null, null, false);

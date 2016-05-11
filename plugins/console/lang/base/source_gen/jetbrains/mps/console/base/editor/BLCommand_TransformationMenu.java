@@ -28,27 +28,28 @@ public class BLCommand_TransformationMenu extends TransformationMenuBase {
   private static class TransformationMenuPart_Action_bzpwar_a0 extends SingleItemMenuPart {
     @Nullable
     protected MenuItem createItem(TransformationMenuContext context) {
-      return new BLCommand_TransformationMenu.ActionItem_bzpwar_a0(context);
-    }
-  }
-  private static class ActionItem_bzpwar_a0 extends ActionItemBase {
-    private final TransformationMenuContext _context;
-
-    public ActionItem_bzpwar_a0(TransformationMenuContext context) {
-      _context = context;
+      return new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a0.Item(context);
     }
 
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return "Evaluate (Ctrl+Enter)";
-    }
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
 
-    @Override
-    public void execute(@NotNull String pattern) {
-      ConsoleTool tool = _context.getEditorContext().getOperationContext().getProject().getComponent(ConsoleTool.class);
-      tool.getCurrentEditableTab().executeCurrentCommand();
-    }
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
 
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "Evaluate (Ctrl+Enter)";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        ConsoleTool tool = _context.getEditorContext().getOperationContext().getProject().getComponent(ConsoleTool.class);
+        tool.getCurrentEditableTab().executeCurrentCommand();
+      }
+
+    }
   }
 }
