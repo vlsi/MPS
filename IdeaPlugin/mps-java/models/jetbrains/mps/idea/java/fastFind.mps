@@ -16,16 +16,16 @@
     <import index="4nm9" ref="~IDEA IC/java:com.intellij.openapi.project(IDEA IC/)" />
     <import index="mies" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence.java.library(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
-    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="1m72" ref="~IDEA IC/java:com.intellij.openapi.components(IDEA IC/)" />
     <import index="mhfm" ref="~IDEA IC/java:org.jetbrains.annotations(IDEA IC/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dj18" ref="~IDEA IC/java:com.intellij.psi(IDEA IC/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring()" implicit="true" />
+    <import index="dush" ref="~mps-openapi/java:org.jetbrains.mps.openapi.persistence(mps-openapi/)" />
+    <import index="yyf4" ref="~mps-openapi/java:org.jetbrains.mps.openapi.util(mps-openapi/)" />
+    <import index="mhbf" ref="~mps-openapi/java:org.jetbrains.mps.openapi.model(mps-openapi/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring()" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="qwe6" ref="~IDEA IC/java:com.intellij.navigation(IDEA IC/)" implicit="true" />
   </imports>
@@ -118,7 +118,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
@@ -431,9 +431,6 @@
                                       <node concept="3clFbS" id="6rA4xDHayn7" role="3clFbx">
                                         <node concept="3cpWs6" id="6rA4xDHaD1$" role="3cqZAp">
                                           <node concept="10QFUN" id="7GJnXJjB7bg" role="3cqZAk">
-                                            <node concept="3uibUv" id="3if7C7H0gv6" role="10QFUM">
-                                              <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-                                            </node>
                                             <node concept="2OqwBi" id="7GJnXJjB7bc" role="10QFUP">
                                               <node concept="2YIFZM" id="3if7C7H0gGz" role="2Oq$k0">
                                                 <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
@@ -446,6 +443,9 @@
                                                   <ref role="3cqZAo" to="w1kc:~BootstrapLanguages.concept_baseLanguage_Annotation" resolve="concept_baseLanguage_Annotation" />
                                                 </node>
                                               </node>
+                                            </node>
+                                            <node concept="3uibUv" id="3if7C7H0gv6" role="10QFUM">
+                                              <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                             </node>
                                           </node>
                                         </node>
@@ -462,9 +462,6 @@
                                         <node concept="3clFbS" id="6rA4xDHaLcd" role="3eOfB_">
                                           <node concept="3cpWs6" id="6rA4xDHaUqH" role="3cqZAp">
                                             <node concept="10QFUN" id="7GJnXJjB7bP" role="3cqZAk">
-                                              <node concept="3uibUv" id="3if7C7H0hp9" role="10QFUM">
-                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-                                              </node>
                                               <node concept="2OqwBi" id="7GJnXJjB7bL" role="10QFUP">
                                                 <node concept="liA8E" id="7GJnXJjB7bM" role="2OqNvi">
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
@@ -477,6 +474,9 @@
                                                   <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
                                                 </node>
+                                              </node>
+                                              <node concept="3uibUv" id="3if7C7H0hp9" role="10QFUM">
+                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                               </node>
                                             </node>
                                           </node>
@@ -494,9 +494,6 @@
                                         <node concept="3clFbS" id="6rA4xDHaWK2" role="3eOfB_">
                                           <node concept="3cpWs6" id="6rA4xDHb5eu" role="3cqZAp">
                                             <node concept="10QFUN" id="7GJnXJjB7cq" role="3cqZAk">
-                                              <node concept="3uibUv" id="3if7C7H0hQv" role="10QFUM">
-                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-                                              </node>
                                               <node concept="2OqwBi" id="7GJnXJjB7cm" role="10QFUP">
                                                 <node concept="liA8E" id="7GJnXJjB7cn" role="2OqNvi">
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
@@ -510,6 +507,9 @@
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
                                                 </node>
                                               </node>
+                                              <node concept="3uibUv" id="3if7C7H0hQv" role="10QFUM">
+                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
@@ -518,9 +518,6 @@
                                         <node concept="3clFbS" id="6rA4xDHb7y5" role="9aQI4">
                                           <node concept="3cpWs6" id="6rA4xDHb8et" role="3cqZAp">
                                             <node concept="10QFUN" id="7GJnXJjB7cZ" role="3cqZAk">
-                                              <node concept="3uibUv" id="3if7C7H0i5h" role="10QFUM">
-                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-                                              </node>
                                               <node concept="2OqwBi" id="7GJnXJjB7cV" role="10QFUP">
                                                 <node concept="liA8E" id="7GJnXJjB7cW" role="2OqNvi">
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
@@ -533,6 +530,9 @@
                                                   <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
                                                   <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
                                                 </node>
+                                              </node>
+                                              <node concept="3uibUv" id="3if7C7H0i5h" role="10QFUM">
+                                                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                               </node>
                                             </node>
                                           </node>
@@ -735,7 +735,7 @@
         </node>
         <node concept="3cpWs6" id="16bZt0jgjIj" role="3cqZAp">
           <node concept="2ZW3vV" id="16bZt0jgjJS" role="3cqZAk">
-            <node concept="3uibUv" id="3if7C7H06rP" role="2ZW6by">
+            <node concept="3uibUv" id="56VbpuSKmX$" role="2ZW6by">
               <ref role="3uigEE" to="mies:~JavaClassStubModelDescriptor" resolve="JavaClassStubModelDescriptor" />
             </node>
             <node concept="37vLTw" id="16bZt0jgjIu" role="2ZW6bz">

@@ -59,5 +59,6 @@
     <orderEntry type="library" name="mps-editor-runtime" level="project" />
     <orderEntry type="library" name="mps-tuples" level="project" />
     <orderEntry type="library" name="mps-icons" level="project" />
+    <orderEntry type="library" name="mps-openapi" level="project" />
   </component>
 </module>
