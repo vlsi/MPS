@@ -54,9 +54,6 @@
     <node concept="PrWs8" id="6kJcyCQ$ioX" role="PzmwI">
       <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
     </node>
-    <node concept="PrWs8" id="6kJcyCQ$ip3" role="PzmwI">
-      <ref role="PrY4T" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
-    </node>
   </node>
   <node concept="1TIwiD" id="291CjQFhGND">
     <property role="EcuMT" value="2468431357014363369" />
