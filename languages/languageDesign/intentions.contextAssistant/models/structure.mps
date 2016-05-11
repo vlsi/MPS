@@ -6,6 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -79,6 +80,23 @@
       <property role="20kJfa" value="refactoring" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20Jj4S2C96c">
+    <property role="EcuMT" value="2319156231054332300" />
+    <property role="TrG5h" value="TransformationMenuPart_PluginAction" />
+    <property role="34LRSv" value="plugin action" />
+    <property role="R4oN_" value="plugin action item" />
+    <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="PrWs8" id="20Jj4S2C96i" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+    </node>
+    <node concept="1TJgyj" id="20Jj4S2C96k" role="1TKVEi">
+      <property role="IQ2ns" value="2319156231054332308" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="action" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp4k:hwsE7KS" resolve="ActionDeclaration" />
     </node>
   </node>
 </model>

@@ -19,6 +19,7 @@
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="7e53" ref="r:e11988ca-dd7b-49ce-b283-28b999b925ea(jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions)" />
     <import index="8cjv" ref="r:938571aa-9d7b-41d5-a017-4298d540d66c(jetbrains.mps.lang.editor.contextAssistant.testLanguage.refactorings)" />
+    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -215,6 +216,9 @@
       <concept id="2468431357014363369" name="jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
       <concept id="2926686622729992785" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
         <reference id="2926686622729992786" name="intention" index="caduC" />
+      </concept>
+      <concept id="2319156231054332300" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_PluginAction" flags="ng" index="yzXR2">
+        <reference id="2319156231054332308" name="action" index="yzXRq" />
       </concept>
       <concept id="4736696158595695479" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
         <reference id="4736696158595695482" name="refactoring" index="BGudP" />
@@ -887,6 +891,32 @@
               <node concept="3clFbF" id="46W80XA5Iyo" role="3cqZAp">
                 <node concept="Xl_RD" id="46W80XA5Iyn" role="3clFbG">
                   <property role="Xl_RC" value="A refactoring" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yzXR2" id="20Jj4S2DlvT" role="1Qtc8A">
+        <ref role="yzXRq" to="tprs:hZsuckv" resolve="ShowBookmarksDialog" />
+        <node concept="2jZ$Xq" id="20Jj4S2Dlw_" role="2jZA2a">
+          <node concept="2jZ$Xn" id="20Jj4S2DlwA" role="2jZ$wY">
+            <node concept="3clFbS" id="20Jj4S2DlwB" role="2VODD2">
+              <node concept="3clFbF" id="20Jj4S2DlwC" role="3cqZAp">
+                <node concept="10M0yZ" id="20Jj4S2DlwD" role="3clFbG">
+                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Action" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2jZ$wS" id="20Jj4S2DlwE" role="2jZA2a">
+          <node concept="1jIJ66" id="20Jj4S2DlwF" role="2jZ$wV">
+            <node concept="3clFbS" id="20Jj4S2DlwG" role="2VODD2">
+              <node concept="3clFbF" id="20Jj4S2DlwH" role="3cqZAp">
+                <node concept="Xl_RD" id="20Jj4S2DlwI" role="3clFbG">
+                  <property role="Xl_RC" value="An action" />
                 </node>
               </node>
             </node>

@@ -15,6 +15,8 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.editor.contextActionsTool.runtime.SidebarActionItem;
 import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.lang.intentions.contextAssistant.runtime.PluginActionMenuPartBase;
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.lang.intentions.contextAssistant.runtime.IntentionMenuPartBase;
 import jetbrains.mps.intentions.IntentionExecutable;
 
@@ -24,7 +26,8 @@ public class Extras extends TransformationMenuBase {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (MenuLocations.CONTEXT_ACTIONS_TOOL.equals(_context.getMenuLocation())) {
       result.add(new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0());
-      result.add(new Extras.TransformationMenuPart_Intention_ha3uwx_b0());
+      result.add(new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0());
+      result.add(new Extras.TransformationMenuPart_Intention_ha3uwx_c0());
     }
     return result;
   }
@@ -54,14 +57,39 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public static class TransformationMenuPart_Intention_ha3uwx_b0 extends IntentionMenuPartBase {
-    public TransformationMenuPart_Intention_ha3uwx_b0() {
+  public static class TransformationMenuPart_PluginAction_ha3uwx_b0 extends PluginActionMenuPartBase {
+    public TransformationMenuPart_PluginAction_ha3uwx_b0() {
+      super("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
+    }
+
+    @Override
+    protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull AnAction action) {
+      return new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0.Item(context, action);
+    }
+
+    private static class Item extends PluginActionMenuPartBase.ItemBase implements SidebarActionItem {
+      private Item(TransformationMenuContext context, AnAction action) {
+        super(context, action);
+      }
+
+      @Override
+      public Icon getIcon() {
+        return MPSIcons.Nodes.Action;
+      }
+      @Override
+      public String getTooltipText() {
+        return "An action";
+      }
+    }
+  }
+  public static class TransformationMenuPart_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
+    public TransformationMenuPart_Intention_ha3uwx_c0() {
       super("jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
 
     @Override
     protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
-      return new Extras.TransformationMenuPart_Intention_ha3uwx_b0.Item(context, executable);
+      return new Extras.TransformationMenuPart_Intention_ha3uwx_c0.Item(context, executable);
     }
 
     private static class Item extends IntentionMenuPartBase.ItemBase implements SidebarActionItem {

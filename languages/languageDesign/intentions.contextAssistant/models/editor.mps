@@ -130,5 +130,40 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="20Jj4S2C9RO">
+    <ref role="1XX52x" to="a1gu:20Jj4S2C96c" resolve="TransformationMenuPart_PluginAction" />
+    <node concept="3EZMnI" id="20Jj4S2C9RW" role="2wV5jI">
+      <node concept="PMmxH" id="20Jj4S2C9RX" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="1iCGBv" id="20Jj4S2C9RY" role="3EZMnx">
+        <ref role="1NtTu8" to="a1gu:20Jj4S2C96k" />
+        <node concept="1sVBvm" id="20Jj4S2C9RZ" role="1sWHZn">
+          <node concept="3F0A7n" id="20Jj4S2C9S0" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="20Jj4S2C9S1" role="2iSdaV" />
+      <node concept="3F2HdR" id="20Jj4S2C9S2" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" />
+        <node concept="l2Vlx" id="20Jj4S2C9S3" role="2czzBx" />
+        <node concept="pVoyu" id="20Jj4S2C9S4" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="20Jj4S2C9S5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="20Jj4S2C9S6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="20Jj4S2C9S7" role="2czzBI">
+          <property role="3F0ifm" value="no additional features" />
+          <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

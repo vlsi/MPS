@@ -9,6 +9,65 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:a3b5964c-2d88-4fe7-9fde-b377ee252f13(jetbrains.mps.lang.intentions.contextAssistant.runtime)/2319156231054336230">
+    <file name="PluginActionMenuPartBase.java">
+      <node id="2319156231054373930" at="20,0,21,0" concept="2" trace="myActionId" />
+      <node id="2319156231054438099" at="22,52,23,26" concept="1" />
+      <node id="2319156231054425820" at="28,68,29,72" concept="6" />
+      <node id="2319156231054427106" at="30,25,31,18" concept="7" />
+      <node id="2319156231054434647" at="32,5,33,39" concept="7" />
+      <node id="2319156231054433398" at="36,103,37,16" concept="7" />
+      <node id="2319156231054376006" at="41,0,42,0" concept="2" trace="_context" />
+      <node id="2319156231054376577" at="42,0,43,0" concept="2" trace="myAction" />
+      <node id="2319156231054380170" at="44,76,45,25" concept="1" />
+      <node id="2319156231054380180" at="45,25,46,24" concept="1" />
+      <node id="2319156231054377506" at="51,48,52,58" concept="7" />
+      <node id="2319156231054383137" at="56,50,57,135" concept="6" />
+      <node id="2319156231054386828" at="57,135,58,155" concept="6" />
+      <node id="2319156231054422099" at="58,155,59,38" concept="1" />
+      <node id="2319156231054438091" at="22,0,25,0" concept="0" trace="PluginActionMenuPartBase#(Ljava/lang/String;)V" />
+      <node id="2319156231054426214" at="29,72,32,5" concept="4" />
+      <node id="2319156231054431160" at="36,0,39,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Lcom/intellij/openapi/actionSystem/AnAction;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuItem;" />
+      <node id="2319156231054380162" at="44,0,48,0" concept="0" trace="ItemBase#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Lcom/intellij/openapi/actionSystem/AnAction;)V" />
+      <node id="2319156231054376814" at="49,0,54,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2319156231054381364" at="55,0,61,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="2319156231054374008" at="26,0,35,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuItem;" />
+      <scope id="2319156231054438095" at="22,52,23,26" />
+      <scope id="2319156231054426216" at="30,25,31,18" />
+      <scope id="2319156231054431163" at="36,103,37,16" />
+      <scope id="2319156231054376821" at="51,48,52,58" />
+      <scope id="2319156231054380166" at="44,76,46,24" />
+      <scope id="2319156231054438091" at="22,0,25,0">
+        <var name="actionId" id="2319156231054438098" />
+      </scope>
+      <scope id="2319156231054431160" at="36,0,39,0">
+        <var name="action" id="2319156231054432535" />
+        <var name="context" id="2319156231054431889" />
+      </scope>
+      <scope id="2319156231054381371" at="56,50,59,38">
+        <var name="dataContext" id="2319156231054383138" />
+        <var name="event" id="2319156231054386829" />
+      </scope>
+      <scope id="2319156231054380162" at="44,0,48,0">
+        <var name="action" id="2319156231054380179" />
+        <var name="context" id="2319156231054380169" />
+      </scope>
+      <scope id="2319156231054374015" at="28,68,33,39">
+        <var name="action" id="2319156231054425821" />
+      </scope>
+      <scope id="2319156231054376814" at="49,0,54,0">
+        <var name="pattern" id="2319156231054376819" />
+      </scope>
+      <scope id="2319156231054381364" at="55,0,61,0">
+        <var name="pattern" id="2319156231054381368" />
+      </scope>
+      <scope id="2319156231054374008" at="26,0,35,0">
+        <var name="context" id="2319156231054374013" />
+      </scope>
+      <unit id="2319156231054374702" at="40,0,62,0" name="jetbrains.mps.lang.intentions.contextAssistant.runtime.PluginActionMenuPartBase$ItemBase" />
+      <unit id="2319156231054336230" at="19,0,63,0" name="jetbrains.mps.lang.intentions.contextAssistant.runtime.PluginActionMenuPartBase" />
+    </file>
+  </root>
   <root nodeRef="r:a3b5964c-2d88-4fe7-9fde-b377ee252f13(jetbrains.mps.lang.intentions.contextAssistant.runtime)/2926686622729974591">
     <file name="IntentionMenuPartBase.java">
       <node id="2926686622729975844" at="20,0,21,0" concept="2" trace="myIntentionId" />

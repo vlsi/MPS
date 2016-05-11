@@ -9683,6 +9683,12 @@
               <ref role="3bR37D" node="7Kfy9QB6Lh2" resolve="jetbrains.mps.refactoring.runtime" />
             </node>
           </node>
+          <node concept="1SiIV0" id="IBh1_7aJlr" role="3bR37C">
+            <node concept="3bR9La" id="IBh1_7aJls" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6L8K" resolve="jetbrains.mps.lang.plugin" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="291CjQFOXJy" role="3bR37C">
           <node concept="3bR9La" id="291CjQFOXJz" role="1SiIV1">
@@ -9714,6 +9720,12 @@
             <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
           </node>
         </node>
+        <node concept="1SiIV0" id="IBh1_7aJlp" role="3bR37C">
+          <node concept="3bR9La" id="IBh1_7aJlq" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L8K" resolve="jetbrains.mps.lang.plugin" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="4yLYeyZVqzT" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -9740,7 +9752,7 @@
         </node>
         <node concept="1SiIV0" id="4yLYeyZVvpK" role="3bR37C">
           <node concept="3bR9La" id="4yLYeyZVvpL" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
