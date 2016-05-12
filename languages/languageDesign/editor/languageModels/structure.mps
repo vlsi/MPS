@@ -4723,7 +4723,7 @@
     <property role="TrG5h" value="TransformationMenu_Default" />
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="Context Assistant Default Menu" />
+    <property role="34LRSv" value="Transformation Menu (Default)" />
     <property role="EcuMT" value="1638911550608571617" />
     <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="TransformationMenu" />
   </node>
@@ -4787,7 +4787,7 @@
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenu_Named" />
     <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="Context Assistant Named Menu" />
+    <property role="34LRSv" value="Transformation Menu (Named)" />
     <property role="EcuMT" value="5624877018226904808" />
     <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="TransformationMenu" />
     <node concept="PrWs8" id="4Sf$XywHuAY" role="PzmwI">
