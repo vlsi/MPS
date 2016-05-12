@@ -19,8 +19,6 @@ package jetbrains.mps.jps.build;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.io.FileUtilRt;
-import com.intellij.project.model.impl.module.content.JpsSourceFolder;
-import com.intellij.util.Processor;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
@@ -43,7 +41,6 @@ import org.jetbrains.jps.incremental.BuildListener;
 import org.jetbrains.jps.incremental.BuildOperations;
 import org.jetbrains.jps.incremental.BuilderCategory;
 import org.jetbrains.jps.incremental.CompileContext;
-import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder;
 import org.jetbrains.jps.incremental.ProjectBuildException;
@@ -82,6 +79,11 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(MPSModuleLevelBuilder.class);
 
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
+  // keep track of what sources we cleared, in case of full rebuild
+  // the thing is: out source gen dir is per module, but our builder is called per module chunk. For isntance,
+  // a module can be compiled in two goes: 1st chunk - module's sources, 2nd - module tests. Without
+  // keeping track we would erase the sources that were generated on the previous step.
+  private Set<JpsModule> cleanedGenSources;
 
   protected MPSModuleLevelBuilder() {
     super(BuilderCategory.SOURCE_GENERATOR);
@@ -95,6 +97,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildStarted(final CompileContext context) {
+    cleanedGenSources = new HashSet<JpsModule>();
     context.addBuildListener(new BuildListener() {
       @Override
       public void filesGenerated(Collection<Pair<String, String>> paths) {
@@ -109,6 +112,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildFinished(CompileContext context) {
+    cleanedGenSources = null;
     Collection<String> filesToRefresh = refreshComponent.getFilesToRefresh();
     if (!filesToRefresh.isEmpty()) {
       for (String file : filesToRefresh) {
@@ -176,6 +180,12 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         return;
       }
 
+      synchronized (cleanedGenSources) {
+        if (cleanedGenSources.contains(jpsModule)) {
+          continue;
+        }
+        cleanedGenSources.add(jpsModule);
+      }
       List<String> deleted = new ArrayList<String>();
       BuildOperations.deleteRecursively(extension.getConfiguration().getGeneratorOutputPath(), deleted, null);
       compileContext.processMessage(new FileDeletedEvent(deleted));
