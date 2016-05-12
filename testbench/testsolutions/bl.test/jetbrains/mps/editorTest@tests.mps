@@ -29389,7 +29389,7 @@
     <node concept="1qefOq" id="7fnnP3fV2X1" role="1SKRRt">
       <node concept="312cEu" id="7fnnP3fV2X3" role="1qenE9">
         <property role="2bfB8j" value="true" />
-        <property role="TrG5h" value="Foo" />
+        <property role="TrG5h" value="FooAbstractNativeIllegal" />
         <property role="1sVAO0" value="true" />
         <node concept="3clFb_" id="7fnnP3fV39o" role="jymVt">
           <property role="1EzhhJ" value="true" />

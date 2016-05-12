@@ -369,7 +369,7 @@
     <property role="TrG5h" value="RepetitionTest" />
     <node concept="1qefOq" id="4$ezt8YY7EL" role="1SKRRt">
       <node concept="1x_AGo" id="4$ezt8YY7EN" role="1qenE9">
-        <property role="TrG5h" value="Foo" />
+        <property role="TrG5h" value="ScriptFoo" />
         <node concept="2C6hJS" id="4$ezt8YY7EO" role="1x_AGi">
           <node concept="2C11UY" id="4$ezt8YY7Fn" role="2C6hI7">
             <property role="TrG5h" value="bar" />
@@ -400,7 +400,7 @@
     <property role="TrG5h" value="DuplicitRoutineNameTest" />
     <node concept="1qefOq" id="79svzH7ZZLu" role="1SKRRt">
       <node concept="2zTg$P" id="79svzH7ZZTb" role="1qenE9">
-        <property role="TrG5h" value="Foo" />
+        <property role="TrG5h" value="LibFoo" />
         <node concept="2C11UY" id="79svzH80496" role="2zTg$O">
           <property role="TrG5h" value="bar" />
           <node concept="2C6hJS" id="79svzH80497" role="2C11UV" />
