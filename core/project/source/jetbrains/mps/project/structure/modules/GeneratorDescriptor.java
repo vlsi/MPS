@@ -99,6 +99,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   public void save(ModelOutputStream stream) throws IOException {
     super.save(stream);
     stream.writeString(myGeneratorUID);
+    stream.writeBoolean(myGenerateTemplates);
 
     stream.writeInt(myDepGenerators.size());
     for (SModuleReference ref : myDepGenerators) {
@@ -115,6 +116,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   public void load(ModelInputStream stream) throws IOException {
     super.load(stream);
     myGeneratorUID = stream.readString();
+    myGenerateTemplates = stream.readBoolean();
 
     myDepGenerators.clear();
     for (int size = stream.readInt(); size > 0; size--) {
