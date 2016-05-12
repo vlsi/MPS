@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.loading.UpdateModeSupport;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -58,7 +59,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SModel implements SModelData {
+public class SModel implements SModelData, UpdateModeSupport {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
   private static AtomicLong ourCounter = new AtomicLong();
 
@@ -806,49 +807,21 @@ public class SModel implements SModelData {
 
   //aspects / additional
 
+  /**
+   * update mode means we are attaching newly loaded children
+   */
   public boolean isUpdateMode() {
     return myFullLoadMode.isLocked();
   }
 
+  @Override
   public void enterUpdateMode() {
     myFullLoadMode.lock();
   }
 
+  @Override
   public void leaveUpdateMode() {
     myFullLoadMode.unlock();
-  }
-
-  /**
-   * update mode means we are attaching newly loaded children
-   * @deprecated use {@link #enterUpdateMode()} or {@link #leaveUpdateMode()} with new contract. do not mix the two
-   * old method kept, with the contract of single call with <code>false</code> that clears any number of calls with (<code>true</code>).
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void setUpdateMode(boolean value) {
-    if (value) {
-      // enter update mode
-      if (myFullLoadMode.isLocked()) {
-        if (!myFullLoadMode.isHeldByCurrentThread()) {
-          throw new IllegalStateException("attempt to update model which is being updated from another thread");
-        }
-        // fall-through, i don't want to use re-enter feature of the lock - to mimic simple boolean which is
-        // 'unlocked' with a singe false value regardless of number of 'true' values. This might need to change
-        // once we have better approach to updatable models.
-      } else {
-        enterUpdateMode();
-      }
-    } else {
-      // clean update mode
-      if (myFullLoadMode.isLocked()) {
-        if (!myFullLoadMode.isHeldByCurrentThread()) {
-          throw new IllegalStateException("attempt to clear update mode flag from a thread that didn't initiate the mode");
-        }
-        leaveUpdateMode();
-      } else {
-        throw  new IllegalStateException("attempt to clear update mode flag while not in the update mode");
-      }
-    }
   }
 
   //to use only from SNode

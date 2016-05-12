@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 /**
  * General [openapi]SModel implementation, with proper synchronization and loading notifications, with factory method {@link #createModel()}
@@ -80,24 +79,11 @@ public abstract class RegularModelDescriptor extends SModelBase {
   protected abstract ModelLoadResult<jetbrains.mps.smodel.SModel> createModel();
 
   @Override
-  public void unload() {
-    assertCanChange();
-
-    if (mySModel == null) {
-      return;
-    }
-    final ModelLoadingState oldState;
+  protected void doUnload() {
     synchronized (myLoadLock) {
-      if (mySModel == null) {
-        return;
-      }
-      oldState = getLoadingState();
-      mySModel.setModelDescriptor(null);
-      mySModel.dispose();
+      super.doUnload();
       mySModel = null;
-      setLoadingState(ModelLoadingState.NOT_LOADED);
     }
-    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
   }
 
   /**

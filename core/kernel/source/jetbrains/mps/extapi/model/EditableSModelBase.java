@@ -76,7 +76,6 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     super.detach();
   }
 
-
   @Override
   public boolean isChanged() {
     return myChanged;
@@ -110,16 +109,8 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     if (needsReloading()) {
       throw new IllegalStateException("cannot unload model in a conflicting state");
     }
-    if (getCurrentModelInternal() == null) return;
-
-    // FIXME move next code to SModelBase?
-    final ModelLoadingState oldState = getLoadingState();
-    doUnload();
-    setLoadingState(ModelLoadingState.NOT_LOADED);
-    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
+    super.unload();
   }
-
-  protected abstract void doUnload();
 
   @Override
   public void reloadFromSource() {

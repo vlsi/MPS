@@ -1480,30 +1480,11 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4P9E75_mn38" role="3cqZAp">
-          <node concept="1rXfSq" id="4P9E75_mn36" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.unload():void" resolve="unload" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4wjoHLQlnX" role="3cqZAp">
-          <node concept="3cpWsn" id="4wjoHLQlnY" role="3cpWs9">
-            <property role="TrG5h" value="newModel" />
-            <node concept="3uibUv" id="4wjoHLQlnZ" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-            </node>
-            <node concept="1rXfSq" id="4P9E75_mnxS" role="33vP2m">
-              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6QPKlGfmsYm" role="3cqZAp">
-          <node concept="1rXfSq" id="6QPKlGfmsYk" role="3clFbG">
-            <ref role="37wK5l" to="g3l6:~SModelBase.replaceModelAndFireEvent(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel):void" resolve="replaceModelAndFireEvent" />
-            <node concept="37vLTw" id="6QPKlGfm_BH" role="37wK5m">
-              <ref role="3cqZAo" node="4wjoHLQaTv" resolve="oldModel" />
-            </node>
-            <node concept="37vLTw" id="4wjoHLQm9e" role="37wK5m">
-              <ref role="3cqZAo" node="4wjoHLQlnY" resolve="newModel" />
+        <node concept="3clFbF" id="1Y_KzzxQuLm" role="3cqZAp">
+          <node concept="1rXfSq" id="1Y_KzzxQuLk" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
+            <node concept="1rXfSq" id="1Y_KzzxQvof" role="37wK5m">
+              <ref role="37wK5l" node="3PyP5yK7RCK" resolve="createModel" />
             </node>
           </node>
         </node>

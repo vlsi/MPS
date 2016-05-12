@@ -172,7 +172,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   private void unloadModel(TransientSModelDescriptor model) {
-    model.unloadModel(true);
+    model.unloadModelNoSave();
   }
 
   public void publishAll() {
@@ -345,11 +345,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
     @Override
     protected void doUnload() {
-      // unload() implementation does proper load state notifications
-      unloadModel(false);
-    }
-
-    /*package*/ void unloadModel(boolean fireLoadStateChange) {
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
@@ -358,22 +353,30 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
           return;
         }
 
-        dropModel();
-
-        if (fireLoadStateChange) {
-          setLoadingState(ModelLoadingState.NOT_LOADED);
-          fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
-        }
-
+        super.doUnload(); // changes loading state as recorded in the descriptor
         wasUnloaded = true;
+        mySModel = null;
       }
     }
 
+    // Can't use openapi's unload as EditableSModelBase does save() on unload(), which is (likely? it's guess) not what
+    // originally deemed necessary for transient models (although could have saveModel no-op or subclass  EditableModelDescriptor),
+    // thus mimics what SModelBase#unload does.
+    // XXX consider subclassing EditableModelDescriptor and use unload() instead of this method directly
+    /*package*/ void unloadModelNoSave() {
+      final ModelLoadingState oldState = getLoadingState();
+      doUnload();
+      fireModelStateChanged(oldState, getLoadingState());
+    }
+
+    // unlike unload, doesn't not swap out model data
     private void dropModel() {
       if (mySModel != null) {
         LOG.debug("Dropped " + getReference());
+        mySModel.setModelDescriptor(null);
         mySModel.dispose();
         mySModel = null;
+        setLoadingState(ModelLoadingState.NOT_LOADED);
       }
     }
 

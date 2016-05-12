@@ -83,14 +83,14 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
         loader.skipPrivateMembers(mySkipPrivate);
         SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
         Collection<SModelReference> imports = loader.completeModel(this, completeModelData);
-        completeModelData.setUpdateMode(true);
-        mi.setUpdateMode(true);
+        completeModelData.enterUpdateMode();
+        mi.enterUpdateMode();
         new PartialModelUpdateFacility(mi, completeModelData, this).update();
         for (SModelReference mr : imports) {
           mi.addModelImport(new SModel.ImportElement(mr));
         }
-        completeModelData.setUpdateMode(false);
-        mi.setUpdateMode(false);
+        completeModelData.leaveUpdateMode();
+        mi.leaveUpdateMode();
         setLoadingState(ModelLoadingState.FULLY_LOADED);
         myIsLoadInProgress = false;
       }
@@ -144,8 +144,6 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
       return;
     }
     // XXX shall I synchronize(myLoadLock) so that unload and subsequent partial load are from the same thread? I'm in the write anyway. 
-    unload();
-    SModel newModel = getSModelInternal();
-    replaceModelAndFireEvent(oldModel, newModel);
+    replace(createModel());
   }
 }

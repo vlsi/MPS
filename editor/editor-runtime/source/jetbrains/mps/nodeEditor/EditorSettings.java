@@ -180,14 +180,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     myState.myAutoQuickFix = autoQuickFix;
   }
 
-  public boolean isHighightChanges() {
-    return myState.myHighlightChanges;
-  }
-
-  public void setHighlightChanges(boolean highlightChanges) {
-    myState.myHighlightChanges = highlightChanges;
-  }
-
   public boolean isShowContextAssistant() {
     return myState.myShowContextAssistant;
   }
@@ -298,7 +290,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     private int myIndentSize = 2;
     private int myVerticalBound = 120;
 
-    private boolean myHighlightChanges = false;
     private boolean myAutoQuickFix = false;
 
     private boolean showPlain = true;
@@ -335,10 +326,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
         return false;
       }
 
-      if (myHighlightChanges != otherState.myHighlightChanges) {
-        return false;
-      }
-
       if (myShowContextAssistant != otherState.myShowContextAssistant) {
         return false;
       }
@@ -358,7 +345,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       result = 31 * result + myIndentSize;
       result = 31 * result + myVerticalBound;
       result = 31 * result + (myAutoQuickFix ? 1 : 0);
-      result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (myUseBraces ? 1 : 0);
       result = 31 * result + (myShowContextAssistant ? 1 : 0);
@@ -468,6 +454,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
      */
     public boolean isShow() {
       return show;
+    }
+
+    public boolean isShowContextAssistant() {
+      return myShowContextAssistant;
+    }
+
+    public void setShowContextAssistant(boolean showContextAssistant) {
+      myShowContextAssistant = showContextAssistant;
     }
   }
 }

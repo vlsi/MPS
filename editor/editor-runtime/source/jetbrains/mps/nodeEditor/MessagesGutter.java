@@ -90,7 +90,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   @Override
-  protected void uninstallListeners() {
+  public void uninstallListeners() {
     scrollbar.removeMouseMotionListener(this);
     scrollbar.removeMouseListener(this);
     if (MPSToolTipManager.getInstance() != null) {

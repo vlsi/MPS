@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,82 +17,40 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.PartialModelUpdateFacility;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.UpdateableModel;
+import jetbrains.mps.smodel.loading.PartialModelDataSupport;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 /**
- * FIXME implementation of UpdatableModel.ModelLoader#doLoad() doesn't depend on model being editable, shall refactor and extract
- * reloading code to be independent from EditableSModelBase
+ * Model with data that could get gradually loaded in subsequent steps.
  * evgeny, 6/6/13
  */
-public abstract class LazyEditableSModelBase extends EditableSModelBase implements UpdateableModel.ModelLoader {
-  private final UpdateableModel myModel;
-
-  @Override
-  public ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
-    if (state == ModelLoadingState.NOT_LOADED) {
-      // XXX ModelLoadResult doesn't tolerate null as an argument. If it never failed, the code is dead?
-      return new ModelLoadResult((SModel) null, ModelLoadingState.NOT_LOADED);
-    }
-    if (state == ModelLoadingState.INTERFACE_LOADED) {
-      ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
-      result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
-      return result;
-    }
-    if (state == ModelLoadingState.FULLY_LOADED) {
-      SModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-      if (current == null) {
-        fullModel.setModelDescriptor(LazyEditableSModelBase.this);
-        return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
-      }
-      current.enterUpdateMode();   //not to send events on changes
-      fullModel.enterUpdateMode();
-      new PartialModelUpdateFacility(current, fullModel, LazyEditableSModelBase.this).update();
-      fullModel.leaveUpdateMode();
-      current.leaveUpdateMode();  //enable events
-      return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
-    }
-    throw new UnsupportedOperationException();
-  }
+public abstract class LazyEditableSModelBase extends EditableSModelBase {
+  private final PartialModelDataSupport<SModel> myModel;
 
   public LazyEditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    myModel = new UpdateableModel(this);
-  }
-
-
-  @NotNull
-  @Override
-  protected final ModelLoadingState getLoadingState() {
-    return myModel.getState();
+    myModel = new PartialModelDataSupport<>(this, state -> {
+      // FIXME need a new loadSModel(state) that return proper ModelLoadResult, and deprecate the old one.
+      ModelLoadResult result = loadSModel(state);
+      if (result.getModel() != null) {
+        result.getModel().setModelDescriptor(LazyEditableSModelBase.this);
+      }
+      return new jetbrains.mps.smodel.ModelLoadResult<>(result.getModel(), result.getState());
+    });
   }
 
   @Override
   public final SModel getSModelInternal() {
-    ModelLoadingState oldState = myModel.getState();
-    if (oldState.ordinal() >= ModelLoadingState.INTERFACE_LOADED.ordinal()) {
-      return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+    ModelLoadingState oldState = getLoadingState();
+    SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
+    if (res == null) {
+      return null; // this is when we are in recursion
     }
-    // FIXME UpdatableModel does synchronize(this) in getModel and replaceWith. What do we accomplish here with synchronize?
-    synchronized (myModel) {
-      final SModel currentModel = myModel.getModel(null);
-      if (currentModel instanceof InvalidSModel) {
-        return currentModel;
-      }
-
-      oldState = myModel.getState();
-      SModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
-      if (res == null) {
-        return null; // this is when we are in recursion
-      }
-    }
-    fireModelStateChanged(oldState, myModel.getState());
-    return myModel.getModel(null);
+    fireModelStateChanged(oldState, getLoadingState()); // doesn't dispatch if state is the same
+    return res;
   }
 
   @Override
@@ -108,12 +66,8 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
 
   @Override
   protected void doUnload() {
-    final SModel oldSModel = getCurrentModelInternal();
-
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-      myModel.replaceWith(null, ModelLoadingState.NOT_LOADED);
-    }
+    super.doUnload();
+    myModel.replaceWith(null, ModelLoadingState.NOT_LOADED);
   }
 
   /**
@@ -134,9 +88,11 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
 
   @Override
   protected void reloadContents() {
-    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) {
+      return;
+    }
 
-    ModelLoadResult result = loadSModel(myModel.getState());
+    ModelLoadResult result = loadSModel(getLoadingState());
     replaceModel(result.getModel(), result.getState());
   }
 }

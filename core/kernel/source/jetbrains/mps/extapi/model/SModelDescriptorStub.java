@@ -28,11 +28,9 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -46,8 +44,13 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * IMPORTANT - DO NOT SUBCLASS THIS ONE DIRECTLY, USE {@link SModelBase} INSTEAD.
+ *
  * Stub for model implementations with data kept separately in a SModel/SModelData (as of now/planned).
- * Keeps transition stuff like legacy SModelListeners and SModelInternal methods.
+ * Unlike {@link SModelBase}, which is true root of model descriptor hierarchy, this class keeps
+ * transition stuff like legacy SModelListeners and SModelInternal methods, our explicit though untold dependencies from smodel.SModel.
+ * Perhaps, one day we can get rid of if altogether.
+ *
  * TODO move listeners to openapi
  */
 public abstract class SModelDescriptorStub implements SModelInternal, SModel, FastNodeFinder.Factory {
@@ -59,19 +62,16 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   /**
    * Migration to 3.0. Loads and returns model data.
    *
+   * FIXME Replace uses of this method with getSModel(), make it abstract and implement in SModelBase subclasses.
+   *       The name getSModelInternal is misleading as it clashes with SModelInternal interface this class implements.
+   *       Though getSModel is not much better, at least in the context of SModelDescriptor it makes more sense.
+   *
    * @deprecated use {@link SModelBase#getModelData()} or {@link #getSModel()}
    * FIXME  there's implicit convention that smodel.SModel has this openapi.SModel (aka descriptor) assigned once
    * this method returns
    */
   @Deprecated
   public abstract jetbrains.mps.smodel.SModel getSModelInternal();
-
-  /**
-   * Dangerous, allows to replace model data.
-   */
-  public void replace(SModelData modelData) {
-    throw new UnsupportedOperationException();
-  }
 
   @Override
   public void addModelListener(@NotNull SModelListener listener) {
@@ -188,15 +188,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     return getSModelInternal();
   }
 
-  /**
-   * Likely, shall return SModelData eventually
-   *
-   * @return actual model data or <code>null</code> if not initialized yet
-   */
-  @Nullable
-  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
-
-  //
 
   public final ModelDependenciesManager getModelDepsManager() {
     return getSModel().getModelDepsManager();
@@ -281,17 +272,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
-  /**
-   * @deprecated ImportElement is implementation detail of SModelData impl we are using, use {@link #getModelImports()} instead.
-   * It's our implementation code, remove as soon as all usages are gone
-   */
-  @Deprecated
-  @ToRemove(version = 0)
-  public final List<ImportElement> importedModels() {
-    assertCanRead();
-    return getSModel().importedModels();
-  }
-
   @NotNull
   @Override
   public Collection<SModelReference> getModelImports() {
@@ -304,6 +284,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
+  @Deprecated
   public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
     assertCanChange();
     new SModelLegacy(getSModel()).addModelImport(modelReference, firstVersion);
@@ -319,7 +300,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public final void deleteModelImport(SModelReference modelReference) {
     assertCanChange();
     final jetbrains.mps.smodel.SModel modelData = getSModel();
-    for (ImportElement importElement : modelData.importedModels()) {
+    for (ImportElement importElement : new ArrayList<>(modelData.importedModels())) {
       if (importElement.getModelReference().equals(modelReference)) {
         modelData.deleteModelImport(importElement);
       }

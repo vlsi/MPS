@@ -699,10 +699,7 @@
                       <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
                     </node>
                     <node concept="liA8E" id="1$0KT$2McNG" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                      <node concept="3clFbT" id="686$TZgseRV" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
+                      <ref role="37wK5l" to="w1kc:~SModel.enterUpdateMode():void" resolve="enterUpdateMode" />
                     </node>
                   </node>
                 </node>
@@ -712,10 +709,7 @@
                       <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
                     </node>
                     <node concept="liA8E" id="686$TZgsk5n" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                      <node concept="3clFbT" id="686$TZgske1" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
+                      <ref role="37wK5l" to="w1kc:~SModel.enterUpdateMode():void" resolve="enterUpdateMode" />
                     </node>
                   </node>
                 </node>
@@ -775,10 +769,7 @@
                       <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
                     </node>
                     <node concept="liA8E" id="1$0KT$2McQd" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                      <node concept="3clFbT" id="686$TZgseWw" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
+                      <ref role="37wK5l" to="w1kc:~SModel.leaveUpdateMode():void" resolve="leaveUpdateMode" />
                     </node>
                   </node>
                 </node>
@@ -788,10 +779,7 @@
                       <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
                     </node>
                     <node concept="liA8E" id="686$TZgsmbw" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                      <node concept="3clFbT" id="686$TZgsmdG" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
+                      <ref role="37wK5l" to="w1kc:~SModel.leaveUpdateMode():void" resolve="leaveUpdateMode" />
                     </node>
                   </node>
                 </node>
@@ -1186,30 +1174,11 @@
             <property role="3SKdUp" value="XXX shall I synchronize(myLoadLock) so that unload and subsequent partial load are from the same thread? I'm in the write anyway." />
           </node>
         </node>
-        <node concept="3clFbF" id="4P9E75_maBf" role="3cqZAp">
-          <node concept="1rXfSq" id="4P9E75_maBd" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.unload():void" resolve="unload" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4P9E75_mbj1" role="3cqZAp">
-          <node concept="3cpWsn" id="4P9E75_mbj2" role="3cpWs9">
-            <property role="TrG5h" value="newModel" />
-            <node concept="3uibUv" id="4P9E75_mbj0" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-            </node>
-            <node concept="1rXfSq" id="4P9E75_mbj3" role="33vP2m">
-              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="GRPX9Erp7R" role="3cqZAp">
-          <node concept="1rXfSq" id="GRPX9Erp7P" role="3clFbG">
-            <ref role="37wK5l" to="g3l6:~SModelBase.replaceModelAndFireEvent(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel):void" resolve="replaceModelAndFireEvent" />
-            <node concept="37vLTw" id="4P9E75_mcJm" role="37wK5m">
-              <ref role="3cqZAo" node="GRPX9ErnNt" resolve="oldModel" />
-            </node>
-            <node concept="37vLTw" id="4P9E75_mcLR" role="37wK5m">
-              <ref role="3cqZAo" node="4P9E75_mbj2" resolve="newModel" />
+        <node concept="3clFbF" id="7t7VYEsuP4u" role="3cqZAp">
+          <node concept="1rXfSq" id="7t7VYEsuP4s" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
+            <node concept="1rXfSq" id="7t7VYEsuPv_" role="37wK5m">
+              <ref role="37wK5l" node="5JsnGMj1qeh" resolve="createModel" />
             </node>
           </node>
         </node>

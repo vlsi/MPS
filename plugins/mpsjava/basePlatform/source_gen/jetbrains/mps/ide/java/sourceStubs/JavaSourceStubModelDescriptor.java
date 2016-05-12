@@ -95,9 +95,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
     }
     MapSequence.fromMap(myRootsPerFile).clear();
     MapSequence.fromMap(myRootsById).clear();
-    unload();
-    SModel newModel = getSModelInternal();
-    replaceModelAndFireEvent(oldModel, newModel);
+    replace(createModel());
   }
 
   @Override

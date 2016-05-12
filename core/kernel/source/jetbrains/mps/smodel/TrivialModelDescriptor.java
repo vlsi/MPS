@@ -19,9 +19,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 /**
@@ -58,17 +55,8 @@ public class TrivialModelDescriptor extends SModelBase {
   }
 
   @Override
-  public void unload() {
-    assertCanChange();
-    if (myModelData == null) {
-      return;
-    }
-
-    ModelLoadingState oldState = getLoadingState();
-    myModelData.setModelDescriptor(null);
-    myModelData.dispose();
-    setLoadingState(ModelLoadingState.NOT_LOADED);
+  protected void doUnload() {
+    super.doUnload();
     myModelData = null;
-    fireModelStateChanged(oldState, ModelLoadingState.NOT_LOADED);
   }
 }

@@ -47,7 +47,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     myHeader = header;
   }
 
-  @Override
   public void replace(SModelData modelData) {
     assertCanChange();
 

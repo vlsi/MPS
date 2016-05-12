@@ -239,8 +239,16 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * @return node storage. Generally, shall not return <code>null</code> (FIXME revisit contract, enforce)
    */
   public SModelData getModelData() {
-    return getSModelInternal();
+    return getSModel();
   }
+
+  /**
+   * Likely, shall return SModelData eventually
+   *
+   * @return actual model data or <code>null</code> if not initialized yet
+   */
+  @Nullable
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   @NotNull
   @Override
@@ -256,7 +264,42 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void load() {
     // perhaps, both load() and unload() shall be left to implementors?
-    getSModelInternal();
+    getModelData();
+  }
+
+  /**
+   * Dispose model data, change model's {@link #getLoadingState() loading state} and
+   * dispatch {@link #fireModelStateChanged(ModelLoadingState, ModelLoadingState) state change event}.
+   * Base implementation does nothing if there's no {@link #getCurrentModelInternal() initialized model data}.
+   * Generally, subclasses shall override {@link #doUnload()} to perform actual cleanup of instance fields.
+   */
+  @Override
+  public void unload() {
+    assertCanChange();
+
+    if (getCurrentModelInternal() == null) {
+      return;
+    }
+
+    final ModelLoadingState oldState = getLoadingState();
+    doUnload();
+    fireModelStateChanged(oldState, getLoadingState());
+
+  }
+
+  /**
+   * Perform actual dispose of model data and {@link #setLoadingState(ModelLoadingState)} changes loading state}.
+   * No loading state event is sent (responsibility of {@link #unload()}. Subclasses shall override to
+   * clean instance fields and generally shall delegate to this implementation first to dispose model data.
+   */
+  protected void doUnload() {
+    jetbrains.mps.smodel.SModel modelData = getCurrentModelInternal();
+    if (modelData == null) {
+      return;
+    }
+    modelData.setModelDescriptor(null);
+    modelData.dispose();
+    setLoadingState(ModelLoadingState.NOT_LOADED);
   }
 
   @Override
@@ -399,6 +442,8 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * Seems reasonable to dispatch proper modelUnloaded/modelLoaded events in addition to modelReplaced as there are listeners that
    * expect either, not both. Especially, in case if load level is changed due to replacement (i.e. was FULL, became INTERFACE)
    * FIXME it's synchronized, do we still need that (with RegularModelDescriptor using distinct lock object)
+   * XXX there are two uses in subclasses of not-so-nice EditableSModelBase (lazy and custom) that can't get replaced readily with
+   * nice and convenient RegularModelDescriptor.replace() call.
    */
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
@@ -439,13 +484,16 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 //      }
   }
 
-  // FIXME likely, shall become final. It's LazyEditableSModelBase which prevents me from doing that now.
+  /**
+   * Generally, shall be protected (as well as {@link #setLoadingState(ModelLoadingState)}, but made public for uses in
+   * {@code PartialModelDataSupport} aka {@code jetbrains.mps.smodel.loading.UpdateableModel}.
+   */
   @NotNull
-  protected ModelLoadingState getLoadingState() {
+  public final ModelLoadingState getLoadingState() {
     return myModelLoadState;
   }
 
-  protected final void setLoadingState(@NotNull ModelLoadingState modelLoadState) {
+  public final void setLoadingState(@NotNull ModelLoadingState modelLoadState) {
     myModelLoadState = modelLoadState;
   }
 

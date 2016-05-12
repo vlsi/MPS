@@ -94,11 +94,10 @@
       <node id="4897777221271893874" at="263,7,264,105" concept="8" />
       <node id="6727405030837722305" at="266,46,267,71" concept="7" />
       <node id="4897777221271893886" at="268,29,269,15" concept="8" />
-      <node id="6727405030837723483" at="270,7,271,15" concept="2" />
-      <node id="6727405030837747691" at="271,15,272,109" concept="9" />
-      <node id="6727405030837748000" at="272,109,273,116" concept="9" />
-      <node id="6727405030837748315" at="273,116,274,44" concept="9" />
-      <node id="4897777221271893895" at="274,44,275,47" concept="2" />
+      <node id="6727405030837747691" at="270,7,271,109" concept="9" />
+      <node id="6727405030837748000" at="271,109,272,123" concept="9" />
+      <node id="6727405030837748315" at="272,123,273,44" concept="9" />
+      <node id="4520980731323556934" at="273,44,274,100" concept="2" />
       <node id="4897777221271894099" at="131,10,133,5" concept="0" />
       <node id="4897777221271894047" at="117,22,120,5" concept="5" />
       <node id="4897777221271894078" at="123,106,126,7" concept="5" />
@@ -137,7 +136,7 @@
       <node id="4897777221271894219" at="178,26,186,7" concept="2" />
       <node id="4897777221271894106" at="136,0,145,0" concept="6" trace="getModelByModule#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="4897777221271894217" at="178,0,188,0" concept="6" trace="clearAll#()V" />
-      <node id="4897777221271893878" at="266,0,277,0" concept="6" trace="originalModuleChanged#()V" />
+      <node id="4897777221271893878" at="266,0,276,0" concept="6" trace="originalModuleChanged#()V" />
       <node id="4897777221271894069" at="121,53,133,5" concept="5" />
       <node id="4897777221271893975" at="76,0,89,0" concept="3" trace="myListener" />
       <node id="7323700756000537739" at="249,53,262,9" concept="5" />
@@ -260,15 +259,15 @@
         <var name="generators" id="4566342431014935899" />
         <var name="langNode" id="7323700756000829833" />
       </scope>
+      <scope id="4897777221271893879" at="266,46,274,100">
+        <var name="oldModel" id="6727405030837722306" />
+      </scope>
       <scope id="4897777221271894106" at="136,0,145,0">
         <var name="module" id="4897777221271894107" />
       </scope>
-      <scope id="4897777221271893879" at="266,46,275,47">
-        <var name="oldModel" id="6727405030837722306" />
-      </scope>
       <scope id="4897777221271894217" at="178,0,188,0" />
+      <scope id="4897777221271893878" at="266,0,276,0" />
       <scope id="4897777221271894142" at="147,22,158,7" />
-      <scope id="4897777221271893878" at="266,0,277,0" />
       <scope id="4897777221271894181" at="162,25,175,54" />
       <scope id="4897777221271893784" at="249,53,262,9" />
       <scope id="4897777221271894140" at="146,0,160,0" />
@@ -291,8 +290,8 @@
       <unit id="4897777221271894225" at="179,53,186,5" name="jetbrains.mps.project.structure.ProjectStructureModule$5" />
       <unit id="4897777221271893980" at="76,53,88,3" name="jetbrains.mps.project.structure.ProjectStructureModule$2" />
       <unit id="4897777221271893961" at="59,55,74,3" name="jetbrains.mps.project.structure.ProjectStructureModule$1" />
-      <unit id="4897777221271893727" at="237,0,278,0" name="jetbrains.mps.project.structure.ProjectStructureModule$ProjectStructureSModelDescriptor" />
-      <unit id="4897777221271893724" at="53,0,279,0" name="jetbrains.mps.project.structure.ProjectStructureModule" />
+      <unit id="4897777221271893727" at="237,0,277,0" name="jetbrains.mps.project.structure.ProjectStructureModule$ProjectStructureSModelDescriptor" />
+      <unit id="4897777221271893724" at="53,0,278,0" name="jetbrains.mps.project.structure.ProjectStructureModule" />
     </file>
   </root>
 </debug-info>
