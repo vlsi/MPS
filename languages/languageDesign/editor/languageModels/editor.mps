@@ -13619,21 +13619,13 @@
           </node>
         </node>
       </node>
-      <node concept="3F2HdR" id="4Sf$XywF4Xe" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:1qY_lWSjJZW" />
-        <node concept="l2Vlx" id="4Sf$XywF4Xf" role="2czzBx" />
-        <node concept="pj6Ft" id="4Sf$XywF4Xg" role="3F10Kt">
+      <node concept="PMmxH" id="6VgTvK0jg9k" role="3EZMnx">
+        <ref role="PMmxG" node="6VgTvK0jg8i" resolve="TransformationMenu_Sections_Component" />
+        <node concept="lj46D" id="6VgTvK0jg9l" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="lj46D" id="4Sf$XywF4Xh" role="3F10Kt">
+        <node concept="pVoyu" id="6VgTvK0jg9m" role="3F10Kt">
           <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pVoyu" id="4Sf$XywF550" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="3F0ifn" id="6V0bp$oSbme" role="2czzBI">
-          <property role="3F0ifm" value="&lt;no items&gt;" />
-          <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
         </node>
       </node>
     </node>
@@ -13658,23 +13650,12 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F2HdR" id="1qY_lWSjNPe" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:1qY_lWSjJZW" />
-        <node concept="VPM3Z" id="1qY_lWSjNPi" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="1qY_lWSjNPn" role="2czzBI">
-          <property role="3F0ifm" value="&lt;no items&gt;" />
-          <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
-        </node>
-        <node concept="pj6Ft" id="6V0bp$oSbgh" role="3F10Kt">
+      <node concept="PMmxH" id="6VgTvK0jg97" role="3EZMnx">
+        <ref role="PMmxG" node="6VgTvK0jg8i" resolve="TransformationMenu_Sections_Component" />
+        <node concept="lj46D" id="6VgTvK0jg98" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="l2Vlx" id="6V0bp$oSbgi" role="2czzBx" />
-        <node concept="ljvvj" id="6V0bp$oSbgj" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="6V0bp$oSbgZ" role="3F10Kt">
+        <node concept="pVoyu" id="6VgTvK0jg99" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -13728,6 +13709,19 @@
           </node>
           <node concept="lj46D" id="6srdxdH8ZYA" role="3F10Kt">
             <property role="VOm3f" value="true" />
+          </node>
+          <node concept="4$FPG" id="6VgTvK0iUh3" role="4_6I_">
+            <node concept="3clFbS" id="6VgTvK0iUh4" role="2VODD2">
+              <node concept="3clFbF" id="6VgTvK0iUku" role="3cqZAp">
+                <node concept="2ShNRf" id="6VgTvK0iUks" role="3clFbG">
+                  <node concept="3zrR0B" id="6VgTvK0jezQ" role="2ShVmc">
+                    <node concept="3Tqbb2" id="6VgTvK0jezS" role="3zrR0E">
+                      <ref role="ehGHo" to="tpc2:6VgTvK0iUgM" resolve="TransformationMenuPart_Placeholder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="lj46D" id="7_cYeEufz8o" role="3F10Kt">
@@ -13925,21 +13919,13 @@
       <node concept="3F1sOY" id="5OVd5tVoa69" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:5OVd5tVoa2Z" />
       </node>
-      <node concept="3F2HdR" id="4Sf$XywKhmO" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:1qY_lWSjJZW" />
-        <node concept="l2Vlx" id="4Sf$XywKhmQ" role="2czzBx" />
-        <node concept="pVoyu" id="5OVd5tVoa5M" role="3F10Kt">
+      <node concept="PMmxH" id="6VgTvK0jg8p" role="3EZMnx">
+        <ref role="PMmxG" node="6VgTvK0jg8i" resolve="TransformationMenu_Sections_Component" />
+        <node concept="lj46D" id="6VgTvK0jg8m" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="lj46D" id="4Sf$XywKhoC" role="3F10Kt">
+        <node concept="pVoyu" id="6VgTvK0jg8l" role="3F10Kt">
           <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pj6Ft" id="4Sf$XywKhql" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="3F0ifn" id="6V0bp$oSbmz" role="2czzBI">
-          <property role="3F0ifm" value="&lt;no items&gt;" />
-          <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
         </node>
       </node>
     </node>
@@ -14005,6 +13991,19 @@
         </node>
         <node concept="ljvvj" id="6V0bp$oHnkN" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="4$FPG" id="6VgTvK0my4a" role="4_6I_">
+          <node concept="3clFbS" id="6VgTvK0my4b" role="2VODD2">
+            <node concept="3clFbF" id="6VgTvK0my7_" role="3cqZAp">
+              <node concept="2ShNRf" id="6VgTvK0my7z" role="3clFbG">
+                <node concept="3zrR0B" id="6VgTvK0myNM" role="2ShVmc">
+                  <node concept="3Tqbb2" id="6VgTvK0myNO" role="3zrR0E">
+                    <ref role="ehGHo" to="tpc2:6VgTvK0iUgM" resolve="TransformationMenuPart_Placeholder" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="l2Vlx" id="6V0bp$oHeZd" role="2iSdaV" />
@@ -14072,6 +14071,27 @@
         </node>
       </node>
       <node concept="l2Vlx" id="3EZUZhmZu2Y" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6VgTvK0iUgY">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="1XX52x" to="tpc2:6VgTvK0iUgM" resolve="TransformationMenuPart_Placeholder" />
+    <node concept="3F0ifn" id="6VgTvK0iUh0" role="2wV5jI" />
+  </node>
+  <node concept="PKFIW" id="6VgTvK0jg8i">
+    <property role="TrG5h" value="TransformationMenu_Sections_Component" />
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="1XX52x" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
+    <node concept="3F2HdR" id="6VgTvK0jg8j" role="2wV5jI">
+      <ref role="1NtTu8" to="tpc2:1qY_lWSjJZW" />
+      <node concept="l2Vlx" id="6VgTvK0jg8k" role="2czzBx" />
+      <node concept="pj6Ft" id="6VgTvK0jg8n" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="3F0ifn" id="6VgTvK0jg8o" role="2czzBI">
+        <property role="3F0ifm" value="&lt;no items&gt;" />
+        <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
+      </node>
     </node>
   </node>
 </model>

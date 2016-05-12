@@ -5059,5 +5059,14 @@
     <property role="EcuMT" value="2468431357014947084" />
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
+  <node concept="1TIwiD" id="6VgTvK0iUgM">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="TransformationMenuPart_Placeholder" />
+    <property role="EcuMT" value="7985135009827365938" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="PrWs8" id="6VgTvK0jeF1" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
