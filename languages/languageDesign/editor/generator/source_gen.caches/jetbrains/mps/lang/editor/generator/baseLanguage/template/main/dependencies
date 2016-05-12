@@ -49,7 +49,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClass__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleSheet__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.Synchronizeable__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.TransformationMenuUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor" />

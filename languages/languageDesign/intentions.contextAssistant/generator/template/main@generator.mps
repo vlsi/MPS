@@ -33,7 +33,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
@@ -115,9 +114,6 @@
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
-        <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
-      </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
       </concept>
@@ -157,12 +153,6 @@
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
       </concept>
     </language>
-    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
-      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
-        <child id="1199569906740" name="parameter" index="1bW2Oz" />
-        <child id="1199569916463" name="body" index="1bW5cS" />
-      </concept>
-    </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
       <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
         <child id="1218047638032" name="baseName" index="2piZGb" />
@@ -200,14 +190,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-    </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
-        <child id="1204796294226" name="closure" index="23t8la" />
-      </concept>
-      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
-      <concept id="1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" flags="nn" index="1VAtEI" />
     </language>
   </registry>
   <node concept="bUwia" id="2ytFvC$HjcY">
@@ -373,46 +355,24 @@
           <node concept="3uibUv" id="46W80XA5yVj" role="1zkMxy">
             <ref role="3uigEE" to="qwun:6kJcyCQ$JZM" resolve="IntentionMenuPartBase.ItemBase" />
           </node>
-          <node concept="3uibUv" id="6kJcyCQ_46$" role="EKbjA">
+          <node concept="3uibUv" id="4sA1wzjmpCr" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
-            <node concept="2b32R4" id="6kJcyCQ_46_" role="lGtFl">
-              <node concept="3JmXsc" id="6kJcyCQ_46A" role="2P8S$">
-                <node concept="3clFbS" id="6kJcyCQ_46B" role="2VODD2">
-                  <node concept="3clFbF" id="6kJcyCQ_46C" role="3cqZAp">
-                    <node concept="2OqwBi" id="6kJcyCQ_46D" role="3clFbG">
-                      <node concept="2OqwBi" id="6kJcyCQ_46E" role="2Oq$k0">
-                        <node concept="2OqwBi" id="6kJcyCQ_46F" role="2Oq$k0">
-                          <node concept="30H73N" id="6kJcyCQ_46G" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="6kJcyCQ_46H" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
-                          </node>
-                        </node>
-                        <node concept="3goQfb" id="6kJcyCQ_46I" role="2OqNvi">
-                          <node concept="1bVj0M" id="6kJcyCQ_46J" role="23t8la">
-                            <node concept="3clFbS" id="6kJcyCQ_46K" role="1bW5cS">
-                              <node concept="3clFbF" id="6kJcyCQ_46L" role="3cqZAp">
-                                <node concept="2OqwBi" id="6kJcyCQ_46M" role="3clFbG">
-                                  <node concept="37vLTw" id="6kJcyCQ_46N" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="6kJcyCQ_46P" resolve="it" />
-                                  </node>
-                                  <node concept="2qgKlT" id="6kJcyCQ_46O" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpcb:4sA1wzjmzSN" resolve="getActionItemInterfaces" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Rh6nW" id="6kJcyCQ_46P" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="6kJcyCQ_46Q" role="1tU5fm" />
-                            </node>
-                          </node>
-                        </node>
+            <node concept="1WS0z7" id="6VgTvK0omiA" role="lGtFl">
+              <node concept="3JmXsc" id="6VgTvK0omiU" role="3Jn$fo">
+                <node concept="3clFbS" id="6VgTvK0omje" role="2VODD2">
+                  <node concept="3clFbF" id="6VgTvK0on6d" role="3cqZAp">
+                    <node concept="2OqwBi" id="4sA1wzjmtLo" role="3clFbG">
+                      <node concept="30H73N" id="4sA1wzjmtBc" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6VgTvK0q9QD" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
-                      <node concept="1VAtEI" id="6kJcyCQ_46R" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="1sPUBX" id="6VgTvK0opWW" role="lGtFl">
+              <ref role="v9R2y" to="tpc3:6VgTvK0odUq" resolve="switch_TransformationLocation_actionItemInterfaces" />
             </node>
           </node>
         </node>
@@ -621,46 +581,24 @@
           <node concept="3uibUv" id="46W80XA5kfe" role="1zkMxy">
             <ref role="3uigEE" to="qwun:46W80XA5afp" resolve="RefactoringMenuPartBase.ItemBase" />
           </node>
-          <node concept="3uibUv" id="46W80XA3tsQ" role="EKbjA">
+          <node concept="3uibUv" id="6VgTvK0o_HR" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
-            <node concept="2b32R4" id="46W80XA3tsR" role="lGtFl">
-              <node concept="3JmXsc" id="46W80XA3tsS" role="2P8S$">
-                <node concept="3clFbS" id="46W80XA3tsT" role="2VODD2">
-                  <node concept="3clFbF" id="46W80XA3tsU" role="3cqZAp">
-                    <node concept="2OqwBi" id="46W80XA3tsV" role="3clFbG">
-                      <node concept="2OqwBi" id="46W80XA3tsW" role="2Oq$k0">
-                        <node concept="2OqwBi" id="46W80XA3tsX" role="2Oq$k0">
-                          <node concept="30H73N" id="46W80XA3tsY" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="46W80XA3tsZ" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
-                          </node>
-                        </node>
-                        <node concept="3goQfb" id="46W80XA3tt0" role="2OqNvi">
-                          <node concept="1bVj0M" id="46W80XA3tt1" role="23t8la">
-                            <node concept="3clFbS" id="46W80XA3tt2" role="1bW5cS">
-                              <node concept="3clFbF" id="46W80XA3tt3" role="3cqZAp">
-                                <node concept="2OqwBi" id="46W80XA3tt4" role="3clFbG">
-                                  <node concept="37vLTw" id="46W80XA3tt5" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="46W80XA3tt7" resolve="it" />
-                                  </node>
-                                  <node concept="2qgKlT" id="46W80XA3tt6" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpcb:4sA1wzjmzSN" resolve="getActionItemInterfaces" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Rh6nW" id="46W80XA3tt7" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="46W80XA3tt8" role="1tU5fm" />
-                            </node>
-                          </node>
-                        </node>
+            <node concept="1WS0z7" id="6VgTvK0o_HS" role="lGtFl">
+              <node concept="3JmXsc" id="6VgTvK0o_HT" role="3Jn$fo">
+                <node concept="3clFbS" id="6VgTvK0o_HU" role="2VODD2">
+                  <node concept="3clFbF" id="6VgTvK0o_HV" role="3cqZAp">
+                    <node concept="2OqwBi" id="6VgTvK0o_HW" role="3clFbG">
+                      <node concept="30H73N" id="6VgTvK0o_HX" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6VgTvK0q8QL" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
-                      <node concept="1VAtEI" id="46W80XA3tt9" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="1sPUBX" id="6VgTvK0o_HZ" role="lGtFl">
+              <ref role="v9R2y" to="tpc3:6VgTvK0odUq" resolve="switch_TransformationLocation_actionItemInterfaces" />
             </node>
           </node>
         </node>
@@ -871,46 +809,24 @@
           <node concept="3uibUv" id="20Jj4S2CPyi" role="1zkMxy">
             <ref role="3uigEE" to="qwun:20Jj4S2CjsI" resolve="PluginActionMenuPartBase.ItemBase" />
           </node>
-          <node concept="3uibUv" id="20Jj4S2CJsj" role="EKbjA">
+          <node concept="3uibUv" id="6VgTvK0oxEQ" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
-            <node concept="2b32R4" id="20Jj4S2CJsk" role="lGtFl">
-              <node concept="3JmXsc" id="20Jj4S2CJsl" role="2P8S$">
-                <node concept="3clFbS" id="20Jj4S2CJsm" role="2VODD2">
-                  <node concept="3clFbF" id="20Jj4S2CJsn" role="3cqZAp">
-                    <node concept="2OqwBi" id="20Jj4S2CJso" role="3clFbG">
-                      <node concept="2OqwBi" id="20Jj4S2CJsp" role="2Oq$k0">
-                        <node concept="2OqwBi" id="20Jj4S2CJsq" role="2Oq$k0">
-                          <node concept="30H73N" id="20Jj4S2CJsr" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="20Jj4S2CJss" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
-                          </node>
-                        </node>
-                        <node concept="3goQfb" id="20Jj4S2CJst" role="2OqNvi">
-                          <node concept="1bVj0M" id="20Jj4S2CJsu" role="23t8la">
-                            <node concept="3clFbS" id="20Jj4S2CJsv" role="1bW5cS">
-                              <node concept="3clFbF" id="20Jj4S2CJsw" role="3cqZAp">
-                                <node concept="2OqwBi" id="20Jj4S2CJsx" role="3clFbG">
-                                  <node concept="37vLTw" id="20Jj4S2CJsy" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="20Jj4S2CJs$" resolve="it" />
-                                  </node>
-                                  <node concept="2qgKlT" id="20Jj4S2CJsz" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpcb:4sA1wzjmzSN" resolve="getActionItemInterfaces" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Rh6nW" id="20Jj4S2CJs$" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="20Jj4S2CJs_" role="1tU5fm" />
-                            </node>
-                          </node>
-                        </node>
+            <node concept="1WS0z7" id="6VgTvK0oxER" role="lGtFl">
+              <node concept="3JmXsc" id="6VgTvK0oxES" role="3Jn$fo">
+                <node concept="3clFbS" id="6VgTvK0oxET" role="2VODD2">
+                  <node concept="3clFbF" id="6VgTvK0oxEU" role="3cqZAp">
+                    <node concept="2OqwBi" id="6VgTvK0oxEV" role="3clFbG">
+                      <node concept="30H73N" id="6VgTvK0oxEW" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6VgTvK0q81f" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
-                      <node concept="1VAtEI" id="20Jj4S2CJsA" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="1sPUBX" id="6VgTvK0oxEY" role="lGtFl">
+              <ref role="v9R2y" to="tpc3:6VgTvK0odUq" resolve="switch_TransformationLocation_actionItemInterfaces" />
             </node>
           </node>
         </node>

@@ -14,38 +14,29 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
 public final class TransformationLocation_Sidebar__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Collection<SConcept>> getRequiredFeatures_id7L5lpRJHK_w = new SMethodBuilder<Collection<SConcept>>(new SJavaCompoundTypeImpl((Class<Collection<SConcept>>) ((Class) Object.class))).name("getRequiredFeatures").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7L5lpRJHK_w").registry(REGISTRY).build();
-  public static final SMethod<Iterable<SNode>> getActionItemInterfaces_id4sA1wzjmzSN = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getActionItemInterfaces").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4sA1wzjmzSN").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getRequiredFeatures_id7L5lpRJHK_w, getActionItemInterfaces_id4sA1wzjmzSN);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getRequiredFeatures_id7L5lpRJHK_w);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static Collection<SConcept> getRequiredFeatures_id7L5lpRJHK_w(@NotNull SNode __thisNode__) {
     return CollectionSequence.fromCollectionAndArray(new HashSet<SConcept>(), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1ac7L, "jetbrains.mps.editor.contextActions.structure.TransformationFeature_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da5L, "jetbrains.mps.editor.contextActions.structure.TransformationFeature_Tooltip"));
-  }
-  /*package*/ static Iterable<SNode> getActionItemInterfaces_id4sA1wzjmzSN(@NotNull SNode __thisNode__) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_2eoz6j_a0a0a1());
   }
 
   /*package*/ TransformationLocation_Sidebar__BehaviorDescriptor() {
@@ -66,8 +57,6 @@ public final class TransformationLocation_Sidebar__BehaviorDescriptor extends Ba
     switch (methodIndex) {
       case 0:
         return (T) ((Collection<SConcept>) getRequiredFeatures_id7L5lpRJHK_w(node));
-      case 1:
-        return (T) ((Iterable<SNode>) getActionItemInterfaces_id4sA1wzjmzSN(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -95,12 +84,5 @@ public final class TransformationLocation_Sidebar__BehaviorDescriptor extends Ba
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static SNode _quotation_createNode_2eoz6j_a0a0a1() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.contextActionsTool.runtime)"), facade.createNodeId("6917971026857095300")));
-    return quotedNode_1;
   }
 }

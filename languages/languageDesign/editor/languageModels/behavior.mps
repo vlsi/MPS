@@ -206,7 +206,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -18135,24 +18135,6 @@
       <node concept="3vKaQO" id="7L5lpRJHSBJ" role="3clF45">
         <node concept="3bZ5Sz" id="7L5lpRJHSBW" role="3O5elw">
           <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="4sA1wzjmzSN" role="13h7CS">
-      <property role="TrG5h" value="getActionItemInterfaces" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="4sA1wzjmzSO" role="1B3o_S" />
-      <node concept="A3Dl8" id="4sA1wzjmzZZ" role="3clF45">
-        <node concept="3Tqbb2" id="4sA1wzjm$0c" role="A3Ik2">
-          <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4sA1wzjmzSQ" role="3clF47">
-        <node concept="3clFbF" id="4sA1wzjm$1g" role="3cqZAp">
-          <node concept="2YIFZM" id="4sA1wzjm$7V" role="3clFbG">
-            <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-          </node>
         </node>
       </node>
     </node>

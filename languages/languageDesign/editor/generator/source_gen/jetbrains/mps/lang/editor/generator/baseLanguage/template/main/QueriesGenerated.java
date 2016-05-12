@@ -60,7 +60,6 @@ import jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescripto
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -2235,6 +2234,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2468431357014017122(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, 0x3abfebf456f8ad26L, "part"));
   }
+  public static SNode sourceNodeQuery_7985135009829302035(final SourceSubstituteMacroNodeContext _context) {
+    return null;
+  }
   public static Object templateArgumentQuery_8382384506219714495(final TemplateQueryContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -2482,12 +2484,8 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_4233361609414462017(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"));
   }
-  public static Iterable<SNode> sourceNodesQuery_5126791860783272374(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(IExtensibleMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return (Iterable<SNode>) TransformationLocation__BehaviorDescriptor.getActionItemInterfaces_id4sA1wzjmzSN.invoke(it);
-      }
-    }).distinct();
+  public static Iterable<SNode> sourceNodesQuery_7985135009828791482(final SourceSubstituteMacroNodesContext _context) {
+    return (List<SNode>) IExtensibleMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_5126791860780648967(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d224048L, "parts"));
@@ -2568,7 +2566,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3495720260243953966(final TemplateQueryContext _context) {
     return Sequence.fromIterable(TransformationMenuUtil.getDefaultMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a096(ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a196(ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2579,7 +2577,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_5624877018229882334(final TemplateQueryContext _context) {
     return Sequence.fromIterable(TransformationMenuUtil.getNamedMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a196(ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a296(ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2831,10 +2829,10 @@ public class QueriesGenerated {
   private static boolean eq_x583g4_a0a0a0a0a0b0kk(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a096(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a196(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a196(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a296(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

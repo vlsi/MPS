@@ -14,10 +14,10 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collections;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -28,17 +28,13 @@ public final class TransformationLocation__BehaviorDescriptor extends BaseBHDesc
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Collection<SConcept>> getRequiredFeatures_id7L5lpRJHK_w = new SMethodBuilder<Collection<SConcept>>(new SJavaCompoundTypeImpl((Class<Collection<SConcept>>) ((Class) Object.class))).name("getRequiredFeatures").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7L5lpRJHK_w").registry(REGISTRY).build();
-  public static final SMethod<Iterable<SNode>> getActionItemInterfaces_id4sA1wzjmzSN = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getActionItemInterfaces").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4sA1wzjmzSN").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getRequiredFeatures_id7L5lpRJHK_w, getActionItemInterfaces_id4sA1wzjmzSN);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getRequiredFeatures_id7L5lpRJHK_w);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static Collection<SConcept> getRequiredFeatures_id7L5lpRJHK_w(@NotNull SNode __thisNode__) {
-    return Collections.emptyList();
-  }
-  /*package*/ static Iterable<SNode> getActionItemInterfaces_id4sA1wzjmzSN(@NotNull SNode __thisNode__) {
     return Collections.emptyList();
   }
 
@@ -60,8 +56,6 @@ public final class TransformationLocation__BehaviorDescriptor extends BaseBHDesc
     switch (methodIndex) {
       case 0:
         return (T) ((Collection<SConcept>) getRequiredFeatures_id7L5lpRJHK_w(node));
-      case 1:
-        return (T) ((Iterable<SNode>) getActionItemInterfaces_id4sA1wzjmzSN(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

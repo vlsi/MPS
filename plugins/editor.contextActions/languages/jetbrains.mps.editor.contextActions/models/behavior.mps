@@ -70,9 +70,7 @@
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
         <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
-        <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -84,14 +82,10 @@
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
-        <child id="1151689745422" name="elementType" index="A3Ik2" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
-      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
         <child id="5686963296372573084" name="elementType" index="3O5elw" />
@@ -155,34 +149,6 @@
       <node concept="3vKaQO" id="4sA1wzjm_zi" role="3clF45">
         <node concept="3bZ5Sz" id="4sA1wzjm_zj" role="3O5elw">
           <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="4sA1wzjmBB3" role="13h7CS">
-      <property role="TrG5h" value="getActionItemInterfaces" />
-      <property role="13i0it" value="false" />
-      <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpcb:4sA1wzjmzSN" resolve="getActionItemInterfaces" />
-      <node concept="3Tm1VV" id="4sA1wzjmBB4" role="1B3o_S" />
-      <node concept="3clFbS" id="4sA1wzjmBBa" role="3clF47">
-        <node concept="3cpWs6" id="4sA1wzjmBNp" role="3cqZAp">
-          <node concept="2ShNRf" id="4sA1wzjmBS2" role="3cqZAk">
-            <node concept="Tc6Ow" id="4sA1wzjmDeF" role="2ShVmc">
-              <node concept="3Tqbb2" id="4sA1wzjmDJg" role="HW$YZ">
-                <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-              </node>
-              <node concept="2c44tf" id="4sA1wzjmDYy" role="HW$Y0">
-                <node concept="3uibUv" id="601$vVQgLb5" role="2c44tc">
-                  <ref role="3uigEE" to="1ne1:601$vVQgJ24" resolve="SidebarActionItem" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="A3Dl8" id="4sA1wzjmBBb" role="3clF45">
-        <node concept="3Tqbb2" id="4sA1wzjmBBc" role="A3Ik2">
-          <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
         </node>
       </node>
     </node>
