@@ -91,6 +91,7 @@ class GenerationSession {
   private final RecordingFactory myLogRecorder;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
+  private SModelReference myFirstTransientModel;
 
   private IntermediateCacheHelper myIntermediateCache;
   // != null unless session is abandoned/disposed
@@ -207,6 +208,7 @@ class GenerationSession {
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
         SModel currInputModel = createTransientModel("0");
+        myFirstTransientModel = currInputModel.getReference();
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
         for (Iterator<SNode> it1 = myOriginalInputModel.getRootNodes().iterator(), it2 = currInputModel.getRootNodes().iterator(); it1.hasNext() && it2.hasNext();) {
@@ -653,6 +655,15 @@ class GenerationSession {
    */
   private void recycleWasteModel(@NotNull SModel model) {
     assert (model.getModule() instanceof TransientModelsModule);
+    if (myFirstTransientModel.equals(model.getReference())) {
+      // transient model @0 doesn't become waste until transformation ends
+      // because there might be nodes in a transient model down the road with references
+      // that hold immature target nodes that belong to this first model. If @0 is 'recycled'
+      // then later full copy code that tries to get target of such reference fails.
+      // That's why we don't record @0 for recycling. Once transformation is over, we don't need it
+      // any longer, and that's why we didn't publish the model (which is an alternative way to keep it).
+      return;
+    }
     myTransientModelsToRecycle.add(model);
   }
   // records the reference to model we'd like to see in transients, useful to forcefully
