@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9mh5ghtse1h0rb5v17xwoq7421v1h77">
+<dependencies version="2" modelHash="-bdsz4solk8s5kf06jk9kz00i20yfiu0">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
@@ -99,7 +99,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="1mg93gkm3xrzojwazpeeyf16a5aek7a" />
   <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="-5cja7t5f7kdxxnf90x9e5kopg1wflpw" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="7gjxl1tystre0c7pnodpd0kn6ktrygr" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-pkuzx7tv5otsdvnh3ghi7ik4atyfzz" />
   <dep model="r:00000000-0000-4000-0000-011c895904a8(jetbrains.mps.ide.devkit.newDevkitDialog)" hash="-ba3mathgz7t398iqvuk6ihdaiowy0t4" />
   <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" hash="-1gmw6ar213z2y20vjkqcr3z4aypw2jr" />
   <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="-1ymjbdks5seku26k3irokftlz03c0uk" />
@@ -111,7 +111,7 @@
   <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-ev2jmlo7vt0mgqbbif5ka8hhvetbfxd" />
   <dep model="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" hash="-cdpu6qb09wgua9n0l4flemcxeqo3zpy" />
   <dep model="r:80bd416f-3ae2-40ea-8a6b-f0c4572f9ff8(jetbrains.mps.ide.actions.nodes)" hash="1dgmjqs2th0q3ni7cf4omp4d7ai3mkm" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="8lkdq2a21zhymffgj7ve7b2mdkhnuvl" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-52ixwy4puf8fvcbw7ylgorfvuhomof2" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="281nppbx9q0k4ral04v9k3q4mas7ay2" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="1kfjmmu51hc0e4dzvfnkq4c4mmyhcmk" />
@@ -223,7 +223,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="Default_KeymapChanges.java" />
   </source>
-  <source id="8586967776370586377" name="MPS Languages DevKit" hash="-4kk41vdwtzz7n3fuioxo26k4ca50zoa" dependsOnNodes="true">
+  <source id="8586967776370586377" name="MPS Languages DevKit" hash="6ibej8zaj8p52vzerdcolzxdwdk33uy" dependsOnNodes="true">
     <dep root="1206195573853570544" />
     <dep root="1206195573853570620" />
     <dep root="1234869968490316273" />

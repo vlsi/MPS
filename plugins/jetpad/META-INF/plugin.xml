@@ -3,7 +3,7 @@
   <id>jetbrains.jetpad</id>
   <name>Jetpad</name>
   <description>Provides Jetpad libraries</description>
-  <version>3.3.5</version>
+  <version>3.3.6</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <depends>jetbrains.mps.core</depends>
   <idea-version since-build="143.1" until-build="144.1"/>

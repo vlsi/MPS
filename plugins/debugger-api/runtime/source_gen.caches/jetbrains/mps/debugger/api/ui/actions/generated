@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="80celkxzwuhocebykj0ao38olc26e1m">
+<dependencies version="2" modelHash="-a629g1smj84pexvn88x39tgpzj543cc">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
@@ -37,7 +37,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="81hj1mua86hzuytkqop7skprohxw986" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-424s16478i43l6jr2damk7gdqpyx68n" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="7gjxl1tystre0c7pnodpd0kn6ktrygr" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-pkuzx7tv5otsdvnh3ghi7ik4atyfzz" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-a15bcgi4uyctz6ms8nmzrdst07c0raj" />
   <dep model="r:16e1d5b7-80ca-4570-9d1a-1cf2ce305e08(jetbrains.mps.debugger.api.ui)" hash="3d9hu2icyj6lv979isz0czjftkagjk" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
@@ -430,7 +430,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="Debugger_KeymapChanges.java" />
   </source>
-  <source id="6762701973176605162" name="Debugger API for MPS" hash="-1nkp9whkor6yx3qgoksuyf0ozgb4hrz" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="6762701973176605162" name="Debugger API for MPS" hash="-4nsnc68srmysghyb086k6s36stidnr3" dependsOnCreated="true" dependsOnNodes="true">
     <dep root="2392684134639444998" />
     <dep root="4073774232572770202" />
     <dep root="418270182880363898" />
