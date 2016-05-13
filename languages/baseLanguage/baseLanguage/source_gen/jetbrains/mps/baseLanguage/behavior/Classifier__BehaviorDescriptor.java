@@ -60,6 +60,8 @@ import java.util.Map;
 import java.util.HashMap;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -254,7 +256,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     // ignore model defferences for java_stub models 
     String javastub = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    if (javastub.equals(SNodeOperations.getModel(__thisNode__).getName().getStereotype()) && javastub.equals(SNodeOperations.getModel(that).getName().getStereotype())) {
+    if (javastub.equals(check_qw8l7c_a0a0d0s(check_qw8l7c_a0a0a3a81(SNodeOperations.getModel(__thisNode__)))) && javastub.equals(check_qw8l7c_a0a0d0s_0(check_qw8l7c_a0a0a3a81_0(SNodeOperations.getModel(that))))) {
       return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__).equals(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(that));
     }
     return __thisNode__ == that;
@@ -693,6 +695,30 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static final Map<SAbstractConcept, Integer> indices_hx1769_i0yc = buildConceptIndices();
   protected static Logger LOG = LogManager.getLogger(Classifier__BehaviorDescriptor.class);
+  private static String check_qw8l7c_a0a0d0s(SModelName checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getStereotype();
+    }
+    return null;
+  }
+  private static SModelName check_qw8l7c_a0a0a3a81(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
+  private static String check_qw8l7c_a0a0d0s_0(SModelName checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getStereotype();
+    }
+    return null;
+  }
+  private static SModelName check_qw8l7c_a0a0a3a81_0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
   private static SNode _quotation_createNode_qw8l7c_a0b0a0a0y(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
