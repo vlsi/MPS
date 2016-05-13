@@ -393,7 +393,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
-      copyNodeAttributes(templateContext, outputNodes);
+      copyNodeAttributes(templateContext, outputNodes, env);
       recordTransformInputTrace(inputNode, outputNodes);
 
       env.getTrace().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
@@ -759,22 +759,28 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes) throws GenerationException {
+  void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes, @NotNull TemplateExecutionEnvironmentImpl env) throws GenerationException {
     final SNode input = ctx.getInput();
     if (input == null) {
       // context in create root rule might have no input
       return;
     }
 
-    QueryExecutionContext queryExecutor = ctx.getEnvironment().getQueryExecutor();
     for (SNode attr : input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute)) {
       if (checkDropNodeAttribute(ctx.subContext(attr))) {
         continue;
       }
       for (SNode output : outputNodes) {
-        // use of CopyUtil mandates references to attributes won't resolve magically (i.e. by matched node id)
+        // We need FullCopyFacility here as we make a copy of attribute hierarchy and there could be references
+        // outside of attribute, e.g. N1 and N2, with attribute A on the latter that references N1. Mere CopyUtil
+        // won't update reference and its immature node would point to input model that might get disposed at the next step, leaving
+        // broken reference.
+        // NOTE. Use of FCF, however, implies we are going to activate reduction rules on attribute children, which might be quite unexpected.
+        //       Perhaps, shall refactor FCF to support two modes, with/without nested reductions.
+        // XXX Likely, current approach does't allow references to attributes to resolve magically (i.e. by matched node id)
         // Is it important, do we care about references to attributes at all?
-        output.addChild(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute, CopyUtil.copy(attr));
+        final SNode attrCopy = new FullCopyFacility(env, getForeignNodes()).copyInputNode(attr);
+        output.addChild(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute, attrCopy);
       }
     }
   }

@@ -300,7 +300,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             if (outputNodes != null) {
               SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
-              generator.copyNodeAttributes(context, outputNodes);
+              generator.copyNodeAttributes(context, outputNodes, this);
               return outputNodes;
             }
           } catch (DismissTopMappingRuleException ex) {
