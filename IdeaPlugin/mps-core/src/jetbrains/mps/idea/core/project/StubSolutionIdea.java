@@ -98,6 +98,9 @@ public abstract class StubSolutionIdea extends StubSolution {
       SModule imod = (SModule) jdkMod;
       Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(imod));
       for (MPSModuleOwner owner : owners) {
+        // FIXME unregister leads to warnings in ModuleUpdater.updateAllEdges()
+        // we register it back in the same write action but listener has the time to see the bad state:
+        // JDK module is missing and a lot depends on it
         repo.unregisterModule(imod, owner);
       }
     }
