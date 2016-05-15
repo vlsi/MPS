@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.border.Border;
+import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.event.FocusListener;
@@ -82,7 +83,11 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
       LOG.errorWithTrace("my component is null");
       return myHeight;
     }
-    FontMetrics metrics = myComponent.getFontMetrics(myComponent.getFont());
+    Font font = myComponent.getFont();
+    if (font == null) {
+      return myHeight;
+    }
+    FontMetrics metrics = myComponent.getFontMetrics(font);
     int ascent = metrics.getAscent();
     Border border = myComponent.getBorder();
     if (border != null) {
