@@ -7,11 +7,12 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -31,14 +32,8 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g0());
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
+      result.addAll(Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a0(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b0(), new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c0(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d0(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e0(), new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f0(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g0()));
     }
     return result;
   }

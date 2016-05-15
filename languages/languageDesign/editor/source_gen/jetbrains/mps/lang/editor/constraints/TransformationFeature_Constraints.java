@@ -12,6 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.Collection;
+import jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TransformationFeature_Constraints extends BaseConstraintsDescriptor {
@@ -39,7 +43,11 @@ public class TransformationFeature_Constraints extends BaseConstraintsDescriptor
         public boolean accept(SNode it) {
           return it == node || !(SNodeOperations.asSConcept(childConcept).equals(SNodeOperations.getConcept(it)));
         }
-      });
+      }) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"), true, false), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).translate(new ITranslator2<SNode, SConcept>() {
+        public Iterable<SConcept> translate(SNode it) {
+          return (Collection<SConcept>) TransformationLocation__BehaviorDescriptor.getAvailableFeatures_id1A4kJjlZ$rL.invoke(it);
+        }
+      }).contains(SNodeOperations.asSConcept(((SNode) childConcept)));
     }
     return true;
   }

@@ -48,15 +48,15 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<KeyT, Collection<ContributionT>>();
 
   @NotNull
-  private final EditorAspectDescriptor myDescriptor;
+  private final EditorAspectDescriptorBase myDescriptor;
 
-  protected EditorAspectContributionsCache(@NotNull EditorAspectDescriptor descriptor) {
+  protected EditorAspectContributionsCache(@NotNull EditorAspectDescriptorBase descriptor) {
     myDescriptor = descriptor;
   }
 
   public Collection<ContributionT> get(KeyT key) {
     if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(myDescriptor)) {
-      myCache.clear();
+      myDescriptor.clearAllCaches();
     } else {
       if (myCache.containsKey(key)) {
         return myCache.get(key);
@@ -66,6 +66,10 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
     myCache.put(key, allValues);
     ValidEditorDescriptorsCache.getInstance().cacheDescriptor(myDescriptor);
     return allValues;
+  }
+
+  public void clear() {
+    myCache.clear();
   }
 
   private Collection<ContributionT> computeValues(KeyT key) {

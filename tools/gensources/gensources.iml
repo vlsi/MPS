@@ -981,7 +981,6 @@
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/generator/source_gen" isTestSource="false" />

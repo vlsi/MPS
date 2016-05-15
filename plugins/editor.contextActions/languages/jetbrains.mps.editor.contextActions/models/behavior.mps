@@ -16,6 +16,7 @@
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
@@ -49,6 +50,9 @@
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -148,6 +152,25 @@
       </node>
       <node concept="3vKaQO" id="4sA1wzjm_zi" role="3clF45">
         <node concept="3bZ5Sz" id="4sA1wzjm_zj" role="3O5elw">
+          <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="1A4kJjm2jlq" role="13h7CS">
+      <property role="TrG5h" value="getAvailableFeatures" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpcb:1A4kJjlZ$rL" resolve="getAvailableFeatures" />
+      <node concept="3Tm1VV" id="1A4kJjm2jlr" role="1B3o_S" />
+      <node concept="3clFbS" id="1A4kJjm2jlx" role="3clF47">
+        <node concept="3cpWs6" id="1A4kJjm2jr1" role="3cqZAp">
+          <node concept="BsUDl" id="1A4kJjm2jvA" role="3cqZAk">
+            <ref role="37wK5l" to="tpcb:7L5lpRJHK_w" resolve="getRequiredFeatures" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vKaQO" id="1A4kJjm2jly" role="3clF45">
+        <node concept="3bZ5Sz" id="1A4kJjm2jlz" role="3O5elw">
           <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
         </node>
       </node>

@@ -54,7 +54,6 @@ public class DefaultSReferenceSubstituteInfo extends AbstractNodeSubstituteInfo 
     super(editorContext);
     mySourceNode = sourceNode;
     myLink = link;
-
   }
 
   @Override

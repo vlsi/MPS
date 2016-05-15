@@ -26,9 +26,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
   private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
   private final CompletionActionItem myActionItem;
+  private final SNode mySourceNode;
 
-  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem) {
+  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
     myActionItem = actionItem;
+    mySourceNode = sourceNode;
   }
 
   @Override
@@ -43,7 +45,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode getSourceNode() {
-    return null;
+    return mySourceNode;
   }
 
   @Override

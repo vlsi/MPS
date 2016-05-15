@@ -7,7 +7,9 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
@@ -21,8 +23,8 @@ public class Recursive extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
-      result.add(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a0());
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
+      result.addAll(Arrays.<MenuPart>asList(new Recursive.TransformationMenuPart_IncludeMenu_q7lcll_a0()));
     }
     return result;
   }

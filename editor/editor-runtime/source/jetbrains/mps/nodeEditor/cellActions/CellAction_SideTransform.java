@@ -27,9 +27,8 @@ import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.action.ModelActions;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
+
 
 public class CellAction_SideTransform extends AbstractCellAction {
   private CellSide mySide;
@@ -44,18 +43,24 @@ public class CellAction_SideTransform extends AbstractCellAction {
   }
 
   private boolean canCreateRightTransformHint(EditorCell selectedCell) {
-    EditorContext editorContext = selectedCell.getContext();
     SNode node = selectedCell.getSNode();
     if (node == null) {
       return false;
     }
-    if (getSideTransformHintAnchorCell(selectedCell) == null) {
+    EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell);
+    if (anchorCell == null) {
       return false;
     }
-    if (selectedCell instanceof EditorCell_Error) return false;
+    if (selectedCell instanceof EditorCell_Error) {
+      return false;
+    }
 
     String anchorTag = selectedCell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
-    return ModelActions.canCreateSideTransformHintSubstituteActions(node, mySide, anchorTag, editorContext.getOperationContext());
+    return !getSubstituteInfo(anchorCell, anchorTag).getMatchingActions("", false).isEmpty();
+  }
+
+  private OldNewCompositeSideTransformSubstituteInfo getSubstituteInfo(EditorCell anchorCell, String anchorTag) {
+    return OldNewCompositeSideTransformSubstituteInfo.createSubstituteInfo(mySide, anchorCell, anchorTag);
   }
 
   private EditorCell getSideTransformHintAnchorCell(EditorCell selectedCell) {
@@ -66,12 +71,9 @@ public class CellAction_SideTransform extends AbstractCellAction {
       anchorCell = selectedCell;
     } else {
       EditorCell nodeMainCell = APICellAdapter.getContainingBigCell(selectedCell);
-      EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell, new Condition<EditorCell>() {
-        @Override
-        public boolean met(EditorCell cell) {
-          return SideTransformTagUtils.getDefaultSideTransformTag().equals(cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG)) && cell.getSNode() == node;
-        }
-      }, true, true);
+      EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell,
+          cell -> SideTransformTagUtils.getDefaultSideTransformTag().equals(cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG)) && cell.getSNode() == node,
+          true, true);
 
       if (defAnchorCell == null) {
         defAnchorCell = nodeMainCell;
@@ -100,6 +102,10 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
     SideTransformInfoUtil.removeTransformInfo(node);
     EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell);
+    if (anchorCell == null) {
+      return;
+    }
+
     assert anchorCell.getSNode() == node : "Incorrect anchor cell was located. Original node: " + node + ", anchorCellNode: " + anchorCell.getSNode();
     String anchorCellId = anchorCell.getCellId();
 
@@ -117,6 +123,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
         sideTransformHintCell != null :
         "STHint cell was not created. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId +
             ", tag: " + anchorTag;
+    sideTransformHintCell.setSubstituteInfo(getSubstituteInfo(anchorCell, anchorTag));
     context.getEditorComponent().changeSelection(sideTransformHintCell);
   }
 }

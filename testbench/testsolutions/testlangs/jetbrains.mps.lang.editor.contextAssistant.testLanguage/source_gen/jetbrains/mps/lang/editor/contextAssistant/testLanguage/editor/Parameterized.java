@@ -7,11 +7,12 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -22,8 +23,8 @@ public class Parameterized extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ACTIONS_TOOL.equals(_context.getMenuLocation())) {
-      result.add(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0());
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
+      result.addAll(Arrays.<MenuPart>asList(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0()));
     }
     return result;
   }

@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,1250,0" name="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
+      <unit at="18,0,1278,0" name="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1083928804390">
@@ -2227,6 +2227,116 @@
         <var name="value" id="2162403111523060375" />
       </scope>
       <unit id="2162403111523060375" at="9,0,44,0" name="jetbrains.mps.lang.editor.structure.PredefinedCellID_PropertySupport" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/3473224453637651887">
+    <file name="TransformationLocation_SideTransform_PlaceInCell.java">
+      <node id="3473224453637651887" at="13,0,14,0" concept="3" trace="myName" />
+      <node id="3473224453637651887" at="14,27,15,18" concept="7" />
+      <node id="3473224453637651887" at="17,0,18,0" concept="3" trace="myValue" />
+      <node id="3473224453637651887" at="18,87,19,18" concept="2" />
+      <node id="3473224453637651887" at="19,18,20,20" concept="2" />
+      <node id="3473224453637651887" at="22,28,23,19" concept="7" />
+      <node id="3473224453637651887" at="25,36,26,19" concept="7" />
+      <node id="3473224453637651887" at="28,87,29,156" concept="6" />
+      <node id="3473224453637651887" at="29,156,30,99" concept="2" />
+      <node id="3473224453637651887" at="30,99,31,98" concept="2" />
+      <node id="3473224453637651887" at="31,98,32,16" concept="7" />
+      <node id="3473224453637651887" at="34,79,35,16" concept="7" />
+      <node id="3473224453637651887" at="38,24,39,75" concept="7" />
+      <node id="3473224453637651887" at="41,98,42,68" concept="7" />
+      <node id="3473224453637651887" at="44,97,45,67" concept="7" />
+      <node id="3473224453637651887" at="46,5,47,73" concept="7" />
+      <node id="3473224453637651887" at="14,0,17,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="3473224453637651887" at="22,0,25,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="3473224453637651887" at="25,0,28,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3473224453637651887" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/editor/structure/TransformationLocation_SideTransform_PlaceInCell;" />
+      <node id="3473224453637651887" at="37,91,40,5" concept="4" />
+      <node id="3473224453637651887" at="40,5,43,5" concept="4" />
+      <node id="3473224453637651887" at="43,5,46,5" concept="4" />
+      <node id="3473224453637651887" at="18,0,22,0" concept="1" trace="TransformationLocation_SideTransform_PlaceInCell#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3473224453637651887" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="3473224453637651887" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/TransformationLocation_SideTransform_PlaceInCell;" />
+      <scope id="3473224453637651887" at="14,27,15,18" />
+      <scope id="3473224453637651887" at="22,28,23,19" />
+      <scope id="3473224453637651887" at="25,36,26,19" />
+      <scope id="3473224453637651887" at="34,79,35,16" />
+      <scope id="3473224453637651887" at="38,24,39,75" />
+      <scope id="3473224453637651887" at="41,98,42,68" />
+      <scope id="3473224453637651887" at="44,97,45,67" />
+      <scope id="3473224453637651887" at="18,87,20,20" />
+      <scope id="3473224453637651887" at="14,0,17,0" />
+      <scope id="3473224453637651887" at="22,0,25,0" />
+      <scope id="3473224453637651887" at="25,0,28,0" />
+      <scope id="3473224453637651887" at="34,0,37,0" />
+      <scope id="3473224453637651887" at="18,0,22,0">
+        <var name="name" id="3473224453637651887" />
+        <var name="value" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="28,87,32,16">
+        <var name="list" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="28,0,34,0" />
+      <scope id="3473224453637651887" at="37,91,47,73" />
+      <scope id="3473224453637651887" at="37,0,49,0">
+        <var name="value" id="3473224453637651887" />
+      </scope>
+      <unit id="3473224453637651887" at="9,0,50,0" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell" />
+    </file>
+    <file name="TransformationLocation_SideTransform_PlaceInCell_PropertySupport.java">
+      <node id="3473224453637651887" at="11,24,12,18" concept="7" />
+      <node id="3473224453637651887" at="13,5,14,173" concept="6" />
+      <node id="3473224453637651887" at="15,33,16,83" concept="6" />
+      <node id="3473224453637651887" at="17,45,18,20" concept="7" />
+      <node id="3473224453637651887" at="20,5,21,17" concept="7" />
+      <node id="3473224453637651887" at="24,24,25,18" concept="7" />
+      <node id="3473224453637651887" at="26,5,27,173" concept="6" />
+      <node id="3473224453637651887" at="28,33,29,83" concept="6" />
+      <node id="3473224453637651887" at="30,45,31,43" concept="7" />
+      <node id="3473224453637651887" at="33,5,34,16" concept="7" />
+      <node id="3473224453637651887" at="36,49,37,131" concept="6" />
+      <node id="3473224453637651887" at="38,27,39,32" concept="7" />
+      <node id="3473224453637651887" at="40,5,41,14" concept="7" />
+      <node id="3473224453637651887" at="10,44,13,5" concept="4" />
+      <node id="3473224453637651887" at="16,83,19,7" concept="4" />
+      <node id="3473224453637651887" at="23,47,26,5" concept="4" />
+      <node id="3473224453637651887" at="29,83,32,7" concept="4" />
+      <node id="3473224453637651887" at="37,131,40,5" concept="4" />
+      <node id="3473224453637651887" at="14,173,20,5" concept="9" />
+      <node id="3473224453637651887" at="27,173,33,5" concept="9" />
+      <node id="3473224453637651887" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3473224453637651887" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="3473224453637651887" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="3473224453637651887" at="11,24,12,18" />
+      <scope id="3473224453637651887" at="17,45,18,20" />
+      <scope id="3473224453637651887" at="24,24,25,18" />
+      <scope id="3473224453637651887" at="30,45,31,43" />
+      <scope id="3473224453637651887" at="38,27,39,32" />
+      <scope id="3473224453637651887" at="15,33,19,7">
+        <var name="constant" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="28,33,32,7">
+        <var name="constant" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="36,49,41,14">
+        <var name="constant" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="36,0,43,0">
+        <var name="value" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="10,44,21,17">
+        <var name="constants" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="23,47,34,16">
+        <var name="constants" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="10,0,23,0">
+        <var name="value" id="3473224453637651887" />
+      </scope>
+      <scope id="3473224453637651887" at="23,0,36,0">
+        <var name="value" id="3473224453637651887" />
+      </scope>
+      <unit id="3473224453637651887" at="9,0,44,0" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/6820251943131810951">

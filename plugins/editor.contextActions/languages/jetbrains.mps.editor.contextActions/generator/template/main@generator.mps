@@ -25,6 +25,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -119,6 +122,13 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
     </language>
   </registry>
   <node concept="bUwia" id="601$vVQ3qGr">
@@ -287,13 +297,18 @@
   <node concept="jVnub" id="3EZUZhmTZF3">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="switch_TransformationLocation_Sidebar_asString" />
-    <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asString" />
+    <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asStringArray" />
     <node concept="3aamgX" id="Z45Y15hYdX" role="3aUrZf">
       <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
       <node concept="gft3U" id="Z45Y15hYek" role="1lVwrX">
-        <node concept="10M0yZ" id="Z45Y15hYel" role="gfFT$">
-          <ref role="1PxDUh" to="1ne1:69nPU$vWSqd" resolve="MenuLocations" />
-          <ref role="3cqZAo" to="1ne1:69nPU$vX00o" resolve="CONTEXT_ACTIONS_TOOL" />
+        <node concept="2ShNRf" id="30NnNOoi6yT" role="gfFT$">
+          <node concept="Tc6Ow" id="30NnNOoi6Rx" role="2ShVmc">
+            <node concept="17QB3L" id="30NnNOoi71O" role="HW$YZ" />
+            <node concept="10M0yZ" id="Z45Y15hYel" role="HW$Y0">
+              <ref role="1PxDUh" to="1ne1:69nPU$vWSqd" resolve="MenuLocations" />
+              <ref role="3cqZAo" to="1ne1:69nPU$vX00o" resolve="CONTEXT_ACTIONS_TOOL" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -27,11 +27,6 @@ import java.util.Collection;
  * Date: 4/8/13
  */
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
-  @Deprecated
-  Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
-  @Deprecated
-  Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
-
   /**
    * Returns the editors defined for a concept together with any additions contributed by extending languages.
    * @param concept the concept
