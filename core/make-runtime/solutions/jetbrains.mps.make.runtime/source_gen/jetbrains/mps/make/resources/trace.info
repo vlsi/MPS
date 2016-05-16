@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/1521318412423194894">
     <file name="IPropertiesPersistence.java">
       <node id="1521318412423194895" at="9,0,10,0" concept="0" trace="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
@@ -54,5 +54,5 @@
       <unit id="6168415856807657256" at="6,0,9,0" name="jetbrains.mps.make.resources.IResource" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
       <unit at="15,0,52,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
@@ -24,5 +24,5 @@
       <unit id="6434864236541625324" at="12,0,21,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.SuperInterfaceMethodCall_TextGen" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

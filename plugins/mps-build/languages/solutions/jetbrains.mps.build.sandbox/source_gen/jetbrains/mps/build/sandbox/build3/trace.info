@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/5253498789149585672">
     <file name="buildMpsA.xml">
       <unit id="5253498789149585672" at="1,0,115,10" name="jetbrains.mps.build.sandbox.build3.buildMpsA" />
@@ -20,5 +20,5 @@
       <unit id="8775597636506171310" at="1,0,51,10" name="jetbrains.mps.build.sandbox.build3.buildMpsD" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)/1252378774017439491">
     <file name="WrappedType_Test.java">
       <node id="1252378774017439491" at="17,72,18,103" concept="0" />
@@ -357,5 +357,5 @@
       <unit id="6572489169071277734" at="14,0,104,0" name="testSubstituteType.model.OverridingInference_Test" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 
