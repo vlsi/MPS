@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.smodel.query" uuid="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" generatorOutputPath="${module}/source_gen" languageVersion="1" moduleVersion="0">
+<language namespace="jetbrains.mps.lang.smodel.query" uuid="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" generatorOutputPath="${module}/source_gen" languageVersion="2" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />

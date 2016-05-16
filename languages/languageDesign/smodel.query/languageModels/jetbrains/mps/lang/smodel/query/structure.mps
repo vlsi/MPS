@@ -2,8 +2,7 @@
 <model ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -178,10 +177,16 @@
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
     <property role="3GE5qa" value="query.parameter" />
-    <property role="TrG5h" value="GlobalScope" />
+    <property role="TrG5h" value="GlobalScope_old" />
     <property role="34LRSv" value="global" />
     <property role="EcuMT" value="4307205004134636866" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <node concept="PrWs8" id="7jPdBzQGXxl" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="7jPdBzQFQ21" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHPb">
     <property role="3GE5qa" value="query.parameter" />

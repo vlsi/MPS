@@ -267,12 +267,6 @@
         <ref role="v9R2y" node="3J6h25QGPcs" resolve="reduce_QueryParameterList" />
       </node>
     </node>
-    <node concept="3aamgX" id="3J6h25QO0bv" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:3J6h25QeHP2" resolve="GlobalScope" />
-      <node concept="j$656" id="3J6h25QO0bw" role="1lVwrX">
-        <ref role="v9R2y" node="3J6h25QO0bt" resolve="reduce_GlobalScopeLiteral" />
-      </node>
-    </node>
     <node concept="3aamgX" id="31Tct3TnZp6" role="3acgRq">
       <ref role="30HIoZ" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
       <node concept="j$656" id="31Tct3TnZp7" role="1lVwrX">
@@ -816,36 +810,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3J6h25QGPGx" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="13MO4I" id="3J6h25QO0bt">
-    <property role="TrG5h" value="reduce_GlobalScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
-    <ref role="3gUMe" to="3xdn:3J6h25QeHP2" resolve="GlobalScope" />
-    <node concept="312cEu" id="3J6h25QO0gm" role="13RCb5">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="Main" />
-      <node concept="2YIFZL" id="3J6h25QO0gn" role="jymVt">
-        <property role="TrG5h" value="execute" />
-        <node concept="3cqZAl" id="3J6h25QO0go" role="3clF45" />
-        <node concept="37vLTG" id="3J6h25QO0gp" role="3clF46">
-          <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="3mC5XuEEWGy" role="1tU5fm">
-            <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="3J6h25QO0gt" role="1B3o_S" />
-        <node concept="3clFbS" id="3J6h25QO0gu" role="3clF47">
-          <node concept="3clFbF" id="3J6h25QOG$P" role="3cqZAp">
-            <node concept="2YIFZM" id="3J6h25QOIM4" role="3clFbG">
-              <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-              <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
-              <node concept="raruj" id="3J6h25QOMpM" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3J6h25QO0hE" role="1B3o_S" />
     </node>
   </node>
   <node concept="13MO4I" id="31Tct3TvJ$l">
