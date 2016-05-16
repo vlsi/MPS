@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1392391688312941958">
     <file name="mpsStandalone.xml">
       <unit id="1392391688312941958" at="1,0,105,10" name="jetbrains.mps.ide.build.mpsStandalone" />
@@ -57,7 +57,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/6164334420696839314">
     <file name="mpsDebuggerPlugin.xml">
-      <unit id="6164334420696839314" at="1,0,1265,10" name="jetbrains.mps.ide.build.mpsDebuggerPlugin" />
+      <unit id="6164334420696839314" at="1,0,1270,10" name="jetbrains.mps.ide.build.mpsDebuggerPlugin" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/618786790401812237">
@@ -125,5 +125,5 @@
       <unit id="8658995123701267517" at="1,0,38,10" name="jetbrains.mps.ide.build.mpsPluginDist" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 
