@@ -15,25 +15,18 @@
  */
 package jetbrains.mps.ide.findusages.model.scopes;
 
-import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jdom.Element;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class GlobalScope extends FindUsagesScope {
   public GlobalScope() {
+    VisibleModuleRegistry registry = VisibleModuleRegistry.getInstance();
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      if (!(module instanceof TransientSModule)) {
+      if (registry == null || registry.isVisible(module)) {
         addModule(module);
       }
     }
-  }
-
-  public GlobalScope(Element element, Project project) throws CantLoadSomethingException {
-    // nothing saved
-    this();
   }
 
   public String toString() {
