@@ -1136,6 +1136,9 @@
       <node concept="nCB5N" id="4cunt6Y$X7m" role="nCB5Z">
         <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />
       </node>
+      <node concept="nCB5N" id="GPBWiitcIN" role="nCB5Z">
+        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
+      </node>
     </node>
     <node concept="398b33" id="75RBgxKm6HY" role="3989C9">
       <property role="TrG5h" value="mps-generator" />
