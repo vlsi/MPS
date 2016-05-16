@@ -19164,6 +19164,12 @@
           <ref role="3bR37D" node="6g2V7OQGaVw" resolve="jetbrains.mps.console.scripts" />
         </node>
       </node>
+      <node concept="1SiIV0" id="5skHvw4c7wb" role="3bR37C">
+        <node concept="3bR9La" id="5skHvw4c7wc" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
+        </node>
+      </node>
       <node concept="1E0d5M" id="5mdbChITL5r" role="1E1XAP">
         <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
       </node>
