@@ -26,5 +26,8 @@ public abstract class ModelOrNodeChooserDialog extends RefactoringDialog {
     protected void showError(String title, JComponent component) {
       JOptionPane.showMessageDialog(component, errorMessage, title, JOptionPane.INFORMATION_MESSAGE);
     }
+    protected void showError(String title, String message, JComponent component) {
+      JOptionPane.showMessageDialog(component, message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
   }
 }

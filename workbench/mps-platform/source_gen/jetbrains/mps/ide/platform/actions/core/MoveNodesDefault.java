@@ -17,11 +17,14 @@ import java.util.HashMap;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -31,8 +34,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Iterator;
 
 public class MoveNodesDefault implements MoveNodesRefactoring {
@@ -103,38 +104,57 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
 
     final Wrappers._T<SModel> currentModel = new Wrappers._T<SModel>();
     final Wrappers._T<SContainmentLink> role = new Wrappers._T<SContainmentLink>();
+    final Wrappers._T<List<SAbstractConcept>> movingNodeConcepts = new Wrappers._T<List<SAbstractConcept>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         currentModel.value = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
         role.value = ListSequence.fromList(nodesToMove).first().getContainmentLink();
+        movingNodeConcepts.value = ListSequence.fromList(nodesToMove).select(new ISelector<SNode, SAbstractConcept>() {
+          public SAbstractConcept select(SNode it) {
+            return ((SAbstractConcept) SNodeOperations.getConcept(it));
+          }
+        }).toListSequence();
       }
     });
     final SContainmentLink finalRole = role.value;
-    final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
-      @Override
+    final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter() {
+      public String getErrorMessage(NodeLocation selectedObject) {
+        return "Choose model or node that can contain moving nodes";
+      }
       public boolean check(final NodeLocation selectedObject, SModel model) {
         if (selectedObject == null) {
           return false;
         }
         if (selectedObject instanceof NodeLocation.NodeLocationChild) {
-          if (finalRole == null) {
-            return false;
-          }
           final Wrappers._T<Collection<SContainmentLink>> containmentLinks = new Wrappers._T<Collection<SContainmentLink>>();
           project.getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               containmentLinks.value = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
             }
           });
-          return CollectionSequence.fromCollection(containmentLinks.value).contains(finalRole);
+          if (finalRole != null && CollectionSequence.fromCollection(containmentLinks.value).contains(finalRole)) {
+            ((NodeLocation.NodeLocationChild) selectedObject).setRole(finalRole);
+            return true;
+          }
+          Iterable<SContainmentLink> applicableLinks = CollectionSequence.fromCollection(containmentLinks.value).where(new IWhereFilter<SContainmentLink>() {
+            public boolean accept(final SContainmentLink link) {
+              return ListSequence.fromList(movingNodeConcepts.value).all(new IWhereFilter<SAbstractConcept>() {
+                public boolean accept(SAbstractConcept cncpt) {
+                  return cncpt.isSubConceptOf(link.getTargetConcept());
+                }
+              });
+            }
+          });
+          if (Sequence.fromIterable(applicableLinks).count() == 1) {
+            ((NodeLocation.NodeLocationChild) selectedObject).setRole(Sequence.fromIterable(applicableLinks).first());
+            return true;
+          }
+          return false;
         } else {
           return true;
         }
       }
     });
-    if (newLocation instanceof NodeLocation.NodeLocationChild) {
-      ((NodeLocation.NodeLocationChild) newLocation).setRole(role.value);
-    }
     if (newLocation == null) {
       return;
     }
