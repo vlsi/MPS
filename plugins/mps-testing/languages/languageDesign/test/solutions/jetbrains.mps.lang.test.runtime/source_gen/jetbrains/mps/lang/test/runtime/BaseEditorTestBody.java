@@ -28,7 +28,7 @@ import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
@@ -197,7 +197,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         public void run() {
           try {
             UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-            MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(BaseEditorTestBody.this.myBefore);
+            MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(myProject.getRepository(), BaseEditorTestBody.this.myBefore);
             undoManager.clearUndoRedoQueueInTests(file);
           } catch (Throwable t) {
             ts[0] = t;
@@ -233,7 +233,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   private MPSFileNodeEditor openEditor() {
     assert ThreadUtils.isInEDT();
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore);
+    MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(myProject.getRepository(), myBefore);
     return new MPSFileNodeEditor((MPSProject) myProject, file);
   }
 

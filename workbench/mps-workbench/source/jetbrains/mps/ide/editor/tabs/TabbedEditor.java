@@ -41,13 +41,13 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -111,7 +111,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
 
-    myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
+    myVirtualFile = NodeVirtualFileSystem.getInstance().getFileFor(mpsProject.getRepository(), myBaseNode);
 
     myTabsPanel = new JPanel(new BorderLayout());
     // bloody BaseNodeEditor makes us know about layout used there

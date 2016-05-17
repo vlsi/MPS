@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 class RootNodeUsageGroupingRule extends FileGroupingRule {
@@ -36,7 +36,7 @@ class RootNodeUsageGroupingRule extends FileGroupingRule {
   @Override
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageInRoot) {
-      return new FileUsageGroup(project, MPSNodesVirtualFileSystem.getInstance().getFileFor(((SNodePointer) ((UsageInRoot) usage).getRoot())));
+      return new FileUsageGroup(project, NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(project), ((UsageInRoot) usage).getRoot()));
     }
     return null;
   }

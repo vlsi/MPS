@@ -25,15 +25,17 @@ import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelListenerBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
+// FIXME How come non-public class is loaded
 class OnReloadingUndoCleaner implements ApplicationComponent {
   private final ProjectManager myProjectManager;
 
@@ -41,11 +43,12 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
     private final SModelListener myModelListener = new SModelListenerBase() {
       @Override
       public void modelReplaced(SModel sm) {
-        if (!jetbrains.mps.util.SNodeOperations.isRegistered(sm)) {
+        final SRepository repo = sm.getRepository();
+        if (repo == null) {
           return;
         }
         for (SNode root : sm.getRootNodes()) {
-          final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
+          final MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(repo, root);
           assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
           for (final Project p : myProjectManager.getOpenProjects()) {
             ApplicationManager.getApplication().invokeLater(new Runnable() {

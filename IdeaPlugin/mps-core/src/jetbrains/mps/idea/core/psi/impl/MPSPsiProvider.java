@@ -55,7 +55,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;

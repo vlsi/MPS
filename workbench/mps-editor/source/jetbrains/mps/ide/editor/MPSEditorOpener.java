@@ -28,6 +28,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -35,8 +37,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -153,7 +153,7 @@ public class MPSEditorOpener {
     }
 
     checkBaseNodeIsValid(root, baseNode); // assertions for MPS-7792
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
+    MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(myProject.getRepository(), baseNode);
     checkVirtualFileBaseNode(baseNode, file); // assertion for MPS-9753
 
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject.getProject());

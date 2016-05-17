@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,14 +32,16 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,18 +60,21 @@ public class MpsSourcePosition extends SourcePosition {
   }
 
   public MPSNodeVirtualFile getVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNodePointer);
+    return NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(myProject), myNodePointer);
   }
 
   public MPSNodeVirtualFile getRootVirtualFile() {
-    SNodeReference rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+    final SRepository repo = ProjectHelper.getProjectRepository(myProject);
+    SNodeReference rootPointer = new ModelAccessHelper(repo).runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode root = myNodePointer.resolve(MPSModuleRepository.getInstance()).getContainingRoot();
-        return new jetbrains.mps.smodel.SNodePointer(root.getModel() == null ? null : root);
+        SNode resolved = myNodePointer.resolve(repo);
+        return resolved == null ? null : resolved.getContainingRoot().getReference();
       }
     });
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(rootPointer);
+    // FIXME [artem] I have no idea whether it's right to return VF of the node if it's not resolved, just decided that null
+    //       would be worse, provided refactored code always had rootPointer (though it assumed myNodePointer always resolves).
+    return rootPointer == null ? getVirtualFile() : NodeVirtualFileSystem.getInstance().getFileFor(repo, rootPointer);
   }
 
   @NotNull

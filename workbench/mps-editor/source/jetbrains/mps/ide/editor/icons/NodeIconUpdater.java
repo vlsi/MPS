@@ -19,11 +19,10 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.event.RepositoryChangeTracker;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
@@ -49,7 +48,7 @@ import java.util.HashSet;
 public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBatchChangeListener {
   private final FileEditorManagerEx myFileEditorManagerEx;
   private final MPSProject myMPSProject;
-  private final MPSNodesVirtualFileSystem myNodeVFS;
+  private final NodeVirtualFileSystem myNodeVFS;
   private final RepositoryChangeTracker myChangeTracker = new RepositoryChangeTracker();
 
   @Override
@@ -66,7 +65,7 @@ public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBa
     new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).detach();
   }
 
-  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, MPSNodesVirtualFileSystem nodeVFS) {
+  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, NodeVirtualFileSystem nodeVFS) {
     super(project);
     myFileEditorManagerEx = fileEditorManager;
     myMPSProject = mpsProject;
@@ -104,8 +103,8 @@ public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBa
       affectedRoots.add(root.getReference());
     }
     for (SNodeReference ptr : affectedRoots) {
-      if (myNodeVFS.hasVirtualFileFor(ptr)) {
-        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(ptr));
+      if (myNodeVFS.hasVirtualFileFor(myMPSProject.getRepository(), ptr)) {
+        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(myMPSProject.getRepository(), ptr));
       }
     }
   }

@@ -20,6 +20,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -37,14 +38,16 @@ import java.util.List;
 public class EmptyTabsComponent implements TabsComponent {
   private SNodeReference myNode;
   private final NodeChangeCallback myCallback;
+  private final Project myProject;
 
   /**
    * @param node Node to show.
    * @param callback Callback to call TabbedEditor.showNodeInternal()
    */
-  public EmptyTabsComponent(SNodeReference node, NodeChangeCallback callback) {
+  public EmptyTabsComponent(SNodeReference node, NodeChangeCallback callback, Project mpsProject) {
     myNode = node;
     myCallback = callback;
+    myProject = mpsProject;
   }
 
   @Override
@@ -65,7 +68,7 @@ public class EmptyTabsComponent implements TabsComponent {
 
   @Override
   public List<Document> getAllEditedDocuments() {
-    return Collections.singletonList(MPSUndoUtil.getDoc(myNode));
+    return Collections.singletonList(MPSUndoUtil.getDoc(myProject.getRepository(), myNode));
   }
 
   @Override

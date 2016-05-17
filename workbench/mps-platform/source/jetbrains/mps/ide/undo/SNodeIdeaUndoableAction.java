@@ -18,11 +18,11 @@ package jetbrains.mps.ide.undo;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -52,7 +52,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         if (virtualFileNode.getModel() == null) {
           continue;
         }
-        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(virtualFileNode);
+        MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(project.getRepository(), virtualFileNode);
         assert file.hasValidMPSNode() :
             "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
 

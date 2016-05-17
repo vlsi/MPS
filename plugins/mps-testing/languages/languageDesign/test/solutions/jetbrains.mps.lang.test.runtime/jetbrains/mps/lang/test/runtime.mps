@@ -43,7 +43,6 @@
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="ghoz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.newTypesystem(MPS.Core/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
-    <import index="oi6x" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.nodesFs(MPS.Platform/)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
@@ -2464,12 +2463,20 @@
                                 <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
                               </node>
                               <node concept="2OqwBi" id="1l3HexGi4Yx" role="33vP2m">
-                                <node concept="2YIFZM" id="1l3HexGi4Yy" role="2Oq$k0">
-                                  <ref role="1Pybhc" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
-                                  <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
+                                <node concept="2YIFZM" id="5IHtz9v1GgP" role="2Oq$k0">
+                                  <ref role="37wK5l" to="kip1:~NodeVirtualFileSystem.getInstance():jetbrains.mps.nodefs.NodeVirtualFileSystem" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="kip1:~NodeVirtualFileSystem" resolve="NodeVirtualFileSystem" />
                                 </node>
                                 <node concept="liA8E" id="1l3HexGi4Yz" role="2OqNvi">
-                                  <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
+                                  <ref role="37wK5l" to="kip1:~NodeVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
+                                  <node concept="2OqwBi" id="5IHtz9v1GtI" role="37wK5m">
+                                    <node concept="37vLTw" id="5IHtz9v1GtJ" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="hPjx680" resolve="myProject" />
+                                    </node>
+                                    <node concept="liA8E" id="5IHtz9v1GtK" role="2OqNvi">
+                                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                    </node>
+                                  </node>
                                   <node concept="2OqwBi" id="1l3HexGi4Y$" role="37wK5m">
                                     <node concept="Xjq3P" id="1l3HexGi4Y_" role="2Oq$k0" />
                                     <node concept="2OwXpG" id="1l3HexGi4YA" role="2OqNvi">
@@ -2732,12 +2739,20 @@
               <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
             </node>
             <node concept="2OqwBi" id="53DOTa2Jk7p" role="33vP2m">
-              <node concept="2YIFZM" id="53DOTa2JjKg" role="2Oq$k0">
-                <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
-                <ref role="1Pybhc" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
+              <node concept="2YIFZM" id="5IHtz9v1wVd" role="2Oq$k0">
+                <ref role="37wK5l" to="kip1:~NodeVirtualFileSystem.getInstance():jetbrains.mps.nodefs.NodeVirtualFileSystem" resolve="getInstance" />
+                <ref role="1Pybhc" to="kip1:~NodeVirtualFileSystem" resolve="NodeVirtualFileSystem" />
               </node>
               <node concept="liA8E" id="53DOTa2JkO2" role="2OqNvi">
-                <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
+                <ref role="37wK5l" to="kip1:~NodeVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
+                <node concept="2OqwBi" id="5IHtz9v1AJV" role="37wK5m">
+                  <node concept="37vLTw" id="5IHtz9v1$Zq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="hPjx680" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="5IHtz9v1CGu" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="ORe5oEa_x2" role="37wK5m">
                   <ref role="3cqZAo" node="hSPZLlg" resolve="myBefore" />
                 </node>

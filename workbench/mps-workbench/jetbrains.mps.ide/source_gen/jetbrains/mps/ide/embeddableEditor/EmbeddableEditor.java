@@ -22,7 +22,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 
 public class EmbeddableEditor extends JPanel implements DataProvider {
   private final Project project;
@@ -94,7 +94,7 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
         throw new IllegalStateException("For nodes not from repository edit mode is disabled");
       }
     }
-    return new MPSFileNodeEditor((MPSProject) project, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
+    return new MPSFileNodeEditor((MPSProject) project, NodeVirtualFileSystem.getInstance().getFileFor(repository, node));
   }
 
   public void disposeEditor() {

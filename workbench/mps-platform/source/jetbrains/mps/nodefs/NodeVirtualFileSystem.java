@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.nodesFs;
+package jetbrains.mps.nodefs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -21,13 +21,8 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.nodefs.MPSModelVirtualFile;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.RepositoryVirtualFiles;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -36,7 +31,6 @@ import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -49,21 +43,18 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
-public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
+public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
-  public static MPSNodesVirtualFileSystem getInstance() {
-    return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
+  public static NodeVirtualFileSystem getInstance() {
+    return ApplicationManager.getApplication().getComponent(NodeVirtualFileSystem.class);
   }
 
-  public MPSNodesVirtualFileSystem(MPSCoreComponents coreComponents) {
+  public NodeVirtualFileSystem(MPSCoreComponents coreComponents) {
     // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
     SRepository myRepository = coreComponents.getModuleRepository();
     myGlobalRepoFiles = new RepositoryVirtualFiles(this, myRepository);
@@ -76,24 +67,23 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   private final SRepositoryContentAdapter myRepositoryListener;
   private boolean myDisposed = false;
 
-  public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
-    return getFileFor(node.getReference());
-  }
-
-  /* TODO package-local once this class moves to j.mps.nodefs package */
-  public void register(@NotNull RepositoryVirtualFiles repoFiles) {
+  void register(@NotNull RepositoryVirtualFiles repoFiles) {
     // assert not more than 1 file container per repository
   }
 
-  public void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
+  void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
 
   }
 
-  public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
+  public MPSNodeVirtualFile getFileFor(@NotNull SRepository repository, @NotNull final SNode node) {
+    return getFileFor(repository, node.getReference());
+  }
+
+  public MPSNodeVirtualFile getFileFor(@NotNull SRepository repository, @NotNull final SNodeReference nodePointer) {
     return myGlobalRepoFiles.getFileFor(nodePointer);
   }
 
-  public MPSModelVirtualFile getFileFor(@NotNull final SModelReference modelReference) {
+  public MPSModelVirtualFile getFileFor(@NotNull SRepository repository, @NotNull final SModelReference modelReference) {
     return myGlobalRepoFiles.getFileFor(modelReference);
   }
 
@@ -147,7 +137,8 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
     return null;
   }
 
-  public boolean hasVirtualFileFor(SNodeReference nodePointer) {
+  // FIXME there's single use, and dubious use-case, need refactor (@see NodeIconUpdater)?
+  public boolean hasVirtualFileFor(@NotNull SRepository repo, SNodeReference nodePointer) {
     return myGlobalRepoFiles.hasVirtualFileFor(nodePointer);
   }
 

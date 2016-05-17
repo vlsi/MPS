@@ -17,8 +17,6 @@ import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.editor.Document;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 
 public class ConsoleFileEditor implements DocumentsEditor {
@@ -134,13 +132,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
     if (myDisposed) {
       return new Document[0];
     }
-    final MPSNodeVirtualFile[] virtualFile = new MPSNodeVirtualFile[1];
-    myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        virtualFile[0] = MPSNodesVirtualFileSystem.getInstance().getFileFor(myEditor.getEditedNode());
-      }
-    });
-
-    return (virtualFile[0] == null ? new Document[0] : new Document[]{MPSUndoUtil.getDoc(virtualFile[0])});
+    Document doc = MPSUndoUtil.getDoc(myEditor.getEditorContext().getRepository(), myEditor.getEditedNodePointer());
+    return (doc == null ? new Document[0] : new Document[]{doc});
   }
 }

@@ -18,9 +18,9 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -32,7 +32,7 @@ public class NodeEditor extends BaseNodeEditor {
 
   public NodeEditor(Project mpsProject, SNode node) {
     super(mpsProject);
-    myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+    myVirtualFile = NodeVirtualFileSystem.getInstance().getFileFor(mpsProject.getRepository(), node);
     editNode(node.getReference(), null);
   }
 

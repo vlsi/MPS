@@ -18,7 +18,6 @@ package jetbrains.mps.nodefs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -38,27 +37,27 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Artem Tikhomirov
  */
 public class RepositoryVirtualFiles {
-  private final MPSNodesVirtualFileSystem myFileSystem;
+  private final NodeVirtualFileSystem myFileSystem;
   private final SRepository myRepository;
   private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
   private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private final NiceReferenceSerializer myPathFacility;
 
-  public RepositoryVirtualFiles(@NotNull MPSNodesVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
+  public RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
     myFileSystem = mpsFileSystem;
     myRepository = repository;
     myPathFacility = new NiceReferenceSerializer(repository);
   }
 
   /**
-   * make this virtual file provider known in the {@linkplain MPSNodesVirtualFileSystem file system}
+   * make this virtual file provider known in the {@linkplain NodeVirtualFileSystem file system}
    */
   public void register() {
     myFileSystem.register(this);
   }
 
   /**
-   * Tell {@linkplain MPSNodesVirtualFileSystem node file system} not to use files of this repository
+   * Tell {@linkplain NodeVirtualFileSystem node file system} not to use files of this repository
    */
   public void unregister() {
     myFileSystem.unregister(this);
@@ -75,7 +74,7 @@ public class RepositoryVirtualFiles {
   }
 
   @NotNull
-  /*package*/ MPSNodesVirtualFileSystem getFileSystem() {
+  /*package*/ NodeVirtualFileSystem getFileSystem() {
     return myFileSystem;
   }
 
