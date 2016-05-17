@@ -16,6 +16,7 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -64,5 +65,12 @@ public class TraceablePositionInfo extends PositionInfo {
       return 0;
     }
     return -1;
+  }
+
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public String getConceptFqName() {
+    return myConcept.getQualifiedName();
   }
 }
