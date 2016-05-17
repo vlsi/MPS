@@ -18,36 +18,60 @@ package jetbrains.mps.nodeEditor.cells.collections;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * Internal interface used by {@link AbstractContainer} implementors in order to associate
+ * prev/next links with the actual value saved inside this container
+ * <p>
  * User: shatalin
  * Date: 10/02/16
  */
-public class Entry<T> {
-  private final T myItem;
-  private Entry<T> myNext; // == null only for the last child in the list
-  private Entry<T> myPrev; // notNull, myFirst.myPrev = the last child
+public interface Entry<T> {
 
-  Entry(@NotNull T item) {
-    myItem = item;
-  }
+  /**
+   * @return container instance holding this entry or null if this entry was deleted from the container
+   */
+  AbstractContainer<T> getContainer();
 
+  /**
+   * Setting {@link AbstractContainer} instance for this entry.
+   * This method can be executed only if:
+   * - the current container is null (getContainer() == null)
+   * - or container argument is null
+   * <p>
+   * This method will throw exception if both conditions are false.
+   *
+   * @param container new container for this Entry
+   * @throws IllegalStateException if specified container != null & this Entry is already
+   *                               included into another container
+   */
+  void setContainer(AbstractContainer<T> container);
+
+  /**
+   * @return actual value wrapped by this entry
+   */
   @NotNull
-  public T getItem() {
-    return myItem;
-  }
+  T getItem();
 
-  Entry<T> getNext() {
-    return myNext;
-  }
+  /**
+   * Returning next entry in the list. Return null for the last entry.
+   *
+   * @return next entry
+   */
+  Entry<T> getNext();
 
-  void setNext(Entry<T> next) {
-    myNext = next;
-  }
+  /**
+   * Setting next entry for this one.
+   */
+  void setNext(Entry<T> next);
 
-  Entry<T> getPrev() {
-    return myPrev;
-  }
+  /**
+   * Returning previous entry in the list. Return last entry for the first entry.
+   *
+   * @return previous entry
+   */
+  Entry<T> getPrev();
 
-  void setPrev(Entry<T> prev) {
-    myPrev = prev;
-  }
+  /**
+   * Setting prev entry for this one.
+   */
+  void setPrev(Entry<T> prev);
 }

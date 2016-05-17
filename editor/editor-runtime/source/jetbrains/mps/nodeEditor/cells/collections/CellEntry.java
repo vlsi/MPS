@@ -15,38 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
  * User: shatalin
- * Date: 10/02/16
+ * Date: 17/05/16
  */
-public class EmptyContainer<T> extends AbstractContainer<T> {
-  private static Container ourInstance;
-
-  public static <T> Container<T> getInstance() {
-    if (ourInstance == null) {
-      ourInstance = new UnmodifiableContainer<>(new EmptyContainer<>());
-    }
-    //noinspection unchecked
-    return ourInstance;
-  }
-
-  private EmptyContainer() {
-  }
-
-  @Override
-  protected Entry<T> getEntry(@NotNull T item) {
-    return null;
-  }
-
-  @Override
-  protected Entry<T> createEntry(@NotNull T item) {
-    return null;
-  }
-
-  @Override
-  protected Entry<T> deleteEntry(@NotNull Entry<T> entry) {
-    return null;
-  }
+public interface CellEntry extends Entry<EditorCell> {
 }

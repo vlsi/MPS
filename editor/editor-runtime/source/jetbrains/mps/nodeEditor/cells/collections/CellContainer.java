@@ -25,26 +25,49 @@ import org.jetbrains.annotations.NotNull;
 public class CellContainer extends AbstractContainer<EditorCell> {
   @Override
   protected Entry<EditorCell> getEntry(@NotNull EditorCell item) {
+    if (item instanceof CellEntry && ((CellEntry) item).getContainer() == this) {
+      return (CellEntry) item;
+    }
+
     //noinspection unchecked
     return (Entry<EditorCell>) item.getUserObject(this);
   }
 
   @Override
   protected Entry<EditorCell> createEntry(@NotNull EditorCell item) {
+    if (item instanceof CellEntry) {
+      CellEntry entry = (CellEntry) item;
+      if (entry.getContainer() == null) {
+        entry.setContainer(this);
+        return entry;
+      } else if (entry.getContainer() == this) {
+        return null;
+      }
+    }
+
     if (item.getUserObject(this) != null) {
       return null;
     }
-    Entry<EditorCell> entry = new Entry<>(item);
+    Entry<EditorCell> entry = new EntryImpl<>(item, this);
     item.putUserObject(this, entry);
     return entry;
   }
 
   @Override
   protected Entry<EditorCell> deleteEntry(@NotNull Entry<EditorCell> entry) {
-    if (entry.getItem().getUserObject(this) != entry) {
+    if (entry.getContainer() != this) {
       return null;
     }
-    entry.getItem().putUserObject(this, null);
+
+    if (!(entry instanceof CellEntry)) {
+      EditorCell cell = entry.getItem();
+      if (cell.getUserObject(this) != entry) {
+        return null;
+      }
+      cell.putUserObject(this, null);
+    }
+
+    entry.setContainer(null);
     return entry;
   }
 }
