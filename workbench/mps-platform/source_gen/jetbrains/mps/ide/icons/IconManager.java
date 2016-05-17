@@ -24,6 +24,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.Level;
@@ -111,6 +112,11 @@ public final class IconManager {
   @ToRemove(version = 3.4)
   public static Icon getIcon(SAbstractConcept concept) {
     return concept.getIcon();
+  }
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static Icon getIconForConceptFQName(String conceptFQName) {
+    return MetaAdapterFactoryByName.getConcept(conceptFQName).getIcon();
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
