@@ -53,7 +53,6 @@
     <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="80j5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl(MPS.Core/)" />
-    <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
     <import index="ovrg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.newTypesystem.operation(MPS.Core/)" />
     <import index="btn2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.impl(MPS.IDEA/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
@@ -80,6 +79,7 @@
     <import index="l9ag" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit(Testbench/)" />
     <import index="zyr2" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.inspector(MPS.Editor/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="kip1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.nodefs(MPS.Platform/)" />
     <import index="tp5o" ref="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -2460,8 +2460,8 @@
                           <node concept="3cpWs8" id="1l3HexGi4Yu" role="3cqZAp">
                             <node concept="3cpWsn" id="1l3HexGi4Yv" role="3cpWs9">
                               <property role="TrG5h" value="file" />
-                              <node concept="3uibUv" id="1l3HexGi4Yw" role="1tU5fm">
-                                <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+                              <node concept="3uibUv" id="2tq39vtOQCq" role="1tU5fm">
+                                <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
                               </node>
                               <node concept="2OqwBi" id="1l3HexGi4Yx" role="33vP2m">
                                 <node concept="2YIFZM" id="1l3HexGi4Yy" role="2Oq$k0">
@@ -2469,7 +2469,7 @@
                                   <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
                                 </node>
                                 <node concept="liA8E" id="1l3HexGi4Yz" role="2OqNvi">
-                                  <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" resolve="getFileFor" />
+                                  <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
                                   <node concept="2OqwBi" id="1l3HexGi4Y$" role="37wK5m">
                                     <node concept="Xjq3P" id="1l3HexGi4Y_" role="2Oq$k0" />
                                     <node concept="2OwXpG" id="1l3HexGi4YA" role="2OqNvi">
@@ -2729,7 +2729,7 @@
           <node concept="3cpWsn" id="53DOTa2Ji_v" role="3cpWs9">
             <property role="TrG5h" value="file" />
             <node concept="3uibUv" id="53DOTa2Ji_w" role="1tU5fm">
-              <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+              <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
             </node>
             <node concept="2OqwBi" id="53DOTa2Jk7p" role="33vP2m">
               <node concept="2YIFZM" id="53DOTa2JjKg" role="2Oq$k0">
@@ -2737,7 +2737,7 @@
                 <ref role="1Pybhc" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
               </node>
               <node concept="liA8E" id="53DOTa2JkO2" role="2OqNvi">
-                <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" resolve="getFileFor" />
+                <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
                 <node concept="37vLTw" id="ORe5oEa_x2" role="37wK5m">
                   <ref role="3cqZAo" node="hSPZLlg" resolve="myBefore" />
                 </node>
@@ -2748,7 +2748,7 @@
         <node concept="3cpWs6" id="2i7g4YmNuos" role="3cqZAp">
           <node concept="2ShNRf" id="53DOTa2IKPJ" role="3cqZAk">
             <node concept="1pGfFk" id="53DOTa2JcbE" role="2ShVmc">
-              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile)" resolve="MPSFileNodeEditor" />
+              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.nodefs.MPSNodeVirtualFile)" resolve="MPSFileNodeEditor" />
               <node concept="10QFUN" id="6gJxm_KAYwP" role="37wK5m">
                 <node concept="3uibUv" id="6gJxm_KAZu7" role="10QFUM">
                   <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />

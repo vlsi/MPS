@@ -17,7 +17,7 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.undo.MPSUndoUtil;

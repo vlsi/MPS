@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,12 @@ import java.util.Collection;
 import java.util.HashSet;
 
 /**
+ * FIXME: MPSNodesVirtualFileSystem listens to node deletion and rename, why doesn't it send out file changed events as well, why do we
+ *        need this distinct component?
+ * XXX if it stays, it may use FileSystemProjectBridge
+ * XXX also, RepositoryChangeTracker may come from a dedicated project component (to share it unless there's
+ * XXX Why it's distinct from NodeFileIconProvider?
+ * mechanism to accomplish the same through SRepository/MPSProject. Although why not Project.getComponent?)
  * @author Evgeny Gerashchenko
  * @since 10/3/11
  */

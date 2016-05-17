@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.nodesFs;
+package jetbrains.mps.nodefs;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
@@ -39,35 +39,35 @@ import java.io.OutputStream;
  * User: fyodor
  * Date: 3/6/13
  */
-public class MPSModelVirtualFile extends VirtualFile {
+public final class MPSModelVirtualFile extends VirtualFile {
   private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
   public static final String MODEL_PREFIX = "model://";
 
   private final SModelReference myModelReference;
-  private final MPSNodesVirtualFileSystem myFileSystem;
+  private final RepositoryVirtualFiles myRepoFiles;
 
   private String myName;
   private String myPath;
 
-  MPSModelVirtualFile(@NotNull SModelReference modelReference, @NotNull MPSNodesVirtualFileSystem vfs) {
+  MPSModelVirtualFile(@NotNull SModelReference modelReference, @NotNull RepositoryVirtualFiles vfs) {
     myModelReference = modelReference;
-    myFileSystem = vfs;
+    myRepoFiles = vfs;
     updateFields();
   }
 
   private void updateFields() {
-    myFileSystem.getRepository().getModelAccess().runReadAction(new Runnable() {
+    myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel model = myModelReference.resolve(myFileSystem.getRepository());
+        SModel model = myModelReference.resolve(myRepoFiles.getRepository());
         if (model == null) {
           LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
           myName = "";
           myPath = "";
         } else {
           myName = NameUtil.shortNameFromLongName(model.getModelName());
-          myPath = MODEL_PREFIX + myFileSystem.getPathFacility().serializeModel(model);
+          myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
         }
       }
     });
@@ -86,7 +86,7 @@ public class MPSModelVirtualFile extends VirtualFile {
   @NotNull
   @Override
   public VirtualFileSystem getFileSystem() {
-    return myFileSystem;
+    return myRepoFiles.getFileSystem();
   }
 
   @Override
@@ -112,10 +112,10 @@ public class MPSModelVirtualFile extends VirtualFile {
   @Override
   public VirtualFile getParent() {
     // hack
-    return new ModelAccessHelper(myFileSystem.getRepository()).runReadAction(new Computable<VirtualFile>() {
+    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        SModel model = myModelReference.resolve(myFileSystem.getRepository());
+        SModel model = myModelReference.resolve(myRepoFiles.getRepository());
         if (model == null) {
           return null;
         }

@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.nodesFs;
+package jetbrains.mps.nodefs;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -40,24 +39,24 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   public static final String NODE_PREFIX = "node://";
 
   private SNodeReference myNode;
-  private final MPSNodesVirtualFileSystem myFileSystem;
+  private final RepositoryVirtualFiles myRepoFiles;
   private String myPath;
   private String myName;
   private String myPresentationName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
 
-  MPSNodeVirtualFile(@NotNull SNodeReference nodePointer, @NotNull MPSNodesVirtualFileSystem vfs) {
+  MPSNodeVirtualFile(@NotNull SNodeReference nodePointer, @NotNull RepositoryVirtualFiles vfs) {
     myNode = nodePointer;
-    myFileSystem = vfs;
+    myRepoFiles = vfs;
     updateFields();
   }
 
-  void updateFields() {
-    myFileSystem.getRepository().getModelAccess().runReadAction(new Runnable() {
+  public /*FIXME: package*/ void updateFields() {
+    myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode node = myNode.resolve(myFileSystem.getRepository());
+        SNode node = myNode.resolve(myRepoFiles.getRepository());
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = myPresentationName = "";
@@ -72,7 +71,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
               myPresentationName = myName + '@' + s;
             }
           }
-          myPath = NODE_PREFIX + myFileSystem.getPathFacility().serializeNode(node);
+          myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
           myTimeStamp = node.getModel().getSource().getTimestamp();
         }
       }
@@ -80,7 +79,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   }
 
   public SNode getNode() {
-    return myNode.resolve(myFileSystem.getRepository());
+    return myNode.resolve(myRepoFiles.getRepository());
   }
 
   public SNodeReference getSNodePointer() {
@@ -96,7 +95,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @NotNull
   public VirtualFileSystem getFileSystem() {
-    return myFileSystem;
+    return myRepoFiles.getFileSystem();
   }
 
   @Override
@@ -146,7 +145,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     // but why it's not MPSModelVirtualFile that serves as parent for node VF?
     if (myNode == null || myNode.getModelReference() == null) return null;
-    return new ModelAccessHelper(myFileSystem.getRepository()).runReadAction(new Computable<VirtualFile>() {
+    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
         if (myNode == null) {
@@ -159,10 +158,10 @@ public final class MPSNodeVirtualFile extends VirtualFile {
           return null;
         }
         org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
-        if (modelRef.resolve(myFileSystem.getRepository()) == null) {
+        if (modelRef.resolve(myRepoFiles.getRepository()) == null) {
           return null;
         }
-        MPSModelVirtualFile modelVFile = myFileSystem.getFileFor(modelRef);
+        MPSModelVirtualFile modelVFile = myRepoFiles.getFileFor(modelRef);
         if (modelVFile != null) {
           return modelVFile.getParent();
         }
@@ -193,12 +192,12 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     return myNode != null;
   }
 
-  void invalidate() {
+  public /*FIXME: package*/ void invalidate() {
     myNode = null;
   }
 
   public boolean hasValidMPSNode() {
-    return isValid() && myFileSystem.hasVirtualFileFor(myNode);
+    return isValid() && myRepoFiles.hasVirtualFileFor(myNode);
   }
 
   @Override

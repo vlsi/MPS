@@ -21,6 +21,9 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.nodefs.MPSModelVirtualFile;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.RepositoryVirtualFiles;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,42 +65,36 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
   public MPSNodesVirtualFileSystem(MPSCoreComponents coreComponents) {
     // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
-    myRepository = coreComponents.getModuleRepository();
+    SRepository myRepository = coreComponents.getModuleRepository();
+    myGlobalRepoFiles = new RepositoryVirtualFiles(this, myRepository);
     myRepositoryListener = new MyRepositoryListener(myRepository);
   }
 
-  private final SRepository myRepository;
+  private final RepositoryVirtualFiles myGlobalRepoFiles;
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private final SRepositoryContentAdapter myRepositoryListener;
-  private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
-  private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private boolean myDisposed = false;
-  private NiceReferenceSerializer myPathFacility;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return getFileFor(node.getReference());
   }
 
-  public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
-    if (hasVirtualFileFor(nodePointer)) {
-      return getVirtualFile(nodePointer);
-    }
+  /* TODO package-local once this class moves to j.mps.nodefs package */
+  public void register(@NotNull RepositoryVirtualFiles repoFiles) {
+    // assert not more than 1 file container per repository
+  }
 
-    MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer, this);
-    myVirtualFiles.put(nodePointer, vf);
-    return vf;
+  public void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
+
+  }
+
+  public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
+    return myGlobalRepoFiles.getFileFor(nodePointer);
   }
 
   public MPSModelVirtualFile getFileFor(@NotNull final SModelReference modelReference) {
-    if (myModelVirtualFiles.containsKey(modelReference)) {
-      return myModelVirtualFiles.get(modelReference);
-    }
-
-    final MPSModelVirtualFile vf = new MPSModelVirtualFile(modelReference, this);
-    myModelVirtualFiles.put(modelReference, vf);
-
-    return vf;
+    return myGlobalRepoFiles.getFileFor(modelReference);
   }
 
   @Override
@@ -114,16 +111,12 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
     // can't change to repository listener as it doesn't react to model import changes
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
 
-    // FIXME use mpsProject.getRepository or myRepository once it's capable to send module add/remove events
-    assert myRepository == MPSModuleRepository.getInstance();
-    new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
-    myPathFacility = new NiceReferenceSerializer(myRepository);
+    new RepoListenerRegistrar(myGlobalRepoFiles.getRepository(), myRepositoryListener).attach();
   }
 
   @Override
   public void disposeComponent() {
-    new RepoListenerRegistrar(myRepository, myRepositoryListener).detach();
-    myPathFacility = null;
+    new RepoListenerRegistrar(myGlobalRepoFiles.getRepository(), myRepositoryListener).detach();
 
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
@@ -140,29 +133,7 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
-    return new ModelAccessHelper(myRepository).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        try {
-          if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNode node = getPathFacility().deserializeNode(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
-            if (node == null) {
-              return null;
-            }
-            return getFileFor(node);
-          } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
-            SModel model = getPathFacility().deserializeModel(path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
-            if (model == null) {
-              return null;
-            }
-            return getFileFor(model.getReference());
-          }
-        } catch (IllegalArgumentException e) {
-          // ignore, parse model ref exception
-        }
-        return null;
-      }
-    });
+    return myGlobalRepoFiles.findFileByPath(path);
   }
 
   @Override
@@ -177,66 +148,17 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   }
 
   public boolean hasVirtualFileFor(SNodeReference nodePointer) {
-    return myVirtualFiles.containsKey(nodePointer);
+    return myGlobalRepoFiles.hasVirtualFileFor(nodePointer);
   }
 
   @Nullable
   /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
-    return myVirtualFiles.get(nodeRef);
+    return myGlobalRepoFiles.getVirtualFile(nodeRef);
   }
 
-  /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
-    ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
-    for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
-      if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
-        rv.add(vf);
-      }
-    }
-    return rv;
-  }
 
   /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
-    myVirtualFiles.remove(nodeRef);
-  }
-
-  /*package*/ SRepository getRepository() {
-    return myRepository;
-  }
-
-  /*package*/ NiceReferenceSerializer getPathFacility() {
-    return myPathFacility;
-  }
-
-  @Override
-  protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  protected void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  protected void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  @NotNull
-  public VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
-      IOException {
-    throw new UnsupportedOperationException();
+    myGlobalRepoFiles.forgetVirtualFile(nodeRef);
   }
 
   /*package*/ void updateModificationStamp(Iterable<SNode> roots) {
@@ -350,7 +272,7 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
       Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
-      for (MPSNodeVirtualFile vf : getKnownVirtualFilesIn(md.getReference())) {
+      for (MPSNodeVirtualFile vf : myGlobalRepoFiles.getKnownVirtualFilesIn(md.getReference())) {
         // XXX reconsider vf.getNode() (with SRepository in file construction time), vf.getNode(myRepository) and explicit resolve here
         SNode node = vf.getSNodePointer().resolve(myRepository);
         if (node == null) {

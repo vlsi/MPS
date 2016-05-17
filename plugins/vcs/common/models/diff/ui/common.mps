@@ -78,6 +78,7 @@
     <import index="zbx9" ref="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)" />
     <import index="tp4s" ref="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
+    <import index="kip1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.nodefs(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -18760,8 +18761,8 @@
         <node concept="3cpWs8" id="2Y6GhaXAUOh" role="3cqZAp">
           <node concept="3cpWsn" id="2Y6GhaXAUOi" role="3cpWs9">
             <property role="TrG5h" value="virtualFile" />
-            <node concept="3uibUv" id="2Y6GhaXAUOj" role="1tU5fm">
-              <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+            <node concept="3uibUv" id="2tq39vtQzWI" role="1tU5fm">
+              <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
             </node>
           </node>
         </node>
@@ -18786,7 +18787,7 @@
                           <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
                         </node>
                         <node concept="liA8E" id="1KUoCipvyBv" role="2OqNvi">
-                          <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" resolve="getFileFor" />
+                          <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
                           <node concept="2OqwBi" id="1KUoCipvyBw" role="37wK5m">
                             <node concept="liA8E" id="1KUoCipvyBx" role="2OqNvi">
                               <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
@@ -18810,8 +18811,8 @@
             <node concept="2ShNRf" id="2Y6GhaXBhyw" role="3K4GZi">
               <node concept="3g6Rrh" id="2Y6GhaXBiIU" role="2ShVmc">
                 <node concept="2YIFZM" id="2Y6GhaXBn7m" role="3g7hyw">
-                  <ref role="37wK5l" to="j532:~MPSUndoUtil.getDoc(jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile):com.intellij.openapi.editor.Document" resolve="getDoc" />
                   <ref role="1Pybhc" to="j532:~MPSUndoUtil" resolve="MPSUndoUtil" />
+                  <ref role="37wK5l" to="j532:~MPSUndoUtil.getDoc(jetbrains.mps.nodefs.MPSNodeVirtualFile):com.intellij.openapi.editor.Document" resolve="getDoc" />
                   <node concept="37vLTw" id="2Y6GhaXBnEx" role="37wK5m">
                     <ref role="3cqZAo" node="2Y6GhaXAUOi" resolve="virtualFile" />
                   </node>
