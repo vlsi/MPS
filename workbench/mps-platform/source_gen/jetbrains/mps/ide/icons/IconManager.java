@@ -22,6 +22,9 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.Level;
@@ -38,7 +41,6 @@ import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
 import org.apache.log4j.Logger;
@@ -105,6 +107,16 @@ public final class IconManager {
       return layeredIcon;
     }
     return result;
+  }
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static Icon getIcon(SAbstractConcept concept) {
+    return concept.getIcon();
+  }
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static Icon getIconForConceptFQName(String conceptFQName) {
+    return MetaAdapterFactoryByName.getConcept(conceptFQName).getIcon();
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
