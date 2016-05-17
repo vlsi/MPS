@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -21,7 +20,7 @@ public class NamedMenuContribution extends TransformationMenuBase {
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a0()));
+      result.add(new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a0());
     }
     return result;
   }

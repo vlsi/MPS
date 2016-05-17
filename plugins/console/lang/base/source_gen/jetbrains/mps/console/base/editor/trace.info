@@ -2003,7 +2003,7 @@
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/69343502268559053">
     <file name="BLCommand_TransformationMenu.java">
       <node id="69343502268559053" at="21,73,22,54" concept="6" />
-      <node id="69343502268559053" at="23,77,24,121" concept="2" />
+      <node id="69343502268559053" at="23,135,24,93" concept="2" />
       <node id="69343502268559053" at="25,5,26,18" concept="7" />
       <node id="7980428675269523851" at="31,70,32,100" concept="7" />
       <node id="7980428675269523851" at="36,0,37,0" concept="3" trace="_context" />
@@ -2017,7 +2017,7 @@
       <node id="7980428675269523851" at="42,0,47,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="7980428675269523851" at="48,0,53,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
       <node id="69343502268559053" at="20,0,28,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="69343502268559053" at="23,77,24,121" />
+      <scope id="69343502268559053" at="23,135,24,93" />
       <scope id="7980428675269523851" at="31,70,32,100" />
       <scope id="7980428675269523851" at="38,55,39,27" />
       <scope id="69343502268559195" at="44,50,45,39" />

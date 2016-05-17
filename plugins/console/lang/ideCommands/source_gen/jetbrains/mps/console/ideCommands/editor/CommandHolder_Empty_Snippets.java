@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
@@ -16,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -27,7 +27,7 @@ public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_a0());
       result.add(new CommandHolder_Empty_Snippets.TransformationMenuPart_Action_vryvy0_b0());
     }

@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import java.util.Arrays;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
@@ -27,10 +26,14 @@ public class NamedMenu extends TransformationMenuBase {
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0(), new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0(), new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0()));
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), SideTransformSubstituteInfo.Side.LEFT.myMenuLocation, SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation).contains(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0(), new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0(), new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0()));
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
     }
     return result;
   }

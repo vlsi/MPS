@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations;
-import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -24,7 +23,7 @@ public class Parameterized extends TransformationMenuBase {
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0()));
+      result.add(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0());
     }
     return result;
   }

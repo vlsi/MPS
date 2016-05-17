@@ -7,8 +7,8 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
@@ -20,8 +20,8 @@ public class BLCommand_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a0()));
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
+      result.add(new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a0());
     }
     return result;
   }

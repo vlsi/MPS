@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.runtime.MenuLocations;
-import java.util.Arrays;
 import jetbrains.mps.lang.intentions.contextAssistant.runtime.RefactoringMenuPartBase;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +26,9 @@ public class Extras extends TransformationMenuBase {
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
-      result.addAll(Arrays.<MenuPart>asList(new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0(), new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0(), new Extras.TransformationMenuPart_Intention_ha3uwx_c0()));
+      result.add(new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0());
+      result.add(new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0());
+      result.add(new Extras.TransformationMenuPart_Intention_ha3uwx_c0());
     }
     return result;
   }

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +21,7 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new Child_MoreDefaultActions.TransformationMenuPart_Action_ch35tm_a0());
     }
     return result;

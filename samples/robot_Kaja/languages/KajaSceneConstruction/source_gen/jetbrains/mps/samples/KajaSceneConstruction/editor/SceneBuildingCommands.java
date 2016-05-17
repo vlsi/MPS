@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import java.util.Arrays;
@@ -24,7 +25,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
-    if (MenuLocations.CONTEXT_ASSISTANT.equals(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0());
     }
     return result;
