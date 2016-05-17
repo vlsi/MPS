@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
@@ -33,10 +34,11 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class EditorCell_Component extends EditorCell_ComponentBase {
+  @NotNull
   private final JComponent myComponent;
   private final FocusListener mySelectCellOnFocusGainedFocusListener = new SelectCellOnFocusGainedFocusListener(this);
 
-  public EditorCell_Component(EditorContext editorContext, SNode node, JComponent component) {
+  public EditorCell_Component(EditorContext editorContext, SNode node, @NotNull JComponent component) {
     super(editorContext, node);
     myComponent = component;
     final EditorComponent nodeEditorComponent = getEditor();
@@ -60,6 +62,9 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
   }
 
   public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
+    if (component == null) {
+      throw new IllegalArgumentException("component cannot be null for component cell " + cellId);
+    }
     return new EditorCell_Component(context, node, component);
   }
 
@@ -67,6 +72,7 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
     return "ComponentCell";
   }
 
+  @NotNull
   @Override
   public JComponent getComponent() {
     return myComponent;
@@ -85,10 +91,6 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
    */
   @Override
   public int getAscent() {
-    if (myComponent == null) {
-      LOG.errorWithTrace("my component is null");
-      return myHeight;
-    }
     Font font = myComponent.getFont();
     if (font == null) {
       return myHeight;
