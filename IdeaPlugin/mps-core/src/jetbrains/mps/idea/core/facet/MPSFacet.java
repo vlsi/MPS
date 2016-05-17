@@ -33,7 +33,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
@@ -55,14 +54,14 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     StartupManager.getInstance(getModule().getProject()).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        myMpsProject = ProjectHelper.fromIdeaProject(getModule().getProject());
+        myMpsProject.getModelAccess().runWriteAction(new Runnable() {
           @Override
           public void run() {
             SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
             com.intellij.openapi.project.Project project = getModule().getProject();
-            myMpsProject = ProjectHelper.toMPSProject(project);
 
             MPSModuleRepository repository = MPSModuleRepository.getInstance();
             if (ModuleRepositoryFacade.getInstance().getModule(solutionDescriptor.getModuleReference()) != null) {
@@ -117,7 +116,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     if (!wasInitialized()) {
       return;
     }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myMpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         mySolution.setModuleDescriptor(configurationBean.getSolutionDescriptor());
