@@ -77,6 +77,12 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
     return false;
   }
 
+  /**
+   * Computes ascent (baseline) of the component for alignment purposes.
+   *
+   * @return "component font ascent + border top inset" (this is not generic but works well for buttons). If the component or its font is null, returns
+   *         the height of the cell.
+   */
   @Override
   public int getAscent() {
     if (myComponent == null) {
