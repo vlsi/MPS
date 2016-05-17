@@ -39,7 +39,7 @@ public final class TransformationLocation__BehaviorDescriptor extends BaseBHDesc
     return Collections.emptyList();
   }
   /*package*/ static Collection<SConcept> getAvailableFeatures_id1A4kJjlZ$rL(@NotNull SNode __thisNode__) {
-    return Collections.emptyList();
+    return TransformationLocation__BehaviorDescriptor.getRequiredFeatures_id7L5lpRJHK_w.invoke(__thisNode__);
   }
 
   /*package*/ TransformationLocation__BehaviorDescriptor() {

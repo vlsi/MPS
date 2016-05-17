@@ -47,12 +47,12 @@ public class SideTransformSubstituteInfo extends AbstractNodeSubstituteInfo {
   private final EditorCell myEditorCell;
   private final SNode mySourceNode;
 
-  public SideTransformSubstituteInfo(EditorCell editorCell, Side side, TransformationMenuLookup lookup) {
+  public SideTransformSubstituteInfo(EditorCell editorCell, Side side) {
     super(editorCell.getContext());
     myEditorCell = editorCell;
     mySourceNode = myEditorCell.getSNode();
     mySide =  side;
-    myLookup =  lookup;
+    myLookup =  myEditorCell.getTransformationMenuLookup();
   }
 
   @Override

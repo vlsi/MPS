@@ -2974,9 +2974,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/7980428675268604155">
     <file name="QueriesGenerated.java">
-      <node id="7985135009828507358" at="2526,120,2527,399" concept="6" />
+      <node id="7980428675268617131" at="2526,120,2527,399" concept="6" />
       <node id="7980428675268638113" at="2529,120,2530,195" concept="6" />
-      <scope id="7985135009828490914" at="2526,120,2527,399" />
+      <scope id="7980428675268617125" at="2526,120,2527,399" />
       <scope id="7980428675268638107" at="2529,120,2530,195" />
     </file>
   </root>

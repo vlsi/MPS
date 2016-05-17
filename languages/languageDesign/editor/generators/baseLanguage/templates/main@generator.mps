@@ -32077,43 +32077,36 @@
           <node concept="3clFbH" id="6V0bp$oIvBc" role="3cqZAp" />
           <node concept="3clFbJ" id="6V0bp$oI_f4" role="3cqZAp">
             <node concept="3clFbS" id="6V0bp$oI_f6" role="3clFbx">
-              <node concept="3clFbF" id="6VgTvK0nez6" role="3cqZAp">
-                <node concept="2OqwBi" id="6VgTvK0nfeA" role="3clFbG">
-                  <node concept="37vLTw" id="6VgTvK0nez4" role="2Oq$k0">
+              <node concept="3clFbF" id="6V0bp$oIvK9" role="3cqZAp">
+                <node concept="2OqwBi" id="6V0bp$oIwdX" role="3clFbG">
+                  <node concept="37vLTw" id="5qocf8PDCYL" role="2Oq$k0">
                     <ref role="3cqZAo" node="6V0bp$oIvy3" resolve="result" />
                   </node>
-                  <node concept="liA8E" id="6VgTvK0nfZb" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.addAll(java.util.Collection):boolean" resolve="addAll" />
-                    <node concept="2YIFZM" id="6VgTvK0ncUu" role="37wK5m">
-                      <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                      <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-                      <node concept="10Nm6u" id="6VgTvK0ncUv" role="37wK5m">
-                        <node concept="1WS0z7" id="6VgTvK0ncUw" role="lGtFl">
-                          <node concept="3JmXsc" id="6VgTvK0ncUx" role="3Jn$fo">
-                            <node concept="3clFbS" id="6VgTvK0ncUy" role="2VODD2">
-                              <node concept="3clFbF" id="6VgTvK0ngVu" role="3cqZAp">
-                                <node concept="2OqwBi" id="6VgTvK0ngVv" role="3clFbG">
-                                  <node concept="1PxgMI" id="6VgTvK0ngVw" role="2Oq$k0">
-                                    <ref role="1m5ApE" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
-                                    <node concept="2OqwBi" id="6VgTvK0ngVx" role="1m5AlR">
-                                      <node concept="30H73N" id="6VgTvK0ngVy" role="2Oq$k0" />
-                                      <node concept="1mfA1w" id="6VgTvK0ngVz" role="2OqNvi" />
-                                    </node>
-                                  </node>
-                                  <node concept="3Tsc0h" id="6VgTvK0ngV$" role="2OqNvi">
-                                    <ref role="3TtcxE" to="tpc2:6V0bp$oHeYZ" />
-                                  </node>
-                                </node>
-                              </node>
+                  <node concept="liA8E" id="6V0bp$oIxIA" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                    <node concept="10Nm6u" id="6V0bp$oIxPs" role="37wK5m">
+                      <node concept="1sPUBX" id="6V0bp$oIyw2" role="lGtFl">
+                        <ref role="v9R2y" node="20qY$3H6Q0h" resolve="switch_TransformationMenuPart_create" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1WS0z7" id="6V0bp$oIyex" role="lGtFl">
+                  <node concept="3JmXsc" id="6V0bp$oIye$" role="3Jn$fo">
+                    <node concept="3clFbS" id="6V0bp$oIye_" role="2VODD2">
+                      <node concept="3clFbF" id="6V0bp$oIyeF" role="3cqZAp">
+                        <node concept="2OqwBi" id="6V0bp$oIDPb" role="3clFbG">
+                          <node concept="1PxgMI" id="6V0bp$oIDvW" role="2Oq$k0">
+                            <ref role="1m5ApE" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
+                            <node concept="2OqwBi" id="6V0bp$oICb5" role="1m5AlR">
+                              <node concept="30H73N" id="6V0bp$oIC0Z" role="2Oq$k0" />
+                              <node concept="1mfA1w" id="6V0bp$oICvq" role="2OqNvi" />
                             </node>
                           </node>
+                          <node concept="3Tsc0h" id="6V0bp$oIE36" role="2OqNvi">
+                            <ref role="3TtcxE" to="tpc2:6V0bp$oHeYZ" />
+                          </node>
                         </node>
-                        <node concept="1sPUBX" id="6VgTvK0ncUB" role="lGtFl">
-                          <ref role="v9R2y" node="20qY$3H6Q0h" resolve="switch_TransformationMenuPart_create" />
-                        </node>
-                      </node>
-                      <node concept="3uibUv" id="6VgTvK0ncUC" role="3PaCim">
-                        <ref role="3uigEE" to="9eyi:~MenuPart" resolve="MenuPart" />
                       </node>
                     </node>
                   </node>

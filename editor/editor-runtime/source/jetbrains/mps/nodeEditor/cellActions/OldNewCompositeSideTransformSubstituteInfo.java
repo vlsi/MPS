@@ -45,7 +45,7 @@ public class OldNewCompositeSideTransformSubstituteInfo extends AbstractNodeSubs
     SNode node = selectedCell.getSNode();
     Side newSide = side == CellSide.RIGHT ? Side.RIGHT : Side.LEFT;
 
-    SideTransformSubstituteInfo newSubstituteInfo = new SideTransformSubstituteInfo(selectedCell, newSide, selectedCell.getTransformationMenuLookup());
+    SideTransformSubstituteInfo newSubstituteInfo = new SideTransformSubstituteInfo(selectedCell, newSide);
     return new OldNewCompositeSideTransformSubstituteInfo(editorContext,
         newSubstituteInfo,new OldSideTransformSubstituteInfo(editorContext, node, side, tag));
   }

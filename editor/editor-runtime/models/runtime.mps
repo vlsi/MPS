@@ -279,6 +279,10 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5858074156537397872" name="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" flags="ng" index="x0GOo">
         <property id="5858074156537397874" name="text" index="x0GOq" />
         <child id="6832197706140448505" name="exceptionType" index="zrq5$" />
@@ -307,6 +311,12 @@
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -1357,7 +1367,22 @@
       <property role="od$2w" value="false" />
       <node concept="P$JXv" id="iitbxChCda" role="lGtFl">
         <node concept="TZ5HI" id="iitbxChCdb" role="3nqlJM">
-          <node concept="TZ5HA" id="iitbxChCdc" role="3HnX3l" />
+          <node concept="TZ5HA" id="iitbxChCdc" role="3HnX3l">
+            <node concept="1dT_AC" id="5qocf8PBVkD" role="1dT_Ay">
+              <property role="1dT_AB" value="after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect so the will be referenced directly from editor and anchor tag will not be used. Use " />
+            </node>
+            <node concept="1dT_AA" id="5qocf8PBVmN" role="1dT_Ay">
+              <node concept="92FcH" id="5qocf8PBVn1" role="qph3F">
+                <node concept="TZ5HA" id="5qocf8PBVn3" role="2XjZqd" />
+                <node concept="VXe0Z" id="5qocf8PCmJr" role="92FcQ">
+                  <ref role="VXe0S" node="iitbxChC8H" resolve="addRightTransformInfo" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="5qocf8PBVmM" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="iitbxChCdd" role="2AJF6D">
@@ -1368,7 +1393,7 @@
         <node concept="2B6LJw" id="PrssY$De$N" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="PrssY$De$O" role="2B70Vg">
-            <property role="$nhwW" value="3.4" />
+            <property role="$nhwW" value="3.5" />
           </node>
         </node>
       </node>
@@ -1460,8 +1485,23 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="P$JXv" id="iitbxChCdH" role="lGtFl">
-        <node concept="TZ5HI" id="iitbxChCdI" role="3nqlJM">
-          <node concept="TZ5HA" id="iitbxChCdJ" role="3HnX3l" />
+        <node concept="TZ5HI" id="5qocf8PCvhr" role="3nqlJM">
+          <node concept="TZ5HA" id="5qocf8PCvhs" role="3HnX3l">
+            <node concept="1dT_AC" id="5qocf8PCvht" role="1dT_Ay">
+              <property role="1dT_AB" value="after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect so the will be referenced directly from editor and anchor tag will not be used. Use " />
+            </node>
+            <node concept="1dT_AA" id="5qocf8PCvhu" role="1dT_Ay">
+              <node concept="92FcH" id="5qocf8PCvhv" role="qph3F">
+                <node concept="TZ5HA" id="5qocf8PCvhw" role="2XjZqd" />
+                <node concept="VXe0Z" id="5qocf8PCLDv" role="92FcQ">
+                  <ref role="VXe0S" node="iitbxChBXh" resolve="addLeftTransformInfo" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="5qocf8PCvhy" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="iitbxChCdK" role="2AJF6D">
@@ -1472,7 +1512,7 @@
         <node concept="2B6LJw" id="PrssY$Deh0" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="PrssY$Devu" role="2B70Vg">
-            <property role="$nhwW" value="3.4" />
+            <property role="$nhwW" value="3.5" />
           </node>
         </node>
       </node>
@@ -1560,8 +1600,23 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="P$JXv" id="iitbxChCo3" role="lGtFl">
-        <node concept="TZ5HI" id="iitbxChCo4" role="3nqlJM">
-          <node concept="TZ5HA" id="iitbxChCo5" role="3HnX3l" />
+        <node concept="TZ5HI" id="5qocf8PCPUX" role="3nqlJM">
+          <node concept="TZ5HA" id="5qocf8PCPUY" role="3HnX3l">
+            <node concept="1dT_AC" id="5qocf8PCPUZ" role="1dT_Ay">
+              <property role="1dT_AB" value="after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect so the will be referenced directly from editor and anchor tag will not be used. Use " />
+            </node>
+            <node concept="1dT_AA" id="5qocf8PCPV0" role="1dT_Ay">
+              <node concept="92FcH" id="5qocf8PCPV1" role="qph3F">
+                <node concept="TZ5HA" id="5qocf8PCPV2" role="2XjZqd" />
+                <node concept="VXe0Z" id="5qocf8PD8$l" role="92FcQ">
+                  <ref role="VXe0S" node="iitbxChCgh" resolve="addTransformInfo" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="5qocf8PCPV4" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="iitbxChCo6" role="2AJF6D">
@@ -1572,7 +1627,7 @@
         <node concept="2B6LJw" id="PrssY$Dexr" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="PrssY$Dexs" role="2B70Vg">
-            <property role="$nhwW" value="3.4" />
+            <property role="$nhwW" value="3.5" />
           </node>
         </node>
       </node>

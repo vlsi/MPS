@@ -18096,10 +18096,9 @@
       <property role="13i0iv" value="false" />
       <node concept="3Tm1VV" id="1A4kJjlZ$rM" role="1B3o_S" />
       <node concept="3clFbS" id="1A4kJjlZ$rN" role="3clF47">
-        <node concept="3clFbF" id="1A4kJjlZ$rO" role="3cqZAp">
-          <node concept="2YIFZM" id="1A4kJjlZ$rP" role="3clFbG">
-            <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+        <node concept="3cpWs6" id="1A4kJjm2jr1" role="3cqZAp">
+          <node concept="BsUDl" id="1A4kJjm2jvA" role="3cqZAk">
+            <ref role="37wK5l" node="7L5lpRJHK_w" resolve="getRequiredFeatures" />
           </node>
         </node>
       </node>
