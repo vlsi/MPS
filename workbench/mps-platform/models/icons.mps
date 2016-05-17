@@ -909,6 +909,46 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="2qySP5iSNLp" role="jymVt">
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getIcon" />
+      <node concept="3clFbS" id="2qySP5iSM0T" role="3clF47">
+        <node concept="3cpWs6" id="5vfjF5c9ctB" role="3cqZAp">
+          <node concept="2OqwBi" id="5vfjF5c9cUi" role="3cqZAk">
+            <node concept="37vLTw" id="6mQv69HRpU2" role="2Oq$k0">
+              <ref role="3cqZAo" node="2qySP5iSRja" resolve="concept" />
+            </node>
+            <node concept="liA8E" id="5vfjF5c9dgR" role="2OqNvi">
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2qySP5iSXTz" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+      <node concept="3Tm1VV" id="2qySP5iSM0S" role="1B3o_S" />
+      <node concept="37vLTG" id="2qySP5iSRja" role="3clF46">
+        <property role="TrG5h" value="concept" />
+        <node concept="3uibUv" id="2qySP5iSRq_" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6mQv69HRpUK" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="6mQv69HRq9N" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="6mQv69HRqF0" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="6mQv69HRqNe" role="2B70Vg">
+            <property role="$nhwW" value="3.4" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="277Nzj6qTIv" role="jymVt">
       <property role="TrG5h" value="getIconForNamespace" />
       <node concept="3Tm1VV" id="277Nzj6qTIw" role="1B3o_S" />
