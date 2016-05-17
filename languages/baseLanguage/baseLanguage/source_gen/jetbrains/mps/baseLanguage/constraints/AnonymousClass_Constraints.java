@@ -28,10 +28,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.AnonymousClassCreator__BehaviorDescriptor;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -106,11 +103,7 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
                 return null;
               }
 
-              final Iterable<SNode> memberClasses = Sequence.fromIterable(ClassifierScopeUtils.getVisibleNestedClassConceptsIncludingInherited(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), _context.getContextNode())).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return !((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it));
-                }
-              });
+              final Iterable<SNode> memberClasses = AnonymousClassCreator__BehaviorDescriptor.retrieveInstantiationPoints_id5qAZxlfYyVZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")), SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), _context.getContextNode());
 
               return new ListScope(memberClasses) {
                 public String getName(SNode child) {
