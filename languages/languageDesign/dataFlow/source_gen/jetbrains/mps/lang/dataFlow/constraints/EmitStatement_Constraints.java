@@ -15,6 +15,7 @@ public class EmitStatement_Constraints extends BaseConstraintsDescriptor {
   public EmitStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

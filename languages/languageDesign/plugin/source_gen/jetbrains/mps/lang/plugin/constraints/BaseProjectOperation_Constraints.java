@@ -20,6 +20,7 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
   public BaseProjectOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2e56fadb4d375f27L, "jetbrains.mps.lang.plugin.structure.BaseProjectOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

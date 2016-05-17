@@ -15,6 +15,7 @@ public class ElementMacro_Constraints extends BaseConstraintsDescriptor {
   public ElementMacro_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa1896bc34f5b4a31L, 0xb78bb65514f8d0e5L, 0x7f05a5bbee38086aL, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

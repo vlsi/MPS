@@ -18,6 +18,7 @@ public class ConvertTo_Constraints extends BaseConstraintsDescriptor {
   public ConvertTo_Constraints() {
     super(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b34209aL, "org.jetbrains.mps.samples.Money.structure.ConvertTo"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

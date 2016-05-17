@@ -32,6 +32,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public SLinkImplicitSelect_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x316f884c72a4157dL, "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -64,7 +65,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -95,5 +96,5 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     return quotedNode_1;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");
-  private static SNodePointer breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074490");
+  private static SNodePointer breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074490");
 }

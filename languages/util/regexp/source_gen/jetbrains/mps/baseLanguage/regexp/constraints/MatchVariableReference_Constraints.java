@@ -22,6 +22,7 @@ public class MatchVariableReference_Constraints extends BaseConstraintsDescripto
   public MatchVariableReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,12 +41,12 @@ public class MatchVariableReference_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_8gk9io_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_8gk9io_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_8gk9io_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
+  private static SNodePointer breakingNode_8gk9io_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
 }

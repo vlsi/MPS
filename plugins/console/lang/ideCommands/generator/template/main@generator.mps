@@ -6,7 +6,7 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
+    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -33,6 +33,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5j9z" ref="r:57b4df63-43a4-47af-aeca-e2ea21da25f1(jetbrains.mps.console.base.generator.util)" />
     <import index="74y1" ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)" />
+    <import index="fyhk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps(MPS.Platform/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -108,6 +109,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -309,6 +311,12 @@
       <ref role="30HIoZ" to="caxt:7mV0m3L$tuv" resolve="ShowExpression" />
       <node concept="j$656" id="YwfKjlWCPN" role="1lVwrX">
         <ref role="v9R2y" node="YwfKjlWCO7" resolve="reduce_ShowExpression" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="3J6h25QO0bv" role="3acgRq">
+      <ref role="30HIoZ" to="caxt:3J6h25QeHP2" resolve="GlobalScope" />
+      <node concept="j$656" id="3J6h25QO0bw" role="1lVwrX">
+        <ref role="v9R2y" node="3J6h25QO0bt" resolve="reduce_GlobalScopeLiteral" />
       </node>
     </node>
   </node>
@@ -1283,6 +1291,37 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="YwfKjlWDwB" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="3J6h25QO0bt">
+    <property role="TrG5h" value="reduce_GlobalScopeLiteral" />
+    <property role="3GE5qa" value="expression.parameter" />
+    <ref role="3gUMe" to="caxt:3J6h25QeHP2" resolve="GlobalScope" />
+    <node concept="312cEu" id="3J6h25QO0gm" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Main" />
+      <node concept="2YIFZL" id="3J6h25QO0gn" role="jymVt">
+        <property role="TrG5h" value="execute" />
+        <node concept="3cqZAl" id="3J6h25QO0go" role="3clF45" />
+        <node concept="37vLTG" id="3J6h25QO0gp" role="3clF46">
+          <property role="TrG5h" value="context" />
+          <node concept="3uibUv" id="3mC5XuEEWGy" role="1tU5fm">
+            <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3J6h25QO0gt" role="1B3o_S" />
+        <node concept="3clFbS" id="3J6h25QO0gu" role="3clF47">
+          <node concept="3clFbF" id="3J6h25QOG$P" role="3cqZAp">
+            <node concept="2ShNRf" id="7jPdBzQFMWN" role="3clFbG">
+              <node concept="1pGfFk" id="7jPdBzQFN35" role="2ShVmc">
+                <ref role="37wK5l" to="fyhk:~FilteredGlobalScope.&lt;init&gt;()" resolve="FilteredGlobalScope" />
+              </node>
+              <node concept="raruj" id="7jPdBzQFQ1J" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3J6h25QO0hE" role="1B3o_S" />
     </node>
   </node>
 </model>

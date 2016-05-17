@@ -29,6 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
+
 public interface ConstraintsDescriptor {
   @Deprecated
   String getConceptFqName();
@@ -72,15 +74,21 @@ public interface ConstraintsDescriptor {
   @Nullable
   ReferenceScopeProvider getDefaultScopeProvider();
 
+  @Nullable
+  // by convention inheritance for this methods not works
+  Icon getInstanceIcon(SNode node);
+
+  SAbstractConcept getDefaultConcreteConcept();
+
   // todo: remove/move this methods
   // by convention inheritance for this methods not works
   // null if icon not alternative
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Nullable
   String getAlternativeIcon(SNode node);
 
   @Deprecated
   @ToRemove(version = 3.4)
   SConceptId getDefaultConcreteConceptId();
-
-  SAbstractConcept getDefaultConcreteConcept();
 }

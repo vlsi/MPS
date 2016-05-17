@@ -16,6 +16,7 @@ public class StaticFieldDeclaration_Constraints extends BaseConstraintsDescripto
   public StaticFieldDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

@@ -16,6 +16,7 @@ public class SubstituteTypeRule_Constraints extends BaseConstraintsDescriptor {
   public SubstituteTypeRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

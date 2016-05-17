@@ -16,6 +16,7 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
   public BuildLayout_Filemode_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

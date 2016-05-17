@@ -8,11 +8,12 @@ import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.FilteredGlobalScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -29,8 +30,9 @@ public class ShowInLogicalView_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    Iterable<SModule> modules = (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators();
-    return Sequence.fromIterable(modules).contains(check_fx2sd0_a0a1a3(check_fx2sd0_a0a0b0d(((SNode) MapSequence.fromMap(_params).get("node")))));
+    Iterable<SModule> modules = (Iterable<SModule>) new FilteredGlobalScope().getModules();
+    SModule currentModule = check_fx2sd0_a0b0d(check_fx2sd0_a0a1a3(((SNode) MapSequence.fromMap(_params).get("node"))));
+    return Sequence.fromIterable(modules).contains(currentModule);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -63,13 +65,13 @@ public class ShowInLogicalView_Action extends BaseAction {
     SNode nodeToSelect = (pane.showNodeStructure() ? ((SNode) MapSequence.fromMap(_params).get("node")) : ((SNode) MapSequence.fromMap(_params).get("node")).getContainingRoot());
     pane.selectNode(nodeToSelect, true);
   }
-  private static SModule check_fx2sd0_a0a1a3(SModel checkedDotOperand) {
+  private static SModule check_fx2sd0_a0b0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_fx2sd0_a0a0b0d(SNode checkedDotOperand) {
+  private static SModel check_fx2sd0_a0a1a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

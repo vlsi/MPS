@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.migration.MigrationScript_0" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.migration.MigrationScript_1" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.migration.MigrationScript_0" file="MigrationScript_0.java">
@@ -21,6 +22,29 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RefactoringRuntime" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.query.migration.MigrationScript_1" file="MigrationScript_1.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />

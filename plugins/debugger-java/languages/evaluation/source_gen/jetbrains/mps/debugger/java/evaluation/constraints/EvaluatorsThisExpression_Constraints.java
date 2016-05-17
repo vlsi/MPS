@@ -16,6 +16,7 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
   public EvaluatorsThisExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1c6L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

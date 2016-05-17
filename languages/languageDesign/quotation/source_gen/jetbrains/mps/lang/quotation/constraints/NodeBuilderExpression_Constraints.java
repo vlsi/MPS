@@ -15,6 +15,7 @@ public class NodeBuilderExpression_Constraints extends BaseConstraintsDescriptor
   public NodeBuilderExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

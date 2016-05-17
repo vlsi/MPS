@@ -15,6 +15,7 @@ public class BuildAspect_Constraints extends BaseConstraintsDescriptor {
   public BuildAspect_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL, "jetbrains.mps.build.structure.BuildAspect"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -28,6 +28,7 @@ public class ColorReference_Constraints extends BaseConstraintsDescriptor {
   public ColorReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,7 +43,7 @@ public class ColorReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -57,5 +58,5 @@ public class ColorReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)", "4191445539799319539");
+  private static SNodePointer breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)", "4191445539799319539");
 }

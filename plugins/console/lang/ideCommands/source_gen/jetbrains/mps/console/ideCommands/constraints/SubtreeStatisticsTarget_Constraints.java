@@ -14,6 +14,7 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
   public SubtreeStatisticsTarget_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"));
   }
+
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;

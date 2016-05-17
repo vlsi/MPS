@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -114,8 +115,8 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
     }
   }
 }

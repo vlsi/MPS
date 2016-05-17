@@ -4,8 +4,9 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,6 +22,12 @@
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
@@ -47,9 +54,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -79,7 +86,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/actions.png" />
     <property role="TrG5h" value="NodeSubstituteActions" />
     <property role="34LRSv" value="Node Substitute Actions" />
     <property role="EcuMT" value="1112056943463" />
@@ -96,6 +102,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1112058057696" />
       <ref role="20lvS9" node="gbFOIBE" resolve="NodeSubstituteActionsBuilder" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJR$" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/actions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbFOIBE">
@@ -208,7 +217,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/rightTransform.png" />
     <property role="TrG5h" value="SideTransformHintSubstituteActions" />
     <property role="34LRSv" value="Transform Menu Actions" />
     <property role="EcuMT" value="1138079416598" />
@@ -225,6 +233,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1138079416599" />
       <ref role="20lvS9" node="gzUNGri" resolve="SideTransformHintSubstituteActionsBuilder" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRy" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/rightTransform.png" />
     </node>
   </node>
   <node concept="AxPO7" id="gAuI3o6">
@@ -293,7 +304,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/nodeFactories.png" />
     <property role="TrG5h" value="NodeFactories" />
     <property role="34LRSv" value="Node Factories" />
     <property role="EcuMT" value="1158700664498" />
@@ -309,6 +319,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1158700779049" />
       <ref role="20lvS9" node="gR7Wvgx" resolve="NodeFactory" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRx" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/nodeFactories.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="gR7Wvgx">
@@ -1298,7 +1311,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/pasteWrapper.png" />
     <property role="TrG5h" value="PasteWrappers" />
     <property role="34LRSv" value="Paste Wrappers" />
     <property role="EcuMT" value="1221135252814" />
@@ -1318,6 +1330,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1221135321084" />
       <ref role="20lvS9" node="hLhlz9g" resolve="PasteWrapper" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRz" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/pasteWrapper.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hLhlz9g">
@@ -1395,7 +1410,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/smartActions.png" />
     <property role="TrG5h" value="SmartEditorActions" />
     <property role="34LRSv" value="Smart Editor Actions" />
     <property role="EcuMT" value="1235051137001" />
@@ -1416,6 +1430,9 @@
     </node>
     <node concept="PrWs8" id="hYeNo7Q" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJR_" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/smartActions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hYeMpW9">

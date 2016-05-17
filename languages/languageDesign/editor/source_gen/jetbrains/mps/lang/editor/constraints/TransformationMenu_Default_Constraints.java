@@ -31,6 +31,7 @@ public class TransformationMenu_Default_Constraints extends BaseConstraintsDescr
   public TransformationMenu_Default_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -61,7 +62,7 @@ public class TransformationMenu_Default_Constraints extends BaseConstraintsDescr
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a2;
+            return breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -72,5 +73,5 @@ public class TransformationMenu_Default_Constraints extends BaseConstraintsDescr
     });
     return references;
   }
-  private static SNodePointer breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "7158114823470865967");
+  private static SNodePointer breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "7158114823470865967");
 }

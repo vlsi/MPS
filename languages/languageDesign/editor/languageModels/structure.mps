@@ -2,7 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -14,6 +17,12 @@
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118933224" name="comment" index="YLQ7P" />
@@ -48,9 +57,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -80,11 +89,13 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/editor.png" />
     <property role="TrG5h" value="ConceptEditorDeclaration" />
     <property role="34LRSv" value="Concept Editor" />
     <property role="EcuMT" value="1071666914219" />
     <ref role="1TJDcQ" node="fIwURLg" resolve="BaseEditorComponent" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQt" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/editor.png" />
+    </node>
     <node concept="PrWs8" id="hBfBzQU" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -474,11 +485,13 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/editorComponent.png" />
     <property role="TrG5h" value="EditorComponentDeclaration" />
     <property role="34LRSv" value="Editor Component" />
     <property role="EcuMT" value="1078938745671" />
     <ref role="1TJDcQ" node="fIwURLg" resolve="BaseEditorComponent" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQp" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/editorComponent.png" />
+    </node>
     <node concept="1TJgyj" id="66t_lsklggO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="overridenEditorComponent" />
@@ -558,11 +571,13 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/keyMap.png" />
     <property role="TrG5h" value="CellKeyMapDeclaration" />
     <property role="3GE5qa" value="CellKeyMap" />
     <property role="34LRSv" value="Cell Keymap" />
     <property role="EcuMT" value="1081293058843" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQr" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/keyMap.png" />
+    </node>
     <node concept="PrWs8" id="AkEQ6o$KU_" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1010,10 +1025,12 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/actionMap.png" />
     <property role="TrG5h" value="CellActionMapDeclaration" />
     <property role="34LRSv" value="Cell Action Map" />
     <property role="EcuMT" value="1139535219966" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQs" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/actionMap.png" />
+    </node>
     <node concept="PrWs8" id="AkEQ6o_2fI" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1951,12 +1968,14 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/menuComponent.png" />
     <property role="TrG5h" value="CellMenuComponent" />
     <property role="3GE5qa" value="CellMenu" />
     <property role="34LRSv" value="Cell Menu Component" />
     <property role="EcuMT" value="1166040637528" />
     <ref role="1TJDcQ" node="gXXWOiD" resolve="AbstractComponent" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQn" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/menuComponent.png" />
+    </node>
     <node concept="1TJgyj" id="gXXsTFp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="applicableFeature" />
@@ -2274,12 +2293,14 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/editorStylesheet.png" />
     <property role="TrG5h" value="StyleSheet" />
     <property role="3GE5qa" value="Stylesheet" />
     <property role="34LRSv" value="Stylesheet" />
     <property role="EcuMT" value="1186402211651" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQq" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/editorStylesheet.png" />
+    </node>
     <node concept="1TJgyj" id="hgV6056" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="styleClass" />
@@ -3337,12 +3358,14 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/parametersInformation.png" />
     <property role="TrG5h" value="ParametersInformationQuery" />
     <property role="3GE5qa" value="MethodParameters" />
     <property role="34LRSv" value="Parameters Information Query" />
     <property role="EcuMT" value="7667276221847612622" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQo" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/parametersInformation.png" />
+    </node>
     <node concept="1TJgyj" id="3DkLjCDOMpB" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="applicableConcept" />
@@ -4666,6 +4689,13 @@
     <property role="EcuMT" value="8449131619432941427" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
   </node>
+  <node concept="1TIwiD" id="FyOJSsBmSI">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_TargetNode" />
+    <property role="34LRSv" value="targetNode" />
+    <property role="EcuMT" value="784421273959493166" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+  </node>
   <node concept="1TIwiD" id="4Sf$XywKgZK">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuContribution" />
@@ -4694,8 +4724,8 @@
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Text" />
     <property role="34LRSv" value="query" />
-    <property role="R4oN_" value="a block of code" />
     <property role="EcuMT" value="5692353713941573329" />
+    <property role="R4oN_" value="a block of code" />
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="PlHQZ" id="4Sf$XywKhwM">
@@ -4886,24 +4916,16 @@
     <property role="EcuMT" value="8740634663378819130" />
     <ref role="1TJDcQ" node="6S33y3MyG9t" resolve="ContextExpression_TransformationMenu" />
   </node>
-  <node concept="PlHQZ" id="657q32pRmdh">
-    <property role="TrG5h" value="IContextProvider" />
-    <property role="3GE5qa" value="QueryExpression" />
-    <property role="EcuMT" value="7009685902974608209" />
-    <node concept="PrWs8" id="4Fjf6xMQPK4" role="PrDN$">
-      <ref role="PrY4T" node="axxf7pcgPe" resolve="IContextVariableProvider" />
-    </node>
-  </node>
   <node concept="PlHQZ" id="axxf7pcgPe">
     <property role="3GE5qa" value="QueryExpression" />
     <property role="TrG5h" value="IContextVariableProvider" />
     <property role="EcuMT" value="189578833592126798" />
   </node>
-  <node concept="1TIwiD" id="FyOJSsBmSI">
+  <node concept="1TIwiD" id="5DJl6Ftwolg">
+    <property role="EcuMT" value="6516520003787916624" />
     <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_TargetNode" />
-    <property role="34LRSv" value="targetNode" />
-    <property role="EcuMT" value="784421273959493166" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
+    <property role="34LRSv" value="condition" />
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="6S33y3MyG9t">
@@ -4927,12 +4949,13 @@
       <ref role="PrY4T" node="7_cYeEu4k3N" resolve="INodeProvider" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5DJl6Ftwolg">
-    <property role="EcuMT" value="6516520003787916624" />
-    <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
-    <property role="34LRSv" value="condition" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+  <node concept="PlHQZ" id="657q32pRmdh">
+    <property role="TrG5h" value="IContextProvider" />
+    <property role="3GE5qa" value="QueryExpression" />
+    <property role="EcuMT" value="7009685902974608209" />
+    <node concept="PrWs8" id="4Fjf6xMQPK4" role="PrDN$">
+      <ref role="PrY4T" node="axxf7pcgPe" resolve="IContextVariableProvider" />
+    </node>
   </node>
 </model>
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="15,0,147,0" name="jetbrains.mps.lang.textGen.editor.EditorAspectDescriptorImpl" />
@@ -4613,68 +4613,68 @@
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/7166719696753421198">
     <file name="EncodingLiteral_Editor.java">
-      <node id="7166719696753421198" at="21,79,22,63" concept="6" />
-      <node id="7166719696753421198" at="24,89,25,96" concept="5" />
-      <node id="7166719696753421198" at="25,96,26,48" concept="2" />
-      <node id="7166719696753421198" at="26,48,27,28" concept="2" />
-      <node id="7166719696753421198" at="27,28,28,81" concept="0" />
-      <node id="7166719696753421198" at="27,28,28,81" concept="2" />
-      <node id="7166719696753421198" at="28,81,29,22" concept="6" />
-      <node id="7166719696753421198" at="31,88,32,82" concept="5" />
-      <node id="7166719696753421198" at="32,82,33,33" concept="2" />
-      <node id="7166719696753421198" at="33,33,34,46" concept="2" />
-      <node id="7166719696753421198" at="34,46,35,26" concept="5" />
-      <node id="7166719696753421198" at="35,26,36,58" concept="2" />
-      <node id="7166719696753421198" at="36,58,37,46" concept="2" />
-      <node id="7166719696753421198" at="37,46,38,34" concept="5" />
-      <node id="7166719696753421198" at="38,34,39,72" concept="2" />
-      <node id="7166719696753421198" at="39,72,40,40" concept="2" />
-      <node id="7166719696753421198" at="40,40,41,212" concept="2" />
-      <node id="7166719696753421198" at="41,212,42,57" concept="5" />
-      <node id="7166719696753421198" at="42,57,43,59" concept="5" />
-      <node id="7166719696753421198" at="44,35,45,82" concept="5" />
-      <node id="7166719696753421198" at="45,82,46,94" concept="6" />
-      <node id="7166719696753421198" at="47,10,48,22" concept="6" />
-      <node id="8063439325682906944" at="53,47,54,68" concept="6" />
-      <node id="8063439325682906944" at="51,0,53,0" concept="1" trace="ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0#()V" />
-      <node id="7166719696753421198" at="21,0,24,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="8063439325682906944" at="53,0,56,0" concept="4" trace="getReplacementConceptName#()Ljava/lang/String;" />
-      <node id="7166719696753421198" at="43,59,48,22" concept="3" />
-      <node id="7166719696753421198" at="24,0,31,0" concept="4" trace="createCollection_djrnp4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="7166719696753421198" at="31,0,50,0" concept="4" trace="createProperty_djrnp4_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="8063439325682906944" at="51,63,51,63" />
-      <scope id="7166719696753421198" at="21,79,22,63" />
-      <scope id="7166719696753421198" at="27,28,28,81" />
-      <scope id="8063439325682906944" at="53,47,54,68" />
-      <scope id="7166719696753421198" at="44,35,46,94">
+      <node id="7166719696753421198" at="23,79,24,63" concept="6" />
+      <node id="7166719696753421198" at="26,89,27,96" concept="5" />
+      <node id="7166719696753421198" at="27,96,28,48" concept="2" />
+      <node id="7166719696753421198" at="28,48,29,28" concept="2" />
+      <node id="7166719696753421198" at="29,28,30,81" concept="0" />
+      <node id="7166719696753421198" at="29,28,30,81" concept="2" />
+      <node id="7166719696753421198" at="30,81,31,22" concept="6" />
+      <node id="7166719696753421198" at="33,88,34,82" concept="5" />
+      <node id="7166719696753421198" at="34,82,35,33" concept="2" />
+      <node id="7166719696753421198" at="35,33,36,46" concept="2" />
+      <node id="7166719696753421198" at="36,46,37,26" concept="5" />
+      <node id="7166719696753421198" at="37,26,38,58" concept="2" />
+      <node id="7166719696753421198" at="38,58,39,46" concept="2" />
+      <node id="7166719696753421198" at="39,46,40,34" concept="5" />
+      <node id="7166719696753421198" at="40,34,41,72" concept="2" />
+      <node id="7166719696753421198" at="41,72,42,40" concept="2" />
+      <node id="7166719696753421198" at="42,40,43,212" concept="2" />
+      <node id="7166719696753421198" at="43,212,44,57" concept="5" />
+      <node id="7166719696753421198" at="44,57,45,59" concept="5" />
+      <node id="7166719696753421198" at="46,35,47,82" concept="5" />
+      <node id="7166719696753421198" at="47,82,48,94" concept="6" />
+      <node id="7166719696753421198" at="49,10,50,22" concept="6" />
+      <node id="8063439325682906944" at="55,53,56,162" concept="6" />
+      <node id="8063439325682906944" at="53,0,55,0" concept="1" trace="ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0#()V" />
+      <node id="7166719696753421198" at="23,0,26,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8063439325682906944" at="55,0,58,0" concept="4" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="7166719696753421198" at="45,59,50,22" concept="3" />
+      <node id="7166719696753421198" at="26,0,33,0" concept="4" trace="createCollection_djrnp4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="7166719696753421198" at="33,0,52,0" concept="4" trace="createProperty_djrnp4_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8063439325682906944" at="53,63,53,63" />
+      <scope id="7166719696753421198" at="23,79,24,63" />
+      <scope id="7166719696753421198" at="29,28,30,81" />
+      <scope id="8063439325682906944" at="55,53,56,162" />
+      <scope id="7166719696753421198" at="46,35,48,94">
         <var name="manager" id="7166719696753421198" />
       </scope>
-      <scope id="8063439325682906944" at="51,0,53,0" />
-      <scope id="7166719696753421198" at="21,0,24,0">
+      <scope id="8063439325682906944" at="53,0,55,0" />
+      <scope id="7166719696753421198" at="23,0,26,0">
         <var name="editorContext" id="7166719696753421198" />
         <var name="node" id="7166719696753421198" />
       </scope>
-      <scope id="8063439325682906944" at="53,0,56,0" />
-      <scope id="7166719696753421198" at="24,89,29,22">
+      <scope id="8063439325682906944" at="55,0,58,0" />
+      <scope id="7166719696753421198" at="26,89,31,22">
         <var name="editorCell" id="7166719696753421198" />
       </scope>
-      <scope id="7166719696753421198" at="24,0,31,0">
+      <scope id="7166719696753421198" at="26,0,33,0">
         <var name="editorContext" id="7166719696753421198" />
         <var name="node" id="7166719696753421198" />
       </scope>
-      <scope id="7166719696753421198" at="31,88,48,22">
+      <scope id="7166719696753421198" at="33,88,50,22">
         <var name="attributeConcept" id="7166719696753421198" />
         <var name="attributeKind" id="7166719696753421198" />
         <var name="editorCell" id="7166719696753421198" />
         <var name="provider" id="7166719696753421198" />
         <var name="style" id="7166719696753421198" />
       </scope>
-      <scope id="7166719696753421198" at="31,0,50,0">
+      <scope id="7166719696753421198" at="33,0,52,0">
         <var name="editorContext" id="7166719696753421198" />
         <var name="node" id="7166719696753421198" />
       </scope>
-      <unit id="8063439325682906944" at="50,0,57,0" name="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor$ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0" />
-      <unit id="7166719696753421198" at="20,0,58,0" name="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor" />
+      <unit id="8063439325682906944" at="52,0,59,0" name="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor$ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0" />
+      <unit id="7166719696753421198" at="22,0,60,0" name="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor" />
     </file>
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/8937790975493363674">
@@ -4761,5 +4761,5 @@
       <unit id="8937790975493363674" at="16,0,60,0" name="jetbrains.mps.lang.textGen.editor.AttributedNodePart_Editor" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

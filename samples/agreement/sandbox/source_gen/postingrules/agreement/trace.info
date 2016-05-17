@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root>
     <file name="AgreementRegistryBuilder.java">
       <unit at="29,0,62,0" name="postingrules.agreement.AgreementRegistryBuilder" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

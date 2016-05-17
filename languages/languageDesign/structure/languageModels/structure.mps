@@ -2,13 +2,21 @@
 <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
@@ -52,9 +60,9 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -83,7 +91,6 @@
     <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/structure.png" />
     <property role="TrG5h" value="ConceptDeclaration" />
     <property role="34LRSv" value="Concept" />
     <property role="EcuMT" value="1071489090640" />
@@ -97,6 +104,7 @@
       <property role="TrG5h" value="iconPath" />
       <property role="IQ2nx" value="1160488491229" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="4qBHWh_rs8W" role="lGtFl" />
     </node>
     <node concept="1TJgyi" id="4G1g3fIR8D8" role="1TKVEl">
       <property role="TrG5h" value="staticScope" />
@@ -116,11 +124,19 @@
       <property role="IQ2ns" value="1169129564478" />
       <ref role="20lvS9" node="h0PrWoo" resolve="InterfaceConceptReference" />
     </node>
+    <node concept="1TJgyj" id="5vfjF5cjTVP" role="1TKVEi">
+      <property role="IQ2ns" value="6327362524875300597" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRI" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/structure.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="f_TJgxE">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/link.png" />
     <property role="TrG5h" value="LinkDeclaration" />
     <property role="EcuMT" value="1071489288298" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -170,11 +186,13 @@
     <node concept="PrWs8" id="1oksCg99EhD" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRH" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/link.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="f_TJgxF">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/property.png" />
     <property role="TrG5h" value="PropertyDeclaration" />
     <property role="EcuMT" value="1071489288299" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -198,6 +216,9 @@
       <property role="IQ2ns" value="1082985295845" />
       <ref role="20lvS9" node="fKAxPRU" resolve="DataTypeDeclaration" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRJ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/property.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fKAxPRU">
     <property role="TrG5h" value="DataTypeDeclaration" />
@@ -210,7 +231,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/enum.png" />
     <property role="TrG5h" value="EnumerationDataTypeDeclaration" />
     <property role="34LRSv" value="Enum Data Type" />
     <property role="EcuMT" value="1082978164219" />
@@ -252,12 +272,14 @@
     <node concept="PrWs8" id="yuXZmMPAu4" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRG" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/enum.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fKAz7CR">
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/constrainedTD.png" />
     <property role="TrG5h" value="ConstrainedDataTypeDeclaration" />
     <property role="34LRSv" value="Constrained Data Type" />
     <property role="EcuMT" value="1082978499127" />
@@ -266,6 +288,9 @@
       <property role="TrG5h" value="constraint" />
       <property role="IQ2nx" value="1083066089218" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRF" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/constrainedTD.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fKM4N6M">
@@ -294,10 +319,12 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/primitiveTD.png" />
     <property role="TrG5h" value="PrimitiveDataTypeDeclaration" />
     <property role="EcuMT" value="1083243159079" />
     <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
+    <node concept="1QGGSu" id="4Q8sAA5iJRL" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/primitiveTD.png" />
+    </node>
   </node>
   <node concept="AxPO7" id="fLJekj2">
     <property role="3lZH7k" value="derive_from_internal_value" />
@@ -411,7 +438,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/interfaceStructure.png" />
     <property role="TrG5h" value="InterfaceConceptDeclaration" />
     <property role="34LRSv" value="Interface Concept" />
     <property role="EcuMT" value="1169125989551" />
@@ -422,6 +448,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1169127546356" />
       <ref role="20lvS9" node="h0PrWoo" resolve="InterfaceConceptReference" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRK" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/interfaceStructure.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h0PrWoo">

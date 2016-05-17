@@ -16,6 +16,7 @@ public class InferenceRule_Constraints extends BaseConstraintsDescriptor {
   public InferenceRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

@@ -24,6 +24,7 @@ public class RefactoringParameterReference_Constraints extends BaseConstraintsDe
   public RefactoringParameterReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77cda06L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,12 +43,12 @@ public class RefactoringParameterReference_Constraints extends BaseConstraintsDe
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_vznh2k_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_vznh2k_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_vznh2k_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878491897");
+  private static SNodePointer breakingNode_vznh2k_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878491897");
 }

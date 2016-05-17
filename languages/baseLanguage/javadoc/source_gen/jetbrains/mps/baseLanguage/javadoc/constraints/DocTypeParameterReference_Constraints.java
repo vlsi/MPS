@@ -24,6 +24,7 @@ public class DocTypeParameterReference_Constraints extends BaseConstraintsDescri
   public DocTypeParameterReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86dbL, "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,12 +43,12 @@ public class DocTypeParameterReference_Constraints extends BaseConstraintsDescri
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6832197706140671704");
+  private static SNodePointer breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6832197706140671704");
 }

@@ -25,6 +25,7 @@ public class NodeBuilderInitProperty_Constraints extends BaseConstraintsDescript
   public NodeBuilderInitProperty_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class NodeBuilderInitProperty_Constraints extends BaseConstraintsDescript
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ui7ey_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_ui7ey_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +54,5 @@ public class NodeBuilderInitProperty_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-  private static SNodePointer breakingNode_ui7ey_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "5455284157993911081");
+  private static SNodePointer breakingNode_ui7ey_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "5455284157993911081");
 }

@@ -17,6 +17,7 @@ public class CaretPositionOperation_Constraints extends BaseConstraintsDescripto
   public CaretPositionOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc395068L, "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

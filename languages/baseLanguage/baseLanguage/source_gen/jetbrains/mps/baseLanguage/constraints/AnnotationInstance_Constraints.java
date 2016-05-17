@@ -16,6 +16,7 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
   public AnnotationInstance_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

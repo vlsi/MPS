@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.core.generator.template.main.QueriesGenerated" />
@@ -12,5 +12,5 @@
       <scope id="9100558062448744131" at="13,108,14,197" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

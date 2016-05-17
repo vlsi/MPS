@@ -31,6 +31,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
   public ScopesTest_Constraints() {
     super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -45,7 +46,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_jzm89w_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_jzm89w_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -76,5 +77,5 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_jzm89w_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "5449224527592362462");
+  private static SNodePointer breakingNode_jzm89w_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "5449224527592362462");
 }

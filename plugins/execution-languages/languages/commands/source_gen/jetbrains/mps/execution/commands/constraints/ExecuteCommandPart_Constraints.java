@@ -31,6 +31,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   public ExecuteCommandPart_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -48,7 +49,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_kwfdao_a0a1a0a0a2;
+        return breakingNode_kwfdao_a0a1a0a0a3;
       }
     };
   }
@@ -63,7 +64,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return check_kwfdao_a0a1a1a0b0a1a3(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(node));
+        return check_kwfdao_a0a1a1a0b0a1a4(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(node));
       }
     });
     properties.put(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), this) {
@@ -90,11 +91,11 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-  private static String check_kwfdao_a0a1a1a0b0a1a3(SNode checkedDotOperand) {
+  private static String check_kwfdao_a0a1a1a0b0a1a4(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
     return null;
   }
-  private static SNodePointer breakingNode_kwfdao_a0a1a0a0a2 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "3445893456318180892");
+  private static SNodePointer breakingNode_kwfdao_a0a1a0a0a3 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "3445893456318180892");
 }

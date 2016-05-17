@@ -18,6 +18,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertyArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -84,8 +86,8 @@ public class PropertyArgument_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractArgument_cellMenu_9w8e31_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractArgument_cellMenu_9w8e31_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument");
     }
   }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -46,8 +47,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -328,6 +329,26 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return "";
     }
     return d.getHelpUrl();
+  }
+
+  @Override
+  @Nullable
+  public Icon getIcon() {
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      return null;
+    }
+    Icon icon = cd.getIcon();
+    if (icon != null) {
+      return icon;
+    }
+
+    //compatibility code, can be removed after 3.4
+    SNode dn = getDeclarationNode();
+    if (dn == null) {
+      return null;
+    }
+    return ConceptIconLoader.getIconForConcept(dn);
   }
 
   /**

@@ -148,7 +148,7 @@ public final class CreateFromUsageUtil {
       setExecuteOutsideCommand(false);
       final Presentation tp = getTemplatePresentation();
       tp.setText(concept.getConceptAlias().isEmpty() ? concept.getName() : concept.getConceptAlias());
-      tp.setIcon(IconManager.getIcon(concept));
+      tp.setIcon(concept.getIcon());
     }
 
     @Override

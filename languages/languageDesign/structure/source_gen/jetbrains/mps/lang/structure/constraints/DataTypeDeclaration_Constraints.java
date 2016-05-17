@@ -16,6 +16,7 @@ public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DataTypeDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -25,7 +26,7 @@ public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_gntvk6_a0a0a0a0a2;
+        return breakingNode_gntvk6_a0a0a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -33,5 +34,5 @@ public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
-  private static SNodePointer breakingNode_gntvk6_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "199017432865782318");
+  private static SNodePointer breakingNode_gntvk6_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "199017432865782318");
 }

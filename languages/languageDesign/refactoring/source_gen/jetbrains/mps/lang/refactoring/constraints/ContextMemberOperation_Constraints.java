@@ -17,6 +17,7 @@ public class ContextMemberOperation_Constraints extends BaseConstraintsDescripto
   public ContextMemberOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

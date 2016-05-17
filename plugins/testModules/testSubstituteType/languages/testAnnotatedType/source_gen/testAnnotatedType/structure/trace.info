@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,73,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
+      <unit at="17,0,74,0" name="testAnnotatedType.structure.StructureAspectDescriptor" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

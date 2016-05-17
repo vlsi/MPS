@@ -16,6 +16,7 @@ public class ResultExpression_Constraints extends BaseConstraintsDescriptor {
   public ResultExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e18dae0L, "jetbrains.mps.baseLanguage.builders.structure.ResultExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

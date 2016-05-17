@@ -26,6 +26,7 @@ public class BuildSource_JavaModule_Constraints extends BaseConstraintsDescripto
   public BuildSource_JavaModule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

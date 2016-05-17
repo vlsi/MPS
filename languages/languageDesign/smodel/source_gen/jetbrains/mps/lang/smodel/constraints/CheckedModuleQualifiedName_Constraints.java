@@ -22,6 +22,7 @@ public class CheckedModuleQualifiedName_Constraints extends BaseConstraintsDescr
   public CheckedModuleQualifiedName_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName"));
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

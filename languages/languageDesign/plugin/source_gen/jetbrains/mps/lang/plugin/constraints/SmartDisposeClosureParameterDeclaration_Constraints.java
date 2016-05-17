@@ -15,6 +15,7 @@ public class SmartDisposeClosureParameterDeclaration_Constraints extends BaseCon
   public SmartDisposeClosureParameterDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6bd88e2e00aae68L, "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

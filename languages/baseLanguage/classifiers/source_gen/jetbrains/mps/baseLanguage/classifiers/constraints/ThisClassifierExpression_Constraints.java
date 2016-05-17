@@ -27,6 +27,7 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
   public ThisClassifierExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -59,7 +60,7 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_9aiht3_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -70,5 +71,5 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
     return SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")}, true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213107438050");
-  private static SNodePointer breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1218737393727");
+  private static SNodePointer breakingNode_9aiht3_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1218737393727");
 }

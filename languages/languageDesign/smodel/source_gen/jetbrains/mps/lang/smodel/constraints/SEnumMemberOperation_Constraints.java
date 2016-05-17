@@ -18,6 +18,7 @@ public class SEnumMemberOperation_Constraints extends BaseConstraintsDescriptor 
   public SEnumMemberOperation_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120f244ef53L, "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

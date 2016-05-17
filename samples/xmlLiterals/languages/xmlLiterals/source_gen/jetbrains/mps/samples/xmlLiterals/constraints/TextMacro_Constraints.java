@@ -15,6 +15,7 @@ public class TextMacro_Constraints extends BaseConstraintsDescriptor {
   public TextMacro_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa1896bc34f5b4a31L, 0xb78bb65514f8d0e5L, 0x7f05a5bbee374ae1L, "jetbrains.mps.samples.xmlLiterals.structure.TextMacro"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

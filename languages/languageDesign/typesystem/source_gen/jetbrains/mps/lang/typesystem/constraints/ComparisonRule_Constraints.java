@@ -16,6 +16,7 @@ public class ComparisonRule_Constraints extends BaseConstraintsDescriptor {
   public ComparisonRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,142,0" name="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor" />
+      <unit at="18,0,143,0" name="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

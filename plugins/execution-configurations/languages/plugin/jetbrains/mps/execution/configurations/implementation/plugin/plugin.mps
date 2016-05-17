@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="0" />
+    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="1" />
     <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="0" />
     <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="0" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
@@ -9365,13 +9365,13 @@
                     <node concept="3clFbS" id="2diPio0Ihe6" role="3clFbx">
                       <node concept="3clFbF" id="2diPio0Ifxf" role="3cqZAp">
                         <node concept="37vLTI" id="2diPio0Ifxh" role="3clFbG">
-                          <node concept="2YIFZM" id="2diPio0IeRO" role="37vLTx">
-                            <ref role="37wK5l" to="sn11:277Nzj6qTN_" resolve="loadIcon" />
-                            <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                            <node concept="37vLTw" id="2diPio0Ih3$" role="37wK5m">
+                          <node concept="2YIFZM" id="5vfjF5cfa7J" role="37vLTx">
+                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
+                            <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
+                            <node concept="37vLTw" id="5vfjF5cfa7K" role="37wK5m">
                               <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
                             </node>
-                            <node concept="3clFbT" id="7up3O4XwBNg" role="37wK5m">
+                            <node concept="3clFbT" id="5vfjF5cfa7L" role="37wK5m">
                               <property role="3clFbU" value="false" />
                             </node>
                           </node>

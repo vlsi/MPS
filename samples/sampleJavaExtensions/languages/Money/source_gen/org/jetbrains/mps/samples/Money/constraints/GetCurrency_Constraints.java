@@ -18,6 +18,7 @@ public class GetCurrency_Constraints extends BaseConstraintsDescriptor {
   public GetCurrency_Constraints() {
     super(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b32f1b1L, "org.jetbrains.mps.samples.Money.structure.GetCurrency"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

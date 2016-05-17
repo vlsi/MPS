@@ -18,6 +18,7 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   public StyleClassItem_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

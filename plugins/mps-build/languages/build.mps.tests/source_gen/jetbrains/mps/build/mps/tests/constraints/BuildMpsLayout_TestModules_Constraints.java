@@ -21,6 +21,7 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
   public BuildMpsLayout_TestModules_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

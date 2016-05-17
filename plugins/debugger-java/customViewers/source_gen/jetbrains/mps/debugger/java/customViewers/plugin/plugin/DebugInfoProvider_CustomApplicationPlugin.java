@@ -4,26 +4,28 @@ package jetbrains.mps.debugger.java.customViewers.plugin.plugin;
 
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.BreakpointCreator;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.debug.api.BreakpointCreatorsManager;
-import jetbrains.mps.util.Mapper2;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
-  private Set<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new HashSet<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
+  private Set<BreakpointCreator> myCreators = SetSequence.fromSet(new HashSet<BreakpointCreator>());
   public DebugInfoProvider_CustomApplicationPlugin() {
   }
   public void doInit() {
@@ -38,12 +40,21 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
     // next lines needed for to be sure that all classes in dispose() loaded after init() 
     // basically: this code do nothing, but class loading 
-    for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
+    for (BreakpointCreator creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
     }
-
     {
-      Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
-        public ILocationBreakpoint value(SNode debuggableNode, Project project) {
+      BreakpointCreator creator = new BreakpointCreator(null, null);
+      creator.canCreate(new _FunctionTypes._return_P2_E0<Boolean, SAbstractConcept, SNode>() {
+        public Boolean invoke(SAbstractConcept concept, SNode debuggableNode) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))) {
+            return true;
+          }
+          return false;
+
+        }
+      });
+      creator.create(new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
+        public ILocationBreakpoint invoke(SNode debuggableNode, Project project) {
           try {
             return Debuggers.getInstance().getDebuggerByNameSafe("Java").createBreakpoint(debuggableNode, "JAVA_LINE_BREAKPOINT", project);
           } catch (DebuggerNotPresentException e) {
@@ -52,14 +63,28 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
             }
             return null;
           }
-
         }
-      };
-      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), creator);
+      });
+
+      SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).addElement(creator);
+      manager.addCreator(creator);
     }
     {
-      Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
-        public ILocationBreakpoint value(SNode debuggableNode, Project project) {
+      BreakpointCreator creator = new BreakpointCreator(null, null);
+      creator.canCreate(new _FunctionTypes._return_P2_E0<Boolean, SAbstractConcept, SNode>() {
+        public Boolean invoke(SAbstractConcept concept, SNode debuggableNode) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+            return true;
+          }
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+            return true;
+          }
+          return false;
+
+        }
+      });
+      creator.create(new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
+        public ILocationBreakpoint invoke(SNode debuggableNode, Project project) {
           try {
             return Debuggers.getInstance().getDebuggerByNameSafe("Java").createBreakpoint(debuggableNode, "JAVA_FIELD_BREAKPOINT", project);
           } catch (DebuggerNotPresentException e) {
@@ -68,11 +93,11 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
             }
             return null;
           }
-
         }
-      };
-      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), creator);
-      manager.addConceptBreakpointCreator(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), creator);
+      });
+
+      SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).addElement(creator);
+      manager.addCreator(creator);
     }
   }
   public void doDispose() {
@@ -84,10 +109,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     if (manager == null) {
       return;
     }
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement");
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
+    for (BreakpointCreator creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
       manager.removeCreator(creator);
     }
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).clear();

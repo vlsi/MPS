@@ -14,11 +14,12 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -43,50 +44,50 @@ public class EmptyBlockDocTag_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag");
     }
   }
   public static class ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
     }
   }
   public static class ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag");
     }
   }
   public static class ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag");
     }
   }
   public static class ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag");
     }
   }
   public static class ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
     }
   }
   public static class ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag");
     }
   }
   public static class EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a extends AbstractCellMenuPart_Generic_Item {

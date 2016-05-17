@@ -14,6 +14,7 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
   public SettingsEditor_Constraints() {
     super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"));
   }
+
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;

@@ -15,6 +15,7 @@ public class BuildLayout_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -39,6 +39,7 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
   public AnonymousClass_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -90,7 +91,7 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_vrtrpd_a0a2a0a0a1a0b0a1a2;
+            return breakingNode_vrtrpd_a0a2a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -124,5 +125,5 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_vrtrpd_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4477882950024298123");
+  private static SNodePointer breakingNode_vrtrpd_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4477882950024298123");
 }

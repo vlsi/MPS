@@ -2,9 +2,7 @@
 <model ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
@@ -13,10 +11,8 @@
   <imports>
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="moux" ref="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)" />
@@ -265,12 +261,6 @@
       <ref role="30HIoZ" to="3xdn:3J6h25Q5HRT" resolve="QueryParameterList" />
       <node concept="j$656" id="3J6h25QGPcv" role="1lVwrX">
         <ref role="v9R2y" node="3J6h25QGPcs" resolve="reduce_QueryParameterList" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="3J6h25QO0bv" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:3J6h25QeHP2" resolve="GlobalScope" />
-      <node concept="j$656" id="3J6h25QO0bw" role="1lVwrX">
-        <ref role="v9R2y" node="3J6h25QO0bt" resolve="reduce_GlobalScopeLiteral" />
       </node>
     </node>
     <node concept="3aamgX" id="31Tct3TnZp6" role="3acgRq">
@@ -816,36 +806,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3J6h25QGPGx" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="13MO4I" id="3J6h25QO0bt">
-    <property role="TrG5h" value="reduce_GlobalScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
-    <ref role="3gUMe" to="3xdn:3J6h25QeHP2" resolve="GlobalScope" />
-    <node concept="312cEu" id="3J6h25QO0gm" role="13RCb5">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="Main" />
-      <node concept="2YIFZL" id="3J6h25QO0gn" role="jymVt">
-        <property role="TrG5h" value="execute" />
-        <node concept="3cqZAl" id="3J6h25QO0go" role="3clF45" />
-        <node concept="37vLTG" id="3J6h25QO0gp" role="3clF46">
-          <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="3mC5XuEEWGy" role="1tU5fm">
-            <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="3J6h25QO0gt" role="1B3o_S" />
-        <node concept="3clFbS" id="3J6h25QO0gu" role="3clF47">
-          <node concept="3clFbF" id="3J6h25QOG$P" role="3cqZAp">
-            <node concept="2YIFZM" id="3J6h25QOIM4" role="3clFbG">
-              <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-              <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
-              <node concept="raruj" id="3J6h25QOMpM" role="lGtFl" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3J6h25QO0hE" role="1B3o_S" />
     </node>
   </node>
   <node concept="13MO4I" id="31Tct3TvJ$l">

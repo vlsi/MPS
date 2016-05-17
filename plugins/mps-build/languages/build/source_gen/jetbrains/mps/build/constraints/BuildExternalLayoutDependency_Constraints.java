@@ -25,6 +25,7 @@ public class BuildExternalLayoutDependency_Constraints extends BaseConstraintsDe
   public BuildExternalLayoutDependency_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class BuildExternalLayoutDependency_Constraints extends BaseConstraintsDe
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +54,5 @@ public class BuildExternalLayoutDependency_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-  private static SNodePointer breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "8258189873530172586");
+  private static SNodePointer breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "8258189873530172586");
 }

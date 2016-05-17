@@ -15,6 +15,7 @@ public class ControlAbstractionDeclaration_Constraints extends BaseConstraintsDe
   public ControlAbstractionDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

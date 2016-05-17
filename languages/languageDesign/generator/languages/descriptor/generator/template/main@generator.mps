@@ -2227,7 +2227,7 @@
                                     <ref role="35c_gD" to="tpc2:59ZEGVOSPtB" resolve="ConceptEditorContextHints" />
                                   </node>
                                   <node concept="35c_gC" id="67q8fiOz7RT" role="37wK5m">
-                                    <ref role="35c_gD" to="tpc2:4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+                                    <ref role="35c_gD" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
                                   </node>
                                 </node>
                                 <node concept="2YIFZM" id="CgolD_znvL" role="3uHU7w">

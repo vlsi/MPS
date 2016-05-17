@@ -15,8 +15,9 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -59,15 +60,15 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_WarningStatement_cellMenu_x0qgth_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_WarningStatement_cellMenu_x0qgth_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.WarningStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
     }
   }
   public static class ReplaceWith_ReportErrorStatement_cellMenu_x0qgth_b0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ReportErrorStatement_cellMenu_x0qgth_b0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
     }
   }
   private EditorCell createRefNode_x0qgth_b0(EditorContext editorContext, SNode node) {

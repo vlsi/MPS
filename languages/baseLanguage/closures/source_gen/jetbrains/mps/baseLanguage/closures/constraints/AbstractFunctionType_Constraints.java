@@ -16,6 +16,7 @@ public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor 
   public AbstractFunctionType_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

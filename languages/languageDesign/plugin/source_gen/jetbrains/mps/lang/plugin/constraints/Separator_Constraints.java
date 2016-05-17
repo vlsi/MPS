@@ -15,6 +15,7 @@ public class Separator_Constraints extends BaseConstraintsDescriptor {
   public Separator_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1188a1ecd8aL, "jetbrains.mps.lang.plugin.structure.Separator"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

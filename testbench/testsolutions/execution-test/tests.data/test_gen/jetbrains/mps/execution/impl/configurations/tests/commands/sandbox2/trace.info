@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)/6339244025082034140">
     <file name="FailedTestCase_Test_Test.java">
       <node id="6339244025082034140" at="14,45,15,152" concept="0" />
@@ -64,5 +64,5 @@
       <unit id="6937584626643047380" at="11,0,28,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

@@ -2,7 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -12,6 +13,12 @@
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -26,9 +33,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -55,12 +62,14 @@
   </registry>
   <node concept="1TIwiD" id="hmS6QkF">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
     <property role="TrG5h" value="IntentionDeclaration" />
     <property role="34LRSv" value="Intention" />
     <property role="3GE5qa" value="old" />
     <property role="EcuMT" value="1192794744107" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
+    <node concept="1QGGSu" id="4Q8sAA5iJSm" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/intentionBulb.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hmS6ZEB">
     <property role="TrG5h" value="DescriptionBlock" />
@@ -243,12 +252,14 @@
   </node>
   <node concept="1TIwiD" id="2c3oNEsfAwl">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/surroundWithIntention.png" />
     <property role="TrG5h" value="SurroundWithIntentionDeclaration" />
     <property role="34LRSv" value="Surround-With Intention" />
     <property role="3GE5qa" value="new" />
     <property role="EcuMT" value="2522969319638198293" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
+    <node concept="1QGGSu" id="4Q8sAA5iJSl" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/surroundWithIntention.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1$_U1xaW3xx">
     <property role="TrG5h" value="ParameterizedDescriptionBlock" />
@@ -270,7 +281,6 @@
     <property role="TrG5h" value="Intention" />
     <property role="3GE5qa" value="new" />
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
     <property role="34LRSv" value="Universal Intention" />
     <property role="EcuMT" value="8214474548715792907" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
@@ -293,6 +303,9 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="6431842707461916273" />
       <ref role="20lvS9" node="5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJSn" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/intentionBulb.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6q8H2OTpOHU">

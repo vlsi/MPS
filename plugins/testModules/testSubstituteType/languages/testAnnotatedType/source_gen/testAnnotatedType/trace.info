@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
+<debug-info-v2>
   <root>
     <file name="Language.java">
       <unit at="18,0,59,0" name="testAnnotatedType.Language" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

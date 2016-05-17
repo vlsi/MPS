@@ -18,6 +18,7 @@ public class MatchRegexpOperation_Constraints extends BaseConstraintsDescriptor 
   public MatchRegexpOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c9466ae95L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

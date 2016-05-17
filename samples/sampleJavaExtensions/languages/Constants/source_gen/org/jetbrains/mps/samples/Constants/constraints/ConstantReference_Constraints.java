@@ -25,6 +25,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
   public ConstantReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_nqxbkv_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_nqxbkv_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +54,5 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_nqxbkv_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "5956117492787420277");
+  private static SNodePointer breakingNode_nqxbkv_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "5956117492787420277");
 }

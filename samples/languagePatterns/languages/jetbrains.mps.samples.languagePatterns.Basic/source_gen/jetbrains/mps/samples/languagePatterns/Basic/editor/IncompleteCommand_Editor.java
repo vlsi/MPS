@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IncompleteCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -82,15 +83,15 @@ public class IncompleteCommand_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_DrawLine_cellMenu_ehgky7_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_DrawLine_cellMenu_ehgky7_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265dade0L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine");
     }
   }
   public static class ReplaceWith_DrawRect_cellMenu_ehgky7_b0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_DrawRect_cellMenu_ehgky7_b0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb26647490L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect");
     }
   }
 }

@@ -28,6 +28,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
   public OperationDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L, "jetbrains.mps.lang.textGen.structure.OperationDeclaration"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -46,7 +47,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_617hs5_a0a1a0a0a2;
+        return breakingNode_617hs5_a0a1a0a0a3;
       }
     };
   }
@@ -81,5 +82,5 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
     });
     return properties;
   }
-  private static SNodePointer breakingNode_617hs5_a0a1a0a0a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
+  private static SNodePointer breakingNode_617hs5_a0a1a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
 }

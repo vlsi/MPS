@@ -17,21 +17,22 @@ package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class TraceablePositionInfo extends PositionInfo {
-  private String myConceptFqName;
+  private SAbstractConcept myConcept;
   private String myPropertyString;
 
   public TraceablePositionInfo() {
   }
 
   @Nullable
-  public String getConceptFqName() {
-    return myConceptFqName;
+  public SAbstractConcept getConcept() {
+    return myConcept;
   }
 
-  public void setConceptFqName(String conceptFqName) {
-    myConceptFqName = InternUtil.intern(conceptFqName);
+  public void setConcept(SAbstractConcept concept) {
+    myConcept = concept;
   }
 
   public String getPropertyString() {
@@ -50,8 +51,8 @@ public class TraceablePositionInfo extends PositionInfo {
     }
     assert p instanceof TraceablePositionInfo;
     TraceablePositionInfo tpi = (TraceablePositionInfo) p;
-    if (myConceptFqName != null) {
-      result = myConceptFqName.compareTo(tpi.myConceptFqName);
+    if (myConcept != null) {
+      result = myConcept.getName().compareTo(tpi.myConcept.getName());
       if (result != 0) {
         return result;
       }
@@ -59,7 +60,7 @@ public class TraceablePositionInfo extends PositionInfo {
     if (myPropertyString != null) {
       return myPropertyString.compareTo(tpi.myPropertyString);
     }
-    if (tpi.myConceptFqName == null && tpi.myPropertyString == null) {
+    if (tpi.myConcept == null && tpi.myPropertyString == null) {
       return 0;
     }
     return -1;

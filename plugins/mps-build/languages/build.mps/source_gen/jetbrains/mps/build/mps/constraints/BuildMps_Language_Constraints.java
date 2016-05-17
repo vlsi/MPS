@@ -18,6 +18,7 @@ public class BuildMps_Language_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_Language_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

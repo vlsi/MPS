@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)/6420745394459121798">
     <file name="DefaultEditorComponent_Test.java">
       <node id="6420745394459121798" at="13,62,14,128" concept="0" />
@@ -66,5 +66,5 @@
       <unit id="6420745394459902267" at="10,0,27,0" name="jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

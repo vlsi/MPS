@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -246,8 +247,8 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
     }
   }
 }

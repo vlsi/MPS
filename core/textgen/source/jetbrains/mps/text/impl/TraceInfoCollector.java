@@ -72,7 +72,7 @@ public class TraceInfoCollector {
 
   public TraceablePositionInfo createTracePosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     TraceablePositionInfo pi = new TraceablePositionInfo();
-    pi.setConceptFqName(node.getConcept().getQualifiedName());
+    pi.setConcept(node.getConcept());
     myTracePositions.put(node, pi);
     myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;

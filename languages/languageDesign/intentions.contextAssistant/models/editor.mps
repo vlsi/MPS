@@ -39,7 +39,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2ytFvC$HnDG">
-    <ref role="1XX52x" to="a1gu:2ytFvC$HnDh" resolve="ContextAssistantMenuPart_Intention" />
+    <ref role="1XX52x" to="a1gu:2ytFvC$HnDh" resolve="TransformationMenuPart_Intention" />
     <node concept="3EZMnI" id="2ytFvC$HnDI" role="2wV5jI">
       <node concept="PMmxH" id="3jqS1UMfu4B" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />

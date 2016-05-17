@@ -15,6 +15,7 @@ public class ContextExpression_Constraints extends BaseConstraintsDescriptor {
   public ContextExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6a69999da766290fL, "jetbrains.mps.execution.configurations.structure.ContextExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

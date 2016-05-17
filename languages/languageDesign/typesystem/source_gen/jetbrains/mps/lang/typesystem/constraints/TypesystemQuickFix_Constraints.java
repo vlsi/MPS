@@ -16,6 +16,7 @@ public class TypesystemQuickFix_Constraints extends BaseConstraintsDescriptor {
   public TypesystemQuickFix_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b36163865L, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,8 +39,8 @@ public class TransformationMenuReference_Named_Editor extends DefaultNodeEditor 
   public static class ReplaceWith_TransformationMenuReference_cellMenu_d4sp3r_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_TransformationMenuReference_cellMenu_d4sp3r_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.structure.TransformationMenuReference";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference");
     }
   }
   private EditorCell createRefCell_d4sp3r_b0(EditorContext editorContext, SNode node) {

@@ -16,6 +16,7 @@ public class StyleSheet_Constraints extends BaseConstraintsDescriptor {
   public StyleSheet_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

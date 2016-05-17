@@ -72,13 +72,13 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
           if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
             SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
             if (node != null) {
-              return IconManager.getIconWithoutAdditionalPart(node);
+              return IconManager.getIconFor(node);
             }
             // TODO: get current empty tab component in MPSEditorUtil by using ((TabbedEditor) nodeEditor).myTabsComponent.getCurrentTabAspect()[.getIcon]
           }
           SNode node = nodeFile.getNode();
           if (node != null) {
-            return IconManager.getIconWithoutAdditionalPart(node);
+            return IconManager.getIconFor(node);
           }
           return null;
         }
@@ -96,7 +96,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
 
           for (SNode node : descr.getRootNodes()) {
             if(node.getName().equals(file.getNameWithoutExtension())) {
-              return IconManager.getIconFor(node, true);
+              return IconManager.getIconFor(node);
             }
           }
           return null;

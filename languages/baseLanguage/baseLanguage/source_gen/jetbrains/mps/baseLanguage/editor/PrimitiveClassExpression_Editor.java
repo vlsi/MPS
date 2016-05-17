@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -66,8 +67,8 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference");
     }
   }
   private EditorCell createConstant_bw5rf5_b0(EditorContext editorContext, SNode node) {

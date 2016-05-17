@@ -367,6 +367,9 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -1012,6 +1015,14 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="5vfjF5cdPVb" role="3cqZAp">
+          <node concept="3cpWsn" id="5vfjF5cdPVc" role="3cpWs9">
+            <property role="TrG5h" value="icon" />
+            <node concept="3uibUv" id="5vfjF5cdPVd" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5u1dFJQIBMo" role="3cqZAp">
           <node concept="3cpWsn" id="5u1dFJQIBMp" role="3cpWs9">
             <property role="TrG5h" value="pc" />
@@ -1032,22 +1043,54 @@
           </node>
         </node>
         <node concept="3clFbJ" id="5u1dFJQICbX" role="3cqZAp">
-          <node concept="3clFbS" id="5u1dFJQICbZ" role="3clFbx">
-            <node concept="3clFbF" id="5u1dFJQIEew" role="3cqZAp">
-              <node concept="37vLTI" id="5u1dFJQIEju" role="3clFbG">
-                <node concept="3B5_sB" id="5u1dFJQIEl8" role="37vLTx">
-                  <ref role="3B5MYn" to="tpee:fz12cDA" resolve="ClassConcept" />
+          <node concept="3y3z36" id="5vfjF5cdRSs" role="3clFbw">
+            <node concept="37vLTw" id="5u1dFJQICjU" role="3uHU7B">
+              <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
+            </node>
+            <node concept="10Nm6u" id="5u1dFJQICz9" role="3uHU7w" />
+          </node>
+          <node concept="3clFbS" id="5vfjF5cdRSx" role="3clFbx">
+            <node concept="3SKdUt" id="5vfjF5cdUbP" role="3cqZAp">
+              <node concept="3SKdUq" id="5vfjF5cdUbR" role="3SKWNk">
+                <property role="3SKdUp" value="viva la interpretation!" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="5vfjF5cdS8_" role="3cqZAp">
+              <node concept="37vLTI" id="5vfjF5cdSet" role="3clFbG">
+                <node concept="2OqwBi" id="5vfjF5cdTvA" role="37vLTx">
+                  <node concept="2OqwBi" id="5vfjF5cdSri" role="2Oq$k0">
+                    <node concept="37vLTw" id="5vfjF5cdSgr" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
+                    </node>
+                    <node concept="1rGIog" id="5vfjF5cdSYY" role="2OqNvi" />
+                  </node>
+                  <node concept="liA8E" id="5vfjF5cdTZ0" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="5u1dFJQIEeu" role="37vLTJ">
-                  <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
+                <node concept="37vLTw" id="5vfjF5cdS8$" role="37vLTJ">
+                  <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="5u1dFJQICs0" role="3clFbw">
-            <node concept="10Nm6u" id="5u1dFJQICz9" role="3uHU7w" />
-            <node concept="37vLTw" id="5u1dFJQICjU" role="3uHU7B">
-              <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
+          <node concept="9aQIb" id="5vfjF5cdRSv" role="9aQIa">
+            <node concept="3clFbS" id="5u1dFJQICbZ" role="9aQI4">
+              <node concept="3clFbF" id="5vfjF5cdQdm" role="3cqZAp">
+                <node concept="37vLTI" id="5vfjF5cdQhZ" role="3clFbG">
+                  <node concept="2OqwBi" id="5vfjF5cdQFO" role="37vLTx">
+                    <node concept="35c_gC" id="5vfjF5cdQjU" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    </node>
+                    <node concept="liA8E" id="5vfjF5cdRMV" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="5vfjF5cdQdk" role="37vLTJ">
+                    <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -1061,15 +1104,8 @@
             </node>
             <node concept="liA8E" id="5kVFkwb9ZBJ" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
-              <node concept="2YIFZM" id="5kVFkwba2hT" role="37wK5m">
-                <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
-                <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                <node concept="2OqwBi" id="5kVFkwba31p" role="37wK5m">
-                  <node concept="37vLTw" id="5u1dFJQIBMv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
-                  </node>
-                  <node concept="1rGIog" id="5kVFkwba3AO" role="2OqNvi" />
-                </node>
+              <node concept="37vLTw" id="5vfjF5cdUlH" role="37wK5m">
+                <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
               </node>
             </node>
           </node>

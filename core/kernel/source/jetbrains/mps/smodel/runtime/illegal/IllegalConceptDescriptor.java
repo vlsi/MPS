@@ -34,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -201,6 +202,11 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public String getHelpUrl() {
     reportWarn();
     return "";
+  }
+
+  @Override
+  public Icon getIcon() {
+    return null;
   }
 
   @Nullable

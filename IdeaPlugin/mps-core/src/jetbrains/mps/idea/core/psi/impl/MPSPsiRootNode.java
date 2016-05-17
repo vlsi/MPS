@@ -90,7 +90,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
       public Icon compute() {
         final SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return IdeIcons.UNKNOWN_ICON;
-        return IconManager.getIconFor(node, true);
+        return IconManager.getIconFor(node);
       }
     });
   }

@@ -16,6 +16,7 @@ public class BwfFileSet_Constraints extends BaseConstraintsDescriptor {
   public BwfFileSet_Constraints() {
     super(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

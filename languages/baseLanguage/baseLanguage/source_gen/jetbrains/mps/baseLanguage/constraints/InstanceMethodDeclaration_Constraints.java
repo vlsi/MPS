@@ -17,4 +17,5 @@ public class InstanceMethodDeclaration_Constraints extends BaseConstraintsDescri
     }
     return null;
   }
+
 }

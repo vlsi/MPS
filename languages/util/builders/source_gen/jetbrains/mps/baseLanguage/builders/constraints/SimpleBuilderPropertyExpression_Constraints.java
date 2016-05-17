@@ -15,6 +15,7 @@ public class SimpleBuilderPropertyExpression_Constraints extends BaseConstraints
   public SimpleBuilderPropertyExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

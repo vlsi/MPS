@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +58,7 @@ public class ConceptDescriptorBuilder {
   private List<PropertyDescriptor> ownProperties = new ArrayList<PropertyDescriptor>();
   private List<ReferenceDescriptor> ownReferences = new ArrayList<ReferenceDescriptor>();
   private List<LinkDescriptor> ownLinks = new ArrayList<LinkDescriptor>();
+  private Icon myIcon;
 
   //remove after migration
   public ConceptDescriptorBuilder(String conceptFqName) {
@@ -155,6 +157,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder icon(Icon value) {
+    myIcon = value;
+    return this;
+  }
+
   public ConceptDescriptorBuilder staticScope(StaticScope value) {
     this.staticScope = value;
     return this;
@@ -181,7 +188,8 @@ public class ConceptDescriptorBuilder {
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope,
-        sourceNodeRef);
+        sourceNodeRef,
+        myIcon);
   }
 
   public static class Link {

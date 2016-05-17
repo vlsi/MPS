@@ -16,6 +16,7 @@ public class ActionTestSidetransformTestAncestor_Constraints extends BaseConstra
   public ActionTestSidetransformTestAncestor_Constraints() {
     super(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefc9cfa78L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor"));
   }
+
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;

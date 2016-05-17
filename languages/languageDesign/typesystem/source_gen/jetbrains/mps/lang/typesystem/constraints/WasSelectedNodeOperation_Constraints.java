@@ -17,6 +17,7 @@ public class WasSelectedNodeOperation_Constraints extends BaseConstraintsDescrip
   public WasSelectedNodeOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc39506eL, "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

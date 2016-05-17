@@ -16,8 +16,9 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -50,8 +51,8 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector");
     }
   }
   private EditorCell createConstant_i44x1b_b0(EditorContext editorContext, SNode node) {
@@ -69,8 +70,8 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector");
     }
   }
   private EditorCell createRefNode_i44x1b_c0(EditorContext editorContext, SNode node) {

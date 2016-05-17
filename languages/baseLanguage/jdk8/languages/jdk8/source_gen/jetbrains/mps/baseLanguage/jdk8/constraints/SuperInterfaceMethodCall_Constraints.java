@@ -35,6 +35,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
   public SuperInterfaceMethodCall_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, "jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -63,7 +64,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_bs3nei_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_bs3nei_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -86,7 +87,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3;
+            return breakingNode_bs3nei_a0a0a0a0a1a0b0a2a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -113,6 +114,6 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
     return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "2043122710974594130");
-  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "8287904403586986407");
-  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a3 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6434457067210687039");
+  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "8287904403586986407");
+  private static SNodePointer breakingNode_bs3nei_a0a0a0a0a1a0b0a2a4 = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "6434457067210687039");
 }

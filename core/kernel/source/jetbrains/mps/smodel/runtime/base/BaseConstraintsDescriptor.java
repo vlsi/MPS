@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -32,23 +33,20 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import javax.swing.Icon;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
@@ -365,6 +363,14 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @Override
   public String getAlternativeIcon(SNode node) {
     return null;
+  }
+
+  @Nullable
+  @Override
+  public Icon getInstanceIcon(SNode node) {
+    //compatibility code introduced before 3.4
+    //we can remove this code when users migrate to new method in constraints
+    return ConceptIconLoader.loadIcon(node.getConcept().getDeclarationNode(), getAlternativeIcon(node));
   }
 
   @Deprecated

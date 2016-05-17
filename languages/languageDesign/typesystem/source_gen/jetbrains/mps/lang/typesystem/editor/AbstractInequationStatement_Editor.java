@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -135,8 +136,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
     }
   }
   private EditorCell createRefNode_ka3b3c_e0a(EditorContext editorContext, SNode node) {
@@ -251,8 +252,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
     }
   }
   private EditorCell createRefNode_ka3b3c_d1a(EditorContext editorContext, SNode node) {

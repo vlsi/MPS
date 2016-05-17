@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -93,8 +94,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
     }
   }
   public static class BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0 extends AbstractCellMenuPart_Generic_Group {

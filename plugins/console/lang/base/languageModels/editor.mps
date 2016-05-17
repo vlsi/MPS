@@ -41,12 +41,12 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
-      <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named" flags="ng" index="A1WHu">
+      <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
-      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default" flags="ng" index="IW6AY" />
-      <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantExecuteFunction" flags="ig" index="IWg2L" />
-      <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action" flags="ng" index="IWgqT">
+      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
+      <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
+      <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
@@ -99,7 +99,7 @@
         <child id="1139535280620" name="executeFunction" index="1hA7z_" />
       </concept>
       <concept id="1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" flags="in" index="1hAIg9" />
-      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantText" flags="ig" index="1hCUdq" />
+      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="1hCUdq" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -142,11 +142,11 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenu" flags="ng" index="3ICUPy">
+      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
         <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
-      <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named" flags="ng" index="3ICXOK" />
-      <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.INamedContextAssistantItems" flags="ng" index="3INCJE">
+      <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
+      <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="items" index="IW6Ez" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />

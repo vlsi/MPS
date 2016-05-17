@@ -173,7 +173,7 @@ public class ShowImplementationComponent extends JPanel {
     public ImplementationNode(SNode node) {
       myNode = SNodeOperations.copyNode(((SNode) node));
       myNodePresentation = (SNodeOperations.isInstanceOf(((SNode) node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && node.getParent() != null ? node.getParent() + "." + node.getPresentation() : node.getPresentation());
-      myNodeIcon = IconManager.getIconFor(node, true);
+      myNodeIcon = IconManager.getIconFor(node);
       myModuleName = node.getModel().getModule().getModuleName();
       myModuleIcon = IconManager.getIconFor(node.getModel().getModule());
       myOriginalNodePointer = node.getReference();

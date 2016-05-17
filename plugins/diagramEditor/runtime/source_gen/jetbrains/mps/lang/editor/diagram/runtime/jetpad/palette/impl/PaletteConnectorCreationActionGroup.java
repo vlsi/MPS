@@ -12,7 +12,7 @@ import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -40,7 +39,7 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childNodeConcept, containingLink, canCreateConnector, setConnectorCallback)});
-    myIcon = IconManager.getIconForConcept(((SNode) childNodeConcept));
+    myIcon = SNodeOperations.asSConcept(childNodeConcept).getIcon();
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();

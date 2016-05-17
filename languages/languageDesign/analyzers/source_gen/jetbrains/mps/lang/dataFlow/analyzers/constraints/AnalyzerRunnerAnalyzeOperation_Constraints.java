@@ -18,6 +18,7 @@ public class AnalyzerRunnerAnalyzeOperation_Constraints extends BaseConstraintsD
   public AnalyzerRunnerAnalyzeOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

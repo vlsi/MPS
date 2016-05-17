@@ -16,6 +16,7 @@ public class AdditionalForLoopVariable_Constraints extends BaseConstraintsDescri
   public AdditionalForLoopVariable_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

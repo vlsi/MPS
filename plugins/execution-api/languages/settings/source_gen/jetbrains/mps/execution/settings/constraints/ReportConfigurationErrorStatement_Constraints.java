@@ -15,6 +15,7 @@ public class ReportConfigurationErrorStatement_Constraints extends BaseConstrain
   public ReportConfigurationErrorStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

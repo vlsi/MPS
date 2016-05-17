@@ -15,6 +15,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(12);
   /*package*/ final ConceptDescriptor myConceptA = new ConceptDescriptorBuilder("BHL6.structure.A", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04606a7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)", "6167444251392476839")).create();
   /*package*/ final ConceptDescriptor myConceptB = new ConceptDescriptorBuilder("BHL6.structure.B", MetaIdFactory.conceptId(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:bab76308-0131-498c-bd77-e2a62f306a1a(BHL6.structure)", "6167444251392479194")).create();

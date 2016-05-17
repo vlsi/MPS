@@ -25,6 +25,7 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
   public OfAspectOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_srl38n_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_srl38n_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -50,5 +51,5 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_srl38n_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5932042262275698794");
+  private static SNodePointer breakingNode_srl38n_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5932042262275698794");
 }

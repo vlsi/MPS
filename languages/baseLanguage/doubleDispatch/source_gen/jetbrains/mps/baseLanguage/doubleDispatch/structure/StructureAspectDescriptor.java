@@ -15,6 +15,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
   /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(0x7db4447f913e4b81L, 0xbd75c9a473319ac6L, 0x21592d9e737fa6f9L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L)).alias("dispatch", "").sourceNode(new SNodePointer("r:7e809ad3-04d3-4570-a077-2d8302adf756(jetbrains.mps.baseLanguage.doubleDispatch.structure)", "2403002034744698617")).create();
 

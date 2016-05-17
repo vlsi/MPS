@@ -25,6 +25,7 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
   public LinkRefQualifier_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -47,12 +48,12 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cgym5w_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_cgym5w_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_cgym5w_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
+  private static SNodePointer breakingNode_cgym5w_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
 }

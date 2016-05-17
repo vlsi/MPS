@@ -18,6 +18,7 @@ public class BuildMps_Solution_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_Solution_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
