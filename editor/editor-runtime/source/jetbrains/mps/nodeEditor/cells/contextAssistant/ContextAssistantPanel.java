@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -74,6 +75,7 @@ public class ContextAssistantPanel implements ActionItemExecutor {
     });
   }
 
+  @NotNull
   public JComponent getComponent() {
     return myComponent;
   }
