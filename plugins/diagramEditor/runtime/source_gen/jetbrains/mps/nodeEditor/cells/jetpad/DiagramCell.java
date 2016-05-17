@@ -21,6 +21,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalett
 import javax.swing.JPanel;
 import jetbrains.jetpad.base.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -89,6 +90,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     super(editorContext, node);
     myTraitProperty.set(getEventHandlingTrait());
   }
+  @NotNull
+  @Override
   public JComponent getComponent() {
     if (myPanel == null) {
       int columnCount = (myPalettePanel == null ? 1 : 2);

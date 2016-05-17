@@ -35,6 +35,7 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
     hideMenu();
   }
 
+  @NotNull
   @Override
   public JComponent getComponent() {
     return myAssistantPanel.getComponent();
