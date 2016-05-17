@@ -16,10 +16,13 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorDataProvider;
 import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
@@ -31,7 +34,15 @@ import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
 import com.intellij.psi.impl.file.impl.FileManager;
+import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.Processor;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndexExtension;
+import com.intellij.util.indexing.ID;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
@@ -43,6 +54,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -57,6 +69,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -251,6 +264,44 @@ public class MPSPsiProvider extends AbstractProjectComponent {
             SModel smodel = psiModel.getSModelReference().resolve(ProjectHelper.getProjectRepository(psiModel.getProject()));
             if (smodel instanceof EditableSModel) {
               ((EditableSModel) smodel).save();
+            }
+            // This is needed to make subsequent index queries, like those from ClassifierSuccessorFinder, to see
+            // all indices in up-to-date state. Otherwise, idea tries to index the files that have been changed
+            // since last indexing. And it fails with an assertion error in case if the provided GlobalSearchScope
+            // has getProject() == null, which is the case is the query goes from mps.
+            //
+            // If either code change happens
+            // 1) mps starts querying indices with a GlobalSearchScope where getProject() in not null (for instance,
+            // when we have honest per-projecy repositories)
+            // 2) we stop saving the model here (and in other places like NewRootAction) right after model file
+            // modification (e.g. creating a new root)
+            // then this hack will no longer be needed
+            makeIndicesUpToDate(smodel);
+          }
+
+          /**
+           * Forces indices that are relevant for this model's virtual file up-to-date by issuing a fake
+           * query. The thing is idea index serves queries by first making sure that all indices are up-to-date. It's
+           * crucial that the provided GlobalSearchScope has non-null project. But MPS code like ClassifierSuccessorFinder
+           * queries indices with a scope where project is null (MPS's GlobalScope)
+           */
+          private void makeIndicesUpToDate(SModel smodel) {
+            if (DumbService.isDumb(myProject)) {
+              return;
+            }
+            if (smodel.getSource() instanceof FileSystemBasedDataSource) {
+              for (IFile f : ((FileSystemBasedDataSource) smodel.getSource()).getAffectedFiles()) {
+                VirtualFile file = VirtualFileUtils.getVirtualFile(f);
+                GlobalSearchScope oneFileScope = GlobalSearchScope.fileScope(myProject, file);
+                FileBasedIndex.getInstance().requestReindex(file);
+                for (FileBasedIndexExtension indexExt : FileBasedIndexExtension.EXTENSION_POINT_NAME.getExtensions()) {
+                  if (!indexExt.getInputFilter().acceptInput(file)) {
+                    continue;
+                  }
+                  ID id = indexExt.getName();
+                  FileBasedIndex.getInstance().processFilesContainingAllKeys(id, Collections.emptyList(), oneFileScope, null, Processor.FALSE);
+                }
+              }
             }
           }
         };
