@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.psi.PsiClassType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.psi.PsiField;
@@ -37,6 +38,7 @@ import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.impl.source.tree.JavaSourceUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
 import com.intellij.psi.PsiNameValuePair;
@@ -120,7 +122,11 @@ public class ASTConverter {
         if (extendz.length != 0) {
           SLinkOperations.setTarget(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), currConverter.resolveClass(extendz[0]));
         }
-        ListSequence.fromList(SLinkOperations.getChildren(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(implementz)).select(new ISelector<PsiClassType, SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(implementz)).where(new IWhereFilter<PsiClassType>() {
+          public boolean accept(PsiClassType it) {
+            return isNotLight(it);
+          }
+        }).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
             return currConverter.resolveClass(it);
           }
@@ -132,10 +138,16 @@ public class ASTConverter {
     }
 
     // interface's super intefaces 
+    // isNotLight is needed, for example, for annotations as they have an implicit extended interface: 
+    // java.lang.annotations.Annotation 
     {
       final SNode iface = classifier.value;
       if (SNodeOperations.isInstanceOf(iface, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        ListSequence.fromList(SLinkOperations.getChildren(iface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(extendz)).select(new ISelector<PsiClassType, SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(iface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(extendz)).where(new IWhereFilter<PsiClassType>() {
+          public boolean accept(PsiClassType it) {
+            return isNotLight(it);
+          }
+        }).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
             return currConverter.resolveClass(it);
           }
@@ -251,7 +263,11 @@ public class ASTConverter {
     SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (isFinal(x)));
     SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"), "" + (x.hasModifierProperty(PsiModifier.SYNCHRONIZED)));
 
-    ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getThrowsList().getReferencedTypes())).select(new ISelector<PsiClassType, SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getThrowsList().getReferencedTypes())).where(new IWhereFilter<PsiClassType>() {
+      public boolean accept(PsiClassType it) {
+        return isNotLight(it);
+      }
+    }).select(new ISelector<PsiClassType, SNode>() {
       public SNode select(PsiClassType it) {
         SNode typ = resolveClass(it);
         return typ;
@@ -380,8 +396,14 @@ public class ASTConverter {
 
     if (x.getExtendsListTypes().length > 0) {
       Iterable<PsiClassType> extend = Sequence.fromArray(x.getExtendsListTypes());
-      SLinkOperations.setTarget(typeVar, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"), resolveClass(Sequence.fromIterable(extend).first()));
-      ListSequence.fromList(SLinkOperations.getChildren(typeVar, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addSequence(Sequence.fromIterable(extend).skip(1).select(new ISelector<PsiClassType, SNode>() {
+      if (isNotLight(Sequence.fromIterable(extend).first())) {
+        SLinkOperations.setTarget(typeVar, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"), resolveClass(Sequence.fromIterable(extend).first()));
+      }
+      ListSequence.fromList(SLinkOperations.getChildren(typeVar, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addSequence(Sequence.fromIterable(extend).skip(1).where(new IWhereFilter<PsiClassType>() {
+        public boolean accept(PsiClassType it) {
+          return isNotLight(it);
+        }
+      }).select(new ISelector<PsiClassType, SNode>() {
         public SNode select(PsiClassType it) {
           return resolveClass(it);
         }
@@ -404,6 +426,7 @@ public class ASTConverter {
     return null;
   }
   public SNode resolveClass(PsiClassType t) {
+    assert isNotLight(t) : "resolveClass() must not be applied to LightElements";
     SNode clsType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
     String resolveInfo;
     if (t instanceof PsiClassReferenceType) {
@@ -433,6 +456,9 @@ public class ASTConverter {
     anno.setReference("annotation", new DynamicReference("annotation", anno, null, fqName));
 
     return anno;
+  }
+  private boolean isNotLight(PsiClassType t) {
+    return !((t instanceof PsiClassReferenceType && ((PsiClassReferenceType) t).getReference() instanceof LightElement));
   }
   private SNode getVisibility(PsiModifierListOwner x) {
     if (x.hasModifierProperty(PsiModifier.PUBLIC)) {
