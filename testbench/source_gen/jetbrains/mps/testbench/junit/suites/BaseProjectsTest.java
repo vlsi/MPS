@@ -24,6 +24,8 @@ import com.intellij.ide.startup.impl.StartupManagerImpl;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.util.ui.UIUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseProjectsTest {
@@ -72,17 +74,27 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
+    waitForInvocations();
   }
 
   @After
   public void closeProject() {
+    waitForInvocations();
     final com.intellij.openapi.project.Project project = ((MPSProject) myProject).getProject();
     final StartupManagerImpl instance = (StartupManagerImpl) StartupManager.getInstance(project);
     instance.prepareForNextTest();
-
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         ProjectUtil.closeAndDispose(project);
+      }
+    }, ModalityState.NON_MODAL);
+    waitForInvocations();
+  }
+
+  private static void waitForInvocations() {
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      public void run() {
+        UIUtil.dispatchAllInvocationEvents();
       }
     });
   }
