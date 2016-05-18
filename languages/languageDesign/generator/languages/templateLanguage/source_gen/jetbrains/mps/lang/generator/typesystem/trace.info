@@ -844,7 +844,7 @@
       <node id="1225934347908" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1225934347908" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1225935926122" at="22,96,26,9" concept="1" />
-      <node id="1225935913285" at="21,221,27,7" concept="9" />
+      <node id="1225935913285" at="21,259,27,7" concept="9" />
       <node id="1225934476733" at="20,118,28,5" concept="9" />
       <node id="1225934347908" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1225934347908" at="18,50,18,50" />
@@ -862,7 +862,7 @@
       </scope>
       <scope id="1225934347908" at="36,0,39,0" />
       <scope id="1225935913286" at="22,96,26,9" />
-      <scope id="1225934476734" at="21,221,27,7" />
+      <scope id="1225934476734" at="21,259,27,7" />
       <scope id="1225934347909" at="20,118,28,5" />
       <scope id="1225934347908" at="20,0,30,0">
         <var name="macro" id="1225934347908" />
@@ -885,7 +885,7 @@
       <node id="1226346278934" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1226346278934" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1226346278940" at="22,96,26,9" concept="1" />
-      <node id="1226346278938" at="21,221,27,7" concept="9" />
+      <node id="1226346278938" at="21,259,27,7" concept="9" />
       <node id="1226346278936" at="20,118,28,5" concept="9" />
       <node id="1226346278934" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1226346278934" at="18,51,18,51" />
@@ -903,7 +903,7 @@
       </scope>
       <scope id="1226346278934" at="36,0,39,0" />
       <scope id="1226346278939" at="22,96,26,9" />
-      <scope id="1226346278937" at="21,221,27,7" />
+      <scope id="1226346278937" at="21,259,27,7" />
       <scope id="1226346278935" at="20,118,28,5" />
       <scope id="1226346278934" at="20,0,30,0">
         <var name="macro" id="1226346278934" />
@@ -926,7 +926,7 @@
       <node id="1226346325144" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1226346325144" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1226346325150" at="22,96,26,9" concept="1" />
-      <node id="1226346325148" at="21,221,27,7" concept="9" />
+      <node id="1226346325148" at="21,259,27,7" concept="9" />
       <node id="1226346325146" at="20,118,28,5" concept="9" />
       <node id="1226346325144" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1226346325144" at="18,46,18,46" />
@@ -944,7 +944,7 @@
       </scope>
       <scope id="1226346325144" at="36,0,39,0" />
       <scope id="1226346325149" at="22,96,26,9" />
-      <scope id="1226346325147" at="21,221,27,7" />
+      <scope id="1226346325147" at="21,259,27,7" />
       <scope id="1226346325145" at="20,118,28,5" />
       <scope id="1226346325144" at="20,0,30,0">
         <var name="macro" id="1226346325144" />
