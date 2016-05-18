@@ -29,6 +29,7 @@ import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
@@ -56,7 +57,14 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
 
   public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
     this(component.getSelectionManager(), component.getUpdater(), new ParentOrSmallCellContextAssistantFinder(),
-        new SelectionMenuProviderByCellAndConcept(repository.getModelAccess(), MenuLocations.CONTEXT_ASSISTANT));
+        defaultMenuProvider(repository.getModelAccess()));
+  }
+
+  @NotNull
+  private static SelectionMenuProvider defaultMenuProvider(ModelAccess modelAccess) {
+    return new FilteringSelectionMenuProvider(
+        new SelectionMenuProviderByCellAndConcept(modelAccess, MenuLocations.CONTEXT_ASSISTANT),
+        new CanExecuteFilter(modelAccess));
   }
 
   public DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,

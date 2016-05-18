@@ -44,4 +44,31 @@ public class SubMenu implements MenuItem {
   public <ResultT> ResultT accept(MenuItemVisitor<ResultT> visitor) {
     return visitor.visit(this);
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    SubMenu subMenu = (SubMenu) o;
+
+    return myText.equals(subMenu.myText) && myItems.equals(subMenu.myItems);
+
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myText.hashCode();
+    result = 31 * result + myItems.hashCode();
+    return result;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("SubMenu %s with items %s", myText, myItems);
+  }
 }
