@@ -34,6 +34,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
@@ -109,6 +111,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
             myComponent = new MyPanel();
             jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
             myInspectorComponent = new InspectorEditorComponent(project.getRepository());
+            EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
             myMessagePanel.setNode(null);
             myComponent.add(myMessagePanel, BorderLayout.NORTH);

@@ -24,4 +24,5 @@ import java.util.List;
 public interface TransformationMenu {
   @NotNull
   List<MenuItem> createMenuItems(TransformationMenuContext context);
+  boolean isContribution();
 }

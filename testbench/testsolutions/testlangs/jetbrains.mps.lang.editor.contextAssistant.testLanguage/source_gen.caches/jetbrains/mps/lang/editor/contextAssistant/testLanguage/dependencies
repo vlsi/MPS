@@ -5,7 +5,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

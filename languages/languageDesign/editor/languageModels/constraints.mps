@@ -170,7 +170,9 @@
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
       <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
+      <concept id="1203001093456" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" flags="in" index="osYL8" />
       <concept id="1203001236505" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" flags="nn" index="otxO1" />
+      <concept id="1203009604308" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" flags="nn" index="oXsJc" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4656991770397278586" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole" flags="nn" index="$OBgH" />
       <concept id="4656991770397278600" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position" flags="nn" index="$OBjv" />
@@ -197,6 +199,7 @@
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
         <child id="1213106463729" name="canBeChild" index="1MLUbF" />
+        <child id="1213106478122" name="canBeParent" index="1MLXOK" />
       </concept>
       <concept id="1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" flags="in" index="1MUpDS" />
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -212,6 +215,10 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
+        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
+        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -238,6 +245,9 @@
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
+        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -2163,6 +2173,45 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="3EZUZhmZo9Y">
+    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
+    <ref role="1M2myG" to="tpc2:3EZUZhmYaO_" resolve="TransformationMenuPart_Parameterized" />
+    <node concept="osYL8" id="3EZUZhn9u_2" role="1MLXOK">
+      <node concept="3clFbS" id="3EZUZhn9u_3" role="2VODD2">
+        <node concept="3clFbJ" id="3EZUZhmZoh8" role="3cqZAp">
+          <node concept="3clFbS" id="3EZUZhmZoha" role="3clFbx">
+            <node concept="3SKdUt" id="3EZUZhmZsLy" role="3cqZAp">
+              <node concept="3SKdUq" id="3EZUZhmZsL$" role="3SKWNk">
+                <property role="3SKdUp" value="Only allow parameterizable menu parts as children" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="3EZUZhmZrjr" role="3cqZAp">
+              <node concept="2OqwBi" id="3EZUZhmZrLV" role="3cqZAk">
+                <node concept="otxO1" id="3EZUZhmZrxJ" role="2Oq$k0" />
+                <node concept="2Zo12i" id="3EZUZhmZrZX" role="2OqNvi">
+                  <node concept="chp4Y" id="3EZUZhmZs9F" role="2Zo12j">
+                    <ref role="cht4Q" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3EZUZhn9va8" role="3clFbw">
+            <node concept="28GBK8" id="3EZUZhmZqhM" role="3uHU7B">
+              <ref role="28GBKb" to="tpc2:3EZUZhmYaO_" resolve="TransformationMenuPart_Parameterized" />
+              <ref role="28H3Ia" to="tpc2:3EZUZhmYaOA" />
+            </node>
+            <node concept="oXsJc" id="3EZUZhn9imP" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3EZUZhmZstI" role="3cqZAp">
+          <node concept="3clFbT" id="3EZUZhmZsu5" role="3cqZAk">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>

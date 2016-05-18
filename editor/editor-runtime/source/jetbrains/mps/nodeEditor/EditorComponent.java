@@ -1940,15 +1940,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (EditorDisposeListener listener : new ArrayList<EditorDisposeListener>(myDisposeListeners)) {
       listener.editorWillBeDisposed(this);
     }
+    myDisposeListeners.clear();
   }
 
-  public void addDisposeListener(EditorDisposeListener listener) {
+  @Override
+  public void addDisposeListener(@NotNull EditorDisposeListener listener) {
     if (!myDisposeListeners.contains(listener)) {
       myDisposeListeners.add(listener);
     }
   }
 
-  public void removeDisposeListener(EditorDisposeListener listener) {
+  @Override
+  public void removeDisposeListener(@NotNull EditorDisposeListener listener) {
     myDisposeListeners.remove(listener);
   }
 
@@ -3068,10 +3071,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Deprecated
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
-  }
-
-  public static interface EditorDisposeListener {
-    public void editorWillBeDisposed(EditorComponent component);
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {

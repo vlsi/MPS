@@ -4160,6 +4160,12 @@
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="IBh1_7aLxC" role="3bR37C">
+          <node concept="3bR9La" id="IBh1_7aLxD" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:2eDSGe9d1qi" resolve="jetbrains.mps.ide" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4Sf$XywNum3" role="2G$12L">
         <property role="BnDLt" value="true" />

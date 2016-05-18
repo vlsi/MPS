@@ -30,12 +30,15 @@ public interface SubstituteAction {
 
   SNode getSourceNode();
 
+  @Deprecated
   Object getParameterObject();
 
+  @Deprecated
   SNode getOutputConcept();
 
   SNode getActionType(String pattern);
 
+  @Deprecated
   SNode getActionType(String pattern, EditorCell contextCell);
 
   String getMatchingText(String pattern);

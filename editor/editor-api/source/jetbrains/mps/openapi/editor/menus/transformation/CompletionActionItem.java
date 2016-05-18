@@ -29,7 +29,9 @@ public interface CompletionActionItem extends ActionItem {
    * @return the text that matches this action, or null if not defined
    */
   @Nullable
-  String getMatchingText(@NotNull String pattern);
+  default String getMatchingText(@NotNull String pattern) {
+    return getLabelText(pattern);
+  }
 
   /**
    * Returns the type of the result of the transformation when performed, if known and applicable. Used to filter actions for smart completion.
@@ -38,10 +40,14 @@ public interface CompletionActionItem extends ActionItem {
    * @return a node representing the type if known; null if unknown or not defined
    */
   @Nullable
-  SNode getActionType(@NotNull String pattern);
+  default SNode getActionType(@NotNull String pattern) {
+    return null;
+  }
 
   @Nullable
-  SNode getIconNode(String pattern);
+  default SNode getIconNode(String pattern) {
+    return null;
+  }
 
   /**
    * Returns the text that would appear on the right side of the completion menu.
@@ -50,5 +56,7 @@ public interface CompletionActionItem extends ActionItem {
    * @return a (short) string or null if not defined
    */
   @Nullable
-  String getShortDescriptionText(@NotNull String pattern);
+  default String getShortDescriptionText(@NotNull String pattern) {
+    return null;
+  }
 }

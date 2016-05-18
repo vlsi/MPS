@@ -143,7 +143,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
       return result;
     } catch (RuntimeException rte) {
       LOG.error("Exception while building SmartMatchingActions list", rte);
-      return new ArrayList<SubstituteAction>();
+      return new ArrayList<>();
     } finally {
       TemporaryModels.getInstance().dispose(ourModelForTypechecking);
       ourModelForTypechecking = null;

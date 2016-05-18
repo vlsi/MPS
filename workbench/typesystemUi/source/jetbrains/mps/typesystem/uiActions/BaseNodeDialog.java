@@ -20,6 +20,7 @@ import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,8 +39,10 @@ public abstract class BaseNodeDialog extends DialogWrapper {
     setTitle(text);
 
     InspectorEditorComponent inspector = new InspectorEditorComponent(myProject.getRepository());
+    EditorExtensionUtil.extendUsingProject(inspector, myProject);
     inspector.setNoVirtualFile(true);
     myEditorComponent = new UIEditorComponent(myProject.getRepository(), inspector);
+    EditorExtensionUtil.extendUsingProject(myEditorComponent, myProject);
 
     mySplitter = new Splitter(true, 0.6f);
 

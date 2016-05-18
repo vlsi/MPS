@@ -38,9 +38,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextVariable__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IParameterizableMenuPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_parameterObject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClass__BehaviorDescriptor" />
@@ -55,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler" />

@@ -61,13 +61,17 @@ class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableBy
 
   @Override
   public PopupStep onChosen(MenuItem selectedValue, boolean finalChoice) {
-    if (selectedValue instanceof SubMenu) {
-      return new MenuItemListStep(myActionItemExecutor, ((SubMenu) selectedValue).getItems());
-    } else if (selectedValue instanceof ActionItem) {
-      return doFinalStep(getRunnableFor((ActionItem) selectedValue));
-    } else {
-      return FINAL_CHOICE;
-    }
+    return selectedValue.accept(new MenuItemVisitor<PopupStep>() {
+      @Override
+      public PopupStep visit(ActionItem actionItem) {
+        return doFinalStep(getRunnableFor(actionItem));
+      }
+
+      @Override
+      public PopupStep visit(SubMenu subMenu) {
+        return new MenuItemListStep(myActionItemExecutor, subMenu.getItems());
+      }
+    });
   }
 
   private Runnable getRunnableFor(final ActionItem item) {

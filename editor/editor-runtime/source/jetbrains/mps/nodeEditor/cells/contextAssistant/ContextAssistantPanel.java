@@ -21,6 +21,7 @@ import com.intellij.util.ui.JBUI;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
@@ -182,12 +183,23 @@ public class ContextAssistantPanel implements ActionItemExecutor {
       item.execute("");
     } else {
       jumpToEditor(false);
-      myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
-        @Override
-        protected void doExecute() {
+      switch (item.getCommandPolicy()) {
+        case COMMAND_REQUIRED:
+          myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
+            @Override
+            protected void doExecute() {
+              item.execute("");
+            }
+          });
+          break;
+
+        case COMMAND_UNSUPPORTED:
           item.execute("");
-        }
-      });
+          break;
+
+        default:
+          throw new IllegalArgumentException("Unknown command policy " + item.getCommandPolicy());
+      }
       myEditorContext.getContextAssistantManager().scheduleUpdate();
     }
   }

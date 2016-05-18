@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -29,7 +28,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * @author simon
@@ -37,20 +35,8 @@ import java.util.List;
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private EditorsCache myEditorsCache = new EditorsCache();
   private EditorComponentsCache myEditorComponentsCache = new EditorComponentsCache();
-  private DefaultContextAssistantMenusCache myDefaultContextAssistantMenusCache = new DefaultContextAssistantMenusCache();
-  private NamedContextAssistantMenusCache myNamedContextAssistantMenusCache = new NamedContextAssistantMenusCache();
-
-  @Override
-  @Deprecated
-  public Collection<ConceptEditor> getEditors(final ConceptDescriptor descriptor) {
-    return new ArrayList<ConceptEditor>();
-  }
-
-  @Override
-  @Deprecated
-  public Collection<ConceptEditorComponent> getEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId) {
-    return new ArrayList<ConceptEditorComponent>();
-  }
+  private DefaultTransformationMenusCache myDefaultTransformationMenusCache = new DefaultTransformationMenusCache();
+  private NamedTransformationMenusCache myNamedTransformationMenusCache = new NamedTransformationMenusCache();
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
@@ -64,18 +50,18 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
 
   @NotNull
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return myEditorComponentsCache.get(new Pair<SAbstractConcept, String>(concept, editorComponentId));
+    return myEditorComponentsCache.get(new Pair<>(concept, editorComponentId));
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return new ArrayList<ConceptEditorComponent>();
+    return new ArrayList<>();
   }
 
   @NotNull
   @Override
   public Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept) {
-    return myDefaultContextAssistantMenusCache.get(concept);
+    return myDefaultTransformationMenusCache.get(concept);
   }
 
   @NotNull
@@ -87,7 +73,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   @NotNull
   @Override
   public Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId) {
-    return myNamedContextAssistantMenusCache.get(menuId);
+    return myNamedTransformationMenusCache.get(menuId);
   }
 
   @NotNull
@@ -96,19 +82,15 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  @Deprecated
-  protected synchronized Collection<ConceptEditor> collectEditors(final ConceptDescriptor descriptor, final List<ConceptEditor> initialEditors) {
-    return initialEditors;
-  }
-
-  @Deprecated
-  protected synchronized Collection<ConceptEditorComponent> collectEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId,
-      final List<ConceptEditorComponent> initialEditors) {
-    return initialEditors;
+  void clearAllCaches() {
+    myEditorsCache.clear();
+    myEditorComponentsCache.clear();
+    myDefaultTransformationMenusCache.clear();
+    myNamedTransformationMenusCache.clear();
   }
 
   private class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
-    public EditorsCache() {
+    private EditorsCache() {
       super(EditorAspectDescriptorBase.this);
     }
 
@@ -125,7 +107,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   }
 
   private class EditorComponentsCache extends EditorAspectContributionsCache<Pair<SAbstractConcept, String>, ConceptEditorComponent> {
-    public EditorComponentsCache() {
+    private EditorComponentsCache() {
       super(EditorAspectDescriptorBase.this);
     }
 
@@ -141,8 +123,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     }
   }
 
-  private class DefaultContextAssistantMenusCache extends EditorAspectContributionsCache<SAbstractConcept, TransformationMenu> {
-    public DefaultContextAssistantMenusCache() {
+  private class DefaultTransformationMenusCache extends EditorAspectContributionsCache<SAbstractConcept, TransformationMenu> {
+    private DefaultTransformationMenusCache() {
       super(EditorAspectDescriptorBase.this);
     }
 
@@ -158,8 +140,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     }
   }
 
-  private class NamedContextAssistantMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
-    public NamedContextAssistantMenusCache() {
+  private class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
+    private NamedTransformationMenusCache() {
       super(EditorAspectDescriptorBase.this);
     }
 

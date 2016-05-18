@@ -165,6 +165,19 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.TableComponentEnum" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell" file="TransformationLocation_SideTransform_PlaceInCell.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell_PropertySupport" file="TransformationLocation_SideTransform_PlaceInCell_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.structure.UnderlineStyle" file="UnderlineStyle.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />

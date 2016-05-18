@@ -2,8 +2,7 @@
 <model ref="r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -42,7 +41,7 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="4PEyPcYoaDd">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="Parent" />
     <property role="34LRSv" value="parent" />
     <property role="19KtqR" value="true" />
@@ -61,7 +60,7 @@
   </node>
   <node concept="1TIwiD" id="4PEyPcYoaCM">
     <property role="TrG5h" value="Child" />
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="child" />
     <property role="EcuMT" value="5578424278096849458" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -70,9 +69,15 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1H9M4VxN7gV">
-    <property role="3GE5qa" value="contextAssistant" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="SubconceptOfChild" />
     <property role="EcuMT" value="1966322953445209147" />
+    <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
+  </node>
+  <node concept="1TIwiD" id="7P0KIHplU$4">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="OtherSubconceptOfChild" />
+    <property role="EcuMT" value="9025427969322494212" />
     <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
   </node>
 </model>

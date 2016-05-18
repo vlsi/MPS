@@ -17,10 +17,12 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,9 +35,6 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
 
   protected AbstractSubstituteAction(SNode sourceNode) {
     mySourceNode = sourceNode;
-  }
-
-  protected AbstractSubstituteAction() {
   }
 
   protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -114,17 +113,14 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
     return matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*");
   }
 
-
   @Override
-  public final SNode substitute(@Nullable final EditorContext context, final String pattern) {
-    final SNode[] newNode = new SNode[1];
-
-    Runnable runnable = new Runnable() {
+  public final SNode substitute(@Nullable final EditorContext editorContext, final String pattern) {
+    ModelComputeRunnable<SNode> substituter = new ModelComputeRunnable<SNode>(new Computable<SNode>() {
       @Override
-      public void run() {
-        if (context != null) {
+      public SNode compute() {
+        if (editorContext != null) {
           // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
-          jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) context.getSelectedCell();
+          jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell();
           if (selectedCell != null) {
             // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
             //
@@ -138,33 +134,38 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
           }
         }
 
-        newNode[0] = doSubstitute(context, pattern);
-        // similar to: IntellijentInputUtil.applyRigthTransform() logic
-        if (context != null && newNode[0] != null) {
-          jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
-          if (editorComponent != null) {
-            editorComponent.getUpdater().flushModelEvents();
-            EditorCell cell = editorComponent.findNodeCell(newNode[0]);
-            if (cell != null) {
-              EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-              if (errorCell != null) {
-                editorComponent.changeSelectionWRTFocusPolicy(((jetbrains.mps.nodeEditor.cells.EditorCell) errorCell));
-              } else {
-                editorComponent.changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
-              }
-            }
-          }
+        SNode nodeToSelect = doSubstitute(editorContext, pattern);
+
+        if (editorContext != null && nodeToSelect != null) {
+          EditorComponent editorComponent = editorContext.getEditorComponent();
+          editorComponent.getUpdater().flushModelEvents();
+          select(editorContext, nodeToSelect);
         }
+        return nodeToSelect;
       }
-    };
+    });
 
-    if (context != null) {
-      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(runnable, context));
+    if (editorContext != null) {
+      editorContext.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(substituter, editorContext));
+      return substituter.getResult();
     } else {
-      runnable.run();
+      substituter.run();
+      return substituter.getResult();
     }
+  }
 
-    return newNode[0];
+  protected void select(EditorContext context, SNode node) {
+    EditorComponent editorComponent = context.getEditorComponent();
+    EditorCell cell = editorComponent.findNodeCell(node);
+    if (cell != null) {
+      EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+      //todo move "select wrt focus policy" to selection api
+      if (errorCell != null) {
+        ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).changeSelectionWRTFocusPolicy(errorCell);
+      } else {
+        ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).changeSelectionWRTFocusPolicy(cell);
+      }
+    }
   }
 
   public String toString() {

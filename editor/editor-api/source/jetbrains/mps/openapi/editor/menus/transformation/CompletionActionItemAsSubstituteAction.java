@@ -26,9 +26,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
   private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
   private final CompletionActionItem myActionItem;
+  private final SNode mySourceNode;
 
-  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem) {
+  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
     myActionItem = actionItem;
+    mySourceNode = sourceNode;
   }
 
   @Override
@@ -43,7 +45,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode getSourceNode() {
-    return null;
+    return mySourceNode;
   }
 
   @Override
@@ -110,6 +112,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode substitute(@Nullable EditorContext context, String pattern) {
+    assert myActionItem.getCommandPolicy() == CommandPolicy.COMMAND_REQUIRED : "Cannot execute a substitute action outside of command";
     myActionItem.execute(pattern);
     // myActionItem should change selection itself, so return null here
     return null;

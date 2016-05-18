@@ -34,14 +34,17 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Attempts to look up context assistant menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it
- * is returned. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default menu.
+ * Attempts to look up a transformation menu by traversing cell hierarchy upwards from the single currently selected cell. If any cell has a menu defined, it is
+ * used. For any big cell without a defined menu, the node's concept (and superconcepts) are checked for the presence of a default
+ * menu. In case when no cell or more than one cell is selected, returns an empty list of items.
  */
-class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMenuProvider {
+public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvider {
   private final ModelAccessHelper myModelAccessHelper;
+  private String myMenuLocation;
 
-  ContextAssistantMenuProviderByCellAndConcept(ModelAccess modelAccess) {
+  public SelectionMenuProviderByCellAndConcept(ModelAccess modelAccess, String menuLocation) {
     myModelAccessHelper = new ModelAccessHelper(modelAccess);
+    myMenuLocation = menuLocation;
   }
 
   @NotNull
@@ -59,7 +62,8 @@ class ContextAssistantMenuProviderByCellAndConcept implements ContextAssistantMe
       return Collections.emptyList();
     }
 
-    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2);
+    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
+        myMenuLocation);
 
     return myModelAccessHelper.runReadAction(() -> context.getMenuItemFactory().createItems(menuLookupAndCell.o1));
   }

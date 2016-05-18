@@ -447,96 +447,98 @@
       <node id="5109148457513120328" at="43,42,44,176" concept="5" />
       <node id="4477049948824794540" at="44,176,45,0" concept="14" />
       <node id="3465057551479311840" at="46,58,47,112" concept="5" />
-      <node id="5109148457513120345" at="47,112,48,61" concept="5" />
-      <node id="3110655250282849320" at="51,44,52,25" concept="12" />
-      <node id="2486616746024237136" at="54,34,55,71" concept="11" />
-      <node id="2837442331563680850" at="55,71,56,74" concept="5" />
-      <node id="635915551343283836" at="56,74,57,21" concept="5" />
-      <node id="2837442331563746413" at="57,21,58,52" concept="5" />
-      <node id="204834724131529719" at="58,52,59,0" concept="14" />
-      <node id="204834724131529721" at="59,0,60,55" concept="5" />
-      <node id="204834724131529727" at="60,55,61,41" concept="5" />
-      <node id="2837442331563679340" at="61,41,62,32" concept="5" />
-      <node id="52085229094018761" at="62,32,63,74" concept="11" />
-      <node id="52085229094018721" at="64,23,65,44" concept="13" />
-      <node id="52085229094018799" at="65,44,66,58" concept="5" />
-      <node id="7604564562223660517" at="67,5,68,27" concept="5" />
-      <node id="6684289465613691521" at="68,27,69,37" concept="5" />
-      <node id="204834724131521232" at="69,37,70,0" concept="14" />
-      <node id="2837442331563679302" at="70,0,71,19" concept="5" />
-      <node id="2837442331563746377" at="73,31,74,47" concept="5" />
-      <node id="2837442331563746390" at="74,47,75,47" concept="5" />
-      <node id="2837442331563746405" at="77,34,78,50" concept="5" />
-      <node id="2837442331563746398" at="78,50,79,50" concept="5" />
-      <node id="2837442331563679309" at="81,30,82,22" concept="5" />
-      <node id="731460841273166558" at="82,22,83,71" concept="11" />
-      <node id="2837442331563748732" at="83,71,84,29" concept="5" />
-      <node id="731460841273166549" at="84,29,85,27" concept="5" />
-      <node id="731460841273166553" at="85,27,86,37" concept="5" />
-      <node id="2837442331563679282" at="86,37,87,0" concept="14" />
-      <node id="2837442331563679267" at="87,0,88,56" concept="5" />
-      <node id="2837442331563679273" at="88,56,89,28" concept="5" />
-      <node id="3046172947922476164" at="89,28,90,0" concept="14" />
-      <node id="2375050912779014220" at="91,31,92,29" concept="5" />
-      <node id="3046172947921642488" at="92,29,93,26" concept="5" />
-      <node id="2837442331563679311" at="100,48,101,16" concept="5" />
-      <node id="2837442331563679337" at="108,45,109,16" concept="5" />
-      <node id="2837442331563679247" at="97,0,99,0" concept="3" trace="MyMouseListener#()V" />
-      <node id="2837442331563679321" at="105,0,107,0" concept="3" trace="MyFocusListener#()V" />
-      <node id="3110655250282849316" at="51,0,54,0" concept="10" trace="getChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-      <node id="4477049948824827100" at="45,0,49,5" concept="9" />
-      <node id="52085229094015861" at="63,74,67,5" concept="9" />
-      <node id="2837442331563678934" at="73,0,77,0" concept="10" trace="addListeners#()V" />
-      <node id="2837442331563678938" at="77,0,81,0" concept="10" trace="removeListeners#()V" />
-      <node id="3046172947921536659" at="90,0,94,5" concept="9" />
-      <node id="2837442331563679253" at="99,0,103,0" concept="10" trace="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-      <node id="2837442331563679327" at="107,0,111,0" concept="10" trace="focusLost#(Ljava/awt/event/FocusEvent;)V" />
-      <node id="2837442331563679263" at="81,0,96,0" concept="10" trace="dispose#()V" />
-      <node id="2837442331563679283" at="54,0,73,0" concept="10" trace="show#(II)V" />
-      <node id="2881457021876857498" at="31,0,51,0" concept="3" trace="PopupPanel#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-      <scope id="2837442331563679250" at="97,30,97,30" />
-      <scope id="2837442331563679324" at="105,30,105,30" />
-      <scope id="3110655250282849319" at="51,44,52,25" />
-      <scope id="2837442331563679258" at="100,48,101,16" />
-      <scope id="2837442331563679332" at="108,45,109,16" />
-      <scope id="4477049948824827101" at="46,58,48,61" />
-      <scope id="52085229094015862" at="64,23,66,58" />
-      <scope id="2837442331563678936" at="73,31,75,47" />
-      <scope id="2837442331563678940" at="77,34,79,50" />
-      <scope id="3046172947921536662" at="91,31,93,26" />
-      <scope id="2837442331563679247" at="97,0,99,0" />
-      <scope id="2837442331563679321" at="105,0,107,0" />
-      <scope id="3110655250282849316" at="51,0,54,0" />
-      <scope id="2837442331563678934" at="73,0,77,0" />
-      <scope id="2837442331563678938" at="77,0,81,0" />
-      <scope id="2837442331563679253" at="99,0,103,0">
+      <node id="1552462378939250210" at="47,112,48,98" concept="13" />
+      <node id="1552462378939251917" at="48,98,49,70" concept="13" />
+      <node id="5109148457513120345" at="49,70,50,61" concept="5" />
+      <node id="3110655250282849320" at="53,44,54,25" concept="12" />
+      <node id="2486616746024237136" at="56,34,57,71" concept="11" />
+      <node id="2837442331563680850" at="57,71,58,74" concept="5" />
+      <node id="635915551343283836" at="58,74,59,21" concept="5" />
+      <node id="2837442331563746413" at="59,21,60,52" concept="5" />
+      <node id="204834724131529719" at="60,52,61,0" concept="14" />
+      <node id="204834724131529721" at="61,0,62,55" concept="5" />
+      <node id="204834724131529727" at="62,55,63,41" concept="5" />
+      <node id="2837442331563679340" at="63,41,64,32" concept="5" />
+      <node id="52085229094018761" at="64,32,65,74" concept="11" />
+      <node id="52085229094018721" at="66,23,67,44" concept="13" />
+      <node id="52085229094018799" at="67,44,68,58" concept="5" />
+      <node id="7604564562223660517" at="69,5,70,27" concept="5" />
+      <node id="6684289465613691521" at="70,27,71,37" concept="5" />
+      <node id="204834724131521232" at="71,37,72,0" concept="14" />
+      <node id="2837442331563679302" at="72,0,73,19" concept="5" />
+      <node id="2837442331563746377" at="75,31,76,47" concept="5" />
+      <node id="2837442331563746390" at="76,47,77,47" concept="5" />
+      <node id="2837442331563746405" at="79,34,80,50" concept="5" />
+      <node id="2837442331563746398" at="80,50,81,50" concept="5" />
+      <node id="2837442331563679309" at="83,30,84,22" concept="5" />
+      <node id="731460841273166558" at="84,22,85,71" concept="11" />
+      <node id="2837442331563748732" at="85,71,86,29" concept="5" />
+      <node id="731460841273166549" at="86,29,87,27" concept="5" />
+      <node id="731460841273166553" at="87,27,88,37" concept="5" />
+      <node id="2837442331563679282" at="88,37,89,0" concept="14" />
+      <node id="2837442331563679267" at="89,0,90,56" concept="5" />
+      <node id="2837442331563679273" at="90,56,91,28" concept="5" />
+      <node id="3046172947922476164" at="91,28,92,0" concept="14" />
+      <node id="2375050912779014220" at="93,31,94,29" concept="5" />
+      <node id="3046172947921642488" at="94,29,95,26" concept="5" />
+      <node id="2837442331563679311" at="102,48,103,16" concept="5" />
+      <node id="2837442331563679337" at="110,45,111,16" concept="5" />
+      <node id="2837442331563679247" at="99,0,101,0" concept="3" trace="MyMouseListener#()V" />
+      <node id="2837442331563679321" at="107,0,109,0" concept="3" trace="MyFocusListener#()V" />
+      <node id="3110655250282849316" at="53,0,56,0" concept="10" trace="getChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+      <node id="52085229094015861" at="65,74,69,5" concept="9" />
+      <node id="2837442331563678934" at="75,0,79,0" concept="10" trace="addListeners#()V" />
+      <node id="2837442331563678938" at="79,0,83,0" concept="10" trace="removeListeners#()V" />
+      <node id="3046172947921536659" at="92,0,96,5" concept="9" />
+      <node id="2837442331563679253" at="101,0,105,0" concept="10" trace="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+      <node id="2837442331563679327" at="109,0,113,0" concept="10" trace="focusLost#(Ljava/awt/event/FocusEvent;)V" />
+      <node id="4477049948824827100" at="45,0,51,5" concept="9" />
+      <node id="2837442331563679263" at="83,0,98,0" concept="10" trace="dispose#()V" />
+      <node id="2837442331563679283" at="56,0,75,0" concept="10" trace="show#(II)V" />
+      <node id="2881457021876857498" at="31,0,53,0" concept="3" trace="PopupPanel#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+      <scope id="2837442331563679250" at="99,30,99,30" />
+      <scope id="2837442331563679324" at="107,30,107,30" />
+      <scope id="3110655250282849319" at="53,44,54,25" />
+      <scope id="2837442331563679258" at="102,48,103,16" />
+      <scope id="2837442331563679332" at="110,45,111,16" />
+      <scope id="52085229094015862" at="66,23,68,58" />
+      <scope id="2837442331563678936" at="75,31,77,47" />
+      <scope id="2837442331563678940" at="79,34,81,50" />
+      <scope id="3046172947921536662" at="93,31,95,26" />
+      <scope id="2837442331563679247" at="99,0,101,0" />
+      <scope id="2837442331563679321" at="107,0,109,0" />
+      <scope id="3110655250282849316" at="53,0,56,0" />
+      <scope id="4477049948824827101" at="46,58,50,61" />
+      <scope id="2837442331563678934" at="75,0,79,0" />
+      <scope id="2837442331563678938" at="79,0,83,0" />
+      <scope id="2837442331563679253" at="101,0,105,0">
         <var name="event" id="2837442331563679256" />
       </scope>
-      <scope id="2837442331563679327" at="107,0,111,0">
+      <scope id="2837442331563679327" at="109,0,113,0">
         <var name="event" id="2837442331563679330" />
       </scope>
-      <scope id="2837442331563679265" at="81,30,94,5">
+      <scope id="2837442331563679265" at="83,30,96,5">
         <var name="layeredPane" id="731460841273166559" />
       </scope>
-      <scope id="2837442331563679263" at="81,0,96,0" />
-      <scope id="2837442331563679285" at="54,34,71,19">
+      <scope id="2837442331563679263" at="83,0,98,0" />
+      <scope id="2837442331563679285" at="56,34,73,19">
         <var name="layeredPane" id="2486616746024237137" />
         <var name="overflow" id="52085229094018762" />
       </scope>
-      <scope id="2881457021876857501" at="31,69,49,5">
-        <var name="toolbarPanel" id="5109148457513120002" />
-      </scope>
-      <scope id="2837442331563679283" at="54,0,73,0">
+      <scope id="2837442331563679283" at="56,0,75,0">
         <var name="x" id="2837442331563679290" />
         <var name="y" id="2837442331563679293" />
       </scope>
-      <scope id="2881457021876857498" at="31,0,51,0">
+      <scope id="2881457021876857501" at="31,69,51,5">
+        <var name="toolbarPanel" id="5109148457513120002" />
+      </scope>
+      <scope id="2881457021876857498" at="31,0,53,0">
         <var name="group" id="2881457021876857835" />
         <var name="painter" id="2881457021876857522" />
       </scope>
-      <unit id="2837442331563679245" at="96,0,104,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyMouseListener" />
-      <unit id="2837442331563679319" at="104,0,112,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyFocusListener" />
-      <unit id="2881457021876857496" at="23,0,113,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
+      <unit id="2837442331563679245" at="98,0,106,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyMouseListener" />
+      <unit id="2837442331563679319" at="106,0,114,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyFocusListener" />
+      <unit id="2881457021876857496" at="23,0,115,0" name="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
     </file>
   </root>
   <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/4477049948824855836">

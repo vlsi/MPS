@@ -22,12 +22,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class ConceptMenusMenuPart implements MenuPart {
-  private final SAbstractConcept[] myConcepts;
+  private final Collection<SAbstractConcept> myConcepts;
 
-  public ConceptMenusMenuPart(SAbstractConcept[] concepts) {
+  public ConceptMenusMenuPart(Collection<SAbstractConcept> concepts) {
     myConcepts = concepts;
   }
 

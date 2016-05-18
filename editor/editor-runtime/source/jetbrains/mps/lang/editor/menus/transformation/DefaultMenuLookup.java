@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -63,19 +64,12 @@ public class DefaultMenuLookup implements TransformationMenuLookup {
 
   @Override
   public Collection<TransformationMenu> lookup() {
-    Set<SAbstractConcept> processedConcepts = new HashSet<SAbstractConcept>();
-    for (SAbstractConcept next : new BreadthConceptHierarchyIterator(myConcept)) {
-      if (!processedConcepts.add(next)) {
-        continue;
-      }
-
-      Collection<TransformationMenu> conceptMenu = getForConcept(next);
-      if (!conceptMenu.isEmpty()) {
-        return conceptMenu;
-      }
+    Collection<TransformationMenu> conceptMenu = new ArrayList<>();
+    conceptMenu.addAll(getForConcept(myConcept));
+    if (conceptMenu.stream().allMatch(TransformationMenu::isContribution)) {
+      conceptMenu.add(new DefaultConceptMenu(myConcept));
     }
-
-    return Collections.emptySet();
+    return conceptMenu;
   }
 
   @NotNull

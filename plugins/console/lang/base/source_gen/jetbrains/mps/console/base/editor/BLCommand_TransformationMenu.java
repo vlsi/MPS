@@ -5,25 +5,52 @@ package jetbrains.mps.console.base.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.console.tool.ConsoleTool;
 
 public class BLCommand_TransformationMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
+      result.add(new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a0());
+    }
+    return result;
+  }
+
+  private static class TransformationMenuPart_Action_bzpwar_a0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new BLCommand_TransformationMenu.TransformationMenuPart_Action_bzpwar_a0.Item(context);
+    }
+
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
       @Override
-      protected String getText(TransformationMenuContext _context) {
+      public String getLabelText(String pattern) {
         return "Evaluate (Ctrl+Enter)";
       }
 
       @Override
-      protected void execute(TransformationMenuContext _context) {
+      public void execute(@NotNull String pattern) {
         ConsoleTool tool = _context.getEditorContext().getOperationContext().getProject().getComponent(ConsoleTool.class);
         tool.getCurrentEditableTab().executeCurrentCommand();
       }
-    });
+
+    }
   }
 }

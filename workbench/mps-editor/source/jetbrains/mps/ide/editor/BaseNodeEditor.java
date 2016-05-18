@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
+import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -164,6 +166,7 @@ public abstract class BaseNodeEditor implements Editor {
       myReplace = null;
     }
     NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository());
+    EditorExtensionUtil.extendUsingProject(editorComponent, myProject);
     setEditorComponent(editorComponent);
   }
 

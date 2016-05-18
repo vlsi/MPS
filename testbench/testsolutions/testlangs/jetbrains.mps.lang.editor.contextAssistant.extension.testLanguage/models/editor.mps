@@ -2,7 +2,7 @@
 <model ref="r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -11,6 +11,7 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="8954657570917870539" name="jetbrains.mps.lang.editor.structure.TransformationLocation_ContextAssistant" flags="ng" index="2j_NTm" />
       <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr">
         <reference id="6718020819487620877" name="concept" index="A1WHq" />
       </concept>
@@ -22,12 +23,16 @@
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
-      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text" flags="ig" index="1hCUdq" />
+      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
-        <child id="1638911550608572412" name="items" index="IW6Ez" />
+        <child id="1638911550608572412" name="sections" index="IW6Ez" />
       </concept>
       <concept id="5624877018228264944" name="jetbrains.mps.lang.editor.structure.TransformationMenuContribution" flags="ng" index="3INDKC">
         <child id="6718020819489956031" name="menuReference" index="AmTjC" />
+      </concept>
+      <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
+        <child id="7980428675268276157" name="locations" index="1Qtc8$" />
+        <child id="7980428675268276159" name="parts" index="1Qtc8A" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -40,7 +45,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
     </language>
@@ -58,22 +63,25 @@
   </registry>
   <node concept="3INDKC" id="4Sf$XywNH2W">
     <property role="TrG5h" value="Child_MoreDefaultActions" />
-    <node concept="IWgqT" id="4Sf$XywNH33" role="IW6Ez">
-      <node concept="1hCUdq" id="4Sf$XywNH35" role="1hCUd6">
-        <node concept="3clFbS" id="4Sf$XywNH37" role="2VODD2">
-          <node concept="3clFbF" id="4Sf$XywNH3S" role="3cqZAp">
-            <node concept="Xl_RD" id="4Sf$XywNH3R" role="3clFbG">
-              <property role="Xl_RC" value="contributed action" />
+    <node concept="1Qtc8_" id="6V0bp$oQR2I" role="IW6Ez">
+      <node concept="2j_NTm" id="6V0bp$oQRbV" role="1Qtc8$" />
+      <node concept="IWgqT" id="4Sf$XywNH33" role="1Qtc8A">
+        <node concept="1hCUdq" id="4Sf$XywNH35" role="1hCUd6">
+          <node concept="3clFbS" id="4Sf$XywNH37" role="2VODD2">
+            <node concept="3clFbF" id="4Sf$XywNH3S" role="3cqZAp">
+              <node concept="Xl_RD" id="4Sf$XywNH3R" role="3clFbG">
+                <property role="Xl_RC" value="contributed action" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="IWg2L" id="4Sf$XywNH39" role="IWgqQ">
-        <node concept="3clFbS" id="4Sf$XywNH3b" role="2VODD2">
-          <node concept="34ab3g" id="4Sf$XywNHej" role="3cqZAp">
-            <property role="35gtTG" value="info" />
-            <node concept="Xl_RD" id="4Sf$XywNHel" role="34bqiv">
-              <property role="Xl_RC" value="contributed action" />
+        <node concept="IWg2L" id="4Sf$XywNH39" role="IWgqQ">
+          <node concept="3clFbS" id="4Sf$XywNH3b" role="2VODD2">
+            <node concept="34ab3g" id="4Sf$XywNHej" role="3cqZAp">
+              <property role="35gtTG" value="info" />
+              <node concept="Xl_RD" id="4Sf$XywNHel" role="34bqiv">
+                <property role="Xl_RC" value="contributed action" />
+              </node>
             </node>
           </node>
         </node>
@@ -85,18 +93,21 @@
   </node>
   <node concept="3INDKC" id="5CFnWxxhZO1">
     <property role="TrG5h" value="Child_MoreNamedActions" />
-    <node concept="IWgqT" id="67q8fiOz1_2" role="IW6Ez">
-      <node concept="1hCUdq" id="67q8fiOz1_4" role="1hCUd6">
-        <node concept="3clFbS" id="67q8fiOz1_6" role="2VODD2">
-          <node concept="3clFbF" id="67q8fiOz1An" role="3cqZAp">
-            <node concept="Xl_RD" id="67q8fiOz1Am" role="3clFbG">
-              <property role="Xl_RC" value="contributed from extending language" />
+    <node concept="1Qtc8_" id="6V0bp$oQRkC" role="IW6Ez">
+      <node concept="2j_NTm" id="6V0bp$oQRtQ" role="1Qtc8$" />
+      <node concept="IWgqT" id="67q8fiOz1_2" role="1Qtc8A">
+        <node concept="1hCUdq" id="67q8fiOz1_4" role="1hCUd6">
+          <node concept="3clFbS" id="67q8fiOz1_6" role="2VODD2">
+            <node concept="3clFbF" id="67q8fiOz1An" role="3cqZAp">
+              <node concept="Xl_RD" id="67q8fiOz1Am" role="3clFbG">
+                <property role="Xl_RC" value="contributed from extending language" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="IWg2L" id="67q8fiOz1_8" role="IWgqQ">
-        <node concept="3clFbS" id="67q8fiOz1_a" role="2VODD2" />
+        <node concept="IWg2L" id="67q8fiOz1_8" role="IWgqQ">
+          <node concept="3clFbS" id="67q8fiOz1_a" role="2VODD2" />
+        </node>
       </node>
     </node>
     <node concept="A1WHu" id="5OVd5tVsX$w" role="AmTjC">

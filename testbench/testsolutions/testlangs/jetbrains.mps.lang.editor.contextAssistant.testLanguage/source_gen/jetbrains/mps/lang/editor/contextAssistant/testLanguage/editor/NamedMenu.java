@@ -5,22 +5,113 @@ package jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ActionItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.intentions.contextAssistant.runtime.IntentionMenuPartBase;
+import jetbrains.mps.intentions.IntentionExecutable;
 
 public class NamedMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts() {
-    return Arrays.<MenuPart>asList(new ActionItemMenuPart() {
+  protected List<MenuPart> getParts(TransformationMenuContext _context) {
+    List<MenuPart> result = new ArrayList<MenuPart>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
+    }
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), SideTransformSubstituteInfo.Side.LEFT.myMenuLocation, SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation).contains(_context.getMenuLocation())) {
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
+      result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
+      result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
+    }
+    return result;
+  }
+
+  private static class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
+    }
+
+    private class Item extends ActionItemBase implements CompletionActionItem {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
       @Override
-      protected String getText(TransformationMenuContext _context) {
+      public String getLabelText(String pattern) {
+        return pattern;
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), pattern);
+      }
+
+      @Override
+      public String getShortDescriptionText(String pattern) {
+        return "set name to" + pattern;
+      }
+    }
+  }
+  public static class TransformationMenuPart_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
+    public TransformationMenuPart_Intention_qsw3kc_b0() {
+      super("jetbrains.mps.lang.editor.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
+    }
+
+    @Override
+    protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
+      return new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0.Item(context, executable);
+    }
+
+    private static class Item extends IntentionMenuPartBase.ItemBase implements CompletionActionItem {
+      private Item(TransformationMenuContext context, IntentionExecutable executable) {
+        super(context, executable);
+      }
+
+      @Override
+      public String getShortDescriptionText(String pattern) {
+        return "Add Letter To name";
+      }
+    }
+  }
+  private static class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart {
+    @Nullable
+    protected MenuItem createItem(TransformationMenuContext context) {
+      return new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0.Item(context);
+    }
+
+    private class Item extends ActionItemBase implements CompletionActionItem {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
         return "defined in named menu";
       }
 
       @Override
-      protected void execute(TransformationMenuContext _context) {
+      public void execute(@NotNull String pattern) {
       }
-    });
+
+    }
   }
 }

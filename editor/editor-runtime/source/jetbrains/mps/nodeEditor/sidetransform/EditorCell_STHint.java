@@ -22,7 +22,9 @@ import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,15 +36,10 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * User: shatalin
@@ -53,14 +50,15 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
   @Nullable
   private final CellInfo myRestoreSelectionCellInfo;
-  @NotNull
   private final String mySideTransformTag;
   @NotNull
   private final EditorCell myBigCell;
   @NotNull
   private final EditorCell myAnchorCell;
-  @NotNull
-  private final CellSide mySide;
+  @Nullable
+  private final CellSide myOldSide;
+  @Nullable
+  private final Side mySide;
   private boolean myInstalled;
 
   public static EditorCell_STHint getSTHintCell(SNode node, @NotNull EditorComponent editorComponent) {
@@ -68,15 +66,34 @@ public class EditorCell_STHint extends EditorCell_Constant {
     return stHintCell instanceof EditorCell_STHint ? (EditorCell_STHint) stHintCell : null;
   }
 
-  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, @NotNull String sideTransformTag,
+
+  /**
+   *
+   * @deprecated after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect
+   * so the will be referenced directly from editor and  anchor tag will not be used.
+   * Use {@link EditorCell_STHint#EditorCell_STHint(EditorCell, EditorCell, Side, CellInfo)}  }
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide oldSide, @NotNull String sideTransformTag,
+      @Nullable CellInfo restoreSelectionCellInto) {
+    this(bigCell, anchorCell, oldSide, sideTransformTag, null, restoreSelectionCellInto);
+  }
+
+  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull Side side, @Nullable CellInfo restoreSelectionCellInto) {
+    this(bigCell, anchorCell, null, null, side, restoreSelectionCellInto);
+  }
+
+  private EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @Nullable CellSide oldSide, @Nullable String sideTransformTag, @Nullable Side side,
       @Nullable CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
-    mySide = side;
-    myRestoreSelectionCellInfo = restoreSelectionCellInto;
-    mySideTransformTag = sideTransformTag;
     myBigCell = bigCell;
     myAnchorCell = anchorCell;
+    myOldSide = oldSide;
+    mySideTransformTag = sideTransformTag;
+    mySide = side;
+    myRestoreSelectionCellInfo = restoreSelectionCellInto;
     init();
   }
 
@@ -105,34 +122,15 @@ public class EditorCell_STHint extends EditorCell_Constant {
     addKeyMap(keyMap);
 
     // create the hint's auto-completion menu
-    setSubstituteInfo(new AbstractNodeSubstituteInfo(getContext()) {
-      @Override
-      protected List<SubstituteAction> createActions() {
-        List<SubstituteAction> list =
-            ModelActions.createSideTransformHintSubstituteActions(getSNode(), mySide, mySideTransformTag, EditorCell_STHint.this.getOperationContext());
-        List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());
-        for (final SubstituteAction action : list) {
-          wrapperList.add(new NodeSubstituteActionWrapper(action) {
-            @Override
-            public SNode substitute(@Nullable EditorContext context, String pattern) {
-              getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
-                @Override
-                public void run() {
-                  SideTransformInfoUtil.removeTransformInfo(getSNode());
-                }
-              });
-              return super.substitute(context, pattern);
-            }
-
-            public String toString() {
-              return "RTWrapper for " + action + "(" + action.getClass() + ")";
-            }
-          });
-        }
-        return wrapperList;
-      }
-    });
+    if (mySide != null) {
+      assert myOldSide == null && mySideTransformTag == null;
+      setSubstituteInfo(new SideTransformSubstituteInfo(myAnchorCell, mySide));
+    } else {
+      assert myOldSide != null && mySideTransformTag != null;
+      setSubstituteInfo(OldNewCompositeSideTransformSubstituteInfo.createSubstituteInfo(myOldSide, myAnchorCell, mySideTransformTag));
+    }
   }
+
 
   @Override
   public CellInfo getCellInfo() {
@@ -149,7 +147,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
   @Override
   public void setCaretPosition(int position, boolean selection) {
-    if (position != getText().length() && mySide == CellSide.LEFT) {
+    if (position != getText().length() && myOldSide == CellSide.LEFT) {
       validate(true, false);
     }
     super.setCaretPosition(position, selection);
@@ -187,18 +185,18 @@ public class EditorCell_STHint extends EditorCell_Constant {
       wrapperCell.setBig(true);
       wrapperCell.setCanBeSynchronized(myBigCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) myBigCell).canBeSynchronized());
       myBigCell.setBig(false);
-      if (mySide == CellSide.LEFT) {
+      if (myOldSide == CellSide.LEFT) {
         wrapperCell.addEditorCell(this);
       }
       wrapperCell.addEditorCell(myBigCell);
-      if (mySide == CellSide.RIGHT) {
+      if (myOldSide == CellSide.RIGHT) {
         wrapperCell.addEditorCell(this);
       }
       return wrapperCell;
     }
 
     EditorCell_Collection cellCollection = myAnchorCell.getParent();
-    int index = mySide == CellSide.RIGHT ? cellCollection.indexOf(myAnchorCell) + 1 : cellCollection.indexOf(myAnchorCell);
+    int index = myOldSide == CellSide.RIGHT ? cellCollection.indexOf(myAnchorCell) + 1 : cellCollection.indexOf(myAnchorCell);
     cellCollection.addEditorCellAt(this, index);
     return myBigCell;
   }

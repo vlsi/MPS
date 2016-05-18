@@ -41,6 +41,10 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Collection;
+import jetbrains.mps.lang.editor.behavior.TransformationLocation__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -841,6 +845,60 @@ public class QueriesGenerated {
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
+    }
+    return result;
+  }
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TransformationLocation_6239791100559296040(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return ((Iterable<SNode>) Sequence.fromIterable(TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), _context.getParentNode(), _context.getCurrentTargetNode())).select(new ISelector<SAbstractConcept, SNode>() {
+            public SNode select(SAbstractConcept it) {
+              return SNodeOperations.asNode(it);
+            }
+          }));
+        }
+      }.compute();
+      if (queryResult != null) {
+        for (SNode item : queryResult) {
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
+        }
+      }
+    }
+    return result;
+  }
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TransformationFeature_6239791100560720330(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          SNode section = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"), true, false);
+          final Iterable<SConcept> availableFeatures = ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).translate(new ITranslator2<SNode, SConcept>() {
+            public Iterable<SConcept> translate(SNode it) {
+              return (Collection<SConcept>) TransformationLocation__BehaviorDescriptor.getAvailableFeatures_id1A4kJjlZ$rL.invoke(it);
+            }
+          });
+          Iterable<SAbstractConcept> concepts = TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L, "jetbrains.mps.lang.editor.structure.TransformationFeature"), _context.getParentNode(), _context.getCurrentTargetNode());
+          if (section != null) {
+            concepts = Sequence.fromIterable(concepts).where(new IWhereFilter<SAbstractConcept>() {
+              public boolean accept(SAbstractConcept it) {
+                return Sequence.fromIterable(availableFeatures).contains(((SConcept) it));
+              }
+            });
+          }
+          return (Iterable<SNode>) Sequence.fromIterable(concepts).select(new ISelector<SAbstractConcept, SNode>() {
+            public SNode select(SAbstractConcept it) {
+              return SNodeOperations.asNode(it);
+            }
+          });
+        }
+      }.compute();
+      if (queryResult != null) {
+        for (SNode item : queryResult) {
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
+        }
       }
     }
     return result;

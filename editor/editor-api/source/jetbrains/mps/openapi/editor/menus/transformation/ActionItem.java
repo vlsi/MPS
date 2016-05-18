@@ -40,4 +40,12 @@ public interface ActionItem extends MenuItem {
    * @param pattern the text that the user has typed so far
    */
   void execute(@NotNull String pattern);
+
+  /**
+   * Indicates whether the {@link #execute(String)} method should be called inside a command, or whether it will start one manually if needed.
+   *
+   * @return true if a command is required, false if it is required that there is no command.
+   */
+  @NotNull
+  CommandPolicy getCommandPolicy();
 }

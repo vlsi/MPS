@@ -34,6 +34,12 @@ public class ActionItemBase implements ActionItem {
   public void execute(@NotNull String pattern) {
   }
 
+  @NotNull
+  @Override
+  public CommandPolicy getCommandPolicy() {
+    return CommandPolicy.COMMAND_REQUIRED;
+  }
+
   @Override
   public <ResultT> ResultT accept(MenuItemVisitor<ResultT> visitor) {
     return visitor.visit(this);

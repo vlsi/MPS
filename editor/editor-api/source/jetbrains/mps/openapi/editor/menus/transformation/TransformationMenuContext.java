@@ -21,6 +21,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface TransformationMenuContext {
   @NotNull
+  String getMenuLocation();
+
+  @NotNull
   SNode getNode();
 
   @NotNull
