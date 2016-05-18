@@ -8317,8 +8317,14 @@
         <node concept="10P_77" id="4GJAg5veWrJ" role="3clF45" />
         <node concept="3clFbS" id="4GJAg5veWrK" role="3clF47">
           <node concept="3clFbF" id="4GJAg5veWrM" role="3cqZAp">
-            <node concept="3clFbT" id="4GJAg5veWrL" role="3clFbG">
-              <property role="3clFbU" value="true" />
+            <node concept="2OqwBi" id="6i_1kuAzCd$" role="3clFbG">
+              <node concept="37vLTw" id="6i_1kuAzB_x" role="2Oq$k0">
+                <ref role="3cqZAo" node="4GJAg5veW2x" resolve="myActionItem" />
+              </node>
+              <node concept="liA8E" id="6i_1kuAzCvH" role="2OqNvi">
+                <ref role="37wK5l" to="uddc:~ActionItem.canExecute(java.lang.String):boolean" resolve="canExecute" />
+                <node concept="Xl_RD" id="6i_1kuAzCTe" role="37wK5m" />
+              </node>
             </node>
           </node>
         </node>
