@@ -276,11 +276,9 @@ public class MethodResolveUtil {
 
       if (SNodeOperations.isInstanceOf(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
         typeOfParam.value = SLinkOperations.getTarget(SNodeOperations.cast(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound"));
-        System.out.println("Upper bound type");
       }
       if (SNodeOperations.isInstanceOf(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
-        System.out.println("Wild type");
-        typeOfParam.value = _quotation_createNode_zegw12_a0b0m0d0s();
+        typeOfParam.value = _quotation_createNode_zegw12_a0a0m0d0s();
       }
       if (subtypingManager.isSubtype(typeOfArg, typeOfParam.value, isWeak)) {
         Set<SNode> methods = typesOfParamToMethods.get(typeOfParam.value);
@@ -318,7 +316,7 @@ public class MethodResolveUtil {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_zegw12_a0b0m0d0s() {
+  private static SNode _quotation_createNode_zegw12_a0a0m0d0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
