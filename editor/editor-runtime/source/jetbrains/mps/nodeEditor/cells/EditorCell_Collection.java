@@ -30,10 +30,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cells.collections.CellContainer;
 import jetbrains.mps.nodeEditor.cells.collections.Container;
 import jetbrains.mps.nodeEditor.cells.collections.EmptyContainer;
-import jetbrains.mps.nodeEditor.cells.collections.Entry;
 import jetbrains.mps.nodeEditor.cells.collections.SingletonContainer;
 import jetbrains.mps.nodeEditor.cells.collections.UnmodifiableIterator;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -77,33 +75,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   public static final String FOLDED_TEXT = "...";
 
-  private Container<EditorCell> myEditorCells = new CellContainer() {
-    @Override
-    protected Entry<EditorCell> addEntryBefore(@NotNull Entry<EditorCell> entry, Entry<EditorCell> anchor) {
-      EditorCell cell = entry.getItem();
-      // TODO: remove cast to EditorCell_Basic
-      ((EditorCell_Basic) cell).setParent(EditorCell_Collection.this);
-      EditorCell_Collection.this.getStyle().add(cell.getStyle());
-
-      if (EditorCell_Collection.this.isInTree()) {
-        ((EditorCell_Basic) cell).onAdd();
-      }
-
-      return super.addEntryBefore(entry, anchor);
-    }
-
-    @Override
-    protected void removeEntry(@NotNull Entry<EditorCell> entry) {
-      super.removeEntry(entry);
-      ((EditorCell_Basic) entry.getItem()).setParent(null);
-      EditorCell_Collection.this.getStyle().remove(entry.getItem().getStyle());
-
-      if (EditorCell_Collection.this.isInTree()) {
-        ((EditorCell_Basic) entry.getItem()).onRemove();
-      }
-    }
-  };
-
+  private Container<EditorCell> myEditorCells;
   private EditorCell myFoldedCell;
 
   @NotNull
@@ -180,7 +152,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return isDefaultCollapsedValueChanged() ? myCollapsed : myInitiallyCollapsed;
   }
 
+  @NotNull
   private Container<EditorCell> getEditorCells() {
+    if (myEditorCells == null) {
+      myEditorCells = new EditorCell_Collection_Container(this);
+    }
     return myEditorCells;
   }
 

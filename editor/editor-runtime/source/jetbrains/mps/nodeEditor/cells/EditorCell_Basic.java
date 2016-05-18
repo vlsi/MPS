@@ -31,8 +31,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.cells.collections.CellEntry;
-import jetbrains.mps.nodeEditor.cells.collections.Container;
 import jetbrains.mps.nodeEditor.cells.collections.Entry;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -83,7 +81,7 @@ import java.util.Set;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class EditorCell_Basic implements EditorCell, CellEntry {
+public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
   public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
@@ -125,9 +123,8 @@ public abstract class EditorCell_Basic implements EditorCell, CellEntry {
   private EditorCellContext myCellContext;
 
   /**
-   * {@link CellEntry} fields
+   * {@link Entry} fields
    */
-  private Container<jetbrains.mps.openapi.editor.cells.EditorCell> myContainer;
   private Entry<jetbrains.mps.openapi.editor.cells.EditorCell> myNext;
   private Entry<jetbrains.mps.openapi.editor.cells.EditorCell> myPrev;
 
@@ -1408,21 +1405,8 @@ public abstract class EditorCell_Basic implements EditorCell, CellEntry {
   }
 
   /**
-   * {@link CellEntry} methods
+   * {@link Entry} methods
    */
-
-  @Override
-  public Container<jetbrains.mps.openapi.editor.cells.EditorCell> getContainer() {
-    return myContainer;
-  }
-
-  @Override
-  public void setContainer(Container<jetbrains.mps.openapi.editor.cells.EditorCell> container) {
-    if (myContainer != null && container != null) {
-      throw new IllegalStateException("Container: " + container + ", myContainer: " + myContainer);
-    }
-    myContainer = container;
-  }
 
   @NotNull
   @Override
