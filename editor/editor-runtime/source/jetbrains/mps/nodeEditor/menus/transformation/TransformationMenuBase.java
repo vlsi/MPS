@@ -25,6 +25,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public abstract class TransformationMenuBase implements TransformationMenu {
+  private boolean myIsContribution;
+
+  public TransformationMenuBase() {
+  }
+
+  public TransformationMenuBase(boolean isContribution) {
+    myIsContribution = isContribution;
+  }
 
   protected abstract List<MenuPart> getParts(TransformationMenuContext context);
 
@@ -32,5 +40,10 @@ public abstract class TransformationMenuBase implements TransformationMenu {
   @Override
   public List<MenuItem> createMenuItems(TransformationMenuContext context) {
     return new CompositeMenuPart(getParts(context)).createItems(context);
+  }
+
+  @Override
+  public boolean isContribution() {
+    return myIsContribution;
   }
 }

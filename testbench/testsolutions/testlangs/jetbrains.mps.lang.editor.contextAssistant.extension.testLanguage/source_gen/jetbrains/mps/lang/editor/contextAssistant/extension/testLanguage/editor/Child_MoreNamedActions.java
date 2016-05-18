@@ -16,6 +16,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 
 public class Child_MoreNamedActions extends TransformationMenuBase {
+  public Child_MoreNamedActions() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();

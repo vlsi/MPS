@@ -22,6 +22,9 @@ import jetbrains.mps.lang.intentions.contextAssistant.runtime.IntentionMenuPartB
 import jetbrains.mps.intentions.IntentionExecutable;
 
 public class Extras extends TransformationMenuBase {
+  public Extras() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();

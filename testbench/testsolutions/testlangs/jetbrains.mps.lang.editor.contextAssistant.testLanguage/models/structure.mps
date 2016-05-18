@@ -74,5 +74,11 @@
     <property role="EcuMT" value="1966322953445209147" />
     <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
   </node>
+  <node concept="1TIwiD" id="7P0KIHplU$4">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="OtherSubconceptOfChild" />
+    <property role="EcuMT" value="9025427969322494212" />
+    <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
+  </node>
 </model>
 

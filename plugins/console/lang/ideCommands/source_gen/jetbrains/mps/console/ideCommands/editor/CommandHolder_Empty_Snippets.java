@@ -24,6 +24,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class CommandHolder_Empty_Snippets extends TransformationMenuBase {
+  public CommandHolder_Empty_Snippets() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();

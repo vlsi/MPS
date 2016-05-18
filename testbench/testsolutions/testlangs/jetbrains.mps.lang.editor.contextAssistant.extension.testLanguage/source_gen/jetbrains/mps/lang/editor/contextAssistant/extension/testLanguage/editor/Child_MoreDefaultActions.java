@@ -18,6 +18,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class Child_MoreDefaultActions extends TransformationMenuBase {
+  public Child_MoreDefaultActions() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();

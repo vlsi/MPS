@@ -30,10 +30,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 1:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new Parent_Editor());
+            return Collections.<ConceptEditor>singletonList(new OtherSubconceptOfChild_Editor());
           }
           break;
         case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Parent_Editor());
+          }
+          break;
+        case 3:
           if (true) {
             return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
           }
@@ -112,7 +117,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.SubconceptOfChild"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.OtherSubconceptOfChild"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.SubconceptOfChild"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.SubconceptOfChild"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a5 = new String[]{"jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu", "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive"};

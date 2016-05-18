@@ -870,10 +870,6 @@
       </node>
     </node>
   </node>
-  <node concept="IW6AY" id="1H9M4VxN7gW">
-    <property role="3GE5qa" value="" />
-    <ref role="7LAce" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
-  </node>
   <node concept="24kQdi" id="1H9M4VxNevw">
     <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
@@ -1022,6 +1018,17 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="IW6AY" id="1H9M4VxN7gW">
+    <property role="3GE5qa" value="" />
+    <ref role="7LAce" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
+  </node>
+  <node concept="24kQdi" id="7P0KIHplUD$">
+    <property role="3GE5qa" value="" />
+    <ref role="1XX52x" to="hsq4:7P0KIHplU$4" resolve="OtherSubconceptOfChild" />
+    <node concept="3F0ifn" id="7P0KIHplUDA" role="2wV5jI">
+      <property role="3F0ifm" value="other subconcept of child" />
     </node>
   </node>
 </model>

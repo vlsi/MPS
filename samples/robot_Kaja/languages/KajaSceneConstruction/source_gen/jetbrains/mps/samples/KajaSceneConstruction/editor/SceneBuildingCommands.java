@@ -22,6 +22,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SceneBuildingCommands extends TransformationMenuBase {
+  public SceneBuildingCommands() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();

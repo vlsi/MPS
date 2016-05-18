@@ -122,5 +122,36 @@
       <unit id="8865042036543828396" at="14,0,38,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShownWhenMenu_Test" />
     </file>
   </root>
+  <root nodeRef="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)/9025427969322513567">
+    <file name="ContextAssistant_ShowAssistantOnSubconcept_Test.java">
+      <node id="9025427969322513567" at="18,82,19,126" concept="0" />
+      <node id="9025427969322513567" at="19,126,20,142" concept="0" />
+      <node id="9025427969322513567" at="26,51,27,53" concept="0" />
+      <node id="9025427969322513575" at="27,53,28,82" concept="2" />
+      <node id="9025427969322513591" at="30,27,31,103" concept="2" />
+      <node id="9025427969322513597" at="31,103,32,0" concept="3" />
+      <node id="9025427969322513598" at="32,0,33,310" concept="0" />
+      <node id="9025427969322513605" at="33,310,34,54" concept="0" />
+      <node id="9025427969322513609" at="34,54,35,77" concept="0" />
+      <node id="9025427969322513613" at="35,77,36,77" concept="0" />
+      <node id="9025427969322513567" at="17,0,22,0" concept="1" trace="test_ContextAssistant_ShowAssistantOnSubconcept#()V" />
+      <node id="9025427969322513589" at="30,0,38,0" concept="1" trace="run#()V" />
+      <node id="9025427969322513581" at="28,82,38,9" concept="0" />
+      <node id="9025427969322513567" at="25,0,40,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="9025427969322513567" at="18,82,20,142" />
+      <scope id="9025427969322513567" at="17,0,22,0" />
+      <scope id="9025427969322513590" at="30,27,36,77">
+        <var name="contextAssistantManager" id="9025427969322513592" />
+      </scope>
+      <scope id="9025427969322513589" at="30,0,38,0" />
+      <scope id="9025427969322513567" at="26,51,38,9">
+        <var name="editorContext" id="9025427969322513576" />
+      </scope>
+      <scope id="9025427969322513567" at="25,0,40,0" />
+      <unit id="9025427969322513589" at="29,70,38,7" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShowAssistantOnSubconcept_Test$1" />
+      <unit id="9025427969322513567" at="23,0,41,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShowAssistantOnSubconcept_Test$TestBody" />
+      <unit id="9025427969322513567" at="15,0,42,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_ShowAssistantOnSubconcept_Test" />
+    </file>
+  </root>
 </debug-info>
 

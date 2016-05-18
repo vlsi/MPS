@@ -15,31 +15,26 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
-public class ConceptMenusMenuPart implements MenuPart {
-  private final Collection<SAbstractConcept> myConcepts;
-
-  public ConceptMenusMenuPart(Collection<SAbstractConcept> concepts) {
-    myConcepts = concepts;
+/**
+ * @author simon
+ */
+public class DefaultConceptMenu extends TransformationMenuBase {
+  public DefaultConceptMenu(SAbstractConcept concept) {
+    myConcept = concept;
   }
 
-  @NotNull
+  private final SAbstractConcept myConcept;
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
-    List<MenuItem> result = new ArrayList<MenuItem>();
-    for (SAbstractConcept concept : myConcepts) {
-      result.addAll(context.getMenuItemFactory().createItems(
-          new DefaultMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept)));
-    }
-    return result;
+  protected List<MenuPart> getParts(TransformationMenuContext context) {
+    return Collections.singletonList(new ConceptMenusMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
   }
+
 }

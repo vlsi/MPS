@@ -89,6 +89,7 @@
       </concept>
     </language>
     <language id="9a629f9a-abc9-4c29-b1b8-db7f349f7fbc" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage">
+      <concept id="9025427969322494212" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.OtherSubconceptOfChild" flags="ng" index="$5QJJ" />
       <concept id="5578424278096849485" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent" flags="ng" index="1N2y4u">
         <child id="5578424278096849496" name="children" index="1N2y4b" />
       </concept>
@@ -604,6 +605,128 @@
                       <ref role="3cqZAo" node="1H9M4VxNiQs" resolve="contextAssistantManager" />
                     </node>
                     <node concept="liA8E" id="1H9M4VxNiR2" role="2OqNvi">
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7P0KIHplZiv">
+    <property role="TrG5h" value="ContextAssistant_ShowAssistantOnSubconcept" />
+    <property role="3YCmrE" value="when subclass does not define menu, superconcept's menu is shown" />
+    <node concept="1N2y4u" id="7P0KIHplZiw" role="LiRBU">
+      <property role="TrG5h" value="parent" />
+      <node concept="LIFWc" id="7P0KIHplZi_" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="6" />
+        <property role="p6zMs" value="6" />
+        <property role="LIFWd" value="Constant_vx0ep_a0a" />
+      </node>
+      <node concept="$5QJJ" id="7P0KIHpm30k" role="1N2y4b">
+        <node concept="3xLA65" id="7P0KIHpm35H" role="lGtFl">
+          <property role="TrG5h" value="base" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="7P0KIHplZiA" role="LjaKd">
+      <node concept="3cpWs8" id="7P0KIHplZiB" role="3cqZAp">
+        <node concept="3cpWsn" id="7P0KIHplZiC" role="3cpWs9">
+          <property role="TrG5h" value="editorContext" />
+          <node concept="3uibUv" id="7P0KIHplZiD" role="1tU5fm">
+            <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
+          </node>
+          <node concept="2OqwBi" id="7P0KIHplZiE" role="33vP2m">
+            <node concept="369mXd" id="7P0KIHplZiF" role="2Oq$k0" />
+            <node concept="liA8E" id="7P0KIHplZiG" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbF" id="7P0KIHplZiH" role="3cqZAp">
+        <node concept="2OqwBi" id="7P0KIHplZiI" role="3clFbG">
+          <node concept="2OqwBi" id="7P0KIHplZiJ" role="2Oq$k0">
+            <node concept="2OqwBi" id="7P0KIHplZiK" role="2Oq$k0">
+              <node concept="37vLTw" id="7P0KIHplZiL" role="2Oq$k0">
+                <ref role="3cqZAo" node="7P0KIHplZiC" resolve="editorContext" />
+              </node>
+              <node concept="liA8E" id="7P0KIHplZiM" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7P0KIHplZiN" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+            </node>
+          </node>
+          <node concept="liA8E" id="7P0KIHplZiO" role="2OqNvi">
+            <ref role="37wK5l" to="lui2:~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
+            <node concept="1bVj0M" id="7P0KIHplZiP" role="37wK5m">
+              <node concept="3clFbS" id="7P0KIHplZiQ" role="1bW5cS">
+                <node concept="3cpWs8" id="7P0KIHplZiR" role="3cqZAp">
+                  <node concept="3cpWsn" id="7P0KIHplZiS" role="3cpWs9">
+                    <property role="TrG5h" value="contextAssistantManager" />
+                    <node concept="3uibUv" id="7P0KIHplZiT" role="1tU5fm">
+                      <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                    </node>
+                    <node concept="2OqwBi" id="7P0KIHplZiU" role="33vP2m">
+                      <node concept="37vLTw" id="7P0KIHplZiV" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7P0KIHplZiC" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="7P0KIHplZiW" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="7P0KIHplZiX" role="3cqZAp" />
+                <node concept="3clFbF" id="7P0KIHplZiY" role="3cqZAp">
+                  <node concept="2OqwBi" id="7P0KIHplZiZ" role="3clFbG">
+                    <node concept="2OqwBi" id="7P0KIHplZj0" role="2Oq$k0">
+                      <node concept="369mXd" id="7P0KIHplZj1" role="2Oq$k0" />
+                      <node concept="liA8E" id="7P0KIHplZj2" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="7P0KIHplZj3" role="2OqNvi">
+                      <ref role="37wK5l" to="lwvz:~SelectionManager.setSelection(org.jetbrains.mps.openapi.model.SNode):void" resolve="setSelection" />
+                      <node concept="3xONca" id="7P0KIHpm35U" role="37wK5m">
+                        <ref role="3xOPvv" node="7P0KIHpm35H" resolve="base" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="7P0KIHplZj5" role="3cqZAp">
+                  <node concept="2OqwBi" id="7P0KIHplZj6" role="3clFbG">
+                    <node concept="37vLTw" id="7P0KIHplZj7" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7P0KIHplZiS" resolve="contextAssistantManager" />
+                    </node>
+                    <node concept="liA8E" id="7P0KIHplZj8" role="2OqNvi">
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Hmddi" id="7P0KIHplZj9" role="3cqZAp">
+                  <node concept="2OqwBi" id="7P0KIHplZja" role="2Hmdds">
+                    <node concept="37vLTw" id="7P0KIHplZjb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7P0KIHplZiS" resolve="contextAssistantManager" />
+                    </node>
+                    <node concept="liA8E" id="7P0KIHplZjc" role="2OqNvi">
+                      <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Hmddi" id="7P0KIHplZjd" role="3cqZAp">
+                  <node concept="2OqwBi" id="7P0KIHplZje" role="2Hmdds">
+                    <node concept="37vLTw" id="7P0KIHplZjf" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7P0KIHplZiS" resolve="contextAssistantManager" />
+                    </node>
+                    <node concept="liA8E" id="7P0KIHplZjg" role="2OqNvi">
                       <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
                     </node>
                   </node>

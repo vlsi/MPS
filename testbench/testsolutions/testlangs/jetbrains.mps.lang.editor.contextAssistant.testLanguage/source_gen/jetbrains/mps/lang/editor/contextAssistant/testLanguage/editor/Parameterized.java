@@ -19,6 +19,9 @@ import jetbrains.mps.editor.contextActionsTool.runtime.SidebarActionItem;
 import javax.swing.Icon;
 
 public class Parameterized extends TransformationMenuBase {
+  public Parameterized() {
+    super(true);
+  }
   @Override
   protected List<MenuPart> getParts(TransformationMenuContext _context) {
     List<MenuPart> result = new ArrayList<MenuPart>();
