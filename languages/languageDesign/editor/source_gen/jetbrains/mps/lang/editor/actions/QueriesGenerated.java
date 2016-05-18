@@ -854,7 +854,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return ((Iterable<SNode>) Sequence.fromIterable(TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), _context.getParentNode(), _context.getCurrentTargetNode())).select(new ISelector<SAbstractConcept, SNode>() {
+          return ((Iterable<SNode>) Sequence.fromIterable(TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), _context.getParentNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"), _context.getCurrentTargetNode())).select(new ISelector<SAbstractConcept, SNode>() {
             public SNode select(SAbstractConcept it) {
               return SNodeOperations.asNode(it);
             }
@@ -869,6 +869,9 @@ public class QueriesGenerated {
     }
     return result;
   }
+  public static boolean nodeSubstituteActionsBuilder_Precondition_TransformationLocation_106767531336893865(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return eq_x583g4_a0a0p(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations").getDeclarationNode());
+  }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TransformationFeature_6239791100560720330(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -880,7 +883,7 @@ public class QueriesGenerated {
               return (Collection<SConcept>) TransformationLocation__BehaviorDescriptor.getAvailableFeatures_id1A4kJjlZ$rL.invoke(it);
             }
           });
-          Iterable<SAbstractConcept> concepts = TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L, "jetbrains.mps.lang.editor.structure.TransformationFeature"), _context.getParentNode(), _context.getCurrentTargetNode());
+          Iterable<SAbstractConcept> concepts = TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L, "jetbrains.mps.lang.editor.structure.TransformationFeature"), _context.getParentNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"), _context.getCurrentTargetNode());
           if (section != null) {
             concepts = Sequence.fromIterable(concepts).where(new IWhereFilter<SAbstractConcept>() {
               public boolean accept(SAbstractConcept it) {
@@ -902,6 +905,9 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+  public static boolean nodeSubstituteActionsBuilder_Precondition_TransformationFeature_106767531336923673(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return eq_x583g4_a0a0r(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features").getDeclarationNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1948540814637841122(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -1135,5 +1141,11 @@ public class QueriesGenerated {
       n1.addChild(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, 0x7e9b10ab1cb5b959L, "element"), n);
     }
     return n1;
+  }
+  private static boolean eq_x583g4_a0a0p(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0r(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

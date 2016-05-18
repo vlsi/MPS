@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.actions;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,24 +14,27 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ class TransformationMenuActionsUtil {
-  /*package*/ static Iterable<SAbstractConcept> getSubconceptsWithCurrentChildConceptsExcluded(SAbstractConcept concept, SNode parentNode, final SNode currentTargetNode) {
+  /*package*/ static Iterable<SAbstractConcept> getSubconceptsWithCurrentChildConceptsExcluded(SAbstractConcept concept, SNode parentNode, SContainmentLink link, final SNode currentTargetNode) {
     Iterable<SAbstractConcept> subConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, SNodeOperations.getModel(parentNode))).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
         return !(it.isAbstract());
       }
     });
-    Iterable<SConcept> currentConcepts = ((Iterable<SConcept>) ListSequence.fromList(SNodeOperations.getChildren(parentNode, currentTargetNode.getContainmentLink())).select(new ISelector<SNode, SConcept>() {
+    Iterable<SConcept> currentConcepts = ((Iterable<SConcept>) ListSequence.fromList(SNodeOperations.getChildren(parentNode, link)).select(new ISelector<SNode, SConcept>() {
       public SConcept select(SNode it) {
         return SNodeOperations.getConcept(it);
       }
-    }).where(new IWhereFilter<SConcept>() {
-      public boolean accept(SConcept it) {
-        return neq_wnuenf_a0a0a0a0a0a0a1a0(it, SNodeOperations.getConcept(currentTargetNode));
-      }
     }));
+    if (currentTargetNode != null) {
+      currentConcepts = Sequence.fromIterable(currentConcepts).where(new IWhereFilter<SConcept>() {
+        public boolean accept(SConcept it) {
+          return neq_wnuenf_a0a0a0a0a0a0a2a0(it, SNodeOperations.getConcept(currentTargetNode));
+        }
+      });
+    }
     return Sequence.fromIterable(subConcepts).subtract(Sequence.fromIterable(currentConcepts));
   }
-  private static boolean neq_wnuenf_a0a0a0a0a0a0a1a0(Object a, Object b) {
+  private static boolean neq_wnuenf_a0a0a0a0a0a0a2a0(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
