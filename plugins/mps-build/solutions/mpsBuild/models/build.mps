@@ -30794,7 +30794,7 @@
       <node concept="1E1JtA" id="1JaUSFUm4WO" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.editor.contextActionsTool" />
-        <property role="3LESm3" value="28583149-5b6e-4663-9c02-b9a8fa3cb099" />
+        <property role="3LESm3" value="28583149-5b6e-4663-9c02-b9a8fa3cb09a" />
         <property role="2GAjPV" value="false" />
         <node concept="398BVA" id="1JaUSFUm4ZG" role="3LF7KH">
           <ref role="398BVh" node="1JaUSFUm4GU" resolve="mps_home" />
