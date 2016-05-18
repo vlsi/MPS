@@ -10708,7 +10708,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="3F0ifn" id="4Sf$XywJx6X" role="3EZMnx">
-            <property role="3F0ifm" value="context assistant menu" />
+            <property role="3F0ifm" value="transformation menu" />
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="3DiRZz_V0lv" role="3EZMnx">

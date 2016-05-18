@@ -29620,24 +29620,24 @@
       <node id="3767670707232315109" at="328,83,329,82" concept="0" />
       <node id="3767670707232315109" at="328,83,329,82" concept="2" />
       <node id="3767670707232315109" at="329,82,330,22" concept="8" />
-      <node id="5624877018228068797" at="332,90,333,108" concept="7" />
-      <node id="5624877018228068797" at="333,108,334,49" concept="2" />
+      <node id="5624877018228068797" at="332,90,333,105" concept="7" />
+      <node id="5624877018228068797" at="333,105,334,49" concept="2" />
       <node id="5624877018228068797" at="334,49,335,34" concept="7" />
       <node id="5624877018228068797" at="335,34,336,56" concept="2" />
       <node id="5624877018228068797" at="336,56,337,40" concept="2" />
       <node id="5624877018228068797" at="337,40,338,34" concept="2" />
       <node id="5624877018228068797" at="338,34,339,22" concept="8" />
-      <node id="3767670707232315109" at="341,89,342,271" concept="7" />
-      <node id="3767670707232315109" at="342,271,343,33" concept="8" />
-      <node id="3767670707232315109" at="346,136,347,49" concept="11" />
+      <node id="3767670707232315109" at="341,89,342,267" concept="7" />
+      <node id="3767670707232315109" at="342,267,343,33" concept="8" />
+      <node id="3767670707232315109" at="346,134,347,49" concept="11" />
       <node id="3767670707232315109" at="349,55,350,59" concept="7" />
       <node id="3767670707232315109" at="350,59,351,41" concept="2" />
       <node id="3767670707232315109" at="351,41,352,24" concept="8" />
       <node id="3767670707232315109" at="354,70,355,137" concept="2" />
-      <node id="3767670707232315109" at="356,41,357,51" concept="2" />
+      <node id="3767670707232315109" at="356,41,357,49" concept="2" />
       <node id="3767670707232315109" at="361,44,362,54" concept="7" />
-      <node id="3767670707232315109" at="362,54,363,57" concept="2" />
-      <node id="3767670707232315109" at="363,57,364,40" concept="2" />
+      <node id="3767670707232315109" at="362,54,363,55" concept="2" />
+      <node id="3767670707232315109" at="363,55,364,40" concept="2" />
       <node id="3767670707232315109" at="364,40,365,24" concept="8" />
       <node id="3767670707232315109" at="367,40,368,20" concept="8" />
       <node id="3767670707232315109" at="371,91,372,99" concept="7" />
@@ -29752,7 +29752,7 @@
       <node id="3767670707232315109" at="296,0,299,0" concept="1" trace="menuDescriptorSingleRoleHandler_tf8r10_b3b0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3767670707232315109" at="305,137,308,7" concept="5" />
       <node id="3767670707232315109" at="317,0,320,0" concept="6" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="3767670707232315109" at="346,0,349,0" concept="1" trace="contextAssistantMenuSingleRoleHandler_tf8r10_b4b0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="3767670707232315109" at="346,0,349,0" concept="1" trace="transformationMenuSingleRoleHandler_tf8r10_b4b0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3767670707232315109" at="355,137,358,7" concept="5" />
       <node id="3767670707232315109" at="367,0,370,0" concept="6" trace="getNoTargetText#()Ljava/lang/String;" />
       <node id="3767670707232315152" at="420,0,423,0" concept="10" trace="renderingCondition_tf8r10_a6b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -29849,8 +29849,8 @@
       <scope id="3767670707232315109" at="317,40,318,22" />
       <scope id="3767670707232315109" at="327,40,328,83" />
       <scope id="3767670707232315109" at="328,83,329,82" />
-      <scope id="3767670707232315109" at="346,136,347,49" />
-      <scope id="3767670707232315109" at="356,41,357,51" />
+      <scope id="3767670707232315109" at="346,134,347,49" />
+      <scope id="3767670707232315109" at="356,41,357,49" />
       <scope id="3767670707232315109" at="367,40,368,20" />
       <scope id="3767670707232315109" at="377,40,378,83" />
       <scope id="3767670707232315109" at="378,83,379,83" />
@@ -30260,7 +30260,7 @@
       </scope>
       <unit id="3767670707232315109" at="97,0,123,0" name="jetbrains.mps.lang.editor.editor.Common_Component$idSingleRoleHandler_tf8r10_b0b0" />
       <unit id="3767670707232315109" at="295,0,321,0" name="jetbrains.mps.lang.editor.editor.Common_Component$menuDescriptorSingleRoleHandler_tf8r10_b3b0" />
-      <unit id="3767670707232315109" at="345,0,371,0" name="jetbrains.mps.lang.editor.editor.Common_Component$contextAssistantMenuSingleRoleHandler_tf8r10_b4b0" />
+      <unit id="3767670707232315109" at="345,0,371,0" name="jetbrains.mps.lang.editor.editor.Common_Component$transformationMenuSingleRoleHandler_tf8r10_b4b0" />
       <unit id="3767670707232315109" at="436,0,462,0" name="jetbrains.mps.lang.editor.editor.Common_Component$focusPolicyApplicableSingleRoleHandler_tf8r10_b6b0" />
       <unit id="3767670707232315109" at="485,0,511,0" name="jetbrains.mps.lang.editor.editor.Common_Component$renderingConditionSingleRoleHandler_tf8r10_b7b0" />
       <unit id="3767670707232315119" at="166,0,197,0" name="jetbrains.mps.lang.editor.editor.Common_Component$_Inline_tf8r10_a1b1a" />

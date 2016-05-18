@@ -163,7 +163,7 @@
     </node>
     <node concept="1TJgyj" id="3DiRZz_UXt0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="contextAssistantMenu" />
+      <property role="20kJfa" value="transformationMenu" />
       <property role="IQ2ns" value="4202667662392416064" />
       <ref role="20lvS9" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
     </node>

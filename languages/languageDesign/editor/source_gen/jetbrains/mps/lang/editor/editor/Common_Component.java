@@ -330,7 +330,7 @@ public class Common_Component implements ConceptEditorComponent {
     return editorCell;
   }
   private EditorCell createConstant_tf8r10_a4b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context assistant menu");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transformation menu");
     editorCell.setCellId("Constant_tf8r10_a4b0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_property(style, editorCell);
@@ -339,11 +339,11 @@ public class Common_Component implements ConceptEditorComponent {
     return editorCell;
   }
   private EditorCell createRefNode_tf8r10_b4b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new Common_Component.contextAssistantMenuSingleRoleHandler_tf8r10_b4b0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3a52dff8e5ebd740L, "contextAssistantMenu"), editorContext);
+    SingleRoleCellProvider provider = new Common_Component.transformationMenuSingleRoleHandler_tf8r10_b4b0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3a52dff8e5ebd740L, "transformationMenu"), editorContext);
     return provider.createCell();
   }
-  private class contextAssistantMenuSingleRoleHandler_tf8r10_b4b0 extends SingleRoleCellProvider {
-    public contextAssistantMenuSingleRoleHandler_tf8r10_b4b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class transformationMenuSingleRoleHandler_tf8r10_b4b0 extends SingleRoleCellProvider {
+    public transformationMenuSingleRoleHandler_tf8r10_b4b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -354,13 +354,13 @@ public class Common_Component implements ConceptEditorComponent {
     private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
-        editorCell.setRole("contextAssistantMenu");
+        editorCell.setRole("transformationMenu");
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_contextAssistantMenu");
+      editorCell.setCellId("empty_transformationMenu");
       installCellInfo(null, editorCell);
       return editorCell;
     }
