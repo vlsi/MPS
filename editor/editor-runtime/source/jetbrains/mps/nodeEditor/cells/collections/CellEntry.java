@@ -22,4 +22,22 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
  * Date: 17/05/16
  */
 public interface CellEntry extends Entry<EditorCell> {
+  /**
+   * @return container instance holding this entry or null if this entry was deleted from the container
+   */
+  Container<EditorCell> getContainer();
+
+  /**
+   * Setting {@link Container} instance for this entry.
+   * This method can be executed only if:
+   * - the current container is null (getContainer() == null)
+   * - or container argument is null in order to reset container reference to null
+   * <p>
+   * This method will throw exception if both conditions are false.
+   *
+   * @param container new container for this Entry
+   * @throws IllegalStateException if specified container != null & this Entry is already
+   *                               included into another container
+   */
+  void setContainer(Container<EditorCell> container);
 }

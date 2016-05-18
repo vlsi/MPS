@@ -39,7 +39,7 @@ public class SingletonContainer<T> extends AbstractContainer<T> {
 
   @Override
   protected Entry<T> createEntry(@NotNull T item) {
-    return isEmpty() ? new EntryImpl<>(item, this) : null;
+    return isEmpty() ? new EntryImpl<>(item) : null;
   }
 
   @Override

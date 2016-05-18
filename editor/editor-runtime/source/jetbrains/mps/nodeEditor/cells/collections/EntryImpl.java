@@ -25,28 +25,9 @@ class EntryImpl<T> implements Entry<T> {
   private final T myItem;
   private Entry<T> myNext;
   private Entry<T> myPrev;
-  private AbstractContainer<T> myContainer;
 
   EntryImpl(@NotNull T item) {
     myItem = item;
-  }
-
-  EntryImpl(@NotNull T item, AbstractContainer<T> container) {
-    myItem = item;
-    myContainer = container;
-  }
-
-  @Override
-  public AbstractContainer<T> getContainer() {
-    return myContainer;
-  }
-
-  @Override
-  public void setContainer(AbstractContainer<T> container) {
-    if (myContainer != null && container != null) {
-      throw new IllegalStateException();
-    }
-    myContainer = container;
   }
 
   @NotNull

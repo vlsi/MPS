@@ -48,26 +48,25 @@ public class CellContainer extends AbstractContainer<EditorCell> {
     if (item.getUserObject(this) != null) {
       return null;
     }
-    Entry<EditorCell> entry = new EntryImpl<>(item, this);
+    Entry<EditorCell> entry = new EntryImpl<>(item);
     item.putUserObject(this, entry);
     return entry;
   }
 
   @Override
   protected Entry<EditorCell> deleteEntry(@NotNull Entry<EditorCell> entry) {
-    if (entry.getContainer() != this) {
+    if (entry instanceof CellEntry) {
+      CellEntry cellEntry = (CellEntry) entry;
+      if (cellEntry.getContainer() == this) {
+        cellEntry.setContainer(null);
+        return cellEntry;
+      }
+    }
+
+    if (entry.getItem().getUserObject(this) != entry) {
       return null;
     }
-
-    if (!(entry instanceof CellEntry)) {
-      EditorCell cell = entry.getItem();
-      if (cell.getUserObject(this) != entry) {
-        return null;
-      }
-      cell.putUserObject(this, null);
-    }
-
-    entry.setContainer(null);
+    entry.getItem().putUserObject(this, null);
     return entry;
   }
 }

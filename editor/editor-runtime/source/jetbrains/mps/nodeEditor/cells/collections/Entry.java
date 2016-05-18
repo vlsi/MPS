@@ -25,26 +25,6 @@ import org.jetbrains.annotations.NotNull;
  * Date: 10/02/16
  */
 public interface Entry<T> {
-
-  /**
-   * @return container instance holding this entry or null if this entry was deleted from the container
-   */
-  AbstractContainer<T> getContainer();
-
-  /**
-   * Setting {@link AbstractContainer} instance for this entry.
-   * This method can be executed only if:
-   * - the current container is null (getContainer() == null)
-   * - or container argument is null
-   * <p>
-   * This method will throw exception if both conditions are false.
-   *
-   * @param container new container for this Entry
-   * @throws IllegalStateException if specified container != null & this Entry is already
-   *                               included into another container
-   */
-  void setContainer(AbstractContainer<T> container);
-
   /**
    * @return actual value wrapped by this entry
    */
