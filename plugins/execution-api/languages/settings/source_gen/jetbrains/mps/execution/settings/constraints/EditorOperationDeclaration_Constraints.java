@@ -9,4 +9,5 @@ public class EditorOperationDeclaration_Constraints extends BaseConstraintsDescr
   public EditorOperationDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"));
   }
+
 }

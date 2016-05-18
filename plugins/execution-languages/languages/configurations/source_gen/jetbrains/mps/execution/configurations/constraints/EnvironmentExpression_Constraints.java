@@ -15,6 +15,7 @@ public class EnvironmentExpression_Constraints extends BaseConstraintsDescriptor
   public EnvironmentExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x7664b739387f64L, "jetbrains.mps.execution.configurations.structure.EnvironmentExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

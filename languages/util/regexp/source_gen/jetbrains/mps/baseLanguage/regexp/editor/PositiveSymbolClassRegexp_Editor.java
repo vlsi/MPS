@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -50,8 +52,8 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
     }
   }
   private EditorCell createRefNodeList_4p4aum_b0(EditorContext editorContext, SNode node) {

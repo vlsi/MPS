@@ -104,6 +104,8 @@ import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
@@ -145,8 +147,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -1137,7 +1137,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
-          myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+          myVirtualFile = !myNoVirtualFile ? NodeVirtualFileSystem.getInstance().getFileFor(getRepository(), node) : null;
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(model, myRepository);

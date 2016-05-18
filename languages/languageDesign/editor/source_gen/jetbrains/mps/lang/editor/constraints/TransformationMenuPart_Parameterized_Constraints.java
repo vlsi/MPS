@@ -17,6 +17,7 @@ public class TransformationMenuPart_Parameterized_Constraints extends BaseConstr
   public TransformationMenuPart_Parameterized_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

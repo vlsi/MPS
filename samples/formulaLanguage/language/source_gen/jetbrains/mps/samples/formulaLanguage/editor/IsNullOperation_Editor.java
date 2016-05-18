@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -75,8 +76,8 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_Operation_cellMenu_ehpdiz_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Operation_cellMenu_ehpdiz_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.formulaLanguage.structure.Operation";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation");
     }
   }
   private EditorCell createConstant_ehpdiz_c0(EditorContext editorContext, SNode node) {

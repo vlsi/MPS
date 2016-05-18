@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +24,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -61,7 +61,7 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
       name = nodeConcept.getName();
     }
     getTemplatePresentation().setText(name);
-    Icon icon = IconManager.getIcon(nodeConcept);
+    Icon icon = nodeConcept.getIcon();
     getTemplatePresentation().setIcon(icon);
     setExecuteOutsideCommand(true);
   }
@@ -104,29 +104,44 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
   }
 
   public static boolean trySelectInCurrentPane(Project p, final SNode node) {
-    return trySelectInCurrentPane(ProjectHelper.toIdeaProject(p), node);
-  }
-  public static boolean trySelectInCurrentPane(com.intellij.openapi.project.Project p, final SNode node) {
-    final ProjectView projectView = ProjectView.getInstance(p);
+    if (!(p instanceof MPSProject)) {
+      return false;
+    }
+
+    final ProjectView projectView = ProjectView.getInstance(((MPSProject) p).getProject());
 
     AbstractProjectViewPane selectedPane = projectView.getCurrentProjectViewPane();
-    if (selectedPane == null) return false;
+    if (selectedPane == null) {
+      return false;
+    }
 
     SelectInTarget target = selectedPane.createSelectInTarget();
-    if (target == null) return false;
+    if (target == null) {
+      return false;
+    }
 
-    MySelectInContext context = new MySelectInContext(p, node.getReference());
-    if (!target.canSelect(context)) return false;
+    MySelectInContext context = new MySelectInContext((MPSProject) p, node.getReference());
+    if (!target.canSelect(context)) {
+      return false;
+    }
 
     target.selectIn(context, false);
     return true;
   }
 
+  /**
+   * @deprecated use {@link #trySelectInCurrentPane(Project, SNode)} instead
+   */
+  @Deprecated
+  public static boolean trySelectInCurrentPane(com.intellij.openapi.project.Project p, final SNode node) {
+    return trySelectInCurrentPane(ProjectHelper.fromIdeaProject(p), node);
+  }
+
   private static class MySelectInContext implements SelectInContext {
-    private com.intellij.openapi.project.Project myProject;
+    private MPSProject myProject;
     private final SNodeReference myNode;
 
-    public MySelectInContext(com.intellij.openapi.project.Project p, SNodeReference node) {
+    public MySelectInContext(MPSProject p, SNodeReference node) {
       myProject = p;
       myNode = node;
     }
@@ -134,13 +149,13 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     @Override
     @NotNull
     public com.intellij.openapi.project.Project getProject() {
-      return myProject;
+      return myProject.getProject();
     }
 
     @Override
     @NotNull
     public VirtualFile getVirtualFile() {
-      return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode);
+      return NodeVirtualFileSystem.getInstance().getFileFor(myProject.getRepository(), myNode);
     }
 
     @Override

@@ -28,7 +28,10 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -49,13 +52,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     if (parent == null) {
       return Collections.emptyList();
     }
-
-    String replacementConceptFqName = getReplacementConceptName();
     IOperationContext context = editorContext.getOperationContext();
-    SNode replacementConcept = SModelUtil.findConceptDeclaration(replacementConceptFqName);
 
-
-    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, replacementConcept, this, context);
+    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
     List<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
     for (SubstituteAction a : actions) {
       result.add(new NodeSubstituteActionWrapper(a) {
@@ -86,7 +85,20 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     return result;
   }
 
-  protected abstract String getReplacementConceptName();
+  @Deprecated
+  @ToRemove(version = 3.4)
+  protected String getReplacementConceptName() {
+    return null;
+  }
+
+  protected SAbstractConcept getReplacementConcept() {
+    //todo make abstract after 3.4, this is a compatibility code
+    if (getReplacementConceptName() != null) {
+      return MetaAdapterFactoryByName.getConcept(getReplacementConceptName());
+    }
+    return null;
+  }
+
 
   /**
    * implements IChildNodeSetter

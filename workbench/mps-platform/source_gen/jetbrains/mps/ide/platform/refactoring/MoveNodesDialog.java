@@ -57,15 +57,11 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     return dialog.mySelectedObject;
   }
   public static abstract class ModelFilter extends ModelOrNodeChooserDialog.Filter {
-    public ModelFilter() {
-    }
-    public ModelFilter(String errorMessage) {
-      super(errorMessage);
-    }
     public abstract boolean check(NodeLocation selectedObject, SModel model);
+    public abstract String getErrorMessage(NodeLocation selectedObject);
     private boolean checkForObject(NodeLocation selectedObject, SModel model, JComponent component) {
       if (!(check(selectedObject, model))) {
-        showError("Nodes can't be moved", component);
+        showError("Nodes can't be moved", getErrorMessage(selectedObject), component);
         return false;
       }
       return true;

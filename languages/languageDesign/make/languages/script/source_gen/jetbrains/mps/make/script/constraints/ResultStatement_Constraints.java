@@ -16,6 +16,7 @@ public class ResultStatement_Constraints extends BaseConstraintsDescriptor {
   public ResultStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

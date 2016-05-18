@@ -2,7 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -14,6 +15,12 @@
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
@@ -46,9 +53,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -129,7 +136,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/actionGroupNew.png" />
     <property role="TrG5h" value="ActionGroupDeclaration" />
     <property role="3GE5qa" value="Actions.Groups" />
     <property role="34LRSv" value="Group" />
@@ -190,6 +196,9 @@
       <property role="TrG5h" value="isPluginXmlGroup" />
       <property role="IQ2nx" value="6368583333374291912" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPP" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/actionGroupNew.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hwtCFDn">
@@ -588,7 +597,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/preferences.png" />
     <property role="TrG5h" value="PreferencesComponentDeclaration" />
     <property role="3GE5qa" value="Preference" />
     <property role="34LRSv" value="Preferences Component" />
@@ -624,6 +632,9 @@
     </node>
     <node concept="PrWs8" id="hB4_zQd" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPM" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/preferences.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hB4jfOQ">
@@ -1012,7 +1023,6 @@
   </node>
   <node concept="1TIwiD" id="1mJS7WEAV1P">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/keymapChangesDeclaration.png" />
     <property role="TrG5h" value="KeymapChangesDeclaration" />
     <property role="3GE5qa" value="Actions.Keymaps" />
     <property role="EcuMT" value="1562714432501166197" />
@@ -1036,6 +1046,9 @@
     </node>
     <node concept="PrWs8" id="1LJzqOWiari" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPO" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/keymapChangesDeclaration.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mJS7WEAV1Q">
@@ -1188,7 +1201,6 @@
     <property role="19KtqR" value="false" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/tool.png" />
     <property role="TrG5h" value="BaseToolDeclaration" />
     <property role="3GE5qa" value="Tool" />
     <property role="34LRSv" value="Base Tool" />
@@ -1252,6 +1264,9 @@
     </node>
     <node concept="PrWs8" id="5FstybB4cVb" role="PzmwI">
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPN" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/tool.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="57l5h3Lsyf5">
@@ -1446,7 +1461,6 @@
   </node>
   <node concept="1TIwiD" id="4mQiM_caNkk">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/ideaPluginDeclaration.png" />
     <property role="TrG5h" value="IdeaInitializerDescriptor" />
     <property role="3GE5qa" value="Idea" />
     <property role="EcuMT" value="5023285075122009364" />
@@ -1512,6 +1526,9 @@
     <node concept="PrWs8" id="biFim42woL" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPR" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/ideaPluginDeclaration.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7Du95iZNqOk">
     <property role="R5$K7" value="false" />
@@ -1567,7 +1584,6 @@
   </node>
   <node concept="1TIwiD" id="3fOKOapZKOJ">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/tabbedEditor.png" />
     <property role="TrG5h" value="EditorTab" />
     <property role="3GE5qa" value="EditorTab" />
     <property role="EcuMT" value="3743831881070611759" />
@@ -1654,6 +1670,9 @@
     </node>
     <node concept="PrWs8" id="3fOKOapZKOV" role="PzmwI">
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPL" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/tabbedEditor.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="3fOKOapZL7y">
@@ -1750,7 +1769,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/actionNew.png" />
     <property role="TrG5h" value="ActionDeclaration" />
     <property role="3GE5qa" value="Actions.Action" />
     <property role="34LRSv" value="Action" />
@@ -1848,6 +1866,9 @@
     </node>
     <node concept="PrWs8" id="6fMxULX24YG" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJPQ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/actionNew.png" />
     </node>
   </node>
   <node concept="AxPO7" id="2aGS$UDXOxR">

@@ -186,6 +186,7 @@
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="fyhk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps(MPS.Platform/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
   </imports>
@@ -3889,15 +3890,14 @@
               </node>
             </node>
             <node concept="10QFUN" id="wTMLDYH67w" role="33vP2m">
-              <node concept="2OqwBi" id="wTMLDYGqN4" role="10QFUP">
-                <node concept="2OqwBi" id="wTMLDYGqN5" role="2Oq$k0">
-                  <node concept="2WthIp" id="wTMLDYGqN6" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="wTMLDYGqN7" role="2OqNvi">
-                    <ref role="2WH_rO" node="wTMLDYGhnk" resolve="mpsProject" />
+              <node concept="2OqwBi" id="7jPdBzQD$nU" role="10QFUP">
+                <node concept="2ShNRf" id="7jPdBzQCU4W" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7jPdBzQDzU7" role="2ShVmc">
+                    <ref role="37wK5l" to="fyhk:~FilteredGlobalScope.&lt;init&gt;()" resolve="FilteredGlobalScope" />
                   </node>
                 </node>
-                <node concept="liA8E" id="wTMLDYGqN8" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                <node concept="liA8E" id="7jPdBzQD_1D" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~FilteredScope.getModules():java.lang.Iterable" resolve="getModules" />
                 </node>
               </node>
               <node concept="A3Dl8" id="wTMLDYH67x" role="10QFUM">
@@ -3908,27 +3908,38 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="7jPdBzQCR58" role="3cqZAp">
+          <node concept="3cpWsn" id="7jPdBzQCR59" role="3cpWs9">
+            <property role="TrG5h" value="currentModule" />
+            <node concept="3uibUv" id="7jPdBzQCR54" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
+            <node concept="2EnYce" id="7jPdBzQCR5a" role="33vP2m">
+              <node concept="2EnYce" id="7jPdBzQCR5b" role="2Oq$k0">
+                <node concept="2OqwBi" id="7jPdBzQCR5c" role="2Oq$k0">
+                  <node concept="2WthIp" id="7jPdBzQCR5d" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="7jPdBzQCR5e" role="2OqNvi">
+                    <ref role="2WH_rO" node="hHNVe9W" resolve="node" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7jPdBzQCR5f" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7jPdBzQCR5g" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="wTMLDYGiJn" role="3cqZAp">
           <node concept="2OqwBi" id="wTMLDYGu77" role="3clFbG">
             <node concept="37vLTw" id="wTMLDYGqN9" role="2Oq$k0">
               <ref role="3cqZAo" node="wTMLDYGqN3" resolve="modules" />
             </node>
             <node concept="3JPx81" id="wTMLDYGvi1" role="2OqNvi">
-              <node concept="2EnYce" id="wTMLDYH6Tw" role="25WWJ7">
-                <node concept="2EnYce" id="wTMLDYH6wk" role="2Oq$k0">
-                  <node concept="2OqwBi" id="wTMLDYGaLc" role="2Oq$k0">
-                    <node concept="2WthIp" id="wTMLDYGaLf" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="wTMLDYGaLh" role="2OqNvi">
-                      <ref role="2WH_rO" node="hHNVe9W" resolve="node" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="wTMLDYGbej" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="wTMLDYGbWn" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                </node>
+              <node concept="37vLTw" id="7jPdBzQCR5h" role="25WWJ7">
+                <ref role="3cqZAo" node="7jPdBzQCR59" resolve="currentModule" />
               </node>
             </node>
           </node>
@@ -40510,12 +40521,9 @@
               </node>
               <node concept="2YIFZM" id="_dGddVVY2G" role="37vLTx">
                 <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
-                <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode,boolean):javax.swing.Icon" resolve="getIconFor" />
+                <ref role="37wK5l" to="xnls:~IconManager.getIconFor(org.jetbrains.mps.openapi.model.SNode):javax.swing.Icon" resolve="getIconFor" />
                 <node concept="37vLTw" id="_dGddVVXrr" role="37wK5m">
                   <ref role="3cqZAo" node="_dGddVVXqY" resolve="node" />
-                </node>
-                <node concept="3clFbT" id="_dGddVVXrs" role="37wK5m">
-                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>

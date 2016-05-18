@@ -143,7 +143,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
       if (topToUses.isEmpty()) continue;
 
       for (SNodeReference top : topToUses.keySet()) {
-        editedDocumentsNew.add(MPSUndoUtil.getDoc(top));
+        editedDocumentsNew.add(MPSUndoUtil.getDoc(getProject().getRepository(), top));
         result.add(d, top, topToUses.get(top));
       }
     }

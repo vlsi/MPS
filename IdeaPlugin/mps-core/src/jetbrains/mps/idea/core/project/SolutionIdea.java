@@ -44,6 +44,7 @@ import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
@@ -61,7 +62,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -70,6 +70,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -92,6 +93,7 @@ import java.util.Set;
 public class SolutionIdea extends Solution {
   @NotNull
   private final Module myModule;
+  private ModelAccess myModelAccess;
   private List<SDependency> myDependencies;
   private Set<ModelRoot> myContributedModelRoots;
   private MessageBusConnection myConnection;
@@ -101,13 +103,15 @@ public class SolutionIdea extends Solution {
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
     super(descriptor, null);
     myModule = module;
+    myModelAccess = ProjectHelper.getModelAccess(myModule.getProject());
+    assert myModelAccess != null;
     // TODO: simply set solution descriptor local variable?
     setModuleDescriptor(descriptor);
     myConnection = myModule.getProject().getMessageBus().connect();
     myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new MyModuleRootListener());
     myConnection.subscribe(FacetManager.FACETS_TOPIC, new MyFacetManagerAdapter());
     final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
@@ -129,6 +133,8 @@ public class SolutionIdea extends Solution {
   protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof SolutionDescriptor;
     SolutionDescriptor newDescriptor = (SolutionDescriptor) moduleDescriptor;
+    myDependencies = null;
+    myContributedModelRoots = null;
     newDescriptor.setNamespace(myModule.getName());
 //    addLibs(newDescriptor);
     super.doSetModuleDescriptor(newDescriptor);
@@ -155,7 +161,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void dispose() {
     final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
@@ -325,7 +331,7 @@ public class SolutionIdea extends Solution {
     if (skipFacetNotification(facet)) {
       return;
     }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myModelAccess.runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         setModuleDescriptor(getModuleDescriptor());
@@ -403,12 +409,14 @@ public class SolutionIdea extends Solution {
   }
 
   private void reset() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myModelAccess.runWriteAction(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).releaseSdk(myModule);
         // this is to prevent a delayed write to be executed after the module has already been disposed
         // TODO: find a better solution
-        if (myModule.isDisposed()) return;
+        if (myModule.isDisposed()) {
+          return;
+        }
         setModuleDescriptor(getModuleDescriptor());
       }
     });

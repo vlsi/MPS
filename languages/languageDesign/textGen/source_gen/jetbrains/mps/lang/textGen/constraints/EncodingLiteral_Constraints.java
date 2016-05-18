@@ -18,6 +18,7 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
   public EncodingLiteral_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x63754d97e1c86b8cL, "jetbrains.mps.lang.textGen.structure.EncodingLiteral"));
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -29,7 +30,7 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "encoding";
-        if (isEmptyString(trim_p9uqyx_a0a0a1a1a0b0a1a1((SPropertyOperations.getString(propertyValue))))) {
+        if (isEmptyString(trim_p9uqyx_a0a0a1a1a0b0a1a2((SPropertyOperations.getString(propertyValue))))) {
           return false;
         }
         if ((SPropertyOperations.getString(propertyValue)).equals("binary")) {
@@ -48,7 +49,7 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  public static String trim_p9uqyx_a0a0a1a1a0b0a1a1(String str) {
+  public static String trim_p9uqyx_a0a0a1a1a0b0a1a2(String str) {
     return (str == null ? null : str.trim());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,19 +36,16 @@ import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -96,10 +93,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   protected Icon getBaseIcon() {
-    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+    return new ModelAccessHelper(getProjectRepository()).runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        return IconManager.getIconFor(myModelReference.resolve(MPSModuleRepository.getInstance()));
+        return IconManager.getIconFor(myModelReference.resolve(getProjectRepository()));
       }
     });
   }
@@ -129,7 +126,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @Override
   public boolean isValid() {
     if (myPsiDirectory == null || !(myPsiDirectory.isValid())) return false;
-    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final SRepository repository = getProjectRepository();
     final Ref<Boolean> result = new Ref<Boolean>(false);
 
     repository.getModelAccess().runReadAction(new Runnable() {
@@ -182,7 +179,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @NotNull
   @Override
   public VirtualFile getVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor((jetbrains.mps.smodel.SModelReference) myModelReference);
+    return NodeVirtualFileSystem.getInstance().getFileFor(getProjectRepository(), myModelReference);
   }
 
   @Override
@@ -320,7 +317,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   public VirtualFile getSourceVirtualFile() {
     if (mySourceVirtualFile == null) {
-      final SRepository repo = ProjectHelper.getProjectRepository(getProject());
+      final SRepository repo = getProjectRepository();
       repo.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -341,7 +338,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @Override
   public PsiFile getContainingFile() {
     // if it's singe-file model then return that file
-    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final SRepository repository = getProjectRepository();
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {
       @Override
       public PsiFile compute() {
@@ -372,9 +369,11 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     SRepository repository = getProjectRepository();
     repository.getModelAccess().checkWriteAccess();
     MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
-    if (mpsPsiNode == null) return null;
+    if (mpsPsiNode == null) {
+      return null;
+    }
 
-    SNode sNode = mpsPsiNode.getSNodeReference().resolve(MPSModuleRepository.getInstance());
+    SNode sNode = mpsPsiNode.getSNodeReference().resolve(repository);
     MPSPsiNode replacement = convert(sNode);
 
     if (isRoot(mpsPsiNode)) {
@@ -402,8 +401,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   public void reloadAll() {
-    ModelAccess.assertLegalRead();
-    SModel sModel = myModelReference.resolve(MPSModuleRepository.getInstance());
+    final SRepository repository = getProjectRepository();
+    repository.getModelAccess().checkReadAccess();
+    SModel sModel = myModelReference.resolve(repository);
     for (SNode root : sModel.getRootNodes()) {
       MPSPsiNode mpsPsiNode = lookupNode(root.getNodeId());
       if (mpsPsiNode == null) continue;

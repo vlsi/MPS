@@ -2,7 +2,8 @@
 <model ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -10,6 +11,12 @@
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
@@ -41,9 +48,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -69,7 +76,6 @@
   </registry>
   <node concept="1TIwiD" id="4RPz6WoY4Cj">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/buildProject.png" />
     <property role="TrG5h" value="BuildProject" />
     <property role="34LRSv" value="build project" />
     <property role="EcuMT" value="5617550519002745363" />
@@ -139,13 +145,18 @@
     <node concept="PrWs8" id="4RPz6WoY4Cr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQW" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/buildProject.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4RPz6WoY4Ck">
-    <property role="MwhBj" value="${language_descriptor}/icons/layout.png" />
     <property role="TrG5h" value="BuildLayout" />
     <property role="3GE5qa" value="Layout" />
     <property role="EcuMT" value="5617550519002745364" />
     <ref role="1TJDcQ" node="6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQN" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/layout.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4RPz6WoY4Cv">
     <property role="R5$K7" value="true" />
@@ -176,7 +187,6 @@
   </node>
   <node concept="1TIwiD" id="6qcrfIJF4LS">
     <property role="R4oN_" value="create a folder" />
-    <property role="MwhBj" value="${language_descriptor}/icons/layout.png" />
     <property role="TrG5h" value="BuildLayout_Folder" />
     <property role="3GE5qa" value="Layout.File" />
     <property role="34LRSv" value="folder" />
@@ -184,6 +194,9 @@
     <ref role="1TJDcQ" node="6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
     <node concept="PrWs8" id="6eCuTcwOun2" role="PzmwI">
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQP" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/layout.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJF4M5">
@@ -220,7 +233,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJF7Yn">
-    <property role="MwhBj" value="${language_descriptor}/icons/archive.png" />
     <property role="TrG5h" value="BuildLayout_Zip" />
     <property role="3GE5qa" value="Layout.File" />
     <property role="34LRSv" value="zip" />
@@ -232,9 +244,11 @@
     <node concept="PrWs8" id="6eCuTcwOun4" role="PzmwI">
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQZ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/archive.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJF7Yq">
-    <property role="MwhBj" value="${language_descriptor}/icons/archive.png" />
     <property role="TrG5h" value="BuildLayout_Jar" />
     <property role="3GE5qa" value="Layout.Java" />
     <property role="34LRSv" value="jar" />
@@ -249,6 +263,9 @@
     <node concept="PrWs8" id="4RsV8qJFhWC" role="PzmwI">
       <ref role="PrY4T" node="4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQS" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/archive.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFdK8">
     <property role="R5$K7" value="true" />
@@ -258,7 +275,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="6qcrfIJFdKS">
-    <property role="MwhBj" value="${language_descriptor}/icons/javaModule.png" />
     <property role="TrG5h" value="BuildSource_JavaModule" />
     <property role="3GE5qa" value="Project.Java" />
     <property role="34LRSv" value="java module" />
@@ -289,6 +305,9 @@
     </node>
     <node concept="PrWs8" id="2fQZjorRIf5" role="PzmwI">
       <ref role="PrY4T" node="2fQZjorRfOB" resolve="BuildSource_CompilablePart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQJ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/javaModule.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFdKY">
@@ -321,7 +340,6 @@
   </node>
   <node concept="1TIwiD" id="6qcrfIJFt02">
     <property role="R4oN_" value="defines folder macro with default value (for local build)" />
-    <property role="MwhBj" value="${language_descriptor}/icons/macro.png" />
     <property role="TrG5h" value="BuildFolderMacro" />
     <property role="3GE5qa" value="Macro" />
     <property role="34LRSv" value="folder" />
@@ -333,9 +351,11 @@
       <property role="IQ2ns" value="7389400916848144618" />
       <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQR" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/macro.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFx8t">
-    <property role="MwhBj" value="${language_descriptor}/icons/path.png" />
     <property role="TrG5h" value="BuildSourceMacroRelativePath" />
     <property role="3GE5qa" value="SourcePath" />
     <property role="EcuMT" value="7389400916848153117" />
@@ -346,6 +366,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7389400916848153130" />
       <ref role="20lvS9" node="6qcrfIJFt02" resolve="BuildFolderMacro" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQQ" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/path.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="2oUTXgL_kr6">
@@ -395,7 +418,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5gfUUDxhbxN">
-    <property role="MwhBj" value="${language_descriptor}/icons/library.png" />
     <property role="TrG5h" value="BuildSource_JavaLibrary" />
     <property role="3GE5qa" value="Project.Java.Library" />
     <property role="34LRSv" value="java library" />
@@ -410,6 +432,9 @@
     </node>
     <node concept="PrWs8" id="5gfUUDxhbxO" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQX" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/library.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="5gfUUDxhecw">
@@ -442,7 +467,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="4lbsKRp2c8w">
-    <property role="MwhBj" value="${language_descriptor}/icons/dependency.png" />
     <property role="TrG5h" value="BuildProjectDependency" />
     <property role="3GE5qa" value="Dependencies" />
     <property role="EcuMT" value="4993211115183325728" />
@@ -462,6 +486,9 @@
     </node>
     <node concept="PrWs8" id="6bGbH3Svq6b" role="PzmwI">
       <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQK" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/dependency.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="34DbxDwQvcK">
@@ -488,12 +515,14 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4Kip2_918YM">
-    <property role="MwhBj" value="${language_descriptor}/icons/path.png" />
     <property role="TrG5h" value="BuildSourceProjectRelativePath" />
     <property role="3GE5qa" value="SourcePath" />
     <property role="34LRSv" value="." />
     <property role="EcuMT" value="5481553824944787378" />
     <ref role="1TJDcQ" node="6mpuAlRavrV" resolve="BuildRelativePath" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQM" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/path.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7usrAn056vL">
     <property role="TrG5h" value="BuildCompositePath" />
@@ -550,7 +579,6 @@
   </node>
   <node concept="1TIwiD" id="3h9a8EwPm3y">
     <property role="R4oN_" value="defines variable macro" />
-    <property role="MwhBj" value="${language_descriptor}/icons/macro.png" />
     <property role="TrG5h" value="BuildVariableMacro" />
     <property role="3GE5qa" value="Macro" />
     <property role="34LRSv" value="var" />
@@ -561,6 +589,9 @@
       <property role="20kJfa" value="initialValue" />
       <property role="IQ2ns" value="2755237150521975432" />
       <ref role="20lvS9" node="2oW$psGOu6E" resolve="BuildVariableMacroInitValue" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQL" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/macro.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4zlO3QT9yYs">
@@ -751,7 +782,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3NagsOfThPf">
-    <property role="MwhBj" value="${language_descriptor}/icons/string.png" />
     <property role="TrG5h" value="BuildString" />
     <property role="3GE5qa" value="Names" />
     <property role="EcuMT" value="4380385936562003279" />
@@ -765,6 +795,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="4903714810883783243" />
       <ref role="20lvS9" node="4gdvEeQyRNZ" resolve="BuildStringPart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQY" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/string.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="15RAxQWZPkq">
@@ -1074,7 +1107,6 @@
   </node>
   <node concept="1TIwiD" id="6eCuTcwObZ9">
     <property role="19KtqR" value="true" />
-    <property role="MwhBj" value="${language_descriptor}/icons/externalLayout.png" />
     <property role="TrG5h" value="BuildExternalLayout" />
     <property role="3GE5qa" value="Layout.External" />
     <property role="34LRSv" value="external layout" />
@@ -1082,6 +1114,9 @@
     <ref role="1TJDcQ" node="6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
     <node concept="PrWs8" id="6eCuTcwObZa" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQV" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/externalLayout.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="6eCuTcwOczV">
@@ -1110,7 +1145,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6eCuTcwOX2$">
-    <property role="MwhBj" value="${language_descriptor}/icons/dependency.png" />
     <property role="TrG5h" value="BuildExternalLayoutDependency" />
     <property role="3GE5qa" value="Layout.External" />
     <property role="EcuMT" value="7181125477683417252" />
@@ -1131,6 +1165,9 @@
     </node>
     <node concept="PrWs8" id="6eCuTcwOX2_" role="PzmwI">
       <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQU" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/dependency.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RsV8qJBXHj">
@@ -1231,7 +1268,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="NvWe6DpNB2">
-    <property role="MwhBj" value="${language_descriptor}/icons/javaOptions.png" />
     <property role="TrG5h" value="BuildSource_JavaOptions" />
     <property role="3GE5qa" value="Project.Java" />
     <property role="34LRSv" value="java options" />
@@ -1288,6 +1324,9 @@
       <property role="TrG5h" value="compilerOptions" />
       <property role="IQ2nx" value="1476884141929960215" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQO" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/javaOptions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1s8OwvM5SHi">
@@ -1496,7 +1535,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7s9W5cEkA83">
-    <property role="MwhBj" value="${language_descriptor}/icons/archive.png" />
     <property role="TrG5h" value="BuildLayout_Tar" />
     <property role="3GE5qa" value="Layout.File" />
     <property role="34LRSv" value="tar" />
@@ -1512,6 +1550,9 @@
     </node>
     <node concept="PrWs8" id="7s9W5cEkA86" role="PzmwI">
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJQT" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/archive.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="3D3G23Q8WAG">

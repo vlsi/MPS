@@ -29,6 +29,8 @@ import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.BaseNodeEditor.BaseEditorState;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.CommandListenerAdapter;
@@ -36,8 +38,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -79,7 +79,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
       if (model != null) {
         for (SNode node : model.getRootNodes()) {
           if (myNameToMatch.equals(node.getName()) || myNameToMatch.equals(node.getNodeId().toString())) {
-            return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+            return NodeVirtualFileSystem.getInstance().getFileFor(myRepository, node);
           }
         }
       }

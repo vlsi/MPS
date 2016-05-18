@@ -15,6 +15,7 @@ public class UnboundClosureParameterDeclaration_Constraints extends BaseConstrai
   public UnboundClosureParameterDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L, "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

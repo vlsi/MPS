@@ -15,6 +15,7 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
   public CellModel_ReferencePresentation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

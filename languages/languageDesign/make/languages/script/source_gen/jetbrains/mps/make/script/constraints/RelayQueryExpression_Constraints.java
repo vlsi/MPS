@@ -16,6 +16,7 @@ public class RelayQueryExpression_Constraints extends BaseConstraintsDescriptor 
   public RelayQueryExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL, "jetbrains.mps.make.script.structure.RelayQueryExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

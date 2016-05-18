@@ -18,6 +18,7 @@ public class GetEditorOperation_Constraints extends BaseConstraintsDescriptor {
   public GetEditorOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x4a75ebd58602caa5L, "jetbrains.mps.execution.settings.structure.GetEditorOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

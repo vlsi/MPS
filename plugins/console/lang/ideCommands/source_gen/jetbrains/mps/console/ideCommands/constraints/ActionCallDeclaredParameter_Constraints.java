@@ -31,6 +31,7 @@ public class ActionCallDeclaredParameter_Constraints extends BaseConstraintsDesc
   public ActionCallDeclaredParameter_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -59,7 +60,7 @@ public class ActionCallDeclaredParameter_Constraints extends BaseConstraintsDesc
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -85,5 +86,5 @@ public class ActionCallDeclaredParameter_Constraints extends BaseConstraintsDesc
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5582028874769074553");
-  private static SNodePointer breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5582028874769074514");
+  private static SNodePointer breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5582028874769074514");
 }

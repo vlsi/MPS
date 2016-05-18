@@ -33,7 +33,6 @@
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
     <import index="px75" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.leftHighlighter(MPS.Editor/)" />
-    <import index="oi6x" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.nodesFs(MPS.Platform/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
@@ -18782,86 +18781,72 @@
         </node>
       </node>
       <node concept="3clFbS" id="2Y6GhaXyCCS" role="3clF47">
-        <node concept="3cpWs8" id="2Y6GhaXAUOh" role="3cqZAp">
-          <node concept="3cpWsn" id="2Y6GhaXAUOi" role="3cpWs9">
-            <property role="TrG5h" value="virtualFile" />
-            <node concept="3uibUv" id="2Y6GhaXAUOj" role="1tU5fm">
-              <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
-            </node>
+        <node concept="3SKdUt" id="5IHtz9v2pnc" role="3cqZAp">
+          <node concept="3SKdUq" id="5IHtz9v2pne" role="3SKWNk">
+            <property role="3SKdUp" value="XXX in fact, there's already VF in myEditor.getVirtualFile, is there need to get it again in getDoc?" />
           </node>
         </node>
-        <node concept="3clFbF" id="1KUoCipvyBk" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCipvyBl" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvyBm" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3cpWs8" id="5IHtz9v2nfD" role="3cqZAp">
+          <node concept="3cpWsn" id="5IHtz9v2nfE" role="3cpWs9">
+            <property role="TrG5h" value="doc" />
+            <node concept="3uibUv" id="5IHtz9v2nfy" role="1tU5fm">
+              <ref role="3uigEE" to="s9o5:~Document" resolve="Document" />
             </node>
-            <node concept="liA8E" id="1KUoCipvyBn" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="1KUoCipvyBo" role="37wK5m">
-                <node concept="3clFbS" id="1KUoCipvyBp" role="1bW5cS">
-                  <node concept="3clFbF" id="1KUoCipvyBq" role="3cqZAp">
-                    <node concept="37vLTI" id="1KUoCipvyBr" role="3clFbG">
-                      <node concept="37vLTw" id="1KUoCipvyBs" role="37vLTJ">
-                        <ref role="3cqZAo" node="2Y6GhaXAUOi" resolve="virtualFile" />
-                      </node>
-                      <node concept="2OqwBi" id="1KUoCipvyBt" role="37vLTx">
-                        <node concept="2YIFZM" id="1KUoCipvyBu" role="2Oq$k0">
-                          <ref role="1Pybhc" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
-                          <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
-                        </node>
-                        <node concept="liA8E" id="1KUoCipvyBv" role="2OqNvi">
-                          <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" resolve="getFileFor" />
-                          <node concept="2OqwBi" id="1KUoCipvyBw" role="37wK5m">
-                            <node concept="liA8E" id="1KUoCipvyBx" role="2OqNvi">
-                              <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
-                            </node>
-                            <node concept="37vLTw" id="1KUoCipvyBy" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2Y6GhaXyDRD" resolve="myEditor" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+            <node concept="2YIFZM" id="5IHtz9v2nfF" role="33vP2m">
+              <ref role="1Pybhc" to="j532:~MPSUndoUtil" resolve="MPSUndoUtil" />
+              <ref role="37wK5l" to="j532:~MPSUndoUtil.getDoc(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SNodeReference):com.intellij.openapi.editor.Document" resolve="getDoc" />
+              <node concept="2OqwBi" id="5IHtz9v2nfG" role="37wK5m">
+                <node concept="2OqwBi" id="5IHtz9v2nfH" role="2Oq$k0">
+                  <node concept="37vLTw" id="5IHtz9v2nfI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2Y6GhaXyDRD" resolve="myEditor" />
                   </node>
+                  <node concept="liA8E" id="5IHtz9v2nfJ" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5IHtz9v2nfK" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5IHtz9v2nfL" role="37wK5m">
+                <node concept="37vLTw" id="5IHtz9v2nfM" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2Y6GhaXyDRD" resolve="myEditor" />
+                </node>
+                <node concept="liA8E" id="5IHtz9v2nfN" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNodePointer():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getEditedNodePointer" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="ZDU5S4WmCM" role="3cqZAp" />
-        <node concept="3clFbF" id="2Y6GhaXBcNt" role="3cqZAp">
-          <node concept="3K4zz7" id="2Y6GhaXBdEN" role="3clFbG">
-            <node concept="2ShNRf" id="2Y6GhaXBhyw" role="3K4GZi">
-              <node concept="3g6Rrh" id="2Y6GhaXBiIU" role="2ShVmc">
-                <node concept="2YIFZM" id="2Y6GhaXBn7m" role="3g7hyw">
-                  <ref role="37wK5l" to="j532:~MPSUndoUtil.getDoc(jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile):com.intellij.openapi.editor.Document" resolve="getDoc" />
-                  <ref role="1Pybhc" to="j532:~MPSUndoUtil" resolve="MPSUndoUtil" />
-                  <node concept="37vLTw" id="2Y6GhaXBnEx" role="37wK5m">
-                    <ref role="3cqZAo" node="2Y6GhaXAUOi" resolve="virtualFile" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="2Y6GhaXBijc" role="3g7fb8">
-                  <ref role="3uigEE" to="s9o5:~Document" resolve="Document" />
-                </node>
+        <node concept="3cpWs6" id="5IHtz9v2qi6" role="3cqZAp">
+          <node concept="3K4zz7" id="5IHtz9v2xdJ" role="3cqZAk">
+            <node concept="3clFbC" id="5IHtz9v2ves" role="3K4Cdx">
+              <node concept="10Nm6u" id="5IHtz9v2wnS" role="3uHU7w" />
+              <node concept="37vLTw" id="5IHtz9v2t8R" role="3uHU7B">
+                <ref role="3cqZAo" node="5IHtz9v2nfE" resolve="doc" />
               </node>
             </node>
-            <node concept="2ShNRf" id="2Y6GhaXBfGk" role="3K4E3e">
-              <node concept="3$_iS1" id="2Y6GhaXBh7v" role="2ShVmc">
-                <node concept="3$GHV9" id="2Y6GhaXBh7x" role="3$GQph">
-                  <node concept="3cmrfG" id="2Y6GhaXBhge" role="3$I4v7">
+            <node concept="2ShNRf" id="5IHtz9v33xn" role="3K4E3e">
+              <node concept="3$_iS1" id="5IHtz9v33xo" role="2ShVmc">
+                <node concept="3$GHV9" id="5IHtz9v33xp" role="3$GQph">
+                  <node concept="3cmrfG" id="5IHtz9v33xq" role="3$I4v7">
                     <property role="3cmrfH" value="0" />
                   </node>
                 </node>
-                <node concept="3uibUv" id="2Y6GhaXBh63" role="3$_nBY">
+                <node concept="3uibUv" id="5IHtz9v33xr" role="3$_nBY">
                   <ref role="3uigEE" to="s9o5:~Document" resolve="Document" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbC" id="2Y6GhaXBdsy" role="3K4Cdx">
-              <node concept="10Nm6u" id="2Y6GhaXBdsO" role="3uHU7w" />
-              <node concept="37vLTw" id="2Y6GhaXBcNs" role="3uHU7B">
-                <ref role="3cqZAo" node="2Y6GhaXAUOi" resolve="virtualFile" />
+            <node concept="2ShNRf" id="5IHtz9v34Ip" role="3K4GZi">
+              <node concept="3g6Rrh" id="5IHtz9v36x4" role="2ShVmc">
+                <node concept="3uibUv" id="5IHtz9v34It" role="3g7fb8">
+                  <ref role="3uigEE" to="s9o5:~Document" resolve="Document" />
+                </node>
+                <node concept="37vLTw" id="5IHtz9v37Cr" role="3g7hyw">
+                  <ref role="3cqZAo" node="5IHtz9v2nfE" resolve="doc" />
+                </node>
               </node>
             </node>
           </node>

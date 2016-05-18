@@ -16,6 +16,7 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
   public BuildExternalLayout_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

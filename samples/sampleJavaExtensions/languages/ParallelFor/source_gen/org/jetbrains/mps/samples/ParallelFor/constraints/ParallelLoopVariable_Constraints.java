@@ -22,6 +22,7 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
   public ParallelLoopVariable_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

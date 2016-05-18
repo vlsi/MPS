@@ -16,6 +16,7 @@ public class NodeFactories_Constraints extends BaseConstraintsDescriptor {
   public NodeFactories_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

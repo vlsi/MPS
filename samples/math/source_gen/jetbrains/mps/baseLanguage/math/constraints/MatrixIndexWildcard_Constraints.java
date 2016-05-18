@@ -17,6 +17,7 @@ public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
   public MatrixIndexWildcard_Constraints() {
     super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f4339L, "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

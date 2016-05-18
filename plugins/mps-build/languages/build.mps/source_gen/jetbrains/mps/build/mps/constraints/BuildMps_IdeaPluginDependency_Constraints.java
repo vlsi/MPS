@@ -25,6 +25,7 @@ public class BuildMps_IdeaPluginDependency_Constraints extends BaseConstraintsDe
   public BuildMps_IdeaPluginDependency_Constraints() {
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency"));
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -39,7 +40,7 @@ public class BuildMps_IdeaPluginDependency_Constraints extends BaseConstraintsDe
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +54,5 @@ public class BuildMps_IdeaPluginDependency_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-  private static SNodePointer breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913839");
+  private static SNodePointer breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913839");
 }

@@ -17,6 +17,7 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
   public ModelReference_Constraints() {
     super(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

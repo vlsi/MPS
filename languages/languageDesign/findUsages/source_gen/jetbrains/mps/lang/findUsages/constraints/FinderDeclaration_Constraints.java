@@ -16,6 +16,7 @@ public class FinderDeclaration_Constraints extends BaseConstraintsDescriptor {
   public FinderDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

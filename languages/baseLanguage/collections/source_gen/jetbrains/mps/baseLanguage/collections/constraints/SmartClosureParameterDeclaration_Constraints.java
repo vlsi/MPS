@@ -15,6 +15,7 @@ public class SmartClosureParameterDeclaration_Constraints extends BaseConstraint
   public SmartClosureParameterDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118374464e4L, "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -16,10 +16,6 @@ import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.editor.Document;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 
 public class DiffFileEditor implements DocumentsEditor {
@@ -88,13 +84,8 @@ public class DiffFileEditor implements DocumentsEditor {
   public void dispose() {
   }
   public Document[] getDocuments() {
-    final Wrappers._T<MPSNodeVirtualFile> virtualFile = new Wrappers._T<MPSNodeVirtualFile>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        virtualFile.value = MPSNodesVirtualFileSystem.getInstance().getFileFor(myEditor.getEditedNode());
-      }
-    });
-
-    return (virtualFile.value == null ? new Document[0] : new Document[]{MPSUndoUtil.getDoc(virtualFile.value)});
+    // XXX in fact, there's already VF in myEditor.getVirtualFile, is there need to get it again in getDoc? 
+    Document doc = MPSUndoUtil.getDoc(myEditor.getEditorContext().getRepository(), myEditor.getEditedNodePointer());
+    return (doc == null ? new Document[0] : new Document[]{doc});
   }
 }

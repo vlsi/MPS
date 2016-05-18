@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
       <unit at="15,0,81,0" name="jetbrains.mps.lang.generator.generationContext.dataFlow.DataFlowAspectDescriptorImpl" />
@@ -97,5 +97,5 @@
       <unit id="1229478234165" at="11,0,16,0" name="jetbrains.mps.lang.generator.generationContext.dataFlow.GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

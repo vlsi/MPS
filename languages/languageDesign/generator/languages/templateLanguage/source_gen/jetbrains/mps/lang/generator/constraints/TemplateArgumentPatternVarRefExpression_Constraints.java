@@ -30,6 +30,7 @@ public class TemplateArgumentPatternVarRefExpression_Constraints extends BaseCon
   public TemplateArgumentPatternVarRefExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -67,7 +68,7 @@ public class TemplateArgumentPatternVarRefExpression_Constraints extends BaseCon
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -78,5 +79,5 @@ public class TemplateArgumentPatternVarRefExpression_Constraints extends BaseCon
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889460329");
-  private static SNodePointer breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889434725");
+  private static SNodePointer breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889434725");
 }

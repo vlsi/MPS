@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -97,7 +98,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
     protected void init() {
       Set<SNode> result = new LinkedHashSet<SNode>();
       Datasets.collectImplementedAndExtended(myTopConcept, result);
-      result.add(SNodeUtil.concept_BaseConcept.getDeclarationNode());
+      result.add(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
       myConcepts = result.toArray(new SNode[result.size()]);
       //  depends on concepts and implemented interface references 
       myDependsOnNodes = new HashSet<SNode>(myConcepts.length * 2);

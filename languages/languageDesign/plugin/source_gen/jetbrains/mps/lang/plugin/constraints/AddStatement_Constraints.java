@@ -16,6 +16,7 @@ public class AddStatement_Constraints extends BaseConstraintsDescriptor {
   public AddStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

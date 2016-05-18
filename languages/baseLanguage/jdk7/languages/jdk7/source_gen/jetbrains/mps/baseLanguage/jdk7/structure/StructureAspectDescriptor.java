@@ -16,6 +16,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
   /*package*/ final ConceptDescriptor myConceptStringSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).alias("switch", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)", "400642802549924137")).create();
 

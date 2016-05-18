@@ -15,7 +15,8 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(27);
+
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(28);
   /*package*/ final ConceptDescriptor myConceptAbsractMake = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.AbsractMake", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL)).super_("jetbrains.mps.lang.smodel.query.structure.QueryExpression").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).parents("jetbrains.mps.lang.smodel.query.structure.QueryExpression").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x276b371e77c0a2f0L, "argument", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false)).children(new String[]{"argument"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "2840424593984889498")).create();
   /*package*/ final ConceptDescriptor myConceptActionCallDeclaredParameter = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L)).super_("jetbrains.mps.console.ideCommands.structure.ActionCallParameter").super_(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL)).parents("jetbrains.mps.console.ideCommands.structure.ActionCallParameter").parentIds(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4d7759afce9587a8L, "declaration", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL), false)).references("declaration").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "5582028874769074087")).create();
   /*package*/ final ConceptDescriptor myConceptActionCallGlobalParameter = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L)).super_("jetbrains.mps.console.ideCommands.structure.ActionCallParameter").super_(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL)).parents("jetbrains.mps.console.ideCommands.structure.ActionCallParameter").parentIds(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4d7759afce9587aaL, "declaration", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL), false)).references("declaration").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "5582028874769074089")).create();
@@ -23,6 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCallActionExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.CallActionExpression", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.smodel.query.structure.ExpressionHelpProvider").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4d7759afce9587aeL, "action", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L), false)).references("action").childDescriptors(new ConceptDescriptorBuilder.Link(0x4d7759afce9587afL, "parameter", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL), true, true, false)).children(new String[]{"parameter"}, new boolean[]{true}).alias("#callAction", "call an IDE action with custom parameters").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "5582028874769074093")).create();
   /*package*/ final ConceptDescriptor myConceptClean = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.Clean", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e74f88509L)).super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").super_(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL)).parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").parentIds(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL)).alias("#clean", "clean files *.generated").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "2840424593938220297")).create();
   /*package*/ final ConceptDescriptor myConceptClickableGenerator = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ClickableGenerator", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x360b134fc0525d7fL, "moduleId")).properties("moduleId").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "3894227536041114995")).create();
+  /*package*/ final ConceptDescriptor myConceptGlobalScope = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.GlobalScope", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x3bc64421763add42L)).super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter").super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).parents("jetbrains.mps.lang.smodel.query.structure.ScopeParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL)).alias("global", "").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "4307205004134636866")).create();
   /*package*/ final ConceptDescriptor myConceptGlobalStatisticTarget = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L)).alias("global", "").sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "7490254719522675896")).create();
   /*package*/ final ConceptDescriptor myConceptINodeSetReference = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.INodeSetReference", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L)).interface_().sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "5207260697411458113")).create();
   /*package*/ final ConceptDescriptor myConceptIStatisticsTarget = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L)).interface_().sourceNode(new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "7490254719522675890")).create();
@@ -52,31 +54,32 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptCallActionExpression.getId(), 4);
     myIndexMap.put(myConceptClean.getId(), 5);
     myIndexMap.put(myConceptClickableGenerator.getId(), 6);
-    myIndexMap.put(myConceptGlobalStatisticTarget.getId(), 7);
-    myIndexMap.put(myConceptINodeSetReference.getId(), 8);
-    myIndexMap.put(myConceptIStatisticsTarget.getId(), 9);
-    myIndexMap.put(myConceptMake.getId(), 10);
-    myIndexMap.put(myConceptModelProperties.getId(), 11);
-    myIndexMap.put(myConceptModelReference.getId(), 12);
-    myIndexMap.put(myConceptModelStatisticsTarget.getId(), 13);
-    myIndexMap.put(myConceptModuleProperties.getId(), 14);
-    myIndexMap.put(myConceptNodeReference.getId(), 15);
-    myIndexMap.put(myConceptOfAspectOperation.getId(), 16);
-    myIndexMap.put(myConceptProjectStatisticsTarget.getId(), 17);
-    myIndexMap.put(myConceptRebuildProjectCommand.getId(), 18);
-    myIndexMap.put(myConceptRemoveGenSources.getId(), 19);
-    myIndexMap.put(myConceptShowBrokenReferences.getId(), 20);
-    myIndexMap.put(myConceptShowExpression.getId(), 21);
-    myIndexMap.put(myConceptShowGenPlan.getId(), 22);
-    myIndexMap.put(myConceptStatCommand.getId(), 23);
-    myIndexMap.put(myConceptSubtreeStatisticsTarget.getId(), 24);
-    myIndexMap.put(myConceptUnloadModelsCommand.getId(), 25);
-    myIndexMap.put(myConceptWithDependencies.getId(), 26);
+    myIndexMap.put(myConceptGlobalScope.getId(), 7);
+    myIndexMap.put(myConceptGlobalStatisticTarget.getId(), 8);
+    myIndexMap.put(myConceptINodeSetReference.getId(), 9);
+    myIndexMap.put(myConceptIStatisticsTarget.getId(), 10);
+    myIndexMap.put(myConceptMake.getId(), 11);
+    myIndexMap.put(myConceptModelProperties.getId(), 12);
+    myIndexMap.put(myConceptModelReference.getId(), 13);
+    myIndexMap.put(myConceptModelStatisticsTarget.getId(), 14);
+    myIndexMap.put(myConceptModuleProperties.getId(), 15);
+    myIndexMap.put(myConceptNodeReference.getId(), 16);
+    myIndexMap.put(myConceptOfAspectOperation.getId(), 17);
+    myIndexMap.put(myConceptProjectStatisticsTarget.getId(), 18);
+    myIndexMap.put(myConceptRebuildProjectCommand.getId(), 19);
+    myIndexMap.put(myConceptRemoveGenSources.getId(), 20);
+    myIndexMap.put(myConceptShowBrokenReferences.getId(), 21);
+    myIndexMap.put(myConceptShowExpression.getId(), 22);
+    myIndexMap.put(myConceptShowGenPlan.getId(), 23);
+    myIndexMap.put(myConceptStatCommand.getId(), 24);
+    myIndexMap.put(myConceptSubtreeStatisticsTarget.getId(), 25);
+    myIndexMap.put(myConceptUnloadModelsCommand.getId(), 26);
+    myIndexMap.put(myConceptWithDependencies.getId(), 27);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation, myConceptProjectStatisticsTarget, myConceptRebuildProjectCommand, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptUnloadModelsCommand, myConceptWithDependencies);
+    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalScope, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation, myConceptProjectStatisticsTarget, myConceptRebuildProjectCommand, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptUnloadModelsCommand, myConceptWithDependencies);
   }
 
   @Override
@@ -102,44 +105,46 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptClickableGenerator;
       case 7:
-        return myConceptGlobalStatisticTarget;
+        return myConceptGlobalScope;
       case 8:
-        return myConceptINodeSetReference;
+        return myConceptGlobalStatisticTarget;
       case 9:
-        return myConceptIStatisticsTarget;
+        return myConceptINodeSetReference;
       case 10:
-        return myConceptMake;
+        return myConceptIStatisticsTarget;
       case 11:
-        return myConceptModelProperties;
+        return myConceptMake;
       case 12:
-        return myConceptModelReference;
+        return myConceptModelProperties;
       case 13:
-        return myConceptModelStatisticsTarget;
+        return myConceptModelReference;
       case 14:
-        return myConceptModuleProperties;
+        return myConceptModelStatisticsTarget;
       case 15:
-        return myConceptNodeReference;
+        return myConceptModuleProperties;
       case 16:
-        return myConceptOfAspectOperation;
+        return myConceptNodeReference;
       case 17:
-        return myConceptProjectStatisticsTarget;
+        return myConceptOfAspectOperation;
       case 18:
-        return myConceptRebuildProjectCommand;
+        return myConceptProjectStatisticsTarget;
       case 19:
-        return myConceptRemoveGenSources;
+        return myConceptRebuildProjectCommand;
       case 20:
-        return myConceptShowBrokenReferences;
+        return myConceptRemoveGenSources;
       case 21:
-        return myConceptShowExpression;
+        return myConceptShowBrokenReferences;
       case 22:
-        return myConceptShowGenPlan;
+        return myConceptShowExpression;
       case 23:
-        return myConceptStatCommand;
+        return myConceptShowGenPlan;
       case 24:
-        return myConceptSubtreeStatisticsTarget;
+        return myConceptStatCommand;
       case 25:
-        return myConceptUnloadModelsCommand;
+        return myConceptSubtreeStatisticsTarget;
       case 26:
+        return myConceptUnloadModelsCommand;
+      case 27:
         return myConceptWithDependencies;
       default:
         throw new IllegalStateException();

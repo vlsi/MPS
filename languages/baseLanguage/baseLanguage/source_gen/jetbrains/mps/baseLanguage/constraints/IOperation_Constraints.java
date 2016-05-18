@@ -16,6 +16,7 @@ public class IOperation_Constraints extends BaseConstraintsDescriptor {
   public IOperation_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

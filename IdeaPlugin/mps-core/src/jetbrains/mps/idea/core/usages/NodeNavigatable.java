@@ -23,14 +23,17 @@ import com.intellij.pom.Navigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class NodeNavigatable implements Navigatable {
@@ -46,16 +49,15 @@ public abstract class NodeNavigatable implements Navigatable {
     myProject = project;
     myItemPresentation = new NodePointerPresentation(node);
     myTextPresentation = myItemPresentation.getPresentableText();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = ProjectHelper.getProjectRepository(project);
+    myRootNode = new ModelAccessHelper(repo).runReadAction(new Computable<SNodeReference>() {
       @Override
-      public void run() {
-        SNode targetNode = myNode.resolve(MPSModuleRepository.getInstance());
-        if (targetNode != null) {
-          myRootNode = new jetbrains.mps.smodel.SNodePointer(targetNode.getContainingRoot());
-          myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(((SNodePointer) myRootNode));
-        }
+      public SNodeReference compute() {
+        SNode targetNode = myNode.resolve(repo);
+        return targetNode == null ? null : targetNode.getContainingRoot().getReference();
       }
     });
+    myFile = myRootNode == null ? null : NodeVirtualFileSystem.getInstance().getFileFor(repo, myRootNode);
   }
 
   @Override

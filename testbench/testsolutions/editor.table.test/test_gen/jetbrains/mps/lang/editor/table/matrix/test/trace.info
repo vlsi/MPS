@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)/1310272842909633660">
     <file name="CreateX_Test.java">
       <node id="1310272842909633660" at="13,47,14,121" concept="0" />
@@ -66,5 +66,5 @@
       <unit id="8748948598094995664" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

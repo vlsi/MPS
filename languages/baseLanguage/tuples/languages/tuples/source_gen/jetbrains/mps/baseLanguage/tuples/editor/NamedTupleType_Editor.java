@@ -33,6 +33,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -215,8 +216,8 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
     }
   }
   private EditorCell createCollection_2ojjgh_c0(EditorContext editorContext, SNode node) {

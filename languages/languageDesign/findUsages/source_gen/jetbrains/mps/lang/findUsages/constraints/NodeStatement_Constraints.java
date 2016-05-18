@@ -15,6 +15,7 @@ public class NodeStatement_Constraints extends BaseConstraintsDescriptor {
   public NodeStatement_Constraints() {
     super(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL, "jetbrains.mps.lang.findUsages.structure.NodeStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

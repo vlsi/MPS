@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -75,7 +75,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     myNodeId = nodeId;
     myModel = containingModel;
     myName = name;
-    myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
+    myViewProvider = new SingleRootFileViewProvider(manager, NodeVirtualFileSystem.getInstance().getFileFor(getProjectRepository(), getSNodeReference()), false);
   }
 
   public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
@@ -90,7 +90,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
       public Icon compute() {
         final SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return IdeIcons.UNKNOWN_ICON;
-        return IconManager.getIconFor(node, true);
+        return IconManager.getIconFor(node);
       }
     });
   }
@@ -127,11 +127,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     if (mySeparateFile != null) {
       return mySeparateFile;
     }
-    Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
-    if (mpsProject == null) {
-      return null;
-    }
-    final SRepository repository = mpsProject.getRepository();
+    final SRepository repository = getProjectRepository();
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {

@@ -15,6 +15,7 @@ public class ParameterBlockDocTag_Constraints extends BaseConstraintsDescriptor 
   public ParameterBlockDocTag_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -105,7 +105,7 @@ public class ModelFileToRootDispatchingEditor extends MPSFileNodeEditor implemen
           return;
         }
         SNode root = node.getContainingRoot();
-        MPSNodeVirtualFile nodeFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
+        MPSNodeVirtualFile nodeFile = NodeVirtualFileSystem.getInstance().getFileFor(repository, root);
         // opening or finding the editor for the right root node
         MPSFileNodeEditor editor = getEditorForRoot(nodeFile);
         // selecting the node inside the root which is designated by the given 'offset'

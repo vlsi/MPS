@@ -15,6 +15,7 @@ public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor
   public SideTransformMenuPart_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112283d3033L, "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

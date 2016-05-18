@@ -9,9 +9,9 @@ import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Computable;
@@ -38,10 +38,14 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final Map<SNodeReference, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodeReference, FileStatus>());
   private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
   protected final MPSProject myMPSProject;
-  public NodeFileStatusMapping(MPSProject project, CurrentDifferenceRegistry registry) {
+  protected final NodeVirtualFileSystem myNodeFileSystem;
+
+
+  public NodeFileStatusMapping(MPSProject project, CurrentDifferenceRegistry registry, NodeVirtualFileSystem nodeFileSystem) {
     super(project.getProject());
     myRegistry = registry;
     myMPSProject = project;
+    myNodeFileSystem = nodeFileSystem;
   }
   @Override
   public void projectOpened() {
@@ -55,17 +59,17 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     myMPSProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
-        MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
         SNode currentNode = nodePointer.resolve(myMPSProject.getRepository());
         if (currentNode == null) {
           return;
         }
-        statusChanged(fsm, nvfs, nodePointer);
+        statusChanged(fsm, currentNode);
       }
     });
   }
-  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
-    fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
+
+  protected void statusChanged(FileStatusManager fsm, @NotNull SNode node) {
+    fsm.fileStatusChanged(myNodeFileSystem.getFileFor(myMPSProject.getRepository(), node));
   }
   private void updateNodeStatus(@NotNull final SNodeReference nodePointer) {
     myRegistry.getCommandQueue().runTask(new Runnable() {
@@ -86,7 +90,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
           CurrentDifference diff = myRegistry.getCurrentDifference(model);
-          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0k(diff.getChangeSet());
+          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0o(diff.getChangeSet());
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
               return root.getNodeId().equals(ch.getRootId());
@@ -176,7 +180,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       addAffectedRoot(change);
     }
   }
-  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0k(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0o(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

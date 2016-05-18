@@ -20,6 +20,7 @@ public class ContextVariable_Constraints extends BaseConstraintsDescriptor {
   public ContextVariable_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

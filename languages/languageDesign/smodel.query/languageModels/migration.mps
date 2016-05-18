@@ -230,5 +230,22 @@
       <node concept="7a1rN" id="6sWCsGPY13h" role="7agGg" />
     </node>
   </node>
+  <node concept="Z5qvL" id="7jPdBzQFQ20">
+    <property role="Z5qvQ" value="1" />
+    <property role="TrG5h" value="MigrationScript_1" />
+    <node concept="Z4OXk" id="7jPdBzQFQ25" role="Z5rET">
+      <node concept="2pBcaW" id="7jPdBzQFQ23" role="Z5P1v">
+        <property role="2pBcoG" value="4307205004134636866" />
+        <property role="2pBcow" value="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
+        <property role="2pBc3U" value="GlobalScope_old" />
+      </node>
+      <node concept="2pBcaW" id="7jPdBzQFQ24" role="Z5P1t">
+        <property role="2pBcoG" value="4307205004134636866" />
+        <property role="2pBcow" value="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
+        <property role="2pBc3U" value="GlobalScope" />
+      </node>
+      <node concept="7a1rZ" id="7jPdBzQFQ22" role="7agGg" />
+    </node>
+  </node>
 </model>
 

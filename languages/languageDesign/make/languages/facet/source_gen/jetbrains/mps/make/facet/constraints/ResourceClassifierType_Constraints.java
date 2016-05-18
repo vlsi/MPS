@@ -36,6 +36,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
   public ResourceClassifierType_Constraints() {
     super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -92,7 +93,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ymgo28_a0a3a0a0a1a0b0a1a3;
+            return breakingNode_ymgo28_a0a3a0a0a1a0b0a1a4;
           }
         };
       }
@@ -117,5 +118,5 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return quotedNode_1;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "4902420589279531869");
-  private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a3 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
+  private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a4 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
 }

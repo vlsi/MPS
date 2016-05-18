@@ -4,8 +4,9 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,6 +19,12 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
@@ -61,9 +68,9 @@
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
-        <property id="1160488491229" name="iconPath" index="MwhBj" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -171,7 +178,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/templateFragment.png" />
     <property role="TrG5h" value="TemplateDeclaration" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="template declaration" />
@@ -201,12 +207,14 @@
       <property role="IQ2ns" value="1092060348987" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRn" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/templateFragment.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fWbUwhP">
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/mappingConf.png" />
     <property role="TrG5h" value="MappingConfiguration" />
     <property role="34LRSv" value="mapping configuration" />
     <property role="EcuMT" value="1095416546421" />
@@ -318,6 +326,9 @@
       <property role="IQ2ns" value="7473026166162327259" />
       <ref role="20lvS9" node="6uPxrhfjpgV" resolve="DropAttributeRule" />
     </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRq" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/mappingConf.png" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fWrartG">
     <property role="TrG5h" value="TemplateFragment" />
@@ -350,7 +361,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/switch.png" />
     <property role="TrG5h" value="TemplateSwitch" />
     <property role="34LRSv" value="template switch" />
     <property role="EcuMT" value="1112730859144" />
@@ -390,6 +400,9 @@
       <property role="20kJfa" value="nullInputMessage" />
       <property role="IQ2ns" value="1226355936225" />
       <ref role="20lvS9" node="h1lLz4x" resolve="GeneratorMessage" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRo" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/switch.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="gcuGL8H">
@@ -1118,7 +1131,6 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="MwhBj" value="${language_descriptor}/icons/generatorScript.png" />
     <property role="TrG5h" value="MappingScript" />
     <property role="3GE5qa" value="script" />
     <property role="34LRSv" value="mapping script" />
@@ -1146,6 +1158,9 @@
     </node>
     <node concept="PrWs8" id="1R2wmhl9FVi" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRp" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/generatorScript.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hppplEC">

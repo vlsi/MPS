@@ -36,6 +36,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import javax.swing.Icon;
+
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   private final SAbstractConcept myConcept;
 
@@ -124,6 +126,12 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @Override
   public String getAlternativeIcon(SNode node) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public Icon getInstanceIcon(SNode node) {
     return null;
   }
 

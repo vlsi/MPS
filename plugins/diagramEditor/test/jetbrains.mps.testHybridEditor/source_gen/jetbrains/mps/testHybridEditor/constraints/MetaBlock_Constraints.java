@@ -22,4 +22,5 @@ public class MetaBlock_Constraints extends BaseConstraintsDescriptor {
     }
     return MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath")));
   }
+
 }

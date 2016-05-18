@@ -276,13 +276,13 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1217679691852(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_7446179200425733250(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6874707660147801920(final PropertyMacroContext _context) {
     return PluginNameUtils.getOriginalModule(_context).getModuleName();
   }
-  public static Object propertyMacro_GetPropertyValue_7446179200425733268(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6874707660147801928(final PropertyMacroContext _context) {
     return PluginNameUtils.getOriginalModule(_context).getModuleReference().getModuleId().toString();
   }
-  public static Object propertyMacro_GetPropertyValue_6331861638741615659(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6874707660147801942(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "icon")).replaceAll("\\\\", "\\\\\\\\");
   }
   public static Object propertyMacro_GetPropertyValue_1557260317236434377(final PropertyMacroContext _context) {

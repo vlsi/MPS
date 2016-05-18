@@ -15,6 +15,7 @@ public class CanWrapHighLevelValue_ConceptFunction_Constraints extends BaseConst
   public CanWrapHighLevelValue_ConceptFunction_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbdbL, "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

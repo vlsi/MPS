@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -74,7 +74,7 @@ public class NewRootAction extends AnAction {
         for (Map.Entry<String, SAbstractConcept> entry : myConceptFqNameToNodePointerMap.entrySet()) {
           String conceptFqName = entry.getKey();
           SAbstractConcept concept = entry.getValue();
-          dialog.getKindCombo().addItem(concept.getConceptAlias(), IconManager.getIcon(concept), conceptFqName);
+          dialog.getKindCombo().addItem(concept.getConceptAlias(), concept.getIcon(), conceptFqName);
           dialog.setTemplateKindComponentsVisible(true);
         }
       }
@@ -84,7 +84,7 @@ public class NewRootAction extends AnAction {
     final SNodeReference rootNode = dialog.getRootNode();
     if (rootNode != null) {
       FileEditorManager.getInstance(myProject).openFile(
-        MPSNodesVirtualFileSystem.getInstance().getFileFor(rootNode), true);
+        NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(myProject), rootNode), true);
     }
   }
 

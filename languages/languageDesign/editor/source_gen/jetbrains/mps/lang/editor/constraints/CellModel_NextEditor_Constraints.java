@@ -16,6 +16,7 @@ public class CellModel_NextEditor_Constraints extends BaseConstraintsDescriptor 
   public CellModel_NextEditor_Constraints() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -14,6 +14,7 @@ public class IRootWithUniqueName_Constraints extends BaseConstraintsDescriptor {
   public IRootWithUniqueName_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L, "jetbrains.mps.lang.extension.structure.IRootWithUniqueName"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

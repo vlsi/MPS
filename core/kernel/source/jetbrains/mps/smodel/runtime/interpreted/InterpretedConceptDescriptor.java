@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
@@ -41,6 +42,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -75,6 +77,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private String conceptAlias;
   private String shortDescription;
   private String helpURL;
+  private Icon myIcon;
   private StaticScope staticScope;
   private volatile boolean myIsInitialized = false;
 
@@ -217,16 +220,21 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           }
         }
 
+        myIcon = ConceptIconLoader.getIconForConcept(declaration);
         mySourceNodeRef = declaration.getReference();
       }
     });
   }
 
   private void init() {
-    if (myIsInitialized) return;
+    if (myIsInitialized) {
+      return;
+    }
 
     synchronized (this) {
-      if (myIsInitialized) return;
+      if (myIsInitialized) {
+        return;
+      }
 
       // get parent descriptors
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.size());
@@ -368,6 +376,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return helpURL;
+  }
+
+  @Override
+  public Icon getIcon() {
+    return myIcon;
   }
 
   @Nullable

@@ -18,6 +18,7 @@ public class CreateBreakpointOperation_Constraints extends BaseConstraintsDescri
   public CreateBreakpointOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

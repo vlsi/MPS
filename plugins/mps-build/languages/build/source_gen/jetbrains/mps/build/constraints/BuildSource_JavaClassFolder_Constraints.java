@@ -15,6 +15,7 @@ public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDesc
   public BuildSource_JavaClassFolder_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbd021959L, "jetbrains.mps.build.structure.BuildSource_JavaClassFolder"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

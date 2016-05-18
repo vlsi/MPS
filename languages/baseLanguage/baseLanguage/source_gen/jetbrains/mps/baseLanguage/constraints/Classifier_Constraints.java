@@ -30,6 +30,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
   public Classifier_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -47,7 +48,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_z47b7w_a0a2a0a0a2;
+        return breakingNode_z47b7w_a0a2a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -93,5 +94,5 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
+  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 }

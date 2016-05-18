@@ -15,6 +15,7 @@ public class DefaultClassifierFieldDeclaration_Constraints extends BaseConstrain
   public DefaultClassifierFieldDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

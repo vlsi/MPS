@@ -15,6 +15,7 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
   public AbstractStateMachineElement_Constraints() {
     super(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6e3eaf7a54e76eeaL, "jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

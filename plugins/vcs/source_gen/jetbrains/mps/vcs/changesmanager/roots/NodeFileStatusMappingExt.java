@@ -5,26 +5,24 @@ package jetbrains.mps.vcs.changesmanager.roots;
 import jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class NodeFileStatusMappingExt extends NodeFileStatusMapping {
-  public NodeFileStatusMappingExt(MPSProject project, CurrentDifferenceRegistry registry) {
-    super(project, registry);
+  public NodeFileStatusMappingExt(MPSProject project, CurrentDifferenceRegistry registry, NodeVirtualFileSystem nodeFileSystem) {
+    super(project, registry, nodeFileSystem);
   }
   @Override
-  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
-    super.statusChanged(fsm, nvfs, nodePointer);
-    SNode currentNode = nodePointer.resolve(myMPSProject.getRepository());
+  protected void statusChanged(FileStatusManager fsm, SNode currentNode) {
+    super.statusChanged(fsm, currentNode);
     for (RelationDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
       SNode baseNode = d.getBaseNode(currentNode);
       if (baseNode != null && baseNode != currentNode) {
-        fsm.fileStatusChanged(nvfs.getFileFor(baseNode));
+        fsm.fileStatusChanged(myNodeFileSystem.getFileFor(myMPSProject.getRepository(), baseNode));
         break;
       }
     }

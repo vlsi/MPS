@@ -15,8 +15,9 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -59,15 +60,15 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_InfoStatement_cellMenu_o0q9qg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_InfoStatement_cellMenu_o0q9qg_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.InfoStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement");
     }
   }
   public static class ReplaceWith_WarningStatement_cellMenu_o0q9qg_b0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_WarningStatement_cellMenu_o0q9qg_b0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.WarningStatement";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
     }
   }
   private EditorCell createRefNode_o0q9qg_b0(EditorContext editorContext, SNode node) {

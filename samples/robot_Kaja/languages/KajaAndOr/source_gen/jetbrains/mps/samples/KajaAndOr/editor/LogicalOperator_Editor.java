@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class LogicalOperator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -91,8 +92,8 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_LogicalOperator_cellMenu_iyfdbj_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_LogicalOperator_cellMenu_iyfdbj_a0c0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
     }
   }
   private EditorCell createRefNode_iyfdbj_d0(EditorContext editorContext, SNode node) {

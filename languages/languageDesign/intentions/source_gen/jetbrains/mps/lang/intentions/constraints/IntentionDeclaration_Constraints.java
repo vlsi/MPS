@@ -16,6 +16,7 @@ public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor 
   public IntentionDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

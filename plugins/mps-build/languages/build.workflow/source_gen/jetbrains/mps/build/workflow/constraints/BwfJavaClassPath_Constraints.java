@@ -16,6 +16,7 @@ public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
   public BwfJavaClassPath_Constraints() {
     super(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

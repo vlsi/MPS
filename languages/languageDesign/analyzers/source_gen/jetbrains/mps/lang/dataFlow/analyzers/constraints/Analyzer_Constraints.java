@@ -16,6 +16,7 @@ public class Analyzer_Constraints extends BaseConstraintsDescriptor {
   public Analyzer_Constraints() {
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

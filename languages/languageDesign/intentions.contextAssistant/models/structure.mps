@@ -2,7 +2,7 @@
 <model ref="r:8333260e-1c41-48f8-b34d-821761a2600f(jetbrains.mps.lang.intentions.contextAssistant.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -47,15 +47,15 @@
     <property role="EcuMT" value="2926686622729992785" />
     <property role="R4oN_" value="performs an intention" />
     <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="PrWs8" id="6kJcyCQ$ioX" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+    </node>
     <node concept="1TJgyj" id="2ytFvC$HnDi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="intention" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2926686622729992786" />
       <ref role="20lvS9" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
-    </node>
-    <node concept="PrWs8" id="6kJcyCQ$ioX" role="PzmwI">
-      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="291CjQFhGND">

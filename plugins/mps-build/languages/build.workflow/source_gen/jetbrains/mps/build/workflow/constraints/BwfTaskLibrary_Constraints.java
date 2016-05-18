@@ -16,6 +16,7 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
   public BwfTaskLibrary_Constraints() {
     super(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

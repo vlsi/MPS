@@ -17,6 +17,7 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
   public ActionTestSidetransformTestContainer_Constraints() {
     super(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

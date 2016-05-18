@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1177666668936:jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558:jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
       <unit at="9,0,153,0" name="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
@@ -844,7 +844,7 @@
       <node id="1225934347908" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1225934347908" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1225935926122" at="22,96,26,9" concept="1" />
-      <node id="1225935913285" at="21,221,27,7" concept="9" />
+      <node id="1225935913285" at="21,259,27,7" concept="9" />
       <node id="1225934476733" at="20,118,28,5" concept="9" />
       <node id="1225934347908" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1225934347908" at="18,50,18,50" />
@@ -862,7 +862,7 @@
       </scope>
       <scope id="1225934347908" at="36,0,39,0" />
       <scope id="1225935913286" at="22,96,26,9" />
-      <scope id="1225934476734" at="21,221,27,7" />
+      <scope id="1225934476734" at="21,259,27,7" />
       <scope id="1225934347909" at="20,118,28,5" />
       <scope id="1225934347908" at="20,0,30,0">
         <var name="macro" id="1225934347908" />
@@ -885,7 +885,7 @@
       <node id="1226346278934" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1226346278934" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1226346278940" at="22,96,26,9" concept="1" />
-      <node id="1226346278938" at="21,221,27,7" concept="9" />
+      <node id="1226346278938" at="21,259,27,7" concept="9" />
       <node id="1226346278936" at="20,118,28,5" concept="9" />
       <node id="1226346278934" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1226346278934" at="18,51,18,51" />
@@ -903,7 +903,7 @@
       </scope>
       <scope id="1226346278934" at="36,0,39,0" />
       <scope id="1226346278939" at="22,96,26,9" />
-      <scope id="1226346278937" at="21,221,27,7" />
+      <scope id="1226346278937" at="21,259,27,7" />
       <scope id="1226346278935" at="20,118,28,5" />
       <scope id="1226346278934" at="20,0,30,0">
         <var name="macro" id="1226346278934" />
@@ -926,7 +926,7 @@
       <node id="1226346325144" at="33,0,36,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1226346325144" at="36,0,39,0" concept="10" trace="overrides#()Z" />
       <node id="1226346325150" at="22,96,26,9" concept="1" />
-      <node id="1226346325148" at="21,221,27,7" concept="9" />
+      <node id="1226346325148" at="21,259,27,7" concept="9" />
       <node id="1226346325146" at="20,118,28,5" concept="9" />
       <node id="1226346325144" at="20,0,30,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1226346325144" at="18,46,18,46" />
@@ -944,7 +944,7 @@
       </scope>
       <scope id="1226346325144" at="36,0,39,0" />
       <scope id="1226346325149" at="22,96,26,9" />
-      <scope id="1226346325147" at="21,221,27,7" />
+      <scope id="1226346325147" at="21,259,27,7" />
       <scope id="1226346325145" at="20,118,28,5" />
       <scope id="1226346325144" at="20,0,30,0">
         <var name="macro" id="1226346325144" />
@@ -2552,5 +2552,5 @@
       <unit id="8915420221429742810" at="19,0,47,0" name="jetbrains.mps.lang.generator.typesystem.typeof_ExportLabelParameter_keeper_InferenceRule" />
     </file>
   </root>
-</debug-info>
+</debug-info-v2>
 

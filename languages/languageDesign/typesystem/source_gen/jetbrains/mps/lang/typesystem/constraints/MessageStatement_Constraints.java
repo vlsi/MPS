@@ -15,6 +15,7 @@ public class MessageStatement_Constraints extends BaseConstraintsDescriptor {
   public MessageStatement_Constraints() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

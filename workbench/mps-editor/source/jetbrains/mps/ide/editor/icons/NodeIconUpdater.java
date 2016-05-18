@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,10 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.event.RepositoryChangeTracker;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
@@ -37,13 +36,19 @@ import java.util.Collection;
 import java.util.HashSet;
 
 /**
+ * FIXME: MPSNodesVirtualFileSystem listens to node deletion and rename, why doesn't it send out file changed events as well, why do we
+ *        need this distinct component?
+ * XXX if it stays, it may use FileSystemProjectBridge
+ * XXX also, RepositoryChangeTracker may come from a dedicated project component (to share it unless there's
+ * XXX Why it's distinct from NodeFileIconProvider?
+ * mechanism to accomplish the same through SRepository/MPSProject. Although why not Project.getComponent?)
  * @author Evgeny Gerashchenko
  * @since 10/3/11
  */
 public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBatchChangeListener {
   private final FileEditorManagerEx myFileEditorManagerEx;
   private final MPSProject myMPSProject;
-  private final MPSNodesVirtualFileSystem myNodeVFS;
+  private final NodeVirtualFileSystem myNodeVFS;
   private final RepositoryChangeTracker myChangeTracker = new RepositoryChangeTracker();
 
   @Override
@@ -60,7 +65,7 @@ public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBa
     new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).detach();
   }
 
-  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, MPSNodesVirtualFileSystem nodeVFS) {
+  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, NodeVirtualFileSystem nodeVFS) {
     super(project);
     myFileEditorManagerEx = fileEditorManager;
     myMPSProject = mpsProject;
@@ -98,8 +103,8 @@ public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBa
       affectedRoots.add(root.getReference());
     }
     for (SNodeReference ptr : affectedRoots) {
-      if (myNodeVFS.hasVirtualFileFor(ptr)) {
-        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(ptr));
+      if (myNodeVFS.hasVirtualFileFor(myMPSProject.getRepository(), ptr)) {
+        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(myMPSProject.getRepository(), ptr));
       }
     }
   }

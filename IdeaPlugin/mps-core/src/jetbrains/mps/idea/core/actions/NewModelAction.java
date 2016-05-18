@@ -23,7 +23,6 @@ import com.intellij.psi.PsiDirectory;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.MPSExtentions;
@@ -31,11 +30,9 @@ import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
@@ -43,10 +40,9 @@ import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
-import javax.swing.Icon;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by danilla on 28/10/15.
@@ -54,16 +50,19 @@ import java.util.List;
 public class NewModelAction extends NewModelActionBase {
   private static Logger LOG = LogManager.getLogger(NewModelAction.class);
 
+  private static final ModelTemplate EMPTY_MODEL = new ModelTemplateBase("EMPTY", MPSBundle.message("new.model.template.empty.presentation"), FileIcons.MODEL_ICON);
+
   public NewModelAction() {
     super(MPSBundle.message("new.model.action"), null, FileIcons.MODEL_ICON);
   }
 
   @Override
   public void actionPerformed(final AnActionEvent anActionEvent) {
+    Map<String, ModelTemplate> namesToTemplates = new HashMap<String, ModelTemplate>();
     CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
       protected void doOKAction() {
-        final ModelTemplates template = ModelTemplates.valueOf(getKindCombo().getSelectedName());
+        final ModelTemplate template = namesToTemplates.get(getKindCombo().getSelectedName());
         String shortModelName = getNameField().getText().trim();
         final String modelName = myModelPrefix.isEmpty() ? shortModelName : myModelPrefix + "." + shortModelName;
         if (!isModelNameValid(modelName)) {
@@ -167,45 +166,15 @@ public class NewModelAction extends NewModelActionBase {
     };
 
     dialog.setTitle(MPSBundle.message("create.new.model.dialog.title"));
-    for (ModelTemplates template : ModelTemplates.values()) {
-      dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.name());
-      dialog.setTemplateKindComponentsVisible(true);
+    dialog.getKindCombo().addItem(EMPTY_MODEL.getPresentation(), EMPTY_MODEL.getIcon(), EMPTY_MODEL.getName());
+    namesToTemplates.put(EMPTY_MODEL.getName(), EMPTY_MODEL);
+    for (ModelTemplateProvider provider : ModelTemplateProvider.EP_NAME.getExtensions()) {
+      for (ModelTemplate template : provider.getTemplates()) {
+        dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.getName());
+        dialog.setTemplateKindComponentsVisible(true);
+        namesToTemplates.put(template.getName(), template);
+      }
     }
     dialog.show();
-  }
-
-
-  private enum ModelTemplates {
-    EMPTY(MPSBundle.message("new.model.template.empty.presentation"), FileIcons.MODEL_ICON),
-    JAVA(MPSBundle.message("new.model.template.java.presentation"), MPSIcons.JAVA_MODEL_ICON, "jetbrains.mps.baseLanguage");
-
-    private final String myPresentation;
-    private final Icon myIcon;
-    private List<SLanguage> myLanguagesToImport = new ArrayList<SLanguage>();
-
-    private ModelTemplates(String presentation, Icon icon, String... languagesToImport) {
-      myPresentation = presentation;
-      myIcon = icon;
-
-      for (String languageNamespace : languagesToImport) {
-        SLanguage language = MetaAdapterFactoryByName.getLanguage(languageNamespace);
-        assert language != null : "Language required by model template is not in repository";
-        myLanguagesToImport.add(language);
-      }
-    }
-
-    public String getPresentation() {
-      return myPresentation;
-    }
-
-    public Icon getIcon() {
-      return myIcon;
-    }
-
-    public void preConfigure(SModel smodel) {
-      for (SLanguage language : myLanguagesToImport) {
-        ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(language);
-      }
-    }
   }
 }

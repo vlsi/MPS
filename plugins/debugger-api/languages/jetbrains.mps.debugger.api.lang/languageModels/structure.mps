@@ -3,8 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,7 +18,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -50,7 +50,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -85,13 +84,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3157158168562219320" />
       <ref role="20lvS9" node="2JguE20RV$U" resolve="ConceptFunction_CreateBreakpoint" />
-    </node>
-    <node concept="1TJgyj" id="7_Oswe9bkNl" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="isApplicable" />
-      <property role="IQ2ns" value="8751745335399632085" />
-      <ref role="20lvS9" node="7_Oswe9bkN9" resolve="ConceptFunction_IsApplicableToConcept" />
-      <node concept="asaX9" id="2Gmwjaanh0X" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="2Gmwjaanh7Q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -255,16 +247,6 @@
       <property role="IQ2ns" value="6720907903633266913" />
       <ref role="20lvS9" node="5P5ty4$bhzy" resolve="GetDebuggerSettings_Function" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="7_Oswe9bkN9">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ConceptFunction_IsApplicableToConcept" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="breakpoints.conceptFunctions" />
-    <property role="34LRSv" value="isApplicable" />
-    <property role="EcuMT" value="8751745335399632073" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="7_Oswe9bkNd">
     <property role="R5$K7" value="false" />

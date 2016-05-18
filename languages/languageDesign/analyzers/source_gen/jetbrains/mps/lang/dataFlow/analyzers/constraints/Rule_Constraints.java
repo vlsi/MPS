@@ -16,6 +16,7 @@ public class Rule_Constraints extends BaseConstraintsDescriptor {
   public Rule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

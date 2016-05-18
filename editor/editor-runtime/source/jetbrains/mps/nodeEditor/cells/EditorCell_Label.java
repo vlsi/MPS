@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -42,7 +43,6 @@ import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -557,9 +557,16 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
 
     SNode node = getSNode();
-    if (node == null || node.getModel() == null) return;
-
-    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
+    if (node == null || node.getModel() == null) {
+      return;
+    }
+    // XXX although it's tempting to use getEditorComponent().getVirtualFile().setStamp here,
+    //     first we shall figure out what happens for undo for inspector. Main editor and inspector's EditorComponent return different
+    //     virtual file (for the node that comes into editNode() call). Perhaps, here we resort to node's root as an attempt to get proper VF
+    //     of a main editor, rather than that of inspected node.
+    //     The approach needs revision, perhaps, we need different VF to support distinct undo in main editor and inspector, or may be we can accomplish
+    //     the same with distinct Documents from undo command.
+    NodeVirtualFileSystem.getInstance().getFileFor(getEditorComponent().getEditorContext().getRepository(), node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {

@@ -21,6 +21,7 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
   public UtilityMethodDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L, "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -45,9 +46,9 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_o7w1nm_a0a1a0a0a2;
+        return breakingNode_o7w1nm_a0a1a0a0a3;
       }
     };
   }
-  private static SNodePointer breakingNode_o7w1nm_a0a1a0a0a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1237206482577");
+  private static SNodePointer breakingNode_o7w1nm_a0a1a0a0a3 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1237206482577");
 }

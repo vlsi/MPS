@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ModelComputeRunnable;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -72,13 +72,13 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
           if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
             SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
             if (node != null) {
-              return IconManager.getIconWithoutAdditionalPart(node);
+              return IconManager.getIconFor(node);
             }
             // TODO: get current empty tab component in MPSEditorUtil by using ((TabbedEditor) nodeEditor).myTabsComponent.getCurrentTabAspect()[.getIcon]
           }
           SNode node = nodeFile.getNode();
           if (node != null) {
-            return IconManager.getIconWithoutAdditionalPart(node);
+            return IconManager.getIconFor(node);
           }
           return null;
         }
@@ -96,7 +96,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
 
           for (SNode node : descr.getRootNodes()) {
             if(node.getName().equals(file.getNameWithoutExtension())) {
-              return IconManager.getIconFor(node, true);
+              return IconManager.getIconFor(node);
             }
           }
           return null;

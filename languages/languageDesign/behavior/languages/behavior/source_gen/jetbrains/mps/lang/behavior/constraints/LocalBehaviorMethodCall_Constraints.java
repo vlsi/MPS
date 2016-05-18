@@ -27,6 +27,7 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
   public LocalBehaviorMethodCall_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
@@ -66,7 +67,7 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -77,5 +78,5 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
     return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655590931");
-  private static SNodePointer breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655529042");
+  private static SNodePointer breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655529042");
 }

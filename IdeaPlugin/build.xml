@@ -81,7 +81,7 @@
     <!-- only for running tests in mps-core -->
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib/jetbrains.mps.lang.test.util.jar"/>
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar"/>
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar"/>
     </copy>
   </target>

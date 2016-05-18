@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 
 public class EmptyLine_Editor extends DefaultNodeEditor {
@@ -42,8 +44,8 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.Kaja.structure.AbstractCommand";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand");
     }
   }
   private EditorCell createContextAssistant_s23fc5_b0(final EditorContext editorContext, final SNode node) {

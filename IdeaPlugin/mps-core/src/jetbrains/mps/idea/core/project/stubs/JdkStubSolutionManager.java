@@ -120,11 +120,11 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
 
     synchronized (LOCK) {
       if (JAVA_SDK_TYPE.equals(sdkType)) {
-
+        // it's JDK
         if (sdk.equals(myJavaSdk)) return; // nothing to do
         dropSdksIfUnused();
-        // no sdks: we're free to set it up
-        if (myJavaSdk == null && myIdeaSdk == null) {
+        if (myJavaSdk == null) {
+          // either no sdks at all, or only idea sdk without underlying jsk: we're free to set it up
           setUpJdk(sdk);
           myModules.add(module);
           return;
@@ -133,7 +133,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
         throw new DifferentSdkException(myJavaSdk, sdk);
 
       } else if (IDEA_SDK_TYPE.equals(sdkType)) {
-
+        // it's an IDEA SDK, we treat it specially cause we know it has jdk as its base
         if (sdk.equals(myIdeaSdk)) return; // do nothing
         dropSdksIfUnused();
         if (myIdeaSdk == null) {
@@ -186,7 +186,6 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
   }
 
   private void setUpIdeaSdk(Sdk sdk) throws DifferentSdkException {
-
     // first we check that this idea sdk uses the right jdk
     Sdk jdk = guessJdk(sdk);
 

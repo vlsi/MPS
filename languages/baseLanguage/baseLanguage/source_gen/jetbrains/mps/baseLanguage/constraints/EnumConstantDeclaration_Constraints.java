@@ -15,6 +15,7 @@ public class EnumConstantDeclaration_Constraints extends BaseConstraintsDescript
   public EnumConstantDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

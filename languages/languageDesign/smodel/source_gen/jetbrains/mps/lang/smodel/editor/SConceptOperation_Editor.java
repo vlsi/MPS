@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class SConceptOperation_Editor extends DefaultNodeEditor {
@@ -53,8 +54,8 @@ public class SConceptOperation_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_SConceptOperation_cellMenu_z8oglp_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SConceptOperation_cellMenu_z8oglp_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.smodel.structure.SConceptOperation";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation");
     }
   }
   private EditorCell createError_z8oglp_a0(EditorContext editorContext, SNode node) {

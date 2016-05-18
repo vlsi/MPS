@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -45,8 +47,8 @@ public class SimplifiedFormDescription_Editor extends DefaultNodeEditor {
   public static class ReplaceWith_AbstractRequestDescription_cellMenu_3xl4d2_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractRequestDescription_cellMenu_3xl4d2_a0a0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription";
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription");
     }
   }
   private EditorCell createProperty_3xl4d2_b0(EditorContext editorContext, SNode node) {

@@ -75,6 +75,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
+    <mps.modelTemplateProvider implementation="jetbrains.mps.idea.java.JavaModelTemplateProvider"/>
     <mps.psiFactory implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>

@@ -31,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -58,6 +59,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String myConceptAlias;
   private final String myConceptShortDescription;
   private final String myHelpUrl;
+  private Icon myIcon;
   private final StaticScope myStaticScope;
   private SNodeReference mySourceNodeRef;
   private final Object myLock = "";
@@ -89,7 +91,9 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String conceptAlias,
       String shortDescription,
       String helpUrl,
-      StaticScope staticScope, SNodeReference sourceNodeRef) {
+      StaticScope staticScope,
+      SNodeReference sourceNodeRef,
+      Icon icon) {
     myId = id;
     myConceptFqName = conceptFqName;
     mySuperConceptId = superConceptId;
@@ -107,6 +111,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myConceptAlias = conceptAlias;
     myConceptShortDescription = shortDescription;
     myHelpUrl = helpUrl;
+    myIcon = icon;
     myStaticScope = staticScope;
 
     // todo: common with StructureAspectInterpreted to new class!
@@ -272,6 +277,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return myHelpUrl;
+  }
+
+  @Override
+  public Icon getIcon() {
+    return myIcon;
   }
 
   @Nullable

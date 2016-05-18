@@ -17,6 +17,7 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
   public ControlAbstractionContainer_Constraints() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer"));
   }
+
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
@@ -26,7 +27,7 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_vhsk47_a0a0a0a0a2;
+        return breakingNode_vhsk47_a0a0a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -34,5 +35,5 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
       }
     };
   }
-  private static SNodePointer breakingNode_vhsk47_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "8756160028285599728");
+  private static SNodePointer breakingNode_vhsk47_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "8756160028285599728");
 }

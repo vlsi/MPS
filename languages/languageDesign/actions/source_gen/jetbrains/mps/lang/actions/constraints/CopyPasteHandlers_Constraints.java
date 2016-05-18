@@ -16,6 +16,7 @@ public class CopyPasteHandlers_Constraints extends BaseConstraintsDescriptor {
   public CopyPasteHandlers_Constraints() {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

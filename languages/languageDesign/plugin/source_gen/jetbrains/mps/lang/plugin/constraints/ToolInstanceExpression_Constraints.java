@@ -15,6 +15,7 @@ public class ToolInstanceExpression_Constraints extends BaseConstraintsDescripto
   public ToolInstanceExpression_Constraints() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870178843L, "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

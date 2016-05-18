@@ -22,9 +22,9 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -1294,25 +1294,32 @@
                     <node concept="1z4cxt" id="UBgfI9cWiP" role="2OqNvi">
                       <node concept="1bVj0M" id="UBgfI9cWiR" role="23t8la">
                         <node concept="3clFbS" id="UBgfI9cWiS" role="1bW5cS">
+                          <node concept="3SKdUt" id="5vfjF5c8Mar" role="3cqZAp">
+                            <node concept="3SKdUq" id="5vfjF5c8Mat" role="3SKWNk">
+                              <property role="3SKdUp" value="viva la interpretation!" />
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="UBgfI9cWiT" role="3cqZAp">
-                            <node concept="3clFbC" id="UBgfI9cWiU" role="3clFbG">
-                              <node concept="2OqwBi" id="UBgfI9cWQW" role="3uHU7w">
-                                <node concept="2OqwBi" id="UBgfI9cWiV" role="2Oq$k0">
-                                  <node concept="37vLTw" id="UBgfI9cWiW" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7T23sO8wicy" resolve="mi" />
-                                  </node>
-                                  <node concept="2yIwOk" id="UBgfI9cWA7" role="2OqNvi" />
+                            <node concept="2OqwBi" id="5vfjF5c8KGi" role="3clFbG">
+                              <node concept="2OqwBi" id="UBgfI9cWiV" role="2Oq$k0">
+                                <node concept="37vLTw" id="UBgfI9cWiW" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7T23sO8wicy" resolve="mi" />
                                 </node>
-                                <node concept="liA8E" id="UBgfI9cX5V" role="2OqNvi">
-                                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-                                </node>
+                                <node concept="2yIwOk" id="UBgfI9cWA7" role="2OqNvi" />
                               </node>
-                              <node concept="2OqwBi" id="UBgfI9cWiY" role="3uHU7B">
-                                <node concept="37vLTw" id="UBgfI9cWiZ" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="UBgfI9cWj1" resolve="it" />
-                                </node>
-                                <node concept="3TrEf2" id="UBgfI9cWj0" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="oubp:7aMlq14w5Qv" />
+                              <node concept="liA8E" id="5vfjF5c8Lgs" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                                <node concept="2YIFZM" id="5vfjF5c8JSb" role="37wK5m">
+                                  <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                                  <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                                  <node concept="2OqwBi" id="UBgfI9cWiY" role="37wK5m">
+                                    <node concept="37vLTw" id="UBgfI9cWiZ" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="UBgfI9cWj1" resolve="it" />
+                                    </node>
+                                    <node concept="3TrEf2" id="UBgfI9cWj0" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="oubp:7aMlq14w5Qv" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>

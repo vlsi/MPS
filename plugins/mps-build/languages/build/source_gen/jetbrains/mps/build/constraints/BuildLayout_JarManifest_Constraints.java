@@ -17,6 +17,7 @@ public class BuildLayout_JarManifest_Constraints extends BaseConstraintsDescript
   public BuildLayout_JarManifest_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

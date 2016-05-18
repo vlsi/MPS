@@ -15,6 +15,7 @@ public class RoutineDefinition_Constraints extends BaseConstraintsDescriptor {
   public RoutineDefinition_Constraints() {
     super(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

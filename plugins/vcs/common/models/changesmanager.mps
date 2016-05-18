@@ -21,7 +21,6 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
-    <import index="oi6x" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.nodesFs(MPS.Platform/)" />
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
@@ -52,6 +51,7 @@
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
+    <import index="kip1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.nodefs(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -9877,6 +9877,16 @@
         <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
+    <node concept="312cEg" id="5IHtz9v0lld" role="jymVt">
+      <property role="TrG5h" value="myNodeFileSystem" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tmbuc" id="5IHtz9v0q17" role="1B3o_S" />
+      <node concept="3uibUv" id="5IHtz9v0llg" role="1tU5fm">
+        <ref role="3uigEE" to="kip1:~NodeVirtualFileSystem" resolve="NodeVirtualFileSystem" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5IHtz9v0nSN" role="jymVt" />
+    <node concept="2tJIrI" id="5IHtz9v0k5E" role="jymVt" />
     <node concept="3clFbW" id="2n7wcdLaAWO" role="jymVt">
       <node concept="3cqZAl" id="2n7wcdLaAWP" role="3clF45" />
       <node concept="3Tm1VV" id="2n7wcdLaAWQ" role="1B3o_S" />
@@ -9912,6 +9922,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="5IHtz9v0llh" role="3cqZAp">
+          <node concept="37vLTI" id="5IHtz9v0llj" role="3clFbG">
+            <node concept="37vLTw" id="5IHtz9v0q$I" role="37vLTJ">
+              <ref role="3cqZAo" node="5IHtz9v0lld" resolve="myNodeFileSystem" />
+            </node>
+            <node concept="37vLTw" id="5IHtz9v0llr" role="37vLTx">
+              <ref role="3cqZAo" node="5IHtz9v0lab" resolve="nodeFileSystem" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="2n7wcdLaAWY" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -9923,6 +9943,12 @@
         <property role="TrG5h" value="registry" />
         <node concept="3uibUv" id="2n7wcdLaAX1" role="1tU5fm">
           <ref role="3uigEE" node="2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5IHtz9v0lab" role="3clF46">
+        <property role="TrG5h" value="nodeFileSystem" />
+        <node concept="3uibUv" id="5IHtz9v0liN" role="1tU5fm">
+          <ref role="3uigEE" to="kip1:~NodeVirtualFileSystem" resolve="NodeVirtualFileSystem" />
         </node>
       </node>
     </node>
@@ -10021,18 +10047,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="1KUoCipvCow" role="3cqZAp">
-                    <node concept="3cpWsn" id="1KUoCipvCox" role="3cpWs9">
-                      <property role="TrG5h" value="nvfs" />
-                      <node concept="3uibUv" id="1KUoCipvCoy" role="1tU5fm">
-                        <ref role="3uigEE" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
-                      </node>
-                      <node concept="2YIFZM" id="1KUoCipvCoz" role="33vP2m">
-                        <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getInstance():jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" resolve="getInstance" />
-                        <ref role="1Pybhc" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="1KUoCipvCo$" role="3cqZAp">
                     <node concept="3cpWsn" id="1KUoCipvCo_" role="3cpWs9">
                       <property role="TrG5h" value="currentNode" />
@@ -10074,11 +10088,8 @@
                       <node concept="37vLTw" id="3GM_nagTB3v" role="37wK5m">
                         <ref role="3cqZAo" node="1KUoCipvCos" resolve="fsm" />
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTzyn" role="37wK5m">
-                        <ref role="3cqZAo" node="1KUoCipvCox" resolve="nvfs" />
-                      </node>
-                      <node concept="37vLTw" id="2BHiRxgm_xL" role="37wK5m">
-                        <ref role="3cqZAo" node="2n7wcdLaARw" resolve="nodePointer" />
+                      <node concept="37vLTw" id="5IHtz9v0y4R" role="37wK5m">
+                        <ref role="3cqZAo" node="1KUoCipvCo_" resolve="currentNode" />
                       </node>
                     </node>
                   </node>
@@ -10089,6 +10100,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5IHtz9v0suF" role="jymVt" />
     <node concept="3clFb_" id="2n7wcdLaAS2" role="jymVt">
       <property role="TrG5h" value="statusChanged" />
       <node concept="3Tmbuc" id="2n7wcdLaAS3" role="1B3o_S" />
@@ -10099,16 +10111,13 @@
           <ref role="3uigEE" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
         </node>
       </node>
-      <node concept="37vLTG" id="2n7wcdLaAS7" role="3clF46">
-        <property role="TrG5h" value="nvfs" />
-        <node concept="3uibUv" id="2n7wcdLaAS8" role="1tU5fm">
-          <ref role="3uigEE" to="oi6x:~MPSNodesVirtualFileSystem" resolve="MPSNodesVirtualFileSystem" />
-        </node>
-      </node>
       <node concept="37vLTG" id="2n7wcdLaAS9" role="3clF46">
-        <property role="TrG5h" value="nodePointer" />
-        <node concept="3uibUv" id="2n7wcdLaASa" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        <property role="TrG5h" value="node" />
+        <node concept="3uibUv" id="5IHtz9v0s9Y" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+        <node concept="2AHcQZ" id="5IHtz9v0yqO" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="2n7wcdLaASb" role="3clF47">
@@ -10120,13 +10129,21 @@
             <node concept="liA8E" id="2n7wcdLaASf" role="2OqNvi">
               <ref role="37wK5l" to="jlcu:~FileStatusManager.fileStatusChanged(com.intellij.openapi.vfs.VirtualFile):void" resolve="fileStatusChanged" />
               <node concept="2OqwBi" id="2n7wcdLaASg" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxghiUs" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2n7wcdLaAS7" resolve="nvfs" />
+                <node concept="37vLTw" id="5IHtz9v0tGV" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5IHtz9v0lld" resolve="myNodeFileSystem" />
                 </node>
                 <node concept="liA8E" id="2n7wcdLaASi" role="2OqNvi">
-                  <ref role="37wK5l" to="oi6x:~MPSNodesVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.model.SNodeReference):jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" resolve="getFileFor" />
+                  <ref role="37wK5l" to="kip1:~NodeVirtualFileSystem.getFileFor(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodefs.MPSNodeVirtualFile" resolve="getFileFor" />
+                  <node concept="2OqwBi" id="5IHtz9v0uwu" role="37wK5m">
+                    <node concept="37vLTw" id="5IHtz9v0vBO" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5A04Co8KyHu" resolve="myMPSProject" />
+                    </node>
+                    <node concept="liA8E" id="5IHtz9v0wiH" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                   <node concept="37vLTw" id="2BHiRxgmysB" role="37wK5m">
-                    <ref role="3cqZAo" node="2n7wcdLaAS9" resolve="nodePointer" />
+                    <ref role="3cqZAo" node="2n7wcdLaAS9" resolve="node" />
                   </node>
                 </node>
               </node>
@@ -11161,8 +11178,8 @@
         <node concept="3clFbJ" id="2n7wcdLaAXz" role="3cqZAp">
           <node concept="3fqX7Q" id="1Dm62SvZPy9" role="3clFbw">
             <node concept="2ZW3vV" id="2n7wcdLaAY9" role="3fr31v">
-              <node concept="3uibUv" id="2n7wcdLaAYa" role="2ZW6by">
-                <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+              <node concept="3uibUv" id="2tq39vtPwGv" role="2ZW6by">
+                <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
               </node>
               <node concept="37vLTw" id="2BHiRxgmtxp" role="2ZW6bz">
                 <ref role="3cqZAo" node="2n7wcdLaAXw" resolve="file" />
@@ -11197,14 +11214,14 @@
             <property role="TrG5h" value="nodeFile" />
             <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="2n7wcdLaAXB" role="1tU5fm">
-              <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+              <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
             </node>
             <node concept="10QFUN" id="2n7wcdLaAXC" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxgmyrL" role="10QFUP">
                 <ref role="3cqZAo" node="2n7wcdLaAXw" resolve="file" />
               </node>
               <node concept="3uibUv" id="2n7wcdLaAXE" role="10QFUM">
-                <ref role="3uigEE" to="oi6x:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
+                <ref role="3uigEE" to="kip1:~MPSNodeVirtualFile" resolve="MPSNodeVirtualFile" />
               </node>
             </node>
           </node>
@@ -11250,7 +11267,7 @@
                             <node concept="3Tqbb2" id="2n7wcdLaAXH" role="1tU5fm" />
                             <node concept="2YIFZM" id="2n7wcdLaAXI" role="33vP2m">
                               <ref role="1Pybhc" to="k3nr:~MPSEditorUtil" resolve="MPSEditorUtil" />
-                              <ref role="37wK5l" to="k3nr:~MPSEditorUtil.getCurrentEditedNode(com.intellij.openapi.project.Project,jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile):org.jetbrains.mps.openapi.model.SNode" resolve="getCurrentEditedNode" />
+                              <ref role="37wK5l" to="k3nr:~MPSEditorUtil.getCurrentEditedNode(com.intellij.openapi.project.Project,jetbrains.mps.nodefs.MPSNodeVirtualFile):org.jetbrains.mps.openapi.model.SNode" resolve="getCurrentEditedNode" />
                               <node concept="2OqwBi" id="3RVEVD6wEmA" role="37wK5m">
                                 <node concept="37vLTw" id="2BHiRxeu$r6" role="2Oq$k0">
                                   <ref role="3cqZAo" node="2n7wcdLaAX3" resolve="myProject" />
@@ -11278,7 +11295,7 @@
                                       <ref role="3cqZAo" node="2n7wcdLaAXA" resolve="nodeFile" />
                                     </node>
                                     <node concept="liA8E" id="$rBR5oP$ej" role="2OqNvi">
-                                      <ref role="37wK5l" to="oi6x:~MPSNodeVirtualFile.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                                      <ref role="37wK5l" to="kip1:~MPSNodeVirtualFile.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="$rBR5oP$9Y" role="2OqNvi">

@@ -18,6 +18,7 @@ public class ArrayCloneOperation_Constraints extends BaseConstraintsDescriptor {
   public ArrayCloneOperation_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

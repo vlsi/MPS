@@ -17,6 +17,7 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
   public ActionAsPattern_Constraints() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"));
   }
+
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;

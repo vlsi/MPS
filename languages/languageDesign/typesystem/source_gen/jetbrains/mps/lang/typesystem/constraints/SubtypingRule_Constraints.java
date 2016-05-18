@@ -16,6 +16,7 @@ public class SubtypingRule_Constraints extends BaseConstraintsDescriptor {
   public SubtypingRule_Constraints() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c426ccaL, "jetbrains.mps.lang.typesystem.structure.SubtypingRule"));
   }
+
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;

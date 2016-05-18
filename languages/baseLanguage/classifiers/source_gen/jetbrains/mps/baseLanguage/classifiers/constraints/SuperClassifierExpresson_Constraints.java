@@ -17,6 +17,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
   public SuperClassifierExpresson_Constraints() {
     super(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11b74b0357cL, "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

@@ -16,6 +16,7 @@ public class ArrayLiteral_Constraints extends BaseConstraintsDescriptor {
   public ArrayLiteral_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"));
   }
+
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;

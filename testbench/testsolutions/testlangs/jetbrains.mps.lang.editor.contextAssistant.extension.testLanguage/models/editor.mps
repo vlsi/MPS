@@ -2,7 +2,7 @@
 <model ref="r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -45,7 +45,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
     </language>
@@ -93,9 +93,6 @@
   </node>
   <node concept="3INDKC" id="5CFnWxxhZO1">
     <property role="TrG5h" value="Child_MoreNamedActions" />
-    <node concept="A1WHu" id="5OVd5tVsX$w" role="AmTjC">
-      <ref role="A1WHt" to="iqcb:6iEu7ikuMlI" resolve="NamedMenu" />
-    </node>
     <node concept="1Qtc8_" id="6V0bp$oQRkC" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQRtQ" role="1Qtc8$" />
       <node concept="IWgqT" id="67q8fiOz1_2" role="1Qtc8A">
@@ -112,6 +109,9 @@
           <node concept="3clFbS" id="67q8fiOz1_a" role="2VODD2" />
         </node>
       </node>
+    </node>
+    <node concept="A1WHu" id="5OVd5tVsX$w" role="AmTjC">
+      <ref role="A1WHt" to="iqcb:6iEu7ikuMlI" resolve="NamedMenu" />
     </node>
   </node>
 </model>
