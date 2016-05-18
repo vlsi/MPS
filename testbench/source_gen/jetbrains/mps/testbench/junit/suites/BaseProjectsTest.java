@@ -25,6 +25,15 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import com.intellij.util.ui.UIUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
@@ -67,6 +76,7 @@ public class BaseProjectsTest {
         return true;
       }
     });
+    make(null);
 
     return projects;
   }
@@ -74,6 +84,7 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
+    make(myProject);
     waitForInvocations();
   }
 
@@ -89,6 +100,23 @@ public class BaseProjectsTest {
       }
     }, ModalityState.NON_MODAL);
     waitForInvocations();
+  }
+
+  protected static void make(Project p) {
+    final Wrappers._T<MPSCompilationResult> mpsCompilationResult = new Wrappers._T<MPSCompilationResult>();
+    (p == null ? MPSModuleRepository.getInstance() : p.getRepository()).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        ModuleMaker maker = new ModuleMaker();
+        mpsCompilationResult.value = maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
+      }
+    });
+    if (mpsCompilationResult.value.isReloadingNeeded()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.value.getChangedModules());
+        }
+      });
+    }
   }
 
   private static void waitForInvocations() {
