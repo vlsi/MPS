@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.smodel.structure.Extension;
@@ -21,14 +21,13 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
-public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipantBase<Tuples._2<Language, I>, Tuples._2<Language, F>, SNode, SNode> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>> {
+public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipantBase<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>, SNode, SNode> implements MoveNodeRefactoringParticipant<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> {
 
   private StructureSpecialization<I, F> myStructureSpecialization;
   public UpdateLocalInstancesParticipant(StructureSpecialization<I, F> structureSpecialization) {
@@ -68,11 +67,11 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
     }
   }
 
-  public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> getDataCollector() {
+  public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> getDataCollector() {
     return myStructureSpecialization;
   }
 
-  public List<RefactoringParticipant.Option> getAvailableOptions(Tuples._2<Language, I> initialState, SRepository repository) {
+  public List<RefactoringParticipant.Option> getAvailableOptions(Tuples._2<I, SNodeReference> initialState, SRepository repository) {
     if (initialState != null) {
       return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
     } else {
@@ -81,19 +80,19 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
   }
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateLocalInstances", "Update instances in current project");
 
-  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+  public List<RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>> getChanges(final Tuples._2<I, SNodeReference> initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
     if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
-      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>>());
     }
-    Collection<SNode> instances = myStructureSpecialization.findInstances(initialState._1(), searchScope);
+    Collection<SNode> instances = myStructureSpecialization.findInstances(initialState._0(), searchScope);
 
-    return CollectionSequence.fromCollection(instances).select(new ISelector<SNode, RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>() {
-      public RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>> select(SNode instance) {
+    return CollectionSequence.fromCollection(instances).select(new ISelector<SNode, RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>>() {
+      public RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> select(SNode instance) {
         final SNodeReference nodeRef = instance.getReference();
         final SearchResults searchResults = new SearchResults();
         searchResults.add(new SearchResult<SNode>(instance, "instance"));
-        RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>> change = new RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>() {
-          public MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>> getParticipant() {
+        RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {
+          public MoveNodeRefactoringParticipant<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> getParticipant() {
             return UpdateLocalInstancesParticipant.this;
           }
           public SearchResults getSearchResults() {
@@ -102,15 +101,15 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
           public boolean needsToPreserveOldNode() {
             return false;
           }
-          public void confirm(final Tuples._2<Language, F> finalState, final SRepository repository, final RefactoringSession refactoringSession) {
+          public void confirm(final Tuples._2<F, SNodeReference> finalState, final SRepository repository, final RefactoringSession refactoringSession) {
             refactoringSession.registerChange(new Runnable() {
               public void run() {
                 SNode node = nodeRef.resolve(repository);
                 MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
                 if (node == null || MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node)) {
-                  myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), initialState._1(), finalState._1());
+                  myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), initialState._0(), finalState._0());
                 }
-                myStructureSpecialization.doReplaceInstance(node, initialState._1(), finalState._1());
+                myStructureSpecialization.doReplaceInstance(node, initialState._0(), finalState._0());
               }
             });
           }

@@ -4,15 +4,15 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class StructureSpecializationBase<T> implements StructureSpecialization<T, T>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, T>, Tuples._2<Language, T>> {
-  public Tuples._2<Language, T> beforeMove(SNode nodeToMove) {
+public abstract class StructureSpecializationBase<T> implements StructureSpecialization<T, T>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<T, SNodeReference>, Tuples._2<T, SNodeReference>> {
+  public Tuples._2<T, SNodeReference> beforeMove(SNode nodeToMove) {
     return fetchState(nodeToMove);
   }
-  public Tuples._2<Language, T> afterMove(SNode movedNode) {
+  public Tuples._2<T, SNodeReference> afterMove(SNode movedNode) {
     return fetchState(movedNode);
   }
-  public abstract Tuples._2<Language, T> fetchState(SNode movingNode);
+  public abstract Tuples._2<T, SNodeReference> fetchState(SNode movingNode);
 }
