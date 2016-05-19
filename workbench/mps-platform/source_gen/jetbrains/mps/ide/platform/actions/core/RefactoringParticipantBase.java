@@ -30,7 +30,7 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
     return getChanges(initialState, repository, selectedOptions, searchScope, new EmptyProgressMonitor());
   }
   public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
-    return ListSequence.fromList(getChanges(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository, selectedOptions, searchScope, progressMonitor)).first();
+    throw new UnsupportedOperationException();
   }
 
 
@@ -42,7 +42,5 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
       }
     }).distinct().toListSequence();
   }
-  public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository) {
-    return getAvailableOptions(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository);
-  }
+  public abstract List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
 }

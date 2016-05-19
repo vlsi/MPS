@@ -42274,12 +42274,9 @@
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="2ziiPwwJLgi" role="2OqNvi">
-                                            <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                                            <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                                             <node concept="37vLTw" id="2ziiPwwJLgj" role="37wK5m">
                                               <ref role="3cqZAo" node="2ziiPwwJLfW" resolve="finalState" />
-                                            </node>
-                                            <node concept="3clFbT" id="2ziiPwwJLgk" role="37wK5m">
-                                              <property role="3clFbU" value="true" />
                                             </node>
                                           </node>
                                         </node>

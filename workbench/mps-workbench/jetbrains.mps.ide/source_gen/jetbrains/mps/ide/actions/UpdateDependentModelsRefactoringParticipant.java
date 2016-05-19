@@ -98,7 +98,7 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
           public void confirm(SModelReference finalState, SRepository repository, RefactoringSession refactoringSession) {
             SModel usage = usageRef.resolve(repository);
             if (usage instanceof SModelInternal && usage instanceof EditableSModel) {
-              ((SModelInternal) usage).addModelImport(finalState, true);
+              ((SModelInternal) usage).addModelImport(finalState);
               updateUsages((EditableSModel) usage, initialState, finalState);
               ((SModelInternal) usage).deleteModelImport(initialState);
             }

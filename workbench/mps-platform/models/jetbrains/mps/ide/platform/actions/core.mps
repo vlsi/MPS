@@ -7757,34 +7757,11 @@
       </node>
       <node concept="3Tm1VV" id="5SvlHWokwKP" role="1B3o_S" />
       <node concept="3clFbS" id="5SvlHWokwKQ" role="3clF47">
-        <node concept="3clFbF" id="5SvlHWokwKR" role="3cqZAp">
-          <node concept="2OqwBi" id="5SvlHWokwKS" role="3clFbG">
-            <node concept="1rXfSq" id="5SvlHWokwKT" role="2Oq$k0">
-              <ref role="37wK5l" node="4GNx7T6VFNy" resolve="getChanges" />
-              <node concept="2ShNRf" id="5SvlHWokwKU" role="37wK5m">
-                <node concept="Tc6Ow" id="5SvlHWokwKV" role="2ShVmc">
-                  <node concept="16syzq" id="5SvlHWokwKW" role="HW$YZ">
-                    <ref role="16sUi3" node="4GNx7T6VFaU" resolve="InitialDataObject" />
-                  </node>
-                  <node concept="37vLTw" id="5SvlHWokwKX" role="HW$Y0">
-                    <ref role="3cqZAo" node="5SvlHWokwKG" resolve="initialState" />
-                  </node>
-                </node>
-              </node>
-              <node concept="37vLTw" id="5SvlHWokwKY" role="37wK5m">
-                <ref role="3cqZAo" node="5SvlHWokwKI" resolve="repository" />
-              </node>
-              <node concept="37vLTw" id="5SvlHWokwKZ" role="37wK5m">
-                <ref role="3cqZAo" node="5SvlHWokwKK" resolve="selectedOptions" />
-              </node>
-              <node concept="37vLTw" id="5SvlHWokwL0" role="37wK5m">
-                <ref role="3cqZAo" node="5SvlHWokwKN" resolve="searchScope" />
-              </node>
-              <node concept="37vLTw" id="3$KqHszMV4J" role="37wK5m">
-                <ref role="3cqZAo" node="5SvlHWokBPy" resolve="progressMonitor" />
-              </node>
+        <node concept="YS8fn" id="37kAYV6bmBN" role="3cqZAp">
+          <node concept="2ShNRf" id="37kAYV6bmRx" role="YScLw">
+            <node concept="1pGfFk" id="37kAYV6bwek" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
             </node>
-            <node concept="1uHKPH" id="5SvlHWokwL3" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -7865,7 +7842,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5SvlHWohUGh" role="jymVt">
-      <property role="1EzhhJ" value="false" />
+      <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getAvailableOptions" />
       <node concept="37vLTG" id="5SvlHWohUGi" role="3clF46">
@@ -7886,26 +7863,7 @@
           <ref role="3uigEE" node="37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
         </node>
       </node>
-      <node concept="3clFbS" id="5SvlHWohUGq" role="3clF47">
-        <node concept="3clFbF" id="5SvlHWoi8KU" role="3cqZAp">
-          <node concept="1rXfSq" id="5SvlHWoi8KT" role="3clFbG">
-            <ref role="37wK5l" node="5SvlHWohSEC" resolve="getAvailableOptions" />
-            <node concept="2ShNRf" id="5SvlHWoi9gs" role="37wK5m">
-              <node concept="Tc6Ow" id="5SvlHWoi9N2" role="2ShVmc">
-                <node concept="16syzq" id="5SvlHWoiavf" role="HW$YZ">
-                  <ref role="16sUi3" node="4GNx7T6VFaU" resolve="InitialDataObject" />
-                </node>
-                <node concept="37vLTw" id="5SvlHWoiaYk" role="HW$Y0">
-                  <ref role="3cqZAo" node="5SvlHWohUGi" resolve="initialState" />
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="5SvlHWoibuS" role="37wK5m">
-              <ref role="3cqZAo" node="5SvlHWohUGl" resolve="repository" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="3clFbS" id="5SvlHWohUGq" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="4GNx7T6VEix" role="1B3o_S" />
     <node concept="3uibUv" id="4GNx7T6VEiZ" role="EKbjA">

@@ -144,6 +144,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" file="RefactoringParticipantBase.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
