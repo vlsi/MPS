@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.event;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+
 /**
  * Base class for property, reference and node change events.
  * @see SPropertyChangeEvent
@@ -26,4 +29,9 @@ package org.jetbrains.mps.openapi.event;
  * @since 3.3
  */
 public abstract class AbstractModelChangeEvent extends AbstractModelEvent {
+  /**
+   * @return affected model
+   */
+  @NotNull
+  public abstract SModel getModel();
 }

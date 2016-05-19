@@ -109,6 +109,9 @@ final class RepositoryVirtualFiles {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
+  /**
+   * @return existing VF, if any.
+   */
   @Nullable
   /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
     return myVirtualFiles.get(nodeRef);

@@ -23,17 +23,20 @@ import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,7 +47,6 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -61,7 +63,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
     SRepository myRepository = coreComponents.getModuleRepository();
     myGlobalRepoFiles = new RepositoryVirtualFiles(this, myRepository);
-    myRepositoryListener = new MyRepositoryListener(myRepository);
+    myRepositoryListener = new MyRepositoryListener(myGlobalRepoFiles);
   }
 
   /*
@@ -76,7 +78,6 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   private final List<RepositoryVirtualFiles> myPerRepositoryFiles = new ArrayList<>();
   private final Map<RepositoryVirtualFiles, MyRepositoryListener> myFiles2ListenerMap = new HashMap<>();
   private SModelCommandListener myCommandListener = new MyCommandListener();
-  private SModelListener myModelListener = new MyModelListener();
   private final SRepositoryContentAdapter myRepositoryListener;
   private boolean myDisposed = false;
 
@@ -90,7 +91,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       }
       // sort of stack, most recent first. just for fun, no hidden assumptions.
       myPerRepositoryFiles.add(0, repoFiles);
-      listener = new MyRepositoryListener(repoFiles.getRepository());
+      listener = new MyRepositoryListener(repoFiles);
       myFiles2ListenerMap.put(repoFiles, listener);
     }
     new RepoListenerRegistrar(repoFiles.getRepository(), listener).attach();
@@ -142,8 +143,6 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   public void initComponent() {
     // can change to openapi.CommandListener once have visitor support for new model events
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
-    // can't change to repository listener as it doesn't react to model import changes
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
 
     new RepoListenerRegistrar(myGlobalRepoFiles.getRepository(), myRepositoryListener).attach();
   }
@@ -152,7 +151,6 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   public void disposeComponent() {
     new RepoListenerRegistrar(myGlobalRepoFiles.getRepository(), myRepositoryListener).detach();
 
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
     myDisposed = true;
   }
@@ -247,7 +245,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
 
   private class MyRepositoryListener extends SRepositoryContentAdapter {
 
-    private final SRepository myRepository;
+    private final RepositoryVirtualFiles myRepoFiles;
 
     /**
      * FIXME the only reason we don't use single listener instance (we can obtain proper SRepository from the change event's model/node)
@@ -255,8 +253,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
      *       Thus, it would be impossible to find proper RepositoryVirtualFiles instance. Shall fix ProjectRepository and its base impl
      *       to send events on its own.
      */
-    public MyRepositoryListener(SRepository repository) {
-      myRepository = repository;
+    public MyRepositoryListener(RepositoryVirtualFiles repoFiles) {
+      myRepoFiles = repoFiles;
     }
 
     @Override
@@ -268,21 +266,25 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     protected void startListening(SModel model) {
       // we listen to SModelListener#modelReplaced
       model.addModelListener(this);
+      // we care about node changes
+      model.addChangeListener(this);
     }
 
     @Override
     protected void stopListening(SModel model) {
+      model.removeChangeListener(this);
       model.removeModelListener(this);
       forget(model);
     }
 
+    // XXX I keep this method instead of direct access to myRepoFiles field in a desperate hope to have single repo listener some day,
+    //     which would pick RVF instance based on model's repository. And that's the reason I check for null return value
+    @Nullable
     private RepositoryVirtualFiles findRepoFiles(SModel m) {
       if (m.getRepository() == null) {
         return null;
       }
-      // FIXME use of a repository this listener has been associated with to work around the fact the only repository that sends
-      // events now is the global one.
-      return findForRepository(myRepository);
+      return myRepoFiles;
     }
 
     private void forget(SModel modelDescriptor) {
@@ -320,19 +322,53 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
     }
-  }
 
-  // XXX the only reason to have this listener separate from MyCommandListener is to update modification stamp
-  //     immediately, perhaps several times during a change, not once at the end of a command?
-  private class MyModelListener extends SModelAdapter {
     @Override
-    public void eventFired(SModelEvent event) {
-      SNode root = event.getAffectedRoot();
-      MPSNodeVirtualFile vf;
-      if (root != null && (vf = getVirtualFile(root.getReference())) != null) {
-        // FIXME is affectedRoot is null for model dependencies/imports changed event? Why then we listen to SModelEvent?
-        updateModificationStamp(Collections.singleton(vf));
+    public void propertyChanged(@NotNull SPropertyChangeEvent event) {
+      updateFileTimestampOfAffectedNodes(event, event.getNode(), event.getNode().getContainingRoot());
+    }
+
+    @Override
+    public void referenceChanged(@NotNull SReferenceChangeEvent event) {
+      updateFileTimestampOfAffectedNodes(event, event.getNode(), event.getNode().getContainingRoot());
+    }
+
+    @Override
+    public void nodeAdded(@NotNull SNodeAddEvent event) {
+      if (event.isRoot()) {
+        // added root of no interest - there could be no file for it yet.
+        return;
       }
+      updateFileTimestampOfAffectedNodes(event, event.getParent(), event.getParent().getContainingRoot());
+    }
+
+    @Override
+    public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+      updateFileTimestampOfAffectedNodes(event, event.getChild(), event.isRoot() ? event.getChild() : event.getParent().getContainingRoot());
+    }
+
+    /*
+     * SModelAdapter that used to update timestamps was deliberately extracted out of end of command listener. Guess, either to
+     * update TS immediately or to support multiple TS changes within single command. That's why I keep this immediate TS update approach
+     * in the new repository listener, too.
+     */
+    private void updateFileTimestampOfAffectedNodes(AbstractModelChangeEvent event, /*not null*/ SNode changed, @Nullable SNode root) {
+      final RepositoryVirtualFiles rvf = findRepoFiles(event.getModel());
+      if (rvf == null) {
+        return;
+      }
+      ArrayList<MPSNodeVirtualFile> files = new ArrayList<>(2);
+      final MPSNodeVirtualFile vf1 = rvf.getVirtualFile(changed.getReference());
+      if (vf1 != null) {
+        files.add(vf1);
+      }
+      if (root != null && root != changed) {
+        MPSNodeVirtualFile vf2 = rvf.getVirtualFile(root.getReference());
+        if (vf2 != null && vf2 != vf1) {
+          files.add(vf2);
+        }
+      }
+      updateModificationStamp(files);
     }
   }
 
