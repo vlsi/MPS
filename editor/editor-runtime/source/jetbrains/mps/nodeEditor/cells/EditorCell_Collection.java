@@ -152,8 +152,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return isDefaultCollapsedValueChanged() ? myCollapsed : myInitiallyCollapsed;
   }
 
+  /**
+   * visibility: package-local for testing purposes only
+   */
   @NotNull
-  private Container<EditorCell> getEditorCells() {
+  Container<EditorCell> getEditorCells() {
     if (myEditorCells == null) {
       myEditorCells = new EditorCell_Collection_Container(this);
     }

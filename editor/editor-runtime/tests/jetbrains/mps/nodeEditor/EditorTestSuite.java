@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.collections.CellContainerTest;
+import jetbrains.mps.nodeEditor.cells.ContainerTests;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeTraversalTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -25,6 +25,6 @@ import org.junit.runners.Suite;
  * Date: 28/04/16
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({CellTreeTraversalTest.class, CellContainerTest.class})
+@Suite.SuiteClasses({CellTreeTraversalTest.class, ContainerTests.class})
 public class EditorTestSuite {
 }
