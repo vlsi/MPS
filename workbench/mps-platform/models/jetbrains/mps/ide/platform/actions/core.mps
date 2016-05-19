@@ -1097,7 +1097,7 @@
             <property role="TrG5h" value="specialRefactorings" />
             <node concept="A3Dl8" id="1F5g4zQxhiS" role="1tU5fm">
               <node concept="3uibUv" id="1F5g4zQxhiT" role="A3Ik2">
-                <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+                <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
               </node>
             </node>
             <node concept="2OqwBi" id="1F5g4zQxhiU" role="33vP2m">
@@ -1113,7 +1113,7 @@
             <property role="TrG5h" value="applicableRefactorings" />
             <node concept="A3Dl8" id="1F5g4zQxhiZ" role="1tU5fm">
               <node concept="3uibUv" id="1F5g4zQxhj0" role="A3Ik2">
-                <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+                <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
               </node>
             </node>
             <node concept="2OqwBi" id="1F5g4zQxhj1" role="33vP2m">
@@ -1160,7 +1160,7 @@
             <node concept="3cpWs6" id="1F5g4zQxjWb" role="3cqZAp">
               <node concept="2ShNRf" id="1F5g4zQxk0r" role="3cqZAk">
                 <node concept="HV5vD" id="1F5g4zQxkxC" role="2ShVmc">
-                  <ref role="HV5vE" node="1F5g4zQqVSR" resolve="MoveNodesDefault" />
+                  <ref role="HV5vE" node="1F5g4zQqVSR" resolve="MoveNodesActionBase" />
                 </node>
               </node>
             </node>
@@ -1278,7 +1278,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1F5g4zQxjq9" role="3clF45">
-        <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+        <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
       </node>
       <node concept="3Tm6S6" id="1F5g4zQxjiT" role="1B3o_S" />
     </node>
@@ -1304,7 +1304,7 @@
               </node>
             </node>
             <node concept="liA8E" id="1F5g4zQxfIn" role="2OqNvi">
-              <ref role="37wK5l" node="1F5g4zQqUnD" resolve="apply" />
+              <ref role="37wK5l" node="1F5g4zQqUnD" resolve="execute" />
               <node concept="2OqwBi" id="1F5g4zQxfJc" role="37wK5m">
                 <node concept="2WthIp" id="1F5g4zQxfJf" role="2Oq$k0" />
                 <node concept="1DTwFV" id="1F5g4zQxfJh" role="2OqNvi">
@@ -1348,7 +1348,7 @@
         <node concept="3clFbJ" id="6gEjUfBq$aW" role="3cqZAp">
           <node concept="1Wc70l" id="1lGS1KokeH9" role="3clFbw">
             <node concept="2YIFZM" id="6gEjUfBq$jC" role="3uHU7B">
-              <ref role="1Pybhc" node="1F5g4zQqVSR" resolve="MoveNodesDefault" />
+              <ref role="1Pybhc" node="1F5g4zQqVSR" resolve="MoveNodesActionBase" />
               <ref role="37wK5l" node="55uxGWy8qqr" resolve="canBeMoved" />
               <node concept="2OqwBi" id="6gEjUfBq$p1" role="37wK5m">
                 <node concept="2WthIp" id="6gEjUfBq$p4" role="2Oq$k0" />
@@ -1377,7 +1377,7 @@
               <node concept="3cpWsn" id="1F5g4zQxlXB" role="3cpWs9">
                 <property role="TrG5h" value="refactoring" />
                 <node concept="3uibUv" id="1F5g4zQxlX$" role="1tU5fm">
-                  <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+                  <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
                 </node>
                 <node concept="2OqwBi" id="1F5g4zQxlXC" role="33vP2m">
                   <node concept="2WthIp" id="1F5g4zQxlXD" role="2Oq$k0" />
@@ -1450,11 +1450,11 @@
   <node concept="vrV6u" id="1F5g4zQqSPo">
     <property role="TrG5h" value="MoveNodesAction" />
     <node concept="3uibUv" id="1F5g4zQwWpf" role="luc8K">
-      <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+      <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
     </node>
   </node>
   <node concept="3HP615" id="1F5g4zQqSPt">
-    <property role="TrG5h" value="MoveNodesRefactoring" />
+    <property role="TrG5h" value="MoveNodesAction" />
     <node concept="3clFb_" id="1F5g4zQxi0e" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
@@ -1482,7 +1482,7 @@
     </node>
     <node concept="3clFb_" id="1F5g4zQqUnD" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="apply" />
+      <property role="TrG5h" value="execute" />
       <node concept="37vLTG" id="1F5g4zQqUoH" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="1F5g4zQqUoI" role="1tU5fm">
@@ -1500,7 +1500,7 @@
     <node concept="3Tm1VV" id="1F5g4zQqSPu" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1F5g4zQqVSR">
-    <property role="TrG5h" value="MoveNodesDefault" />
+    <property role="TrG5h" value="MoveNodesActionBase" />
     <node concept="2tJIrI" id="55uxGWy8qpC" role="jymVt" />
     <node concept="2tJIrI" id="55uxGWy8qpD" role="jymVt" />
     <node concept="3clFb_" id="55uxGWy8qpE" role="jymVt">
@@ -1538,11 +1538,11 @@
           <node concept="3cpWsn" id="55uxGWy8qpS" role="3cpWs9">
             <property role="TrG5h" value="moveNodesDefault" />
             <node concept="3uibUv" id="55uxGWy8Erv" role="1tU5fm">
-              <ref role="3uigEE" node="1F5g4zQqVSR" resolve="MoveNodesDefault" />
+              <ref role="3uigEE" node="1F5g4zQqVSR" resolve="MoveNodesActionBase" />
             </node>
             <node concept="2ShNRf" id="55uxGWy8qpU" role="33vP2m">
               <node concept="HV5vD" id="55uxGWy8Egq" role="2ShVmc">
-                <ref role="HV5vE" node="1F5g4zQqVSR" resolve="MoveNodesDefault" />
+                <ref role="HV5vE" node="1F5g4zQqVSR" resolve="MoveNodesActionBase" />
               </node>
             </node>
           </node>
@@ -1555,7 +1555,7 @@
                   <ref role="3cqZAo" node="55uxGWy8qpS" resolve="moveNodesDefault" />
                 </node>
                 <node concept="liA8E" id="55uxGWy8qq1" role="2OqNvi">
-                  <ref role="37wK5l" node="55uxGWy8qrI" resolve="apply" />
+                  <ref role="37wK5l" node="55uxGWy8qrI" resolve="execute" />
                   <node concept="37vLTw" id="55uxGWy8qq2" role="37wK5m">
                     <ref role="3cqZAo" node="55uxGWy8qpO" resolve="mpsProject" />
                   </node>
@@ -1864,11 +1864,11 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="44mXFSxhoqX" role="10QFUM">
-                  <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                  <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
                 </node>
               </node>
               <node concept="3uibUv" id="44mXFSxhnNj" role="1tU5fm">
-                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
               </node>
             </node>
           </node>
@@ -1878,7 +1878,7 @@
                 <node concept="37vLTI" id="5Y9QCNBZXbk" role="3clFbG">
                   <node concept="2ShNRf" id="44mXFSxhn69" role="37vLTx">
                     <node concept="HV5vD" id="44mXFSxhUGv" role="2ShVmc">
-                      <ref role="HV5vE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                      <ref role="HV5vE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5Y9QCNBZWRh" role="37vLTJ">
@@ -1923,7 +1923,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="44mXFSxhlZu" role="3clF45">
-          <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+          <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
         </node>
       </node>
       <node concept="3clFb_" id="44mXFSxhV$4" role="jymVt">
@@ -2045,7 +2045,7 @@
     <node concept="2tJIrI" id="55uxGWy8qrH" role="jymVt" />
     <node concept="3clFb_" id="55uxGWy8qrI" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="apply" />
+      <property role="TrG5h" value="execute" />
       <node concept="37vLTG" id="55uxGWy8qrJ" role="3clF46">
         <property role="TrG5h" value="project" />
         <property role="3TUv4t" value="true" />
@@ -2539,13 +2539,13 @@
             <node concept="3rvAFt" id="FLkVtyCy_O" role="1tU5fm">
               <node concept="3Tqbb2" id="76O06llYwlT" role="3rvQeY" />
               <node concept="3uibUv" id="1hLOda5b_n5" role="3rvSg0">
-                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
               </node>
             </node>
             <node concept="2ShNRf" id="FLkVtyCz2I" role="33vP2m">
               <node concept="3rGOSV" id="FLkVtyCz2_" role="2ShVmc">
                 <node concept="3uibUv" id="1hLOda5bA0S" role="3rHtpV">
-                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                 </node>
                 <node concept="3Tqbb2" id="76O06llYwFa" role="3rHrn6" />
               </node>
@@ -2556,11 +2556,11 @@
           <node concept="3cpWsn" id="1hLOda5bc5W" role="3cpWs9">
             <property role="TrG5h" value="processor" />
             <node concept="3uibUv" id="1hLOda5bBPp" role="1tU5fm">
-              <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+              <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
             </node>
             <node concept="2ShNRf" id="1hLOda5bc5X" role="33vP2m">
               <node concept="1pGfFk" id="1hLOda5bc5Y" role="2ShVmc">
-                <ref role="37wK5l" node="5sZ4VO_ZqCx" resolve="MoveNodesDefault.CopyingNodeProcessor" />
+                <ref role="37wK5l" node="5sZ4VO_ZqCx" resolve="MoveNodesActionBase.NodeCreatingProcessor" />
                 <node concept="37vLTw" id="1hLOda5bc5Z" role="37wK5m">
                   <ref role="3cqZAo" node="55uxGWy8qs7" resolve="newLocation" />
                 </node>
@@ -2729,12 +2729,12 @@
         <property role="3TUv4t" value="true" />
         <node concept="_YKpA" id="1DR1niAZwkP" role="1tU5fm">
           <node concept="2pR195" id="1DR1niAZwQP" role="_ZDj9">
-            <ref role="3uigEE" node="3BJTP_NofFn" resolve="MoveNodesDefault.ToMoveItem" />
+            <ref role="3uigEE" node="3BJTP_NofFn" resolve="MoveNodesActionBase.ToMoveItem" />
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="1DR1niAZuH7" role="3clF46">
-        <property role="TrG5h" value="callBack" />
+        <property role="TrG5h" value="initRefactoringSession" />
         <property role="3TUv4t" value="false" />
         <node concept="1ajhzC" id="zYDcsyE97y" role="1tU5fm">
           <node concept="3cqZAl" id="zYDcsyE97z" role="1ajl9A" />
@@ -2750,13 +2750,13 @@
             <node concept="3rvAFt" id="1DR1niAZxq9" role="1tU5fm">
               <node concept="3Tqbb2" id="76O06llYwZE" role="3rvQeY" />
               <node concept="3uibUv" id="1hLOda5bAzr" role="3rvSg0">
-                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
               </node>
             </node>
             <node concept="2ShNRf" id="1DR1niAZCqj" role="33vP2m">
               <node concept="3rGOSV" id="1DR1niAZCpd" role="2ShVmc">
                 <node concept="3uibUv" id="1hLOda5bB9A" role="3rHtpV">
-                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                 </node>
                 <node concept="3Tqbb2" id="76O06llYxjZ" role="3rHrn6" />
               </node>
@@ -2772,11 +2772,11 @@
               <node concept="3cpWsn" id="1hLOda5bd8Q" role="3cpWs9">
                 <property role="TrG5h" value="processor" />
                 <node concept="3uibUv" id="1hLOda5bR5s" role="1tU5fm">
-                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                  <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                 </node>
                 <node concept="2ShNRf" id="1hLOda5bd8R" role="33vP2m">
                   <node concept="1pGfFk" id="1hLOda5bd8S" role="2ShVmc">
-                    <ref role="37wK5l" node="5sZ4VO_ZqCx" resolve="MoveNodesDefault.CopyingNodeProcessor" />
+                    <ref role="37wK5l" node="5sZ4VO_ZqCx" resolve="MoveNodesActionBase.NodeCreatingProcessor" />
                     <node concept="2OqwBi" id="1hLOda5bd8T" role="37wK5m">
                       <node concept="2GrUjf" id="1hLOda5bd8U" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1DR1niAZylJ" resolve="nodesToMove" />
@@ -2837,7 +2837,7 @@
               <ref role="3cqZAo" node="1DR1niAZxqf" resolve="moveMap" />
             </node>
             <node concept="37vLTw" id="4TDY5SFaxWH" role="37wK5m">
-              <ref role="3cqZAo" node="1DR1niAZuH7" resolve="callBack" />
+              <ref role="3cqZAo" node="1DR1niAZuH7" resolve="initRefactoringSession" />
             </node>
           </node>
         </node>
@@ -3045,13 +3045,13 @@
                         <node concept="3Tqbb2" id="5sZ4VOA1XdY" role="_ZDj9" />
                       </node>
                       <node concept="3uibUv" id="1hLOda5bKhU" role="3rvQeY">
-                        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                       </node>
                     </node>
                     <node concept="2ShNRf" id="5sZ4VOA1YHw" role="33vP2m">
                       <node concept="3rGOSV" id="5sZ4VOA1Yzs" role="2ShVmc">
                         <node concept="3uibUv" id="1hLOda5bLnI" role="3rHrn6">
-                          <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                          <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                         </node>
                         <node concept="_YKpA" id="5sZ4VOA1Yzu" role="3rHtpV">
                           <node concept="3Tqbb2" id="5sZ4VOA1Yzv" role="_ZDj9" />
@@ -3072,7 +3072,7 @@
                             <node concept="3cpWsn" id="5sZ4VOA1ZfK" role="3cpWs9">
                               <property role="TrG5h" value="processor" />
                               <node concept="3uibUv" id="1hLOda5bJea" role="1tU5fm">
-                                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+                                <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
                               </node>
                               <node concept="2OqwBi" id="76O06llUsa8" role="33vP2m">
                                 <node concept="37vLTw" id="5sZ4VOA1ZfR" role="2Oq$k0">
@@ -3316,7 +3316,7 @@
                     </node>
                     <node concept="2OqwBi" id="44mXFSxi0Al" role="33vP2m">
                       <node concept="2YIFZM" id="44mXFSxf1Ct" role="2Oq$k0">
-                        <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                        <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
                         <ref role="37wK5l" node="5Y9QCNBZQm$" resolve="getCopyMap" />
                         <node concept="37vLTw" id="44mXFSxf3cZ" role="37wK5m">
                           <ref role="3cqZAo" node="76O06llWMrw" resolve="refactoringSession" />
@@ -3389,7 +3389,7 @@
         <node concept="3rvAFt" id="FLkVty_Nev" role="1tU5fm">
           <node concept="3Tqbb2" id="76O06llUAY$" role="3rvQeY" />
           <node concept="3uibUv" id="1hLOda5bClV" role="3rvSg0">
-            <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+            <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
           </node>
         </node>
       </node>
@@ -3477,7 +3477,7 @@
     <node concept="2tJIrI" id="5sZ4VO_YlvL" role="jymVt" />
     <node concept="312cEu" id="5sZ4VO_Ynmh" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="CopyingNodeProcessor" />
+      <property role="TrG5h" value="NodeCreatingProcessor" />
       <node concept="312cEg" id="5sZ4VO_ZC8C" role="jymVt">
         <property role="TrG5h" value="myNodeLocation" />
         <node concept="3Tm6S6" id="5sZ4VO_ZC8D" role="1B3o_S" />
@@ -3636,10 +3636,10 @@
             <node concept="3cpWsn" id="5sZ4VO_YCdW" role="3cpWs9">
               <property role="TrG5h" value="copyMap" />
               <node concept="3uibUv" id="5sZ4VO_YCdS" role="1tU5fm">
-                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
               </node>
               <node concept="2YIFZM" id="5sZ4VO_YCdX" role="33vP2m">
-                <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
                 <ref role="37wK5l" node="5Y9QCNBZQm$" resolve="getCopyMap" />
                 <node concept="37vLTw" id="5sZ4VO_YCdY" role="37wK5m">
                   <ref role="3cqZAo" node="5sZ4VO_Yr93" resolve="refactoringSession" />
@@ -3745,13 +3745,13 @@
       </node>
       <node concept="3Tm1VV" id="5sZ4VO_Ynmi" role="1B3o_S" />
       <node concept="3uibUv" id="1hLOda5buN_" role="EKbjA">
-        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
       </node>
     </node>
     <node concept="2tJIrI" id="1hLOda5cfiA" role="jymVt" />
     <node concept="312cEu" id="1hLOda5chO5" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="MergingNodeProcessor" />
+      <property role="TrG5h" value="ExistingTargetProcessor" />
       <node concept="312cEg" id="1hLOda5chO6" role="jymVt">
         <property role="TrG5h" value="myTarget" />
         <node concept="3Tm6S6" id="1hLOda5chO7" role="1B3o_S" />
@@ -3932,11 +3932,11 @@
             <node concept="3cpWsn" id="1hLOda5chP1" role="3cpWs9">
               <property role="TrG5h" value="copyMap" />
               <node concept="3uibUv" id="1hLOda5chP2" role="1tU5fm">
-                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                <ref role="3uigEE" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
               </node>
               <node concept="2YIFZM" id="1hLOda5chP3" role="33vP2m">
                 <ref role="37wK5l" node="5Y9QCNBZQm$" resolve="getCopyMap" />
-                <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                <ref role="1Pybhc" node="5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
                 <node concept="37vLTw" id="1hLOda5chP4" role="37wK5m">
                   <ref role="3cqZAo" node="1hLOda5chPE" resolve="refactoringSession" />
                 </node>
@@ -4021,14 +4021,14 @@
       </node>
       <node concept="3Tm1VV" id="1hLOda5chPG" role="1B3o_S" />
       <node concept="3uibUv" id="1hLOda5chPH" role="EKbjA">
-        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesDefault.NodeProcessor" />
+        <ref role="3uigEE" node="1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
       </node>
     </node>
     <node concept="2tJIrI" id="1hLOda5cgAF" role="jymVt" />
     <node concept="2tJIrI" id="55uxGWy8qtT" role="jymVt" />
     <node concept="3Tm1VV" id="1F5g4zQqVSS" role="1B3o_S" />
     <node concept="3uibUv" id="1F5g4zQqVTe" role="EKbjA">
-      <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
+      <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
     </node>
   </node>
   <node concept="312cEu" id="792doUmHTRn">
