@@ -25,14 +25,14 @@
     <import index="mu20" ref="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="1fjm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)" />
-    <import index="7jhi" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern(MPS.Core/)" />
-    <import index="dau9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework.instructions(MPS.Core/)" />
-    <import index="8ov6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow(MPS.Core/)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="1fjm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework()" />
+    <import index="7jhi" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern()" />
+    <import index="dau9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework.instructions()" />
+    <import index="8ov6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow()" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language()" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
     <import index="tp42" ref="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
     <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -210,12 +210,16 @@
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
+      <concept id="1219952072943" name="jetbrains.mps.lang.generator.structure.DropRootRule" flags="lg" index="aNPBN">
+        <reference id="1219952338328" name="applicableConcept" index="aOQi4" />
+      </concept>
       <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
         <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="3071639529306477415" name="exports" index="24Zfi7" />
+        <child id="1219952894531" name="dropRootRule" index="aQYdv" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167088157977" name="createRootRule" index="2VS0gm" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
@@ -445,6 +449,9 @@
   <node concept="bUwia" id="7XrupC0L9ZR">
     <property role="TrG5h" value="main" />
     <property role="3$yP7D" value="true" />
+    <node concept="aNPBN" id="7fxZEB1w48A" role="aQYdv">
+      <ref role="aOQi4" to="bj1v:7fxZEB1sFyL" resolve="CustomInstructionsContainer" />
+    </node>
     <node concept="2VPoh5" id="1_Iic4WSosy" role="2VS0gm">
       <ref role="2VPoh2" to="tp42:1_Iic4WSpJF" resolve="DataFlowAspectDescriptorImpl" />
       <node concept="2VP$b9" id="1_Iic4WSp7w" role="2VPoh3">
@@ -1302,31 +1309,6 @@
     </node>
     <node concept="312cEu" id="7XrupC0LiJG" role="jymVt">
       <property role="TrG5h" value="Analyzer" />
-      <node concept="3uibUv" id="7UkgJtnqbqW" role="1zkMxy">
-        <ref role="3uigEE" to="1fjm:~DataFlowAnalyzerBase" resolve="DataFlowAnalyzerBase" />
-        <node concept="3uibUv" id="6EBM_lhyQkC" role="11_B2D">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          <node concept="29HgVG" id="6EBM_lhyQkD" role="lGtFl">
-            <node concept="3NFfHV" id="6EBM_lhyQkE" role="3NFExx">
-              <node concept="3clFbS" id="6EBM_lhyQkF" role="2VODD2">
-                <node concept="3clFbF" id="6EBM_lhyQkG" role="3cqZAp">
-                  <node concept="2OqwBi" id="6EBM_lhyQkH" role="3clFbG">
-                    <node concept="2OqwBi" id="6EBM_lhyQkI" role="2Oq$k0">
-                      <node concept="30H73N" id="6EBM_lhyQkJ" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="6EBM_lhyQkK" role="2OqNvi">
-                        <ref role="3Tt5mk" to="bj1v:7XrupC0LhIV" />
-                      </node>
-                    </node>
-                    <node concept="2qgKlT" id="6EBM_lhyQkL" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:hEwIzNC" resolve="getBoxedType" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="312cEg" id="3tEjlbSLlXu" role="jymVt">
         <property role="34CwA1" value="false" />
         <property role="eg7rD" value="false" />
@@ -1794,6 +1776,31 @@
         </node>
         <node concept="2AHcQZ" id="5MCOPSq4K3q" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7UkgJtnqbqW" role="1zkMxy">
+        <ref role="3uigEE" to="1fjm:~DataFlowAnalyzerBase" resolve="DataFlowAnalyzerBase" />
+        <node concept="3uibUv" id="6EBM_lhyQkC" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          <node concept="29HgVG" id="6EBM_lhyQkD" role="lGtFl">
+            <node concept="3NFfHV" id="6EBM_lhyQkE" role="3NFExx">
+              <node concept="3clFbS" id="6EBM_lhyQkF" role="2VODD2">
+                <node concept="3clFbF" id="6EBM_lhyQkG" role="3cqZAp">
+                  <node concept="2OqwBi" id="6EBM_lhyQkH" role="3clFbG">
+                    <node concept="2OqwBi" id="6EBM_lhyQkI" role="2Oq$k0">
+                      <node concept="30H73N" id="6EBM_lhyQkJ" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="6EBM_lhyQkK" role="2OqNvi">
+                        <ref role="3Tt5mk" to="bj1v:7XrupC0LhIV" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="6EBM_lhyQkL" role="2OqNvi">
+                      <ref role="37wK5l" to="tpek:hEwIzNC" resolve="getBoxedType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
