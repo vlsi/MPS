@@ -52,7 +52,10 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     updateFields();
   }
 
-  public /*FIXME: package*/ void updateFields() {
+  // FIXME: check, perhaps is invoked with proper model access already.
+  // for exposed files, this shall happen in exclusive read (so that different threads from readAction do not get different
+  // result e.g. for getName().
+  /*package*/ void updateFields() {
     myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -78,10 +81,12 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     });
   }
 
+  @Nullable
   public SNode getNode() {
     return myNode.resolve(myRepoFiles.getRepository());
   }
 
+  @NotNull
   public SNodeReference getSNodePointer() {
     return myNode;
   }
@@ -98,6 +103,9 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     return myRepoFiles.getFileSystem();
   }
 
+  /**
+   * Pre-evaluated name of the file. This method doesn't require model access.
+   */
   @Override
   @NotNull
   @NonNls
@@ -105,6 +113,10 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     return myName;
   }
 
+  /**
+   * Pre-evaluated user-presentable name of the file, may include extra information to distinguish nodes with the same {@linkplain #getName() name}.
+   * This method doesn't require model access.
+   */
   @Override
   public String getPresentableName() {
     return myPresentationName;
@@ -192,10 +204,12 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     return myNode != null;
   }
 
-  public /*FIXME: package*/ void invalidate() {
+  /*package*/ void invalidate() {
+    myRepoFiles.forgetVirtualFile(myNode);
     myNode = null;
   }
 
+  // XXX what's the contract of the method???
   public boolean hasValidMPSNode() {
     return isValid() && myRepoFiles.hasVirtualFileFor(myNode);
   }

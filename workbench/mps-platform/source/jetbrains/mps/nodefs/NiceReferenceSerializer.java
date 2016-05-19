@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * Provide nice reference presentation for nodes/models/modules using names, be careful - can be not persistent in case of node/model/module changes.
  * Format: {module_name}/{model_name}/{node_presentation}. In case of names ambiguity format becomes name~{id} like DOS fs.
+ *
+ * FIXME works with root nodes only, references to children nodes would never get de-serialized.
  */
 /*package*/ class NiceReferenceSerializer {
   private static final String SEP = "/";
