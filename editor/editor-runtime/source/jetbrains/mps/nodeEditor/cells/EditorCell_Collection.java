@@ -473,16 +473,25 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (editorCell == null) {
       return;
     }
+    detachFromParent(editorCell);
     getEditorCells().add(editorCell);
+  }
+
+  private void detachFromParent(EditorCell editorCell) {
+    if (editorCell.getParent() != null) {
+      editorCell.getParent().removeCell(editorCell);
+    }
   }
 
   @Override
   public void addEditorCellBefore(EditorCell editorCell, EditorCell anchor) {
+    detachFromParent(editorCell);
     getEditorCells().addBefore(editorCell, anchor);
   }
 
   @Override
   public void addEditorCellAfter(EditorCell editorCell, EditorCell anchor) {
+    detachFromParent(editorCell);
     Iterator<EditorCell> iterator = getEditorCells().iterator(anchor, true);
     getEditorCells().addBefore(editorCell, iterator.hasNext() ? iterator.next() : null);
   }
@@ -890,6 +899,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   @Deprecated
   @Override
   public void addEditorCellAt(EditorCell cellToAdd, int index) {
+    detachFromParent(cellToAdd);
     Iterator<EditorCell> iterator = getEditorCells().iterator();
     int i = 0;
     for (; i < index && iterator.hasNext(); i++) {
