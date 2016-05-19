@@ -22,11 +22,11 @@ import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -78,12 +78,13 @@ public class SNodeCutCopyProvider implements CopyProvider, CutProvider {
   }
 
   private void performCopy(final boolean cut) {
-    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
+    SRepository repository = myProject.getRepository();
+    repository.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         List<SNode> nodes = new ArrayList<SNode>();
         for (SNodeReference selectedNode : mySelectedNodes) {
-          SNode node = selectedNode.resolve(MPSModuleRepository.getInstance());
+          SNode node = selectedNode.resolve(repository);
           SNode theParent = null;
           if (node != null) {
             nodes.add(node);

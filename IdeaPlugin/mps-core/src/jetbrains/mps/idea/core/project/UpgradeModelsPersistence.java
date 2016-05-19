@@ -25,10 +25,10 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -49,7 +49,7 @@ public class UpgradeModelsPersistence implements ProjectComponent {
     StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        ProjectHelper.getModelAccess(myProject).executeUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
             for (Module module : ModuleManager.getInstance(myProject).getModules()) {

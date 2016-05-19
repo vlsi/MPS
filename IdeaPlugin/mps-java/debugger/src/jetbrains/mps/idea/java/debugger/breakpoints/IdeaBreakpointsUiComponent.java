@@ -36,11 +36,11 @@ import com.intellij.xdebugger.breakpoints.XBreakpoint;
 import com.intellij.xdebugger.breakpoints.XBreakpointListener;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -91,7 +91,7 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
   protected Set<BreakpointWithHighlighter> getBreakpointsForComponent(@NotNull final EditorComponent component) {
     final Set<BreakpointWithHighlighter> result = new HashSet<BreakpointWithHighlighter>();
     final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints(); //XDebuggerManager.getInstance(myProject).getBreakpointManager()
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
       @Override
       public void run() {
         for (Breakpoint breakpoint : breakpoints) {
@@ -198,7 +198,7 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
       clearAllEditors();
 
       final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
         @Override
         public void run() {
           for (Breakpoint breakpoint : breakpoints) {

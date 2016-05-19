@@ -24,12 +24,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -73,19 +72,19 @@ public class ModelNodeNavigatable implements Navigatable {
    * @return
    */
   public SModel lookupModel() {
-    ModelAccess.assertLegalRead();
+    SRepository repository = ProjectHelper.getProjectRepository(project);
+    assert repository.getModelAccess().canRead();
     SModel model = null;
     if (module != null) {
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-      SModelRepository smrepo = SModelRepository.getInstance();
-      for (SModel smd: smrepo.getModelDescriptors(facet.getSolution())) {
+      for (SModel smd: facet.getSolution().getModels()) {
         if (smd.getName().getLongName().equals(modelName)) {
           model = smd;
         }
       }
     }
     else {
-      model = SModelRepository.getInstance().getModelDescriptor(modelName);
+      model = new ModuleRepositoryFacade(repository).getModelByName(modelName);
     }
     return model;
   }

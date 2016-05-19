@@ -90,6 +90,7 @@ public class ModuleLibrariesUtil {
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
     }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {

@@ -31,8 +31,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;

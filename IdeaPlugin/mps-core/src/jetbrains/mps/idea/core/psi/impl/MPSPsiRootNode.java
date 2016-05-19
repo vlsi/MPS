@@ -37,14 +37,11 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -85,10 +82,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   protected Icon getBaseIcon() {
-    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+    SRepository repository = ProjectHelper.getProjectRepository(getProject());
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        final SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
+        final SNode node = getSNodeReference().resolve(repository);
         if (node == null) return IdeIcons.UNKNOWN_ICON;
         return IconManager.getIconFor(node);
       }

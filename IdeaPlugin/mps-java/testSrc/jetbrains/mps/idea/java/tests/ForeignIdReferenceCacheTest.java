@@ -14,7 +14,7 @@ import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psi.ForeignIdReferenceCache;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -104,7 +104,7 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
         final SReference ref = it.next();
         assertFalse(it.hasNext());
 
-        RuntimeException throwable = ModelAccess.instance().runReadAction(new Computable<RuntimeException>() {
+        RuntimeException throwable = new ModelAccessHelper(ProjectHelper.getModelAccess(project)).runReadAction(new Computable<RuntimeException>() {
           @Override
           public RuntimeException compute() {
             try {

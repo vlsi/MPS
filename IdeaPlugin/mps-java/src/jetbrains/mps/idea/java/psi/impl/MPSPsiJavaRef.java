@@ -22,7 +22,6 @@ import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -63,7 +62,7 @@ public abstract class MPSPsiJavaRef extends MPSPsiRef {
 
   protected SReference getSReference() {
     SNodeReference source = getSource();
-    SNode sourceNode = source.resolve(MPSModuleRepository.getInstance());
+    SNode sourceNode = source.resolve(getProjectRepository());
     return sourceNode.getReference(getRole());
   }
 
@@ -84,7 +83,7 @@ public abstract class MPSPsiJavaRef extends MPSPsiRef {
         @Override
         public void run() {
           SNodeReference source = getSource();
-          SNode sourceNode = source.resolve(MPSModuleRepository.getInstance());
+          SNode sourceNode = source.resolve(getProjectRepository());
           SNodePointer oldNode = new SNodePointer(getModelReference(), getNodeId());
           SNodePointer newNode = JavaForeignIdBuilder.computeNodePtr(element).toSNodeReference();
           SReference newRef = StaticReference.create(getRole(), sourceNode, newNode.getModelReference(), newNode.getNodeId());
@@ -98,7 +97,7 @@ public abstract class MPSPsiJavaRef extends MPSPsiRef {
             ModelImports modelImports = new ModelImports(model);
             modelImports.addModelImport(newTargetModel);
 
-            if (oldNode.getModelReference().resolve(MPSModuleRepository.getInstance()) == null) {
+            if (oldNode.getModelReference().resolve(getProjectRepository()) == null) {
               modelImports.removeModelImport(oldNode.getModelReference());
             }
           }

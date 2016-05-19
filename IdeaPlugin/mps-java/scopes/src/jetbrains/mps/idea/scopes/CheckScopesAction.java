@@ -22,22 +22,22 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassOwner;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.util.InstanceOfCondition;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.InstanceOfCondition;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -59,7 +59,11 @@ public class CheckScopesAction extends AnAction {
     //    List<String> members = ScopeUtils.getMembersFromClass(cl1);
     //    members.size();
 
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    Project project = anActionEvent.getProject();
+    if (project == null) {
+      return;
+    }
+    ProjectHelper.getModelAccess(project).runReadInEDT(new Runnable() {
       @Override
       public void run() {
         long mpsTime = 0, ideaTime = 0;

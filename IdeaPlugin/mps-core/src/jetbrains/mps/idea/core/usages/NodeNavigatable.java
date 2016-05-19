@@ -21,20 +21,15 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public abstract class NodeNavigatable implements Navigatable {
   protected final SNodeReference myNode;
@@ -62,7 +57,7 @@ public abstract class NodeNavigatable implements Navigatable {
 
   @Override
   public void navigate(final boolean focus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    ProjectHelper.getModelAccess(myProject).runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         if (canNavigate()) {

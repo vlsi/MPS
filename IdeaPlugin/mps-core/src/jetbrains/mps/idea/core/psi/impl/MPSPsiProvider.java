@@ -16,8 +16,6 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorDataProvider;
@@ -39,7 +37,6 @@ import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndexExtension;
 import com.intellij.util.indexing.ID;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -48,14 +45,13 @@ import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -118,7 +114,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   public PsiElement getPsi(SNodeReference nodeRef) {
     if (nodeRef == null) return null;
 
-    final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
+    final SNode node = nodeRef.resolve(ProjectHelper.getProjectRepository(myProject));
     if (node == null) return null;
     return getPsi(node);
   }
@@ -155,7 +151,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     MPSPsiModel cached = models.get(modelRef);
     if (cached != null) return cached;
 
-    SModel model = modelRef.resolve(MPSModuleRepository.getInstance());
+    SModel model = modelRef.resolve(ProjectHelper.getProjectRepository(myProject));
 
     // TODO check if the model is valid
 
@@ -372,7 +368,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         MPSPsiModel psiModel = models.get(sNodePointer.getModelReference());
         if (psiModel == null) return null;
 
-        PsiElement psiElement = ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+        PsiElement psiElement = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiElement>() {
           @Override
           public PsiElement compute() {
             return getPsi(sNodePointer);

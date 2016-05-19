@@ -28,17 +28,16 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.SearchScope;
 import com.intellij.psi.search.searches.DirectClassInheritorsSearch.SearchParameters;
 import com.intellij.util.Processor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -72,11 +71,10 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
       if (facet == null) continue;
 
       final Solution facetSolution = facet.getSolution();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
         @Override
         public void run() {
-
-          for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
+          for (SModel model : facetSolution.getModels()) {
             for (SNode root : model.getRootNodes()) {
               for (SNode claz : SNodeOperations.getNodeAncestors(root, MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.Classifier"), true)) {
                 PsiElement psiElem = MPSPsiProvider.getInstance(project).getPsi(claz);

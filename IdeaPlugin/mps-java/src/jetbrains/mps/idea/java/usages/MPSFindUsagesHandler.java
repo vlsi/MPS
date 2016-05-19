@@ -30,17 +30,17 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
@@ -61,16 +61,16 @@ public class MPSFindUsagesHandler extends FindUsagesHandler {
   public boolean processElementUsages(@NotNull final PsiElement element, @NotNull final Processor<UsageInfo> processor, @NotNull final FindUsagesOptions options) {
     final Project project = element.getProject();
     SearchScope scope = options.searchScope;
+    final SRepository repository = ProjectHelper.getProjectRepository(element.getProject());
 
     assert element instanceof MPSPsiNode;
     assert scope instanceof GlobalSearchScope;
 
-    boolean cont = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    boolean cont = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         final SModuleReference langStructureModule = PersistenceFacade.getInstance().createModuleReference("c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)");
         GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(langStructureModule, "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
-        // FIXME MPSModuleRepo --> get SRepo by project
-        SNode node = ((MPSPsiNode) element).getSNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNode node = ((MPSPsiNode) element).getSNodeReference().resolve(repository);
 
         SearchQuery query = new SearchQuery(node, new IdeaSearchScope((GlobalSearchScope) options.searchScope));
         SearchResults<SNode> results = FindUtils.makeProvider(finder).getResults(query, null);

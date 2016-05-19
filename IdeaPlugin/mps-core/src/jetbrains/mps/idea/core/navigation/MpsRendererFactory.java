@@ -20,12 +20,12 @@ import com.intellij.ide.util.ModuleRendererFactory;
 import com.intellij.ide.util.PlatformModuleRendererFactory.PlatformModuleRenderer;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.Icon;

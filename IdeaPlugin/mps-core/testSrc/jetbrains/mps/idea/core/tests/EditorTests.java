@@ -28,7 +28,6 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -36,7 +35,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -169,7 +167,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         @Override
         public void run() {
           final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myModule.getProject());
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          mpsProject.getModelAccess().runWriteAction(new Runnable() {
             @Override
             public void run() {
               new MPSEditorOpener(mpsProject).openNode(myRoot, true, true);

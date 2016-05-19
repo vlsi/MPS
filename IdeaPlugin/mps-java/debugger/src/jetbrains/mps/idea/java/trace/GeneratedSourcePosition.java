@@ -24,24 +24,22 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.textgen.trace.NodeTraceInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Use this class for mapping debugger position (type, file, line number) to
@@ -77,6 +75,7 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public SNodeReference getNodePointer() {
+    // FIXME how to remove ModelAccess here? maybe no need in read action at all?
     return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
@@ -91,7 +90,7 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public PsiFile getPsiFile(final Project project) {
-    SModelReference reference = ModelAccess.instance().runReadAction(new Computable<SModelReference>() {
+    SModelReference reference = new ModelAccessHelper(ProjectHelper.getModelAccess(project)).runReadAction(new Computable<SModelReference>() {
       @Override
       public SModelReference compute() {
         SNode node = getNode();
@@ -120,10 +119,11 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public static PsiFile getPsiFile(final Project project, final SModelReference modelReference, final String generatedFileName) {
-    final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
+    SRepository repository = ProjectHelper.getProjectRepository(project);
+    final String fullPath = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+        SModel modelDescriptor = modelReference.resolve(repository);
         SModule module = modelDescriptor.getModule();
         IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, ((AbstractModule) module).getOutputPath());
         IFile file = defaultOutputDir.getDescendant(generatedFileName);

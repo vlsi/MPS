@@ -38,7 +38,6 @@ import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -100,7 +99,7 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
 
         final SNodeReference mpsTarget = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
         // do we have this node?
-        if (mpsTarget.resolve(MPSModuleRepository.getInstance()) == null) return;
+        if (mpsTarget.resolve(repository) == null) return;
 
         String prefix = nodePtr.getNodeId().toString();
         final String prefixToSearch = (prefix.startsWith(Foreign.ID_PREFIX) ? prefix.substring(1) : prefix);

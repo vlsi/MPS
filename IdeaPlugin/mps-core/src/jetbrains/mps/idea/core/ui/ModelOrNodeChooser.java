@@ -34,19 +34,20 @@ import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation.NodeLocationChild;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation.NodeLocationRoot;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.MPSPsiElementTreeNode;
 import jetbrains.mps.idea.core.projectView.MPSPsiModelTreeNode;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -132,12 +133,13 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
 
   @Override
   public NodeLocation getSelectedObject() {
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
     if ((getSelectedNode() != null) && (getSelectedNode().getUserObject() instanceof MPSPsiElementTreeNode)) {
-      return new NodeLocationChild(((MPSPsiElementTreeNode) (getSelectedNode().getUserObject())).getValue().getSNodeReference().resolve(MPSModuleRepository.getInstance()));
+      return new NodeLocationChild(((MPSPsiElementTreeNode) (getSelectedNode().getUserObject())).getValue().getSNodeReference().resolve(repository));
     } else {
       Set<IFile> models = MPSDataKeys.MODEL_FILES.getData(this);
       if (models != null && models.size() == 1) {
-        return new NodeLocationRoot(SModelFileTracker.getInstance().findModel(models.iterator().next()));
+        return new NodeLocationRoot(SModelFileTracker.getInstance(repository).findModel(models.iterator().next()));
       }
       // we could handle the case when we haven't got a model
       // perhaps, in plugin every directory (under module with MPS facet) should be transparently made into model
