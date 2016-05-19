@@ -22,7 +22,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -31,7 +30,6 @@ import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +50,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -215,14 +212,14 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       }
       final VFSNotifier vfsNotifier = new VFSNotifier(myGlobalRepoFiles); // FIXME use of global repo shall get replaced with actual repo
       vfsNotifier.deleted(visitor.myDeletedFiles);
-      vfsNotifier.renamed(visitor.myRenamedFiles);
+      vfsNotifier.changed(visitor.myChangedFiles);
       vfsNotifier.execute();
     }
   }
 
   private class MyModelEventVisitor extends SModelEventVisitorAdapter {
-    private Collection<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
-    private Collection<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+    Collection<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
+    Collection<MPSNodeVirtualFile> myChangedFiles = new ArrayList<MPSNodeVirtualFile>();
 
     @Override
     public void visitRootEvent(SModelRootEvent event) {
@@ -241,12 +238,10 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     public void visitPropertyEvent(final SModelPropertyEvent event) {
       MPSNodeVirtualFile vf = getVirtualFile(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
       if (event.getNode().getModel() == null || event.getNode().getParent() != null || vf == null) {
+        // deleted or not root node, or no known file
         return;
       }
-      String newName = event.getNode().getPresentation();
-      if (!newName.equals(vf.getName())) {
-        myRenamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, newName));
-      }
+      myChangedFiles.add(vf);
     }
   }
 
@@ -311,25 +306,18 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       updateModificationStamp(filesInModel);
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+      Collection<MPSNodeVirtualFile> changedFiles = new ArrayList<MPSNodeVirtualFile>();
       for (MPSNodeVirtualFile vf : filesInModel) {
         // XXX reconsider vf.getNode() (with SRepository in file construction time), vf.getNode(myRepository) and explicit resolve here
         if (vf.getNode() == null) {
           deletedFiles.add(vf);
         } else {
-          String oldName = vf.getName();
-          // updateFields needs exclusive read in fact. Here we are in model write, and it's ok to change internal state of the file
-          // FIXME to fire beforePropChange, shall not decide about rename here, but in VFSNotifier. Report these as changed and let VFSNotifier decide whether it's rename or not.
-          vf.updateFields();
-          String newName = vf.getName();
-          if (!oldName.equals(newName)) {
-            renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, oldName));
-          }
+          changedFiles.add(vf);
         }
       }
       VFSNotifier vfsNotifier = new VFSNotifier(rvf);
       vfsNotifier.deleted(deletedFiles);
-      vfsNotifier.renamed(renamedFiles);
+      vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
     }
   }
@@ -351,8 +339,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   private class VFSNotifier implements Runnable {
     private final RepositoryVirtualFiles mySource;
     private final Set<MPSNodeVirtualFile> myDeletedFiles = new HashSet<>();
-    // pair of VF, updated, and its old name (prior to rename)
-    private final Set<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new HashSet<>();
+    private final Set<MPSNodeVirtualFile> myChangedFiles = new HashSet<>();
 
     public VFSNotifier(@NotNull RepositoryVirtualFiles source) {
       mySource = source;
@@ -362,8 +349,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       myDeletedFiles.addAll(deletedFiles);
     }
 
-    public synchronized void renamed(Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles) {
-      myRenamedFiles.addAll(renamedFiles);
+    public synchronized void changed(Collection<MPSNodeVirtualFile> changed) {
+      myChangedFiles.addAll(changed);
     }
 
     public void execute() {
@@ -378,12 +365,12 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
         return;
       }
       ArrayList<MPSNodeVirtualFile> deletedFiles;
-      ArrayList<Pair<MPSNodeVirtualFile, String>> renamedFiles;
+      ArrayList<MPSNodeVirtualFile> changedFiles;
       synchronized (this) {
         deletedFiles = new ArrayList<>(myDeletedFiles);
-        renamedFiles = new ArrayList<>(myRenamedFiles);
+        changedFiles = new ArrayList<>(myChangedFiles);
         myDeletedFiles.clear();
-        myRenamedFiles.clear();
+        myChangedFiles.clear();
       }
 
       for (MPSNodeVirtualFile deletedFile : deletedFiles) {
@@ -392,14 +379,19 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
         fireFileDeleted(this, deletedFile, deletedFile.getName(), null);
       }
 
-      for (Pair<MPSNodeVirtualFile, String> renamedFile : renamedFiles) {
-        MPSNodeVirtualFile vf = renamedFile.o1;
-        firePropertyChanged(this, vf, VirtualFile.PROP_NAME, renamedFile.o2, vf.getName());
+      for (MPSNodeVirtualFile changedFile : changedFiles) {
+        String oldName = changedFile.getName();
+        changedFile.updateFields();
+        String newName = changedFile.getName();
+        if (!oldName.equals(newName)) {
+          // XXX this effectively reverts 0ec4b371f9acef4c82b644dfa3a295961b515efc, I wonder what's the reason not to send file rename events?
+          firePropertyChanged(this, changedFile, VirtualFile.PROP_NAME, oldName, newName);
+        }
       }
     }
 
     private boolean hasPendingNotifications() {
-      return !myDeletedFiles.isEmpty() || !myRenamedFiles.isEmpty();
+      return !myDeletedFiles.isEmpty() || !myChangedFiles.isEmpty();
     }
   }
 }
