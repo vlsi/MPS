@@ -1943,14 +1943,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myDisposeListeners.clear();
   }
 
-  @Override
+  /**
+   * Adds a listener to be called when this instance is disposed. It is not necessary to remove a listener when it has been called since the collection of
+   * listeners is cleared during the disposal.
+   *
+   * @param listener the listener to add
+   */
   public void addDisposeListener(@NotNull EditorDisposeListener listener) {
     if (!myDisposeListeners.contains(listener)) {
       myDisposeListeners.add(listener);
     }
   }
 
-  @Override
+  /**
+   * Removes a listener so that it is no longer called when this instance is disposed. It is not necessary to remove a listener when it has been called since
+   * the collection of listeners is cleared during the disposal.
+   *
+   * @param listener the listener to remove
+   */
   public void removeDisposeListener(@NotNull EditorDisposeListener listener) {
     myDisposeListeners.remove(listener);
   }
@@ -3071,6 +3081,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Deprecated
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
+  }
+
+  public interface EditorDisposeListener {
+    void editorWillBeDisposed(EditorComponent component);
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {

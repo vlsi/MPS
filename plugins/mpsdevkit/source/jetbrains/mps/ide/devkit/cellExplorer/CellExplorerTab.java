@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.actions.CloseTabToolbarAction;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -31,8 +32,8 @@ import jetbrains.mps.ide.devkit.cellExplorer.cellsTree.CellsTree;
 import jetbrains.mps.ide.devkit.cellExplorer.detailTree.CellDetailTree;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
+import jetbrains.mps.nodeEditor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -65,7 +66,7 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
     myEditorComponent = editorComponent;
     myEditorActivator = editorActivator;
 
-    myEditorComponent.addDisposeListener(myCloseTabOnEditorDisposeListener);
+    ((jetbrains.mps.nodeEditor.EditorComponent) myEditorComponent).addDisposeListener(myCloseTabOnEditorDisposeListener);
 
     myCellDetailTree = new CellDetailTree();
 
@@ -96,13 +97,13 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
     myComponent.setContent(splitter);
   }
 
-  void showCell(@NotNull EditorCell cell) {
+  public void showCell(@NotNull EditorCell cell) {
     myCellsTree.showCellInTree(cell);
   }
 
   @Override
   public void disposeComponent(JComponent component) {
-    myEditorComponent.removeDisposeListener(myCloseTabOnEditorDisposeListener);
+    ((jetbrains.mps.nodeEditor.EditorComponent) myEditorComponent).removeDisposeListener(myCloseTabOnEditorDisposeListener);
 
     myCellsTree.dispose();
     myCellDetailTree.dispose();
@@ -159,7 +160,7 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
 
   private class CloseTabOnEditorDisposeListener implements EditorDisposeListener {
     @Override
-    public void editorWillBeDisposed(@NotNull EditorComponent component) {
+    public void editorWillBeDisposed(jetbrains.mps.nodeEditor.EditorComponent component) {
       closeTab();
     }
   }

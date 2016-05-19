@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -78,20 +77,6 @@ public interface EditorComponent {
   void dispose();
 
   /**
-   * Adds a listener to be called when this instance is disposed.
-   * @param listener the listener to add
-   */
-  void addDisposeListener(@NotNull EditorDisposeListener listener);
-
-  /**
-   * Removes a listener so that it is no longer called when this instance is disposed. It is not necessary to remove a listener when it has been called since
-   * the collection of listeners is cleared during the disposal.
-   *
-   * @param listener the listener to remove
-   */
-  void removeDisposeListener(@NotNull EditorDisposeListener listener);
-
-  /**
    * @deprecated use methods of {@link #getEditorContext() EditorContext} or a an MPSProject instance obtained elsewhere
    */
   @Deprecated
@@ -115,8 +100,4 @@ public interface EditorComponent {
   Updater getUpdater();
 
   CommandContext getCommandContext();
-
-  interface EditorDisposeListener {
-    void editorWillBeDisposed(@NotNull EditorComponent component);
-  }
 }

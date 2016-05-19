@@ -89,7 +89,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />

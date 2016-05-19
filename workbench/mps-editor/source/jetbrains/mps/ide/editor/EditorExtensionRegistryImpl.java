@@ -18,8 +18,8 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.nodeEditor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.openapi.editor.extensions.EditorExtension;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -101,7 +101,7 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
 
     myEditorExtensions.put(editorComponent, applicableExtensions);
     installExtensions(editorComponent, applicableExtensions);
-    editorComponent.addDisposeListener(myUnextendOnEditorDisposeListener);
+    ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).addDisposeListener(myUnextendOnEditorDisposeListener);
   }
 
   private Collection<EditorExtension> getApplicableExtensions(EditorComponent editorComponent) {
@@ -128,7 +128,7 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
 
   private class UnextendOnEditorDisposeListener implements EditorDisposeListener {
     @Override
-    public void editorWillBeDisposed(@NotNull EditorComponent component) {
+    public void editorWillBeDisposed(@NotNull jetbrains.mps.nodeEditor.EditorComponent component) {
       ThreadUtils.assertEDT();
       Collection<EditorExtension> extensions = myEditorExtensions.remove(component);
       if (extensions == null) {

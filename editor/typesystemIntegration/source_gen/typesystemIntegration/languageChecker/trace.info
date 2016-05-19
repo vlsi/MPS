@@ -417,8 +417,8 @@
       <node id="7390982340086719752" at="203,64,204,16" concept="10" />
       <node id="1676458755710096483" at="211,82,212,109" concept="10" />
       <node id="1676458755710166742" at="217,160,218,86" concept="17" />
-      <node id="7425893170000357349" at="220,202,221,141" concept="9" />
-      <node id="7425893170000770338" at="221,141,222,44" concept="9" />
+      <node id="7425893170000357349" at="220,202,221,91" concept="9" />
+      <node id="7425893170000770338" at="221,91,222,44" concept="9" />
       <node id="7425893170001627903" at="222,44,223,76" concept="9" />
       <node id="256199307250263514" at="223,76,224,0" concept="12" />
       <node id="2855655749838906505" at="224,0,225,55" concept="4" />
@@ -535,7 +535,7 @@
       <node id="635533361882789144" at="456,0,458,0" concept="8" trace="setIsError#(Z)V" />
       <node id="6186836323606650485" at="118,33,121,9" concept="7" />
       <node id="7425893169999919108" at="160,0,163,0" concept="8" trace="visit#(Ljetbrains/mps/checkers/LanguageErrorsComponent;)V" />
-      <node id="7425893169999947448" at="165,0,168,0" concept="8" trace="visit#(Ljetbrains/mps/openapi/editor/EditorComponent;)V" />
+      <node id="7425893169999947448" at="165,0,168,0" concept="8" trace="visit#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="7425893170000013792" at="171,0,174,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="7390982340086719613" at="179,0,182,0" concept="8" trace="removeModelListener#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="7390982340086719635" at="182,0,185,0" concept="8" trace="addModelListener#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
@@ -552,7 +552,7 @@
       <node id="7425893170002936812" at="331,76,334,9" concept="7" />
       <node id="7902975013650990557" at="338,0,341,5" concept="7" />
       <node id="7902975013651340750" at="366,71,369,5" concept="7" />
-      <node id="256199307249498431" at="373,88,376,5" concept="16" />
+      <node id="256199307249498431" at="373,63,376,5" concept="16" />
       <node id="1247676979971715584" at="388,54,391,11" concept="7" />
       <node id="6268689888338069369" at="404,98,407,7" concept="7" />
       <node id="8941604747782182057" at="423,45,426,9" concept="7" />
@@ -616,7 +616,7 @@
       <node id="8941604747782182047" at="420,47,435,7" concept="6" />
       <node id="7425893170003960273" at="290,0,306,5" concept="7" />
       <node id="5680675782393210360" at="345,66,362,9" concept="4" />
-      <node id="7390982340086719485" at="89,0,107,0" concept="8" trace="editorWillBeDisposed#(Ljetbrains/mps/openapi/editor/EditorComponent;)V" />
+      <node id="7390982340086719485" at="89,0,107,0" concept="8" trace="editorWillBeDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="8941604747782180590" at="419,0,437,0" concept="8" trace="findMissing#(Ljetbrains/mps/checkers/LanguageErrorsComponent;Ljava/lang/Iterable;Ljava/util/Set;Ljava/util/Set;)V" />
       <node id="4503895560555317943" at="157,75,176,5" concept="16" />
       <node id="7425893170004618911" at="344,33,363,5" concept="7" />
@@ -700,7 +700,7 @@
       <scope id="7425893170001217508" at="238,82,241,20" />
       <scope id="7425893170000865469" at="269,44,272,34" />
       <scope id="7425893170002936746" at="300,17,303,9" />
-      <scope id="7390982340086720029" at="373,88,376,5" />
+      <scope id="7390982340086720029" at="373,63,376,5" />
       <scope id="635533361882789138" at="453,0,456,0" />
       <scope id="635533361882789152" at="458,0,461,0" />
       <scope id="1120958784824379862" at="112,0,116,0">
@@ -889,7 +889,7 @@
       <unit id="7425893169999919108" at="159,100,163,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$4" />
       <unit id="7425893169999947448" at="164,98,168,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$5" />
       <unit id="7425893170000013792" at="170,99,174,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$6" />
-      <unit id="1676458755710096474" at="209,192,214,5" name="typesystemIntegration.languageChecker.LanguageEditorChecker$7" />
+      <unit id="1676458755710096474" at="209,167,214,5" name="typesystemIntegration.languageChecker.LanguageEditorChecker$7" />
       <unit id="256199307248870568" at="276,60,283,9" name="typesystemIntegration.languageChecker.LanguageEditorChecker$8" />
       <unit id="1247676979971715582" at="387,50,395,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />
       <unit id="635533361882801153" at="442,19,451,9" name="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />

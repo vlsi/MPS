@@ -8,7 +8,7 @@ import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
-import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -206,7 +206,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   @Override
   protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable, boolean applyQuickFixes) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(((jetbrains.mps.nodeEditor.EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(TypeCheckingContext typeCheckingContext) {
         return doCreateMessages(node, list, wasCheckedOnce, editorContext, typeCheckingContext, cancellable);
@@ -218,7 +218,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     throw new UnsupportedOperationException("old createMessages() API not supported");
   }
   private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
-    jetbrains.mps.nodeEditor.EditorComponent editorComponent = (jetbrains.mps.nodeEditor.EditorComponent) editorContext.getEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
     boolean inspector = editorComponent instanceof InspectorEditorComponent;
 
@@ -370,7 +370,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return EditorSettings.getInstance().isAutoQuickFix() || myForceRunQuickFixes;
   }
   @Override
-  protected void clear(SNode node, jetbrains.mps.nodeEditor.EditorComponent component) {
+  protected void clear(SNode node, EditorComponent component) {
     synchronized (myMapsLock) {
       MapSequence.fromMap(myEditorComponentToErrorMap).get(component).clear();
     }
