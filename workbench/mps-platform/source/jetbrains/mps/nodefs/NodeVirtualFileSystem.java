@@ -47,8 +47,10 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -62,7 +64,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
     SRepository myRepository = coreComponents.getModuleRepository();
     myGlobalRepoFiles = new RepositoryVirtualFiles(this, myRepository);
-    myRepositoryListener = new MyRepositoryListener();
+    myRepositoryListener = new MyRepositoryListener(myRepository);
   }
 
   /*
@@ -74,26 +76,38 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   @ToRemove(version = 3.4)
   private final RepositoryVirtualFiles myGlobalRepoFiles;
   // I don't expect this collection to grow significantly, hence just List
-  private final List<RepositoryVirtualFiles> myPerRepositoryFiles = new CopyOnWriteArrayList<>();
+  private final List<RepositoryVirtualFiles> myPerRepositoryFiles = new ArrayList<>();
+  private final Map<RepositoryVirtualFiles, MyRepositoryListener> myFiles2ListenerMap = new HashMap<>();
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private final SRepositoryContentAdapter myRepositoryListener;
   private boolean myDisposed = false;
 
-  synchronized void register(@NotNull RepositoryVirtualFiles repoFiles) {
-    // assert not more than 1 file container per repository
-    RepositoryVirtualFiles existing = findForRepository(repoFiles.getRepository());
-    if (existing != null) {
-      throw new IllegalArgumentException("Attempt to register another VirtualFile container for the same repository");
+  void register(@NotNull RepositoryVirtualFiles repoFiles) {
+    MyRepositoryListener listener;
+    synchronized (this) {
+      // assert not more than 1 file container per repository
+      RepositoryVirtualFiles existing = findForRepository(repoFiles.getRepository());
+      if (existing != null) {
+        throw new IllegalArgumentException("Attempt to register another VirtualFile container for the same repository");
+      }
+      // sort of stack, most recent first. just for fun, no hidden assumptions.
+      myPerRepositoryFiles.add(0, repoFiles);
+      listener = new MyRepositoryListener(repoFiles.getRepository());
+      myFiles2ListenerMap.put(repoFiles, listener);
     }
-    // sort of stack, most recent first. just for fun, no hidden assumptions.
-    myPerRepositoryFiles.add(0, repoFiles);
-    new RepoListenerRegistrar(repoFiles.getRepository(), myRepositoryListener).attach();
+    new RepoListenerRegistrar(repoFiles.getRepository(), listener).attach();
   }
 
-  synchronized void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
-    new RepoListenerRegistrar(repoFiles.getRepository(), myRepositoryListener).detach();
-    myPerRepositoryFiles.remove(repoFiles);
+  void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
+    MyRepositoryListener listener;
+    synchronized (this) {
+      myPerRepositoryFiles.remove(repoFiles);
+      listener = myFiles2ListenerMap.remove(repoFiles);
+    }
+    if (listener != null) {
+      new RepoListenerRegistrar(repoFiles.getRepository(), listener).detach();
+    }
   }
 
   public MPSNodeVirtualFile getFileFor(@NotNull SRepository repository, @NotNull final SNode node) {
@@ -172,7 +186,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
 
   // FIXME there's single use, and dubious use-case, need refactor (@see NodeIconUpdater)?
   public boolean hasVirtualFileFor(@NotNull SRepository repo, SNodeReference nodePointer) {
-    return myGlobalRepoFiles.hasVirtualFileFor(nodePointer);
+    final RepositoryVirtualFiles rvf = findForRepository(repo);
+    return rvf != null ? rvf.hasVirtualFileFor(nodePointer) : myGlobalRepoFiles.hasVirtualFileFor(nodePointer);
   }
 
   @Nullable
@@ -237,7 +252,16 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
 
   private class MyRepositoryListener extends SRepositoryContentAdapter {
 
-    public MyRepositoryListener() {
+    private final SRepository myRepository;
+
+    /**
+     * FIXME the only reason we don't use single listener instance (we can obtain proper SRepository from the change event's model/node)
+     * FIXME is that our project repository implementation is not capable of event sending, all events come from global repository.
+     *       Thus, it would be impossible to find proper RepositoryVirtualFiles instance. Shall fix ProjectRepository and its base impl
+     *       to send events on its own.
+     */
+    public MyRepositoryListener(SRepository repository) {
+      myRepository = repository;
     }
 
     @Override
@@ -261,8 +285,9 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       if (m.getRepository() == null) {
         return null;
       }
-      // FIXME won't work as all out models belong to same global repository, while RVF is per project's repository (another instance, !=)
-      return findForRepository(m.getRepository());
+      // FIXME use of a repository this listener has been associated with to work around the fact the only repository that sends
+      // events now is the global one.
+      return findForRepository(myRepository);
     }
 
     private void forget(SModel modelDescriptor) {
