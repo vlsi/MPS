@@ -6,11 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -35,16 +35,16 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE))))) {
+    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof Generator)) {
+      return false;
+    }
+    if (SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)) == null || !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE))))) {
       return false;
     }
     if ((SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)) == null)) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
-      return false;
-    }
-    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof Generator)) {
       return false;
     }
     return true;

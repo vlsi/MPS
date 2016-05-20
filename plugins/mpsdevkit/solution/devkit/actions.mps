@@ -5204,17 +5204,53 @@
     </node>
     <node concept="2ScWuX" id="25sHNDqAn9G" role="tmbBb">
       <node concept="3clFbS" id="25sHNDqAn9H" role="2VODD2">
+        <node concept="3clFbJ" id="25sHNDqAnag" role="3cqZAp">
+          <node concept="3clFbS" id="25sHNDqAnah" role="3clFbx">
+            <node concept="3cpWs6" id="25sHNDqAnai" role="3cqZAp">
+              <node concept="3clFbT" id="25sHNDqAnaj" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="25sHNDqAnak" role="3clFbw">
+            <node concept="2ZW3vV" id="25sHNDqAnal" role="3fr31v">
+              <node concept="3uibUv" id="25sHNDqAnam" role="2ZW6by">
+                <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+              </node>
+              <node concept="2OqwBi" id="25sHNDqAnan" role="2ZW6bz">
+                <node concept="2WthIp" id="25sHNDqAnao" role="2Oq$k0" />
+                <node concept="1DTwFV" id="25sHNDqAnap" role="2OqNvi">
+                  <ref role="2WH_rO" node="25sHNDqAnat" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="25sHNDqAn9I" role="3cqZAp">
-          <node concept="3fqX7Q" id="25sHNDqAn9J" role="3clFbw">
-            <node concept="2YIFZM" id="25sHNDqAn9K" role="3fr31v">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="2OqwBi" id="25sHNDqAn9L" role="37wK5m">
-                <node concept="I4A8Y" id="25sHNDqAn9P" role="2OqNvi" />
-                <node concept="2OqwBi" id="2Ex1te_vQDZ" role="2Oq$k0">
-                  <node concept="2WthIp" id="2Ex1te_vQE0" role="2Oq$k0" />
-                  <node concept="3gHZIF" id="2Ex1te_vQE1" role="2OqNvi">
+          <node concept="22lmx$" id="fqe14dJb5u" role="3clFbw">
+            <node concept="3clFbC" id="fqe14dJa_W" role="3uHU7B">
+              <node concept="10Nm6u" id="fqe14dJaQ7" role="3uHU7w" />
+              <node concept="2OqwBi" id="fqe14dIKiT" role="3uHU7B">
+                <node concept="I4A8Y" id="fqe14dIKiU" role="2OqNvi" />
+                <node concept="2OqwBi" id="fqe14dIKiV" role="2Oq$k0">
+                  <node concept="2WthIp" id="fqe14dIKiW" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="fqe14dIKiX" role="2OqNvi">
                     <ref role="2WH_rO" node="25sHNDqAnau" resolve="node" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="25sHNDqAn9J" role="3uHU7w">
+              <node concept="2YIFZM" id="25sHNDqAn9K" role="3fr31v">
+                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+                <node concept="2OqwBi" id="25sHNDqAn9L" role="37wK5m">
+                  <node concept="I4A8Y" id="25sHNDqAn9P" role="2OqNvi" />
+                  <node concept="2OqwBi" id="2Ex1te_vQDZ" role="2Oq$k0">
+                    <node concept="2WthIp" id="2Ex1te_vQE0" role="2Oq$k0" />
+                    <node concept="3gHZIF" id="2Ex1te_vQE1" role="2OqNvi">
+                      <ref role="2WH_rO" node="25sHNDqAnau" resolve="node" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5270,28 +5306,6 @@
             <node concept="1mIQ4w" id="25sHNDqAnae" role="2OqNvi">
               <node concept="chp4Y" id="25sHNDqAnaf" role="cj9EA">
                 <ref role="cht4Q" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="25sHNDqAnag" role="3cqZAp">
-          <node concept="3clFbS" id="25sHNDqAnah" role="3clFbx">
-            <node concept="3cpWs6" id="25sHNDqAnai" role="3cqZAp">
-              <node concept="3clFbT" id="25sHNDqAnaj" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="25sHNDqAnak" role="3clFbw">
-            <node concept="2ZW3vV" id="25sHNDqAnal" role="3fr31v">
-              <node concept="3uibUv" id="25sHNDqAnam" role="2ZW6by">
-                <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
-              </node>
-              <node concept="2OqwBi" id="25sHNDqAnan" role="2ZW6bz">
-                <node concept="2WthIp" id="25sHNDqAnao" role="2Oq$k0" />
-                <node concept="1DTwFV" id="25sHNDqAnap" role="2OqNvi">
-                  <ref role="2WH_rO" node="25sHNDqAnat" resolve="module" />
-                </node>
               </node>
             </node>
           </node>
