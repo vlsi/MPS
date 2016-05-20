@@ -32,7 +32,8 @@ import java.util.List;
  * Tracks changes in a repository within boundaries of a command, and dispatch them further to listeners.
  * Replacement for <code>jetbrains.mps.smodel.GlobalSModelEventsManager</code>, in particular <code>#addGlobalCommandListener</code> and {@link SModelCommandListener}
  *
- * XXX
+ * RepositoryChangeTracker may come from a dedicated project component (to share it unless there's
+ * mechanism to accomplish the same through SRepository/MPSProject. Although why not Project.getComponent?)
  *
  * @author Artem Tikhomirov
  */

@@ -176,12 +176,6 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     return null;
   }
 
-  // FIXME there's single use, and dubious use-case, need refactor (@see NodeIconUpdater)?
-  public boolean hasVirtualFileFor(@NotNull SRepository repo, SNodeReference nodePointer) {
-    final RepositoryVirtualFiles rvf = findForRepository(repo);
-    return rvf != null ? rvf.hasVirtualFileFor(nodePointer) : myGlobalRepoFiles.hasVirtualFileFor(nodePointer);
-  }
-
   /*package*/ void updateModificationStamp(Collection<MPSNodeVirtualFile> files) {
     // identical timestamp for all roots touched simultaneously
     final long vfsStamp = LocalTimeCounter.currentTime();
