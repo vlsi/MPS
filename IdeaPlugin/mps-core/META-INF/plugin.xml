@@ -113,11 +113,6 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
-    <!--
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.project.stubs.SdkClassesImporter</implementation-class>
-    </component>
-    -->
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
