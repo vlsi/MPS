@@ -8470,7 +8470,7 @@
           <node concept="3cpWs3" id="1uEHu$WbAUF" role="3clFbG">
             <node concept="3cpWs3" id="1uEHu$WbAUG" role="3uHU7B">
               <node concept="Xl_RD" id="1uEHu$WbAUH" role="3uHU7B">
-                <property role="Xl_RC" value="Make" />
+                <property role="Xl_RC" value="Make Class" />
               </node>
               <node concept="1eOMI4" id="1uEHu$WbAUI" role="3uHU7w">
                 <node concept="3K4zz7" id="1uEHu$WbAUJ" role="1eOMHV">
