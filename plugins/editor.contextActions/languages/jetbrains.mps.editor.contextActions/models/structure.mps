@@ -68,8 +68,8 @@
   <node concept="1TIwiD" id="7L5lpRJILQC">
     <property role="EcuMT" value="8954657570916343208" />
     <property role="3GE5qa" value="TransformationMenu.Locations" />
-    <property role="TrG5h" value="TransformationLocation_Sidebar" />
-    <property role="34LRSv" value="sidebar" />
+    <property role="TrG5h" value="TransformationLocation_ContextActionsTool" />
+    <property role="34LRSv" value="context actions tool" />
     <property role="R4oN_" value="context actions tool window" />
     <ref role="1TJDcQ" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
   </node>
