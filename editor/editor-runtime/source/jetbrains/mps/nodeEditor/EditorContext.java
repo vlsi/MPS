@@ -18,15 +18,14 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.icons.CachingIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
-import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
@@ -34,7 +33,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
@@ -93,10 +91,14 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public boolean isEditable() {
     SNode node = myNodeEditorComponent.getRootCell().getSNode();
-    if (node == null) return false;
+    if (node == null) {
+      return false;
+    }
 
     SModel model = node.getModel();
-    if (!(model instanceof EditableSModel)) return false;
+    if (!(model instanceof EditableSModel)) {
+      return false;
+    }
 
     return !model.isReadOnly();
   }
@@ -138,26 +140,30 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public IOperationContext getOperationContext() {
     Project project = ProjectHelper.getProject(myRepository);
-    if (project == null) return new GlobalOperationContext() {
-      @Override
-      public <T> T getComponent(Class<T> clazz) {
-        if (EditorManager.class == clazz) {
-          return (T) getEditorManager();
+    if (project == null) {
+      return new GlobalOperationContext() {
+        @Override
+        public <T> T getComponent(Class<T> clazz) {
+          if (EditorManager.class == clazz) {
+            return (T) getEditorManager();
+          }
+          return super.getComponent(clazz);
         }
-        return super.getComponent(clazz);
-      }
-    };
+      };
+    }
 
     SModule module = myModel == null ? null : myModel.getModule();
-    if (module == null) return new ProjectOperationContext(project) {
-      @Override
-      public <T> T getComponent(@NotNull Class<T> clazz) {
-        if (EditorManager.class == clazz) {
-          return (T) getEditorManager();
+    if (module == null) {
+      return new ProjectOperationContext(project) {
+        @Override
+        public <T> T getComponent(@NotNull Class<T> clazz) {
+          if (EditorManager.class == clazz) {
+            return (T) getEditorManager();
+          }
+          return super.getComponent(clazz);
         }
-        return super.getComponent(clazz);
-      }
-    };
+      };
+    }
 
     return new ModuleContext(module, project) {
       @Override
@@ -168,22 +174,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         return super.getComponent(clazz);
       }
     };
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().updateRootCell()
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((UpdaterImpl) getEditorComponent().getUpdater()).updateRootCell(node, events);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().updateRootCell()
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((UpdaterImpl) getEditorComponent().getUpdater()).updateRootCell(node, events);
   }
 
   /**
@@ -264,44 +254,32 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
     EditorCell cell = getNodeEditorComponent().findNodeCell(node);
     if (cell != null) {
-      getNodeEditorComponent().changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
+      getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
     }
   }
 
   @Override
   public void selectWRTFocusPolicy(EditorCell editorCell) {
-    getNodeEditorComponent().changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
+    getNodeEditorComponent().changeSelectionWRTFocusPolicy(editorCell);
   }
 
   @Override
   public void openInspector() {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
-          @Override
-          public void run() {
-            // There's similar code in NodeEditorComponent.getInspectorTool, is possible to merge uses?
-            final InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
-            if (inspector != null) {
-              inspector.openTool(true);
-            }
-          }
-        });
+    SwingUtilities.invokeLater(() -> IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(() -> {
+      final InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
+      if (inspector != null) {
+        inspector.openTool(true);
       }
-    });
+    }));
   }
 
   @Override
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       final Memento memento = (Memento) o;
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myNodeEditorComponent.relayout();
-          memento.restore(myNodeEditorComponent);
-        }
+      ModelAccess.instance().runReadAction(() -> {
+        myNodeEditorComponent.relayout();
+        memento.restore(myNodeEditorComponent);
       });
 
       myNodeEditorComponent.getUpdater().flushModelEvents();
@@ -313,18 +291,17 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public EditorCell getContextCell() {
-    if (myContextCell == null) return getNodeEditorComponent().getSelectedCell();
+    if (myContextCell == null) {
+      return getNodeEditorComponent().getSelectedCell();
+    }
     return myContextCell;
   }
 
   @Override
   public void runWithContextCell(EditorCell contextCell, final Runnable r) {
-    runWithContextCell(contextCell, new Computable<Object>() {
-      @Override
-      public Object compute() {
-        r.run();
-        return null;
-      }
+    runWithContextCell(contextCell, () -> {
+      r.run();
+      return null;
     });
   }
 

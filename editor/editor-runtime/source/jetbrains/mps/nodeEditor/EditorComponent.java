@@ -320,7 +320,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private JComponent myContainer;
 
   protected EditorCell myRootCell;
-  private boolean myCellSwapInProgress;
   private int myShiftX = 15;
   private int myShiftY = 10;
 
@@ -1630,30 +1629,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void setRootCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell rootCell) {
-    boolean cellSwapInProgress = myCellSwapInProgress;
-    try {
-      myCellSwapInProgress = true;
-      Object memento = getEditorContext().createMemento();
-      if (getComponents().length > 0) {
-        removeAll();
-      }
-      ((EditorCell_Basic) myRootCell).onRemove();
-
-      myRootCell = (EditorCell) rootCell;
-
-      ((EditorCell_Basic) myRootCell).onAdd();
-      for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
-        add(component.getComponent());
-      }
-      for (AdditionalPainter painter : getAdditionalPainters()) {
-        painter.onUpdate(this);
-      }
-
-      getEditorContext().setMemento(memento);
-    } finally {
-      myCellSwapInProgress = cellSwapInProgress;
+    if (getComponents().length > 0) {
+      removeAll();
     }
-    revalidate();
+    ((EditorCell_Basic) myRootCell).onRemove();
+
+    myRootCell = (EditorCell) rootCell;
+
+    ((EditorCell_Basic) myRootCell).onAdd();
+    for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
+      add(component.getComponent());
+    }
+    for (AdditionalPainter painter : getAdditionalPainters()) {
+      painter.onUpdate(this);
+    }
   }
 
   @Override
@@ -2899,10 +2888,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
     return new DefaultContextAssistantManager(this, repository);
-  }
-
-  boolean isCellSwapInProgress() {
-    return myCellSwapInProgress;
   }
 
   @Override

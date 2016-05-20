@@ -26,10 +26,8 @@ import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -60,22 +58,20 @@ public class UpdaterImpl implements Updater, CommandContext {
   private final EditorComponent myEditorComponent;
   private UpdateSessionImpl myUpdateSession;
   private final UpdaterModelListenersController myModelListenersController;
-  private List<UpdaterListener> myListeners = new ArrayList<UpdaterListener>();
+  private List<UpdaterListener> myListeners = new ArrayList<>();
 
-  private Map<SNode, WeakReference<EditorCell>> myBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
-  private Map<EditorCell, Set<SNode>> myRelatedNodes = new WeakHashMap<EditorCell, Set<SNode>>();
-  private Map<EditorCell, Set<SNodeReference>> myRelatedRefTargets = new WeakHashMap<EditorCell, Set<SNodeReference>>();
-  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
-  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
-  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
+  private Map<SNode, WeakReference<EditorCell>> myBigCellsMap = new WeakHashMap<>();
+  private Map<EditorCell, Set<SNode>> myRelatedNodes = new WeakHashMap<>();
+  private Map<EditorCell, Set<SNodeReference>> myRelatedRefTargets = new WeakHashMap<>();
+  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells = new HashMap<>();
+  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells = new HashMap<>();
+  private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells = new HashMap<>();
   private boolean myDisposed;
   private int myCommandLevel = 0;
   private String[] myInitialHints;
-  private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
+  private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<>();
   private UpdateInfoIndex myUpdateInfoIndex;
+  private boolean myInProgress;
 
   public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -85,14 +81,16 @@ public class UpdaterImpl implements Updater, CommandContext {
   @Override
   public void update() {
     assert !myDisposed;
+    boolean wasInProgress = fireEditorUpdateStarted();
     doUpdate(null);
     myModelListenersController.clearCollectedEvents();
-    fireEditorUpdated();
+    fireEditorUpdated(wasInProgress);
   }
 
   void update(List<SModelEvent> events) {
+    boolean wasInProgress = fireEditorUpdateStarted();
     doUpdate(events);
-    fireEditorUpdated();
+    fireEditorUpdated(wasInProgress);
   }
 
   private void doUpdate(List<SModelEvent> events) {
@@ -105,38 +103,30 @@ public class UpdaterImpl implements Updater, CommandContext {
     getEditorContext().getRepository().getModelAccess().checkReadAccess();
 
     SNode editedNode = myEditorComponent.getEditedNode();
-    EditorCell newRootCell;
     if (editedNode == null || editedNode.getModel() == null) {
-      newRootCell = myEditorComponent.createEmptyCell();
+      myEditorComponent.setRootCell(myEditorComponent.createEmptyCell());
     } else {
-      newRootCell = updateRootCell(editedNode, events);
+      Object memento = getEditorContext().createMemento();
+      myEditorComponent.setRootCell(updateRootCell(editedNode, events));
+      getEditorContext().setMemento(memento);
     }
-    myEditorComponent.setRootCell(newRootCell);
   }
 
-  /**
-   * This method will be private after MPS 3.2
-   *
-   * @deprecated
-   */
-  @Deprecated
-  public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
+  private EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
     assert !myDisposed;
     Project project = ProjectHelper.getProject(getEditorContext().getRepository());
     assert
         project == null || !project.isDisposed() :
         "Update was executed for the editor associated with disposed project: " + project + ", editor: " + getEditorComponent() + ", node: " +
             getEditorComponent().getEditedNode();
+
+    assert myUpdateSession == null;
     myUpdateSession = createUpdateSession(node, events);
     EditorCell rootCell = null;
     try {
+
       Pair<EditorCell, UpdateInfoIndex> result =
-          TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, new Computable<Pair<EditorCell, UpdateInfoIndex>>() {
-            @Override
-            public Pair<EditorCell, UpdateInfoIndex> compute() {
-              return myUpdateSession.performUpdate();
-            }
-          });
+          TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, () -> myUpdateSession.performUpdate());
       rootCell = result.o1;
       myUpdateInfoIndex = result.o2;
     } finally {
@@ -194,7 +184,7 @@ public class UpdaterImpl implements Updater, CommandContext {
   public void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints) {
     Collection<String> currentHints = myEditorHintsForNodeMap.get(nodeReference);
     if (currentHints == null) {
-      currentHints = new ArrayList<String>();
+      currentHints = new ArrayList<>();
       Collections.addAll(currentHints, hints);
       myEditorHintsForNodeMap.put(nodeReference, currentHints);
     } else {
@@ -229,15 +219,30 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   private void fireCellSynchronized(EditorCell cell) {
-    for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
+    for (UpdaterListener nextListener : new ArrayList<>(myListeners)) {
       nextListener.cellSynchronizedWithModel(cell);
     }
   }
 
-  private void fireEditorUpdated() {
-    for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
+  private boolean fireEditorUpdateStarted() {
+    if (myInProgress) {
+      return true;
+    }
+    myInProgress = true;
+    for (UpdaterListener nextListener : new ArrayList<>(myListeners)) {
+      nextListener.editorUpdateStarted(myEditorComponent);
+    }
+    return false;
+  }
+
+  private void fireEditorUpdated(boolean wasInProgress) {
+    if (wasInProgress) {
+      return;
+    }
+    for (UpdaterListener nextListener : new ArrayList<>(myListeners)) {
       nextListener.editorUpdated(myEditorComponent);
     }
+    myInProgress = false;
   }
 
   protected UpdateSessionImpl createUpdateSession(SNode node, List<SModelEvent> events) {
@@ -286,14 +291,18 @@ public class UpdaterImpl implements Updater, CommandContext {
   public Set<SNode> getRelatedNodes(EditorCell cell) {
     assert !myDisposed;
     Set<SNode> nodes = myRelatedNodes.get(cell);
-    if (nodes == null) return null;
+    if (nodes == null) {
+      return null;
+    }
     return Collections.unmodifiableSet(nodes);
   }
 
   public Set<SNodeReference> getRelatedRefTargets(EditorCell cell) {
     assert !myDisposed;
     Set<SNodeReference> nodeProxies = myRelatedRefTargets.get(cell);
-    if (nodeProxies == null) return null;
+    if (nodeProxies == null) {
+      return null;
+    }
     return Collections.unmodifiableSet(nodeProxies);
   }
 
@@ -314,7 +323,7 @@ public class UpdaterImpl implements Updater, CommandContext {
    * synchronization.
    * <p/>
    * editor update should be triggered if:
-   * - specified property was accessed "dirtyly" while building this editor
+   * - specified property was accessed "dirtily" while building this editor
    * - specified property was added/removed and corresponding property existence was checked
    * while building the editor
    *
