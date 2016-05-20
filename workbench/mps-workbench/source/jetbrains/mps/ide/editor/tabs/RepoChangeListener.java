@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,25 +38,13 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
  *
  * @author Artem Tikhomirov
  */
-class RepoChangeListener extends SRepositoryContentAdapter implements CommandListener {
+class RepoChangeListener extends SRepositoryContentAdapter {
   private boolean myChangedRoots = false;
   @Nullable
   private TabsComponent myTabController;
 
   /*package*/ void setTabController(@Nullable TabsComponent tabController) {
     myTabController = tabController;
-  }
-
-  @Override
-  public void startListening(@NotNull SRepository repository) {
-    super.startListening(repository);
-    repository.getModelAccess().addCommandListener(this);
-  }
-
-  @Override
-  public void stopListening(SRepository repository) {
-    repository.getModelAccess().removeCommandListener(this);
-    super.stopListening(repository);
   }
 
   @Override
@@ -101,12 +89,12 @@ class RepoChangeListener extends SRepositoryContentAdapter implements CommandLis
   }
 
   @Override
-  public void commandStarted() {
+  public void commandStarted(SRepository repository) {
     myChangedRoots = false;
   }
 
   @Override
-  public void commandFinished() {
+  public void commandFinished(SRepository repository) {
     if (myChangedRoots && myTabController != null) {
       myTabController.updateTabs();
     }
