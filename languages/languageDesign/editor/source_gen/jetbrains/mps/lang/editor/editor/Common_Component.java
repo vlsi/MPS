@@ -365,7 +365,7 @@ public class Common_Component implements ConceptEditorComponent {
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "none";
+      return "<none>";
     }
   }
   private EditorCell createCollection_tf8r10_f1a(EditorContext editorContext, SNode node) {
