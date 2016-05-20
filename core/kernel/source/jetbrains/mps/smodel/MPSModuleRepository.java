@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,6 +49,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private static MPSModuleRepository ourInstance;
 
   private final GlobalModelAccess myGlobalModelAccess;
+  private final CommandListener myCommandListener;
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
@@ -79,6 +81,17 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   public MPSModuleRepository() {
     myGlobalModelAccess = new GlobalModelAccess();
+    myCommandListener = new CommandListener() {
+      @Override
+      public void commandStarted() {
+        fireCommandStarted();
+      }
+
+      @Override
+      public void commandFinished() {
+        fireCommandFinished();
+      }
+    };
   }
 
   @Override
@@ -88,10 +101,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       throw new IllegalStateException("already initialized");
     }
     ourInstance = this;
+    myGlobalModelAccess.addCommandListener(myCommandListener);
   }
 
-  @Override
+    @Override
   public void dispose() {
+    myGlobalModelAccess.removeCommandListener(myCommandListener);
     ourInstance = null;
     super.dispose();
   }

@@ -44,28 +44,15 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
 public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
-  private final CommandListener myCommandListener;
 
   public ProjectRepository(@NotNull Project project) {
     myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
-    myProjectModelAccess.addCommandListener(myCommandListener = new CommandListener() {
-      @Override
-      public void commandStarted() {
-        fireCommandStarted();
-      }
-
-      @Override
-      public void commandFinished() {
-        fireCommandFinished();
-      }
-    });
     init();
   }
 
   @Override
   public void dispose() {
-    myProjectModelAccess.removeCommandListener(myCommandListener);
     super.dispose();
   }
 
