@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -124,7 +125,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SProperty property,
       InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : concept.getAllParents()) {
+    for (SAbstractConcept parent : new InheritanceIterable(concept)) {
       if (!((SAbstractConceptAdapter) parent).hasProperty(property)) {
         continue;
       }

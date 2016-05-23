@@ -103,11 +103,6 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   }
 
   @Override
-  public List<SAbstractConcept> getAllParents() {
-    return Collections.emptyList();
-  }
-
-  @Override
   public String serialize() {
     return INVALID_PREFIX + ID_DELIM + myFqName;
   }

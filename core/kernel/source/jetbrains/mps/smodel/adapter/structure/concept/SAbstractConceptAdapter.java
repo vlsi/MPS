@@ -411,6 +411,4 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       throw new FormatException("Illegal concept type: " + s);
     }
   }
-
-  public abstract List<? extends SAbstractConcept> getAllParents();
 }

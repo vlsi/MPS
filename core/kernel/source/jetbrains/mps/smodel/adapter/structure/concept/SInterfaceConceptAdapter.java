@@ -52,9 +52,4 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   public final boolean isAbstract() {
     return true;
   }
-
-  @Override
-  public List<? extends SAbstractConcept> getAllParents() {
-    return getSuperInterfaces();
-  }
 }

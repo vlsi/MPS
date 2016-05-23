@@ -81,15 +81,4 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     }
     return res;
   }
-
-  @Override
-  public List<SAbstractConcept> getAllParents() {
-    List<SAbstractConcept> parents = new ArrayList<>();
-    SConcept sc = getSuperConcept();
-    if (sc != null) {
-      parents.add(sc);
-    }
-    parents.addAll(IterableUtil.asCollection(getSuperInterfaces()));
-    return parents;
-  }
 }

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -148,7 +149,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   private ConstraintsDescriptor getMethodUsingInheritance(SAbstractConcept concept, InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : concept.getAllParents()) {
+    for (SAbstractConcept parent : new InheritanceIterable(concept)) {
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
 
       ConstraintsDescriptor parentCalculated;

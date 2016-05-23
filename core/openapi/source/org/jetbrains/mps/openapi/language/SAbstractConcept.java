@@ -67,13 +67,6 @@ public interface SAbstractConcept extends SNamedElement {
   boolean isSubConceptOf(SAbstractConcept concept);
 
   /**
-   * Returns all parents of a concept or concept interface in "inheritance" order.
-   * "Inheritance" order means that behavior methods, constraints and some other concept stuff, that is inherited,
-   * should be searched accordingly to order of parents in this list
-   */
-  List<? extends SAbstractConcept> getAllParents();
-
-  /**
    * @return <code>true</code> for interfaces and abstract concepts.
    */
   boolean isAbstract();

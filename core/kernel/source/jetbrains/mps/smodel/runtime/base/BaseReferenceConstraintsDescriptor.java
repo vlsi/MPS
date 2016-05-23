@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDispatchable;
@@ -86,7 +87,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SReferenceLink referenceLinkId,
       InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : concept.getAllParents()) {
+    for (SAbstractConcept parent : new InheritanceIterable(concept)) {
       if (!((SAbstractConceptAdapter) parent).hasReference(referenceLinkId)) {
         continue;
       }
