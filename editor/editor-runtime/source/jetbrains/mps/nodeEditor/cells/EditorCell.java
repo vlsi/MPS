@@ -97,10 +97,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean isLeaf();
 
-  // TODO: remove
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getNextSibling()}
+   */
+  @Deprecated
   EditorCell getNextSibling();
 
-  // TODO: remove
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getNextSibling()}
+   */
+  @Deprecated
   EditorCell getPrevSibling();
 
   EditorCell getNextLeaf();
@@ -119,8 +125,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getLastLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLastChild();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getFirstChild();
 
   EditorCell getEndCell(Condition<EditorCell> condition);

@@ -37,10 +37,20 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   Iterator<EditorCell> reverseIterator();
 
+  /**
+   * @return true if there is no element in iterator provided by this collection
+   */
+  boolean isEmpty();
+
+  /**
+   * @return first child or null if the collection is empty
+   */
   EditorCell firstCell();
 
+  /**
+   * @return last child or null if the collection is empty
+   */
   EditorCell lastCell();
-
 
   /**
    * Not used anymore.

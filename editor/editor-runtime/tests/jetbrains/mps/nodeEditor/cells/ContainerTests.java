@@ -99,7 +99,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setX(int x) {
-
     }
 
     @Override
@@ -109,7 +108,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setY(int y) {
-
     }
 
     @Override
@@ -119,7 +117,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setWidth(int width) {
-
     }
 
     @Override
@@ -129,7 +126,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setHeight(int height) {
-
     }
 
     @Override
@@ -149,7 +145,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setBaseline(int y) {
-
     }
 
     @Override
@@ -189,7 +184,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setLeftGap(int gap) {
-
     }
 
     @Override
@@ -199,7 +193,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setRightGap(int gap) {
-
     }
 
     @Override
@@ -209,12 +202,10 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void moveTo(int x, int y) {
-
     }
 
     @Override
     public void setSelected(boolean isSelected) {
-
     }
 
     @Override
@@ -224,7 +215,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setSelectable(boolean isSelected) {
-
     }
 
     @Override
@@ -234,7 +224,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setCellId(String cellId) {
-
     }
 
     @Override
@@ -244,7 +233,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setRole(String role) {
-
     }
 
     @Override
@@ -259,17 +247,14 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setErrorState(boolean isError) {
-
     }
 
     @Override
     public void relayout() {
-
     }
 
     @Override
     public void requestRelayout() {
-
     }
 
     @Override
@@ -279,7 +264,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setCaretX(int x) {
-
     }
 
     @Override
@@ -289,12 +273,10 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void home() {
-
     }
 
     @Override
     public void end() {
-
     }
 
     @Override
@@ -304,6 +286,16 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public EditorCell_Collection getParent() {
+      return null;
+    }
+
+    @Override
+    public EditorCell getNextSibling() {
+      return null;
+    }
+
+    @Override
+    public EditorCell getPrevSibling() {
       return null;
     }
 
@@ -354,7 +346,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void addKeyMap(KeyMap keyMap) {
-
     }
 
     @Override
@@ -364,7 +355,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setAction(CellActionType type, CellAction action) {
-
     }
 
     @Override
@@ -379,7 +369,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setSubstituteInfo(SubstituteInfo info) {
-
     }
 
     @Override
@@ -395,7 +384,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup) {
-
     }
 
     @Override
@@ -405,7 +393,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setBig(boolean big) {
-
     }
 
     @Override
@@ -415,7 +402,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setCellContext(EditorCellContext cellContext) {
-
     }
 
     @Override
@@ -425,7 +411,6 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public void setReferenceCell(boolean isReference) {
-
     }
 
     @Override

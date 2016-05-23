@@ -146,6 +146,28 @@ public interface EditorCell {
 
   EditorCell_Collection getParent();
 
+  /**
+   * Returning next EditorCell in the same {@link #getParent()} collection or null if this
+   * cell is the last one.
+   * <p>
+   * If cell was not attached to parent, this method may return null or the next sibling cell
+   * depending on the particular {@link EditorCell} implementation.
+   *
+   * @return next sibling cell or null
+   */
+  EditorCell getNextSibling();
+
+  /**
+   * Returning previous EditorCell in the same {@link #getParent()} collection or null if this
+   * cell is the first one.
+   * <p>
+   * If cell was not attached to parent, this method may return null or the prev sibling cell
+   * depending on the particular {@link EditorCell} implementation.
+   *
+   * @return next sibling cell or null
+   */
+  EditorCell getPrevSibling();
+
   EditorCell getRootParent();
 
   EditorCell findLeaf(int x, int y);

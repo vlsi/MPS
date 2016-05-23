@@ -452,6 +452,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
+  public boolean isEmpty() {
+    return getVisibleChildCells().isEmpty();
+  }
+
+  @Override
   public EditorCell firstCell() {
     Container<EditorCell> visibleChildCells = getVisibleChildCells();
     return visibleChildCells.isEmpty() ? null : visibleChildCells.getFirst();

@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.collections.Entry;
-import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -43,7 +42,6 @@ import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
@@ -1077,22 +1075,12 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   @Override
   public EditorCell getNextSibling() {
-    if (myParent == null) {
-      return null;
-    }
-
-    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = myParent.iterator(this, true);
-    return iterator.hasNext() ? (EditorCell) iterator.next() : null;
+    return myNext != null ? (EditorCell) myNext.getItem() : null;
   }
 
   @Override
   public EditorCell getPrevSibling() {
-    if (myParent == null) {
-      return null;
-    }
-
-    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = myParent.iterator(this, false);
-    return iterator.hasNext() ? (EditorCell) iterator.next() : null;
+    return myPrev != null ? (EditorCell) myPrev.getItem() : null;
   }
 
   @Override
