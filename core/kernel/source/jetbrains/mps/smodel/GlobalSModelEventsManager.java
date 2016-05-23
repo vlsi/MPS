@@ -23,10 +23,12 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -36,6 +38,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * @deprecated There ain't no such thing as global event dispatch. Attach your listeners to specific repository instead.
+ * See individual methods ({@link #addGlobalCommandListener(SModelCommandListener)} and {@link #addGlobalModelListener(SModelListener)} for replacement details.
+ *
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class GlobalSModelEventsManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(GlobalSModelEventsManager.class);
   private static GlobalSModelEventsManager ourInstance;
@@ -113,6 +122,12 @@ public class GlobalSModelEventsManager implements CoreComponent {
     myEventsCollector.stopListeningToModel(sm);
   }
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.model.SNodeChangeListener} or {@link org.jetbrains.mps.openapi.model.SNodeAccessListener} instead.
+   *             If these listeners are insufficient (e.g. to find out about changed model imports, please contact MPS team/Artem).
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void addGlobalModelListener(SModelListener l) {
     myGlobalListenersList.get(l.getPriority().ordinal()).add(l);
   }
@@ -122,8 +137,15 @@ public class GlobalSModelEventsManager implements CoreComponent {
   }
 
   /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.repository.CommandListener}
+   * or {@link org.jetbrains.mps.openapi.module.SRepositoryListener#commandFinished(SRepository)}
+   *
+   * You may also find {@link jetbrains.mps.smodel.event.RepositoryChangeTracker} convenient.
+   *
    * Listener is notified within model write action
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void addGlobalCommandListener(@NotNull SModelCommandListener l) {
     myGlobalCommandListeners.add(l);
   }
