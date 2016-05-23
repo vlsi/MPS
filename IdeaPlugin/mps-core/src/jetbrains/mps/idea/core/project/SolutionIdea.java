@@ -253,7 +253,7 @@ public class SolutionIdea extends Solution {
         }
 
         if (ModuleLibraryType.isModuleLibrary(library)) {
-          Set<SModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
+          Set<SModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(ProjectHelper.getProjectRepository(myModule.getProject()), library);
           for (SModuleReference moduleReference : moduleReferences) {
             SModule m = moduleReference.resolve(getRepository());
             if (m == null) {
