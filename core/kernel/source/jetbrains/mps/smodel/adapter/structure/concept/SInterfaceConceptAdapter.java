@@ -54,7 +54,7 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   }
 
   @Override
-  public Set<SAbstractConcept> getAllParents() {
-    return new HashSet<SAbstractConcept>(getSuperInterfaces());
+  public List<? extends SAbstractConcept> getAllParents() {
+    return getSuperInterfaces();
   }
 }

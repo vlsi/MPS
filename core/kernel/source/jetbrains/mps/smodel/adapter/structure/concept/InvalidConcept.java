@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -102,8 +103,8 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   }
 
   @Override
-  public Set<SAbstractConcept> getAllParents() {
-    return Collections.emptySet();
+  public List<SAbstractConcept> getAllParents() {
+    return Collections.emptyList();
   }
 
   @Override

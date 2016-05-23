@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -82,11 +83,13 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   }
 
   @Override
-  public Set<SAbstractConcept> getAllParents() {
-    Set<SAbstractConcept> parents = new HashSet<SAbstractConcept>();
+  public List<SAbstractConcept> getAllParents() {
+    List<SAbstractConcept> parents = new ArrayList<>();
+    SConcept sc = getSuperConcept();
+    if (sc != null) {
+      parents.add(sc);
+    }
     parents.addAll(IterableUtil.asCollection(getSuperInterfaces()));
-    parents.add(getSuperConcept());
-    parents.remove(null);
     return parents;
   }
 }

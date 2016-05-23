@@ -52,6 +52,7 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -411,5 +412,5 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
   }
 
-  public abstract Set<SAbstractConcept> getAllParents();
+  public abstract List<? extends SAbstractConcept> getAllParents();
 }
