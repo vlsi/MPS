@@ -22,7 +22,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -110,7 +109,7 @@ public class MoveModel_Action extends BaseAction {
     final List<SModuleReference> modules = ListSequence.fromList(new ArrayList<SModuleReference>());
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModule module : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators())) {
+        for (SModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModulesWithGenerators())) {
           ListSequence.fromList(modules).addElement(module.getModuleReference());
         }
       }
@@ -123,8 +122,8 @@ public class MoveModel_Action extends BaseAction {
     UpdateDependentModelsRefactoringParticipant participant = new UpdateDependentModelsRefactoringParticipant();
     Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveModelParticipantEP").getObjects();
 
-    RefactoringProcessor.performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SModel, ? super SModel>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
-      public _FunctionTypes._return_P1_E0<? extends SModel, ? super SModel> invoke(Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SModel, SModel, SModel, SModel>> changes, RefactoringSession refactoringSession) {
+    RefactoringProcessor.performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SModel, ? super SModel>, Iterable<RefactoringParticipant.ParticipantState<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
+      public _FunctionTypes._return_P1_E0<? extends SModel, ? super SModel> invoke(Iterable<RefactoringParticipant.ParticipantState<?, ?, SModel, SModel, SModel, SModel>> changes, RefactoringSession refactoringSession) {
 
         final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
         ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {

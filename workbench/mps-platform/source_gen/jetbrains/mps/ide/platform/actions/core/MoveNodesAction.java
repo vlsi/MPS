@@ -6,8 +6,8 @@ import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface MoveNodesRefactoring {
+public interface MoveNodesAction {
   String getName();
   boolean isApplicable(MPSProject project, List<SNode> target);
-  void apply(MPSProject project, List<SNode> target);
+  void execute(MPSProject project, List<SNode> target);
 }

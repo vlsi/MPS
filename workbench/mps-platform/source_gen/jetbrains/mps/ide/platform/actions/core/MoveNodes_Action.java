@@ -40,8 +40,8 @@ public class MoveNodes_Action extends BaseAction {
     // if old refactoring is overrided we should execute other action instead 
     boolean oldRefactoringApplicable = RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "MoveNodes"), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
 
-    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()) && oldRefactoringApplicable) {
-      MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
+    if (MoveNodesActionBase.areSiblings(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()) && oldRefactoringApplicable) {
+      MoveNodesAction refactoring = MoveNodes_Action.this.getRefactoring(_params);
       event.getPresentation().setText(refactoring.getName());
       event.getPresentation().setEnabled(true);
     } else {
@@ -76,22 +76,22 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    MoveNodes_Action.this.getRefactoring(_params).apply(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
+    MoveNodes_Action.this.getRefactoring(_params).execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
   }
-  private MoveNodesRefactoring getRefactoring(final Map<String, Object> _params) {
-    Iterable<MoveNodesRefactoring> specialRefactorings = new ExtensionPoint<MoveNodesRefactoring>("jetbrains.mps.ide.platform.MoveNodesAction").getObjects();
-    Iterable<MoveNodesRefactoring> applicableRefactorings = Sequence.fromIterable(specialRefactorings).where(new IWhereFilter<MoveNodesRefactoring>() {
-      public boolean accept(MoveNodesRefactoring it) {
+  private MoveNodesAction getRefactoring(final Map<String, Object> _params) {
+    Iterable<MoveNodesAction> specialRefactorings = new ExtensionPoint<MoveNodesAction>("jetbrains.mps.ide.platform.MoveNodesAction").getObjects();
+    Iterable<MoveNodesAction> applicableRefactorings = Sequence.fromIterable(specialRefactorings).where(new IWhereFilter<MoveNodesAction>() {
+      public boolean accept(MoveNodesAction it) {
         return it.isApplicable(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
       }
     });
     if (Sequence.fromIterable(applicableRefactorings).isEmpty()) {
-      return new MoveNodesDefault();
+      return new MoveNodesActionBase();
     } else {
       if (Sequence.fromIterable(applicableRefactorings).count() > 1) {
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("More than one MoveNodes refactoring applicable: " + Sequence.fromIterable(applicableRefactorings).select(new ISelector<MoveNodesRefactoring, String>() {
-            public String select(MoveNodesRefactoring it) {
+          LOG.error("More than one MoveNodes refactoring applicable: " + Sequence.fromIterable(applicableRefactorings).select(new ISelector<MoveNodesAction, String>() {
+            public String select(MoveNodesAction it) {
               return "\"" + it.getName() + "\"";
             }
           }).foldLeft("", new ILeftCombinator<String, String>() {

@@ -37,7 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -180,7 +180,7 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
     }).toListSequence();
   }
   protected boolean shouldUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, SNode movingNode, RefactoringSession refactoringSession) {
-    MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
+    MoveNodesActionBase.CopyMapObject copyMap = MoveNodesActionBase.CopyMapObject.getCopyMap(refactoringSession);
     if (containingNode == null) {
       return false;
     }
