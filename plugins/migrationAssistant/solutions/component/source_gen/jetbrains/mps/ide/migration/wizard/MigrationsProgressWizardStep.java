@@ -29,12 +29,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.migration.ScriptApplied;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
@@ -162,9 +159,10 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
 
     addElementToMigrationList("Checking models... Please wait.");
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
         if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             setFraction(progress, ProgressEstimation.preCheck(fraction));
@@ -206,17 +204,18 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
 
     addElementToMigrationList("Saving changed models... Please wait.");
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().saveAll();
+        mpsProject.getRepository().saveAll();
       }
     });
     setFraction(progress, ProgressEstimation.saving(1.0));
 
     addElementToMigrationList("Checking models... Please wait.");
-    ModelAccess.instance().runReadAction(new Runnable() {
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
         final Wrappers._int moduleNum = new Wrappers._int(0);
         if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
@@ -311,8 +310,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return "Migration Assistant found that some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
     }
     public Iterable<Problem> getProblems() {
-      jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
       return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }
@@ -324,8 +322,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Model Checker tool after the project is loaded.<br>" + "Please correct them manually.";
     }
     public Iterable<Problem> getProblems() {
-      jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
       return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }

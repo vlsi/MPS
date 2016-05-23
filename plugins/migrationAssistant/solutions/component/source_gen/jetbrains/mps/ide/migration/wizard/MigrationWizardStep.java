@@ -11,9 +11,10 @@ import java.awt.BorderLayout;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public abstract class MigrationWizardStep extends AbstractWizardStepEx {
-  protected Project myProject;
+  private Project myProject;
   private JComponent myComponent;
   private String myId;
   public MigrationWizardStep(Project project, String title, String id) {
@@ -54,4 +55,9 @@ public abstract class MigrationWizardStep extends AbstractWizardStepEx {
     later.invoke();
   }
   protected abstract void doCreateComponent(JComponent mainPanel);
+
+  public jetbrains.mps.project.Project getMPSProject() {
+    // TODO pass MPS project into cons, why bother with IDEA's? 
+    return ProjectHelper.fromIdeaProject(myProject);
+  }
 }

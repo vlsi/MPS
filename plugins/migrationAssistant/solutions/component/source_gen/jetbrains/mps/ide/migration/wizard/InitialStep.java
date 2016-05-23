@@ -23,7 +23,6 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectOptionsRegistry;
@@ -75,7 +74,7 @@ public class InitialStep extends MigrationWizardStep {
     List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
     ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
       public boolean accept(ProjectMigrationWithOptions it) {
-        return it.shouldBeExecuted(ProjectHelper.toMPSProject(myProject));
+        return it.shouldBeExecuted(getMPSProject());
       }
     }).translate(new ITranslator2<ProjectMigrationWithOptions, String>() {
       public Iterable<String> translate(ProjectMigrationWithOptions it) {
