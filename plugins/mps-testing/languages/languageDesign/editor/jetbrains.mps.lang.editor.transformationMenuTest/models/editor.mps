@@ -46,6 +46,10 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
+        <child id="1068498886297" name="rValue" index="37vLTx" />
+        <child id="1068498886295" name="lValue" index="37vLTJ" />
+      </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -54,14 +58,36 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
+      </concept>
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -70,6 +96,13 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="4eb772b0-4df3-414a-b894-63abeb912f56" name="jetbrains.mps.lang.editor.transformationMenuTest">
       <concept id="6436886136983394210" name="jetbrains.mps.lang.editor.transformationMenuTest.structure.TransformationLocation_Test" flags="ng" index="ZR7TO" />
@@ -167,6 +200,53 @@
                     <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="ub8z3" id="5oiZ4v5oYTH" role="37wK5m" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="5oiZ4v5qnn1">
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="ActionExecuteTestHelper" />
+    <node concept="Wx3nA" id="5oiZ4v5qnnM" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="myCalled" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm1VV" id="5oiZ4v5qnnt" role="1B3o_S" />
+      <node concept="10P_77" id="5oiZ4v5qnnG" role="1tU5fm" />
+    </node>
+    <node concept="3Tm1VV" id="5oiZ4v5qnn2" role="1B3o_S" />
+  </node>
+  <node concept="3ICXOK" id="5oiZ4v5qnDK">
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="WithExecutableAction" />
+    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <node concept="1Qtc8_" id="5oiZ4v5qnDL" role="IW6Ez">
+      <node concept="ZR7TO" id="5oiZ4v5qnDM" role="1Qtc8$" />
+      <node concept="IWgqT" id="5oiZ4v5qnDN" role="1Qtc8A">
+        <node concept="1hCUdq" id="5oiZ4v5qnDO" role="1hCUd6">
+          <node concept="3clFbS" id="5oiZ4v5qnDP" role="2VODD2">
+            <node concept="3clFbF" id="5oiZ4v5qnDQ" role="3cqZAp">
+              <node concept="Xl_RD" id="5oiZ4v5qnDR" role="3clFbG">
+                <property role="Xl_RC" value="Executable action" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="5oiZ4v5qnDS" role="IWgqQ">
+          <node concept="3clFbS" id="5oiZ4v5qnDT" role="2VODD2">
+            <node concept="3clFbF" id="5oiZ4v5qob3" role="3cqZAp">
+              <node concept="37vLTI" id="5oiZ4v5qopu" role="3clFbG">
+                <node concept="3clFbT" id="5oiZ4v5qopI" role="37vLTx">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="10M0yZ" id="5oiZ4v5qob2" role="37vLTJ">
+                  <ref role="1PxDUh" node="5oiZ4v5qnn1" resolve="ActionExecuteTestHelper" />
+                  <ref role="3cqZAo" node="5oiZ4v5qnnM" resolve="myCalled" />
                 </node>
               </node>
             </node>

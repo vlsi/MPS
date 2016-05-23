@@ -119,6 +119,30 @@
       <unit id="6202297022026376132" at="16,0,37,0" name="jetbrains.mps.lang.editor.menu.transformation.test.Action_CanExecuteIsGeneratedCorrectly_Test" />
     </file>
   </root>
+  <root nodeRef="r:38424e2f-ff0f-4534-a6ea-12f0496db0de(jetbrains.mps.lang.editor.menu.transformation.test)/6202297022027492335">
+    <file name="Action_ExecuteIsGeneratedCorrectly_Test.java">
+      <node id="6202297022027492335" at="20,74,21,122" concept="0" />
+      <node id="6202297022027492335" at="21,122,22,136" concept="0" />
+      <node id="6202297022027492335" at="28,51,29,53" concept="0" />
+      <node id="6202297022027492339" at="29,53,30,239" concept="2" />
+      <node id="6202297022027492347" at="30,239,31,0" concept="4" />
+      <node id="6202297022027492348" at="31,0,32,80" concept="2" />
+      <node id="6202297022027499873" at="32,80,33,47" concept="0" />
+      <node id="6202297022027504142" at="33,47,34,23" concept="0" />
+      <node id="6202297022027502605" at="34,23,35,93" concept="0" />
+      <node id="6202297022027492335" at="19,0,24,0" concept="1" trace="test_Action_ExecuteIsGeneratedCorrectly#()V" />
+      <node id="6202297022027492335" at="27,0,37,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6202297022027492335" at="20,74,22,136" />
+      <scope id="6202297022027492335" at="19,0,24,0" />
+      <scope id="6202297022027492335" at="28,51,35,93">
+        <var name="item" id="6202297022027492349" />
+        <var name="items" id="6202297022027492340" />
+      </scope>
+      <scope id="6202297022027492335" at="27,0,37,0" />
+      <unit id="6202297022027492335" at="25,0,38,0" name="jetbrains.mps.lang.editor.menu.transformation.test.Action_ExecuteIsGeneratedCorrectly_Test$TestBody" />
+      <unit id="6202297022027492335" at="17,0,39,0" name="jetbrains.mps.lang.editor.menu.transformation.test.Action_ExecuteIsGeneratedCorrectly_Test" />
+    </file>
+  </root>
   <root nodeRef="r:38424e2f-ff0f-4534-a6ea-12f0496db0de(jetbrains.mps.lang.editor.menu.transformation.test)/6436886136983309262">
     <file name="LoadDefaultMenu_Test.java">
       <node id="6436886136983309262" at="19,55,20,122" concept="0" />

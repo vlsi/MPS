@@ -65,6 +65,9 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -95,6 +98,9 @@
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -839,6 +845,99 @@
         <node concept="3_1$Yv" id="5oiZ4v5mjOU" role="3_9lra">
           <node concept="Xl_RD" id="5oiZ4v5mjPH" role="3_1BAH">
             <property role="Xl_RC" value="canExecute should return false for pattern = 'cannot'" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5oiZ4v5qmJJ">
+    <property role="TrG5h" value="Action_ExecuteIsGeneratedCorrectly" />
+    <property role="3YCmrE" value="Checks that execute of TransformationMenuPart_Action works" />
+    <node concept="rbkbI" id="5oiZ4v5qmJK" role="LiRBU">
+      <node concept="LIFWc" id="5oiZ4v5qmJL" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="5oiZ4v5qmJM" role="LjaKd">
+      <node concept="3cpWs8" id="5oiZ4v5qmJN" role="3cqZAp">
+        <node concept="3cpWsn" id="5oiZ4v5qmJO" role="3cpWs9">
+          <property role="TrG5h" value="items" />
+          <node concept="_YKpA" id="5oiZ4v5qmJP" role="1tU5fm">
+            <node concept="3uibUv" id="5oiZ4v5qmJQ" role="_ZDj9">
+              <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+            </node>
+          </node>
+          <node concept="2YIFZM" id="5oiZ4v5qmJR" role="33vP2m">
+            <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
+            <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
+            <node concept="369mXd" id="5oiZ4v5qmJS" role="37wK5m" />
+            <node concept="1N_AGu" id="5oiZ4v5qmJT" role="37wK5m">
+              <ref role="1N_AGt" to="j2fg:5oiZ4v5qnDK" resolve="WithExecutableAction" />
+            </node>
+            <node concept="Xl_RD" id="5oiZ4v5qmJU" role="37wK5m">
+              <property role="Xl_RC" value="test location" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="5oiZ4v5qmJV" role="3cqZAp" />
+      <node concept="3cpWs8" id="5oiZ4v5qmJW" role="3cqZAp">
+        <node concept="3cpWsn" id="5oiZ4v5qmJX" role="3cpWs9">
+          <property role="TrG5h" value="item" />
+          <node concept="3uibUv" id="5oiZ4v5qmJY" role="1tU5fm">
+            <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+          </node>
+          <node concept="10QFUN" id="5oiZ4v5qmJZ" role="33vP2m">
+            <node concept="3uibUv" id="5oiZ4v5qmK0" role="10QFUM">
+              <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+            </node>
+            <node concept="2OqwBi" id="5oiZ4v5qmK1" role="10QFUP">
+              <node concept="37vLTw" id="5oiZ4v5qmK2" role="2Oq$k0">
+                <ref role="3cqZAo" node="5oiZ4v5qmJO" resolve="items" />
+              </node>
+              <node concept="34jXtK" id="5oiZ4v5qmK3" role="2OqNvi">
+                <node concept="3cmrfG" id="5oiZ4v5qmK4" role="25WWJ7">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbF" id="5oiZ4v5qo_x" role="3cqZAp">
+        <node concept="37vLTI" id="5oiZ4v5qp2$" role="3clFbG">
+          <node concept="3clFbT" id="5oiZ4v5qp38" role="37vLTx">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="10M0yZ" id="5oiZ4v5qo_w" role="37vLTJ">
+            <ref role="1PxDUh" to="j2fg:5oiZ4v5qnn1" resolve="ActionExecuteTestHelper" />
+            <ref role="3cqZAo" to="j2fg:5oiZ4v5qnnM" resolve="myCalled" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbF" id="5oiZ4v5qpCe" role="3cqZAp">
+        <node concept="2OqwBi" id="5oiZ4v5qpMa" role="3clFbG">
+          <node concept="37vLTw" id="5oiZ4v5qpCc" role="2Oq$k0">
+            <ref role="3cqZAo" node="5oiZ4v5qmJX" resolve="item" />
+          </node>
+          <node concept="liA8E" id="5oiZ4v5qq9r" role="2OqNvi">
+            <ref role="37wK5l" to="uddc:~ActionItem.execute(java.lang.String):void" resolve="execute" />
+            <node concept="Xl_RD" id="5oiZ4v5qq9P" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="5oiZ4v5qpgd" role="3cqZAp">
+        <node concept="10M0yZ" id="5oiZ4v5qpmD" role="3vwVQn">
+          <ref role="1PxDUh" to="j2fg:5oiZ4v5qnn1" resolve="ActionExecuteTestHelper" />
+          <ref role="3cqZAo" to="j2fg:5oiZ4v5qnnM" resolve="myCalled" />
+        </node>
+        <node concept="3_1$Yv" id="5oiZ4v5qsco" role="3_9lra">
+          <node concept="Xl_RD" id="5oiZ4v5qscU" role="3_1BAH">
+            <property role="Xl_RC" value="execute should have been called" />
           </node>
         </node>
       </node>
