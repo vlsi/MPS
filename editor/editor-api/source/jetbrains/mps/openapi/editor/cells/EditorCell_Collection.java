@@ -42,15 +42,25 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
   EditorCell lastCell();
 
 
-  //todo do we need to deprecate?
   /**
-   * @deprecated since MPS 3.4 not used
+   * Not used anymore.
+   * <p>
+   * Use {@link jetbrains.mps.util.IterableUtil#indexOf(Iterable, Object)} instead in rare cases to get
+   * actual index of the cell. Use new {@link #iterator(EditorCell, boolean)} method for more optimal
+   * iterations.
+   *
+   * @deprecated since MPS 3.4
    */
   @Deprecated
   int indexOf(EditorCell cell);
 
   /**
-   * @deprecated since MPS 3.4 use iterator() methods
+   * Not used anymore.
+   * <p>
+   * Use {@link jetbrains.mps.util.IterableUtil#get(Iterable, int)} instead in rare cases to get actual
+   * cell by index. Use new {@link #iterator(EditorCell, boolean)} method for more optimal iterations.
+   *
+   * @deprecated since MPS 3.4
    */
   @Deprecated
   EditorCell getCellAt(int index);

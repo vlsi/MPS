@@ -9,6 +9,7 @@
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="x4nc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selectionRestoring(MPS.Editor/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -34,6 +35,9 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
@@ -266,15 +270,14 @@
               <node concept="37vLTw" id="783I1NXtZB5" role="3uHU7w">
                 <ref role="3cqZAo" node="19qhldhKsmm" resolve="mySelectedCell" />
               </node>
-              <node concept="2OqwBi" id="783I1NXtZsu" role="3uHU7B">
-                <node concept="37vLTw" id="783I1NXtZpL" role="2Oq$k0">
+              <node concept="2YIFZM" id="3nMoDN_0d79" role="3uHU7B">
+                <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
+                <ref role="37wK5l" to="18ew:~IterableUtil.get(java.lang.Iterable,int):java.lang.Object" resolve="get" />
+                <node concept="37vLTw" id="3nMoDN_0dyD" role="37wK5m">
                   <ref role="3cqZAo" node="19qhldhK20V" resolve="parent" />
                 </node>
-                <node concept="liA8E" id="783I1NXtZw8" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell_Collection.getCellAt(int):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCellAt" />
-                  <node concept="37vLTw" id="783I1NXtZyi" role="37wK5m">
-                    <ref role="3cqZAo" node="783I1NXtYvw" resolve="EXPECTED_CHILD_INDEX" />
-                  </node>
+                <node concept="37vLTw" id="3nMoDN_0eFA" role="37wK5m">
+                  <ref role="3cqZAo" node="783I1NXtYvw" resolve="EXPECTED_CHILD_INDEX" />
                 </node>
               </node>
             </node>
@@ -539,15 +542,14 @@
               <node concept="37vLTw" id="43TOVRWQb_O" role="3uHU7w">
                 <ref role="3cqZAo" node="19qhldhKzi5" resolve="selectedCell" />
               </node>
-              <node concept="2OqwBi" id="43TOVRWQazZ" role="3uHU7B">
-                <node concept="37vLTw" id="43TOVRWQa$0" role="2Oq$k0">
+              <node concept="2YIFZM" id="3nMoDN_09QZ" role="3uHU7B">
+                <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
+                <ref role="37wK5l" to="18ew:~IterableUtil.get(java.lang.Iterable,int):java.lang.Object" resolve="get" />
+                <node concept="37vLTw" id="3nMoDN_0aiz" role="37wK5m">
                   <ref role="3cqZAo" node="43TOVRWQazL" resolve="parent" />
                 </node>
-                <node concept="liA8E" id="43TOVRWQa$1" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell_Collection.getCellAt(int):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCellAt" />
-                  <node concept="37vLTw" id="43TOVRWQcGu" role="37wK5m">
-                    <ref role="3cqZAo" node="43TOVRWQaXI" resolve="EXPECTED_CHILD_INDEX" />
-                  </node>
+                <node concept="37vLTw" id="3nMoDN_0bqg" role="37wK5m">
+                  <ref role="3cqZAo" node="43TOVRWQaXI" resolve="EXPECTED_CHILD_INDEX" />
                 </node>
               </node>
             </node>

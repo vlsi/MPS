@@ -32,8 +32,10 @@ import java.util.Set;
 public class IterableUtil {
 
   @NotNull
-  public static <T> Iterable<T> distinct(@Nullable  Iterable<T> t) {
-    if (t == null) return Collections.emptyList();
+  public static <T> Iterable<T> distinct(@Nullable Iterable<T> t) {
+    if (t == null) {
+      return Collections.emptyList();
+    }
     return new DistinctIterator<T>(t);
   }
 
@@ -57,28 +59,33 @@ public class IterableUtil {
    * FIXME: conversion of wildcard type to its upper bound breaks container's contract
    * Example:
    * <code>
-   *
-   *    class A {};
-   *    class B extends A {}
-   *
-   *    Set<B> sob = new HashSet<B>();
-   *
-   *    Iterable&lt;? extends A&gt; ioa = sob;
-   *
-   *    Set<A> soa = IterableUtil.asSet(ioa);
-   *    soa.add(new A());
-   *
-   *    B b = sob.iterator().next();  // ClassCastException
-   *
- *   </code>
+   * <p>
+   * class A {};
+   * class B extends A {}
+   * <p>
+   * Set<B> sob = new HashSet<B>();
+   * <p>
+   * Iterable&lt;? extends A&gt; ioa = sob;
+   * <p>
+   * Set<A> soa = IterableUtil.asSet(ioa);
+   * soa.add(new A());
+   * <p>
+   * B b = sob.iterator().next();  // ClassCastException
+   * <p>
+   * </code>
    */
   @NotNull
   public static <T> Set<T> asSet(@Nullable Iterable<? extends T> iter) {
-    if (iter instanceof Set) return (Set<T>) iter;
-    if (iter == null) return Collections.emptySet();
+    if (iter instanceof Set) {
+      return (Set<T>) iter;
+    }
+    if (iter == null) {
+      return Collections.emptySet();
+    }
     Set<T> result = new HashSet<T>();
-    for (T o : iter)
+    for (T o : iter) {
       result.add(o);
+    }
     return result;
   }
 
@@ -88,7 +95,9 @@ public class IterableUtil {
    */
   @NotNull
   public static <T> Collection<T> asCollection(@Nullable Iterable<? extends T> iter) {
-    if (iter instanceof Collection) return (Collection<T>) iter;
+    if (iter instanceof Collection) {
+      return (Collection<T>) iter;
+    }
     return asList(iter);
   }
 
@@ -98,13 +107,17 @@ public class IterableUtil {
    */
   @NotNull
   public static <T> List<T> asList(@Nullable Iterable<? extends T> iter) {
-    if (iter instanceof List) return (List<T>) iter;
+    if (iter instanceof List) {
+      return (List<T>) iter;
+    }
     return copyToList(iter);
   }
 
   @NotNull
   public static <T> List<T> copyToList(@Nullable Iterable<? extends T> iter) {
-    if (iter == null) return Collections.emptyList();
+    if (iter == null) {
+      return Collections.emptyList();
+    }
     List<T> result = new ArrayList<T>();
     for (T o : iter) {
       result.add(o);
@@ -117,7 +130,9 @@ public class IterableUtil {
    */
   @NotNull
   public static <T> Iterable<T> asIterable(@Nullable final Iterator<T> it) {
-    if (it == null) return Collections.emptyList();
+    if (it == null) {
+      return Collections.emptyList();
+    }
     return new Iterable<T>() {
       @Override
       public Iterator<T> iterator() {
@@ -126,12 +141,28 @@ public class IterableUtil {
     };
   }
 
-  public static <T> T get(@Nullable Iterable<T> data, int index){
-    if (data == null) throw new IndexOutOfBoundsException();
+  public static <T> T get(@Nullable Iterable<T> data, int index) {
+    if (data == null) {
+      throw new IndexOutOfBoundsException();
+    }
     Iterator<T> it = data.iterator();
-    for (int i = 0;i<index;i++){
+    for (int i = 0; i < index; i++) {
       it.next();
     }
     return it.next();
+  }
+
+  public static <T> int indexOf(Iterable<T> data, T element) {
+    if (data == null) {
+      return -1;
+    }
+    int index = 0;
+    for (T next : data) {
+      if (next.equals(element)) {
+        return index;
+      }
+      index++;
+    }
+    return -1;
   }
 }
