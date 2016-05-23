@@ -573,18 +573,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6638738203687387587(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_2196823097110094844(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
-    return "0x" + Long.toHexString(msb) + "L";
-  }
-  public static Object propertyMacro_GetPropertyValue_2196823097110094861(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
-    return "0x" + Long.toHexString(lsb) + "L";
-  }
-  public static Object propertyMacro_GetPropertyValue_2196823097110094878(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
-    return "0x" + Long.toHexString(id) + "L";
-  }
   public static Object propertyMacro_GetPropertyValue_2196823097110114471(final PropertyMacroContext _context) {
     long msb = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
@@ -1005,7 +993,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument")) != null);
   }
   public static boolean ifMacro_Condition_2965815627220345643(final IfMacroContext _context) {
-    return neq_x583g4_a0a0gj(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, 0x120ed32e98cL, "enumDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983041843"));
+    return neq_x583g4_a0a0dj(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, 0x120ed32e98cL, "enumDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983041843"));
   }
   public static boolean ifMacro_Condition_8828148184968343643(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"));
@@ -1788,7 +1776,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       result = Type__BehaviorDescriptor.getClassExpression_idhEwIzOd.invoke(returnType);
     } else {
-      result = _quotation_createNode_x583g4_a0a0a3a564(returnType);
+      result = _quotation_createNode_x583g4_a0a0a3a264(returnType);
     }
     return result;
   }
@@ -2255,10 +2243,10 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean neq_x583g4_a0a0gj(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0dj(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a3a564(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0a3a264(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

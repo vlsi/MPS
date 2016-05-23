@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.UUID;
+
 /**
  * This allows to convert source-level (non-published code) entities to structure-level ids (published code ids)
  * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
@@ -39,36 +41,44 @@ public class MetaIdByDeclaration {
     Long id = null;
 
     String prop = c.getProperty(SNodeUtil.property_AbstractConcept_Id);
-    if (prop!=null){
+    if (prop != null) {
       try {
         id = Long.parseLong(prop);
-      } catch (NumberFormatException e){
+      } catch (NumberFormatException e) {
         //id is still null
       }
     }
 
-    if (id==null){
+    if (id == null) {
       org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
       assert nodeId instanceof SNodeId.Regular;
       id = ((SNodeId.Regular) nodeId).getId();
     }
 
-    return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
+    SLanguageId langId;
+    String propLangId = c.getProperty(SNodeUtil.property_AbstractConcept_LangId);
+    if (propLangId == null || propLangId.isEmpty()) {
+      langId = getLanguageId(((Language) c.getModel().getModule()));
+    } else {
+      langId = MetaIdFactory.langId(UUID.fromString(propLangId));
+    }
+
+    return new SConceptId(langId, id);
   }
 
   public static SContainmentLinkId getLinkId(@NotNull SNode c) {
     Long id = null;
 
     String prop = c.getProperty(SNodeUtil.property_Link_Id);
-    if (prop!=null){
+    if (prop != null) {
       try {
         id = Long.parseLong(prop);
-      } catch (NumberFormatException e){
+      } catch (NumberFormatException e) {
         //id is still null
       }
     }
 
-    if (id==null){
+    if (id == null) {
       org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
       assert nodeId instanceof SNodeId.Regular;
       id = ((SNodeId.Regular) nodeId).getId();
@@ -81,15 +91,15 @@ public class MetaIdByDeclaration {
     Long id = null;
 
     String prop = c.getProperty(SNodeUtil.property_Link_Id);
-    if (prop!=null){
+    if (prop != null) {
       try {
         id = Long.parseLong(prop);
-      } catch (NumberFormatException e){
+      } catch (NumberFormatException e) {
         //id is still null
       }
     }
 
-    if (id==null){
+    if (id == null) {
       org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
       assert nodeId instanceof SNodeId.Regular;
       id = ((SNodeId.Regular) nodeId).getId();
@@ -102,15 +112,15 @@ public class MetaIdByDeclaration {
     Long id = null;
 
     String prop = c.getProperty(SNodeUtil.property_Property_Id);
-    if (prop!=null){
+    if (prop != null) {
       try {
         id = Long.parseLong(prop);
-      } catch (NumberFormatException e){
+      } catch (NumberFormatException e) {
         //id is still null
       }
     }
 
-    if (id==null){
+    if (id == null) {
       org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
       assert nodeId instanceof SNodeId.Regular;
       id = ((SNodeId.Regular) nodeId).getId();

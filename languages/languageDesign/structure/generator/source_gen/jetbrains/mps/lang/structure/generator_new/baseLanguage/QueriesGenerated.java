@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
-import java.util.UUID;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.lang.structure.generator_new.util.IdGenerationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration__BehaviorDescriptor;
@@ -38,6 +38,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
+import java.util.UUID;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -141,15 +142,13 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4630900134062580147(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("cv:i"));
   }
-  public static Object propertyMacro_GetPropertyValue_8145375452081973427(final PropertyMacroContext _context) {
-    UUID uuid = UUID.fromString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId")));
-    long id = uuid.getMostSignificantBits();
-    return "0x" + Long.toHexString(id) + "L";
+  public static Object propertyMacro_GetPropertyValue_2196823097110094844(final PropertyMacroContext _context) {
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    return "0x" + Long.toHexString(msb) + "L";
   }
-  public static Object propertyMacro_GetPropertyValue_8145375452081983252(final PropertyMacroContext _context) {
-    UUID uuid = UUID.fromString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId")));
-    long id = uuid.getLeastSignificantBits();
-    return "0x" + Long.toHexString(id) + "L";
+  public static Object propertyMacro_GetPropertyValue_2196823097110094861(final PropertyMacroContext _context) {
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829506(final PropertyMacroContext _context) {
     return "0x" + Long.toHexString(IdGenerationUtil.getConceptId(_context, _context.getNode())) + "L";

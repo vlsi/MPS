@@ -1335,6 +1335,18 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
+    <node concept="Wx3nA" id="7NTi8jMdqsl" role="jymVt">
+      <property role="TrG5h" value="property_AbstractConcept_LangId" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="7NTi8jMdqsm" role="1B3o_S" />
+      <node concept="355D3s" id="7NTi8jMdqsn" role="33vP2m">
+        <ref role="355D3t" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        <ref role="355D3u" to="tpce:7NTi8jM8Rgz" resolve="languageId" />
+      </node>
+      <node concept="3uibUv" id="7NTi8jMdqso" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="dqwjwH$T_7" role="jymVt">
       <property role="TrG5h" value="property_Property_Id" />
       <property role="3TUv4t" value="true" />
