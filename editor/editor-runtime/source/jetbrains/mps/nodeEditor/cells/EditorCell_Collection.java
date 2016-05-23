@@ -968,12 +968,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getFirstLeaf() {
-    return getCellsCount() > 0 ? ((jetbrains.mps.nodeEditor.cells.EditorCell) firstCell()).getFirstLeaf() : this;
+    return isEmpty() ? this : ((jetbrains.mps.nodeEditor.cells.EditorCell) firstCell()).getFirstLeaf();
   }
 
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getLastLeaf() {
-    return getCellsCount() > 0 ? ((jetbrains.mps.nodeEditor.cells.EditorCell) lastCell()).getLastLeaf() : this;
+    return isEmpty() ? this : ((jetbrains.mps.nodeEditor.cells.EditorCell) lastCell()).getLastLeaf();
   }
 
   @Override

@@ -41,20 +41,29 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       jetbrains.mps.openapi.editor.cells.CellLayout layout = collection.getCellLayout();
-      if (layout instanceof CellLayout_Superscript) ((CellLayout_Superscript) layout).myBaseScale = scale;
-      else for (EditorCell c : collection) applyScalingInt(c, scale);
+      if (layout instanceof CellLayout_Superscript) {
+        ((CellLayout_Superscript) layout).myBaseScale = scale;
+      } else {
+        for (EditorCell c : collection) {
+          applyScalingInt(c, scale);
+        }
+      }
     }
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cell;
       Integer oldFontSize = label.getStyle().get(StyleAttributes.ORIGINAL_FONT_SIZE);
       Integer fontSize = label.getStyle().get(StyleAttributes.FONT_SIZE);
-      if (fontSize == null) fontSize = EditorSettings.getInstance().getFontSize();
+      if (fontSize == null) {
+        fontSize = EditorSettings.getInstance().getFontSize();
+      }
       if (oldFontSize == null) {
         oldFontSize = fontSize;
         label.getStyle().set(StyleAttributes.ORIGINAL_FONT_SIZE, oldFontSize);
       }
       fontSize = (int) Math.round(oldFontSize * Math.pow(scaleCoo, scale));
-      if (!fontSize.equals(oldFontSize)) label.getStyle().set(StyleAttributes.FONT_SIZE, fontSize);
+      if (!fontSize.equals(oldFontSize)) {
+        label.getStyle().set(StyleAttributes.FONT_SIZE, fontSize);
+      }
     }
   }
 
@@ -163,7 +172,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.firstCell().getRightInset();
+    return editorCell_collection.isEmpty() ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   public String toString() {

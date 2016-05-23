@@ -49,11 +49,11 @@ public abstract class AbstractCellLayout implements CellLayout {
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.lastCell().getRightInset();
+    return editorCell_collection.isEmpty() ? 0 : editorCell_collection.lastCell().getRightInset();
   }
 
   public int getLeftInternalInset(EditorCell_Collection editorCell_collection) {
-    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.firstCell().getLeftInset();
+    return editorCell_collection.isEmpty() ? 0 : editorCell_collection.firstCell().getLeftInset();
   }
 
   @Override

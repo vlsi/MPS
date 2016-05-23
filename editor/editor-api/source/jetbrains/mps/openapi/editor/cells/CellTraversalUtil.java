@@ -153,7 +153,7 @@ public class CellTraversalUtil {
 
   public static EditorCell getFirstLeaf(@NotNull EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
-      return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getFirstLeaf(((EditorCell_Collection) cell).firstCell()) : cell;
+      return ((EditorCell_Collection) cell).isEmpty() ? cell : getFirstLeaf(((EditorCell_Collection) cell).firstCell());
     } else {
       return cell;
     }
@@ -161,7 +161,7 @@ public class CellTraversalUtil {
 
   public static EditorCell getLastLeaf(@NotNull EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
-      return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getLastLeaf(((EditorCell_Collection) cell).lastCell()) : cell;
+      return ((EditorCell_Collection) cell).isEmpty() ? cell : getLastLeaf(((EditorCell_Collection) cell).lastCell());
     } else {
       return cell;
     }
@@ -191,7 +191,9 @@ public class CellTraversalUtil {
   public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
     EditorCell_Collection parent = child.getParent();
     while (parent != null) {
-      if (parent.equals(ancestor)) return true;
+      if (parent.equals(ancestor)) {
+        return true;
+      }
       parent = parent.getParent();
     }
     return false;
@@ -212,8 +214,9 @@ public class CellTraversalUtil {
 
   /**
    * Returns a {@link CellTreeIterable} that iterates over the subtree of {@code root}, in preorder, starting with {@code start}.
-   * @param root the root of the subtree to iterate, {@code null} to iterate the whole tree that {@code start} is part of.
-   * @param start the first node to visit
+   *
+   * @param root    the root of the subtree to iterate, {@code null} to iterate the whole tree that {@code start} is part of.
+   * @param start   the first node to visit
    * @param forward {@code true} to visit children of a cell from first to last, {@code false} for the reverse order.
    * @return a new instance of {@link CellTreeIterable}
    */

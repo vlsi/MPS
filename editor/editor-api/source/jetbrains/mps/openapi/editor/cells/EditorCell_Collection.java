@@ -112,6 +112,10 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   EditorCell lastContentCell();
 
+  /**
+   * @deprecated since MPS 3.4 not used anymore. Use {@link #getCellsCount()} instead.
+   */
+  @Deprecated
   int getContentCellsCount();
 
   @NotNull

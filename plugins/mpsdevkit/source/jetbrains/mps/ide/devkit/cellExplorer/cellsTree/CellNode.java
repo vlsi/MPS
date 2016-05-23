@@ -49,13 +49,25 @@ class CellNode extends MPSTreeNode {
   }
 
   private Icon calculateIcon() {
-    if (myCell.isErrorState()) return CellExplorer.CellError;
+    if (myCell.isErrorState()) {
+      return CellExplorer.CellError;
+    }
 
-    if (myCell instanceof EditorCell_Collection) return CellExplorer.Cells;
-    if (myCell instanceof EditorCell_Constant) return CellExplorer.CellConst;
-    if (myCell instanceof EditorCell_Error) return CellExplorer.CellError;
-    if (myCell instanceof EditorCell_Component) return CellExplorer.CellComponent;
-    if (myCell instanceof EditorCell_Property) return CellExplorer.CellProperty;
+    if (myCell instanceof EditorCell_Collection) {
+      return CellExplorer.Cells;
+    }
+    if (myCell instanceof EditorCell_Constant) {
+      return CellExplorer.CellConst;
+    }
+    if (myCell instanceof EditorCell_Error) {
+      return CellExplorer.CellError;
+    }
+    if (myCell instanceof EditorCell_Component) {
+      return CellExplorer.CellComponent;
+    }
+    if (myCell instanceof EditorCell_Property) {
+      return CellExplorer.CellProperty;
+    }
 
     return CellExplorer.CellDefault;
   }
@@ -84,7 +96,9 @@ class CellNode extends MPSTreeNode {
   }
 
   private boolean hasSameNodeAsParent() {
-    if (!(getParent() instanceof CellNode)) return false;
+    if (!(getParent() instanceof CellNode)) {
+      return false;
+    }
 
     CellNode parentCellNode = (CellNode) getParent();
 
@@ -99,7 +113,7 @@ class CellNode extends MPSTreeNode {
   @Override
   public boolean isLeaf() {
     return !(myCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection)
-        || ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) myCell).getCellsCount() == 0;
+        || ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) myCell).isEmpty();
   }
 
   @Override
