@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.UUID;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -69,6 +70,25 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
         }
         try {
           Long.parseLong((SPropertyOperations.getString(propertyValue)));
+          return true;
+        } catch (NumberFormatException e) {
+          return false;
+        }
+      }
+    });
+    properties.put(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId"), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L), this) {
+      @Override
+      public boolean hasOwnValidator() {
+        return true;
+      }
+      @Override
+      public boolean validateValue(SNode node, String propertyValue) {
+        String propertyName = "languageId";
+        if (isEmptyString((SPropertyOperations.getString(propertyValue)))) {
+          return true;
+        }
+        try {
+          UUID.fromString((SPropertyOperations.getString(propertyValue)));
           return true;
         } catch (NumberFormatException e) {
           return false;
