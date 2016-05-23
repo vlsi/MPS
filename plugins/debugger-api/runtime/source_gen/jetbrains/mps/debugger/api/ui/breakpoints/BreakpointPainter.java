@@ -4,14 +4,14 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /*package*/ class BreakpointPainter extends BreakpointPainterEx<ILocationBreakpoint> {
   public BreakpointPainter(ILocationBreakpoint mpsBreakpoint) {
     super(mpsBreakpoint);
   }
   @Override
-  protected SNode getSNode() {
-    return myBreakpoint.getLocation().getSNode();
+  protected SNodeReference getSNode() {
+    return myBreakpoint.getLocation().getNodePointer();
   }
 }

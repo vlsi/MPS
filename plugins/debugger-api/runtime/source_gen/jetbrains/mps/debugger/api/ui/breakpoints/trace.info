@@ -1423,11 +1423,11 @@
   <root nodeRef="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)/4474271214083119913">
     <file name="BreakpointPainter.java">
       <node id="8589065642488590119" at="10,63,11,25" concept="16" />
-      <node id="4474271214083119967" at="14,30,15,49" concept="11" />
+      <node id="4474271214083119967" at="14,39,15,55" concept="11" />
       <node id="4474271214083119944" at="10,0,13,0" concept="2" trace="BreakpointPainter#(Ljetbrains/mps/debug/api/breakpoints/ILocationBreakpoint;)V" />
-      <node id="4474271214083119954" at="13,0,17,0" concept="9" trace="getSNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4474271214083119954" at="13,0,17,0" concept="9" trace="getSNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <scope id="4474271214083119949" at="10,63,11,25" />
-      <scope id="4474271214083119957" at="14,30,15,49" />
+      <scope id="4474271214083119957" at="14,39,15,55" />
       <scope id="4474271214083119944" at="10,0,13,0">
         <var name="mpsBreakpoint" id="4474271214083119947" />
       </scope>

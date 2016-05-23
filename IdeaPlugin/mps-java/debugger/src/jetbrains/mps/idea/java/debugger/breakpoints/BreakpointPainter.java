@@ -25,6 +25,7 @@ import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 /*package private*/ class BreakpointPainter extends BreakpointPainterEx<BreakpointWithHighlighter> {
@@ -33,8 +34,9 @@ import org.jetbrains.annotations.Nullable;
   }
 
   @Override
-  protected SNode getSNode() {
-    return getNodeForBreakpoint(myBreakpoint);
+  protected SNodeReference getSNode() {
+    final SNode n = getNodeForBreakpoint(myBreakpoint);
+    return n == null ? null : n.getReference();
   }
 
   @Nullable

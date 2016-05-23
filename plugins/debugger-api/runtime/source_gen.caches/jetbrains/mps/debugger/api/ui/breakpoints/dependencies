@@ -70,7 +70,7 @@
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" file="BreakpointPainter.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent" file="BreakpointViewSettingsComponent.java">

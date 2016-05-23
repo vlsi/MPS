@@ -9,8 +9,8 @@ import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import com.intellij.util.messages.MessageBusConnection;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.CommandListenerAdapter;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Collection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,17 +19,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public abstract class CurrentLinePositionComponentEx<S> {
@@ -38,7 +37,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   protected final Project myProject;
   private final EditorComponentCreateListener myEditorComponentCreationHandler = new CurrentLinePositionComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
-  private final SRepositoryListener myRepositoryListener = new CurrentLinePositionComponentEx.MyRepositoryListener();
+  private final CommandListenerAdapter myCommandListener = new CurrentLinePositionComponentEx.MyRepositoryListener();
   public CurrentLinePositionComponentEx(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
@@ -46,10 +45,10 @@ public abstract class CurrentLinePositionComponentEx<S> {
   protected void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
-    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    ProjectHelper.getModelAccess(myProject).addCommandListener(myCommandListener);
   }
   protected void dispose() {
-    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
+    ProjectHelper.getModelAccess(myProject).removeCommandListener(myCommandListener);
     myMessageBusConnection.disconnect();
   }
   protected abstract S getCurrentSession();
@@ -61,40 +60,45 @@ public abstract class CurrentLinePositionComponentEx<S> {
       return painters;
     }
   }
-  protected void attach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
+
+  /**
+   * Expects EDT and model read access
+   */
+  /*package*/ void attach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = painter.getSNode();
-        if (node != null && EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
-          editorComponent.addAdditionalPainter(painter);
-          editorComponent.repaintExternalComponent();
-        }
-      }
-    });
+    final SRepository repo = editorComponent.getEditorContext().getRepository();
+    SNode node = (painter.getSNode() == null ? null : painter.getSNode().resolve(repo));
+    if (node != null && EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
+      editorComponent.addAdditionalPainter(painter);
+      editorComponent.repaintExternalComponent();
+    }
   }
-  protected void detach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
+
+  /**
+   * Expects EDT and model read access
+   */
+  /*package*/ void detach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = painter.getSNode();
-        if (node == null || EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
-          editorComponent.removeAdditionalPainter(painter);
-          editorComponent.repaintExternalComponent();
-        }
-      }
-    });
+    final SRepository repo = editorComponent.getEditorContext().getRepository();
+    SNode node = (painter.getSNode() == null ? null : painter.getSNode().resolve(repo));
+    if (node == null || EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
+      editorComponent.removeAdditionalPainter(painter);
+      editorComponent.repaintExternalComponent();
+    }
   }
+
+  /**
+   * 
+   * @return Runnable to execute with model write access and inside EDT
+   */
   @Nullable
-  protected Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
-    final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
+  /*package*/ Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
+    final CurrentLinePainter newPainter = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<CurrentLinePainter>() {
       @Override
       public CurrentLinePainter compute() {
         SNode node = getNode(debugSession);
         if (node != null) {
-          return new CurrentLinePainter(node);
+          return new CurrentLinePainter(SNodeOperations.getPointer(node));
         }
         return null;
       }
@@ -108,9 +112,9 @@ public abstract class CurrentLinePositionComponentEx<S> {
         return new Runnable() {
           @Override
           public void run() {
-            final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+            final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
             mpsProject.getModelAccess().checkWriteAccess();
-            SNode node = newPainter.getSNode();
+            SNode node = (newPainter.getSNode() == null ? null : newPainter.getSNode().resolve(mpsProject.getRepository()));
             if (node != null) {
               if (visible && focus) {
                 jetbrains.mps.openapi.editor.EditorComponent currentEditorComponent = NavigationSupport.getInstance().openNode(mpsProject, node, true, false).getCurrentEditorComponent();
@@ -132,8 +136,13 @@ public abstract class CurrentLinePositionComponentEx<S> {
     return null;
   }
   protected abstract SNode getNode(S session);
+
+  /**
+   * 
+   * @return Runnable to execute with model read and inside EDT
+   */
   @Nullable
-  protected Runnable detachPainterRunnable(S session) {
+  /*package*/ Runnable detachPainterRunnable(S session) {
     final CurrentLinePainter painter;
     synchronized (mySessionToContextPainterMap) {
       painter = MapSequence.fromMap(mySessionToContextPainterMap).get(session);
@@ -156,13 +165,14 @@ public abstract class CurrentLinePositionComponentEx<S> {
     if (detachPainterRunnable == null) {
       return;
     }
-    ApplicationManager.getApplication().invokeLater(detachPainterRunnable);
+    ProjectHelper.getModelAccess(myProject).runReadInEDT(detachPainterRunnable);
   }
+
   protected void reAttachPainter(S session, boolean focus) {
     final Runnable detachSession = detachPainterRunnable(session);
     final Runnable attachSession = attachPainterRunnable(session, focus);
     if (detachSession != null || attachSession != null) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      ProjectHelper.getModelAccess(myProject).runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           if (detachSession != null) {
@@ -212,9 +222,15 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     }
   }
-  private class MyRepositoryListener extends SRepositoryListenerBase {
+
+  /**
+   * It used to be SRepositoryListener with commandFinished that has NOT been invoked
+   * for couple of releases with no apparent defect (commandFinished of SRepositoryListener was deprecated and not invoked)
+   * so I wonder if there's a reason to keep it?
+   */
+  private class MyRepositoryListener extends CommandListenerAdapter {
     @Override
-    public void commandFinished(SRepository repository) {
+    public void commandFinished() {
       for (S session : CollectionSequence.fromCollection(getAllSessions())) {
         reAttachPainter(session, false);
       }

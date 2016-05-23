@@ -15,7 +15,6 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import java.awt.Graphics;
@@ -51,8 +50,8 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
   }
   @Override
   @Nullable
-  protected SNode getSNode() {
-    return ((SNodePointer) getItem()).resolve(MPSModuleRepository.getInstance());
+  protected SNodeReference getSNode() {
+    return myNodePointer;
   }
   @Override
   public Rectangle getCoverageArea(EditorComponent editorComponent) {

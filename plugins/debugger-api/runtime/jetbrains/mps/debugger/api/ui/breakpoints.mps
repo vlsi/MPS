@@ -6,7 +6,6 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -51,7 +50,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="bfoa" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view.icons(MPS.Platform/)" />
     <import index="7e8u" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.tree(MPS.Platform/)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="4jgh" ref="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -12463,7 +12462,7 @@
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
     <node concept="3uibUv" id="3SnNvqCbxGE" role="1zkMxy">
-      <ref role="3uigEE" to="zobu:~BreakpointPainterEx" resolve="BreakpointPainterEx" />
+      <ref role="3uigEE" to="4jgh:7sMvr7H2Rd5" resolve="BreakpointPainterEx" />
       <node concept="3uibUv" id="4d7ZCcwP0Ll" role="11_B2D">
         <ref role="3uigEE" to="rw00:3SnNvqCaJeL" resolve="ILocationBreakpoint" />
       </node>
@@ -12480,8 +12479,8 @@
       </node>
       <node concept="3clFbS" id="3SnNvqCbxHd" role="3clF47">
         <node concept="XkiVB" id="7sMvr7H2QWB" role="3cqZAp">
-          <ref role="37wK5l" to="zobu:~BreakpointPainterEx.&lt;init&gt;(java.lang.Object)" resolve="BreakpointPainterEx" />
-          <node concept="37vLTw" id="2BHiRxglyH_" role="37wK5m">
+          <ref role="37wK5l" to="4jgh:7sMvr7H2Rej" resolve="BreakpointPainterEx" />
+          <node concept="37vLTw" id="6mkTi9xEfnc" role="37wK5m">
             <ref role="3cqZAo" node="3SnNvqCbxHb" resolve="mpsBreakpoint" />
           </node>
         </node>
@@ -12492,22 +12491,22 @@
       <property role="TrG5h" value="getSNode" />
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="3SnNvqCbxHj" role="1B3o_S" />
-      <node concept="3uibUv" id="3oTAX9lRKo1" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      <node concept="3uibUv" id="6mkTi9xEdzs" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
       <node concept="3clFbS" id="3SnNvqCbxHl" role="3clF47">
         <node concept="3cpWs6" id="3SnNvqCbxHv" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCbxHw" role="3cqZAk">
             <node concept="2OqwBi" id="3SnNvqCbxHx" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxeuEaE" role="2Oq$k0">
-                <ref role="3cqZAo" to="zobu:~BreakpointPainterEx.myBreakpoint" resolve="myBreakpoint" />
+              <node concept="37vLTw" id="6mkTi9xEfGb" role="2Oq$k0">
+                <ref role="3cqZAo" to="4jgh:7sMvr7H2RdQ" resolve="myBreakpoint" />
               </node>
               <node concept="liA8E" id="3SnNvqCbxHA" role="2OqNvi">
                 <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
               </node>
             </node>
             <node concept="liA8E" id="3SnNvqCbxHB" role="2OqNvi">
-              <ref role="37wK5l" to="rw00:3SnNvqCaJWo" resolve="getSNode" />
+              <ref role="37wK5l" to="rw00:3SnNvqCaJWi" resolve="getNodePointer" />
             </node>
           </node>
         </node>

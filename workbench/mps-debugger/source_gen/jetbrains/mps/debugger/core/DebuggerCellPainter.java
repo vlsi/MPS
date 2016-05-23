@@ -10,9 +10,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.Graphics;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -33,7 +35,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
   @Nullable
   protected abstract Color getFrameColor();
   @Nullable
-  protected abstract SNode getSNode();
+  protected abstract SNodeReference getSNode();
 
   @Override
   public void afterAdding(EditorComponent component) {
@@ -74,10 +76,11 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     paintCellBackground(graphics, component);
   }
   private void setComponentParameters(final EditorComponent editorComponent) {
-    ModelAccess ma = editorComponent.getEditorContext().getRepository().getModelAccess();
+    final SRepository repository = editorComponent.getEditorContext().getRepository();
+    ModelAccess ma = repository.getModelAccess();
     ma.runReadAction(new Runnable() {
       public void run() {
-        SNode node = getSNode();
+        SNode node = (getSNode() == null ? null : getSNode().resolve(repository));
         MapSequence.fromMap(myCells).put(editorComponent, (node == null ? null : editorComponent.getBigValidCellForNode(node)));
       }
     });
