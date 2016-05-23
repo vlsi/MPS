@@ -41225,7 +41225,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="6YK8y67q5Q4" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                    <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
                   </node>
                 </node>
               </node>
@@ -41343,8 +41343,8 @@
             <node concept="1bVj0M" id="43e76yODlzZ" role="37wK5m">
               <node concept="37vLTG" id="76O06llXMZ0" role="1bW2Oz">
                 <property role="TrG5h" value="changes" />
-                <node concept="3rvAFt" id="76O06llXNXD" role="1tU5fm">
-                  <node concept="3uibUv" id="76O06llXNXH" role="3rvSg0">
+                <node concept="A3Dl8" id="5$FcEFN8Oyz" role="1tU5fm">
+                  <node concept="3uibUv" id="76O06llXNXH" role="A3Ik2">
                     <ref role="3uigEE" to="lfzw:5z_gLGerhde" resolve="RefactoringParticipant.ParticipantState" />
                     <node concept="3qTvmN" id="76O06llXNXI" role="11_B2D" />
                     <node concept="3qTvmN" id="76O06llXNXJ" role="11_B2D" />
@@ -41352,9 +41352,6 @@
                     <node concept="H_c77" id="43e76yODQmv" role="11_B2D" />
                     <node concept="H_c77" id="XAmMekb3ha" role="11_B2D" />
                     <node concept="H_c77" id="XAmMekb4JX" role="11_B2D" />
-                  </node>
-                  <node concept="3uibUv" id="76O06llXNXE" role="3rvQeY">
-                    <ref role="3uigEE" to="lfzw:3KqYwoBIxpF" resolve="RefactoringParticipant" />
                   </node>
                 </node>
               </node>
