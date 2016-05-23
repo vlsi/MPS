@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.watching.ModelFocusSynchronizer" file="ModelFocusSynchronizer.java">
     <classNode dependClassName="com.intellij.ide.FrameStateListener" />
     <classNode dependClassName="com.intellij.ide.FrameStateManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
@@ -15,11 +16,12 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.nodefs.MPSNodeVirtualFile" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.FileSystemModelHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

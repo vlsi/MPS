@@ -5,23 +5,25 @@ package jetbrains.mps.watching;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.ide.FrameStateManager;
 import com.intellij.ide.FrameStateListener;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
-import com.intellij.openapi.vfs.newvfs.RefreshSession;
-import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.workbench.FileSystemModelHelper;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.newvfs.RefreshSession;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -34,12 +36,19 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       }
       @Override
       public void onFrameActivated() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
-            for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        final Set<IFile> files = SetSequence.fromSet(new HashSet<IFile>());
+        for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+          // XXX could use MPS's ProjectManager, but it's complicated to get IDEA project out of regular mps's Project. 
+          MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
+          if (mpsProject == null) {
+            continue;
+          }
+          mpsProject.getModelAccess().runReadInEDT(new Runnable() {
+            public void run() {
+              Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
               for (VirtualFile vf : FileEditorManager.getInstance(project).getSelectedFiles()) {
                 if (vf instanceof MPSNodeVirtualFile) {
+                  // XXX as long as we update VFS files, why do we care to find actual edited node? Why vf.getNode() is not sufficient? 
                   MPSNodeVirtualFile nvf = ((MPSNodeVirtualFile) vf);
                   SNode node = MPSEditorUtil.getCurrentEditedNode(project, nvf);
                   if (node == null) {
@@ -53,19 +62,27 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
                   }
                 }
               }
+              for (SModel model : SetSequence.fromSet(models)) {
+                SetSequence.fromSet(files).addSequence(CollectionSequence.fromCollection(new FileSystemModelHelper(model).getFiles()));
+              }
             }
-
+          });
+        }
+        //  the sole reason for invokeLater here is to run after all runReadInEDT. IOW, we implicitly 
+        // synchronize file collection task with refresh task by using EDT thread. Just don't want to bother with 
+        // explicit synch (e.g. semaphore incremented before runReadInEDT, decremented in the end and RefreshQueue waiting for 
+        // semaphore == 0. 
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
-            for (SModel model : SetSequence.fromSet(models)) {
-              for (IFile file : CollectionSequence.fromCollection(new FileSystemModelHelper(model).getFiles())) {
-                IFile fileToRefresh = file;
-                while (!(fileToRefresh.exists())) {
-                  fileToRefresh = fileToRefresh.getParent();
-                }
-                VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
-                if (virtualFile != null) {
-                  session.addFile(virtualFile);
-                }
+            for (IFile file : SetSequence.fromSet(files)) {
+              IFile fileToRefresh = file;
+              while (!(fileToRefresh.exists())) {
+                fileToRefresh = fileToRefresh.getParent();
+              }
+              VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
+              if (virtualFile != null) {
+                session.addFile(virtualFile);
               }
             }
             session.launch();
