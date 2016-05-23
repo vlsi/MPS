@@ -22405,6 +22405,9 @@
             <ref role="3bR37D" node="2eDSGe9d1pJ" resolve="jetbrains.mps.lang.plugin.standalone" />
           </node>
         </node>
+        <node concept="1E0d5M" id="6G6RsahJhAW" role="1E1XAP">
+          <ref role="1E0d5P" node="3405ypXZilV" resolve="JDK-tools" />
+        </node>
       </node>
       <node concept="1E1JtD" id="4LDuh$Ud1MP" role="2G$12L">
         <property role="BnDLt" value="true" />
