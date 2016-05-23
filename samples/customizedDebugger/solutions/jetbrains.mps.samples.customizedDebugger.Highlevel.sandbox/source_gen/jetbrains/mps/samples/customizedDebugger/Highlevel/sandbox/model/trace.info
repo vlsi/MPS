@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info-v2>
+  <concept fqn="c:3f028972-a290-4cf2-a87e-9b8f7e56076b/567241428659643876:jetbrains.mps.samples.customizedDebugger.Bottomline.structure.OutputMessage" />
+  <root nodeRef="r:4d8ad4e6-5a42-471b-bd0a-37d5d4f0adee(jetbrains.mps.samples.customizedDebugger.Highlevel.sandbox.model)/8203012558887846131">
+    <file name="MorningChitChat.java">
+      <node id="8203012558887849546" at="5,0,7,0" concept="0" trace="Joe says: Good morning!" />
+      <node id="8203012558887849552" at="7,0,9,0" concept="0" trace="Alice says: Hi Joe!" />
+      <node id="8203012558887849560" at="9,0,11,0" concept="0" trace="Brian says: Hi there!" />
+      <node id="8203012558887849570" at="11,0,13,0" concept="0" trace="Joe says: What's up today?" />
+      <node id="8203012558887849582" at="13,0,15,0" concept="0" trace="Alice says: We'll be testing custom MPS debugger after lunch." />
+      <node id="8203012558887849596" at="15,0,17,0" concept="0" trace="Joe says: That sounds useful. Are you, Brian, joining us?" />
+      <node id="8203012558887849612" at="17,0,19,0" concept="0" trace="Brian says: Of course, I am! Can't miss that!" />
+      <unit id="8203012558887846131" at="1,0,20,1" name="jetbrains.mps.samples.customizedDebugger.Highlevel.sandbox.model.MorningChitChat" />
+    </file>
+  </root>
+</debug-info-v2>
+

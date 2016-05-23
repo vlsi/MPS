@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info-v2>
+  <concept fqn="c:3f028972-a290-4cf2-a87e-9b8f7e56076b/567241428659643876:jetbrains.mps.samples.customizedDebugger.Bottomline.structure.OutputMessage" />
+  <root nodeRef="r:3c45983e-01f9-4fa4-9155-8bf871023e43(jetbrains.mps.samples.customizedDebugger.Bottomline.sandbox)/567241428660050326">
+    <file name="SampleMessages.java">
+      <node id="567241428660050327" at="5,0,7,0" concept="0" trace="Hello" />
+      <node id="567241428660050329" at="7,0,9,0" concept="0" trace="Hi" />
+      <node id="567241428660050332" at="9,0,11,0" concept="0" trace="Good morning!" />
+      <unit id="567241428660050326" at="1,0,12,1" name="jetbrains.mps.samples.customizedDebugger.Bottomline.sandbox.SampleMessages" />
+    </file>
+  </root>
+</debug-info-v2>
+
