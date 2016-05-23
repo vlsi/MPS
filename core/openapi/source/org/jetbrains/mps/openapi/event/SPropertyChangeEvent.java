@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SPropertyChangeEvent  extends AbstractModelChangeEvent {
+public final class SPropertyChangeEvent extends AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myNode;
   private final SProperty myProperty;
@@ -43,6 +43,8 @@ public final class SPropertyChangeEvent  extends AbstractModelChangeEvent {
     myNewValue = newValue;
   }
 
+  @Override
+  @NotNull
   public SModel getModel() {
     return myModel;
   }

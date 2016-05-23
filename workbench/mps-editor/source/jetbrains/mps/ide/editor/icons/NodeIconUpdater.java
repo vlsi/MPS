@@ -18,94 +18,68 @@ package jetbrains.mps.ide.editor.icons;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileEvent;
+import com.intellij.openapi.vfs.VirtualFileListener;
+import com.intellij.openapi.vfs.VirtualFilePropertyEvent;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.event.RepositoryChangeTracker;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
-import org.jetbrains.mps.openapi.event.SNodeAddEvent;
-import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
-import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
-import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.Arrays;
 
 /**
  * FIXME: MPSNodesVirtualFileSystem listens to node deletion and rename, why doesn't it send out file changed events as well, why do we
- *        need this distinct component?
- * XXX if it stays, it may use FileSystemProjectBridge
- * XXX also, RepositoryChangeTracker may come from a dedicated project component (to share it unless there's
+ *        need this distinct component? Does IDEA listen to file changes or it's indeed our responsibility to update editors on VF change?
  * XXX Why it's distinct from NodeFileIconProvider?
- * mechanism to accomplish the same through SRepository/MPSProject. Although why not Project.getComponent?)
- * @author Evgeny Gerashchenko
- * @since 10/3/11
  */
-public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBatchChangeListener {
+public class NodeIconUpdater extends AbstractProjectComponent {
   private final FileEditorManagerEx myFileEditorManagerEx;
-  private final MPSProject myMPSProject;
   private final NodeVirtualFileSystem myNodeVFS;
-  private final RepositoryChangeTracker myChangeTracker = new RepositoryChangeTracker();
+  private final VirtualFileListener myFileListener;
+
+  public NodeIconUpdater(Project project, FileEditorManagerEx fileEditorManager, NodeVirtualFileSystem nodeVFS) {
+    super(project);
+    myFileEditorManagerEx = fileEditorManager;
+    myNodeVFS = nodeVFS;
+    // TODO Would be more effective to be an ApplicationComponent and listen to bulk changes (BulkFileListener)
+    // however, there's no way to find out MPSProject from MPSNodeVirtualFile at the moment, and without a project
+    // can't access FileEditorManagerEx.
+    myFileListener = new VirtualFileAdapter() {
+      @Override
+      public void propertyChanged(@NotNull VirtualFilePropertyEvent event) {
+        refresh(event.getFile());
+      }
+
+      @Override
+      public void contentsChanged(@NotNull VirtualFileEvent event) {
+        refresh(event.getFile());
+      }
+
+      @Override
+      public void fileDeleted(@NotNull VirtualFileEvent event) {
+        refresh(event.getFile());
+      }
+    };
+  }
 
   @Override
   public void projectOpened() {
-    // XXX there's little sense to have own RepositoryChangeTracker in each component like this, we shall
-    // rather share one. Therefore, I explicitly add/remove listeners here.
-    myChangeTracker.addListener(this);
-    new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).attach();
+    myNodeVFS.addVirtualFileListener(myFileListener);
   }
 
   @Override
   public void projectClosed() {
-    myChangeTracker.removeListener(this);
-    new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).detach();
+    myNodeVFS.removeVirtualFileListener(myFileListener);
   }
 
-  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, NodeVirtualFileSystem nodeVFS) {
-    super(project);
-    myFileEditorManagerEx = fileEditorManager;
-    myMPSProject = mpsProject;
-    myNodeVFS = nodeVFS;
-  }
-
-  @Override
-  public void processEvents(@NotNull Collection<AbstractModelChangeEvent> events) {
-    HashSet<SNodeReference> affectedRoots = new HashSet<SNodeReference>(events.size());
-    for (AbstractModelChangeEvent event : events) {
-      SNode root = null;
-      if (event instanceof SNodeAddEvent) {
-        final SNodeAddEvent e = (SNodeAddEvent) event;
-        if (e.isRoot()) {
-          root = e.getChild();
-        } else {
-          root = e.getParent().getContainingRoot();
-        }
-      } else if (event instanceof SNodeRemoveEvent) {
-        final SNodeRemoveEvent e = (SNodeRemoveEvent) event;
-        if (e.isRoot()) {
-          root = e.getChild();
-        } else {
-          // e.getChild().getContainingRoot() is unlikely to give proper value, as the node is not inside model, right?
-          root = e.getParent().getContainingRoot();
-        }
-      } else if (event instanceof SPropertyChangeEvent) {
-        root = ((SPropertyChangeEvent) event).getNode().getContainingRoot();
-      } else if (event instanceof SReferenceChangeEvent) {
-        root = ((SReferenceChangeEvent) event).getNode().getContainingRoot();
-      }
-      if (root == null || root.getModel() == null) {
-        continue;
-      }
-      affectedRoots.add(root.getReference());
+  void refresh(VirtualFile vf) {
+    if (false == vf instanceof MPSNodeVirtualFile) {
+      return;
     }
-    for (SNodeReference ptr : affectedRoots) {
-      if (myNodeVFS.hasVirtualFileFor(myMPSProject.getRepository(), ptr)) {
-        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(myMPSProject.getRepository(), ptr));
-      }
+    if (Arrays.<VirtualFile>asList(myFileEditorManagerEx.getOpenFiles()).contains(vf)) {
+      myFileEditorManagerEx.updateFilePresentation(vf);
     }
   }
 }

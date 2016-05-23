@@ -24,8 +24,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TransformationLocation_Sidebar__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar");
+public final class TransformationLocation_ContextActionsTool__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActions.structure.TransformationLocation_ContextActionsTool");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Collection<SConcept>> getRequiredFeatures_id7L5lpRJHK_w = new SMethodBuilder<Collection<SConcept>>(new SJavaCompoundTypeImpl((Class<Collection<SConcept>>) ((Class) Object.class))).name("getRequiredFeatures").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7L5lpRJHK_w").registry(REGISTRY).build();
@@ -39,7 +39,7 @@ public final class TransformationLocation_Sidebar__BehaviorDescriptor extends Ba
     return CollectionSequence.fromCollectionAndArray(new HashSet<SConcept>(), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1ac7L, "jetbrains.mps.editor.contextActions.structure.TransformationFeature_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da5L, "jetbrains.mps.editor.contextActions.structure.TransformationFeature_Tooltip"));
   }
 
-  /*package*/ TransformationLocation_Sidebar__BehaviorDescriptor() {
+  /*package*/ TransformationLocation_ContextActionsTool__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

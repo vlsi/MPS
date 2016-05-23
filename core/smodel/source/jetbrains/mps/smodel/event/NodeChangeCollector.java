@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import java.util.List;
 /**
  * Implementation of model change {@link SNodeChangeListener listener} that collects events as commanded.
  * Multiple start/stop sequences are possible.
+ * Nested start/stop are not supported. Initial state is stopped.
  * <p/>
  * Not thread-safe, it's caller's responsibility to ensure single-thread use or to synchronize access.
  *
@@ -67,21 +68,29 @@ public class NodeChangeCollector implements SNodeChangeListener {
 
   @Override
   public void propertyChanged(@NotNull SPropertyChangeEvent event) {
-    myEvents.add(event);
+    if (myEnabled) {
+      myEvents.add(event);
+    }
   }
 
   @Override
   public void referenceChanged(@NotNull SReferenceChangeEvent event) {
-    myEvents.add(event);
+    if (myEnabled) {
+      myEvents.add(event);
+    }
   }
 
   @Override
   public void nodeAdded(@NotNull SNodeAddEvent event) {
-    myEvents.add(event);
+    if (myEnabled) {
+      myEvents.add(event);
+    }
   }
 
   @Override
   public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
-    myEvents.add(event);
+    if (myEnabled) {
+      myEvents.add(event);
+    }
   }
 }

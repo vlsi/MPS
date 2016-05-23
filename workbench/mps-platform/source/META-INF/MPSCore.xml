@@ -72,6 +72,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.compiler.CompilerSettingsComponent</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.nodefs.FileSystemProjectBridge</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>

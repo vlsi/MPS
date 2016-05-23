@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,12 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.List;
 
@@ -34,25 +32,14 @@ import java.util.List;
  * Tracks changes in a repository within boundaries of a command, and dispatch them further to listeners.
  * Replacement for <code>jetbrains.mps.smodel.GlobalSModelEventsManager</code>, in particular <code>#addGlobalCommandListener</code> and {@link SModelCommandListener}
  *
- * XXX
+ * RepositoryChangeTracker may come from a dedicated project component (to share it unless there's
+ * mechanism to accomplish the same through SRepository/MPSProject. Although why not Project.getComponent?)
  *
  * @author Artem Tikhomirov
  */
-public class RepositoryChangeTracker extends SRepositoryContentAdapter implements CommandListener {
+public class RepositoryChangeTracker extends SRepositoryContentAdapter {
   private final NodeChangeCollector myChangeCollector = new NodeChangeCollector();
   private final BatchChangeEventDispatch myListeners = new BatchChangeEventDispatch();
-
-  @Override
-  public void startListening(@NotNull SRepository repository) {
-    super.startListening(repository);
-    repository.getModelAccess().addCommandListener(this);
-  }
-
-  @Override
-  public void stopListening(SRepository repository) {
-    repository.getModelAccess().removeCommandListener(this);
-    super.stopListening(repository);
-  }
 
   @Override
   protected boolean isIncluded(SModule module) {
@@ -72,12 +59,12 @@ public class RepositoryChangeTracker extends SRepositoryContentAdapter implement
   }
 
   @Override
-  public void commandStarted() {
+  public void commandStarted(SRepository repository) {
     myChangeCollector.start();
   }
 
   @Override
-  public void commandFinished() {
+  public void commandFinished(SRepository repository) {
     myChangeCollector.stop();
     final List<AbstractModelChangeEvent> events = myChangeCollector.purge();
     myListeners.dispatch(events);

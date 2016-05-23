@@ -10712,7 +10712,7 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="3DiRZz_V0lv" role="3EZMnx">
-            <property role="1$x2rV" value="none" />
+            <property role="1$x2rV" value="&lt;none&gt;" />
             <ref role="1NtTu8" to="tpc2:3DiRZz_UXt0" />
           </node>
           <node concept="2iRfu4" id="4Sf$XywJx6Y" role="2iSdaV" />

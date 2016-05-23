@@ -21,19 +21,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptQueryFunction_TransformationMenu_Tooltip = new ConceptDescriptorBuilder("jetbrains.mps.editor.contextActions.structure.QueryFunction_TransformationMenu_Tooltip", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x652f322a3695c3acL)).super_("jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L)).parents("jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L)).alias("query", "a block of code").sourceNode(new SNodePointer("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)", "7291101478621922220")).create();
   /*package*/ final ConceptDescriptor myConceptTransformationFeature_Icon = new ConceptDescriptorBuilder("jetbrains.mps.editor.contextActions.structure.TransformationFeature_Icon", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1ac7L)).super_("jetbrains.mps.lang.editor.structure.TransformationFeature").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).parents("jetbrains.mps.lang.editor.structure.TransformationFeature").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c45559defbb1da3L, "query", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1acaL), true, false, false)).children(new String[]{"query"}, new boolean[]{false}).alias("icon", "").sourceNode(new SNodePointer("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)", "8954657570916342471")).create();
   /*package*/ final ConceptDescriptor myConceptTransformationFeature_Tooltip = new ConceptDescriptorBuilder("jetbrains.mps.editor.contextActions.structure.TransformationFeature_Tooltip", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da5L)).super_("jetbrains.mps.lang.editor.structure.TransformationFeature").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).parents("jetbrains.mps.lang.editor.structure.TransformationFeature").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c45559defbb1da6L, "query", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x652f322a3695c3acL), true, false, false)).children(new String[]{"query"}, new boolean[]{false}).alias("tooltip", "").sourceNode(new SNodePointer("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)", "8954657570916343205")).create();
-  /*package*/ final ConceptDescriptor myConceptTransformationLocation_Sidebar = new ConceptDescriptorBuilder("jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L)).super_("jetbrains.mps.lang.editor.structure.TransformationLocation").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).parents("jetbrains.mps.lang.editor.structure.TransformationLocation").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).alias("sidebar", "context actions tool window").sourceNode(new SNodePointer("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)", "8954657570916343208")).create();
+  /*package*/ final ConceptDescriptor myConceptTransformationLocation_ContextActionsTool = new ConceptDescriptorBuilder("jetbrains.mps.editor.contextActions.structure.TransformationLocation_ContextActionsTool", MetaIdFactory.conceptId(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L)).super_("jetbrains.mps.lang.editor.structure.TransformationLocation").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).parents("jetbrains.mps.lang.editor.structure.TransformationLocation").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).alias("context actions tool", "context actions tool window").sourceNode(new SNodePointer("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActions.structure)", "8954657570916343208")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptQueryFunction_TransformationMenu_Icon.getId(), 0);
     myIndexMap.put(myConceptQueryFunction_TransformationMenu_Tooltip.getId(), 1);
     myIndexMap.put(myConceptTransformationFeature_Icon.getId(), 2);
     myIndexMap.put(myConceptTransformationFeature_Tooltip.getId(), 3);
-    myIndexMap.put(myConceptTransformationLocation_Sidebar.getId(), 4);
+    myIndexMap.put(myConceptTransformationLocation_ContextActionsTool.getId(), 4);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptQueryFunction_TransformationMenu_Icon, myConceptQueryFunction_TransformationMenu_Tooltip, myConceptTransformationFeature_Icon, myConceptTransformationFeature_Tooltip, myConceptTransformationLocation_Sidebar);
+    return Arrays.asList(myConceptQueryFunction_TransformationMenu_Icon, myConceptQueryFunction_TransformationMenu_Tooltip, myConceptTransformationFeature_Icon, myConceptTransformationFeature_Tooltip, myConceptTransformationLocation_ContextActionsTool);
   }
 
   @Override
@@ -53,7 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptTransformationFeature_Tooltip;
       case 4:
-        return myConceptTransformationLocation_Sidebar;
+        return myConceptTransformationLocation_ContextActionsTool;
       default:
         throw new IllegalStateException();
     }

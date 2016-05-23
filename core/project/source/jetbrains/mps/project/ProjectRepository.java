@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,8 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 /**
  * Repository with modules visible in MPS {@link Project project}.
@@ -50,6 +49,11 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
     myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
     init();
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
   }
 
   @NotNull

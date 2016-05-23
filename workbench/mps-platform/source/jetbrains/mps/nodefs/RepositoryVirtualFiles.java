@@ -35,8 +35,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * Manages {@linkplain com.intellij.openapi.vfs.VirtualFile virtual files} for nodes of given repository
  *
  * @author Artem Tikhomirov
+ * @since 3.4
  */
-public class RepositoryVirtualFiles {
+final class RepositoryVirtualFiles {
   private final NodeVirtualFileSystem myFileSystem;
   private final SRepository myRepository;
   private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
@@ -69,7 +70,7 @@ public class RepositoryVirtualFiles {
   }
 
   @NotNull
-  public /*FIXME: package*/ SRepository getRepository() {
+  /*package*/ SRepository getRepository() {
     return myRepository;
   }
 
@@ -108,13 +109,16 @@ public class RepositoryVirtualFiles {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
+  /**
+   * @return existing VF, if any.
+   */
   @Nullable
-  public /*FIXME: package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
+  /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
     return myVirtualFiles.get(nodeRef);
   }
 
   // XXX likely, RVF shall be responsible to collect deleted/renamed files, rather than give access to known vf
-  public /*FIXME: package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
+  /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
     ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
     for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
       if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
@@ -124,12 +128,12 @@ public class RepositoryVirtualFiles {
     return rv;
   }
 
-  public /*FIXME: package*/ void forgetVirtualFile(SNodeReference nodeRef) {
+  /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
     myVirtualFiles.remove(nodeRef);
   }
 
   @Nullable
-  public VirtualFile findFileByPath(final @NotNull String path) {
+  /*package*/ VirtualFile findFileByPath(final @NotNull String path) {
     return new ModelAccessHelper(myRepository).runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
