@@ -47,6 +47,9 @@
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -376,11 +379,10 @@
                             <property role="3cmrfH" value="4" />
                           </node>
                           <node concept="2OqwBi" id="4KDfkUwMiBC" role="3uHU7B">
-                            <node concept="2OqwBi" id="4KDfkUwMiBD" role="2Oq$k0">
-                              <node concept="liA8E" id="4KDfkUwMiBE" role="2OqNvi">
-                                <ref role="37wK5l" to="g51k:~EditorCell_Basic.getPrevLeaf():jetbrains.mps.nodeEditor.cells.EditorCell" resolve="getPrevLeaf" />
-                              </node>
-                              <node concept="Xjq3P" id="4KDfkUwMiBF" role="2Oq$k0" />
+                            <node concept="2YIFZM" id="6W_QSQ8u7Fe" role="2Oq$k0">
+                              <ref role="37wK5l" to="f4zo:~CellTraversalUtil.getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getPrevLeaf" />
+                              <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
+                              <node concept="Xjq3P" id="6W_QSQ8u8oz" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="4KDfkUwMiBG" role="2OqNvi">
                               <ref role="37wK5l" to="f4zo:~EditorCell.getHeight():int" resolve="getHeight" />
