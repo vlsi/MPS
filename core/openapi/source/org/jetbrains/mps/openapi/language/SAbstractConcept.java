@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * A descriptor of a concept. Concepts define categories for AST nodes.
@@ -37,6 +38,7 @@ public interface SAbstractConcept extends SNamedElement {
   @Override
   @NotNull
   String getName();
+
   /**
    * The language that defines the concept
    */
@@ -65,6 +67,13 @@ public interface SAbstractConcept extends SNamedElement {
   boolean isSubConceptOf(SAbstractConcept concept);
 
   /**
+   * Returns all parents of a concept or concept interface in "inheritance" order.
+   * "Inheritance" order means that behavior methods, constraints and some other concept stuff, that is inherited,
+   * should be searched accordingly to order of parents in this list
+   */
+  List<? extends SAbstractConcept> getAllParents();
+
+  /**
    * @return <code>true</code> for interfaces and abstract concepts.
    */
   boolean isAbstract();
@@ -85,7 +94,7 @@ public interface SAbstractConcept extends SNamedElement {
   @Nullable
   SNodeReference getSourceNode();
 
-   /**
+  /**
    * Returns true if this concept is fully-functional. Typically, user code should not care about this
    * Can return false, for example, if the containing language is absent
    */
