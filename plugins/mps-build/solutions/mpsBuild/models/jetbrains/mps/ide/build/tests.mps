@@ -1053,6 +1053,18 @@
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5_kqtpAyfG_" role="3bR37C">
+          <node concept="3bR9La" id="5_kqtpAyfGA" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5_kqtpAyfGB" role="3bR37C">
+          <node concept="3bR9La" id="5_kqtpAyfGC" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="55IIr" id="53PdBITeUcM" role="auvoZ">

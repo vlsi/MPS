@@ -117,12 +117,12 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
-      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
-      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
@@ -273,7 +273,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -32595,23 +32595,6 @@
   <node concept="jVnub" id="6VgTvK0odUq">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="switch_TransformationLocation_actionItemInterfaces" />
-    <node concept="3aamgX" id="6VgTvK0qiW4" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpc2:7L5lpRJOAJb" resolve="TransformationLocation_ContextAssistant" />
-      <node concept="gft3U" id="6VgTvK0qiW8" role="1lVwrX">
-        <node concept="2VYdi" id="6VgTvK0qiWa" role="gfFT$">
-          <node concept="29HgVG" id="6VgTvK0qiWg" role="lGtFl">
-            <node concept="3NFfHV" id="6VgTvK0qiWj" role="3NFExx">
-              <node concept="3clFbS" id="6VgTvK0qiWk" role="2VODD2">
-                <node concept="3clFbF" id="6VgTvK0qiZD" role="3cqZAp">
-                  <node concept="10Nm6u" id="6VgTvK0qiZC" role="3clFbG" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="30NnNOohxj0" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:2wNq5j$KpC6" resolve="TransformationLocation_SideTransform" />
@@ -32621,6 +32604,7 @@
         </node>
       </node>
     </node>
+    <node concept="b5Tf3" id="5_kqtpAy53e" role="jxRDz" />
   </node>
   <node concept="13MO4I" id="4sA1wziUiKH">
     <property role="3GE5qa" value="TransformationMenu" />

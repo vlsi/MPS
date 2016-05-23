@@ -244,6 +244,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/runtime/jetbrains.mps.lang.editor.table.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.mpl" folder="core.baseLanguage.unitTest" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="core.baseLanguage.unitTest" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/editor/jetbrains.mps.lang.editor.transformationMenuTest/jetbrains.mps.lang.editor.transformationMenuTest.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/editorTest/jetbrains.mps.lang.editor.editorTest.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/patternTest/jetbrains.mps.lang.pattern.testLang.mpl" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/smodelTests/jetbrains.mps.lang.smodelTests.mpl" folder="core.languages.smodel" />

@@ -42,12 +42,19 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @NotNull
   private final SNode myNode;
 
+  @NotNull
   public static DefaultTransformationMenuContext createInitialContextForCell(@NotNull EditorCell cell, @NotNull String menuLocation) {
-    if (cell.getSNode() == null) {
+    SNode cellNode = cell.getSNode();
+    if (cellNode == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);
     }
 
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), menuLocation, cell.getContext(), cell.getSNode());
+    return createInitialContextForNode(cell.getContext(), cellNode, menuLocation);
+  }
+
+  @NotNull
+  public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), menuLocation, editorContext, node);
   }
 
   private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory menuItemFactory, @NotNull String menuLocation,

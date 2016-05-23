@@ -543,6 +543,12 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editor">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editor/jetbrains.mps.lang.editor.transformationMenuTest/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editor/jetbrains.mps.lang.editor.transformationMenuTest/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editor/jetbrains.mps.lang.editor.transformationMenuTest/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editor/jetbrains.mps.lang.editor.transformationMenuTest/generator/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editorTest">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editorTest/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/editorTest/classes_gen" />
