@@ -28,7 +28,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.Nullable;
@@ -389,12 +389,12 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Nullable
     @Override
-    public ContextAssistantMenuLookup getContextAssistantMenuLookup() {
+    public TransformationMenuLookup getTransformationMenuLookup() {
       return null;
     }
 
     @Override
-    public void setContextAssistantMenuLookup(@Nullable ContextAssistantMenuLookup contextAssistantMenuLookup) {
+    public void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup) {
 
     }
 
