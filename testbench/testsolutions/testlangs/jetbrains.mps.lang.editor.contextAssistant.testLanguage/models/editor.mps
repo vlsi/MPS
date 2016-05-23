@@ -95,7 +95,7 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
-        <child id="4202667662392416064" name="contextAssistantMenu" index="3vIgyS" />
+        <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -212,7 +212,7 @@
       </concept>
     </language>
     <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActions">
-      <concept id="8954657570916343208" name="jetbrains.mps.editor.contextActions.structure.TransformationLocation_Sidebar" flags="ng" index="2jZ$wP" />
+      <concept id="8954657570916343208" name="jetbrains.mps.editor.contextActions.structure.TransformationLocation_ContextActionsTool" flags="ng" index="2jZ$wP" />
       <concept id="8954657570916343205" name="jetbrains.mps.editor.contextActions.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
         <child id="8954657570916343206" name="query" index="2jZ$wV" />
       </concept>
