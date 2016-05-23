@@ -86,7 +86,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SReferenceLink referenceLinkId,
       InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : ((SAbstractConceptAdapter) concept).getAllParents()) {
+    for (SAbstractConcept parent : concept.getAllParents()) {
       if (!((SAbstractConceptAdapter) parent).hasReference(referenceLinkId)) {
         continue;
       }

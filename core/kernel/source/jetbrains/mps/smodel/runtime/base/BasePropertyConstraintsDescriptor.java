@@ -124,7 +124,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SProperty property,
       InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : ((SAbstractConceptAdapter) concept).getAllParents()) {
+    for (SAbstractConcept parent : concept.getAllParents()) {
       if (!((SAbstractConceptAdapter) parent).hasProperty(property)) {
         continue;
       }

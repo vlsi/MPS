@@ -148,7 +148,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   private ConstraintsDescriptor getMethodUsingInheritance(SAbstractConcept concept, InheritanceCalculateParameters parameters) {
-    for (SAbstractConcept parent : ((SAbstractConceptAdapter) concept).getAllParents()) {
+    for (SAbstractConcept parent : concept.getAllParents()) {
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
 
       ConstraintsDescriptor parentCalculated;
