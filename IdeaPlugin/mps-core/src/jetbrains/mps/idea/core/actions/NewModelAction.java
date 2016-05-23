@@ -77,8 +77,11 @@ public class NewModelAction extends NewModelActionBase {
             EditableSModel model = null;
             try {
               model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+              model.setChanged(true);
+              model.save();
             } catch (IOException e) {
               LOG.error("Can't create per-root model " + modelName + " under " + path, e);
+              return null;
             }
 
             // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
@@ -113,9 +116,6 @@ public class NewModelAction extends NewModelActionBase {
               public void problemsDetected(SModel sModel, Iterable<Problem> problems) {
               }
             });
-
-            model.setChanged(true);
-            model.save();
 
             ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
             new MissingDependenciesFixer(model).fixModuleDependencies();
