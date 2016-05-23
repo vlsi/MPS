@@ -301,6 +301,11 @@
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/jetbrains.mps.samples.customAspect.sampleLanguage.sandbox.msd" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/jetbrains.mps.samples.customAspect.documentation.pluginSolution.msd" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/jetbrains.mps.samples.customAspect.documentation.runtime.msd" folder="samples.customAspect" />
+      <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/jetbrains.mps.samples.customizedDebugger.Bottomline.mpl" folder="samples.customizedDebugger" />
+      <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/sandbox/jetbrains.mps.samples.customizedDebugger.Bottomline.sandbox.msd" folder="samples.customizedDebugger" />
+      <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Highlevel/jetbrains.mps.samples.customizedDebugger.Highlevel.mpl" folder="samples.customizedDebugger" />
+      <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/solutions/jetbrains.mps.samples.customizedDebugger.Bottomline.debug/jetbrains.mps.samples.customizedDebugger.Bottomline.debug.msd" folder="samples.customizedDebugger" />
+      <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/solutions/jetbrains.mps.samples.customizedDebugger.Highlevel.sandbox/jetbrains.mps.samples.customizedDebugger.Highlevel.sandbox.msd" folder="samples.customizedDebugger" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/jetbrains.mps.samples.secretCompartmentLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" folder="samples" />
