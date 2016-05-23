@@ -13,8 +13,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import java.util.concurrent.atomic.AtomicInteger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
@@ -22,6 +20,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
@@ -31,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -96,12 +95,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     int locks = myBlocked.decrementAndGet();
     assert locks >= 0 : "Non-paired block-unblock method usage";
     if (locks == 0) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          MigrationTrigger.updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
-          checkMigrationNeeded();
-        }
-      });
+      checkMigrationNeeded();
     }
   }
 
@@ -113,12 +107,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
     if (!(myState.migrationRequired)) {
       addListeners();
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
-          checkMigrationNeeded();
-        }
-      });
+      checkMigrationNeeded();
     } else {
       saveAndSetTipsState();
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
@@ -134,7 +123,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             public void run() {
               myState.migrationRequired = false;
 
-              ModelAccess.instance().runWriteAction(new Runnable() {
+              myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
                 public void run() {
                   updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
                 }
@@ -164,8 +153,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   public void run() {
                     ApplicationManager.getApplication().invokeLater(new Runnable() {
                       public void run() {
-                        ModelAccess.instance().runReadAction(new Runnable() {
+                        myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                           public void run() {
+                            // FIXME is there real need to obtain model access? For project and problems??? 
                             MigrationOutputUtil.showProblems(myProject, myErrors.getProblems());
                           }
                         });
@@ -211,26 +201,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private void addListeners() {
     myListenersAdded = true;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        MPSModuleRepository.getInstance().addRepositoryListener(MigrationTrigger.this.myRepoListener);
-        ClassLoaderManager.getInstance().addClassesHandler(MigrationTrigger.this.myClassesListener);
-        myProperties.addListener(myPropertiesListener);
-      }
-    });
+    new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
+    ClassLoaderManager.getInstance().addClassesHandler(this.myClassesListener);
+    myProperties.addListener(myPropertiesListener);
   }
 
   private boolean removeListeners() {
     if (!(myListenersAdded)) {
       return true;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myProperties.removeListener(myPropertiesListener);
-        ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
-        MPSModuleRepository.getInstance().removeRepositoryListener(MigrationTrigger.this.myRepoListener);
-      }
-    });
+    myProperties.removeListener(myPropertiesListener);
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
+    new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
     return false;
   }
 
@@ -244,8 +226,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myMigrationQueued = false;
   }
 
-  public synchronized void checkMigrationNeeded() {
-    postponeMigrationIfNeededOnModuleChange(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+  /*package*/ void checkMigrationNeeded() {
+    myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        postponeMigrationIfNeededOnModuleChange(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+      }
+    });
   }
 
   private synchronized void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
@@ -313,7 +299,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            ModelAccess.instance().runWriteAction(new Runnable() {
+            myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
               public void run() {
                 updateUsedLanguagesVersions(allModules);
               }
@@ -356,7 +342,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
+      if (!(myMpsProject.isProjectModule(module))) {
         return;
       }
       if (!(MigrationsUtil.isModuleMigrateable(module))) {
@@ -368,7 +354,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     public void moduleChanged(SModule module) {
       super.moduleChanged(module);
-      if (!(MPSModuleRepository.getInstance().getOwners(module).contains(myMpsProject))) {
+      if (!(myMpsProject.isProjectModule(module))) {
         return;
       }
       if (!(MigrationsUtil.isModuleMigrateable(module))) {
@@ -390,11 +376,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private class MyPropertiesListener implements ProjectMigrationProperties.MigrationPropertiesReloadListener {
     @Override
     public void onReload() {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          checkMigrationNeeded();
-        }
-      });
+      checkMigrationNeeded();
     }
   }
 
