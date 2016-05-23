@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells.collections;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigInteger;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -27,8 +26,6 @@ import java.util.NoSuchElementException;
  * Date: 10/02/16
  */
 abstract class AbstractContainer<T> implements Container<T> {
-  private static final BigInteger MAX_INT = BigInteger.valueOf(Integer.MAX_VALUE);
-
   private Object myModificationId = new Object();
   private Entry<T> myFirst;
   private int mySize = 0;
@@ -169,7 +166,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     return myFirst == null ? null : myFirst.getPrev();
   }
 
-  protected Entry<T> addEntryBefore(@NotNull Entry<T> entry, Entry<T> anchor) {
+  private Entry<T> addEntryBefore(@NotNull Entry<T> entry, Entry<T> anchor) {
     assert entry.getPrev() == null;
     assert entry.getNext() == null;
 
@@ -207,7 +204,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     return entry;
   }
 
-  protected void removeEntry(@NotNull Entry<T> entry) {
+  private void removeEntry(@NotNull Entry<T> entry) {
     assert deleteEntry(entry) != null;
     decSize();
 
