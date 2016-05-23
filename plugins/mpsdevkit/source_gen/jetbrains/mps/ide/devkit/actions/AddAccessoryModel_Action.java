@@ -10,7 +10,6 @@ import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.Language;
@@ -18,6 +17,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.FilteredGlobalScope;
@@ -27,7 +27,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class AddAccessoryModel_Action extends BaseAction {
@@ -61,13 +60,6 @@ public class AddAccessoryModel_Action extends BaseAction {
       }
     }
     {
-      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
-      MapSequence.fromMap(_params).put("treeNode", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
@@ -80,7 +72,8 @@ public class AddAccessoryModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
     final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    ModelAccess modelAccess = repository.getModelAccess();
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
@@ -100,7 +93,7 @@ public class AddAccessoryModel_Action extends BaseAction {
     final Wrappers._boolean visibleFromModule = new Wrappers._boolean(true);
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        SModel md = result.resolve(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+        SModel md = result.resolve(repository);
         visibleFromModule.value = VisibilityUtil.isVisible(language, md);
       }
     });
@@ -115,13 +108,13 @@ public class AddAccessoryModel_Action extends BaseAction {
     modelAccess.executeCommand(new Runnable() {
       public void run() {
         // see MPS-18743 
-        MPSModuleRepository.getInstance().saveAll();
+        repository.saveAll();
         LanguageDescriptor descriptor;
         descriptor = language.getModuleDescriptor();
         descriptor.getAccessoryModels().add(result);
-        language.setLanguageDescriptor(descriptor);
+        language.setModuleDescriptor(descriptor);
         if (importModuleDependency) {
-          SModel md = result.resolve(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+          SModel md = result.resolve(repository);
           language.addDependency(md.getModule().getModuleReference(), false);
         }
         language.save();
