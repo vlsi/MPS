@@ -67,6 +67,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a5, menuId.getFqName())) {
               case 0:
                 return Arrays.asList(new TransformationMenu[]{new NamedTestMenu()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new WithNonExecutableAction()});
               default:
             }
           }
@@ -89,5 +91,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.transformationMenuTest.structure.TransformationMenuTestConcept"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.transformationMenuTest.structure.TransformationMenuTestConcept"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.transformationMenuTest.structure.TransformationMenuTestConcept"));
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a5 = new String[]{"jetbrains.mps.lang.editor.transformationMenuTest.editor.NamedTestMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a5 = new String[]{"jetbrains.mps.lang.editor.transformationMenuTest.editor.NamedTestMenu", "jetbrains.mps.lang.editor.transformationMenuTest.editor.WithNonExecutableAction"};
 }

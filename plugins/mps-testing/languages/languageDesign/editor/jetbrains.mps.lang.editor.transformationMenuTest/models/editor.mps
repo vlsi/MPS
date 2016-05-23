@@ -10,16 +10,19 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
     <import index="wtc3" ref="r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.transformationMenuTest.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
+        <child id="6202297022026447496" name="canExecuteFunction" index="2jiSrf" />
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
@@ -43,6 +46,11 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -55,9 +63,19 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
     </language>
     <language id="4eb772b0-4df3-414a-b894-63abeb912f56" name="jetbrains.mps.lang.editor.transformationMenuTest">
       <concept id="6436886136983394210" name="jetbrains.mps.lang.editor.transformationMenuTest.structure.TransformationLocation_Test" flags="ng" index="ZR7TO" />
+    </language>
+    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
+      <concept id="1177327274449" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" flags="nn" index="ub8z3" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -114,6 +132,45 @@
         </node>
         <node concept="IWg2L" id="5oiZ4v5c5A0" role="IWgqQ">
           <node concept="3clFbS" id="5oiZ4v5c5A2" role="2VODD2" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3ICXOK" id="5oiZ4v5mfRL">
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="WithNonExecutableAction" />
+    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <node concept="1Qtc8_" id="5oiZ4v5mfRM" role="IW6Ez">
+      <node concept="ZR7TO" id="5oiZ4v5mfRS" role="1Qtc8$" />
+      <node concept="IWgqT" id="5oiZ4v5mfRV" role="1Qtc8A">
+        <node concept="1hCUdq" id="5oiZ4v5mfRX" role="1hCUd6">
+          <node concept="3clFbS" id="5oiZ4v5mfRZ" role="2VODD2">
+            <node concept="3clFbF" id="5oiZ4v5mg0C" role="3cqZAp">
+              <node concept="Xl_RD" id="5oiZ4v5mg0B" role="3clFbG">
+                <property role="Xl_RC" value="Non-executable action" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="5oiZ4v5mfS1" role="IWgqQ">
+          <node concept="3clFbS" id="5oiZ4v5mfS3" role="2VODD2" />
+        </node>
+        <node concept="27VH4U" id="5oiZ4v5oW3j" role="2jiSrf">
+          <node concept="3clFbS" id="5oiZ4v5oW3k" role="2VODD2">
+            <node concept="3clFbF" id="5oiZ4v5oWax" role="3cqZAp">
+              <node concept="3fqX7Q" id="5oiZ4v5oWav" role="3clFbG">
+                <node concept="2OqwBi" id="5oiZ4v5oXWT" role="3fr31v">
+                  <node concept="Xl_RD" id="5oiZ4v5oWlp" role="2Oq$k0">
+                    <property role="Xl_RC" value="cannot" />
+                  </node>
+                  <node concept="liA8E" id="5oiZ4v5oYLX" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="ub8z3" id="5oiZ4v5oYTH" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

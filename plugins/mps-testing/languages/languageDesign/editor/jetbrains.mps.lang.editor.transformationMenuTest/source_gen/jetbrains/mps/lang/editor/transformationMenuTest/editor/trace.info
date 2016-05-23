@@ -9,7 +9,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="18,0,94,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.EditorAspectDescriptorImpl" />
+      <unit at="18,0,96,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.transformationMenuTest.editor)/2344528742722056861">
@@ -123,6 +123,55 @@
       <unit id="6202297022023752049" at="33,0,51,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.NamedTestMenu$TransformationMenuPart_Action_xyzz9_a0$Item" />
       <unit id="6202297022023752049" at="27,0,52,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.NamedTestMenu$TransformationMenuPart_Action_xyzz9_a0" />
       <unit id="6202297022023752048" at="17,0,53,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.NamedTestMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.transformationMenuTest.editor)/6202297022026415601">
+    <file name="WithNonExecutableAction.java">
+      <node id="6202297022026415601" at="19,73,20,54" concept="5" />
+      <node id="6202297022026415601" at="21,119,22,88" concept="1" />
+      <node id="6202297022026415601" at="23,5,24,18" concept="6" />
+      <node id="6202297022026415602" at="29,70,30,95" concept="6" />
+      <node id="6202297022026415602" at="34,0,35,0" concept="2" trace="_context" />
+      <node id="6202297022026415602" at="36,55,37,27" concept="1" />
+      <node id="6202297022026416168" at="42,50,43,39" concept="6" />
+      <node id="6202297022027121313" at="51,58,52,43" concept="6" />
+      <node id="6202297022026415601" at="20,54,23,5" concept="3" />
+      <node id="6202297022026415602" at="36,0,39,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="6202297022026415602" at="46,0,49,0" concept="4" trace="execute#(Ljava/lang/String;)V" />
+      <node id="6202297022026415602" at="28,0,32,0" concept="4" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuItem;" />
+      <node id="6202297022026415602" at="50,0,54,0" concept="4" trace="canExecute#(Ljava/lang/String;)Z" />
+      <node id="6202297022026415602" at="40,0,45,0" concept="4" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6202297022026415601" at="18,0,26,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="6202297022026415619" at="47,52,47,52" />
+      <scope id="6202297022026415601" at="21,119,22,88" />
+      <scope id="6202297022026415602" at="29,70,30,95" />
+      <scope id="6202297022026415602" at="36,55,37,27" />
+      <scope id="6202297022026415615" at="42,50,43,39" />
+      <scope id="6202297022027120852" at="51,58,52,43" />
+      <scope id="6202297022026415602" at="36,0,39,0">
+        <var name="context" id="6202297022026415602" />
+      </scope>
+      <scope id="6202297022026415602" at="46,0,49,0">
+        <var name="pattern" id="6202297022026415602" />
+      </scope>
+      <scope id="6202297022026415602" at="28,0,32,0">
+        <var name="context" id="6202297022026415602" />
+      </scope>
+      <scope id="6202297022026415602" at="50,0,54,0">
+        <var name="pattern" id="6202297022026415602" />
+      </scope>
+      <scope id="6202297022026415601" at="19,73,24,18">
+        <var name="result" id="6202297022026415601" />
+      </scope>
+      <scope id="6202297022026415602" at="40,0,45,0">
+        <var name="pattern" id="6202297022026415602" />
+      </scope>
+      <scope id="6202297022026415601" at="18,0,26,0">
+        <var name="_context" id="6202297022026415601" />
+      </scope>
+      <unit id="6202297022026415602" at="33,0,55,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.WithNonExecutableAction$TransformationMenuPart_Action_guv3c3_a0$Item" />
+      <unit id="6202297022026415602" at="27,0,56,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.WithNonExecutableAction$TransformationMenuPart_Action_guv3c3_a0" />
+      <unit id="6202297022026415601" at="17,0,57,0" name="jetbrains.mps.lang.editor.transformationMenuTest.editor.WithNonExecutableAction" />
     </file>
   </root>
 </debug-info-v2>

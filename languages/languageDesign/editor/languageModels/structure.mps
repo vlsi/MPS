@@ -4647,6 +4647,12 @@
       <property role="IQ2ns" value="5692353713941573325" />
       <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_ActionLabelText" />
     </node>
+    <node concept="1TJgyj" id="5oiZ4v5mnE8" role="1TKVEi">
+      <property role="IQ2ns" value="6202297022026447496" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canExecuteFunction" />
+      <ref role="20lvS9" node="5DJl6Ftwolg" resolve="QueryFunction_TransformationMenu_Condition" />
+    </node>
     <node concept="1TJgyj" id="1qY_lWSjTfD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="executeFunction" />
@@ -4959,7 +4965,7 @@
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
     <property role="34LRSv" value="condition" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
   <node concept="1TIwiD" id="3EZUZhmYcnz">
     <property role="EcuMT" value="4233361609415247331" />

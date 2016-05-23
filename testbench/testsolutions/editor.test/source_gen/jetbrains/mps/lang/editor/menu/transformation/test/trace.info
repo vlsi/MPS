@@ -96,6 +96,29 @@
       <unit id="6202297022023746454" at="17,0,40,0" name="jetbrains.mps.lang.editor.menu.transformation.test.LoadNamedMenu_Test" />
     </file>
   </root>
+  <root nodeRef="r:38424e2f-ff0f-4534-a6ea-12f0496db0de(jetbrains.mps.lang.editor.menu.transformation.test)/6202297022026376132">
+    <file name="Action_CanExecuteIsGeneratedCorrectly_Test.java">
+      <node id="6202297022026376132" at="19,77,20,122" concept="0" />
+      <node id="6202297022026376132" at="20,122,21,139" concept="0" />
+      <node id="6202297022026376132" at="27,51,28,53" concept="0" />
+      <node id="6202297022026397539" at="28,53,29,239" concept="2" />
+      <node id="6202297022026398202" at="29,239,30,0" concept="4" />
+      <node id="6202297022026404277" at="30,0,31,80" concept="2" />
+      <node id="6202297022026414714" at="31,80,32,0" concept="4" />
+      <node id="6202297022026405475" at="32,0,33,109" concept="0" />
+      <node id="6202297022026376132" at="18,0,23,0" concept="1" trace="test_Action_CanExecuteIsGeneratedCorrectly#()V" />
+      <node id="6202297022026376132" at="26,0,35,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6202297022026376132" at="19,77,21,139" />
+      <scope id="6202297022026376132" at="18,0,23,0" />
+      <scope id="6202297022026376132" at="27,51,33,109">
+        <var name="item" id="6202297022026404278" />
+        <var name="items" id="6202297022026397540" />
+      </scope>
+      <scope id="6202297022026376132" at="26,0,35,0" />
+      <unit id="6202297022026376132" at="24,0,36,0" name="jetbrains.mps.lang.editor.menu.transformation.test.Action_CanExecuteIsGeneratedCorrectly_Test$TestBody" />
+      <unit id="6202297022026376132" at="16,0,37,0" name="jetbrains.mps.lang.editor.menu.transformation.test.Action_CanExecuteIsGeneratedCorrectly_Test" />
+    </file>
+  </root>
   <root nodeRef="r:38424e2f-ff0f-4534-a6ea-12f0496db0de(jetbrains.mps.lang.editor.menu.transformation.test)/6436886136983309262">
     <file name="LoadDefaultMenu_Test.java">
       <node id="6436886136983309262" at="19,55,20,122" concept="0" />

@@ -16,7 +16,6 @@
     <import index="j2fg" ref="r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.transformationMenuTest.editor)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -97,6 +96,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -151,6 +153,9 @@
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
+      <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
+        <child id="1171983854940" name="condition" index="3vFALc" />
+      </concept>
       <concept id="1172073500303" name="jetbrains.mps.baseLanguage.unitTest.structure.Message" flags="ng" index="3_1$Yv">
         <child id="1172073511101" name="message" index="3_1BAH" />
       </concept>
@@ -183,11 +188,15 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
     </language>
   </registry>
   <node concept="2XOHcx" id="229s7wVD3dt">
@@ -753,6 +762,85 @@
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
         <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5oiZ4v5m6f4">
+    <property role="TrG5h" value="Action_CanExecuteIsGeneratedCorrectly" />
+    <property role="3YCmrE" value="Checks that canExecute of TransformationMenuPart_Action works" />
+    <node concept="rbkbI" id="5oiZ4v5m6lA" role="LiRBU">
+      <node concept="LIFWc" id="5oiZ4v5m6lT" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="5oiZ4v5m8pF" role="LjaKd">
+      <node concept="3cpWs8" id="5oiZ4v5mbtz" role="3cqZAp">
+        <node concept="3cpWsn" id="5oiZ4v5mbt$" role="3cpWs9">
+          <property role="TrG5h" value="items" />
+          <node concept="_YKpA" id="5oiZ4v5mbtt" role="1tU5fm">
+            <node concept="3uibUv" id="5oiZ4v5mbtw" role="_ZDj9">
+              <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+            </node>
+          </node>
+          <node concept="2YIFZM" id="5oiZ4v5mbt_" role="33vP2m">
+            <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
+            <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
+            <node concept="369mXd" id="5oiZ4v5mbtA" role="37wK5m" />
+            <node concept="1N_AGu" id="5oiZ4v5mbtB" role="37wK5m">
+              <ref role="1N_AGt" to="j2fg:5oiZ4v5mfRL" resolve="WithNonExecutableAction" />
+            </node>
+            <node concept="Xl_RD" id="5oiZ4v5mbtC" role="37wK5m">
+              <property role="Xl_RC" value="test location" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="5oiZ4v5mbBU" role="3cqZAp" />
+      <node concept="3cpWs8" id="5oiZ4v5md6P" role="3cqZAp">
+        <node concept="3cpWsn" id="5oiZ4v5md6Q" role="3cpWs9">
+          <property role="TrG5h" value="item" />
+          <node concept="3uibUv" id="5oiZ4v5mdU0" role="1tU5fm">
+            <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+          </node>
+          <node concept="10QFUN" id="5oiZ4v5mdUo" role="33vP2m">
+            <node concept="3uibUv" id="5oiZ4v5mdXi" role="10QFUM">
+              <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+            </node>
+            <node concept="2OqwBi" id="5oiZ4v5md6R" role="10QFUP">
+              <node concept="37vLTw" id="5oiZ4v5md6S" role="2Oq$k0">
+                <ref role="3cqZAo" node="5oiZ4v5mbt$" resolve="items" />
+              </node>
+              <node concept="34jXtK" id="5oiZ4v5md6T" role="2OqNvi">
+                <node concept="3cmrfG" id="5oiZ4v5md6U" role="25WWJ7">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="5oiZ4v5mfDU" role="3cqZAp" />
+      <node concept="3vFxKo" id="5oiZ4v5mdpz" role="3cqZAp">
+        <node concept="2OqwBi" id="5oiZ4v5mdyL" role="3vFALc">
+          <node concept="37vLTw" id="5oiZ4v5mdvK" role="2Oq$k0">
+            <ref role="3cqZAo" node="5oiZ4v5md6Q" resolve="item" />
+          </node>
+          <node concept="liA8E" id="5oiZ4v5me9M" role="2OqNvi">
+            <ref role="37wK5l" to="uddc:~ActionItem.canExecute(java.lang.String):boolean" resolve="canExecute" />
+            <node concept="Xl_RD" id="5oiZ4v5meac" role="37wK5m">
+              <property role="Xl_RC" value="cannot" />
+            </node>
+          </node>
+        </node>
+        <node concept="3_1$Yv" id="5oiZ4v5mjOU" role="3_9lra">
+          <node concept="Xl_RD" id="5oiZ4v5mjPH" role="3_1BAH">
+            <property role="Xl_RC" value="canExecute should return false for pattern = 'cannot'" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
