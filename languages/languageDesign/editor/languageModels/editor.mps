@@ -13330,7 +13330,6 @@
     <ref role="1XX52x" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
     <node concept="3EZMnI" id="1qY_lWSmtVP" role="2wV5jI">
       <property role="S$Qs1" value="true" />
-      <property role="3EXrWe" value="true" />
       <node concept="l2Vlx" id="5Ffx24t6q_l" role="2iSdaV" />
       <node concept="PMmxH" id="1qY_lWSmtWm" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
