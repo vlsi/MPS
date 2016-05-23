@@ -17,18 +17,28 @@
 package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
+  private final Project myProject;
   private final ProjectLibraryTable myLibTable;
 
   @SuppressWarnings("UnusedParameters") //creation time dependency
-  public MPSProjectLibImporter(MPSCoreComponents core, ProjectLibraryTable libTable) {
+  public MPSProjectLibImporter(MPSCoreComponents core, Project project, ProjectLibraryTable libTable) {
+    myProject = project;
     myLibTable = libTable;
+  }
+
+  @Override
+  protected SRepositoryExt getRepository() {
+    return (SRepositoryExt) ProjectHelper.getProjectRepository(myProject);
   }
 
   @Override

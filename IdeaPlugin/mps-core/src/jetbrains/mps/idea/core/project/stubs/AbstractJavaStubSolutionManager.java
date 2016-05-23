@@ -17,18 +17,20 @@
 package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.libraries.Library;
+import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.StubSolutionIdea;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * User: shatalin
@@ -38,22 +40,12 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   @Override
   public void initComponent() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        init();
-      }
-    });
+    init();
   }
 
   @Override
   public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        dispose();
-      }
-    });
+    dispose();
   }
 
   @NotNull
@@ -64,24 +56,36 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   protected abstract void init();
 
-  protected abstract void dispose();
+  protected void dispose() {
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      SRepository repository = ProjectHelper.getProjectRepository(project);
+      if (repository == null) {
+        continue;
+      }
+      repository.getModelAccess().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          new ModuleRepositoryFacade(repository).unregisterModules(AbstractJavaStubSolutionManager.this);
+        }
+      });
 
-  protected Solution addSolution(Library library) {
-    return StubSolutionIdea.newInstance(library, this);
+    }
   }
 
-  protected Solution addSolution(Sdk sdk) {
-    return StubSolutionIdea.newInstance(sdk, null, this );
+  protected Solution addSolution(Library library, SRepositoryExt repository) {
+    return StubSolutionIdea.newInstance(library, this, repository);
   }
 
-  protected Solution replaceJdkSolution(Sdk sdk) {
-    return StubSolutionIdea.newInstanceForJdk(sdk, this);
+  protected Solution addSolution(Sdk sdk, SRepositoryExt repository) {
+    return StubSolutionIdea.newInstance(sdk, null, this, repository);
   }
 
-  protected void removeSolution(String name) {
-    SModuleReference ref = new jetbrains.mps.project.structure.modules.ModuleReference(null, ModuleId.foreign(name));
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    SModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
+  protected Solution replaceJdkSolution(Sdk sdk, SRepositoryExt repository) {
+    return StubSolutionIdea.newInstanceForJdk(sdk, this, repository);
+  }
+
+  protected void removeSolution(String name, SRepositoryExt repository) {
+    SModule m = repository.getModule(ModuleId.foreign(name));
     if (m == null) {
       return;
     }

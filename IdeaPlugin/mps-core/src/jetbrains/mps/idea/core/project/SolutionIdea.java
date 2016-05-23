@@ -21,7 +21,6 @@ import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CompilerModuleExtension;
 import com.intellij.openapi.roots.JdkOrderEntry;
 import com.intellij.openapi.roots.LibraryOrderEntry;
@@ -61,7 +60,6 @@ import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -238,10 +236,10 @@ public class SolutionIdea extends Solution {
   }
 
   private void addUsedLibraries(final List<SDependency> dependencies) {
-    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject(), true));
+    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), true));
   }
 
-  public static List<SDependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
+  public List<SDependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final boolean includeStubs) {
     final Map<SModule, Boolean> modules = new HashMap<SModule, Boolean>();
     orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
@@ -257,7 +255,7 @@ public class SolutionIdea extends Solution {
         if (ModuleLibraryType.isModuleLibrary(library)) {
           Set<SModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
           for (SModuleReference moduleReference : moduleReferences) {
-            SModule m = moduleReference.resolve(MPSModuleRepository.getInstance()); // FIXME module repo
+            SModule m = moduleReference.resolve(getRepository());
             if (m == null) {
               continue;
             }
@@ -271,7 +269,7 @@ public class SolutionIdea extends Solution {
           }
         } else if (includeStubs) {
           // try to find stub solution
-          SModule s = MPSModuleRepository.getInstance().getModule(ModuleId.foreign(library.getName()));
+          SModule s = getRepository().getModule(ModuleId.foreign(library.getName()));
           if (s != null) {
             modules.put(s, loe.isExported());
           }
@@ -291,7 +289,7 @@ public class SolutionIdea extends Solution {
     // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
 
-    SModule sModule = moduleRef.resolve(MPSModuleRepository.getInstance()); // FIXME module repo
+    SModule sModule = moduleRef.resolve(getRepository());
 
     if (sModule instanceof SolutionIdea) {
       // we add dependency between idea modules

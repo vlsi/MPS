@@ -19,39 +19,45 @@ package jetbrains.mps.idea.core.project.stubs;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 
 public abstract class BaseLibImporter extends AbstractJavaStubSolutionManager {
   private final Listener myListener = new MyListener();
 
   @Override
   protected void init() {
-    for (Library l : getLibTable().getLibraries()) {
-      addModuleForLibrary(l);
-    }
+    getRepository().getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (Library l : getLibTable().getLibraries()) {
+          addModuleForLibrary(l);
+        }
+      }
+    });
     getLibTable().addListener(myListener);
   }
 
   @Override
   protected void dispose() {
     getLibTable().removeListener(myListener);
-    ModuleRepositoryFacade.getInstance().unregisterModules(BaseLibImporter.this);
+    super.dispose();
   }
+
+  protected abstract SRepositoryExt getRepository();
 
   protected abstract LibraryTable getLibTable();
 
   protected void addModuleForLibrary(Library l) {
-    addSolution(l);
+    addSolution(l, getRepository());
   }
 
   protected void removeModuleForLibrary(Library l) {
-    removeSolution(l.getName());
+    removeSolution(l.getName(), getRepository());
   }
 
   private class MyListener implements Listener {
     public void afterLibraryAdded(final Library newLibrary) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           addModuleForLibrary(newLibrary);
         }
@@ -63,7 +69,7 @@ public abstract class BaseLibImporter extends AbstractJavaStubSolutionManager {
     }
 
     public void beforeLibraryRemoved(final Library library) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           removeModuleForLibrary(library);
         }
