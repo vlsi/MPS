@@ -119,12 +119,6 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   boolean isAncestorOf(EditorCell cell);
 
-  /**
-   * @deprecated since MPS 3.3 use isCollapsed()
-   */
-  @Deprecated
-  boolean isFolded();
-
   boolean isCollapsed();
 
   void fold();

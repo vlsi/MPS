@@ -693,12 +693,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public void paint(Graphics g, ParentSettings parentSettings) {
-    paintCell(g, parentSettings);
-    paintDecorations(g);
-  }
-
-  @Override
   public boolean isInClipRegion(Graphics g) {
     // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
     return g.hitClip(getX(), getY(), getWidth() + 1, getHeight() + 1);
@@ -784,52 +778,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getEditor().getHighlightManager().getMessages(this);
   }
 
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
-   */
-  @Deprecated
-  @Override
-  public <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz) {
-    return CellMessagesUtil.getMessages(this, clazz);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  @Override
-  public List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
-    ArrayList<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>(1);
-    for (SimpleEditorMessage message : getMessages()) {
-      if (message.getOwner() == owner) {
-        result.add(message);
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
-   */
-  @Deprecated
-  @Override
-  public boolean hasErrorMessages() {
-    return CellMessagesUtil.hasErrorMessages(this);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
-   */
-  @Deprecated
-  @Override
-  public EditorCell_Label getSTHintCell() {
-    SNode node = getSNode();
-    if (node == null) {
-      return null;
-    }
-    return EditorCell_STHint.getSTHintCell(node, getEditorComponent());
-  }
-
   @Override
   public void synchronizeViewWithModel() {
   }
@@ -912,21 +860,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public void setRightTransformAnchorTag(String tag) {
-    getStyle().set(StyleAttributes.RT_ANCHOR_TAG, tag);
-  }
-
-  @Override
-  public String getRightTransformAnchorTag() {
-    return getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
-  }
-
-  @Override
-  public boolean hasRightTransformAnchorTag(String tag) {
-    return getRightTransformAnchorTag() != null && getRightTransformAnchorTag().equals(tag);
-  }
-
-  @Override
   public boolean isAncestorOf(EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
     while (parent != null) {
@@ -986,24 +919,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
-  /**
-   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
-   */
-  @Deprecated
-  public boolean isFolded() {
-    return false;
-  }
-
-  @Override
-  public boolean isUnfoldedCollection() {
-    return false;
-  }
-
-  @Override
-  public boolean canBePossiblyFolded() {
-    return false;
-  }
-
   @Override
   public EditorCell getRootParent() {
     EditorCell cell = this;
@@ -1033,26 +948,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   @Override
   public boolean isLastPositionInBigCell() {
     return false;
-  }
-
-  @Override
-  public boolean isLastChild() {
-    return getParent() != null && this == getParent().lastCell();
-  }
-
-  @Override
-  public boolean isFirstChild() {
-    return getParent() != null && this == getParent().firstCell();
-  }
-
-  @Override
-  public boolean isOnLeftBoundary() {
-    return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
-  }
-
-  @Override
-  public boolean isOnRightBoundary() {
-    return getNextLeaf() == null || getNextLeaf().getSNode() != getSNode();
   }
 
   @Override
@@ -1191,18 +1086,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public EditorCell getNextSibling(Condition<EditorCell> condition) {
-    EditorCell current = getNextSibling();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getNextSibling();
-    }
-    return null;
-  }
-
-  @Override
   public EditorCell getPrevSibling() {
     if (myParent == null) {
       return null;
@@ -1210,18 +1093,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
     Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = myParent.iterator(this, false);
     return iterator.hasNext() ? (EditorCell) iterator.next() : null;
-  }
-
-  @Override
-  public EditorCell getPrevSibling(Condition<EditorCell> condition) {
-    EditorCell current = getPrevSibling();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getPrevSibling();
-    }
-    return null;
   }
 
   @Override

@@ -143,11 +143,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return new EditorCell_Collection(editorContext, node, cellLayout, handler);
   }
 
-  @Override
-  public boolean isFolded() {
-    return isCollapsed();
-  }
-
   public boolean isCollapsed() {
     return isDefaultCollapsedValueChanged() ? myCollapsed : myInitiallyCollapsed;
   }
@@ -724,11 +719,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public boolean canBePossiblyFolded() {
-    return isFoldable();
-  }
-
-  @Override
   public boolean isFoldable() {
     return myCanBeFolded && myCellLayout.canBeFolded();
   }
@@ -761,11 +751,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   @Deprecated
   public void unfold(boolean programmaticaly) {
     toggleCollapsed(false);
-  }
-
-  @Override
-  public boolean isUnfoldedCollection() {
-    return !isCollapsed();
   }
 
   @Override
