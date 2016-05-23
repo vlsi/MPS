@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.ArrayList;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesAction;
@@ -82,9 +83,10 @@ public class MoveFeatureUp extends MoveNodesActionBase {
     }
 
     if (merge) {
-      this.doMove(project, MapSequence.<SNode, MoveNodesActionBase.NodeProcessor>fromMapAndKeysArray(new HashMap<SNode, MoveNodesActionBase.NodeProcessor>(), feature).withValues(new MoveNodesActionBase.ExistingTargetProcessor(mergeTarget.value.getReference(), project)), null);
+      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.ExistingTargetProcessor(mergeTarget.value.getReference(), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)), null);
+
     } else {
-      this.doMove(project, MapSequence.<SNode, MoveNodesActionBase.NodeProcessor>fromMapAndKeysArray(new HashMap<SNode, MoveNodesActionBase.NodeProcessor>(), feature).withValues(new MoveNodesActionBase.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)), null);
+      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)), null);
     }
   }
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesAction> {

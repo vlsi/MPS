@@ -25,7 +25,8 @@ import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.ArrayList;
+import java.util.HashMap;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -107,7 +108,7 @@ public class MoveConcepts extends MoveNodesActionBase {
       }
     });
 
-    this.doMove(project, MapSequence.fromMap(new ArrayList<ToMoveItem>()), new _FunctionTypes._void_P1_E0<RefactoringSession>() {
+    doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel.value), project)).withValues(nodesToMove), new _FunctionTypes._void_P1_E0<RefactoringSession>() {
       public void invoke(RefactoringSession refactoringSession) {
         sourceLanguage.addDependency(targetLanguage.value.getModuleReference(), false);
         targetLanguage.value.addDependency(sourceLanguage.getModuleReference(), false);
