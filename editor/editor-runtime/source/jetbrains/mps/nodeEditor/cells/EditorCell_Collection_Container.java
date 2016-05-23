@@ -44,57 +44,41 @@ class EditorCell_Collection_Container extends CellContainer {
 
   @Override
   protected Entry<EditorCell> createEntry(@NotNull EditorCell item) {
+    Entry<EditorCell> entry;
     if (item instanceof Entry) {
-      //noinspection unchecked
-      Entry<EditorCell> entry = (Entry<EditorCell>) item;
-      attachParent(item);
-      return entry;
-// TODO: switch on
-//      if (item.getParent() == null) {
-//        attachParent(item);
-//        return entry;
-//      } else if (item.getParent() == myCell) {
-//        return null;
-//      } else {
-//  setting parent for this cell will detach it from current parent /  what should we do here?
-//  two options:
-//  1) attach new parent silently
-//  2) throw exception / assert
-//
-//  we cannot continue with the default logic here because if we create user object (EntryImpl) for this cell,
-//  set new parent for this cell & return created Entry instance, then subsequent getEntry() call will not
-//  work consistently.
-//      }
+      if (item.getParent() == null) {
+        //noinspection unchecked
+        entry = (Entry<EditorCell>) item;
+      } else {
+        // Two cases are mixed here: item.getParent() == myCell & item.getParent() == anotherCell.
+        // We did that intentionally because it's hard to implement contract otherwise.
+        //
+        // super.createEntry(item) cannot be used for instances of Entry interface - subsequent
+        // attachParent() method call will change parent of this cell used in the condition above
+        // and inside getEntry() method implementation
+        return null;
+      }
+    } else {
+      entry = super.createEntry(item);
     }
-
-    Entry<EditorCell> entry = super.createEntry(item);
     attachParent(item);
     return entry;
   }
 
   @Override
   protected Entry<EditorCell> deleteEntry(@NotNull Entry<EditorCell> entry) {
-    if (entry.getItem() == entry) {
-      detachParent(entry.getItem());
-      return entry;
-// TODO: switch on
-//      if (entry.getItem().getParent() == myCell) {
-//        detachParent(entry.getItem());
-//        return entry;
-//      } else if (entry.getItem().getParent() == null) {
-//        return null;
-//      } else {
-//  setting parent to null for this cell later will potentially break an association of this cell in another container /  what should we do here?
-//  two options:
-//  1) detach new parent silently
-//  2) throw exception / assert
-//
-//  we probably shoudl not continue with the default logic here...
-//      }
+    if (entry.getItem() == entry && entry.getItem().getParent() != myCell) {
+      // Two cases are mixed here: item.getParent() == null & item.getParent() == anotherCell.
+      // We did that intentionally because it's hard to implement contract otherwise.
+      //
+      // super.deleteEntry(item) cannot be used for instances of Entry interface - subsequent
+      // detachParent() method remove this call from the parent cell used in the condition above
+      // and inside getEntry() method implementation
+      return null;
     }
 
     detachParent(entry.getItem());
-    return super.deleteEntry(entry);
+    return entry.getItem() == entry ? entry : super.deleteEntry(entry);
   }
 
   private void attachParent(EditorCell cell) {
