@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -4696,7 +4696,7 @@
   <node concept="1TIwiD" id="4Sf$XywKgZK">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuContribution" />
-    <property role="34LRSv" value="Context Assistant Menu Contribution" />
+    <property role="34LRSv" value="Transformation Menu Contribution" />
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5624877018228264944" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />

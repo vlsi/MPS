@@ -118,7 +118,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3944,7 +3944,7 @@
                     </node>
                   </node>
                   <node concept="Xl_RD" id="fSn6kMM5Yq" role="3uHU7B">
-                    <property role="Xl_RC" value="Duplicate context assistant menu or contribution defined: " />
+                    <property role="Xl_RC" value="Duplicate transformation menu or contribution defined: " />
                   </node>
                 </node>
                 <node concept="1YBJjd" id="fSn6kMM6jo" role="2OEOjV">

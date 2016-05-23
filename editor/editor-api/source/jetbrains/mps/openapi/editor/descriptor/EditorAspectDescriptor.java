@@ -62,7 +62,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId);
 
   /**
-   * Returns the default context assistant menu for a concept (if defined), together with any additions contributed by extending languages.
+   * Returns the default transformation menu for a concept (if defined), together with any additions contributed by extending languages.
    * @param concept the concept
    * @return a non-null but possibly empty collection
    */
@@ -70,7 +70,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept);
 
   /**
-   * Returns the default context assistant menu for a concept and/or any contributions to that menu that are declared in this language.
+   * Returns the default transformation menu for a concept and/or any contributions to that menu that are declared in this language.
    * @param concept the concept
    * @return a non-null but possibly empty collection
    */
@@ -78,7 +78,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept);
 
   /**
-   * Returns a named context assistant menu together with any additions to it contributed by extending languages.
+   * Returns a named transformation menu together with any additions to it contributed by extending languages.
    * @param menuId identifier of the named menu
    * @return a non-null but possibly empty collection
    */
@@ -86,7 +86,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId);
 
   /**
-   * Returns a named context assistant menu together with any additions to it declared in this language
+   * Returns a named transformation menu together with any additions to it declared in this language
    * @param menuId identifier of the named menu
    * @return a non-null but possibly empty collection
    */
