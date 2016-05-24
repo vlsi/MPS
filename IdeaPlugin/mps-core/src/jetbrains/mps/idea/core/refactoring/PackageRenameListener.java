@@ -55,7 +55,7 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
     final List<SModel> models = new ArrayList<SModel>();
     for (PsiDirectory psiDir : pkg.getDirectories()) {
       IFile iFile = VirtualFileUtils.toIFile(psiDir.getVirtualFile());
-      SModel model = SModelFileTracker.getInstance().findModel(iFile);
+      SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(element.getProject())).findModel(iFile);
       if (model != null) {
         models.add(model);
       }

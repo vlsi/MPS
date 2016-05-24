@@ -44,6 +44,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -51,13 +52,13 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -103,7 +104,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public NewLibraryConfiguration createNewLibrary(@NotNull JComponent parentComponent, @Nullable VirtualFile contextDirectory, @NotNull final Project project) {
-    List<SModuleReference> availableSolutions = calculateVisibleModules(Collections.<VirtualFile>emptySet());
+    List<SModuleReference> availableSolutions = calculateVisibleModules(ProjectHelper.getProjectRepository(project), Collections.<VirtualFile>emptySet());
 
     ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(project, availableSolutions);
     chooser.show();
@@ -245,7 +246,8 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.MPS_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
         @Override
         public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
-          List<SModuleReference> visibleModules = calculateVisibleModules(new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML))));
+          SRepository repository = ProjectHelper.getProjectRepository(contextModule.getProject());
+          List<SModuleReference> visibleModules = calculateVisibleModules(repository, new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML))));
 
           ChooseElementsDialog<SModuleReference> chooser = new SModuleReferenceChooserDialog(parent, visibleModules);
           chooser.show();
@@ -253,7 +255,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
           final Set<VirtualFile> addedDescriptors = new LinkedHashSet<VirtualFile>();
           final Set<VirtualFile> addedJars = new LinkedHashSet<VirtualFile>();
-          ModelAccess.instance().runReadAction(new Runnable() {
+          repository.getModelAccess().runReadAction(new Runnable() {
             @Override
             public void run() {
               for (SModuleReference module : chosenElements) {
@@ -276,13 +278,13 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     }
   }
 
-  private static List<SModuleReference> calculateVisibleModules(final Set<VirtualFile> excluded) {
+  private static List<SModuleReference> calculateVisibleModules(SRepository repository, final Set<VirtualFile> excluded) {
     final List<SModuleReference> availableSolutions = new ArrayList<SModuleReference>();
     final List<SModuleReference> availableLanguages = new ArrayList<SModuleReference>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (SModule module : ModuleRepositoryFacade.getInstance().getAllModules(SModule.class)) {
+        for (SModule module : new ModuleRepositoryFacade(repository).getAllModules(SModule.class)) {
           if (module instanceof SolutionIdea || ((AbstractModule) module).getDescriptorFile() == null) {
             continue;
           }

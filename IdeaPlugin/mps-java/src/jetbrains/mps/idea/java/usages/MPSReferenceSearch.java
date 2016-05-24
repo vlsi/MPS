@@ -16,10 +16,7 @@
 
 package jetbrains.mps.idea.java.usages;
 
-import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.QueryExecutorBase;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
@@ -37,10 +34,7 @@ import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
 import jetbrains.mps.baseLanguage.javastub.ASMNodeId;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
@@ -49,21 +43,15 @@ import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodeId.Foreign;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -76,7 +64,6 @@ import java.util.Set;
 // For methods MethodReferenceSearch is used.
 // Local variables shouldn't bother us since we can't reference java code's local vars
 public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, ReferencesSearch.SearchParameters> {
-
   public MPSReferenceSearch() {
     // flag: requires read action
     super(true);
@@ -95,12 +82,11 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
 
     final Project project = psiTarget.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
+    SRepository repository = ProjectHelper.getProjectRepository(project);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-
         if (DumbService.getInstance(project).isDumb()) {
           return;
         }
@@ -174,7 +160,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       if (nodePtr == null) {
         return null;
       }
-      SNode node = nodePtr.toSNodeReference().resolve(MPSModuleRepository.getInstance());
+      SNode node = nodePtr.toSNodeReference().resolve(ProjectHelper.getProjectRepository(element.getProject()));
 
       return node;
 
@@ -200,9 +186,11 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       }
 
       String packageName = ((PsiJavaFile) psiFile).getPackageName();
-      // looks like this works without stereotype
-      for (SModel model : SModelRepository.getInstance().getModelDescriptorsByModelName(packageName)) {
+      for (SModel model : new ModuleRepositoryFacade(ProjectHelper.getProjectRepository(element.getProject())).getAllModels()) {
         if (!(model instanceof JavaClassStubModelDescriptor)) continue;
+        if (!packageName.equals(model.getName().getLongName())) {
+          continue;
+        }
         SNode node = model.getNode(nodeId);
         if (node == null) continue;
         return node;

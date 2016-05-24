@@ -27,11 +27,10 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -40,6 +39,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -61,6 +61,10 @@ public class AddMissingDependencyAction extends BaseAction {
   @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> params) {
     try {
+      Project project = e.getProject();
+      if (project == null) {
+        return;
+      }
       SNode curNode = e.getData(MPSCommonDataKeys.NODE);
       if (curNode == null) return;
       IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
@@ -72,11 +76,12 @@ public class AddMissingDependencyAction extends BaseAction {
 
       final List<Module> ideaModulesToDependOn = new ArrayList<Module>();
       Set<Module> circularDependentModulesSet = new LinkedHashSet<Module>();
+      SRepository repository = ProjectHelper.getProjectRepository(project);
 
       for (SReference ref : curNode.getReferences()) {
         SModelReference mref = ref.getTargetSModelReference();
         if (mref == null) continue;
-        SModel model = mref.resolve(MPSModuleRepository.getInstance());
+        SModel model = mref.resolve(repository);
         if (model == null) continue;
         SModule moduleToDependOn = model.getModule();
         if (!(moduleToDependOn instanceof SolutionIdea)) continue;
@@ -176,8 +181,14 @@ public class AddMissingDependencyAction extends BaseAction {
 
 
   public boolean isApplicable(AnActionEvent e) {
+    Project project = e.getProject();
+    if (project == null) {
+      return false;
+    }
     SNode curNode = e.getData(MPSCommonDataKeys.NODE);
-    if (curNode == null) return false;
+    if (curNode == null) {
+      return false;
+    }
 
     IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
     if (context == null) return false;
@@ -185,10 +196,11 @@ public class AddMissingDependencyAction extends BaseAction {
     SModule dependentModule = context.getModule();
     if (!(dependentModule instanceof SolutionIdea)) return false;
 
+    SRepository repository = ProjectHelper.getProjectRepository(project);
     for (SReference ref : curNode.getReferences()) {
       SModelReference mref = ref.getTargetSModelReference();
       if (mref == null) continue;
-      SModel model = mref.resolve(MPSModuleRepository.getInstance());
+      SModel model = mref.resolve(repository);
       if (model == null) continue;
       SModule moduleToDependOn = model.getModule();
       if (!(moduleToDependOn instanceof SolutionIdea)) continue;

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.facet.FacetManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFinder;
@@ -25,19 +22,18 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiPackage;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.jgoodies.common.collect.ArrayListModel;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 
@@ -47,7 +43,6 @@ import java.util.List;
  */
 
 public class MPSPackageFinder extends PsiElementFinder {
-
   private Project myProject;
 
   public MPSPackageFinder(Project project) {
@@ -57,33 +52,30 @@ public class MPSPackageFinder extends PsiElementFinder {
   @Nullable
   @Override
   public PsiPackage findPackage(@NotNull final String qualifiedName) {
-
-    return ModelAccess.instance().runReadAction(new Computable<PsiPackage>() {
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiPackage>() {
       @Override
       public PsiPackage compute() {
         List<PsiPackage> packages = new ArrayListModel<PsiPackage>();
 
-        List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(qualifiedName);
-        if (models == null || models.size() == 0) return null;
-
-        for (SModel model : models) {
-          SModule module = model.getModule();
-          if (module instanceof SolutionIdea
-            && ((SolutionIdea) module).getIdeaModule().getProject().equals(myProject)) {
-
-            MPSPsiModel psiModel = MPSPsiProvider.getInstance(myProject).getPsi(model);
-            if (psiModel == null) {
-              return null;
-            }
-            packages.add(new MPSPackage(psiModel, PsiManager.getInstance(myProject)));
-          }
-        }
-
-        if (packages.isEmpty() || packages.size() > 1) {
+        SModel model = new ModuleRepositoryFacade(repository).getModelByName(qualifiedName);
+        if (model == null) {
           return null;
         }
 
-        return packages.get(0);
+        SModule module = model.getModule();
+        if (!(module instanceof SolutionIdea)) {
+          return null;
+        }
+        if (!((SolutionIdea) module).getIdeaModule().getProject().equals(myProject)) {
+          return null;
+        }
+
+        MPSPsiModel psiModel = MPSPsiProvider.getInstance(myProject).getPsi(model);
+        if (psiModel == null) {
+          return null;
+        }
+        return new MPSPackage(psiModel, PsiManager.getInstance(myProject));
       }
     });
   }

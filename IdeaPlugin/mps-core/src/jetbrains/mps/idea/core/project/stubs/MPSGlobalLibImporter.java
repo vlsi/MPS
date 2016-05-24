@@ -19,7 +19,9 @@ package jetbrains.mps.idea.core.project.stubs;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.roots.impl.libraries.ApplicationLibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTable;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MPSGlobalLibImporter extends BaseLibImporter implements ApplicationComponent {
   private ApplicationLibraryTable myTable;
@@ -27,6 +29,12 @@ public class MPSGlobalLibImporter extends BaseLibImporter implements Application
   @SuppressWarnings("UnusedParameters") //creation time dependency
   public MPSGlobalLibImporter(MPSCoreComponents core, ApplicationLibraryTable table) {
     myTable = table;
+  }
+
+  @Override
+  protected SRepositoryExt getRepository() {
+    // fixme what repository should I provide here?
+    return MPSModuleRepository.getInstance();
   }
 
   protected LibraryTable getLibTable() {

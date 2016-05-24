@@ -31,19 +31,18 @@ import com.intellij.psi.PsiWhiteSpace;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class MpsSourcePosition extends SourcePosition {
   private final SNodeReference myNodePointer;

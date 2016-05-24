@@ -14,7 +14,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +23,11 @@ import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsLibrary;
-import org.jetbrains.jps.model.module.*;
+import org.jetbrains.jps.model.module.JpsDependencyElement;
+import org.jetbrains.jps.model.module.JpsLibraryDependency;
+import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.module.JpsModuleDependency;
+import org.jetbrains.jps.model.module.JpsSdkDependency;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -34,7 +37,12 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -106,7 +114,7 @@ public class JpsSolutionIdea extends Solution {
           MPSCompilerUtil.debug(myCompileContext, "**** not found lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
         } else {
           String name = lib.getName();
-          solution = (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(name));
+          solution = (Solution) getRepository().getModule(ModuleId.foreign(name));
         }
 
       } else if (jpsDep instanceof JpsSdkDependency) {
@@ -120,7 +128,7 @@ public class JpsSolutionIdea extends Solution {
         }
 
         String sdkName = ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName();
-        solution = (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(sdkName));
+        solution = (Solution) getRepository().getModule(ModuleId.foreign(sdkName));
       }
 
       if (solution != null) {

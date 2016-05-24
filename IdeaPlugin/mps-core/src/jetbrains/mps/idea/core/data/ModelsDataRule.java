@@ -17,9 +17,12 @@
 package jetbrains.mps.idea.core.data;
 
 import com.intellij.ide.impl.dataRules.GetDataRule;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
@@ -36,16 +39,22 @@ public class ModelsDataRule implements GetDataRule {
   @Override
   public Object getData(DataProvider dataProvider) {
     VirtualFile[] virtualFiles = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataProvider);
-    if (virtualFiles != null) {
-      List<SModel> result = new ArrayList<SModel>();
-      for (VirtualFile f : virtualFiles) {
-        final SModel model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(f.getPath()));
-        if (model != null) {
-          result.add(model);
-        }
-      }
-      return result.isEmpty() ? null : result;
+    if (virtualFiles == null) {
+      return null;
     }
-    return null;
+
+    final Project project = CommonDataKeys.PROJECT.getData(dataProvider);
+    if (project == null) {
+      return null;
+    }
+
+    List<SModel> result = new ArrayList<SModel>();
+    for (VirtualFile f : virtualFiles) {
+      final SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFileByPath(f.getPath()));
+      if (model != null) {
+        result.add(model);
+      }
+    }
+    return result.isEmpty() ? null : result;
   }
 }

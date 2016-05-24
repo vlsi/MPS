@@ -16,7 +16,6 @@
 package jetbrains.mps.idea.java.usages;
 
 import com.intellij.openapi.application.QueryExecutorBase;
-import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.psi.PsiElement;
@@ -32,12 +31,12 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -81,7 +80,7 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
       return;
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.getModelAccess(method.getProject()).runReadAction(new Runnable() {
       @Override
       public void run() {
 

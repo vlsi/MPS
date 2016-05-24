@@ -26,12 +26,11 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
@@ -75,7 +74,7 @@ public class TraceFilesManager implements ProjectComponent {
           if (mpsFacet == null) {
             continue;
           }
-          List<SModel> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(mpsFacet.getSolution());
+          List<SModel> modelDescriptors = mpsFacet.getSolution().getModels();
           for (SModel descriptor : modelDescriptors) {
             TraceInfoCache.getInstance().clean(descriptor);
           }

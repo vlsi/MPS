@@ -31,7 +31,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -86,10 +85,10 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
   public void navigate(boolean requestFocus) {
     MPSPsiModel psiModel = extractPsiFromValue();
     SModelReference modelReference = psiModel.getSModelReference();
-    SModel sModel = modelReference.resolve(MPSModuleRepository.getInstance());
+    SModel sModel = modelReference.resolve(ProjectHelper.getProjectRepository(getProject()));
 
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(sModel,
-      ProjectHelper.toMPSProject(MPSPsiModelTreeNode.this.getProject()),
+      ProjectHelper.fromIdeaProject(MPSPsiModelTreeNode.this.getProject()),
       true
     );
 

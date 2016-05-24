@@ -1,18 +1,16 @@
 package jetbrains.mps.idea.core.editor;
 
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.psi.PsiElement;
 import com.intellij.usages.UsageTarget;
 import com.intellij.usages.UsageView;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.NodeEditor;
-import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,7 +34,7 @@ public class IdeaNodeEditor extends NodeEditor {
     if (UsageView.USAGE_TARGETS_KEY.is(dataId)) {
       assert myProject instanceof MPSProject;
 
-      SNodeReference currNodeRef = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      SNodeReference currNodeRef = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNodeReference>() {
         @Override
         public SNodeReference compute() {
           SNode node = MPSCommonDataKeys.NODE.getData(getCurrentEditorComponent());
@@ -52,7 +50,7 @@ public class IdeaNodeEditor extends NodeEditor {
     } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
       assert myProject instanceof MPSProject;
 
-      return ModelAccess.instance().runReadAction(new Computable<PsiElement[]>() {
+      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<PsiElement[]>() {
         @Override
         public PsiElement[] compute() {
           List<SNode> nodes =  MPSCommonDataKeys.NODES.getData(getCurrentEditorComponent());

@@ -30,17 +30,16 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -81,7 +80,7 @@ public class ModuleLibrariesUtil {
   }
 
   @NotNull
-  public static Set<SModuleReference> getModules(final Library library) {
+  public static Set<SModuleReference> getModules(SRepository repository, final Library library) {
     if (!ModuleLibraryType.isModuleLibrary(library)) {
       return Collections.emptySet();
     }
@@ -90,7 +89,8 @@ public class ModuleLibrariesUtil {
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (IFile moduleDescriptor : moduleXmls) {
@@ -104,11 +104,11 @@ public class ModuleLibrariesUtil {
     return modules;
   }
 
-  public static Set<SModuleReference> getModules(OrderEntry... roots) {
+  public static Set<SModuleReference> getModules(SRepository repository, OrderEntry... roots) {
     Set<SModuleReference> modules = new HashSet<SModuleReference>();
     for (OrderEntry entry : roots) {
       if (entry instanceof LibraryOrderEntry) {
-        modules.addAll(ModuleLibrariesUtil.getModules(((LibraryOrderEntry) entry).getLibrary()));
+        modules.addAll(ModuleLibrariesUtil.getModules(repository, ((LibraryOrderEntry) entry).getLibrary()));
       }
     }
     return modules;

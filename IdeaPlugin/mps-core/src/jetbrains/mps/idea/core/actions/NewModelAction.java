@@ -28,7 +28,7 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
@@ -58,6 +59,7 @@ public class NewModelAction extends NewModelActionBase {
 
   @Override
   public void actionPerformed(final AnActionEvent anActionEvent) {
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
     Map<String, ModelTemplate> namesToTemplates = new HashMap<String, ModelTemplate>();
     CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
@@ -69,7 +71,7 @@ public class NewModelAction extends NewModelActionBase {
           return;
         }
 
-        final SModel newModel = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<SModel>() {
+        final SModel newModel = new ModelAccessHelper(repository.getModelAccess()).executeCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             final String path = ((PsiDirectory) anActionEvent.getData(LangDataKeys.PSI_ELEMENT)).getVirtualFile().getPath();
@@ -133,7 +135,7 @@ public class NewModelAction extends NewModelActionBase {
         }
 
         //Hack for update ProjectView
-        ProjectHelper.getModelAccess(myProject).runWriteAction(new Runnable() {
+        repository.getModelAccess().runWriteAction(new Runnable() {
           @Override
           public void run() {
             ((EditableSModel) newModel).save();
@@ -147,7 +149,7 @@ public class NewModelAction extends NewModelActionBase {
           return false;
         }
 
-        if (SModelRepository.getInstance().getModelDescriptor(modelName) != null) {
+        if (new ModuleRepositoryFacade(repository).getModelByName(modelName) != null) {
           showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
           return false;
         }

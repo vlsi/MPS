@@ -23,7 +23,8 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -62,7 +63,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     // Note: we expect that PSI clients do take read lock to resolve references
     ApplicationManager.getApplication().assertReadAccessAllowed();
 
-    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(getProject())).runReadAction(new Computable<PsiElement>() {
       @Override
       public PsiElement compute() {
         if (model != null && nodeId != null) {

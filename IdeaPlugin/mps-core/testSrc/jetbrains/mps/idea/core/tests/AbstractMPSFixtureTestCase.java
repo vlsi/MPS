@@ -74,6 +74,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   public static void flushEDT() throws InterruptedException {
     assert SwingUtilities.isEventDispatchThread();
     final boolean[] flag = new boolean[]{false};
+    // fixme use ApplicationManager.getApplication().invokeLater() ?
     ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
@@ -118,7 +119,10 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
   @Override
   protected void tearDown() throws Exception {
-    if (!ModelAccess.instance().isInEDT()) ModelAccess.instance().flushEventQueue();
+    if (!ApplicationManager.getApplication().isDispatchThread()) {
+      // fixme needed at all? another way? maybe flushEDT()
+      ModelAccess.instance().flushEventQueue();
+    }
     myFixture.tearDown();
     super.tearDown();
   }
@@ -183,7 +187,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
    * Execute Runnable with MPS read lock
    */
   protected final void runModelRead(@NotNull Runnable r) {
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myModule.getProject());
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject((myModule.getProject()));
     mpsProject.getModelAccess().runReadAction(r);
   }
 

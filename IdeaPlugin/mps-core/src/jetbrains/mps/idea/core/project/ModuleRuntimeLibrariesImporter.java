@@ -25,6 +25,7 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -48,16 +49,19 @@ import java.util.Set;
 public abstract class ModuleRuntimeLibrariesImporter {
   private static final Logger LOG = Logger.getInstance(ModuleRuntimeLibrariesImporter.class);
 
+  private Project myProject;
   private final Collection<? extends SModuleReference> myAddedModules;
   private final ModifiableRootModel myModifiableRootModel;
   private final LibrariesContainer myLibrariesContainer;
 
   public ModuleRuntimeLibrariesImporter(FacetEditorContext context, Collection<? extends SModuleReference> addedModules) {
     this(addedModules, context.getModifiableRootModel(), ((FacetEditorContextBase) context).getContainer());
+    myProject = context.getProject();
   }
 
   public ModuleRuntimeLibrariesImporter(Module ideaModule, Collection<? extends SModuleReference> addedModules, ModifiableRootModel modifiableModel) {
     this(addedModules, modifiableModel, LibrariesContainerFactory.createContainer(ideaModule));
+    myProject = ideaModule.getProject();
   }
 
   private ModuleRuntimeLibrariesImporter(Collection<? extends SModuleReference> addedModules, ModifiableRootModel modifiableModel, LibrariesContainer container) {
@@ -79,7 +83,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
   }
 
   public void addMissingLibraries() {
-    Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(myModifiableRootModel.getOrderEntries());
+    Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(ProjectHelper.getProjectRepository(myProject), myModifiableRootModel.getOrderEntries());
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     for (SModule usedModule : collectRuntimeModules(myAddedModules)) {

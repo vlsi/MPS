@@ -20,12 +20,13 @@ import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
+import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
@@ -38,11 +39,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
-
-import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-
-import java.util.regex.Matcher;
 
 
 /**
@@ -50,7 +46,6 @@ import java.util.regex.Matcher;
  */
 
 public class IdPrefixReference implements PsiReference {
-
   private SNodeReference myTarget;
   private String myRole;
   private PsiElement myParent;
@@ -76,7 +71,7 @@ public class IdPrefixReference implements PsiReference {
   public PsiElement resolve() {
     ApplicationManager.getApplication().assertReadAccessAllowed();
 
-    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myParent.getProject())).runReadAction(new Computable<PsiElement>() {
       @Override
       public PsiElement compute() {
         return MPSPsiProvider.getInstance(myParent.getProject()).getPsi(myTarget);
@@ -128,9 +123,8 @@ public class IdPrefixReference implements PsiReference {
   }
 
   private void handleRename(NodePtr newNode) {
-
     SNodePointer oldNode = (SNodePointer) myTarget;
-    SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
+    SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(ProjectHelper.getProjectRepository(myParent.getProject()));
     String oldId = source.getReference(myRole).getTargetNodeId().toString();
 
     // replacing all proper occurences
@@ -145,7 +139,7 @@ public class IdPrefixReference implements PsiReference {
 
     // add model import if needed
     if (!oldNode.getModelReference().equals(newNode.getSModelReference())) {
-      SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
+      SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(ProjectHelper.getProjectRepository(myParent.getProject())).getModel();
       SModelReference newTargetModel = newNode.getSModelReference();
 
       new ModelImports(model).addModelImport(newTargetModel);

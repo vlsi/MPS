@@ -19,12 +19,12 @@ package jetbrains.mps.idea.core.projectView.edit;
 import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -52,8 +52,9 @@ public class SNodeDeleteProvider implements DeleteProvider, Runnable {
   @Override
   public void run() {
     Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
+    SRepository repository = myProject.getRepository();
     for (SNodeReference selectedNode : mySelectedNodes) {
-      SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
+      SNode nodeToDelete = selectedNode.resolve(repository);
       if (nodeToDelete != null) {
         SModel modelDescriptor = nodeToDelete.getModel();
         if (modelDescriptor instanceof EditableSModel) {

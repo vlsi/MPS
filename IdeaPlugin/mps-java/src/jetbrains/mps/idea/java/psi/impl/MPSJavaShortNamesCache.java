@@ -32,12 +32,12 @@ import com.intellij.util.Processor;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.java.index.MPSJavaFieldIndex;
 import jetbrains.mps.idea.java.index.MPSJavaMethodIndex;
 import jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NonNls;
@@ -52,7 +52,6 @@ import java.util.List;
  * evgeny, 1/25/13
  */
 public class MPSJavaShortNamesCache extends PsiShortNamesCache {
-
   private final Project myProject;
 
   public MPSJavaShortNamesCache(Project project) {
@@ -63,8 +62,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   @Override
   public PsiClass[] getClassesByName(@NotNull @NonNls final String name, final @NotNull GlobalSearchScope scope) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
-
-    return ModelAccess.instance().runReadAction(new Computable<PsiClass[]>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiClass[]>() {
       @Override
       public PsiClass[] compute() {
         CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
@@ -90,8 +88,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   @Override
   public PsiMethod[] getMethodsByName(@NonNls @NotNull final String name, @NotNull final GlobalSearchScope scope) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
-
-    return ModelAccess.instance().runReadAction(new Computable<PsiMethod[]>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiMethod[]>() {
       @Override
       public PsiMethod[] compute() {
         CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
@@ -105,7 +102,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   @Override
   public PsiMethod[] getMethodsByNameIfNotMoreThan(@NonNls @NotNull final String name, @NotNull final GlobalSearchScope scope, final int maxCount) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
-    return ModelAccess.instance().runReadAction(new Computable<PsiMethod[]>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiMethod[]>() {
       @Override
       public PsiMethod[] compute() {
         final CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
@@ -127,7 +124,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   @Override
   public PsiField[] getFieldsByNameIfNotMoreThan(@NonNls @NotNull final String name, @NotNull final GlobalSearchScope scope, final int maxCount) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
-    return ModelAccess.instance().runReadAction(new Computable<PsiField[]>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiField[]>() {
       @Override
       public PsiField[] compute() {
         final CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
@@ -150,7 +147,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   public boolean processMethodsWithName(@NonNls @NotNull final String name, @NotNull final GlobalSearchScope scope, @NotNull final Processor<PsiMethod> processor) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(myProject);
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return processMPSMethods(name, new Processor<SNode>() {
@@ -183,8 +180,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   @Override
   public PsiField[] getFieldsByName(@NotNull @NonNls final String name, @NotNull final GlobalSearchScope scope) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
-
-    return ModelAccess.instance().runReadAction(new Computable<PsiField[]>() {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<PsiField[]>() {
       @Override
       public PsiField[] compute() {
         CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
@@ -227,7 +223,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
       @Override
       public boolean process(VirtualFile file, Collection<SNodeDescriptor> value) {
         for (SNodeDescriptor descriptor : value) {
-          SNode node = descriptor.getNodeReference().resolve(MPSModuleRepository.getInstance());
+          SNode node = descriptor.getNodeReference().resolve(ProjectHelper.getProjectRepository(myProject));
           if (node == null) continue;
           if (!processor.process(node)) return false;
         }
@@ -250,7 +246,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
       @Override
       public boolean process(VirtualFile file, Collection<SNodeDescriptor> value) {
         for (SNodeDescriptor descriptor : value) {
-          SNode node = descriptor.getNodeReference().resolve(MPSModuleRepository.getInstance());
+          SNode node = descriptor.getNodeReference().resolve(ProjectHelper.getProjectRepository(myProject));
           if (node == null) continue;
           if (!processor.process(node)) return false;
         }
@@ -262,7 +258,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   private void collectNodes(Consumer<SNode> consumer, List<Collection<SNodeDescriptor>> values) {
     for (Collection<SNodeDescriptor> value : values) {
       for (SNodeDescriptor descriptor : value) {
-        SNode node = descriptor.getNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNode node = descriptor.getNodeReference().resolve(ProjectHelper.getProjectRepository(myProject));
         if (node == null) continue;
         consumer.consume(node);
       }

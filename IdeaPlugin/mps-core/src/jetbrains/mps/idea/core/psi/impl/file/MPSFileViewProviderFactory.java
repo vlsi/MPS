@@ -27,19 +27,21 @@ import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.MPSNodeFileViewProvider;
 import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * User: fyodor
@@ -91,10 +93,11 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
         ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().getPath())
         : FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
-      PsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<PsiFile>() {
+      SRepository repository = ProjectHelper.getProjectRepository(getManager().getProject());
+      PsiFile psiFile = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {
         @Override
         public PsiFile compute() {
-          SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
+          SModel descr = SModelFileTracker.getInstance(repository).findModel(modelFile);
           if (descr != null) {
             // force loading the model and updating the PSI tree at this time
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
