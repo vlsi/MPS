@@ -33,7 +33,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @Deprecated
-/*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
+public final class ClassifierAndSuperClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> CLASSIFIERS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
     @Override
@@ -77,7 +77,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getMethods();
   }
-  /*package*/ List<SNode> getOverriddenMethods(SNode method) {
+  public List<SNode> getOverriddenMethods(SNode method) {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getOverriddenMethods(method);
   }
