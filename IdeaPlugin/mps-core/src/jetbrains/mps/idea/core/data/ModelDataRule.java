@@ -17,9 +17,12 @@
 package jetbrains.mps.idea.core.data;
 
 import com.intellij.ide.impl.dataRules.GetDataRule;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
@@ -32,10 +35,16 @@ public class ModelDataRule implements GetDataRule {
   @Override
   public Object getData(DataProvider dataProvider) {
     VirtualFile virtualFile = PlatformDataKeys.VIRTUAL_FILE.getData(dataProvider);
-    if (virtualFile != null) {
-      return SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(virtualFile.getPath()));
+    if (virtualFile == null) {
+      return null;
+
     }
-    return null;
+    final Project project =  CommonDataKeys.PROJECT.getData(dataProvider);
+    if (project == null) {
+      return null;
+    }
+
+    return SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(project)).findModel(FileSystem.getInstance().getFileByPath(virtualFile.getPath()));
   }
 }
 

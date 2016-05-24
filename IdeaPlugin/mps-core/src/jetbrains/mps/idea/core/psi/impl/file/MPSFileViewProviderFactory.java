@@ -41,6 +41,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * User: fyodor
@@ -92,10 +93,11 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
         ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().getPath())
         : FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
-      PsiFile psiFile = new ModelAccessHelper(ProjectHelper.getModelAccess(getManager().getProject())).runReadAction(new Computable<PsiFile>() {
+      SRepository repository = ProjectHelper.getProjectRepository(getManager().getProject());
+      PsiFile psiFile = new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {
         @Override
         public PsiFile compute() {
-          SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
+          SModel descr = SModelFileTracker.getInstance(repository).findModel(modelFile);
           if (descr != null) {
             // force loading the model and updating the PSI tree at this time
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());

@@ -69,7 +69,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         final IFile modelFile = FileSystem.getInstance().getFileByPath(path + "/test.mps");
         final List<SNode> roots = new ArrayList<SNode>();
 
-        SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
+        SModel descr = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(myProjectBuilder.getFixture().getProject())).findModel(modelFile);
         if (descr == null) {
           thrown[0] = new IllegalStateException("model not found");
           return;

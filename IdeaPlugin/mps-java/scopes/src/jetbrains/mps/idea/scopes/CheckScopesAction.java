@@ -37,6 +37,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.InstanceOfCondition;
 
 import java.util.HashSet;
@@ -63,13 +64,14 @@ public class CheckScopesAction extends AnAction {
     if (project == null) {
       return;
     }
-    ProjectHelper.getModelAccess(project).runReadInEDT(new Runnable() {
+    SRepository repository = ProjectHelper.getProjectRepository(project);
+    repository.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         long mpsTime = 0, ideaTime = 0;
         int notEqualMembersCount = 0;
 
-        SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
+        SModel descriptor = SModelFileTracker.getInstance(repository).findModel(myModelFile);
         for (SNode root : new ConditionalIterable<SNode>(descriptor.getRootNodes(), new InstanceOfCondition(SNodeUtil.concept_Classifier))) {
           PsiClass clazz = getPsiClass(myProject, root);
           if (clazz == null) {

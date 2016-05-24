@@ -88,8 +88,9 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   public Collection<AbstractTreeNode> modify(final AbstractTreeNode treeNode, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
     final Ref<Collection<AbstractTreeNode>> result = new Ref<Collection<AbstractTreeNode>>(children);
 
+    SRepository repository = ProjectHelper.getProjectRepository(treeNode.getProject());
     // we're actually in EDT here, but we work with SModels, and various routines assert that we can read, thus read action
-    ProjectHelper.getProjectRepository(treeNode.getProject()).getModelAccess().runReadAction(new Runnable() {
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         List<AbstractTreeNode> updatedChildren = null;
@@ -100,7 +101,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
         if (treeNode instanceof PsiDirectoryNode) {
           // let's see if we have a model built from this dir, e.g. in per-root persistence
-          SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) treeNode).getVirtualFile()));
+          SModel sModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) treeNode).getVirtualFile()));
           if (sModel != null) {
             // adding root nodes (removing their corresponding files' nodes from the tree is further below)
             List<MPSPsiElementTreeNode> rootsTreeNodes = new ArrayList<MPSPsiElementTreeNode>();
@@ -134,7 +135,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
             }
 
             // check if it's a single file model
-            final SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vFile));
+            final SModel sModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(vFile));
             if (sModel != null) {
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
@@ -153,7 +154,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           } else if (child instanceof PsiDirectoryNode) {
             // below code only attaches our action to the directory and makes it show added children - our root nodes
 
-            final SModel perRootModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
+            final SModel perRootModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
             if (perRootModel != null) {
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
 
@@ -339,7 +340,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         return null;
       }
       IFile ifile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
-      SModel model = SModelFileTracker.getInstance().findModel(ifile);
+      SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(treeNode.getProject())).findModel(ifile);
       if (model != null) return ifile;
 
     }

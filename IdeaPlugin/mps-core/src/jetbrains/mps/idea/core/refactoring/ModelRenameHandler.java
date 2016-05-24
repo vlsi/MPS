@@ -62,7 +62,7 @@ public class ModelRenameHandler implements RenameHandler {
     IFile modelFile = getModelFile(dataContext);
     PsiElement psiElement = PlatformDataKeys.PSI_ELEMENT.getData(dataContext);
     if (modelFile == null || modelFile.isDirectory() || psiElement == null) return false;
-    SModel model = SModelFileTracker.getInstance().findModel(modelFile);
+    SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(psiElement.getProject())).findModel(modelFile);
     return model instanceof EditableSModel;
   }
 
@@ -81,7 +81,8 @@ public class ModelRenameHandler implements RenameHandler {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return;
 
-    SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
+    SRepository repository = ProjectHelper.getProjectRepository(project);
+    SModel descriptor = SModelFileTracker.getInstance(repository).findModel(modelFile);
     if (!(descriptor instanceof EditableSModel)) return;
 
     final EditableSModel modelDescriptor = (EditableSModel) descriptor;
@@ -99,7 +100,7 @@ public class ModelRenameHandler implements RenameHandler {
 
         @Override
         protected SRepository getRepository() {
-          return ProjectHelper.getProjectRepository(project);
+          return repository;
         }
       });
 
