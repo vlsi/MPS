@@ -7,13 +7,13 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -26,8 +26,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.openapi.vcs.FileStatusListener;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelsEventsCollector;
 import com.intellij.util.containers.MultiMap;
 import java.util.List;
@@ -39,7 +38,7 @@ import java.util.ArrayList;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
-  private final SModelRepositoryListener myModelRepositoryListener = new CurrentDifferenceRegistry.MySModelRepositoryListener();
+  private final SRepositoryContentAdapter myModelRepositoryListener = new CurrentDifferenceRegistry.MyRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
   private final CurrentDifferenceRegistry.MyEventsCollector myEventsCollector = new CurrentDifferenceRegistry.MyEventsCollector();
   private final CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
@@ -55,14 +54,12 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   @Override
   public void projectOpened() {
     myFileStatusManager.addFileStatusListener(myFileStatusListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-
-    updateLoadedModels();
+    new RepoListenerRegistrar(myMpsProject.getRepository(), myModelRepositoryListener).attach();
   }
   @Override
   public void projectClosed() {
     myFileStatusManager.removeFileStatusListener(myFileStatusListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    new RepoListenerRegistrar(myMpsProject.getRepository(), myModelRepositoryListener).detach();
     synchronized (myCurrentDifferences) {
       for (CurrentDifference modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myCurrentDifferences).values())) {
         modelChangesManager.dispose();
@@ -72,10 +69,12 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     myEventsCollector.dispose();
     myCommandQueue.dispose();
   }
+
   public Project getProject() {
     return myProject;
   }
-  private void updateModel(@NotNull SModel model) {
+
+  /*package*/ void updateModel(@NotNull SModel model) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = model.getReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
@@ -86,6 +85,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       MapSequence.fromMap(myCurrentDifferences).put(modelRef, cd);
     }
   }
+
   /*package*/ void updateModel(@Nullable VirtualFile file) {
     if (file == null) {
       return;
@@ -163,32 +163,47 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     }
   }
 
-  private class MySModelRepositoryListener extends SModelRepositoryAdapter {
-    public MySModelRepositoryListener() {
+  private class MyRepositoryListener extends SRepositoryContentAdapter {
+    public MyRepositoryListener() {
     }
 
     @Override
-    public void modelsReplaced(Set<SModel> set) {
+    protected boolean isIncluded(SModule module) {
+      return !(module.isReadOnly());
+    }
+
+    @Override
+    protected void startListening(SModel model) {
+      if (model instanceof EditableSModel) {
+        // we care about modelReplaced event 
+        model.addModelListener(this);
+        updateModel(model);
+      }
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+    }
+
+
+    @Override
+    public void modelReplaced(SModel model) {
+      if (!(model instanceof EditableSModel)) {
+        return;
+      }
       synchronized (myCurrentDifferences) {
-        for (SModel m : set) {
-          if (!(m instanceof EditableSModel)) {
-            continue;
-          }
-
-          CurrentDifference difference = MapSequence.fromMap(myCurrentDifferences).get(m.getReference());
-          if (difference == null) {
-            continue;
-          }
-
+        CurrentDifference difference = MapSequence.fromMap(myCurrentDifferences).get(model.getReference());
+        if (difference != null) {
           difference.getChangesTracker().scheduleFullUpdate(true);
         }
       }
     }
+
     @Override
-    public void beforeModelRemoved(SModel descriptor) {
-      if (descriptor instanceof EditableSModel) {
-        disposeModelChangesManager(descriptor.getReference());
-      }
+    public void beforeModelRemoved(SModule module, SModel model) {
+      disposeModelChangesManager(model.getReference());
+      super.beforeModelRemoved(module, model);
     }
   }
 
