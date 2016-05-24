@@ -88,7 +88,7 @@ public class DataNode implements IExternalizeable {
     Set<SModel> models = new LinkedHashSet<SModel>();
     if (myData instanceof ModelNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded()) {
-        models.add(((ModelNodeData) myData).getModelDescriptor());
+        models.add(((ModelNodeData) myData).getModel());
       }
     }
     for (DataNode child : myChildren) {

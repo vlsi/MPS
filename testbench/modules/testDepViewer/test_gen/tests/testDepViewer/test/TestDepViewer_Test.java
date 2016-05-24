@@ -53,7 +53,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
     }
     public void test_testModel1DependsOnSomething() throws Exception {
       ReferencesFinder finder = new ReferencesFinder();
-      DependencyViewerScope testScope = new DependencyViewerScope();
+      DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model1());
 
       Iterable<SNode> nodes = finder.getNodes(testScope);
@@ -62,7 +62,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
     }
     public void test_testModel3DoesntDependOnAnything() throws Exception {
       ReferencesFinder finder = new ReferencesFinder();
-      DependencyViewerScope testScope = new DependencyViewerScope();
+      DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model3());
 
       Iterable<SNode> nodes = finder.getNodes(testScope);
@@ -71,9 +71,9 @@ public class TestDepViewer_Test extends BaseTransformationTest {
     }
     public void test_testModel1DependsOnModel2() throws Exception {
       ReferencesFinder finder = new ReferencesFinder();
-      DependencyViewerScope testScope = new DependencyViewerScope();
+      DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model1());
-      DependencyViewerScope targetScope = new DependencyViewerScope();
+      DependencyViewerScope targetScope = new DependencyViewerScope(myProject.getRepository());
       targetScope.add(this.model2());
 
       Iterable<SNode> nodes = finder.getNodes(testScope);
@@ -82,9 +82,9 @@ public class TestDepViewer_Test extends BaseTransformationTest {
     }
     public void test_testModel1DoesntDependOnModel3() throws Exception {
       ReferencesFinder finder = new ReferencesFinder();
-      DependencyViewerScope testScope = new DependencyViewerScope();
+      DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model1());
-      DependencyViewerScope targetScope = new DependencyViewerScope();
+      DependencyViewerScope targetScope = new DependencyViewerScope(myProject.getRepository());
       targetScope.add(this.model3());
 
       Iterable<SNode> nodes = finder.getNodes(testScope);

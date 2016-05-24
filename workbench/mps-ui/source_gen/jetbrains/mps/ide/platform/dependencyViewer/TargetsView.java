@@ -15,7 +15,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNod
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
@@ -77,31 +76,27 @@ public class TargetsView extends UsagesView {
     }
     @Override
     public void valueChanged(TreeSelectionEvent event) {
-      final TreePath[] paths = myTree.getSelectionPaths();
+      TreePath[] paths = myTree.getSelectionPaths();
       if (paths == null || paths.length == 0) {
         return;
       }
-      final DependencyViewerScope scope = new DependencyViewerScope();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (TreePath path : paths) {
-            MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-            Object userObject = node.getUserObject();
-            if (userObject instanceof DataNode) {
-              BaseNodeData data = ((DataNode) userObject).getData();
-              if (data instanceof ModelNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3e(data, ModelNodeData.class).getModelDescriptor());
-              }
-              if (data instanceof ModuleNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3e(data, ModuleNodeData.class).getModule());
-              }
-              if (data instanceof NodeNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3e(data, NodeNodeData.class).getNode());
-              }
-            }
+      DependencyViewerScope scope = new DependencyViewerScope(getProject().getRepository());
+      for (TreePath path : paths) {
+        MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+        Object userObject = node.getUserObject();
+        if (userObject instanceof DataNode) {
+          BaseNodeData data = ((DataNode) userObject).getData();
+          if (data instanceof ModelNodeData) {
+            scope.add(as_w7qo2b_a0a0a0a1a2a3a3e(data, ModelNodeData.class).getModelReference());
+          }
+          if (data instanceof ModuleNodeData) {
+            scope.add(as_w7qo2b_a0a0a0a2a2a3a3e(data, ModuleNodeData.class).getModuleReference());
+          }
+          if (data instanceof NodeNodeData) {
+            scope.add(as_w7qo2b_a0a0a0a3a2a3a3e(data, NodeNodeData.class).getNodePointer());
           }
         }
-      });
+      }
       myDependenciesComponent.updateReferencesView(scope);
     }
   }
@@ -148,13 +143,13 @@ public class TargetsView extends UsagesView {
   private static <T> T as_w7qo2b_a0a0a2a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3e(Object o, Class<T> type) {
+  private static <T> T as_w7qo2b_a0a0a0a1a2a3a3e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3e(Object o, Class<T> type) {
+  private static <T> T as_w7qo2b_a0a0a0a2a2a3a3e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3e(Object o, Class<T> type) {
+  private static <T> T as_w7qo2b_a0a0a0a3a2a3a3e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -273,6 +273,10 @@ public class UsagesView implements IExternalizeable {
     return rv;
   }
 
+  protected final Project getProject() {
+    return myProject;
+  }
+
   public static class RerunAction extends AnAction {
     private final UsagesView myView;
     private SearchTask mySearchTask;
