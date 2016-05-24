@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -112,12 +114,12 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----DATA QUERY----
 
-  public Set<SModel> getIncludedModels() {
-    return getResultsNode().getIncludedModels();
+  public Set<SModel> getIncludedModels(SRepository repository) {
+    return getResultsNode().getIncludedModels(repository);
   }
 
-  public Set<SModel> getAllModels() {
-    return getResultsNode().getAllModels();
+  public Set<SModel> getAllModels(SRepository repository) {
+    return getResultsNode().getAllModels(repository);
   }
 
   public List<SNodeReference> getIncludedResultNodes() {
@@ -150,18 +152,14 @@ public class DataTree implements IExternalizeable, IChangeListener {
     HashSet<SModelReference> models = new HashSet<SModelReference>();
     HashSet<SModuleReference> modules = new HashSet<SModuleReference>();
 
-    for (DataNode node : myTreeRoot.getDescendantsByDataClass(NodeNodeData.class)) {
-      NodeNodeData nodeData = (NodeNodeData) node.getData();
-      nodes.add(nodeData.getNodePointer());
-    }
-    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModelNodeData.class)) {
-      ModelNodeData modelData = (ModelNodeData) node.getData();
-      models.add(modelData.getModelReference());
-    }
-    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModuleNodeData.class)) {
-      ModuleNodeData moduleData = (ModuleNodeData) node.getData();
-      modules.add(moduleData.getModuleReference());
-    }
+    nodes.addAll(Arrays.asList(myTreeRoot.getNodeDataStream().filter(nd -> nd instanceof NodeNodeData).map(
+        nd -> ((NodeNodeData) nd).getNodePointer()).toArray(SNodeReference[]::new)));
+    models.addAll(Arrays.asList(myTreeRoot.getNodeDataStream().filter(nd -> nd instanceof ModelNodeData).map(
+        nd -> ((ModelNodeData) nd).getModelReference()).toArray(SModelReference[]::new)));
+
+    modules.addAll(Arrays.asList(myTreeRoot.getNodeDataStream().filter(nd -> nd instanceof ModuleNodeData).map(
+        nd -> ((ModuleNodeData) nd).getModuleReference()).toArray(SModuleReference[]::new)));
+
     myChangesNotifier.trackNodes(this, nodes);
     myChangesNotifier.trackModels(this, models);
     myChangesNotifier.trackModules(this, modules);
