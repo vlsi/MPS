@@ -4111,6 +4111,12 @@
         <node concept="L2wRC" id="2X_LC_CDFE_" role="39821P">
           <ref role="L2wRA" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
         </node>
+        <node concept="L2wRC" id="33LYnHOCpS4" role="39821P">
+          <ref role="L2wRA" node="33LYnHOCppR" resolve="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+        </node>
+        <node concept="L2wRC" id="33LYnHOCpUL" role="39821P">
+          <ref role="L2wRA" node="33LYnHOCpBH" resolve="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+        </node>
         <node concept="L2wRC" id="4Sf$XywNuar" role="39821P">
           <ref role="L2wRA" node="4Sf$XywNuay" resolve="jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
         </node>
@@ -4234,8 +4240,64 @@
           </node>
         </node>
       </node>
+      <node concept="1E1JtD" id="33LYnHOCppR" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+        <property role="3LESm3" value="9b3af7e0-9a52-4741-a75d-becf7e1d5117" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="33LYnHOCppU" role="3LF7KH">
+          <node concept="2Ry0Ak" id="33LYnHOCpri" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="33LYnHOCpu$" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="33LYnHOCpvg" role="2Ry0An">
+                <property role="2Ry0Am" value="testlangs" />
+                <node concept="2Ry0Ak" id="33LYnHOCpyy" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+                  <node concept="2Ry0Ak" id="33LYnHOCp$y" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="33LYnHOCp_d" role="3bR37C">
+          <node concept="1Busua" id="33LYnHOCp_e" role="1SiIV1">
+            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtD" id="33LYnHOCpBH" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+        <property role="3LESm3" value="f909cea5-3e79-4399-b0a6-980af6d53669" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="33LYnHOCpBK" role="3LF7KH">
+          <node concept="2Ry0Ak" id="33LYnHOCpDn" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="33LYnHOCpI_" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="33LYnHOCpJn" role="2Ry0An">
+                <property role="2Ry0Am" value="testlangs" />
+                <node concept="2Ry0Ak" id="33LYnHOCpNQ" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+                  <node concept="2Ry0Ak" id="33LYnHOCpPp" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="33LYnHOCpQa" role="3bR37C">
+          <node concept="1Busua" id="33LYnHOCpQb" role="1SiIV1">
+            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+          </node>
+        </node>
+      </node>
       <node concept="1E1JtA" id="axQ2jNKpix" role="2G$12L">
-        <property role="BnDLt" value="false" />
+        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.tests" />
         <property role="3LESm3" value="0aa20195-3c81-4810-b4b6-be1166055d6a" />
         <property role="2GAjPV" value="false" />

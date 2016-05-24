@@ -24,6 +24,7 @@
     <language slang="l:aee9cad2-acd4-4608-aef2-0004f6a1cdbd:jetbrains.mps.lang.actions" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
     <language slang="l:18bc6592-03a6-4e29-a83a-7ff23bde13ba:jetbrains.mps.lang.editor" version="3" />
+    <language slang="l:9b3af7e0-9a52-4741-a75d-becf7e1d5117:jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" version="0" />
     <language slang="l:4eb772b0-4df3-414a-b894-63abeb912f56:jetbrains.mps.lang.editor.transformationMenu.testLanguage" version="0" />
     <language slang="l:13744753-c81f-424a-9c1b-cf8943bf4e86:jetbrains.mps.lang.sharedConcepts" version="0" />
     <language slang="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" version="4" />

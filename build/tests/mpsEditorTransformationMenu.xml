@@ -135,6 +135,86 @@
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testLanguage/jetbrains.mps.lang.editor.transformationMenu.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.transformationMenu.testLanguage-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" type="language" uuid="9b3af7e0-9a52-4741-a75d-becf7e1d5117">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage-models">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+      </fileset>
+      <zipfileset file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" type="language" uuid="f909cea5-3e79-4399-b0a6-980af6d53669">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage-models">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+      </fileset>
+      <zipfileset file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.contextAssistant.testLanguage.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.contextAssistant.testLanguage.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.lang.editor.contextAssistant.testLanguage.jar/META-INF/module.xml">
@@ -298,7 +378,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage#3415354185901915849, java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.tests, java.compile.jetbrains.mps.lang.editor.contextAssistant.testLanguage, java.compile.jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.contextAssistant.tests" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage#3415354185901915849, java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.tests, java.compile.jetbrains.mps.lang.editor.contextAssistant.testLanguage, java.compile.jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.contextAssistant.tests" />
   
   <target name="processResources" />
   
@@ -398,7 +478,9 @@
       </chunk>
       <chunk>
         <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.contextAssistant.tests/jetbrains.mps.lang.editor.contextAssistant.tests.msd" />
+        <module file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.mpl" />
         <module file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testLanguage/jetbrains.mps.lang.editor.transformationMenu.testLanguage.mpl" />
+        <module file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.mpl" />
       </chunk>
       <chunk>
         <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.transformationMenu.tests/jetbrains.mps.lang.editor.transformationMenu.tests.msd" />
@@ -575,6 +657,112 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testLanguage">
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testLanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, **/*.gif" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, fetchDependencies">
+    <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
+        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, **/*.gif" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, fetchDependencies">
+    <mkdir dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
+        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage">
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, **/*.gif" />
     </copy>
   </target>
   
@@ -882,9 +1070,11 @@
     <path id="mps.tests.path">
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.contextAssistant.testLanguage.jar" />
+      <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage-generator.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage.jar" />
+      <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.contextAssistant.tests.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.transformationMenu.tests.jar" />
     </path>
@@ -943,8 +1133,10 @@
     <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.testLanguage/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testLanguage/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage/generator/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.contextAssistant.tests/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.transformationMenu.tests/test_gen" />
   </target>

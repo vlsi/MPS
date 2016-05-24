@@ -69,6 +69,59 @@
       <unit id="2344528742722136214" at="21,0,53,0" name="jetbrains.mps.lang.editor.transformationMenu.tests.MenuLoadingUtils" />
     </file>
   </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.transformationMenu.tests@tests)/3526874291840104597">
+    <file name="ContributionFromUnusedLanguage_Test.java">
+      <node id="3526874291840104597" at="20,70,21,128" concept="0" />
+      <node id="3526874291840104597" at="21,128,22,132" concept="0" />
+      <node id="3526874291840104597" at="28,51,29,53" concept="0" />
+      <node id="3526874291840813372" at="31,27,32,507" concept="0" />
+      <node id="3526874291840108270" at="34,9,35,248" concept="2" />
+      <node id="3526874291840718202" at="35,248,36,58" concept="0" />
+      <node id="3526874291840302452" at="31,0,34,0" concept="1" trace="run#()V" />
+      <node id="3526874291840104597" at="19,0,24,0" concept="1" trace="test_ContributionFromUnusedLanguage#()V" />
+      <node id="3526874291840302450" at="29,53,34,9" concept="0" />
+      <node id="3526874291840104597" at="27,0,38,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3526874291840302454" at="31,27,32,507" />
+      <scope id="3526874291840104597" at="20,70,22,132" />
+      <scope id="3526874291840302452" at="31,0,34,0" />
+      <scope id="3526874291840104597" at="19,0,24,0" />
+      <scope id="3526874291840104597" at="28,51,36,58">
+        <var name="items" id="3526874291840108271" />
+      </scope>
+      <scope id="3526874291840104597" at="27,0,38,0" />
+      <unit id="3526874291840302452" at="30,97,34,7" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUnusedLanguage_Test$1" />
+      <unit id="3526874291840104597" at="25,0,39,0" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUnusedLanguage_Test$TestBody" />
+      <unit id="3526874291840104597" at="17,0,40,0" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUnusedLanguage_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.transformationMenu.tests@tests)/3526874291840777614">
+    <file name="ContributionFromUsedLanguage_Test.java">
+      <node id="3526874291840777614" at="21,68,22,128" concept="0" />
+      <node id="3526874291840777614" at="22,128,23,130" concept="0" />
+      <node id="3526874291840777614" at="29,51,30,53" concept="0" />
+      <node id="3526874291840824014" at="32,27,33,490" concept="0" />
+      <node id="3526874291840777645" at="35,9,36,248" concept="2" />
+      <node id="3526874291840777653" at="36,248,37,67" concept="0" />
+      <node id="3526874291840796196" at="37,67,38,80" concept="2" />
+      <node id="3526874291840797713" at="38,80,39,93" concept="0" />
+      <node id="3526874291840777619" at="32,0,35,0" concept="1" trace="run#()V" />
+      <node id="3526874291840777614" at="20,0,25,0" concept="1" trace="test_ContributionFromUsedLanguage#()V" />
+      <node id="3526874291840777618" at="30,53,35,9" concept="0" />
+      <node id="3526874291840777614" at="28,0,41,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3526874291840777620" at="32,27,33,490" />
+      <scope id="3526874291840777614" at="21,68,23,130" />
+      <scope id="3526874291840777619" at="32,0,35,0" />
+      <scope id="3526874291840777614" at="20,0,25,0" />
+      <scope id="3526874291840777614" at="29,51,39,93">
+        <var name="item" id="3526874291840796197" />
+        <var name="items" id="3526874291840777646" />
+      </scope>
+      <scope id="3526874291840777614" at="28,0,41,0" />
+      <unit id="3526874291840777619" at="31,97,35,7" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUsedLanguage_Test$1" />
+      <unit id="3526874291840777614" at="26,0,42,0" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUsedLanguage_Test$TestBody" />
+      <unit id="3526874291840777614" at="18,0,43,0" name="jetbrains.mps.lang.editor.transformationMenu.tests.ContributionFromUsedLanguage_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.transformationMenu.tests@tests)/6202297022023746454">
     <file name="LoadNamedMenu_Test.java">
       <node id="6202297022023746454" at="20,53,21,128" concept="0" />

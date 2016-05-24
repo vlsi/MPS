@@ -714,9 +714,11 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.testLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceInfo.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceInfo.test/test_gen" includeSubdirectories="true" />
