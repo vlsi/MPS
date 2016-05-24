@@ -1080,7 +1080,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   @Override
   public EditorCell getPrevSibling() {
-    return myPrev.getNext() != null ? (EditorCell) myPrev.getItem() : null;
+    return myPrev != null && myPrev.getNext() != null ? (EditorCell) myPrev.getItem() : null;
   }
 
   @Override
