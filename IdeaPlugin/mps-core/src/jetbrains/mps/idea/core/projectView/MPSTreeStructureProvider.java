@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.projectView;
 
+import com.intellij.ide.DeleteProvider;
 import com.intellij.ide.projectView.SelectableTreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
@@ -43,12 +44,14 @@ import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.edit.SNodeCutCopyProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodePasteProvider;
+import jetbrains.mps.idea.core.projectView.edit.SingleFileModelDeleteProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ModelComputeRunnable;
@@ -206,6 +209,10 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       return getProvider(selected, CUT_COPY_PROVIDER_FACTORY);
     }
     if (PlatformDataKeys.DELETE_ELEMENT_PROVIDER.is(dataName)) {
+      DeleteProvider deleteModelProvider = getDeleteModelProvider(selected);
+      if (deleteModelProvider != null) {
+        return deleteModelProvider;
+      }
       return getProvider(selected, DELETE_PROVIDER_FACTORY);
     }
     if (MPSDataKeys.MODEL_FILES.is(dataName)) {
@@ -275,6 +282,19 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (sModel == null) return null;
 
     return createProvider.create(selectedNodePointers, modelDescriptor, sModel, mpsProject);
+  }
+
+  private DeleteProvider getDeleteModelProvider(Collection<AbstractTreeNode> selected) {
+    final List<MPSPsiModel> psiModels = new ArrayList<MPSPsiModel>();
+    for (AbstractTreeNode treeNode : selected) {
+      if (!(treeNode instanceof MPSPsiModelTreeNode)) {
+        return null;
+      }
+      MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).getModel();
+      psiModels.add(psiModel);
+    }
+
+    return new SingleFileModelDeleteProvider(psiModels);
   }
 
   private <T> T getModelProvider(AbstractTreeNode treeNode, ModelProviderFactory<T> createProvider) {

@@ -580,6 +580,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public void delete() throws IncorrectOperationException {
+    // todo unregister model
     try {
       getSourceVirtualFile().delete(getManager());
     } catch (IOException e) {
