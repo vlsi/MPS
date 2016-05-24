@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 
 public interface MPS2PsiMapper {
 
-  public static final ExtensionPointName<MPS2PsiMapper> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
+  ExtensionPointName<MPS2PsiMapper> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
 
   boolean hasCorrespondingPsi(SModel model);
 
