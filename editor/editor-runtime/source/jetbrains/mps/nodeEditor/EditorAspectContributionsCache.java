@@ -40,15 +40,15 @@ import java.util.Map;
  * @param <KeyT> type of the identifier of a contribution
  * @param <ContributionT> contribution type
  */
-public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
+abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectContributionsCache.class));
 
-  private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<KeyT, Collection<ContributionT>>();
+  private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<>();
 
   @NotNull
   private final EditorAspectDescriptorBase myDescriptor;
 
-  protected EditorAspectContributionsCache(@NotNull EditorAspectDescriptorBase descriptor) {
+  EditorAspectContributionsCache(@NotNull EditorAspectDescriptorBase descriptor) {
     myDescriptor = descriptor;
   }
 
@@ -71,7 +71,7 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   }
 
   private Collection<ContributionT> computeValues(KeyT key) {
-    List<ContributionT> result = new ArrayList<ContributionT>();
+    List<ContributionT> result = new ArrayList<>();
     addContributions(result, myDescriptor, key);
 
     LanguageRuntime languageRuntime = myDescriptor.getLanguageRuntime();

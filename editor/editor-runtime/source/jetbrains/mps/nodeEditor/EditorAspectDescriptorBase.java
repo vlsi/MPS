@@ -17,18 +17,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeAware;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -51,7 +47,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(final SAbstractConcept concept) {
-    return new ArrayList<ConceptEditor>();
+    return new ArrayList<>();
   }
 
   @NotNull
