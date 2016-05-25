@@ -156,6 +156,14 @@ public class ModulesWatcher {
       Collection<? extends SModuleReference> allInvalidModules = getBackDependencies(invalidModules);
       for (SModuleReference mRef : allInvalidModules) {
         myStatusMap.put(mRef, INVALID);
+        if (LOG.isTraceEnabled()) {
+          Collection<SModuleReference> dependencies = getDependencies(Collections.singleton(mRef));
+          for (SModuleReference depRef : dependencies) {
+            if (invalidModules.contains(depRef)) {
+              LOG.trace("The module " + mRef + " is invalid since it has a transitive dependency on the module " + depRef);
+            }
+          }
+        }
       }
       LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
           " modules [totally in the repository]");

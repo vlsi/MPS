@@ -80,7 +80,11 @@ public class ClassLoadingBroadCaster {
     myLoadedModules.removeAll(modulesToUnload);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      listener.beforeClassesUnloaded(modulesToUnload);
+      try {
+        listener.beforeClassesUnloaded(modulesToUnload);
+      } catch (Exception e) {
+        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+      }
     }
 
     final Set<ReloadableModule> resultingUnload = new LinkedHashSet<ReloadableModule>();
@@ -97,7 +101,11 @@ public class ClassLoadingBroadCaster {
     myLoadedModules.addAll(modulesToLoad);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      listener.afterClassesLoaded(modulesToLoad);
+      try {
+        listener.afterClassesLoaded(modulesToLoad);
+      } catch (Exception e) {
+        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+      }
     }
   }
 
