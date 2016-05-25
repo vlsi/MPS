@@ -175,11 +175,6 @@
     <property role="3GE5qa" value="newBlocks" />
     <property role="EcuMT" value="2353136177973871304" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="7WVujHHtGfg" role="1TKVEl">
-      <property role="TrG5h" value="iconPath" />
-      <property role="IQ2nx" value="9168054762589307856" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyi" id="21G88dsvDs7" role="1TKVEl">
       <property role="TrG5h" value="path" />
       <property role="IQ2nx" value="2336278055263049479" />

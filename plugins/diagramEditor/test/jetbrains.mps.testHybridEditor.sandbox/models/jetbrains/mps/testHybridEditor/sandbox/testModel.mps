@@ -13,7 +13,6 @@
     </language>
     <language id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor">
       <concept id="2353136177973871304" name="jetbrains.mps.testHybridEditor.structure.MetaBlock" flags="ng" index="3cUcoE">
-        <property id="9168054762589307856" name="iconPath" index="ijrFF" />
         <child id="2353136177973888134" name="inMetaPorts" index="3cUg1$" />
         <child id="3229274890675219468" name="outMetaPorts" index="1S65LF" />
       </concept>
@@ -565,14 +564,12 @@
   </node>
   <node concept="3cUcoE" id="13JDji$ZFUY">
     <property role="TrG5h" value="Consumer" />
-    <property role="ijrFF" value="${module}/icons/consumer.png" />
     <node concept="3cUfyZ" id="63$PQ332Son" role="3cUg1$">
       <property role="TrG5h" value="consumerInput" />
     </node>
   </node>
   <node concept="3cUcoE" id="6P_LPfF4OG3">
     <property role="TrG5h" value="Producer" />
-    <property role="ijrFF" value="${module}/icons/producer.png" />
     <node concept="3cUfyZ" id="6P_LPfF4OG5" role="1S65LF">
       <property role="TrG5h" value="producerOutput" />
     </node>
