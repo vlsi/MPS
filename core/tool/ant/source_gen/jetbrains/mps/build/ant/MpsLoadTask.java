@@ -41,35 +41,45 @@ public abstract class MpsLoadTask extends Task {
   private final List<String> myJvmArgs = new ArrayList<String>();
   public MpsLoadTask() {
   }
+
   public void setMpsHome(File mpsHome) {
     myMpsHome = mpsHome;
   }
+
   public File getMpsHome() {
     return myMpsHome;
   }
+
   public void setFailOnError(boolean failOnError) {
     myWhatToDo.updateFailOnError(failOnError);
   }
+
   public void setLogLevel(MpsLoadTask.LogLevelAttribute logLevel) {
     myWhatToDo.updateLogLevel(logLevel.getLevel());
   }
+
   public void setFork(boolean fork) {
     myFork = fork;
   }
+
   public void addConfiguredExclude(ExcludeNested excludeInner) {
     for (File file : excludeInner.getExcludedFromDiffFiles()) {
       myWhatToDo.excludeFileFromDiff(file);
     }
   }
+
   public void addConfiguredMacro(Macro macro) {
     myWhatToDo.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
   }
+
   public boolean getUsePropertiesAsMacro() {
     return myUsePropertiesAsMacro;
   }
+
   public void setUsePropertiesAsMacro(boolean usePropertiesAsMacro) {
     myUsePropertiesAsMacro = usePropertiesAsMacro;
   }
+
   public void addConfiguredJvmArg(Arg jvmArg) {
     if (!(myFork)) {
       throw new BuildException("Nested jvmarg is only allowed in fork mode.");
@@ -77,12 +87,14 @@ public abstract class MpsLoadTask extends Task {
     log("Nested jvmarg is deprecated. Use jvmargs instead.", Project.MSG_WARN);
     myJvmArgs.add(jvmArg.getValue());
   }
+
   public void addConfiguredJvmArgs(JvmArgs jvmArg) {
     if (!(myFork)) {
       throw new BuildException("Nested jvmargs is only allowed in fork mode.");
     }
     myJvmArgs.addAll(jvmArg.getArgs());
   }
+
   @Override
   public void execute() throws BuildException {
     Set<File> classPaths = calculateClassPath(myFork);
@@ -171,6 +183,7 @@ public abstract class MpsLoadTask extends Task {
       }
     }
   }
+
   private void outputBuildNumber() {
     String antTaskBuildNumber;
     URL resource = getClass().getResource("/build.number");
@@ -205,31 +218,38 @@ public abstract class MpsLoadTask extends Task {
       log("MPS build number is " + mpsBuildNumber + ", while ant task build number is " + antTaskBuildNumber + ".\n" + "This may cause errors.", Project.MSG_WARN);
     }
   }
+
   private void processNonZeroExitCode(int i) {
     throw new BuildException("Process exited with code " + i + ".");
   }
+
   private void dumpPropertiesToWhatToDo() {
     Hashtable properties = getProject().getProperties();
     for (Object key : properties.keySet()) {
       myWhatToDo.putProperty((String) key, (String) properties.get(key));
     }
   }
+
   private void checkMpsHome() {
     if (myMpsHome == null) {
       myMpsHome = MPSClasspathUtil.resolveMPSHome(getProject(), true);
     }
     outputBuildNumber();
   }
+
   private boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
+
   protected Set<File> calculateClassPath(boolean fork) {
     checkMpsHome();
     LinkedHashSet<File> result = new LinkedHashSet<File>();
     result.addAll(MPSClasspathUtil.buildClasspath(getProject(), myMpsHome, fork));
     return result;
   }
+
   protected abstract String getWorkerClass();
+
   public static String readBuildNumber(InputStream stream) {
     BufferedReader bufferedReader = null;
     try {
@@ -253,7 +273,6 @@ public abstract class MpsLoadTask extends Task {
       if (buildNumber != null && configurationName != null) {
         return configurationName + "." + buildNumber;
       }
-    } catch (FileNotFoundException ignore) {
     } catch (IOException ignore) {
     } finally {
       if (bufferedReader != null) {
@@ -265,6 +284,7 @@ public abstract class MpsLoadTask extends Task {
     }
     return null;
   }
+
   public static class LogLevelAttribute extends EnumeratedAttribute {
     public LogLevelAttribute() {
     }
@@ -280,6 +300,7 @@ public abstract class MpsLoadTask extends Task {
       return Level.toLevel(val);
     }
   }
+
   public static abstract class AbstractOutputReader extends Thread {
     private InputStream myInputStream;
     public AbstractOutputReader(InputStream inputStream) {
