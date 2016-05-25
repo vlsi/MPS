@@ -47,12 +47,14 @@ public class SwitchStatement_TextGen extends TextGenDescriptorBase {
       tgs.appendNode(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d8048L, "body")));
       ctx.getBuffer().area().decreaseIndent();
     }
-    tgs.newLine();
-    tgs.indent();
-    tgs.append("default:");
-    ctx.getBuffer().area().increaseIndent();
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02c1b6eL, "defaultBlock")));
-    ctx.getBuffer().area().decreaseIndent();
+    if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02c1b6eL, "defaultBlock")) != null)) {
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("default:");
+      ctx.getBuffer().area().increaseIndent();
+      tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02c1b6eL, "defaultBlock")));
+      ctx.getBuffer().area().decreaseIndent();
+    }
     ctx.getBuffer().area().decreaseIndent();
     tgs.newLine();
     tgs.indent();
