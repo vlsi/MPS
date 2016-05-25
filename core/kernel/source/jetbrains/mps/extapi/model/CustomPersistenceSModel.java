@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,12 +119,20 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   protected void reloadContents() {
     assertCanChange();
 
-    if (!isLoaded()) return;
+    if (!isLoaded()) {
+      return;
+    }
 
     final SModel oldModel = myModel;
     myModel = loadSModel();
+    oldModel.setModelDescriptor(null);
+    myModel.setModelDescriptor(this);
+    oldModel.dispose();
     setChanged(false);
-    replaceModelAndFireEvent(oldModel, myModel);
+
+    // XXX loadSModel() doesn't change loading state (though it's wrong, as reload might load empty model)
+    //     hence no fireModelStateChanged() call here
+    fireModelReplaced();
   }
 
   @Override
