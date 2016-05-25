@@ -53,16 +53,11 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   }
 
   public Collection<ContributionT> get(KeyT key) {
-    if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(myDescriptor)) {
-      myDescriptor.clearAllCaches();
-    } else {
-      if (myCache.containsKey(key)) {
-        return myCache.get(key);
-      }
+    if (myCache.containsKey(key)) {
+      return myCache.get(key);
     }
     Collection<ContributionT> allValues = computeValues(key);
     myCache.put(key, allValues);
-    ValidEditorDescriptorsCache.getInstance().cacheDescriptor(myDescriptor);
     return allValues;
   }
 

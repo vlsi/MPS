@@ -42,7 +42,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
-    return myEditorsCache.get(concept);
+    return this.clearCachesIfStaleThenGetFromCache(myEditorsCache, concept);
   }
 
   @NotNull
@@ -52,7 +52,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return myEditorComponentsCache.get(new Pair<>(concept, editorComponentId));
+    return this.clearCachesIfStaleThenGetFromCache(myEditorComponentsCache, new Pair<>(concept, editorComponentId));
   }
 
   @NotNull
@@ -63,7 +63,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept) {
-    return myDefaultTransformationMenusCache.get(concept);
+    return this.clearCachesIfStaleThenGetFromCache(myDefaultTransformationMenusCache, concept);
   }
 
   @NotNull
@@ -75,7 +75,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId) {
-    return myNamedTransformationMenusCache.get(menuId);
+    return this.clearCachesIfStaleThenGetFromCache(myNamedTransformationMenusCache, menuId);
   }
 
   @NotNull
@@ -97,7 +97,22 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     myLanguageRuntime = languageRuntime;
   }
 
-  void clearAllCaches() {
+  // TODO improve the name or improve the method
+  private <KeyT, ContributionT> Collection<ContributionT> clearCachesIfStaleThenGetFromCache(EditorAspectContributionsCache<KeyT, ContributionT> cache, KeyT key) {
+    clearCachesIfStale();
+    return cache.get(key);
+  }
+
+  private void clearCachesIfStale() {
+    ValidEditorDescriptorsCache cache = ValidEditorDescriptorsCache.getInstance();
+
+    if (!cache.isDescriptorValid(this)) {
+      clearAllCaches();
+      cache.markDescriptorValid(this);
+    }
+  }
+
+  private void clearAllCaches() {
     myEditorsCache.clear();
     myEditorComponentsCache.clear();
     myDefaultTransformationMenusCache.clear();

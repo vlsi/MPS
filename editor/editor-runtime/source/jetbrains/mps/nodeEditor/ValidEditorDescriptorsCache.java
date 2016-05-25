@@ -49,7 +49,7 @@ public class ValidEditorDescriptorsCache {
     return myCachedEditorDescriptors.contains(descriptor);
   }
 
-  public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {
+  public synchronized void markDescriptorValid(@NotNull EditorAspectDescriptor descriptor) {
     myCachedEditorDescriptors.add(descriptor);
     attachLanguageRegistryListener();
   }
