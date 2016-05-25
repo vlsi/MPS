@@ -35,10 +35,10 @@ import java.util.Collections;
  */
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor, LanguageRuntimeAware {
   private LanguageRuntime myLanguageRuntime;
-  private EditorsCache myEditorsCache = new EditorsCache();
-  private EditorComponentsCache myEditorComponentsCache = new EditorComponentsCache();
-  private DefaultTransformationMenusCache myDefaultTransformationMenusCache = new DefaultTransformationMenusCache();
-  private NamedTransformationMenusCache myNamedTransformationMenusCache = new NamedTransformationMenusCache();
+  private EditorsCache myEditorsCache;
+  private EditorComponentsCache myEditorComponentsCache;
+  private DefaultTransformationMenusCache myDefaultTransformationMenusCache;
+  private NamedTransformationMenusCache myNamedTransformationMenusCache;
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
@@ -84,17 +84,14 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     return Collections.emptyList();
   }
 
-  @NotNull
-  LanguageRuntime getLanguageRuntime() {
-    if (myLanguageRuntime == null) {
-      throw new IllegalStateException("Language runtime was not set during initialization");
-    }
-    return myLanguageRuntime;
-  }
-
   @Override
   public void setLanguageRuntime(@NotNull LanguageRuntime languageRuntime) {
     myLanguageRuntime = languageRuntime;
+
+    myEditorsCache = new EditorsCache(myLanguageRuntime);
+    myEditorComponentsCache = new EditorComponentsCache(myLanguageRuntime);
+    myDefaultTransformationMenusCache = new DefaultTransformationMenusCache(myLanguageRuntime);
+    myNamedTransformationMenusCache = new NamedTransformationMenusCache(myLanguageRuntime);
   }
 
   // TODO improve the name or improve the method
@@ -103,7 +100,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     return cache.get(key);
   }
 
-  private void clearCachesIfStale() {
+  protected void clearCachesIfStale() {
     ValidEditorDescriptorsCache cache = ValidEditorDescriptorsCache.getInstance();
 
     if (!cache.isDescriptorValid(this)) {
@@ -119,9 +116,9 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     myNamedTransformationMenusCache.clear();
   }
 
-  private class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
-    private EditorsCache() {
-      super(EditorAspectDescriptorBase.this);
+  private static class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
+    private EditorsCache(LanguageRuntime languageRuntime) {
+      super(languageRuntime);
     }
 
     @NotNull
@@ -131,9 +128,9 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
-  private class EditorComponentsCache extends EditorAspectContributionsCache<Pair<SAbstractConcept, String>, ConceptEditorComponent> {
-    private EditorComponentsCache() {
-      super(EditorAspectDescriptorBase.this);
+  private static class EditorComponentsCache extends EditorAspectContributionsCache<Pair<SAbstractConcept, String>, ConceptEditorComponent> {
+    private EditorComponentsCache(LanguageRuntime languageRuntime) {
+      super(languageRuntime);
     }
 
     @NotNull
@@ -143,9 +140,9 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
-  private class DefaultTransformationMenusCache extends EditorAspectContributionsCache<SAbstractConcept, TransformationMenu> {
-    private DefaultTransformationMenusCache() {
-      super(EditorAspectDescriptorBase.this);
+  private static class DefaultTransformationMenusCache extends EditorAspectContributionsCache<SAbstractConcept, TransformationMenu> {
+    private DefaultTransformationMenusCache(LanguageRuntime languageRuntime) {
+      super(languageRuntime);
     }
 
     @NotNull
@@ -155,9 +152,9 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
-  private class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
-    private NamedTransformationMenusCache() {
-      super(EditorAspectDescriptorBase.this);
+  private static class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
+    private NamedTransformationMenusCache(LanguageRuntime languageRuntime) {
+      super(languageRuntime);
     }
 
     @NotNull

@@ -46,10 +46,10 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<>();
 
   @NotNull
-  private final EditorAspectDescriptorBase myDescriptor;
+  private final LanguageRuntime myLanguageRuntime;
 
-  EditorAspectContributionsCache(@NotNull EditorAspectDescriptorBase descriptor) {
-    myDescriptor = descriptor;
+  EditorAspectContributionsCache(@NotNull LanguageRuntime languageRuntime) {
+    myLanguageRuntime = languageRuntime;
   }
 
   public Collection<ContributionT> get(KeyT key) {
@@ -67,17 +67,20 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
 
   private Collection<ContributionT> computeValues(KeyT key) {
     List<ContributionT> result = new ArrayList<>();
-    addContributions(result, myDescriptor, key);
+    addContributions(result, myLanguageRuntime, key);
 
-    LanguageRuntime languageRuntime = myDescriptor.getLanguageRuntime();
-    for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(extendingLanguage);
-      if (editorAspect == null) {
-        continue;
-      }
-      addContributions(result, editorAspect, key);
+    for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
+      addContributions(result, extendingLanguage, key);
     }
     return result;
+  }
+
+  private void addContributions(List<ContributionT> container, LanguageRuntime languageRuntime, KeyT key) {
+    EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(languageRuntime);
+    if (editorAspect == null) {
+      return;
+    }
+    addContributions(container, editorAspect, key);
   }
 
   private void addContributions(List<ContributionT> container, EditorAspectDescriptor editorAspect, KeyT key) {
