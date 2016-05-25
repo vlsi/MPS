@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -11,11 +12,8 @@ public class InstanceMethodDeclaration_Constraints extends BaseConstraintsDescri
   public InstanceMethodDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
   }
-  public String getAlternativeIcon(SNode node) {
-    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"))) {
-      return "${language_descriptor}/icons/abstractMethod.png";
-    }
-    return null;
+  public Icon getInstanceIcon(SNode node) {
+    return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")) ? IconContainer.ICON_a0a0b : null);
   }
 
 }

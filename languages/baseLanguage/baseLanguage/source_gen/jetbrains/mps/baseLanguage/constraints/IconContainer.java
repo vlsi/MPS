@@ -9,4 +9,5 @@ public class IconContainer {
   protected static Icon ICON_a0a0a0a1 = IconUtil.getIcon("abstractException.png");
   protected static Icon ICON_a1a0a1 = IconUtil.getIcon("exceptionClass.png");
   protected static Icon ICON_a0a1a1 = IconUtil.getIcon("abstractClass.png");
+  protected static Icon ICON_a0a0b = IconUtil.getIcon("abstractMethod.png");
 }

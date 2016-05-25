@@ -19,7 +19,7 @@
       <unit at="13,0,320,0" name="jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor" />
     </file>
     <file name="IconContainer.java">
-      <unit at="8,0,13,0" name="jetbrains.mps.baseLanguage.constraints.IconContainer" />
+      <unit at="8,0,14,0" name="jetbrains.mps.baseLanguage.constraints.IconContainer" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/1213104836688">
@@ -3236,20 +3236,17 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7474456048895327068">
     <file name="InstanceMethodDeclaration_Constraints.java">
-      <node id="7474456048895327068" at="11,50,12,164" concept="13" />
-      <node id="7474456048895327076" at="15,166,16,63" concept="8" />
-      <node id="7474456048895327078" at="17,5,18,16" concept="8" />
-      <node id="7474456048895327068" at="11,0,14,0" concept="2" trace="InstanceMethodDeclaration_Constraints#()V" />
-      <node id="7474456048895327071" at="14,48,17,5" concept="5" />
-      <node id="7474456048895327068" at="14,0,20,0" concept="6" trace="getAlternativeIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="7474456048895327068" at="11,50,12,164" />
-      <scope id="7474456048895327075" at="15,166,16,63" />
-      <scope id="7474456048895327068" at="11,0,14,0" />
-      <scope id="7474456048895327070" at="14,48,18,16" />
-      <scope id="7474456048895327068" at="14,0,20,0">
+      <node id="7474456048895327068" at="12,50,13,164" concept="13" />
+      <node id="1426851521647335043" at="15,43,16,203" concept="8" />
+      <node id="7474456048895327068" at="12,0,15,0" concept="2" trace="InstanceMethodDeclaration_Constraints#()V" />
+      <node id="7474456048895327068" at="15,0,18,0" concept="6" trace="getInstanceIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+      <scope id="7474456048895327068" at="12,50,13,164" />
+      <scope id="1426851521647331281" at="15,43,16,203" />
+      <scope id="7474456048895327068" at="12,0,15,0" />
+      <scope id="7474456048895327068" at="15,0,18,0">
         <var name="node" id="7474456048895327068" />
       </scope>
-      <unit id="7474456048895327068" at="10,0,22,0" name="jetbrains.mps.baseLanguage.constraints.InstanceMethodDeclaration_Constraints" />
+      <unit id="7474456048895327068" at="11,0,20,0" name="jetbrains.mps.baseLanguage.constraints.InstanceMethodDeclaration_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7785501532031731655">
