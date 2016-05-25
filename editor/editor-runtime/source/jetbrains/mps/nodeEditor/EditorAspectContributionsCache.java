@@ -22,9 +22,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * <p>
@@ -43,7 +46,7 @@ import java.util.Map;
 abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectContributionsCache.class));
 
-  private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<>();
+  private final Map<KeyT, Map<LanguageRuntime, Collection<ContributionT>>> myCache = new HashMap<>();
 
   @NotNull
   private final LanguageRuntime myLanguageRuntime;
@@ -53,42 +56,81 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   }
 
   public Collection<ContributionT> get(KeyT key) {
-    if (myCache.containsKey(key)) {
-      return myCache.get(key);
+    return concatValues(getOrCompute(key));
+  }
+
+  public Collection<ContributionT> getInLanguages(KeyT key, Collection<LanguageRuntime> languageRuntimes) {
+    return filterKeysAndConcatValues(getOrCompute(key), languageRuntimes);
+  }
+
+  private Map<LanguageRuntime, Collection<ContributionT>> getOrCompute(KeyT key) {
+    Map<LanguageRuntime, Collection<ContributionT>> values = myCache.get(key);
+
+    if (values == null) {
+      values = computeValues(key);
+      myCache.put(key, values);
     }
-    Collection<ContributionT> allValues = computeValues(key);
-    myCache.put(key, allValues);
-    return allValues;
+    return values;
+  }
+
+  private static <T> Collection<T> concatValues(Map<?, Collection<T>> map) {
+    List<T> result = new ArrayList<>();
+
+    for (Entry<?, Collection<T>> entry : map.entrySet()) {
+      result.addAll(entry.getValue());
+    }
+
+    return result;
+  }
+
+  private static <K, T> Collection<T> filterKeysAndConcatValues(Map<K, Collection<T>> map, Collection<K> wantedKeys) {
+    List<T> result = new ArrayList<>();
+
+    for (Entry<K, Collection<T>> entry : map.entrySet()) {
+      if (wantedKeys.contains(entry.getKey())) {
+        result.addAll(entry.getValue());
+      }
+    }
+
+    return result;
   }
 
   public void clear() {
     myCache.clear();
   }
 
-  private Collection<ContributionT> computeValues(KeyT key) {
-    List<ContributionT> result = new ArrayList<>();
-    addContributions(result, myLanguageRuntime, key);
+  private Map<LanguageRuntime, Collection<ContributionT>> computeValues(KeyT key) {
+    Map<LanguageRuntime, Collection<ContributionT>> result = new IdentityHashMap<>();
 
+    putIfNotEmpty(result, myLanguageRuntime, getDeclaredContributions(myLanguageRuntime, key));
     for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
-      addContributions(result, extendingLanguage, key);
+      putIfNotEmpty(result, extendingLanguage, getDeclaredContributions(extendingLanguage, key));
     }
+
     return result;
   }
 
-  private void addContributions(List<ContributionT> container, LanguageRuntime languageRuntime, KeyT key) {
-    EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(languageRuntime);
-    if (editorAspect == null) {
-      return;
+  private static <KeyT, ValueT> void putIfNotEmpty(Map<KeyT, Collection<ValueT>> map, KeyT key, Collection<ValueT> values) {
+    if (!values.isEmpty()) {
+      map.put(key, values);
     }
-    addContributions(container, editorAspect, key);
   }
 
-  private void addContributions(List<ContributionT> container, EditorAspectDescriptor editorAspect, KeyT key) {
+  @NotNull
+  private Collection<ContributionT> getDeclaredContributions(LanguageRuntime languageRuntime, KeyT key) {
+    EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(languageRuntime);
+    if (editorAspect == null) {
+      return Collections.emptyList();
+    }
+
+    Collection<ContributionT> declaredContributions;
     try {
-      container.addAll(getDeclaredContributions(editorAspect, key));
+      declaredContributions = getDeclaredContributions(editorAspect, key);
     } catch (NoClassDefFoundError error) {
       LOG.error("Failed to get contributions from editor aspect descriptor " + editorAspect, error);
+      declaredContributions = Collections.emptyList();
     }
+    return declaredContributions;
   }
 
   /**
