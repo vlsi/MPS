@@ -4,6 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -25,6 +26,15 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
+        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      </concept>
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -202,6 +212,7 @@
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
+      <concept id="1426851521646451314" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetInstanceIcon" flags="in" index="XeQIk" />
       <concept id="4590747232508808445" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor" flags="nn" index="30Zx2P" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="6768994795311967732" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible" flags="nn" index="18Yu4j" />
@@ -219,6 +230,7 @@
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="3754598629525415384" name="alternativeIcon" index="2B7epn" />
+        <child id="1426851521646478396" name="instanceIcon" index="XeZnq" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
@@ -1612,15 +1624,17 @@
         </node>
       </node>
     </node>
-    <node concept="2B7ep0" id="1cLdD6E6V6Z" role="2B7epn">
-      <node concept="3clFbS" id="1cLdD6E6V70" role="2VODD2">
+    <node concept="XeQIk" id="1fdcuoIZZJi" role="XeZnq">
+      <node concept="3clFbS" id="1fdcuoIZZJj" role="2VODD2">
         <node concept="3clFbJ" id="4DHwkIM$thc" role="3cqZAp">
           <node concept="3clFbS" id="4DHwkIM$thd" role="3clFbx">
             <node concept="3clFbJ" id="4DHwkIM$tBj" role="3cqZAp">
               <node concept="3clFbS" id="4DHwkIM$tBk" role="3clFbx">
-                <node concept="3cpWs6" id="4DHwkIM$tBt" role="3cqZAp">
-                  <node concept="Xl_RD" id="4DHwkIM$tBv" role="3cqZAk">
-                    <property role="Xl_RC" value="${language_descriptor}/icons/abstractException.png" />
+                <node concept="3cpWs6" id="1fdcuoJ0cYR" role="3cqZAp">
+                  <node concept="1QGGTA" id="1fdcuoJ0dCb" role="3cqZAk">
+                    <node concept="1QGGSu" id="1fdcuoJ0dCd" role="1QGGTw">
+                      <property role="1QGGTI" value="${module}/icons/abstractException.png" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1631,9 +1645,11 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="4DHwkIM$tBf" role="3cqZAp">
-              <node concept="Xl_RD" id="4DHwkIM$tBh" role="3cqZAk">
-                <property role="Xl_RC" value="${language_descriptor}/icons/exceptionClass.png" />
+            <node concept="3cpWs6" id="1fdcuoJ0fbJ" role="3cqZAp">
+              <node concept="1QGGTA" id="1fdcuoJ0fbK" role="3cqZAk">
+                <node concept="1QGGSu" id="1fdcuoJ0fbL" role="1QGGTw">
+                  <property role="1QGGTI" value="${module}/icons/exceptionClass.png" />
+                </node>
               </node>
             </node>
           </node>
@@ -1650,8 +1666,10 @@
         <node concept="3clFbJ" id="1cLdD6E6WI$" role="3cqZAp">
           <node concept="3clFbS" id="1cLdD6E6WIA" role="3clFbx">
             <node concept="3cpWs6" id="1cLdD6E6WIH" role="3cqZAp">
-              <node concept="Xl_RD" id="1cLdD6E6WIJ" role="3cqZAk">
-                <property role="Xl_RC" value="${language_descriptor}/icons/abstractClass.png" />
+              <node concept="1QGGTA" id="1fdcuoJ0g85" role="3cqZAk">
+                <node concept="1QGGSu" id="1fdcuoJ0g86" role="1QGGTw">
+                  <property role="1QGGTI" value="${module}/icons/abstractClass.png" />
+                </node>
               </node>
             </node>
           </node>
