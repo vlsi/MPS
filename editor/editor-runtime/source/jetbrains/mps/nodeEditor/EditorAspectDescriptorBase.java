@@ -20,7 +20,12 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRuntimeAware;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -32,7 +37,8 @@ import java.util.Collections;
 /**
  * @author simon
  */
-public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
+public class EditorAspectDescriptorBase implements EditorAspectDescriptor, LanguageRuntimeAware {
+  private LanguageRuntime myLanguageRuntime;
   private EditorsCache myEditorsCache = new EditorsCache();
   private EditorComponentsCache myEditorComponentsCache = new EditorComponentsCache();
   private DefaultTransformationMenusCache myDefaultTransformationMenusCache = new DefaultTransformationMenusCache();
@@ -82,6 +88,19 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
+  @NotNull
+  LanguageRuntime getLanguageRuntime() {
+    if (myLanguageRuntime == null) {
+      throw new IllegalStateException("Language runtime was not set during initialization");
+    }
+    return myLanguageRuntime;
+  }
+
+  @Override
+  public void setLanguageRuntime(@NotNull LanguageRuntime languageRuntime) {
+    myLanguageRuntime = languageRuntime;
+  }
+
   void clearAllCaches() {
     myEditorsCache.clear();
     myEditorComponentsCache.clear();
@@ -92,11 +111,6 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
     private EditorsCache() {
       super(EditorAspectDescriptorBase.this);
-    }
-
-    @Override
-    protected SLanguage getLanguage(SAbstractConcept key) {
-      return key.getLanguage();
     }
 
     @NotNull
@@ -111,11 +125,6 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
       super(EditorAspectDescriptorBase.this);
     }
 
-    @Override
-    protected SLanguage getLanguage(Pair<SAbstractConcept, String> key) {
-      return key.o1.getLanguage();
-    }
-
     @NotNull
     @Override
     protected Collection<ConceptEditorComponent> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, Pair<SAbstractConcept, String> key) {
@@ -128,11 +137,6 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
       super(EditorAspectDescriptorBase.this);
     }
 
-    @Override
-    protected SLanguage getLanguage(SAbstractConcept key) {
-      return key.getLanguage();
-    }
-
     @NotNull
     @Override
     protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, SAbstractConcept key) {
@@ -143,11 +147,6 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
     private NamedTransformationMenusCache() {
       super(EditorAspectDescriptorBase.this);
-    }
-
-    @Override
-    protected SLanguage getLanguage(NamedTransformationMenuId key) {
-      return key.getConcept().getLanguage();
     }
 
     @NotNull

@@ -16,11 +16,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,8 +32,8 @@ import java.util.Map;
  * {@link jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent}s, etc.).
  * <p>
  * Contributions are looked up using a key of type {@code KeyT}, which is usually a {@link org.jetbrains.mps.openapi.language.SAbstractConcept} by itself or
- * bundled with some extra data further identifying the contribution. Contributions are collected from both the concept's language and languages which extend
- * the concept's language (directly or indirectly).
+ * bundled with some extra data further identifying the contribution. Contributions are collected from the owning editor descriptor's language and languages
+ * which extend this language (directly or indirectly).
  * <p>
  * The maintained cache is invalidated by {@link ValidEditorDescriptorsCache#cleanCaches(Iterable)}.
  *
@@ -75,12 +73,8 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private Collection<ContributionT> computeValues(KeyT key) {
     List<ContributionT> result = new ArrayList<ContributionT>();
     addContributions(result, myDescriptor, key);
-    SLanguage language = getLanguage(key);
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
-    if (languageRuntime == null) {
-      LOG.warning("No language runtime found for language: " + language);
-      return result;
-    }
+
+    LanguageRuntime languageRuntime = myDescriptor.getLanguageRuntime();
     for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
       EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(extendingLanguage);
       if (editorAspect == null) {
@@ -98,13 +92,6 @@ public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
       LOG.error("Failed to get contributions from editor aspect descriptor " + editorAspect, error);
     }
   }
-
-  /**
-   * Extract {@link SLanguage} from {@code key}. Languages extending this language will be examined for their contributions.
-   * @param key a key
-   * @return language corresponding to the key
-   */
-  protected abstract SLanguage getLanguage(KeyT key);
 
   /**
    * Retrieve contributions declared directly in the model represented by {@code descriptor} and matching {@code key}.
