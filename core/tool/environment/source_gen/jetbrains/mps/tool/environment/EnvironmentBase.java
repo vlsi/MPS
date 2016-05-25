@@ -23,8 +23,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 
@@ -186,23 +184,15 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   protected static void setSystemProperties(boolean loadIdeaPlugins) {
-    boolean internalFlag = InternalFlag.isInternalMode();
-    System.setProperty("idea.is.internal", internalFlag + "");
+    System.setProperty("idea.is.internal", InternalFlag.isInternalMode() + "");
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", loadIdeaPlugins + "");
-    System.setProperty("idea.platform.prefix", "Idea");
   }
 
   protected static void setIdeaPluginsToLoad(EnvironmentConfig config) {
     // todo try removing this hack 
     if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
       setPluginPath();
-      // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(SetSequence.fromSet(config.getPlugins()).select(new ISelector<PluginDescriptor, String>() {
-        public String select(PluginDescriptor it) {
-          return it.getId();
-        }
-      }), ","));
     }
   }
 

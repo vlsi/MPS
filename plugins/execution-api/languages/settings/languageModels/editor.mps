@@ -23,10 +23,12 @@
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
+        <child id="928328222691832421" name="separatorTextQuery" index="2gpyvW" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
+      <concept id="709996738298806197" name="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" flags="in" index="2o9xnK" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
@@ -1049,6 +1051,15 @@
     <node concept="3F2HdR" id="O$iR4JBsUc" role="2wV5jI">
       <ref role="1NtTu8" to="fb9u:O$iR4J$g0z" />
       <node concept="2iRkQZ" id="O$iR4JBsUd" role="2czzBx" />
+      <node concept="2o9xnK" id="1I6I6y47vPF" role="2gpyvW">
+        <node concept="3clFbS" id="1I6I6y47vPG" role="2VODD2">
+          <node concept="3clFbF" id="1I6I6y47vR0" role="3cqZAp">
+            <node concept="Xl_RD" id="1I6I6y47vQZ" role="3clFbG">
+              <property role="Xl_RC" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="4DPUXm60GEC">

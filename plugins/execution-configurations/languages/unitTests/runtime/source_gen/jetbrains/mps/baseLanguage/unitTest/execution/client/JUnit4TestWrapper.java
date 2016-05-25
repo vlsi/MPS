@@ -18,15 +18,18 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4TestWrapper(SNode clazz) {
     super(clazz);
   }
+
   @Override
   public boolean isTestCase() {
     return true;
   }
+
   @NonNls
   @Override
   public String getFqName() {
-    return check_rdmqn1_a0a2(getNode(), this);
+    return check_rdmqn1_a0a4(getNode(), this);
   }
+
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
@@ -51,6 +54,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
       }
     });
   }
+
   public static boolean isJUnit4TestCase(SNode clazz) {
     if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
       return false;
@@ -62,7 +66,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-  private static String check_rdmqn1_a0a2(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
+  private static String check_rdmqn1_a0a4(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     }

@@ -8,13 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
@@ -50,18 +49,14 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
       SModel model = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
-      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
-        public String compute() {
-          return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090").getName();
-        }
-      });
-      this.startAndTerminate(JUnitUtil.wrapTests(model, Sequence.<String>singleton(testName)));
+      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(model, Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090")));
+      this.startAndTerminate(wrappedTests);
     }
 
 
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
-        final TestRunState runState = new TestRunState(testNodes);
+        final TestRunState runState = new TestRunState(testNodes, myProject);
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);

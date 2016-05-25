@@ -26,12 +26,14 @@
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
+        <child id="928328222691832421" name="separatorTextQuery" index="2gpyvW" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
+      <concept id="709996738298806197" name="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" flags="in" index="2o9xnK" />
       <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
@@ -112,6 +114,9 @@
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
@@ -403,13 +408,14 @@
         </node>
       </node>
       <node concept="3EZMnI" id="5keEkmeCgv0" role="3EZMnx">
+        <node concept="3XFhqQ" id="5keEkmeCgv4" role="3EZMnx" />
+        <node concept="2iRfu4" id="5keEkmeCgv3" role="2iSdaV" />
         <node concept="VPM3Z" id="5keEkmeCgv1" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="2iRfu4" id="5keEkmeCgv3" role="2iSdaV" />
-        <node concept="3XFhqQ" id="5keEkmeCgv4" role="3EZMnx" />
         <node concept="3F2HdR" id="5keEkmeCgv6" role="3EZMnx">
           <ref role="1NtTu8" to="rzqf:5keEkmeCguY" />
+          <node concept="l2Vlx" id="3iq8LPqRaF" role="2czzBx" />
           <node concept="VPM3Z" id="3iq8LPqRaG" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -425,7 +431,15 @@
           <node concept="pj6Ft" id="3iq8LPqRaK" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="l2Vlx" id="3iq8LPqRaF" role="2czzBx" />
+          <node concept="2o9xnK" id="1I6I6y44BEg" role="2gpyvW">
+            <node concept="3clFbS" id="1I6I6y44BEh" role="2VODD2">
+              <node concept="3clFbF" id="1I6I6y44BF3" role="3cqZAp">
+                <node concept="Xl_RD" id="1I6I6y44BF2" role="3clFbG">
+                  <property role="Xl_RC" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3F0ifn" id="JzCdmU6yLS" role="3EZMnx">
@@ -441,6 +455,15 @@
         <node concept="3F2HdR" id="JzCdmU6yLX" role="3EZMnx">
           <ref role="1NtTu8" to="rzqf:JzCdmU6yJI" />
           <node concept="2iRkQZ" id="JzCdmU6yLY" role="2czzBx" />
+          <node concept="2o9xnK" id="1I6I6y44zHU" role="2gpyvW">
+            <node concept="3clFbS" id="1I6I6y44zHV" role="2VODD2">
+              <node concept="3clFbF" id="1I6I6y44zJ8" role="3cqZAp">
+                <node concept="Xl_RD" id="1I6I6y44zJ7" role="3clFbG">
+                  <property role="Xl_RC" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="2iRfu4" id="JzCdmU6yLZ" role="2iSdaV" />
       </node>

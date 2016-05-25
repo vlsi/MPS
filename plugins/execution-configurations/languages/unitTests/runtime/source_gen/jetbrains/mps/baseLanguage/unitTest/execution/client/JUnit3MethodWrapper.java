@@ -16,23 +16,26 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3MethodWrapper(SNode method) {
     super(method);
   }
+
   @Override
   public boolean isTestCase() {
     return false;
   }
+
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    SNode clazz = check_pj3jcm_a0a0c(getNode(), this);
+    SNode clazz = check_pj3jcm_a0a0e(getNode(), this);
     if ((clazz != null)) {
       return new JUnit3TestWrapper(clazz);
     }
     return null;
   }
+
   public static boolean isTestMethod(@NotNull SNode method) {
     return !(((boolean) (Boolean) BHReflection.invoke(method, SMethodTrimmedId.create("isAbstract", null, "hWjv7RO")))) && (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) != null) && SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("test");
   }
-  private static SNode check_pj3jcm_a0a0c(SNode checkedDotOperand, JUnit3MethodWrapper checkedDotThisExpression) {
+  private static SNode check_pj3jcm_a0a0e(SNode checkedDotOperand, JUnit3MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.getNodeAncestor(checkedDotOperand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }

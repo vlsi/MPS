@@ -33,18 +33,21 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   protected ITestNodeWrapper wrap(SNode node) {
     return TestNodeWrapperFactory.tryToWrap(node);
   }
+
   @Override
   protected SNodeReference unwrap(ITestNodeWrapper element) {
     return element.getNodePointer();
   }
+
   @Override
   protected String getFqName(ITestNodeWrapper element) {
     return element.getCachedFqName();
   }
+
   @Override
   protected void collectCandidates(final ProgressMonitor progress) {
     final List<SNode> nodesList = new ArrayList<SNode>();
-    final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
+    final SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SAbstractConcept c : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {

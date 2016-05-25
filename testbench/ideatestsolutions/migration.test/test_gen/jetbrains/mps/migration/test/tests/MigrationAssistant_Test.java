@@ -34,7 +34,7 @@ public class MigrationAssistant_Test extends TestCase {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<? extends SModule> modules = project.getModules();
+        Iterable<SModule> modules = project.getProjectModules();
         Solution migratingSolution = Sequence.fromIterable(modules).ofType(Solution.class).first();
         SModel migratingModel = migratingSolution.getModels().get(0);
         root.value = migratingModel.getRootNodes().iterator().next();
@@ -45,7 +45,7 @@ public class MigrationAssistant_Test extends TestCase {
         }, false).toListSequence();
       }
     });
-    Assert.assertTrue(ListSequence.fromList(properties.value).count() == 2);
+    Assert.assertEquals(2, ListSequence.fromList(properties.value).count());
 
     final Wrappers._T<String> value0 = new Wrappers._T<String>();
     final Wrappers._T<String> value1 = new Wrappers._T<String>();
@@ -55,10 +55,10 @@ public class MigrationAssistant_Test extends TestCase {
         value1.value = root.value.getProperty(ListSequence.fromList(properties.value).getElement(1));
       }
     });
-    Assert.assertTrue(ListSequence.fromList(properties.value).getElement(0).getName().equals("value"));
-    Assert.assertTrue(value0.value.equals("239"));
-    Assert.assertTrue(ListSequence.fromList(properties.value).getElement(1).getName().equals("newvalue"));
-    Assert.assertTrue(value1.value.equals("239"));
+    Assert.assertEquals("value", ListSequence.fromList(properties.value).getElement(0).getName());
+    Assert.assertEquals("239", value0.value);
+    Assert.assertEquals("newvalue", ListSequence.fromList(properties.value).getElement(1).getName());
+    Assert.assertEquals("239", value1.value);
   }
   public void setUp() {
     Environment env = IdeaEnvironment.getOrCreate(createConfig());

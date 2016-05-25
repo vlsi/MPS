@@ -6,17 +6,16 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
+import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
@@ -43,12 +42,8 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startTrickyTestCase() throws Exception {
-      String testName = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
-        public String compute() {
-          return SNodeOperations.getNode("r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", "4177017564823046256").getName();
-        }
-      });
-      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", "4177017564823046256")));
+      this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
 
 
@@ -58,7 +53,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
-        final TestRunState runState = new TestRunState(testNodes);
+        final TestRunState runState = new TestRunState(testNodes, myProject);
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor;
