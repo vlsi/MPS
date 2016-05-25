@@ -69,11 +69,11 @@ public final class ClassifierAndSuperClassifiersCache extends AbstractCache {
     }
     return dependsOnModel;
   }
-  /*package*/ List<SNode> getClassifiers() {
+  public List<SNode> getClassifiers() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getClassifiers();
   }
-  /*package*/ List<SNode> getMethods() {
+  public List<SNode> getMethods() {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getMethods();
   }
@@ -101,7 +101,7 @@ public final class ClassifierAndSuperClassifiersCache extends AbstractCache {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getStaticFieldByName(name);
   }
-  /*package*/ Map<SNode, SNode> getTypeByTypeVariableMap() {
+  public Map<SNode, SNode> getTypeByTypeVariableMap() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getTypeByTypeVariableMap();
   }
