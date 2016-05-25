@@ -81,6 +81,9 @@ public abstract class LanguageRuntime {
    * <p>
    * At the moment, sole mechanism to supply new aspect is code in generated language runtime subclass (i.e. there's no mechanism yet to
    * add aspects dynamically).
+   * <p>
+   * Calls {@link LanguageRuntimeAware#setLanguageRuntime(LanguageRuntime)} on aspects implementing {@link LanguageRuntimeAware} after creation, passing itself
+   * as the parameter.
    *
    * @param aspectClass identifies aspect to retrieve
    * @param <T>         subtype of {@link jetbrains.mps.smodel.runtime.ILanguageAspect}
@@ -94,6 +97,9 @@ public abstract class LanguageRuntime {
       aspectDescriptor = createAspect(aspectClass);
       if (aspectDescriptor == null) {
         return null;
+      }
+      if (aspectDescriptor instanceof LanguageRuntimeAware) {
+        ((LanguageRuntimeAware) aspectDescriptor).setLanguageRuntime(this);
       }
       T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
       if (alreadyThere != null) {
