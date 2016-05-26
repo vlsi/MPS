@@ -12,9 +12,13 @@ import javax.swing.JButton;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.awt.FlowLayout;
@@ -27,7 +31,6 @@ import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Container;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class RefactoringViewItemImpl implements RefactoringViewItem.RefactoringViewItemEx {
@@ -41,16 +44,16 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem.Ref
   private JButton myCancelButton;
   @Nullable
   private RefactoringContext myRefactoringContext = null;
-  public RefactoringViewItemImpl(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+  public RefactoringViewItemImpl(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
     myRefactoringContext = refactoringContext;
     myProject = refactoringContext.getSelectedProject();
-    init(refactoringViewAction, searchResults, hasModelsToGenerate);
+    init(refactoringViewAction, searchResults, searchTask);
   }
-  public RefactoringViewItemImpl(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+  public RefactoringViewItemImpl(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
     myProject = p;
-    init(refactoringViewAction, searchResults, hasModelsToGenerate);
+    init(refactoringViewAction, searchResults, searchTask);
   }
-  private void init(RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+  private void init(RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
     if (mySearchResults == null) {
@@ -58,11 +61,18 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem.Ref
     }
     myPanel = new JPanel(new BorderLayout());
     myUsagesView = new UsagesView(myProject, new ViewOptions());
-    myUsagesView.setActions(new AnAction("Close", "", AllIcons.Actions.Cancel) {
+    List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
+    if (searchTask != null) {
+      UsagesView.RerunAction rerunAction = new UsagesView.RerunAction(myUsagesView, "Run search again");
+      rerunAction.setRunOptions(searchTask);
+      ListSequence.fromList(actions).addElement(rerunAction);
+    }
+    ListSequence.fromList(actions).addElement(new AnAction("Close", "", AllIcons.Actions.Cancel) {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         RefactoringViewItemImpl.this.close();
       }
     });
+    myUsagesView.setActions(actions);
     myUsagesView.setContents(searchResults);
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myDoRefactorButton = new JButton(new AbstractAction("Do Refactor") {

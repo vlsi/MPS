@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 public abstract class RefactoringAccessEx extends RefactoringAccess {
@@ -22,8 +23,12 @@ public abstract class RefactoringAccessEx extends RefactoringAccess {
   }
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModel model);
+  @Deprecated
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+  public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name);
+  @Deprecated
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+  public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name);
 
   public static RefactoringAccessEx getInstance() {
     return (RefactoringAccessEx) RefactoringAccess.getInstance();

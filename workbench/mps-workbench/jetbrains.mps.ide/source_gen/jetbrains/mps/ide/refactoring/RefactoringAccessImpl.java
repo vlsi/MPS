@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -50,15 +51,23 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
     rv.select(node);
     return rv;
   }
-  @Override
+  @Deprecated
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    RefactoringView refactoringView = project.getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(project, callback, truncateSearchResults(project, searchResults), hasModelsToGenerate, name);
+    showRefactoringView(project, callback, searchResults, null, name);
+  }
+  @Deprecated
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    showRefactoringView(refactoringContext, callback, searchResults, null, name);
   }
   @Override
-  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+  public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name) {
+    RefactoringView refactoringView = project.getComponent(RefactoringView.class);
+    refactoringView.showRefactoringView(project, callback, truncateSearchResults(project, searchResults), searchTask, name);
+  }
+  @Override
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringView refactoringView = refactoringContext.getSelectedProject().getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(refactoringContext, callback, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), hasModelsToGenerate);
+    refactoringView.showRefactoringView(refactoringContext, callback, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), searchTask);
   }
   private SearchResults truncateSearchResults(Project project, SearchResults searchResults) {
     if (searchResults.getSearchResults().size() > MAX_SEARCH_RESULTS) {

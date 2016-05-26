@@ -2580,5 +2580,43 @@
       <node concept="3cqZAl" id="J2bOg0cata" role="3clF45" />
     </node>
   </node>
+  <node concept="3HP615" id="7DGCeT2Ukgb">
+    <property role="TrG5h" value="SearchTask" />
+    <node concept="3clFb_" id="7DGCeT2Ukpc" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="canExecute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7DGCeT2Ukpd" role="1B3o_S" />
+      <node concept="3clFbS" id="7DGCeT2Ukpe" role="3clF47" />
+      <node concept="10P_77" id="7DGCeT2Ukpf" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="7DGCeT2Ukpg" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="execute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7DGCeT2Ukph" role="1B3o_S" />
+      <node concept="37vLTG" id="7DGCeT2Ukpi" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="7DGCeT2Ukpj" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7DGCeT2Ukpk" role="3clF46">
+        <property role="TrG5h" value="progressMonitor" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="7DGCeT2Uks0" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="7DGCeT2Ukpm" role="3clF47" />
+      <node concept="3uibUv" id="7DGCeT2Ukpn" role="3clF45">
+        <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7DGCeT2Ukgc" role="1B3o_S" />
+  </node>
 </model>
 

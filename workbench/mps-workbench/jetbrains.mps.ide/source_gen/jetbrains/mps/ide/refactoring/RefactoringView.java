@@ -13,6 +13,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.project.ProjectHelper;
 
 public class RefactoringView extends TabbedUsagesTool {
@@ -32,27 +33,24 @@ public class RefactoringView extends TabbedUsagesTool {
   protected boolean forceCloseOnReload() {
     return true;
   }
-  public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
-    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
+  public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, searchTask);
     myRefactoringViews.add(refactoringViewItem);
     addContent(refactoringViewItem.getComponent(), refactoringContext.getRefactoring().getUserFriendlyName(), null, false);
     openTool(true);
   }
-  public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(ProjectHelper.toMPSProject(p), refactoringViewAction, searchResults, hasModelsToGenerate);
+  public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask, String name) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(ProjectHelper.toMPSProject(p), refactoringViewAction, searchResults, searchTask);
     myRefactoringViews.add(refactoringViewItem);
     addContent(refactoringViewItem.getComponent(), name, null, false);
     openTool(true);
   }
-  public int getPriority() {
-    return -1;
-  }
   private class MyRefactoringViewItem extends RefactoringViewItemImpl {
-    public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
-      super(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
+    public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
+      super(refactoringContext, refactoringViewAction, searchResults, searchTask);
     }
-    public MyRefactoringViewItem(jetbrains.mps.project.Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
-      super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
+    public MyRefactoringViewItem(jetbrains.mps.project.Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, SearchTask searchTask) {
+      super(p, refactoringViewAction, searchResults, searchTask);
     }
     @Override
     public void close() {

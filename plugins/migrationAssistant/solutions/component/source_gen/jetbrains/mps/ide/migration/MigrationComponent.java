@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -247,7 +248,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     public List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> availableOptions) {
       return (mySelectedOptions == null ? availableOptions : mySelectedOptions);
     }
-    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, RefactoringSession refactoringSession) {
+    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession refactoringSession) {
       MigrationComponent.RefactoringSessionTaskQueue.getInstance(refactoringSession).putTask(task);
     }
   }
