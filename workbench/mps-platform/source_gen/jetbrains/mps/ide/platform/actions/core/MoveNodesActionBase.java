@@ -25,6 +25,8 @@ import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
@@ -147,8 +149,20 @@ public class MoveNodesActionBase implements MoveNodesAction {
             return true;
           }
           return false;
+        } else if (selectedObject instanceof NodeLocation.NodeLocationRoot) {
+          final Wrappers._boolean canInsert = new Wrappers._boolean();
+          project.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              canInsert.value = ListSequence.fromList(movingNodeConcepts.value).all(new IWhereFilter<SAbstractConcept>() {
+                public boolean accept(SAbstractConcept cncpt) {
+                  return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(cncpt), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+                }
+              });
+            }
+          });
+          return canInsert.value;
         } else {
-          return true;
+          return false;
         }
       }
     });
