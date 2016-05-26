@@ -20,15 +20,19 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeAware;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -61,8 +65,9 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept) {
-    return clearCachesIfStaleThenGetFromCache(myDefaultTransformationMenusCache, concept);
+  public Collection<TransformationMenu> getDefaultTransformationMenus(@NotNull SAbstractConcept concept, @NotNull Collection<SLanguage> usedLanguages) {
+    clearCachesIfStale();
+    return myDefaultTransformationMenusCache.getInLanguages(concept, lookupRuntimes(usedLanguages));
   }
 
   @NotNull
@@ -73,8 +78,23 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId) {
-    return clearCachesIfStaleThenGetFromCache(myNamedTransformationMenusCache, menuId);
+  public Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
+    clearCachesIfStale();
+    return myNamedTransformationMenusCache.getInLanguages(menuId, lookupRuntimes(usedLanguages));
+  }
+
+  private Collection<LanguageRuntime> lookupRuntimes(Collection<SLanguage> sLanguages) {
+    // FIXME we shouldn't access LanguageRegistry here but I can't get my callers to accept a collection of LanguageRuntimes since it's not part of openapi.
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance();
+    List<LanguageRuntime> runtimes = new ArrayList<>();
+
+    for (SLanguage language : sLanguages) {
+      LanguageRuntime runtime = languageRegistry.getLanguage(language);
+      if (runtime != null) {
+        runtimes.add(runtime);
+      }
+    }
+    return runtimes;
   }
 
   @NotNull

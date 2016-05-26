@@ -79,7 +79,7 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
 
       if (cell.isBig()) {
         DefaultMenuLookup menuLookup = new DefaultMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), cell.getSNode().getConcept());
-        Collection<TransformationMenu> defaultMenu = menuLookup.lookup();
+        Collection<TransformationMenu> defaultMenu = menuLookup.lookup(Collections.singleton(cell.getSNode().getConcept().getLanguage()));
         boolean hasDefaultMenu = !defaultMenu.isEmpty();
         if (hasDefaultMenu) {
           return new Pair<>(menuLookup, cell);

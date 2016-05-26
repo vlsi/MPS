@@ -25,8 +25,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLooku
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -54,7 +58,16 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), menuLocation, editorContext, node);
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(getUsedLanguages(node)), menuLocation, editorContext, node);
+  }
+
+  private static Collection<SLanguage> getUsedLanguages(SNode node) {
+    SModel model = node.getModel();
+    if (model == null) {
+      return Collections.emptySet();
+    }
+
+    return model.getModule().getUsedLanguages();
   }
 
   private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory menuItemFactory, @NotNull String menuLocation,

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 
@@ -62,12 +63,15 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId);
 
   /**
-   * Returns the default transformation menu for a concept (if defined), together with any additions contributed by extending languages.
+   * Returns the default transformation menu for a concept (if defined), together with any additions contributed by extending languages. Only menus and
+   * contributions from used languages are returned.
+   *
    * @param concept the concept
+   * @param usedLanguages a collection of used languages
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept);
+  Collection<TransformationMenu> getDefaultTransformationMenus(@NotNull SAbstractConcept concept, @NotNull Collection<SLanguage> usedLanguages);
 
   /**
    * Returns the default transformation menu for a concept and/or any contributions to that menu that are declared in this language.
@@ -78,12 +82,15 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept);
 
   /**
-   * Returns a named transformation menu together with any additions to it contributed by extending languages.
+   * Returns a named transformation menu together with any additions to it contributed by extending languages. Only menus and contributions from used languages
+   * are returned.
+   *
    * @param menuId identifier of the named menu
+   * @param usedLanguages a collection of used languages
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId);
+  Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
 
   /**
    * Returns a named transformation menu together with any additions to it declared in this language

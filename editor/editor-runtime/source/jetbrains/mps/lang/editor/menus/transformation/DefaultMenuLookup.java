@@ -22,13 +22,11 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 public class DefaultMenuLookup implements TransformationMenuLookup {
   @NotNull
@@ -62,10 +60,15 @@ public class DefaultMenuLookup implements TransformationMenuLookup {
     return "default menu for " + myConcept;
   }
 
+  public boolean exists(@NotNull Collection<SLanguage> usedLanguages) {
+    return !getForConcept(usedLanguages).isEmpty();
+  }
+
+  @NotNull
   @Override
-  public Collection<TransformationMenu> lookup() {
+  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages) {
     Collection<TransformationMenu> conceptMenu = new ArrayList<>();
-    conceptMenu.addAll(getForConcept(myConcept));
+    conceptMenu.addAll(getForConcept(usedLanguages));
     if (conceptMenu.stream().allMatch(TransformationMenu::isContribution)) {
       conceptMenu.add(new DefaultConceptMenu(myConcept));
     }
@@ -73,12 +76,12 @@ public class DefaultMenuLookup implements TransformationMenuLookup {
   }
 
   @NotNull
-  private Collection<TransformationMenu> getForConcept(SAbstractConcept concept) {
-    EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, concept.getLanguage());
+  private Collection<TransformationMenu> getForConcept(Collection<SLanguage> usedLanguages) {
+    EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myConcept.getLanguage());
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
 
-    return aspectDescriptor.getDefaultTransformationMenus(concept);
+    return aspectDescriptor.getDefaultTransformationMenus(myConcept, usedLanguages);
   }
 }

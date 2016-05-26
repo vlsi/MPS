@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -63,13 +64,14 @@ public class NamedMenuLookup implements TransformationMenuLookup {
     return myId.toString();
   }
 
+  @NotNull
   @Override
-  public Collection<TransformationMenu> lookup() {
+  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages) {
     EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myId.getConcept().getLanguage());
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
 
-    return aspectDescriptor.getNamedTransformationMenus(myId);
+    return aspectDescriptor.getNamedTransformationMenus(myId, usedLanguages);
   }
 }
