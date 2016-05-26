@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -83,5 +84,18 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
       }
     }
     return false;
+  }
+
+  @Override
+  public String asString(SRepository repository) {
+    if (myGenerator == null) {
+      return "unknown";
+    }
+    SModule generator = myGenerator.resolve(repository);
+    if (!(generator instanceof Generator)) {
+      return "unknown" + '(' + myGenerator.getModuleName() + ')';
+    }
+    String alias = ((Generator) generator).getAlias();
+    return '[' + alias + ':' + myMappingConfig.asString(repository) + ']';
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -80,5 +82,28 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
       return true;
     }
     return false;
+  }
+
+  @Override
+  public String asString(SRepository repository) {
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(myModelUID);
+    String modelName = modelReference.getName().getLongName();
+    StringBuilder sb = new StringBuilder();
+    sb.append(modelName);
+    sb.append('.');
+    if (myNodeID.equals("*")) {
+      return sb.append('*').toString();
+    } else {
+      SModel refModel = modelReference.resolve(repository);
+      if (refModel != null) {
+        SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(myNodeID);
+        assert nodeId != null : "wrong node id string";
+        SNode mappingConfig = refModel.getNode(nodeId);
+        if (mappingConfig != null) {
+          return sb.append(mappingConfig.getName()).toString();
+        }
+      }
+    }
+    return sb.append(myNodeID).append("!unresolved!").toString();
   }
 }

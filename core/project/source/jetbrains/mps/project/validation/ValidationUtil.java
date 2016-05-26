@@ -403,14 +403,17 @@ public class ValidationUtil {
       MappingConfig_AbstractRef left = mpr.getLeft();
       MappingConfig_AbstractRef right = mpr.getRight();
       if (left == null || right == null) {
-        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Broken priority rule: %s", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Broken priority rule: %s", s)));
         continue;
       }
       if (left.isIncomplete()) {
-        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Left-hand side of rule %s is incomplete", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Left-hand side of rule %s is incomplete", s)));
       }
       if (right.isIncomplete()) {
-        goOn &= processor.process(new ValidationProblem(Severity.ERROR, String.format("Right-hand side of rule %s is incomplete", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn &= processor.process(new ValidationProblem(Severity.ERROR, String.format("Right-hand side of rule %s is incomplete", s)));
       }
     }
     return true;
