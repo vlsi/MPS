@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.wm.IdeFocusManager;
-import jetbrains.mps.ide.icons.CachingIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
@@ -62,7 +61,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   private EditorCellFactory myCellFactory;
 
-  private CachingIconManager myIconManager;
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;
 
@@ -424,13 +422,5 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   void reset() {
     myEditorManager = null;
-    myIconManager = null;
-  }
-
-  public CachingIconManager getIconManager() {
-    if (myIconManager == null) {
-      myIconManager = new CachingIconManager();
-    }
-    return myIconManager;
   }
 }
