@@ -17,9 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.ide.icons.CachingIconManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -136,9 +134,5 @@ public class APICellAdapter {
 
   public static EditorCell getContainingBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getContainingBigCell();
-  }
-
-  public static CachingIconManager getIconManager(EditorContext context) {
-    return ((jetbrains.mps.nodeEditor.EditorContext) context).getIconManager();
   }
 }

@@ -19,6 +19,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.ConceptIconLoader;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -53,7 +55,9 @@ public class EditorCell_Image extends EditorCell_Basic {
   @Nullable
   private static SModule getModule(SNode node) {
     SModel model = node.getModel();
-    if (model == null) return null;
+    if (model == null) {
+      return null;
+    }
     return model.getModule();
   }
 
@@ -71,7 +75,9 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   @Override
   protected void paintContent(Graphics g, ParentSettings parentSettings) {
-    if (myIcon == null) return;
+    if (myIcon == null) {
+      return;
+    }
     switch (myAlignment) {
       case justify: {
         if ((myWidth != -1 && myWidth != myIcon.getIconWidth())
@@ -112,7 +118,9 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   @Override
   protected void relayoutImpl() {
-    if (myIcon == null) return;
+    if (myIcon == null) {
+      return;
+    }
     if (myAlignment == ImageAlignment.justify) {
       int width = myIcon.getIconWidth();
       if (width != -1) {
@@ -160,7 +168,11 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   private static Icon loadIcon(EditorContext context, SModule module, String iconPath) {
-    return APICellAdapter.getIconManager(context).getIcon(toAbstractModule(module), iconPath);
+    String fullPath = MacrosFactory.forModule((AbstractModule) module).expandPath(iconPath);
+    if (fullPath == null) {
+      return null;
+    }
+    return ConceptIconLoader.loadIcon(iconPath, true);
   }
 
   @Nullable
