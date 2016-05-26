@@ -36,10 +36,9 @@ import java.util.Map;
 import java.util.Set;
 
 class Dependencies {
-
   private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
-  private final Map<String, SModule> myModules = new HashMap<String, SModule>();
+  private final Map<String, SModule> myFqName2Modules = new HashMap<String, SModule>();
   private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<String>();
 
   public Dependencies(Collection<? extends SModule> ms) {
@@ -61,6 +60,9 @@ class Dependencies {
     return result;
   }
 
+  /**
+   * transitive closure of all extend deps
+   */
   private void fillExtendsDependencies(String fqName, FlattenIterable<String> result) {
     Set<String> extendDeps = myExtendsDependencies.get(fqName);
     if (extendDeps == null) return;
@@ -73,12 +75,12 @@ class Dependencies {
 
   @Nullable
   private File getJavaFile(String fqName) {
-    SModule m = myModules.get(fqName);
+    SModule m = myFqName2Modules.get(fqName);
     if (m == null) return null;
 
     for (String path : SModuleOperations.getAllSourcePaths(m)) {
-      String outputPath = path + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
-      File outputFile = new File(outputPath);
+      String outputPath = NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
+      File outputFile = new File(path, outputPath);
       if (outputFile.exists()) {
         return outputFile;
       }
@@ -105,7 +107,7 @@ class Dependencies {
     for (RootDependencies r : root.getDependencies()) {
       final String className = r.getClassName();
 
-      myModules.put(className, m);
+      myFqName2Modules.put(className, m);
       myDependencies.put(className, r.getDependencies());
       myExtendsDependencies.put(className, r.getExtends());
     }
@@ -123,6 +125,6 @@ class Dependencies {
   }
 
   public SModule getModule(String fqName) {
-    return myModules.get(fqName);
+    return myFqName2Modules.get(fqName);
   }
 }

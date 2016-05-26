@@ -8,12 +8,12 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
 
 public class EnumClass_TextGen extends TextGenDescriptorBase {
@@ -28,10 +28,6 @@ public class EnumClass_TextGen extends TextGenDescriptorBase {
     } else {
       tgs.indent();
     }
-    if (!(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))).contains(ctx.getPrimaryInput()))) {
-      tgs.append("static ");
-    }
-    tgs.indent();
     tgs.append("enum ");
     tgs.append(JavaNameUtil.shortName(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).isNotEmpty()) {
@@ -59,10 +55,13 @@ public class EnumClass_TextGen extends TextGenDescriptorBase {
         }
       }
     }
-    tgs.append(";");
-    tgs.newLine();
-    tgs.newLine();
-    BaseClassConceptTextGen.members(ctx.getPrimaryInput(), ctx);
+    if (ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(ctx.getPrimaryInput())).count() > ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).count()) {
+      tgs.append(";");
+      tgs.newLine();
+      BaseClassConceptTextGen.members(ctx.getPrimaryInput(), ctx);
+    } else {
+      tgs.newLine();
+    }
     ctx.getBuffer().area().decreaseIndent();
     tgs.indent();
     tgs.append("}");

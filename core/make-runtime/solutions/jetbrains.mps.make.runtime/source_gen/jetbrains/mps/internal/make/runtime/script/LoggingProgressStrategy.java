@@ -63,7 +63,7 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
     }
     logger.info(wrk.fullName() + " -- finished");
   }
-  public static interface Log {
+  public interface Log {
     void error(String text);
     void warning(String text);
     void info(String text);

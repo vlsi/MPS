@@ -20,9 +20,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.internal.compiler.Compiler;
@@ -34,41 +31,24 @@ import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * MPS java compiler class, which relies on the eclipse compiler {@link Compiler} functionality.
+ * Works by consequently adding java source files by calling the method {@link #addSource(String, String)}
+ * and once the method {@link #compile} after that
+ */
 public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
-  public void addSourceFile(String path, String filename, Object contents) {
-    if (!(contents instanceof String)) {
-      // binary files aren't sources
-      return;
-    }
-    if (!path.isEmpty()) {
-      path = path + (path.endsWith(File.separator) ? "" : File.separatorChar);
-    }
-    String filePath = path + filename;
-    CompilationUnit compilationUnit = new CompilationUnit(((String) contents).toCharArray(), filePath, FileUtil.DEFAULT_CHARSET_NAME);
-    myCompilationUnits.put(NameUtil.namespaceFromPath(filePath.substring(0, MPSExtentions.DOT_JAVAFILE.length())), compilationUnit);
-  }
-
-  public void addSource(String classFqName, String text) {
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE,
-        FileUtil.DEFAULT_CHARSET_NAME);
-    myCompilationUnits.put(classFqName, compilationUnit);
-  }
-
-
-  public void compile(IClassPathItem classPath) {
-    compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
-  }
-  public void compile(IClassPathItem classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
-    Map compilerOptions = new HashMap();
+  @NotNull
+  private static Map<String, String> addPresetCompilerOptions(@NotNull JavaCompilerOptions customCompilerOptions) {
+    Map<String, String> compilerOptions = new HashMap<String, String>();
     String actualJavaTargetVersion = customCompilerOptions.getTargetJavaVersion().getCompilerVersion();
     compilerOptions.put(CompilerOptions.OPTION_Source, actualJavaTargetVersion);
     compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
@@ -78,13 +58,29 @@ public class JavaCompiler {
     compilerOptions.put(CompilerOptions.OPTION_LocalVariableAttribute, CompilerOptions.GENERATE);
     compilerOptions.put(CompilerOptions.OPTION_LineNumberAttribute, CompilerOptions.GENERATE);
     compilerOptions.put(CompilerOptions.OPTION_SourceFileAttribute, CompilerOptions.GENERATE);
+    return compilerOptions;
+  }
+
+  public void addSource(String classFqName, String text) {
+    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE,
+        FileUtil.DEFAULT_CHARSET_NAME);
+    myCompilationUnits.put(classFqName, compilationUnit);
+  }
+
+  public void compile(IClassPathItem classPath) {
+    compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
+  }
+
+  public void compile(IClassPathItem classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
+    Map<String, String> compilerOptions = addPresetCompilerOptions(customCompilerOptions);
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
-    Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory());
-    //c.options.verbose = true;
+    Compiler compiler = new Compiler(new MyNameEnvironment(classPath), new ProceedingOnErrorsPolicy(), options, new RelayingRequestor(), new DefaultProblemFactory());
+    //compiler.options.verbose = true;
 
     try {
-      c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+      Collection<CompilationUnit> compilationUnits = myCompilationUnits.values();
+      compiler.compile(compilationUnits.toArray(new CompilationUnit[compilationUnits.size()]));
     } catch (RuntimeException ex) {
       onFatalError(ex.getMessage());
     }
@@ -136,7 +132,7 @@ public class JavaCompiler {
     }
   }
 
-  private static class MyErrorHandlingPolicy implements IErrorHandlingPolicy {
+  private static class ProceedingOnErrorsPolicy implements IErrorHandlingPolicy {
     @Override
     public boolean proceedOnErrors() {
       return true;
@@ -165,9 +161,7 @@ public class JavaCompiler {
     return sb.toString();
   }
 
-  private static Logger LOG = LogManager.getLogger(JavaCompiler.class);
-
-  private class MyCompilerRequestor implements ICompilerRequestor {
+  private class RelayingRequestor implements ICompilerRequestor {
     @Override
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {

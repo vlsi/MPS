@@ -81,11 +81,12 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
     int row = 0;
 
-    if(myJavaModuleFacet.getModule() instanceof Solution) {
+    if (myJavaModuleFacet.getModule() instanceof Solution) {
       SolutionDescriptor descriptor = ((Solution) myJavaModuleFacet.getModule()).getModuleDescriptor();
+      assert descriptor != null;
 
       JBLabel solutionKindLabel = new JBLabel(PropertiesBundle.message("facet.java.solutionkind"));
-      myComboBox = new ComboBox(new DefaultComboBoxModel(SolutionKind.values()));
+      myComboBox = new ComboBox(new DefaultComboBoxModel<SolutionKind>(SolutionKind.values()));
       myComboBox.setSelectedItem(descriptor.getKind());
 
       advancedTab.add(solutionKindLabel, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -169,10 +170,10 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   @Override
   public boolean isModified() {
     boolean solutionCheck = false;
-    if(myJavaModuleFacet.getModule() instanceof Solution) {
+    if (myJavaModuleFacet.getModule() instanceof Solution) {
       SolutionDescriptor descriptor = (SolutionDescriptor) myJavaModuleFacet.getModule().getModuleDescriptor();
-      solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected()
-          || descriptor.getKind() != myComboBox.getSelectedItem();
+      assert descriptor != null;
+      solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected() || descriptor.getKind() != myComboBox.getSelectedItem();
     }
 
     return myPathsTableModel.isModified()
@@ -182,10 +183,11 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
   @Override
   public void apply() {
-    if(myJavaModuleFacet.getModule() instanceof Solution) {
+    if (myJavaModuleFacet.getModule() instanceof Solution) {
       SolutionDescriptor descriptor = (SolutionDescriptor) myJavaModuleFacet.getModule().getModuleDescriptor();
+      assert descriptor != null;
       descriptor.setCompileInMPS(myCheckBox.isSelected());
-      descriptor.setKind((SolutionKind)myComboBox.getSelectedItem());
+      descriptor.setKind((SolutionKind) myComboBox.getSelectedItem());
     }
 
     myPathsTableModel.apply();
@@ -198,19 +200,16 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private class PathsTableModel extends AbstractTableModel implements ItemRemovable {
-
     public PathsTableModel() {
-      super();
-      for(String s : myJavaModuleFacet.getAdditionalSourcePaths())
+      for(String s : myJavaModuleFacet.getAdditionalSourcePaths()) {
         myPaths.add(s);
+      }
     }
 
     List<String> myPaths = new ArrayList<String>();
 
     public void add(String path) {
-      if(path == null)
-        return;
-      if(!myPaths.contains(path)) {
+      if (path != null && !myPaths.contains(path)) {
         myPaths.add(path);
         fireTableDataChanged();
       }
@@ -238,8 +237,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-      if(columnIndex == 0)
+      if (columnIndex == 0) {
         return String.class;
+      }
       return super.getColumnClass(columnIndex);
     }
 
@@ -254,13 +254,13 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
     public void apply() {
       myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().clear();
-      if(!myPaths.isEmpty())
+      if (!myPaths.isEmpty()) {
         myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().addAll(myPaths);
+      }
     }
   }
 
   private class PathChooser implements Computable<String> {
-
     @Override
     public String compute() {
       TreeFileChooser chooser = new TreeFileChooser();
@@ -274,18 +274,18 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private class LibraryTableModel extends AbstractTableModel implements ItemRemovable {
-
-    List<String> myStubModelEntries = new ArrayList<String>();
+    private List<String> myStubModelEntries = new ArrayList<String>();
 
     public LibraryTableModel() {
-      super();
-      for(String javaStubPath : myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths())
+      for (String javaStubPath : myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths()) {
         myStubModelEntries.add(javaStubPath);
+      }
     }
 
     public void addAll(Collection<String> javaStubPaths) {
-      if(myStubModelEntries.addAll(javaStubPaths))
+      if (myStubModelEntries.addAll(javaStubPaths)) {
         fireTableDataChanged();
+      }
     }
 
     @Override
@@ -310,8 +310,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-      if(columnIndex == 0)
+      if (columnIndex == 0) {
         return String.class;
+      }
       return super.getColumnClass(columnIndex);
     }
 
@@ -322,13 +323,15 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
 
     public boolean isModified() {
-      return !(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().containsAll(myStubModelEntries) && myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
+      return !(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().containsAll(myStubModelEntries) &&
+          myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
     }
 
     public void apply() {
       myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().clear();
-      if(!myStubModelEntries.isEmpty())
+      if (!myStubModelEntries.isEmpty()) {
         myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().addAll(myStubModelEntries);
+      }
     }
   }
 
@@ -340,10 +343,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
       if (value != null) {
         String path = FileUtil.getCanonicalPath((String) value);
-        if(!(new File(path)).exists()) {
+        if (!(new File(path)).exists()) {
           append(path, SimpleTextAttributes.ERROR_ATTRIBUTES);
-        }
-        else {
+        } else {
           append(path);
         }
       }

@@ -27,10 +27,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.make.ErrorsLoggingHandler;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -38,6 +42,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.project.Project;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -97,30 +102,30 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_widgfz_a0a);
               }
               final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  cr.value = new ModuleMaker().make(toCompile, progressMonitor, vars(pa.global()).options());
-                }
-              });
-              if (cr.value != null) {
-                vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.value.isCompiledAnything());
-                for (IMessage msg : cr.value.getMessages()) {
+              final IMessageHandler msgHandler = new IMessageHandler() {
+                private final IMessageHandler myErrorsLoggingHandler = new ErrorsLoggingHandler(LogManager.getLogger(new IFacet.Name("jetbrains.mps.make.facets.JavaCompile").getClass().toString()));
+
+                public void handle(@NotNull IMessage msg) {
+                  myErrorsLoggingHandler.handle(msg);
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
-              }
-              if (cr.value == null || !(cr.value.isOk())) {
-                if (cr.value != null) {
-                  if (cr.value.getErrors() > 0) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
-                  } else if (cr.value.getWarnings() > 0) {
-                    monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
-                  } else {
-                    monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
-                  }
+              };
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  cr.value = new ModuleMaker(msgHandler, MessageKind.INFORMATION).make(toCompile, progressMonitor, vars(pa.global()).options());
+                }
+              });
+              vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.value.isCompiledAnything());
+              if (!(cr.value.isOk())) {
+                if (cr.value.getErrorsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
+                } else if (cr.value.getWarningsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
+                } else {
+                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
                 }
                 return new IResult.FAILURE(_output_widgfz_a0a);
               }
-
               for (TResource tres : Sequence.fromIterable(input)) {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_widgfz_a0a);
@@ -264,27 +269,18 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 1, monitor.currentProgress().workLeft());
 
               monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1);
-              MPSCompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
+              CompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
                 public SModule select(TResource it) {
                   return it.module();
                 }
               }).toGenericArray(SModule.class));
-
-              // analyse results 
-              if (cr != null) {
-                for (IMessage msg : cr.getMessages()) {
-                  monitor.reportFeedback(new IFeedback.MESSAGE(msg));
-                }
-              }
-              if (cr == null || !(cr.isOk())) {
-                if (cr != null) {
-                  if (cr.getErrors() > 0) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
-                  } else if (cr.getWarnings() > 0) {
-                    monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr)));
-                  } else {
-                    monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr)));
-                  }
+              if (!(cr.isOk())) {
+                if (cr.getErrorsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
+                } else if (cr.getWarningsCount() > 0) {
+                  monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr)));
+                } else {
+                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr)));
                 }
                 return new IResult.FAILURE(_output_widgfz_a0b);
               }

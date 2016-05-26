@@ -75,7 +75,7 @@ public class JavaModuleOperations {
    * @return constructed CompositeClassPathItem
    */
   public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
-    CompositeClassPathItem classPathItem = new CompositeClassPathItem(false);
+    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
 
     for (String path : classPath) {
       try {

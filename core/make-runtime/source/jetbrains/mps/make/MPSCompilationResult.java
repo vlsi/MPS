@@ -16,7 +16,9 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.MessageKind;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.Serializable;
@@ -28,77 +30,82 @@ import java.util.Set;
 
 /**
  * @author Evgeny Gryaznov, Aug 20, 2010
+ *
+ * AP: where do we need the serialization?
  */
-public class MPSCompilationResult implements Serializable {
+@Immutable
+public final class MPSCompilationResult implements Serializable, CompilationResult {
   private static final long serialVersionUID = -4445402451448540384L;
 
-  private int myErrors;
-  private int myWarnings;
+  private final static String COMPILATION_FINISHED = "Compilation finished: %d errors, %d warnings.";
+  private final static String COMPILATION_ABORTED = "Compilation aborted.";
+  public final static MPSCompilationResult ZERO_COMPILATION_RESULT = new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet());
+
+  private int myErrorsCount;
+  private int myWarningsCount;
   private boolean myAborted;
 
-  private List<? extends IMessage> myMessages;
   private Set<SModule> myChangedModules;
 
-  public MPSCompilationResult(int errors, int warnings, boolean aborted, Collection<? extends SModule> changedModules) {
-    this(errors, warnings, aborted, changedModules, Collections.<IMessage>emptyList());
-  }
-
-  public MPSCompilationResult(int errors, int warnings, boolean aborted, Collection<? extends SModule> changedModules, List<? extends IMessage> messages) {
-    myErrors = errors;
-    myWarnings = warnings;
+  public MPSCompilationResult(int errorsCount, int warningsCount, boolean aborted, Collection<? extends SModule> changedModules) {
+    myErrorsCount = errorsCount;
+    myWarningsCount = warningsCount;
     myAborted = aborted;
-    myMessages = messages;
     myChangedModules = new HashSet<SModule>(changedModules);
   }
 
-  public int getErrors() {
-    return myErrors;
+  @NotNull
+  static MPSCompilationResult nothingToDoCompilationResult() {
+    return ZERO_COMPILATION_RESULT;
   }
 
-  public int getWarnings() {
-    return myWarnings;
+  @NotNull
+  static MPSCompilationResult noJavaCompiledCompilationResult() {
+    return ZERO_COMPILATION_RESULT;
   }
 
+  @Override
+  public int getErrorsCount() {
+    return myErrorsCount;
+  }
+
+  @Override
+  public int getWarningsCount() {
+    return myWarningsCount;
+  }
+
+  @Override
   public boolean isAborted() {
     return myAborted;
   }
 
+  @Override
   public boolean isCompiledAnything() {
     return !myChangedModules.isEmpty();
   }
 
+  @Override
   public boolean isOk() {
-    return (getErrors() == 0) && !isAborted();
+    return !isAborted() && getErrorsCount() == 0;
   }
 
+  @Override
   public boolean isReloadingNeeded() {
     return isOk() && isCompiledAnything();
   }
 
-  public List<IMessage> getMessages() {
-    return myMessages != null ? Collections.unmodifiableList(myMessages) : Collections.<IMessage>emptyList();
-  }
-
+  @Override
+  @NotNull
   public Set<SModule> getChangedModules() {
     return Collections.unmodifiableSet(myChangedModules);
   }
 
-  public String getErrorsText() {
-    StringBuilder sb = new StringBuilder();
-    for (IMessage m : myMessages) {
-      if (m.getKind() == MessageKind.ERROR) {
-        sb.append(m.getText()).append('\n');
-      }
-    }
-    return sb.toString();
-  }
-
+  @Override
   public String toString() {
     if (!isAborted()) {
-      return "compilation finished : errors: " + getErrors() + " warnings: " + getWarnings()
-          + (getErrors() > 0 ? "\n" + getErrorsText() : "");
+      return String.format(COMPILATION_FINISHED, getErrorsCount(), getWarningsCount());
     } else {
-      return "compilation aborted";
+      return COMPILATION_ABORTED;
     }
   }
 }

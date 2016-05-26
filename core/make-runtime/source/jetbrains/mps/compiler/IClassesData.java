@@ -19,7 +19,5 @@ package jetbrains.mps.compiler;
  * fyodor, 1/27/11
  */
 public interface IClassesData {
-
-  ClassLoader getClassLoader (ClassLoader parent);
-
+  ClassLoader getClassLoader(ClassLoader parent);
 }

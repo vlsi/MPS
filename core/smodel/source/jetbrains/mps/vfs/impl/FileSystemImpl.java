@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Evgeny Gerashchenko
@@ -55,6 +56,7 @@ public class FileSystemImpl extends FileSystem {
     return myFileSystemProvider.isFileIgnored(name);
   }
 
+  @Nullable
   @Override
   public IFile getBundleHome(IFile file) {
     if (file instanceof IFileEx) {

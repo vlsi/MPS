@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages;
+package jetbrains.mps.make;
 
-import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.MPSAppenderBase;
-import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.messages.MessageKind;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-public class DummyMessageViewLoggingHandler extends AbstractProjectComponent implements ProjectComponent {
-  protected DummyMessageViewLoggingHandler(Project project) {
-    super(project);
+/**
+ * Handles only error IMessage's unlike the super {@link LogHandler}
+ */
+public final class ErrorsLoggingHandler extends LogHandler {
+  public ErrorsLoggingHandler(@NotNull Logger log) {
+    super(log);
+  }
+
+  @Override
+  public void handle(@NotNull IMessage msg) {
+    if (msg.getKind() == MessageKind.ERROR) {
+      super.handle(msg);
+    }
   }
 }

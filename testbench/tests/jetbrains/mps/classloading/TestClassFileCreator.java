@@ -17,7 +17,7 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.make.ClassFileWriter;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.util.NameUtil;
@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+// FIXME Reuse make package, remove duplication
 public class TestClassFileCreator {
   private static final Logger LOG = LogManager.getLogger(TestClassFileCreator.class);
   private final String myClassDir;
@@ -77,7 +78,7 @@ public class TestClassFileCreator {
 
     @Override
     public void onClass(ClassFile cf) {
-      String fqName = ModuleMaker.convertCompoundToFqName(cf.getCompoundName());
+      String fqName = ClassFileWriter.convertCompoundToFqName(cf.getCompoundName());
       String packageName = NameUtil.namespaceFromLongName(fqName);
       File outputDir = new File(myClassDir + File.separator + NameUtil.pathFromNamespace(packageName));
       if (!outputDir.exists() && !outputDir.mkdirs()) {

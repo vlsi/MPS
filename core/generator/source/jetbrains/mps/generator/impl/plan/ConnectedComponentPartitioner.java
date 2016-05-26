@@ -33,31 +33,29 @@ import java.util.Map;
  * Evgeny Gryaznov, Jan 11, 2010
  */
 public class ConnectedComponentPartitioner {
-
   private static Component[] EMPTY_COMPONENTS = new Component[0];
 
-  private int count;
+  private int myCount;
   private SNode[] myRoots;
   private int[][] myDependencies;
 
   public ConnectedComponentPartitioner(List<SNode> roots) {
-    this.count = roots.size();
-    this.myRoots = roots.toArray(new SNode[this.count]);
+    myCount = roots.size();
+    myRoots = roots.toArray(new SNode[this.myCount]);
     myDependencies = buildDependencies();
   }
 
   private int[][] buildDependencies() {
-    int[] dependsOn = new int[count];
-    int[][] result = new int[count][];
+    int[] dependsOn = new int[myCount];
+    int[][] result = new int[myCount][];
 
     Map<SNode, Integer> rootIndex = new HashMap<SNode, Integer>();
     for (int i = 0; i < myRoots.length; i++) {
       rootIndex.put(myRoots[i], i);
     }
 
-    for (int index = 0; index < count; index++) {
+    for (int index = 0; index < myCount; index++) {
       SNode root = myRoots[index];
-      Arrays.fill(dependsOn, 0);
       for (SNode node : SNodeUtil.getDescendants(root, null, true)) {
         buildNodeDependencies(node, dependsOn, rootIndex);
       }
@@ -144,10 +142,8 @@ public class ConnectedComponentPartitioner {
     return result;
   }
 
-
+  @Override
   public String toString() {
-    Component[] components = partitionStrong();
-
     int[][] strongPartitions = GraphUtil.tarjan(myDependencies);
     int[][] partitions = GraphUtil.components(GraphUtil.removeOrientation(myDependencies));
 
@@ -167,7 +163,7 @@ public class ConnectedComponentPartitioner {
     return sb.toString();
   }
 
-  public class Component {
+  public static class Component {
     private final SNode[] roots;
     private final Component[] dependsOn;
     private boolean isDirty;

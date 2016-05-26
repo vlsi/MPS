@@ -140,10 +140,6 @@
       </implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
-      <headless-implementation-class>jetbrains.mps.ide.messages.DummyMessageViewLoggingHandler</headless-implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
     </component>
     <component>

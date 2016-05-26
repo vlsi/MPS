@@ -21,10 +21,12 @@ import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.util.SModuleNameComparator;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -32,25 +34,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class StronglyConnectedModules {
-  private static final StronglyConnectedModules INSTANCE = new StronglyConnectedModules();
+public class StronglyConnectedModules<M extends SModule> {
+  private final static Comparator<SModule> MODULE_BY_NAME_COMPARATOR = new SModuleNameComparator();
+  private final Set<M> myModules;
 
-  private StronglyConnectedModules() {
+  public StronglyConnectedModules(Set<M> modules) {
+    myModules = modules;
   }
 
-  public static StronglyConnectedModules getInstance() {
-    return INSTANCE;
+  public List<Set<M>> getStronglyConnectedComponents() {
+    return getStronglyConnectedComponents(myModules, new DefaultModuleDecoratorBuilder<M>());
   }
 
-  public <M extends SModule> List<Set<M>> getStronglyConnectedComponents(Set<M> modules) {
-    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>());
-  }
-
-  public <M extends SModule, D extends SModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, SModuleDecoratorBuilder<M, D> decoratorBuilder) {
-    List<Set<M>> result = new LinkedList<Set<M>>();
-
+  private <D extends SModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, SModuleDecoratorBuilder<M, D> decoratorBuilder) {
     Graph<SModuleDecorator<M>> graph = new Graph<SModuleDecorator<M>>();
-
     Map<SModule, SModuleDecorator<M>> moduleToDecorator = new LinkedHashMap<SModule, SModuleDecorator<M>>();
     for (M module : modules) {
       SModuleDecorator<M> decorator = decoratorBuilder.decorate(module);
@@ -64,6 +61,7 @@ public class StronglyConnectedModules {
 
     List<List<SModuleDecorator<M>>> cycles = Graphs.findStronglyConnectedComponents(graph);
 
+    List<Set<M>> result = new LinkedList<Set<M>>();
     for (List<SModuleDecorator<M>> cycle : cycles) {
       Set<M> mset = new LinkedHashSet<M>();
       result.add(mset);
@@ -77,14 +75,13 @@ public class StronglyConnectedModules {
     return result;
   }
 
-  public static interface SModuleDecorator<M extends SModule> extends IVertex, Comparable<SModuleDecorator<M>> {
-    public M getModule();
-
-    public void fill(Map<SModule, SModuleDecorator<M>> map);
+  interface SModuleDecorator<M extends SModule> extends IVertex, Comparable<SModuleDecorator<M>> {
+    M getModule();
+    void fill(Map<SModule, SModuleDecorator<M>> map);
   }
 
-  public static interface SModuleDecoratorBuilder<M extends SModule, D extends SModuleDecorator<M>> {
-    public D decorate(M module);
+  interface SModuleDecoratorBuilder<M extends SModule, D extends SModuleDecorator<M>> {
+    D decorate(M module);
   }
 
   private static class DefaultModuleDecoratorBuilder<M extends SModule> implements SModuleDecoratorBuilder<M, DefaultModuleDecorator<M>> {
@@ -105,10 +102,8 @@ public class StronglyConnectedModules {
     @Override
     public void fill(Map<SModule, SModuleDecorator<M>> map) {
       List<SModule> dependency = new ArrayList<SModule>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
-      List<SModule> dependencyCopy = new ArrayList<SModule>();
-      dependencyCopy.addAll(dependency);
-      Collections.sort(dependencyCopy, new SModuleNameComparator());
-      for (SModule module : dependencyCopy) {
+      Collections.sort(dependency, MODULE_BY_NAME_COMPARATOR);
+      for (SModule module : dependency) {
         SModuleDecorator<M> next = map.get(module);
         if (next != null) {
           assert next.getModule() == module;
@@ -128,12 +123,12 @@ public class StronglyConnectedModules {
     }
 
     @Override
-    public int compareTo(SModuleDecorator<M> o) {
-      return myModule.getModuleName().compareTo(o.getModule().getModuleName());
+    public int compareTo(@NotNull SModuleDecorator<M> decorator) {
+      return MODULE_BY_NAME_COMPARATOR.compare(myModule, decorator.getModule());
     }
 
     public String toString() {
-      return myModule.getModuleReference().toString();
+      return "DefaultModuleDecorator for the " + myModule;
     }
   }
 }

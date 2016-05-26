@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.util.performance;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 
 /**
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public class PerformanceTracer implements IPerformanceTracer {
-
   public static final boolean IS_TRACING = true;
 
   private int top = 0;
@@ -37,7 +38,7 @@ public class PerformanceTracer implements IPerformanceTracer {
     for (int i = 0; i < precreated.length; i++) {
       precreated[i] = new Task("default");
     }
-    myStack[0].name = null;
+    myStack[0].name = "Zero [" + name + "]";
     myStack[0].task = new Task(myStack[0].name);
     externalText = new ArrayList<String>();
   }
@@ -139,7 +140,7 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
   }
 
-  private static class Task implements Comparable {
+  private static class Task implements Comparable<Task> {
     String name;
     long executionTime;
     long correction;
@@ -209,8 +210,8 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
 
     @Override
-    public int compareTo(Object o) {
-      return new Long(((Task) o).executionTime).compareTo(executionTime);
+    public int compareTo(@NotNull Task task) {
+      return Long.valueOf(task.executionTime).compareTo(executionTime);
     }
   }
 
@@ -224,6 +225,6 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
   }
 
-  private Task[] precreated = new Task[4096];
+  private Task[] precreated = new Task[4096]; // todo: AP what is that?
   int precreatedIndex = 0;
 }

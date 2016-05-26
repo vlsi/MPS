@@ -14,7 +14,6 @@ public enum DayDataType {
   Friday("Friday", "friday"),
   Saturday("Saturday", "saturday"),
   Sunday("Sunday", "sunday");
-
   private final String myName;
   public String getName() {
     return myName;

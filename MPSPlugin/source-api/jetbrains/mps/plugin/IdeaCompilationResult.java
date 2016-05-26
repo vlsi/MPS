@@ -17,54 +17,44 @@ package jetbrains.mps.plugin;
 
 import java.io.Serializable;
 
-public class CompilationResult implements Serializable {
+/**
+ * Serves as a result of the idea compilation (for the mps developers e.g.)
+ *
+ * AP: This module is supposed to be independent from the rest MPS project, though it may seems that some code
+ * repeats here and there
+ */
+public final class IdeaCompilationResult implements Serializable {
   private static final long serialVersionUID = -4445402451448540384L;
 
-  private int myErrors;
-  private int myWarnings;
+  private int myErrorCount;
+  private int myWarningCount;
   private boolean myAborted;
   private boolean myCompiledAnything;
 
-  public CompilationResult(int errors, int warnings, boolean aborted) {
-    this(errors, warnings, aborted, true);
+  public IdeaCompilationResult(int errorCount, int warningCount, boolean aborted) {
+    this(errorCount, warningCount, aborted, true);
   }
 
-  public CompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
-    myErrors = errors;
-    myWarnings = warnings;
+  public IdeaCompilationResult(int errorCount, int warningCount, boolean aborted, boolean compiled) {
+    myErrorCount = errorCount;
+    myWarningCount = warningCount;
     myAborted = aborted;
     myCompiledAnything = compiled;
   }
 
-  public int getErrors() {
-    return myErrors;
+  public int getErrorCount() {
+    return myErrorCount;
   }
 
-  public int getWarnings() {
-    return myWarnings;
+  public int getWarningCount() {
+    return myWarningCount;
   }
 
   public boolean isAborted() {
     return myAborted;
   }
 
-  public boolean isCompiledAnything() {
+  public boolean hasCompiledAnything() {
     return myCompiledAnything;
-  }
-
-  public boolean isOk() {
-    return (getErrors() == 0) && !isAborted();
-  }
-
-  public boolean isReloadingNeeded() {
-    return isOk() && isCompiledAnything();
-  }
-
-  public String toString() {
-    if (!isAborted()) {
-      return "compilation finished : errors: " + getErrors() + " warnings: " + getWarnings();
-    } else {
-      return "compilation aborted";
-    }
   }
 }

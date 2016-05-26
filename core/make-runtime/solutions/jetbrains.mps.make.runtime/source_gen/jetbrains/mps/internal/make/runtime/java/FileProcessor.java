@@ -83,7 +83,7 @@ public class FileProcessor {
       return myFile.toString();
     }
   }
-  private static interface FileContent {
+  private interface FileContent {
     boolean isUnchanged(IFile file);
     void saveToFile(IFile file);
     int calcApproximateSize();

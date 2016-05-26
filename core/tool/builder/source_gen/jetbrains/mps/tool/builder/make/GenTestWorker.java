@@ -16,6 +16,8 @@ import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
 import java.util.Set;
+
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.LinkedHashSet;
 import java.util.Collections;
@@ -388,7 +390,7 @@ public class GenTestWorker extends GeneratorWorker {
     public MyMessageHandler() {
     }
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           GenTestWorker.this.error(msg.getText());
@@ -404,9 +406,6 @@ public class GenTestWorker extends GeneratorWorker {
           break;
         default:
       }
-    }
-    @Override
-    public void clear() {
     }
   }
   private class MyUnitTestAdapter extends UnitTestAdapter {

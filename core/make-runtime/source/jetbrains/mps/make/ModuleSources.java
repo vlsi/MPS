@@ -17,8 +17,6 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.performance.IPerformanceTracer;
-import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -32,10 +30,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+// FIXME AP refactor
 public class ModuleSources {
   private final Map<SModule, ModuleSources> myAvailableSources;
   private Dependencies myDependencies;
-  private final IPerformanceTracer ttrace;
   private SModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
@@ -48,24 +46,19 @@ public class ModuleSources {
    * @param module Module with JavaModuleFacet
    */
   ModuleSources(SModule module, Dependencies deps) {
-    this(module, Collections.<SModule, ModuleSources>emptyMap(), deps, new NullPerformanceTracer());
+    this(module, Collections.<SModule, ModuleSources>emptyMap(), deps);
   }
 
   /**
    * @param module Module with JavaModuleFacet
    */
-  ModuleSources(SModule module, Map<? extends SModule, ModuleSources> availableSources, Dependencies deps, IPerformanceTracer ttracer) {
+  ModuleSources(SModule module, Map<SModule, ModuleSources> availableSources, Dependencies deps) {
     myModule = module;
-    myAvailableSources = (Map) availableSources;
+    myAvailableSources = availableSources;
     myDependencies = deps;
-    ttrace = ttracer;
 
-    ttrace.push("collect modules sources", false);
     collectInputFilesInfo();
-    ttrace.pop();
-    ttrace.push("checking output folder", false);
     collectOutputFilesInfo();
-    ttrace.pop();
   }
 
   public Collection<File> getFilesToDelete() {
@@ -163,34 +156,27 @@ public class ModuleSources {
   }
 
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
-    ttrace.push("check is up-to-date", false);
-    try {
-      if (javaFile.getLastModified() >= classFileLastModified) {
-        return false;
-      }
+    if (javaFile.getLastModified() >= classFileLastModified) {
+      return false;
+    }
 
-      for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        final SModule module = myDependencies.getModule(fqName);
-        if (module != null) {
-          JavaFile file = myJavaFiles.get(fqName);
-          if (file == null) {
-            final ModuleSources targetModule = myAvailableSources.get(module);
-            if (targetModule != null) {
-              file = targetModule.getJavaFile(fqName);
-            }
-          }
-          ttrace.push("in dependencies", false);
-          long javaFileLastModified = file != null ? file.getLastModified() : myDependencies.getJavaFileLastModified(fqName);
-          ttrace.pop();
-          if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
-            return false;
+    for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
+      final SModule module = myDependencies.getModule(fqName);
+      if (module != null) {
+        JavaFile file = myJavaFiles.get(fqName);
+        if (file == null) {
+          final ModuleSources targetModule = myAvailableSources.get(module);
+          if (targetModule != null) {
+            file = targetModule.getJavaFile(fqName);
           }
         }
+        long javaFileLastModified = file != null ? file.getLastModified() : myDependencies.getJavaFileLastModified(fqName);
+        if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
+          return false;
+        }
       }
-      return true;
-    } finally {
-      ttrace.pop();
     }
+    return true;
   }
 
   private void collectOutput(File outputDir, String[] files, StringBuilder path, StringBuilder package_) {

@@ -31,16 +31,6 @@ import java.util.Set;
 public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
-  public CompositeClassPathItem() {
-    this(true);
-  }
-
-  public CompositeClassPathItem(boolean registerForInvalidate) {
-    if (registerForInvalidate) {
-      ClassPathFactory.getInstance().addCompositeClassPathItem(this);
-    }
-  }
-
   public void add(IClassPathItem item) {
     assert item != null;
     checkValidity();

@@ -27,7 +27,7 @@ public interface IProjectHandler extends Remote {
   /**
    * This method executes refreshFS before modules building
    */
-  CompilationResult buildModules(final String[] paths) throws RemoteException;
+  IdeaCompilationResult buildModules(final String[] paths) throws RemoteException;
 
   List<String> findInheritors(final String fqName) throws RemoteException;
 

@@ -2530,16 +2530,16 @@
           <node concept="3clFbS" id="42gV918qkFv" role="SfCbr">
             <node concept="3cpWs8" id="42gV918qkFw" role="3cqZAp">
               <node concept="3cpWsn" id="42gV918qkFx" role="3cpWs9">
-                <property role="TrG5h" value="cr" />
-                <node concept="3uibUv" id="1NLLl502Lx0" role="1tU5fm">
-                  <ref role="3uigEE" to="ba15:~CompilationResult" resolve="CompilationResult" />
+                <property role="TrG5h" value="ideaResult" />
+                <node concept="3uibUv" id="6n6n_4fs856" role="1tU5fm">
+                  <ref role="3uigEE" to="ba15:~IdeaCompilationResult" resolve="IdeaCompilationResult" />
                 </node>
                 <node concept="2OqwBi" id="42gV918qkFz" role="33vP2m">
                   <node concept="37vLTw" id="2BHiRxeucUa" role="2Oq$k0">
                     <ref role="3cqZAo" node="7vbFQ4bPXJN" resolve="myIdeaProjectHandler" />
                   </node>
                   <node concept="liA8E" id="42gV918qkF_" role="2OqNvi">
-                    <ref role="37wK5l" to="ba15:~IProjectHandler.buildModules(java.lang.String[]):jetbrains.mps.plugin.CompilationResult" resolve="buildModules" />
+                    <ref role="37wK5l" to="ba15:~IProjectHandler.buildModules(java.lang.String[]):jetbrains.mps.plugin.IdeaCompilationResult" resolve="buildModules" />
                     <node concept="2OqwBi" id="5vRZWGeW7JF" role="37wK5m">
                       <node concept="3_kTaI" id="5vRZWGeWnKU" role="2OqNvi" />
                       <node concept="37vLTw" id="42gV918qTvy" role="2Oq$k0">
@@ -2553,7 +2553,7 @@
             <node concept="3clFbJ" id="42gV918qkFD" role="3cqZAp">
               <node concept="3y3z36" id="42gV918qkFE" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagTrWG" role="3uHU7B">
-                  <ref role="3cqZAo" node="42gV918qkFx" resolve="cr" />
+                  <ref role="3cqZAo" node="42gV918qkFx" resolve="ideaResult" />
                 </node>
                 <node concept="10Nm6u" id="42gV918qkFG" role="3uHU7w" />
               </node>
@@ -2564,26 +2564,26 @@
                       <ref role="37wK5l" to="vqh0:~MPSCompilationResult.&lt;init&gt;(int,int,boolean,java.util.Collection)" resolve="MPSCompilationResult" />
                       <node concept="2OqwBi" id="42gV918qkFL" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTubk" role="2Oq$k0">
-                          <ref role="3cqZAo" node="42gV918qkFx" resolve="cr" />
+                          <ref role="3cqZAo" node="42gV918qkFx" resolve="ideaResult" />
                         </node>
                         <node concept="liA8E" id="42gV918qkFN" role="2OqNvi">
-                          <ref role="37wK5l" to="ba15:~CompilationResult.getErrors():int" resolve="getErrors" />
+                          <ref role="37wK5l" to="ba15:~IdeaCompilationResult.getErrorCount():int" resolve="getErrorCount" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="42gV918qkFO" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTrSL" role="2Oq$k0">
-                          <ref role="3cqZAo" node="42gV918qkFx" resolve="cr" />
+                          <ref role="3cqZAo" node="42gV918qkFx" resolve="ideaResult" />
                         </node>
                         <node concept="liA8E" id="42gV918qkFQ" role="2OqNvi">
-                          <ref role="37wK5l" to="ba15:~CompilationResult.getWarnings():int" resolve="getWarnings" />
+                          <ref role="37wK5l" to="ba15:~IdeaCompilationResult.getWarningCount():int" resolve="getWarningCount" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="42gV918qkFR" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagT$ov" role="2Oq$k0">
-                          <ref role="3cqZAo" node="42gV918qkFx" resolve="cr" />
+                          <ref role="3cqZAo" node="42gV918qkFx" resolve="ideaResult" />
                         </node>
                         <node concept="liA8E" id="42gV918qkFT" role="2OqNvi">
-                          <ref role="37wK5l" to="ba15:~CompilationResult.isAborted():boolean" resolve="isAborted" />
+                          <ref role="37wK5l" to="ba15:~IdeaCompilationResult.isAborted():boolean" resolve="isAborted" />
                         </node>
                       </node>
                       <node concept="3K4zz7" id="3fUxIgz6bHD" role="37wK5m">
@@ -2603,10 +2603,10 @@
                         </node>
                         <node concept="2OqwBi" id="42gV918qkFU" role="3K4Cdx">
                           <node concept="37vLTw" id="3GM_nagTAwD" role="2Oq$k0">
-                            <ref role="3cqZAo" node="42gV918qkFx" resolve="cr" />
+                            <ref role="3cqZAo" node="42gV918qkFx" resolve="ideaResult" />
                           </node>
                           <node concept="liA8E" id="42gV918qkFW" role="2OqNvi">
-                            <ref role="37wK5l" to="ba15:~CompilationResult.isCompiledAnything():boolean" resolve="isCompiledAnything" />
+                            <ref role="37wK5l" to="ba15:~IdeaCompilationResult.hasCompiledAnything():boolean" resolve="hasCompiledAnything" />
                           </node>
                         </node>
                       </node>

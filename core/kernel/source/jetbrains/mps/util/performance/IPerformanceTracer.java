@@ -16,6 +16,8 @@
 package jetbrains.mps.util.performance;
 
 /**
+ * Interface which offers a cosy stack-like methods to track the performance (e.g. time consumption)
+ *
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public interface IPerformanceTracer {
@@ -26,12 +28,12 @@ public interface IPerformanceTracer {
 
   String report(String... separate);
 
-  public void addText(String s);
+  void addText(String s);
 
   /**
-   * Default implementation.
+   * Default implementation which tracks nothing
    */
-  public static class NullPerformanceTracer implements IPerformanceTracer {
+  class NullPerformanceTracer implements IPerformanceTracer {
 
     @Override
     public void push(String taskName, boolean isMajor) {
@@ -48,8 +50,6 @@ public interface IPerformanceTracer {
 
     @Override
     public void addText(String s){
-
     }
-
   }
 }

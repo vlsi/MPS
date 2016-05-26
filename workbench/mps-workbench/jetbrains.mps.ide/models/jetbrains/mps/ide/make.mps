@@ -544,6 +544,7 @@
       </node>
       <node concept="3Tm1VV" id="41innpAnEqF" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJua" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uBa" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -633,6 +634,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJub" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uBF" role="jymVt">
       <property role="TrG5h" value="spawnMakeThreadThenDoRunRelayingLog" />
       <node concept="3Tm6S6" id="9D0Ba05uBG" role="1B3o_S" />
@@ -812,52 +814,15 @@
                         <node concept="3Tm1VV" id="9D0Ba05uC2" role="1B3o_S" />
                         <node concept="3cqZAl" id="9D0Ba05uC3" role="3clF45" />
                         <node concept="3clFbS" id="9D0Ba05uC4" role="3clF47">
-                          <node concept="3cpWs8" id="9D0Ba05uC5" role="3cqZAp">
-                            <node concept="3cpWsn" id="9D0Ba05uC6" role="3cpWs9">
-                              <property role="TrG5h" value="rlh" />
-                              <node concept="3uibUv" id="9D0Ba05uC7" role="1tU5fm">
-                                <ref role="3uigEE" to="4rvk:6eQ0BhLYtlb" resolve="CoreMakeTask.RelayingLoggingHandler" />
+                          <node concept="3clFbF" id="9D0Ba05uCj" role="3cqZAp">
+                            <node concept="2OqwBi" id="9D0Ba05uCk" role="3clFbG">
+                              <node concept="37vLTw" id="2BHiRxeuxRg" role="2Oq$k0">
+                                <ref role="3cqZAo" node="9D0Ba05uFq" resolve="coreTask" />
                               </node>
-                              <node concept="2ShNRf" id="9D0Ba05uC8" role="33vP2m">
-                                <node concept="1pGfFk" id="9D0Ba05uC9" role="2ShVmc">
-                                  <ref role="37wK5l" to="4rvk:6eQ0BhLYtli" resolve="CoreMakeTask.RelayingLoggingHandler" />
-                                  <node concept="2OqwBi" id="9D0Ba05uCa" role="37wK5m">
-                                    <node concept="37vLTw" id="2BHiRxeuE1V" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="9D0Ba05uFq" resolve="coreTask" />
-                                    </node>
-                                    <node concept="liA8E" id="9D0Ba05uCc" role="2OqNvi">
-                                      <ref role="37wK5l" to="4rvk:6eQ0BhLYKsT" resolve="getMessageHandler" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2GUZhq" id="9D0Ba05uCd" role="3cqZAp">
-                            <node concept="3clFbS" id="9D0Ba05uCe" role="2GV8ay">
-                              <node concept="3clFbF" id="9D0Ba05uCj" role="3cqZAp">
-                                <node concept="2OqwBi" id="9D0Ba05uCk" role="3clFbG">
-                                  <node concept="37vLTw" id="2BHiRxeuxRg" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="9D0Ba05uFq" resolve="coreTask" />
-                                  </node>
-                                  <node concept="liA8E" id="9D0Ba05uCm" role="2OqNvi">
-                                    <ref role="37wK5l" to="4rvk:6eQ0BhLYtnI" resolve="run" />
-                                    <node concept="37vLTw" id="2BHiRxgll84" role="37wK5m">
-                                      <ref role="3cqZAo" node="9D0Ba05uBI" resolve="monitor" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbS" id="9D0Ba05uCo" role="2GVbov">
-                              <node concept="3clFbF" id="9D0Ba05uCp" role="3cqZAp">
-                                <node concept="2OqwBi" id="9D0Ba05uCq" role="3clFbG">
-                                  <node concept="37vLTw" id="3GM_nagTt4G" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="9D0Ba05uC6" resolve="rlh" />
-                                  </node>
-                                  <node concept="liA8E" id="9D0Ba05uCs" role="2OqNvi">
-                                    <ref role="37wK5l" to="4rvk:6eQ0BhLYtlJ" resolve="dispose" />
-                                  </node>
+                              <node concept="liA8E" id="9D0Ba05uCm" role="2OqNvi">
+                                <ref role="37wK5l" to="4rvk:6eQ0BhLYtnI" resolve="run" />
+                                <node concept="37vLTw" id="2BHiRxgll84" role="37wK5m">
+                                  <ref role="3cqZAo" node="9D0Ba05uBI" resolve="monitor" />
                                 </node>
                               </node>
                             </node>
@@ -924,6 +889,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJuc" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uCL" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -947,6 +913,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJud" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uCU" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -967,6 +934,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJue" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uD2" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -996,6 +964,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJuf" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uDc" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1041,6 +1010,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJug" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uDs" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1107,6 +1077,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJuh" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uDO" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1192,6 +1163,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJui" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uEj" role="jymVt">
       <property role="TrG5h" value="displayInfo" />
       <node concept="37vLTG" id="9D0Ba05uEk" role="3clF46">
@@ -1202,6 +1174,7 @@
       <node concept="3Tmbuc" id="9D0Ba05uEn" role="1B3o_S" />
       <node concept="3clFbS" id="9D0Ba05uEo" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="4bOkk0MKJuj" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uEp" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="aboutToStart" />
@@ -1209,6 +1182,7 @@
       <node concept="3Tmbuc" id="9D0Ba05uEr" role="1B3o_S" />
       <node concept="3clFbS" id="9D0Ba05uEs" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfd_8" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05uEt" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="done" />
@@ -1216,6 +1190,7 @@
       <node concept="3Tmbuc" id="9D0Ba05uEv" role="1B3o_S" />
       <node concept="3clFbS" id="9D0Ba05uEw" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfewo" role="jymVt" />
     <node concept="312cEu" id="9D0Ba05uFz" role="jymVt">
       <property role="TrG5h" value="WorkbenchMakeTask" />
       <property role="2bfB8j" value="true" />
@@ -1271,6 +1246,7 @@
         </node>
         <node concept="3Tm1VV" id="41innpAnahJ" role="1B3o_S" />
       </node>
+      <node concept="2tJIrI" id="6DhoVFdfaVo" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05uG2" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="reconcile" />
@@ -1366,6 +1342,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="6DhoVFdfaVp" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05uGD" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="doRun" />
@@ -1410,6 +1387,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="6DhoVFdfaVq" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05uGU" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="displayInfo" />
@@ -1438,6 +1416,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="6DhoVFdfaVr" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05uH6" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="aboutToStart" />
@@ -1460,34 +1439,31 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1k3_r9P82GG" role="jymVt" />
     <node concept="Qs71p" id="9D0Ba05uHf" role="jymVt">
       <property role="TrG5h" value="TaskState" />
       <property role="2bfB8j" value="false" />
       <node concept="QsSxf" id="9D0Ba05uJR" role="Qtgdg">
         <property role="TrG5h" value="NOT_STARTED" />
-        <ref role="37wK5l" node="9D0Ba05uJN" resolve="MakeTask.TaskState" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="9D0Ba05uJS" role="Qtgdg">
         <property role="TrG5h" value="RUNNING" />
-        <ref role="37wK5l" node="9D0Ba05uJN" resolve="MakeTask.TaskState" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="9D0Ba05uJT" role="Qtgdg">
         <property role="TrG5h" value="DONE" />
-        <ref role="37wK5l" node="9D0Ba05uJN" resolve="MakeTask.TaskState" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="9D0Ba05uJU" role="Qtgdg">
         <property role="TrG5h" value="CANCELLED" />
-        <ref role="37wK5l" node="9D0Ba05uJN" resolve="MakeTask.TaskState" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="9D0Ba05uJV" role="Qtgdg">
         <property role="TrG5h" value="INDETERMINATE" />
-        <ref role="37wK5l" node="9D0Ba05uJN" resolve="MakeTask.TaskState" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="3Tm6S6" id="9D0Ba05uJW" role="1B3o_S" />
-      <node concept="3clFbW" id="9D0Ba05uJN" role="jymVt">
-        <node concept="3cqZAl" id="9D0Ba05uJO" role="3clF45" />
-        <node concept="3clFbS" id="9D0Ba05uJQ" role="3clF47" />
-      </node>
     </node>
   </node>
   <node concept="312cEu" id="9D0Ba05uJX">
@@ -3683,6 +3659,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzM" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vbi" role="jymVt">
       <property role="TrG5h" value="isInstance" />
       <node concept="10P_77" id="9D0Ba05vbj" role="3clF45" />
@@ -3698,6 +3675,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzN" role="jymVt" />
     <node concept="3clFb_" id="43l$qHE8U6I" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="make" />
@@ -3848,6 +3826,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzO" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vcF" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isSessionActive" />
@@ -3878,6 +3857,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzP" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vcT" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="openNewSession" />
@@ -4023,6 +4003,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzQ" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vdL" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="closeSession" />
@@ -4169,6 +4150,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzR" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vfM" role="jymVt">
       <property role="TrG5h" value="getSession" />
       <node concept="3uibUv" id="9D0Ba05vfO" role="3clF45">
@@ -4187,6 +4169,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzS" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vfU" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addListener" />
@@ -4221,6 +4204,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzT" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vg7" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="removeListener" />
@@ -4255,6 +4239,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzU" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vgk" role="jymVt">
       <property role="TrG5h" value="notifyListeners" />
       <node concept="3cqZAl" id="9D0Ba05vgl" role="3clF45" />
@@ -4305,6 +4290,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzV" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vhn" role="jymVt">
       <property role="TrG5h" value="attemptCloseSession" />
       <node concept="3Tm6S6" id="9D0Ba05vho" role="1B3o_S" />
@@ -4406,6 +4392,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzW" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vi3" role="jymVt">
       <property role="TrG5h" value="abortSession" />
       <node concept="3cqZAl" id="9D0Ba05vi4" role="3clF45" />
@@ -4489,6 +4476,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzX" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05viC" role="jymVt">
       <property role="od$2w" value="true" />
       <property role="TrG5h" value="awaitCurrentProcess" />
@@ -4589,6 +4577,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzY" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vjl" role="jymVt">
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="_doMake" />
@@ -4670,16 +4659,6 @@
               <node concept="liA8E" id="9D0Ba05vjO" role="2OqNvi">
                 <ref role="37wK5l" to="hfuk:7yGn3z4N4Nw" resolve="getMessageHandler" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="9D0Ba05vk5" role="3cqZAp">
-          <node concept="2OqwBi" id="9D0Ba05vk6" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT_RG" role="2Oq$k0">
-              <ref role="3cqZAo" node="9D0Ba05vjI" resolve="mh" />
-            </node>
-            <node concept="liA8E" id="9D0Ba05vk8" role="2OqNvi">
-              <ref role="37wK5l" to="et5u:~IMessageHandler.clear():void" resolve="clear" />
             </node>
           </node>
         </node>
@@ -5155,6 +5134,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfVzZ" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vl9" role="jymVt">
       <property role="TrG5h" value="checkValidUsage" />
       <node concept="3Tm6S6" id="9D0Ba05vla" role="1B3o_S" />
@@ -5201,6 +5181,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfV$0" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vlu" role="jymVt">
       <property role="TrG5h" value="checkValidSession" />
       <node concept="3cqZAl" id="9D0Ba05vlv" role="3clF45" />
@@ -5243,6 +5224,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6DhoVFdfV$1" role="jymVt" />
     <node concept="3clFb_" id="9D0Ba05vlK" role="jymVt">
       <property role="TrG5h" value="displayInfo" />
       <node concept="3Tm6S6" id="9D0Ba05vlL" role="1B3o_S" />
@@ -5437,6 +5419,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="1k3_r9OYzcW" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05v2J" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="runConfigWithMonitor" />
@@ -5541,6 +5524,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="1k3_r9OYzcX" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05v3u" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="runJobWithMonitor" />
@@ -5628,6 +5612,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="1k3_r9OYzcY" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05v4a" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="setup" />
@@ -5922,6 +5907,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="1k3_r9OYzcZ" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05v6o" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="useMonitor" />
@@ -5952,6 +5938,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="1k3_r9OYzd0" role="jymVt" />
       <node concept="3clFb_" id="9D0Ba05v6$" role="jymVt">
         <property role="TrG5h" value="init" />
         <node concept="3cqZAl" id="9D0Ba05v6_" role="3clF45" />

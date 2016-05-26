@@ -27,7 +27,9 @@ import java.util.Stack;
  * Evgeny Gryaznov, Jan 11, 2010
  */
 public class GraphUtil {
-
+  /**
+   * set[i] is transformed to the res[k] | res[k] -- k-th nonzero element in the set array
+   */
   public static int[] setToList(int[] set) {
     int size = 0;
     for (int i = 0; i < set.length; i++) {
@@ -49,35 +51,43 @@ public class GraphUtil {
     return merge(transpose(graph), graph);
   }
 
+  /**
+   * sorts every adjacency list in the graph
+   */
   public static void sort(int[][] graph) {
     for(int[] edges : graph) {
       Arrays.sort(edges);
     }
   }
 
+  /**
+   * preserve the graph[k] arrays sorted (!)
+   */
   public static int[][] transpose(int[][] graph) {
-    int count = graph.length;
-    int[] size = new int[count];
-    Arrays.fill(size, 0);
-    for (int vertex = 0; vertex < count; vertex++) {
-      for (int target : graph[vertex]) {
+    int vertexCount = graph.length;
+    int[] size = new int[vertexCount];
+    for (int v = 0; v < vertexCount; v++) {
+      for (int target : graph[v]) {
         size[target]++;
       }
     }
 
-    int[][] result = new int[count][];
-    for (int vertex = 0; vertex < count; vertex++) {
-      result[vertex] = new int[size[vertex]];
-      size[vertex] = 0;
+    int[][] result = new int[vertexCount][];
+    for (int v = 0; v < vertexCount; v++) {
+      result[v] = new int[size[v]];
+      size[v] = 0;
     }
-    for (int vertex = 0; vertex < count; vertex++) {
-      for (int target : graph[vertex]) {
-        result[target][size[target]++] = vertex;
+    for (int v = 0; v < vertexCount; v++) {
+      for (int target : graph[v]) {
+        result[target][size[target]++] = v;
       }
     }
     return result;
   }
 
+  /**
+   * here we work with the sorted arrays
+   */
   public static int[][] merge(int[][] graph1, int[][] graph2) {
     assert graph1.length == graph2.length;
     int count = graph1.length;
@@ -92,6 +102,9 @@ public class GraphUtil {
     return result;
   }
 
+  /**
+   * pure util method to merge two sorted arrays
+   */
   private static int mergeSortedArrays(int[] target, int[] source1, int[] source2) {
     int size = 0, i1 = 0, i2 = 0;
     while (i1 < source1.length && i2 < source2.length) {
@@ -120,7 +133,7 @@ public class GraphUtil {
 
     if (count < 2) {
       if (count == 1) {
-        result.add(new int[]{0});
+        result.add(new int[]{0}); // fixme AP: is zero vertex connected to itself?
       }
       return result.toArray(new int[result.size()][]);
     }
@@ -128,7 +141,6 @@ public class GraphUtil {
     int[] component = new int[count];
 
     int[] state = new int[count];
-    Arrays.fill(state, 0);
     Stack<Integer> stack = new Stack<Integer>();
     int nextVertex = 0;
 
@@ -159,7 +171,6 @@ public class GraphUtil {
   }
 
   private static class Tarjan {
-
     List<int[]> result = new ArrayList<int[]>();
     int[] stack;
     int[] index;
@@ -173,9 +184,7 @@ public class GraphUtil {
       index = new int[graph.length];
       Arrays.fill(index, -1);
       lowlink = new int[graph.length];
-      Arrays.fill(lowlink, 0);
       onstack = new boolean[graph.length];
-      Arrays.fill(onstack, false);
       stack = new int[graph.length];
       this.graph = graph;
     }

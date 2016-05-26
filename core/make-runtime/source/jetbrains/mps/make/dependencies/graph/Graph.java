@@ -23,37 +23,45 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Likely this class represents a graph of V
+ * @param <V> -- vertex class
+ */
 public class Graph<V extends IVertex> {
   private static final Logger LOG = LogManager.getLogger(Graph.class);
-  private final Set<V> myData = new LinkedHashSet<V>();
 
-  public Graph() {
-  }
+  private final Set<V> myVertices = new LinkedHashSet<V>();
 
+  /**
+   * adds the vertex and its neighbours to the graph
+   */
   public void add(@NotNull V vertex) {
-    myData.add(vertex);
+    myVertices.add(vertex);
     for (IVertex next : vertex.getNexts()) {
       if (next == null) {
         LOG.error("Next of vertex " + vertex + " is null.");
-      } else if (!myData.contains(next)) {
+      } else if (!myVertices.contains(next)) {
         add((V) next);
       }
     }
   }
 
+  /**
+   * return the number of vertices in the graph
+   */
   public int getNVertexes() {
-    return myData.size();
+    return myVertices.size();
   }
 
   public Set<V> getData() {
-    return Collections.unmodifiableSet(myData);
+    return Collections.unmodifiableSet(myVertices);
   }
 
   @Override
   public String toString() {
-    StringBuffer sb = new StringBuffer();
+    StringBuilder sb = new StringBuilder();
 
-    for (V vertex : myData) {
+    for (V vertex : myVertices) {
       sb.append(vertex);
       sb.append(" -> ");
       int j = 0;
@@ -70,5 +78,4 @@ public class Graph<V extends IVertex> {
 
     return sb.toString();
   }
-
 }

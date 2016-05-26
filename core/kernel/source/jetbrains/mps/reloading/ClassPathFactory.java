@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+// FIXME: AP What is the purpose of this class. Which paths exactly it is supposed to store?
 public class ClassPathFactory {
   private static Logger LOG = LogManager.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
@@ -38,7 +39,6 @@ public class ClassPathFactory {
 
   private static final Object LOCK = new Object();
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
-  private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
 
   // FIXME rewrite without IFile, write class path item tests about jars in jars
   @NotNull
@@ -72,30 +72,27 @@ public class ClassPathFactory {
 
   //--------------------------
 
+  // FIXME AP what happens with the inner state of this class. When is this method supposed to call?
+
+  /**
+   * Supposedly is called only after MPS make.
+   * clears up the cache for the given paths
+   *
+   * FIXME must be replaced with the classloading (reloading, whatever) listening to the make operations
+   */
   public void invalidate(Set<String> paths) {
-    List<AbstractClassPathItem> invalidate = new ArrayList<AbstractClassPathItem>();
+    List<AbstractClassPathItem> invalidated = new ArrayList<AbstractClassPathItem>();
 
     synchronized (LOCK) {
       for (String path : paths) {
-        if (!myCache.containsKey(path)) continue;
-        invalidate.add(myCache.remove(path));
+        if (myCache.containsKey(path)) {
+          invalidated.add(myCache.remove(path));
+        }
       }
     }
 
-    for (AbstractClassPathItem p : invalidate) {
+    for (AbstractClassPathItem p : invalidated) {
       p.invalidate();
-    }
-  }
-
-  public void invalidate(IClassPathItem classPathItems) {
-    for (RealClassPathItem item : classPathItems.flatten()) {
-      invalidate(Collections.singleton(item.getPath()));
-    }
-  }
-
-  public void addCompositeClassPathItem(CompositeClassPathItem item) {
-    synchronized (LOCK) {
-      myCompositeClassPathItems.add(item);
     }
   }
 }

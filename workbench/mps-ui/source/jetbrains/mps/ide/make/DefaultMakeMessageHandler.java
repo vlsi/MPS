@@ -19,8 +19,10 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Message handler to use for all make sessions that
@@ -40,12 +42,7 @@ public class DefaultMakeMessageHandler implements IMessageHandler {
   }
 
   @Override
-  public void handle(IMessage msg) {
+  public void handle(@NotNull IMessage msg) {
     myDelegate.handle(msg);
-  }
-
-  @Override
-  public void clear() {
-    myDelegate.clear();
   }
 }

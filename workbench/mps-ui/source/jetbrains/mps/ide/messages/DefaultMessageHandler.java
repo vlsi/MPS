@@ -18,7 +18,9 @@ package jetbrains.mps.ide.messages;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.LogHandler;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Implementation of {@link jetbrains.mps.messages.IMessageHandler} that pipes
@@ -41,12 +43,7 @@ public class DefaultMessageHandler implements IMessageHandler {
 
 
   @Override
-  public void handle(IMessage msg) {
+  public void handle(@NotNull IMessage msg) {
     myDelegate.handle(msg);
-  }
-
-  @Override
-  public void clear() {
-    myDelegate.clear();
   }
 }

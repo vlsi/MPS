@@ -105,9 +105,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-  public CompilationResult buildModules(final String[] paths) {
+  public IdeaCompilationResult buildModules(final String[] paths) {
     final CountDownLatch latch = new CountDownLatch(1);
-    final CompilationResult[] result = new CompilationResult[1];
+    final IdeaCompilationResult[] result = new IdeaCompilationResult[1];
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -134,7 +134,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               }
 
               private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
-                result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
+                result[0] = new IdeaCompilationResult(errorsNumber, warningsNumber, aborted);
                 latch.countDown();
               }
             });

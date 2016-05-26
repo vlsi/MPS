@@ -45,6 +45,7 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -441,7 +442,7 @@ public class GenerationTestBase {
   private static class TestMessageHandler implements IMessageHandler {
 
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
         case WARNING:
@@ -452,10 +453,6 @@ public class GenerationTestBase {
           //System.out.println(msg.getText());
           break;
       }
-    }
-
-    @Override
-    public void clear() {
     }
   }
 }

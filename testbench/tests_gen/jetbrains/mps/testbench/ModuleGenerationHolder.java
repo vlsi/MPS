@@ -6,6 +6,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -304,7 +305,7 @@ public class ModuleGenerationHolder {
     private MyMessageHandler() {
     }
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           if (msg.getException() != null) {
@@ -332,9 +333,6 @@ public class ModuleGenerationHolder {
     public void cleanUp() {
       myGenerationErrors.clear();
       myGenerationWarnings.clear();
-    }
-    @Override
-    public void clear() {
     }
   }
 }

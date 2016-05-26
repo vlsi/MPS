@@ -22,8 +22,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import java.util.Set;
 
 public interface JavaModuleFacet extends SModuleFacet {
-
-  public static final String FACET_TYPE = "java";
+  String FACET_TYPE = "java";
 
   // flag for internal use (we can compile either in MPS or in Idea)
   // for "generate" task

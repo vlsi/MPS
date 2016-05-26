@@ -113,5 +113,4 @@ public class Log4jUtil {
   public static Object createMessageObject(String message, Object hintObject) {
     return hintObject != null ? new MessageObject(message, hintObject) : message;
   }
-
 }

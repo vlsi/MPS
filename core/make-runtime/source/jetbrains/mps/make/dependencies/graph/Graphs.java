@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Graphs {
-
   public static int[][] graphToIntInt(IVertex[] vertices, boolean allowSelfLoops, boolean sorted) {
     int count = vertices.length;
     int[] temparray = new int[count];
@@ -55,6 +54,9 @@ public class Graphs {
   }
 
 
+  /**
+   * @return strongly connected components in the topological order
+   */
   public static <V extends IVertex> List<List<V>> findStronglyConnectedComponents(Graph<V> graph0) {
     IVertex[] vertices = graph0.getData().toArray(new IVertex[graph0.getNVertexes()]);
     int[][] graph = graphToIntInt(vertices, false, false);

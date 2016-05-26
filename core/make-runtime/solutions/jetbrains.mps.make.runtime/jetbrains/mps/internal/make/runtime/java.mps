@@ -1835,8 +1835,8 @@
     <node concept="3clFb_" id="42gV918qhxZ" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="compileModules" />
-      <node concept="3uibUv" id="42gV918qhKE" role="3clF45">
-        <ref role="3uigEE" to="vqh0:~MPSCompilationResult" resolve="MPSCompilationResult" />
+      <node concept="3uibUv" id="3E_ABgyyzwE" role="3clF45">
+        <ref role="3uigEE" to="vqh0:~CompilationResult" resolve="CompilationResult" />
       </node>
       <node concept="3Tm1VV" id="42gV918qhy1" role="1B3o_S" />
       <node concept="3clFbS" id="42gV918qhy2" role="3clF47" />

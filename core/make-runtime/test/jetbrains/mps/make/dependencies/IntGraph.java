@@ -17,9 +17,11 @@ package jetbrains.mps.make.dependencies;
 
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.IVertex;
+import org.jetbrains.annotations.TestOnly;
 
 import java.util.*;
 
+@TestOnly
 public class IntGraph {
 
   private final Graph myGraph = new Graph();
@@ -39,6 +41,7 @@ public class IntGraph {
     }
   }
 
+  @TestOnly
   public static class IntVertex implements IVertex, Comparable<IntVertex> {
 
     private final Set<IntVertex> myNext = new TreeSet<IntVertex>();

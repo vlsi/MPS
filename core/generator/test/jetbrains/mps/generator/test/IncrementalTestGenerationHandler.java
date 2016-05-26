@@ -25,7 +25,7 @@ import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
-import jetbrains.mps.messages.IMessageHandler.LogHandler;
+import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextGeneratorEngine;

@@ -10,6 +10,9 @@ core/components/classes
 core/platform/classes
 core/kernel/classes
 core/kernel/resources/classes
+core/logging/classes
+core/mps-messaging/classes
+core/mps-annotations/classes
 core/persistence/classes
 core/java-stub/classes
 core/smodel/classes

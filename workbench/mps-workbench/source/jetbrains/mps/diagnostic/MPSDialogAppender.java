@@ -25,6 +25,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Delegates all the error messages to the parent which in turn sends all the errors to the IDE event log.
+ * Which is essential e.g. when the unchecked exceptions are thrown and not being caught.
+ *
+ * [Idea platform has default {@link java.lang.Thread.UncaughtExceptionHandler} which logs most of errors]
+ */
 public class MPSDialogAppender extends com.intellij.diagnostic.DialogAppender implements ApplicationComponent {
   private static Queue<LoggingEvent> ourEvents = new LinkedList<LoggingEvent>();
 

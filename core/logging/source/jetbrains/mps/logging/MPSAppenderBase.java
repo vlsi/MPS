@@ -27,10 +27,10 @@ import org.jetbrains.annotations.Nullable;
  * Implement this to have your own appender.
  */
 public abstract class MPSAppenderBase extends AppenderSkeleton {
-  private static volatile int myCount = 0;
+  private static volatile int ourCount = 0;
 
   public MPSAppenderBase() {
-    this("MPS_APPENDER_" + myCount++);
+    this("MPS_APPENDER_" + ourCount++);
   }
 
   protected MPSAppenderBase(String name) {
@@ -70,7 +70,7 @@ public abstract class MPSAppenderBase extends AppenderSkeleton {
       throwable = (Throwable) message;
     }
 
-    append(event.level, event.categoryName, renderedMessage, throwable, message);
+    append(event.getLevel(), event.getLoggerName(), renderedMessage, throwable, message);
   }
 
   @Override

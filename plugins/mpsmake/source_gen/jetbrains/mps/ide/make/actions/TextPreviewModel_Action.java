@@ -105,7 +105,6 @@ public class TextPreviewModel_Action extends BaseAction {
     final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     final Project ideaProject = event.getData(CommonDataKeys.PROJECT);
     final DefaultMakeMessageHandler msgHandler = new DefaultMakeMessageHandler(mpsProject);
-    msgHandler.clear();
     MakeSession session = new MakeSession(mpsProject, msgHandler, true);
     final SNodeReference contextNode = (event.getData(MPSCommonDataKeys.NODE) == null ? null : event.getData(MPSCommonDataKeys.NODE).getReference());
     if (IMakeService.INSTANCE.get().openNewSession(session)) {

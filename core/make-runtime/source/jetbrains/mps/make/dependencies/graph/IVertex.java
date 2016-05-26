@@ -17,8 +17,12 @@ package jetbrains.mps.make.dependencies.graph;
 
 import java.util.Set;
 
+/**
+ * I guess this interface is a vertex of the {@link Graph}
+ */
 public interface IVertex {
-
+  /**
+   * @return adjacent vertices for this vertex.
+   */
   Set<? extends IVertex> getNexts();
-
 }

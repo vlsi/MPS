@@ -326,13 +326,8 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       myList.add(msg);
-    }
-
-    @Override
-    public void clear() {
-      myList.clear();
     }
   }
 }

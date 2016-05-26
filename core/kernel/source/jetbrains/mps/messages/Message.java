@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.messages;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -25,15 +27,15 @@ import org.jetbrains.mps.openapi.module.SModule;
  * @author Kostik
  */
 public class Message implements IMessage {
+  private static final Logger LOG = LogManager.getLogger(Message.class);
+
   private String mySender;
   private MessageKind myKind;
   private String myText;
   private Throwable myException;
   private String myHelpUrl;
   private long myCreationTime = System.currentTimeMillis();
-  private Object myHintObject;
-
-  public Message(MessageKind kind, @Nullable String sender, String text) {
+  private Object myHintObject; public Message(MessageKind kind, @Nullable String sender, String text) {
     myKind = kind;
     mySender = sender;
     myText = text;
@@ -111,8 +113,7 @@ public class Message implements IMessage {
     }
 
     if (error) {
-      //todo enable after 2.5
-      //  LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
+      LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
     }
     return this;
   }
@@ -120,5 +121,23 @@ public class Message implements IMessage {
   @Override
   public Object getHintObject() {
     return myHintObject;
+  }
+
+  public static IMessage createMessage(@NotNull MessageKind kind, @NotNull String sender, @NotNull String text) {
+    return createMessage(kind, sender, text, null);
+  }
+
+  public static IMessage createMessage(@NotNull MessageKind kind, @NotNull String sender, @NotNull String text, @Nullable Object hint) {
+    Message m = new Message(kind, sender, text);
+    m.setHintObject(hint);
+    return m;
+  }
+
+  public static IMessage createMessage(@NotNull MessageKind kind, @NotNull String sender, @NotNull String text, @Nullable Throwable ex) {
+    Message m = new Message(kind, sender, text);
+    if (ex != null) {
+      m.setException(ex);
+    }
+    return m;
   }
 }

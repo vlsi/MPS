@@ -15,11 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import com.intellij.compiler.instrumentation.FailSafeClassReader;
-import com.intellij.compiler.instrumentation.InstrumentationClassFinder;
-import com.intellij.compiler.instrumentation.InstrumenterClassWriter;
-import com.intellij.compiler.notNullVerification.NotNullVerifyingInstrumenter;
-import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
@@ -27,40 +22,22 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import org.eclipse.jdt.internal.compiler.ClassFile;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.org.objectweb.asm.ClassWriter;
-import org.jetbrains.org.objectweb.asm.Opcodes;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -72,70 +49,87 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
+/**
+ * ModuleMaker is able to make sources of the given modules.
+ * Main API is two #make methods, one of them accepts also the compiler options argument (e.g. to choose the java language level
+ * for the compiler)
+ *
+ * Underneath this class analyzes module dependencies,
+ * chooses which of the modules are dirty, collects all the java sources and handles
+ * them to the eclipse java compiler (the mps wrapper {@link JavaCompiler})
+ *
+ * fixme use bundle for this package
+ * fixme check multiple computations of the same modules' dependencies (time wasting)
+ */
+public final class ModuleMaker {
+  private final static String BUILDING_MODULES_MSG = "Building %d modules";
+  private final static String CYCLE_FORMAT_MSG = "Processing cycle #%d: [%s]";
+  private final static String COLLECTING_DEPENDENCIES_MSG = "Collecting dependent candidates";
+  private final static String LOADING_DEPENDENCIES_MSG = "Loading dependencies";
+  private final static String CALCULATING_DEPENDENCIES_TO_COMPILE_MSG = "Calculating all dependent modules to compile";
+  private final static String BUILDING_MODULE_CYCLES_MSG = "Building module cycles";
 
-public class ModuleMaker {
-  private final static Logger LOG = LogManager.getLogger(ModuleMaker.class);
-
-  private final static int MAX_ERRORS = 100;
-
-  private Map<String, SModule> myContainingModules = new HashMap<String, SModule>();
-  private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
-  private Dependencies myDependencies;
-  private final IPerformanceTracer myTracer;
-  @NotNull private final IMessageHandler myHandler;
+  @NotNull private final IPerformanceTracer myTracer;
+  @NotNull private final MessageSender mySender;
   private final MessageKind myLevel;
 
-  private static final class ErrorsLoggingHandler extends IMessageHandler.LogHandler {
-    public ErrorsLoggingHandler(@NotNull Logger log) {
-      super(log);
-    }
-
-    @Override
-    public void handle(IMessage msg) {
-      if (msg.getKind() == MessageKind.ERROR) {
-        myLog.error(msg.getText());
-      }
-    }
-  }
-
+  /**
+   * The empty constructor delegates only error messages to the apache's logger
+   */
   public ModuleMaker() {
     this(null, MessageKind.ERROR);
   }
 
-  public ModuleMaker(@Nullable IMessageHandler handler, MessageKind level) {
+  /**
+   * Accepts the logging strategy (via {@link IMessageHandler})
+   * and the logging level {@link MessageKind}.
+   */
+  public ModuleMaker(@Nullable IMessageHandler handler, @NotNull MessageKind level) {
+    // AP Odd behavior: the default tracer choice depends on whether the handler is null
     if (handler != null) {
-      myHandler = handler;
-      myTracer = new PerformanceTracer("module maker");
+      mySender = new MessageSender(handler, this);
+      myTracer = new PerformanceTracer(this.toString());
     } else {
-      myHandler = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
+      ErrorsLoggingHandler handler1 = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
+      mySender = new MessageSender(handler1, this);
       myTracer = new NullPerformanceTracer();
     }
     myLevel = level;
   }
 
-  public ModuleMaker(@NotNull IMessageHandler handler, MessageKind level, @NotNull IPerformanceTracer trace) {
-    myHandler = handler;
+  /**
+   * Accepts the logging strategy (via {@link IMessageHandler})
+   * and the logging level {@link MessageKind}.
+   * and the performance tracer
+   *
+   * @deprecated IPerformanceTracer is an internal feature I believe.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level, @NotNull IPerformanceTracer trace) {
+    mySender = new MessageSender(handler, this);
     myLevel = level;
     myTracer = trace;
   }
 
+  /**
+   * TODO move or rename the ModuleMaker (the naming is quite disturbing)
+   */
   public void clean(final Set<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Cleaning...", modules.size());
     try {
       for (SModule module : modules) {
-        if (isExcluded(module)) {
-          monitor.advance(1);
-          continue;
+        if (monitor.isCanceled()) {
+          break;
         }
-        if (monitor.isCanceled()) break;
-
-        monitor.step(module.getModuleName());
-        JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-        assert facet != null && facet.getClassesGen() != null;
-        String path = facet.getClassesGen().getPath();
-        FileUtil.delete(new File(path));
-        ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
+        if (!ModulesContainer.isExcluded(module)) {
+          monitor.step(module.getModuleName());
+          JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+          assert facet != null && facet.getClassesGen() != null;
+          File classesGenFile = new File(facet.getClassesGen().getPath());
+          FileUtil.delete(classesGenFile);
+          ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGenFile.getAbsolutePath()));
+        }
         monitor.advance(1);
       }
     } finally {
@@ -143,251 +137,100 @@ public class ModuleMaker {
     }
   }
 
+  @NotNull
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     return make(modules, monitor, null);
   }
 
   // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
-  public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, final JavaCompilerOptions compilerOptions) {
-    LOG.debug("Compiling " + modules.size() + " modules");
-    monitor.start("Compiling", 12);
-    myTracer.push("making " + modules.size() + " modules", false);
+  @NotNull
+  public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, @Nullable final JavaCompilerOptions compilerOptions) {
+    CompositeTracer tracer = new CompositeTracer(myTracer, monitor, String.format(BUILDING_MODULES_MSG, modules.size()), 12); // FIXME: 12 is a gorgeous number
     try {
-      LOG.debug("Collecting dependent candidates");
-      monitor.step("Collecting candidates");
-      myTracer.push("collecting candidates", false);
-      Collection<SModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
-      myTracer.pop();
-      monitor.advance(1);
+      tracer.push(COLLECTING_DEPENDENCIES_MSG);
+      Set<SModule> candidates = new HashSet<SModule>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
+      tracer.pop();
 
-      LOG.debug("Loading dependencies");
-      myTracer.push("loading deps", false);
-      monitor.step("Loading dependencies");
-      myDependencies = new Dependencies(candidates);
-      myTracer.pop();
-      monitor.advance(1);
+      tracer.push(LOADING_DEPENDENCIES_MSG);
+      Dependencies dependencies = new Dependencies(candidates); // fixme AP why do we need to look for some other deps??
+      tracer.pop();
 
-      LOG.debug("Totally " + modules.size() + " modules to compile");
-      myTracer.push("modules to compile", false);
-      monitor.step("Calculating modules to compile");
-      Set<SModule> toCompile = getModulesToCompile(candidates);
-      myTracer.pop();
-      monitor.advance(1);
+      tracer.push(CALCULATING_DEPENDENCIES_TO_COMPILE_MSG);
+      Set<SModule> toCompile = getModulesToCompile(new ModulesContainer(candidates, dependencies));
+      tracer.pop();
 
-      int errorCount = 0;
-      int warnCount = 0;
-      List<IMessage> messages = new ArrayList<IMessage>();
-      Set<SModule> changedModules = new HashSet<SModule>();
+      tracer.push(BUILDING_MODULE_CYCLES_MSG);
+      List<Set<SModule>> schedule = new StronglyConnectedModules<SModule>(toCompile).getStronglyConnectedComponents();
+      tracer.pop();
 
-      LOG.debug("Building module cycles");
-      monitor.step("Building module cycles");
-      myTracer.push("building cycles", false);
-      List<Set<SModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
-      myTracer.pop();
-      monitor.advance(1);
-
-      ProgressMonitor inner = monitor.subTask(8);
-      inner.start("", toCompile.size());
-      try {
-        for (Set<SModule> cycle : schedule) {
-          if (monitor.isCanceled()) break;
-
-          LOG.debug("Processing " + cycle + " cycle");
-          inner.step("compiling " + cycle);
-          myTracer.push("processing cycle", false);
-          MPSCompilationResult result = compile(cycle, compilerOptions);
-          inner.advance(cycle.size());
-          myTracer.pop();
-          errorCount += result.getErrors();
-          warnCount += result.getWarnings();
-          changedModules.addAll(result.getChangedModules());
-          messages.addAll(result.getMessages());
-          for (IMessage msg : result.getMessages()) {
-            if (msg.getKind() == MessageKind.ERROR) {
-              handle(msg);
-            }
-          }
-        }
-      } finally {
-        inner.done();
-        LOG.debug("Make is done");
-      }
-
-      return new MPSCompilationResult(errorCount, warnCount, false, changedModules, messages);
+      return compileCycles(compilerOptions, schedule, tracer.subTracer(toCompile.size()), dependencies);
     } finally {
-      myTracer.pop();
-      final String report = myTracer.report();
+      tracer.done();
+      final String report = tracer.getReport();
       if (report != null) {
         handle(new Message(MessageKind.INFORMATION, report));
       }
-      monitor.done();
     }
   }
 
-  // private methods, all modules here is SModule with JavaModuleFacet
+  @NotNull
+  private MPSCompilationResult compileCycles(@Nullable JavaCompilerOptions compilerOptions, List<Set<SModule>> cyclesToCompile, @NotNull CompositeTracer tracer, @NotNull Dependencies dependencies) {
+    List<MPSCompilationResult> cycleCompilationResults = new ArrayList<MPSCompilationResult>();
+    try {
+      int cycleNumber = 0;
+      for (Set<SModule> modulesInCycle : cyclesToCompile) {
+        if (tracer.isMonitorCanceled()) {
+          break;
+        }
+        tracer.push(String.format(CYCLE_FORMAT_MSG, ++cycleNumber, modulesInCycle));
+        ModulesContainer modulesContainer = new ModulesContainer(modulesInCycle, dependencies);
+        MPSCompilationResult cycleCompilationResult = compile(modulesContainer, compilerOptions);
+        cycleCompilationResults.add(cycleCompilationResult);
+        tracer.pop(modulesInCycle.size());
+      }
+    } finally {
+      tracer.done();
+    }
+
+    return combineCycleCompilationResults(cycleCompilationResults);
+  }
+
+  @NotNull
+  private MPSCompilationResult combineCycleCompilationResults(List<MPSCompilationResult> results) {
+    int errorCount = 0;
+    int warnCount = 0;
+    Set<SModule> changedModules = new HashSet<SModule>();
+    for (MPSCompilationResult result : results) {
+      errorCount += result.getErrorsCount();
+      warnCount += result.getWarningsCount();
+      changedModules.addAll(result.getChangedModules());
+    }
+    return new MPSCompilationResult(errorCount, warnCount, false, changedModules);
+  }
+
+  // fixme AP this method is used not for all messages during make. why?
   private void handle(IMessage msg) {
     if (msg.getKind().ordinal() >= myLevel.ordinal()) {
-      myHandler.handle(msg);
+      mySender.handle(msg);
     }
   }
 
-  private MPSCompilationResult compile(Set<SModule> modules, JavaCompilerOptions compilerOptions) {
-    boolean hasAnythingToCompile = false;
-    List<IMessage> messages = new ArrayList<IMessage>();
+  /**
+   * The actual compilation happens here // FIXME
+   */
+  private MPSCompilationResult compile(@NotNull ModulesContainer modulesContainer, @Nullable JavaCompilerOptions compilerOptions) {
+    CompositeTracer tracer = new CompositeTracer(myTracer);
+    InternalJavaCompiler internalJavaCompiler = new InternalJavaCompiler(modulesContainer, mySender, tracer, compilerOptions);
 
-    for (SModule m : modules) {
-      if (isExcluded(m)) continue;
-
-      hasAnythingToCompile = true;
-    }
-
-    if (!hasAnythingToCompile) {
-      return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet());
-    }
-
-    boolean hasJavaToCompile = false;
-    boolean hasFilesToCopyOrDelete = false;
-
-    JavaCompiler compiler = new JavaCompiler();
-    myTracer.push("preparing to compile", false);
-    Set<SModule> modulesWithRemovals = new HashSet<SModule>();
-    for (SModule m : modules) {
-      if (areClassesUpToDate(m)) continue;
-
-      if (!getJavaFacet(m).isCompileInMps()) {
-        String text = "Module which compiled in IDEA depends on module which has to be compiled in MPS:" + m.getModuleName();
-        messages.add(createMessage(MessageKind.WARNING, text, m));
-        myHandler.handle(createMessage(MessageKind.INFORMATION, text, m));
-        continue;
-      }
-
-      ModuleSources sources = getModuleSources(m);
-      hasFilesToCopyOrDelete |= !sources.isResourcesUpToDate();
-      hasJavaToCompile |= !sources.isJavaUpToDate();
-
-      for (File f : sources.getFilesToDelete()) {
-        //noinspection ResultOfMethodCallIgnored
-        f.delete();
-        modulesWithRemovals.add(m);
-      }
-
-      for (JavaFile f : sources.getFilesToCompile()) {
-        compiler.addSource(f.getClassName(), f.getContents());
-        myContainingModules.put(f.getClassName(), m);
-      }
-    }
-    myTracer.pop();
-
-    if (!hasJavaToCompile && !hasFilesToCopyOrDelete) {
-      return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet(), messages);
-    }
-
-    myTracer.push("invalidating classpath", false);
-    for (SModule module : modulesWithRemovals) {
-      invalidateCompiledClasses(module);
-    }
-    myTracer.pop();
-
-    Set<SModule> changedModules = new HashSet<SModule>();
-    MyCompilationResultAdapter listener = null;
-    if (hasJavaToCompile) {
-      myTracer.push("compiling java", false);
-      IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-      listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
-      compiler.addCompilationResultListener(listener);
-      myTracer.push("eclipse compiler", true);
-
-      if (compilerOptions == null) {
-        compiler.compile(classPathItems);
-      } else {
-        compiler.compile(classPathItems, compilerOptions);
-      }
-      listener.writeClasses();
-      myTracer.pop();
-      changedModules.addAll(listener.myChangedModules);
-      compiler.removeCompilationResultListener(listener);
-      myTracer.pop();
-    }
-
-    myTracer.push("copying resources", false);
-    for (SModule module : modules) {
-      ModuleSources sources = getModuleSources(module);
-      IFile classesGen = getJavaFacet(module).getClassesGen();
-      if (classesGen == null) {
-        continue;
-      }
-      for (ResourceFile toCopy : sources.getResourcesToCopy()) {
-        String fqName = toCopy.getPath();
-
-        fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
-        String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
-
-        if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
-          FileUtil.copyFile(new File(toCopy.getFile().getAbsolutePath()), new File(classesGen.getDescendant(path).getPath()));
-        }
-      }
-    }
-    myTracer.pop();
-
-    myTracer.push("updating classpath", false);
-    for (SModule module : changedModules) {
-      invalidateCompiledClasses(module);
-    }
-    myTracer.pop();
-
-    for (SModule module : modulesWithRemovals) {
-      if (!changedModules.contains(module)) {
-        myHandler.handle(createMessage(MessageKind.WARNING, "Module with removals not in changed modules: " + module, module));
-      }
-    }
-
-    // todo: check possibility of this statements
-    if (hasJavaToCompile && changedModules.isEmpty()) {
-      myHandler.handle(createMessage(MessageKind.ERROR, "has java to compile but changed modules is empty", null));
-    }
-    if (!hasJavaToCompile && !changedModules.isEmpty()) {
-      myHandler.handle(createMessage(MessageKind.ERROR, "has not java to compile but changed modules is not empty", null));
-    }
-
-    return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, changedModules, messages);
+    return internalJavaCompiler.compile();
   }
 
-  private void invalidateCompiledClasses(SModule module) {
-    IFile classesGen = getJavaFacet(module).getClassesGen();
-    if (classesGen != null) {
-      ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGen.getPath()));
-    }
-  }
-
-  public static String convertCompoundToFqName(char[][] compoundName) {
-    StringBuilder result = new StringBuilder();
-    for (int i = 0; i < compoundName.length; i++) {
-      char[] part = compoundName[i];
-      result.append(part);
-      if (i != compoundName.length - 1) {
-        result.append(".");
-      }
-    }
-
-    return result.toString().trim();
-  }
-
-  private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
-    myTracer.push("dependencies classpath", false);
-    try {
-      Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
-      return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
-    } finally {
-      myTracer.pop();
-    }
-  }
-
-  private Set<SModule> getModulesToCompile(Collection<SModule> candidates) {
+  private Set<SModule> getModulesToCompile(ModulesContainer modulesContainer) {
+    Set<SModule> candidates = modulesContainer.getModules();
     myTracer.push("checking if " + candidates.size() + " modules are dirty", false);
-    Set<SModule> allModules = candidates instanceof Set ? (Set<SModule>) candidates : new HashSet<SModule>(candidates);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
     for (SModule m : candidates) {
-      if (isDirty(m)) {
+      if (modulesContainer.isDirty(m)) {
         dirtyModules.add(m);
       }
     }
@@ -420,7 +263,7 @@ public class ModuleMaker {
     LinkedList<SModule> queue = new LinkedList<SModule>(dirtyModules);
     while (!queue.isEmpty()) {
       SModule m = queue.removeFirst();
-      if (allModules.contains(m)) {
+      if (candidates.contains(m)) {
         toCompile.add(m);
       }
       Set<SModule> backDeps = backDependencies.remove(m);
@@ -433,213 +276,4 @@ public class ModuleMaker {
     return toCompile;
   }
 
-  private boolean isDirty(SModule m) {
-    if (isExcluded(m)) return false;
-    if (areClassesUpToDate(m)) return false;
-    return true;
-  }
-
-  private boolean areClassesUpToDate(SModule m) {
-    if (isExcluded(m)) return true;
-    if (!getJavaFacet(m).isCompileInMps()) return true;
-
-    return getModuleSources(m).isUpToDate();
-  }
-
-  private ModuleSources getModuleSources(SModule m) {
-    ModuleSources moduleSources = myModuleSources.get(m);
-    if (moduleSources == null) {
-      moduleSources = new ModuleSources(m, myModuleSources, myDependencies, myTracer);
-      myModuleSources.put(m, moduleSources);
-    }
-    return moduleSources;
-  }
-
-  private boolean isExcluded(@NotNull SModule m) {
-    return m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
-  }
-
-  private class MyCompilationResultAdapter extends CompilationResultAdapter {
-    private int myErrorCount = 0;
-    private int myOutputtedErrors = 0;
-    private final Set<SModule> myModules;
-    private IClassPathItem myClassPathItems;
-    private List<IMessage> myMessages;
-    private Set<SModule> myChangedModules = new HashSet<SModule>();
-    private final Set<ClassFile> myCompiledClassFiles = new HashSet<ClassFile>();
-    private final List<CompilationResult> myResults = new ArrayList<CompilationResult>();
-
-    public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<IMessage> messages) {
-      myModules = modules;
-      myClassPathItems = classPathItems;
-      myMessages = messages;
-      myFinder = createInstrumentationClassFinder(classPathItems);
-    }
-
-    @Override
-    public void onClass(ClassFile f) {
-      myCompiledClassFiles.add(f);
-    }
-
-    @Override
-    public void onFatalError(String error) {
-      myMessages.add(createMessage(MessageKind.ERROR, "Fatal error. " + error, null));
-      myMessages.add(createMessage(MessageKind.INFORMATION, "Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n", null));
-      myErrorCount += 1;
-    }
-
-    @Override
-    public void onCompilationResult(CompilationResult cr) {
-      myResults.add(cr);
-    }
-
-    private final InstrumentationClassFinder myFinder;
-
-    @NotNull
-    private byte[] instrumentNotNull(@NotNull byte[] classContent, int version, IClassPathItem classPath) throws MalformedURLException {
-      FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
-      ClassWriter writer = new InstrumenterClassWriter(reader, getAsmClassWriterFlags(version), myFinder);
-      NotNullVerifyingInstrumenter.processClassFile(reader, writer);
-      return writer.toByteArray();
-    }
-
-    private int getAsmClassWriterFlags(int version) {
-      return version >= Opcodes.V1_6 && version != Opcodes.V1_1 ? ClassWriter.COMPUTE_FRAMES : ClassWriter.COMPUTE_MAXS;
-    }
-
-    @NotNull
-    private InstrumentationClassFinder createInstrumentationClassFinder(final IClassPathItem classPath) {
-      final List<URL> urls = new ArrayList<URL>();
-      for (RealClassPathItem flatten : classPath.flatten()) {
-        try {
-          urls.add(new File(flatten.getPath()).toURI().toURL());
-        } catch (MalformedURLException e) {
-          e.printStackTrace();
-        }
-      }
-      final URL[] urlsArr = urls.toArray(new URL[urls.size()]);
-      return new InstrumentationClassFinder(urlsArr) {
-        @Override
-        protected InputStream lookupClassBeforeClasspath(String internalClassName) {
-          for (ClassFile cf : myCompiledClassFiles) {
-            String fqName = NameUtil.pathFromNamespace(convertCompoundToFqName(cf.getCompoundName()));
-            if (internalClassName.equals(fqName)) {
-              return new ByteArrayInputStream(cf.getBytes());
-            }
-          }
-          return null;
-        }
-      };
-    }
-
-    public int getErrorCount() {
-      return myErrorCount;
-    }
-
-    public void writeClasses() {
-      for (CompilationResult cr : myResults) {
-        Set<String> classesWithErrors = new HashSet<String>();
-        if (cr.getErrors() != null) {
-          myTracer.push("handling errors", false);
-          for (final CategorizedProblem cp : cr.getErrors()) {
-            String fileName = new String(cp.getOriginatingFileName());
-            final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
-            classesWithErrors.add(fqName);
-
-            SModule containingModule = myContainingModules.get(fqName);
-            assert containingModule != null;
-            JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
-
-            String messageString = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
-
-            //final SNode nodeToShow = getNodeByLine(cp, fqName);
-
-            Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
-
-            String errMsg = messageString + " (line: " + cp.getSourceLineNumber() + ")";
-            if (cp.isWarning()) {
-              myMessages.add(createMessage(MessageKind.WARNING, errMsg, hintObject));
-            } else {
-              if (myOutputtedErrors == 0) {
-                myMessages.add(createMessage(MessageKind.ERROR, "Compilation problems", null));
-                myMessages.add(createMessage(MessageKind.INFORMATION, "Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n", null));
-              }
-              if (myOutputtedErrors < MAX_ERRORS) {
-                myOutputtedErrors++;
-                myMessages.add(createMessage(MessageKind.ERROR, errMsg, hintObject));
-              }
-            }
-          }
-          myTracer.pop();
-
-          myErrorCount += cr.getErrors().length;
-        }
-
-        myTracer.push("storing files", false);
-        for (ClassFile cf : cr.getClassFiles()) {
-          String fqName = convertCompoundToFqName(cf.getCompoundName());
-          String containerClassName = fqName;
-          if (containerClassName.contains("$")) {
-            int index = containerClassName.indexOf('$');
-            containerClassName = containerClassName.substring(0, index);
-          }
-          if (myContainingModules.containsKey(containerClassName)) {
-            SModule m = myContainingModules.get(containerClassName);
-            myChangedModules.add(m);
-            File classesGen = new File(getJavaFacet(m).getClassesGen().getPath());
-            String packageName = NameUtil.namespaceFromLongName(fqName);
-            File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
-            if (!outputDir.exists()) {
-              if (!outputDir.mkdirs()) {
-                throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
-              }
-            }
-            String className = NameUtil.shortNameFromLongName(fqName);
-            File output = new File(outputDir, className + ".class");
-            if (!classesWithErrors.contains(containerClassName)) {
-              FileOutputStream os = null;
-              try {
-                os = new FileOutputStream(output);
-                byte[] classContent = instrumentNotNull(cf.getBytes(), Opcodes.V1_6, myClassPathItems);
-                os.write(classContent);
-              } catch (IOException e) {
-                String errMsg = "Can't write to " + output.getAbsolutePath();
-                myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
-              } finally {
-                if (os != null) {
-                  try {
-                    os.close();
-                  } catch (IOException e) {
-                    myHandler.handle(createMessage(MessageKind.ERROR, e.toString(), e));
-                  }
-                }
-              }
-            } else {
-              if (output.exists() && !(output.delete())) {
-                String errMsg = "Can't delete " + output.getPath();
-                myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
-              }
-            }
-          } else {
-            String errMsg = "I don't know in which module's output path I should place class file for " + fqName;
-            myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
-          }
-        }
-        myTracer.pop();
-
-      }
-    }
-  }
-
-  private static IMessage createMessage(@NotNull MessageKind kind, @NotNull String text, @Nullable Object hint) {
-    Message m = new Message(kind, ModuleMaker.class, text);
-    m.setHintObject(hint);
-    return m;
-  }
-
-  private static IMessage createMessage(@NotNull MessageKind kind, @NotNull String text, Throwable ex) {
-    Message m = new Message(kind, ModuleMaker.class, text);
-    m.setException(ex);
-    return m;
-  }
 }

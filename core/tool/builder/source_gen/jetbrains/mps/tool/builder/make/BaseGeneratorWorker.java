@@ -8,6 +8,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.GeneratorProperties;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.MResource;
@@ -205,7 +206,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     }
 
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           if (msg.getException() != null) {
@@ -222,9 +223,6 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
           break;
         default:
       }
-    }
-    @Override
-    public void clear() {
     }
   }
 }

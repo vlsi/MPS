@@ -17,6 +17,7 @@ package jetbrains.mps.vfs;
 
 import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Evgeny Gerashchenko
@@ -32,6 +33,8 @@ public abstract class FileSystem {
   public abstract IFile getFileByPath(@NotNull String path);
   public abstract boolean isPackaged(IFile file);
   public abstract boolean isFileIgnored(@NotNull String name);
+
+  @Nullable
   public abstract IFile getBundleHome(IFile file);
   public abstract boolean setTimeStamp(IFile file, long time);
 

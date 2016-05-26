@@ -91,6 +91,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public String toString() {
-    return "ProjectLibraryManager " + myProject.getName();
+    return "ProjectLibraryManager [" + myProject.getName() + "]";
   }
 }

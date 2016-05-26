@@ -9,9 +9,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/annotations.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="logging" />
     <orderEntry type="module" module-name="mps-annotations" />
-    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>

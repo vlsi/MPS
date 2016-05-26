@@ -20,6 +20,10 @@ import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.File;
 
+/**
+ * MPS abstraction of the java source file
+ * Simply a composite.
+ */
 @Immutable
 public class JavaFile {
   private final File myFile;

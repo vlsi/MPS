@@ -20,7 +20,6 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" scope="TEST" />
-    <orderEntry type="module" module-name="MPSSupport" scope="TEST" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="miscTests" />

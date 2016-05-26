@@ -20,7 +20,7 @@ import org.jetbrains.mps.annotations.Immutable;
 import java.io.File;
 
 @Immutable
-public class FileWithPosition {
+public final class FileWithPosition {
   private final File myFile;
   private final int myOffset;
 
