@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JUnit4Mockery;
@@ -26,7 +27,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -45,7 +45,9 @@ public class GetContributionsInLanguagesTest {
 
   @Test
   public void singleLanguage() {
-    LanguageRuntime languageRuntime = new FakeLanguageRuntime().withAspect(context.mock(EditorAspectDescriptor.class, "test"));
+    LanguageRuntime languageRuntime = new FakeLanguageRuntime()
+        .withNamespace("language namespace")
+        .withAspect(context.mock(EditorAspectDescriptor.class, "test"));
     EditorAspectContributionsCache<Object, String> descriptorToString = new EditorAspectContributionsCache<Object, String>(languageRuntime) {
       @NotNull
       @Override
@@ -55,16 +57,21 @@ public class GetContributionsInLanguagesTest {
     };
     Object irrelevantKey = new Object();
 
-    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, Collections.singleton(languageRuntime));
+    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, Collections.singleton("language namespace"));
 
     assertEquals(Collections.singletonList("test"), contributions);
   }
 
   @Test
   public void usedExtendingLanguage() {
-    FakeLanguageRuntime extending = new FakeLanguageRuntime().withAspect(context.mock(EditorAspectDescriptor.class, "extending descriptor"));
-    FakeLanguageRuntime base = new FakeLanguageRuntime().withAspect(context.mock(EditorAspectDescriptor.class, "base descriptor"));
+    FakeLanguageRuntime base = new FakeLanguageRuntime()
+        .withNamespace("base namespace")
+        .withAspect(context.mock(EditorAspectDescriptor.class, "base descriptor"));
+    FakeLanguageRuntime extending = new FakeLanguageRuntime()
+        .withNamespace("extending namespace")
+        .withAspect(context.mock(EditorAspectDescriptor.class, "extending descriptor"));
     base.extendWith(extending);
+
     EditorAspectContributionsCache<Object, String> descriptorToString = new EditorAspectContributionsCache<Object, String>(base) {
       @NotNull
       @Override
@@ -74,16 +81,19 @@ public class GetContributionsInLanguagesTest {
     };
     Object irrelevantKey = new Object();
 
-    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, Arrays.asList(base, extending));
+    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, CollectionUtil.set("base namespace", "extending namespace"));
     assertThat(contributions, containsInAnyOrder("base descriptor", "extending descriptor"));
   }
 
   @Test
   public void unusedExtendingLanguage() {
     FakeLanguageRuntime base = new FakeLanguageRuntime()
+        .withNamespace("base namespace")
         .withAspect(context.mock(EditorAspectDescriptor.class, "base descriptor"));
     base.extendWith(
-        new FakeLanguageRuntime().withAspect(context.mock(EditorAspectDescriptor.class, "unused extending descriptor")));
+        new FakeLanguageRuntime()
+            .withNamespace("unused extending namespace")
+            .withAspect(context.mock(EditorAspectDescriptor.class, "unused extending descriptor")));
     EditorAspectContributionsCache<Object, String> descriptorToString = new EditorAspectContributionsCache<Object, String>(base) {
       @NotNull
       @Override
@@ -93,13 +103,14 @@ public class GetContributionsInLanguagesTest {
     };
     Object irrelevantKey = new Object();
 
-    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, Collections.singleton(base));
+    Collection<String> contributions = descriptorToString.getInLanguages(irrelevantKey, Collections.singleton("base namespace"));
     assertEquals(Collections.singletonList("base descriptor"), contributions);
   }
 
   private static class FakeLanguageRuntime extends LanguageRuntime {
     private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<>();
     private ILanguageAspect myAspect;
+    private String myNamespace;
 
     FakeLanguageRuntime withAspect(ILanguageAspect aspect) {
       myAspect = aspect;
@@ -122,6 +133,11 @@ public class GetContributionsInLanguagesTest {
       return myExtendingLanguages;
     }
 
+    FakeLanguageRuntime withNamespace(String namespace) {
+      myNamespace = namespace;
+      return this;
+    }
+
     @NotNull
     @Override
     public SLanguageId getId() {
@@ -130,7 +146,10 @@ public class GetContributionsInLanguagesTest {
 
     @Override
     public String getNamespace() {
-      throw new UnsupportedOperationException("not implemented");
+      if (myNamespace == null) {
+        throw new IllegalStateException("namespace was not set");
+      }
+      return myNamespace;
     }
 
     @Override

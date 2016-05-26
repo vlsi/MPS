@@ -28,6 +28,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * <p>
@@ -46,7 +47,7 @@ import java.util.Map.Entry;
 abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectContributionsCache.class));
 
-  private final Map<KeyT, Map<LanguageRuntime, Collection<ContributionT>>> myCache = new HashMap<>();
+  private final Map<KeyT, Map<String, Collection<ContributionT>>> myCache = new HashMap<>();
 
   @NotNull
   private final LanguageRuntime myLanguageRuntime;
@@ -55,19 +56,35 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
     myLanguageRuntime = languageRuntime;
   }
 
+  /**
+   * Returns contributions for {@code key} from the owner language and all its extending languages.
+   *
+   * @param key the key of the contribution
+   * @return a non-null, possibly empty, collection of contributions in an unspecified order.
+   */
+  @NotNull
   public Collection<ContributionT> get(KeyT key) {
     return concatValues(getOrCompute(key));
   }
 
-  public Collection<ContributionT> getInLanguages(KeyT key, Collection<LanguageRuntime> languageRuntimes) {
-    return filterKeysAndConcatValues(getOrCompute(key), languageRuntimes);
+  /**
+   * Returns contributions for {@code key} from the owner language and all its extending languages but restricted to languages whose namespaces are contained in
+   * {@code languageNamespaces}.
+   *
+   * @param key the key of the contribution
+   * @param languageNamespaces a set of language namespaces/fully qualified names
+   * @return a non-null, possibly empty, collection of contributions in an unspecified order.
+   */
+  @NotNull
+  public Collection<ContributionT> getInLanguages(KeyT key, Set<String> languageNamespaces) {
+    return filterKeysAndConcatValues(getOrCompute(key), languageNamespaces);
   }
 
-  private Map<LanguageRuntime, Collection<ContributionT>> getOrCompute(KeyT key) {
-    Map<LanguageRuntime, Collection<ContributionT>> values = myCache.get(key);
+  private Map<String, Collection<ContributionT>> getOrCompute(KeyT key) {
+    Map<String, Collection<ContributionT>> values = myCache.get(key);
 
     if (values == null) {
-      values = computeValues(key);
+      values = computeValuesByLanguageNamespaces(key);
       myCache.put(key, values);
     }
     return values;
@@ -105,6 +122,17 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
     putIfNotEmpty(result, myLanguageRuntime, getDeclaredContributions(myLanguageRuntime, key));
     for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
       putIfNotEmpty(result, extendingLanguage, getDeclaredContributions(extendingLanguage, key));
+    }
+
+    return result;
+  }
+
+  private Map<String, Collection<ContributionT>> computeValuesByLanguageNamespaces(KeyT key) {
+    Map<String, Collection<ContributionT>> result = new HashMap<>();
+
+    putIfNotEmpty(result, myLanguageRuntime.getNamespace(), getDeclaredContributions(myLanguageRuntime, key));
+    for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
+      putIfNotEmpty(result, extendingLanguage.getNamespace(), getDeclaredContributions(extendingLanguage, key));
     }
 
     return result;
