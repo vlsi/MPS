@@ -1,6 +1,4 @@
 <project name="mps" default="build">
-  <property name="mps.sign" location="sign"/>
-
   <property name="idea_home" location=".."/>
   <property name="resources" location="${basedir}/resources"/>
 
@@ -9,7 +7,7 @@
     <ant antfile="./jetpad/build.xml" target="resolve" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
-  <target name="build" depends="platform, base, signed"/>
+  <target name="build" depends="platform, base"/>
 
   <target name="base" depends="platform">
     <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getHelp" />
@@ -20,11 +18,9 @@
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="publishTCArtifacts"/>
   </target>
 
-  <target name="signed" depends="base">
-    <ant antfile="mpsExe.xml" inheritAll="true" useNativeBasedir="true"/>
-    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="dmg-mac"/>
-    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="dmg-mac-jdk"/>
-    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="zip-mac-delete"/>
+  <target name="exe" depends="base">
+    <property name="build.distribution" value="${basedir}/artifacts/mpsDistribution"/>
+    <ant antfile="buildExe.xml" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
   <target name="clean">
