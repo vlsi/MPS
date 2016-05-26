@@ -34,7 +34,6 @@ import java.util.Collections;
  * @author simon
  */
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor, LanguageRuntimeAware {
-  private LanguageRuntime myLanguageRuntime;
   private EditorsCache myEditorsCache;
   private EditorComponentsCache myEditorComponentsCache;
   private DefaultTransformationMenusCache myDefaultTransformationMenusCache;
@@ -42,7 +41,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
-    return this.clearCachesIfStaleThenGetFromCache(myEditorsCache, concept);
+    return clearCachesIfStaleThenGetFromCache(myEditorsCache, concept);
   }
 
   @NotNull
@@ -52,7 +51,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return this.clearCachesIfStaleThenGetFromCache(myEditorComponentsCache, new Pair<>(concept, editorComponentId));
+    return clearCachesIfStaleThenGetFromCache(myEditorComponentsCache, new Pair<>(concept, editorComponentId));
   }
 
   @NotNull
@@ -63,7 +62,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<TransformationMenu> getDefaultTransformationMenus(SAbstractConcept concept) {
-    return this.clearCachesIfStaleThenGetFromCache(myDefaultTransformationMenusCache, concept);
+    return clearCachesIfStaleThenGetFromCache(myDefaultTransformationMenusCache, concept);
   }
 
   @NotNull
@@ -75,7 +74,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<TransformationMenu> getNamedTransformationMenus(NamedTransformationMenuId menuId) {
-    return this.clearCachesIfStaleThenGetFromCache(myNamedTransformationMenusCache, menuId);
+    return clearCachesIfStaleThenGetFromCache(myNamedTransformationMenusCache, menuId);
   }
 
   @NotNull
@@ -86,12 +85,10 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @Override
   public void setLanguageRuntime(@NotNull LanguageRuntime languageRuntime) {
-    myLanguageRuntime = languageRuntime;
-
-    myEditorsCache = new EditorsCache(myLanguageRuntime);
-    myEditorComponentsCache = new EditorComponentsCache(myLanguageRuntime);
-    myDefaultTransformationMenusCache = new DefaultTransformationMenusCache(myLanguageRuntime);
-    myNamedTransformationMenusCache = new NamedTransformationMenusCache(myLanguageRuntime);
+    myEditorsCache = new EditorsCache(languageRuntime);
+    myEditorComponentsCache = new EditorComponentsCache(languageRuntime);
+    myDefaultTransformationMenusCache = new DefaultTransformationMenusCache(languageRuntime);
+    myNamedTransformationMenusCache = new NamedTransformationMenusCache(languageRuntime);
   }
 
   // TODO improve the name or improve the method
