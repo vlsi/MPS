@@ -42,5 +42,7 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
       }
     }).distinct().toListSequence();
   }
-  public abstract List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
+  public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository) {
+    throw new UnsupportedOperationException();
+  }
 }

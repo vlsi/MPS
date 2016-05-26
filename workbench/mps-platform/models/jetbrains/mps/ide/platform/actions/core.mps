@@ -7825,7 +7825,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5SvlHWohUGh" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getAvailableOptions" />
       <node concept="37vLTG" id="5SvlHWohUGi" role="3clF46">
@@ -7846,7 +7846,15 @@
           <ref role="3uigEE" node="37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
         </node>
       </node>
-      <node concept="3clFbS" id="5SvlHWohUGq" role="3clF47" />
+      <node concept="3clFbS" id="5SvlHWohUGq" role="3clF47">
+        <node concept="YS8fn" id="6gU0oA5S28q" role="3cqZAp">
+          <node concept="2ShNRf" id="6gU0oA5S28r" role="YScLw">
+            <node concept="1pGfFk" id="6gU0oA5S28s" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="4GNx7T6VEix" role="1B3o_S" />
     <node concept="3uibUv" id="4GNx7T6VEiZ" role="EKbjA">
