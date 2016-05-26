@@ -2,6 +2,7 @@
   <property name="mps.sign" location="sign"/>
 
   <property name="idea_home" location=".."/>
+  <property name="resources" location="${basedir}/resources"/>
 
   <target name="platform">
     <ant antfile="getIdeaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true"/>
@@ -11,6 +12,9 @@
   <target name="build" depends="platform, base, signed"/>
 
   <target name="base" depends="platform">
+    <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getHelp" />
+    <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getMachelp" />
+    <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getJdk" />
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="assemble"/>
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="publishTCArtifacts"/>
@@ -26,5 +30,10 @@
   <target name="clean">
     <delete dir="tmp"/>
     <delete dir="artifacts"/>
+  </target>
+
+  <target name="cleanResources">
+    <delete dir="${resources}/help"/>
+    <delete dir="${resources}/JDK"/>
   </target>
 </project>
