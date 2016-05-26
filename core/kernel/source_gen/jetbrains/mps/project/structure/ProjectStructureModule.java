@@ -229,11 +229,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     // none 
   }
 
-  @Override
-  public SModel resolveInDependencies(SModelId ref) {
-    return myModels.get(ref);
-  }
-
   public class ProjectStructureSModelDescriptor extends RegularModelDescriptor {
     private final SModule myModule;
     private ProjectStructureSModelDescriptor(SModelReference ref, SModule module) {

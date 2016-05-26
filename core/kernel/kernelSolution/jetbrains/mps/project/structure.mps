@@ -1754,41 +1754,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2OV1G3ujJS6" role="jymVt" />
-    <node concept="3clFb_" id="4fSpAVAUj_P" role="jymVt">
-      <property role="TrG5h" value="resolveInDependencies" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="4fSpAVAUj_Q" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="37vLTG" id="4fSpAVAUj_R" role="3clF46">
-        <property role="TrG5h" value="ref" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="4fSpAVAUj_S" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModelId" resolve="SModelId" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4fSpAVAUj_T" role="3clF47">
-        <node concept="3cpWs6" id="4fSpAVAUj_U" role="3cqZAp">
-          <node concept="2OqwBi" id="4fSpAVAUjD$" role="3cqZAk">
-            <node concept="37vLTw" id="4fSpAVAUjDz" role="2Oq$k0">
-              <ref role="3cqZAo" node="4fSpAVAUjuK" resolve="myModels" />
-            </node>
-            <node concept="liA8E" id="4fSpAVAUjD_" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-              <node concept="37vLTw" id="4fSpAVAUj_W" role="37wK5m">
-                <ref role="3cqZAo" node="4fSpAVAUj_R" resolve="ref" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4fSpAVAUj_X" role="1B3o_S" />
-      <node concept="3uibUv" id="4fSpAVAUj_Y" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4F1sLpFrjqX" role="jymVt" />
     <node concept="312cEu" id="4fSpAVAUjrv" role="jymVt">
       <property role="TrG5h" value="ProjectStructureSModelDescriptor" />
       <property role="2bfB8j" value="true" />
