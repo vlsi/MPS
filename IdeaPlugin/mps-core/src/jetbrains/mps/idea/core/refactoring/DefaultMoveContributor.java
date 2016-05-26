@@ -8,7 +8,7 @@ import com.intellij.refactoring.util.MoveRenameUsageInfo;
 import com.intellij.usageView.UsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -75,7 +75,7 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
   @Override
   public void invoke(@NotNull Project project, @NotNull final List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
-    MoveNodesDefault.moveNodes(nodes, mpsProject);
+    MoveNodesActionBase.moveNodes(nodes, mpsProject);
   }
 }
 
