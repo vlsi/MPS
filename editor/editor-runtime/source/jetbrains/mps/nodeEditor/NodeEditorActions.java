@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -32,6 +33,7 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection.SideSelectDirect
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import java.awt.Rectangle;
 import java.util.List;
@@ -289,8 +291,21 @@ public class NodeEditorActions {
       return null;
     }
 
-    private EditorCell findTarget(EditorCell cell, int caretX) {
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getUpper(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE, caretX);
+    private EditorCell findTarget(EditorCell cell, int baseX) {
+      EditorCell bestMatch = null;
+      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(c, cell);
+      for (EditorCell nextCandidate = CellTraversalUtil.getPrevLeaf(cell, condition); nextCandidate != null;
+           nextCandidate = CellTraversalUtil.getPrevLeaf(nextCandidate, condition)) {
+
+        if (bestMatch != null && GeometryUtil.isAbove(nextCandidate, bestMatch)) {
+          break;
+        }
+
+        if (bestMatch == null || GeometryUtil.getHorizontalDistance(bestMatch, baseX) > GeometryUtil.getHorizontalDistance(nextCandidate, baseX)) {
+          bestMatch = nextCandidate;
+        }
+      }
+      return bestMatch;
     }
   }
 
@@ -328,7 +343,20 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLower(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE, caretX);
+      EditorCell bestMatch = null;
+      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(cell, c);
+      for (EditorCell nextCandidate = CellTraversalUtil.getNextLeaf(cell, condition); nextCandidate != null;
+           nextCandidate = CellTraversalUtil.getNextLeaf(nextCandidate, condition)) {
+
+        if (bestMatch != null && GeometryUtil.isAbove(bestMatch, nextCandidate)) {
+          break;
+        }
+
+        if (bestMatch == null || GeometryUtil.getHorizontalDistance(bestMatch, caretX) > GeometryUtil.getHorizontalDistance(nextCandidate, caretX)) {
+          bestMatch = nextCandidate;
+        }
+      }
+      return bestMatch;
     }
   }
 
@@ -536,7 +564,9 @@ public class NodeEditorActions {
               break;
             }
           }
-          if (common) return result;
+          if (common) {
+            return result;
+          }
         }
 
         result = result.getParent();

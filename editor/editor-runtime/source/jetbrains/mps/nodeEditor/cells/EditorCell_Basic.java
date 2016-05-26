@@ -956,14 +956,24 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getParent().getContainingBigCell();
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(this, cell)
+   */
+  @Deprecated
   @Override
   public boolean isAbove(EditorCell cell) {
-    return getY() + getHeight() <= cell.getY();
+    return GeometryUtil.isAbove(this, cell);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(cell, this)
+   */
+  @Deprecated
   @Override
   public boolean isBelow(EditorCell cell) {
-    return cell.isAbove(this);
+    return GeometryUtil.isAbove(cell, this);
   }
 
   @Override
@@ -976,26 +986,23 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return cell.isToLeft(this);
   }
 
-  private static int horizontalDistance(EditorCell cell, int x) {
-    if (cell.getX() + cell.getLeftGap() <= x && x <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
-      return 0;
-    }
-    return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x));
-  }
-
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getUpper(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
     EditorCell current = getPrevLeaf(condition);
 
     while (current != null) {
-      if (current.isAbove(this)) {
-        if (bestMatch != null && current.isAbove(bestMatch)) {
+      if (GeometryUtil.isAbove(current, this)) {
+        if (bestMatch != null && GeometryUtil.isAbove(current, bestMatch)) {
           break;
         }
 
         if (bestMatch != null) {
-          if (horizontalDistance(bestMatch, baseX) > horizontalDistance(current, baseX)) {
+          if (GeometryUtil.getHorizontalDistance(bestMatch, baseX) > GeometryUtil.getHorizontalDistance(current, baseX)) {
             bestMatch = current;
           }
         } else {
@@ -1009,6 +1016,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return bestMatch;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getLower(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
@@ -1021,7 +1032,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
         }
 
         if (bestMatch != null) {
-          if (horizontalDistance(bestMatch, baseX) > horizontalDistance(current, baseX)) {
+          if (GeometryUtil.getHorizontalDistance(bestMatch, baseX) > GeometryUtil.getHorizontalDistance(current, baseX)) {
             bestMatch = current;
           }
         } else {
@@ -1058,7 +1069,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getPrevLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
-        return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToRight(current);
+        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToRight(current);
       }
     });
   }
@@ -1068,7 +1079,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getNextLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
-        return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToLeft(current);
+        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToLeft(current);
       }
     });
   }

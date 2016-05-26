@@ -145,15 +145,33 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getLeafToRight(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(this, cell)
+   */
+  @Deprecated
   boolean isAbove(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(cell, this)
+   */
+  @Deprecated
   boolean isBelow(EditorCell cell);
 
   boolean isToLeft(EditorCell cell);
 
   boolean isToRight(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
 }

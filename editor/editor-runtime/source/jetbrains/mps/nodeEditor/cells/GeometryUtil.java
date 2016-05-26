@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+
 import java.awt.Rectangle;
 
 /**
@@ -22,7 +24,7 @@ import java.awt.Rectangle;
  * Date: 12/7/12
  */
 public class GeometryUtil {
-  public static Rectangle getBounds(jetbrains.mps.openapi.editor.cells.EditorCell... cells) {
+  public static Rectangle getBounds(EditorCell... cells) {
     assert cells.length > 0;
     Rectangle result = null;
     for (int i = 0; i < cells.length; i++) {
@@ -32,7 +34,18 @@ public class GeometryUtil {
     return result;
   }
 
-  public static boolean contains(jetbrains.mps.openapi.editor.cells.EditorCell cell, int x, int y) {
+  public static boolean contains(EditorCell cell, int x, int y) {
     return getBounds(cell).contains(x, y);
+  }
+
+  public static boolean isAbove(EditorCell below, EditorCell above) {
+    return below.getY() + below.getHeight() <= above.getY();
+  }
+
+  public static int getHorizontalDistance(EditorCell cell, int x_point) {
+    if (cell.getX() + cell.getLeftGap() <= x_point && x_point <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
+      return 0;
+    }
+    return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x_point), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x_point));
   }
 }
