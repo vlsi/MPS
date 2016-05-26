@@ -243,10 +243,14 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
         icon = myNodeIconMap.get(iconNode);
       }
       if (icon == null) {
-        icon = isConcept ? MetaAdapterByDeclaration.getConcept(iconNode).getIcon() : IconManager.getIconFor(iconNode);
         if (isConcept) {
+          icon = MetaAdapterByDeclaration.getConcept(iconNode).getIcon();
+          if (icon==null){
+            icon = IdeIcons.DEFAULT_NODE_ICON;
+          }
           myConceptIconMap.put(iconNode, icon);
         } else {
+          icon = IconManager.getIconFor(iconNode);
           myNodeIconMap.put(iconNode, icon);
         }
       }
