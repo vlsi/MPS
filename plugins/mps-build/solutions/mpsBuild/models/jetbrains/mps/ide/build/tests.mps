@@ -4193,6 +4193,12 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="478VZjcfQl9" role="3bR37C">
+          <node concept="3bR9La" id="478VZjcfQla" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="2X_LC_CDElV" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -4344,6 +4350,12 @@
           <node concept="3bR9La" id="axQ2jNKpr$" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="478VZjcfQk1" role="3bR37C">
+          <node concept="3bR9La" id="478VZjcfQk2" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
           </node>
         </node>
       </node>

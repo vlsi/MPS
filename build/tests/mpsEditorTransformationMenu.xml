@@ -766,7 +766,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.transformationMenu.tests" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.editor.transformationMenu.tests" depends="java.compile.jetbrains.mps.lang.editor.transformationMenu.testLanguage, java.compile.jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -785,6 +785,7 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-2.5.1.jar" />
