@@ -16,20 +16,22 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(4);
+  /*package*/ final ConceptDescriptor myConceptCDHolder_GeneratorInternal = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.simpleStructure.structure.CDHolder_GeneratorInternal", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cdebd8L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x346ead2c08cdebe5L, "c", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), false, false, false)).children(new String[]{"c"}, new boolean[]{false}).sourceNode(new SNodePointer("r:e5107c9a-a05a-456e-bf48-05faadc7a98c(jetbrains.mps.samples.highlevel.simpleStructure.structure)", "3778147542048304088")).create();
   /*package*/ final ConceptDescriptor myConceptSimpleConceptDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.simpleStructure.structure.SimpleConceptDeclaration", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x460f3ddb176b0a3cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x346ead2c08cc8029L, "properties", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cc7faeL), true, true, false)).children(new String[]{"properties"}, new boolean[]{true}).sourceNode(new SNodePointer("r:e5107c9a-a05a-456e-bf48-05faadc7a98c(jetbrains.mps.samples.highlevel.simpleStructure.structure)", "5048321718505638460")).create();
   /*package*/ final ConceptDescriptor myConceptSimplePropertyDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.simpleStructure.structure.SimplePropertyDeclaration", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cc7faeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).sourceNode(new SNodePointer("r:e5107c9a-a05a-456e-bf48-05faadc7a98c(jetbrains.mps.samples.highlevel.simpleStructure.structure)", "3778147542048210862")).create();
   /*package*/ final ConceptDescriptor myConceptStructureAspectDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.simpleStructure.structure.StructureAspectDeclaration", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cc7fc8L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x346ead2c08cc7fd5L, "concepts", MetaIdFactory.conceptId(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x460f3ddb176b0a3cL), true, true, false)).children(new String[]{"concepts"}, new boolean[]{true}).sourceNode(new SNodePointer("r:e5107c9a-a05a-456e-bf48-05faadc7a98c(jetbrains.mps.samples.highlevel.simpleStructure.structure)", "3778147542048210888")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptSimpleConceptDeclaration.getId(), 0);
-    myIndexMap.put(myConceptSimplePropertyDeclaration.getId(), 1);
-    myIndexMap.put(myConceptStructureAspectDeclaration.getId(), 2);
+    myIndexMap.put(myConceptCDHolder_GeneratorInternal.getId(), 0);
+    myIndexMap.put(myConceptSimpleConceptDeclaration.getId(), 1);
+    myIndexMap.put(myConceptSimplePropertyDeclaration.getId(), 2);
+    myIndexMap.put(myConceptStructureAspectDeclaration.getId(), 3);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptSimpleConceptDeclaration, myConceptSimplePropertyDeclaration, myConceptStructureAspectDeclaration);
+    return Arrays.asList(myConceptCDHolder_GeneratorInternal, myConceptSimpleConceptDeclaration, myConceptSimplePropertyDeclaration, myConceptStructureAspectDeclaration);
   }
 
   @Override
@@ -41,10 +43,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptSimpleConceptDeclaration;
+        return myConceptCDHolder_GeneratorInternal;
       case 1:
-        return myConceptSimplePropertyDeclaration;
+        return myConceptSimpleConceptDeclaration;
       case 2:
+        return myConceptSimplePropertyDeclaration;
+      case 3:
         return myConceptStructureAspectDeclaration;
       default:
         throw new IllegalStateException();

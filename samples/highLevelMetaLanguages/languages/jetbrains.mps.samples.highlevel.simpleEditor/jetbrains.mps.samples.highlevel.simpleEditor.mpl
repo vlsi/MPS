@@ -31,7 +31,7 @@
         <language slang="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" version="0" />
         <language slang="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" version="4" />
         <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
-        <language slang="l:c457c5de-6027-4104-ab9c-a31c5404ae8b:jetbrains.mps.samples.highlevel.hlEditor" version="-1" />
+        <language slang="l:c457c5de-6027-4104-ab9c-a31c5404ae8b:jetbrains.mps.samples.highlevel.simpleEditor" version="-1" />
       </languageVersions>
       <dependencyVersions>
         <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />

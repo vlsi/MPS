@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class ExportLabelFunctions {
   public static void marshal_3778147542048304063(ExportLabelContext ctx) {
     SLinkOperations.setTarget(ctx.getKeeper(), MetaAdapterFactory.getContainmentLink(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cdebd8L, 0x346ead2c08cdebe5L, "c"), SNodeOperations.copyNode(ctx.getOutput()));
-    System.out.println(SPropertyOperations.getString(ctx.getOutput(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId")));
   }
   public static void unmarshal_3778147542048304065(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getContainmentLink(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cdebd8L, 0x346ead2c08cdebe5L, "c")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
