@@ -13379,7 +13379,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="3F0ifn" id="7L5lpRJNZkR" role="2czzBI">
-            <property role="3F0ifm" value="no additional features" />
+            <property role="ilYzB" value="&lt;no additional features&gt;" />
             <ref role="1k5W1q" to="tpen:hinfsDb" resolve="EmptyCell" />
           </node>
         </node>

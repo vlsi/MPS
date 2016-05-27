@@ -36,5 +36,43 @@
     <property role="R4oN_" value="location for use in tests" />
     <ref role="1TJDcQ" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
   </node>
+  <node concept="1TIwiD" id="3fN3QovvCzu">
+    <property role="EcuMT" value="3743352646564481246" />
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="TransformationLocation_WithFeatures" />
+    <property role="34LRSv" value="location with a required and an optional feature" />
+    <ref role="1TJDcQ" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
+  </node>
+  <node concept="1TIwiD" id="3fN3QovxAWl">
+    <property role="EcuMT" value="3743352646564998933" />
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="TransformationFeature_Unavailable" />
+    <property role="34LRSv" value="unavailable" />
+    <property role="R4oN_" value="unavailable feature" />
+    <ref role="1TJDcQ" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
+  </node>
+  <node concept="1TIwiD" id="478VZjcfvKt">
+    <property role="EcuMT" value="4740302442485120029" />
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="TransformationFeature_Optional" />
+    <property role="34LRSv" value="optional" />
+    <property role="R4oN_" value="optional feature" />
+    <ref role="1TJDcQ" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
+  </node>
+  <node concept="1TIwiD" id="478VZjcfwBo">
+    <property role="EcuMT" value="4740302442485123544" />
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="TransformationFeature_Required" />
+    <property role="34LRSv" value="required" />
+    <property role="R4oN_" value="required feature" />
+    <ref role="1TJDcQ" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
+  </node>
+  <node concept="1TIwiD" id="478VZjcfF$F">
+    <property role="EcuMT" value="4740302442485168427" />
+    <property role="3GE5qa" value="menu.transformation" />
+    <property role="TrG5h" value="TransformationLocation_WithoutFeatures" />
+    <property role="34LRSv" value="location with no available features" />
+    <ref role="1TJDcQ" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
+  </node>
 </model>
 

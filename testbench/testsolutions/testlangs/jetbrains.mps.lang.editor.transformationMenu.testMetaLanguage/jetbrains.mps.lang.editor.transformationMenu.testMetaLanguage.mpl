@@ -71,6 +71,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">69068b7c-ba1f-47fb-a486-4981f42606e9(jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage)</dependency>
+  </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
