@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -26,7 +27,7 @@ public class StructureAspectDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vq6uem_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vq6uem_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_vq6uem_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_vq6uem_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_vq6uem_a0(EditorContext editorContext, SNode node) {
@@ -35,15 +36,26 @@ public class StructureAspectDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_vq6uem_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new StructureAspectDeclaration_Editor.conceptsListHandler_vq6uem_b0(node, "concepts", editorContext);
+  private EditorCell createCollection_vq6uem_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_vq6uem_b0");
+    editorCell.addEditorCell(this.createIndentCell_vq6uem_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vq6uem_b1a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createIndentCell_vq6uem_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_vq6uem_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new StructureAspectDeclaration_Editor.conceptsListHandler_vq6uem_b1a(node, "concepts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_concepts");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class conceptsListHandler_vq6uem_b0 extends RefNodeListHandler {
-    public conceptsListHandler_vq6uem_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class conceptsListHandler_vq6uem_b1a extends RefNodeListHandler {
+    public conceptsListHandler_vq6uem_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

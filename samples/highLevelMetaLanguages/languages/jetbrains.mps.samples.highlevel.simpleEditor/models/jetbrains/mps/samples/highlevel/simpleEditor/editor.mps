@@ -38,6 +38,7 @@
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -63,6 +64,7 @@
         </node>
       </node>
       <node concept="3EZMnI" id="3hIFiK8NgF5" role="3EZMnx">
+        <node concept="3XFhqQ" id="QNcRo9vE8H" role="3EZMnx" />
         <node concept="2iRfu4" id="3hIFiK8NgF6" role="2iSdaV" />
         <node concept="3F0ifn" id="3hIFiK8NgE4" role="3EZMnx">
           <property role="3F0ifm" value="alias:" />
@@ -73,6 +75,7 @@
       </node>
       <node concept="3EZMnI" id="3hIFiK8NgEl" role="3EZMnx">
         <node concept="2iRfu4" id="3hIFiK8NgEm" role="2iSdaV" />
+        <node concept="3XFhqQ" id="QNcRo9vE8X" role="3EZMnx" />
         <node concept="3F0ifn" id="3hIFiK8NgEc" role="3EZMnx">
           <property role="3F0ifm" value="properties:" />
         </node>
@@ -91,9 +94,13 @@
       <node concept="3F0ifn" id="3hIFiK8NfBq" role="3EZMnx">
         <property role="3F0ifm" value="editors" />
       </node>
-      <node concept="3F2HdR" id="3hIFiK8NfBH" role="3EZMnx">
-        <ref role="1NtTu8" to="nvz:3hIFiK8Nfsc" />
-        <node concept="2iRkQZ" id="3hIFiK8NfBJ" role="2czzBx" />
+      <node concept="3EZMnI" id="QNcRo9vDg_" role="3EZMnx">
+        <node concept="3XFhqQ" id="QNcRo9vDgM" role="3EZMnx" />
+        <node concept="2iRfu4" id="QNcRo9vDgA" role="2iSdaV" />
+        <node concept="3F2HdR" id="3hIFiK8NfBH" role="3EZMnx">
+          <ref role="1NtTu8" to="nvz:3hIFiK8Nfsc" />
+          <node concept="2iRkQZ" id="3hIFiK8NfBJ" role="2czzBx" />
+        </node>
       </node>
     </node>
   </node>

@@ -34,21 +34,26 @@
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
     </language>
   </registry>
   <node concept="24kQdi" id="3hIFiK8N7ZK">
-    <ref role="1XX52x" to="q7pe:3hIFiK8N7Z8" resolve="SimpleLanguageDeclaration" />
+    <ref role="1XX52x" to="q7pe:3hIFiK8N7Z8" resolve="StructureAspectDeclaration" />
     <node concept="3EZMnI" id="3hIFiK8N801" role="2wV5jI">
       <node concept="2iRkQZ" id="3hIFiK8N802" role="2iSdaV" />
       <node concept="3F0ifn" id="3hIFiK8N7ZY" role="3EZMnx">
         <property role="3F0ifm" value="language concepts" />
       </node>
-      <node concept="3F2HdR" id="3hIFiK8N80a" role="3EZMnx">
-        <ref role="1NtTu8" to="q7pe:3hIFiK8N7Zl" />
-        <node concept="2iRkQZ" id="3hIFiK8N80c" role="2czzBx" />
+      <node concept="3EZMnI" id="QNcRo9vDgR" role="3EZMnx">
+        <node concept="3XFhqQ" id="QNcRo9vDh4" role="3EZMnx" />
+        <node concept="2iRfu4" id="QNcRo9vDgS" role="2iSdaV" />
+        <node concept="3F2HdR" id="3hIFiK8N80a" role="3EZMnx">
+          <ref role="1NtTu8" to="q7pe:3hIFiK8N7Zl" />
+          <node concept="2iRkQZ" id="3hIFiK8N80c" role="2czzBx" />
+        </node>
       </node>
     </node>
   </node>
