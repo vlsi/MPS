@@ -70,25 +70,25 @@ public abstract class EditableModelDescriptor extends RegularModelDescriptor imp
 
   @Override
   public void addChangeListener(SNodeChangeListener listener) {
-    getEventDispatch().addChangeListener(listener);
+    getNodeEventDispatch().addChangeListener(listener);
   }
 
   @Override
   public void removeChangeListener(SNodeChangeListener listener) {
-    getEventDispatch().removeChangeListener(listener);
+    getNodeEventDispatch().removeChangeListener(listener);
   }
 
   @Override
   public void addChangeListener(SModelChangeListener l) {
     // although there's no reason to handle legacy listeners that are scheduled for removal in the new class,
     // it doesn't hurt to.
-    getEventDispatch().addChangeListener(l);
+    getNodeEventDispatch().addChangeListener(l);
   }
 
   @Override
   public void removeChangeListener(SModelChangeListener l) {
     // although there's no reason to handle legacy listeners that are scheduled for removal in the new class,
     // it doesn't hurt to.
-    getEventDispatch().removeChangeListener(l);
+    getNodeEventDispatch().removeChangeListener(l);
   }
 }

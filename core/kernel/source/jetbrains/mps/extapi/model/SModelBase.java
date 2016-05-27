@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.IllegalModelAccessException;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
+import jetbrains.mps.smodel.event.ModelListenerDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -42,8 +43,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Base implementation of {@link org.jetbrains.mps.openapi.model.SModel}, with actual
@@ -59,8 +58,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
   private static Logger LOG = LogManager.getLogger(SModelBase.class);
 
-  private final ModelEventDispatch myEventDispatch;
-  private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private final ModelEventDispatch myNodeEventDispatch;
+  // XXX when necessary, shall get exposed with protected accessor. fire* methods kept for now as some of them do delegation to legacy
+  // listeners as well, could get removed once smodel.SModelListener gone.
+  private final ModelListenerDispatch myModelEventDispatch;
 
   @NotNull
   private final DataSource mySource;
@@ -75,14 +76,15 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   /**
    * model is treated {@link #isLoaded() loaded} when the state == FULLY_LOADED.
    * There are model implementations with simple NOT_LOADED -- FULLY_LOADED cycle,
-   * and more complext with NOT_LOADED -- INTERFACE_LOADED -- FULLY_LOADED.
+   * and more complex with NOT_LOADED -- INTERFACE_LOADED -- FULLY_LOADED.
    */
   private ModelLoadingState myModelLoadState = ModelLoadingState.NOT_LOADED;
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
-    myEventDispatch = new ModelEventDispatch(this);
+    myNodeEventDispatch = new ModelEventDispatch(this);
+    myModelEventDispatch = new ModelListenerDispatch();
   }
 
   @Override
@@ -309,32 +311,32 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void addModelListener(SModelListener l) {
-    myModelListeners.add(l);
+    myModelEventDispatch.addListener(l);
   }
 
   @Override
   public void removeModelListener(SModelListener l) {
-    myModelListeners.remove(l);
+    myModelEventDispatch.removeListener(l);
   }
 
   @Override
   public void addAccessListener(SModelAccessListener l) {
-    myEventDispatch.addAccessListener(l);
+    myNodeEventDispatch.addAccessListener(l);
   }
 
   @Override
   public void removeAccessListener(SModelAccessListener l) {
-    myEventDispatch.removeAccessListener(l);
+    myNodeEventDispatch.removeAccessListener(l);
   }
 
   @Override
   public void addAccessListener(SNodeAccessListener l) {
-    myEventDispatch.addAccessListener(l);
+    myNodeEventDispatch.addAccessListener(l);
   }
 
   @Override
   public void removeAccessListener(SNodeAccessListener l) {
-    myEventDispatch.removeAccessListener(l);
+    myNodeEventDispatch.removeAccessListener(l);
   }
 
   /**
@@ -376,59 +378,29 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       return;
     }
     super.fireModelStateChanged(newState);
-    for (SModelListener l : myModelListeners) {
-      try {
-        if (newState == ModelLoadingState.NOT_LOADED) {
-          l.modelUnloaded(this);
-        } else {
-          l.modelLoaded(this, newState == ModelLoadingState.INTERFACE_LOADED);
-        }
-      } catch (Throwable t) {
-        LOG.error("listener failure", t);
-      }
+    if (newState == ModelLoadingState.NOT_LOADED) {
+      myModelEventDispatch.modelUnloaded(this);
+    } else {
+      myModelEventDispatch.modelLoaded(this, newState == ModelLoadingState.INTERFACE_LOADED);
     }
   }
 
   @Override
   protected void fireModelSaved() {
     super.fireModelSaved();
-    for (SModelListener l : myModelListeners) {
-      try {
-        l.modelSaved(this);
-      } catch (Throwable t) {
-        LOG.error("listener failure", t);
-      }
-    }
+    myModelEventDispatch.modelSaved(this);
   }
 
   protected void fireConflictDetected() {
-    for (SModelListener l : myModelListeners) {
-      try {
-        l.conflictDetected(this);
-      } catch (Throwable t) {
-        LOG.error("listener failure", t);
-      }
-    }
+    myModelEventDispatch.conflictDetected(this);
   }
 
   protected void fireProblemsDetected(Iterable<Problem> problems) {
-    for (SModelListener l : myModelListeners) {
-      try {
-        l.problemsDetected(this, problems);
-      } catch (Throwable t) {
-        LOG.error("listener failure", t);
-      }
-    }
+    myModelEventDispatch.problemsDetected(this, problems);
   }
 
   protected void fireModelReplaced() {
-    for (SModelListener l : myModelListeners) {
-      try {
-        l.modelReplaced(this);
-      } catch (Throwable t) {
-        LOG.error("listener failure", t);
-      }
-    }
+    myModelEventDispatch.modelReplaced(this);
   }
 
   @Override
@@ -499,7 +471,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
 
   /**
-   * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries.
+   * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries (those of SModelData implementation and this class).
    * FIXME This is a hack. We shall pass myEventDispatch the moment internal model is initialized.
    * However, it's tricky to find out exact moment with present approach (getSModelInternal() either
    * returns existing or creates new), fireModeStateChanged is feasible option, but misguiding as well.
@@ -508,7 +480,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    * loading whole model.
    */
   @NotNull
-  public final ModelEventDispatch getEventDispatch() {
-    return myEventDispatch;
+  public final ModelEventDispatch getNodeEventDispatch() {
+    return myNodeEventDispatch;
   }
 }

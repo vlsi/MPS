@@ -24,7 +24,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -283,22 +282,22 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
   @Override
   public void addChangeListener(SModelChangeListener l) {
-    getEventDispatch().addChangeListener(l);
+    getNodeEventDispatch().addChangeListener(l);
   }
 
   @Override
   public void removeChangeListener(SModelChangeListener l) {
-    getEventDispatch().removeChangeListener(l);
+    getNodeEventDispatch().removeChangeListener(l);
   }
 
   @Override
   public void addChangeListener(SNodeChangeListener l) {
-    getEventDispatch().addChangeListener(l);
+    getNodeEventDispatch().addChangeListener(l);
   }
 
   @Override
   public void removeChangeListener(SNodeChangeListener l) {
-    getEventDispatch().removeChangeListener(l);
+    getNodeEventDispatch().removeChangeListener(l);
   }
 
   public String toString() {
