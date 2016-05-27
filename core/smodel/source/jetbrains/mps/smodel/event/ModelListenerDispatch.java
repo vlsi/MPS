@@ -20,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -110,6 +111,28 @@ public final class ModelListenerDispatch implements org.jetbrains.mps.openapi.mo
     for (SModelListener l : myListeners) {
       try {
         l.problemsDetected(model, problems);
+      } catch (Throwable t) {
+        reportListenerError(l, t);
+      }
+    }
+  }
+
+  @Override
+  public void modelAttached(SModel model, SRepository repository) {
+    for (SModelListener l : myListeners) {
+      try {
+        l.modelAttached(model, repository);
+      } catch (Throwable t) {
+        reportListenerError(l, t);
+      }
+    }
+  }
+
+  @Override
+  public void modelDetached(SModel model, SRepository repository) {
+    for (SModelListener l : myListeners) {
+      try {
+        l.modelDetached(model, repository);
       } catch (Throwable t) {
         reportListenerError(l, t);
       }

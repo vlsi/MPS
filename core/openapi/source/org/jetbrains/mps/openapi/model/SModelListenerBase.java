@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Convenient empty implementation of {@link org.jetbrains.mps.openapi.model.SModelListener}
@@ -43,5 +44,13 @@ public abstract class SModelListenerBase implements SModelListener {
 
   @Override
   public void problemsDetected(SModel model, Iterable<Problem> problems) {
+  }
+
+  @Override
+  public void modelAttached(SModel model, SRepository repository) {
+  }
+
+  @Override
+  public void modelDetached(SModel model, SRepository repository) {
   }
 }

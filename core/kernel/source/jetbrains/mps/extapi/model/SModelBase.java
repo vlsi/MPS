@@ -22,8 +22,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.ModelListenerDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -56,11 +54,10 @@ import java.util.Collections;
  * TODO relocate to [smodel]
  */
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
-  private static Logger LOG = LogManager.getLogger(SModelBase.class);
-
   private final ModelEventDispatch myNodeEventDispatch;
   // XXX when necessary, shall get exposed with protected accessor. fire* methods kept for now as some of them do delegation to legacy
-  // listeners as well, could get removed once smodel.SModelListener gone.
+  // listeners as well, could get removed once smodel.SModelListener gone. Besides, I'm not yet sure multi-cast approach of
+  // ModelListenerDispatch shall prevail, to limit future changes, let fire* method stay non deprecated for now.
   private final ModelListenerDispatch myModelEventDispatch;
 
   @NotNull
@@ -118,11 +115,15 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
     repo.getModelAccess().checkReadAccess();
     myRepository = repo;
+    myModelEventDispatch.modelAttached(this, repo);
   }
 
   public void detach() {
     assertCanChange();
-    myRepository = null;
+    if (myRepository != null) {
+      myModelEventDispatch.modelDetached(this, myRepository);
+      myRepository = null;
+    }
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {
