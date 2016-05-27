@@ -156,6 +156,11 @@
     <property role="34LRSv" value="check nodes error messages" />
     <property role="EcuMT" value="1215075719096" />
     <ref role="1TJDcQ" node="hFquTD4" resolve="AbstractNodeAssert" />
+    <node concept="1TJgyi" id="3fN3Qov$aYT" role="1TKVEl">
+      <property role="IQ2nx" value="3743352646565670841" />
+      <property role="TrG5h" value="includeSelf" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hG1TgHj">
     <property role="TrG5h" value="NodePropertiesContainer" />
@@ -286,6 +291,11 @@
     <node concept="1TJgyi" id="JjtHGBNrEI" role="1TKVEl">
       <property role="TrG5h" value="allowWarnings" />
       <property role="IQ2nx" value="852155438140865198" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="3fN3QovzdMy" role="1TKVEl">
+      <property role="IQ2nx" value="3743352646565420194" />
+      <property role="TrG5h" value="includeSelf" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>

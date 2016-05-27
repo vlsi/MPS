@@ -5,31 +5,38 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import junit.framework.Assert;
 import jetbrains.mps.errors.MessageStatus;
 
 public class CheckErrorMessagesAction implements Runnable {
-  private SNode node;
-  private boolean allowsWarnings;
-  private boolean allowsErrors;
+  private final SNode myNode;
+  private boolean myAllowsWarnings;
+  private boolean myAllowsErrors;
+  private boolean myIncludeSelf;
 
   public CheckErrorMessagesAction(SNode node, boolean allowsWarnings, boolean allowsErrors) {
-    this.node = node;
-    this.allowsWarnings = allowsWarnings;
-    this.allowsErrors = allowsErrors;
+    this.myNode = node;
+    this.myAllowsWarnings = allowsWarnings;
+    this.myAllowsErrors = allowsErrors;
+  }
+
+  public CheckErrorMessagesAction includeSelf(boolean includeSelf) {
+    myIncludeSelf = includeSelf;
+    return this;
   }
 
   @Override
   public void run() {
-    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
-    List<SNode> descendants = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{});
+    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(myNode));
+    List<SNode> descendants;
+    descendants = (myIncludeSelf ? SNodeOperations.getNodeDescendants(myNode, null, true, new SAbstractConcept[]{}) : SNodeOperations.getNodeDescendants(myNode, null, false, new SAbstractConcept[]{}));
     final Iterable<IErrorReporter> reporters = checker.getAllErrors();
     for (IErrorReporter reporter : reporters) {
       SNode child = reporter.getSNode();
@@ -60,13 +67,13 @@ public class CheckErrorMessagesAction implements Runnable {
   }
 
   private void checkWarnings(IErrorReporter reporter, String warningMsg) {
-    if (!(allowsWarnings)) {
+    if (!(myAllowsWarnings)) {
       Assert.assertTrue(warningMsg, reporter.getMessageStatus() != MessageStatus.WARNING);
     }
   }
 
   private void checkErrors(IErrorReporter reporter, String errorMsg) {
-    if (!(allowsErrors)) {
+    if (!(myAllowsErrors)) {
       Assert.assertTrue(errorMsg, reporter.getMessageStatus() != MessageStatus.ERROR);
     }
   }

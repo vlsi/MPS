@@ -7,6 +7,7 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class NodeCheckerUtil {
 
@@ -26,9 +27,19 @@ public class NodeCheckerUtil {
     return reporter.getRuleNode().resolve(MPSModuleRepository.getInstance());
   }
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.test.runtime.NodeCheckerUtil#checkNodeForErrorMessages(SNode, boolean, boolean, boolean) }
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings) {
     Runnable checkErrorsAction = new CheckErrorMessagesAction(node, allowWarnings, allowErrors);
     checkErrorsAction.run();
   }
 
+  public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings, boolean includeSelf) {
+    Runnable checkErrorsAction = new CheckErrorMessagesAction(node, allowWarnings, allowErrors).includeSelf(includeSelf);
+    checkErrorsAction.run();
+  }
 }
