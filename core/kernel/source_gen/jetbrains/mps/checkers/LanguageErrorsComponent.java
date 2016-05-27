@@ -12,11 +12,10 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +24,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
@@ -37,7 +35,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import org.jetbrains.mps.openapi.model.SModelListenerBase;
 
 public class LanguageErrorsComponent {
   /**
@@ -61,8 +59,8 @@ public class LanguageErrorsComponent {
   private Map<SNode, Set<SNode>> myNodesToDependecies = new HashMap<SNode, Set<SNode>>();
   private Set<SNode> myInvalidNodes = new HashSet<SNode>();
   private Set<SNode> myDependenciesToInvalidate = new HashSet<SNode>();
-  private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
-  private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
+  private LanguageErrorsComponent.MyModelChangeListener myChangeListener = new LanguageErrorsComponent.MyModelChangeListener();
+  private LanguageErrorsComponent.MyModelUnloadListener myUnloadListener = new LanguageErrorsComponent.MyModelUnloadListener();
   private Set<SModel> myListenedModels = new HashSet<SModel>();
   private boolean myFullCheckCompleted = false;
   private SNode myCurrentNode = null;
@@ -80,18 +78,20 @@ public class LanguageErrorsComponent {
 
   public LanguageErrorsComponent(SModel model) {
     myModel = model;
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
+
   public void dispose() {
-    this.removeModelListener();
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    // XXX any idea why not clear()? 
+    this.removeModelListeners();
   }
-  private void removeModelListener() {
+
+  private void removeModelListeners() {
     for (SModel modelDescriptor : myListenedModels) {
-      modelDescriptor.removeChangeListener(myModelListener);
+      removeModelListeners(modelDescriptor);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
+
   public void addDependency(SNode dependency) {
     if (myCurrentNode == null) {
       return;
@@ -137,10 +137,11 @@ public class LanguageErrorsComponent {
     // returning a set of checked nodes removed from mapping 
     return nodes;
   }
-  private Set<SNode> getDependenciesToInvalidate(SModel model) {
+
+  /*package*/ Set<SNode> getDependenciesToInvalidate(SModel model, SRepository repo) {
     Set<SNode> result = new HashSet<SNode>();
     for (SNode dependency : MapSequence.fromMap(myDependenciesToNodes).keySet()) {
-      if (!(SNodeUtil.isAccessible(dependency, MPSModuleRepository.getInstance())) || SNodeOperations.getModel(dependency) == model) {
+      if (!(SNodeUtil.isAccessible(dependency, repo)) || SNodeOperations.getModel(dependency) == model) {
         SetSequence.fromSet(result).addElement(dependency);
       }
     }
@@ -152,9 +153,16 @@ public class LanguageErrorsComponent {
       return;
     }
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      modelDescriptor.addChangeListener(myModelListener);
+      // XX why access to myListenedModels is not synchronized? 
+      modelDescriptor.addChangeListener(myChangeListener);
+      modelDescriptor.addModelListener(myUnloadListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
+  }
+
+  private void removeModelListeners(SModel m) {
+    m.removeChangeListener(myChangeListener);
+    m.removeModelListener(myUnloadListener);
   }
 
   public void addError(SNode node, String errorString, @Nullable SNodeReference ruleNode) {
@@ -196,6 +204,7 @@ public class LanguageErrorsComponent {
       }
     }
   }
+
   /**
    * 
    * 
@@ -258,7 +267,6 @@ public class LanguageErrorsComponent {
     }
   }
 
-
   private void checkNode(SNode node, Set<AbstractConstraintsChecker> checkers, SRepository repository) {
     if (SNodeOperations.getModel(node) == null) {
       return;
@@ -300,7 +308,7 @@ public class LanguageErrorsComponent {
     MapSequence.fromMap(myDependenciesToNodes).clear();
     MapSequence.fromMap(myNodesToDependecies).clear();
     MapSequence.fromMap(myNodesToErrors).clear();
-    removeModelListener();
+    removeModelListeners();
   }
 
   /*package*/ void processEvent(SNodeAddEvent event) {
@@ -354,7 +362,7 @@ public class LanguageErrorsComponent {
     return (Result) result[0];
   }
 
-  public class MyModelListener extends SNodeChangeListenerAdapter {
+  public class MyModelChangeListener extends SNodeChangeListenerAdapter {
     @Override
     public void referenceChanged(@NotNull SReferenceChangeEvent event) {
       processEvent(event);
@@ -378,14 +386,15 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public class MyModelRepositoryListener extends SModelRepositoryAdapter {
+  private class MyModelUnloadListener extends SModelListenerBase {
     @Override
-    public void modelRemoved(SModel model) {
+    public void modelDetached(SModel model, SRepository repository) {
       if (myModel != model) {
-        for (SNode dependencyToInvalidate : getDependenciesToInvalidate(model)) {
+        for (SNode dependencyToInvalidate : getDependenciesToInvalidate(model, repository)) {
           invalidateDependency(dependencyToInvalidate);
         }
       }
+      removeModelListeners(model);
       SetSequence.fromSet(myListenedModels).removeElement(model);
     }
   }

@@ -18,7 +18,6 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="zavc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.messageTargets(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
-    <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
     <import index="k6ay" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.search(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
@@ -207,6 +206,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -2064,26 +2066,26 @@
       </node>
     </node>
     <node concept="312cEg" id="6qi2OtU3ueI" role="jymVt">
-      <property role="TrG5h" value="myModelListener" />
+      <property role="TrG5h" value="myChangeListener" />
       <node concept="3Tm6S6" id="6qi2OtU3ueJ" role="1B3o_S" />
       <node concept="3uibUv" id="6qi2OtU3ueK" role="1tU5fm">
-        <ref role="3uigEE" node="6qi2OtU3u0n" resolve="LanguageErrorsComponent.MyModelListener" />
+        <ref role="3uigEE" node="6qi2OtU3u0n" resolve="LanguageErrorsComponent.MyModelChangeListener" />
       </node>
       <node concept="2ShNRf" id="6qi2OtU3ueL" role="33vP2m">
         <node concept="HV5vD" id="1QnJaNXF_ue" role="2ShVmc">
-          <ref role="HV5vE" node="6qi2OtU3u0n" resolve="LanguageErrorsComponent.MyModelListener" />
+          <ref role="HV5vE" node="6qi2OtU3u0n" resolve="LanguageErrorsComponent.MyModelChangeListener" />
         </node>
       </node>
     </node>
     <node concept="312cEg" id="6qi2OtU3ueN" role="jymVt">
-      <property role="TrG5h" value="myModelRepositoryListener" />
+      <property role="TrG5h" value="myUnloadListener" />
       <node concept="3Tm6S6" id="6qi2OtU3ueO" role="1B3o_S" />
       <node concept="3uibUv" id="6qi2OtU3ueP" role="1tU5fm">
-        <ref role="3uigEE" node="6qi2OtU3u1k" resolve="LanguageErrorsComponent.MyModelRepositoryListener" />
+        <ref role="3uigEE" node="6qi2OtU3u1k" resolve="LanguageErrorsComponent.MyModelUnloadListener" />
       </node>
       <node concept="2ShNRf" id="6qi2OtU3ueQ" role="33vP2m">
         <node concept="HV5vD" id="1QnJaNXFBq_" role="2ShVmc">
-          <ref role="HV5vE" node="6qi2OtU3u1k" resolve="LanguageErrorsComponent.MyModelRepositoryListener" />
+          <ref role="HV5vE" node="6qi2OtU3u1k" resolve="LanguageErrorsComponent.MyModelUnloadListener" />
         </node>
       </node>
     </node>
@@ -2262,20 +2264,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6qi2OtU3ufj" role="3cqZAp">
-          <node concept="2OqwBi" id="6qi2OtU3ufk" role="3clFbG">
-            <node concept="2YIFZM" id="6qi2OtU3ufl" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-            </node>
-            <node concept="liA8E" id="6qi2OtU3ufm" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelRepository.addModelRepositoryListener(jetbrains.mps.smodel.SModelRepositoryListener):void" resolve="addModelRepositoryListener" />
-              <node concept="37vLTw" id="2BHiRxeumX1" role="37wK5m">
-                <ref role="3cqZAo" node="6qi2OtU3ueN" resolve="myModelRepositoryListener" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="37vLTG" id="6qi2OtU3ufo" role="3clF46">
         <property role="TrG5h" value="model" />
@@ -2284,37 +2272,30 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7MOQyvfUjFz" role="jymVt" />
     <node concept="3clFb_" id="6qi2OtU3u1H" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3cqZAl" id="6qi2OtU3u1I" role="3clF45" />
       <node concept="3Tm1VV" id="6qi2OtU3u1J" role="1B3o_S" />
       <node concept="3clFbS" id="6qi2OtU3u1K" role="3clF47">
+        <node concept="3SKdUt" id="7MOQyvfUtYp" role="3cqZAp">
+          <node concept="3SKdUq" id="7MOQyvfUtYr" role="3SKWNk">
+            <property role="3SKdUp" value="XXX any idea why not clear()?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="6qi2OtU3u1L" role="3cqZAp">
           <node concept="2OqwBi" id="6qi2OtU3u1M" role="3clFbG">
             <node concept="Xjq3P" id="6qi2OtU3u1N" role="2Oq$k0" />
             <node concept="liA8E" id="6qi2OtU3u1O" role="2OqNvi">
-              <ref role="37wK5l" node="6qi2OtU3u1U" resolve="removeModelListener" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6qi2OtU3u1P" role="3cqZAp">
-          <node concept="2OqwBi" id="6qi2OtU3u1Q" role="3clFbG">
-            <node concept="2YIFZM" id="6qi2OtU3u1R" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-            </node>
-            <node concept="liA8E" id="6qi2OtU3u1S" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelRepository.removeModelRepositoryListener(jetbrains.mps.smodel.SModelRepositoryListener):void" resolve="removeModelRepositoryListener" />
-              <node concept="37vLTw" id="2BHiRxeulj0" role="37wK5m">
-                <ref role="3cqZAo" node="6qi2OtU3ueN" resolve="myModelRepositoryListener" />
-              </node>
+              <ref role="37wK5l" node="6qi2OtU3u1U" resolve="removeModelListeners" />
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7MOQyvfTTFB" role="jymVt" />
     <node concept="3clFb_" id="6qi2OtU3u1U" role="jymVt">
-      <property role="TrG5h" value="removeModelListener" />
+      <property role="TrG5h" value="removeModelListeners" />
       <node concept="3Tm6S6" id="6qi2OtU3u1V" role="1B3o_S" />
       <node concept="3cqZAl" id="6qi2OtU3u1W" role="3clF45" />
       <node concept="3clFbS" id="6qi2OtU3u1X" role="3clF47">
@@ -2329,16 +2310,11 @@
             <ref role="3cqZAo" node="6qi2OtU3ueS" resolve="myListenedModels" />
           </node>
           <node concept="3clFbS" id="6qi2OtU3u22" role="2LFqv$">
-            <node concept="3clFbF" id="6qi2OtU3u23" role="3cqZAp">
-              <node concept="2OqwBi" id="6qi2OtU3u24" role="3clFbG">
-                <node concept="37vLTw" id="3e8vJfj5nK9" role="2Oq$k0">
+            <node concept="3clFbF" id="7MOQyvfVTa_" role="3cqZAp">
+              <node concept="1rXfSq" id="7MOQyvfVTaz" role="3clFbG">
+                <ref role="37wK5l" node="7MOQyvfVuyI" resolve="removeModelListeners" />
+                <node concept="37vLTw" id="7MOQyvfVTrT" role="37wK5m">
                   <ref role="3cqZAo" node="6qi2OtU3u1Z" resolve="modelDescriptor" />
-                </node>
-                <node concept="liA8E" id="6qi2OtU3u26" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.removeChangeListener(org.jetbrains.mps.openapi.model.SNodeChangeListener):void" resolve="removeChangeListener" />
-                  <node concept="37vLTw" id="2BHiRxeuu5j" role="37wK5m">
-                    <ref role="3cqZAo" node="6qi2OtU3ueI" resolve="myModelListener" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -2354,6 +2330,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7MOQyvfU1Qk" role="jymVt" />
     <node concept="3clFb_" id="6qi2OtU3u2c" role="jymVt">
       <property role="TrG5h" value="addDependency" />
       <node concept="3cqZAl" id="6qi2OtU3u2d" role="3clF45" />
@@ -2660,6 +2637,7 @@
         <node concept="3Tqbb2" id="1QnJaNXybW7" role="2hN53Y" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7MOQyvfTu8o" role="jymVt" />
     <node concept="3clFb_" id="1QnJaNXB5ZG" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDependenciesToInvalidate" />
@@ -2669,6 +2647,12 @@
         <property role="TrG5h" value="model" />
         <node concept="3uibUv" id="1QnJaNXBh2m" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7MOQyvfTA$g" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <node concept="3uibUv" id="7MOQyvfTHbI" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="3clFbS" id="1QnJaNXB5ZJ" role="3clF47">
@@ -2711,9 +2695,8 @@
                     <node concept="37vLTw" id="3GwZr6spokZ" role="37wK5m">
                       <ref role="3cqZAo" node="1QnJaNXBCh7" resolve="dependency" />
                     </node>
-                    <node concept="2YIFZM" id="3GwZr6sm$cC" role="37wK5m">
-                      <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                      <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                    <node concept="37vLTw" id="7MOQyvfTJ2I" role="37wK5m">
+                      <ref role="3cqZAo" node="7MOQyvfTA$g" resolve="repo" />
                     </node>
                   </node>
                 </node>
@@ -2748,7 +2731,6 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm6S6" id="1QnJaNXAW6z" role="1B3o_S" />
       <node concept="2hMVRd" id="1QnJaNXE9DV" role="3clF45">
         <node concept="3Tqbb2" id="1QnJaNXE9DW" role="2hN53Y" />
       </node>
@@ -2772,6 +2754,11 @@
         </node>
         <node concept="3clFbJ" id="6qi2OtU3u5w" role="3cqZAp">
           <node concept="3clFbS" id="6qi2OtU3u5x" role="3clFbx">
+            <node concept="3SKdUt" id="7MOQyvfUvKY" role="3cqZAp">
+              <node concept="3SKdUq" id="7MOQyvfUvL0" role="3SKWNk">
+                <property role="3SKdUp" value="XX why access to myListenedModels is not synchronized?" />
+              </node>
+            </node>
             <node concept="3clFbF" id="6qi2OtU3u5y" role="3cqZAp">
               <node concept="2OqwBi" id="6qi2OtU3u5z" role="3clFbG">
                 <node concept="37vLTw" id="3e8vJfj5nWz" role="2Oq$k0">
@@ -2780,7 +2767,20 @@
                 <node concept="liA8E" id="6qi2OtU3u5_" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.addChangeListener(org.jetbrains.mps.openapi.model.SNodeChangeListener):void" resolve="addChangeListener" />
                   <node concept="37vLTw" id="2BHiRxeuknW" role="37wK5m">
-                    <ref role="3cqZAo" node="6qi2OtU3ueI" resolve="myModelListener" />
+                    <ref role="3cqZAo" node="6qi2OtU3ueI" resolve="myChangeListener" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7MOQyvfUuw4" role="3cqZAp">
+              <node concept="2OqwBi" id="7MOQyvfUuZe" role="3clFbG">
+                <node concept="37vLTw" id="7MOQyvfUuw2" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6qi2OtU3u5L" resolve="modelDescriptor" />
+                </node>
+                <node concept="liA8E" id="7MOQyvfUvc5" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.addModelListener(org.jetbrains.mps.openapi.model.SModelListener):void" resolve="addModelListener" />
+                  <node concept="37vLTw" id="7MOQyvfUvhQ" role="37wK5m">
+                    <ref role="3cqZAo" node="6qi2OtU3ueN" resolve="myUnloadListener" />
                   </node>
                 </node>
               </node>
@@ -2815,6 +2815,50 @@
       <node concept="37vLTG" id="6qi2OtU3u5L" role="3clF46">
         <property role="TrG5h" value="modelDescriptor" />
         <node concept="3uibUv" id="6qi2OtU3u5M" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7MOQyvfXsER" role="jymVt" />
+    <node concept="3clFb_" id="7MOQyvfVuyI" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="removeModelListeners" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7MOQyvfVuyL" role="3clF47">
+        <node concept="3clFbF" id="7MOQyvfVSN$" role="3cqZAp">
+          <node concept="2OqwBi" id="7MOQyvfVSN_" role="3clFbG">
+            <node concept="37vLTw" id="7MOQyvfVSNA" role="2Oq$k0">
+              <ref role="3cqZAo" node="7MOQyvfVJEB" resolve="m" />
+            </node>
+            <node concept="liA8E" id="7MOQyvfVSNB" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModel.removeChangeListener(org.jetbrains.mps.openapi.model.SNodeChangeListener):void" resolve="removeChangeListener" />
+              <node concept="37vLTw" id="7MOQyvfVSNC" role="37wK5m">
+                <ref role="3cqZAo" node="6qi2OtU3ueI" resolve="myChangeListener" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7MOQyvfVSND" role="3cqZAp">
+          <node concept="2OqwBi" id="7MOQyvfVSNE" role="3clFbG">
+            <node concept="37vLTw" id="7MOQyvfVSNF" role="2Oq$k0">
+              <ref role="3cqZAo" node="7MOQyvfVJEB" resolve="m" />
+            </node>
+            <node concept="liA8E" id="7MOQyvfVSNG" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModel.removeModelListener(org.jetbrains.mps.openapi.model.SModelListener):void" resolve="removeModelListener" />
+              <node concept="37vLTw" id="7MOQyvfVSNH" role="37wK5m">
+                <ref role="3cqZAo" node="6qi2OtU3ueN" resolve="myUnloadListener" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="7MOQyvfVlV_" role="1B3o_S" />
+      <node concept="3cqZAl" id="7MOQyvfVmeX" role="3clF45" />
+      <node concept="37vLTG" id="7MOQyvfVJEB" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <node concept="3uibUv" id="7MOQyvfVJEA" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
         </node>
       </node>
@@ -3169,6 +3213,7 @@
         <node concept="3Tqbb2" id="6qi2OtU3u9Q" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7MOQyvfW5No" role="jymVt" />
     <node concept="3clFb_" id="6qi2OtU3u6L" role="jymVt">
       <property role="TrG5h" value="check" />
       <node concept="P$JXv" id="3HjgqlBzXvC" role="lGtFl">
@@ -3545,7 +3590,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1tg7vfsACwm" role="jymVt" />
     <node concept="2tJIrI" id="1tg7vfsAFL7" role="jymVt" />
     <node concept="3clFb_" id="5$E3$wJM3aG" role="jymVt">
       <property role="TrG5h" value="checkNode" />
@@ -3847,7 +3891,7 @@
         </node>
         <node concept="3clFbF" id="6qi2OtU3ubY" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz8TC" role="3clFbG">
-            <ref role="37wK5l" node="6qi2OtU3u1U" resolve="removeModelListener" />
+            <ref role="37wK5l" node="6qi2OtU3u1U" resolve="removeModelListeners" />
           </node>
         </node>
       </node>
@@ -4356,7 +4400,7 @@
     </node>
     <node concept="2tJIrI" id="3e8vJfj70Wq" role="jymVt" />
     <node concept="312cEu" id="6qi2OtU3u0n" role="jymVt">
-      <property role="TrG5h" value="MyModelListener" />
+      <property role="TrG5h" value="MyModelChangeListener" />
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="6qi2OtU3u0o" role="1B3o_S" />
       <node concept="3uibUv" id="3e8vJfj4MDy" role="1zkMxy">
@@ -4508,30 +4552,35 @@
     </node>
     <node concept="2tJIrI" id="3e8vJfj79ri" role="jymVt" />
     <node concept="312cEu" id="6qi2OtU3u1k" role="jymVt">
-      <property role="TrG5h" value="MyModelRepositoryListener" />
+      <property role="TrG5h" value="MyModelUnloadListener" />
       <property role="2bfB8j" value="true" />
-      <node concept="3Tm1VV" id="6qi2OtU3u1l" role="1B3o_S" />
-      <node concept="3uibUv" id="6qi2OtU3u1q" role="1zkMxy">
-        <ref role="3uigEE" to="w1kc:~SModelRepositoryAdapter" resolve="SModelRepositoryAdapter" />
-      </node>
-      <node concept="3clFb_" id="6qi2OtU3u1r" role="jymVt">
-        <property role="TrG5h" value="modelRemoved" />
-        <node concept="3Tm1VV" id="6qi2OtU3u1s" role="1B3o_S" />
-        <node concept="3cqZAl" id="6qi2OtU3u1t" role="3clF45" />
-        <node concept="37vLTG" id="6qi2OtU3u1u" role="3clF46">
+      <node concept="3clFb_" id="7MOQyvfTi4r" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="modelDetached" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="7MOQyvfTi4s" role="1B3o_S" />
+        <node concept="3cqZAl" id="7MOQyvfTi4u" role="3clF45" />
+        <node concept="37vLTG" id="7MOQyvfTi4v" role="3clF46">
           <property role="TrG5h" value="model" />
-          <node concept="3uibUv" id="6qi2OtU3u1v" role="1tU5fm">
+          <node concept="3uibUv" id="7MOQyvfTi4w" role="1tU5fm">
             <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
           </node>
         </node>
-        <node concept="3clFbS" id="6qi2OtU3u1w" role="3clF47">
+        <node concept="37vLTG" id="7MOQyvfTi4x" role="3clF46">
+          <property role="TrG5h" value="repository" />
+          <node concept="3uibUv" id="7MOQyvfTi4y" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="7MOQyvfTi4z" role="3clF47">
           <node concept="3clFbJ" id="1QnJaNXELTq" role="3cqZAp">
             <node concept="3y3z36" id="3e8vJfj6UOB" role="3clFbw">
               <node concept="37vLTw" id="6se4BTTGBx$" role="3uHU7B">
                 <ref role="3cqZAo" node="6se4BTTGkph" resolve="myModel" />
               </node>
               <node concept="37vLTw" id="3e8vJfj6Wcs" role="3uHU7w">
-                <ref role="3cqZAo" node="6qi2OtU3u1u" resolve="model" />
+                <ref role="3cqZAo" node="7MOQyvfTi4v" resolve="model" />
               </node>
             </node>
             <node concept="3clFbS" id="1QnJaNXELT_" role="3clFbx">
@@ -4553,9 +4602,20 @@
                 <node concept="1rXfSq" id="1QnJaNXEMAi" role="1DdaDG">
                   <ref role="37wK5l" node="1QnJaNXB5ZG" resolve="getDependenciesToInvalidate" />
                   <node concept="37vLTw" id="3e8vJfj6Wj8" role="37wK5m">
-                    <ref role="3cqZAo" node="6qi2OtU3u1u" resolve="model" />
+                    <ref role="3cqZAo" node="7MOQyvfTi4v" resolve="model" />
+                  </node>
+                  <node concept="37vLTw" id="7MOQyvfTJ_i" role="37wK5m">
+                    <ref role="3cqZAo" node="7MOQyvfTi4x" resolve="repository" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7MOQyvfVW7p" role="3cqZAp">
+            <node concept="1rXfSq" id="7MOQyvfVW7n" role="3clFbG">
+              <ref role="37wK5l" node="7MOQyvfVuyI" resolve="removeModelListeners" />
+              <node concept="37vLTw" id="7MOQyvfVXSG" role="37wK5m">
+                <ref role="3cqZAo" node="7MOQyvfTi4v" resolve="model" />
               </node>
             </node>
           </node>
@@ -4566,15 +4626,19 @@
               </node>
               <node concept="3dhRuq" id="2UMCgvoqpbR" role="2OqNvi">
                 <node concept="37vLTw" id="1QnJaNXAzXm" role="25WWJ7">
-                  <ref role="3cqZAo" node="6qi2OtU3u1u" resolve="model" />
+                  <ref role="3cqZAo" node="7MOQyvfTi4v" resolve="model" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="2AHcQZ" id="3tYsUK_sR62" role="2AJF6D">
+        <node concept="2AHcQZ" id="7MOQyvfTi4$" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
+      </node>
+      <node concept="3Tm6S6" id="7MOQyvfTa2c" role="1B3o_S" />
+      <node concept="3uibUv" id="7MOQyvfTbLi" role="1zkMxy">
+        <ref role="3uigEE" to="mhbf:~SModelListenerBase" resolve="SModelListenerBase" />
       </node>
     </node>
   </node>
