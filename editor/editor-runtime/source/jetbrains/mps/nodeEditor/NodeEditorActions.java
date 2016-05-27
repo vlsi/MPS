@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
@@ -77,10 +76,13 @@ public class NodeEditorActions {
       SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       EditorCell cell = findTarget(selectionManager);
       selectionManager.setSelection(cell);
-      if (APICellAdapter.isPunctuationLayout(cell) && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
-        ((EditorCell_Label) cell).setCaretPosition(1);
-      } else {
+      if (cell == null) {
+        return;
+      }
+      if (myHome) {
         cell.home();
+      } else {
+        cell.end();
       }
     }
 
@@ -385,6 +387,9 @@ public class NodeEditorActions {
     @Override
     public void execute(EditorContext context) {
       EditorCell selection = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent()).getSelectedCell();
+      if (selection == null) {
+        return;
+      }
       context.getEditorComponent().changeSelection(CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE));
     }
   }
@@ -399,6 +404,9 @@ public class NodeEditorActions {
     @Override
     public void execute(EditorContext context) {
       EditorCell selection = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent()).getSelectedCell();
+      if (selection == null) {
+        return;
+      }
       context.getEditorComponent().changeSelection(CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE));
     }
   }
@@ -406,6 +414,9 @@ public class NodeEditorActions {
   private static void navigatePage(EditorContext context, boolean isDown) {
     jetbrains.mps.nodeEditor.EditorComponent editor = (jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent();
     EditorCell selection = editor.getSelectedCell();
+    if (selection == null) {
+      return;
+    }
     Rectangle rect = editor.getVisibleRect();
     int height = (int) rect.getHeight();
     height = isDown ? height : -height;
