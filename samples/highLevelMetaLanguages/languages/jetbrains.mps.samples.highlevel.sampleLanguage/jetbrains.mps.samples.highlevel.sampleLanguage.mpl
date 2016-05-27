@@ -48,6 +48,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">baa9238b-36da-4ccb-a76b-8ad70e222183(jetbrains.mps.samples.highlevel.simpleStructure)</dependency>
+  </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
@@ -71,6 +74,8 @@
     <language slang="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" version="3" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="0" />
+    <language slang="l:c457c5de-6027-4104-ab9c-a31c5404ae8b:jetbrains.mps.samples.highlevel.simpleEditor" version="0" />
+    <language slang="l:baa9238b-36da-4ccb-a76b-8ad70e222183:jetbrains.mps.samples.highlevel.simpleStructure" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
@@ -81,6 +86,7 @@
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="99aa3e0f-a162-4dc1-bcff-2def4d654205(jetbrains.mps.samples.highlevel.sampleLanguage)" version="0" />
+    <module reference="baa9238b-36da-4ccb-a76b-8ad70e222183(jetbrains.mps.samples.highlevel.simpleStructure)" version="0" />
   </dependencyVersions>
   <extendedLanguages />
 </language>
