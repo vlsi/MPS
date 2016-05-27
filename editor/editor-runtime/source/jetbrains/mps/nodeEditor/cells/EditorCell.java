@@ -137,12 +137,28 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell getFirstChild();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getEndCell(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getHomeCell(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLeafToLeft(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLeafToRight(Condition<EditorCell> condition);
 
   /**
@@ -159,8 +175,18 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   boolean isBelow(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLeftToRight(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isLeftToRight(this, cell)
+   */
+  @Deprecated
   boolean isToLeft(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLeftToRight(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isLeftToRight(cell, this)
+   */
+  @Deprecated
   boolean isToRight(EditorCell cell);
 
   /**

@@ -46,7 +46,19 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveLocal extends NavigationAction {
+  abstract static class HorizontalNavigationAction extends NavigationAction {
+    public EditorCell getNextAlignedLeaf(EditorCell cell) {
+      return CellTraversalUtil.getNextLeaf(cell,
+          c -> c.isSelectable() && !GeometryUtil.isAbove(cell, c) && !GeometryUtil.isAbove(c, cell) && GeometryUtil.isLeftToRight(cell, c));
+    }
+
+    public EditorCell getPrevAlignedLeaf(EditorCell cell) {
+      return CellTraversalUtil.getPrevLeaf(cell,
+          c -> c.isSelectable() && !GeometryUtil.isAbove(cell, c) && !GeometryUtil.isAbove(c, cell) && GeometryUtil.isLeftToRight(c, cell));
+    }
+  }
+
+  public static class MoveLocal extends HorizontalNavigationAction {
     private boolean myHome;
 
     public MoveLocal(boolean home) {
@@ -77,9 +89,7 @@ public class NodeEditorActions {
       }
       List<EditorCell> selectedCells = selection.getSelectedCells();
       EditorCell cell = myHome ? selectedCells.get(0) : selectedCells.get(selectedCells.size() - 1);
-      EditorCell leaf = myHome ? ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLeafToLeft(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE) :
-          ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLeafToRight(
-              jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE);
+      EditorCell leaf = myHome ? getPrevAlignedLeaf(cell) : getNextAlignedLeaf(cell);
       if (leaf != null) {
         return leaf;
       }
@@ -87,7 +97,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveLeft extends NavigationAction {
+  public static class MoveLeft extends HorizontalNavigationAction {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
@@ -116,7 +126,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell toLeft = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLeafToLeft(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE);
+      EditorCell toLeft = getPrevAlignedLeaf(cell);
       if (toLeft != null) {
         return toLeft;
       }
@@ -160,10 +170,10 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveHome extends NavigationAction {
+  public static class MoveHome extends HorizontalNavigationAction {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
-      return findTarget(((EditorComponent) context.getEditorComponent())) != null;
+      return findTarget(context.getEditorComponent()) != null;
     }
 
     @Override
@@ -177,19 +187,21 @@ public class NodeEditorActions {
       editorComponent.changeSelection(target);
     }
 
-    private EditorCell findTarget(EditorComponent editorComponent) {
+    private EditorCell findTarget(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
       Selection selection = editorComponent.getSelectionManager().getSelection();
       if (selection == null) {
         return null;
       }
       List<EditorCell> selectedCells = selection.getSelectedCells();
       EditorCell cell = selectedCells.get(0);
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getHomeCell(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE);
+      while (getPrevAlignedLeaf(cell) != null) {
+        cell = getPrevAlignedLeaf(cell);
+      }
+      return cell;
     }
-
   }
 
-  public static class MoveEnd extends NavigationAction {
+  public static class MoveEnd extends HorizontalNavigationAction {
 
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
@@ -214,11 +226,15 @@ public class NodeEditorActions {
       }
       List<EditorCell> selectedCells = selection.getSelectedCells();
       EditorCell cell = selectedCells.get(selectedCells.size() - 1);
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getEndCell(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE);
+
+      while (getNextAlignedLeaf(cell) != null) {
+        cell = getNextAlignedLeaf(cell);
+      }
+      return cell;
     }
   }
 
-  public static class MoveRight extends NavigationAction {
+  public static class MoveRight extends HorizontalNavigationAction {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
@@ -228,12 +244,10 @@ public class NodeEditorActions {
     @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
-      EditorCell_Label target = findTarget(selection);
+      EditorCell target = findTarget(selection);
       context.getEditorComponent().changeSelection(target);
-      if (target.isPunctuationLayout() && target.isCaretPositionAllowed(1)) {
-        target.setCaretPosition(1);
-      } else if (target instanceof EditorCell_Label) {
-        EditorCell_Label label = target;
+      if (target instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) target;
         label.home();
       }
     }
@@ -248,13 +262,12 @@ public class NodeEditorActions {
       return null;
     }
 
-    private EditorCell_Label findTarget(EditorCell cell) {
-      EditorCell toRight = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLeafToRight(jetbrains.mps.nodeEditor.cells.CellConditions.SELECTABLE);
-      if (toRight instanceof EditorCell_Label) {
-        return (EditorCell_Label) toRight;
+    private EditorCell findTarget(EditorCell cell) {
+      EditorCell toRight = getNextAlignedLeaf(cell);
+      if (toRight != null) {
+        return toRight;
       }
-      EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell, CellConditions.SELECTABLE);
-      return nextLeaf instanceof EditorCell_Label ? (EditorCell_Label) nextLeaf : null;
+      return CellTraversalUtil.getNextLeaf(cell, CellConditions.SELECTABLE);
     }
   }
 

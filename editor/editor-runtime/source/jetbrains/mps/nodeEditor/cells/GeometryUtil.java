@@ -42,6 +42,10 @@ public class GeometryUtil {
     return below.getY() + below.getHeight() <= above.getY();
   }
 
+  public static boolean isLeftToRight(EditorCell left, EditorCell right) {
+    return left.getX() + left.getWidth() <= right.getX();
+  }
+
   public static int getHorizontalDistance(EditorCell cell, int x_point) {
     if (cell.getX() + cell.getLeftGap() <= x_point && x_point <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
       return 0;

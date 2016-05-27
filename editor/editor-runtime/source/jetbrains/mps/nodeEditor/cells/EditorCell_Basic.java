@@ -978,7 +978,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   @Override
   public boolean isToLeft(EditorCell cell) {
-    return getX() + getWidth() <= cell.getX();
+    return GeometryUtil.isLeftToRight(this, cell);
   }
 
   @Override
@@ -1046,6 +1046,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return bestMatch;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getEndCell(Condition<EditorCell> condition) {
     EditorCell current = this;
@@ -1055,6 +1059,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return current.getLastLeaf(condition);
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getHomeCell(Condition<EditorCell> condition) {
     EditorCell current = this;
