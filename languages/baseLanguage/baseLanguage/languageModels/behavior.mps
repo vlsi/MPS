@@ -56026,25 +56026,53 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="7udAD8tO8DO" role="3cqZAp" />
+              <node concept="3clFbH" id="5YOW3iaVPrI" role="3cqZAp" />
               <node concept="3cpWs8" id="V1bUHEllXW" role="3cqZAp">
                 <node concept="3cpWsn" id="V1bUHEllXZ" role="3cpWs9">
                   <property role="TrG5h" value="resolveResult" />
-                  <node concept="1LlUBW" id="3EWPnx29gV" role="1tU5fm">
-                    <node concept="3Tqbb2" id="3EWPnx29gY" role="1Lm7xW">
-                      <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+                  <node concept="2YIFZM" id="5YOW3iaVyuc" role="33vP2m">
+                    <ref role="37wK5l" to="fnmy:2Jvt1sWfvLb" resolve="chooseByParameterType" />
+                    <ref role="1Pybhc" to="fnmy:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
+                    <node concept="2OqwBi" id="5YOW3iaWuyj" role="37wK5m">
+                      <node concept="2OqwBi" id="5YOW3iaVQw0" role="2Oq$k0">
+                        <node concept="37vLTw" id="5YOW3iaVyud" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7o4ozN$lF4d" resolve="x" />
+                        </node>
+                        <node concept="2qgKlT" id="5YOW3iaVRCB" role="2OqNvi">
+                          <ref role="37wK5l" node="50EF2fWdwEN" resolve="getAvailableMethodDeclarations" />
+                          <node concept="Xl_RD" id="5YOW3iaVSu3" role="37wK5m">
+                            <property role="Xl_RC" value="" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="ANE8D" id="5YOW3iaWvW9" role="2OqNvi" />
                     </node>
-                    <node concept="10P_77" id="3EWPnx29h0" role="1Lm7xW" />
+                    <node concept="2OqwBi" id="5YOW3iaWkB0" role="37wK5m">
+                      <node concept="37vLTw" id="5YOW3iaWkB1" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7o4ozN$lF4d" resolve="x" />
+                      </node>
+                      <node concept="3Tsc0h" id="5YOW3iaWkB2" role="2OqNvi">
+                        <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                      </node>
+                    </node>
+                    <node concept="2YIFZM" id="5YOW3iaW2mJ" role="37wK5m">
+                      <ref role="37wK5l" to="fnmy:2mgvSCZlDlp" resolve="getTypesByTypeVars" />
+                      <ref role="1Pybhc" to="fnmy:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
+                      <node concept="37vLTw" id="5YOW3iaW3kQ" role="37wK5m">
+                        <ref role="3cqZAo" node="4Z5nYjzSyY5" resolve="typ" />
+                      </node>
+                      <node concept="2OqwBi" id="5YOW3iaWyTj" role="37wK5m">
+                        <node concept="37vLTw" id="5YOW3iaWyo$" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4Z5nYjzSyY5" resolve="typ" />
+                        </node>
+                        <node concept="3Tsc0h" id="5YOW3iaWCcU" role="2OqNvi">
+                          <ref role="3TtcxE" to="tpee:g96eVAe" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node concept="2YIFZM" id="6mBdlj32BQR" role="33vP2m">
-                    <ref role="37wK5l" to="5h2r:6mBdlj31AFU" resolve="resolveMethod" />
-                    <ref role="1Pybhc" to="5h2r:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
-                    <node concept="37vLTw" id="6mBdlj32CwL" role="37wK5m">
-                      <ref role="3cqZAo" node="7o4ozN$lF4d" resolve="x" />
-                    </node>
-                    <node concept="Xl_RD" id="6mBdlj32DQL" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                    </node>
+                  <node concept="3Tqbb2" id="5YOW3iaWnUP" role="1tU5fm">
+                    <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                   </node>
                 </node>
               </node>
@@ -56056,13 +56084,8 @@
                     <node concept="1PxgMI" id="5$E8SuYV$W9" role="3K4GZi">
                       <property role="1BlNFB" value="true" />
                       <ref role="1m5ApE" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-                      <node concept="1LFfDK" id="5$E8SuYVzez" role="1m5AlR">
-                        <node concept="3cmrfG" id="5$E8SuYVzTO" role="1LF_Uc">
-                          <property role="3cmrfH" value="0" />
-                        </node>
-                        <node concept="37vLTw" id="5$E8SuYVyiO" role="1LFl5Q">
-                          <ref role="3cqZAo" node="V1bUHEllXZ" resolve="resolveResult" />
-                        </node>
+                      <node concept="37vLTw" id="5YOW3iaWxiv" role="1m5AlR">
+                        <ref role="3cqZAo" node="V1bUHEllXZ" resolve="resolveResult" />
                       </node>
                     </node>
                     <node concept="3clFbC" id="5$E8SuYVw8P" role="3K4Cdx">
