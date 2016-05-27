@@ -201,7 +201,14 @@ public class NodeEditorActions {
       while (getPrevAlignedLeaf(cell) != null) {
         cell = getPrevAlignedLeaf(cell);
       }
-      return cell;
+      if (cell != selectedCells.get(0)) {
+        // another cell was found to the left from the current selection
+        return cell;
+      } else {
+        // there is no cells to the left from selected one.
+        // selecting first cell (important if currently selected cell is collection)
+        return CellTraversalUtil.getFirstLeaf(cell);
+      }
     }
   }
 
@@ -234,7 +241,14 @@ public class NodeEditorActions {
       while (getNextAlignedLeaf(cell) != null) {
         cell = getNextAlignedLeaf(cell);
       }
-      return cell;
+      if (cell != selectedCells.get(0)) {
+        // another cell was found to the right from the current selection
+        return cell;
+      } else {
+        // there is no cells to the right from selected one.
+        // selecting last cell (important if currently selected cell is collection)
+        return CellTraversalUtil.getLastLeaf(cell);
+      }
     }
   }
 
