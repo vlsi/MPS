@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -29,14 +28,15 @@ import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.event.SModelChildEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
-import jetbrains.mps.smodel.SModelAdapter;
+import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class LanguageErrorsComponent {
@@ -88,7 +88,7 @@ public class LanguageErrorsComponent {
   }
   private void removeModelListener() {
     for (SModel modelDescriptor : myListenedModels) {
-      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
+      modelDescriptor.removeChangeListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
@@ -152,7 +152,7 @@ public class LanguageErrorsComponent {
       return;
     }
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
+      modelDescriptor.addChangeListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }
@@ -303,19 +303,20 @@ public class LanguageErrorsComponent {
     removeModelListener();
   }
 
-  private void processEvent(SModelChildEvent event) {
+  /*package*/ void processEvent(SNodeAddEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
-    if (event.isRemoved()) {
-      SetSequence.fromSet(myDependenciesToInvalidate).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
-    }
-    if (event.isAdded()) {
-      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
-    }
+    SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
   }
-  private void processEvent(SModelReferenceEvent event) {
-    SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getReference().getSourceNode());
+  /*package*/ void processEvent(SNodeRemoveEvent event) {
+    if (!(event.isRoot())) {
+      SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
+    }
+    SetSequence.fromSet(myDependenciesToInvalidate).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
   }
-  private void processEvent(SModelPropertyEvent event) {
+  /*package*/ void processEvent(SReferenceChangeEvent event) {
+    SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getNode());
+  }
+  /*package*/ void processEvent(SPropertyChangeEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getNode());
   }
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
@@ -352,41 +353,40 @@ public class LanguageErrorsComponent {
     }
     return (Result) result[0];
   }
-  public class MyModelListener extends SModelAdapter {
+
+  public class MyModelListener extends SNodeChangeListenerAdapter {
     @Override
-    public void beforeModelDisposed(SModel model) {
-      if (myModel == model) {
+    public void referenceChanged(@NotNull SReferenceChangeEvent event) {
+      processEvent(event);
+    }
+    @Override
+    public void nodeAdded(@NotNull SNodeAddEvent event) {
+      if (event.isRoot()) {
         return;
       }
-      for (SNode dependencyToInvalidate : getDependenciesToInvalidate(model)) {
-        invalidateDependency(dependencyToInvalidate);
-      }
-    }
-    @Override
-    public void referenceRemoved(SModelReferenceEvent event) {
       processEvent(event);
     }
     @Override
-    public void referenceAdded(SModelReferenceEvent event) {
+    public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+      // XXX old listener ignored root change events (listened to childAdded/childRemoved only). 
+      // While I can understand why not rootAdded, I don't why rootRemoved was ignored - imo, the root may appear in dependencies and we shall invalidate it here. 
       processEvent(event);
     }
     @Override
-    public void childRemoved(SModelChildEvent event) {
-      processEvent(event);
-    }
-    @Override
-    public void childAdded(SModelChildEvent event) {
-      processEvent(event);
-    }
-    @Override
-    public void propertyChanged(SModelPropertyEvent event) {
+    public void propertyChanged(@NotNull SPropertyChangeEvent event) {
       processEvent(event);
     }
   }
+
   public class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void modelRemoved(SModel descriptor) {
-      SetSequence.fromSet(myListenedModels).removeElement(descriptor);
+    public void modelRemoved(SModel model) {
+      if (myModel != model) {
+        for (SNode dependencyToInvalidate : getDependenciesToInvalidate(model)) {
+          invalidateDependency(dependencyToInvalidate);
+        }
+      }
+      SetSequence.fromSet(myListenedModels).removeElement(model);
     }
   }
 }
