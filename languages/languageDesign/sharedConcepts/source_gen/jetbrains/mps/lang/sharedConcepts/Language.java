@@ -11,7 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
+import jetbrains.mps.lang.sharedConcepts.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.sharedConcepts.typesystem.TypesystemDescriptor;
@@ -47,7 +47,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor();
     }
     if (aspectClass == EditorAspectDescriptor.class) {
-      return ((T) new EditorAspectDescriptorBase());
+      return (T) new EditorAspectDescriptorImpl();
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.sharedConcepts.structure.StructureAspectDescriptor();
