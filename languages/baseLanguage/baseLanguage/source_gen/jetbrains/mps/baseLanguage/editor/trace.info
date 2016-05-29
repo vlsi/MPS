@@ -16234,108 +16234,82 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/1140734681122">
     <file name="BinaryOperation_RightArgument_Actions.java">
-      <node id="1140734681122" at="19,95,20,142" concept="5" />
-      <node id="1140734681122" at="20,142,21,148" concept="5" />
-      <node id="1140734681122" at="24,0,25,0" concept="6" trace="myNode" />
-      <node id="1140734681122" at="25,69,26,25" concept="5" />
-      <node id="1140734681122" at="28,40,29,58" concept="12" />
-      <node id="1140734681122" at="31,54,32,56" concept="5" />
-      <node id="7350591771769012520" at="35,430,36,378" concept="5" />
-      <node id="7350591771769026303" at="36,378,37,15" concept="12" />
-      <node id="1217776233773" at="38,7,39,190" concept="11" />
-      <node id="1217776233779" at="39,190,40,63" concept="5" />
-      <node id="1217776233784" at="40,63,41,34" concept="5" />
-      <node id="1217776233788" at="41,34,42,66" concept="11" />
-      <node id="1217776233794" at="42,66,43,60" concept="11" />
-      <node id="1217777211346" at="44,25,45,120" concept="11" />
-      <node id="1217776233801" at="45,120,46,41" concept="5" />
-      <node id="1217777213247" at="47,51,48,46" concept="5" />
-      <node id="1140734681122" at="54,0,55,0" concept="6" trace="myNode" />
-      <node id="1140734681122" at="55,72,56,25" concept="5" />
-      <node id="1140734681122" at="58,40,59,58" concept="12" />
-      <node id="1140734681122" at="61,54,62,56" concept="5" />
-      <node id="7350591771769012520" at="65,430,66,378" concept="5" />
-      <node id="7350591771769026303" at="66,378,67,15" concept="12" />
-      <node id="1217776233773" at="68,7,69,190" concept="11" />
-      <node id="1217776233779" at="69,190,70,63" concept="5" />
-      <node id="1217776233784" at="70,63,71,34" concept="5" />
-      <node id="1217776233788" at="71,34,72,66" concept="11" />
-      <node id="1217776233794" at="72,66,73,60" concept="11" />
-      <node id="1217777211346" at="74,25,75,120" concept="11" />
-      <node id="1217776233801" at="75,120,76,41" concept="5" />
-      <node id="1217777213247" at="77,51,78,46" concept="5" />
-      <node id="1140734681122" at="25,0,28,0" concept="3" trace="BinaryOperation_RightArgument_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1140734681122" at="28,0,31,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
-      <node id="1140734681122" at="31,0,34,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="1217777213245" at="46,41,49,9" concept="9" />
-      <node id="1140734681122" at="55,0,58,0" concept="3" trace="BinaryOperation_RightArgument_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1140734681122" at="58,0,61,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
-      <node id="1140734681122" at="61,0,64,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="1217777213245" at="76,41,79,9" concept="9" />
-      <node id="1140734681122" at="19,0,23,0" concept="15" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="7350591771769003631" at="34,75,38,7" concept="9" />
-      <node id="7350591771769003631" at="64,75,68,7" concept="9" />
-      <node id="1235063319472" at="43,60,50,7" concept="9" />
-      <node id="1235063319472" at="73,60,80,7" concept="9" />
-      <node id="1140734681122" at="34,0,52,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1140734681122" at="64,0,82,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1140734681122" at="25,69,26,25" />
-      <scope id="1140734681122" at="28,40,29,58" />
-      <scope id="1140734681122" at="31,54,32,56" />
-      <scope id="1217777213246" at="47,51,48,46" />
-      <scope id="1140734681122" at="55,72,56,25" />
-      <scope id="1140734681122" at="58,40,59,58" />
-      <scope id="1140734681122" at="61,54,62,56" />
-      <scope id="1217777213246" at="77,51,78,46" />
-      <scope id="1140734681122" at="19,95,21,148" />
-      <scope id="7350591771769003634" at="35,430,37,15" />
-      <scope id="7350591771769003634" at="65,430,67,15" />
-      <scope id="1140734681122" at="25,0,28,0">
+      <node id="1140734681122" at="18,95,19,142" concept="5" />
+      <node id="1140734681122" at="19,142,20,148" concept="5" />
+      <node id="1140734681122" at="23,0,24,0" concept="6" trace="myNode" />
+      <node id="1140734681122" at="24,69,25,25" concept="5" />
+      <node id="1140734681122" at="27,40,28,58" concept="12" />
+      <node id="1140734681122" at="30,54,31,56" concept="5" />
+      <node id="7350591771769012520" at="34,430,35,378" concept="5" />
+      <node id="7350591771769026303" at="35,378,36,15" concept="12" />
+      <node id="1217776233773" at="37,7,38,190" concept="11" />
+      <node id="1217776233779" at="38,190,39,63" concept="5" />
+      <node id="5408468910908720521" at="39,63,40,109" concept="5" />
+      <node id="1140734681122" at="44,0,45,0" concept="6" trace="myNode" />
+      <node id="1140734681122" at="45,72,46,25" concept="5" />
+      <node id="1140734681122" at="48,40,49,58" concept="12" />
+      <node id="1140734681122" at="51,54,52,56" concept="5" />
+      <node id="7350591771769012520" at="55,430,56,378" concept="5" />
+      <node id="7350591771769026303" at="56,378,57,15" concept="12" />
+      <node id="1217776233773" at="58,7,59,190" concept="11" />
+      <node id="1217776233779" at="59,190,60,63" concept="5" />
+      <node id="5408468910908720521" at="60,63,61,109" concept="5" />
+      <node id="1140734681122" at="24,0,27,0" concept="3" trace="BinaryOperation_RightArgument_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1140734681122" at="27,0,30,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="1140734681122" at="30,0,33,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1140734681122" at="45,0,48,0" concept="3" trace="BinaryOperation_RightArgument_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1140734681122" at="48,0,51,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="1140734681122" at="51,0,54,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1140734681122" at="18,0,22,0" concept="15" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="7350591771769003631" at="33,75,37,7" concept="9" />
+      <node id="7350591771769003631" at="54,75,58,7" concept="9" />
+      <node id="1140734681122" at="33,0,42,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1140734681122" at="54,0,63,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1140734681122" at="24,69,25,25" />
+      <scope id="1140734681122" at="27,40,28,58" />
+      <scope id="1140734681122" at="30,54,31,56" />
+      <scope id="1140734681122" at="45,72,46,25" />
+      <scope id="1140734681122" at="48,40,49,58" />
+      <scope id="1140734681122" at="51,54,52,56" />
+      <scope id="1140734681122" at="18,95,20,148" />
+      <scope id="7350591771769003634" at="34,430,36,15" />
+      <scope id="7350591771769003634" at="55,430,57,15" />
+      <scope id="1140734681122" at="24,0,27,0">
         <var name="node" id="1140734681122" />
       </scope>
-      <scope id="1140734681122" at="28,0,31,0" />
-      <scope id="1140734681122" at="31,0,34,0">
+      <scope id="1140734681122" at="27,0,30,0" />
+      <scope id="1140734681122" at="30,0,33,0">
         <var name="editorContext" id="1140734681122" />
       </scope>
-      <scope id="1140734681122" at="55,0,58,0">
+      <scope id="1140734681122" at="45,0,48,0">
         <var name="node" id="1140734681122" />
       </scope>
-      <scope id="1140734681122" at="58,0,61,0" />
-      <scope id="1140734681122" at="61,0,64,0">
+      <scope id="1140734681122" at="48,0,51,0" />
+      <scope id="1140734681122" at="51,0,54,0">
         <var name="editorContext" id="1140734681122" />
       </scope>
-      <scope id="1140734681122" at="19,0,23,0">
+      <scope id="1140734681122" at="18,0,22,0">
         <var name="context" id="1140734681122" />
         <var name="editorCell" id="1140734681122" />
         <var name="node" id="1140734681122" />
       </scope>
-      <scope id="1235063319474" at="44,25,49,9">
-        <var name="lastLeaf" id="1217777211347" />
-      </scope>
-      <scope id="1235063319474" at="74,25,79,9">
-        <var name="lastLeaf" id="1217777211347" />
-      </scope>
-      <scope id="1140734681129" at="34,75,50,7">
-        <var name="cell" id="1217776233795" />
-        <var name="editor" id="1217776233789" />
+      <scope id="1140734681129" at="33,75,40,109">
         <var name="leftExpression" id="1217776233774" />
       </scope>
-      <scope id="1140734681129" at="64,75,80,7">
-        <var name="cell" id="1217776233795" />
-        <var name="editor" id="1217776233789" />
+      <scope id="1140734681129" at="54,75,61,109">
         <var name="leftExpression" id="1217776233774" />
       </scope>
-      <scope id="1140734681122" at="34,0,52,0">
+      <scope id="1140734681122" at="33,0,42,0">
         <var name="editorContext" id="1140734681122" />
         <var name="node" id="1140734681122" />
       </scope>
-      <scope id="1140734681122" at="64,0,82,0">
+      <scope id="1140734681122" at="54,0,63,0">
         <var name="editorContext" id="1140734681122" />
         <var name="node" id="1140734681122" />
       </scope>
-      <unit id="1140734681122" at="23,0,53,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions$BinaryOperation_RightArgument_Actions_DELETE" />
-      <unit id="1140734681122" at="53,0,83,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions$BinaryOperation_RightArgument_Actions_BACKSPACE" />
-      <unit id="1140734681122" at="18,0,84,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions" />
+      <unit id="1140734681122" at="22,0,43,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions$BinaryOperation_RightArgument_Actions_DELETE" />
+      <unit id="1140734681122" at="43,0,64,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions$BinaryOperation_RightArgument_Actions_BACKSPACE" />
+      <unit id="1140734681122" at="17,0,65,0" name="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/1140748024390">

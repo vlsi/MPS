@@ -1172,6 +1172,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     });
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getLastLeaf(final Condition<EditorCell> condition) {
     EditorCell lastLeaf = getLastLeaf();
