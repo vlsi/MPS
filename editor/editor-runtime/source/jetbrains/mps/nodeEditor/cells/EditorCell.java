@@ -122,37 +122,37 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell getNextSibling();
 
   /**
-   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getNextSibling()}
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getPrevSibling()}
    */
   @Deprecated
   EditorCell getPrevSibling();
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */
   @Deprecated
   EditorCell getNextLeaf();
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, Condition)}
    */
   @Deprecated
   EditorCell getNextLeaf(Condition<EditorCell> condition);
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */
   @Deprecated
   EditorCell getPrevLeaf();
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, Condition)}
    */
   @Deprecated
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */
   @Deprecated
   EditorCell getFirstLeaf();
@@ -164,7 +164,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell getFirstLeaf(Condition<EditorCell> condition);
 
   /**
-   * @deprecated since MPS 3.4 not used
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getLastLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */
   @Deprecated
   EditorCell getLastLeaf();
