@@ -151,6 +151,7 @@ public class CellTraversalUtil {
     return null;
   }
 
+  @NotNull
   public static EditorCell getFirstLeaf(@NotNull EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       return ((EditorCell_Collection) cell).isEmpty() ? cell : getFirstLeaf(((EditorCell_Collection) cell).firstCell());
@@ -159,6 +160,7 @@ public class CellTraversalUtil {
     }
   }
 
+  @NotNull
   public static EditorCell getLastLeaf(@NotNull EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       return ((EditorCell_Collection) cell).isEmpty() ? cell : getLastLeaf(((EditorCell_Collection) cell).lastCell());

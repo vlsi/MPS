@@ -119,6 +119,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getFirstLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getFirstLeaf(Condition<EditorCell> condition);
 
   EditorCell getLastLeaf();

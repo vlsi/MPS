@@ -639,14 +639,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     getEditor().clearSelectionStack();
-    EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
-    if (editorCellToSelect != null) {
-      getEditor().changeSelection(editorCellToSelect);
-      editorCellToSelect.home();
-    } else {
-      getEditor().changeSelection(this);
-      home();
+    for (EditorCell nextCell : new CellTreeIterable(this, CellTraversalUtil.getFirstLeaf(this), true)) {
+      if (nextCell.isSelectable()) {
+        getEditor().changeSelection(nextCell);
+        nextCell.home();
+        return;
+      }
     }
+
+    getEditor().changeSelection(this);
+    home();
   }
 
   /**

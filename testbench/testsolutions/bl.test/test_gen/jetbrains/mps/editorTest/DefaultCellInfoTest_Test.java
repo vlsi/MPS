@@ -8,9 +8,9 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
+import java.util.Set;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class DefaultCellInfoTest_Test extends BaseTransformationTest {
@@ -26,12 +26,10 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("5560058483159205760", "5560058483159208304");
       EditorComponent inspector = myProject.getComponent(InspectorTool.class).getInspector();
-      EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
-        @Override
-        public boolean met(EditorCell c) {
-          return c instanceof EditorCell_Error;
-        }
-      });
+      Set<EditorCell> errorCells = inspector.getCellTracker().getErrorCells();
+      Assert.assertTrue(!(errorCells.isEmpty()));
+
+      EditorCell editorCell = errorCells.iterator().next();
       inspector.getSelectionManager().setSelection(editorCell);
       invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }

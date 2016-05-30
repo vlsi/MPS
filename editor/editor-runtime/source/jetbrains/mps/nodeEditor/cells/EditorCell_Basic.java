@@ -1072,6 +1072,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return current.getFirstLeaf();
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
     return getPrevLeaf(new Condition<EditorCell>() {
@@ -1158,6 +1162,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return this;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getFirstLeaf(final Condition<EditorCell> condition) {
     EditorCell firstLeaf = getFirstLeaf();
