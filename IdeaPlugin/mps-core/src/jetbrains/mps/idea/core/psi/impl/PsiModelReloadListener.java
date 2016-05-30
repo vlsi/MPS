@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListener;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Created by danilla on 12/23/14.
@@ -78,6 +79,14 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
   @Override
   public void problemsDetected(SModel sModel, Iterable<Problem> iterable) {
   }
+
+  @Override
+  public void modelAttached(SModel model, SRepository repository) {
+  }
+
+  public void modelDetached(SModel model, SRepository repository) {
+  }
+
 
   // module listener
 

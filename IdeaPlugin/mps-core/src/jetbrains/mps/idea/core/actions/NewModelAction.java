@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
-import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.model.SModelListenerBase;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -91,31 +91,12 @@ public class NewModelAction extends NewModelActionBase {
             template.preConfigure(model);
 
             //Hack for update ProjectView
-            model.addModelListener(new SModelListener() {
-              @Override
-              public void modelLoaded(SModel sModel, boolean b) {
-              }
-
-              @Override
-              public void modelReplaced(SModel sModel) {
-              }
-
-              @Override
-              public void modelUnloaded(SModel sModel) {
-              }
+            model.addModelListener(new SModelListenerBase() {
 
               @Override
               public void modelSaved(SModel sModel) {
                 ProjectView.getInstance(myProject).refresh();
                 sModel.removeModelListener(this); //need to refresh once
-              }
-
-              @Override
-              public void conflictDetected(SModel sModel) {
-              }
-
-              @Override
-              public void problemsDetected(SModel sModel, Iterable<Problem> problems) {
               }
             });
 
