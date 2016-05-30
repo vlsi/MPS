@@ -20,8 +20,8 @@ public class Scopes {
   public static Scope forConcepts(SNode contextNode, SAbstractConcept metaConcept) {
     return new FullyQualifiedNamedElementsScope(Concepts.getAvailableConcepts(contextNode, metaConcept));
   }
-  public static Scope forLanguageConcepts(SModel model, SAbstractConcept metaConcept) {
-    return new FullyQualifiedNamedElementsScope(Concepts.getAvailableLanguageConcepts(model, metaConcept));
+  public static Scope forLanguageConcepts(SNode contextNode, SAbstractConcept metaConcept) {
+    return new FullyQualifiedNamedElementsScope(Concepts.getAvailableLanguageConcepts(contextNode, metaConcept));
   }
   public static Scope forConceptDeclarationExtends(final SNode conceptNode, SNode contextNode) {
     if (conceptNode == null) {

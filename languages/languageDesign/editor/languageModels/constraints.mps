@@ -1694,7 +1694,7 @@
             <node concept="2YIFZM" id="50vK5YaseYq" role="3clFbG">
               <ref role="37wK5l" to="tpcg:50vK5Yas08Z" resolve="forLanguageConcepts" />
               <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
-              <node concept="1Q6Npb" id="50vK5Yasf03" role="37wK5m" />
+              <node concept="2rP1CM" id="5SJcws9kQRw" role="37wK5m" />
               <node concept="35c_gC" id="50vK5Yasf35" role="37wK5m">
                 <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
               </node>
