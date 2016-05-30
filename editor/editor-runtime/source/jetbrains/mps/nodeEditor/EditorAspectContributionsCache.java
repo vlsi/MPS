@@ -20,15 +20,12 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.IdentityHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -76,7 +73,7 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
    * @return a non-null, possibly empty, collection of contributions in an unspecified order.
    */
   @NotNull
-  public Collection<ContributionT> getInLanguages(KeyT key, Set<String> languageNamespaces) {
+  Collection<ContributionT> getInLanguages(KeyT key, Set<String> languageNamespaces) {
     return filterKeysAndConcatValues(getOrCompute(key), languageNamespaces);
   }
 
@@ -84,50 +81,28 @@ abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
     Map<String, Collection<ContributionT>> values = myCache.get(key);
 
     if (values == null) {
-      values = computeValuesByLanguageNamespaces(key);
+      values = computeValues(key);
       myCache.put(key, values);
     }
     return values;
   }
 
   private static <T> Collection<T> concatValues(Map<?, Collection<T>> map) {
-    List<T> result = new ArrayList<>();
-
-    for (Entry<?, Collection<T>> entry : map.entrySet()) {
-      result.addAll(entry.getValue());
-    }
-
-    return result;
+    return map.entrySet().stream().flatMap(e -> e.getValue().stream()).collect(Collectors.toList());
   }
 
   private static <K, T> Collection<T> filterKeysAndConcatValues(Map<K, Collection<T>> map, Collection<K> wantedKeys) {
-    List<T> result = new ArrayList<>();
-
-    for (Entry<K, Collection<T>> entry : map.entrySet()) {
-      if (wantedKeys.contains(entry.getKey())) {
-        result.addAll(entry.getValue());
-      }
-    }
-
-    return result;
+    return map.entrySet().stream()
+        .filter(entry -> wantedKeys.contains(entry.getKey()))
+        .flatMap(entry -> entry.getValue().stream())
+        .collect(Collectors.toList());
   }
 
   public void clear() {
     myCache.clear();
   }
 
-  private Map<LanguageRuntime, Collection<ContributionT>> computeValues(KeyT key) {
-    Map<LanguageRuntime, Collection<ContributionT>> result = new IdentityHashMap<>();
-
-    putIfNotEmpty(result, myLanguageRuntime, getDeclaredContributions(myLanguageRuntime, key));
-    for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
-      putIfNotEmpty(result, extendingLanguage, getDeclaredContributions(extendingLanguage, key));
-    }
-
-    return result;
-  }
-
-  private Map<String, Collection<ContributionT>> computeValuesByLanguageNamespaces(KeyT key) {
+  private Map<String, Collection<ContributionT>> computeValues(KeyT key) {
     Map<String, Collection<ContributionT>> result = new HashMap<>();
 
     putIfNotEmpty(result, myLanguageRuntime.getNamespace(), getDeclaredContributions(myLanguageRuntime, key));

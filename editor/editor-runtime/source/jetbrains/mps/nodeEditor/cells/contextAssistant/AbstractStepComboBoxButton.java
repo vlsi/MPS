@@ -41,8 +41,6 @@ import java.awt.Dimension;
 import java.awt.Insets;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -54,12 +52,12 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
   private boolean myForcePressed = false;
   private JBPopup myPopup;
 
-  public AbstractStepComboBoxButton(String text) {
+  AbstractStepComboBoxButton(String text) {
     this();
     setText(text + " \u25be"); // BLACK DOWN-POINTING SMALL TRIANGLE (U+25BE)
   }
 
-  public AbstractStepComboBoxButton() {
+  private AbstractStepComboBoxButton() {
     setModel(new MyButtonModel());
     setHorizontalAlignment(LEFT);
     putClientProperty("styleCombo", Boolean.TRUE);
@@ -75,17 +73,9 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
     inputMap.put(KeyStroke.getKeyStroke("released DOWN"), "released");
 
     addActionListener(
-        new ActionListener() {
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            if (!myForcePressed) {
-              IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
-                @Override
-                public void run() {
-                  showPopup();
-                }
-              });
-            }
+        e -> {
+          if (!myForcePressed) {
+            IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(this::showPopup);
           }
         }
     );
@@ -146,20 +136,14 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
     myForcePressed = true;
     repaint();
 
-    return new Disposable() {
-      @Override
-      public void dispose() {
-        // give the button a chance to handle action listener
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            myForcePressed = false;
-            myPopup = null;
-          }
-        }, ModalityState.any());
-        repaint();
-        fireStateChanged();
-      }
+    return () -> {
+      // give the button a chance to handle action listener
+      ApplicationManager.getApplication().invokeLater(() -> {
+        myForcePressed = false;
+        myPopup = null;
+      }, ModalityState.any());
+      repaint();
+      fireStateChanged();
     };
   }
 
@@ -169,7 +153,7 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
     return myForcePressed ? null : super.getToolTipText();
   }
 
-  public void showPopup() {
+  private void showPopup() {
     myPopup = JBPopupFactory.getInstance().createListPopup(getStep());
     Disposer.register(myPopup, setForcePressed());
     myPopup.showUnderneathOf(this);
@@ -182,7 +166,7 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
     return new Dimension(super.getMinimumSize().width, getPreferredSize().height);
   }
 
-  protected class MyButtonModel extends DefaultButtonModel {
+  private class MyButtonModel extends DefaultButtonModel {
     @Override
     public boolean isPressed() {
       return myForcePressed || super.isPressed();

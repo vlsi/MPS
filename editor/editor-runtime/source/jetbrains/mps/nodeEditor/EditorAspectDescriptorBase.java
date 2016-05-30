@@ -44,7 +44,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
-    return clearCachesIfStaleThenGetFromCache(myEditorsCache, concept);
+    clearCachesIfStale();
+    return myEditorsCache.get(concept);
   }
 
   @NotNull
@@ -54,7 +55,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return clearCachesIfStaleThenGetFromCache(myEditorComponentsCache, new Pair<>(concept, editorComponentId));
+    clearCachesIfStale();
+    return myEditorComponentsCache.get(new Pair<>(concept, editorComponentId));
   }
 
   @NotNull
@@ -100,13 +102,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     myNamedTransformationMenusCache = new NamedTransformationMenusCache(languageRuntime);
   }
 
-  // TODO improve the name or improve the method
-  private <KeyT, ContributionT> Collection<ContributionT> clearCachesIfStaleThenGetFromCache(EditorAspectContributionsCache<KeyT, ContributionT> cache, KeyT key) {
-    clearCachesIfStale();
-    return cache.get(key);
-  }
-
-  protected void clearCachesIfStale() {
+  private void clearCachesIfStale() {
     ValidEditorDescriptorsCache cache = ValidEditorDescriptorsCache.getInstance();
 
     if (!cache.isDescriptorValid(this)) {

@@ -26,10 +26,10 @@ import java.awt.event.ActionEvent;
 /**
  * A menu item visitor that creates a top-level button for the visited menu item.
  */
-public class TopLevelButtonCreatingVisitor implements MenuItemVisitor<JButton> {
+class TopLevelButtonCreatingVisitor implements MenuItemVisitor<JButton> {
   private final ActionItemExecutor myActionItemExecutor;
 
-  public TopLevelButtonCreatingVisitor(ActionItemExecutor actionItemExecutor) {
+  TopLevelButtonCreatingVisitor(ActionItemExecutor actionItemExecutor) {
     myActionItemExecutor = actionItemExecutor;
   }
 

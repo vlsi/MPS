@@ -67,7 +67,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
         new CanExecuteFilter(modelAccess));
   }
 
-  public DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,
+  private DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,
       SelectionMenuProvider menuProvider) {
     mySelectionManager = selectionManager;
     myUpdater = updater;
