@@ -56,8 +56,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   */
+  @Deprecated
   EditorCell findCellWeak(int x, int y);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   */
+  @Deprecated
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   void synchronizeViewWithModel();
@@ -100,6 +108,11 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean isAncestorOf(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use code like:
+   * instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean isLeaf();
 
   /**
@@ -128,6 +141,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getPrevLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
   EditorCell getFirstLeaf();

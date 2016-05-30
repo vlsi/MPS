@@ -537,6 +537,11 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return GeometryUtil.findLeaf(this, x, y);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
+   * and check the condition upon returned cell
+   */
+  @Deprecated
   @Override
   public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight && condition.met(this)) {
@@ -545,11 +550,19 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   */
+  @Deprecated
   @Override
   public final EditorCell findCellWeak(int x, int y) {
     return findCellWeak(x, y, Condition.TRUE_CONDITION);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   */
+  @Deprecated
   @Override
   public EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition) {
     Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();

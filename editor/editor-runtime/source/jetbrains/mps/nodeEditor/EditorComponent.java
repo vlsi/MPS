@@ -81,7 +81,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -157,6 +156,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -1984,9 +1984,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(x, y);
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = GeometryUtil.findLeaf(myRootCell, x, y);
     if (cell == null) {
-      cell = myRootCell.findCellWeak(x, y);
+      cell = GeometryUtil.findNearestCell(myRootCell, x, y, Condition.TRUE_CONDITION);
     }
     return cell;
   }
@@ -2117,7 +2117,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
-      newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
+      newSelectedCell =
+          GeometryUtil.findNearestCell(myRootCell, mouseEvent.getX(), mouseEvent.getY(), jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
     }
 
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {

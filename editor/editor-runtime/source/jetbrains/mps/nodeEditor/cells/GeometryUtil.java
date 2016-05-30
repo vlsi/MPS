@@ -19,8 +19,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import org.jetbrains.mps.openapi.util.TreeIterator;
+import org.jetbrains.mps.util.Condition;
 
 import java.awt.Rectangle;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TODO: push up to openapi package
@@ -69,5 +72,32 @@ public class GeometryUtil {
       }
     }
     return null;
+  }
+
+  public static EditorCell findNearestCell(EditorCell cell, int x, int y, Condition<EditorCell> condition) {
+    List<EditorCell> candidates = new ArrayList<>();
+    for (EditorCell editorCell : new CellTreeIterable(cell, cell, true)) {
+      if (editorCell instanceof EditorCell_Collection || !condition.met(editorCell)) {
+        continue;
+      }
+      if (y >= editorCell.getY() && y <= editorCell.getY() + editorCell.getHeight()) {
+        candidates.add(editorCell);
+      }
+    }
+    EditorCell nearestCell = findNearestCell(candidates, x);
+    return nearestCell;
+  }
+
+  private static EditorCell findNearestCell(Iterable<EditorCell> candidates, int x) {
+    EditorCell best = null;
+    int bestDistance = Integer.MAX_VALUE;
+    for (EditorCell cell : candidates) {
+      int distance = getHorizontalDistance(cell, x);
+      if (distance < bestDistance) {
+        best = cell;
+        bestDistance = distance;
+      }
+    }
+    return best;
   }
 }
