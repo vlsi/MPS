@@ -20,10 +20,12 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,6 +60,28 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     }
 
     return MetaAdapterFactory.getConcept(superConcept, conceptDescriptor.getSuperConcept());
+  }
+
+  @Override
+  public boolean isRootable() {
+    //todo remove this code after 3.4, needed for compatibility
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      return false;
+    }
+
+    if (cd instanceof CompiledConceptDescriptor && ((CompiledConceptDescriptor) cd).getVersion() <= 0) {
+      SNode conceptDecl = getDeclarationNode();
+      if (conceptDecl == null) {
+        return false;
+      }
+      if (!conceptDecl.isInstanceOfConcept(SNodeUtil.concept_ConceptDeclaration)) {
+        return false;
+      }
+      return SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl);
+    } else {
+      return cd.isRootable();
+    }
   }
 
   @Override

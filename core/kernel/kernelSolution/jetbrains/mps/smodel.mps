@@ -1347,6 +1347,18 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
+    <node concept="Wx3nA" id="4JZCOBaqiKL" role="jymVt">
+      <property role="TrG5h" value="property_Concept_Rootable" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4JZCOBaqiKM" role="1B3o_S" />
+      <node concept="355D3s" id="4JZCOBaqiKN" role="33vP2m">
+        <ref role="355D3t" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        <ref role="355D3u" to="tpce:fX9Ktp8" resolve="rootable" />
+      </node>
+      <node concept="3uibUv" id="4JZCOBaqiKO" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="dqwjwH$T_7" role="jymVt">
       <property role="TrG5h" value="property_Property_Id" />
       <property role="3TUv4t" value="true" />
