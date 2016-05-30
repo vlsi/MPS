@@ -170,6 +170,7 @@ public interface EditorCell {
 
   EditorCell getRootParent();
 
+  // TODO: deprecate at the moment we have GeometryUtil published in ope-API package
   EditorCell findLeaf(int x, int y);
 
   boolean isSingleNodeCell();

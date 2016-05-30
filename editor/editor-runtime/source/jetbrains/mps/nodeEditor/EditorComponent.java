@@ -90,6 +90,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -155,7 +156,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.AbstractAction;
@@ -2111,7 +2111,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void processCoordSelection(MouseEvent mouseEvent) {
-    EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
+    jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell = GeometryUtil.findLeaf(myRootCell, mouseEvent.getX(), mouseEvent.getY());
     if (newSelectedCell != null && CellTraversalUtil.getFoldedParent(newSelectedCell) != null) {
       // mouse was pressed on a cell representing folded collection
       return;
@@ -2122,7 +2122,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {
       mySelectionManager.setSelection(newSelectedCell);
-      newSelectedCell.processMousePressed(mouseEvent);
+      ((EditorCell) newSelectedCell).processMousePressed(mouseEvent);
     }
   }
 

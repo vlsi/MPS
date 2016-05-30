@@ -533,8 +533,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public final EditorCell findLeaf(int x, int y) {
-    return findLeaf(x, y, Condition.TRUE_CONDITION);
+  public final jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
+    return GeometryUtil.findLeaf(this, x, y);
   }
 
   @Override
@@ -1086,6 +1086,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     });
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getLeafToRight(Condition<EditorCell> condition) {
     return getNextLeaf(new Condition<EditorCell>() {
@@ -1106,6 +1110,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myPrev != null && myPrev.getNext() != null ? (EditorCell) myPrev.getItem() : null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getNextLeaf() {
     if (getNextSibling() != null) {
@@ -1117,6 +1125,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getNextLeaf(Condition<EditorCell> condition) {
     EditorCell current = getNextLeaf();

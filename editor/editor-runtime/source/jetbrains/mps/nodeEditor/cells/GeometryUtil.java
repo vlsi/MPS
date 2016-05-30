@@ -16,10 +16,14 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
+import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.awt.Rectangle;
 
 /**
+ * TODO: push up to openapi package
  * User: shatalin
  * Date: 12/7/12
  */
@@ -51,5 +55,19 @@ public class GeometryUtil {
       return 0;
     }
     return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x_point), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x_point));
+  }
+
+  public static EditorCell findLeaf(EditorCell cell, int x, int y) {
+    for (TreeIterator<EditorCell> treeIterator = new CellTreeIterable(cell, cell, true).iterator(); treeIterator.hasNext(); ) {
+      EditorCell next = treeIterator.next();
+      if (next.getX() <= x && x < next.getX() + next.getWidth() && next.getY() <= y && y < next.getY() + next.getHeight()) {
+        if (!(next instanceof EditorCell_Collection)) {
+          return next;
+        }
+      } else {
+        treeIterator.skipChildren();
+      }
+    }
+    return null;
   }
 }

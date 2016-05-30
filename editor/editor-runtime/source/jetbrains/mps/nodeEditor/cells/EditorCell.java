@@ -49,6 +49,11 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
+   * and check the condition upon returned cell
+   */
+  @Deprecated
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
   EditorCell findCellWeak(int x, int y);
@@ -109,8 +114,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell getPrevSibling();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getNextLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getNextLeaf(Condition<EditorCell> condition);
 
   EditorCell getPrevLeaf();

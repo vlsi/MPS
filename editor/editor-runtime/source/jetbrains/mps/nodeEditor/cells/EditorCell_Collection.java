@@ -858,20 +858,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  @Override
-  public jetbrains.mps.nodeEditor.cells.EditorCell findLeaf(int x, int y, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
-    if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
-      for (EditorCell child : getVisibleChildCells()) {
-        jetbrains.mps.nodeEditor.cells.EditorCell result = ((jetbrains.mps.nodeEditor.cells.EditorCell) child).findLeaf(x, y, condition);
-        if (result != null) {
-          return result;
-        }
-      }
-    }
-
-    return null;
-  }
-
   /**
    * @deprecated since MPS 3.4 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
    */
