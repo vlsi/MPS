@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class ModelNodeData extends AbstractResultNodeData {
 
   @Override
   public Icon getIcon() {
-    SModel modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModel();
     if (modelDescriptor != null) {
       return IconManager.getIconFor(modelDescriptor);
     }
@@ -68,17 +68,6 @@ public class ModelNodeData extends AbstractResultNodeData {
   @Deprecated
   @ToRemove(version = 3.3)
   public SModel getModel() {
-    SModel modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) return null;
-    return modelDescriptor;
-  }
-
-  /**
-   * @deprecated use {@link #getModelReference()} ()} and resolve as appropriate
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 

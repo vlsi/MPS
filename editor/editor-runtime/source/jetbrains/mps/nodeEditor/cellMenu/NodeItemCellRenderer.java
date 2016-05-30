@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.icons.CachingIconManager;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
@@ -62,7 +62,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private int myOldStyle = Font.PLAIN;
   private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
-  private CachingIconManager myIconManager = new CachingIconManager();
   private static final int MY_MIN_CELL_HEIGHT_TO_ADD = 2;
   private final NodeSubstituteChooser mySubstituteChooser;
 
@@ -244,10 +243,14 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
         icon = myNodeIconMap.get(iconNode);
       }
       if (icon == null) {
-        icon = isConcept ? myIconManager.getConceptIcon(MetaAdapterByDeclaration.getConcept(iconNode)) : myIconManager.getNodeIcon(iconNode);
         if (isConcept) {
+          icon = MetaAdapterByDeclaration.getConcept(iconNode).getIcon();
+          if (icon==null){
+            icon = IdeIcons.DEFAULT_NODE_ICON;
+          }
           myConceptIconMap.put(iconNode, icon);
         } else {
+          icon = IconManager.getIconFor(iconNode);
           myNodeIconMap.put(iconNode, icon);
         }
       }

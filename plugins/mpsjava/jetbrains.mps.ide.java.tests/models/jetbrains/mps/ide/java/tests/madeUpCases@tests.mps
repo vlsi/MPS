@@ -1085,10 +1085,22 @@
                 <node concept="BaHAS" id="44G$aAkpZQg" role="HW$Y0">
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations" />
                   <property role="BaGAP" value="" />
+                  <node concept="2OqwBi" id="1nctWZV1Ean" role="up2gk">
+                    <node concept="1jxXqW" id="1nctWZV1E1O" role="2Oq$k0" />
+                    <node concept="liA8E" id="1nctWZV1F1k" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="BaHAS" id="44G$aAkq0qz" role="HW$Y0">
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations.user" />
                   <property role="BaGAP" value="" />
+                  <node concept="2OqwBi" id="1nctWZV1FrZ" role="up2gk">
+                    <node concept="1jxXqW" id="1nctWZV1Fs0" role="2Oq$k0" />
+                    <node concept="liA8E" id="1nctWZV1Fs1" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

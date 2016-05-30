@@ -208,6 +208,7 @@
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
     <fileEditorProvider implementation="jetbrains.mps.idea.core.editor.ModelFileToRootDispatchingEditorProvider"></fileEditorProvider>
+    <gotoClassContributor implementation="jetbrains.mps.idea.core.navigation.MPSIdeaGotoClassContributor"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

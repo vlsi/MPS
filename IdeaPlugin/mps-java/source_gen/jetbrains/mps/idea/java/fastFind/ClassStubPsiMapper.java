@@ -4,11 +4,12 @@ package jetbrains.mps.idea.java.fastFind;
 
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.psi.PsiClass;
@@ -21,12 +22,12 @@ import com.intellij.psi.search.GlobalSearchScope;
 
 public class ClassStubPsiMapper implements MPS2PsiMapper {
   public boolean hasCorrespondingPsi(SModel model) {
-    ModelAccess.instance().checkReadAccess();
     return model instanceof JavaClassStubModelDescriptor;
   }
 
   public PsiElement getPsiElement(SNode nodeParam, Project project) {
-    ModelAccess.instance().checkReadAccess();
+    SRepository repository = ProjectHelper.getProjectRepository(project);
+    assert repository.getModelAccess().canRead();
 
     SNode node = nodeParam;
     if (!(hasCorrespondingPsi(SNodeOperations.getModel(node)))) {

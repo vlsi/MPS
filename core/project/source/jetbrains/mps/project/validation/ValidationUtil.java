@@ -67,6 +67,7 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Processor;
@@ -248,12 +249,27 @@ public class ValidationUtil {
 
 
     SModule module = model.getModule();
+    final SearchScope moduleScope = (module instanceof AbstractModule) ? ((AbstractModule) module).getScope() : null;
     final SModelReference modelToValidateRef = model.getReference();
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
-      if (module.resolveInDependencies(reference.getModelId()) == null) {
-        String msg = "Can't find model: " + reference.getName();
+      if (reference.resolve(repository) == null) {
+        final SModuleReference depModule = reference.getModuleReference();
+        final String msg;
+        if (depModule != null && depModule.resolve(repository) == null) {
+          msg = String.format("Can't find imported model %s due to missing module %s", reference.getName(), depModule.getModuleName());
+        } else {
+          msg = String.format("Can't find imported model: %s", reference.getName());
+        }
         if (!processor.process(new MissingModelError(model, msg, reference))) {
           return;
+        }
+      } else {
+        if (moduleScope != null && moduleScope.resolve(reference) == null) {
+          String msg = String.format("Imported model %s is not visible in module's scope",reference.getName());
+          // FIXME could have dedicated problem kind with quick fix to add module import
+          if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) {
+            return;
+          }
         }
       }
       if (reference.equals(modelToValidateRef)) {
@@ -403,14 +419,17 @@ public class ValidationUtil {
       MappingConfig_AbstractRef left = mpr.getLeft();
       MappingConfig_AbstractRef right = mpr.getRight();
       if (left == null || right == null) {
-        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Broken priority rule: %s", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Broken priority rule: %s", s)));
         continue;
       }
       if (left.isIncomplete()) {
-        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Left-hand side of rule %s is incomplete", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Left-hand side of rule %s is incomplete", s)));
       }
       if (right.isIncomplete()) {
-        goOn &= processor.process(new ValidationProblem(Severity.ERROR, String.format("Right-hand side of rule %s is incomplete", mpr.toString())));
+        final String s = mpr.asString(generator.getRepository());
+        goOn &= processor.process(new ValidationProblem(Severity.ERROR, String.format("Right-hand side of rule %s is incomplete", s)));
       }
     }
     return true;

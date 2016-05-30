@@ -204,7 +204,7 @@ public class Switch_returnLanguageAspectDescriptor extends TemplateSwitchBase im
                           {
                             final SNode tnode17 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
                             try {
-                              environment.nodeCopied(context14, tnode17, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/3804006705095854461");
+                              environment.nodeCopied(context14, tnode17, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6786698169276856742");
                               environment.resolveInTemplateLater(tnode17, "typeVariableDeclaration", templateNode_d4dvgd_c0a1a1a3a1a2a1a2a1a0b0c0b0d0c0c7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373512", "T", context14);
                             } finally {
                             }
@@ -1927,7 +1927,7 @@ public class Switch_returnLanguageAspectDescriptor extends TemplateSwitchBase im
   private static SNodePointer templateNode_d4dvgd_c0a1a1a2a1a2a1a1a2a1a3a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4644225720241363019");
   private static SNodePointer propertyMacro_d4dvgd_c0a0c0b0b0d0b0c0b0b0c0b0d0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742315554123");
   private static SNodePointer ifMacroRef_d4dvgd_b0a0b0c0b0d0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3804006705095767852");
-  private static SNodePointer templateNode_d4dvgd_c0a1a1a3a1a2a1a2a1a0b0c0b0d0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3804006705095854461");
+  private static SNodePointer templateNode_d4dvgd_c0a1a1a3a1a2a1a2a1a0b0c0b0d0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "6786698169276856742");
   private static SNodePointer templateNode_d4dvgd_c0a1a1a3a1a2a2a2i = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5664333325054614805");
   private static SNodePointer templateNode_d4dvgd_c0a1a1a2a1a2a1a2a1a3a2a2i = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5664333325054614809");
   private static SNodePointer propertyMacro_d4dvgd_c0a0c0b0b0d0b0c0b0c0b0d0c0c8 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5664333325054614812");

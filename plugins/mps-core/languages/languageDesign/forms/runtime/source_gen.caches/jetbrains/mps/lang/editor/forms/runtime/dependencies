@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" file="SaveSelectionForCheckbox.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -19,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
   </dependency>
 </dependenciesRoot>
 

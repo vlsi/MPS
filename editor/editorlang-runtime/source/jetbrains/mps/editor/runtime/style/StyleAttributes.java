@@ -41,11 +41,18 @@ import java.util.Set;
  */
 public class StyleAttributes {
 
-  private static StyleAttributes ourInstance = new StyleAttributes();
+  private static StyleAttributes ourInstance;
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(StyleAttributes.class));
 
   private StyleAttributes() {
+    if (LanguageRegistry.getInstance() == null) {
+      // For testing purposes
+      // TODO: modify this code. Introduce ILanguageAspect.dispose() method, unregister
+      // TODO: StyleAttributes from EditorAspectDescriptor.dispose()
+      // TODO: similar code present in ValidEditorDescriptorsCache
+      return;
+    }
     LanguageRegistry.getInstance().addRegistryListener(new LanguageRegistryListener() {
       @Override
       public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
@@ -135,8 +142,11 @@ public class StyleAttributes {
 
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color", null, true);
   public static final StyleAttribute<Color> BRACKETS_COLOR = new InheritableStyleAttribute<Color>("bracket-color", Color.BLACK, true);
-  public static final StyleAttribute<Color> TEXT_COLOR = new InheritableStyleAttribute<Color>("text-color", StyleRegistry.getInstance() != null ? StyleRegistry.getInstance().getEditorForeground() : Color.BLACK, true);
-  public static final StyleAttribute<Color> NULL_TEXT_COLOR = new InheritableStyleAttribute<Color>("null-text-color", StyleRegistry.getInstance() != null ? StyleRegistry.getInstance().getColor("DEFAULT_NULL_TEXT_COLOR") : Color.GRAY, true);
+  public static final StyleAttribute<Color> TEXT_COLOR =
+      new InheritableStyleAttribute<Color>("text-color", StyleRegistry.getInstance() != null ? StyleRegistry.getInstance().getEditorForeground() : Color.BLACK,
+          true);
+  public static final StyleAttribute<Color> NULL_TEXT_COLOR = new InheritableStyleAttribute<Color>("null-text-color",
+      StyleRegistry.getInstance() != null ? StyleRegistry.getInstance().getColor("DEFAULT_NULL_TEXT_COLOR") : Color.GRAY, true);
   public static final StyleAttribute<Color> TEXT_BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("text-background-color", null, true);
   public static final StyleAttribute<Color> NULL_TEXT_BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("null-text-color", null, true);
   public static final StyleAttribute<Color> SELECTED_TEXT_BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("selected-text-background-color", null, true);
@@ -151,11 +161,13 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> STRIKE_OUT = new SimpleStyleAttribute<Boolean>("deprecated", false, true);
 
   public static final StyleAttribute<Boolean> BASE_LINE_CELL = new SimpleStyleAttribute<Boolean>("baseLineCell", false, true);
-  public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE = new SimpleStyleAttribute<DefaultBaseLine>("default-baseline", DefaultBaseLine.FIRST, true);
+  public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE =
+      new SimpleStyleAttribute<DefaultBaseLine>("default-baseline", DefaultBaseLine.FIRST, true);
 
   public static final StyleAttribute<Boolean> CONTROL_OVERED_REFERENCE = new SimpleStyleAttribute<Boolean>("control-overed-reference", false, true);
 
-  public static final StyleAttribute<String> RT_ANCHOR_TAG = new SimpleStyleAttribute<String>("rt-anchor-tag", SideTransformTagUtils.getDefaultSideTransformTag(), true);
+  public static final StyleAttribute<String> RT_ANCHOR_TAG =
+      new SimpleStyleAttribute<String>("rt-anchor-tag", SideTransformTagUtils.getDefaultSideTransformTag(), true);
   public static final StyleAttribute<String> LAYOUT_CONSTRAINT = new SimpleStyleAttribute<String>("layout-constraint", null, true);
   public static final StyleAttribute<FocusPolicy> FOCUS_POLICY = new SimpleStyleAttribute<FocusPolicy>("focus-policy", FocusPolicy.NONE, true);
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITION = new SimpleStyleAttribute<CaretPosition>("default-caret-position", null, true);
@@ -190,14 +202,17 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_WRAP_ANCHOR = new SimpleStyleAttribute<Boolean>("indent-layout-wrap-anchor", false, true);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-new-line", false, true);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_ON_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-on-new-line", false, true);
-  public static final StyleAttribute<Boolean> INDENT_LAYOUT_CHILDREN_NEWLINE = new SimpleStyleAttribute<Boolean>("indent-layout-children-new-line", false, true);
+  public static final StyleAttribute<Boolean> INDENT_LAYOUT_CHILDREN_NEWLINE =
+      new SimpleStyleAttribute<Boolean>("indent-layout-children-new-line", false, true);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NO_WRAP = new SimpleStyleAttribute<Boolean>("indent-layout-no-wrap", false, true);
 
-  public static final StyleAttribute<ParametersInformation> PARAMETERS_INFORMATION = new SimpleStyleAttribute<ParametersInformation>("parameters-information", null, true);
+  public static final StyleAttribute<ParametersInformation> PARAMETERS_INFORMATION =
+      new SimpleStyleAttribute<ParametersInformation>("parameters-information", null, true);
 
   public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL, true);
   public static final StyleAttribute<Integer> ORIGINAL_FONT_SIZE = new SimpleStyleAttribute<Integer>("original-font-size", null, true);
-  public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION, true);
+  public static final StyleAttribute<TableComponent> TABLE_COMPONENT =
+      new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION, true);
 
   public static final StyleAttribute<SNode> NAVIGATABLE_NODE = new SimpleStyleAttribute<SNode>("navigatable-node", null, true);
 

@@ -187,7 +187,6 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -197,10 +196,8 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelsEventsCollector" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
@@ -213,6 +210,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.EventConsumingMapping" file="EventConsumingMapping.java">

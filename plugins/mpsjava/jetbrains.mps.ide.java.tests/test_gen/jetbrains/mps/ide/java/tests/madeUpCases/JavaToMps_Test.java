@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelRepository;
 
 @MPSLaunch
 public class JavaToMps_Test extends BaseTransformationTest {
@@ -101,7 +100,7 @@ public class JavaToMps_Test extends BaseTransformationTest {
       addNodeById("4795297196607520929");
       addNodeById("1218582063869484737");
       addNodeById("8083368042256419833");
-      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDirAnnotations", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.annotations"), SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.annotations.user")));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDirAnnotations", ListSequence.fromListAndArray(new ArrayList<SModel>(), new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.ide.java.testMaterial.annotations"), new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.ide.java.testMaterial.annotations.user")));
     }
     public void test_ClassNesting() throws Exception {
       addNodeById("4795297196607520929");

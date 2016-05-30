@@ -204,7 +204,7 @@ public class QueriesGenerated {
       }
     });
     if (Sequence.fromIterable(conceptSource).count() != 1) {
-      _context.showErrorMessage(null, "There are " + Sequence.fromIterable(conceptSource).count() + " concepts from source model that could potentially be a source of concept " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ". There should be exactly one");
+      _context.showErrorMessage(null, "There are " + Sequence.fromIterable(conceptSource).count() + " concepts from source model that could potentially be a source of concept " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ". There should be exactly one. If this concept is generated, set source node in generator template for it.");
     }
     return Sequence.fromIterable(conceptSource).first();
   }

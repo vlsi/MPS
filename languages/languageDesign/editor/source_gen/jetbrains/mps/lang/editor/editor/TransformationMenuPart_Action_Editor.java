@@ -43,7 +43,6 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_zg23bd_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zg23bd_b0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_zg23bd_c0(editorContext, node));
-    editorCell.setInitiallyCollapsed(true);
     return editorCell;
   }
   private EditorCell createComponent_zg23bd_a0(EditorContext editorContext, SNode node) {

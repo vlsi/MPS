@@ -34,7 +34,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens__BehaviorDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Queue;
@@ -329,7 +330,10 @@ public class ClassifierResolveUtils {
         }
       }));
 
-      ListSequence.fromList(javaImportedThings).addElement(SModelRepository.getInstance().getModelDescriptor("java.lang@java_stub"));
+      SModel javaLangModel = moduleScope.resolve(new JavaPackageNameStub("java.lang").asModelReference(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")));
+      if (javaLangModel != null) {
+        ListSequence.fromList(javaImportedThings).addElement(javaLangModel);
+      }
 
       for (SNode imp : ListSequence.fromList(SLinkOperations.getChildren(javaImports, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, 0x64c0181e6020a7L, "entries"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

@@ -26,16 +26,18 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class DataNode implements IExternalizeable {
   private static final Logger LOG = LogManager.getLogger(DataNode.class);
@@ -60,85 +62,36 @@ public class DataNode implements IExternalizeable {
     return myData;
   }
 
-  public List<DataNode> getDescendantsWithCondition(Condition<BaseNodeData> c) {
-    List<DataNode> result = new ArrayList<DataNode>();
-    if (c.met(myData)) result.add(this);
-    for (DataNode child : getChildren()) {
-      result.addAll(child.getDescendantsWithCondition(c));
-    }
-    return result;
-  }
-
-  public List<DataNode> getDescendantsByDataClass(final Class dataClass) {
-    return getDescendantsWithCondition(new Condition<BaseNodeData>() {
-      @Override
-      public boolean met(BaseNodeData data) {
-        return dataClass.isInstance(data);
-      }
-    });
-  }
-
   public boolean containsNodes(Class dataClass) {
-    return !getDescendantsByDataClass(dataClass).isEmpty();
+    return getNodeDataStream().anyMatch(dataClass::isInstance);
   }
 
   //-------DATA QUERY--------
 
-  public Set<SModel> getIncludedModels() {
-    Set<SModel> models = new LinkedHashSet<SModel>();
-    if (myData instanceof ModelNodeData) {
-      if (!myData.isInvalid() && !myData.isExcluded()) {
-        models.add(((ModelNodeData) myData).getModelDescriptor());
-      }
-    }
-    for (DataNode child : myChildren) {
-      models.addAll(child.getIncludedModels());
-    }
-    return models;
+  // flatten elements associated with the node and its children, recursively.
+  /*package*/ Stream<BaseNodeData> getNodeDataStream() {
+    return Stream.concat(Stream.of(myData), myChildren.stream().flatMap(DataNode::getNodeDataStream));
   }
 
-  public Set<SModel> getAllModels() {
-    List<DataNode> modelNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
-      @Override
-      public boolean met(BaseNodeData nodeData) {
-        return nodeData instanceof ModelNodeData;
-      }
-    });
+  private static Set<SModel> resolve(Stream<SModelReference> models, SRepository repo) {
+    return new HashSet<>(Arrays.asList(models.map(modelReference -> modelReference.resolve(repo)).filter(m -> m != null).toArray(SModel[]::new)));
+  }
 
-    Set<SModel> result = new LinkedHashSet<SModel>();
-    for (DataNode node : modelNodes) {
-      SModel model = ((ModelNodeData) node.getData()).getModel();
-      if (model != null) result.add(model);
-    }
-    return result;
+  public Set<SModel> getIncludedModels(SRepository repo) {
+    return resolve(getNodeDataStream().filter(nd -> nd instanceof ModelNodeData && !nd.isInvalid() && !nd.isExcluded()).map(
+        nd -> ((ModelNodeData) nd).getModelReference()), repo);
+  }
+
+  public Set<SModel> getAllModels(SRepository repo) {
+    return resolve(getNodeDataStream().filter(nd -> nd instanceof ModelNodeData).map(nd -> ((ModelNodeData) nd).getModelReference()), repo);
   }
 
   public List<SNodeReference> getIncludedResultNodes() {
-    List<SNodeReference> nodes = new ArrayList<SNodeReference>();
-    if (myData instanceof NodeNodeData) {
-      if (!myData.isInvalid() && !myData.isExcluded() && myData.isResultNode()) {
-        nodes.add(((NodeNodeData) myData).getNodePointer());
-      }
-    }
-    for (DataNode child : myChildren) {
-      nodes.addAll(child.getIncludedResultNodes());
-    }
-    return nodes;
+    return Arrays.asList(getNodeDataStream().filter(nd -> nd instanceof NodeNodeData && !nd.isInvalid() && !nd.isExcluded() && nd.isResultNode()).map(nd -> ((NodeNodeData) nd).getNodePointer()).toArray(SNodeReference[]::new));
   }
 
   public List<SNodeReference> getAllResultNodes() {
-    List<DataNode> nodeNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
-      @Override
-      public boolean met(BaseNodeData nodeData) {
-        return nodeData instanceof NodeNodeData && nodeData.isResultNode();
-      }
-    });
-    List<SNodeReference> result = new ArrayList<SNodeReference>();
-    for (DataNode node : nodeNodes) {
-      SNode n = ((NodeNodeData) node.getData()).getNode();
-      if (n != null) result.add(new jetbrains.mps.smodel.SNodePointer(n));
-    }
-    return result;
+    return Arrays.asList(getNodeDataStream().filter(nd -> nd instanceof NodeNodeData && nd.isResultNode()).map(nd -> ((NodeNodeData) nd).getNodePointer()).toArray(SNodeReference[]::new));
   }
 
   //-------CHILD MANIPULATION--------

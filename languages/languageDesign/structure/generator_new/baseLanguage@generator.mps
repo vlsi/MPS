@@ -3901,7 +3901,7 @@
                             <node concept="2k5nB$" id="4mSE8vfPhLP" role="2OqNvi">
                               <node concept="3cpWs3" id="4mSE8vfPxQ0" role="2k5Stb">
                                 <node concept="Xl_RD" id="4mSE8vfPxQg" role="3uHU7w">
-                                  <property role="Xl_RC" value=". There should be exactly one" />
+                                  <property role="Xl_RC" value=". There should be exactly one. If this concept is generated, set source node in generator template for it." />
                                 </node>
                                 <node concept="3cpWs3" id="4mSE8vfPu$A" role="3uHU7B">
                                   <node concept="3cpWs3" id="4mSE8vfPlUm" role="3uHU7B">

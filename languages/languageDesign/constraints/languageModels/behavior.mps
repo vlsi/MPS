@@ -22,6 +22,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -2934,6 +2935,80 @@
       <node concept="3Tqbb2" id="4IGpg_YjLGq" role="3clF45">
         <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1fdcuoIX_DW">
+    <ref role="13h7C2" to="tp1t:1fdcuoIX_DM" resolve="ConstraintFunction_GetInstanceIcon" />
+    <node concept="13hLZK" id="1fdcuoIX_DX" role="13h7CW">
+      <node concept="3clFbS" id="1fdcuoIX_DY" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1fdcuoIX_DZ" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <node concept="3Tm1VV" id="1fdcuoIX_E0" role="1B3o_S" />
+      <node concept="_YKpA" id="1fdcuoIX_E1" role="3clF45">
+        <node concept="3Tqbb2" id="1fdcuoIX_E2" role="_ZDj9">
+          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1fdcuoIX_E3" role="3clF47">
+        <node concept="3cpWs8" id="1fdcuoIX_E4" role="3cqZAp">
+          <node concept="3cpWsn" id="1fdcuoIX_E5" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="1fdcuoIX_E6" role="1tU5fm">
+              <node concept="3Tqbb2" id="1fdcuoIX_E7" role="_ZDj9">
+                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1fdcuoIX_E8" role="33vP2m">
+              <node concept="13iAh5" id="1fdcuoIX_E9" role="2Oq$k0">
+                <ref role="3eA5LN" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+              </node>
+              <node concept="2qgKlT" id="1fdcuoIX_Ea" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1fdcuoIX_Eb" role="3cqZAp">
+          <node concept="2OqwBi" id="1fdcuoIX_Ec" role="3clFbG">
+            <node concept="37vLTw" id="1fdcuoIX_Ed" role="2Oq$k0">
+              <ref role="3cqZAo" node="1fdcuoIX_E5" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="1fdcuoIX_Ee" role="2OqNvi">
+              <node concept="3B5_sB" id="1fdcuoIX_Ef" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:gGEsrNs" resolve="ConstraintsFunctionParameter_node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1fdcuoIX_Eg" role="3cqZAp">
+          <node concept="37vLTw" id="1fdcuoIX_Eh" role="3cqZAk">
+            <ref role="3cqZAo" node="1fdcuoIX_E5" resolve="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="1fdcuoIX_Ei" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="1fdcuoIX_Ej" role="1B3o_S" />
+      <node concept="3clFbS" id="1fdcuoIX_Ek" role="3clF47">
+        <node concept="3cpWs6" id="1fdcuoIX_El" role="3cqZAp">
+          <node concept="2c44tf" id="1fdcuoIX_Em" role="3cqZAk">
+            <node concept="3uibUv" id="1fdcuoIXGfT" role="2c44tc">
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1fdcuoIX_Eo" role="3clF45" />
     </node>
   </node>
 </model>

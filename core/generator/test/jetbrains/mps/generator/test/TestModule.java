@@ -24,7 +24,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.RegularModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -107,12 +106,13 @@ public class TestModule extends AbstractModule {
   }
 
   @Override
-  public SModel resolveInDependencies(SModelId reference) {
-    boolean own = reference.getModelName() != null && myModels.containsKey(reference.getModelName());
-    if (!own) {
-      return super.resolveInDependencies(reference);
+  public SModel getModel(SModelId id) {
+    SModel m = super.getModel(id);
+    if (m == null) {
+      boolean own = id.getModelName() != null && myModels.containsKey(id.getModelName());
+      m = own ? myModels.get(id.getModelName()) : null;
     }
-    return myModels.get(reference.getModelName());
+    return m;
   }
 
   @Override

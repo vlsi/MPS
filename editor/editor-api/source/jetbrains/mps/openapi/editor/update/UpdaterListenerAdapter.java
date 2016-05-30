@@ -28,6 +28,10 @@ public class UpdaterListenerAdapter implements UpdaterListener {
   }
 
   @Override
+  public void editorUpdateStarted(EditorComponent editorComponent) {
+  }
+
+  @Override
   public void editorUpdated(EditorComponent editorComponent) {
   }
 }

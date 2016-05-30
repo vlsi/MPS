@@ -459,6 +459,14 @@
       <directory url="file://$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/heating/jetbrains.mps.samples.heating/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.sampleLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.sampleLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.simpleEditor/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.simpleEditor/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.simpleStructure/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/languages/jetbrains.mps.samples.highlevel.simpleStructure/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/solutions/jetbrains.mps.samples.highlevel.sampleLanguageUsage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/highLevelMetaLanguages/solutions/jetbrains.mps.samples.highlevel.sampleLanguageUsage/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/lambda/languages/lambdaCalculus/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/lambda/languages/lambdaCalculus/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" includeSubdirectories="true" />

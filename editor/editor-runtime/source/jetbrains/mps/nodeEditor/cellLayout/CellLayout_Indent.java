@@ -107,8 +107,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
-        if (lastCell != null) {
+        if (!editorCells.isEmpty()) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }
@@ -236,7 +236,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private static boolean isIndentCollection(EditorCell_Collection collection) {
-    return collection.getCellLayout() instanceof CellLayout_Indent && collection.getCellsCount() > 0;
+    return collection.getCellLayout() instanceof CellLayout_Indent && !collection.isEmpty();
   }
 
   private class CellLayouter {
@@ -469,7 +469,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
       EditorCell current = result;
 
       while (true) {
-        if (!isIndentCollection(current.getParent())) break;
+        if (!isIndentCollection(current.getParent())) {
+          break;
+        }
 
         EditorCell indentLeaf = getFirstIndentLeaf(current.getParent());
         EditorCell unitStart = expandToUnitStart(indentLeaf);
@@ -499,8 +501,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
           prevLeaf = prevLeaf.getParent();
         }
 
-        if (!myCell.isAncestorOf(prevLeaf)) break;
-        if (!myLineContent.contains(prevLeaf)) break;
+        if (!myCell.isAncestorOf(prevLeaf)) {
+          break;
+        }
+        if (!myLineContent.contains(prevLeaf)) {
+          break;
+        }
 
         if (isNoWrap(result) || result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT)) {
           result = prevLeaf;
@@ -536,7 +542,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private EditorCell getFirstIndentLeaf(EditorCell_Collection collection) {
-      if (!isIndentCollection(collection)) return collection;
+      if (!isIndentCollection(collection)) {
+        return collection;
+      }
 
       EditorCell firstChild = collection.firstCell();
       if (firstChild instanceof EditorCell_Collection) {
@@ -548,7 +556,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private void splitLineAt(EditorCell splitAt) {
       int index = myLineContent.indexOf(splitAt);
-      if (index == -1) throw new IllegalStateException();
+      if (index == -1) {
+        throw new IllegalStateException();
+      }
 
       final List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
       final List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));

@@ -15,13 +15,41 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.Collection;
-
 /**
+ * This class is responsible for {@link EditorComponent} update and synchronization
+ * processes.
+ * <p>
+ * The tree of currently visible {@link jetbrains.mps.openapi.editor.cells.EditorCell}s
+ * will be substituted completely or partually as a part of update process. Update
+ * process can be started as a result of explicit {@link Updater#update()} or
+ * {@link #flushModelEvents()} method calls. Alternatively, it can be triggered as a
+ * consequence of arrived model notifications, listened by the {@link Updater}
+ * implementations.
+ * <p>
+ * {@link UpdaterListener#editorUpdateStarted(EditorComponent)}/{@link UpdaterListener#editorUpdated(EditorComponent)}
+ * notifications should be fired at the very beginning of the update process and in the
+ * end of it.
+ * <p>
+ * New instance of {@link UpdateSession} may be created and disposed during update
+ * process. Update process may include some other internal tasks except of
+ * {@link jetbrains.mps.openapi.editor.cells.EditorCell} tree update (re-creation).
+ * <p>
+ * It should be possible to execute update process as a part of another (currently running)
+ * editor update process for the same editor. In such cases {@link Updater} will fire the
+ * pair of {@link UpdaterListener#editorUpdateStarted(EditorComponent)}/
+ * {@link UpdaterListener#editorUpdated(EditorComponent)} events only for top-level update
+ * process.
+ * <p>
+ * Alternatively, {@link Updater} implementation may decide to synchronize some
+ * {@link jetbrains.mps.openapi.editor.cells.EditorCell}s with model information to reflect
+ * actual state of the model without starting complete editor update process. In this case
+ * {@link UpdaterListener#cellSynchronizedWithModel(EditorCell)} event will be fired.
+ * <p>
  * User: shatalin
  * Date: 03/09/14
  */
@@ -43,7 +71,16 @@ public interface Updater {
   void update();
 
   /**
-   * @return currently running update session or null if editor update was not executed
+   * Return currently running update session or null if there is no active update session.
+   * {@link UpdateSession} will be created at the beginning of the rebuild process for the
+   * tree of {@link jetbrains.mps.openapi.editor.cells.EditorCell}s, as a sub-sequence of
+   * update process. {@link UpdateSession} will be stopped/disposed at the end of cell
+   * tree rebuild process.
+   * <p>
+   * It's prohibited to execute another update before the end of currently running one.
+   * {@link AssertionError} will be thrown in such cases.
+   *
+   * @return currently running update session
    */
   UpdateSession getCurrentUpdateSession();
 
@@ -92,7 +129,7 @@ public interface Updater {
    * These hints will be counted when updater finds the most specific editor for the node
    *
    * @param nodeReference reference of the node
-   * @param hints explicit hints to add
+   * @param hints         explicit hints to add
    */
   void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
 
@@ -100,7 +137,7 @@ public interface Updater {
    * Use this method to remove previously added hints for particular node
    *
    * @param nodeReference reference of the node
-   * @param hints explicit hints to remove
+   * @param hints         explicit hints to remove
    */
   void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
 

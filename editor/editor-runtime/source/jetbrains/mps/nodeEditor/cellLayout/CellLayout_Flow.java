@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.apache.log4j.LogManager;
@@ -167,22 +168,17 @@ public class CellLayout_Flow extends AbstractCellLayout {
         getCurrentLineLayouts().clear();
       }
 
-      Iterator<EditorCell> lookAhead = myEditorCells.iterator();
-      if (lookAhead.hasNext()) lookAhead.next();
-
       for (EditorCell cell : myEditorCells) {
         if (myToSkip) {
           myToSkip = false;
           myNextIsPunctuation = false;
-          if (lookAhead.hasNext()) lookAhead.next();
           continue;
         }
 
         //testing the next cell
-        EditorCell nextCell = null;
+        EditorCell nextCell = CellTraversalUtil.getNextSibling(cell);
         myNextIsPunctuation = false;
-        if (lookAhead.hasNext()) {
-          nextCell = lookAhead.next();
+        if (nextCell != null) {
           if (APICellAdapter.isPunctuationLayout(nextCell)) {
             myNextIsPunctuation = true;
           }

@@ -197,9 +197,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   protected Collection<SProperty> getProperties() {
     return myProperties;
   }
+
   protected Collection<SReferenceLink> getReferenceLinks() {
     return myReferenceLinks;
   }
+
   protected Collection<SContainmentLink> getContainmentLinks() {
     return myContainmentLinks;
   }
@@ -368,7 +370,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private EditorCell getLastCell() {
     EditorCell_Collection collection = collectionStack.peek();
     EditorCell lastCell = collection;
-    if (collection.getCellsCount() > 0) {
+    if (!collection.isEmpty()) {
       lastCell = collection.lastCell();
     }
     return lastCell;

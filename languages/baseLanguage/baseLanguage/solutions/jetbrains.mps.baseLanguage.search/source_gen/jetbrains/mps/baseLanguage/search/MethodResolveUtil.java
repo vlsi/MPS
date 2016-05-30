@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -267,7 +268,7 @@ public class MethodResolveUtil {
       })) {
         continue;
       }
-      typeOfParam.value = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam.value, typeByTypeVar);
+      typeOfParam.value = MethodResolveUtil.getTypeWithResolvedTypeVars(typeOfParam.value, typeByTypeVar);
       ListSequence.fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
         public void visit(SNode tvd) {
           typeByTypeVar.remove(tvd);
@@ -302,6 +303,48 @@ public class MethodResolveUtil {
     }
     return result;
   }
+
+  public static SNode getTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
+    if (MapSequence.fromMap(typeByTypeVar).isEmpty()) {
+      return type;
+    }
+
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      return MethodResolveUtil.getTypeByTypeVariable(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), typeByTypeVar);
+    } else {
+      SNode typeCopy = SNodeOperations.copyNode(type);
+      for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getNodeDescendants(typeCopy, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{}))) {
+        SNode resolvedType = MethodResolveUtil.getTypeByTypeVariable(typeVariableRef, typeByTypeVar);
+        if (resolvedType != typeVariableRef) {
+          SNodeOperations.replaceWithAnother(typeVariableRef, SNodeOperations.copyNode(resolvedType));
+        }
+      }
+      return typeCopy;
+    }
+  }
+
+  private static SNode getTypeByTypeVariable(SNode typeVariableRef, Map<SNode, SNode> typeByTypeVar) {
+    SNode result = typeVariableRef;
+    SNode typeVar = SLinkOperations.getTarget(typeVariableRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
+    while ((typeVar != null)) {
+      SNode typeVarValue = typeByTypeVar.get(typeVar);
+      if ((typeVarValue == null)) {
+        break;
+      }
+      result = typeVarValue;
+      if (SNodeOperations.isInstanceOf(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+        SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
+        if (typeVar == newTypeVar) {
+          break;
+        }
+        typeVar = newTypeVar;
+      } else {
+        break;
+      }
+    }
+    return result;
+  }
+
   private static boolean eq_zegw12_a0a0a0a0a1a0a0e0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

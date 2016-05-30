@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -87,7 +88,9 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
     boolean is = isUpdating();
     boolean shouldBe = shouldBeUpdating();
 
-    if (is == shouldBe) return;
+    if (is == shouldBe) {
+      return;
+    }
 
     if (shouldBe) {
       startUpdating();
@@ -181,13 +184,15 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
     }
   }
 
-  private class ScheduleUpdateListener implements SelectionListener, UpdaterListener {
+  private class ScheduleUpdateListener extends UpdaterListenerAdapter implements SelectionListener, UpdaterListener {
     @Override
     public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       EditorCell oldCell = ContextAssistantSelectionUtil.getSingleSelectedCell(oldSelection);
       EditorCell newCell = ContextAssistantSelectionUtil.getSingleSelectedCell(newSelection);
       // Skip uninteresting changes - either within a single cell or from multiple cells to multiple cells.
-      if (oldCell == newCell) return;
+      if (oldCell == newCell) {
+        return;
+      }
 
       scheduleUpdate();
     }

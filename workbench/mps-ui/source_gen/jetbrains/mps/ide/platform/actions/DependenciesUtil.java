@@ -15,9 +15,9 @@ public class DependenciesUtil {
   public DependenciesUtil() {
   }
   public static SearchResults analyzeDependencies(SModule from, SModule to, Project project, MPSProject mpsProject, boolean isMeta, boolean openTool) {
-    DependencyViewerScope fromScope = new DependencyViewerScope();
+    DependencyViewerScope fromScope = new DependencyViewerScope(mpsProject.getRepository());
     fromScope.add(from);
-    DependencyViewerScope toScope = new DependencyViewerScope();
+    DependencyViewerScope toScope = new DependencyViewerScope(mpsProject.getRepository());
     toScope.add(to);
 
     AnalyzeDependenciesViewTool tool = project.getComponent(AnalyzeDependenciesViewTool.class);
@@ -30,8 +30,8 @@ public class DependenciesUtil {
     return panel.updateReferencesView(toScope);
   }
   public static SearchResults analyzeDependencies(Iterable<SModule> from, Iterable<SModule> to, Project project, MPSProject mpsProject, boolean isMeta) {
-    final DependencyViewerScope fromScope = new DependencyViewerScope();
-    final DependencyViewerScope toScope = new DependencyViewerScope();
+    final DependencyViewerScope fromScope = new DependencyViewerScope(mpsProject.getRepository());
+    final DependencyViewerScope toScope = new DependencyViewerScope(mpsProject.getRepository());
     Sequence.fromIterable(from).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         fromScope.add(it);

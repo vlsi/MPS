@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.util.ui.UIUtil;
+import gnu.trove.TIntObjectHashMap;
+import gnu.trove.TIntProcedure;
 import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
@@ -29,7 +31,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cells.collections.Entry;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -40,7 +42,6 @@ import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
@@ -67,7 +68,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -79,7 +79,7 @@ import java.util.Set;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class EditorCell_Basic implements EditorCell {
+public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
   public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
@@ -103,7 +103,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
   private TransformationMenuLookup myTransformationMenuLookup;
-  private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
+  private TIntObjectHashMap<CellAction> myActionMap = new TIntObjectHashMap<CellAction>();
 
   private Style myStyle = new StyleImpl();
 
@@ -119,6 +119,12 @@ public abstract class EditorCell_Basic implements EditorCell {
   private boolean myIsNeedRelayout = true;
   private boolean myBig;
   private EditorCellContext myCellContext;
+
+  /**
+   * {@link Entry} fields
+   */
+  private Entry<jetbrains.mps.openapi.editor.cells.EditorCell> myNext;
+  private Entry<jetbrains.mps.openapi.editor.cells.EditorCell> myPrev;
 
   protected EditorCell_Basic(@NotNull EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -173,7 +179,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       pattern = ((EditorCell_Label) this).getText();
     }
 
-    if (pattern.equals("")) return false;
+    if (pattern.equals("")) {
+      return false;
+    }
 
     List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
     return APICellAdapter.substituteIfPossible(this, canActivatePopup, pattern, matchingActions);
@@ -200,17 +208,24 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public CellAction getAction(CellActionType type) {
-    return myActionMap.get(type);
+    return myActionMap.get(type.ordinal());
   }
 
   @Override
   public Collection<CellActionType> getAvailableActions() {
-    return new HashSet<CellActionType>(myActionMap.keySet());
+    final Collection<CellActionType> result = new ArrayList<CellActionType>(myActionMap.size());
+    myActionMap.forEachKey(new TIntProcedure() {
+      @Override
+      public boolean execute(int value) {
+        return result.add(CellActionType.values()[value]);
+      }
+    });
+    return result;
   }
 
   @Override
   public void setAction(CellActionType type, CellAction action) {
-    myActionMap.put(type, action);
+    myActionMap.put(type.ordinal(), action);
   }
 
   @Override
@@ -410,7 +425,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
-    if (e.isConsumed()) return false;
+    if (e.isConsumed()) {
+      return false;
+    }
     return doProcessKeyPressed(e, allowErrors);
   }
 
@@ -420,7 +437,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public final boolean processKeyTyped(KeyEvent e, boolean allowErrors) {
-    if (e.isConsumed()) return false;
+    if (e.isConsumed()) {
+      return false;
+    }
     return doProcessKeyTyped(e, allowErrors);
   }
 
@@ -434,7 +453,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       public Boolean compute() {
         return getSNode().getModel() != null && getSNode().getParent() == null;
       }
-    })) return false;
+    })) {
+      return false;
+    }
 
     getContext().getRepository().getModelAccess().executeCommand(new EditorCommand(getContext()) {
       @Override
@@ -453,7 +474,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
         newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
         EditorCell nodeCell = editor.findNodeCell(newNode);
-        if (nodeCell == null) return;
+        if (nodeCell == null) {
+          return;
+        }
         EditorCell_Label editable = CellFinderUtil.findFirstEditable(nodeCell);
         if (editable != null) {
           editor.changeSelection(editable);
@@ -548,7 +571,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell best = null;
     int bestDistance = -1;
     for (EditorCell cell : candidates) {
-      if (!condition.met(cell)) continue;
+      if (!condition.met(cell)) {
+        continue;
+      }
 
       int distance = horizontalDistance(x, cell);
       if (bestDistance == -1 || distance < bestDistance) {
@@ -560,7 +585,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private int horizontalDistance(int x, EditorCell cell) {
-    if (x >= cell.getX() && x <= cell.getX() + cell.getWidth()) return 0;
+    if (x >= cell.getX() && x <= cell.getX() + cell.getWidth()) {
+      return 0;
+    }
     return Math.min(Math.abs(x - cell.getX()), Math.abs(x - cell.getX() - cell.getWidth()));
   }
 
@@ -664,12 +691,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public void paint(Graphics g, ParentSettings parentSettings) {
-    paintCell(g, parentSettings);
-    paintDecorations(g);
-  }
-
-  @Override
   public boolean isInClipRegion(Graphics g) {
     // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
     return g.hitClip(getX(), getY(), getWidth() + 1, getHeight() + 1);
@@ -755,52 +776,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getEditor().getHighlightManager().getMessages(this);
   }
 
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
-   */
-  @Deprecated
-  @Override
-  public <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz) {
-    return CellMessagesUtil.getMessages(this, clazz);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  @Override
-  public List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
-    ArrayList<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>(1);
-    for (SimpleEditorMessage message : getMessages()) {
-      if (message.getOwner() == owner) {
-        result.add(message);
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
-   */
-  @Deprecated
-  @Override
-  public boolean hasErrorMessages() {
-    return CellMessagesUtil.hasErrorMessages(this);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
-   */
-  @Deprecated
-  @Override
-  public EditorCell_Label getSTHintCell() {
-    SNode node = getSNode();
-    if (node == null) {
-      return null;
-    }
-    return EditorCell_STHint.getSTHintCell(node, getEditorComponent());
-  }
-
   @Override
   public void synchronizeViewWithModel() {
   }
@@ -883,25 +858,12 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public void setRightTransformAnchorTag(String tag) {
-    getStyle().set(StyleAttributes.RT_ANCHOR_TAG, tag);
-  }
-
-  @Override
-  public String getRightTransformAnchorTag() {
-    return getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
-  }
-
-  @Override
-  public boolean hasRightTransformAnchorTag(String tag) {
-    return getRightTransformAnchorTag() != null && getRightTransformAnchorTag().equals(tag);
-  }
-
-  @Override
   public boolean isAncestorOf(EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
     while (parent != null) {
-      if (parent == this) return true;
+      if (parent == this) {
+        return true;
+      }
       parent = parent.getParent();
     }
     return false;
@@ -928,7 +890,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       @Override
       public EditorCell_Collection next() {
         EditorCell_Collection parent = (EditorCell_Collection) myCurrentCell.getParent();
-        if (parent == null) throw new NoSuchElementException();
+        if (parent == null) {
+          throw new NoSuchElementException();
+        }
         myCurrentCell = parent;
         return parent;
       }
@@ -951,24 +915,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
     }
     return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
-   */
-  @Deprecated
-  public boolean isFolded() {
-    return false;
-  }
-
-  @Override
-  public boolean isUnfoldedCollection() {
-    return false;
-  }
-
-  @Override
-  public boolean canBePossiblyFolded() {
-    return false;
   }
 
   @Override
@@ -1003,26 +949,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public boolean isLastChild() {
-    return getParent() != null && this == getParent().lastCell();
-  }
-
-  @Override
-  public boolean isFirstChild() {
-    return getParent() != null && this == getParent().firstCell();
-  }
-
-  @Override
-  public boolean isOnLeftBoundary() {
-    return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
-  }
-
-  @Override
-  public boolean isOnRightBoundary() {
-    return getNextLeaf() == null || getNextLeaf().getSNode() != getSNode();
-  }
-
-  @Override
   public EditorCell getContainingBigCell() {
     if (isBig() || getParent() == null) {
       return this;
@@ -1051,7 +977,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private static int horizontalDistance(EditorCell cell, int x) {
-    if (cell.getX() + cell.getLeftGap() <= x && x <= cell.getX() + cell.getWidth() - cell.getRightGap()) return 0;
+    if (cell.getX() + cell.getLeftGap() <= x && x <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
+      return 0;
+    }
     return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x));
   }
 
@@ -1147,54 +1075,12 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getNextSibling() {
-    if (myParent == null) {
-      return null;
-    }
-    int index = myParent.indexOf(this);
-    if (index + 1 < myParent.getCellsCount()) {
-      EditorCell nextChild = myParent.getChildAt(index + 1);
-      assert nextChild.getParent() == myParent;
-      return nextChild;
-    }
-    return null;
-  }
-
-  @Override
-  public EditorCell getNextSibling(Condition<EditorCell> condition) {
-    EditorCell current = getNextSibling();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getNextSibling();
-    }
-    return null;
+    return myNext != null ? (EditorCell) myNext.getItem() : null;
   }
 
   @Override
   public EditorCell getPrevSibling() {
-    if (myParent == null) {
-      return null;
-    }
-    int index = myParent.indexOf(this);
-    if (index > 0) {
-      EditorCell prevChild = myParent.getChildAt(index - 1);
-      assert prevChild.getParent() == myParent;
-      return prevChild;
-    }
-    return null;
-  }
-
-  @Override
-  public EditorCell getPrevSibling(Condition<EditorCell> condition) {
-    EditorCell current = getPrevSibling();
-    while (current != null) {
-      if (condition.met(current)) {
-        return current;
-      }
-      current = current.getPrevSibling();
-    }
-    return null;
+    return myPrev != null && myPrev.getNext() != null ? (EditorCell) myPrev.getItem() : null;
   }
 
   @Override
@@ -1375,5 +1261,35 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public EditorCellContext getCellContext() {
     return myCellContext;
+  }
+
+  /**
+   * {@link Entry} methods
+   */
+
+  @NotNull
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell getItem() {
+    return this;
+  }
+
+  @Override
+  public Entry<jetbrains.mps.openapi.editor.cells.EditorCell> getNext() {
+    return myNext;
+  }
+
+  @Override
+  public void setNext(Entry<jetbrains.mps.openapi.editor.cells.EditorCell> next) {
+    myNext = next;
+  }
+
+  @Override
+  public Entry<jetbrains.mps.openapi.editor.cells.EditorCell> getPrev() {
+    return myPrev;
+  }
+
+  @Override
+  public void setPrev(Entry<jetbrains.mps.openapi.editor.cells.EditorCell> prev) {
+    myPrev = prev;
   }
 }

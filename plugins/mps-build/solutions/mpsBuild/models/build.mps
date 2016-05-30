@@ -9110,6 +9110,12 @@
             <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="58p9KwJtNNO" role="3bR37C">
+          <node concept="3bR9La" id="58p9KwJtNNP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+          </node>
+        </node>
         <node concept="398BVA" id="6wK_PpNA8EZ" role="3LF7KH">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="6wK_PpNA8F0" role="iGT6I">
@@ -22320,9 +22326,6 @@
         <node concept="1E0d5M" id="2a9bszgrvjI" role="1E1XAP">
           <ref role="1E0d5P" node="mXGwHwhVPj" resolve="JDK" />
         </node>
-        <node concept="1E0d5M" id="6G6RsahJhAW" role="1E1XAP">
-          <ref role="1E0d5P" node="3405ypXZilV" resolve="JDK-tools" />
-        </node>
         <node concept="1SiIV0" id="2a9bszgrvj4" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrvj3" role="1SiIV1">
             <property role="3bR36h" value="true" />
@@ -22407,6 +22410,9 @@
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="2eDSGe9d1pJ" resolve="jetbrains.mps.lang.plugin.standalone" />
           </node>
+        </node>
+        <node concept="1E0d5M" id="6G6RsahJhAW" role="1E1XAP">
+          <ref role="1E0d5P" node="3405ypXZilV" resolve="JDK-tools" />
         </node>
       </node>
       <node concept="1E1JtD" id="4LDuh$Ud1MP" role="2G$12L">

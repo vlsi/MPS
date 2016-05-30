@@ -32,8 +32,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.HashSet;
 import java.util.Queue;
@@ -173,17 +171,18 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static List<SNode> getMethodsToImplement_id4GM03FJm5q2(@NotNull SNode __thisNode__) {
     List<SNode> methods = new ArrayList<SNode>();
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(__thisNode__, IClassifiersSearchScope.INSTANCE_METHOD);
-    for (SNode method : ((List<SNode>) scope.getNodes())) {
+
+    MethodOverrideHelper helper = new MethodOverrideHelper(__thisNode__);
+
+    for (SNode method : (List<SNode>) helper.getMethods()) {
       boolean isOverridden = false;
-      List<SNode> overridenMethods = scope.getOverriddenMethods(method);
+      List<SNode> overridenMethods = helper.getOverriddenMethods(method);
       for (SNode overridingMethod : overridenMethods) {
         isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
       }
       if (isOverridden) {
         continue;
       }
-
       SNode container = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
       if (container == __thisNode__ || container == null) {
         continue;

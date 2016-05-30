@@ -23,7 +23,19 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
  * Date: 12/09/14
  */
 public interface UpdaterListener {
-  public void cellSynchronizedWithModel(EditorCell cell);
+  void cellSynchronizedWithModel(EditorCell cell);
 
+  /**
+   * Will be fired at the moment of starting editor update process.
+   *
+   * @see Updater documentation for more details.
+   */
+  void editorUpdateStarted(EditorComponent editorComponent);
+
+  /**
+   * Will be fired at the very end of editor update process.
+   *
+   * @see Updater documentation for more details.
+   */
   void editorUpdated(EditorComponent editorComponent);
 }

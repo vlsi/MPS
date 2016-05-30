@@ -199,6 +199,16 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
     // no-op
   }
 
+  @Override
+  public void modelAttached(SModel model, SRepository repository) {
+    // no-op
+  }
+
+  @Override
+  public void modelDetached(SModel model, SRepository repository) {
+    // no-op
+  }
+
   //
   // SModelListener
   //

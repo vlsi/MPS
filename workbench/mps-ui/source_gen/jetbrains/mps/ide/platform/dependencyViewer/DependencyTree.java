@@ -64,7 +64,7 @@ public class DependencyTree extends MPSTree {
       if (paths == null || paths.length == 0) {
         return;
       }
-      final DependencyViewerScope scope = new DependencyViewerScope();
+      final DependencyViewerScope scope = new DependencyViewerScope(myProject.getRepository());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (TreePath path : paths) {
