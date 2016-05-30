@@ -954,11 +954,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return iterator.hasNext() ? result : null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getFirstLeaf() {
     return isEmpty() ? this : ((jetbrains.mps.nodeEditor.cells.EditorCell) firstCell()).getFirstLeaf();
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getLastLeaf() {
     return isEmpty() ? this : ((jetbrains.mps.nodeEditor.cells.EditorCell) lastCell()).getLastLeaf();

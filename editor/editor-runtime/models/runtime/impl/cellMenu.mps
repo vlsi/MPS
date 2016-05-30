@@ -1065,11 +1065,10 @@
                     <node concept="37vLTw" id="3GM_nagTtXX" role="3uHU7w">
                       <ref role="3cqZAo" node="29B$5YOfqgo" resolve="referenceCell" />
                     </node>
-                    <node concept="2OqwBi" id="29B$5YOfqgD" role="3uHU7B">
-                      <node concept="liA8E" id="29B$5YOfqgH" role="2OqNvi">
-                        <ref role="37wK5l" to="g51k:~EditorCell.getFirstLeaf():jetbrains.mps.nodeEditor.cells.EditorCell" resolve="getFirstLeaf" />
-                      </node>
-                      <node concept="2OqwBi" id="29B$5YOfqgE" role="2Oq$k0">
+                    <node concept="2YIFZM" id="45K04$TzVbS" role="3uHU7B">
+                      <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
+                      <ref role="37wK5l" to="f4zo:~CellTraversalUtil.getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getFirstLeaf" />
+                      <node concept="2OqwBi" id="29B$5YOfqgE" role="37wK5m">
                         <node concept="1eOMI4" id="20m38krBzIy" role="2Oq$k0">
                           <node concept="10QFUN" id="20m38krBzIv" role="1eOMHV">
                             <node concept="3uibUv" id="20m38krB$ub" role="10QFUM">

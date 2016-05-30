@@ -139,6 +139,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell getNextLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getPrevLeaf();
 
   /**
@@ -147,6 +151,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getFirstLeaf();
 
   /**
@@ -155,6 +163,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorCell getFirstLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLastLeaf();
 
   /**

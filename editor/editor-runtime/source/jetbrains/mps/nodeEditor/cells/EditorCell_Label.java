@@ -94,12 +94,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isFirstPositionInBigCell() {
-    return getContainingBigCell().getFirstLeaf() == this && isFirstCaretPosition();
+    return CellTraversalUtil.getFirstLeaf(getContainingBigCell()) == this && isFirstCaretPosition();
   }
 
   @Override
   public boolean isLastPositionInBigCell() {
-    return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
+    return CellTraversalUtil.getLastLeaf(getContainingBigCell()) == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
   }
 
   public boolean canPasteText() {
@@ -733,7 +733,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     EditorCell containingBigCell = getContainingBigCell();
-    return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this &&
+    return containingBigCell != null && CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
         getText().equals(getSelectedText());
   }
 

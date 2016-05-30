@@ -1154,6 +1154,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getPrevLeaf() {
     if (getPrevSibling() != null) {
@@ -1165,6 +1169,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getPrevLeaf(Condition<EditorCell> condition) {
     EditorCell current = getPrevLeaf();
@@ -1177,11 +1185,19 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return null;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getFirstLeaf() {
     return this;
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell getLastLeaf() {
     return this;
