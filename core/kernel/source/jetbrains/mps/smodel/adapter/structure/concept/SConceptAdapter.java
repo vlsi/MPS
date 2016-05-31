@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -78,7 +80,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
       if (!conceptDecl.isInstanceOfConcept(SNodeUtil.concept_ConceptDeclaration)) {
         return false;
       }
-      return SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl);
+      return SPropertyOperations.getBoolean(conceptDecl,SNodeUtil.property_Concept_Rootable);
     } else {
       return cd.isRootable();
     }
