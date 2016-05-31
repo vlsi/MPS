@@ -34,6 +34,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="mjwp" ref="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)" implicit="true" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" implicit="true" />
@@ -239,7 +240,6 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -5168,7 +5168,9 @@
       <node concept="3clFbS" id="6u50yCprH$T" role="3clF47">
         <node concept="3cpWs6" id="6u50yCprH$U" role="3cqZAp">
           <node concept="2c44tf" id="6u50yCprH$V" role="3cqZAk">
-            <node concept="3bZ5Sz" id="6u50yCprHCd" role="2c44tc" />
+            <node concept="3uibUv" id="2Mnhr$7dyUv" role="2c44tc">
+              <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+            </node>
           </node>
         </node>
       </node>
@@ -5260,7 +5262,9 @@
         <node concept="3cpWs6" id="6u50yCprHSs" role="3cqZAp">
           <node concept="2c44tf" id="6u50yCprHSt" role="3cqZAk">
             <node concept="A3Dl8" id="6u50yCprI2d" role="2c44tc">
-              <node concept="3bZ5Sz" id="6u50yCprI99" role="A3Ik2" />
+              <node concept="3uibUv" id="2Mnhr$7dyz6" role="A3Ik2">
+                <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+              </node>
             </node>
           </node>
         </node>

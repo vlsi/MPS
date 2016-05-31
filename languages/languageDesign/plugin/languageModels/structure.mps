@@ -2285,7 +2285,7 @@
   <node concept="1TIwiD" id="6u50yCprH$i">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ConceptFunctionParameter_SConcept" />
+    <property role="TrG5h" value="ConceptFunctionParameter_SConceptClass" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Shared" />
     <property role="34LRSv" value="concept" />
