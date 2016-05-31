@@ -16,84 +16,93 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantController;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantPanel;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.FocusUtil;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.WhatsThisActionItem;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import javax.swing.AbstractAction;
 import javax.swing.JComponent;
-import java.util.List;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
 
-public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBase implements ContextAssistant {
-  private final ContextAssistantPanel myAssistantPanel;
+public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBase {
+  private final ContextAssistantController myController;
+  private final ContextAssistantPanel myPanel;
 
   public EditorCell_ContextAssistantComponent(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    myAssistantPanel = new ContextAssistantPanel(editorContext);
-    hideMenu();
+    myPanel = new ContextAssistantPanel();
+    myPanel.setBackground(StyleRegistry.getInstance().getEditorBackground());
+    myPanel.setEscapeAction(new RequestFocusInEditorAction(editorContext.getEditorComponent()));
+
+    myController = new ContextAssistantController(editorContext, myPanel);
+    myController.setHelpAction(new WhatsThisActionItem(myPanel.getComponent()));
+    myController.hideMenu();
   }
 
   @NotNull
   @Override
   public JComponent getComponent() {
-    return myAssistantPanel.getComponent();
+    return myPanel.getComponent();
   }
 
   @Override
   public int getAscent() {
-    return myAssistantPanel.getBaseline();
+    return myPanel.getBaseline();
   }
 
   @Override
   public void onAdd() {
     super.onAdd();
-    getContext().getContextAssistantManager().register(this);
+    getContext().getContextAssistantManager().register(myController);
   }
 
   @Override
   public void onRemove() {
-    getContext().getContextAssistantManager().unregister(this);
+    getContext().getContextAssistantManager().unregister(myController);
     super.onRemove();
   }
 
   @Override
   public void moveTo(int x, int y) {
     super.moveTo(x, y);
-    myAssistantPanel.setMaximumWidth(EditorSettings.getInstance().getVerticalBoundWidth() - x);
+    myPanel.setMaximumWidth(EditorSettings.getInstance().getVerticalBoundWidth() - x);
   }
 
   @Override
   public void setX(int x) {
     super.setX(x);
-    myAssistantPanel.setMaximumWidth(EditorSettings.getInstance().getVerticalBoundWidth() - x);
-  }
-
-  @Override
-  public void showMenu(@NotNull List<MenuItem> items) {
-    myAssistantPanel.showMenu(items);
-  }
-
-  @Override
-  public void hideMenu() {
-    myAssistantPanel.hideMenu();
-  }
-
-  @Override
-  public boolean hasFocus() {
-    return myAssistantPanel.hasFocus();
-  }
-
-  @Override
-  public void focusMenu() {
-    myAssistantPanel.focusMenu();
+    myPanel.setMaximumWidth(EditorSettings.getInstance().getVerticalBoundWidth() - x);
   }
 
   @Override
   public void relayoutImpl() {
     JComponent component = getComponent();
     setWidth(component.isVisible() ? component.getWidth() : 0);
-    setHeight(myAssistantPanel.getPreferredHeight() - 1); // do not count the bottom border, hence -1
+    setHeight(myPanel.getPreferredHeight() - 1); // do not count the bottom border, hence -1
+  }
+
+  public ContextAssistant getContextAssistant() {
+    return myController;
+  }
+
+  private static class RequestFocusInEditorAction extends AbstractAction {
+    private final EditorComponent myEditorComponent;
+
+    RequestFocusInEditorAction(EditorComponent editorComponent) {
+      myEditorComponent = editorComponent;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      FocusUtil.requestFocus((Component) myEditorComponent, true);
+    }
   }
 }

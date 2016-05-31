@@ -18,45 +18,33 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.JBUI;
-import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
-import java.awt.Component;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.KeyboardFocusManager;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
 
-public class ContextAssistantPanel implements ActionItemExecutor {
+/**
+ * Displays a {@link ListPopupStep ListPopupStep&lt;MenuItem&gt;} as a row of buttons in a panel, with an overflow button ("More...").
+ */
+public class ContextAssistantPanel implements ContextAssistantView {
   private final OverflowLayout myLayout = new OverflowLayout(JBUI.scale(2));
   private final JComponent myComponent = PanelCustomizations.setupMenuBar(new JPanel(myLayout));
-  private final ActionItem myHelpAction = HelpUtil.createHelpAction(myComponent);
   private final JButton myOverflowButton = createOverflowButton();
 
-  private final EditorContext myEditorContext;
   private final int myPreferredHeight;
   private final int myBaseline;
 
-  private MenuItemListStep myStep;
+  private ListPopupStep<MenuItem> myStep;
 
-  public ContextAssistantPanel(final EditorContext editorContext) {
-    myEditorContext = editorContext;
-
-    myComponent.setBackground(StyleRegistry.getInstance().getEditorBackground());
-    setEscapeAction(new JumpToEditorAction());
-
+  public ContextAssistantPanel() {
     // Compute preferred height and baseline (for layout purposes)
     JButton flatButton = ButtonCustomizations.setupMenuButton(new JButton("some text"));
     Dimension preferredSize = flatButton.getPreferredSize();
@@ -64,11 +52,15 @@ public class ContextAssistantPanel implements ActionItemExecutor {
     myBaseline = flatButton.getBaseline(preferredSize.width, preferredSize.height);
   }
 
+  public void setBackground(Color background) {
+    myComponent.setBackground(background);
+  }
+
   private JButton createOverflowButton() {
     return ButtonCustomizations.setupMenuButton(new AbstractStepComboBoxButton("More") {
       @Override
       protected ListPopupStep<?> getStep() {
-        return myStep.subList(myLayout.getFitCount());
+        return SubListStep.subList(myStep, myLayout.getFitCount());
       }
     });
   }
@@ -86,11 +78,13 @@ public class ContextAssistantPanel implements ActionItemExecutor {
     return myBaseline;
   }
 
+  @Override
   public boolean hasFocus() {
     return myComponent.isFocusOwner() || myComponent.isAncestorOf(KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner());
   }
 
-  public void focusMenu() {
+  @Override
+  public void requestFocus() {
     IdeFocusManager.findInstanceByComponent(myComponent).requestFocus(myComponent, true);
   }
 
@@ -106,36 +100,29 @@ public class ContextAssistantPanel implements ActionItemExecutor {
     myComponent.revalidate();
   }
 
-  public void showMenu(List<MenuItem> items) {
-    List<MenuItem> itemsWithHelp;
-    if (HelpUtil.shouldShowHelp()) {
-      itemsWithHelp = new ArrayList<>(items);
-      itemsWithHelp.add(myHelpAction);
-    } else {
-      itemsWithHelp = items;
-    }
-
-    setStep(new MenuItemListStep(this, itemsWithHelp));
-    myComponent.setVisible(true);
+  @Override
+  public void showMenu(@NotNull ListPopupStep<MenuItem> items) {
+    setStep(items);
+    setVisible(true);
   }
 
+  @Override
   public void hideMenu() {
     setStep(MenuItemListStep.EMPTY);
-    myComponent.setVisible(false);
+    setVisible(false);
   }
 
-  private void jumpToEditor(boolean forced) {
-    Component editorComponent = (Component) myEditorContext.getEditorComponent();
-    IdeFocusManager.findInstanceByComponent(editorComponent).requestFocus(editorComponent, forced);
-  }
-
-  private void setEscapeAction(Action action) {
+  public void setEscapeAction(Action action) {
     Object actionMapKey = new Object();
     myComponent.getActionMap().put(actionMapKey, action);
     myComponent.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), actionMapKey);
   }
 
-  private void setStep(MenuItemListStep step) {
+  private void setVisible(boolean visible) {
+    myComponent.setVisible(visible);
+  }
+
+  private void setStep(ListPopupStep<MenuItem> step) {
     myStep = step;
     updateButtons();
   }
@@ -156,40 +143,6 @@ public class ContextAssistantPanel implements ActionItemExecutor {
   }
 
   private JButton createBaseButton(final MenuItem item) {
-    return item.accept(new TopLevelButtonCreatingVisitor(this));
-  }
-
-  @Override
-  public void executeActionItem(final ActionItem item) {
-    if (HelpUtil.isHelpAction(item)) {
-      item.execute("");
-    } else {
-      jumpToEditor(false);
-      switch (item.getCommandPolicy()) {
-        case COMMAND_REQUIRED:
-          myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
-            @Override
-            protected void doExecute() {
-              item.execute("");
-            }
-          });
-          break;
-
-        case COMMAND_UNSUPPORTED:
-          item.execute("");
-          break;
-
-        default:
-          throw new IllegalArgumentException("Unknown command policy " + item.getCommandPolicy());
-      }
-      myEditorContext.getContextAssistantManager().scheduleUpdate();
-    }
-  }
-
-  private class JumpToEditorAction extends AbstractAction {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      jumpToEditor(true);
-    }
+    return item.accept(new TopLevelButtonCreatingVisitor(myStep));
   }
 }

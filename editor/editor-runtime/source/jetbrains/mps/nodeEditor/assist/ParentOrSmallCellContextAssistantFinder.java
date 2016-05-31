@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.assist;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
@@ -48,7 +49,7 @@ class ParentOrSmallCellContextAssistantFinder implements ContextAssistantFinder 
    * Looks for context assistant in the subtree of {@code root}, skipping big cells and {@code skipChild} (since it was checked earlier).
    */
   private ContextAssistant findAssistantInSubTree(@NotNull EditorCell root, @Nullable EditorCell skipChild) {
-    if (root instanceof ContextAssistant) return ((ContextAssistant) root);
+    if (root instanceof EditorCell_ContextAssistantComponent) return ((EditorCell_ContextAssistantComponent) root).getContextAssistant();
 
     if (!(root instanceof EditorCell_Collection)) return null;
 
