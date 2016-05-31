@@ -119,7 +119,7 @@
   </node>
   <node concept="13h7C7" id="7L5lpRJILQD">
     <property role="3GE5qa" value="TransformationMenu.Locations" />
-    <ref role="13h7C2" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
+    <ref role="13h7C2" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_ContextActionsTool" />
     <node concept="13hLZK" id="7L5lpRJILQE" role="13h7CW">
       <node concept="3clFbS" id="7L5lpRJILQF" role="2VODD2" />
     </node>
