@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.editor.menus.contextActionsTool.plugin.ContextActionsTool_ProjectPlugin" file="ContextActionsTool_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.plugin.ContextActionsTool_Tool" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.editor.menus.contextActionsTool.plugin.ContextActionsTool_Tool" file="ContextActionsTool_Tool.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
+    <classNode dependClassName="com.intellij.openapi.wm.ex.ToolWindowEx" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.ChangeViewAction" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.ContextMenuController" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.ToolComponent" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.ToolController" />
+    <classNode dependClassName="jetbrains.mps.editor.menus.contextActionsTool.runtime.ViewType" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.assist.SelectionMenuProviderByCellAndConcept" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
+  </dependency>
+</dependenciesRoot>
+

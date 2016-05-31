@@ -4106,22 +4106,22 @@
     <node concept="1l3spV" id="4Sf$XywNuap" role="1l3spN">
       <node concept="398223" id="axQ2jNKhOz" role="39821P">
         <node concept="L2wRC" id="axQ2jNFdln" role="39821P">
-          <ref role="L2wRA" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+          <ref role="L2wRA" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
         </node>
         <node concept="L2wRC" id="2X_LC_CDFE_" role="39821P">
-          <ref role="L2wRA" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+          <ref role="L2wRA" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
         </node>
         <node concept="L2wRC" id="33LYnHOCpS4" role="39821P">
-          <ref role="L2wRA" node="33LYnHOCppR" resolve="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+          <ref role="L2wRA" node="33LYnHOCppR" resolve="jetbrains.mps.lang.editor.menus.testExtendingLanguage" />
         </node>
         <node concept="L2wRC" id="33LYnHOCpUL" role="39821P">
-          <ref role="L2wRA" node="33LYnHOCpBH" resolve="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+          <ref role="L2wRA" node="33LYnHOCpBH" resolve="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage" />
         </node>
         <node concept="L2wRC" id="4Sf$XywNuar" role="39821P">
-          <ref role="L2wRA" node="4Sf$XywNuay" resolve="jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
+          <ref role="L2wRA" node="4Sf$XywNuay" resolve="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage" />
         </node>
         <node concept="L2wRC" id="4Sf$XywNuoV" role="39821P">
-          <ref role="L2wRA" node="4Sf$XywNum3" resolve="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" />
+          <ref role="L2wRA" node="4Sf$XywNum3" resolve="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage" />
         </node>
         <node concept="3_J27D" id="axQ2jNKhO_" role="Nbhlr">
           <node concept="3Mxwew" id="axQ2jNKhPr" role="3MwsjC">
@@ -4130,11 +4130,11 @@
         </node>
       </node>
       <node concept="398223" id="4Sf$XywNuaq" role="39821P">
-        <node concept="L2wRC" id="4Sf$XywNuas" role="39821P">
-          <ref role="L2wRA" node="4Sf$XywNuaG" resolve="jetbrains.mps.lang.editor.contextAssistant.tests" />
-        </node>
         <node concept="L2wRC" id="2X_LC_CDFGq" role="39821P">
-          <ref role="L2wRA" node="axQ2jNKpix" resolve="jetbrains.mps.lang.editor.transformationMenu.tests" />
+          <ref role="L2wRA" node="axQ2jNKpix" resolve="jetbrains.mps.lang.editor.menus.tests" />
+        </node>
+        <node concept="L2wRC" id="4Sf$XywNuas" role="39821P">
+          <ref role="L2wRA" node="4Sf$XywNuaG" resolve="jetbrains.mps.lang.editor.menus.contextAssistant.tests" />
         </node>
         <node concept="3_J27D" id="4Sf$XywNuat" role="Nbhlr">
           <node concept="3Mxwew" id="4Sf$XywNuau" role="3MwsjC">
@@ -4157,7 +4157,7 @@
       <property role="TrG5h" value="transformation-menu-tests" />
       <node concept="1E1JtD" id="2X_LC_CP7fo" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
         <property role="3LESm3" value="69068b7c-ba1f-47fb-a486-4981f42606e9" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="2X_LC_CP7hB" role="3LF7KH">
@@ -4168,9 +4168,9 @@
               <node concept="2Ry0Ak" id="2X_LC_CP7hE" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="axQ2jNxuP8" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
-                  <node concept="2Ry0Ak" id="axQ2jNxuQ5" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.testMetaLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxc" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.testMetaLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4183,7 +4183,7 @@
           </node>
         </node>
         <node concept="1yeLz9" id="axQ2jNxuQ_" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage#3415354185901915849" />
+          <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.testMetaLanguage#3415354185901915849" />
           <property role="3LESm3" value="e7f3952e-b4e4-4190-bdf4-d553cb97c53e" />
           <property role="2GAjPV" value="false" />
           <node concept="1SiIV0" id="axQ2jNxuQA" role="3bR37C">
@@ -4196,13 +4196,13 @@
         <node concept="1SiIV0" id="478VZjcfQl9" role="3bR37C">
           <node concept="3bR9La" id="478VZjcfQla" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
           </node>
         </node>
       </node>
       <node concept="1E1JtD" id="2X_LC_CDElV" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.testLanguage" />
         <property role="3LESm3" value="4eb772b0-4df3-414a-b894-63abeb912f56" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="2X_LC_CDElW" role="3LF7KH">
@@ -4213,9 +4213,9 @@
               <node concept="2Ry0Ak" id="2X_LC_CDEp7" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="2X_LC_CDEpI" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
-                  <node concept="2Ry0Ak" id="2X_LC_CDEql" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.testLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxe" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.testLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4242,13 +4242,13 @@
         <node concept="1SiIV0" id="axQ2jNxuR_" role="3bR37C">
           <node concept="3bR9La" id="axQ2jNxuRA" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
           </node>
         </node>
       </node>
       <node concept="1E1JtD" id="33LYnHOCppR" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.testExtendingLanguage" />
         <property role="3LESm3" value="9b3af7e0-9a52-4741-a75d-becf7e1d5117" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="33LYnHOCppU" role="3LF7KH">
@@ -4259,9 +4259,9 @@
               <node concept="2Ry0Ak" id="33LYnHOCpvg" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="33LYnHOCpyy" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage" />
-                  <node concept="2Ry0Ak" id="33LYnHOCp$y" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.testExtendingLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxg" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.testExtendingLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4270,13 +4270,13 @@
         </node>
         <node concept="1SiIV0" id="33LYnHOCp_d" role="3bR37C">
           <node concept="1Busua" id="33LYnHOCp_e" role="1SiIV1">
-            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
           </node>
         </node>
       </node>
       <node concept="1E1JtD" id="33LYnHOCpBH" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage" />
         <property role="3LESm3" value="f909cea5-3e79-4399-b0a6-980af6d53669" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="33LYnHOCpBK" role="3LF7KH">
@@ -4287,9 +4287,9 @@
               <node concept="2Ry0Ak" id="33LYnHOCpJn" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="33LYnHOCpNQ" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage" />
-                  <node concept="2Ry0Ak" id="33LYnHOCpPp" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.testUnusedExtendingLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.testUnusedExtendingLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxi" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4298,13 +4298,13 @@
         </node>
         <node concept="1SiIV0" id="33LYnHOCpQa" role="3bR37C">
           <node concept="1Busua" id="33LYnHOCpQb" role="1SiIV1">
-            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
           </node>
         </node>
       </node>
       <node concept="1E1JtA" id="axQ2jNKpix" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.transformationMenu.tests" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.tests" />
         <property role="3LESm3" value="0aa20195-3c81-4810-b4b6-be1166055d6a" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="tests" />
@@ -4314,9 +4314,9 @@
             <node concept="2Ry0Ak" id="axQ2jNKpn4" role="2Ry0An">
               <property role="2Ry0Am" value="testsolutions" />
               <node concept="2Ry0Ak" id="axQ2jNKpoh" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.tests" />
-                <node concept="2Ry0Ak" id="axQ2jNKpq2" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.transformationMenu.tests.msd" />
+                <property role="2Ry0Am" value="editor.menus.tests" />
+                <node concept="2Ry0Ak" id="6oUy5jx7Pxk" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.tests.msd" />
                 </node>
               </node>
             </node>
@@ -4331,7 +4331,7 @@
         <node concept="1SiIV0" id="axQ2jNKprt" role="3bR37C">
           <node concept="3bR9La" id="axQ2jNKpru" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.transformationMenu.testLanguage" />
+            <ref role="3bR37D" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
           </node>
         </node>
         <node concept="1SiIV0" id="axQ2jNKprv" role="3bR37C">
@@ -4355,7 +4355,7 @@
         <node concept="1SiIV0" id="478VZjcfQk1" role="3bR37C">
           <node concept="3bR9La" id="478VZjcfQk2" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" />
+            <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
           </node>
         </node>
       </node>
@@ -4364,7 +4364,7 @@
       <property role="TrG5h" value="context-assistant-tests" />
       <node concept="1E1JtD" id="4Sf$XywNuay" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage" />
         <property role="3LESm3" value="9a629f9a-abc9-4c29-b1b8-db7f349f7fbc" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="4Sf$XywNuaz" role="3LF7KH">
@@ -4375,9 +4375,9 @@
               <node concept="2Ry0Ak" id="4Sf$XywNuaA" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="4Sf$XywNuaB" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
-                  <node concept="2Ry0Ak" id="4Sf$XywNuis" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.testLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.contextAssistant.testLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxm" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4410,7 +4410,7 @@
       </node>
       <node concept="1E1JtD" id="4Sf$XywNum3" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage" />
         <property role="3LESm3" value="d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="4Sf$XywNum6" role="3LF7KH">
@@ -4421,9 +4421,9 @@
               <node concept="2Ry0Ak" id="4Sf$XywNumM" role="2Ry0An">
                 <property role="2Ry0Am" value="testlangs" />
                 <node concept="2Ry0Ak" id="4Sf$XywNumR" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage" />
-                  <node concept="2Ry0Ak" id="4Sf$XywNumW" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage.mpl" />
+                  <property role="2Ry0Am" value="editor.menus.contextAssistant.extension.testLanguage" />
+                  <node concept="2Ry0Ak" id="6oUy5jx7Pxo" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.mpl" />
                   </node>
                 </node>
               </node>
@@ -4432,13 +4432,13 @@
         </node>
         <node concept="1SiIV0" id="4Sf$XywNumY" role="3bR37C">
           <node concept="1Busua" id="4Sf$XywNumZ" role="1SiIV1">
-            <ref role="1Busuk" node="4Sf$XywNuay" resolve="jetbrains.mps.lang.editor.contextAssistant.testLanguage" />
+            <ref role="1Busuk" node="4Sf$XywNuay" resolve="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage" />
           </node>
         </node>
       </node>
       <node concept="1E1JtA" id="4Sf$XywNuaG" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.editor.contextAssistant.tests" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.menus.contextAssistant.tests" />
         <property role="3LESm3" value="39e0eaec-a754-4bf3-b9e5-fb075e13bcc5" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="tests" />
@@ -4448,9 +4448,9 @@
             <node concept="2Ry0Ak" id="4Sf$XywNuaJ" role="2Ry0An">
               <property role="2Ry0Am" value="testsolutions" />
               <node concept="2Ry0Ak" id="4Sf$XywNuaK" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.tests" />
-                <node concept="2Ry0Ak" id="4Sf$XywNujm" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.contextAssistant.tests.msd" />
+                <property role="2Ry0Am" value="editor.menus.contextAssistant.tests" />
+                <node concept="2Ry0Ak" id="6oUy5jx7Pxq" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.menus.contextAssistant.tests.msd" />
                 </node>
               </node>
             </node>
