@@ -73,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacadeImpl" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
@@ -165,6 +166,17 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.platform.refactoring.UsagesModelTracker" file="UsagesModelTracker.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.RepositoryChangeTracker" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.event.AbstractModelChangeEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="com.intellij.openapi.Disposable" />
+    <classNode extendsClassName="jetbrains.mps.extapi.model.SNodeBatchChangeListener" />
   </dependency>
 </dependenciesRoot>
 

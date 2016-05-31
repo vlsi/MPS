@@ -2598,10 +2598,10 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="7DGCeT2Ukph" role="1B3o_S" />
       <node concept="37vLTG" id="7DGCeT2Ukpi" role="3clF46">
-        <property role="TrG5h" value="project" />
+        <property role="TrG5h" value="modelAccess" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="7DGCeT2Ukpj" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="2FW2ExVkIuC" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
         </node>
       </node>
       <node concept="37vLTG" id="7DGCeT2Ukpk" role="3clF46">

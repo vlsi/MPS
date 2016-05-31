@@ -92,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringView" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
     <classNode dependClassName="java.util.List" />
@@ -126,9 +127,11 @@
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

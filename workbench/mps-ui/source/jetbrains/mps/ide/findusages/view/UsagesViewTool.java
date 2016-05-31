@@ -153,7 +153,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()), new ProgressMonitorAdapter(indicator));
+            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()).getModelAccess(), new ProgressMonitorAdapter(indicator));
           }
 
           @Override

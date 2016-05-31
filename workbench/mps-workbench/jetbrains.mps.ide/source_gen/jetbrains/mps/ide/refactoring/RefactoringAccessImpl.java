@@ -53,21 +53,21 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   }
   @Deprecated
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    showRefactoringView(project, callback, searchResults, null, name);
+    showRefactoringView(project, callback, null, searchResults, null, name);
   }
   @Deprecated
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    showRefactoringView(refactoringContext, callback, searchResults, null, name);
+    showRefactoringView(refactoringContext, callback, null, searchResults, null, name);
   }
   @Override
-  public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name) {
+  public void showRefactoringView(Project project, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringView refactoringView = project.getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(project, callback, truncateSearchResults(project, searchResults), searchTask, name);
+    refactoringView.showRefactoringView(project, refactoringViewAction, disposeAction, truncateSearchResults(project, searchResults), searchTask, name);
   }
   @Override
-  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, SearchTask searchTask, String name) {
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringView refactoringView = refactoringContext.getSelectedProject().getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(refactoringContext, callback, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), searchTask);
+    refactoringView.showRefactoringView(refactoringContext, refactoringViewAction, disposeAction, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), searchTask);
   }
   private SearchResults truncateSearchResults(Project project, SearchResults searchResults) {
     if (searchResults.getSearchResults().size() > MAX_SEARCH_RESULTS) {

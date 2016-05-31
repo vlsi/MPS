@@ -57,7 +57,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.findusages.model.SearchTask" file="SearchTask.java">
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
 </dependenciesRoot>

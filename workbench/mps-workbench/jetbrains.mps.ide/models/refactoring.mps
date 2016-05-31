@@ -533,6 +533,15 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
+      <node concept="37vLTG" id="1u1ej4GoWfG" role="3clF46">
+        <property role="TrG5h" value="disposeAction" />
+        <node concept="3uibUv" id="1u1ej4GoWQJ" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+        <node concept="2AHcQZ" id="3872w8aSs0Q" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+      </node>
       <node concept="37vLTG" id="29N7xYwTFNj" role="3clF46">
         <property role="TrG5h" value="searchResults" />
         <property role="3TUv4t" value="false" />
@@ -562,6 +571,9 @@
                 </node>
                 <node concept="37vLTw" id="2BHiRxglRG3" role="37wK5m">
                   <ref role="3cqZAo" node="29N7xYwTFNg" resolve="refactoringViewAction" />
+                </node>
+                <node concept="37vLTw" id="1u1ej4GoX8k" role="37wK5m">
+                  <ref role="3cqZAo" node="1u1ej4GoWfG" resolve="disposeAction" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxglB7m" role="37wK5m">
                   <ref role="3cqZAo" node="29N7xYwTFNj" resolve="searchResults" />
@@ -640,13 +652,22 @@
         </node>
       </node>
       <node concept="37vLTG" id="29N7xYwTFNY" role="3clF46">
-        <property role="TrG5h" value="refactoringViewAction" />
+        <property role="TrG5h" value="refactorAction" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="6q$OdKd9cc8" role="1tU5fm">
           <ref role="3uigEE" to="u42p:3g3N8kb3Dex" resolve="RefactoringViewAction" />
         </node>
         <node concept="2AHcQZ" id="29N7xYwTFO0" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1u1ej4Gooso" role="3clF46">
+        <property role="TrG5h" value="disposeAction" />
+        <node concept="3uibUv" id="1u1ej4GoIPU" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+        <node concept="2AHcQZ" id="3872w8aSrJX" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
         </node>
       </node>
       <node concept="37vLTG" id="29N7xYwTFO1" role="3clF46">
@@ -685,7 +706,10 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgl1$d" role="37wK5m">
-                  <ref role="3cqZAo" node="29N7xYwTFNY" resolve="refactoringViewAction" />
+                  <ref role="3cqZAo" node="29N7xYwTFNY" resolve="refactorAction" />
+                </node>
+                <node concept="37vLTw" id="1u1ej4Gorol" role="37wK5m">
+                  <ref role="3cqZAo" node="1u1ej4Gooso" resolve="disposeAction" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxghczx" role="37wK5m">
                   <ref role="3cqZAo" node="29N7xYwTFO1" resolve="searchResults" />
@@ -745,6 +769,15 @@
       <property role="2bfB8j" value="true" />
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="false" />
+      <node concept="2tJIrI" id="1u1ej4GoShU" role="jymVt" />
+      <node concept="312cEg" id="1u1ej4GoRN1" role="jymVt">
+        <property role="TrG5h" value="myDisposeAction" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm6S6" id="1u1ej4GoRN2" role="1B3o_S" />
+        <node concept="3uibUv" id="1u1ej4GoRN4" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
       <node concept="3Tm6S6" id="29N7xYwTFLX" role="1B3o_S" />
       <node concept="3uibUv" id="29N7xYwTFLY" role="1zkMxy">
         <ref role="3uigEE" node="29N7xYwTFW8" resolve="RefactoringViewItemImpl" />
@@ -764,6 +797,12 @@
           <property role="3TUv4t" value="false" />
           <node concept="3uibUv" id="6q$OdKd9ccp" role="1tU5fm">
             <ref role="3uigEE" to="u42p:3g3N8kb3Dex" resolve="RefactoringViewAction" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="1u1ej4GoT21" role="3clF46">
+          <property role="TrG5h" value="disposeAction" />
+          <node concept="3uibUv" id="1u1ej4GoT22" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
           </node>
         </node>
         <node concept="37vLTG" id="29N7xYwTFM6" role="3clF46">
@@ -795,6 +834,16 @@
               <ref role="3cqZAo" node="7DGCeT2LtAw" resolve="searchTask" />
             </node>
           </node>
+          <node concept="3clFbF" id="1u1ej4GoUfM" role="3cqZAp">
+            <node concept="37vLTI" id="1u1ej4GoUzF" role="3clFbG">
+              <node concept="37vLTw" id="1u1ej4GoUMU" role="37vLTx">
+                <ref role="3cqZAo" node="1u1ej4GoT21" resolve="disposeAction" />
+              </node>
+              <node concept="37vLTw" id="1u1ej4GoUfK" role="37vLTJ">
+                <ref role="3cqZAo" node="1u1ej4GoRN1" resolve="myDisposeAction" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3clFbW" id="29N7xYwTFMa" role="jymVt">
@@ -812,6 +861,12 @@
           <property role="3TUv4t" value="false" />
           <node concept="3uibUv" id="6q$OdKd9ccZ" role="1tU5fm">
             <ref role="3uigEE" to="u42p:3g3N8kb3Dex" resolve="RefactoringViewAction" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="1u1ej4GoBWm" role="3clF46">
+          <property role="TrG5h" value="disposeAction" />
+          <node concept="3uibUv" id="1u1ej4GoLKc" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
           </node>
         </node>
         <node concept="37vLTG" id="29N7xYwTFMh" role="3clF46">
@@ -843,6 +898,16 @@
               <ref role="3cqZAo" node="7DGCeT2LtaV" resolve="searchTask" />
             </node>
           </node>
+          <node concept="3clFbF" id="1u1ej4GoVc9" role="3cqZAp">
+            <node concept="37vLTI" id="1u1ej4GoVwa" role="3clFbG">
+              <node concept="37vLTw" id="1u1ej4GoVVn" role="37vLTx">
+                <ref role="3cqZAo" node="1u1ej4GoBWm" resolve="disposeAction" />
+              </node>
+              <node concept="37vLTw" id="1u1ej4GoVc7" role="37vLTJ">
+                <ref role="3cqZAo" node="1u1ej4GoRN1" resolve="myDisposeAction" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="29N7xYwTFMl" role="jymVt">
@@ -852,6 +917,26 @@
         <node concept="3Tm1VV" id="29N7xYwTFMm" role="1B3o_S" />
         <node concept="3cqZAl" id="29N7xYwTFMn" role="3clF45" />
         <node concept="3clFbS" id="29N7xYwTFOQ" role="3clF47">
+          <node concept="3clFbJ" id="3872w8aSmLD" role="3cqZAp">
+            <node concept="3clFbS" id="3872w8aSmLF" role="3clFbx">
+              <node concept="3clFbF" id="1u1ej4GoGHO" role="3cqZAp">
+                <node concept="2OqwBi" id="1u1ej4GoH6F" role="3clFbG">
+                  <node concept="37vLTw" id="1u1ej4GoW8t" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1u1ej4GoRN1" resolve="myDisposeAction" />
+                  </node>
+                  <node concept="liA8E" id="1u1ej4GoHdY" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="3872w8aSopu" role="3clFbw">
+              <node concept="10Nm6u" id="3872w8aSo_q" role="3uHU7w" />
+              <node concept="37vLTw" id="3872w8aSnKG" role="3uHU7B">
+                <ref role="3cqZAo" node="1u1ej4GoRN1" resolve="myDisposeAction" />
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="29N7xYwTFOR" role="3cqZAp">
             <node concept="3cpWsn" id="29N7xYwTFOS" role="3cpWs9">
               <property role="TrG5h" value="index" />
@@ -4706,6 +4791,7 @@
             <node concept="37vLTw" id="7DGCeT2LGWc" role="37wK5m">
               <ref role="3cqZAo" node="7DGCeT2LC1f" resolve="callback" />
             </node>
+            <node concept="10Nm6u" id="1u1ej4Gpa47" role="37wK5m" />
             <node concept="37vLTw" id="7DGCeT2LHtl" role="37wK5m">
               <ref role="3cqZAo" node="7DGCeT2LC1h" resolve="searchResults" />
             </node>
@@ -4761,6 +4847,7 @@
             <node concept="37vLTw" id="7DGCeT2LKDU" role="37wK5m">
               <ref role="3cqZAo" node="7DGCeT2LC1v" resolve="callback" />
             </node>
+            <node concept="10Nm6u" id="1u1ej4Gpm0t" role="37wK5m" />
             <node concept="37vLTw" id="7DGCeT2LKDV" role="37wK5m">
               <ref role="3cqZAo" node="7DGCeT2LC1x" resolve="searchResults" />
             </node>
@@ -4782,9 +4869,15 @@
         </node>
       </node>
       <node concept="37vLTG" id="3g3N8kb3LMk" role="3clF46">
-        <property role="TrG5h" value="callback" />
+        <property role="TrG5h" value="refactoringViewAction" />
         <node concept="3uibUv" id="3g3N8kb3MoL" role="1tU5fm">
           <ref role="3uigEE" to="u42p:3g3N8kb3Dex" resolve="RefactoringViewAction" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1u1ej4Gp6SP" role="3clF46">
+        <property role="TrG5h" value="disposeAction" />
+        <node concept="3uibUv" id="1u1ej4Gp7Fn" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
       <node concept="37vLTG" id="3g3N8kb3LMm" role="3clF46">
@@ -4836,7 +4929,10 @@
                 <ref role="3cqZAo" node="3g3N8kb3LMi" resolve="project" />
               </node>
               <node concept="37vLTw" id="2BHiRxglwxn" role="37wK5m">
-                <ref role="3cqZAo" node="3g3N8kb3LMk" resolve="callback" />
+                <ref role="3cqZAo" node="3g3N8kb3LMk" resolve="refactoringViewAction" />
+              </node>
+              <node concept="37vLTw" id="1u1ej4Gpajy" role="37wK5m">
+                <ref role="3cqZAo" node="1u1ej4Gp6SP" resolve="disposeAction" />
               </node>
               <node concept="1rXfSq" id="3$KqHszPfUb" role="37wK5m">
                 <ref role="37wK5l" node="3$KqHszOH_n" resolve="truncateSearchResults" />
@@ -4871,9 +4967,15 @@
         </node>
       </node>
       <node concept="37vLTG" id="6q$OdKd99DB" role="3clF46">
-        <property role="TrG5h" value="callback" />
+        <property role="TrG5h" value="refactoringViewAction" />
         <node concept="3uibUv" id="6q$OdKd99DC" role="1tU5fm">
           <ref role="3uigEE" to="u42p:3g3N8kb3Dex" resolve="RefactoringViewAction" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1u1ej4GoYcX" role="3clF46">
+        <property role="TrG5h" value="disposeAction" />
+        <node concept="3uibUv" id="1u1ej4GoZcu" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
       <node concept="37vLTG" id="6q$OdKd99DD" role="3clF46">
@@ -4930,7 +5032,10 @@
                 <ref role="3cqZAo" node="6q$OdKd99D_" resolve="refactoringContext" />
               </node>
               <node concept="37vLTw" id="2BHiRxglqeN" role="37wK5m">
-                <ref role="3cqZAo" node="6q$OdKd99DB" resolve="callback" />
+                <ref role="3cqZAo" node="6q$OdKd99DB" resolve="refactoringViewAction" />
+              </node>
+              <node concept="37vLTw" id="1u1ej4Gp1zC" role="37wK5m">
+                <ref role="3cqZAo" node="1u1ej4GoYcX" resolve="disposeAction" />
               </node>
               <node concept="1rXfSq" id="3$KqHszOY1L" role="37wK5m">
                 <ref role="37wK5l" node="3$KqHszOH_n" resolve="truncateSearchResults" />

@@ -59,6 +59,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.BorderFactory;
@@ -319,7 +320,7 @@ public class UsagesView implements IExternalizeable {
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
           indicator.setIndeterminate(true);
-          mySearchResults = mySearchTask.execute(myView.myProject, new ProgressMonitorAdapter(indicator));
+          mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
         }
 
         @Override
@@ -371,9 +372,9 @@ public class UsagesView implements IExternalizeable {
       return objectHolder.getObject();
     }
 
-    public SearchResults execute(Project mpsProject, ProgressMonitor progressMonitor) {
+    public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
       myProgress = progressMonitor;
-      mpsProject.getModelAccess().runReadAction(this);
+      modelAccess.runReadAction(this);
       return getSearchResults();
     }
 
