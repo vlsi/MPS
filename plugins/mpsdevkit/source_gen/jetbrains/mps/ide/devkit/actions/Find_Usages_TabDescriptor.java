@@ -18,6 +18,9 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Find_Usages_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.UsagesFinder;
@@ -61,7 +64,11 @@ public class Find_Usages_TabDescriptor extends RelationDescriptor {
     return false;
   }
   public List<SNode> getConcepts(final SNode node) {
-    return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
+    return ListSequence.fromList(ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node)).select(new ISelector<SAbstractConcept, SNode>() {
+      public SNode select(SAbstractConcept it) {
+        return ((SNode) it.getDeclarationNode());
+      }
+    }).toListSequence();
   }
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.FIND_USAGES, node, concept);

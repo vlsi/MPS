@@ -18,6 +18,9 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Intentions_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = AllIcons.Actions.IntentionBulb;
@@ -61,7 +64,11 @@ public class Intentions_TabDescriptor extends RelationDescriptor {
     return false;
   }
   public List<SNode> getConcepts(final SNode node) {
-    return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.INTENTIONS, node);
+    return ListSequence.fromList(ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.INTENTIONS, node)).select(new ISelector<SAbstractConcept, SNode>() {
+      public SNode select(SAbstractConcept it) {
+        return ((SNode) it.getDeclarationNode());
+      }
+    }).toListSequence();
   }
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.INTENTIONS, node, concept);

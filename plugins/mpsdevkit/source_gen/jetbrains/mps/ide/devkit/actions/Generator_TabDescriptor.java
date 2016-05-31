@@ -16,14 +16,15 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -32,6 +33,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -77,9 +80,9 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     return false;
   }
   public List<SNode> getConcepts(final SNode node) {
-    List<SNode> result = ConceptEditorHelper.getAvailableConceptAspects(SNodeOperations.getModel(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch").getDeclarationNode()), node);
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence").getDeclarationNode());
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence").getDeclarationNode());
+    List<SAbstractConcept> result = ConceptEditorHelper.getAvailableConceptAspects(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator"), node);
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
     boolean rootable = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.getBoolean((SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
     boolean isInterface = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
     if (rootable || isInterface) {
@@ -92,23 +95,27 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       }
       if (isNeedRootTemplate) {
         for (SLanguage lang : SModelOperations.getAllLanguageImports(SNodeOperations.getModel(node))) {
-          SModule language = lang.getSourceModule();
-          if (!(language instanceof Language)) {
-            continue;
-          }
-          // we could iterate over concepts here with SLanguage#getConcepts() and then access conceptNode with getDeclarationNode 
-          // however shall clarify what happens for not-yet built language first (i.e. when there's no StructureAspectDescriptor yet) 
-          SModel structureModel = ((Language) language).getStructureModelDescriptor();
-          for (SNode nodeToAdd : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-            SNode conceptToAdd = (SNode) nodeToAdd;
-            if (SPropertyOperations.getBoolean(nodeToAdd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"))) {
-              ListSequence.fromList(result).addElement(conceptToAdd);
+          for (SAbstractConcept importedConcept : lang.getConcepts()) {
+            if (importedConcept.isAbstract()) {
+              continue;
+            }
+            if (!((importedConcept instanceof SConcept))) {
+              continue;
+            }
+            if (((SConcept) importedConcept).isRootable()) {
+              ListSequence.fromList(result).addElement(importedConcept);
             }
           }
         }
       }
     }
-    return result;
+
+    // todo do not cast to nodes here 
+    return ListSequence.fromList(result).select(new ISelector<SAbstractConcept, SNode>() {
+      public SNode select(SAbstractConcept it) {
+        return ((SNode) it.getDeclarationNode());
+      }
+    }).toListSequence();
   }
   public boolean commandOnCreate() {
     return false;
