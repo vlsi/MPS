@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> implements RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
@@ -17,8 +16,7 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
     progressMonitor.start((firstOption == null ? "" : firstOption.getDescription()), ListSequence.fromList(initialStates).count());
     List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> result = ListSequence.fromList(new ArrayList<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>>(ListSequence.fromList(initialStates).count()));
     for (InitialDataObject initialState : ListSequence.fromList(initialStates)) {
-      progressMonitor.advance(1);
-      ListSequence.fromList(result).addElement(getChanges(initialState, repository, selectedOptions, searchScope));
+      ListSequence.fromList(result).addElement(getChanges(initialState, repository, selectedOptions, searchScope, progressMonitor.subTask(1)));
       if (progressMonitor.isCanceled()) {
         return null;
       }
@@ -26,10 +24,10 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
     progressMonitor.done();
     return result;
   }
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    return getChanges(initialState, repository, selectedOptions, searchScope, new EmptyProgressMonitor());
-  }
   public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    return getChanges(initialState, repository, selectedOptions, searchScope);
+  }
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
     throw new UnsupportedOperationException();
   }
 

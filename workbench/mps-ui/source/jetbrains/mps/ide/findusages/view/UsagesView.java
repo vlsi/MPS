@@ -319,7 +319,6 @@ public class UsagesView implements IExternalizeable {
         private SearchResults mySearchResults;
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
           mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
         }
 
@@ -334,10 +333,6 @@ public class UsagesView implements IExternalizeable {
     }
   }
 
-  /**
-   * Abstraction of search activity one could execute several times.
-   * Use {@link #canExecute()} and {@link #execute(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.util.ProgressMonitor)}.
-   */
   public static final class SearchTaskImpl implements SearchTask, Runnable {
     private final IResultProvider myResultProvider;
     private final SearchQuery mySearchQuery;
