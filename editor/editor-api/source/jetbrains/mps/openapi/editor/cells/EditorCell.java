@@ -183,7 +183,13 @@ public interface EditorCell {
    * @param y -coordinate
    * @return cell at the specified position
    */
-  EditorCell findLeaf(int x, int y);
+  default EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      return this;
+    } else {
+      return null;
+    }
+  }
 
   /**
    * Searching for the cell within the editor "line" which is closest to the specified position
@@ -199,7 +205,13 @@ public interface EditorCell {
    * @param condition
    * @return
    */
-  EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition);
+  default EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
+      return this;
+    } else {
+      return null;
+    }
+  }
 
   boolean isSingleNodeCell();
 
