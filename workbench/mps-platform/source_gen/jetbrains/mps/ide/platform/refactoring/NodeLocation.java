@@ -10,8 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
@@ -56,7 +55,7 @@ public interface NodeLocation {
       this.model = model.getReference();
     }
     public boolean canInsert(SRepository repository, SNode nodeToMove) {
-      return model.resolve(repository) != null && SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(nodeToMove)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+      return model.resolve(repository) != null && ((SConcept) SNodeOperations.getConcept(nodeToMove)).isRootable();
     }
     public void insertNode(SRepository repository, SNode nodeToMove) {
       SModel oldModel = nodeToMove.getModel();
@@ -74,7 +73,7 @@ public interface NodeLocation {
       myAspect = aspect;
     }
     public boolean canInsert(SRepository repository, SNode nodeToMove) {
-      return myLanguage.resolve(repository) instanceof Language && SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(nodeToMove)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+      return myLanguage.resolve(repository) instanceof Language && ((SConcept) SNodeOperations.getConcept(nodeToMove)).isRootable();
     }
     public void insertNode(SRepository repository, SNode nodeToMove) {
       SModel model = myAspect.getOrCreate(((Language) myLanguage.resolve(repository)));
