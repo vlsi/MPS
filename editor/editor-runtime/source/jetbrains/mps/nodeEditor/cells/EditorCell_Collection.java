@@ -858,6 +858,44 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  @Override
+  public EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      for (EditorCell child : this) {
+        EditorCell result = child.findLeaf(x, y);
+        if (result != null) {
+          return result;
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight()) {
+      List<EditorCell> candidates = new ArrayList<>();
+      for (EditorCell child : this) {
+        EditorCell nextCandidate = child.findNearestLeafOnLine(x, y, condition);
+        if (nextCandidate != null) {
+          candidates.add(nextCandidate);
+        }
+      }
+
+      EditorCell best = null;
+      int bestDistance = Integer.MAX_VALUE;
+      for (EditorCell next : candidates) {
+        int distance = GeometryUtil.getHorizontalDistance(next, x);
+        if (distance < bestDistance) {
+          best = next;
+          bestDistance = distance;
+        }
+      }
+      return best;
+    }
+    return null;
+  }
+
   /**
    * @deprecated since MPS 3.4 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
    */

@@ -533,13 +533,25 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public final jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
-    return GeometryUtil.findLeaf(this, x, y);
+  public jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findNearestLeafOnLine(int x, int y, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
+      return this;
+    } else {
+      return null;
+    }
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
-   * and check the condition upon returned cell
+   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */
   @Deprecated
   @Override
@@ -551,7 +563,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
    */
   @Deprecated
   @Override
@@ -560,7 +573,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
    */
   @Deprecated
   @Override

@@ -89,7 +89,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -1984,9 +1983,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = GeometryUtil.findLeaf(myRootCell, x, y);
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(x, y);
     if (cell == null) {
-      cell = GeometryUtil.findNearestCell(myRootCell, x, y, Condition.TRUE_CONDITION);
+      cell = myRootCell.findNearestLeafOnLine(x, y, Condition.TRUE_CONDITION);
     }
     return cell;
   }
@@ -2111,14 +2110,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void processCoordSelection(MouseEvent mouseEvent) {
-    jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell = GeometryUtil.findLeaf(myRootCell, mouseEvent.getX(), mouseEvent.getY());
+    jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY());
     if (newSelectedCell != null && CellTraversalUtil.getFoldedParent(newSelectedCell) != null) {
       // mouse was pressed on a cell representing folded collection
       return;
     }
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
-      newSelectedCell =
-          GeometryUtil.findNearestCell(myRootCell, mouseEvent.getX(), mouseEvent.getY(), jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
+      newSelectedCell = myRootCell.findNearestLeafOnLine(mouseEvent.getX(), mouseEvent.getY(), jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
     }
 
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {

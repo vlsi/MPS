@@ -16,14 +16,8 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
-import org.jetbrains.mps.openapi.util.TreeIterator;
-import org.jetbrains.mps.util.Condition;
 
 import java.awt.Rectangle;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * TODO: push up to openapi package
@@ -58,46 +52,5 @@ public class GeometryUtil {
       return 0;
     }
     return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x_point), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x_point));
-  }
-
-  public static EditorCell findLeaf(EditorCell cell, int x, int y) {
-    for (TreeIterator<EditorCell> treeIterator = new CellTreeIterable(cell, cell, true).iterator(); treeIterator.hasNext(); ) {
-      EditorCell next = treeIterator.next();
-      if (next.getX() <= x && x < next.getX() + next.getWidth() && next.getY() <= y && y < next.getY() + next.getHeight()) {
-        if (!(next instanceof EditorCell_Collection)) {
-          return next;
-        }
-      } else {
-        treeIterator.skipChildren();
-      }
-    }
-    return null;
-  }
-
-  public static EditorCell findNearestCell(EditorCell cell, int x, int y, Condition<EditorCell> condition) {
-    List<EditorCell> candidates = new ArrayList<>();
-    for (EditorCell editorCell : new CellTreeIterable(cell, cell, true)) {
-      if (editorCell instanceof EditorCell_Collection || !condition.met(editorCell)) {
-        continue;
-      }
-      if (y >= editorCell.getY() && y <= editorCell.getY() + editorCell.getHeight()) {
-        candidates.add(editorCell);
-      }
-    }
-    EditorCell nearestCell = findNearestCell(candidates, x);
-    return nearestCell;
-  }
-
-  private static EditorCell findNearestCell(Iterable<EditorCell> candidates, int x) {
-    EditorCell best = null;
-    int bestDistance = Integer.MAX_VALUE;
-    for (EditorCell cell : candidates) {
-      int distance = getHorizontalDistance(cell, x);
-      if (distance < bestDistance) {
-        best = cell;
-        bestDistance = distance;
-      }
-    }
-    return best;
   }
 }

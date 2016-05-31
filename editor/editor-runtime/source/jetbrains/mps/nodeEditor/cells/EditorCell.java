@@ -50,20 +50,20 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
-   * and check the condition upon returned cell
+   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */
   @Deprecated
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
    */
   @Deprecated
   EditorCell findCellWeak(int x, int y);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
    */
   @Deprecated
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);

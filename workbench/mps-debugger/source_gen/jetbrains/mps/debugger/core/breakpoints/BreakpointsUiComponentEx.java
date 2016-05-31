@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.textgen.trace.TraceInfo;
-import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -89,7 +88,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
-    EditorCell foundCell = GeometryUtil.findNearestCell(editorComponent.getRootCell(), x, y, new Condition<EditorCell>() {
+    EditorCell foundCell = editorComponent.getRootCell().findNearestLeafOnLine(x, y, new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell object) {
         EditorCell debuggableOrTraceableCell = findDebuggableOrTraceableCell(object);
