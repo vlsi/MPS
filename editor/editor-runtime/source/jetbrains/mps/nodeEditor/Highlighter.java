@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,20 +44,14 @@ import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -104,28 +98,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       });
     }
   };
-  private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
-    @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      final List<SModelReference> referencesToRecheck = new ArrayList<SModelReference>(replacedModels.size());
-      for (SModel sModel : replacedModels) {
-        if (sModel.getRepository() != null) {
-          referencesToRecheck.add(sModel.getReference());
-        }
-      }
 
-      addPendingAction(new Runnable() {
-        @Override
-        public void run() {
-          for (SModelReference reference : referencesToRecheck) {
-            myEditorTracker.markEditorsOfModelUnchecked(reference);
-          }
-        }
-      });
-    }
-  };
-
-  private Project myProject;
+  private final Project myProject;
+  private final MPSProject myMPSProject;
   private CommandWatcher myCommandWatcher = new CommandWatcher();
   private final HighlighterEditorList myEditorList;
   private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
@@ -136,8 +111,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
    * MPSProject and un-initialized before it.
    */
-  public Highlighter(@SuppressWarnings("UnusedParameters") MPSProject mpsProject, Project project, FileEditorManager fileEditorManager, InspectorTool inspector,
-      MPSCoreComponents coreComponents) {
+  public Highlighter(MPSProject mpsProject, Project project, FileEditorManager fileEditorManager, InspectorTool inspector, MPSCoreComponents coreComponents) {
+    myMPSProject = mpsProject;
     myProject = project;
     myEditorList = new HighlighterEditorList(fileEditorManager);
     myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
@@ -152,8 +127,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       return;
     }
     myClassLoaderManager.addClassesHandler(myClassesListener);
-    myEventCollector.startListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
-    SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
+    myEventCollector.startListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
+    myEventCollector.onModelReload(model -> {
+      if (model.getRepository() != null) {
+        final SModelReference mref = model.getReference();
+        addPendingAction(() -> myEditorTracker.markEditorsOfModelUnchecked(mref));
+      }
+    });
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -177,7 +157,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
     ApplicationManager.getApplication().addApplicationListener(myApplicationListener);
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
-    ModelAccess.instance().addCommandListener(myCommandWatcher);
+    myMPSProject.getModelAccess().addCommandListener(myCommandWatcher);
     myThread = new HighlighterThread();
     myThread.start();
   }
@@ -185,11 +165,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   @Override
   public void projectClosed() {
     stopUpdater();
-    ModelAccess.instance().removeCommandListener(myCommandWatcher);
+    myMPSProject.getModelAccess().removeCommandListener(myCommandWatcher);
     CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
-    myEventCollector.stopListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
+    myEventCollector.stopListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
@@ -204,12 +183,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 
   private void addPendingAction(Runnable r) {

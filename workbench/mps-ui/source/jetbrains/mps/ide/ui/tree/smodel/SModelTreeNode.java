@@ -22,11 +22,9 @@ import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeTextSource;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
@@ -47,6 +45,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
 
@@ -290,11 +290,23 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       String shortName = candidateName.substring(modelName.length() + 1);
       if (shortName.indexOf('.') > 0) {
         String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
-        SModel md = SModelRepository.getInstance().getModelDescriptor(maxPackage);
-        if (md != null) {
-          if (IterableUtil.asCollection(md.getModule().getModels()).contains(myModelDescriptor)) {
-            return false;
-          }
+        // Imagine, we need to figure out whether a.b.c.d is subfolder model of a.b (iow, 'a.b'.isSubfolderModel('a.b.c.d'))
+        // Guess, 'subfolder' means 'shall be displayed as my immediate child' here.
+        // As I understood, the idea is to check whether there's model a.b.c (sic!) inside same module and thus candidate model
+        // shall get reported as its subfolder rather than that of myModelDescriptor.
+        // XXX there's a defect that two models like a.b.x.y1 and a.b.x.y2 (namely, jetbrains.mps.ide solution,
+        //     findusages.findalgorithm.finders.specific and findusages.view.optionseditor)
+        //     are visualized as distinct x.y1 and x.y2 when there's no a.b.x model (i.e. they are not grouped under
+        //     same 'x' node unless there are nodes in 'x' model).
+        //     Another defect in present implementation is that it doesn't take into account actual set of visualized models
+        //     and assumes all models of a module are visible, but this can't be fixed unless the whole approach (see below) is fixed.
+        // FIXME This whole code with implicit assumption of iterating over models from the same module, and recursive processing of
+        //       sorted(!) collection of models with int index (i.e. SModelsSubtree.buildChildModels()) needs refactoring.
+        //       Sorting ensures we didn't create SModelTreeNode for a child before the one for the parent.
+        //       Can't refactor right away as mbeddr subclasses our tree nodes and heavily relies on implementation.
+        final Stream<SModel> modelsInMyModule = StreamSupport.stream(myModelDescriptor.getModule().getModels().spliterator(), false);
+        if (modelsInMyModule.anyMatch(m -> maxPackage.equals(m.getName().getLongName()))) {
+          return false;
         }
       }
       return true;

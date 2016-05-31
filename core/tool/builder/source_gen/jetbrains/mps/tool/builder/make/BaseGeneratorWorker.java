@@ -22,13 +22,6 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
-import java.util.Map;
-import java.io.File;
-import java.util.List;
-import jetbrains.mps.core.tool.environment.util.FileMPSProject;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -39,6 +32,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.List;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -48,7 +42,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 
-public class BaseGeneratorWorker extends MpsWorker {
+public abstract class BaseGeneratorWorker extends MpsWorker {
   private final BaseGeneratorWorker.MyMessageHandler myMessageHandler = new BaseGeneratorWorker.MyMessageHandler();
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
@@ -138,43 +132,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     myEnvironment.flushAllEvents();
   }
 
-  @Override
-  public void work() {
-    setupEnvironment();
-    boolean doneSomething = false;
-    //  for each project 
-    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
-    for (File file : mpsProjects.keySet()) {
-      FileMPSProject p = new FileMPSProject(file);
-      makeProject();
-
-      info("Loaded project " + p);
-
-      executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<SModule>(), new HashSet<SModel>()));
-
-      doneSomething = true;
-      p.dispose();
-    }
-
-    // the rest -- using dummy project 
-    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-    LinkedHashSet<SModel> models = new LinkedHashSet<SModel>();
-    collectFromModuleFiles(modules);
-    collectFromModelFiles(models);
-    MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
-    if (go.hasAnythingToGenerate()) {
-      Project project = createDummyProject();
-      executeTask(project, go);
-      doneSomething = true;
-    }
-    if (!(doneSomething)) {
-      error("Could not find anything to generate.");
-    }
-
-    dispose();
-    showStatistic();
-  }
-
   protected void makeProject() {
     final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
@@ -241,11 +198,6 @@ public class BaseGeneratorWorker extends MpsWorker {
         return (MResource) r;
       }
     });
-  }
-
-  public static void main(String[] args) {
-    MpsWorker mpsWorker = new BaseGeneratorWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
-    mpsWorker.workFromMain();
   }
 
   private class MyMessageHandler implements IMessageHandler {

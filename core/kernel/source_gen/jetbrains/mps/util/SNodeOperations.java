@@ -27,9 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
@@ -309,18 +306,7 @@ public class SNodeOperations {
       to.putUserObject(key, from.getUserObject(key));
     }
   }
-  /**
-   * 
-   * @deprecated use SNodeReference.getModelReference().resolve() instead.
-   */
-  @Deprecated
-  public static SModel getModelFromNodeReference(SNodeReference ref) {
-    SModelReference mr = ref.getModelReference();
-    if (mr == null) {
-      return null;
-    }
-    return SModelRepository.getInstance().getModelDescriptor(mr);
-  }
+
   /**
    * 
    * @deprecated not supposed to be used not in MPS core. Use ref.getTargetNode

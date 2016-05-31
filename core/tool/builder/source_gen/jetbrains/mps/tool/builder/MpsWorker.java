@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
-import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -42,15 +41,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.util.FileUtil;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -169,20 +159,7 @@ public abstract class MpsWorker {
       throw new RuntimeException(this.formatErrorsReport(name).toString());
     }
   }
-  public void collectModelsToGenerate(MpsWorker.ObjectsToProcess go) {
-    collectFromProjects(go.getProjects());
-    collectFromModuleFiles(go.getModules());
-    collectFromModelFiles(go.getModels());
-  }
-  private void collectFromProjects(Set<Project> projects) {
-    for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
-      if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        Project project = myEnvironment.openProject(projectFile);
-        info("Loaded project " + project);
-        projects.add(project);
-      }
-    }
-  }
+
   protected void extractModels(Set<SModel> result, Project project) {
     for (SModule module : project.getModulesWithGenerators()) {
       for (SModel model : module.getModels()) {
@@ -202,14 +179,11 @@ public abstract class MpsWorker {
       }
     }
   }
-  protected void collectFromModuleFiles(final Set<SModule> modules) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        for (File moduleFile : myWhatToDo.getModules()) {
-          processModuleFile(moduleFile, modules);
-        }
-      }
-    });
+  protected void collectFromModuleFiles(Set<SModule> modules) {
+    // FIXME GenTestWorker/GenTestTask still use module files as configuration argument (from Java code perspective, need to check actual tasks in scripts and generator thereof) 
+    for (File moduleFile : myWhatToDo.getModules()) {
+      processModuleFile(moduleFile, modules);
+    }
   }
   protected void processModuleFile(final File moduleFile, final Set<SModule> modules) {
     if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
@@ -247,41 +221,7 @@ public abstract class MpsWorker {
       }
     }
   }
-  protected void collectFromModelFiles(Set<SModel> model) {
-    for (File f : myWhatToDo.getModels()) {
-      if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
-        processModelFile(model, f);
-      }
-    }
-  }
-  private void processModelFile(Set<SModel> models, File f) {
-    final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
-    //  try to find if model is loaded 
-    SModel model = SModelFileTracker.getInstance().findModel(ifile);
-    if (model != null) {
-      models.add(model);
-      info("Found model " + model);
-      return;
-    }
-    //  if model is not loaded, read it 
-    try {
-      SModelHeader dr = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
-      SModelReference modelReference = dr.getModelReference();
-      if (modelReference == null) {
-        String modelName = FileUtil.getNameWithoutExtension(ifile.getName());
-        modelReference = PersistenceFacade.getInstance().createModelReference(modelName);
-      }
-      info("Read model " + modelReference);
-      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(modelReference);
-      if (existingDescr == null) {
-        error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
-      } else {
-        models.add(existingDescr);
-      }
-    } catch (ModelReadException e) {
-      log(e);
-    }
-  }
+
   private void log(String text, Level level) {
     if (!(level.isGreaterOrEqual(myWhatToDo.getLogLevel()))) {
       return;
