@@ -16,9 +16,8 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Typesystem_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Type;
@@ -79,14 +78,10 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
   public boolean isSingle() {
     return false;
   }
-  public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromList(ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.TYPESYSTEM, node)).select(new ISelector<SAbstractConcept, SNode>() {
-      public SNode select(SAbstractConcept it) {
-        return ((SNode) it.getDeclarationNode());
-      }
-    }).toListSequence();
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.TYPESYSTEM, node);
   }
-  public SNode createNode(final SNode node, final SNode concept) {
+  public SNode createAspect(final SNode node, final SConcept concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TYPESYSTEM, node, concept);
   }
 }

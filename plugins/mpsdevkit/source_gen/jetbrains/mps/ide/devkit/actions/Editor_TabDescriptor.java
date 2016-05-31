@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Editor_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Editor;
@@ -65,14 +65,10 @@ public class Editor_TabDescriptor extends RelationDescriptor {
   public boolean isSingle() {
     return false;
   }
-  public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromList(ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.EDITOR, node)).select(new ISelector<SAbstractConcept, SNode>() {
-      public SNode select(SAbstractConcept it) {
-        return ((SNode) it.getDeclarationNode());
-      }
-    }).toListSequence();
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.EDITOR, node);
   }
-  public SNode createNode(final SNode node, final SNode concept) {
+  public SNode createAspect(final SNode node, final SConcept concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, node, concept);
   }
 }

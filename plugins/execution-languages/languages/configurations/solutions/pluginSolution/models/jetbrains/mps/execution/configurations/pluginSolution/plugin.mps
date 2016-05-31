@@ -33,6 +33,7 @@
     <import index="kz9k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.navigation(MPS.Editor/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" implicit="true" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
@@ -265,7 +266,6 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -424,9 +424,11 @@
           <node concept="3clFbF" id="4KDfkUwMkUX" role="3cqZAp">
             <node concept="2ShNRf" id="4KDfkUwMkUY" role="3clFbG">
               <node concept="Tc6Ow" id="4KDfkUwMkUZ" role="2ShVmc">
-                <node concept="3bZ5Sz" id="6u50yCpt5Ub" role="HW$YZ" />
                 <node concept="35c_gC" id="6u50yCpt5nW" role="HW$Y0">
                   <ref role="35c_gD" to="uhxm:6LlKjXrMe7G" resolve="RunConfigurationExecutor" />
+                </node>
+                <node concept="3uibUv" id="2Mnhr$7fBeA" role="HW$YZ">
+                  <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                 </node>
               </node>
             </node>
@@ -1007,9 +1009,11 @@
           <node concept="3clFbF" id="7in5BMsZfs_" role="3cqZAp">
             <node concept="2ShNRf" id="7in5BMsZfsA" role="3clFbG">
               <node concept="Tc6Ow" id="7in5BMsZfsB" role="2ShVmc">
-                <node concept="3bZ5Sz" id="6u50yCpt8RH" role="HW$YZ" />
                 <node concept="35c_gC" id="6u50yCpt9vj" role="HW$Y0">
                   <ref role="35c_gD" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
+                </node>
+                <node concept="3uibUv" id="2Mnhr$7fVnd" role="HW$YZ">
+                  <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                 </node>
               </node>
             </node>

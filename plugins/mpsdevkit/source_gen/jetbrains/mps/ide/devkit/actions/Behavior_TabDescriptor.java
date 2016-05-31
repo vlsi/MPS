@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Behavior_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Behavior;
@@ -70,10 +71,10 @@ public class Behavior_TabDescriptor extends RelationDescriptor {
 
     return Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspects", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "4G9PD8$NvPM"), aspectModel))).first();
   }
-  public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior").getDeclarationNode());
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
   }
-  public SNode createNode(final SNode node, final SNode concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.BEHAVIOR, node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior").getDeclarationNode());
+  public SNode createAspect(final SNode node, final SConcept concept) {
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.BEHAVIOR, node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
   }
 }

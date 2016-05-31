@@ -16,15 +16,14 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -79,8 +78,8 @@ public class Generator_TabDescriptor extends RelationDescriptor {
   public boolean isSingle() {
     return false;
   }
-  public List<SNode> getConcepts(final SNode node) {
-    List<SAbstractConcept> result = ConceptEditorHelper.getAvailableConceptAspects(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator"), node);
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    List<SConcept> result = ConceptEditorHelper.getAvailableConceptAspects(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator"), node);
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
     boolean rootable = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.getBoolean((SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
@@ -103,24 +102,18 @@ public class Generator_TabDescriptor extends RelationDescriptor {
               continue;
             }
             if (((SConcept) importedConcept).isRootable()) {
-              ListSequence.fromList(result).addElement(importedConcept);
+              ListSequence.fromList(result).addElement(((SConcept) importedConcept));
             }
           }
         }
       }
     }
-
-    // todo do not cast to nodes here 
-    return ListSequence.fromList(result).select(new ISelector<SAbstractConcept, SNode>() {
-      public SNode select(SAbstractConcept it) {
-        return ((SNode) it.getDeclarationNode());
-      }
-    }).toListSequence();
+    return result;
   }
   public boolean commandOnCreate() {
     return false;
   }
-  public SNode createNode(final SNode node, final SNode concept) {
+  public SNode createAspect(final SNode node, final SConcept concept) {
     Project ideaProject = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     JFrame frame = WindowManager.getInstance().getFrame(ideaProject);
     jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(ideaProject);

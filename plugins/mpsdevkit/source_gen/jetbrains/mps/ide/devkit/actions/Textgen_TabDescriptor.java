@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Textgen_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.TextGen;
@@ -67,10 +68,10 @@ public class Textgen_TabDescriptor extends RelationDescriptor {
 
     return Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspects", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "4G9PD8$NvPM"), aspectModel))).first();
   }
-  public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration").getDeclarationNode());
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
   }
-  public SNode createNode(final SNode node, final SNode concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TEXT_GEN, node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration").getDeclarationNode());
+  public SNode createAspect(final SNode node, final SConcept concept) {
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TEXT_GEN, node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
   }
 }
