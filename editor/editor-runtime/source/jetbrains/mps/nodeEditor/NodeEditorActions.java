@@ -50,12 +50,12 @@ public class NodeEditorActions {
   abstract static class HorizontalNavigationAction extends NavigationAction {
     public EditorCell getNextAlignedLeaf(EditorCell cell) {
       return CellTraversalUtil.getNextLeaf(cell,
-          c -> c.isSelectable() && !GeometryUtil.isAbove(cell, c) && !GeometryUtil.isAbove(c, cell) && GeometryUtil.isLeftToRight(cell, c));
+          c -> c.isSelectable() && !GeometryUtil.isAbove(c, cell) && !GeometryUtil.isAbove(cell, c) && GeometryUtil.isLeftToRight(cell, c));
     }
 
     public EditorCell getPrevAlignedLeaf(EditorCell cell) {
       return CellTraversalUtil.getPrevLeaf(cell,
-          c -> c.isSelectable() && !GeometryUtil.isAbove(cell, c) && !GeometryUtil.isAbove(c, cell) && GeometryUtil.isLeftToRight(c, cell));
+          c -> c.isSelectable() && !GeometryUtil.isAbove(c, cell) && !GeometryUtil.isAbove(cell, c) && GeometryUtil.isLeftToRight(c, cell));
     }
   }
 
@@ -324,11 +324,11 @@ public class NodeEditorActions {
 
     private EditorCell findTarget(EditorCell cell, int baseX) {
       EditorCell bestMatch = null;
-      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(c, cell);
+      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(cell, c);
       for (EditorCell nextCandidate = CellTraversalUtil.getPrevLeaf(cell, condition); nextCandidate != null;
            nextCandidate = CellTraversalUtil.getPrevLeaf(nextCandidate, condition)) {
 
-        if (bestMatch != null && GeometryUtil.isAbove(nextCandidate, bestMatch)) {
+        if (bestMatch != null && GeometryUtil.isAbove(bestMatch, nextCandidate)) {
           break;
         }
 
@@ -375,11 +375,11 @@ public class NodeEditorActions {
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
       EditorCell bestMatch = null;
-      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(cell, c);
+      Condition<EditorCell> condition = c -> c.isSelectable() && GeometryUtil.isAbove(c, cell);
       for (EditorCell nextCandidate = CellTraversalUtil.getNextLeaf(cell, condition); nextCandidate != null;
            nextCandidate = CellTraversalUtil.getNextLeaf(nextCandidate, condition)) {
 
-        if (bestMatch != null && GeometryUtil.isAbove(bestMatch, nextCandidate)) {
+        if (bestMatch != null && GeometryUtil.isAbove(nextCandidate, bestMatch)) {
           break;
         }
 

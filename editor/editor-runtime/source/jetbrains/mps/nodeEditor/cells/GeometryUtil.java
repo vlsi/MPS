@@ -39,7 +39,7 @@ public class GeometryUtil {
     return getBounds(cell).contains(x, y);
   }
 
-  public static boolean isAbove(EditorCell below, EditorCell above) {
+  public static boolean isAbove(EditorCell above, EditorCell below) {
     return below.getY() + below.getHeight() <= above.getY();
   }
 
