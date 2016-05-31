@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 @State(
     name = "ContextAssistantSettings",
-    storages = @Storage(file = StoragePathMacros.APP_CONFIG + "/contextAssistant.xml")
+    storages = @Storage("mpsContextAssistant.xml")
 )
 public class ContextAssistantSettings implements ApplicationComponent, PersistentStateComponent<ContextAssistantSettings> {
 
