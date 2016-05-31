@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Actions_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Action;
@@ -60,10 +61,10 @@ public class Actions_TabDescriptor extends RelationDescriptor {
   public boolean isSingle() {
     return false;
   }
-  public List<SNode> getConcepts(final SNode node) {
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.ACTIONS, node);
   }
-  public SNode createNode(final SNode node, final SNode concept) {
+  public SNode createAspect(final SNode node, final SConcept concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.ACTIONS, node, concept);
   }
 }

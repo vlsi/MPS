@@ -119,7 +119,7 @@ public final class CreateFromUsageUtil {
           continue;
         }
         final SConcept concept = (SConcept) ac;
-        if (SNodeUtil.getConceptDeclaration_IsRootable(ac.getDeclarationNode()) && conceptsFilter.met(concept)) {
+        if (concept.isRootable() && conceptsFilter.met(concept)) {
           group.add(new AddNewRootAction(model, concept, newRootHandler));
           hasChildren = true;
         }

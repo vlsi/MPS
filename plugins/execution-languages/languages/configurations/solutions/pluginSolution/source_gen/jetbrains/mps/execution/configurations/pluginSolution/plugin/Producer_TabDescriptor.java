@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -48,10 +49,10 @@ public class Producer_TabDescriptor extends RelationDescriptor {
   public boolean isSingle() {
     return false;
   }
-  public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer").getDeclarationNode());
+  public Iterable<SConcept> getAspectConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"));
   }
-  public SNode createNode(final SNode node, final SNode concept) {
+  public SNode createAspect(final SNode node, final SConcept concept) {
     SNode producer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")));
     SLinkOperations.setTarget(producer, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, 0x3c97fcb79c84a8efL, "configuration"), createPersistentConfigurationType_rqzr2x_a0b0a0(node));
     SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -30,6 +31,7 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -104,10 +106,12 @@ public class ModelConstraints {
     if (concept.isAbstract()) {
       return false;
     }
-    SNode conceptDecl = concept.getDeclarationNode();
-    if (conceptDecl != null && !SNodeUtil.getConceptDeclaration_IsRootable(conceptDecl)) {
+
+    assert concept instanceof SConcept : "non-abstract SAbstractConcept should be an instanceof SConcept";
+    if (!((SConcept) concept).isRootable()) {
       return false;
     }
+
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
     return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
   }

@@ -184,6 +184,10 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     return false;
   }
 
+  @Override
+  public boolean isRootable() {
+    return false;
+  }
 
   @NotNull
   @Override

@@ -74,6 +74,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, LinkDescriptor> myLinksByName;
   private boolean isAbstract;
   private boolean isFinal;
+  private boolean myIsRootable;
   private String conceptAlias;
   private String shortDescription;
   private String helpURL;
@@ -108,6 +109,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         // and might query concept descriptor we are trying to initialize right now, which is not what we would like to encounter.
         isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
         isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
+        isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
         helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
 
         conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
@@ -334,6 +336,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public boolean isInterfaceConcept() {
     return isInterface;
+  }
+
+  @Override
+  public boolean isRootable() {
+    return myIsRootable;
   }
 
   @Override

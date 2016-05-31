@@ -25,8 +25,8 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class NewCreateBlock__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7cL, "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
+public final class CreateBlock__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196e8f01L, "jetbrains.mps.lang.plugin.structure.CreateBlock");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> showName_id1653mnvAgry = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("showName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgry").registry(REGISTRY).build();
@@ -43,15 +43,15 @@ public final class NewCreateBlock__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
     List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "7692832593197710975"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "7459370737647671570"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1203853034639"));
     return result;
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
-    return _quotation_createNode_ruf7io_a0a2();
+    return _quotation_createNode_8ubmkw_a0a2();
   }
 
-  /*package*/ NewCreateBlock__BehaviorDescriptor() {
+  /*package*/ CreateBlock__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -101,7 +101,7 @@ public final class NewCreateBlock__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_ruf7io_a0a2() {
+  private static SNode _quotation_createNode_8ubmkw_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);

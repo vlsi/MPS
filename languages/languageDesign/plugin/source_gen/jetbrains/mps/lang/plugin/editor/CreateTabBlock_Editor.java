@@ -15,6 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CreateTabBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -25,8 +26,14 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_kdmyd8_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_kdmyd8_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_kdmyd8_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_kdmyd8_c0(editorContext, node));
+    if (renderingCondition_kdmyd8_a1a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_kdmyd8_b0(editorContext, node));
+    }
+    if (renderingCondition_kdmyd8_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_kdmyd8_c0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_kdmyd8_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kdmyd8_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_kdmyd8_a0(EditorContext editorContext, SNode node) {
@@ -59,11 +66,77 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNode_kdmyd8_b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new CreateTabBlock_Editor.conceptsBlockSingleRoleHandler_kdmyd8_b0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66aL, "conceptsBlock"), editorContext);
+    SingleRoleCellProvider provider = new CreateTabBlock_Editor.oldConceptsBlockSingleRoleHandler_kdmyd8_b0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66aL, "oldConceptsBlock"), editorContext);
     return provider.createCell();
   }
-  private class conceptsBlockSingleRoleHandler_kdmyd8_b0 extends SingleRoleCellProvider {
-    public conceptsBlockSingleRoleHandler_kdmyd8_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class oldConceptsBlockSingleRoleHandler_kdmyd8_b0 extends SingleRoleCellProvider {
+    public oldConceptsBlockSingleRoleHandler_kdmyd8_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("oldConceptsBlock");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_oldConceptsBlock");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no oldConceptsBlock>";
+    }
+  }
+  private static boolean renderingCondition_kdmyd8_a1a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66aL, "oldConceptsBlock")) != null);
+  }
+  private EditorCell createRefNode_kdmyd8_c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new CreateTabBlock_Editor.oldCreateBlockSingleRoleHandler_kdmyd8_c0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66cL, "oldCreateBlock"), editorContext);
+    return provider.createCell();
+  }
+  private class oldCreateBlockSingleRoleHandler_kdmyd8_c0 extends SingleRoleCellProvider {
+    public oldCreateBlockSingleRoleHandler_kdmyd8_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("oldCreateBlock");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_oldCreateBlock");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no oldCreateBlock>";
+    }
+  }
+  private static boolean renderingCondition_kdmyd8_a2a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66cL, "oldCreateBlock")) != null);
+  }
+  private EditorCell createRefNode_kdmyd8_d0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new CreateTabBlock_Editor.conceptsBlockSingleRoleHandler_kdmyd8_d0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x6785022a196e8ee3L, "conceptsBlock"), editorContext);
+    return provider.createCell();
+  }
+  private class conceptsBlockSingleRoleHandler_kdmyd8_d0 extends SingleRoleCellProvider {
+    public conceptsBlockSingleRoleHandler_kdmyd8_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -85,15 +158,15 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "<no conceptsBlock>";
+      return "<concepts block>";
     }
   }
-  private EditorCell createRefNode_kdmyd8_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new CreateTabBlock_Editor.createBlockSingleRoleHandler_kdmyd8_c0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66cL, "createBlock"), editorContext);
+  private EditorCell createRefNode_kdmyd8_e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new CreateTabBlock_Editor.createBlockSingleRoleHandler_kdmyd8_e0(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x6785022a196e8f03L, "createBlock"), editorContext);
     return provider.createCell();
   }
-  private class createBlockSingleRoleHandler_kdmyd8_c0 extends SingleRoleCellProvider {
-    public createBlockSingleRoleHandler_kdmyd8_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class createBlockSingleRoleHandler_kdmyd8_e0 extends SingleRoleCellProvider {
+    public createBlockSingleRoleHandler_kdmyd8_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -115,7 +188,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "<no createBlock>";
+      return "<create block>";
     }
   }
 }

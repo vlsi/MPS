@@ -32,4 +32,6 @@ public interface SConcept extends SAbstractConcept {
    * Returns immediately implemented interfaces
    */
   Iterable<SInterfaceConcept> getSuperInterfaces();
+
+  boolean isRootable();
 }

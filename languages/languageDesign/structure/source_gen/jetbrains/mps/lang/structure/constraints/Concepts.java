@@ -70,8 +70,8 @@ public class Concepts {
       }
     });
   }
-  public static Iterable<SNode> getAvailableLanguageConcepts(SModel model, final SAbstractConcept metaConcept) {
-    Language language = as_v88qdx_a0a0a1(model.getModule(), Language.class);
+  public static Iterable<SNode> getAvailableLanguageConcepts(SNode contextNode, final SAbstractConcept metaConcept) {
+    Language language = as_v88qdx_a0a0a1(SNodeOperations.getModel(contextNode).getModule(), Language.class);
     if (language == null) {
       return Collections.emptyList();
     }

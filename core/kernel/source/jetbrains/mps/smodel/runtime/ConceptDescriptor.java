@@ -45,6 +45,8 @@ public interface ConceptDescriptor {
 
   boolean isFinal(); // since 3.0
 
+  boolean isRootable();
+
   @NotNull
   String getConceptAlias(); // since 3.0
 

@@ -27,6 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -80,7 +81,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
             results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
               public boolean accept(SearchResult<SNode> it) {
                 SNode node = (SNode) it.getObject();
-                return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) && isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
+                return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x57cf4eb14c4f9ef5L, "icon")) == null);
               }
             }).toListSequence();
           }
@@ -102,8 +103,5 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
         });
       }
     });
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

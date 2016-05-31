@@ -98,6 +98,11 @@ public class InvalidConcept extends SAbstractConceptAdapter implements SConcept,
   }
 
   @Override
+  public boolean isRootable() {
+    return false;
+  }
+
+  @Override
   protected boolean isSubConceptOfSpecial(@NotNull ConceptDescriptor thisDescriptor, ConceptDescriptor anotherDescriptor, SAbstractConcept anotherConcept) {
     return false;
   }
