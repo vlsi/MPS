@@ -106,6 +106,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getContainingBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   boolean isAncestorOf(EditorCell cell);
 
   /**

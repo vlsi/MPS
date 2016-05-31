@@ -883,6 +883,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return new DefaultCellInfo(this);
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public boolean isAncestorOf(EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
