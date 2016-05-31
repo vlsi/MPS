@@ -37,6 +37,7 @@ import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -48,33 +49,34 @@ import java.util.Set;
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
   private Project myProject;
-  private RefactoringContext myRefactoringContext;
   private RefactoringViewAction myCallback;
-  private boolean myHasModelsToGenerate;
+  private Runnable myDisposeAction;
 
 
   @Override
   public void close() {
+    if (myDisposeAction != null) {
+      myDisposeAction.run();
+    }
     usageView.close();
   }
 
-  public void showRefactoringView(@NotNull Project project, @NotNull final RefactoringViewAction callback, @NotNull SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+  public void showRefactoringView(@NotNull Project project, @NotNull final RefactoringViewAction callback, @Nullable Runnable disposeAction, @NotNull SearchResults searchResults, String name) {
     myProject = project;
-    init(callback, searchResults, name, hasModelsToGenerate);
+    init(callback, disposeAction, searchResults, name);
   }
 
-  public void showRefactoringView(@NotNull RefactoringContext refactoringContext, @NotNull final RefactoringViewAction callback, @NotNull SearchResults searchResults, boolean hasModelsToGenerate) {
-    myRefactoringContext = refactoringContext;
+  public void showRefactoringView(@NotNull RefactoringContext refactoringContext, @NotNull final RefactoringViewAction callback, @Nullable Runnable disposeAction, @NotNull SearchResults searchResults) {
     myProject = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
-    init(callback, searchResults, refactoringContext.getRefactoring().getUserFriendlyName(), hasModelsToGenerate);
+    init(callback, disposeAction, searchResults, refactoringContext.getRefactoring().getUserFriendlyName());
   }
 
-  private void init(final RefactoringViewAction callback, SearchResults searchResults, String name, final boolean hasModelsToGenerate) {
+  private void init(final RefactoringViewAction callback, Runnable disposeAction, SearchResults searchResults, String name) {
     List<UsageTarget> usageTargets = new LinkedList<UsageTarget>();
     UsageViewManager viewManager = UsageViewManager.getInstance(myProject);
 
     myCallback = callback;
-    myHasModelsToGenerate = hasModelsToGenerate;
+    myDisposeAction = disposeAction;
 
     for (Object searchedNode : searchResults.getAliveNodes()) {
       if (searchedNode instanceof SNode) {
