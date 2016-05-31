@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.util.ArrayUtil;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -38,20 +37,20 @@ import java.awt.Rectangle;
  * </ul>
  */
 class OverflowLayout implements LayoutManager {
-  public static final String SHOW_ON_OVERFLOW = "SHOW_ON_OVERFLOW";
+  static final String SHOW_ON_OVERFLOW = "SHOW_ON_OVERFLOW";
 
   private final int myHorizontalGap;
   private Component myShowOnOverflowComponent;
   private int myFitCount = -1;
 
-  public OverflowLayout(int horizontalGap) {
+  OverflowLayout(int horizontalGap) {
     myHorizontalGap = horizontalGap;
   }
 
   /**
    * Count of components that fit inside the container and are visible (not counting the overflow component).
    */
-  public int getFitCount() {
+  int getFitCount() {
     return myFitCount;
   }
 

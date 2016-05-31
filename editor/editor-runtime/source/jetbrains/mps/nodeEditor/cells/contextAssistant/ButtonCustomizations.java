@@ -42,7 +42,7 @@ class ButtonCustomizations {
   private static final ButtonUI ourButtonUI = createFlatButtonUI();
   private static final Border ourButtonBorder = createFlatButtonBorder();
 
-  public static JButton setupMenuButton(JButton button) {
+  static JButton setupMenuButton(JButton button) {
     return makeFlat(makeEnterPressButton(button));
   }
 
@@ -107,7 +107,7 @@ class ButtonCustomizations {
     private final Color myPlainColor;
     private final Color myActiveColor;
 
-    public FlatButtonBorder(Color plainColor, Color activeColor) {
+    FlatButtonBorder(Color plainColor, Color activeColor) {
       myPlainColor = plainColor;
       myActiveColor = activeColor;
     }
@@ -136,13 +136,13 @@ class ButtonCustomizations {
     }
   }
 
-  public static class FlatButtonUI extends BasicButtonUI {
+  private static class FlatButtonUI extends BasicButtonUI {
     private final Color myForeground;
     private final Color myBackground;
     private final Color myFocusedForeground;
     private final Color myFocusedBackground;
 
-    public FlatButtonUI(Color foreground, Color background, Color focusedForeground, Color focusedBackground) {
+    FlatButtonUI(Color foreground, Color background, Color focusedForeground, Color focusedBackground) {
       myFocusedForeground = focusedForeground;
       myFocusedBackground = focusedBackground;
       myForeground = foreground;
