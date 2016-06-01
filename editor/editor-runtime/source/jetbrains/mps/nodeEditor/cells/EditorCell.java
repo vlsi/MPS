@@ -225,14 +225,14 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   /**
    * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
-   * like: isAbove(cell, this)
+   * like: isAbove(this, cell)
    */
   @Deprecated
   boolean isAbove(EditorCell cell);
 
   /**
    * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
-   * like: isAbove(this, cell)
+   * like: isAbove(cell, this)
    */
   @Deprecated
   boolean isBelow(EditorCell cell);

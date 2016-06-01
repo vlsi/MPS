@@ -48,7 +48,7 @@ public class GeometryUtil {
   }
 
   public static boolean isAbove(EditorCell above, EditorCell below) {
-    return below.getY() + below.getHeight() <= above.getY();
+    return above.getY() + above.getHeight() <= below.getY();
   }
 
   public static boolean isLeftToRight(EditorCell left, EditorCell right) {
