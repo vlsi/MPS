@@ -273,6 +273,16 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
     }
 
     @Override
+    public boolean isFirstCaretPosition() {
+      return false;
+    }
+
+    @Override
+    public boolean isLastCaretPosition() {
+      return false;
+    }
+
+    @Override
     public void home() {
     }
 

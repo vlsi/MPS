@@ -139,6 +139,16 @@ public interface EditorCell {
 
   int getCaretX();
 
+  /**
+   * @return true if the cursor is located on the first position within this cell
+   */
+  boolean isFirstCaretPosition();
+
+  /**
+   * @return true if the cursor is located on the last position within this cell
+   */
+  boolean isLastCaretPosition();
+
   void home();
 
   void end();

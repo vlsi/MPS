@@ -2708,18 +2708,11 @@
               <node concept="22lmx$" id="3ath0p6hlGO" role="3clFbw">
                 <node concept="3fqX7Q" id="6KwcZ1G3PjQ" role="3uHU7B">
                   <node concept="2OqwBi" id="6KwcZ1G3PjR" role="3fr31v">
-                    <node concept="1eOMI4" id="20m38krXaU6" role="2Oq$k0">
-                      <node concept="10QFUN" id="20m38krXaU3" role="1eOMHV">
-                        <node concept="3uibUv" id="20m38krXb4t" role="10QFUM">
-                          <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTwlk" role="10QFUP">
-                          <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="3GM_nagTwlk" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
                     </node>
                     <node concept="liA8E" id="6KwcZ1G3PjV" role="2OqNvi">
-                      <ref role="37wK5l" to="g51k:~EditorCell.isLastCaretPosition():boolean" resolve="isLastCaretPosition" />
+                      <ref role="37wK5l" to="f4zo:~EditorCell.isLastCaretPosition():boolean" resolve="isLastCaretPosition" />
                     </node>
                   </node>
                 </node>
@@ -2753,18 +2746,11 @@
             </node>
           </node>
           <node concept="2OqwBi" id="6KwcZ1G3PjW" role="3clFbw">
-            <node concept="1eOMI4" id="20m38krX9mb" role="2Oq$k0">
-              <node concept="10QFUN" id="20m38krX9m8" role="1eOMHV">
-                <node concept="3uibUv" id="20m38krX9xc" role="10QFUM">
-                  <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
-                </node>
-                <node concept="37vLTw" id="3GM_nagTtiO" role="10QFUP">
-                  <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="3GM_nagTtiO" role="2Oq$k0">
+              <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
             </node>
             <node concept="liA8E" id="6KwcZ1G3Pk0" role="2OqNvi">
-              <ref role="37wK5l" to="g51k:~EditorCell.isFirstCaretPosition():boolean" resolve="isFirstCaretPosition" />
+              <ref role="37wK5l" to="f4zo:~EditorCell.isFirstCaretPosition():boolean" resolve="isFirstCaretPosition" />
             </node>
           </node>
         </node>

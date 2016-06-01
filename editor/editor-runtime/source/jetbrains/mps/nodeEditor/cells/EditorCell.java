@@ -100,10 +100,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean isLastPositionInBigCell();
 
-  boolean isFirstCaretPosition();
-
-  boolean isLastCaretPosition();
-
   /**
    * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */

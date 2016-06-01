@@ -55,8 +55,8 @@ public class Insert_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isFirstCaretPosition()) {
-      if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
+    if (editorCell.isFirstCaretPosition()) {
+      if (!(editorCell.isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
         EditorActionUtils.callInsertBeforeAction(editorCell);
         return;
       }
