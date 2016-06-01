@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.ide.ThreadUtils;
@@ -26,11 +27,14 @@ public class JavaThread extends ProxyForJava implements IThread {
   private final List<IStackFrame> myStackFrames = ListSequence.fromList(new ArrayList<IStackFrame>());
   private boolean myInitialized = false;
   private final String myPresentation;
-  public JavaThread(@NotNull ThreadReference threadReference) {
+  private final AbstractDebugSession<?> myDebugSession;
+
+  public JavaThread(@NotNull AbstractDebugSession<?> debugSession, @NotNull ThreadReference threadReference) {
     super(threadReference);
     myThreadReference = threadReference;
     myPresentation = calculatePresentation();
     myCachedIcon = calculateIcon();
+    myDebugSession = debugSession;
   }
   public synchronized void initializeFrames() {
     if (myInitialized) {
@@ -67,6 +71,12 @@ public class JavaThread extends ProxyForJava implements IThread {
   public ThreadReference getThread() {
     return myThreadReference;
   }
+
+  @NotNull
+  public AbstractDebugSession<?> getDebugSession() {
+    return myDebugSession;
+  }
+
   @Override
   public String getName() {
     return myThreadReference.name();

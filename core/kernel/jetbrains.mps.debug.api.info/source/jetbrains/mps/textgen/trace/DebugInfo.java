@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -122,7 +123,12 @@ public class DebugInfo {
     return Collections.emptyList();
   }
 
+  /**
+   * @deprecated cumbersome contract
+   */
+  @Deprecated
   @NotNull
+  @ToRemove(version = 0)
   public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
     Map<DebugInfoRoot, List<T>> result = new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false);
     for (DebugInfoRoot root : getRootsForFile(file)) {
@@ -140,6 +146,32 @@ public class DebugInfo {
       }
     }
     return result;
+  }
+
+  /**
+   * Look up for variable nodes within scope that covers specified line of the file.
+   * List is sorted in reverse order, with variables from the bottom (most nested) coming first.
+   * <p/>
+   * The reason I don't want to expose ScopePositionInfo and let clients filter positions themselves is
+   * that they'd need access to DebugInfoRoot as well (to find out container node/model), and the API would get too complicated.
+   */
+  @NotNull
+  public List<SNodeReference> getVariableNodesForPosition(@NotNull String fileName, int line, @NotNull String varName) {
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    ArrayList<SNodeReference> rv = new ArrayList<SNodeReference>();
+    for (DebugInfoRoot dr : getRootsForFile(fileName)) {
+      ArrayList<ScopePositionInfo> positionInfos = new ArrayList<>(dr.getScopePositions());
+      Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      for (ScopePositionInfo spi : positionInfos) {
+        if (!spi.contains(fileName, line)) {
+          continue;
+        }
+        if (spi.getVarNames().contains(varName)) {
+          rv.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(spi.getVarId(varName))));
+        }
+      }
+    }
+    return rv;
   }
 
   /**

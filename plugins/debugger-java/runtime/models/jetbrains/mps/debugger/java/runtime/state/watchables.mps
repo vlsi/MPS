@@ -18,6 +18,7 @@
     <import index="5qx8" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi.event(JDK-tools/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wtoj" ref="r:42278aae-7cc0-4e00-9041-018f7301c362(jetbrains.mps.debugger.java.api.state.customViewers)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -26,6 +27,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -936,15 +938,21 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="2KV5YDxCSjM" role="jymVt">
+    <node concept="2tJIrI" id="6k4GBOygFkk" role="jymVt" />
+    <node concept="3clFb_" id="6k4GBOygGrl" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getNode" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="2KV5YDxCSjN" role="1B3o_S" />
-      <node concept="3uibUv" id="2KV5YDxCSjO" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      <property role="TrG5h" value="getSourceNode" />
+      <node concept="3uibUv" id="6k4GBOygGrm" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
-      <node concept="3clFbS" id="2KV5YDxCSjP" role="3clF47">
+      <node concept="3Tm1VV" id="6k4GBOygGrn" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6k4GBOygGro" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="2AHcQZ" id="6k4GBOygGrs" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="6k4GBOygGrt" role="3clF47">
         <node concept="3SKdUt" id="2KV5YDxCSjQ" role="3cqZAp">
           <node concept="3SKdUq" id="2KV5YDxCSjR" role="3SKWNk">
             <property role="3SKdUp" value=" todo from location???" />
@@ -954,10 +962,8 @@
           <node concept="10Nm6u" id="2KV5YDxCSjT" role="3cqZAk" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="2KV5YDxCSjU" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
     </node>
+    <node concept="2tJIrI" id="6k4GBOygFRE" role="jymVt" />
     <node concept="312cEu" id="2KV5YDxCSi6" role="jymVt">
       <property role="TrG5h" value="JavaMethodValue" />
       <property role="2bfB8j" value="true" />

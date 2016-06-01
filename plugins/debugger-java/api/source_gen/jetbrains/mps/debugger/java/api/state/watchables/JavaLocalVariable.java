@@ -11,11 +11,13 @@ import com.sun.jdi.StackFrame;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import java.util.List;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaLocalVariable extends JavaWatchable implements IWatchable {
@@ -48,20 +50,23 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
   }
-  @Override
-  public SNode getNode() {
-    JavaLocation location = myStackFrame.getLocation();
-    if (location == null) {
-      return null;
-    }
-    return TraceInfoUtil.getVar(location.getUnitName(), location.getFileName(), location.getLineNumber(), myLocalVariable.name());
-  }
-
 
   @Nullable
   @Override
   public SNodeReference getSourceNode() {
-    return super.getSourceNode();
+    JavaLocation location = myStackFrame.getLocation();
+    if (location == null) {
+      return null;
+    }
+    TraceInfoProvider traceProvider = myStackFrame.getThread().getDebugSession().getTraceProvider();
+    for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaThisObject.modelNameFromUnitName(location.getUnitName())).iterator(); it.hasNext();) {
+      DebugInfo di = it.next();
+      List<SNodeReference> varNodes = di.getVariableNodesForPosition(location.getFileName(), location.getLineNumber(), myLocalVariable.name());
+      if (!(varNodes.isEmpty())) {
+        return varNodes.get(0);
+      }
+    }
+    return null;
   }
 
   @Override

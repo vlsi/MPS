@@ -10,11 +10,13 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import java.util.List;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaThisObject extends JavaWatchable implements IWatchable {
@@ -42,23 +44,34 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
   public Icon getPresentationIcon() {
     return myValue.getPresentationIcon();
   }
-  @Override
-  public SNode getNode() {
-    JavaLocation location = myStackFrame.getLocation();
-    if (location == null) {
-      return null;
-    }
-    return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
-  }
 
   @Nullable
   @Override
   public SNodeReference getSourceNode() {
-    return super.getSourceNode();
+    final JavaLocation location = myStackFrame.getLocation();
+    if (location == null) {
+      return null;
+    }
+    TraceInfoProvider traceProvider = myStackFrame.getThread().getDebugSession().getTraceProvider();
+    for (Iterator<DebugInfo> it = traceProvider.debugInfo(modelNameFromUnitName(location.getUnitName())).iterator(); it.hasNext();) {
+      DebugInfo di = it.next();
+      List<SNodeReference> unitNodes = di.getUnitNodesForPosition(location.getFileName(), location.getLineNumber());
+      if (!(unitNodes.isEmpty())) {
+        return unitNodes.get(0);
+      }
+    }
+    return null;
   }
 
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.THIS_OBJECT;
+  }
+
+  /*package*/ static String modelNameFromUnitName(String unitName) {
+    // XXX no idea why we don't expect nested unit names, like com.package.A.B here. 
+    // just kept the way it was in TraceInfoUtil.modelFqNameFromUnitName 
+    int lastDot = unitName.lastIndexOf('.');
+    return (lastDot == -1 ? "" : unitName.substring(0, lastDot));
   }
 }
