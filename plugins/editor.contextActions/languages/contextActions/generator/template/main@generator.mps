@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:1001eaaf-b3eb-45aa-8fc4-05df7efd348d(jetbrains.mps.editor.menus.contextActions.generator.template.main@generator)">
+<model ref="r:1001eaaf-b3eb-45aa-8fc4-05df7efd348d(jetbrains.mps.lang.editor.menus.contextActions.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
@@ -8,9 +8,9 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="1ne1" ref="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.editor.menus.contextActionsTool.runtime)" />
+    <import index="1ne1" ref="r:e9a49de8-6adf-4c2e-b5c2-32fc88189c93(jetbrains.mps.lang.editor.menus.contextActionsTool.runtime)" />
     <import index="tpc3" ref="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.menus.contextActions.structure)" implicit="true" />
+    <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.lang.editor.menus.contextActions.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>

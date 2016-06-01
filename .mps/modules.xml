@@ -93,9 +93,9 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/constraints/jetbrains.mps.lang.constraints.mpl" folder="core.aspects.constraints" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/customAspect/jetbrains.mps.lang.aspect.mpl" folder="core.aspects.aspect" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/dataFlow/jetbrains.mps.lang.dataFlow.mpl" folder="core.aspects.dataflow" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/jetbrains.mps.lang.editor.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor.menus.extras/jetbrains.mps.lang.editor.menus.extras.mpl" folder="core.aspects.editor.menus.extras" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor.menus.extras/runtime/jetbrains.mps.lang.editor.menus.extras.runtime.msd" folder="core.aspects.editor.menus.extras" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/jetbrains.mps.lang.editor.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/extension/jetbrains.mps.lang.extension.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/findUsages/jetbrains.mps.lang.findUsages.mpl" folder="core.aspects.findUsages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" folder="core.aspects.descriptor" />
@@ -189,8 +189,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/jetbrains.mps.testHybridEditor.diagram.generated.mpl" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/jetbrains.mps.testHybridEditor.sandbox.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/jetbrains.mps.testHybridEditor.mpl" folder="core.aspects.editor.diagram" />
-      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActions/languages/contextActions/jetbrains.mps.editor.menus.contextActions.mpl" folder="core.aspects.editor.menus.contextActions" />
-      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActions/solutions/contextActionsTool/jetbrains.mps.editor.menus.contextActionsTool.msd" folder="core.aspects.editor.menus.contextActions" />
+      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActions/languages/contextActions/jetbrains.mps.lang.editor.menus.contextActions.mpl" folder="core.aspects.editor.menus.contextActions" />
+      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActions/solutions/contextActionsTool/jetbrains.mps.lang.editor.menus.contextActionsTool.msd" folder="core.aspects.editor.menus.contextActions" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/jetbrains.mps.execution.api.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" folder="workbench.execution" />

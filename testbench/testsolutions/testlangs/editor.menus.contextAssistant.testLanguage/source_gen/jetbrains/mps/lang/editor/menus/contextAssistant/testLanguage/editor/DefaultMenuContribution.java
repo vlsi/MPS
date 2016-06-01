@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.editor.menus.contextActionsTool.runtime.SidebarActionItem;
+import jetbrains.mps.lang.editor.menus.contextActionsTool.runtime.SidebarActionItem;
 import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import org.apache.log4j.Logger;
@@ -30,7 +30,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a0());
     }
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), jetbrains.mps.editor.menus.contextActionsTool.runtime.MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), jetbrains.mps.lang.editor.menus.contextActionsTool.runtime.MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
       result.add(new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a1());
     }
     return result;

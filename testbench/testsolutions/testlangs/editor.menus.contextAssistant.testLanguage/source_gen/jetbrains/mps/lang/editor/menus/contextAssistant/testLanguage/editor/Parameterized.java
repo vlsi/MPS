@@ -8,14 +8,14 @@ import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.editor.menus.contextActionsTool.runtime.MenuLocations;
+import jetbrains.mps.lang.editor.menus.contextActionsTool.runtime.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.editor.menus.contextActionsTool.runtime.SidebarActionItem;
+import jetbrains.mps.lang.editor.menus.contextActionsTool.runtime.SidebarActionItem;
 import javax.swing.Icon;
 
 public class Parameterized extends TransformationMenuBase {
