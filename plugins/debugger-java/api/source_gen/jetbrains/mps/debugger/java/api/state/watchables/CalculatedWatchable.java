@@ -8,7 +8,6 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;
@@ -33,9 +32,5 @@ public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   @Override
   public Icon getPresentationIcon() {
     return myValue.getPresentationIcon();
-  }
-  @Override
-  public SNode getNode() {
-    return null;
   }
 }

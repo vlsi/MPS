@@ -9,7 +9,6 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import com.sun.jdi.Field;
@@ -39,10 +38,7 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
   public Icon getPresentationIcon() {
     return Icons.WATCHABLE_STATIC;
   }
-  @Override
-  public SNode getNode() {
-    return null;
-  }
+
   private class StaticContextValue implements IValue {
     private final String myName;
     private volatile List<IWatchable> mySubvalues;

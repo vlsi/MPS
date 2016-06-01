@@ -130,17 +130,29 @@
   </root>
   <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/4474271214082916598">
     <file name="IWatchable.java">
-      <node id="4474271214082916600" at="10,0,11,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="4474271214082916604" at="11,0,12,0" concept="4" trace="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
-      <node id="4474271214082916608" at="12,0,13,0" concept="4" trace="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
-      <node id="4474271214082916612" at="13,0,14,0" concept="4" trace="getPresentationIcon#()Ljavax/swing/Icon;" />
-      <node id="4474271214082916616" at="14,0,16,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4474271214082916600" at="10,0,11,0" />
-      <scope id="4474271214082916604" at="11,0,12,0" />
-      <scope id="4474271214082916608" at="12,0,13,0" />
-      <scope id="4474271214082916612" at="13,0,14,0" />
-      <scope id="4474271214082916616" at="14,0,16,0" />
-      <unit id="4474271214082916598" at="9,0,17,0" name="jetbrains.mps.debug.api.programState.IWatchable" />
+      <node id="4474271214082916600" at="13,0,14,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="4474271214082916604" at="14,0,15,0" concept="4" trace="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
+      <node id="4474271214082916608" at="15,0,16,0" concept="4" trace="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
+      <node id="4474271214082916612" at="16,0,17,0" concept="4" trace="getPresentationIcon#()Ljavax/swing/Icon;" />
+      <node id="4474271214082916616" at="21,0,24,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="4474271214082916600" at="13,0,14,0" />
+      <scope id="4474271214082916604" at="14,0,15,0" />
+      <scope id="4474271214082916608" at="15,0,16,0" />
+      <scope id="4474271214082916612" at="16,0,17,0" />
+      <scope id="4474271214082916616" at="21,0,24,0" />
+      <unit id="4474271214082916598" at="12,0,25,0" name="jetbrains.mps.debug.api.programState.IWatchable" />
+    </file>
+  </root>
+  <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/6559558851652261578">
+    <file name="AbstractWatchable.java">
+      <unit id="6559558851652261578" at="9,0,11,0" name="jetbrains.mps.debug.api.programState.AbstractWatchable" />
+    </file>
+  </root>
+  <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/6559558851652287506">
+    <file name="Watchable2.java">
+      <node id="6559558851652287705" at="17,0,19,0" concept="4" trace="getSourceNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <scope id="6559558851652287705" at="17,0,19,0" />
+      <unit id="6559558851652287506" at="12,0,20,0" name="jetbrains.mps.debug.api.programState.Watchable2" />
     </file>
   </root>
 </debug-info-v2>

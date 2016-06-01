@@ -10,7 +10,6 @@ import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class JavaStaticField extends JavaWatchable implements IWatchable {
   private final Field myField;
@@ -35,9 +34,5 @@ public class JavaStaticField extends JavaWatchable implements IWatchable {
   @Override
   public Icon getPresentationIcon() {
     return myCachedValue.getPresentationIcon();
-  }
-  @Override
-  public SNode getNode() {
-    return null;
   }
 }

@@ -14,6 +14,8 @@ import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaLocalVariable extends JavaWatchable implements IWatchable {
@@ -54,6 +56,14 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
     }
     return TraceInfoUtil.getVar(location.getUnitName(), location.getFileName(), location.getLineNumber(), myLocalVariable.name());
   }
+
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return super.getSourceNode();
+  }
+
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.LOCAL_VARIABLE;

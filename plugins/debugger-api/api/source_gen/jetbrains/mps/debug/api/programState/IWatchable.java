@@ -6,11 +6,19 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * FIXME This class shall merge {@link jetbrains.mps.debug.api.programState.Watchable2 } into self in next release. Subclasses shall use {@link jetbrains.mps.debug.api.programState.AbstractWatchable }
+ */
 public interface IWatchable {
   String getName();
   WatchablesCategory getCategory();
   IValue getValue();
   Icon getPresentationIcon();
+  /**
+   * 
+   * @deprecated Replaced with {@link jetbrains.mps.debug.api.programState.Watchable2#getSourceNode() }. Please subclass {@link jetbrains.mps.debug.api.programState.AbstractWatchable } to facilitate future API changes
+   */
   @Nullable
+  @Deprecated
   SNode getNode();
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaWatchpointWatchable extends JavaWatchable {
   private final FieldWatchpointValue myValue;
@@ -44,9 +43,5 @@ import org.jetbrains.mps.openapi.model.SNode;
   @Override
   public Icon getPresentationIcon() {
     return Icons.VALUE_OBJECT;
-  }
-  @Override
-  public SNode getNode() {
-    return null;
   }
 }

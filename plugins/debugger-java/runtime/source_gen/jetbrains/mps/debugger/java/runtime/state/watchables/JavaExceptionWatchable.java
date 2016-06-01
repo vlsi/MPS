@@ -12,7 +12,6 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.runtime.ui.Icons;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaExceptionWatchable extends JavaWatchable {
   private final JavaValue myValue;
@@ -35,9 +34,5 @@ import org.jetbrains.mps.openapi.model.SNode;
   @Override
   public Icon getPresentationIcon() {
     return Icons.EXCEPTION_BREAKPOINT;
-  }
-  @Override
-  public SNode getNode() {
-    return null;
   }
 }

@@ -13,6 +13,8 @@ import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaThisObject extends JavaWatchable implements IWatchable {
@@ -48,6 +50,13 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
     }
     return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
+
+  @Nullable
+  @Override
+  public SNodeReference getSourceNode() {
+    return super.getSourceNode();
+  }
+
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.THIS_OBJECT;
