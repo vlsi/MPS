@@ -20,39 +20,39 @@ import org.jetbrains.mps.openapi.language.SConceptFeature;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AdditionalConceptProperties {
+public class ConceptPropsBuilder {
   private String myHelpUrl;
   private String myShortDescription;
   private IconHandle myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
-  public AdditionalConceptProperties(String helpUrl, String shortDescription, IconHandle icon, boolean isDeprecated,
-      Set<SConceptFeature> deprecatedFeatures) {
+  public ConceptPropsBuilder helpUrl(String helpUrl) {
     myHelpUrl = helpUrl;
-    myShortDescription = shortDescription;
+    return this;
+  }
+
+  public ConceptPropsBuilder shortDesc(String desc) {
+    myShortDescription = desc;
+    return this;
+  }
+
+  public ConceptPropsBuilder icon(IconHandle icon) {
     myIcon = icon;
-    myIsDeprecated = isDeprecated;
-    myDeprecatedFeatures = deprecatedFeatures;
+    return this;
   }
 
-  public String getHelpUrl() {
-    return myHelpUrl;
+  public ConceptPropsBuilder deprecated(boolean deprecated) {
+    myIsDeprecated = deprecated;
+    return this;
   }
 
-  public String getShortDescription() {
-    return myShortDescription;
+  public ConceptPropsBuilder deprecated(SConceptFeature f) {
+    myDeprecatedFeatures.add(f);
+    return this;
   }
 
-  public IconHandle getIcon() {
-    return myIcon;
-  }
-
-  public boolean isDeprecated() {
-    return myIsDeprecated;
-  }
-
-  public boolean isDeprecated(SConceptFeature f) {
-    return myDeprecatedFeatures.contains(f);
+  public AdditionalConceptProperties create(){
+    return new AdditionalConceptProperties(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures);
   }
 }
