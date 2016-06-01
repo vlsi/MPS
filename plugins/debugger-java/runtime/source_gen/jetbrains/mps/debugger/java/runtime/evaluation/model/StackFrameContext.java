@@ -33,6 +33,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject;
 import com.sun.jdi.PrimitiveType;
@@ -191,8 +196,22 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     JavaStackFrame frame = myUiState.getStackFrame();
     if (frame != null) {
       JavaLocation location = frame.getLocation();
-      if (location != null) {
-        return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+      if (location == null) {
+        return null;
+      }
+      // XXX Code almost identical to JavaThisObject.getSourceNode(), could reuse? 
+      AbstractDebugSession<?> debugSession = frame.getThread().getDebugSession();
+      TraceInfoProvider traceProvider = debugSession.getTraceProvider();
+      for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaUiState.modelNameFromLocation(location)).iterator(); it.hasNext();) {
+        DebugInfo di = it.next();
+        List<SNodeReference> unitNodes = di.getUnitNodesForPosition(location.getFileName(), location.getLineNumber());
+        if (unitNodes.isEmpty()) {
+          continue;
+        }
+        SNode node = unitNodes.get(0).resolve(debugSession.getProject().getRepository());
+        if (node != null) {
+          return node;
+        }
       }
     }
     return null;

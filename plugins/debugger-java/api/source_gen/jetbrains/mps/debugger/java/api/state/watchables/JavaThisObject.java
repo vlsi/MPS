@@ -16,6 +16,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.textgen.trace.TraceInfoProvider;
 import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
@@ -53,7 +54,7 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
       return null;
     }
     TraceInfoProvider traceProvider = myStackFrame.getThread().getDebugSession().getTraceProvider();
-    for (Iterator<DebugInfo> it = traceProvider.debugInfo(modelNameFromUnitName(location.getUnitName())).iterator(); it.hasNext();) {
+    for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaUiState.modelNameFromLocation(location)).iterator(); it.hasNext();) {
       DebugInfo di = it.next();
       List<SNodeReference> unitNodes = di.getUnitNodesForPosition(location.getFileName(), location.getLineNumber());
       if (!(unitNodes.isEmpty())) {
@@ -68,10 +69,4 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
     return JavaWatchablesCategory.THIS_OBJECT;
   }
 
-  /*package*/ static String modelNameFromUnitName(String unitName) {
-    // XXX no idea why we don't expect nested unit names, like com.package.A.B here. 
-    // just kept the way it was in TraceInfoUtil.modelFqNameFromUnitName 
-    int lastDot = unitName.lastIndexOf('.');
-    return (lastDot == -1 ? "" : unitName.substring(0, lastDot));
-  }
 }

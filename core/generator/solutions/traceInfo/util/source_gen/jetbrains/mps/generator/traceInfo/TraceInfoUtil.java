@@ -8,11 +8,9 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import java.util.List;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -23,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
@@ -37,24 +35,10 @@ public final class TraceInfoUtil {
   private TraceInfoUtil() {
   }
 
-  /**
-   * 
-   * @deprecated Use of SNode as return value is wrong. Use {@link jetbrains.mps.textgen.trace.DebugInfo#getUnitNodesForPosition(String, int) } instead
-   */
-  @Nullable
-  @Deprecated
-  public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
-    return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModel>() {
-      public SNode invoke(DebugInfo info, SModel descriptor) {
-        List<SNodeReference> nodesForPosition = info.getUnitNodesForPosition(file, position);
-        return (nodesForPosition.isEmpty() ? null : nodesForPosition.get(0).resolve(MPSModuleRepository.getInstance()));
-      }
-    });
-  }
-
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a4(getAllTraceableNodes(className, file, position));
+    // in use by mbeddr (2 uses) 
+    return check_4iwlxm_a1a2(getAllTraceableNodes(className, file, position));
   }
   /**
    * Java-specific method for finding the most suitable node from position in java code.
@@ -169,28 +153,14 @@ public final class TraceInfoUtil {
   }
   @Nullable
   public static List<SNode> getAllTraceableNodes(@NotNull String className, final String file, final int position) {
+    // in use by mbeddr (3 uses) 
     return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
       public Set<TraceablePositionInfo> invoke(DebugInfoRoot key) {
         return key.getPositions();
       }
     });
   }
-  @Nullable
-  public static List<SNode> getAllScopeNodes(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
-      public Set<ScopePositionInfo> invoke(DebugInfoRoot key) {
-        return key.getScopePositions();
-      }
-    });
-  }
-  @Nullable
-  public static List<SNode> getAllUnitNodes(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
-      public Set<UnitPositionInfo> invoke(DebugInfoRoot key) {
-        return key.getUnitPositions();
-      }
-    });
-  }
+
   private static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
@@ -225,7 +195,7 @@ public final class TraceInfoUtil {
       }
     });
   }
-  public static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
+  private static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<List<SNode>, DebugInfo, SModel>() {
       public List<SNode> invoke(DebugInfo debugInfo, SModel descriptor) {
         Map<DebugInfoRoot, List<T>> infoForPosition = debugInfo.getRootToInfoForPosition(file, lineNumber, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
@@ -253,7 +223,7 @@ public final class TraceInfoUtil {
       }
     });
   }
-  private static SNode check_4iwlxm_a0a4(List<SNode> checkedDotOperand) {
+  private static SNode check_4iwlxm_a1a2(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }
