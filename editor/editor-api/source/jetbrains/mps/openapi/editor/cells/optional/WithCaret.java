@@ -28,4 +28,14 @@ public interface WithCaret {
    * Used by CaretBlinker.
    */
   void switchCaretVisible();
+
+  /**
+   * @return true if the cursor is located on the first position within this cell
+   */
+  boolean isFirstCaretPosition();
+
+  /**
+   * @return true if the cursor is located on the last position within this cell
+   */
+  boolean isLastCaretPosition();
 }

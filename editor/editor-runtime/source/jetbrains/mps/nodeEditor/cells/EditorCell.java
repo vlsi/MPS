@@ -84,6 +84,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   /**
    * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
    * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
    */
   @Deprecated
   void switchCaretVisible();
@@ -135,6 +136,22 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
    */
   @Deprecated
   boolean isLastPositionInBigCell();
+
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
+   */
+  @Deprecated
+  boolean isFirstCaretPosition();
+
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
+   */
+  @Deprecated
+  boolean isLastCaretPosition();
 
   /**
    * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}

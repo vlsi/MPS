@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 
 import java.awt.Rectangle;
 
@@ -56,11 +57,27 @@ public class GeometryUtil {
   }
 
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
-    return cell.isFirstCaretPosition() && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    if (cell instanceof WithCaret) {
+      return ((WithCaret) cell).isFirstCaretPosition() && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    }
+    if (cell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+      // TODO: remove this option after MPS 3.4
+      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstCaretPosition() &&
+          CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    }
+    return false;
   }
 
   public static boolean isLastPositionInBigCell(EditorCell cell) {
-    return cell.isLastCaretPosition() && CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    if (cell instanceof WithCaret) {
+      return ((WithCaret) cell).isLastCaretPosition() && CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    }
+    if (cell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+      // TODO: remove this option after MPS 3.4
+      return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastCaretPosition() &&
+          CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+    }
+    return false;
   }
 
 }
