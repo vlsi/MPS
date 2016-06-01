@@ -532,6 +532,24 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findNearestLeafOnLine(int x, int y, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
   /**
    * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */

@@ -33,6 +33,7 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -301,6 +302,16 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
 
     @Override
     public EditorCell getRootParent() {
+      return null;
+    }
+
+    @Override
+    public EditorCell findLeaf(int x, int y) {
+      return null;
+    }
+
+    @Override
+    public EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition) {
       return null;
     }
 
