@@ -9,6 +9,7 @@ import java.util.Map;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import jetbrains.mps.core.tool.environment.util.PathManager;
 
@@ -20,15 +21,23 @@ import jetbrains.mps.core.tool.environment.util.PathManager;
  * @see jetbrains.mps.tool.environment.EnvironmentContainer 
  */
 public class EnvironmentConfig {
-
   private final Set<PluginDescriptor> myPlugins = SetSequence.fromSet(new LinkedHashSet<PluginDescriptor>());
   private final Map<String, File> myMacros = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
   private final Set<String> myLibs = SetSequence.fromSet(new LinkedHashSet<String>());
+  private boolean myLoadPluginsByDefault = false;
 
   private EnvironmentConfig() {
   }
 
+  /**
+   * 
+   * @return null if we do not want to specify plugins to the platform
+   */
+  @Nullable
   public Set<PluginDescriptor> getPlugins() {
+    if (myLoadPluginsByDefault) {
+      return null;
+    }
     return SetSequence.fromSet(myPlugins).asUnmodifiable();
   }
 
@@ -103,6 +112,16 @@ public class EnvironmentConfig {
 
   public static EnvironmentConfig defaultConfig() {
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries().withWorkbenchPath();
+  }
+
+  /**
+   * 
+   * @return EnvironmentConfig with no specified plugins. At the time of writing it meant that the platform will load all the plugins. Note that one needs to provide a proper class path.
+   */
+  public static EnvironmentConfig defaultConfigNoPluginsSpecified() {
+    EnvironmentConfig defaultConf = defaultConfig();
+    defaultConf.myLoadPluginsByDefault = false;
+    return defaultConf;
   }
 
   /**

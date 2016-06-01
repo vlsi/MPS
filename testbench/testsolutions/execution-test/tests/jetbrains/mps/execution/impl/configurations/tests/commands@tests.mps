@@ -761,15 +761,15 @@
             <node concept="2WthIp" id="2_AUN5Gsmkc" role="2Oq$k0" />
             <node concept="2XshWL" id="2_AUN5Gsmkd" role="2OqNvi">
               <ref role="2WH_rO" node="6bfDvj8bCm1" resolve="checkTests" />
-              <node concept="37vLTw" id="2_AUN5Gsmke" role="2XxRq1">
-                <ref role="3cqZAo" node="2_AUN5GsmjT" resolve="wrappedTests" />
-              </node>
               <node concept="2ShNRf" id="2_AUN5Gsmkf" role="2XxRq1">
                 <node concept="Tc6Ow" id="2_AUN5Gsmkg" role="2ShVmc">
                   <node concept="3uibUv" id="2_AUN5Gsmkh" role="HW$YZ">
                     <ref role="3uigEE" to="sfqd:56tRMpP_ej7" resolve="ITestNodeWrapper" />
                   </node>
                 </node>
+              </node>
+              <node concept="37vLTw" id="2_AUN5Gsmke" role="2XxRq1">
+                <ref role="3cqZAo" node="2_AUN5GsmjT" resolve="wrappedTests" />
               </node>
             </node>
           </node>

@@ -29,6 +29,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
@@ -46,6 +47,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="jetbrains.mps.tool.environment.LibraryContributorHelper" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Log4jInitializer" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectContainer" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
@@ -68,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentContainer" file="EnvironmentContainer.java">
     <classNode dependClassName="java.lang.IllegalStateException" />

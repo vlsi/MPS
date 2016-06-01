@@ -66,6 +66,7 @@ public class Ant_Command {
     }
     return this;
   }
+
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
     SNode target = myTarget_NodeINamedConcept;
     String targetName = SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -78,6 +79,8 @@ public class Ant_Command {
     }
     return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues(myMacroToDefine_ListString)).toListSequence()), (((myOptions_String != null && myOptions_String.length() > 0) ? myOptions_String + " " : "")), new KeyValueCommandPart("-" + "f", new File(antFilePath)), (((myTargetName_String == null || myTargetName_String.length() == 0) ? "" : " " + myTargetName_String)))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation_String));
   }
+
+
   private static String getDefaultAntHome() {
     return PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant";
   }
@@ -125,4 +128,5 @@ public class Ant_Command {
     file = file.getDescendant(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
     return file.getPath();
   }
+
 }
