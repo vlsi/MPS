@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.registry.ConceptInfo;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -34,6 +36,8 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.spi.ThrowableInformation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -237,6 +241,7 @@ public interface MetaModelInfoProvider {
    * Setter methods update {@link jetbrains.mps.smodel.DebugRegistry}.
    */
   public static class RegularMetaModelInfo extends BaseMetaModelInfo {
+    private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
     @Override
     public String getLanguageName(SLanguageId lang) {
       final LanguageRuntime langRT = LanguageRegistry.getInstance().getLanguage(lang);
@@ -335,11 +340,14 @@ public interface MetaModelInfoProvider {
       // FIXME move stub concept id to ConceptDescriptor
       final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
 
-      assert ModelAccess.instance().canRead() : "Read action is needed to collect some non-AST properties of model. " +
-          "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called. " +
-          "This error most possibly means that the model has stub concept attributes missing. " +
-          "This happens after merging models sometimes [MPS-23869]." +
-          "Possible fix is to open model in MPS and re-save it";
+      if (!ModelAccess.instance().canRead()){
+        LOG.error("Read action is needed to collect some non-AST properties of model. " +
+            "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called. " +
+            "This error most possibly means that the model has stub concept attributes missing. " +
+            "This happens after merging models sometimes [MPS-23869]." +
+            "Possible fix is to open model in MPS and re-save it", new Throwable());
+        return MetaIdFactory.INVALID_CONCEPT_ID;
+      }
       final SConcept concept = MetaAdapterFactoryByName.getConcept(stubFQName);
       if (!(concept.isValid())) {
         return null;
