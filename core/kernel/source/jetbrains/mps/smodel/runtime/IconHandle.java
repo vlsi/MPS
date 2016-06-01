@@ -16,4 +16,13 @@
 package jetbrains.mps.smodel.runtime;
 
 public class IconHandle {
+  private String myIconResId;
+
+  public IconHandle(String iconResId) {
+    myIconResId = iconResId;
+  }
+
+  public String getIconResId() {
+    return myIconResId;
+  }
 }
