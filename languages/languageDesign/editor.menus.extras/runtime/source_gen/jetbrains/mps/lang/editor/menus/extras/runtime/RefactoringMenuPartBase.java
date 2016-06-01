@@ -9,16 +9,18 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget;
+import java.util.Collections;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import java.awt.Component;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Collections;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 
-public class RefactoringMenuPartBase extends SingleItemMenuPart {
+public abstract class RefactoringMenuPartBase extends SingleItemMenuPart {
   private final String myRefactoringClassName;
 
   public RefactoringMenuPartBase(String refactoringClassName) {
@@ -37,15 +39,23 @@ public class RefactoringMenuPartBase extends SingleItemMenuPart {
   }
 
   @Nullable
-  protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IRefactoring refactoring) {
-    return null;
+  protected abstract MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IRefactoring refactoring);
+
+  public static boolean isRefactoringApplicableToNode(IRefactoring refactoring, SNode node) {
+    IRefactoringTarget refactoringTarget = refactoring.getRefactoringTarget();
+    if (refactoringTarget.getTarget() != IRefactoringTarget.TargetType.NODE) {
+      return false;
+    }
+
+    Object targetEntity = (refactoringTarget.allowMultipleTargets() ? Collections.singletonList(node) : node);
+    return RefactoringUtil.isApplicable(refactoring, targetEntity);
   }
 
-  protected static class ItemBase extends ActionItemBase {
+  public static class ItemBase extends ActionItemBase {
     protected final TransformationMenuContext _context;
     protected final IRefactoring myRefactoring;
 
-    protected ItemBase(TransformationMenuContext context, IRefactoring refactoring) {
+    public ItemBase(TransformationMenuContext context, IRefactoring refactoring) {
       _context = context;
       myRefactoring = refactoring;
     }
@@ -54,6 +64,11 @@ public class RefactoringMenuPartBase extends SingleItemMenuPart {
     @Override
     public String getLabelText(@NotNull String pattern) {
       return myRefactoring.getUserFriendlyName();
+    }
+
+    @Override
+    public boolean canExecute(@NotNull String pattern) {
+      return isRefactoringApplicableToNode(myRefactoring, _context.getNode());
     }
 
     @Override

@@ -36,12 +36,12 @@
   <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test" file="ContributionFromUnusedLanguage_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.MenuLoadingUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuItem" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -54,12 +54,12 @@
   <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test" file="ContributionFromUsedLanguage_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.MenuLoadingUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItem" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuItem" />
@@ -133,6 +133,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" file="UsedLanguagesUtils.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
   </dependency>
 </dependenciesRoot>
 

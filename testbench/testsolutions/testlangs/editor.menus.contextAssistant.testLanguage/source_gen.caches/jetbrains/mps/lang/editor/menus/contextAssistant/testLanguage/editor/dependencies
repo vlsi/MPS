@@ -112,6 +112,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.ItemBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuPartBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuPart" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuItem" />

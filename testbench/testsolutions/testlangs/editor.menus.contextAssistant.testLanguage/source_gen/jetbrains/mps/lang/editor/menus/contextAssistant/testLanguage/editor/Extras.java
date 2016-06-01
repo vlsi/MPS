@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuPartBase;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase;
 import jetbrains.mps.lang.editor.menus.contextActionsTool.runtime.SidebarActionItem;
 import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
@@ -46,7 +47,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0.Item(context, refactoring);
     }
 
-    private static class Item extends RefactoringMenuPartBase.ItemBase implements SidebarActionItem {
+    private static class Item extends RefactoringMenuItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, IRefactoring refactoring) {
         super(context, refactoring);
       }
