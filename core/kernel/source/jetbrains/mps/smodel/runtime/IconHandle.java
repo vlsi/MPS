@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import java.io.InputStream;
+
 public class IconHandle {
   private String myIconResId;
+  private Class myResourceProvider;
 
-  public IconHandle(String iconResId) {
+  public IconHandle(String iconResId, Class resourceProvider) {
     myIconResId = iconResId;
+    myResourceProvider = resourceProvider;
   }
 
-  public String getIconResId() {
-    return myIconResId;
+  public InputStream getResource() {
+    return myResourceProvider.getResourceAsStream(myIconResId);
   }
 }

@@ -23,7 +23,7 @@ import java.util.Set;
 public class ConceptPropsBuilder {
   private String myHelpUrl;
   private String myShortDescription;
-  private String myIconResId;
+  private IconHandle myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
@@ -37,8 +37,8 @@ public class ConceptPropsBuilder {
     return this;
   }
 
-  public ConceptPropsBuilder icon(String icnResId) {
-    myIconResId = icnResId;
+  public ConceptPropsBuilder icon(String icnResId, Class resourceProvider) {
+    myIcon = new IconHandle(icnResId, resourceProvider);
     return this;
   }
 
@@ -53,6 +53,6 @@ public class ConceptPropsBuilder {
   }
 
   public AdditionalConceptProperties create(){
-    return new AdditionalConceptProperties(myHelpUrl, myShortDescription, new IconHandle(myIconResId), myIsDeprecated, myDeprecatedFeatures);
+    return new AdditionalConceptProperties(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures);
   }
 }
