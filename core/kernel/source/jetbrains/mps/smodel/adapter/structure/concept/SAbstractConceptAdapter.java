@@ -41,6 +41,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -335,13 +336,17 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Nullable
   public Icon getIcon() {
-    ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) {
-      return null;
-    }
-    Icon icon = cd.getIcon();
-    if (icon != null) {
-      return icon;
+    SAbstractConceptAdapter current = this;
+    while (current != null) {
+      ConceptDescriptor cd = current.getConceptDescriptor();
+      if (cd == null) {
+        return null;
+      }
+      Icon icon = cd.getIcon();
+      if (icon != null) {
+        return icon;
+      }
+      current = (current instanceof SConceptAdapter) ? ((SConceptAdapter) ((SConceptAdapter) current).getSuperConcept()) : null;
     }
 
     //compatibility code, can be removed after 3.4

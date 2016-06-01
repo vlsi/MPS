@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,16 +32,18 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeD
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -520,38 +522,25 @@ public class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (treeNode.getUserObject() == null) {
-          return;
-        }
+    if (treeNode.getUserObject() == null) {
+      return;
+    }
 
-        BaseNodeData data = treeNode.getUserObject().getData();
-        if (data instanceof NodeNodeData) {
-          SNode node = ((NodeNodeData) data).getNode();
-          if (node != null) {
-            if (inProjectIfPossible) {
-              NavigationSupport.getInstance().selectInTree(myProject, node, focus);
-            } else {
-              NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
-            }
-          } else {
-            LOG.info("clicked node was deleted");
-          }
-        } else if (data instanceof ModelNodeData) {
-          SModel model = ((ModelNodeData) data).getModel();
-          if (model != null) {
-            NavigationSupport.getInstance().selectInTree(myProject, model, focus);
-          }
-        } else if (data instanceof ModuleNodeData) {
-          SModule module = ((ModuleNodeData) data).getModule();
-          if (module != null) {
-            NavigationSupport.getInstance().selectInTree(myProject, module, focus);
-          }
-        }
+    BaseNodeData data = treeNode.getUserObject().getData();
+    if (data instanceof NodeNodeData) {
+      SNodeReference node = ((NodeNodeData) data).getNodePointer();
+      if (inProjectIfPossible) {
+        new ProjectPaneNavigator(myProject).shallFocus(focus).select(node);
+      } else {
+        new EditorNavigator(myProject).shallFocus(focus).selectIfChild().open(node);
       }
-    });
+    } else if (data instanceof ModelNodeData) {
+      SModelReference model = ((ModelNodeData) data).getModelReference();
+      new ProjectPaneNavigator(myProject).shallFocus(focus).select(model);
+    } else if (data instanceof ModuleNodeData) {
+      SModuleReference module = ((ModuleNodeData) data).getModuleReference();
+      new ProjectPaneNavigator(myProject).shallFocus(focus).select(module);
+    }
   }
 
   private boolean isAliveResultNode(DataNode node) {

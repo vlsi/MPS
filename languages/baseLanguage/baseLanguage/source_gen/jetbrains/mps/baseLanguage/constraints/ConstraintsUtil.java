@@ -10,8 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 
 public class ConstraintsUtil {
-  private ConstraintsUtil() {
-  }
+
   public static boolean isInNonStaticClasssifierContext(SNode node) {
     if (!(isInsideOfClassifier(node))) {
       return false;

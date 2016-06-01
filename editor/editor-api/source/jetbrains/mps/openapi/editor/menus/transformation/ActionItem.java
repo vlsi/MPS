@@ -28,14 +28,15 @@ public interface ActionItem extends MenuItem {
   String getLabelText(String pattern);
 
   /**
-   * Indicates whether the action may be executed with the given pattern.
+   * Indicates whether the action may be executed with the given pattern. Always called in a read action.
    *
    * @param pattern the text that the user has typed so far
    */
   boolean canExecute(@NotNull String pattern);
 
   /**
-   * Performs the transformation. May change the editor selection and possibly other state.
+   * Performs the transformation. May change the editor selection and possibly other state. Will be called inside or outside a command depending
+   * on {@link #getCommandPolicy()}.
    *
    * @param pattern the text that the user has typed so far
    */

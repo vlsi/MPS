@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -4647,6 +4647,12 @@
       <property role="IQ2ns" value="5692353713941573325" />
       <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_ActionLabelText" />
     </node>
+    <node concept="1TJgyj" id="5oiZ4v5mnE8" role="1TKVEi">
+      <property role="IQ2ns" value="6202297022026447496" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canExecuteFunction" />
+      <ref role="20lvS9" node="5DJl6Ftwolg" resolve="QueryFunction_TransformationMenu_Condition" />
+    </node>
     <node concept="1TJgyj" id="1qY_lWSjTfD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="executeFunction" />
@@ -4696,7 +4702,7 @@
   <node concept="1TIwiD" id="4Sf$XywKgZK">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuContribution" />
-    <property role="34LRSv" value="Context Assistant Menu Contribution" />
+    <property role="34LRSv" value="Transformation Menu Contribution" />
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5624877018228264944" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -4959,7 +4965,7 @@
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="QueryFunction_TransformationMenu_Condition" />
     <property role="34LRSv" value="condition" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
   <node concept="1TIwiD" id="3EZUZhmYcnz">
     <property role="EcuMT" value="4233361609415247331" />

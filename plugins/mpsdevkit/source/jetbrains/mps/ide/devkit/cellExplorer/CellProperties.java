@@ -17,6 +17,7 @@ package jetbrains.mps.ide.devkit.cellExplorer;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -50,9 +51,10 @@ public class CellProperties {
     mySNode = cell.getSNode();
     String name = mySNode.getName();
     name = name != null ? name : "<no name>";
-    myCellSNode = mySNode == null ? "no node" : name + " (" + NameUtil.shortNameFromLongName(mySNode.getConcept().getQualifiedName()) + ") [" + mySNode.getNodeId().toString() + "]";
+    myCellSNode = mySNode == null ? "no node" :
+        name + " (" + NameUtil.shortNameFromLongName(mySNode.getConcept().getQualifiedName()) + ") [" + mySNode.getNodeId().toString() + "]";
     if (cell.getParent() != null) {
-      myCellNumber = cell.getParent().indexOf(cell) + "";
+      myCellNumber = String.valueOf(IterableUtil.indexOf(cell.getParent(), cell));
     }
   }
 

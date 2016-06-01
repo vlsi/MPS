@@ -10,9 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class BinaryOperation_Symbol_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -36,16 +35,7 @@ public class BinaryOperation_Symbol_Actions {
         newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
       }
       SNodeOperations.replaceWithAnother(node, newExpression);
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(newExpression);
-      if (cell != null) {
-        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(firstLeaf);
-        if (firstLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) firstLeaf).home();
-        }
-      }
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, newExpression, SelectionManager.FIRST_CELL, 0);
     }
   }
   public static class BinaryOperation_Symbol_Actions_BACKSPACE extends AbstractCellAction {
@@ -65,16 +55,7 @@ public class BinaryOperation_Symbol_Actions {
         newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
       }
       SNodeOperations.replaceWithAnother(node, newExpression);
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(newExpression);
-      if (cell != null) {
-        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(firstLeaf);
-        if (firstLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) firstLeaf).home();
-        }
-      }
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, newExpression, SelectionManager.FIRST_CELL, 0);
     }
   }
 }

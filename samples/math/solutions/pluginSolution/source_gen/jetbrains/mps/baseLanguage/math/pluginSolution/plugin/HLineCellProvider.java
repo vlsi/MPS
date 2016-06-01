@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 
 public class HLineCellProvider extends AbstractCellProvider {
   private SNode myNode;
@@ -34,7 +35,7 @@ public class HLineCellProvider extends AbstractCellProvider {
       }
       @Override
       public int getAscent() {
-        return this.getPrevLeaf().getHeight() / 4;
+        return CellTraversalUtil.getPrevLeaf(this).getHeight() / 4;
       }
       @Override
       public void relayoutImpl() {

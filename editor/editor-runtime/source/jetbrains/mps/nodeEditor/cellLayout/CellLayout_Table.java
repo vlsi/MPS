@@ -48,11 +48,15 @@ public class CellLayout_Table extends AbstractCellLayout {
       jetbrains.mps.openapi.editor.cells.CellLayout l = col.getCellLayout();
       if (l instanceof CellLayout_Table) {
         TableComponent comp = col.getStyle().get(StyleAttributes.TABLE_COMPONENT);
-        if (comp == tc) return col;
+        if (comp == tc) {
+          return col;
+        }
       }
       for (EditorCell c : col) {
         EditorCell_Collection result = findCollection(c, tc);
-        if (result != null) return result;
+        if (result != null) {
+          return result;
+        }
       }
     }
     return null;
@@ -243,8 +247,8 @@ public class CellLayout_Table extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
-        if (lastCell != null) {
+        if (!editorCells.isEmpty()) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }
@@ -254,9 +258,7 @@ public class CellLayout_Table extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    EditorCell editorCell = editorCell_collection.firstCell();
-    if (editorCell != null) return editorCell.getRightInset();
-    else return 0;
+    return editorCell_collection.isEmpty() ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   public String toString() {

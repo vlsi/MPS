@@ -227,13 +227,7 @@ class IntelligentNodeMover {
   }
 
   private Iterator<EditorCell> getCellIterator(EditorCell anchorCell) {
-    Iterator<EditorCell> iterator = forward() ? anchorCell.getParent().iterator() : anchorCell.getParent().reverseIterator();
-    while (iterator.hasNext()) {
-      if (iterator.next().equals(anchorCell)) {
-        break;
-      }
-    }
-    return iterator;
+    return anchorCell.getParent().iterator(anchorCell, forward());
   }
 
   private void moveOtherNodes() {

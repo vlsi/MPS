@@ -21,10 +21,7 @@ import com.intellij.util.ui.JBUI;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
-import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -159,22 +156,7 @@ public class ContextAssistantPanel implements ActionItemExecutor {
   }
 
   private JButton createBaseButton(final MenuItem item) {
-    return item.accept(new MenuItemVisitor<JButton>() {
-      @Override
-      public JButton visit(ActionItem actionItem) {
-        return new JButton(new AbstractAction(actionItem.getLabelText("")) {
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            executeActionItem(actionItem);
-          }
-        });
-      }
-
-      @Override
-      public JButton visit(SubMenu subMenu) {
-        return new StepComboBoxButton(subMenu.getText(), new MenuItemListStep(ContextAssistantPanel.this, subMenu.getItems()));
-      }
-    });
+    return item.accept(new TopLevelButtonCreatingVisitor(this));
   }
 
   @Override

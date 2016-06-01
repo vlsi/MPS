@@ -26,7 +26,7 @@ import static org.junit.Assert.assertEquals;
 public class ComponentCellTest extends BaseEditorTest {
   @Test
   public void ascentIsHeightIfComponentHasNoFont() {
-    EditorCell_Component cell = new EditorCell_Component(myEditorContext, null, newComponentWithoutFont());
+    EditorCell_Component cell = new EditorCell_Component(getEditorContext(), null, newComponentWithoutFont());
     cell.setHeight(33);
     assertEquals(33, cell.getAscent());
   }

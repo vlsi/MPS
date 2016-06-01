@@ -17458,10 +17458,7 @@
               <node concept="2YIFZM" id="2ePTwhfJ8$q" role="3cqZAk">
                 <ref role="37wK5l" to="tpcg:50vK5Yas08Z" resolve="forLanguageConcepts" />
                 <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
-                <node concept="2OqwBi" id="2ePTwhfJ8FA" role="37wK5m">
-                  <node concept="13iPFW" id="2ePTwhfJ8Ba" role="2Oq$k0" />
-                  <node concept="I4A8Y" id="2ePTwhfJ8O4" role="2OqNvi" />
-                </node>
+                <node concept="13iPFW" id="2ePTwhfJ8Ba" role="37wK5m" />
                 <node concept="35c_gC" id="2ePTwhfJ8SD" role="37wK5m">
                   <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                 </node>

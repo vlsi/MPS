@@ -9110,6 +9110,12 @@
             <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="58p9KwJtNNO" role="3bR37C">
+          <node concept="3bR9La" id="58p9KwJtNNP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
+          </node>
+        </node>
         <node concept="398BVA" id="6wK_PpNA8EZ" role="3LF7KH">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="6wK_PpNA8F0" role="iGT6I">
@@ -23608,6 +23614,12 @@
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2Mnhr$7i4o0" role="3bR37C">
+          <node concept="3bR9La" id="2Mnhr$7i4o1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5xa9wY2vh9W" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -24221,7 +24233,7 @@
         </node>
         <node concept="1SiIV0" id="6IZ_b08qDHa" role="3bR37C">
           <node concept="3bR9La" id="6IZ_b08qDHb" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>

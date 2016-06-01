@@ -104,7 +104,6 @@
 
     <fileBasedIndex implementation="jetbrains.mps.workbench.findusages.MPSModelsIndexer"/>
     <fileBasedIndex implementation="jetbrains.mps.workbench.index.RootNodeNameIndex"/>
-    <gotoClassContributor implementation="jetbrains.mps.workbench.goTo.GoToClassMPSContributor"/>
     <editorTabTitleProvider implementation="jetbrains.mps.fileTypes.MPSEditorTabTitleProvider"/>
   </extensions>
 </components>

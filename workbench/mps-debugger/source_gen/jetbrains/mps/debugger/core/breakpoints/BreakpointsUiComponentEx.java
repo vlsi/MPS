@@ -88,9 +88,9 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
-    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<jetbrains.mps.nodeEditor.cells.EditorCell>() {
+    EditorCell foundCell = editorComponent.getRootCell().findNearestLeafOnLine(x, y, new Condition<EditorCell>() {
       @Override
-      public boolean met(jetbrains.mps.nodeEditor.cells.EditorCell object) {
+      public boolean met(EditorCell object) {
         EditorCell debuggableOrTraceableCell = findDebuggableOrTraceableCell(object);
         if (debuggableOrTraceableCell == null) {
           return false;

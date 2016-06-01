@@ -13,13 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
 import java.util.List;
@@ -128,8 +128,8 @@ public class ResolveUnknownUtil {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")));
         SNode creator;
 
-        Tuples._2<SNode, Boolean> resolveResult = MethodResolveUtil.resolveMethod(x, "");
-        SNode ctor = (resolveResult == null ? null : SNodeOperations.as(resolveResult._0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
+        SNode resolveResult = MethodResolveUtil.chooseByParameterType(Sequence.fromIterable(IMethodCall__BehaviorDescriptor.getAvailableMethodDeclarations_id50EF2fWdwEN.invoke(x, "")).toListSequence(), SLinkOperations.getChildren(x, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")), MethodResolveUtil.getTypesByTypeVars(typ, SLinkOperations.getChildren(typ, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))));
+        SNode ctor = (resolveResult == null ? null : SNodeOperations.as(resolveResult, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
 
         if ((ctor == null)) {
 

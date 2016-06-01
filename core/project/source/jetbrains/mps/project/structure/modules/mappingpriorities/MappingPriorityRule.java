@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -71,9 +70,10 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     return result;
   }
 
-  @Override
-  public String toString() {
-    return GenerationPartitioningUtil.asString(this, true);
+  public String asString(SRepository repository) {
+    String left = myLeft == null ? "???" : myLeft.asString(repository);
+    String right = myRight == null ? "???" : myRight.asString(repository);
+    return left + ' ' + getType().getName() + ' ' + right;
   }
 
   public boolean updateReferences(SRepository repository) {

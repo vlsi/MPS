@@ -10,9 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class RedirectOutputExpression {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,20 +32,7 @@ public class RedirectOutputExpression {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L, 0xbe3a0d5ba1a2c15L, "processHandler"));
       SNodeOperations.replaceWithAnother(node, expression);
-
-      // some stuff I copied from binary operation 
-      // it does some magic with selection 
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(expression);
-      if (cell != null) {
-        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(lastLeaf);
-        if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) lastLeaf).end();
-        }
-      }
-
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, expression, SelectionManager.LAST_CELL, -1);
     }
   }
   public static class RedirectOutputExpression_BACKSPACE extends AbstractCellAction {
@@ -63,20 +49,7 @@ public class RedirectOutputExpression {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L, 0xbe3a0d5ba1a2c15L, "processHandler"));
       SNodeOperations.replaceWithAnother(node, expression);
-
-      // some stuff I copied from binary operation 
-      // it does some magic with selection 
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(expression);
-      if (cell != null) {
-        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(lastLeaf);
-        if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) lastLeaf).end();
-        }
-      }
-
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, expression, SelectionManager.LAST_CELL, -1);
     }
   }
 }

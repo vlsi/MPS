@@ -10,9 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class ParensRegexp_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,18 +28,8 @@ public class ParensRegexp_Actions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nn = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr"));
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr")));
-
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(nn);
-      if (cell != null) {
-        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(lastLeaf);
-        if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) lastLeaf).end();
-        }
-      }
+      SNodeOperations.replaceWithAnother(node, nn);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, nn, SelectionManager.LAST_CELL, -1);
     }
   }
   public static class ParensRegexp_Actions_BACKSPACE extends AbstractCellAction {
@@ -53,18 +42,8 @@ public class ParensRegexp_Actions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nn = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr"));
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr")));
-
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(nn);
-      if (cell != null) {
-        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
-        editor.changeSelection(lastLeaf);
-        if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) lastLeaf).end();
-        }
-      }
+      SNodeOperations.replaceWithAnother(node, nn);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, nn, SelectionManager.LAST_CELL, -1);
     }
   }
 }

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public interface CellInfo {
   EditorCell findCell(EditorComponent editorComponent);

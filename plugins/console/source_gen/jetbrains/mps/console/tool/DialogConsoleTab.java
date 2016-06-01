@@ -12,9 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -77,19 +76,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
   private void setSelection() {
     getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        getEditorComponent().selectNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
-        EditorCell selectedCell = (EditorCell) getEditorComponent().getSelectedCell();
-        EditorCell lastLeaf = (selectedCell == null ? null : selectedCell.getLastLeaf(new Condition<EditorCell>() {
-          public boolean met(EditorCell cell) {
-            return cell.isSelectable();
-          }
-        }));
-        if (lastLeaf != null) {
-          getEditorComponent().changeSelection(lastLeaf);
-          if (lastLeaf instanceof EditorCell_Label) {
-            ((EditorCell_Label) lastLeaf).end();
-          }
-        }
+        SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), SelectionManager.LAST_CELL, -1);
       }
     });
     getEditorComponent().ensureSelectionVisible();

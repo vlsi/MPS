@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,15 +34,15 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
-import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.BorderFactory;
@@ -216,16 +216,10 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
           if (myNode == null) {
             return;
           }
-          final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-          mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-            @Override
-            public void run() {
-              SNode concept = myNode.getConcept().getDeclarationNode();
-              if (concept != null) {
-                NavigationSupport.getInstance().openNode(mpsProject, concept, true, false);
-              }
-            }
-          });
+          SNodeReference conceptDecl = myNode.getConcept().getSourceNode();
+          if (conceptDecl != null) {
+            new EditorNavigator(ProjectHelper.fromIdeaProject(getProject())).shallFocus(true).shallSelect(false).open(conceptDecl);
+          }
         }
       });
     }

@@ -25,8 +25,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLooku
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -42,12 +46,28 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @NotNull
   private final SNode myNode;
 
+  @NotNull
   public static DefaultTransformationMenuContext createInitialContextForCell(@NotNull EditorCell cell, @NotNull String menuLocation) {
-    if (cell.getSNode() == null) {
+    SNode cellNode = cell.getSNode();
+    if (cellNode == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);
     }
 
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(), menuLocation, cell.getContext(), cell.getSNode());
+    return createInitialContextForNode(cell.getContext(), cellNode, menuLocation);
+  }
+
+  @NotNull
+  public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory(getUsedLanguages(node)), menuLocation, editorContext, node);
+  }
+
+  private static Collection<SLanguage> getUsedLanguages(SNode node) {
+    SModel model = node.getModel();
+    if (model == null) {
+      return Collections.emptySet();
+    }
+
+    return model.getModule().getUsedLanguages();
   }
 
   private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory menuItemFactory, @NotNull String menuLocation,

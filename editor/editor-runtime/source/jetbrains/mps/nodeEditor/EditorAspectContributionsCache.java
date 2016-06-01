@@ -16,17 +16,16 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -34,77 +33,108 @@ import java.util.Map;
  * {@link jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent}s, etc.).
  * <p>
  * Contributions are looked up using a key of type {@code KeyT}, which is usually a {@link org.jetbrains.mps.openapi.language.SAbstractConcept} by itself or
- * bundled with some extra data further identifying the contribution. Contributions are collected from both the concept's language and languages which extend
- * the concept's language (directly or indirectly).
+ * bundled with some extra data further identifying the contribution. Contributions are collected from the owning editor descriptor's language and languages
+ * which extend this language (directly or indirectly).
  * <p>
  * The maintained cache is invalidated by {@link ValidEditorDescriptorsCache#cleanCaches(Iterable)}.
  *
  * @param <KeyT> type of the identifier of a contribution
  * @param <ContributionT> contribution type
  */
-public abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
+abstract class EditorAspectContributionsCache<KeyT, ContributionT> {
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectContributionsCache.class));
 
-  private final Map<KeyT, Collection<ContributionT>> myCache = new HashMap<KeyT, Collection<ContributionT>>();
+  private final Map<KeyT, Map<String, Collection<ContributionT>>> myCache = new HashMap<>();
 
   @NotNull
-  private final EditorAspectDescriptorBase myDescriptor;
+  private final LanguageRuntime myLanguageRuntime;
 
-  protected EditorAspectContributionsCache(@NotNull EditorAspectDescriptorBase descriptor) {
-    myDescriptor = descriptor;
+  EditorAspectContributionsCache(@NotNull LanguageRuntime languageRuntime) {
+    myLanguageRuntime = languageRuntime;
   }
 
+  /**
+   * Returns contributions for {@code key} from the owner language and all its extending languages.
+   *
+   * @param key the key of the contribution
+   * @return a non-null, possibly empty, collection of contributions in an unspecified order.
+   */
+  @NotNull
   public Collection<ContributionT> get(KeyT key) {
-    if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(myDescriptor)) {
-      myDescriptor.clearAllCaches();
-    } else {
-      if (myCache.containsKey(key)) {
-        return myCache.get(key);
-      }
+    return concatValues(getOrCompute(key));
+  }
+
+  /**
+   * Returns contributions for {@code key} from the owner language and all its extending languages but restricted to languages whose namespaces are contained in
+   * {@code languageNamespaces}.
+   *
+   * @param key the key of the contribution
+   * @param languageNamespaces a set of language namespaces/fully qualified names
+   * @return a non-null, possibly empty, collection of contributions in an unspecified order.
+   */
+  @NotNull
+  Collection<ContributionT> getInLanguages(KeyT key, Set<String> languageNamespaces) {
+    return filterKeysAndConcatValues(getOrCompute(key), languageNamespaces);
+  }
+
+  private Map<String, Collection<ContributionT>> getOrCompute(KeyT key) {
+    Map<String, Collection<ContributionT>> values = myCache.get(key);
+
+    if (values == null) {
+      values = computeValues(key);
+      myCache.put(key, values);
     }
-    Collection<ContributionT> allValues = computeValues(key);
-    myCache.put(key, allValues);
-    ValidEditorDescriptorsCache.getInstance().cacheDescriptor(myDescriptor);
-    return allValues;
+    return values;
+  }
+
+  private static <T> Collection<T> concatValues(Map<?, Collection<T>> map) {
+    return map.entrySet().stream().flatMap(e -> e.getValue().stream()).collect(Collectors.toList());
+  }
+
+  private static <K, T> Collection<T> filterKeysAndConcatValues(Map<K, Collection<T>> map, Collection<K> wantedKeys) {
+    return map.entrySet().stream()
+        .filter(entry -> wantedKeys.contains(entry.getKey()))
+        .flatMap(entry -> entry.getValue().stream())
+        .collect(Collectors.toList());
   }
 
   public void clear() {
     myCache.clear();
   }
 
-  private Collection<ContributionT> computeValues(KeyT key) {
-    List<ContributionT> result = new ArrayList<ContributionT>();
-    addContributions(result, myDescriptor, key);
-    SLanguage language = getLanguage(key);
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
-    if (languageRuntime == null) {
-      LOG.warning("No language runtime found for language: " + language);
-      return result;
+  private Map<String, Collection<ContributionT>> computeValues(KeyT key) {
+    Map<String, Collection<ContributionT>> result = new HashMap<>();
+
+    putIfNotEmpty(result, myLanguageRuntime.getNamespace(), getDeclaredContributions(myLanguageRuntime, key));
+    for (LanguageRuntime extendingLanguage : myLanguageRuntime.getExtendingLanguages()) {
+      putIfNotEmpty(result, extendingLanguage.getNamespace(), getDeclaredContributions(extendingLanguage, key));
     }
-    for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(extendingLanguage);
-      if (editorAspect == null) {
-        continue;
-      }
-      addContributions(result, editorAspect, key);
-    }
+
     return result;
   }
 
-  private void addContributions(List<ContributionT> container, EditorAspectDescriptor editorAspect, KeyT key) {
-    try {
-      container.addAll(getDeclaredContributions(editorAspect, key));
-    } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get contributions from editor aspect descriptor " + editorAspect, error);
+  private static <KeyT, ValueT> void putIfNotEmpty(Map<KeyT, Collection<ValueT>> map, KeyT key, Collection<ValueT> values) {
+    if (!values.isEmpty()) {
+      map.put(key, values);
     }
   }
 
-  /**
-   * Extract {@link SLanguage} from {@code key}. Languages extending this language will be examined for their contributions.
-   * @param key a key
-   * @return language corresponding to the key
-   */
-  protected abstract SLanguage getLanguage(KeyT key);
+  @NotNull
+  private Collection<ContributionT> getDeclaredContributions(LanguageRuntime languageRuntime, KeyT key) {
+    EditorAspectDescriptor editorAspect = LanguageRegistryHelper.getEditorAspectDescriptor(languageRuntime);
+    if (editorAspect == null) {
+      return Collections.emptyList();
+    }
+
+    Collection<ContributionT> declaredContributions;
+    try {
+      declaredContributions = getDeclaredContributions(editorAspect, key);
+    } catch (NoClassDefFoundError error) {
+      LOG.error("Failed to get contributions from editor aspect descriptor " + editorAspect, error);
+      declaredContributions = Collections.emptyList();
+    }
+    return declaredContributions;
+  }
 
   /**
    * Retrieve contributions declared directly in the model represented by {@code descriptor} and matching {@code key}.

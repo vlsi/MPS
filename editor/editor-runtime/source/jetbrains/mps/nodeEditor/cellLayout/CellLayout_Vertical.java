@@ -186,9 +186,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    EditorCell editorCell = editorCell_collection.firstCell();
-    if (editorCell == null) return 0;
-    return editorCell.getRightInset();
+    return editorCell_collection.isEmpty() ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   @Override
@@ -224,8 +222,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
-        if (lastCell != null) {
+        if (!editorCells.isEmpty()) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }

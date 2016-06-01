@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import org.jetbrains.mps.openapi.module.SRepository;
+
 public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
 
   public static final int PERSISTENCE_ID = 0x55550001;
@@ -27,5 +29,10 @@ public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
   @Override
   public boolean isIncomplete() {
     return false;
+  }
+
+  @Override
+  public String asString(SRepository repository) {
+    return "*";
   }
 }

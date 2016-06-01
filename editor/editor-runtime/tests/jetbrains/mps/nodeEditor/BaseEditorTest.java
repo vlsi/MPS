@@ -15,43 +15,29 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.CoreMpsTest;
-import jetbrains.mps.editor.runtime.HeadlessEditorComponent;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.After;
 import org.junit.Before;
 
-public class BaseEditorTest extends CoreMpsTest {
-  protected EditorContext myEditorContext;
+public class BaseEditorTest {
+  private TestEditorEnvironment myEditorEnvironment;
 
   @Before
   public void initContext() throws Exception {
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        SRepository repository = MPSModuleRepository.getInstance();
-        EditorComponent component = new HeadlessEditorComponent(null, repository);
-        myEditorContext = new jetbrains.mps.nodeEditor.EditorContext(component, null, repository);
-      }
-    });
-    if (exception != null) {
-      throw exception;
-    }
+    myEditorEnvironment = new TestEditorEnvironment();
   }
 
   @After
   public void disposeContext() throws Exception {
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        myEditorContext.getEditorComponent().dispose();
-      }
-    });
-    if (exception != null) {
-      throw exception;
-    }
+    myEditorEnvironment.dispose();
+  }
+
+  protected EditorContext getEditorContext() {
+    return myEditorEnvironment.getEditorContext();
+  }
+
+  protected EditorComponent getEditorComponent() {
+    return myEditorEnvironment.getEditorComponent();
   }
 }

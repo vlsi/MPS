@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayDeque;
@@ -36,6 +37,11 @@ import java.util.List;
 class CircularReferenceSafeMenuItemFactory {
   private static final Logger LOG = Logger.getLogger(CircularReferenceSafeMenuItemFactory.class);
   private final ArrayDeque<Key> myKeyStack = new ArrayDeque<>();
+  private final Collection<SLanguage> myUsedLanguages;
+
+  CircularReferenceSafeMenuItemFactory(Collection<SLanguage> usedLanguages) {
+    myUsedLanguages = usedLanguages;
+  }
 
   @NotNull
   public List<MenuItem> createItems(@NotNull TransformationMenuContext context, @NotNull TransformationMenuLookup menuLookup) {
@@ -50,7 +56,7 @@ class CircularReferenceSafeMenuItemFactory {
     myKeyStack.addLast(key);
 
     try {
-      Collection<TransformationMenu> menus = menuLookup.lookup();
+      Collection<TransformationMenu> menus = menuLookup.lookup(myUsedLanguages);
 
       if (menus.isEmpty()) {
         return Collections.emptyList();

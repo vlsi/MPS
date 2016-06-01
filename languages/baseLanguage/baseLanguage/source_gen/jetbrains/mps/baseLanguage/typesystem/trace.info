@@ -22068,66 +22068,41 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6974494769387259317">
     <file name="Queries.java">
-      <node id="6974494769387329503" at="24,79,25,62" concept="13" />
-      <node id="6974494769387270858" at="27,100,28,118" concept="12" />
-      <node id="6974494769387270872" at="29,22,30,120" concept="12" />
-      <node id="6974494769387270880" at="30,120,31,53" concept="0" />
-      <node id="6974494769387270884" at="31,53,32,56" concept="12" />
-      <node id="6974494769387270890" at="32,56,33,77" concept="12" />
-      <node id="6974494769387434258" at="34,1077,35,243" concept="12" />
-      <node id="6974494769387434272" at="35,243,36,350" concept="6" />
-      <node id="6974494769387270938" at="36,350,37,30" concept="13" />
-      <node id="6974494769387434288" at="40,42,41,248" concept="12" />
-      <node id="6974494769387270952" at="41,248,42,189" concept="6" />
-      <node id="6974494769387270957" at="42,189,43,30" concept="13" />
-      <node id="2975087721891080810" at="44,5,45,57" concept="12" />
-      <node id="2975087721891080820" at="46,5,47,224" concept="12" />
-      <node id="2975087721891080820" at="47,224,48,117" concept="12" />
-      <node id="2975087721891080826" at="49,43,50,38" concept="13" />
-      <node id="2975087721891080830" at="51,14,52,20" concept="13" />
-      <node id="6974494769387270818" at="22,0,24,0" concept="3" trace="Queries#()V" />
-      <node id="2975087721891080820" at="51,12,53,7" concept="1" />
-      <node id="6974494769387270822" at="24,0,27,0" concept="17" trace="getBinaryOperationType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6974494769387270897" at="33,77,38,7" concept="10" />
-      <node id="6974494769387270942" at="39,5,44,5" concept="10" />
-      <node id="2975087721891080820" at="48,117,53,7" concept="10" />
-      <node id="2975087721891080820" at="45,57,54,5" concept="1" />
-      <node id="6974494769387270869" at="28,118,39,5" concept="10" />
-      <node id="6974494769387270835" at="27,0,56,0" concept="17" trace="getBinaryOperationType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6974494769387270821" at="22,20,22,20" />
-      <scope id="6974494769387270829" at="24,79,25,62" />
-      <scope id="2975087721891080823" at="49,43,50,38" />
-      <scope id="2975087721891080829" at="51,14,52,20" />
-      <scope id="6974494769387270818" at="22,0,24,0" />
-      <scope id="6974494769387270822" at="24,0,27,0">
-        <var name="leftType" id="6974494769387270825" />
-        <var name="rightType" id="6974494769387270827" />
-      </scope>
-      <scope id="6974494769387270925" at="34,1077,37,30">
-        <var name="classifierType" id="6974494769387434259" />
-      </scope>
-      <scope id="6974494769387270946" at="40,42,43,30">
+      <node id="6974494769387270858" at="20,79,21,118" concept="12" />
+      <node id="6974494769387434288" at="22,42,23,248" concept="12" />
+      <node id="6974494769387270952" at="23,248,24,189" concept="6" />
+      <node id="6974494769387270957" at="24,189,25,30" concept="13" />
+      <node id="2975087721891080810" at="26,5,27,57" concept="12" />
+      <node id="2975087721891080820" at="28,5,29,224" concept="12" />
+      <node id="2975087721891080820" at="29,224,30,117" concept="12" />
+      <node id="2975087721891080826" at="31,43,32,38" concept="13" />
+      <node id="2975087721891080830" at="33,14,34,20" concept="13" />
+      <node id="6974494769387270818" at="18,0,20,0" concept="3" trace="Queries#()V" />
+      <node id="2975087721891080820" at="33,12,35,7" concept="1" />
+      <node id="6974494769387270942" at="21,118,26,5" concept="10" />
+      <node id="2975087721891080820" at="30,117,35,7" concept="10" />
+      <node id="2975087721891080820" at="27,57,36,5" concept="1" />
+      <node id="6974494769387270822" at="20,0,38,0" concept="17" trace="getBinaryOperationType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6974494769387270821" at="18,21,18,21" />
+      <scope id="2975087721891080823" at="31,43,32,38" />
+      <scope id="2975087721891080829" at="33,14,34,20" />
+      <scope id="6974494769387270818" at="18,0,20,0" />
+      <scope id="6974494769387270946" at="22,42,25,30">
         <var name="runtimeErrorType" id="6974494769387434289" />
       </scope>
-      <scope id="2975087721891080820" at="46,5,53,7">
-        <var name="coercedNode_j6k1pf_e0c" id="2975087721891080820" />
-        <var name="pattern_j6k1pf_e0c" id="2975087721891080820" />
+      <scope id="2975087721891080820" at="28,5,35,7">
+        <var name="coercedNode_j6k1pf_d0b" id="2975087721891080820" />
+        <var name="pattern_j6k1pf_d0b" id="2975087721891080820" />
       </scope>
-      <scope id="6974494769387270871" at="29,22,38,7">
-        <var name="javaLang" id="6974494769387270885" />
-        <var name="javaLangJavaStubModelDescriptor" id="6974494769387270873" />
-        <var name="stringClass" id="6974494769387270891" />
-      </scope>
-      <scope id="6974494769387270844" at="27,100,54,5">
+      <scope id="6974494769387270829" at="20,79,36,5">
         <var name="leastCommonSupertypes" id="6974494769387270859" />
         <var name="type" id="2975087721891080811" />
       </scope>
-      <scope id="6974494769387270835" at="27,0,56,0">
-        <var name="leftType" id="6974494769387270838" />
-        <var name="mayBeString" id="6974494769387270842" />
-        <var name="rightType" id="6974494769387270840" />
+      <scope id="6974494769387270822" at="20,0,38,0">
+        <var name="leftType" id="6974494769387270825" />
+        <var name="rightType" id="6974494769387270827" />
       </scope>
-      <unit id="6974494769387259317" at="21,0,57,0" name="jetbrains.mps.baseLanguage.typesystem.Queries" />
+      <unit id="6974494769387259317" at="17,0,39,0" name="jetbrains.mps.baseLanguage.typesystem.Queries" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7152041109751465917">

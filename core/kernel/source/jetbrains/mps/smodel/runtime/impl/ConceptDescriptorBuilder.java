@@ -48,6 +48,7 @@ public class ConceptDescriptorBuilder {
   private String[] parents;
   private boolean isAbstract;
   private boolean isFinal;
+  private boolean isRootable; //meaningless for interfaces
   private String conceptAlias;
   private String shortDescription;
   private String helpUrl;
@@ -59,6 +60,7 @@ public class ConceptDescriptorBuilder {
   private List<ReferenceDescriptor> ownReferences = new ArrayList<ReferenceDescriptor>();
   private List<LinkDescriptor> ownLinks = new ArrayList<LinkDescriptor>();
   private Icon myIcon;
+  private int version = 0; //version 1 means canBeRoot is set
 
   //remove after migration
   public ConceptDescriptorBuilder(String conceptFqName) {
@@ -68,6 +70,11 @@ public class ConceptDescriptorBuilder {
   public ConceptDescriptorBuilder(String conceptFqName, SConceptId id) {
     this.conceptFqName = conceptFqName;
     this.id = id;
+  }
+
+  public ConceptDescriptorBuilder version(int version) {
+    this.version = version;
+    return this;
   }
 
   public ConceptDescriptorBuilder super_(@NotNull String qualifiedName) {
@@ -141,6 +148,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder rootable() {
+    isRootable = true;
+    return this;
+  }
+
   public ConceptDescriptorBuilder interface_() {
     isInterfaceConcept = true;
     return this;
@@ -174,6 +186,7 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptor create() {
     return new CompiledConceptDescriptor(
+        version,
         id,
         conceptFqName,
         superConceptId,
@@ -184,8 +197,11 @@ public class ConceptDescriptorBuilder {
         ownProperties.toArray(new PropertyDescriptor[ownProperties.size()]),
         ownReferences.toArray(new ReferenceDescriptor[ownReferences.size()]),
         ownLinks.toArray(new LinkDescriptor[ownLinks.size()]),
-        isAbstract || isInterfaceConcept, isFinal,
-        conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
+        isAbstract || isInterfaceConcept,
+        isFinal,
+        isRootable,
+        conceptAlias == null ? "" : conceptAlias,
+        shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope,
         sourceNodeRef,

@@ -22,19 +22,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import javax.swing.JComponent;
-import jetbrains.mps.editor.runtime.EditorUtil;
 
 public class MetaBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -243,107 +230,17 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_liyxwi_a_0");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createAlternation_liyxwi_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_liyxwi_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_liyxwi_c0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_liyxwi_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_liyxwi_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_liyxwi_b0_0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createAlternation_liyxwi_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = MetaBlock_Editor.renderingCondition_liyxwi_a0a(node, editorContext);
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createImage_liyxwi_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_liyxwi_a0a(editorContext, node);
-    }
-    return editorCell;
-  }
-  private static boolean renderingCondition_liyxwi_a0a(SNode node, EditorContext editorContext) {
-    SModule module = SNodeOperations.getModel(node).getModule();
-    if (!(module instanceof AbstractModule)) {
-      return false;
-    }
-    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath")));
-    if (s == null) {
-      return false;
-    }
-    return FileSystem.getInstance().getFileByPath(s).exists();
-
-  }
-  private EditorCell createImage_liyxwi_a0a(final EditorContext editorContext, final SNode node) {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getModel(node).getModule();
-    imagePath = (new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath"));
-      }
-    }).invoke();
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
-    editorCell.setCellId("Image_liyxwi_a0a");
-    editorCell.setDescent(0);
-    return editorCell;
-  }
-  private EditorCell createConstant_liyxwi_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
-    editorCell.setCellId("Constant_liyxwi_a0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_liyxwi_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_liyxwi_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_liyxwi_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_liyxwi_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createJComponent_liyxwi_c1a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_liyxwi_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
-    editorCell.setCellId("Constant_liyxwi_a1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_liyxwi_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("iconPath");
-    provider.setNoTargetText("<no icon>");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_iconPath");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createJComponent_liyxwi_c1a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, MetaBlock_Editor._QueryFunction_JComponent_liyxwi_a2b0(node, editorContext), "_liyxwi_c1a");
-    editorCell.setCellId("JComponent_liyxwi_c1a");
-    return editorCell;
-  }
-  private static JComponent _QueryFunction_JComponent_liyxwi_a2b0(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, editorContext);
-  }
-  private EditorCell createConstant_liyxwi_c0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_liyxwi_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path:");
-    editorCell.setCellId("Constant_liyxwi_c0_0");
+    editorCell.setCellId("Constant_liyxwi_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_liyxwi_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_liyxwi_b0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");

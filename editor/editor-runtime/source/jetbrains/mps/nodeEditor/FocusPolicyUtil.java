@@ -50,7 +50,7 @@ public class FocusPolicyUtil {
       }
     }
     while (focusedCell instanceof EditorCell_Collection && ((EditorCell_Collection) focusedCell).isTransparentCollection()) {
-      focusedCell = ((EditorCell_Collection) focusedCell).getCellAt(0);
+      focusedCell = ((EditorCell_Collection) focusedCell).firstCell();
     }
     return focusedCell;
   }

@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
@@ -75,7 +76,8 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
   }
   @Override
   protected void doOKAction() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    assert ThreadUtils.isInEDT();
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myGitFixes.installIfNeeded();
         myGitGlobal.installIfNeeded();
@@ -86,9 +88,9 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
         if (myIdeSvn != null) {
           myIdeSvn.installIfNeeded();
         }
-        close(DialogWrapper.OK_EXIT_CODE);
       }
     });
+    close(DialogWrapper.OK_EXIT_CODE);
   }
   @NotNull
   @Override

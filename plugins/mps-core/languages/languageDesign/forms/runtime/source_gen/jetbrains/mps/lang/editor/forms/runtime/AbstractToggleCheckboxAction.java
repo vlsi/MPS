@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell;
 import jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator;
@@ -32,7 +33,7 @@ public abstract class AbstractToggleCheckboxAction {
     }
 
     EditorCell_Collection parent = selectedCell.getParent();
-    if (parent.getCellsCount() < EXPECTED_CHILD_INDEX + 1 || parent.getCellAt(EXPECTED_CHILD_INDEX) != selectedCell) {
+    if (parent.getCellsCount() < EXPECTED_CHILD_INDEX + 1 || IterableUtil.get(parent, EXPECTED_CHILD_INDEX) != selectedCell) {
       // No need to save selection, it will be restored by normal means 
       return null;
     }

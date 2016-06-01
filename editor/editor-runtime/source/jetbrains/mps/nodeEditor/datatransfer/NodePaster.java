@@ -127,8 +127,7 @@ public class NodePaster {
 
   public boolean canPasteAsRoots() {
     for (SNode pasteNode : myPasteNodes) {
-      SNode nodeConcept = new SNodeLegacy(pasteNode).getConceptDeclarationNode();
-      if (!SNodeUtil.isInstanceOfConceptDeclaration(nodeConcept) || !SNodeUtil.getConceptDeclaration_IsRootable(nodeConcept)) {
+      if (!pasteNode.getConcept().isRootable()) {
         return false;
       }
     }

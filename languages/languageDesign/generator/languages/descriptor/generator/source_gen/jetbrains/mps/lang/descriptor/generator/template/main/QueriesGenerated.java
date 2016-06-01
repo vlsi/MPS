@@ -290,15 +290,7 @@ public class QueriesGenerated {
     }));
   }
   public static boolean ifMacro_Condition_3804006705095767854(final IfMacroContext _context) {
-    SModel aspectModel = LanguageAspect.EDITOR.get(((Language) _context.getVariable("langModule")));
-    if (aspectModel == null) {
-      return false;
-    }
-    if (!(aspectModel.getReference().getModelId().toString().equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))))) {
-      return false;
-    }
-
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(aspectModel, _context, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu")) || LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(_context, aspectModel) || LanguageRuntimeGeneratorUtils.hasStyleAttributeDeclaration(aspectModel);
+    return LanguageAspect.EDITOR.get(((Language) _context.getVariable("langModule"))).getRootNodes().iterator().hasNext();
   }
   public static boolean ifMacro_Condition_263208052639706518(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"))).isNotEmpty();

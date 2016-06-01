@@ -22,6 +22,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Iterator;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -206,7 +207,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
       EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-      EditorCell columnCell = ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow).getCellAt(columnIntex + 1);
+      EditorCell columnCell = IterableUtil.get((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow, columnIntex + 1);
       if (columnCell == null) {
         throw new ColumnNotFoundException(columnIntex);
       }

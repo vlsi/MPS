@@ -6,37 +6,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class Queries {
-  public Queries() {
+  private Queries() {
   }
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
-    return getBinaryOperationType(leftType, rightType, false);
-  }
-  public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
     List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(Arrays.asList(leftType, rightType), null);
-    if (mayBeString) {
-      SModel javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor("java.lang@java_stub");
-      assert javaLangJavaStubModelDescriptor != null;
-      SModel javaLang = javaLangJavaStubModelDescriptor;
-      SNode stringClass = SModelOperations.getRootByName(javaLang, "String");
-      if (SNodeOperations.isInstanceOf(leftType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SLinkOperations.getTarget((SNodeOperations.cast(leftType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == stringClass || SNodeOperations.isInstanceOf(rightType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SLinkOperations.getTarget((SNodeOperations.cast(rightType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == stringClass) {
-        SNode classifierType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
-        SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SNodeOperations.cast(stringClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
-        return classifierType;
-      }
-    }
     if (leastCommonSupertypes.isEmpty()) {
       SNode runtimeErrorType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType")));
       SPropertyOperations.set(runtimeErrorType, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText"), "incompatible types");
@@ -44,10 +26,10 @@ public class Queries {
     }
     SNode type = leastCommonSupertypes.iterator().next();
     {
-      IMatchingPattern pattern_j6k1pf_e0c = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
-      SNode coercedNode_j6k1pf_e0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_e0c);
-      if (coercedNode_j6k1pf_e0c != null) {
-        return coercedNode_j6k1pf_e0c;
+      IMatchingPattern pattern_j6k1pf_d0b = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
+      SNode coercedNode_j6k1pf_d0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_d0b);
+      if (coercedNode_j6k1pf_d0b != null) {
+        return coercedNode_j6k1pf_d0b;
       } else {
         return type;
       }

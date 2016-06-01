@@ -56,6 +56,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final LinkDescriptor[] myOwnLinks;
   private final boolean myAbstract;
   private final boolean myFinal;
+  private boolean myIsRootable;
   private final String myConceptAlias;
   private final String myConceptShortDescription;
   private final String myHelpUrl;
@@ -75,8 +76,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, ReferenceDescriptor> referencesByName;
   private Map<String, LinkDescriptor> linksByName;
   private volatile boolean myInitialized = false;
+  private int myVersion;
 
-  CompiledConceptDescriptor(@NotNull SConceptId id,
+  CompiledConceptDescriptor(
+      int version,
+      @NotNull SConceptId id,
       @NotNull String conceptFqName,
       @Nullable SConceptId superConceptId,
       @Nullable String superConcept,
@@ -88,12 +92,14 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       LinkDescriptor[] ownLinks,
       boolean isAbstract,
       boolean isFinal,
+      boolean isRootable,
       String conceptAlias,
       String shortDescription,
       String helpUrl,
       StaticScope staticScope,
       SNodeReference sourceNodeRef,
       Icon icon) {
+    myVersion = version;
     myId = id;
     myConceptFqName = conceptFqName;
     mySuperConceptId = superConceptId;
@@ -108,6 +114,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
     myAbstract = isAbstract;
     myFinal = isFinal;
+    myIsRootable = isRootable;
     myConceptAlias = conceptAlias;
     myConceptShortDescription = shortDescription;
     myHelpUrl = helpUrl;
@@ -221,6 +228,16 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     linksByName = linksByNameMap;
   }
 
+  /**
+   * This method is for internal use only.
+   * It allows to identify whether some properties, which were added in later versions of MPS, were specified
+   * on construction (by generated code) or they have default values.
+   * This is needed not to make wasSet/wasNotSet field for each method.
+   */
+  public int getVersion() {
+    return myVersion;
+  }
+
   @Override
   public List<String> getParentsNames() {
     init();
@@ -256,6 +273,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public boolean isAbstract() {
     return myAbstract;
+  }
+
+  @Override
+  public boolean isRootable() {
+    return myIsRootable;
   }
 
   @Override

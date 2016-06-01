@@ -1263,21 +1263,21 @@
             <node concept="3uibUv" id="3SnNvqCbyLF" role="1tU5fm">
               <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
             </node>
-            <node concept="2OqwBi" id="3SnNvqCbyLG" role="33vP2m">
-              <node concept="2OqwBi" id="3SnNvqCbyLH" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxglIcp" role="2Oq$k0">
+            <node concept="2OqwBi" id="38fsJmvgoVb" role="33vP2m">
+              <node concept="2OqwBi" id="38fsJmvggFw" role="2Oq$k0">
+                <node concept="37vLTw" id="38fsJmvgf5t" role="2Oq$k0">
                   <ref role="3cqZAo" node="3SnNvqCbyLy" resolve="editorComponent" />
                 </node>
-                <node concept="liA8E" id="3SnNvqCbyLJ" role="2OqNvi">
+                <node concept="liA8E" id="38fsJmvgoP2" role="2OqNvi">
                   <ref role="37wK5l" to="exr9:~EditorComponent.getRootCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolve="getRootCell" />
                 </node>
               </node>
-              <node concept="liA8E" id="3SnNvqCbyLK" role="2OqNvi">
-                <ref role="37wK5l" to="g51k:~EditorCell.findCellWeak(int,int,org.jetbrains.mps.util.Condition):jetbrains.mps.nodeEditor.cells.EditorCell" resolve="findCellWeak" />
-                <node concept="37vLTw" id="2BHiRxgmG4P" role="37wK5m">
+              <node concept="liA8E" id="38fsJmvgqCl" role="2OqNvi">
+                <ref role="37wK5l" to="f4zo:~EditorCell.findNearestLeafOnLine(int,int,org.jetbrains.mps.util.Condition):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findNearestLeafOnLine" />
+                <node concept="37vLTw" id="38fsJmvgqFq" role="37wK5m">
                   <ref role="3cqZAo" node="3SnNvqCbyL$" resolve="x" />
                 </node>
-                <node concept="37vLTw" id="2BHiRxgmeEx" role="37wK5m">
+                <node concept="37vLTw" id="38fsJmvgqKr" role="37wK5m">
                   <ref role="3cqZAo" node="3SnNvqCbyLA" resolve="y" />
                 </node>
                 <node concept="2ShNRf" id="3SnNvqCbyLN" role="37wK5m">
@@ -1287,8 +1287,8 @@
                       <property role="2bfB8j" value="true" />
                       <ref role="1Y3XeK" to="y49u:~Condition" resolve="Condition" />
                       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3uibUv" id="20m38krTZVZ" role="2Ghqu4">
-                        <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+                      <node concept="3uibUv" id="37VBvxGnJzJ" role="2Ghqu4">
+                        <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
                       </node>
                       <node concept="3clFb_" id="3SnNvqCbyLR" role="jymVt">
                         <property role="1EzhhJ" value="false" />
@@ -1299,8 +1299,8 @@
                         <node concept="37vLTG" id="3SnNvqCbyLU" role="3clF46">
                           <property role="TrG5h" value="object" />
                           <property role="3TUv4t" value="false" />
-                          <node concept="3uibUv" id="20m38krU1hZ" role="1tU5fm">
-                            <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+                          <node concept="3uibUv" id="37VBvxGnJPC" role="1tU5fm">
+                            <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="3SnNvqCbyYp" role="3clF47">
@@ -1347,8 +1347,8 @@
                                 <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
                               </node>
                               <node concept="2YIFZM" id="2meLaIF5lBK" role="33vP2m">
-                                <ref role="37wK5l" node="7sMvr7H2RbF" resolve="getBreakpointIconAnchorCell" />
                                 <ref role="1Pybhc" node="7sMvr7H2RbE" resolve="BreakpointIconRenderrerEx" />
+                                <ref role="37wK5l" node="7sMvr7H2RbF" resolve="getBreakpointIconAnchorCell" />
                                 <node concept="2OqwBi" id="2meLaIF5lBA" role="37wK5m">
                                   <node concept="37vLTw" id="2BHiRxgm9Im" role="2Oq$k0">
                                     <ref role="3cqZAo" node="3SnNvqCbyLy" resolve="editorComponent" />

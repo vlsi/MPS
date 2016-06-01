@@ -6,19 +6,26 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DependencyViewerScope {
-  private Collection<SModule> myModules;
-  private Collection<SModel> myModels;
-  private Collection<SNode> myRoots;
-  public DependencyViewerScope() {
+  private final Collection<SModule> myModules;
+  private final Collection<SModel> myModels;
+  private final Collection<SNode> myRoots;
+  private final SRepository myRepo;
+
+  public DependencyViewerScope(SRepository contextRepo) {
     myModules = CollectionSequence.fromCollection(new LinkedHashSet<SModule>());
     myModels = CollectionSequence.fromCollection(new LinkedHashSet<SModel>());
     myRoots = CollectionSequence.fromCollection(new LinkedHashSet<SNode>());
+    myRepo = contextRepo;
   }
   private int getNumRoots(SModel model) {
     return Sequence.fromIterable(((Iterable<SNode>) model.getRootNodes())).count();
@@ -49,12 +56,28 @@ public class DependencyViewerScope {
     }
     return CollectionSequence.fromCollection(myModules).contains(model.getModule());
   }
+
+  public void add(SModuleReference moduleRef) {
+    if (moduleRef == null) {
+      return;
+    }
+    add(moduleRef.resolve(myRepo));
+  }
+
   public void add(@Nullable SModule module) {
     if (module == null) {
       return;
     }
     CollectionSequence.fromCollection(myModules).addElement(module);
   }
+
+  public void add(SModelReference modelRef) {
+    if (modelRef == null) {
+      return;
+    }
+    add(modelRef.resolve(myRepo));
+  }
+
   public void add(@Nullable SModel model) {
     if (model == null) {
       return;
@@ -63,6 +86,14 @@ public class DependencyViewerScope {
       CollectionSequence.fromCollection(myModels).addElement(model);
     }
   }
+
+  public void add(SNodeReference nodeRef) {
+    if (nodeRef == null) {
+      return;
+    }
+    add(nodeRef.resolve(myRepo));
+  }
+
   public void add(@Nullable SNode root) {
     if (root == null) {
       return;

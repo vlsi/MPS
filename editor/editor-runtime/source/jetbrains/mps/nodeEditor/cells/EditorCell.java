@@ -17,8 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
@@ -26,7 +24,6 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
-import java.util.List;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   void paint(Graphics g);
@@ -34,12 +31,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   void paintCell(Graphics g, ParentSettings parentSettings);
 
   void paintDecorations(Graphics g);
-
-  /**
-   * @deprecated since MPS 3.2 use paintContent() & paintDecorations() instead
-   */
-  @Deprecated
-  void paint(Graphics g, ParentSettings parentSettings);
 
   void paintSelection(Graphics g, Color c, boolean drawBorder);
 
@@ -58,10 +49,23 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
+   */
+  @Deprecated
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
+   */
+  @Deprecated
   EditorCell findCellWeak(int x, int y);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   */
+  @Deprecated
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   void synchronizeViewWithModel();
@@ -88,161 +92,166 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   // TODO: move this method to open API
   CellInfo getCellInfo();
 
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  void setRightTransformAnchorTag(String tag);
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  String getRightTransformAnchorTag();
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  boolean hasRightTransformAnchorTag(String tag);
-
   Iterator<EditorCell_Collection> parents();
 
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
-
-  /**
-   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
-   */
-  @Deprecated
-  boolean isFolded();
-
-  /**
-   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
-   */
-  @Deprecated
-  boolean isUnfoldedCollection();
-
-  /**
-   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
-   */
-  @Deprecated
-  boolean canBePossiblyFolded();
 
   boolean isFirstPositionInBigCell();
 
   boolean isLastPositionInBigCell();
 
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  boolean isLastChild();
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  boolean isFirstChild();
-
   boolean isFirstCaretPosition();
 
   boolean isLastCaretPosition();
 
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  boolean isOnLeftBoundary();
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  boolean isOnRightBoundary();
-
   EditorCell getContainingBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   boolean isAncestorOf(EditorCell cell);
 
   /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
+   * @deprecated since MPS 3.4 use code like:
+   * instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
    */
   @Deprecated
-  <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
-   */
-  @Deprecated
-  boolean hasErrorMessages();
-
-  /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
-   */
-  @Deprecated
-  EditorCell_Label getSTHintCell();
-
   boolean isLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getNextSibling()}
+   */
+  @Deprecated
   EditorCell getNextSibling();
 
   /**
-   * @deprecated since MPS 3.3 not used.
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.EditorCell#getPrevSibling()}
    */
   @Deprecated
-  EditorCell getNextSibling(Condition<EditorCell> condition);
-
   EditorCell getPrevSibling();
 
   /**
-   * @deprecated since MPS 3.3 not used.
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
    */
   @Deprecated
-  EditorCell getPrevSibling(Condition<EditorCell> condition);
-
   EditorCell getNextLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, Condition)}
+   */
+  @Deprecated
   EditorCell getNextLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   EditorCell getPrevLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, Condition)}
+   */
+  @Deprecated
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   EditorCell getFirstLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getFirstLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getLastLeaf(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   EditorCell getLastLeaf();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLastLeaf(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLastChild();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getFirstChild();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getEndCell(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getHomeCell(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLeafToLeft(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLeafToRight(Condition<EditorCell> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(cell, this)
+   */
+  @Deprecated
   boolean isAbove(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(this, cell)
+   */
+  @Deprecated
   boolean isBelow(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLeftToRight(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isLeftToRight(this, cell)
+   */
+  @Deprecated
   boolean isToLeft(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLeftToRight(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isLeftToRight(cell, this)
+   */
+  @Deprecated
   boolean isToRight(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
 }

@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowInspection;
@@ -74,8 +75,9 @@ public class AnalyzeDependencies_Action extends BaseAction {
     DependenciesUtil.openDependenciesTool(event.getData(CommonDataKeys.PROJECT), scope, true);
   }
   /*package*/ DependencyViewerScope computeScope(final AnActionEvent event) {
-    final DependencyViewerScope scope = new DependencyViewerScope();
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+    SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+    final DependencyViewerScope scope = new DependencyViewerScope(repository);
+    repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (event.getData(MPSCommonDataKeys.MODELS) != null) {
           for (SModel model : event.getData(MPSCommonDataKeys.MODELS)) {
@@ -88,7 +90,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
           }
         }
         if (scope.isEmpty()) {
-          SNode node = check_rkpdtm_a0a0c0a0a1a0(event.getData(MPSCommonDataKeys.NODE));
+          SNode node = check_rkpdtm_a0a0c0a0a2a0(event.getData(MPSCommonDataKeys.NODE));
           if (node != null) {
             scope.add(node);
           }
@@ -97,7 +99,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
     });
     return scope;
   }
-  private static SNode check_rkpdtm_a0a0c0a0a1a0(SNode checkedDotOperand) {
+  private static SNode check_rkpdtm_a0a0c0a0a2a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();
     }

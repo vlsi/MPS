@@ -24,7 +24,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
@@ -32,6 +31,8 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellConditions;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -42,6 +43,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -220,7 +222,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
             Set<SReference> requireResolveReferences = new HashSet<SReference>();
             for (SReference ref : pasteNodeData.getRequireResolveReferences()) {
               //ref can be detached from modeltoPaste while using copy/paste handlers
-              if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) continue;
+              if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) {
+                continue;
+              }
               requireResolveReferences.add(ref);
             }
 
@@ -241,7 +245,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
     Iterator<SNodeReference> referenceIterator = selectedReferences.iterator();
     for (SNode node : currentSelectedNodes) {
       SNodeReference reference = referenceIterator.next();
-      if (checkDisposed(reference, node)) return true;
+      if (checkDisposed(reference, node)) {
+        return true;
+      }
     }
     return false;
   }
@@ -257,23 +263,38 @@ public class CellAction_PasteNode extends AbstractCellAction {
   }
 
   private boolean canPasteBefore(EditorCell selectedCell, List<SNode> pasteNodes) {
-    if (!APICellAdapter.isFirstPositionInBigCell(selectedCell)) return false;
+    if (!APICellAdapter.isFirstPositionInBigCell(selectedCell)) {
+      return false;
+    }
     SNode anchor = selectedCell.getSNode();
-    if (anchor.getParent() == null) return false;
+    if (anchor.getParent() == null) {
+      return false;
+    }
 
     NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRoleInParent(), false);
-    if (nodeAndRole == null) return false;
+    if (nodeAndRole == null) {
+      return false;
+    }
 
     EditorCell targetCell = selectedCell.getEditorComponent().findNodeCell(nodeAndRole.myNode);
-    return targetCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) targetCell).getFirstLeaf(CellConditions.SELECTABLE) == selectedCell &&
-        new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
+    return targetCell != null && isFirstSelectableInTarget(selectedCell, targetCell) && new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
+  }
+
+  private boolean isFirstSelectableInTarget(@NotNull EditorCell selectedCell, @NotNull EditorCell targetCell) {
+    if (!CellTraversalUtil.getParents(selectedCell, true).contains(targetCell)) {
+      return false;
+    }
+    EditorCell prevSelectable = CellTraversalUtil.getPrevLeaf(selectedCell, CellConditions.SELECTABLE);
+    return prevSelectable == null || !CellTraversalUtil.getParents(prevSelectable, false).contains(targetCell);
   }
 
   private EditorCell getCellToPasteTo(EditorCell cell) {
     if (cell == null) {
+      return null;
+    }
+    if (APICellAdapter.isLastPositionInBigCell(cell)) {
       return cell;
     }
-    if (APICellAdapter.isLastPositionInBigCell(cell)) return cell;
 
     if (cell instanceof EditorCell_Label && cell.getRole() == null) {
       EditorCell result = new ChildrenCollectionFinder(cell, true, false).find();

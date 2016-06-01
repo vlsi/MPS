@@ -66,10 +66,10 @@ public class JavaCompilerOptionsComponent {
     } else if (property.startsWith("1.8")) {
       return JavaVersion.VERSION_1_8;
     }
-    return JavaVersion.VERSION_1_6;
+    return JavaVersion.VERSION_1_8;
   }
 
-  public static enum JavaVersion {
+  public enum JavaVersion {
     VERSION_1_6(CompilerOptions.VERSION_1_6),
     VERSION_1_7(CompilerOptions.VERSION_1_7),
     VERSION_1_8(CompilerOptions.VERSION_1_8);

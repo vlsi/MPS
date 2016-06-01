@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.selectionRestoring;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,6 +46,6 @@ public class ChildCellLocator implements CellLocator {
       return null;
     }
 
-    return parentCollection.getCellAt(myChildIndex);
+    return IterableUtil.get(parentCollection, myChildIndex);
   }
 }

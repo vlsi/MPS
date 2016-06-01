@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -93,12 +94,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isFirstPositionInBigCell() {
-    return getContainingBigCell().getFirstLeaf() == this && isFirstCaretPosition();
+    return CellTraversalUtil.getFirstLeaf(getContainingBigCell()) == this && isFirstCaretPosition();
   }
 
   @Override
   public boolean isLastPositionInBigCell() {
-    return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
+    return CellTraversalUtil.getLastLeaf(getContainingBigCell()) == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
   }
 
   public boolean canPasteText() {
@@ -177,8 +178,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   public boolean isCaretPositionAllowed(int position) {
-    if (!StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && position == 0) return false;
-    if (!StyleAttributesUtil.isLastPositionAllowed(getStyle()) && position == myTextLine.getText().length()) return false;
+    if (!StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && position == 0) {
+      return false;
+    }
+    if (!StyleAttributesUtil.isLastPositionAllowed(getStyle()) && position == myTextLine.getText().length()) {
+      return false;
+    }
     return position >= 0 && position <= myTextLine.getText().length();
   }
 
@@ -212,7 +217,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isSelectable() {
-    if (!super.isSelectable()) return false;
+    if (!super.isSelectable()) {
+      return false;
+    }
 
     if (getText() == null || getText().length() == 0) {
       return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && StyleAttributesUtil.isLastPositionAllowed(getStyle());
@@ -295,7 +302,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     } else {
       textLineWidth = myTextLine.getEffectiveWidth();
     }
-    if (isDrawBrackets()) textLineWidth += 2 * BRACKET_WIDTH;
+    if (isDrawBrackets()) {
+      textLineWidth += 2 * BRACKET_WIDTH;
+    }
     return textLineWidth;
   }
 
@@ -492,9 +501,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return currentText.substring(0, startSelection) + keyChar + currentText.substring(endSelection);
   }
 
-  private boolean canDeleteFrom(EditorCell cell) {
-    if (getText().length() == 0) return false;
-    if (!(cell instanceof EditorCell_Label)) return false;
+  private boolean canDeleteFrom(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (getText().length() == 0) {
+      return false;
+    }
+    if (!(cell instanceof EditorCell_Label)) {
+      return false;
+    }
     EditorCell_Label label = (EditorCell_Label) cell;
     return label.isEditable() && label.isSelectable();
   }
@@ -553,8 +566,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private void updateVfsTimestamp(String text, String oldText) {
-    if (EqualUtil.equals(oldText, text) || isValidText(text)) return;
-    if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
+    if (EqualUtil.equals(oldText, text) || isValidText(text)) {
+      return;
+    }
+    if (CommandProcessor.getInstance().getCurrentCommand() == null) {
+      return;
+    }
 
     SNode node = getSNode();
     if (node == null || node.getModel() == null) {
@@ -566,7 +583,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     //     of a main editor, rather than that of inspected node.
     //     The approach needs revision, perhaps, we need different VF to support distinct undo in main editor and inspector, or may be we can accomplish
     //     the same with distinct Documents from undo command.
-    NodeVirtualFileSystem.getInstance().getFileFor(getEditorComponent().getEditorContext().getRepository(), node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
+    NodeVirtualFileSystem.getInstance().getFileFor(getEditorComponent().getEditorContext().getRepository(), node.getContainingRoot()).setModificationStamp(
+        LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {
@@ -715,7 +733,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     EditorCell containingBigCell = getContainingBigCell();
-    return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this &&
+    return containingBigCell != null && CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
         getText().equals(getSelectedText());
   }
 
@@ -867,7 +885,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   private class PasteIntoLabelText extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
+      if (!(context.getSelectedCell() instanceof EditorCell_Label)) {
+        return false;
+      }
       // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
@@ -953,14 +973,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
           }
           changeText(newText);
           addChangeTextUndoableAction();
-          if (!isCaretPositionAllowed(caretPosition - 1)) return false;
+          if (!isCaretPositionAllowed(caretPosition - 1)) {
+            return false;
+          }
           setCaretPosition(caretPosition - 1);
           ensureCaretVisible();
           deleteIfPossible(myActionType);
           return true;
         } else {
-          if (myAllowErrors && canDeleteFrom(getPrevLeaf())) {
-            EditorCell_Label label = (EditorCell_Label) getPrevLeaf();
+          jetbrains.mps.openapi.editor.cells.EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(EditorCell_Label.this);
+          if (myAllowErrors && canDeleteFrom(prevLeaf)) {
+            EditorCell_Label label = (EditorCell_Label) prevLeaf;
             getEditor().changeSelection(label);
             label.end();
             label.executeTextAction(myActionType, true);
@@ -984,8 +1007,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
           deleteIfPossible(myActionType);
           return true;
         } else {
-          if (myAllowErrors && canDeleteFrom(getNextLeaf())) {
-            EditorCell_Label label = (EditorCell_Label) getNextLeaf();
+          jetbrains.mps.openapi.editor.cells.EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(EditorCell_Label.this);
+          if (myAllowErrors && canDeleteFrom(nextLeaf)) {
+            EditorCell_Label label = (EditorCell_Label) nextLeaf;
             getEditor().changeSelection(label);
             label.home();
             label.executeTextAction(myActionType, true);

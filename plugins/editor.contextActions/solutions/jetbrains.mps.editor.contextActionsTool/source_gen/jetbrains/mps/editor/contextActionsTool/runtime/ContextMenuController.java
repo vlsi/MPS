@@ -91,7 +91,7 @@ public class ContextMenuController extends ToolController {
     }
     @Override
     public boolean isVisible() {
-      return true;
+      return myActionItem.canExecute("");
     }
     @Override
     public void execute() {

@@ -286,7 +286,7 @@ public class SModel implements SModelData, UpdateModeSupport {
       return;
     }
     myModelDescriptor = ((SModelBase) modelDescriptor);
-    myNodeOwner.setEventDispatch(modelDescriptor == null ? null : myModelDescriptor.getEventDispatch());
+    myNodeOwner.setEventDispatch(modelDescriptor == null ? null : myModelDescriptor.getNodeEventDispatch());
   }
 
   protected void enforceFullLoad() {

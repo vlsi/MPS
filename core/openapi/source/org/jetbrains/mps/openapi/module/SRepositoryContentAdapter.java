@@ -211,6 +211,14 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements SM
   public void problemsDetected(SModel model, Iterable<Problem> problems) {
   }
 
+  @Override
+  public void modelAttached(SModel model, SRepository repository) {
+  }
+
+  @Override
+  public void modelDetached(SModel model, SRepository repository) {
+  }
+
   // SModelAccessListener methods
   @Override
   public void nodeRead(SNode node) {

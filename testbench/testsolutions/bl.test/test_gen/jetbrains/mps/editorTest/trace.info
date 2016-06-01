@@ -8,7 +8,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558:jetbrains.mps.baseLanguage.structure.ForStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1086097794003843976">
     <file name="ReplacePlusWithMinus_Test.java">
@@ -746,7 +745,7 @@
       <node id="1233333241782" at="21,51,22,72" concept="3" />
       <node id="1315230867830143424" at="22,72,23,72" concept="3" />
       <node id="403806536168332657" at="23,72,24,69" concept="3" />
-      <node id="5152201093378696005" at="24,69,25,0" concept="9" />
+      <node id="5152201093378696005" at="24,69,25,0" concept="8" />
       <node id="1233333241782" at="12,0,17,0" concept="6" trace="test_BracesTest#()V" />
       <node id="1233333241782" at="20,0,27,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="1233333241782" at="13,50,15,86" />
@@ -1512,8 +1511,8 @@
       <node id="1954244792706921840" at="22,72,23,25" concept="3" />
       <node id="1954244792706921853" at="23,25,24,28" concept="3" />
       <node id="1954244792706921857" at="24,28,25,28" concept="3" />
-      <node id="722054852932264769" at="25,28,26,0" concept="9" />
-      <node id="722054852932185191" at="26,0,27,0" concept="9" />
+      <node id="722054852932264769" at="25,28,26,0" concept="8" />
+      <node id="722054852932185191" at="26,0,27,0" concept="8" />
       <node id="1954244792706921825" at="12,0,17,0" concept="6" trace="test_UndoSustitutionOfExpressionWithIntContant#()V" />
       <node id="1954244792706921825" at="20,0,29,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="1954244792706921825" at="13,81,15,117" />
@@ -2373,7 +2372,7 @@
       <node id="284804022074342038" at="21,51,22,70" concept="3" />
       <node id="284804022074403058" at="22,70,23,24" concept="3" />
       <node id="284804022085206579" at="23,24,24,69" concept="3" />
-      <node id="284804022085206591" at="24,69,25,0" concept="9" />
+      <node id="284804022085206591" at="24,69,25,0" concept="8" />
       <node id="284804022074342038" at="12,0,17,0" concept="6" trace="test_VoidMethodDefinition1#()V" />
       <node id="284804022074342038" at="20,0,27,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="284804022074342038" at="13,61,15,97" />
@@ -3365,7 +3364,7 @@
       <node id="341917192554897819" at="31,72,32,72" concept="3" />
       <node id="341917192554897841" at="32,72,33,72" concept="3" />
       <node id="341917192554898383" at="33,72,34,72" concept="3" />
-      <node id="341917192554898411" at="34,72,35,0" concept="9" />
+      <node id="341917192554898411" at="34,72,35,0" concept="8" />
       <node id="341917192554888509" at="12,0,17,0" concept="6" trace="test_RemoveRightParen#()V" />
       <node id="341917192554888509" at="20,0,37,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="341917192554888509" at="13,56,15,92" />
@@ -3584,7 +3583,7 @@
       <node id="341917192555058223" at="32,71,33,71" concept="3" />
       <node id="341917192555058246" at="33,71,34,71" concept="3" />
       <node id="341917192555058108" at="34,71,35,22" concept="3" />
-      <node id="341917192555058122" at="35,22,36,0" concept="9" />
+      <node id="341917192555058122" at="35,22,36,0" concept="8" />
       <node id="341917192555036874" at="12,0,17,0" concept="6" trace="test_ParenthesiseMethodCall#()V" />
       <node id="341917192555036874" at="20,0,38,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="341917192555036874" at="13,62,15,98" />
@@ -3974,7 +3973,7 @@
       <node id="3498805908282591430" at="25,66,26,71" concept="3" />
       <node id="3498805908282601630" at="26,71,27,71" concept="3" />
       <node id="7466236358574416127" at="27,71,28,29" concept="3" />
-      <node id="7466236358574416109" at="28,29,29,0" concept="9" />
+      <node id="7466236358574416109" at="28,29,29,0" concept="8" />
       <node id="3498805908282577297" at="12,0,17,0" concept="6" trace="test_PasteSingleStatement#()V" />
       <node id="3498805908282577297" at="20,0,31,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="3498805908282577297" at="13,60,15,96" />
@@ -3997,7 +3996,7 @@
       <node id="3498805908282603880" at="26,71,27,71" concept="3" />
       <node id="3498805908282609914" at="27,71,28,77" concept="3" />
       <node id="7466236358574411416" at="28,77,29,29" concept="3" />
-      <node id="7466236358574411396" at="29,29,30,0" concept="9" />
+      <node id="7466236358574411396" at="29,29,30,0" concept="8" />
       <node id="3498805908282603857" at="12,0,17,0" concept="6" trace="test_PasteMultipleStatement#()V" />
       <node id="3498805908282603857" at="20,0,32,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="3498805908282603857" at="13,62,15,98" />
@@ -4369,7 +4368,7 @@
       <node id="3586175963764966607" at="24,72,25,25" concept="3" />
       <node id="3694071247855998069" at="25,25,26,71" concept="3" />
       <node id="3586175963764966610" at="26,71,27,82" concept="3" />
-      <node id="3586175963764966612" at="27,82,28,0" concept="9" />
+      <node id="3586175963764966612" at="27,82,28,0" concept="8" />
       <node id="3586175963764966583" at="14,0,19,0" concept="6" trace="test_CompletionSpace#()V" />
       <node id="3586175963764966583" at="22,0,30,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="3586175963764966583" at="15,55,17,91" />
@@ -4799,7 +4798,7 @@
       <node id="3852894662483077213" at="37,41,38,41" concept="3" />
       <node id="2329139814027285002" at="38,41,39,255" concept="3" />
       <node id="2329139814027285199" at="39,255,40,256" concept="3" />
-      <node id="2329139814027284890" at="40,256,41,0" concept="9" />
+      <node id="2329139814027284890" at="40,256,41,0" concept="8" />
       <node id="3852894662483077222" at="42,7,43,299" concept="7" />
       <node id="3852894662483077222" at="43,299,44,298" concept="7" />
       <node id="3852894662483077222" at="44,298,45,151" concept="3" />
@@ -6098,7 +6097,7 @@
       <node id="472942194665436915" at="21,51,22,70" concept="3" />
       <node id="472942194665436922" at="22,70,23,71" concept="3" />
       <node id="472942194665446900" at="23,71,24,150" concept="0" />
-      <node id="5516939226773077302" at="24,150,25,0" concept="9" />
+      <node id="5516939226773077302" at="24,150,25,0" concept="8" />
       <node id="472942194665436915" at="12,0,17,0" concept="6" trace="test_DefaultEditor_DontSubstituteAbstractConcepts#()V" />
       <node id="472942194665436915" at="20,0,27,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="472942194665436915" at="13,84,15,120" />
@@ -8752,27 +8751,24 @@
       <node id="6249787563914683642" at="19,102,20,95" concept="3" />
       <node id="6249787563914683642" at="26,51,27,72" concept="3" />
       <node id="5423119640845751028" at="27,72,28,93" concept="7" />
-      <node id="5423119640845780913" at="31,42,32,47" concept="8" />
-      <node id="3349229934431906055" at="34,9,35,63" concept="3" />
-      <node id="403806536168445080" at="35,63,36,71" concept="3" />
-      <node id="5423119640845780907" at="30,0,34,0" concept="6" trace="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+      <node id="5408468910910277711" at="28,93,29,78" concept="7" />
+      <node id="5408468910910280749" at="29,78,30,49" concept="3" />
+      <node id="5408468910910237182" at="30,49,31,0" concept="8" />
+      <node id="5423119640845780895" at="31,0,32,59" concept="7" />
+      <node id="3349229934431906055" at="32,59,33,63" concept="3" />
+      <node id="403806536168445080" at="33,63,34,71" concept="3" />
       <node id="6249787563914683642" at="17,0,22,0" concept="6" trace="test_DefaultCellInfoTest#()V" />
-      <node id="5423119640845780895" at="28,93,34,9" concept="7" />
-      <node id="6249787563914683642" at="25,0,38,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="5423119640845780912" at="31,42,32,47" />
+      <node id="6249787563914683642" at="25,0,36,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="6249787563914683642" at="18,59,20,95" />
-      <scope id="5423119640845780907" at="30,0,34,0">
-        <var name="c" id="5423119640845780910" />
-      </scope>
       <scope id="6249787563914683642" at="17,0,22,0" />
-      <scope id="6249787563914683642" at="26,51,36,71">
+      <scope id="6249787563914683642" at="26,51,34,71">
         <var name="editorCell" id="5423119640845780896" />
+        <var name="errorCells" id="5408468910910277712" />
         <var name="inspector" id="5423119640845751029" />
       </scope>
-      <scope id="6249787563914683642" at="25,0,38,0" />
-      <unit id="5423119640845780905" at="29,71,34,7" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
-      <unit id="6249787563914683642" at="23,0,39,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
-      <unit id="6249787563914683642" at="15,0,40,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
+      <scope id="6249787563914683642" at="25,0,36,0" />
+      <unit id="6249787563914683642" at="23,0,37,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
+      <unit id="6249787563914683642" at="15,0,38,0" name="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6386137884199284577">
@@ -12230,7 +12226,7 @@
       <node id="8777381699079344987" at="28,69,29,71" concept="3" />
       <node id="8777381699079350290" at="29,71,30,71" concept="3" />
       <node id="8777381699079285214" at="30,71,31,29" concept="3" />
-      <node id="8777381699079285216" at="31,29,32,0" concept="9" />
+      <node id="8777381699079285216" at="31,29,32,0" concept="8" />
       <node id="8777381699079285184" at="12,0,17,0" concept="6" trace="test_CopyStatementToPartiallySelectedStatement#()V" />
       <node id="8777381699079285184" at="20,0,34,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="8777381699079285184" at="13,81,15,117" />
@@ -12251,7 +12247,7 @@
       <node id="8777381699079413194" at="24,71,25,71" concept="3" />
       <node id="8777381699079413221" at="25,71,26,71" concept="3" />
       <node id="8777381699079379211" at="26,71,27,29" concept="3" />
-      <node id="8777381699079379213" at="27,29,28,0" concept="9" />
+      <node id="8777381699079379213" at="27,29,28,0" concept="8" />
       <node id="8777381699079379181" at="12,0,17,0" concept="6" trace="test_CopyMethodCall#()V" />
       <node id="8777381699079379181" at="20,0,30,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="8777381699079379181" at="13,54,15,90" />
@@ -12270,7 +12266,7 @@
       <node id="8777381699079423306" at="22,72,23,28" concept="3" />
       <node id="8777381699079423308" at="23,28,24,71" concept="3" />
       <node id="8777381699079423310" at="24,71,25,29" concept="3" />
-      <node id="8777381699079423312" at="25,29,26,0" concept="9" />
+      <node id="8777381699079423312" at="25,29,26,0" concept="8" />
       <node id="8777381699079423280" at="12,0,17,0" concept="6" trace="test_AddStatementToBlock#()V" />
       <node id="8777381699079423280" at="20,0,28,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="8777381699079423280" at="13,59,15,95" />
@@ -12609,7 +12605,7 @@
       <node id="9010159352460138969" at="24,72,25,27" concept="3" />
       <node id="3694071247855997993" at="25,27,26,71" concept="3" />
       <node id="9010159352460166200" at="26,71,27,82" concept="3" />
-      <node id="9010159352460166157" at="27,82,28,0" concept="9" />
+      <node id="9010159352460166157" at="27,82,28,0" concept="8" />
       <node id="9010159352460099163" at="14,0,19,0" concept="6" trace="test_CompletionStartsWithTest#()V" />
       <node id="9010159352460099163" at="22,0,30,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="9010159352460099163" at="15,64,17,100" />
@@ -12727,7 +12723,7 @@
       <node id="953450985260480313" at="21,51,22,70" concept="3" />
       <node id="953450985260497329" at="22,70,23,77" concept="3" />
       <node id="953450985260497342" at="23,77,24,77" concept="3" />
-      <node id="953450985260497338" at="24,77,25,0" concept="9" />
+      <node id="953450985260497338" at="24,77,25,0" concept="8" />
       <node id="953450985260480313" at="12,0,17,0" concept="6" trace="test_MoveToBlock#()V" />
       <node id="953450985260480313" at="20,0,27,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="953450985260480313" at="13,51,15,87" />
@@ -12748,8 +12744,8 @@
       <node id="953450985260511252" at="24,79,25,79" concept="3" />
       <node id="953450985260511450" at="25,79,26,71" concept="3" />
       <node id="953450985260511468" at="26,71,27,77" concept="3" />
-      <node id="953450985260511267" at="27,77,28,0" concept="9" />
-      <node id="953450985260511235" at="28,0,29,0" concept="9" />
+      <node id="953450985260511267" at="27,77,28,0" concept="8" />
+      <node id="953450985260511235" at="28,0,29,0" concept="8" />
       <node id="953450985260497371" at="12,0,17,0" concept="6" trace="test_MoveFirstStatementThenMethod#()V" />
       <node id="953450985260497371" at="20,0,31,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="953450985260497371" at="13,68,15,104" />

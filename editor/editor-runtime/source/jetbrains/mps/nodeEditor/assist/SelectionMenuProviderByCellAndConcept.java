@@ -19,14 +19,15 @@ import jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
@@ -62,10 +63,11 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
       return Collections.emptyList();
     }
 
-    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
-        myMenuLocation);
-
-    return myModelAccessHelper.runReadAction(() -> context.getMenuItemFactory().createItems(menuLookupAndCell.o1));
+    return myModelAccessHelper.runReadAction(() -> {
+      DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
+          myMenuLocation);
+      return context.getMenuItemFactory().createItems(menuLookupAndCell.o1);
+    });
   }
 
   @Nullable
@@ -78,8 +80,9 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
       }
 
       if (cell.isBig()) {
-        DefaultMenuLookup menuLookup = new DefaultMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), cell.getSNode().getConcept());
-        Collection<TransformationMenu> defaultMenu = menuLookup.lookup();
+        SConcept concept = cell.getSNode().getConcept();
+        DefaultMenuLookup menuLookup = new DefaultMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), concept);
+        Collection<TransformationMenu> defaultMenu = menuLookup.lookup(Collections.singleton(concept.getLanguage()));
         boolean hasDefaultMenu = !defaultMenu.isEmpty();
         if (hasDefaultMenu) {
           return new Pair<>(menuLookup, cell);

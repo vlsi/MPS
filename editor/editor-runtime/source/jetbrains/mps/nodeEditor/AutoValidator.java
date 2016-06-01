@@ -24,20 +24,24 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 class AutoValidator {
   private final SRepository myRepository;
   private boolean mySuppressSelectionChanges = false;
+  private boolean myEventsBlocked;
 
   AutoValidator(EditorComponent editorComponent) {
     editorComponent.getSelectionManager().addSelectionListener(new MyCellSelectionListener());
+    editorComponent.getUpdater().addListener(new MyUpdaterListener());
     myRepository = editorComponent.getEditorContext().getRepository();
   }
 
   private void validateErrorCell(CellInfo cellInfo, EditorComponent editorComponent) {
-    EditorCell cell = cellInfo.findCell((jetbrains.mps.nodeEditor.EditorComponent) editorComponent);
+    EditorCell cell = cellInfo.findCell(editorComponent);
     if (cell == null) {
       return;
     }
@@ -64,7 +68,7 @@ class AutoValidator {
         return;
       }
 
-      if (editorComponent.isReadOnly() || ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).isCellSwapInProgress()) {
+      if (editorComponent.isReadOnly() || myEventsBlocked) {
         return;
       }
 
@@ -76,16 +80,25 @@ class AutoValidator {
 
       final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = APICellAdapter.getCellInfo(editorCell);
-      myRepository.getModelAccess().executeCommandInEDT(new Runnable() {
-        @Override
-        public void run() {
-          if (wasInErrorState) {
-            validateErrorCell(cellInfo, editorComponent);
-          } else {
-            SideTransformInfoUtil.removeTransformInfo(node);
-          }
+      myRepository.getModelAccess().executeCommandInEDT(() -> {
+        if (wasInErrorState) {
+          validateErrorCell(cellInfo, editorComponent);
+        } else {
+          SideTransformInfoUtil.removeTransformInfo(node);
         }
       });
+    }
+  }
+
+  private class MyUpdaterListener extends UpdaterListenerAdapter implements UpdaterListener {
+    @Override
+    public void editorUpdateStarted(EditorComponent editorComponent) {
+      myEventsBlocked = true;
+    }
+
+    @Override
+    public void editorUpdated(EditorComponent editorComponent) {
+      myEventsBlocked = false;
     }
   }
 }

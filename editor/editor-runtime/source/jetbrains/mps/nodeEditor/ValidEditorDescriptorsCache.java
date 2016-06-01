@@ -27,6 +27,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * TODO: Introduce ILanguageAspect.dispose() method
+ * TODO: remove this class, replace with proper implementation of EditorAspectDescriptor.dispose() method
+ * TODO: see {@link jetbrains.mps.editor.runtime.style.StyleAttributes}, that class contains similar code
+ *
  * @author simon
  */
 public class ValidEditorDescriptorsCache {
@@ -49,7 +53,7 @@ public class ValidEditorDescriptorsCache {
     return myCachedEditorDescriptors.contains(descriptor);
   }
 
-  public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {
+  public synchronized void markDescriptorValid(@NotNull EditorAspectDescriptor descriptor) {
     myCachedEditorDescriptors.add(descriptor);
     attachLanguageRegistryListener();
   }

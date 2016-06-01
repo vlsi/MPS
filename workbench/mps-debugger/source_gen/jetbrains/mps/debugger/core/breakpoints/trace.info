@@ -40,7 +40,7 @@
       <node id="4474271214083124493" at="82,37,83,14" concept="0" />
       <node id="4474271214083124494" at="84,7,85,30" concept="2" />
       <node id="4474271214083124500" at="86,5,87,16" concept="8" />
-      <node id="4474271214083125146" at="93,76,94,85" concept="7" />
+      <node id="4474271214083125146" at="93,45,94,85" concept="7" />
       <node id="4474271214083125156" at="95,48,96,23" concept="8" />
       <node id="4474271214083127106" at="97,9,98,46" concept="9" />
       <node id="4474271214083125158" at="98,46,99,158" concept="7" />
@@ -114,7 +114,7 @@
       <node id="4474271214083124240" at="130,0,141,0" concept="6" trace="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="2228821930962874067" at="158,0,169,0" concept="6" trace="repaintBreakpoints#()V" />
       <node id="4474271214083124807" at="179,89,190,7" concept="5" />
-      <node id="4474271214083124343" at="92,0,104,0" concept="6" trace="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+      <node id="4474271214083124343" at="92,0,104,0" concept="6" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <node id="4474271214083124329" at="90,95,104,7" concept="7" />
       <node id="4474271214083124181" at="115,0,129,0" concept="6" trace="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="4474271214083123767" at="178,0,192,0" concept="6" trace="mouseClicked#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
@@ -237,7 +237,7 @@
       <scope id="4474271214083124443" at="78,64,87,16">
         <var name="cell" id="4474271214083124449" />
       </scope>
-      <scope id="4474271214083125145" at="93,76,102,107">
+      <scope id="4474271214083125145" at="93,45,102,107">
         <var name="debuggableOrTraceableCell" id="4474271214083125147" />
         <var name="iconAnchorCell" id="4474271214083125159" />
       </scope>
@@ -280,7 +280,7 @@
       <unit id="2228821930962906004" at="159,56,167,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$2" />
       <unit id="4474271214083124820" at="181,49,189,9" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
       <unit id="4474271214083123731" at="193,0,205,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyEditorComponentCreateListener" />
-      <unit id="4474271214083124341" at="91,80,104,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
+      <unit id="4474271214083124341" at="91,89,104,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
       <unit id="4474271214083123747" at="169,0,193,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyLeftMarginMouseListener" />
       <unit id="2706316667685001040" at="33,0,206,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" />
     </file>

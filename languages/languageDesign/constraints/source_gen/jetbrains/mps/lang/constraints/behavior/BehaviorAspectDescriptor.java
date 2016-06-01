@@ -30,6 +30,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConstraintFunction_PropertyValidator__BehaviorDescriptor = new ConstraintFunction_PropertyValidator__BehaviorDescriptor();
   private final BHDescriptor myConceptConstraints__BehaviorDescriptor = new ConceptConstraints__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_CanBeARoot__BehaviorDescriptor = new ConstraintFunction_CanBeARoot__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_GetInstanceIcon__BehaviorDescriptor = new ConstraintFunction_GetInstanceIcon__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_containingLink__BehaviorDescriptor = new ConstraintFunctionParameter_containingLink__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_checkedNode__BehaviorDescriptor = new ConstraintFunctionParameter_checkedNode__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor();
@@ -54,7 +55,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0lb.get(cncpt);
+      Integer preIndex = indices_846f5o_a0mb.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -159,70 +160,75 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
           break;
         case 20:
           if (true) {
-            return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
+            return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
           }
           break;
         case 21:
           if (true) {
-            return myConstraintFunction_PropertySetter__BehaviorDescriptor;
+            return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
           }
           break;
         case 22:
           if (true) {
-            return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
+            return myConstraintFunction_PropertySetter__BehaviorDescriptor;
           }
           break;
         case 23:
           if (true) {
-            return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
+            return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
           }
           break;
         case 24:
           if (true) {
-            return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
+            return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
           }
           break;
         case 25:
           if (true) {
-            return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
           }
           break;
         case 26:
           if (true) {
-            return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
           }
           break;
         case 27:
           if (true) {
-            return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
           }
           break;
         case 28:
           if (true) {
-            return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
           }
           break;
         case 29:
           if (true) {
-            return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
           }
           break;
         case 30:
           if (true) {
-            return myConstraintsFunctionParameter_node__BehaviorDescriptor;
+            return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
           }
           break;
         case 31:
           if (true) {
-            return myNodeDefaultSearchScope__BehaviorDescriptor;
+            return myConstraintsFunctionParameter_node__BehaviorDescriptor;
           }
           break;
         case 32:
           if (true) {
-            return myNodePropertyConstraint__BehaviorDescriptor;
+            return myNodeDefaultSearchScope__BehaviorDescriptor;
           }
           break;
         case 33:
+          if (true) {
+            return myNodePropertyConstraint__BehaviorDescriptor;
+          }
+          break;
+        case 34:
           if (true) {
             return myNodeReferentConstraint__BehaviorDescriptor;
           }
@@ -241,5 +247,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0lb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL, "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL, "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0mb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL, "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x13cd31e62ef65a72L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetInstanceIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL, "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"));
 }

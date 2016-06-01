@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
@@ -71,7 +73,7 @@ class Memento {
   private Memento() {
   }
 
-  Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean saveEditedNode) {
+  Memento(EditorContext context, boolean saveEditedNode) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
     if (editedNode == null || SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
@@ -82,10 +84,10 @@ class Memento {
       List<Pair<EditorCell, Boolean>> collapseStates = nodeEditor.getCollapseStates();
       Collections.sort(collapseStates, COLLAPSED_STATES_COMPARATOR);
       for (Pair<EditorCell, Boolean> collapseState : collapseStates) {
-        myCollapseStates.add(new Pair<CellInfo, Boolean>(collapseState.o1.getCellInfo(), collapseState.o2));
+        myCollapseStates.add(new Pair<CellInfo, Boolean>(APICellAdapter.getCellInfo(collapseState.o1), collapseState.o2));
       }
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
-        myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
+        myCollectionsWithEnabledBraces.add(APICellAdapter.getCellInfo(bracesEnabledCell));
       }
 
       collectErrors(nodeEditor);

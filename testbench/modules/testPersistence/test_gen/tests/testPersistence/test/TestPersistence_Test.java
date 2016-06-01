@@ -13,13 +13,15 @@ import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.persistence.PersistenceRegistry;
 
 /**
@@ -60,7 +62,7 @@ public class TestPersistence_Test extends TestCase {
     });
 
     Assert.assertTrue(c.myConcepts.contains(((SConceptAdapterById) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")).getId()));
-    Assert.assertTrue(c.myImports.contains((SModelRepository.getInstance().getModelDescriptor("java.io@java_stub")).getReference()));
+    Assert.assertTrue(c.myImports.contains(new JavaPackageNameStub("java.io").asModelReference(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))));
     Assert.assertTrue(c.myExtRefs.contains(new SNodeId.Foreign("~System")));
     Assert.assertTrue(c.myLocalRefs.contains(new SNodePointer("r:b44bed60-e0f0-4d48-bb29-e0fdb2041a66(tests.testPersistence.testModel)", "3895553186365322355").getNodeId()));
   }

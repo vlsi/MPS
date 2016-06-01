@@ -40,13 +40,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -184,27 +184,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @Override
-  public SModel resolveInDependencies(SModelId ref) {
-    assertCanRead();
-    SModel rv = getModel(ref);
-    if (rv != null) {
-      return rv;
-    }
-    for (SModule visibleModule : new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE)) {
-      rv = visibleModule.getModel(ref);
-      if (rv != null) {
-        return rv;
-      }
-    }
-//    TODO: Work in progress. At the moment, there are two cases I'm aware of, that
-//    doesn't allow us to return null here (i.e. not to go to global registry):
-//    1) Use of java stub counterparts where their original (source) module is in dependencies.
-//       E.g. closures.runtime and its trick to use java stubs instead of plain node references
-//    2) References to accessory model of used language. E.g. mps.build generator uses mps.wf language,
-//       which exposes fw.preset models as its accessories. These are not deemed visible by GMDM
-//    Uncomment next warning to see these.
-//    LOG.warn(String.format("Failed to resolve %s in module %s", ref, getModuleName()));
-    return SModelRepository.getInstance().getModelDescriptor(ref);
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public final SModel resolveInDependencies(SModelId ref) {
+    return getModel(ref);
   }
 
   protected void setModuleReference(@NotNull SModuleReference reference) {

@@ -31,6 +31,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -95,32 +96,23 @@ public class CreateGroupsBuilder {
   }
 
   /*package*/ DefaultActionGroup doGetCreateGroup(RelationDescriptor d) {
-    List<SNode> concepts = d.getConcepts(myBaseNode.resolve(myProject.getRepository()));
-    if (concepts.isEmpty()) return new DefaultActionGroup();
+    Iterable<SConcept> concepts = d.getAspectConcepts(myBaseNode.resolve(myProject.getRepository()));
+    if (!concepts.iterator().hasNext()) return new DefaultActionGroup();
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), true);
-    for (final SNode concept : concepts) {
+    for (SConcept concept : concepts) {
       group.add(new CreateAction(concept, d));
     }
     return group;
   }
 
-  private static String getConceptAlias(SNode concept) {
-    String alias = SNodeUtil.getConceptAlias(concept);
-    if (StringUtil.isEmpty(alias)) {
-      return concept.getName();
-    } else {
-      return alias;
-    }
-  }
-
   private class CreateAction extends AnAction {
-    private final SNode myConcept;
+    private final SConcept myConcept;
     private final RelationDescriptor myDescriptor;
 
-    public CreateAction(SNode concept, RelationDescriptor descriptor) {
+    public CreateAction(SConcept concept, RelationDescriptor descriptor) {
       //todo pass concepts instead of nodes
-      super(getConceptAlias(concept).replaceAll("_", "__"), "", MetaAdapterByDeclaration.getConcept(concept).getIcon());
+      super(concept.getConceptAlias().replaceAll("_", "__"), "", concept.getIcon());
       myConcept = concept;
       myDescriptor = descriptor;
     }
@@ -139,7 +131,7 @@ public class CreateGroupsBuilder {
               return myBaseNode.resolve(myProject.getRepository());
             }
           });
-          created[0] = myDescriptor.createNode(node, myConcept);
+          created[0] = myDescriptor.createAspect(node, myConcept);
         }
       };
 

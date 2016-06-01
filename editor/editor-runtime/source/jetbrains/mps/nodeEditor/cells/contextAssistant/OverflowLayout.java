@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.util.ArrayUtil;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -85,9 +86,16 @@ class OverflowLayout implements LayoutManager {
     int currentX = 0;
     int height = 0;
 
-    final int reservedWidthForOverflow = myHorizontalGap + myShowOnOverflowComponent.getWidth();
-    Component[] componentsWithoutOverflow = ArrayUtil.remove(parent.getComponents(), myShowOnOverflowComponent);
-    myShowOnOverflowComponent.setVisible(false);
+    final int reservedWidthForOverflow;
+    final Component[] componentsWithoutOverflow;
+    if (myShowOnOverflowComponent == null) {
+      reservedWidthForOverflow = 0;
+      componentsWithoutOverflow = parent.getComponents();
+    } else {
+      reservedWidthForOverflow = myHorizontalGap + myShowOnOverflowComponent.getWidth();
+      componentsWithoutOverflow = ArrayUtil.remove(parent.getComponents(), myShowOnOverflowComponent);
+      myShowOnOverflowComponent.setVisible(false);
+    }
 
     int i = 0, length = componentsWithoutOverflow.length;
     for (; i < length; i++) {
@@ -99,7 +107,9 @@ class OverflowLayout implements LayoutManager {
 
       boolean last = i == length - 1;
       boolean fits;
-      if (last) {
+      if (myShowOnOverflowComponent == null) {
+        fits = true;
+      } else if (last) {
         fits = componentWidthWithGap <= availableWidth - currentX;
       } else {
         fits = componentWidthWithGap + reservedWidthForOverflow <= availableWidth - currentX;
