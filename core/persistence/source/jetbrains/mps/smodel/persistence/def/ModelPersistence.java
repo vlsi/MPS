@@ -302,12 +302,7 @@ public class ModelPersistence {
 
   @NotNull
   public static String modelToString(@NotNull final SModel model) {
-    return JDOMUtil.asString(ModelAccess.instance().runReadAction(new Computable<Document>() {
-      @Override
-      public Document compute() {
-        return saveModel(model);
-      }
-    }));
+    return JDOMUtil.asString(saveModel(model));
   }
 
   // propagates exceptions that had happened during read, except for special case when we deliberately stop parsing process
