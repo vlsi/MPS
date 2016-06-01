@@ -25,6 +25,11 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaLocalVariable;
 import com.sun.jdi.Type;
 import org.apache.log4j.Level;
 import com.sun.jdi.ClassNotLoadedException;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,11 +38,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.textgen.trace.TraceInfoProvider;
-import java.util.Iterator;
-import jetbrains.mps.textgen.trace.DebugInfo;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject;
 import com.sun.jdi.PrimitiveType;
@@ -137,12 +137,23 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
   public void fillVariableDescription(String varName, VariableDescription description) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-    if (javaStackFrame != null) {
-      JavaLocation javaLocation = javaStackFrame.getLocation();
+    JavaLocation javaLocation;
+    if (javaStackFrame != null && (javaLocation = javaStackFrame.getLocation()) != null) {
       try {
-        SNode node = TraceInfoUtil.getVar(getStaticContextTypeName(), javaLocation.getFileName(), javaLocation.getLineNumber(), varName);
-        if ((node != null)) {
-          description.setHighLevelNode(node);
+        // XXX Code identical to JavaLocalVariable.getSourceNode 
+        AbstractDebugSession<?> debugSession = javaStackFrame.getThread().getDebugSession();
+        TraceInfoProvider traceProvider = debugSession.getTraceProvider();
+        for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaUiState.modelNameFromLocation(javaLocation)).iterator(); it.hasNext();) {
+          DebugInfo di = it.next();
+          List<SNodeReference> varNodes = di.getVariableNodesForPosition(javaLocation.getFileName(), javaLocation.getLineNumber(), varName);
+          if (varNodes.isEmpty()) {
+            continue;
+          }
+          SNode node = varNodes.get(0).resolve(debugSession.getProject().getRepository());
+          if (node != null) {
+            description.setHighLevelNode(node);
+            break;
+          }
         }
       } catch (InvalidStackFrameException e) {
         if (LOG.isEnabledFor(Level.WARN)) {
@@ -172,9 +183,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode")));
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
-    if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+    if (SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, ((SNode) BHReflection.invoke(SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SMethodTrimmedId.create("getThisType", null, "2RtWPFZ12w7")))));
-    } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))) {
+    } else if (SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))) {
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, ((SNode) BHReflection.invoke(SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), SMethodTrimmedId.create("createType", null, "hEwJimy")))));
     } else {
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, null));

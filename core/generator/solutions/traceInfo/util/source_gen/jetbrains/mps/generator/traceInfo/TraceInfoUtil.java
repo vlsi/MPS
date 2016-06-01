@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -116,36 +115,6 @@ public final class TraceInfoUtil {
             }
           }
           return new SNodePointer(model, result.getNodeId()).resolve(MPSModuleRepository.getInstance());
-        }
-        return null;
-      }
-    });
-  }
-  @Nullable
-  public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
-    return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModel>() {
-      public SNode invoke(DebugInfo info, SModel descriptor) {
-        Map<DebugInfoRoot, List<ScopePositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
-          public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
-            return root.getScopePositions();
-          }
-        });
-        if (MapSequence.fromMap(resultList).isEmpty()) {
-          return null;
-        }
-        for (DebugInfoRoot root : SetSequence.fromSet(MapSequence.fromMap(resultList).keySet())) {
-          Iterable<ScopePositionInfo> sorted = ListSequence.fromList(MapSequence.fromMap(resultList).get(root)).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
-            public ScopePositionInfo select(ScopePositionInfo it) {
-              return it;
-            }
-          }, true);
-          for (ScopePositionInfo scopeInfo : sorted) {
-            String varInfo = scopeInfo.getVarId(varName);
-            if ((varInfo != null && varInfo.length() > 0)) {
-              final String model = root.getNodeRef().getModelReference().toString();
-              return new SNodePointer(model, varInfo).resolve(MPSModuleRepository.getInstance());
-            }
-          }
         }
         return null;
       }

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
@@ -41,17 +42,19 @@ public class DefaultTraceInfoProvider implements TraceInfoProvider {
   }
 
   @Override
-  public Stream<DebugInfo> debugInfo(@NotNull String modelName, @NotNull Predicate<SModel> modelFilter) {
+  public Stream<DebugInfo> debugInfo(@NotNull SModelName modelName, @NotNull Predicate<SModel> modelFilter) {
+    // if exact model requested, find the one. if no stereotype specified, find any matching by long name only
+    Predicate<SModel> nameCheck = modelName.hasStereotype() ? m -> modelName.equals(m.getName()) : m -> modelName.getLongName().equals(m.getName().getLongName());
     // XXX can cache DebugInfo[] for given model name if lookup turns out slow, just don't want optimize early.
     // If cache, shall specify whether this provider listens to changes in TraceInfoCache or not. generally, shall not as caller has a chance to control
     // lifecycle of the provider and I expect uses of this class to be either short-lived or bound to another object (e.g. debug session) where it's
     // reasonable to expect no changes like removal of TraceInfoCache.
-    Predicate<SModel> namedNotStubModelWithTrace = m -> !SModelStereotype.isStubModel(m) && modelName.equals(m.getName().getLongName()) && TraceInfo.hasTrace(m);
+    Predicate<SModel> notStubModelWithTrace = m -> !SModelStereotype.isStubModel(m) && TraceInfo.hasTrace(m);
     // XXX need a fast way to iterate over names of models accessible in a repository
     final DebugInfo[] debugInfos = new ModelAccessHelper(myRepository).runReadAction(() ->
-      StreamSupport.stream(myRepository.getModules().spliterator(), false).flatMap(
-          module -> StreamSupport.stream(module.getModels().spliterator(), false)).filter(
-          namedNotStubModelWithTrace.and(modelFilter)).map(m -> TraceInfoCache.getInstance().get(m)).toArray(DebugInfo[]::new)
+            StreamSupport.stream(myRepository.getModules().spliterator(), false).flatMap(
+                module -> StreamSupport.stream(module.getModels().spliterator(), false)).filter(
+                nameCheck.and(notStubModelWithTrace).and(modelFilter)).map(m -> TraceInfoCache.getInstance().get(m)).toArray(DebugInfo[]::new)
     );
     return Arrays.stream(debugInfos);
   }

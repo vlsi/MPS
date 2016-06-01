@@ -4,18 +4,25 @@ package jetbrains.mps.traceInfo.test;
 
 import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
 import org.junit.Before;
 import jetbrains.mps.testbench.BaseMpsTest;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import org.junit.After;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import java.util.function.Predicate;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,9 +31,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 
 public class TraceInfoTest extends PlatformMpsTest {
   private Project myProject;
+  private TraceInfoProvider myTraceProvider;
 
   public TraceInfoTest() {
   }
@@ -34,12 +43,31 @@ public class TraceInfoTest extends PlatformMpsTest {
   @Before
   public void setUp() {
     myProject = BaseMpsTest.openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
+    myTraceProvider = new DefaultTraceInfoProvider(myProject.getRepository());
   }
 
   @After
   public void tearDown() {
     cleanup(myProject);
     myProject = null;
+    myTraceProvider = null;
+  }
+
+
+  @Test
+  public void precondition() {
+    invokeTestWithModelRead(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Assert.assertNotNull(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").resolve(myProject.getRepository()));
+        Assert.assertTrue(TraceInfo.hasTrace(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().resolve(myProject.getRepository())));
+        Assert.assertTrue("Trace provider by model long name (no stereotype)", myTraceProvider.debugInfo(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().getName().getLongName()).findAny().isPresent());
+        Assert.assertTrue("Trace provider by exact model name", myTraceProvider.debugInfo(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().getName(), new Predicate<SModel>() {
+          public boolean test(SModel m) {
+            return true;
+          }
+        }).findAny().isPresent());
+      }
+    });
   }
 
   @Test
@@ -91,8 +119,11 @@ public class TraceInfoTest extends PlatformMpsTest {
           TestClass.foreachTest();
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
-          SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it");
-          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
+          List<SNodeReference> variableNodesForPosition = myTraceProvider.debugInfo(getModelName(stackTraceElement)).findFirst().get().getVariableNodesForPosition(stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it");
+          Assert.assertFalse(variableNodesForPosition.isEmpty());
+          SNode node = variableNodesForPosition.get(0).resolve(myProject.getRepository());
+          Assert.assertNotNull(node);
+          Assert.assertTrue("Node " + node + " for variable it.", SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });
@@ -106,18 +137,27 @@ public class TraceInfoTest extends PlatformMpsTest {
           TestClass.generatedForeachTest();
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
-          SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
-          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
+          List<SNodeReference> variableNodesForPosition = myTraceProvider.debugInfo(getModelName(stackTraceElement)).findFirst().get().getVariableNodesForPosition(stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
+          Assert.assertFalse(variableNodesForPosition.isEmpty());
+          SNode node = variableNodesForPosition.get(0).resolve(myProject.getRepository());
+          Assert.assertNotNull(node);
+          Assert.assertTrue("Node " + node + " for variable it_gen.", SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });
+  }
+
+  private static String getModelName(StackTraceElement stackTraceElement) {
+    String className = stackTraceElement.getClassName();
+    return className.substring(0, className.lastIndexOf('.'));
   }
 
   @Test
   public void internalClassTest() {
     invokeTestWithModelRead(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        SNode statement = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.getNode("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650"))).where(new IWhereFilter<SNode>() {
+        SNode testClass = SNodeOperations.cast(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").resolve(myProject.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        SNode statement = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(testClass)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("internalClassTest");
           }
