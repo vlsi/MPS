@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -263,7 +264,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
   }
 
   private boolean canPasteBefore(EditorCell selectedCell, List<SNode> pasteNodes) {
-    if (!APICellAdapter.isFirstPositionInBigCell(selectedCell)) {
+    if (!GeometryUtil.isFirstPositionInBigCell(selectedCell)) {
       return false;
     }
     SNode anchor = selectedCell.getSNode();
@@ -292,7 +293,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     if (cell == null) {
       return null;
     }
-    if (APICellAdapter.isLastPositionInBigCell(cell)) {
+    if (GeometryUtil.isLastPositionInBigCell(cell)) {
       return cell;
     }
 

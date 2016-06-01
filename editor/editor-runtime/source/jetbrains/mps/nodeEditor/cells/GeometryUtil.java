@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 import java.awt.Rectangle;
@@ -39,6 +40,13 @@ public class GeometryUtil {
     return getBounds(cell).contains(x, y);
   }
 
+  public static int getHorizontalDistance(EditorCell cell, int x_point) {
+    if (cell.getX() + cell.getLeftGap() <= x_point && x_point <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
+      return 0;
+    }
+    return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x_point), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x_point));
+  }
+
   public static boolean isAbove(EditorCell above, EditorCell below) {
     return below.getY() + below.getHeight() <= above.getY();
   }
@@ -47,10 +55,12 @@ public class GeometryUtil {
     return left.getX() + left.getWidth() <= right.getX();
   }
 
-  public static int getHorizontalDistance(EditorCell cell, int x_point) {
-    if (cell.getX() + cell.getLeftGap() <= x_point && x_point <= cell.getX() + cell.getWidth() - cell.getRightGap()) {
-      return 0;
-    }
-    return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x_point), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x_point));
+  public static boolean isFirstPositionInBigCell(EditorCell cell) {
+    return cell.isFirstCaretPosition() && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
   }
+
+  public static boolean isLastPositionInBigCell(EditorCell cell) {
+    return cell.isLastCaretPosition() && CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(cell)) == cell;
+  }
+
 }

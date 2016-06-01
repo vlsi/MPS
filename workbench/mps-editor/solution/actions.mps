@@ -4141,10 +4141,10 @@
                       <ref role="3cqZAo" node="5WVM2Z0c2w$" resolve="cell" />
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="7_HtvZVfpPl" role="3uHU7w">
-                    <ref role="37wK5l" to="g51k:~APICellAdapter.isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isLastPositionInBigCell" />
-                    <ref role="1Pybhc" to="g51k:~APICellAdapter" resolve="APICellAdapter" />
-                    <node concept="37vLTw" id="7_HtvZVfpPm" role="37wK5m">
+                  <node concept="2YIFZM" id="3BgShLpGaQr" role="3uHU7w">
+                    <ref role="37wK5l" to="g51k:~GeometryUtil.isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isLastPositionInBigCell" />
+                    <ref role="1Pybhc" to="g51k:~GeometryUtil" resolve="GeometryUtil" />
+                    <node concept="37vLTw" id="3BgShLpGaQs" role="37wK5m">
                       <ref role="3cqZAo" node="5WVM2Z0c2w$" resolve="cell" />
                     </node>
                   </node>

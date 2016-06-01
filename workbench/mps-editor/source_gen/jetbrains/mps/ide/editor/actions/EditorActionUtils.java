@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -78,7 +79,7 @@ public class EditorActionUtils {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
     EditorCell nextLeaf = (forward ? CellTraversalUtil.getNextLeaf(cell) : CellTraversalUtil.getPrevLeaf(cell));
 
-    if ((cell.isBig() || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ? hasSingleRolesAtRightBoundary(cell) : hasSingleRolesAtLeftBoundary(cell))) && nextLeaf != null) {
+    if ((cell.isBig() || GeometryUtil.isLastPositionInBigCell(cell)) && ((forward ? hasSingleRolesAtRightBoundary(cell) : hasSingleRolesAtLeftBoundary(cell))) && nextLeaf != null) {
       // Looking for the next child collection in parents 
       return new ChildrenCollectionFinder(nextLeaf, cell, forward, true).find();
     }

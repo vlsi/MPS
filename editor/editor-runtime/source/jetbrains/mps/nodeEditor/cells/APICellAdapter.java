@@ -115,10 +115,18 @@ public class APICellAdapter {
     }
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isFirstPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstPositionInBigCell();
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static boolean isLastPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
   }

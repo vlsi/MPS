@@ -96,8 +96,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isFirstPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   boolean isFirstPositionInBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   boolean isLastPositionInBigCell();
 
   /**
