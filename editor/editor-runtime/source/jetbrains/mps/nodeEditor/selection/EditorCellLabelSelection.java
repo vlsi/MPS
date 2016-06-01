@@ -204,7 +204,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   private boolean processSideDeletes(CellActionType type) {
     // TODO: review this logic - it was originally copied from EditorComponentKeyboardHandler
     final EditorCell selectedCell = getEditorCell();
-    if (type == CellActionType.DELETE && GeometryUtil.isLastPositionInBigCell(selectedCell) && !GeometryUtil.isFirstPositionInBigCell(selectedCell)) {
+    if (type == CellActionType.DELETE && !hasNonTrivialSelection() && GeometryUtil.isLastPositionInBigCell(selectedCell) &&
+        !GeometryUtil.isFirstPositionInBigCell(selectedCell)) {
       final EditorCell target;
       EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(CellTraversalUtil.getContainingBigCell(selectedCell));
       if (bigCellNextSibling != null) {
@@ -230,7 +231,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       return getEditorComponent().getActionHandler().executeAction(target, type);
     }
 
-    if (type == CellActionType.BACKSPACE && GeometryUtil.isFirstPositionInBigCell(selectedCell) && !GeometryUtil.isLastPositionInBigCell(selectedCell)) {
+    if (type == CellActionType.BACKSPACE && !hasNonTrivialSelection() && GeometryUtil.isFirstPositionInBigCell(selectedCell) &&
+        !GeometryUtil.isLastPositionInBigCell(selectedCell)) {
       final EditorCell target;
       EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(CellTraversalUtil.getContainingBigCell(selectedCell));
       if (bigCellPrevSibling != null) {
