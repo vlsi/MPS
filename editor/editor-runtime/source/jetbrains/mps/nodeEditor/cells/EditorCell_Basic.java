@@ -978,6 +978,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   @Override
   public EditorCell getContainingBigCell() {
     if (isBig() || getParent() == null) {

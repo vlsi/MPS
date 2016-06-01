@@ -182,7 +182,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       return false;
     }
     if (label instanceof EditorCell_Constant || label instanceof EditorCell_Property) {
-      return label.isEditable() || CellFinderUtil.findLastSelectableLeaf(APICellAdapter.getContainingBigCell(label)) != label;
+      return label.isEditable() || CellFinderUtil.findLastSelectableLeaf(CellTraversalUtil.getContainingBigCell(label)) != label;
     }
     return true;
   }
@@ -205,11 +205,11 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     final EditorCell selectedCell = getEditorCell();
     if (type == CellActionType.DELETE && APICellAdapter.isLastPositionInBigCell(selectedCell) && !APICellAdapter.isFirstPositionInBigCell(selectedCell)) {
       final EditorCell target;
-      EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
+      EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(CellTraversalUtil.getContainingBigCell(selectedCell));
       if (bigCellNextSibling != null) {
         target = bigCellNextSibling;
       } else {
-        EditorCell nextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
+        EditorCell nextSibling = CellTraversalUtil.getNextSibling(CellTraversalUtil.getContainingBigCell(selectedCell));
         if (nextSibling != null) {
           target = nextSibling;
         } else {
@@ -222,14 +222,16 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         public Boolean compute() {
           return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
         }
-      })) return false;
+      })) {
+        return false;
+      }
 
       return getEditorComponent().getActionHandler().executeAction(target, type);
     }
 
     if (type == CellActionType.BACKSPACE && APICellAdapter.isFirstPositionInBigCell(selectedCell) && !APICellAdapter.isLastPositionInBigCell(selectedCell)) {
       final EditorCell target;
-      EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(APICellAdapter.getContainingBigCell(selectedCell));
+      EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(CellTraversalUtil.getContainingBigCell(selectedCell));
       if (bigCellPrevSibling != null) {
         target = bigCellPrevSibling;
       } else {
@@ -241,7 +243,9 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       }
 
-      if (target == null || ReadOnlyUtil.isCellReadOnly(target)) return false;
+      if (target == null || ReadOnlyUtil.isCellReadOnly(target)) {
+        return false;
+      }
       /*
         Was commented out (again) to let some of our unit-tests be green.
         in particular - pressing BackSpace at this situation:

@@ -1068,19 +1068,11 @@
                     <node concept="2YIFZM" id="45K04$TzVbS" role="3uHU7B">
                       <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
                       <ref role="37wK5l" to="f4zo:~CellTraversalUtil.getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getFirstLeaf" />
-                      <node concept="2OqwBi" id="29B$5YOfqgE" role="37wK5m">
-                        <node concept="1eOMI4" id="20m38krBzIy" role="2Oq$k0">
-                          <node concept="10QFUN" id="20m38krBzIv" role="1eOMHV">
-                            <node concept="3uibUv" id="20m38krB$ub" role="10QFUM">
-                              <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTyUs" role="10QFUP">
-                              <ref role="3cqZAo" node="29B$5YOfqgo" resolve="referenceCell" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="29B$5YOfqgG" role="2OqNvi">
-                          <ref role="37wK5l" to="g51k:~EditorCell.getContainingBigCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolve="getContainingBigCell" />
+                      <node concept="2YIFZM" id="4f34bWvbfe" role="37wK5m">
+                        <ref role="37wK5l" to="f4zo:~CellTraversalUtil.getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getContainingBigCell" />
+                        <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
+                        <node concept="37vLTw" id="4f34bWvbN7" role="37wK5m">
+                          <ref role="3cqZAo" node="29B$5YOfqgo" resolve="referenceCell" />
                         </node>
                       </node>
                     </node>

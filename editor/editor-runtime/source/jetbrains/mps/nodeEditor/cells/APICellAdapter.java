@@ -68,7 +68,9 @@ public class APICellAdapter {
     }
     final String pattern = cell.renderText().getText();
 
-    if (pattern.equals("")) return false;
+    if (pattern.equals("")) {
+      return false;
+    }
 
     List<SubstituteAction> matchingActions = ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
@@ -123,7 +125,9 @@ public class APICellAdapter {
 
   public static boolean isUnderFolded(EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
-      if (parent.isCollapsed()) return true;
+      if (parent.isCollapsed()) {
+        return true;
+      }
     }
     return false;
   }
@@ -132,6 +136,10 @@ public class APICellAdapter {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellInfo();
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static EditorCell getContainingBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getContainingBigCell();
   }
