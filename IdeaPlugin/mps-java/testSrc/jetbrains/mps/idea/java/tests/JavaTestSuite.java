@@ -23,7 +23,7 @@ import jetbrains.mps.TestMode;
 import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ForeignIdReferenceCacheTest.class})
+@Suite.SuiteClasses({ForeignIdReferenceCacheTest.class, NewRootTest.class})
 public class JavaTestSuite {
   @BeforeClass
   public static void setTestMode() {
