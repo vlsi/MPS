@@ -335,16 +335,16 @@ public interface MetaModelInfoProvider {
       // FIXME move stub concept id to ConceptDescriptor
       final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
 
-      final SConcept[] concept = new SConcept[1];
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          //no instances of interfaces allowed
-          concept[0] = MetaAdapterFactoryByName.getConcept(stubFQName);
-        }
-      });
-      if (!(concept[0].isValid())) return null;
-      return MetaIdHelper.getConcept(concept[0]);
+      assert ModelAccess.instance().canRead() : "Read action is needed to collect some non-AST properties of model. " +
+          "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called. " +
+          "This error most possibly means that the model has stub concept attributes missing. " +
+          "This happens after merging models sometimes [MPS-23869]." +
+          "Possible fix is to open model in MPS and re-save it";
+      final SConcept concept = MetaAdapterFactoryByName.getConcept(stubFQName);
+      if (!(concept.isValid())) {
+        return null;
+      }
+      return MetaIdHelper.getConcept(concept);
     }
 
     @Override
