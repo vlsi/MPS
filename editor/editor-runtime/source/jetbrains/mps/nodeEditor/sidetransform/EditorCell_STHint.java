@@ -68,7 +68,6 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
 
   /**
-   *
    * @deprecated after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect
    * so the will be referenced directly from editor and  anchor tag will not be used.
    * Use {@link EditorCell_STHint#EditorCell_STHint(EditorCell, EditorCell, Side, CellInfo)}  }
@@ -84,7 +83,8 @@ public class EditorCell_STHint extends EditorCell_Constant {
     this(bigCell, anchorCell, null, null, side, restoreSelectionCellInto);
   }
 
-  private EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @Nullable CellSide oldSide, @Nullable String sideTransformTag, @Nullable Side side,
+  private EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @Nullable CellSide oldSide, @Nullable String sideTransformTag,
+      @Nullable Side side,
       @Nullable CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
@@ -101,7 +101,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
     setCellId(CELL_ID);
     setDefaultText(" ");
     setEditable(true);
-    setCellBackgroundColor(LightColors.BLUE);
+    getStyle().set(StyleAttributes.BACKGROUND_COLOR, LightColors.BLUE);
 
     getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
     getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -167,7 +167,9 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
     jetbrains.mps.nodeEditor.EditorComponent editorComponent = (jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent();
     EditorCell newlySelectedCell = myRestoreSelectionCellInfo.findCell(editorComponent);
-    if (newlySelectedCell == null) return;
+    if (newlySelectedCell == null) {
+      return;
+    }
     editorComponent.changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
       newlySelectedCell.end();

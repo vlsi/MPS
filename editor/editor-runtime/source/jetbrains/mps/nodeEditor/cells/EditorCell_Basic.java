@@ -191,12 +191,21 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getStyle().get(StyleAttributes.DRAW_BRACKETS);
   }
 
-
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
+   */
+  @Deprecated
   @Override
   public void setCellBackgroundColor(Color color) {
     getStyle().set(StyleAttributes.BACKGROUND_COLOR, color);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
+   */
+  @Deprecated
   @Override
   public Color getCellBackgroundColor() {
     return getStyle().get(StyleAttributes.BACKGROUND_COLOR);
@@ -726,8 +735,9 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
       if (!parentSettings.isSkipBackground()) {
-        if (getCellBackgroundColor() != null) {
-          g.setColor(getCellBackgroundColor());
+        Color backgroundColor = getStyle().get(StyleAttributes.BACKGROUND_COLOR);
+        if (backgroundColor != null) {
+          g.setColor(backgroundColor);
           paintBackground(g);
         }
       }
@@ -873,6 +883,11 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   */
+  @Deprecated
   @Override
   public void switchCaretVisible() {
 
@@ -907,6 +922,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return EditorSettings.getInstance().getRangeSelectionForegroundColor();
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public Iterator<EditorCell_Collection> parents() {
     return new Iterator<EditorCell_Collection>() {
@@ -934,6 +953,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     };
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {

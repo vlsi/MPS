@@ -81,19 +81,47 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorComponent getEditor();
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   */
+  @Deprecated
   void switchCaretVisible();
 
+  /**
+   * @deprecated since MPS 3.4 this methods will be protected in {@link EditorCell_Basic} class.
+   * It is used only by sub-classes of {@link EditorCell_Basic}
+   */
+  @Deprecated
   boolean isPunctuationLayout();
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
+   */
+  @Deprecated
   Color getCellBackgroundColor();
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
+   */
+  @Deprecated
   void setCellBackgroundColor(Color color);
 
   // TODO: move this method to open API
   CellInfo getCellInfo();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   Iterator<EditorCell_Collection> parents();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
   /**
@@ -122,7 +150,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   /**
    * @deprecated since MPS 3.4 use code like:
-   * instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   * <code>instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}</code>
    */
   @Deprecated
   boolean isLeaf();

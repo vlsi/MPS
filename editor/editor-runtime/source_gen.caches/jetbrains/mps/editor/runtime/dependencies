@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.cells.optional.WithCaret" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.EditorUtil" file="EditorUtil.java">
     <classNode dependClassName="java.awt.Component" />
