@@ -290,7 +290,23 @@
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
+      </concept>
+      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
+        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
+      <concept id="8182547171709752110" name="jetbrains.mps.lang.quotation.structure.NodeBuilderExpression" flags="nn" index="36biLy">
+        <child id="8182547171709752112" name="expression" index="36biLW" />
+      </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176543928247" name="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" flags="nn" index="3JuTUA">
@@ -22674,39 +22690,33 @@
                 <node concept="3Tqbb2" id="76kz0BTmuJO" role="1tU5fm">
                   <ref role="ehGHo" to="tpee:f$XkiSu" resolve="SuperConstructorInvocation" />
                 </node>
-                <node concept="2c44tf" id="zqwbuHRHAN" role="33vP2m">
-                  <node concept="XkiVB" id="zqwbuHRHCS" role="2c44tc">
-                    <node concept="37vLTw" id="2BHiRxgm9ZN" role="37wK5m">
-                      <ref role="3cqZAo" node="76kz0BTmuCe" resolve="constructorDeclaration" />
-                      <node concept="2c44t8" id="zqwbuHRHH0" role="lGtFl">
-                        <node concept="37vLTw" id="3GM_nagTz4J" role="2c44t1">
+                <node concept="2pJPEk" id="6uoOrkmb3xB" role="33vP2m">
+                  <node concept="2pJPED" id="6uoOrkmb3xx" role="2pJPEn">
+                    <ref role="2pJxaS" to="tpee:f$XkiSu" resolve="SuperConstructorInvocation" />
+                    <node concept="2pIpSj" id="6uoOrkmb3xy" role="2pJxcM">
+                      <ref role="2pIpSl" to="tpee:i4hAU1E" />
+                      <node concept="36biLy" id="6uoOrkmb7UY" role="2pJxcZ">
+                        <node concept="2OqwBi" id="6uoOrkmb9W5" role="36biLW">
+                          <node concept="2OqwBi" id="6uoOrkmb9W6" role="2Oq$k0">
+                            <node concept="Xjq3P" id="6uoOrkmb9W7" role="2Oq$k0" />
+                            <node concept="2OwXpG" id="6uoOrkmb9W8" role="2OqNvi">
+                              <ref role="2Oxat5" node="76kz0BTm2qG" resolve="myClassToRefactor" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="6uoOrkmb9W9" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpee:2yoSzAaKW1s" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2pIpSj" id="6uoOrkmb3x$" role="2pJxcM">
+                      <ref role="2pIpSl" to="tpee:fz7wK6I" />
+                      <node concept="36biLy" id="6uoOrkmb5Pw" role="2pJxcZ">
+                        <node concept="37vLTw" id="6uoOrkmb7Hs" role="36biLW">
                           <ref role="3cqZAo" node="76kz0BTmuJw" resolve="parameterReferences" />
                         </node>
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="76kz0BTmuJW" role="3cqZAp">
-              <node concept="37vLTI" id="76kz0BTmuJX" role="3clFbG">
-                <node concept="2OqwBi" id="76kz0BTmuJY" role="37vLTJ">
-                  <node concept="37vLTw" id="3GM_nagTBLr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="76kz0BTmuJN" resolve="invocation" />
-                  </node>
-                  <node concept="3TrEf2" id="76kz0BTmuK0" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:i4hAU1E" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="76kz0BTmuK1" role="37vLTx">
-                  <node concept="2OqwBi" id="76kz0BTmuK2" role="2Oq$k0">
-                    <node concept="2OwXpG" id="76kz0BTmuK3" role="2OqNvi">
-                      <ref role="2Oxat5" node="76kz0BTm2qG" resolve="myClassToRefactor" />
-                    </node>
-                    <node concept="Xjq3P" id="76kz0BTmuK4" role="2Oq$k0" />
-                  </node>
-                  <node concept="3TrEf2" id="76kz0BTmuK5" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:2yoSzAaKW1s" />
                   </node>
                 </node>
               </node>
