@@ -92,7 +92,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
     if (header != null && header.getMetaInfoProvider() != null) {
       mmiProvider = header.getMetaInfoProvider();
     } else {
-      mmiProvider = new RegularMetaModelInfo();
+      mmiProvider = new RegularMetaModelInfo(header.getModelReference());
     }
     return new ModelWriter9(mmiProvider);
   }
@@ -108,7 +108,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
     final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
     if (mmiProvider == null) {
-      mmiProvider = new RegularMetaModelInfo();
+      mmiProvider = new RegularMetaModelInfo(header.getModelReference());
     }
     IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
     return new ModelReader9Handler(header, readHelper);

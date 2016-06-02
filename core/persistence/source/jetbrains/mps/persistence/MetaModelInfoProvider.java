@@ -40,6 +40,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.spi.ThrowableInformation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -242,6 +243,12 @@ public interface MetaModelInfoProvider {
    */
   public static class RegularMetaModelInfo extends BaseMetaModelInfo {
     private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
+    private SModelReference myModelRef;
+
+    public RegularMetaModelInfo(SModelReference modelRef) {
+      myModelRef = modelRef;
+    }
+
     @Override
     public String getLanguageName(SLanguageId lang) {
       final LanguageRuntime langRT = LanguageRegistry.getInstance().getLanguage(lang);
@@ -340,12 +347,12 @@ public interface MetaModelInfoProvider {
       // FIXME move stub concept id to ConceptDescriptor
       final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
 
-      if (!ModelAccess.instance().canRead()){
-        LOG.error("Read action is needed to collect some non-AST properties of model. " +
-            "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called. " +
-            "This error most possibly means that the model has stub concept attributes missing. " +
-            "This happens after merging models sometimes [MPS-23869]." +
-            "Possible fix is to open model in MPS and re-save it", new Throwable());
+      if (!ModelAccess.instance().canRead()) {
+        LOG.error("Read action is needed to collect some non-AST properties of model" + myModelRef.getModelName() + ".\n" +
+            "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called.\n" +
+            "This error most possibly means that the model has stub concept attributes missing.\n" +
+            "This happens after merging models sometimes [MPS-23869].\n" +
+            "Possible fix is to open model " + myModelRef.getModelName() + " in MPS and re-save it\n", new Throwable());
         return MetaIdFactory.INVALID_CONCEPT_ID;
       }
       final SConcept concept = MetaAdapterFactoryByName.getConcept(stubFQName);

@@ -80,7 +80,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
       throw new IOException(e.getMessageEx(), e);
     }
     if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
     }
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
