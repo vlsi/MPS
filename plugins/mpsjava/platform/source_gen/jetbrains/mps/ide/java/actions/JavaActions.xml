@@ -1,8 +1,5 @@
 <components>
   <actions>
-    <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
-      <keyboard-shortcut first-keystroke=" F6" keymap="$default" />
-    </action>
     <action id="jetbrains.mps.ide.java.actions.ExtractMethod_Action" class="jetbrains.mps.ide.java.actions.ExtractMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl alt M" keymap="$default" />
     </action>
@@ -81,7 +78,6 @@
       <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" />
     </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
-      <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.ExtractMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.InlineField_Action" />

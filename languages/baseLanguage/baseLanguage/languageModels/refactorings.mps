@@ -212,7 +212,6 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -742,61 +741,6 @@
             </node>
             <node concept="liA8E" id="nfsfDyw8KK" role="2OqNvi">
               <ref role="37wK5l" to="89o2:4ttB5pAqOOg" resolve="getUsages" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3SMa$L" id="4iAF5_Lbwf1">
-    <property role="3SMaAB" value="Convert Anonymous to Inner Class" />
-    <property role="TrG5h" value="ConvertAnonymousClass" />
-    <property role="3GE5qa" value="classifiers.classifiers" />
-    <ref role="3SMaAn" to="2yc6:65fYhwGpKCS" resolve="MoveNodes" />
-    <node concept="3SM$Og" id="4iAF5_Lbwf2" role="3SMaAG">
-      <property role="TrG5h" value="name" />
-      <node concept="17QB3L" id="5aFM5Vekeat" role="1tU5fm" />
-    </node>
-    <node concept="3SM$So" id="4iAF5_Lbwfh" role="3SM$Oy">
-      <ref role="3SM$Vy" to="tpee:h1Y3b43" resolve="AnonymousClass" />
-      <node concept="3SM$VG" id="4iAF5_Lbwfi" role="1M1ICn">
-        <node concept="3clFbS" id="4iAF5_Lbwfj" role="2VODD2">
-          <node concept="3clFbF" id="4iAF5_Lbwfk" role="3cqZAp">
-            <node concept="2OqwBi" id="4iAF5_Lbwfl" role="3clFbG">
-              <node concept="2OqwBi" id="4iAF5_Lbwfm" role="2Oq$k0">
-                <node concept="3SM$VE" id="4iAF5_Lbwfn" role="2Oq$k0" />
-                <node concept="2Xjw5R" id="4iAF5_Lbwfo" role="2OqNvi">
-                  <node concept="1xMEDy" id="4iAF5_Lbwfp" role="1xVPHs">
-                    <node concept="chp4Y" id="4iAF5_Lbwfq" role="ri$Ld">
-                      <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3x8VRR" id="4iAF5_Lbwfr" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3ZiDMR" id="4iAF5_Lbwfs" role="3SMaAD">
-      <node concept="3clFbS" id="4iAF5_Lbwft" role="2VODD2">
-        <node concept="3clFbF" id="4iAF5_Lbwfu" role="3cqZAp">
-          <node concept="2OqwBi" id="4iAF5_Lbwfv" role="3clFbG">
-            <node concept="2ShNRf" id="4iAF5_Lbwfw" role="2Oq$k0">
-              <node concept="1pGfFk" id="4iAF5_Lbwfx" role="2ShVmc">
-                <ref role="37wK5l" to="89o2:76kz0BTm1hi" resolve="ConvertAnonymousRefactoring" />
-                <node concept="2OqwBi" id="4iAF5_Lbwfy" role="37wK5m">
-                  <node concept="50NuE" id="4iAF5_Lbwfz" role="2Oq$k0" />
-                  <node concept="50M6j" id="4iAF5_Lbwf$" role="2OqNvi" />
-                </node>
-                <node concept="3SN95M" id="4iAF5_Lbwf_" role="37wK5m">
-                  <ref role="3SN95N" node="4iAF5_Lbwf2" resolve="name" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="4iAF5_LbwfA" role="2OqNvi">
-              <ref role="37wK5l" to="89o2:76kz0BTm2oQ" resolve="doRefactor" />
             </node>
           </node>
         </node>
