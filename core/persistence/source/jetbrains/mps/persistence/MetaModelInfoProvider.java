@@ -348,7 +348,7 @@ public interface MetaModelInfoProvider {
       final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
 
       if (!ModelAccess.instance().canRead()) {
-        LOG.error("Read action is needed to collect some non-AST properties of model" + myModelRef.getModelName() + ".\n" +
+        LOG.error("Read action is needed to collect some non-AST properties of model " + myModelRef.getModelName() + ".\n" +
             "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called.\n" +
             "This error most possibly means that the model has stub concept attributes missing.\n" +
             "This happens after merging models sometimes [MPS-23869].\n" +
