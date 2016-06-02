@@ -23,17 +23,14 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
@@ -74,26 +71,8 @@ public final class CreateFromUsageUtil {
     return null;
   }
 
-  /**
-   * @deprecated use {@link #showCreateNewRootMenu(jetbrains.mps.openapi.editor.EditorContext, Setter, Condition)}
-   */
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public static void showCreateNewRootMenu(jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter, Setter<SNode> newRootHandler) {
-    Condition<SConcept> cf = null;
-    if (conceptsFilter != null) {
-      cf = new Condition<SConcept>() {
-        @Override
-        public boolean met(SConcept c) {
-          final SNode conceptNode = c.getDeclarationNode();
-          return conceptNode != null && conceptsFilter.met(conceptNode);
-        }
-      };
-    }
-    showCreateNewRootMenu(editorContext, newRootHandler, cf);
-  }
-
-  public static void showCreateNewRootMenu(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, @Nullable Setter<SNode> newRootHandler, @Nullable Condition<SConcept> conceptsFilter) {
+  public static void showCreateNewRootMenu(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, @Nullable Setter<SNode> newRootHandler,
+      @Nullable Condition<SConcept> conceptsFilter) {
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();
     int y = selectedCell.getY();
@@ -131,7 +110,7 @@ public final class CreateFromUsageUtil {
     }
 
     ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
-            group, dataContext, JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
+        group, dataContext, JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
 //    popup.showInBestPositionFor(dataContext);
     popup.show(new RelativePoint(editorComponent, new Point(x, y)));
   }

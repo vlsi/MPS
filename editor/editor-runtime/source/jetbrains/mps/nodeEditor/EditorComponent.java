@@ -889,28 +889,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
-  /**
-   * @deprecated since MPS 3.3 use {@link jetbrains.mps.editor.runtime.IntelligentNodeMover}
-   */
-  @Deprecated
-  public void moveCurrentUp() {
-    Selection selection = getSelectionManager().getSelection();
-    if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {
-      new IntelligentNodeMover(this, false).move();
-    }
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use {@link jetbrains.mps.editor.runtime.IntelligentNodeMover}
-   */
-  @Deprecated
-  public void moveCurrentDown() {
-    Selection selection = getSelectionManager().getSelection();
-    if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {
-      new IntelligentNodeMover(this, true).move();
-    }
-  }
-
   private void goToNextErrorCell(boolean backwards) {
     if (getSelectedCell() == null) {
       return;
@@ -1427,14 +1405,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new EditorCell_Constant(getEditorContext(), getEditedNode(), getEditedNode() == null ? "<no node>" : "<node is not inside a model>");
   }
 
-  /**
-   * @deprecated since MPS 3.3 use setCollapseState()
-   */
-  @Deprecated
-  public void setFolded(EditorCell cell, boolean folded) {
-    setCollapseState(cell, folded ? Boolean.TRUE : null);
-  }
-
   public void setCollapseState(jetbrains.mps.openapi.editor.cells.EditorCell cell, Boolean collapsed) {
     if (collapsed == null) {
       resetCollapseState(cell);
@@ -1458,14 +1428,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result;
   }
 
-  /**
-   * @deprecated since MPS 3.3 not used anymore, will be removed
-   */
-  @Deprecated
-  void clearFoldedCells() {
-    myCollapseStates.clear();
-  }
-
   public void setBracesEnabled(EditorCell cell, boolean enabled) {
     if (enabled) {
       myBracesEnabledCells.add(cell);
@@ -1480,14 +1442,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   void clearBracesEnabledCells() {
     myBracesEnabledCells.clear();
-  }
-
-  /**
-   * @deprecated Since MPS 3.2 use getUpdater().flushModelEvents()
-   */
-  @Deprecated
-  public void flushEvents() {
-    getUpdater().flushModelEvents();
   }
 
   @Override
