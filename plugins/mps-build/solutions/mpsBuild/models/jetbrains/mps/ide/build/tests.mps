@@ -4390,9 +4390,10 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="6wRXAC4uQjn" role="3bR37C">
-          <node concept="1Busua" id="6wRXAC4uQjo" role="1SiIV1">
-            <ref role="1Busuk" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
+        <node concept="1SiIV0" id="7GARn1zNdW0" role="3bR37C">
+          <node concept="3bR9La" id="7GARn1zNdW1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="2X_LC_CDElV" resolve="jetbrains.mps.lang.editor.menus.testLanguage" />
           </node>
         </node>
       </node>
@@ -4428,12 +4429,6 @@
             <ref role="3bR37D" to="ffeo:4yLYeyZVqzT" resolve="jetbrains.mps.lang.editor.menus.extras.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6wRXAC4uQDQ" role="3bR37C">
-          <node concept="3bR9La" id="6wRXAC4uQDR" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6L9q" resolve="jetbrains.mps.lang.refactoring" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="6wRXAC4uQDS" role="3bR37C">
           <node concept="3bR9La" id="6wRXAC4uQDT" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -4462,6 +4457,18 @@
           <node concept="3bR9La" id="6wRXAC4uQE1" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7GARn1zNdW8" role="3bR37C">
+          <node concept="3bR9La" id="7GARn1zNdW9" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lh2" resolve="jetbrains.mps.refactoring.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7GARn1zNdWa" role="3bR37C">
+          <node concept="3bR9La" id="7GARn1zNdWb" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L7y" resolve="jetbrains.mps.lang.intentions" />
           </node>
         </node>
       </node>
