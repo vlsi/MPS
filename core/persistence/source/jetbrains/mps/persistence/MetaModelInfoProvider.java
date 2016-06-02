@@ -392,6 +392,7 @@ public interface MetaModelInfoProvider {
       other.myUnordered.putAll(myUnordered);
       other.myScope.putAll(myScope);
       other.myKind.putAll(myKind);
+      other.myStubs.putAll(myStubs);
     }
 
     @Override
