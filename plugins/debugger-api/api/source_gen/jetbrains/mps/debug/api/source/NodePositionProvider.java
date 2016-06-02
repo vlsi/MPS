@@ -12,8 +12,9 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
@@ -22,6 +23,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   public NodePositionProvider(MPSProject mpsProject) {
     myProject = mpsProject;
   }
+
   @Nullable
   @Override
   public NodeSourcePosition getPosition(@Nullable ILocation location) {
@@ -36,26 +38,24 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   }
   @Nullable
   @Override
+  @Deprecated
   public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    SNodeReference node = getSNodePointer(unitName, fileName, lineNumber);
-    if (node != null) {
-      return new NodeSourcePosition(node);
-    }
-    return null;
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
   @Nullable
-  public SNodeReference getSNodePointer(@Nullable ILocation location) {
+  protected SNodeReference getSNodePointer(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
     return getSNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
+
   @Nullable
-  public SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
+  protected SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
     return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode node = getNode(unitName, fileName, position);
+        SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
         if (node == null) {
           return null;
         }
@@ -63,18 +63,29 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
       }
     });
   }
+
+  /**
+   * 
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation) } shall be sufficient}
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getNode(@Nullable ILocation location) {
-    if (location == null || location instanceof NullLocation) {
-      return null;
-    }
-    return getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
+
+  /**
+   * 
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(String, String, int) shall be sufficient}
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
-    // FIXME pass proper repository into TraceInfo to perform lookup with respect to context 
-    return TraceInfoUtil.getNode(unitName, fileName, position);
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
+
   @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;

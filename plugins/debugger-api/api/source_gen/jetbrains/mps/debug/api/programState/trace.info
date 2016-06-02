@@ -7,6 +7,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1178893518978:jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
   <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/4474271214082913243">
     <file name="IThread.java">
       <node id="4474271214082913245" at="9,0,10,0" concept="4" trace="getFrames#()Ljava/util/List;" />
@@ -141,6 +142,58 @@
       <scope id="4474271214082916612" at="16,0,17,0" />
       <scope id="4474271214082916616" at="21,0,24,0" />
       <unit id="4474271214082916598" at="12,0,26,0" name="jetbrains.mps.debug.api.programState.IWatchable" />
+    </file>
+  </root>
+  <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/4664028035453560593">
+    <file name="GenericSourceCodeLocation.java">
+      <node id="4664028035453575179" at="11,0,12,0" concept="2" trace="myUnitName" />
+      <node id="4664028035453578295" at="12,0,13,0" concept="2" trace="myFileName" />
+      <node id="4664028035453578971" at="13,0,14,0" concept="2" trace="myRoutineName" />
+      <node id="4664028035453579393" at="14,0,15,0" concept="2" trace="myLineNumber" />
+      <node id="4664028035453598069" at="16,70,17,39" concept="7" />
+      <node id="4664028035453590527" at="20,86,21,47" concept="7" />
+      <node id="4664028035453575183" at="24,106,25,26" concept="1" />
+      <node id="4664028035453578299" at="25,26,26,26" concept="1" />
+      <node id="4664028035453578975" at="26,26,27,32" concept="1" />
+      <node id="4664028035453579397" at="27,32,28,30" concept="1" />
+      <node id="4664028035453580986" at="31,31,32,22" concept="5" />
+      <node id="4664028035453582210" at="34,31,35,22" concept="5" />
+      <node id="4664028035453583434" at="37,34,38,25" concept="5" />
+      <node id="4664028035453584658" at="40,30,41,24" concept="5" />
+      <node id="4664028035453595436" at="16,0,19,0" concept="0" trace="GenericSourceCodeLocation#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4664028035453586877" at="20,0,23,0" concept="0" trace="GenericSourceCodeLocation#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="4664028035453570333" at="31,0,34,0" concept="4" trace="getFileName#()Ljava/lang/String;" />
+      <node id="4664028035453570338" at="34,0,37,0" concept="4" trace="getUnitName#()Ljava/lang/String;" />
+      <node id="4664028035453570343" at="37,0,40,0" concept="4" trace="getRoutineName#()Ljava/lang/String;" />
+      <node id="4664028035453570348" at="40,0,43,0" concept="4" trace="getLineNumber#()I" />
+      <node id="4664028035453572990" at="24,0,30,0" concept="0" trace="GenericSourceCodeLocation#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V" />
+      <scope id="4664028035453595440" at="16,70,17,39" />
+      <scope id="4664028035453586881" at="20,86,21,47" />
+      <scope id="4664028035453570337" at="31,31,32,22" />
+      <scope id="4664028035453570342" at="34,31,35,22" />
+      <scope id="4664028035453570347" at="37,34,38,25" />
+      <scope id="4664028035453570352" at="40,30,41,24" />
+      <scope id="4664028035453595436" at="16,0,19,0">
+        <var name="fileName" id="4664028035453596189" />
+        <var name="unitName" id="4664028035453596187" />
+      </scope>
+      <scope id="4664028035453586877" at="20,0,23,0">
+        <var name="fileName" id="4664028035453589067" />
+        <var name="lineNumber" id="4664028035453589071" />
+        <var name="unitName" id="4664028035453589065" />
+      </scope>
+      <scope id="4664028035453570333" at="31,0,34,0" />
+      <scope id="4664028035453570338" at="34,0,37,0" />
+      <scope id="4664028035453570343" at="37,0,40,0" />
+      <scope id="4664028035453570348" at="40,0,43,0" />
+      <scope id="4664028035453572996" at="24,106,28,30" />
+      <scope id="4664028035453572990" at="24,0,30,0">
+        <var name="fileName" id="4664028035453573682" />
+        <var name="lineNumber" id="4664028035453574652" />
+        <var name="routineName" id="4664028035453574141" />
+        <var name="unitName" id="4664028035453573424" />
+      </scope>
+      <unit id="4664028035453560593" at="10,0,44,0" name="jetbrains.mps.debug.api.programState.GenericSourceCodeLocation" />
     </file>
   </root>
   <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/6559558851652261578">

@@ -8,12 +8,13 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.ide.common.FileOpenUtil;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class TextPositionProvider implements IPositionProvider<TextSourcePosition> {
-  private Project myProject;
+  private final Project myProject;
+
   public TextPositionProvider(Project project) {
     myProject = project;
   }
@@ -43,7 +44,7 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     if (location == null || location instanceof NullLocation) {
       return null;
     }
-    return FileOpenUtil.findFile(myProject, location.getUnitName(), location.getFileName());
+    return getFile(location.getUnitName(), location.getFileName());
   }
   @Nullable
   public VirtualFile getFile(@NonNls String unitName, @NonNls String fileName) {

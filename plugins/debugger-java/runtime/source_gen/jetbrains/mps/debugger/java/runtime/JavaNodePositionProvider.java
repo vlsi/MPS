@@ -7,10 +7,13 @@ import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.debug.api.source.PositionProvider;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.debug.api.programState.ILocation;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.debug.api.source.NodeSourcePosition;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
@@ -21,11 +24,14 @@ public class JavaNodePositionProvider extends NodePositionProvider implements Pr
     super(mpsProject);
     myProvider = provider;
   }
+
   @Nullable
   @Override
-  public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
-    return TraceInfoUtil.getJavaNode(unitName, fileName, position);
+  protected SNodeReference getSNodePointer(@Nullable ILocation location) {
+    SNode jn = TraceInfoUtil.getJavaNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    return (jn == null ? null : new SNodePointer(jn));
   }
+
   @Override
   public void projectOpened() {
   }
