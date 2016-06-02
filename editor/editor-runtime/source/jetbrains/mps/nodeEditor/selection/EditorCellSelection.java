@@ -49,7 +49,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
       throw new SelectionStoreException("Required CellInfo parameter is null");
     }
     // TODO: think about better way to restore relevant selection in case of deleted cell (EditorManager.EditorCell_STHint)
-    myEditorCell = cellInfo.findClosestCell((jetbrains.mps.nodeEditor.EditorComponent) editorComponent);
+    myEditorCell = cellInfo.findClosestCell(editorComponent);
     if (myEditorCell == null) {
       throw new SelectionRestoreException();
     }

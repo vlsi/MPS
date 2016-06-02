@@ -36,7 +36,7 @@ public class SNodeFactoryOperations {
   @Deprecated
   public static SConcept asInstanceConcept(SNode node) {
     if (node == null) { return null; }
-    return MetaAdapterByDeclaration.getInstanceConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getInstanceConcept(node);
   }
 
   @Deprecated

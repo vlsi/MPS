@@ -53,7 +53,7 @@ class Memento {
     private int getDepth(EditorCell cell) {
       int depth = 0;
       while (cell.getParent() != null) {
-        cell = (EditorCell) cell.getParent();
+        cell = cell.getParent();
         depth++;
       }
       return depth;

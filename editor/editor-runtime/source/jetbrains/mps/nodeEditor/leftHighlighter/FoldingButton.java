@@ -134,7 +134,7 @@ class FoldingButton {
   }
 
   private EditorCell getCell() {
-    return myCellInfo.findCell((jetbrains.mps.nodeEditor.EditorComponent) myEditor);
+    return myCellInfo.findCell(myEditor);
   }
 
   void activate(int x, int y) {
