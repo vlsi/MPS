@@ -251,10 +251,12 @@
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/languages/contextActions/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/languages/contextActions/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/solutions/contextActionsTool/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActions/solutions/contextActionsTool/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/common/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/source_gen" includeSubdirectories="true" />
