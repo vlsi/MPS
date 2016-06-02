@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -33,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -237,17 +237,17 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
     public STHintCellInfo(EditorCell_STHint rightTransformHintCell, EditorCell anchorCell) {
       super(rightTransformHintCell);
-      myAnchorCellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getCellInfo();
+      myAnchorCellInfo = anchorCell.getCellInfo();
     }
 
     @Override
-    public EditorCell findCell(EditorComponent editorComponent) {
+    public EditorCell findCell(@NotNull EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       return anchorCell != null ? getSTHintCell(anchorCell.getSNode(), editorComponent) : super.findCell(editorComponent);
     }
 
     @Override
-    public EditorCell findClosestCell(EditorComponent editorComponent) {
+    public EditorCell findClosestCell(@NotNull EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) {
         return super.findCell(editorComponent);

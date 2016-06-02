@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
@@ -160,14 +159,24 @@ public class SelectionInfoImpl implements SelectionInfo {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     SelectionInfoImpl that = (SelectionInfoImpl) o;
 
-    if (!mySelectionClassName.equals(that.mySelectionClassName)) return false;
-    if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) return false;
-    if (!myProperties.equals(that.myProperties)) return false;
+    if (!mySelectionClassName.equals(that.mySelectionClassName)) {
+      return false;
+    }
+    if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) {
+      return false;
+    }
+    if (!myProperties.equals(that.myProperties)) {
+      return false;
+    }
 
     return true;
   }

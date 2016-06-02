@@ -38,6 +38,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -1248,7 +1249,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public EditorCell findCell(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    public EditorCell findCell(@NotNull jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
       EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
       if (!(cell instanceof EditorCell_Collection)) {
         return null;

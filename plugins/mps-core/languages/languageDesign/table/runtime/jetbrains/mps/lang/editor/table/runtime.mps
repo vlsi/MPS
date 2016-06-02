@@ -6207,7 +6207,7 @@
             <property role="TrG5h" value="editorCell" />
             <node concept="2OqwBi" id="6asZ_IpevtK" role="33vP2m">
               <node concept="liA8E" id="6asZ_IpevtM" role="2OqNvi">
-                <ref role="37wK5l" to="g51k:~CellInfo.findCell(jetbrains.mps.openapi.editor.EditorComponent):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findCell" />
+                <ref role="37wK5l" to="f4zo:~CellInfo.findCell(jetbrains.mps.openapi.editor.EditorComponent):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findCell" />
                 <node concept="10QFUN" id="2TtwAs917nz" role="37wK5m">
                   <node concept="3uibUv" id="2TtwAs91bli" role="10QFUM">
                     <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
@@ -6376,8 +6376,8 @@
       </node>
       <node concept="37vLTG" id="24Hp4kBjUOb" role="3clF46">
         <property role="TrG5h" value="cellInfo" />
-        <node concept="3uibUv" id="24Hp4kBjUOd" role="1tU5fm">
-          <ref role="3uigEE" to="g51k:~CellInfo" resolve="CellInfo" />
+        <node concept="3uibUv" id="7dEFbfDrWHF" role="1tU5fm">
+          <ref role="3uigEE" to="f4zo:~CellInfo" resolve="CellInfo" />
         </node>
       </node>
       <node concept="3uibUv" id="1tYCy_FFKaD" role="Sfmx6">
@@ -6780,10 +6780,10 @@
               <ref role="3cqZAo" node="1tYCy_FFNQZ" resolve="selectionInto" />
             </node>
             <node concept="liA8E" id="6mKznQTjdXP" role="2OqNvi">
-              <ref role="37wK5l" to="b8lf:~SelectionInfoImpl.setCellInfo(jetbrains.mps.nodeEditor.cells.CellInfo):void" resolve="setCellInfo" />
+              <ref role="37wK5l" to="b8lf:~SelectionInfoImpl.setCellInfo(jetbrains.mps.openapi.editor.cells.CellInfo):void" resolve="setCellInfo" />
               <node concept="2OqwBi" id="6mKznQTjdXR" role="37wK5m">
                 <node concept="liA8E" id="6mKznQTjdZz" role="2OqNvi">
-                  <ref role="37wK5l" to="g51k:~EditorCell_Basic.getCellInfo():jetbrains.mps.nodeEditor.cells.CellInfo" resolve="getCellInfo" />
+                  <ref role="37wK5l" to="g51k:~EditorCell_Basic.getCellInfo():jetbrains.mps.openapi.editor.cells.CellInfo" resolve="getCellInfo" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxeuvN9" role="2Oq$k0">
                   <ref role="3cqZAo" node="21VbeaslD8j" resolve="myTableCell" />

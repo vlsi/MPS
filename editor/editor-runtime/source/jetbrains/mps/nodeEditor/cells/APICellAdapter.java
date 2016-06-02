@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -140,8 +141,12 @@ public class APICellAdapter {
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link EditorCell#getCellInfo()}
+   */
+  @Deprecated
   public static CellInfo getCellInfo(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellInfo();
+    return cell.getCellInfo();
   }
 
   /**

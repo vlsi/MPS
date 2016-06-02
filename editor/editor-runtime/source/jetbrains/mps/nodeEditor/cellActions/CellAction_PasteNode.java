@@ -23,8 +23,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
@@ -33,6 +31,7 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -148,7 +147,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       if (pasteTargetCell == null) {
         return;
       }
-      pasteTargetCellInfo = APICellAdapter.getCellInfo(pasteTargetCell);
+      pasteTargetCellInfo = pasteTargetCell.getCellInfo();
       cellNodeSelected = pasteTargetCell.getSNode();
       selectedCellReference = cellNodeSelected.getReference();
     } else {

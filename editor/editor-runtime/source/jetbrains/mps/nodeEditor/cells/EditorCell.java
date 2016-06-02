@@ -110,9 +110,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   void setCellBackgroundColor(Color color);
 
-  // TODO: move this method to open API
-  CellInfo getCellInfo();
-
   /**
    * @deprecated since MPS 3.4 not used
    */

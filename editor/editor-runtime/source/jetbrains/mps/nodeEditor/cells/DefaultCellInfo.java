@@ -17,10 +17,13 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Reference;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -38,18 +41,15 @@ public class DefaultCellInfo implements CellInfo {
   private int myCellNumber = 0;
   private boolean myIsInList = false;
 
-  protected CellInfo myParentInfo;
+  private CellInfo myParentInfo;
 
   public DefaultCellInfo(final EditorCell cell) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = cell.getSNode();
-        if (node == null || node.getModel() == null) {
-          myNodeReference = null;
-        } else {
-          myNodeReference = node.getReference();
-        }
+    ModelAccess.instance().runReadAction(() -> {
+      SNode node = cell.getSNode();
+      if (node == null || node.getModel() == null) {
+        myNodeReference = null;
+      } else {
+        myNodeReference = node.getReference();
       }
     });
 
@@ -60,7 +60,7 @@ public class DefaultCellInfo implements CellInfo {
       myParentInfo = parent.getCellInfo();
       myIsInList = parent.hasCellListHandler();
       if (myIsInList || myCellId == null) {
-        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : parent) {
+        for (EditorCell editorCell : parent) {
           if (editorCell.equals(cell)) {
             break;
           }
@@ -100,7 +100,9 @@ public class DefaultCellInfo implements CellInfo {
     DefaultCellInfo parentInfo = null;
     cellId = e.getAttributeValue(CELL_ID);
     String num = e.getAttributeValue(CELL_NUMBER);
-    if (num == null) return null;
+    if (num == null) {
+      return null;
+    }
     try {
       cellNumber = Integer.parseInt(num);
     } catch (NumberFormatException ex) {
@@ -108,13 +110,19 @@ public class DefaultCellInfo implements CellInfo {
     }
     isInList = "true".equals(e.getAttributeValue(IS_IN_LIST));
     Element nodeElem = e.getChild(NODE);
-    if (nodeElem == null) return null;
+    if (nodeElem == null) {
+      return null;
+    }
     nodeReference = nodeElem.getAttributeValue(NODE_REFERENCE);
-    if (nodeReference == null) return null;
+    if (nodeReference == null) {
+      return null;
+    }
     Element parentElem = e.getChild(PARENT);
     if (parentElem != null) {
       parentInfo = loadFrom(parentElem);
-      if (parentInfo == null) return null;
+      if (parentInfo == null) {
+        return null;
+      }
     }
     final DefaultCellInfo result = new DefaultCellInfo();
     result.myNodeReference = PersistenceFacade.getInstance().createNodeReference(nodeReference);
@@ -131,19 +139,17 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   @Override
-  public EditorCell findCell(final EditorComponent editorComponent) {
+  public EditorCell findCell(@NotNull final EditorComponent editorComponent) {
     if (myCellId != null) {
       final EditorContext editorContext = editorComponent.getEditorContext();
-      if (myNodeReference == null) return null;
+      if (myNodeReference == null) {
+        return null;
+      }
 
-      final EditorCell[] cell = new EditorCell[]{null};
-      editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          cell[0] = editorComponent.findCellWithId(myNodeReference.resolve(editorContext.getRepository()), myCellId);
-        }
-      });
-      return cell[0];
+      Reference<EditorCell> cellRef = new Reference<>();
+      editorContext.getRepository().getModelAccess().runReadAction(
+          () -> cellRef.set(editorComponent.findCellWithId(myNodeReference.resolve(editorContext.getRepository()), myCellId)));
+      return cellRef.get();
     } else if (myParentInfo != null) {
       EditorCell parentCell = myParentInfo.findCell(editorComponent);
       if (!(parentCell instanceof EditorCell_Collection)) {
@@ -155,9 +161,9 @@ public class DefaultCellInfo implements CellInfo {
       }
       EditorCell editorCell = null;
       int i = 0;
-      for (jetbrains.mps.openapi.editor.cells.EditorCell nextCell : parentCollection) {
+      for (EditorCell nextCell : parentCollection) {
         if (i == myCellNumber) {
-          editorCell = (EditorCell) nextCell;
+          editorCell = nextCell;
           break;
         }
         i++;
@@ -170,15 +176,21 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   @Override
-  public EditorCell findClosestCell(EditorComponent editorComponent) {
+  public EditorCell findClosestCell(@NotNull EditorComponent editorComponent) {
     return findCell(editorComponent);
   }
 
   public boolean equals(Object o) {
-    if (!(o instanceof DefaultCellInfo)) return false;
+    if (!(o instanceof DefaultCellInfo)) {
+      return false;
+    }
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
-    if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
-    if (cellInfo.myNodeReference == null) return false;
+    if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) {
+      return false;
+    }
+    if (cellInfo.myNodeReference == null) {
+      return false;
+    }
     return (cellInfo.myCellId == null ?
         myCellId == null :
         cellInfo.myCellId.equals(myCellId)) && (cellInfo.myNodeReference.equals(myNodeReference)) && cellInfo.myCellNumber == myCellNumber;

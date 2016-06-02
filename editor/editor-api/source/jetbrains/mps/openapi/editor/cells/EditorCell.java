@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -252,4 +253,7 @@ public interface EditorCell {
   void setReferenceCell(boolean isReference);
 
   boolean isReferenceCell();
+
+  @NotNull
+  CellInfo getCellInfo();
 }

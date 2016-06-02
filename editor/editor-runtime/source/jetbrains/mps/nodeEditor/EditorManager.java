@@ -20,15 +20,14 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
@@ -205,7 +204,7 @@ public class EditorManager {
    */
   @Deprecated
   public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
-        List<Pair<SNode, SNodeReference>> modifications) {
+      List<Pair<SNode, SNodeReference>> modifications) {
     return doCreateRoleAttributeCell(attributeKind, cellWithRole, ReferencedNodeContext.createNodeAttributeContext(roleAttribute), modifications);
   }
 
@@ -636,7 +635,7 @@ public class EditorManager {
 
   private CellInfo getCurrentlySelectedCellInfo(EditorContext context) {
     EditorCell selectedCell = context.getSelectedCell();
-    return selectedCell != null ? APICellAdapter.getCellInfo(selectedCell) : null;
+    return selectedCell != null ? selectedCell.getCellInfo() : null;
   }
 
   private void pushTask(String message) {

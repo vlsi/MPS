@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -24,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -84,7 +84,7 @@ class Memento {
       List<Pair<EditorCell, Boolean>> collapseStates = nodeEditor.getCollapseStates();
       Collections.sort(collapseStates, COLLAPSED_STATES_COMPARATOR);
       for (Pair<EditorCell, Boolean> collapseState : collapseStates) {
-        myCollapseStates.add(new Pair<CellInfo, Boolean>(APICellAdapter.getCellInfo(collapseState.o1), collapseState.o2));
+        myCollapseStates.add(new Pair<CellInfo, Boolean>(collapseState.o1.getCellInfo(), collapseState.o2));
       }
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
         myCollectionsWithEnabledBraces.add(APICellAdapter.getCellInfo(bracesEnabledCell));
@@ -141,14 +141,18 @@ class Memento {
     for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
       needsRelayout = true;
       EditorCell collection = collapseState.o1.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) continue;
+      if (!(collection instanceof EditorCell_Collection)) {
+        continue;
+      }
       ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
     }
 
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) continue;
+      if (!(collection instanceof EditorCell_Collection)) {
+        continue;
+      }
       if (((EditorCell_Collection) collection).usesBraces()) {
         ((EditorCell_Collection) collection).enableBraces();
       }
@@ -197,7 +201,9 @@ class Memento {
   }
 
   public boolean equals(Object object) {
-    if (object == this) return true;
+    if (object == this) {
+      return true;
+    }
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
@@ -437,14 +443,24 @@ class Memento {
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
 
       ErrorMarker that = (ErrorMarker) o;
 
-      if (myPropertyCell != that.myPropertyCell) return false;
-      if (!myCellInfo.equals(that.myCellInfo)) return false;
-      if (!myText.equals(that.myText)) return false;
+      if (myPropertyCell != that.myPropertyCell) {
+        return false;
+      }
+      if (!myCellInfo.equals(that.myCellInfo)) {
+        return false;
+      }
+      if (!myText.equals(that.myText)) {
+        return false;
+      }
       return !(myModelText != null ? !myModelText.equals(that.myModelText) : that.myModelText != null);
     }
 
@@ -505,8 +521,12 @@ class Memento {
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
 
       TransactionalPropertyState that = (TransactionalPropertyState) o;
 

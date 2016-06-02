@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
@@ -55,11 +54,12 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
       throw new SelectionRestoreException();
     }
     // Using absolute coordinates to restore caret X in case different cell was found.
-    myActivateUsingRelativeCaretX = cellInfo.equals(APICellAdapter.getCellInfo(myEditorCell));
+    myActivateUsingRelativeCaretX = cellInfo.equals(myEditorCell.getCellInfo());
     myCaretX = SelectionInfoImpl.Util.getIntProperty(properties, CARET_X_PROPERTY_NAME);
     myCaretXRelative = SelectionInfoImpl.Util.getIntProperty(properties, CARET_X_RELATIVE_PROPERTY_NAME);
-    mySideSelectDirection = (SideSelectDirection) SelectionInfoImpl.Util.getEnumProperty(properties, SIDE_SELECT_DIRECTION_PROPERTY_NAME, SideSelectDirection.class,
-        mySideSelectDirection);
+    mySideSelectDirection =
+        (SideSelectDirection) SelectionInfoImpl.Util.getEnumProperty(properties, SIDE_SELECT_DIRECTION_PROPERTY_NAME, SideSelectDirection.class,
+            mySideSelectDirection);
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
@@ -120,7 +120,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   @Override
   public SelectionInfoImpl getSelectionInfo() throws SelectionStoreException {
     SelectionInfoImpl selectionInfo = new SelectionInfoImpl(this.getClass().getName());
-    selectionInfo.setCellInfo(APICellAdapter.getCellInfo(myEditorCell));
+    selectionInfo.setCellInfo(myEditorCell.getCellInfo());
     selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(getCaretX()));
     selectionInfo.getPropertiesMap().put(CARET_X_RELATIVE_PROPERTY_NAME, Integer.toString(getCaretXRelative()));
     selectionInfo.getPropertiesMap().put(SIDE_SELECT_DIRECTION_PROPERTY_NAME, mySideSelectDirection.name());

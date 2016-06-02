@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-
-public interface CellInfo {
-  EditorCell findCell(EditorComponent editorComponent);
-
-  EditorCell findClosestCell(EditorComponent editorComponent);
+/**
+ * @deprecated @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellInfo}
+ */
+@Deprecated
+public interface CellInfo extends jetbrains.mps.openapi.editor.cells.CellInfo {
 }

@@ -16,14 +16,13 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
@@ -51,7 +50,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       throw new SelectionRestoreException();
     }
     myNonTrivialSelection = SelectionInfoImpl.Util.getBooleanProperty(properties, HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME);
-    if (APICellAdapter.getCellInfo(getEditorCell()).equals(cellInfo)) {
+    if (getEditorCell().getCellInfo().equals(cellInfo)) {
       if (myNonTrivialSelection) {
         /*
          This is kind of hack for EditorManager.STHintCellInfo - if located cell is different from the original one
