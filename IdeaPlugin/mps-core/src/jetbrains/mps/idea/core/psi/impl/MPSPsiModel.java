@@ -142,7 +142,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public boolean isPhysical() {
-    return true;
+    // See SmartPsiElementPointerImpl.doCreateElementInfo() and LOG.error() in createElementInfo() in the same class
+    // We implement PsiDirectory but don't want DirElementInfo to be created for us, because when it's restored
+    // it creates not an MPSPsiModel obviously but a PsiDirectoryFactory.getInstance().findDirectory() which happens
+    // to be PsiDirectoryImpl or something. Hence, LOG.error() is called.
+    // It affects project pane tests.
+    //
+    // Currently waiting for the change element isntanceof PsiDirectory && element.isPhysical() to happen in idea code
+    return false;
   }
 
 
