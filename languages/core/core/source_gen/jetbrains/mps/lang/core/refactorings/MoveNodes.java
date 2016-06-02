@@ -5,33 +5,9 @@ package jetbrains.mps.lang.core.refactorings;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
 
 public class MoveNodes extends BaseRefactoring {
   public MoveNodes() {
-    this.addTransientParameter("target");
-    this.addTransientParameter("role");
-    this.addTransientParameter("nodeToOpen");
   }
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveNodes_Target();
@@ -39,75 +15,7 @@ public class MoveNodes extends BaseRefactoring {
   public String getUserFriendlyName() {
     return "Move Nodes";
   }
-  public boolean init(final RefactoringContext refactoringContext) {
-    final Wrappers._boolean result = new Wrappers._boolean(false);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
-          SNode targetNode = ((SNode) ((Object) refactoringContext.getParameter("target")));
-          SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
-          ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(concept);
-          List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
-          Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
-            }
-          });
-          Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector<SNode, String>() {
-            public String select(SNode it) {
-              return SModelUtil.getGenuineLinkRole(it);
-            }
-          });
-          for (SNode node : refactoringContext.getSelectedNodes()) {
-            String childRole = node.getRoleInParent();
-            if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
-              return;
-            }
-            for (SNode linkDeclaration : childLinkDeclarations) {
-              if (SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")).equals(childRole)) {
-                if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node))))) {
-                  return;
-                }
-              }
-            }
-          }
-          result.value = true;
-        } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
-          result.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
-            public boolean accept(SNode node) {
-              return ((SConcept) SNodeOperations.getConcept(node)).isRootable();
-            }
-          });
-        }
-      }
-    });
-    return result.value;
-  }
   public void refactor(final RefactoringContext refactoringContext) {
-    List<SNode> nodes = refactoringContext.getSelectedNodes();
-    SModel targetModel = null;
-    List<SNode> movedNodes = null;
-    if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
-      targetModel = ((SModel) ((Object) refactoringContext.getParameter("target")));
-      movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
-    }
-    if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
-      SNode targetNode = (SNode) ((Object) refactoringContext.getParameter("target"));
-      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRoleInParent(), targetNode);
-      targetModel = SNodeOperations.getModel(targetNode);
-    }
-    if (targetModel != null) {
-      refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
-    }
-  }
-  public void doWhenDone(final RefactoringContext refactoringContext) {
-    // todo: open target nodes 
-  }
-  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    SearchResults searchResults = new SearchResults();
-    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
-      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressMonitor(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-    }
-    return searchResults;
+    throw new UnsupportedOperationException();
   }
 }
