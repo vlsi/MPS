@@ -2,15 +2,15 @@
 <model ref="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -155,7 +155,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -410,7 +410,6 @@
         <child id="1146253292181" name="value" index="3y1jev" />
       </concept>
       <concept id="5944356402132808749" name="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement" flags="nn" index="1_3QMa">
-        <child id="6039268229365417680" name="defaultBlock" index="1prKM_" />
         <child id="5944356402132808753" name="case" index="1_3QMm" />
         <child id="5944356402132808752" name="expression" index="1_3QMn" />
       </concept>
@@ -2049,7 +2048,7 @@
       </node>
     </node>
     <node concept="2VPoh5" id="1gbSomzAejm" role="2VS0gm">
-      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="AdditionalConceptPropertiesImpl" />
+      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="AdditionalStructurePropertiesImpl" />
       <node concept="2VP$b9" id="1gbSomzAejn" role="2VPoh3">
         <node concept="3clFbS" id="1gbSomzAejo" role="2VODD2">
           <node concept="3clFbF" id="1gbSomzAejp" role="3cqZAp">
@@ -4957,7 +4956,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1gbSomz_aDL">
-    <property role="TrG5h" value="AdditionalConceptPropertiesImpl" />
+    <property role="TrG5h" value="AdditionalStructurePropertiesImpl" />
     <node concept="3uibUv" id="1gbSomzAnri" role="1zkMxy">
       <ref role="3uigEE" to="ze1i:~BaseAdditionalStructureProperties" resolve="BaseAdditionalStructureProperties" />
     </node>
@@ -5279,6 +5278,7 @@
           </node>
           <node concept="liA8E" id="1gbSomz_aQg" role="2OqNvi">
             <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.icon(java.lang.String,java.lang.Class):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="icon" />
+            <node concept="10Nm6u" id="1yvR2BK1sGm" role="37wK5m" />
             <node concept="1W57fq" id="1gbSomz_aQh" role="lGtFl">
               <node concept="3IZrLx" id="1gbSomz_aQi" role="3IZSJc">
                 <node concept="3clFbS" id="1gbSomz_aQj" role="2VODD2">
@@ -5293,26 +5293,6 @@
                           <property role="1BlNFB" value="true" />
                           <ref role="1m5ApE" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                           <node concept="30H73N" id="1gbSomz_aQq" role="1m5AlR" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="1gbSomz_aQr" role="37wK5m">
-              <ref role="3cqZAo" node="1gbSomz_aDM" resolve="CONCEPT_ICON" />
-              <node concept="1ZhdrF" id="1gbSomz_aQs" role="lGtFl">
-                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                <property role="2qtEX8" value="variableDeclaration" />
-                <node concept="3$xsQk" id="1gbSomz_aQt" role="3$ytzL">
-                  <node concept="3clFbS" id="1gbSomz_aQu" role="2VODD2">
-                    <node concept="3clFbF" id="1gbSomz_aQv" role="3cqZAp">
-                      <node concept="2OqwBi" id="1gbSomz_aQw" role="3clFbG">
-                        <node concept="1iwH7S" id="1gbSomz_aQx" role="2Oq$k0" />
-                        <node concept="1iwH70" id="1gbSomz_aQy" role="2OqNvi">
-                          <ref role="1iwH77" node="5vfjF5cjF7N" resolve="conceptIcon" />
-                          <node concept="30H73N" id="1gbSomz_aQz" role="1iwH7V" />
                         </node>
                       </node>
                     </node>
@@ -5455,7 +5435,7 @@
                           <node concept="2OqwBi" id="1gbSomzCKL8" role="3clFbG">
                             <node concept="1iwH7S" id="1gbSomzCKL9" role="2Oq$k0" />
                             <node concept="1iwH70" id="1gbSomzCKLa" role="2OqNvi">
-                              <ref role="1iwH77" node="40knyhR0GtY" resolve="conceptFieldDecl" />
+                              <ref role="1iwH77" node="1gbSomzBSCj" resolve="conceptPropFieldDecl" />
                               <node concept="30H73N" id="1gbSomzCKLb" role="1iwH7V" />
                             </node>
                           </node>
@@ -5484,13 +5464,11 @@
           <node concept="37vLTw" id="1gbSomzCnT_" role="1_3QMn">
             <ref role="3cqZAo" node="1gbSomz_aTh" resolve="c" />
           </node>
-          <node concept="3clFbS" id="1gbSomzCKWA" role="1prKM_">
-            <node concept="YS8fn" id="1gbSomz_aU3" role="3cqZAp">
-              <node concept="2ShNRf" id="1gbSomz_aU4" role="YScLw">
-                <node concept="1pGfFk" id="1gbSomz_aU5" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
-                </node>
-              </node>
+        </node>
+        <node concept="YS8fn" id="1gbSomz_aU3" role="3cqZAp">
+          <node concept="2ShNRf" id="1gbSomz_aU4" role="YScLw">
+            <node concept="1pGfFk" id="1gbSomz_aU5" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
             </node>
           </node>
         </node>
