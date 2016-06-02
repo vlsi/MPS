@@ -175,26 +175,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateNodeCell()
-   */
-  @Deprecated
-  @Override
-  public EditorCell createNodeCell(SNode node) {
-    return getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
-  }
-
-  /**
-   * @deprecated since MPS 3.2
-   */
-  @Deprecated
-  @Override
-  public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
-    // This method should never be executed
-    assert false : "should be never called";
-    return null;
-  }
-
-  /**
    * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell()
    */
   @Deprecated
@@ -315,53 +295,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell()
-   */
-  @Deprecated
-  @Override
-  public EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
-    return getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
-  }
-
   @Override
   public List<SNode> getSelectedNodes() {
     return myNodeEditorComponent.getSelectedNodes();
-  }
-
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
-   * For internal editor implementation needs separate class EditorCommand was created in MPS
-   * editor implementation module
-   */
-  @Deprecated
-  @Override
-  public void executeCommand(Runnable r) {
-    myNodeEditorComponent.executeCommand(r);
-  }
-
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
-   * For internal editor implementation needs separate class EditorComputable was created in MPS
-   * editor implementation module
-   */
-  @Deprecated
-  @Override
-  public <T> T executeCommand(Computable<T> c) {
-    return myNodeEditorComponent.executeCommand(c);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 not used anymore
-   */
-  @Deprecated
-  @Override
-  public boolean isInsideCommand() {
-    return false;
   }
 
   void startTracing(String name) {

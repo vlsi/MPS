@@ -53,7 +53,6 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
@@ -129,7 +128,6 @@ import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
@@ -1299,11 +1297,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   protected Set<SimpleEditorMessage> getMessages() {
     return new LinkedHashSet<SimpleEditorMessage>(myHighlightManager.getMessages());
-  }
-
-  @Override
-  public IOperationContext getOperationContext() {
-    return getEditorContext().getOperationContext();
   }
 
   private EditorCell_WithComponent findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
@@ -2570,29 +2563,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myUpdater;
   }
 
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 use getModelAccess().executeCommand() & {@link jetbrains.mps.editor.runtime.commands.EditorCommand} or
-   * {@link jetbrains.mps.editor.runtime.commands.EditorCommandAdapter} in accordance
-   */
-  @Deprecated
-  void executeCommand(final Runnable r) {
-    getModelAccess().executeCommand(new EditorCommandAdapter(r, this));
-  }
-
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 use getModelAccess().executeCommand() & {@link jetbrains.mps.editor.runtime.commands.EditorComputable}
-   */
-  @Deprecated
-  <T> T executeCommand(final Computable<T> c) {
-    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
-    executeCommand(r);
-    return r.getResult();
-  }
-
   <T> T runRead(final Computable<T> c) {
     final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
     getModelAccess().runReadAction(r);
@@ -2925,10 +2895,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
-    if (dataId.equals(MPSEditorDataKeys.OPERATION_CONTEXT.getName())) {
-      return getOperationContext();
-    }
-
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) {
       return createEditorContextForActions();
     }

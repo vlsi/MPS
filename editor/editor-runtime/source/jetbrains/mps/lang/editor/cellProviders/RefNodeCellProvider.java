@@ -34,18 +34,16 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
   public RefNodeCellProvider(SNode node, EditorContext context) {
     super(node, context);
   }
+
   @Override
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
-    if (myIsAggregation) {
-      editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(referencedNode);
-    } else {
-      editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
-    }
     // TODO: refactor: This class should be always called with:
     // - myIsCardinality1
     // - myIsAggregation
     // so we should add corresponding assertions & modify generator in accordance
+    assert myIsAggregation;
+    editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(referencedNode);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     return editorCell;

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
-import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Computable;
@@ -76,32 +76,6 @@ public interface EditorContext {
 
   IOperationContext getOperationContext();
 
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
-   * For internal editor implementation needs separate class EditorCommand was created in MPS
-   * editor implementation module
-   */
-  @Deprecated
-  void executeCommand(Runnable r);
-
-  /**
-   * Executing command and updating selection in accordance with changes made by this command
-   *
-   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
-   * For internal editor implementation needs separate class EditorComputable was created in MPS
-   * editor implementation module
-   */
-  @Deprecated
-  <T> T executeCommand(Computable<T> c);
-
-  /**
-   * @deprecated since MPS 3.2 not used anymore
-   */
-  @Deprecated
-  boolean isInsideCommand();
-
   void flushEvents();
 
   SModel getModel();
@@ -111,24 +85,6 @@ public interface EditorContext {
   Object createMemento();
 
   boolean setMemento(Object o);
-
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateNodeCell()
-   */
-  @Deprecated
-  EditorCell createNodeCell(SNode node);
-
-  /**
-   * @deprecated since MPS 3.2
-   */
-  @Deprecated
-  EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
-
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell()
-   */
-  @Deprecated
-  EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
 
   void runWithContextCell(EditorCell contextCell, Runnable r);
 
