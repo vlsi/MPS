@@ -44,9 +44,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
-        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
-      </concept>
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
@@ -177,6 +174,7 @@
   </registry>
   <node concept="312cEu" id="2ytFvC$HjcZ">
     <property role="TrG5h" value="IntentionMenuPartBase" />
+    <property role="1sVAO0" value="true" />
     <node concept="312cEg" id="2ytFvC$Hjw$" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -229,72 +227,40 @@
         </node>
       </node>
       <node concept="3clFbS" id="291CjQFiEnJ" role="3clF47">
-        <node concept="3cpWs8" id="291CjQFiEAp" role="3cqZAp">
-          <node concept="3cpWsn" id="291CjQFiEAq" role="3cpWs9">
-            <property role="TrG5h" value="query" />
-            <node concept="3uibUv" id="291CjQFiEAr" role="1tU5fm">
-              <ref role="3uigEE" to="91lp:~IntentionsManager$QueryDescriptor" resolve="IntentionsManager.QueryDescriptor" />
-            </node>
-            <node concept="2ShNRf" id="291CjQFiEBG" role="33vP2m">
-              <node concept="1pGfFk" id="291CjQFiEMY" role="2ShVmc">
-                <ref role="37wK5l" to="91lp:~IntentionsManager$QueryDescriptor.&lt;init&gt;()" resolve="IntentionsManager.QueryDescriptor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="291CjQFiEO6" role="3cqZAp">
-          <node concept="2OqwBi" id="291CjQFiEQ7" role="3clFbG">
-            <node concept="37vLTw" id="291CjQFiEO4" role="2Oq$k0">
-              <ref role="3cqZAo" node="291CjQFiEAq" resolve="query" />
-            </node>
-            <node concept="liA8E" id="291CjQFiESb" role="2OqNvi">
-              <ref role="37wK5l" to="91lp:~IntentionsManager$QueryDescriptor.setCurrentNodeOnly(boolean):void" resolve="setCurrentNodeOnly" />
-              <node concept="3clFbT" id="291CjQFiEST" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="291CjQFiEXO" role="3cqZAp">
-          <node concept="3cpWsn" id="291CjQFiEXU" role="3cpWs9">
+        <node concept="3cpWs8" id="5UD30_PTXww" role="3cqZAp">
+          <node concept="3cpWsn" id="5UD30_PTXwA" role="3cpWs9">
             <property role="TrG5h" value="executables" />
-            <node concept="3uibUv" id="291CjQFiEXW" role="1tU5fm">
+            <node concept="3uibUv" id="5UD30_PTY9E" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-              <node concept="3uibUv" id="291CjQFiEZ1" role="11_B2D">
-                <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                <node concept="3uibUv" id="291CjQFiF06" role="11_B2D">
-                  <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
-                </node>
-                <node concept="3uibUv" id="291CjQFiF1L" role="11_B2D">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                </node>
+              <node concept="3uibUv" id="5UD30_PTYd_" role="11_B2D">
+                <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
               </node>
             </node>
-            <node concept="2OqwBi" id="291CjQFiFde" role="33vP2m">
-              <node concept="2YIFZM" id="291CjQFiF7y" role="2Oq$k0">
+            <node concept="2OqwBi" id="5UD30_PTYqL" role="33vP2m">
+              <node concept="2YIFZM" id="5UD30_PTYll" role="2Oq$k0">
                 <ref role="37wK5l" to="91lp:~IntentionsManager.getInstance():jetbrains.mps.intentions.IntentionsManager" resolve="getInstance" />
                 <ref role="1Pybhc" to="91lp:~IntentionsManager" resolve="IntentionsManager" />
               </node>
-              <node concept="liA8E" id="291CjQFiFpl" role="2OqNvi">
-                <ref role="37wK5l" to="91lp:~IntentionsManager.getAvailableIntentions(jetbrains.mps.intentions.IntentionsManager$QueryDescriptor,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):java.util.Collection" resolve="getAvailableIntentions" />
-                <node concept="37vLTw" id="291CjQFiFsc" role="37wK5m">
-                  <ref role="3cqZAo" node="291CjQFiEAq" resolve="query" />
-                </node>
-                <node concept="2OqwBi" id="291CjQFiF_M" role="37wK5m">
-                  <node concept="37vLTw" id="291CjQFiFxK" role="2Oq$k0">
+              <node concept="liA8E" id="5UD30_PTYKh" role="2OqNvi">
+                <ref role="37wK5l" to="91lp:~IntentionsManager.getIntentionsById(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext,java.lang.String):java.util.List" resolve="getIntentionsById" />
+                <node concept="2OqwBi" id="5UD30_PTZ1D" role="37wK5m">
+                  <node concept="37vLTw" id="5UD30_PTYRC" role="2Oq$k0">
                     <ref role="3cqZAo" node="291CjQFiEnH" resolve="context" />
                   </node>
-                  <node concept="liA8E" id="291CjQFiFFt" role="2OqNvi">
+                  <node concept="liA8E" id="5UD30_PTZbE" role="2OqNvi">
                     <ref role="37wK5l" to="uddc:~TransformationMenuContext.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="291CjQFiFOY" role="37wK5m">
-                  <node concept="37vLTw" id="291CjQFiFKC" role="2Oq$k0">
+                <node concept="2OqwBi" id="5UD30_PTZtu" role="37wK5m">
+                  <node concept="37vLTw" id="5UD30_PTZkG" role="2Oq$k0">
                     <ref role="3cqZAo" node="291CjQFiEnH" resolve="context" />
                   </node>
-                  <node concept="liA8E" id="291CjQFiFWB" role="2OqNvi">
+                  <node concept="liA8E" id="5UD30_PTZBN" role="2OqNvi">
                     <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                   </node>
+                </node>
+                <node concept="37vLTw" id="5UD30_PTZNb" role="37wK5m">
+                  <ref role="3cqZAo" node="2ytFvC$Hjw$" resolve="myIntentionId" />
                 </node>
               </node>
             </node>
@@ -333,13 +299,8 @@
                   <node concept="37vLTw" id="291CjQFiOte" role="37wK5m">
                     <ref role="3cqZAo" node="291CjQFiEnH" resolve="context" />
                   </node>
-                  <node concept="2OqwBi" id="291CjQFiOtf" role="37wK5m">
-                    <node concept="37vLTw" id="291CjQFiOtg" role="2Oq$k0">
-                      <ref role="3cqZAo" node="291CjQFiMyh" resolve="pair" />
-                    </node>
-                    <node concept="2OwXpG" id="291CjQFiOth" role="2OqNvi">
-                      <ref role="2Oxat5" to="18ew:~Pair.o1" resolve="o1" />
-                    </node>
+                  <node concept="37vLTw" id="5UD30_PU0WJ" role="37wK5m">
+                    <ref role="3cqZAo" node="291CjQFiMyh" resolve="executable" />
                   </node>
                 </node>
               </node>
@@ -369,19 +330,13 @@
             </node>
           </node>
           <node concept="3cpWsn" id="291CjQFiMyh" role="1Duv9x">
-            <property role="TrG5h" value="pair" />
-            <node concept="3uibUv" id="291CjQFiMIv" role="1tU5fm">
-              <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-              <node concept="3uibUv" id="291CjQFiMQI" role="11_B2D">
-                <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
-              </node>
-              <node concept="3uibUv" id="291CjQFiN7c" role="11_B2D">
-                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-              </node>
+            <property role="TrG5h" value="executable" />
+            <node concept="3uibUv" id="5UD30_PU0xH" role="1tU5fm">
+              <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
             </node>
           </node>
-          <node concept="37vLTw" id="291CjQFiNnE" role="1DdaDG">
-            <ref role="3cqZAo" node="291CjQFiEXU" resolve="executables" />
+          <node concept="37vLTw" id="5UD30_PU0hd" role="1DdaDG">
+            <ref role="3cqZAo" node="5UD30_PTXwA" resolve="executables" />
           </node>
         </node>
         <node concept="3cpWs6" id="291CjQFiP6C" role="3cqZAp">
@@ -394,6 +349,7 @@
     <node concept="2tJIrI" id="2ytFvC$HjdT" role="jymVt" />
     <node concept="3clFb_" id="6kJcyCQ$t16" role="jymVt">
       <property role="TrG5h" value="createItem" />
+      <property role="1EzhhJ" value="true" />
       <node concept="3Tmbuc" id="6kJcyCQ$t17" role="1B3o_S" />
       <node concept="3uibUv" id="6kJcyCQ$vvQ" role="3clF45">
         <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
@@ -417,11 +373,7 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3clFbS" id="6kJcyCQ$sWH" role="3clF47">
-        <node concept="3clFbF" id="6kJcyCQ$vCS" role="3cqZAp">
-          <node concept="10Nm6u" id="6kJcyCQ$vCR" role="3clFbG" />
-        </node>
-      </node>
+      <node concept="3clFbS" id="6kJcyCQ$sWH" role="3clF47" />
       <node concept="2AHcQZ" id="6kJcyCQ$vZr" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>

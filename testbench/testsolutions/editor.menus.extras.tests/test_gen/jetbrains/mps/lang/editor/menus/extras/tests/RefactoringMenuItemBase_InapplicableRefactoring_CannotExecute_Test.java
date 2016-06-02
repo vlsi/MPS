@@ -31,7 +31,7 @@ public class RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test 
 
       repository.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          IRefactoring refactoring = RefactoringLookupUtils.getRefactoring(repository, new SNodePointer("r:2f49f947-e2b6-4dd2-87ae-7938deb42899(jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings)", "121597702824488195"));
+          IRefactoring refactoring = ActionLookupUtils.getRefactoring(repository, new SNodePointer("r:2f49f947-e2b6-4dd2-87ae-7938deb42899(jetbrains.mps.lang.editor.menus.extras.testLanguage.refactorings)", "121597702824488195"));
 
           DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(getEditorComponent().getSelectedCell(), "irrelevant location");
 

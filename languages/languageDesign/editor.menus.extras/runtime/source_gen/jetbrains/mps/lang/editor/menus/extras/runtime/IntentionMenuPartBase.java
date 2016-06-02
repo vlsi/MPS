@@ -7,16 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.IntentionExecutable;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.intentions.IntentionsManager;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 
-public class IntentionMenuPartBase implements MenuPart {
+public abstract class IntentionMenuPartBase implements MenuPart {
   private final String myIntentionId;
 
   public IntentionMenuPartBase(String intentionId) {
@@ -25,13 +23,11 @@ public class IntentionMenuPartBase implements MenuPart {
 
   @NotNull
   public List<MenuItem> createItems(TransformationMenuContext context) {
-    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setCurrentNodeOnly(true);
-    Collection<Pair<IntentionExecutable, SNode>> executables = IntentionsManager.getInstance().getAvailableIntentions(query, context.getNode(), context.getEditorContext());
+    Collection<IntentionExecutable> executables = IntentionsManager.getInstance().getIntentionsById(context.getNode(), context.getEditorContext(), myIntentionId);
 
     List<MenuItem> result = new ArrayList<MenuItem>();
-    for (Pair<IntentionExecutable, SNode> pair : executables) {
-      MenuItem item = createItem(context, pair.o1);
+    for (IntentionExecutable executable : executables) {
+      MenuItem item = createItem(context, executable);
       if (item != null) {
         result.add(item);
       }
@@ -40,9 +36,7 @@ public class IntentionMenuPartBase implements MenuPart {
   }
 
   @Nullable
-  protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
-    return null;
-  }
+  protected abstract MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable);
 
   protected static class ItemBase extends ActionItemBase {
     protected final TransformationMenuContext _context;
