@@ -118,14 +118,12 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
-import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -330,8 +328,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
 
-  private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
-  private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
   private final NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -379,7 +375,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
-    myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
     myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
     myRootCell.setSelectable(false);
@@ -1897,38 +1892,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myDisposeListeners.remove(listener);
   }
 
-  /**
-   * @deprecated since MPS 3.2 use getUpdater().addListener()
-   */
-  @Deprecated
-  public void addRebuildListener(RebuildListener listener) {
-    myRebuildListeners.add(listener);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getUpdater().removeListener()
-   */
-  @Deprecated
-  public void removeRebuildListener(RebuildListener listener) {
-    myRebuildListeners.remove(listener);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getUpdater().addListener()
-   */
-  @Deprecated
-  public void addSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    myCellSynchronizationListeners.add(listener);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getUpdater().removeListener()
-   */
-  @Deprecated
-  public void removeSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    myCellSynchronizationListeners.remove(listener);
-  }
-
   public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
     jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(x, y);
     if (cell == null) {
@@ -2654,70 +2617,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public void addCellDependentOnNodeProperty(EditorCell cell, Pair<SNodeReference, String> pair) {
-    myUpdater.getCurrentUpdateSession().registerCleanDependency(cell, pair);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
-    myUpdater.getCurrentUpdateSession().registerDirtyDependency(cell, pair);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
-    myUpdater.getCurrentUpdateSession().registerExistenceDependency(cell, pair);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public void putCellAndNodesToDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, Set<SNode> nodes, Set<SNodeReference> refTargets) {
-    myUpdater.getCurrentUpdateSession().registerDependencies(cell, nodes, refTargets);
-  }
-
   public Set<SNode> getNodesCellDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return myUpdater.getRelatedNodes(cell);
   }
 
   public Set<SNodeReference> getCopyOfRefTargetsCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return myUpdater.getRelatedRefTargets(cell);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public boolean doesCellDependOnNode(jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode node, @NotNull SNodeReference nodePointer) {
-    return myUpdater.isRelated(cell, new Pair<SNode, SNodeReference>(node, nodePointer));
-  }
-
-  /**
-   * If update logic is changed then this method will not be necessary anymore.
-   *
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  public void clearNodesCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager editorManager) {
-    myUpdater.clearDependencies(cell);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
-   */
-  @Deprecated
-  void registerAsBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager manager) {
-    myUpdater.getCurrentUpdateSession().registerAsBigCell(cell);
   }
 
   @Nullable
@@ -2990,43 +2895,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         LOG.error(t);
       }
     }
-  }
-
-  /**
-   * This class should be removed after MPS 3.2 together with
-   * RebuildListener/CellSynchronizationWithModelListener
-   */
-  private class UpdaterEventDispatcher extends UpdaterListenerAdapter {
-    @Override
-    public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners.toArray(
-          new CellSynchronizationWithModelListener[myCellSynchronizationListeners.size()])) {
-        listener.cellSynchronizedWithModel(cell);
-      }
-    }
-
-    @Override
-    public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-      for (RebuildListener listener : myRebuildListeners) {
-        listener.editorRebuilt(EditorComponent.this);
-      }
-    }
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use {@link jetbrains.mps.openapi.editor.update.UpdaterListener} instead
-   */
-  @Deprecated
-  public static interface RebuildListener {
-    public void editorRebuilt(EditorComponent editor);
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use UpdaterListener instead
-   */
-  @Deprecated
-  public static interface CellSynchronizationWithModelListener {
-    public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
   }
 
   public interface EditorDisposeListener {

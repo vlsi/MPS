@@ -25,15 +25,16 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -53,10 +54,10 @@ public class BookmarksUIComponent implements ProjectComponent {
 
   private final EditorComponentCreateListener editorListener = new MyEditorComponentCreateListener();
   private final BookmarkListener bookmarkListener = new MyBookmarkListener();
-  private final RebuildListener editorRebuildListener = new RebuildListener() {
+  private final UpdaterListener myUpdaterListener = new UpdaterListenerAdapter() {
     @Override
-    public void editorRebuilt(EditorComponent editor) {
-      BookmarksUIComponent.this.onEditorRebuilt(editor);
+    public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+      BookmarksUIComponent.this.onEditorRebuilt((EditorComponent) editorComponent);
     }
   };
 
@@ -100,19 +101,21 @@ public class BookmarksUIComponent implements ProjectComponent {
   }
 
   private void editorComponentCreated(@NotNull EditorComponent editorComponent) {
-    editorComponent.addRebuildListener(editorRebuildListener);
+    editorComponent.getUpdater().addListener(myUpdaterListener);
     SNode editedNode = editorComponent.getEditedNode();
     if (editedNode != null) {
       boolean modified = false;
       for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
         modified |= addRenderer(editorComponent, bookmark.o1, bookmark.o2);
       }
-      if (modified) editorComponent.repaintExternalComponent();
+      if (modified) {
+        editorComponent.repaintExternalComponent();
+      }
     }
   }
 
   private void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
-    editorComponent.removeRebuildListener(editorRebuildListener);
+    editorComponent.getUpdater().removeListener(myUpdaterListener);
     editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(BookmarkIconRenderer.TYPE);
   }
 
