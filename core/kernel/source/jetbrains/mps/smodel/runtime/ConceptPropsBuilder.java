@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -47,8 +48,8 @@ public class ConceptPropsBuilder {
     return this;
   }
 
-  public ConceptPropsBuilder deprecated(SConceptFeature f) {
-    myDeprecatedFeatures.add(f);
+  public ConceptPropsBuilder deprecated(SConceptFeature ... f) {
+    myDeprecatedFeatures.addAll(Arrays.asList(f));
     return this;
   }
 

@@ -12520,7 +12520,7 @@
                             <node concept="30H73N" id="23CHI7KLVPE" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLVPG" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KLVPH" role="2OqNvi">
@@ -12581,7 +12581,7 @@
                             <node concept="30H73N" id="23CHI7KLYrO" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLYrQ" role="2OqNvi">
-                            <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           </node>
                         </node>
                         <node concept="liA8E" id="23CHI7KLYrR" role="2OqNvi">
@@ -12640,7 +12640,7 @@
                         <node concept="30H73N" id="23CHI7KM6sT" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KM6sV" role="2OqNvi">
-                        <ref role="37wK5l" to="e8bb:~SConceptFeatureId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <ref role="37wK5l" to="e8bb:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="23CHI7KM6sW" role="2OqNvi">
