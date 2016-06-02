@@ -2217,5 +2217,26 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="7GARn1zMWJt">
+    <property role="3GE5qa" value="TransformationMenu" />
+    <ref role="1M2myG" to="tpc2:4Sf$XywF4VC" resolve="TransformationMenu_Named" />
+    <node concept="1N5Pfh" id="7GARn1zMWJu" role="1Mr941">
+      <ref role="1N5Vy1" to="tpc2:1oFY2ohVpGC" />
+      <node concept="13QW63" id="7GARn1zMWJv" role="1N6uqs">
+        <node concept="3clFbS" id="7GARn1zMWJw" role="2VODD2">
+          <node concept="3clFbF" id="7GARn1zMWJx" role="3cqZAp">
+            <node concept="2YIFZM" id="7GARn1zMWJy" role="3clFbG">
+              <ref role="37wK5l" to="tpcg:50vK5Yas08Z" resolve="forLanguageConcepts" />
+              <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
+              <node concept="1Q6Npb" id="7GARn1zMWJz" role="37wK5m" />
+              <node concept="35c_gC" id="7GARn1zMWJ$" role="37wK5m">
+                <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
