@@ -21,12 +21,17 @@ import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.awt.Color;
 import java.util.Collection;
@@ -57,6 +62,13 @@ public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiRootNode> {
   @Override
   protected Collection<AbstractTreeNode> getChildrenImpl() {
     return null;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    SNodeReference rootNodeRef = getValue().getSNodeReference();
+    MPSNodeVirtualFile nodeVirtualFile = NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(getProject()), rootNodeRef);
+    FileEditorManager.getInstance(getProject()).openFile(nodeVirtualFile, requestFocus);
   }
 
   @Override
