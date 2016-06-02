@@ -101,15 +101,6 @@ public class EditorManager {
     }
   }
 
-  /**
-   * @deprecated since MPS 3.3 use createRootCell(SNode, List<Pair<SNode, SNodeReference>>, ReferencedNodeContext, boolean)
-   */
-  @Deprecated
-  public EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext,
-      boolean isInspectorCell) {
-    return createRootCell(node, modifications, refContext, isInspectorCell);
-  }
-
   private static void fillContextToCellMap(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     Object bigCellContext = cell.getUserObject(BIG_CELL_CONTEXT);
     if (bigCellContext instanceof ReferencedNodeContext) {
@@ -135,14 +126,6 @@ public class EditorManager {
         fillContextToCellMap(childCell, map);
       }
     }
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use createNodeRoleAttributeCell(SNode, Class, EditorCell)
-   */
-  @Deprecated
-  public EditorCell createNodeRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
-    return createNodeRoleAttributeCell(roleAttribute, attributeKind, cellWithRole);
   }
 
   public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
@@ -190,24 +173,6 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /**
-   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, ReferencedNodeContext, List<Pair<SNode, SNodeReference>>)
-   */
-  @Deprecated
-  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context,
-      SNode roleAttribute, List<Pair<SNode, SNodeReference>> modifications) {
-    return doCreateRoleAttributeCell(attributeKind, cellWithRole, ReferencedNodeContext.createNodeAttributeContext(roleAttribute), modifications);
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, ReferencedNodeContext, List<Pair<SNode, SNodeReference>>)
-   */
-  @Deprecated
-  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
-      List<Pair<SNode, SNodeReference>> modifications) {
-    return doCreateRoleAttributeCell(attributeKind, cellWithRole, ReferencedNodeContext.createNodeAttributeContext(roleAttribute), modifications);
-  }
-
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
   public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, ReferencedNodeContext refContext,
       List<Pair<SNode, SNodeReference>> modifications) {
@@ -245,36 +210,20 @@ public class EditorManager {
 
   @NotNull
   public EditorCell getCurrentAttributedCellWithRole(Class attributeKind, SNode node) {
-    EditorCell result = getCurrentAttributedCellWithRole(attributeKind);
+    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
+    if (stack == null) {
+      stack = new Stack<EditorCell>();
+      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
+    }
+    EditorCell result = stack.isEmpty() ? null : stack.peek();
     if (result == null) {
       result = new EditorCell_Error(getEditorContext(), node, "<attributed cell not found>");
     }
     return result;
   }
 
-  /**
-   * @deprecated since MPS 3.3 use getCurrentAttributedCellWithRole(Class, SNode)
-   */
-  @Deprecated
-  public EditorCell getCurrentAttributedCellWithRole(Class attributeKind) {
-    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
-    if (stack == null) {
-      stack = new Stack<EditorCell>();
-      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
-    }
-    return stack.isEmpty() ? null : stack.peek();
-  }
-
   protected boolean areAttributesShown() {
     return !myCreatingInspectedCell;
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use createEditorCell(List<Pair<SNode, SNodeReference>> , ReferencedNodeContext)
-   */
-  @Deprecated
-  public EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext) {
-    return createEditorCell(modifications, refContext);
   }
 
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?

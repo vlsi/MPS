@@ -174,19 +174,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     };
   }
 
-  /**
-   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell()
-   */
-  @Deprecated
-  public EditorCell createReferentCell(final AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
-    return getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        return inlineComponent.createEditorCell(EditorContext.this);
-      }
-    }, targetNode, role);
-  }
-
   @Override
   public void flushEvents() {
     // TODO: replace all usages by updater.flushModelEvents() ?

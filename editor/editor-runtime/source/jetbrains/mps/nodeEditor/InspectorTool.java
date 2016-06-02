@@ -144,15 +144,6 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myComponent;
   }
 
-  /**
-   * @deprecated use {@link #inspect(SNode, FileEditor, String[])}  instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, String[] enabledHints) {
-    inspect(node, fileEditor, enabledHints);
-  }
-
   public void inspect(SNode node, FileEditor fileEditor, String[] enabledHints) {
     if (node instanceof jetbrains.mps.smodel.SNode && !SNodeUtil.isAccessible(node, myInspectorComponent.getRepository())) {
       // Note: inspector does not support disposed nodes. If we get one, just clear the tool.

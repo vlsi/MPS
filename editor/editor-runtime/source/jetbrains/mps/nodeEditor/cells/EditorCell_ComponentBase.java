@@ -16,13 +16,10 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
-import javax.swing.border.Border;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 
 public abstract class EditorCell_ComponentBase extends EditorCell_Basic implements EditorCell_WithComponent {
