@@ -9,16 +9,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.refactoring.framework.IRefactoringTarget;
-import java.util.Collections;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.ide.DataManager;
-import java.awt.Component;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 
 public abstract class RefactoringMenuPartBase extends SingleItemMenuPart {
   private final String myRefactoringClassName;
@@ -40,43 +30,4 @@ public abstract class RefactoringMenuPartBase extends SingleItemMenuPart {
 
   @Nullable
   protected abstract MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IRefactoring refactoring);
-
-  public static boolean isRefactoringApplicableToNode(IRefactoring refactoring, SNode node) {
-    IRefactoringTarget refactoringTarget = refactoring.getRefactoringTarget();
-    if (refactoringTarget.getTarget() != IRefactoringTarget.TargetType.NODE) {
-      return false;
-    }
-
-    Object targetEntity = (refactoringTarget.allowMultipleTargets() ? Collections.singletonList(node) : node);
-    return RefactoringUtil.isApplicable(refactoring, targetEntity);
-  }
-
-  public static class ItemBase extends ActionItemBase {
-    protected final TransformationMenuContext _context;
-    protected final IRefactoring myRefactoring;
-
-    public ItemBase(TransformationMenuContext context, IRefactoring refactoring) {
-      _context = context;
-      myRefactoring = refactoring;
-    }
-
-    @Nullable
-    @Override
-    public String getLabelText(@NotNull String pattern) {
-      return myRefactoring.getUserFriendlyName();
-    }
-
-    @Override
-    public boolean canExecute(@NotNull String pattern) {
-      return isRefactoringApplicableToNode(myRefactoring, _context.getNode());
-    }
-
-    @Override
-    public void execute(@NotNull String pattern) {
-      MPSProject project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext((Component) _context.getEditorContext().getEditorComponent()));
-
-      RefactoringContext refactoringContext = RefactoringContext.createRefactoringContext(myRefactoring, Collections.emptyList(), Collections.emptyList(), _context.getNode(), project);
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
-    }
-  }
 }

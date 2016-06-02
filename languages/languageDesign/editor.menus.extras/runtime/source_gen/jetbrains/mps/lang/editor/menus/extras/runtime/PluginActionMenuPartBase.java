@@ -9,14 +9,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
-import java.awt.Component;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 
-public class PluginActionMenuPartBase extends SingleItemMenuPart {
+public abstract class PluginActionMenuPartBase extends SingleItemMenuPart {
   private final String myActionId;
 
   public PluginActionMenuPartBase(String actionId) {
@@ -33,30 +27,5 @@ public class PluginActionMenuPartBase extends SingleItemMenuPart {
     return createItem(context, action);
   }
 
-  protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull AnAction action) {
-    return null;
-  }
-
-  protected static class ItemBase extends ActionItemBase {
-    protected final TransformationMenuContext _context;
-    protected final AnAction myAction;
-
-    protected ItemBase(TransformationMenuContext context, AnAction action) {
-      _context = context;
-      myAction = action;
-    }
-
-    @Nullable
-    @Override
-    public String getLabelText(String pattern) {
-      return myAction.getTemplatePresentation().getText();
-    }
-
-    @Override
-    public void execute(@NotNull String pattern) {
-      DataContext dataContext = DataManager.getInstance().getDataContext((Component) _context.getEditorContext().getEditorComponent());
-      AnActionEvent event = new AnActionEvent(null, dataContext, ActionPlaces.UNKNOWN, myAction.getTemplatePresentation(), ActionManager.getInstance(), 0);
-      myAction.actionPerformed(event);
-    }
-  }
+  protected abstract MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull AnAction action);
 }

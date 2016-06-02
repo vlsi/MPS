@@ -14,6 +14,9 @@ import java.awt.Component;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Collections;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 
 public class RefactoringMenuItemBase extends ActionItemBase {
   protected final TransformationMenuContext _context;
@@ -32,7 +35,7 @@ public class RefactoringMenuItemBase extends ActionItemBase {
 
   @Override
   public boolean canExecute(@NotNull String pattern) {
-    return RefactoringMenuPartBase.isRefactoringApplicableToNode(myRefactoring, _context.getNode());
+    return isRefactoringApplicableToNode(myRefactoring, _context.getNode());
   }
 
   @Override
@@ -41,5 +44,15 @@ public class RefactoringMenuItemBase extends ActionItemBase {
 
     RefactoringContext refactoringContext = RefactoringContext.createRefactoringContext(myRefactoring, Collections.emptyList(), Collections.emptyList(), _context.getNode(), project);
     RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
+  }
+
+  private static boolean isRefactoringApplicableToNode(IRefactoring refactoring, SNode node) {
+    IRefactoringTarget refactoringTarget = refactoring.getRefactoringTarget();
+    if (refactoringTarget.getTarget() != IRefactoringTarget.TargetType.NODE) {
+      return false;
+    }
+
+    Object targetEntity = (refactoringTarget.allowMultipleTargets() ? Collections.singletonList(node) : node);
+    return RefactoringUtil.isApplicable(refactoring, targetEntity);
   }
 }

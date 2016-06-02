@@ -19,6 +19,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase;
 import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
 import jetbrains.mps.intentions.IntentionExecutable;
 
@@ -72,7 +73,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0.Item(context, action);
     }
 
-    private static class Item extends PluginActionMenuPartBase.ItemBase implements SidebarActionItem {
+    private static class Item extends PluginActionMenuItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, AnAction action) {
         super(context, action);
       }

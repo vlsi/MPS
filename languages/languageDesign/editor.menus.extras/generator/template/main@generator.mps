@@ -763,7 +763,7 @@
             <node concept="3Tm6S6" id="20Jj4S2CJrY" role="1B3o_S" />
             <node concept="3clFbS" id="20Jj4S2CJrZ" role="3clF47">
               <node concept="XkiVB" id="20Jj4S2CJs0" role="3cqZAp">
-                <ref role="37wK5l" to="qwun:20Jj4S2CkM2" resolve="PluginActionMenuPartBase.ItemBase" />
+                <ref role="37wK5l" to="qwun:20Jj4S2CkM2" resolve="PluginActionMenuItemBase" />
                 <node concept="37vLTw" id="20Jj4S2CJs1" role="37wK5m">
                   <ref role="3cqZAo" node="20Jj4S2CJs3" resolve="context" />
                 </node>
@@ -807,7 +807,7 @@
           </node>
           <node concept="3Tm6S6" id="20Jj4S2CJsh" role="1B3o_S" />
           <node concept="3uibUv" id="20Jj4S2CPyi" role="1zkMxy">
-            <ref role="3uigEE" to="qwun:20Jj4S2CjsI" resolve="PluginActionMenuPartBase.ItemBase" />
+            <ref role="3uigEE" to="qwun:20Jj4S2CjsI" resolve="PluginActionMenuItemBase" />
           </node>
           <node concept="3uibUv" id="6VgTvK0oxEQ" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
