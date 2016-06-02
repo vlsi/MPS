@@ -31,7 +31,7 @@ public class MoveStaticMethod extends BaseRefactoring {
     refactoringContext.setParameter("refactor", new MoveStaticMethodRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
+        ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).setUsages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
       }
     });
     return true;

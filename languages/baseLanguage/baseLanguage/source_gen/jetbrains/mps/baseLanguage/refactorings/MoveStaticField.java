@@ -31,7 +31,7 @@ public class MoveStaticField extends BaseRefactoring {
     refactoringContext.setParameter("refactor", new MoveStaticFieldRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ((MoveStaticFieldRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
+        ((MoveStaticFieldRefactoring) refactoringContext.getParameter("refactor")).setUsages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
       }
     });
     return true;

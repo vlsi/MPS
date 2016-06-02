@@ -18,7 +18,7 @@ public class BasicMoveRefactoring {
     this.myMoving = moving;
     this.myDestination = destination;
   }
-  public void setUssages(SearchResults<SNode> usages) {
+  public void setUsages(SearchResults<SNode> usages) {
     this.myUsages = usages;
   }
   public SearchResults<SNode> getUsages() {

@@ -584,7 +584,7 @@
                         <ref role="1M0zk5" node="4ttB5pAsz92" resolve="refactor" />
                       </node>
                       <node concept="liA8E" id="4ttB5pAs_7H" role="2OqNvi">
-                        <ref role="37wK5l" to="89o2:4ttB5pAqOO3" resolve="setUssages" />
+                        <ref role="37wK5l" to="89o2:4ttB5pAqOO3" resolve="setUsages" />
                         <node concept="zAVLd" id="3X$1g2Ty9AZ" role="37wK5m">
                           <node concept="zAVLb" id="3X$1g2Ty9B0" role="1C5ry4">
                             <ref role="2$JaeB" to="tpeg:htXK4q1" resolve="FieldUsages" />
@@ -698,7 +698,7 @@
                         <ref role="1M0zk5" node="nfsfDyw8K4" resolve="refactor" />
                       </node>
                       <node concept="liA8E" id="nfsfDyw8Kw" role="2OqNvi">
-                        <ref role="37wK5l" to="89o2:4ttB5pAqOO3" resolve="setUssages" />
+                        <ref role="37wK5l" to="89o2:4ttB5pAqOO3" resolve="setUsages" />
                         <node concept="zAVLd" id="3X$1g2Ty9C1" role="37wK5m">
                           <node concept="zAVLb" id="3X$1g2Ty9C2" role="1C5ry4">
                             <ref role="2$JaeB" to="tpeg:hRek0zv" resolve="ExactMethodUsages" />
