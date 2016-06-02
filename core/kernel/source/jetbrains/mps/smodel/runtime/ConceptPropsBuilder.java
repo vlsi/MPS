@@ -24,7 +24,7 @@ import java.util.Set;
 public class ConceptPropsBuilder {
   private String myHelpUrl;
   private String myShortDescription;
-  private IconHandle myIcon;
+  private IconResource myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
@@ -39,7 +39,7 @@ public class ConceptPropsBuilder {
   }
 
   public ConceptPropsBuilder icon(String icnResId, Class resourceProvider) {
-    myIcon = new IconHandle(icnResId, resourceProvider);
+    myIcon = new IconResource(icnResId, resourceProvider);
     return this;
   }
 

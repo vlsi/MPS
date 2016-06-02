@@ -17,11 +17,11 @@ package jetbrains.mps.smodel.runtime;
 
 import java.io.InputStream;
 
-public class IconHandle {
+public class IconResource {
   private String myIconResId;
   private Class myResourceProvider;
 
-  public IconHandle(String iconResId, Class resourceProvider) {
+  public IconResource(String iconResId, Class resourceProvider) {
     myIconResId = iconResId;
     myResourceProvider = resourceProvider;
   }

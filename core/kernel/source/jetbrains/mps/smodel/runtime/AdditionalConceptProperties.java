@@ -23,11 +23,11 @@ import java.util.Set;
 public class AdditionalConceptProperties {
   private String myHelpUrl;
   private String myShortDescription;
-  private IconHandle myIcon;
+  private IconResource myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
-  public AdditionalConceptProperties(String helpUrl, String shortDescription, IconHandle icon, boolean isDeprecated,
+  public AdditionalConceptProperties(String helpUrl, String shortDescription, IconResource icon, boolean isDeprecated,
       Set<SConceptFeature> deprecatedFeatures) {
     myHelpUrl = helpUrl;
     myShortDescription = shortDescription;
@@ -44,7 +44,7 @@ public class AdditionalConceptProperties {
     return myShortDescription;
   }
 
-  public IconHandle getIcon() {
+  public IconResource getIcon() {
     return myIcon;
   }
 
