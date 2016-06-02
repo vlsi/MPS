@@ -5,17 +5,15 @@ package jetbrains.mps.debug.api.source;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   private final MPSProject myProject;
@@ -24,49 +22,57 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     myProject = mpsProject;
   }
 
+
   @Nullable
-  @Override
-  public NodeSourcePosition getPosition(@Nullable ILocation location) {
+  public NodeSourcePosition getPosition(@Nullable ILocation location, @NotNull AbstractDebugSession session) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
-    SNodeReference node = getSNodePointer(location);
+    SNodeReference node = getSNodePointer(location, session);
     if (node != null) {
       return new NodeSourcePosition(node);
     }
     return null;
   }
+
+  @Nullable
+  protected SNodeReference getSNodePointer(@NotNull ILocation location, @NotNull AbstractDebugSession session) {
+    SNode node = TraceInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    if (node == null) {
+      return null;
+    }
+    return new SNodePointer(node);
+  }
+
+  @Nullable
+  @Override
+  @Deprecated
+  public NodeSourcePosition getPosition(@Nullable ILocation location) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+
   @Nullable
   @Override
   @Deprecated
   public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
     throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
+
   @Nullable
+  @Deprecated
   protected SNodeReference getSNodePointer(@Nullable ILocation location) {
-    if (location == null || location instanceof NullLocation) {
-      return null;
-    }
-    return getSNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
 
   @Nullable
+  @Deprecated
   protected SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
-        if (node == null) {
-          return null;
-        }
-        return new SNodePointer(node);
-      }
-    });
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
 
   /**
    * 
-   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation) } shall be sufficient}
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) } shall be sufficient}
    */
   @Nullable
   @Deprecated
@@ -77,7 +83,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
 
   /**
    * 
-   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(String, String, int) shall be sufficient}
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) shall be sufficient}
    */
   @Nullable
   @Deprecated

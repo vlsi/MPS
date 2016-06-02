@@ -38,7 +38,7 @@ public class PositionProvider implements ProjectComponent {
         }
       });
       if (provider != null) {
-        SourcePosition position = provider.getPosition(location);
+        SourcePosition position = provider.getPosition(location, session);
         if (position != null) {
           return position;
         }

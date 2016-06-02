@@ -4,16 +4,26 @@ package jetbrains.mps.debug.api.source;
 
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public interface IPositionProvider<P extends SourcePosition> {
+
   @Nullable
-  P getPosition(@Nullable ILocation location);
+  P getPosition(@Nullable ILocation location, @NotNull AbstractDebugSession session);
+
   /**
    * 
-   * @deprecated  use {@link jetbrains.mps.debug.api.source.IPositionProvider#getPosition(ILocation) } instead (wrap arguments with {@link jetbrains.mps.debug.api.programState.GenericSourceCodeLocation } as needed)
+   * @deprecated implement {@link jetbrains.mps.debug.api.source.IPositionProvider#getPosition(ILocation, AbstractDebugSession) } instead
+   */
+  @Nullable
+  @Deprecated
+  P getPosition(@Nullable ILocation location);
+
+  /**
+   * 
+   * @deprecated  implement {@link jetbrains.mps.debug.api.source.IPositionProvider#getPosition(ILocation, AbstractDebugSession) } instead (wrap arguments with {@link jetbrains.mps.debug.api.programState.GenericSourceCodeLocation } as needed)
    */
   @Nullable
   @Deprecated

@@ -117,21 +117,26 @@
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103542592">
     <file name="IPositionProvider.java">
-      <node id="7576820355142635290" at="22,0,23,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
-      <node id="7048882195103542598" at="12,0,14,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)null" />
-      <node id="7048882195103545987" at="18,0,22,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)null" />
-      <scope id="7576820355142635290" at="22,0,23,0">
+      <node id="7576820355142635290" at="32,0,33,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
+      <node id="4664028035454251863" at="13,0,15,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;Ljetbrains/mps/debug/api/AbstractDebugSession;)null" />
+      <node id="7048882195103542598" at="20,0,23,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)null" />
+      <node id="7048882195103545987" at="28,0,32,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)null" />
+      <scope id="7576820355142635290" at="32,0,33,0">
         <var name="session" id="7576820355142635295" />
       </scope>
-      <scope id="7048882195103542598" at="12,0,14,0">
+      <scope id="4664028035454251863" at="13,0,15,0">
+        <var name="location" id="4664028035454251867" />
+        <var name="session" id="4664028035454252433" />
+      </scope>
+      <scope id="7048882195103542598" at="20,0,23,0">
         <var name="location" id="7048882195103542607" />
       </scope>
-      <scope id="7048882195103545987" at="18,0,22,0">
+      <scope id="7048882195103545987" at="28,0,32,0">
         <var name="fileName" id="7048882195103546001" />
         <var name="lineNumber" id="7048882195103546004" />
         <var name="unitName" id="7048882195103545992" />
       </scope>
-      <unit id="7048882195103542592" at="11,0,24,0" name="jetbrains.mps.debug.api.source.IPositionProvider" />
+      <unit id="7048882195103542592" at="11,0,34,0" name="jetbrains.mps.debug.api.source.IPositionProvider" />
     </file>
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103545633">
@@ -142,7 +147,7 @@
       <node id="7576820355142721221" at="28,67,29,28" concept="1" />
       <node id="4847853483689754962" at="29,28,30,27" concept="1" />
       <node id="7576820355142673356" at="36,53,37,37" concept="7" />
-      <node id="7576820355142673421" at="40,29,41,65" concept="6" />
+      <node id="7576820355142673421" at="40,29,41,74" concept="6" />
       <node id="7576820355142673457" at="42,31,43,26" concept="7" />
       <node id="7576820355142673463" at="46,5,47,16" concept="7" />
       <node id="4664028035453657529" at="56,144,57,95" concept="7" />
@@ -158,7 +163,7 @@
       <node id="7576820355142721211" at="94,36,95,31" concept="7" />
       <node id="7576820355142722477" at="97,63,98,56" concept="7" />
       <node id="7576820355142673354" at="36,0,39,0" concept="5" trace="accept#(Ljetbrains/mps/debug/api/source/IPositionProvider;)Z" />
-      <node id="7576820355142673430" at="41,65,44,9" concept="4" />
+      <node id="7576820355142673430" at="41,74,44,9" concept="4" />
       <node id="7576820355142674040" at="69,121,72,7" concept="4" />
       <node id="7576820355142721189" at="76,0,79,0" concept="5" trace="projectOpened#()V" />
       <node id="7576820355142721193" at="79,0,82,0" concept="5" trace="projectClosed#()V" />
@@ -244,148 +249,155 @@
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103545922">
     <file name="NodePositionProvider.java">
-      <node id="4847853483689658939" at="21,0,22,0" concept="2" trace="myProject" />
-      <node id="4847853483689658943" at="23,54,24,27" concept="1" />
-      <node id="7048882195103545952" at="30,63,31,18" concept="7" />
-      <node id="7048882195103545954" at="32,5,33,52" concept="6" />
-      <node id="7048882195103545961" at="34,23,35,42" concept="7" />
-      <node id="7048882195103545969" at="36,5,37,16" concept="7" />
-      <node id="4664028035453973809" at="42,109,43,92" concept="10" />
-      <node id="4701043456212939365" at="47,63,48,18" concept="7" />
-      <node id="4701043456212939374" at="49,5,50,101" concept="7" />
-      <node id="4701043456212939410" at="57,39,58,73" concept="6" />
-      <node id="4701043456212939419" at="59,27,60,22" concept="7" />
-      <node id="4701043456212939424" at="61,9,62,38" concept="7" />
-      <node id="4664028035453456874" at="74,54,75,92" concept="10" />
-      <node id="4664028035453324267" at="85,88,86,92" concept="10" />
-      <node id="7576820355142672876" at="90,56,91,16" concept="7" />
-      <node id="7048882195103545924" at="23,0,26,0" concept="0" trace="NodePositionProvider#(Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="7048882195103545943" at="29,71,32,5" concept="4" />
-      <node id="7048882195103545959" at="33,52,36,5" concept="4" />
-      <node id="4701043456212939363" at="46,74,49,5" concept="4" />
-      <node id="4701043456212939417" at="58,73,61,9" concept="4" />
-      <node id="7576820355142672867" at="89,0,93,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
-      <node id="7048882195103546095" at="39,0,45,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/debug/api/source/NodeSourcePosition;" />
-      <node id="4701043456212939474" at="71,0,77,0" concept="5" trace="getNode#(Ljetbrains/mps/debug/api/programState/ILocation;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4701043456212939504" at="82,0,88,0" concept="5" trace="getNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4701043456212939356" at="45,0,52,0" concept="5" trace="getSNodePointer#(Ljetbrains/mps/debug/api/programState/ILocation;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="4701043456212939406" at="56,0,64,0" concept="5" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="4701043456212939398" at="54,126,64,7" concept="7" />
-      <node id="7048882195103545931" at="27,0,39,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/debug/api/source/NodeSourcePosition;" />
-      <node id="4701043456212939386" at="53,0,66,0" concept="5" trace="getSNodePointer#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <scope id="7048882195103545927" at="23,54,24,27" />
-      <scope id="7048882195103545951" at="30,63,31,18" />
-      <scope id="7048882195103545960" at="34,23,35,42" />
-      <scope id="7048882195103546107" at="42,109,43,92" />
-      <scope id="4701043456212939364" at="47,63,48,18" />
-      <scope id="4701043456212939418" at="59,27,60,22" />
-      <scope id="4701043456212939480" at="74,54,75,92" />
-      <scope id="4701043456212939515" at="85,88,86,92" />
-      <scope id="7576820355142672872" at="90,56,91,16" />
-      <scope id="7048882195103545924" at="23,0,26,0">
+      <node id="4847853483689658939" at="19,0,20,0" concept="2" trace="myProject" />
+      <node id="4847853483689658943" at="21,54,22,27" concept="1" />
+      <node id="7048882195103545952" at="28,63,29,18" concept="7" />
+      <node id="7048882195103545954" at="30,5,31,61" concept="6" />
+      <node id="7048882195103545961" at="32,23,33,42" concept="7" />
+      <node id="7048882195103545969" at="34,5,35,16" concept="7" />
+      <node id="4701043456212939410" at="39,112,40,113" concept="6" />
+      <node id="4701043456212939419" at="41,23,42,18" concept="7" />
+      <node id="4701043456212939424" at="43,5,44,34" concept="7" />
+      <node id="4664028035454325134" at="50,71,51,92" concept="10" />
+      <node id="4664028035453973809" at="57,109,58,92" concept="10" />
+      <node id="4664028035454445765" at="63,74,64,92" concept="10" />
+      <node id="4664028035454445489" at="69,126,70,92" concept="10" />
+      <node id="4664028035453456874" at="80,54,81,92" concept="10" />
+      <node id="4664028035453324267" at="91,88,92,92" concept="10" />
+      <node id="7576820355142672876" at="96,56,97,16" concept="7" />
+      <node id="7048882195103545924" at="21,0,24,0" concept="0" trace="NodePositionProvider#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="7048882195103545943" at="27,110,30,5" concept="4" />
+      <node id="7048882195103545959" at="31,61,34,5" concept="4" />
+      <node id="4701043456212939417" at="40,113,43,5" concept="4" />
+      <node id="7576820355142672867" at="95,0,99,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
+      <node id="4701043456212939356" at="61,0,66,0" concept="5" trace="getSNodePointer#(Ljetbrains/mps/debug/api/programState/ILocation;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4701043456212939386" at="67,0,72,0" concept="5" trace="getSNodePointer#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="7048882195103545931" at="47,0,53,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/debug/api/source/NodeSourcePosition;" />
+      <node id="7048882195103546095" at="54,0,60,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/debug/api/source/NodeSourcePosition;" />
+      <node id="4701043456212939474" at="77,0,83,0" concept="5" trace="getNode#(Ljetbrains/mps/debug/api/programState/ILocation;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4701043456212939504" at="88,0,94,0" concept="5" trace="getNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4664028035454346317" at="38,0,46,0" concept="5" trace="getSNodePointer#(Ljetbrains/mps/debug/api/programState/ILocation;Ljetbrains/mps/debug/api/AbstractDebugSession;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4664028035454318804" at="26,0,37,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/debug/api/source/NodeSourcePosition;" />
+      <scope id="7048882195103545927" at="21,54,22,27" />
+      <scope id="7048882195103545951" at="28,63,29,18" />
+      <scope id="7048882195103545960" at="32,23,33,42" />
+      <scope id="4701043456212939418" at="41,23,42,18" />
+      <scope id="7048882195103545938" at="50,71,51,92" />
+      <scope id="7048882195103546107" at="57,109,58,92" />
+      <scope id="4701043456212939362" at="63,74,64,92" />
+      <scope id="4701043456212939397" at="69,126,70,92" />
+      <scope id="4701043456212939480" at="80,54,81,92" />
+      <scope id="4701043456212939515" at="91,88,92,92" />
+      <scope id="7576820355142672872" at="96,56,97,16" />
+      <scope id="7048882195103545924" at="21,0,24,0">
         <var name="mpsProject" id="4847853483689657351" />
       </scope>
-      <scope id="4701043456212939362" at="46,74,50,101" />
-      <scope id="7576820355142672867" at="89,0,93,0">
+      <scope id="7576820355142672867" at="95,0,99,0">
         <var name="session" id="7576820355142672868" />
       </scope>
-      <scope id="4701043456212939409" at="57,39,62,38">
+      <scope id="4664028035454346321" at="39,112,44,34">
         <var name="node" id="4701043456212939411" />
       </scope>
-      <scope id="7048882195103546095" at="39,0,45,0">
-        <var name="fileName" id="7048882195103546099" />
-        <var name="lineNumber" id="7048882195103546102" />
-        <var name="unitName" id="7048882195103546096" />
-      </scope>
-      <scope id="4701043456212939474" at="71,0,77,0">
-        <var name="location" id="4701043456212939475" />
-      </scope>
-      <scope id="4701043456212939504" at="82,0,88,0">
-        <var name="fileName" id="4701043456212939508" />
-        <var name="position" id="4701043456212939511" />
-        <var name="unitName" id="4701043456212939505" />
-      </scope>
-      <scope id="4701043456212939356" at="45,0,52,0">
+      <scope id="4701043456212939356" at="61,0,66,0">
         <var name="location" id="4701043456212939357" />
       </scope>
-      <scope id="7048882195103545938" at="29,71,37,16">
-        <var name="node" id="7048882195103545955" />
-      </scope>
-      <scope id="4701043456212939406" at="56,0,64,0" />
-      <scope id="4701043456212939397" at="54,126,64,7" />
-      <scope id="7048882195103545931" at="27,0,39,0">
-        <var name="location" id="7048882195103545934" />
-      </scope>
-      <scope id="4701043456212939386" at="53,0,66,0">
+      <scope id="4701043456212939386" at="67,0,72,0">
         <var name="fileName" id="4701043456212939390" />
         <var name="position" id="4701043456212939393" />
         <var name="unitName" id="4701043456212939387" />
       </scope>
-      <unit id="4701043456212939404" at="55,79,64,5" name="jetbrains.mps.debug.api.source.NodePositionProvider$1" />
-      <unit id="7048882195103545922" at="20,0,94,0" name="jetbrains.mps.debug.api.source.NodePositionProvider" />
+      <scope id="7048882195103545931" at="47,0,53,0">
+        <var name="location" id="7048882195103545934" />
+      </scope>
+      <scope id="7048882195103546095" at="54,0,60,0">
+        <var name="fileName" id="7048882195103546099" />
+        <var name="lineNumber" id="7048882195103546102" />
+        <var name="unitName" id="7048882195103546096" />
+      </scope>
+      <scope id="4701043456212939474" at="77,0,83,0">
+        <var name="location" id="4701043456212939475" />
+      </scope>
+      <scope id="4701043456212939504" at="88,0,94,0">
+        <var name="fileName" id="4701043456212939508" />
+        <var name="position" id="4701043456212939511" />
+        <var name="unitName" id="4701043456212939505" />
+      </scope>
+      <scope id="4664028035454318815" at="27,110,35,16">
+        <var name="node" id="7048882195103545955" />
+      </scope>
+      <scope id="4664028035454346317" at="38,0,46,0">
+        <var name="location" id="4664028035454357910" />
+        <var name="session" id="4664028035454364567" />
+      </scope>
+      <scope id="4664028035454318804" at="26,0,37,0">
+        <var name="location" id="4664028035454318808" />
+        <var name="session" id="4664028035454318811" />
+      </scope>
+      <unit id="7048882195103545922" at="18,0,100,0" name="jetbrains.mps.debug.api.source.NodePositionProvider" />
     </file>
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103546169">
     <file name="TextPositionProvider.java">
       <node id="7048882195103546281" at="16,0,17,0" concept="2" trace="myProject" />
       <node id="7048882195103546285" at="18,48,19,24" concept="1" />
-      <node id="7048882195103546210" at="24,63,25,18" concept="7" />
-      <node id="7048882195103546226" at="26,5,27,41" concept="6" />
-      <node id="7048882195103546233" at="28,23,29,68" concept="7" />
-      <node id="7048882195103546243" at="30,5,31,16" concept="7" />
-      <node id="7048882195103546261" at="35,109,36,51" concept="6" />
-      <node id="7048882195103546269" at="37,23,38,54" concept="7" />
-      <node id="7048882195103546277" at="39,5,40,16" concept="7" />
-      <node id="4701043456212939435" at="44,63,45,18" concept="7" />
-      <node id="4664028035453984717" at="46,5,47,67" concept="7" />
-      <node id="4701043456212939461" at="50,80,51,64" concept="7" />
-      <node id="7576820355142672863" at="54,56,55,16" concept="7" />
+      <node id="4664028035454567930" at="24,63,25,18" concept="7" />
+      <node id="4664028035454567932" at="26,5,27,41" concept="6" />
+      <node id="4664028035454567939" at="28,23,29,68" concept="7" />
+      <node id="4664028035454567949" at="30,5,31,16" concept="7" />
+      <node id="4664028035454569778" at="35,71,36,92" concept="10" />
+      <node id="4664028035454560618" at="40,109,41,92" concept="10" />
+      <node id="4701043456212939435" at="45,63,46,18" concept="7" />
+      <node id="4664028035453984717" at="47,5,48,67" concept="7" />
+      <node id="4701043456212939461" at="51,80,52,64" concept="7" />
+      <node id="7576820355142672863" at="55,56,56,16" concept="7" />
       <node id="7048882195103546171" at="18,0,21,0" concept="0" trace="TextPositionProvider#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="7048882195103546201" at="23,71,26,5" concept="4" />
-      <node id="7048882195103546231" at="27,41,30,5" concept="4" />
-      <node id="7048882195103546267" at="36,51,39,5" concept="4" />
-      <node id="4701043456212939433" at="43,60,46,5" concept="4" />
-      <node id="4701043456212939458" at="49,0,53,0" concept="5" trace="getFile#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-      <node id="7576820355142672855" at="53,0,57,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
-      <node id="4701043456212939430" at="42,0,49,0" concept="5" trace="getFile#(Ljetbrains/mps/debug/api/programState/ILocation;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-      <node id="7048882195103546186" at="33,0,42,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
-      <node id="7048882195103546176" at="21,0,33,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
+      <node id="4664028035454567921" at="23,110,26,5" concept="4" />
+      <node id="4664028035454567937" at="27,41,30,5" concept="4" />
+      <node id="4701043456212939433" at="44,60,47,5" concept="4" />
+      <node id="4701043456212939458" at="50,0,54,0" concept="5" trace="getFile#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="7576820355142672855" at="54,0,58,0" concept="5" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
+      <node id="7048882195103546176" at="33,0,38,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
+      <node id="7048882195103546186" at="38,0,43,0" concept="5" trace="getPosition#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
+      <node id="4701043456212939430" at="43,0,50,0" concept="5" trace="getFile#(Ljetbrains/mps/debug/api/programState/ILocation;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="4664028035454566660" at="22,0,33,0" concept="5" trace="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
       <scope id="7048882195103546174" at="18,48,19,24" />
-      <scope id="7048882195103546209" at="24,63,25,18" />
-      <scope id="7048882195103546232" at="28,23,29,68" />
-      <scope id="7048882195103546268" at="37,23,38,54" />
-      <scope id="4701043456212939434" at="44,63,45,18" />
-      <scope id="4701043456212939460" at="50,80,51,64" />
-      <scope id="7576820355142672860" at="54,56,55,16" />
+      <scope id="4664028035454567929" at="24,63,25,18" />
+      <scope id="4664028035454567938" at="28,23,29,68" />
+      <scope id="7048882195103546183" at="35,71,36,92" />
+      <scope id="7048882195103546198" at="40,109,41,92" />
+      <scope id="4701043456212939434" at="45,63,46,18" />
+      <scope id="4701043456212939460" at="51,80,52,64" />
+      <scope id="7576820355142672860" at="55,56,56,16" />
       <scope id="7048882195103546171" at="18,0,21,0">
         <var name="project" id="7048882195103546279" />
       </scope>
-      <scope id="4701043456212939432" at="43,60,47,67" />
-      <scope id="4701043456212939458" at="49,0,53,0">
+      <scope id="4701043456212939432" at="44,60,48,67" />
+      <scope id="4701043456212939458" at="50,0,54,0">
         <var name="fileName" id="4701043456212939471" />
         <var name="unitName" id="4701043456212939468" />
       </scope>
-      <scope id="7576820355142672855" at="53,0,57,0">
+      <scope id="7576820355142672855" at="54,0,58,0">
         <var name="session" id="7576820355142672856" />
       </scope>
-      <scope id="7048882195103546198" at="35,109,40,16">
-        <var name="file" id="7048882195103546262" />
+      <scope id="7048882195103546176" at="33,0,38,0">
+        <var name="location" id="7048882195103546179" />
       </scope>
-      <scope id="4701043456212939430" at="42,0,49,0">
-        <var name="location" id="4701043456212939453" />
-      </scope>
-      <scope id="7048882195103546183" at="23,71,31,16">
-        <var name="file" id="7048882195103546227" />
-      </scope>
-      <scope id="7048882195103546186" at="33,0,42,0">
+      <scope id="7048882195103546186" at="38,0,43,0">
         <var name="fileName" id="7048882195103546190" />
         <var name="lineNumber" id="7048882195103546193" />
         <var name="unitName" id="7048882195103546187" />
       </scope>
-      <scope id="7048882195103546176" at="21,0,33,0">
-        <var name="location" id="7048882195103546179" />
+      <scope id="4701043456212939430" at="43,0,50,0">
+        <var name="location" id="4701043456212939453" />
       </scope>
-      <unit id="7048882195103546169" at="15,0,58,0" name="jetbrains.mps.debug.api.source.TextPositionProvider" />
+      <scope id="4664028035454566672" at="23,110,31,16">
+        <var name="file" id="4664028035454567933" />
+      </scope>
+      <scope id="4664028035454566660" at="22,0,33,0">
+        <var name="location" id="4664028035454566664" />
+        <var name="session" id="4664028035454566667" />
+      </scope>
+      <unit id="7048882195103546169" at="15,0,59,0" name="jetbrains.mps.debug.api.source.TextPositionProvider" />
     </file>
   </root>
 </debug-info-v2>
