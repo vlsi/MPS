@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -35,14 +36,29 @@ import org.jetbrains.annotations.Nullable;
 
   @Override
   protected SNodeReference getSNode() {
-    final SNode n = getNodeForBreakpoint(myBreakpoint);
-    return n == null ? null : n.getReference();
+    return getPosition(myBreakpoint).getNode();
   }
 
+  /**
+   * @deprecated though it's technically feasible to resolve SNodeReference from GeneratedSourcePosition.getNode()
+   *             to SNode here using repository of breakpoint.getProject(), it doesn't look right as there's no guarantee I'm inside read
+   *             action here (from 3 uses of the method, BreakpointIconRenderrer is suspicious, others are inside read).
+   *             It's not smart to take read action here (using breakpoint.getProject()) as well, as SNode return value outside of read action
+   *             makes little sense.
+   *             Please revisit uses of the method and fix them to use SNodeReference instead (expose getPosition() then).
+   */
   @Nullable
+  @Deprecated
   public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
+    GeneratedSourcePosition gsp = getPosition(breakpoint);
+    return gsp.getNode() == null ? null : gsp.getNode().resolve(ProjectHelper.getProjectRepository(breakpoint.getProject()));
+  }
+
+  private static GeneratedSourcePosition getPosition(BreakpointWithHighlighter breakpoint) {
     SourcePosition sourcePosition = breakpoint.getSourcePosition();
-    if (sourcePosition == null) return null;
+    if (sourcePosition == null) {
+      return null;
+    }
 
     String className = null;
     PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
@@ -61,7 +77,7 @@ import org.jetbrains.annotations.Nullable;
     if (className == null) {
       return null;
     }
-    return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
+    return GeneratedSourcePosition.fromLocation(breakpoint.getProject(), className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1);
   }
 
   private static PsiClass getTopLevelParentClass(PsiClass psiClass) {

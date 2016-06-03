@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,15 +23,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.NodeTraceInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,11 +48,13 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * some stuff as: node, psi file.
  */
 public class GeneratedSourcePosition {
+  private final SNodeReference myNode;
   private final String myTypeName;
   private final String myFileName;
   private final int myLineNumber;
 
-  public GeneratedSourcePosition(String typeName, String fileName, int lineNumber) {
+  /*package*/ GeneratedSourcePosition(@Nullable SNodeReference nodeRef, String typeName, String fileName, int lineNumber) {
+    myNode = nodeRef;
     myLineNumber = lineNumber;
     myFileName = fileName;
     myTypeName = typeName;
@@ -69,40 +73,13 @@ public class GeneratedSourcePosition {
   }
 
   @Nullable
-  public SNode getNode() {
-    return TraceInfoUtil.getJavaNode(myTypeName, myFileName, myLineNumber);
+  public SNodeReference getNode() {
+    return myNode;
   }
 
   @Nullable
-  public SNodeReference getNodePointer() {
-    // FIXME how to remove ModelAccess here? maybe no need in read action at all?
-    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode node = getNode();
-        if (node == null) {
-          return null;
-        }
-        return new jetbrains.mps.smodel.SNodePointer(node);
-      }
-    });
-  }
-
-  @Nullable
-  public PsiFile getPsiFile(final Project project) {
-    SModelReference reference = new ModelAccessHelper(ProjectHelper.getModelAccess(project)).runReadAction(new Computable<SModelReference>() {
-      @Override
-      public SModelReference compute() {
-        SNode node = getNode();
-        if (node == null) return null;
-        SModel modelDescriptor = node.getModel();
-        return modelDescriptor.getReference();
-      }
-    });
-    if (reference == null) {
-      return null;
-    }
-    return getPsiFile(project, reference, myFileName);
+  public PsiFile getPsiFile(Project project) {
+    return myNode == null ? null : getPsiFile(project, myNode.getModelReference(), myFileName);
   }
 
   @Nullable
@@ -113,7 +90,12 @@ public class GeneratedSourcePosition {
       return null;
     }
 
-    return new GeneratedSourcePosition(nti.getUnitName(), nti.getFileName(), position.getStartLine());
+    return new GeneratedSourcePosition(node.getReference(), nti.getUnitName(), nti.getFileName(), position.getStartLine());
+  }
+
+  public static GeneratedSourcePosition fromLocation(Project project, String unitName, String fileName, int line) {
+    DebugInfo di = new DefaultTraceInfoProvider(ProjectHelper.getProjectRepository(project)).debugInfo(NameUtil.namespaceFromLongName(unitName)).findFirst().get();
+    return new GeneratedSourcePosition(di == null ? null : new BaseLanguageNodeLookup(di).getNodeAt(fileName, line), unitName, fileName, line);
   }
 
 
