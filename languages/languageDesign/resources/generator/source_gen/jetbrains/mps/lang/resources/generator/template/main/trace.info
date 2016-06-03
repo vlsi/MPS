@@ -72,11 +72,11 @@
   </root>
   <root nodeRef="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)/8974276187400288251">
     <file name="QueriesGenerated.java">
-      <node id="6759767305208035935" at="25,108,26,247" concept="1" />
+      <node id="6759767305208035935" at="25,108,26,494" concept="1" />
       <node id="2990235398087431179" at="28,112,29,338" concept="1" />
       <node id="2990235398087273709" at="31,112,32,392" concept="0" />
       <node id="2990235398087273719" at="32,392,33,144" concept="1" />
-      <scope id="6759767305208033199" at="25,108,26,247" />
+      <scope id="6759767305208033199" at="25,108,26,494" />
       <scope id="2990235398087431177" at="28,112,29,338" />
       <scope id="2990235398087273708" at="31,112,33,144">
         <var name="irb" id="2990235398087273710" />
