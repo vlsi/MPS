@@ -76,7 +76,7 @@ public interface ConstraintsDescriptor {
 
   @Nullable
   // by convention inheritance for this methods not works
-  Icon getInstanceIcon(SNode node);
+  IconResource getInstanceIcon(SNode node);
 
   SAbstractConcept getDefaultConcreteConcept();
 

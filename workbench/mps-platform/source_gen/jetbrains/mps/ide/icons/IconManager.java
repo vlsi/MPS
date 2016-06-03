@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.LanguageAspect;
 import javax.swing.Icon;
 import java.awt.Component;
 import java.awt.Graphics;
+
+import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -73,9 +75,9 @@ public final class IconManager {
 
     Icon mainIcon = SNodeOperations.getConcept(node).getIcon();
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      Icon alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
+      IconResource alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
       if (alternativeIcon != null) {
-        mainIcon = alternativeIcon;
+        mainIcon = ConceptIconLoader.getIconFor(alternativeIcon.getResource());
       } else {
         mainIcon = SNodeOperations.getConcept(node).getIcon();
       }
