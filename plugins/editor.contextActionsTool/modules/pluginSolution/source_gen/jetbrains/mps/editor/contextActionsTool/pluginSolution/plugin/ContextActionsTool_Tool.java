@@ -31,7 +31,7 @@ public class ContextActionsTool_Tool extends GeneratedTool {
     }
 
     ContextActionsTool_Tool.this.myComponent = new ToolComponent(tool);
-    ContextActionsTool_Tool.this.myController = new ContextMenuController(mpsProject, ContextActionsTool_Tool.this.myComponent, new SelectionMenuProviderByCellAndConcept(mpsProject.getRepository().getModelAccess(), MenuLocations.CONTEXT_ACTIONS_TOOL));
+    ContextActionsTool_Tool.this.myController = new ToolController(mpsProject, ContextActionsTool_Tool.this.myComponent, new SelectionMenuProviderByCellAndConcept(mpsProject.getRepository().getModelAccess(), MenuLocations.CONTEXT_ACTIONS_TOOL));
 
     ((ToolWindowEx) tool.getToolWindow()).setAdditionalGearActions(ContextActionsTool_Tool.this.createGearActionGroup());
 

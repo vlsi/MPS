@@ -31134,7 +31134,7 @@
         </node>
         <node concept="1SiIV0" id="pUqJj8tAmH" role="3bR37C">
           <node concept="3bR9La" id="pUqJj8tAmI" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
@@ -31149,7 +31149,7 @@
       </node>
       <node concept="3_J27D" id="1JaUSFUm4GD" role="m_cZH">
         <node concept="3Mxwew" id="1JaUSFUm4GE" role="3MwsjC">
-          <property role="3MwjfP" value="editor.contextActions" />
+          <property role="3MwjfP" value="editor.contextActionsTool" />
         </node>
       </node>
       <node concept="3_J27D" id="1JaUSFUm4GF" role="m$_w8">
@@ -31192,6 +31192,9 @@
       </node>
       <node concept="m$_yC" id="1JaUSFUm4GS" role="m$_yJ">
         <ref role="m$_y1" node="4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
+      <node concept="m$f5U" id="EPbpPrikW8" role="m$_yh">
+        <ref role="m$f5T" node="1JaUSFUm4EW" resolve="mps-context-actions-tool" />
       </node>
     </node>
     <node concept="398rNT" id="1JaUSFUm4GT" role="1l3spd">

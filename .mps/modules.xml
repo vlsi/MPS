@@ -192,6 +192,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/jetbrains.mps.editor.contextActionsTool.lang.menus.mpl" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/pluginSolution/jetbrains.mps.editor.contextActionsTool.pluginSolution.msd" folder="workbench.editor.contextActionsTool" />
+      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/testModules/tests/jetbrains.mps.editor.contextActionsTool.tests.msd" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/jetbrains.mps.execution.api.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" folder="workbench.execution" />

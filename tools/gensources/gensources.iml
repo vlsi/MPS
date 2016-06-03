@@ -422,10 +422,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/lang.menus/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/testModules/tests/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/lang.menus/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/lang.menus/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/lang.menus/runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/modules/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/editor.contextActionsTool/testModules/tests/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-api/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-api/languages/common/source_gen" isTestSource="false" />
