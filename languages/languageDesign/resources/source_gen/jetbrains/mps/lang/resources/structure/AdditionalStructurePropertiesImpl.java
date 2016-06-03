@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class AdditionalConceptPropertiesImpl extends BaseAdditionalStructureProperties {
+public class AdditionalStructurePropertiesImpl extends BaseAdditionalStructureProperties {
   private final AdditionalConceptProperties props_Icon = new ConceptPropsBuilder().create();
-  private final AdditionalConceptProperties props_IconBundle = new ConceptPropsBuilder().icon("iconResourceBundle.png", AdditionalConceptPropertiesImpl.class).create();
+  private final AdditionalConceptProperties props_IconBundle = new ConceptPropsBuilder().icon("iconResourceBundle.png", AdditionalStructurePropertiesImpl.class).create();
   private final AdditionalConceptProperties props_IconDeclaration = new ConceptPropsBuilder().create();
   private final AdditionalConceptProperties props_IconExpression = new ConceptPropsBuilder().create();
   private final AdditionalConceptProperties props_IconReference = new ConceptPropsBuilder().create();
@@ -25,7 +25,7 @@ public class AdditionalConceptPropertiesImpl extends BaseAdditionalStructureProp
   public AdditionalConceptProperties getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_5xh3cq_a0i.get(cncpt);
+      Integer preIndex = indices_4qogsf_a0i.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -76,5 +76,5 @@ public class AdditionalConceptPropertiesImpl extends BaseAdditionalStructureProp
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_5xh3cq_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "IconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "IconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "IconExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "IconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "IconResourceExpression"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "Resource"));
+  private static final Map<SAbstractConcept, Integer> indices_4qogsf_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "IconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "IconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "IconExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "IconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "IconResourceExpression"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "Resource"));
 }

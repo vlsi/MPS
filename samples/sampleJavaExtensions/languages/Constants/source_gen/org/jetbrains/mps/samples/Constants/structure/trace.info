@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <root>
+    <file name="AdditionalStructurePropertiesImpl.java">
+      <unit at="14,0,75,0" name="org.jetbrains.mps.samples.Constants.structure.AdditionalStructurePropertiesImpl" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,67,0" name="org.jetbrains.mps.samples.Constants.structure.StructureAspectDescriptor" />
+      <unit at="18,0,66,0" name="org.jetbrains.mps.samples.Constants.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info-v2>

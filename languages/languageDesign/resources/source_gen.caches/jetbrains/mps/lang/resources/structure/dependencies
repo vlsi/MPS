@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.resources.structure.AdditionalConceptPropertiesImpl" file="AdditionalConceptPropertiesImpl.java">
+  <dependency className="jetbrains.mps.lang.resources.structure.AdditionalStructurePropertiesImpl" file="AdditionalStructurePropertiesImpl.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
