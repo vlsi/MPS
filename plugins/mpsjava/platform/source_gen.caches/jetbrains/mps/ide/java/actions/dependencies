@@ -22,21 +22,21 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ConvertAnonymousClass" file="ConvertAnonymousClass.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" file="ConvertAnonymousClass_Action.java">
@@ -67,11 +67,11 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ExtensionDescriptor" file="ExtensionDescriptor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.ConvertAnonymousClass" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ExtractMethod_Action" file="ExtractMethod_Action.java">
@@ -846,7 +846,14 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveRefactoringRunnable" file="MoveRefactoringRunnable.java">
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveStaticFieldExecutable" file="MoveStaticFieldExecutable.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -863,8 +870,8 @@
     <classNode extendsClassName="jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveStaticField_Action" file="MoveStaticField_Action.java">
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -904,8 +911,8 @@
     <classNode extendsClassName="jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" file="MoveStaticMethod_Action.java">
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.MoveStaticMethodExecutable" />
