@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class AdditionalConceptPropertiesImpl extends BaseAdditionalStructureProperties {
   private final AdditionalConceptProperties props_Icon = new ConceptPropsBuilder().create();
-  private final AdditionalConceptProperties props_IconBundle = new ConceptPropsBuilder().create();
+  private final AdditionalConceptProperties props_IconBundle = new ConceptPropsBuilder().icon("iconResourceBundle.png", AdditionalConceptPropertiesImpl.class).create();
   private final AdditionalConceptProperties props_IconDeclaration = new ConceptPropsBuilder().create();
   private final AdditionalConceptProperties props_IconExpression = new ConceptPropsBuilder().create();
   private final AdditionalConceptProperties props_IconReference = new ConceptPropsBuilder().create();
