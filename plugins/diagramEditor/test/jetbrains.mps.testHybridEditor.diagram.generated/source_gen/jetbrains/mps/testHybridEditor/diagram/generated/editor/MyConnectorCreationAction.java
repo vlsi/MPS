@@ -7,6 +7,7 @@ import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -31,7 +32,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myText = "Connector";
-        myIcon = MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance").getIcon();
+        myIcon = IconManager.getIcon(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"));
       }
     });
   }

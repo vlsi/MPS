@@ -60,7 +60,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String myConceptAlias;
   private final String myConceptShortDescription;
   private final String myHelpUrl;
-  private Icon myIcon;
   private final StaticScope myStaticScope;
   private SNodeReference mySourceNodeRef;
   private final Object myLock = "";
@@ -97,8 +96,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String shortDescription,
       String helpUrl,
       StaticScope staticScope,
-      SNodeReference sourceNodeRef,
-      Icon icon) {
+      SNodeReference sourceNodeRef) {
     myVersion = version;
     myId = id;
     myConceptFqName = conceptFqName;
@@ -118,7 +116,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myConceptAlias = conceptAlias;
     myConceptShortDescription = shortDescription;
     myHelpUrl = helpUrl;
-    myIcon = icon;
     myStaticScope = staticScope;
 
     // todo: common with StructureAspectInterpreted to new class!
@@ -299,11 +296,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return myHelpUrl;
-  }
-
-  @Override
-  public Icon getIcon() {
-    return myIcon;
   }
 
   @Nullable

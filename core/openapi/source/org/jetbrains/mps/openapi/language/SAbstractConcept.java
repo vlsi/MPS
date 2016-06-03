@@ -108,9 +108,6 @@ public interface SAbstractConcept extends SNamedElement {
   @NotNull
   String getHelpUrl();
 
-  @Nullable
-  Icon getIcon();
-
   //----------deprecated------------
 
   @Deprecated

@@ -58,8 +58,6 @@ public interface ConceptDescriptor {
 
   String getHelpUrl(); // since 3.0
 
-  Icon getIcon();
-
   @Nullable
   SNodeReference getSourceNode();
 

@@ -29,6 +29,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -127,7 +129,7 @@ public final class CreateFromUsageUtil {
       setExecuteOutsideCommand(false);
       final Presentation tp = getTemplatePresentation();
       tp.setText(concept.getConceptAlias().isEmpty() ? concept.getName() : concept.getConceptAlias());
-      tp.setIcon(concept.getIcon());
+      tp.setIcon(IconManager.getIcon(concept));
     }
 
     @Override

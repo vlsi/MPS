@@ -27,7 +27,6 @@
     <import index="lgza" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -1924,12 +1923,11 @@
               </node>
               <node concept="3clFbF" id="75MLXfcuTfk" role="3cqZAp">
                 <node concept="37vLTI" id="75MLXfcuTfl" role="3clFbG">
-                  <node concept="2OqwBi" id="5vfjF5c9l1V" role="37vLTx">
-                    <node concept="35c_gC" id="5vfjF5c9kmq" role="2Oq$k0">
+                  <node concept="2YIFZM" id="N34cyRDlZi" role="37vLTx">
+                    <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                    <node concept="35c_gC" id="5vfjF5c9kmq" role="37wK5m">
                       <ref role="35c_gD" to="adck:22C1ebGh1km" resolve="ConnectorInstance" />
-                    </node>
-                    <node concept="liA8E" id="5vfjF5c9l_B" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="75MLXfcuTfo" role="37vLTJ">

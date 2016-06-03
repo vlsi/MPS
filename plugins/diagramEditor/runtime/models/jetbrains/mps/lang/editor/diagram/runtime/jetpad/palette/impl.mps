@@ -34,7 +34,6 @@
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -439,15 +438,14 @@
             <node concept="37vLTw" id="5nQpa4sROZL" role="37vLTJ">
               <ref role="3cqZAo" node="5nQpa4sRIUL" resolve="myIcon" />
             </node>
-            <node concept="2OqwBi" id="5vfjF5c9o5U" role="37vLTx">
-              <node concept="2OqwBi" id="5vfjF5c9n$H" role="2Oq$k0">
+            <node concept="2YIFZM" id="N34cyRDk2N" role="37vLTx">
+              <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+              <node concept="2OqwBi" id="5vfjF5c9n$H" role="37wK5m">
                 <node concept="37vLTw" id="5vfjF5c9nlA" role="2Oq$k0">
                   <ref role="3cqZAo" node="6KNGF9hh7e" resolve="childNodeConcept" />
                 </node>
                 <node concept="1rGIog" id="5vfjF5c9nNs" role="2OqNvi" />
-              </node>
-              <node concept="liA8E" id="5vfjF5c9otU" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
               </node>
             </node>
           </node>
@@ -1465,15 +1463,14 @@
             <node concept="37vLTw" id="6P_LPfF1h_G" role="37vLTJ">
               <ref role="3cqZAo" node="6P_LPfF1ees" resolve="myIcon" />
             </node>
-            <node concept="2OqwBi" id="5vfjF5c9pKl" role="37vLTx">
-              <node concept="2OqwBi" id="5vfjF5c9pKm" role="2Oq$k0">
+            <node concept="2YIFZM" id="N34cyRDhqm" role="37vLTx">
+              <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+              <node concept="2OqwBi" id="5vfjF5c9pKm" role="37wK5m">
                 <node concept="37vLTw" id="5vfjF5c9pKn" role="2Oq$k0">
                   <ref role="3cqZAo" node="3NXJmdrw9Y7" resolve="childNodeConcept" />
                 </node>
                 <node concept="1rGIog" id="5vfjF5c9pKo" role="2OqNvi" />
-              </node>
-              <node concept="liA8E" id="5vfjF5c9pKp" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
               </node>
             </node>
           </node>
@@ -2960,8 +2957,10 @@
                       <ref role="3cqZAo" node="5nQpa4sU0Ha" resolve="iconNode" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="5vfjF5c9rr4" role="3K4E3e">
-                    <node concept="2OqwBi" id="5vfjF5c9qzp" role="2Oq$k0">
+                  <node concept="2YIFZM" id="N34cyRDiAd" role="3K4E3e">
+                    <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                    <node concept="2OqwBi" id="5vfjF5c9qzp" role="37wK5m">
                       <node concept="1eOMI4" id="5VcKDTTlXP6" role="2Oq$k0">
                         <node concept="10QFUN" id="5VcKDTTlXP7" role="1eOMHV">
                           <node concept="37vLTw" id="5VcKDTTlXP5" role="10QFUP">
@@ -2973,9 +2972,6 @@
                         </node>
                       </node>
                       <node concept="1rGIog" id="5vfjF5c9qZc" role="2OqNvi" />
-                    </node>
-                    <node concept="liA8E" id="5vfjF5c9rQC" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
                     </node>
                   </node>
                 </node>

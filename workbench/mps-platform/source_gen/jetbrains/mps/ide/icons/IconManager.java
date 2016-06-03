@@ -7,14 +7,14 @@ import jetbrains.mps.smodel.LanguageAspect;
 import javax.swing.Icon;
 import java.awt.Component;
 import java.awt.Graphics;
-
-import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.ConceptIconLoader;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -24,8 +24,13 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
+import jetbrains.mps.smodel.runtime.AdditionalConceptProperties;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -39,11 +44,9 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -73,13 +76,13 @@ public final class IconManager {
       return IdeIcons.UNKNOWN_ICON;
     }
 
-    Icon mainIcon = SNodeOperations.getConcept(node).getIcon();
+    Icon mainIcon = getIcon(SNodeOperations.getConcept(node));
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       IconResource alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
       if (alternativeIcon != null) {
         mainIcon = ConceptIconLoader.getIconFor(alternativeIcon.getResource());
       } else {
-        mainIcon = SNodeOperations.getConcept(node).getIcon();
+        mainIcon = getIcon(SNodeOperations.getConcept(node));
       }
     }
     if (mainIcon == null) {
@@ -110,15 +113,47 @@ public final class IconManager {
     }
     return result;
   }
-  @Deprecated
-  @ToRemove(version = 3.4)
+  private static Map<SAbstractConcept, Icon> ourConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, Icon>());
   public static Icon getIcon(SAbstractConcept concept) {
-    return concept.getIcon();
+    if (!(MapSequence.fromMap(ourConceptToIcon).containsKey(concept))) {
+      Icon icon = getIconForConceptNoCache(concept);
+      MapSequence.fromMap(ourConceptToIcon).put(concept, icon);
+    }
+    return MapSequence.fromMap(ourConceptToIcon).get(concept);
+  }
+  public static Icon getIconForConceptNoCache(SAbstractConcept concept) {
+    SAbstractConceptAdapter current = ((SAbstractConceptAdapter) concept);
+    while (current != null) {
+      Icon icon = getIconForExactConcept(current);
+      if (icon != null) {
+        return icon;
+      }
+      current = ((current instanceof SConceptAdapter) ? ((SConceptAdapter) ((SConceptAdapter) current).getSuperConcept()) : null);
+    }
+
+    // compatibility code, can be removed after 3.4 
+    SNode dn = concept.getDeclarationNode();
+    if (dn == null) {
+      return null;
+    }
+    return ConceptIconLoader.getIconForConcept(dn);
+  }
+
+  private static Icon getIconForExactConcept(SAbstractConcept concept) {
+    AdditionalConceptProperties props = ConceptRegistry.getInstance().getConceptProperties(concept);
+    if (props == null) {
+      return null;
+    }
+    IconResource icn = props.getIcon();
+    if (icn == null) {
+      return null;
+    }
+    return ConceptIconLoader.getIconFor(icn.getResource());
   }
   @Deprecated
   @ToRemove(version = 3.4)
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    return MetaAdapterFactoryByName.getConcept(conceptFQName).getIcon();
+    return getIcon(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";

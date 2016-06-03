@@ -208,11 +208,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     return "";
   }
 
-  @Override
-  public Icon getIcon() {
-    return null;
-  }
-
   @Nullable
   @Override
   public SNodeReference getSourceNode() {

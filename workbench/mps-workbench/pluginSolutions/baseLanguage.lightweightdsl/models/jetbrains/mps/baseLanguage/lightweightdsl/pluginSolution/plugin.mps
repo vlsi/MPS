@@ -58,8 +58,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
         <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
@@ -1057,15 +1057,14 @@
             </node>
             <node concept="3clFbF" id="5vfjF5cdS8_" role="3cqZAp">
               <node concept="37vLTI" id="5vfjF5cdSet" role="3clFbG">
-                <node concept="2OqwBi" id="5vfjF5cdTvA" role="37vLTx">
-                  <node concept="2OqwBi" id="5vfjF5cdSri" role="2Oq$k0">
+                <node concept="2YIFZM" id="N34cyRD9SL" role="37vLTx">
+                  <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+                  <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                  <node concept="2OqwBi" id="5vfjF5cdSri" role="37wK5m">
                     <node concept="37vLTw" id="5vfjF5cdSgr" role="2Oq$k0">
                       <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
                     </node>
                     <node concept="1rGIog" id="5vfjF5cdSYY" role="2OqNvi" />
-                  </node>
-                  <node concept="liA8E" id="5vfjF5cdTZ0" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="5vfjF5cdS8$" role="37vLTJ">
@@ -1078,16 +1077,15 @@
             <node concept="3clFbS" id="5u1dFJQICbZ" role="9aQI4">
               <node concept="3clFbF" id="5vfjF5cdQdm" role="3cqZAp">
                 <node concept="37vLTI" id="5vfjF5cdQhZ" role="3clFbG">
-                  <node concept="2OqwBi" id="5vfjF5cdQFO" role="37vLTx">
-                    <node concept="35c_gC" id="5vfjF5cdQjU" role="2Oq$k0">
-                      <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
-                    </node>
-                    <node concept="liA8E" id="5vfjF5cdRMV" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getIcon():javax.swing.Icon" resolve="getIcon" />
-                    </node>
-                  </node>
                   <node concept="37vLTw" id="5vfjF5cdQdk" role="37vLTJ">
                     <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
+                  </node>
+                  <node concept="2YIFZM" id="N34cyRD9L2" role="37vLTx">
+                    <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                    <node concept="35c_gC" id="5vfjF5cdQjU" role="37wK5m">
+                      <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    </node>
                   </node>
                 </node>
               </node>

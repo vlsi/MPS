@@ -31,7 +31,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
     myNode = node;
 
     SConcept concept = myNode.getConcept();
-    setIcon(concept.getIcon());
+    setIcon(IconManager.getIcon(concept));
     setNodeIdentifier(concept.getName());
     final SNode conceptDecl = concept.getDeclarationNode();
     myConceptDeclaration = conceptDecl == null ? null : conceptDecl.getReference();
