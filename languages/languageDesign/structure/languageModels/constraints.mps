@@ -33,10 +33,10 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
+        <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -484,13 +484,13 @@
                 <ref role="3TsBF5" to="tpce:fX9Ktp8" resolve="rootable" />
               </node>
             </node>
-            <node concept="1QGGTA" id="1fdcuoJ10dv" role="3K4E3e">
-              <node concept="1QGGSu" id="1fdcuoJ10dx" role="1QGGTw">
+            <node concept="2SwGe0" id="14excHa39PN" role="3K4E3e">
+              <node concept="1QGGSu" id="1fdcuoJ10dx" role="2SwzYu">
                 <property role="1QGGTI" value="${module}/icons/rootableConcept.png" />
               </node>
             </node>
-            <node concept="1QGGTA" id="1fdcuoJ11xO" role="3K4GZi">
-              <node concept="1QGGSu" id="1fdcuoJ11xP" role="1QGGTw">
+            <node concept="2SwGe0" id="14excHa39Yb" role="3K4GZi">
+              <node concept="1QGGSu" id="1fdcuoJ11xP" role="2SwzYu">
                 <property role="1QGGTI" value="${module}/icons/structure.png" />
               </node>
             </node>
