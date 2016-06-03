@@ -928,8 +928,8 @@
       <property role="TrG5h" value="getInstanceIcon" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="1fdcuoIZuqV" role="1B3o_S" />
-      <node concept="3uibUv" id="1fdcuoIZJ9v" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      <node concept="3uibUv" id="14excHa3ZVk" role="3clF45">
+        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
       </node>
       <node concept="37vLTG" id="1fdcuoIZuqX" role="3clF46">
         <property role="TrG5h" value="node" />
