@@ -54,12 +54,12 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
   public void invoke(@NotNull Project project, @NotNull List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
     final SNode target = nodes.get(0);
-    getRefactoringExecutable().execute(mpsProject, target, new MyMoveRefactoringRunnable(new MovetStaticMemberRefactoring(), target, mpsProject));
+    getRefactoringExecutable().execute(mpsProject, target, new MyMoveRefactoringRunnable(new MoveStaticMemberRefactoring(), target, mpsProject));
   }
 
-  class MovetStaticMemberRefactoring extends PsiAwareRefactoring {
+  class MoveStaticMemberRefactoring extends PsiAwareRefactoring {
 
-    public MovetStaticMemberRefactoring() {
+    public MoveStaticMemberRefactoring() {
       super(RefactoringUtil.getRefactoringByClassName(getRefactoringClassName()));
     }
 
