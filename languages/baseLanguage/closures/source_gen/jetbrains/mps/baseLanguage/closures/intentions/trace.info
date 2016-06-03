@@ -373,15 +373,10 @@
       <node id="1235748072133" at="43,0,47,0" concept="6" trace="isSurroundWith#()Z" />
       <node id="1235748072133" at="56,0,60,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="1235748072133" at="65,0,69,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-      <node id="1235748173357" at="81,5,85,5" concept="0" />
-      <node id="1235748173357" at="81,5,85,5" concept="0" />
       <node id="1235748072133" at="60,0,65,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1235748072133" at="47,0,53,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1235748173357" at="75,253,81,5" concept="0" />
-      <node id="1235748173357" at="75,253,81,5" concept="0" />
       <node id="1235748072133" at="33,0,40,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-      <node id="1235748173357" at="74,30,85,5" concept="0" />
-      <node id="1235748173357" at="74,30,85,5" concept="0" />
       <node id="1235748173357" at="70,0,88,0" concept="9" trace="_quotation_createNode_7ste6_a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1235748072133" at="54,38,54,38" />
       <scope id="1235748072133" at="26,65,27,326" />
@@ -418,7 +413,6 @@
       <scope id="1235748173357" at="76,5,80,7">
         <var name="nodes" id="1235748173357" />
       </scope>
-      <scope id="1235748173357" at="81,5,85,5" />
       <scope id="1235748072133" at="60,0,65,0">
         <var name="editorContext" id="1235748072133" />
         <var name="node" id="1235748072133" />
@@ -427,12 +421,10 @@
         <var name="context" id="1235748072133" />
         <var name="node" id="1235748072133" />
       </scope>
-      <scope id="1235748173357" at="75,253,81,5" />
       <scope id="1235748072133" at="33,0,40,0">
         <var name="editorContext" id="1235748072133" />
         <var name="node" id="1235748072133" />
       </scope>
-      <scope id="1235748173357" at="74,30,85,5" />
       <scope id="1235748173357" at="70,99,86,24">
         <var name="facade" id="1235748173357" />
         <var name="quotedNode_3" id="1235748173357" />

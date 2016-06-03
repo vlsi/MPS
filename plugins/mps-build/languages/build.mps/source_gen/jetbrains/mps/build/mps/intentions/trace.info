@@ -53,9 +53,7 @@
       <node id="1753793013241722025" at="46,0,49,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1753793013241722025" at="53,99,56,5" concept="5" />
       <node id="9200313594506257068" at="77,40,80,11" concept="5" />
-      <node id="5780287594867850303" at="83,46,86,13" concept="0" />
       <node id="5780287594867850303" at="83,46,86,13" concept="5" />
-      <node id="2342048759136061910" at="86,13,89,13" concept="0" />
       <node id="2342048759136061910" at="86,13,89,13" concept="5" />
       <node id="1753793013241722025" at="35,0,39,0" concept="6" trace="getPresentation#()Ljava/lang/String;" />
       <node id="1753793013241722025" at="49,0,53,0" concept="6" trace="isSurroundWith#()Z" />
@@ -86,8 +84,6 @@
         <var name="editorContext" id="1753793013241722025" />
         <var name="node" id="1753793013241722025" />
       </scope>
-      <scope id="5780287594867850303" at="83,46,86,13" />
-      <scope id="2342048759136061910" at="86,13,89,13" />
       <scope id="1753793013241722025" at="35,0,39,0" />
       <scope id="1753793013241722025" at="40,84,44,16" />
       <scope id="1753793013241722025" at="49,0,53,0" />

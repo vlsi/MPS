@@ -22,7 +22,6 @@
       <node id="6628579460233872871" at="34,9,35,62" concept="5" />
       <node id="6628579460233872871" at="35,62,36,393" concept="5" />
       <node id="6628579460233842869" at="41,50,42,141" concept="6" />
-      <node id="6628579460233842869" at="44,68,45,102" concept="0" />
       <node id="6628579460233842869" at="44,68,45,102" concept="6" />
       <node id="6628579460233842869" at="47,30,48,17" concept="6" />
       <node id="6628579460233842869" at="24,0,26,0" concept="1" trace="check_Counter_NonTypesystemRule#()V" />

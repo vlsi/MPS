@@ -1018,11 +1018,9 @@
       <node id="3575782568432722925" at="194,96,197,7" concept="8" />
       <node id="3575782568432722940" at="203,0,206,0" concept="2" trace="ClassMessage#(Ljava/lang/String;)V" />
       <node id="3575782568432723019" at="224,0,227,0" concept="2" trace="MethodMessage#(Ljava/lang/String;)V" />
-      <node id="3575782568432723113" at="260,31,263,9" concept="0" />
       <node id="3575782568432723113" at="260,31,263,9" concept="8" />
       <node id="3575782568432723213" at="281,60,284,15" concept="8" />
       <node id="3575782568432723224" at="286,0,289,0" concept="9" trace="accept#(Lcom/intellij/openapi/util/Key;)Z" />
-      <node id="3575782568432723279" at="297,35,300,13" concept="0" />
       <node id="3575782568432723279" at="297,35,300,13" concept="8" />
       <node id="3575782568432723532" at="328,0,331,0" concept="15" trace="neq_r62oz9_a0a0a11#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="3575782568432723535" at="331,0,334,0" concept="15" trace="neq_r62oz9_a0a0a11_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -1187,7 +1185,6 @@
         <var name="e" id="3575782568432723110" />
       </scope>
       <scope id="3575782568432723112" at="260,31,263,9" />
-      <scope id="3575782568432723113" at="260,31,263,9" />
       <scope id="3575782568432723224" at="286,0,289,0">
         <var name="it" id="3575782568432723224" />
       </scope>
@@ -1195,7 +1192,6 @@
         <var name="e" id="3575782568432723276" />
       </scope>
       <scope id="3575782568432723278" at="297,35,300,13" />
-      <scope id="3575782568432723279" at="297,35,300,13" />
       <scope id="3575782568432723532" at="328,0,331,0">
         <var name="a" id="3575782568432723532" />
         <var name="b" id="3575782568432723532" />

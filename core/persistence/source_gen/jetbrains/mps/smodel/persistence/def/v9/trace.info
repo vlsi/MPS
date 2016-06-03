@@ -991,9 +991,7 @@
       <node id="7167172773708891006" at="111,0,113,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="7167172773708891006" at="128,0,130,0" concept="7" trace="validate#(Ljava/lang/Object;)V" />
       <node id="7167172773708891006" at="132,0,134,0" concept="1" trace="ModelElementHandler#()V" />
-      <node id="7167172773708891006" at="153,7,155,28" concept="0" />
       <node id="7167172773708891006" at="163,0,165,0" concept="1" trace="RegistryElementHandler#()V" />
-      <node id="7167172773708891006" at="210,7,212,28" concept="0" />
       <node id="7167172773708891006" at="33,0,36,0" concept="1" trace="AnnotationInfoReader9Handler#(Ljetbrains/mps/smodel/persistence/def/v9/IdInfoReadHelper;)V" />
       <node id="7167172773708891006" at="36,0,39,0" concept="7" trace="getResult#()Ljava/util/List;" />
       <node id="7167172773708891006" at="46,162,49,5" concept="6" />
@@ -1124,7 +1122,6 @@
       <scope id="7167172773708891006" at="132,0,134,0" />
       <scope id="7167172773708891006" at="135,84,137,55" />
       <scope id="7167172773708891006" at="141,39,143,31" />
-      <scope id="7167172773708891006" at="153,7,155,28" />
       <scope id="7167172773708891006" at="157,105,159,45">
         <var name="child" id="7167172773708891006" />
       </scope>
@@ -1135,7 +1132,6 @@
       <scope id="7167172773708891006" at="197,73,199,18" />
       <scope id="7167172773708891006" at="203,39,205,40" />
       <scope id="7167172773708891006" at="207,40,209,43" />
-      <scope id="7167172773708891006" at="210,7,212,28" />
       <scope id="7167172773708891006" at="220,73,222,18" />
       <scope id="7167172773708891006" at="230,73,232,18" />
       <scope id="7167172773708891006" at="295,105,297,45">

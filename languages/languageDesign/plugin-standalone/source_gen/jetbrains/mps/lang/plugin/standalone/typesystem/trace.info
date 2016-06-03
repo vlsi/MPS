@@ -16,7 +16,6 @@
     <file name="Typeof_ProjectPluginType_SubtypingRule.java">
       <node id="481983775135178861" at="19,120,20,47" concept="5" />
       <node id="481983775135178859" at="22,50,23,171" concept="5" />
-      <node id="481983775135178859" at="25,68,26,102" concept="0" />
       <node id="481983775135178859" at="25,68,26,102" concept="5" />
       <node id="481983775135178859" at="28,27,29,17" concept="5" />
       <node id="481983775135178862" at="31,60,32,63" concept="4" />
@@ -25,8 +24,6 @@
       <node id="481983775135178862" at="34,227,35,481" concept="2" />
       <node id="481983775135178862" at="35,481,36,24" concept="5" />
       <node id="481983775135178859" at="17,0,19,0" concept="1" trace="Typeof_ProjectPluginType_SubtypingRule#()V" />
-      <node id="481983775135178862" at="33,30,35,481" concept="0" />
-      <node id="481983775135178862" at="33,30,35,481" concept="0" />
       <node id="481983775135178859" at="19,0,22,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178859" at="22,0,25,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="481983775135178859" at="25,0,28,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -38,7 +35,6 @@
       <scope id="481983775135178859" at="25,68,26,102" />
       <scope id="481983775135178859" at="28,27,29,17" />
       <scope id="481983775135178859" at="17,0,19,0" />
-      <scope id="481983775135178862" at="33,30,35,481" />
       <scope id="481983775135178859" at="19,0,22,0">
         <var name="pluginType" id="481983775135178859" />
         <var name="status" id="481983775135178859" />
@@ -61,7 +57,6 @@
     <file name="Typeof_ApplicationPluginType_SubtypingRule.java">
       <node id="481983775135178867" at="19,137,20,47" concept="5" />
       <node id="481983775135178865" at="22,50,23,175" concept="5" />
-      <node id="481983775135178865" at="25,68,26,102" concept="0" />
       <node id="481983775135178865" at="25,68,26,102" concept="5" />
       <node id="481983775135178865" at="28,27,29,17" concept="5" />
       <node id="481983775135178868" at="31,60,32,63" concept="4" />
@@ -70,8 +65,6 @@
       <node id="481983775135178868" at="34,227,35,485" concept="2" />
       <node id="481983775135178868" at="35,485,36,24" concept="5" />
       <node id="481983775135178865" at="17,0,19,0" concept="1" trace="Typeof_ApplicationPluginType_SubtypingRule#()V" />
-      <node id="481983775135178868" at="33,30,35,485" concept="0" />
-      <node id="481983775135178868" at="33,30,35,485" concept="0" />
       <node id="481983775135178865" at="19,0,22,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178865" at="22,0,25,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="481983775135178865" at="25,0,28,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -83,7 +76,6 @@
       <scope id="481983775135178865" at="25,68,26,102" />
       <scope id="481983775135178865" at="28,27,29,17" />
       <scope id="481983775135178865" at="17,0,19,0" />
-      <scope id="481983775135178868" at="33,30,35,485" />
       <scope id="481983775135178865" at="19,0,22,0">
         <var name="customApplicationPluginType" id="481983775135178865" />
         <var name="status" id="481983775135178865" />
@@ -108,7 +100,6 @@
       <node id="681855071694758173" at="21,51,22,212" concept="4" />
       <node id="681855071694758173" at="22,212,23,477" concept="2" />
       <node id="681855071694758171" at="26,50,27,179" concept="5" />
-      <node id="681855071694758171" at="29,68,30,102" concept="0" />
       <node id="681855071694758171" at="29,68,30,102" concept="5" />
       <node id="681855071694758171" at="32,30,33,17" concept="5" />
       <node id="681855071694758171" at="17,0,19,0" concept="1" trace="typeof_GetToolInProjectOperation_InferenceRule#()V" />
@@ -146,7 +137,6 @@
       <node id="681855071694758186" at="21,51,22,212" concept="4" />
       <node id="681855071694758186" at="22,212,23,493" concept="2" />
       <node id="681855071694758184" at="26,50,27,195" concept="5" />
-      <node id="681855071694758184" at="29,68,30,102" concept="0" />
       <node id="681855071694758184" at="29,68,30,102" concept="5" />
       <node id="681855071694758184" at="32,30,33,17" concept="5" />
       <node id="681855071694758184" at="17,0,19,0" concept="1" trace="typeof_GetPreferencesComponentInProjectOperation_InferenceRule#()V" />

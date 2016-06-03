@@ -107,9 +107,7 @@
       <node id="5145867626676112766" at="77,0,80,0" concept="7" trace="projectOpened#()V" />
       <node id="5145867626676112770" at="81,0,84,0" concept="7" trace="projectClosed#()V" />
       <node id="5145867626676112777" at="85,39,88,5" concept="6" />
-      <node id="5138467354513155905" at="112,42,115,15" concept="1" />
       <node id="5138467354513155905" at="112,42,115,15" concept="6" />
-      <node id="5138467354513155896" at="117,55,120,15" concept="1" />
       <node id="5138467354513155896" at="117,55,120,15" concept="6" />
       <node id="5138467354513078419" at="130,0,133,0" concept="7" trace="clearAllRunConfigurations#()V" />
       <node id="4426601056068794229" at="139,0,142,0" concept="7" trace="accept#(Lcom/intellij/execution/configurations/RunConfiguration;)Z" />
@@ -118,9 +116,7 @@
       <node id="5145867626676113015" at="161,0,164,0" concept="7" trace="getRunManager#()Lcom/intellij/execution/impl/RunManagerImpl;" />
       <node id="5145867626676113024" at="165,0,168,0" concept="7" trace="getSharedConfigurationManager#()Lcom/intellij/execution/impl/ProjectRunConfigurationManager;" />
       <node id="778004717327684279" at="192,0,195,0" concept="12" trace="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/execution/impl/configurations/RunConfigurationsStateManager;" />
-      <node id="8565799187151772433" at="209,29,212,9" concept="1" />
       <node id="8565799187151772433" at="209,29,212,9" concept="6" />
-      <node id="8565799187151772462" at="221,29,224,9" concept="1" />
       <node id="8565799187151772462" at="221,29,224,9" concept="6" />
       <node id="5145867626676112756" at="50,0,54,0" concept="2" trace="RunConfigurationsStateManager#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/plugins/projectplugins/ProjectPluginManager;)V" />
       <node id="1667993328519773933" at="55,0,59,0" concept="7" trace="afterPluginsLoaded#(Ljava/util/List;)V" />
@@ -176,9 +172,7 @@
       <scope id="5145867626676112766" at="77,0,80,0" />
       <scope id="5145867626676112770" at="81,0,84,0" />
       <scope id="5138467354513155904" at="112,42,115,15" />
-      <scope id="5138467354513155905" at="112,42,115,15" />
       <scope id="5138467354513155895" at="117,55,120,15" />
-      <scope id="5138467354513155896" at="117,55,120,15" />
       <scope id="5138467354513078419" at="130,0,133,0" />
       <scope id="4426601056068794229" at="139,0,142,0">
         <var name="it" id="4426601056068794229" />
@@ -195,13 +189,11 @@
         <var name="e" id="5138467354512925584" />
       </scope>
       <scope id="5138467354512925583" at="209,29,212,9" />
-      <scope id="8565799187151772433" at="209,29,212,9" />
       <scope id="5138467354512914807" at="217,11,220,67" />
       <scope id="5138467354512914802" at="221,0,224,9">
         <var name="e" id="5138467354512914804" />
       </scope>
       <scope id="5138467354512914803" at="221,29,224,9" />
-      <scope id="8565799187151772462" at="221,29,224,9" />
       <scope id="5145867626676112756" at="50,0,54,0">
         <var name="pluginManager" id="1667993328519712446" />
         <var name="project" id="5145867626676112759" />

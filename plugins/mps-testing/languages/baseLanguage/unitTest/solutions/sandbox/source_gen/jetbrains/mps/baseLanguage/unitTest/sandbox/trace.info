@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -11,9 +10,9 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/2213297802761044209">
     <file name="AbstractTestClass.java">
-      <node id="2213297802761063394" at="11,26,12,35" concept="2" />
-      <node id="2213297802761044211" at="9,0,11,0" concept="1" trace="AbstractTestClass#()V" />
-      <node id="2213297802761063388" at="11,0,14,0" concept="4" trace="testtest#()V" />
+      <node id="2213297802761063394" at="11,26,12,35" concept="1" />
+      <node id="2213297802761044211" at="9,0,11,0" concept="0" trace="AbstractTestClass#()V" />
+      <node id="2213297802761063388" at="11,0,14,0" concept="3" trace="testtest#()V" />
       <scope id="2213297802761044214" at="9,30,9,30" />
       <scope id="2213297802761063391" at="11,26,12,35" />
       <scope id="2213297802761044211" at="9,0,11,0" />
@@ -23,9 +22,9 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/2213297802761100201">
     <file name="AbstractTest4Class.java">
-      <node id="2213297802761100212" at="12,29,13,41" concept="2" />
-      <node id="2213297802761100203" at="9,0,11,0" concept="1" trace="AbstractTest4Class#()V" />
-      <node id="2213297802761100207" at="11,0,15,0" concept="4" trace="testMethod4#()V" />
+      <node id="2213297802761100212" at="12,29,13,41" concept="1" />
+      <node id="2213297802761100203" at="9,0,11,0" concept="0" trace="AbstractTest4Class#()V" />
+      <node id="2213297802761100207" at="11,0,15,0" concept="3" trace="testMethod4#()V" />
       <scope id="2213297802761100206" at="9,31,9,31" />
       <scope id="2213297802761100210" at="12,29,13,41" />
       <scope id="2213297802761100203" at="9,0,11,0" />
@@ -35,26 +34,24 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/3669442855016276711">
     <file name="Test_Test.java">
-      <node id="3561282099138168649" at="12,30,13,24" concept="2" />
-      <node id="3669442855016276722" at="14,5,15,30" concept="2" />
-      <node id="8243879142738608126" at="17,45,18,28" concept="2" />
-      <node id="8243879142738608069" at="20,23,21,39" concept="2" />
-      <node id="8243879142738608088" at="23,26,24,42" concept="2" />
-      <node id="3669442855016276711" at="28,0,29,0" concept="5" trace="LOG" />
-      <node id="3669442855016276713" at="26,0,28,0" concept="1" trace="Test_Test#()V" />
-      <node id="3561282099138168649" at="11,45,14,5" concept="0" />
-      <node id="3561282099138168649" at="11,45,14,5" concept="3" />
-      <node id="8243879142738608120" at="17,0,20,0" concept="4" trace="test_test2#()V" />
-      <node id="3669442855016276711" at="20,0,23,0" concept="4" trace="setUp#()V" />
-      <node id="3669442855016276711" at="23,0,26,0" concept="4" trace="tearDown#()V" />
-      <node id="3669442855016276718" at="11,0,17,0" concept="4" trace="test_test1#()V" />
+      <node id="3561282099138168649" at="12,30,13,24" concept="1" />
+      <node id="3669442855016276722" at="14,5,15,30" concept="1" />
+      <node id="8243879142738608126" at="17,45,18,28" concept="1" />
+      <node id="8243879142738608069" at="20,23,21,39" concept="1" />
+      <node id="8243879142738608088" at="23,26,24,42" concept="1" />
+      <node id="3669442855016276711" at="28,0,29,0" concept="4" trace="LOG" />
+      <node id="3669442855016276713" at="26,0,28,0" concept="0" trace="Test_Test#()V" />
+      <node id="3561282099138168649" at="11,45,14,5" concept="2" />
+      <node id="8243879142738608120" at="17,0,20,0" concept="3" trace="test_test2#()V" />
+      <node id="3669442855016276711" at="20,0,23,0" concept="3" trace="setUp#()V" />
+      <node id="3669442855016276711" at="23,0,26,0" concept="3" trace="tearDown#()V" />
+      <node id="3669442855016276718" at="11,0,17,0" concept="3" trace="test_test1#()V" />
       <scope id="3669442855016276716" at="26,22,26,22" />
       <scope id="3561282099138168649" at="12,30,13,24" />
       <scope id="8243879142738608123" at="17,45,18,28" />
       <scope id="8243879142738651513" at="20,23,21,39" />
       <scope id="8243879142738651515" at="23,26,24,42" />
       <scope id="3669442855016276713" at="26,0,28,0" />
-      <scope id="3561282099138168649" at="11,45,14,5" />
       <scope id="8243879142738608120" at="17,0,20,0" />
       <scope id="3669442855016276711" at="20,0,23,0" />
       <scope id="3669442855016276711" at="23,0,26,0" />
@@ -65,10 +62,10 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/3669442855016277665">
     <file name="Test3.java">
-      <node id="2678767641691661448" at="10,26,11,30" concept="2" />
-      <node id="4268859740513510653" at="11,30,12,30" concept="2" />
-      <node id="3669442855016277667" at="8,0,10,0" concept="1" trace="Test3#()V" />
-      <node id="3669442855016278294" at="10,0,14,0" concept="4" trace="testBlah#()V" />
+      <node id="2678767641691661448" at="10,26,11,30" concept="1" />
+      <node id="4268859740513510653" at="11,30,12,30" concept="1" />
+      <node id="3669442855016277667" at="8,0,10,0" concept="0" trace="Test3#()V" />
+      <node id="3669442855016278294" at="10,0,14,0" concept="3" trace="testBlah#()V" />
       <scope id="3669442855016277670" at="8,18,8,18" />
       <scope id="3669442855016277667" at="8,0,10,0" />
       <scope id="3669442855016278297" at="10,26,12,30" />
@@ -78,14 +75,14 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/4347343044614079991">
     <file name="Test4.java">
-      <node id="4347343044614080007" at="15,24,16,29" concept="2" />
-      <node id="4347343044614080016" at="19,25,20,30" concept="2" />
-      <node id="4268859740513510677" at="20,30,21,36" concept="8" />
-      <node id="8024509436353585238" at="25,25,26,30" concept="2" />
-      <node id="4347343044614079993" at="12,0,14,0" concept="1" trace="Test4#()V" />
-      <node id="4347343044614080001" at="14,0,18,0" concept="4" trace="method#()V" />
-      <node id="4347343044614080011" at="18,0,23,0" concept="4" trace="method2#()V" />
-      <node id="8024509436353585232" at="23,0,28,0" concept="4" trace="method3#()V" />
+      <node id="4347343044614080007" at="15,24,16,29" concept="1" />
+      <node id="4347343044614080016" at="19,25,20,30" concept="1" />
+      <node id="4268859740513510677" at="20,30,21,36" concept="7" />
+      <node id="8024509436353585238" at="25,25,26,30" concept="1" />
+      <node id="4347343044614079993" at="12,0,14,0" concept="0" trace="Test4#()V" />
+      <node id="4347343044614080001" at="14,0,18,0" concept="3" trace="method#()V" />
+      <node id="4347343044614080011" at="18,0,23,0" concept="3" trace="method2#()V" />
+      <node id="8024509436353585232" at="23,0,28,0" concept="3" trace="method3#()V" />
       <scope id="4347343044614079996" at="12,18,12,18" />
       <scope id="4347343044614080004" at="15,24,16,29" />
       <scope id="8024509436353585235" at="25,25,26,30" />
@@ -99,9 +96,9 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/6829399386646795190">
     <file name="TestMain.java">
-      <node id="6829399386646795730" at="9,42,10,43" concept="2" />
-      <node id="6829399386646795192" at="7,0,9,0" concept="1" trace="TestMain#()V" />
-      <node id="6829399386646795723" at="9,0,12,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="6829399386646795730" at="9,42,10,43" concept="1" />
+      <node id="6829399386646795192" at="7,0,9,0" concept="0" trace="TestMain#()V" />
+      <node id="6829399386646795723" at="9,0,12,0" concept="5" trace="main#([Ljava/lang/String;)V" />
       <scope id="6829399386646795195" at="7,21,7,21" />
       <scope id="6829399386646795729" at="9,42,10,43" />
       <scope id="6829399386646795192" at="7,0,9,0" />
@@ -113,11 +110,11 @@
   </root>
   <root nodeRef="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)/8923434991440662525">
     <file name="SimpleRunner.java">
-      <node id="8923434991440664338" at="11,63,12,17" concept="7" />
-      <node id="8923434991440664359" at="15,73,16,44" concept="2" />
-      <node id="8923434991440664354" at="16,44,17,37" concept="2" />
-      <node id="8923434991440662527" at="11,0,14,0" concept="1" trace="SimpleRunner#(Ljava/lang/Class;)V" />
-      <node id="8923434991440664345" at="14,0,19,0" concept="4" trace="runChild#(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V" />
+      <node id="8923434991440664338" at="11,63,12,17" concept="6" />
+      <node id="8923434991440664359" at="15,73,16,44" concept="1" />
+      <node id="8923434991440664354" at="16,44,17,37" concept="1" />
+      <node id="8923434991440662527" at="11,0,14,0" concept="0" trace="SimpleRunner#(Ljava/lang/Class;)V" />
+      <node id="8923434991440664345" at="14,0,19,0" concept="3" trace="runChild#(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V" />
       <scope id="8923434991440662530" at="11,63,12,17" />
       <scope id="8923434991440664352" at="15,73,17,37" />
       <scope id="8923434991440662527" at="11,0,14,0">

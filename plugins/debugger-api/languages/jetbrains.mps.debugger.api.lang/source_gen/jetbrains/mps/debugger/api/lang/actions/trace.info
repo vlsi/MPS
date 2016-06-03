@@ -40,7 +40,6 @@
       <node id="1104094430779069345" at="43,20,63,9" concept="3" />
       <node id="1104094430779069345" at="33,62,64,7" concept="3" />
       <node id="1104094430779069345" at="30,93,65,5" concept="0" />
-      <node id="1104094430779069345" at="30,93,65,5" concept="0" />
       <node id="1104094430779069345" at="29,0,68,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_DebuggerReference_1104094430779069345#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="337851360307413992" at="38,102,39,82" />
       <scope id="2064548906020947163" at="52,61,53,50" />
@@ -82,7 +81,6 @@
         <var name="childConcept" id="1104094430779069345" />
         <var name="outputConcept" id="1104094430779069345" />
       </scope>
-      <scope id="1104094430779069345" at="30,93,65,5" />
       <scope id="1104094430779069345" at="29,216,66,18">
         <var name="result" id="1104094430779069345" />
       </scope>
@@ -125,7 +123,6 @@
       <node id="2569394751387978976" at="86,34,105,11" concept="2" />
       <node id="2569394751387978976" at="85,20,106,9" concept="3" />
       <node id="2569394751387978976" at="72,62,107,7" concept="3" />
-      <node id="2569394751387978976" at="69,93,108,5" concept="0" />
       <node id="2569394751387978976" at="69,93,108,5" concept="0" />
       <node id="2569394751387978976" at="68,0,111,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_IOperation_2569394751387978976#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="2569394751388019624" at="79,37,80,70" />
@@ -172,7 +169,6 @@
         <var name="childConcept" id="2569394751387978976" />
         <var name="outputConcept" id="2569394751387978976" />
       </scope>
-      <scope id="2569394751387978976" at="69,93,108,5" />
       <scope id="2569394751387978976" at="68,209,109,18">
         <var name="result" id="2569394751387978976" />
       </scope>

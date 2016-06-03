@@ -62,9 +62,6 @@
       <node id="1986963296983815963" at="42,7,47,133" concept="4" />
       <node id="1986963296984073381" at="68,50,73,7" concept="1" />
       <node id="1986963296983872657" at="87,182,93,5" concept="0" />
-      <node id="1986963296983872657" at="87,182,93,5" concept="0" />
-      <node id="1986963296983872657" at="85,30,93,5" concept="0" />
-      <node id="1986963296983872657" at="85,30,93,5" concept="0" />
       <node id="1986963296983871141" at="54,0,66,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1986963296983827761" at="52,46,66,7" concept="1" />
       <node id="1986963296983872657" at="82,0,96,0" concept="8" trace="_quotation_createNode_i4ro0d_a0a0a0a8a5#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -94,8 +91,6 @@
       <scope id="1986963296983872657" at="88,5,92,7">
         <var name="nodes" id="1986963296983872657" />
       </scope>
-      <scope id="1986963296983872657" at="87,182,93,5" />
-      <scope id="1986963296983872657" at="85,30,93,5" />
       <scope id="1986963296983871142" at="54,40,64,0">
         <var name="data" id="1986963296983930169" />
         <var name="newNode" id="1986963296983871615" />

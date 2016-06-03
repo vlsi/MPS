@@ -23,7 +23,6 @@
       <node id="1205753211126" at="31,7,32,60" concept="6" />
       <node id="1205753211126" at="32,60,33,285" concept="6" />
       <node id="1205753100058" at="37,50,38,176" concept="7" />
-      <node id="1205753100058" at="40,68,41,102" concept="0" />
       <node id="1205753100058" at="40,68,41,102" concept="7" />
       <node id="1205753100058" at="43,30,44,17" concept="7" />
       <node id="1205753100058" at="20,0,22,0" concept="2" trace="typeof_ThisClassifierExpresson_InferenceRule#()V" />
@@ -85,7 +84,6 @@
       <node id="1205854659855" at="51,7,52,60" concept="6" />
       <node id="1205854659855" at="52,60,53,262" concept="6" />
       <node id="1205769672845" at="57,50,58,188" concept="7" />
-      <node id="1205769672845" at="60,68,61,102" concept="0" />
       <node id="1205769672845" at="60,68,61,102" concept="7" />
       <node id="1205769672845" at="63,30,64,17" concept="7" />
       <node id="1205769672845" at="21,0,23,0" concept="2" trace="typeof_DefaultMethodCallOperation_InferenceRule#()V" />
@@ -96,7 +94,6 @@
       <node id="1205769672845" at="63,0,66,0" concept="5" trace="overrides#()Z" />
       <node id="1205854659855" at="50,560,54,7" concept="0" />
       <node id="1205769679712" at="23,124,28,5" concept="0" />
-      <node id="1205854494628" at="42,44,47,9" concept="0" />
       <node id="1205854571586" at="42,44,47,9" concept="0" />
       <node id="1205854636586" at="49,5,55,5" concept="4" />
       <node id="1205854494628" at="33,248,48,7" concept="8" />
@@ -127,7 +124,6 @@
       </scope>
       <scope id="1205769672845" at="63,0,66,0" />
       <scope id="1205854636587" at="50,560,54,7" />
-      <scope id="1205854494633" at="42,44,47,9" />
       <scope id="1205854494628" at="34,20,47,9" />
       <scope id="1205854494628" at="29,5,48,7">
         <var name="argument" id="1205854523027" />
@@ -153,7 +149,6 @@
       <node id="1205921883388" at="34,64,35,259" concept="6" />
       <node id="1205921883368" at="38,12,39,7" concept="0" />
       <node id="1205853960046" at="42,50,43,177" concept="7" />
-      <node id="1205853960046" at="45,68,46,102" concept="0" />
       <node id="1205853960046" at="45,68,46,102" concept="7" />
       <node id="1205853960046" at="48,30,49,17" concept="7" />
       <node id="1205853960046" at="24,0,26,0" concept="2" trace="check_IMemberOperation_NonTypesystemRule#()V" />
@@ -202,7 +197,6 @@
       <node id="1214001485999" at="20,53,21,209" concept="6" />
       <node id="1214001485999" at="21,209,22,567" concept="3" />
       <node id="1214001475035" at="25,50,26,189" concept="7" />
-      <node id="1214001475035" at="28,68,29,102" concept="0" />
       <node id="1214001475035" at="28,68,29,102" concept="7" />
       <node id="1214001475035" at="31,30,32,17" concept="7" />
       <node id="1214001475035" at="16,0,18,0" concept="2" trace="typeof_DefaultClassifierFieldAccessOperation_InferenceRule#()V" />
@@ -243,7 +237,6 @@
       <node id="1217434001462" at="31,7,32,60" concept="6" />
       <node id="1217434001462" at="32,60,33,284" concept="6" />
       <node id="1217433986271" at="37,50,38,176" concept="7" />
-      <node id="1217433986271" at="40,68,41,102" concept="0" />
       <node id="1217433986271" at="40,68,41,102" concept="7" />
       <node id="1217433986271" at="43,30,44,17" concept="7" />
       <node id="1217433986271" at="20,0,22,0" concept="2" trace="typeof_SuperClassifierExpresson_InferenceRule#()V" />
@@ -289,7 +282,6 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/5415321287508135637">
     <file name="check_DefaultClassifierFieldDeclaration_NonTypesystemRule.java">
       <node id="5415321287508135637" at="18,50,19,185" concept="7" />
-      <node id="5415321287508135637" at="21,68,22,102" concept="0" />
       <node id="5415321287508135637" at="21,68,22,102" concept="7" />
       <node id="5415321287508135637" at="24,30,25,16" concept="7" />
       <node id="5415321287508135637" at="14,0,16,0" concept="2" trace="check_DefaultClassifierFieldDeclaration_NonTypesystemRule#()V" />

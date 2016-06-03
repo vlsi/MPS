@@ -194,9 +194,7 @@
       <node id="6299533519672650755" at="247,0,250,0" concept="15" trace="getNodesFromClipboard#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
       <node id="6299533519672650792" at="252,82,255,7" concept="8" />
       <node id="6299533519672650807" at="257,5,260,5" concept="8" />
-      <node id="7365583369097483175" at="266,46,269,9" concept="1" />
       <node id="7365583369097483175" at="266,46,269,9" concept="8" />
-      <node id="7365583369097483179" at="270,31,273,9" concept="1" />
       <node id="7365583369097483179" at="270,31,273,9" concept="8" />
       <node id="6299533519672650865" at="278,0,281,0" concept="15" trace="getNodeFromClipboard#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6299533519672650893" at="283,199,286,5" concept="8" />
@@ -375,12 +373,10 @@
         <var name="e" id="6299533519672650834" />
       </scope>
       <scope id="6299533519672650827" at="266,46,269,9" />
-      <scope id="7365583369097483175" at="266,46,269,9" />
       <scope id="6299533519672650836" at="270,0,273,9">
         <var name="e" id="6299533519672650844" />
       </scope>
       <scope id="6299533519672650837" at="270,31,273,9" />
-      <scope id="7365583369097483179" at="270,31,273,9" />
       <scope id="6299533519672650865" at="278,0,281,0">
         <var name="model" id="6299533519672650868" />
       </scope>

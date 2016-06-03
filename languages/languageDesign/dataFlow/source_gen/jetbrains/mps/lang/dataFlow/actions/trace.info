@@ -30,7 +30,6 @@
       <node id="137546700134038988" at="28,0,31,0" concept="3" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="137546700134038988" at="31,0,34,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="137546700134038988" at="34,0,41,0" concept="3" trace="isEnabled#()Z" />
-      <node id="137546700134038988" at="23,93,41,7" concept="0" />
       <node id="137546700134038988" at="23,93,41,7" concept="1" />
       <node id="137546700134038988" at="22,0,44,0" concept="6" trace="sideTransform_ActionsFactory_EmitStatement_137546700134038988#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
       <scope id="137546700134038995" at="25,94,26,432" />
@@ -52,7 +51,6 @@
         <var name="sourceNode" id="137546700134038988" />
       </scope>
       <scope id="137546700134038988" at="34,0,41,0" />
-      <scope id="137546700134038988" at="23,93,41,7" />
       <scope id="137546700134038988" at="22,195,42,18">
         <var name="result" id="137546700134038988" />
       </scope>
@@ -112,9 +110,7 @@
       <node id="2557916264116497619" at="71,0,74,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="2557916264116497619" at="56,0,63,0" concept="3" trace="isEnabled#()Z" />
       <node id="2557916264116497619" at="74,0,81,0" concept="3" trace="isEnabled#()Z" />
-      <node id="2557916264116497619" at="45,93,63,7" concept="0" />
       <node id="2557916264116497619" at="45,93,63,7" concept="1" />
-      <node id="2557916264116497619" at="63,7,81,7" concept="0" />
       <node id="2557916264116497619" at="63,7,81,7" concept="1" />
       <node id="2557916264116497619" at="44,0,84,0" concept="6" trace="sideTransform_ActionsFactory_BaseEmitJumpStatement_2557916264116497619#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
       <scope id="2557916264116497623" at="47,94,48,276" />
@@ -155,8 +151,6 @@
       </scope>
       <scope id="2557916264116497619" at="56,0,63,0" />
       <scope id="2557916264116497619" at="74,0,81,0" />
-      <scope id="2557916264116497619" at="45,93,63,7" />
-      <scope id="2557916264116497619" at="63,7,81,7" />
       <scope id="2557916264116497619" at="44,204,82,18">
         <var name="result" id="2557916264116497619" />
       </scope>

@@ -5027,7 +5027,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-ui" depends="java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-icons, fetchDependencies">
+  <target name="java.compile.mps-ui" depends="java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-debuginfo-api, fetchDependencies">
     <mkdir dir="${mps_home}/workbench/mps-ui/source" />
     <mkdir dir="${mps_home}/workbench/mps-ui/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-ui" />
@@ -5059,6 +5059,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-icons" />
+        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
