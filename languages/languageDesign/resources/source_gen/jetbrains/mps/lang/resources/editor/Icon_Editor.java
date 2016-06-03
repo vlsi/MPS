@@ -20,6 +20,8 @@ import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
@@ -125,7 +127,7 @@ public class Icon_Editor extends DefaultNodeEditor {
     imageModule = SNodeOperations.getModel(node).getModule();
     imagePath = (new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path"));
+        return MacrosFactory.forModule(((AbstractModule) SNodeOperations.getModel(node).getModule())).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
       }
     }).invoke();
     EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
