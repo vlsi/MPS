@@ -64,7 +64,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
+  public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     return super.getCellForParentNodeInMainEditor(editor);
   }
 
@@ -79,7 +79,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public void paint(Graphics g, EditorComponent editorComponent, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
+  public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     if (cell != null) {
       for (Region nextRegion : getHighlightedRegions(cell)) {
         nextRegion.drawWaveUnderCell(g, getColor());
@@ -88,7 +88,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   private List<Region> getHighlightedRegions(EditorCell cell) {
-    Deque<Iterator<EditorCell>> iteratorsStack = new LinkedList<Iterator<EditorCell>>();
+    Deque<Iterator<EditorCell>> iteratorsStack = new LinkedList<>();
     if (cell instanceof EditorCell_Collection) {
       iteratorsStack.addLast(((EditorCell_Collection) cell).iterator());
     } else {
@@ -97,7 +97,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
     Region anchorRegion = null;
     AnchorCellType anchorCellType = AnchorCellType.NONE;
-    List<Region> regions = new ArrayList<Region>();
+    List<Region> regions = new ArrayList<>();
     boolean insidePrefix = true;
     while (!iteratorsStack.isEmpty()) {
       Iterator<EditorCell> currentIterator = iteratorsStack.peekLast();

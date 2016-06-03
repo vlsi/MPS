@@ -1187,8 +1187,8 @@
       </node>
       <node concept="37vLTG" id="4iUaVbRglKM" role="3clF46">
         <property role="TrG5h" value="cell" />
-        <node concept="3uibUv" id="4iUaVbRglKN" role="1tU5fm">
-          <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+        <node concept="3uibUv" id="29VACSeltkh" role="1tU5fm">
+          <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
         </node>
       </node>
       <node concept="3clFbS" id="4iUaVbRglKO" role="3clF47" />

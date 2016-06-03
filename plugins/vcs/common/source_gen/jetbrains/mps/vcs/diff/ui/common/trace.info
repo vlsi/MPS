@@ -472,8 +472,8 @@
       <node id="2574970789914154818" at="82,12,83,188" concept="13" />
       <node id="4731452235444708783" at="88,33,89,25" concept="13" />
       <node id="410698761440032051" at="94,27,95,13" concept="13" />
-      <node id="4652592318748336302" at="97,29,98,55" concept="6" />
-      <node id="4652592318748336309" at="98,55,99,48" concept="6" />
+      <node id="4652592318748336302" at="97,29,98,101" concept="6" />
+      <node id="4652592318748336309" at="98,101,99,48" concept="6" />
       <node id="4652592318748336318" at="101,75,102,41" concept="6" />
       <node id="4652592318748336329" at="103,14,104,118" concept="12" />
       <node id="4652592318748336335" at="104,118,105,106" concept="6" />
@@ -490,7 +490,7 @@
       <node id="4652592318748336379" at="131,89,132,83" concept="14" />
       <node id="4652592318748336381" at="132,83,133,52" concept="12" />
       <node id="4652592318748336403" at="136,54,137,34" concept="13" />
-      <node id="4652592318748336418" at="140,37,141,162" concept="6" />
+      <node id="4652592318748336418" at="140,37,141,118" concept="6" />
       <node id="4652592318748336455" at="146,59,147,83" concept="12" />
       <node id="4652592318748336466" at="148,24,149,76" concept="12" />
       <node id="4652592318748336472" at="149,76,150,0" concept="15" />
@@ -626,7 +626,7 @@
       <node id="4652592318748335692" at="57,0,60,0" concept="11" trace="isConflicted#()Z" />
       <node id="4652592318748336255" at="68,0,71,0" concept="11" trace="getChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
       <node id="2574970789914124557" at="76,85,79,5" concept="10" />
-      <node id="410698761440032044" at="93,112,96,5" concept="10" />
+      <node id="410698761440032044" at="93,81,96,5" concept="10" />
       <node id="2034046503361606208" at="114,29,117,7" concept="10" />
       <node id="4652592318748336401" at="136,0,139,0" concept="11" trace="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)Z" />
       <node id="4652592318748336416" at="139,9,142,7" concept="10" />
@@ -701,7 +701,7 @@
       <node id="4652592318748336369" at="130,0,145,0" concept="11" trace="repaintConflictedMessages#(Ljava/awt/Graphics;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="4652592318748336923" at="326,0,341,0" concept="11" trace="getBoundsForChild#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;I)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="4652592318748336453" at="145,69,162,5" concept="10" />
-      <node id="4652592318748336268" at="92,0,110,0" concept="11" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
+      <node id="4652592318748336268" at="92,0,110,0" concept="11" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="4652592318748336439" at="145,0,164,0" concept="11" trace="drawDeletedChild#(Ljava/awt/Graphics;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="4652592318748336849" at="304,10,324,5" concept="1" />
       <node id="4652592318748336626" at="174,0,196,0" concept="11" trace="drawVerticalLineWithArrows#(Ljava/awt/Graphics;Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
@@ -735,7 +735,7 @@
       <scope id="4652592318748336317" at="101,75,102,41" />
       <scope id="2034046503361606209" at="115,196,116,74" />
       <scope id="4652592318748336402" at="136,54,137,34" />
-      <scope id="4652592318748336417" at="140,37,141,162" />
+      <scope id="4652592318748336417" at="140,37,141,118" />
       <scope id="4652592318748336484" at="153,43,154,68" />
       <scope id="4652592318748336493" at="155,18,156,76" />
       <scope id="4652592318748336500" at="158,16,159,105" />
@@ -941,7 +941,7 @@
         <var name="maxY" id="4652592318748336950" />
         <var name="minY" id="4652592318748336947" />
       </scope>
-      <scope id="4652592318748336277" at="93,112,108,5" />
+      <scope id="4652592318748336277" at="93,81,108,5" />
       <scope id="4652592318748336369" at="130,0,145,0">
         <var name="cell" id="4652592318748336374" />
         <var name="graphics" id="4652592318748336372" />

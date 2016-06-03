@@ -40,7 +40,7 @@ import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -171,7 +171,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         super.doUpdatePresentation();
         if (!(showNode)) {
           setColor(JBColor.GRAY);
-        }else if (hasAnError) {
+        } else if (hasAnError) {
           setColor(JBColor.RED);
         }
       }
@@ -421,7 +421,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private class SelectedNodeEditorMessage extends DefaultEditorMessage {
-    private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
+    private EditorCell myCell;
 
     public SelectedNodeEditorMessage(EditorCell cell, String message) {
       super(cell.getSNode(), StyleRegistry.getInstance().getSimpleColor(new Color(192, 255, 255)), message, myMessageOwner);
@@ -429,12 +429,12 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     @Override
-    public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent component) {
+    public EditorCell getCell(EditorComponent component) {
       return myCell;
     }
 
     @Override
-    public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent component) {
+    public boolean acceptCell(EditorCell cell, EditorComponent component) {
       return myCell == cell;
     }
 

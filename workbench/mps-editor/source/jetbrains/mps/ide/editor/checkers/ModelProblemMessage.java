@@ -21,7 +21,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -58,19 +58,21 @@ public class ModelProblemMessage extends DefaultEditorMessage {
   }
 
   private void paintDecorations(Graphics g, EditorCell cell) {
-    if (cell == null) return;
+    if (cell == null) {
+      return;
+    }
     if (isWarning()) {
-      cell.paintSelection(g,
-          EditorColorsManager.getInstance().getGlobalScheme().getAttributes(
-              TextAttributesKey.createTextAttributesKey("WARNING_ATTRIBUTES")).getBackgroundColor(),
-          false);
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paintSelection(g, EditorColorsManager.getInstance().getGlobalScheme().getAttributes(
+          TextAttributesKey.createTextAttributesKey("WARNING_ATTRIBUTES")).getBackgroundColor(), false);
     } else {
       drawWaveUnderCell(g, getColor(), cell);
     }
   }
 
   public static void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
-    if (cell == null) return;
+    if (cell == null) {
+      return;
+    }
     int x = cell.getX();
     int y = cell.getY();
     int height = cell.getHeight();

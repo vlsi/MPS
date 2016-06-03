@@ -19,6 +19,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -41,7 +42,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
   }
 
   @Override
-  public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor) {
+  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     //cell can be not a big one so we don't call super.acceptCell
     if (cell == null || !editor.isValid(cell) || cell.getSNode() != getNode()) {
       return false;
@@ -74,7 +75,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
+  public EditorCell getCell(EditorComponent editor) {
     switch (myMessageTarget.getTarget()) {
       case NODE:
         return super.getCell(editor);

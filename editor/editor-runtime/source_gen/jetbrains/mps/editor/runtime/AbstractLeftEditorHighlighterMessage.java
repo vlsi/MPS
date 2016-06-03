@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import java.awt.Cursor;
 

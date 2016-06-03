@@ -2561,7 +2561,7 @@
       <property role="TrG5h" value="isDirectCell" />
       <node concept="37vLTG" id="198KyXImE2Y" role="3clF46">
         <property role="TrG5h" value="cell" />
-        <node concept="3uibUv" id="2LiDtbYf5fG" role="1tU5fm">
+        <node concept="3uibUv" id="29VACSemdzz" role="1tU5fm">
           <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
         </node>
       </node>
@@ -2875,8 +2875,15 @@
           <node concept="3clFbS" id="42hl10VHa2H" role="3clFbx">
             <node concept="3clFbF" id="42hl10VHa2I" role="3cqZAp">
               <node concept="2OqwBi" id="42hl10VHa2J" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxgl2$2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="42hl10VHa2j" resolve="cell" />
+                <node concept="1eOMI4" id="29VACSen9F6" role="2Oq$k0">
+                  <node concept="10QFUN" id="29VACSen9kv" role="1eOMHV">
+                    <node concept="3uibUv" id="29VACSenaa4" role="10QFUM">
+                      <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxgl2$2" role="10QFUP">
+                      <ref role="3cqZAo" node="42hl10VHa2j" resolve="cell" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="liA8E" id="42hl10VHa2L" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~EditorCell.paintSelection(java.awt.Graphics,java.awt.Color,boolean):void" resolve="paintSelection" />
@@ -2926,8 +2933,8 @@
       </node>
       <node concept="37vLTG" id="42hl10VHa2j" role="3clF46">
         <property role="TrG5h" value="cell" />
-        <node concept="3uibUv" id="20m38krLnSV" role="1tU5fm">
-          <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+        <node concept="3uibUv" id="29VACSen1Y0" role="1tU5fm">
+          <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
         </node>
       </node>
       <node concept="3cqZAl" id="42hl10VHa2e" role="3clF45" />
@@ -3339,13 +3346,8 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="10QFUN" id="54a$TM8DZZF" role="37wK5m">
-                        <node concept="3uibUv" id="20m38krQlQU" role="10QFUM">
-                          <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTzl1" role="10QFUP">
-                          <ref role="3cqZAo" node="42hl10VHa3Y" resolve="parent" />
-                        </node>
+                      <node concept="37vLTw" id="3GM_nagTzl1" role="37wK5m">
+                        <ref role="3cqZAo" node="42hl10VHa3Y" resolve="parent" />
                       </node>
                     </node>
                   </node>

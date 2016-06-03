@@ -30,7 +30,7 @@
       <node id="4952318787899710567" at="37,34,38,21" concept="9" />
       <node id="4952318787899710573" at="41,38,42,58" concept="9" />
       <node id="4952318787899710580" at="45,33,46,17" concept="9" />
-      <node id="4952318787899710507" at="21,0,24,0" concept="7" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
+      <node id="4952318787899710507" at="21,0,24,0" concept="7" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="4952318787899710486" at="17,0,21,0" concept="2" trace="AbstractLeftEditorHighlighterMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
       <node id="4952318787899710518" at="24,0,28,0" concept="7" trace="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
       <node id="4952318787899710533" at="29,54,33,5" concept="6" />
