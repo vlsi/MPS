@@ -23,6 +23,7 @@
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -3002,8 +3003,8 @@
       <node concept="3clFbS" id="1fdcuoIX_Ek" role="3clF47">
         <node concept="3cpWs6" id="1fdcuoIX_El" role="3cqZAp">
           <node concept="2c44tf" id="1fdcuoIX_Em" role="3cqZAk">
-            <node concept="3uibUv" id="1fdcuoIXGfT" role="2c44tc">
-              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+            <node concept="3uibUv" id="3wZWR6FvW3H" role="2c44tc">
+              <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
             </node>
           </node>
         </node>
