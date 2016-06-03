@@ -68,32 +68,29 @@ public final class ModuleMaker {
   private final static String LOADING_DEPENDENCIES_MSG = "Loading dependencies";
   private final static String CALCULATING_DEPENDENCIES_TO_COMPILE_MSG = "Calculating all dependent modules to compile";
   private final static String BUILDING_MODULE_CYCLES_MSG = "Building module cycles";
+  private final static MessageKind DEFAULT_MSG_LEVEL = MessageKind.ERROR;
 
-  @NotNull private final IPerformanceTracer myTracer;
+  @NotNull private final IPerformanceTracer myTracer; // fixme get rid of, replace with sender
   @NotNull private final MessageSender mySender;
   private final MessageKind myLevel;
 
   /**
-   * The empty constructor delegates only error messages to the apache's logger
+   * The empty constructor delegates only error messages to the apache's logger and traces nothing
    */
   public ModuleMaker() {
-    this(null, MessageKind.ERROR);
+    ErrorsLoggingHandler defaultHandler = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
+    mySender = new MessageSender(defaultHandler, this);
+    myTracer = new NullPerformanceTracer();
+    myLevel = DEFAULT_MSG_LEVEL;
   }
 
   /**
    * Accepts the logging strategy (via {@link IMessageHandler})
    * and the logging level {@link MessageKind}.
    */
-  public ModuleMaker(@Nullable IMessageHandler handler, @NotNull MessageKind level) {
-    // AP Odd behavior: the default tracer choice depends on whether the handler is null
-    if (handler != null) {
-      mySender = new MessageSender(handler, this);
-      myTracer = new PerformanceTracer(this.toString());
-    } else {
-      ErrorsLoggingHandler handler1 = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
-      mySender = new MessageSender(handler1, this);
-      myTracer = new NullPerformanceTracer();
-    }
+  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level) {
+    mySender = new MessageSender(handler, this);
+    myTracer = new PerformanceTracer(this.toString());
     myLevel = level;
   }
 

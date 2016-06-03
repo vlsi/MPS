@@ -4823,10 +4823,10 @@
   </root>
   <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/3812443517665722597">
     <file name="Outcome.java">
-      <node id="3812443517665722605" at="14,0,16,0" concept="1" trace="Outcome#()V" />
-      <scope id="3812443517665722608" at="14,21,14,21" />
-      <scope id="3812443517665722605" at="14,0,16,0" />
-      <unit id="3812443517665722597" at="6,0,17,0" name="jetbrains.mps.baseLanguage.closures.runtime.Outcome" />
+      <node id="3812443517665722605" at="13,0,15,0" concept="1" trace="Outcome#()V" />
+      <scope id="3812443517665722608" at="13,21,13,21" />
+      <scope id="3812443517665722605" at="13,0,15,0" />
+      <unit id="3812443517665722597" at="6,0,16,0" name="jetbrains.mps.baseLanguage.closures.runtime.Outcome" />
     </file>
   </root>
   <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/3812443517665722609">
@@ -5008,7 +5008,7 @@
       <node id="3812443517665723085" at="63,0,64,0" concept="5" trace="moveToNext#()Z" />
       <node id="3812443517665723095" at="64,29,65,21" concept="2" />
       <node id="3812443517665722938" at="15,0,17,0" concept="1" trace="YieldingIterator#()V" />
-      <node id="3812443517665722925" at="72,0,74,0" concept="1" trace="State#()V" />
+      <node id="3812443517665722925" at="71,0,73,0" concept="1" trace="State#()V" />
       <node id="3812443517665723089" at="64,0,67,0" concept="5" trace="yield#(null)V" />
       <node id="3812443517665723040" at="40,13,44,11" concept="4" />
       <node id="3812443517665723078" at="59,0,63,0" concept="5" trace="remove#()V" />
@@ -5020,7 +5020,7 @@
       <node id="3812443517665723004" at="35,19,57,5" concept="11" />
       <node id="3812443517665723000" at="34,0,59,0" concept="5" trace="next#()null" />
       <scope id="3812443517665722941" at="15,29,15,29" />
-      <scope id="3812443517665723104" at="72,21,72,21" />
+      <scope id="3812443517665723104" at="71,21,71,21" />
       <scope id="3812443517665722964" at="20,11,21,109" />
       <scope id="3812443517665723012" at="37,18,38,43" />
       <scope id="3812443517665723006" at="55,14,56,42" />
@@ -5033,7 +5033,7 @@
       </scope>
       <scope id="3812443517665722953" at="22,37,24,17" />
       <scope id="3812443517665723045" at="41,37,43,47" />
-      <scope id="3812443517665722925" at="72,0,74,0" />
+      <scope id="3812443517665722925" at="71,0,73,0" />
       <scope id="3812443517665722981" at="27,28,30,16">
         <var name="tmp" id="3812443517665722983" />
       </scope>
@@ -5055,8 +5055,8 @@
       <scope id="3812443517665722942" at="17,0,34,0" />
       <scope id="3812443517665723003" at="35,19,57,5" />
       <scope id="3812443517665723000" at="34,0,59,0" />
-      <unit id="3812443517665722102" at="67,0,75,0" name="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator$State" />
-      <unit id="3812443517665722916" at="11,0,76,0" name="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+      <unit id="3812443517665722102" at="67,0,74,0" name="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator$State" />
+      <unit id="3812443517665722916" at="11,0,75,0" name="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     </file>
   </root>
   <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/4914003190800642467">

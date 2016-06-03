@@ -4,730 +4,730 @@ package jetbrains.mps.baseLanguage.closures.runtime;
 
 
 public class _FunctionTypes {
-  public static interface _void_P0_E0 {
+  public interface _void_P0_E0 {
     void invoke();
   }
-  public static interface _void_P0_E1<E1 extends Throwable> {
+  public interface _void_P0_E1<E1 extends Throwable> {
     void invoke() throws E1;
   }
-  public static interface _void_P0_E2<E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P0_E2<E1 extends Throwable, E2 extends Throwable> {
     void invoke() throws E1, E2;
   }
-  public static interface _void_P0_E3<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P0_E3<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke() throws E1, E2, E3;
   }
-  public static interface _void_P0_E4<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P0_E4<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke() throws E1, E2, E3, E4;
   }
-  public static interface _void_P0_E5<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P0_E5<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P0_E6<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P0_E6<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P0_E7<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P0_E7<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P0_E8<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P0_E8<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P0_E9<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P0_E9<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P0_E10<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P0_E10<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P1_E0<P1> {
+  public interface _void_P1_E0<P1> {
     void invoke(P1 p1);
   }
-  public static interface _void_P1_E1<P1, E1 extends Throwable> {
+  public interface _void_P1_E1<P1, E1 extends Throwable> {
     void invoke(P1 p1) throws E1;
   }
-  public static interface _void_P1_E2<P1, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P1_E2<P1, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1) throws E1, E2;
   }
-  public static interface _void_P1_E3<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P1_E3<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3;
   }
-  public static interface _void_P1_E4<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P1_E4<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4;
   }
-  public static interface _void_P1_E5<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P1_E5<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P1_E6<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P1_E6<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P1_E7<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P1_E7<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P1_E8<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P1_E8<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P1_E9<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P1_E9<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P1_E10<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P1_E10<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P2_E0<P1, P2> {
+  public interface _void_P2_E0<P1, P2> {
     void invoke(P1 p1, P2 p2);
   }
-  public static interface _void_P2_E1<P1, P2, E1 extends Throwable> {
+  public interface _void_P2_E1<P1, P2, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1;
   }
-  public static interface _void_P2_E2<P1, P2, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P2_E2<P1, P2, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2;
   }
-  public static interface _void_P2_E3<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P2_E3<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3;
   }
-  public static interface _void_P2_E4<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P2_E4<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4;
   }
-  public static interface _void_P2_E5<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P2_E5<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P2_E6<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P2_E6<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P2_E7<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P2_E7<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P2_E8<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P2_E8<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P2_E9<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P2_E9<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P2_E10<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P2_E10<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P3_E0<P1, P2, P3> {
+  public interface _void_P3_E0<P1, P2, P3> {
     void invoke(P1 p1, P2 p2, P3 p3);
   }
-  public static interface _void_P3_E1<P1, P2, P3, E1 extends Throwable> {
+  public interface _void_P3_E1<P1, P2, P3, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1;
   }
-  public static interface _void_P3_E2<P1, P2, P3, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P3_E2<P1, P2, P3, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2;
   }
-  public static interface _void_P3_E3<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P3_E3<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3;
   }
-  public static interface _void_P3_E4<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P3_E4<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4;
   }
-  public static interface _void_P3_E5<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P3_E5<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P3_E6<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P3_E6<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P3_E7<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P3_E7<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P3_E8<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P3_E8<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P3_E9<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P3_E9<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P3_E10<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P3_E10<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P4_E0<P1, P2, P3, P4> {
+  public interface _void_P4_E0<P1, P2, P3, P4> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4);
   }
-  public static interface _void_P4_E1<P1, P2, P3, P4, E1 extends Throwable> {
+  public interface _void_P4_E1<P1, P2, P3, P4, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1;
   }
-  public static interface _void_P4_E2<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P4_E2<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2;
   }
-  public static interface _void_P4_E3<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P4_E3<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3;
   }
-  public static interface _void_P4_E4<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P4_E4<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4;
   }
-  public static interface _void_P4_E5<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P4_E5<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P4_E6<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P4_E6<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P4_E7<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P4_E7<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P4_E8<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P4_E8<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P4_E9<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P4_E9<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P4_E10<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P4_E10<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P5_E0<P1, P2, P3, P4, P5> {
+  public interface _void_P5_E0<P1, P2, P3, P4, P5> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5);
   }
-  public static interface _void_P5_E1<P1, P2, P3, P4, P5, E1 extends Throwable> {
+  public interface _void_P5_E1<P1, P2, P3, P4, P5, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1;
   }
-  public static interface _void_P5_E2<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P5_E2<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2;
   }
-  public static interface _void_P5_E3<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P5_E3<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3;
   }
-  public static interface _void_P5_E4<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P5_E4<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4;
   }
-  public static interface _void_P5_E5<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P5_E5<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P5_E6<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P5_E6<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P5_E7<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P5_E7<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P5_E8<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P5_E8<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P5_E9<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P5_E9<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P5_E10<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P5_E10<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P6_E0<P1, P2, P3, P4, P5, P6> {
+  public interface _void_P6_E0<P1, P2, P3, P4, P5, P6> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6);
   }
-  public static interface _void_P6_E1<P1, P2, P3, P4, P5, P6, E1 extends Throwable> {
+  public interface _void_P6_E1<P1, P2, P3, P4, P5, P6, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1;
   }
-  public static interface _void_P6_E2<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P6_E2<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2;
   }
-  public static interface _void_P6_E3<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P6_E3<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3;
   }
-  public static interface _void_P6_E4<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P6_E4<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4;
   }
-  public static interface _void_P6_E5<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P6_E5<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P6_E6<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P6_E6<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P6_E7<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P6_E7<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P6_E8<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P6_E8<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P6_E9<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P6_E9<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P6_E10<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P6_E10<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P7_E0<P1, P2, P3, P4, P5, P6, P7> {
+  public interface _void_P7_E0<P1, P2, P3, P4, P5, P6, P7> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7);
   }
-  public static interface _void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> {
+  public interface _void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1;
   }
-  public static interface _void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2;
   }
-  public static interface _void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3;
   }
-  public static interface _void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4;
   }
-  public static interface _void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> {
+  public interface _void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8);
   }
-  public static interface _void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> {
+  public interface _void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1;
   }
-  public static interface _void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2;
   }
-  public static interface _void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3;
   }
-  public static interface _void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4;
   }
-  public static interface _void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+  public interface _void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9);
   }
-  public static interface _void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> {
+  public interface _void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1;
   }
-  public static interface _void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2;
   }
-  public static interface _void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3;
   }
-  public static interface _void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4;
   }
-  public static interface _void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+  public interface _void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10);
   }
-  public static interface _void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> {
+  public interface _void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1;
   }
-  public static interface _void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> {
+  public interface _void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2;
   }
-  public static interface _void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3;
   }
-  public static interface _void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4;
   }
-  public static interface _void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5;
   }
-  public static interface _void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     void invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P0_E0<R> {
+  public interface _return_P0_E0<R> {
     R invoke();
   }
-  public static interface _return_P0_E1<R, E1 extends Throwable> {
+  public interface _return_P0_E1<R, E1 extends Throwable> {
     R invoke() throws E1;
   }
-  public static interface _return_P0_E2<R, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P0_E2<R, E1 extends Throwable, E2 extends Throwable> {
     R invoke() throws E1, E2;
   }
-  public static interface _return_P0_E3<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P0_E3<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke() throws E1, E2, E3;
   }
-  public static interface _return_P0_E4<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P0_E4<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke() throws E1, E2, E3, E4;
   }
-  public static interface _return_P0_E5<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P0_E5<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P0_E6<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P0_E6<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P0_E7<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P0_E7<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P0_E8<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P0_E8<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P0_E9<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P0_E9<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P0_E10<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P0_E10<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P1_E0<R, P1> {
+  public interface _return_P1_E0<R, P1> {
     R invoke(P1 p1);
   }
-  public static interface _return_P1_E1<R, P1, E1 extends Throwable> {
+  public interface _return_P1_E1<R, P1, E1 extends Throwable> {
     R invoke(P1 p1) throws E1;
   }
-  public static interface _return_P1_E2<R, P1, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P1_E2<R, P1, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1) throws E1, E2;
   }
-  public static interface _return_P1_E3<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P1_E3<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3;
   }
-  public static interface _return_P1_E4<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P1_E4<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4;
   }
-  public static interface _return_P1_E5<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P1_E5<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P1_E6<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P1_E6<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P1_E7<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P1_E7<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P1_E8<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P1_E8<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P1_E9<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P1_E9<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P1_E10<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P1_E10<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P2_E0<R, P1, P2> {
+  public interface _return_P2_E0<R, P1, P2> {
     R invoke(P1 p1, P2 p2);
   }
-  public static interface _return_P2_E1<R, P1, P2, E1 extends Throwable> {
+  public interface _return_P2_E1<R, P1, P2, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1;
   }
-  public static interface _return_P2_E2<R, P1, P2, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P2_E2<R, P1, P2, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2;
   }
-  public static interface _return_P2_E3<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P2_E3<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3;
   }
-  public static interface _return_P2_E4<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P2_E4<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4;
   }
-  public static interface _return_P2_E5<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P2_E5<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P2_E6<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P2_E6<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P2_E7<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P2_E7<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P2_E8<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P2_E8<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P2_E9<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P2_E9<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P2_E10<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P2_E10<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P3_E0<R, P1, P2, P3> {
+  public interface _return_P3_E0<R, P1, P2, P3> {
     R invoke(P1 p1, P2 p2, P3 p3);
   }
-  public static interface _return_P3_E1<R, P1, P2, P3, E1 extends Throwable> {
+  public interface _return_P3_E1<R, P1, P2, P3, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1;
   }
-  public static interface _return_P3_E2<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P3_E2<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2;
   }
-  public static interface _return_P3_E3<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P3_E3<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3;
   }
-  public static interface _return_P3_E4<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P3_E4<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4;
   }
-  public static interface _return_P3_E5<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P3_E5<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P3_E6<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P3_E6<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P3_E7<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P3_E7<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P3_E8<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P3_E8<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P3_E9<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P3_E9<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P3_E10<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P3_E10<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P4_E0<R, P1, P2, P3, P4> {
+  public interface _return_P4_E0<R, P1, P2, P3, P4> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4);
   }
-  public static interface _return_P4_E1<R, P1, P2, P3, P4, E1 extends Throwable> {
+  public interface _return_P4_E1<R, P1, P2, P3, P4, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1;
   }
-  public static interface _return_P4_E2<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P4_E2<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2;
   }
-  public static interface _return_P4_E3<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P4_E3<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3;
   }
-  public static interface _return_P4_E4<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P4_E4<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4;
   }
-  public static interface _return_P4_E5<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P4_E5<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P4_E6<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P4_E6<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P4_E7<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P4_E7<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P4_E8<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P4_E8<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P4_E9<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P4_E9<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P4_E10<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P4_E10<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P5_E0<R, P1, P2, P3, P4, P5> {
+  public interface _return_P5_E0<R, P1, P2, P3, P4, P5> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5);
   }
-  public static interface _return_P5_E1<R, P1, P2, P3, P4, P5, E1 extends Throwable> {
+  public interface _return_P5_E1<R, P1, P2, P3, P4, P5, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1;
   }
-  public static interface _return_P5_E2<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P5_E2<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2;
   }
-  public static interface _return_P5_E3<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P5_E3<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3;
   }
-  public static interface _return_P5_E4<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P5_E4<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4;
   }
-  public static interface _return_P5_E5<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P5_E5<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P5_E6<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P5_E6<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P5_E7<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P5_E7<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P5_E8<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P5_E8<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P5_E9<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P5_E9<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P5_E10<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P5_E10<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P6_E0<R, P1, P2, P3, P4, P5, P6> {
+  public interface _return_P6_E0<R, P1, P2, P3, P4, P5, P6> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6);
   }
-  public static interface _return_P6_E1<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable> {
+  public interface _return_P6_E1<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1;
   }
-  public static interface _return_P6_E2<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P6_E2<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2;
   }
-  public static interface _return_P6_E3<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P6_E3<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3;
   }
-  public static interface _return_P6_E4<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P6_E4<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4;
   }
-  public static interface _return_P6_E5<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P6_E5<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P6_E6<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P6_E6<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P6_E7<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P6_E7<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P6_E8<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P6_E8<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P6_E9<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P6_E9<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P6_E10<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P6_E10<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> {
+  public interface _return_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7);
   }
-  public static interface _return_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> {
+  public interface _return_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1;
   }
-  public static interface _return_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2;
   }
-  public static interface _return_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3;
   }
-  public static interface _return_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4;
   }
-  public static interface _return_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> {
+  public interface _return_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8);
   }
-  public static interface _return_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> {
+  public interface _return_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1;
   }
-  public static interface _return_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2;
   }
-  public static interface _return_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3;
   }
-  public static interface _return_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4;
   }
-  public static interface _return_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+  public interface _return_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9);
   }
-  public static interface _return_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> {
+  public interface _return_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1;
   }
-  public static interface _return_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2;
   }
-  public static interface _return_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3;
   }
-  public static interface _return_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4;
   }
-  public static interface _return_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
-  public static interface _return_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+  public interface _return_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10);
   }
-  public static interface _return_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> {
+  public interface _return_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1;
   }
-  public static interface _return_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> {
+  public interface _return_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2;
   }
-  public static interface _return_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
+  public interface _return_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3;
   }
-  public static interface _return_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
+  public interface _return_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4;
   }
-  public static interface _return_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
+  public interface _return_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5;
   }
-  public static interface _return_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
+  public interface _return_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6;
   }
-  public static interface _return_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
+  public interface _return_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7;
   }
-  public static interface _return_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
+  public interface _return_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8;
   }
-  public static interface _return_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
+  public interface _return_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9;
   }
-  public static interface _return_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
+  public interface _return_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> {
     R invoke(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10;
   }
 }

@@ -12,7 +12,7 @@
   <property name="mpsPlugin.date" value="${import.mpsPlugin.mpsPlugin.date}" />
   <property name="mpsBootstrapCore.version" value="${import.mpsPlugin.mpsBootstrapCore.version}" />
   <property name="environment" value="env" />
-  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">

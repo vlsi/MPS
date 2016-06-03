@@ -23,6 +23,7 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
@@ -42,6 +43,9 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+
+import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * Compiles all project modules at startup
@@ -80,20 +84,15 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
     monitor.start("Making modules", 10);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
-      MPSCompilationResult mpsCompilationResult = new ModelComputeRunnable<MPSCompilationResult>(new Computable<MPSCompilationResult>() {
-        @Override
-        public MPSCompilationResult compute() {
-          monitor.advance(1);
+      MPSCompilationResult mpsCompilationResult = new ModelComputeRunnable<>(() -> {
+        monitor.advance(1);
 
-          final ModuleMaker maker = new ModuleMaker(new DefaultMessageHandler(myProject), MessageKind.ERROR);
-          return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
-            @Override
-            public MPSCompilationResult compute() {
-              return maker.make(IterableUtil.asCollection(getModules()), monitor.subTask(9),
-                  JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject));
-            }
-          });
-        }
+        final ModuleMaker maker = new ModuleMaker();
+        return myReloadManager.computeNoReload(() -> {
+          JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
+          Collection<SModule> modules = getModules();
+          return maker.make(modules, monitor.subTask(9), compilerOptions);
+        });
       }).runRead(myMPSProject.getModelAccess());
       if (mpsCompilationResult.isReloadingNeeded()) {
         reloadClasses(mpsCompilationResult, indicator, early);
@@ -104,11 +103,11 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
     LOG.info("Compilation on startup is finished");
   }
 
-  private Iterable<? extends SModule> getModules() {
+  private Collection<SModule> getModules() {
     if (InternalFlag.isInternalMode()) {
-      return myMPSProject.getRepository().getModules();
+      return IterableUtil.asCollection(myMPSProject.getRepository().getModules());
     }
-    return myMPSProject.getModulesWithGenerators();
+    return myMPSProject.getProjectModulesWithGenerators();
   }
 
   private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {

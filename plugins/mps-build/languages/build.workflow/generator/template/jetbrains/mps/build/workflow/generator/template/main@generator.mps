@@ -3160,7 +3160,7 @@
             </node>
           </node>
           <node concept="1_4tnW" id="41I$9JZZ8HL" role="2VaxJS">
-            <property role="TrG5h" value="${env.JAVA_HOME}" />
+            <property role="TrG5h" value="env.JAVA_HOME" />
             <property role="1_4tnY" value="${java.home}/.." />
             <node concept="raruj" id="41I$9JZZ8HM" role="lGtFl" />
             <node concept="1W57fq" id="41I$9JZZ8HN" role="lGtFl">

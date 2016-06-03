@@ -6,7 +6,7 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="environment" value="env" />
-  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">

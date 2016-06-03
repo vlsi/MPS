@@ -64,11 +64,10 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
   protected void yield(T t) {
     this.yielded = t;
   }
-  private static   enum State {
+  private enum State {
     HAS_NEXT(),
     AT_END(),
     UNKNOWN();
-
     private State() {
     }
   }
