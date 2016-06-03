@@ -61,6 +61,6 @@ public class MoveStaticField_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
 
-    new MoveStaticFieldExecutable().execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveRefactoringRunnable.MyMoveRefactoringRunnable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField"), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+    new MoveStaticFieldExecutable().execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveRefactoringRunnable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField"), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
   }
 }

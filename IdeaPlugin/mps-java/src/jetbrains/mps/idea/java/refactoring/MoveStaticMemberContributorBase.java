@@ -13,7 +13,7 @@ import com.intellij.refactoring.move.moveMembers.MoveMembersOptions;
 import com.intellij.refactoring.move.moveMembers.MoveMembersProcessor.MoveMembersUsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.java.actions.MoveRefactoringRunnable.MyMoveRefactoringRunnable;
+import jetbrains.mps.ide.java.actions.MoveRefactoringRunnable;
 import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.MoveRefactoringContributor;
@@ -54,7 +54,7 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
   public void invoke(@NotNull Project project, @NotNull List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
     final SNode target = nodes.get(0);
-    getRefactoringExecutable().execute(mpsProject, target, new MyMoveRefactoringRunnable(new MoveStaticMemberRefactoring(), target, mpsProject));
+    getRefactoringExecutable().execute(mpsProject, target, new MoveRefactoringRunnable(new MoveStaticMemberRefactoring(), target, mpsProject));
   }
 
   class MoveStaticMemberRefactoring extends PsiAwareRefactoring {
