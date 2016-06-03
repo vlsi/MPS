@@ -11,9 +11,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 import jetbrains.mps.debug.api.source.NodeSourcePosition;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
@@ -28,8 +29,13 @@ public class JavaNodePositionProvider extends NodePositionProvider implements Pr
   @Nullable
   @Override
   protected SNodeReference getSNodePointer(@NotNull ILocation location, @NotNull AbstractDebugSession session) {
-    SNode jn = TraceInfoUtil.getJavaNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
-    return (jn == null ? null : new SNodePointer(jn));
+    for (Iterator<DebugInfo> it = session.getTraceProvider().debugInfo(NameUtil.namespaceFromLongName(location.getUnitName())).iterator(); it.hasNext();) {
+      SNodeReference n = new BaseLanguageNodeLookup(it.next()).getNodeAt(location.getFileName(), location.getLineNumber());
+      if (n != null) {
+        return n;
+      }
+    }
+    return null;
   }
 
   @Override

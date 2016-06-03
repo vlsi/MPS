@@ -35,6 +35,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class DebugInfo {
   private final Map<SNodeReference, DebugInfoRoot> myRoots = new HashMap<SNodeReference, DebugInfoRoot>();
@@ -149,22 +150,46 @@ public class DebugInfo {
   }
 
   /**
-   * Look up all {@link TraceablePositionInfo} that cover specified location, sort them by distance of starting line from the
-   * line specified (closes coming first), prepare {@code SNodeReference} and yield the list.
+   * @see
    */
   @NotNull
   public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line) {
+    return getTracedNodesForPosition(fileName, line, null);
+  }
+
+    /**
+     * Look up all {@link TraceablePositionInfo} that cover specified location, sort them by distance of starting line from the
+     * line specified (closes coming first), prepare {@code SNodeReference} and yield the list.
+     * Takes an optional code that may further filter out {@link TraceablePositionInfo} according to specific needs. Consumer can respect certain
+     * approaches to code generation, language differences and relation of line and position.
+     *
+     * @param fileName name of generated file with text
+     * @param line index of line in question
+     * @param extraProcessing optional code that takes sorted list of {@linkplain TraceablePositionInfo positions} that span specified line, the one with
+     *                        closest start coming first. The list could be modified/augmented or even emptied, positions left in the list are translated
+     *                        to respective node references and constitute the outcome of the method. Consumer list argument is never {@code null}.
+     */
+  @NotNull
+  public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line, @Nullable Consumer<List<TraceablePositionInfo>> extraProcessing) {
     // XXX implementation note: this method, much like the next one, getVariableNodesForPosition, is identical to getUnitNodesForPosition
     //     and all are worth refactoring (though not the way it used to be in TraceInfoUtil)
+    //     Perhaps, can throw in some Java 8?
     PersistenceFacade persFacade = PersistenceFacade.getInstance();
     ArrayList<SNodeReference> traceNode = new ArrayList<SNodeReference>();
     for (DebugInfoRoot dr : getRootsForFile(fileName)) {
       ArrayList<TraceablePositionInfo> positionInfos = new ArrayList<TraceablePositionInfo>(dr.getPositions());
       Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      ArrayList<TraceablePositionInfo> infosForLine = new ArrayList<TraceablePositionInfo>(positionInfos.size());
       for (TraceablePositionInfo tpi : positionInfos) {
         if (tpi.contains(fileName, line)) {
-          traceNode.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(tpi.getNodeId())));
+          infosForLine.add(tpi);
         }
+      }
+      if (extraProcessing != null) {
+        extraProcessing.accept(infosForLine);
+      }
+      for (TraceablePositionInfo tpi : infosForLine) {
+        traceNode.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(tpi.getNodeId())));
       }
     }
     return traceNode;

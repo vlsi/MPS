@@ -7,7 +7,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -25,11 +30,6 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaLocalVariable;
 import com.sun.jdi.Type;
 import org.apache.log4j.Level;
 import com.sun.jdi.ClassNotLoadedException;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.textgen.trace.TraceInfoProvider;
-import java.util.Iterator;
-import jetbrains.mps.textgen.trace.DebugInfo;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -68,10 +68,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   @Override
   public SNode getLocationNode() {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-    if (javaStackFrame != null) {
-      JavaLocation location = javaStackFrame.getLocation();
-      if (location != null) {
-        return TraceInfoUtil.getJavaNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    JavaLocation location;
+    // FIXME is there true need to access node, not SNodeReference here? 
+
+    if (javaStackFrame != null && (location = javaStackFrame.getLocation()) != null) {
+      AbstractDebugSession<?> debugSession = javaStackFrame.getThread().getDebugSession();
+      TraceInfoProvider traceProvider = debugSession.getTraceProvider();
+      for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaUiState.modelNameFromLocation(location)).iterator(); it.hasNext();) {
+        SNodeReference n = new BaseLanguageNodeLookup(it.next()).getNodeAt(location.getFileName(), location.getLineNumber());
+        if (n == null) {
+          continue;
+        }
+        SNode resolved = n.resolve(debugSession.getProject().getRepository());
+        if (resolved != null) {
+          return resolved;
+        }
       }
     }
     return null;

@@ -5,29 +5,32 @@ package jetbrains.mps.ide.platform.actions;
 import com.intellij.execution.filters.Filter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.smodel.SNodePointer;
-import com.intellij.execution.filters.HyperlinkInfo;
-import jetbrains.mps.ide.navigation.NodeNavigatable;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
+import com.intellij.execution.filters.HyperlinkInfo;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
 
 public class MPSStackTraceFilter implements Filter {
   private static String STRING_START = "at ";
-  private final Project myProject;
+  protected final Project myProject;
+
   public MPSStackTraceFilter(Project project) {
     myProject = project;
   }
   @Nullable
   @Override
   public Filter.Result applyFilter(String line, int length) {
-    return tryToParseLine(line, length - line.length(), myProject);
+    return tryToParseLine(line, length - line.length());
   }
 
-  private Filter.Result tryToParseLine(String line, int offset, Project project) {
+  private Filter.Result tryToParseLine(String line, int offset) {
     if (((line == null ? null : line.trim())).indexOf(STRING_START) < 0) {
       return null;
     }
@@ -65,28 +68,27 @@ public class MPSStackTraceFilter implements Filter {
     int hlStart = start + parenIndex + 1 + offset;
     int hlEnd = start + closingParenIndex + offset;
 
-    return detectTarget(hlStart, hlEnd, unitName, fileName, lineNumber, project);
+    return detectTarget(hlStart, hlEnd, unitName, fileName, lineNumber);
   }
 
-  protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber, Project project) {
-    final SNodeReference nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode node = TraceInfoUtil.getJavaNode(unitName, fileName, lineNumber);
-        if (node == null) {
-          return null;
-        }
-        return new SNodePointer(node);
+  protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber) {
+    SRepository repo = ProjectHelper.getProjectRepository(myProject);
+    if (repo == null) {
+      return null;
+    }
+    for (Iterator<DebugInfo> it = new DefaultTraceInfoProvider(repo).debugInfo(NameUtil.namespaceFromLongName(unitName)).iterator(); it.hasNext();) {
+      final SNodeReference n = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, lineNumber);
+      if (n == null) {
+        continue;
       }
-    });
-
-
-    if (nodeToShow != null) {
+      // XXX could benefit from repo.isAccessible(SNodeReference) that finds out whether reference could be resolved but doesn't provide node and thus doesn't require external model access 
+      //     though takes one internally to find out 
       return new Filter.Result(hlStart, hlEnd, new HyperlinkInfo() {
         @Override
         public void navigate(Project ideaProject) {
-          if (nodeToShow != null && ideaProject != null) {
-            new NodeNavigatable(ProjectHelper.toMPSProject(ideaProject), nodeToShow).navigate(true);
+          MPSProject mpsProject = ProjectHelper.fromIdeaProject(ideaProject);
+          if (mpsProject != null) {
+            new NodeNavigatable(mpsProject, n).navigate(true);
           }
         }
       });
