@@ -58,7 +58,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   private static int ourIndex = 0;
 
   protected MPSFacet myFacet;
-  private JavaCodeInsightTestFixture myFixture;
+  protected JavaCodeInsightTestFixture myFixture;
   protected Module myModule;
   protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 

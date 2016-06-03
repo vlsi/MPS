@@ -149,6 +149,29 @@ public class DebugInfo {
   }
 
   /**
+   * Look up all {@link TraceablePositionInfo} that cover specified location, sort them by distance of starting line from the
+   * line specified (closes coming first), prepare {@code SNodeReference} and yield the list.
+   */
+  @NotNull
+  public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line) {
+    // XXX implementation note: this method, much like the next one, getVariableNodesForPosition, is identical to getUnitNodesForPosition
+    //     and all are worth refactoring (though not the way it used to be in TraceInfoUtil)
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    ArrayList<SNodeReference> traceNode = new ArrayList<SNodeReference>();
+    for (DebugInfoRoot dr : getRootsForFile(fileName)) {
+      ArrayList<TraceablePositionInfo> positionInfos = new ArrayList<TraceablePositionInfo>(dr.getPositions());
+      Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      for (TraceablePositionInfo tpi : positionInfos) {
+        if (tpi.contains(fileName, line)) {
+          traceNode.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(tpi.getNodeId())));
+        }
+      }
+    }
+    return traceNode;
+  }
+
+
+  /**
    * Look up for variable nodes within scope that covers specified line of the file.
    * List is sorted in reverse order, with variables from the bottom (most nested) coming first.
    * <p/>

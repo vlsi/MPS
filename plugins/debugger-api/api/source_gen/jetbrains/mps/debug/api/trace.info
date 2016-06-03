@@ -528,78 +528,80 @@
   </root>
   <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913515">
     <file name="DebuggableFramesSelector.java">
-      <node id="1331672133304148678" at="15,0,16,0" concept="5" trace="myProject" />
-      <node id="4701043456212925511" at="16,0,17,0" concept="5" trace="mySession" />
-      <node id="1331672133304148683" at="17,82,18,24" concept="4" />
-      <node id="7048882195103586378" at="18,24,19,24" concept="4" />
-      <node id="4474271214082913538" at="24,37,25,21" concept="11" />
-      <node id="4474271214082913545" at="28,27,29,18" concept="11" />
-      <node id="4474271214082913547" at="30,5,31,25" concept="11" />
-      <node id="4474271214082913560" at="34,72,35,18" concept="10" />
-      <node id="4474271214082913573" at="37,37,38,21" concept="11" />
-      <node id="4474271214082913575" at="39,7,40,14" concept="4" />
-      <node id="4474271214082913583" at="42,27,43,38" concept="11" />
-      <node id="4474271214082913585" at="44,5,45,13" concept="11" />
-      <node id="4474271214082913621" at="48,64,49,103" concept="11" />
-      <node id="4474271214082913643" at="52,103,53,112" concept="11" />
-      <node id="4474271214082913681" at="57,127,58,18" concept="11" />
-      <node id="1053276000964841970" at="59,5,60,140" concept="10" />
-      <node id="1053276000964841997" at="60,140,61,140" concept="10" />
-      <node id="4474271214082913697" at="61,140,62,53" concept="11" />
-      <node id="1053276000964842022" at="64,62,65,46" concept="11" />
-      <node id="4474271214082913534" at="23,38,26,7" concept="8" />
-      <node id="4474271214082913540" at="27,5,30,5" concept="8" />
-      <node id="4474271214082913569" at="36,38,39,7" concept="8" />
-      <node id="4474271214082913578" at="41,5,44,5" concept="8" />
-      <node id="4474271214082913668" at="56,197,59,5" concept="8" />
-      <node id="1053276000964842022" at="64,0,67,0" concept="15" trace="eq_xhry8p_a0d0h#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4474271214082913518" at="17,0,21,0" concept="3" trace="DebuggableFramesSelector#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-      <node id="4474271214082913588" at="47,0,51,0" concept="9" trace="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
-      <node id="4474271214082913626" at="51,0,55,0" concept="9" trace="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
-      <node id="4474271214082913529" at="22,75,27,5" concept="7" />
-      <node id="4474271214082913564" at="35,18,41,5" concept="7" />
-      <node id="4474271214082913648" at="55,0,64,0" concept="9" trace="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
-      <node id="4474271214082913522" at="21,0,33,0" concept="9" trace="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-      <node id="4474271214082913553" at="33,0,47,0" concept="9" trace="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
-      <scope id="4474271214082913537" at="24,37,25,21" />
-      <scope id="4474271214082913544" at="28,27,29,18" />
-      <scope id="4474271214082913572" at="37,37,38,21" />
-      <scope id="4474271214082913582" at="42,27,43,38" />
-      <scope id="4474271214082913594" at="48,64,49,103" />
-      <scope id="4474271214082913635" at="52,103,53,112" />
-      <scope id="4474271214082913680" at="57,127,58,18" />
-      <scope id="1053276000964842022" at="64,62,65,46" />
-      <scope id="4474271214082913521" at="17,82,19,24" />
-      <scope id="4474271214082913533" at="23,38,26,7" />
-      <scope id="1053276000964842022" at="64,0,67,0">
+      <node id="1331672133304148678" at="16,0,17,0" concept="5" trace="myProject" />
+      <node id="4701043456212925511" at="17,0,18,0" concept="5" trace="mySession" />
+      <node id="1331672133304148683" at="18,82,19,24" concept="4" />
+      <node id="7048882195103586378" at="19,24,20,24" concept="4" />
+      <node id="4474271214082913538" at="25,37,26,21" concept="11" />
+      <node id="4474271214082913545" at="29,27,30,18" concept="11" />
+      <node id="4474271214082913547" at="31,5,32,25" concept="11" />
+      <node id="4474271214082913560" at="35,72,36,18" concept="10" />
+      <node id="4474271214082913573" at="38,37,39,21" concept="11" />
+      <node id="4474271214082913575" at="40,7,41,14" concept="4" />
+      <node id="4474271214082913583" at="43,27,44,38" concept="11" />
+      <node id="4474271214082913585" at="45,5,46,13" concept="11" />
+      <node id="4474271214082913621" at="49,64,50,103" concept="11" />
+      <node id="4474271214082913643" at="53,103,54,143" concept="11" />
+      <node id="4474271214082913681" at="58,127,59,18" concept="11" />
+      <node id="4664028035453751817" at="60,5,61,75" concept="10" />
+      <node id="1053276000964841970" at="61,75,62,143" concept="10" />
+      <node id="1053276000964841997" at="62,143,63,143" concept="10" />
+      <node id="4474271214082913697" at="63,143,64,53" concept="11" />
+      <node id="1053276000964842022" at="66,62,67,46" concept="11" />
+      <node id="4474271214082913534" at="24,38,27,7" concept="8" />
+      <node id="4474271214082913540" at="28,5,31,5" concept="8" />
+      <node id="4474271214082913569" at="37,38,40,7" concept="8" />
+      <node id="4474271214082913578" at="42,5,45,5" concept="8" />
+      <node id="4474271214082913668" at="57,197,60,5" concept="8" />
+      <node id="1053276000964842022" at="66,0,69,0" concept="15" trace="eq_xhry8p_a0e0h#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="4474271214082913518" at="18,0,22,0" concept="3" trace="DebuggableFramesSelector#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+      <node id="4474271214082913588" at="48,0,52,0" concept="9" trace="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
+      <node id="4474271214082913626" at="52,0,56,0" concept="9" trace="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
+      <node id="4474271214082913529" at="23,75,28,5" concept="7" />
+      <node id="4474271214082913564" at="36,18,42,5" concept="7" />
+      <node id="4474271214082913648" at="56,0,66,0" concept="9" trace="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
+      <node id="4474271214082913522" at="22,0,34,0" concept="9" trace="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
+      <node id="4474271214082913553" at="34,0,48,0" concept="9" trace="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
+      <scope id="4474271214082913537" at="25,37,26,21" />
+      <scope id="4474271214082913544" at="29,27,30,18" />
+      <scope id="4474271214082913572" at="38,37,39,21" />
+      <scope id="4474271214082913582" at="43,27,44,38" />
+      <scope id="4474271214082913594" at="49,64,50,103" />
+      <scope id="4474271214082913635" at="53,103,54,143" />
+      <scope id="4474271214082913680" at="58,127,59,18" />
+      <scope id="1053276000964842022" at="66,62,67,46" />
+      <scope id="4474271214082913521" at="18,82,20,24" />
+      <scope id="4474271214082913533" at="24,38,27,7" />
+      <scope id="1053276000964842022" at="66,0,69,0">
         <var name="a" id="1053276000964842022" />
         <var name="b" id="1053276000964842022" />
       </scope>
-      <scope id="4474271214082913518" at="17,0,21,0">
+      <scope id="4474271214082913518" at="18,0,22,0">
         <var name="project" id="1331672133304146151" />
         <var name="session" id="7048882195103586374" />
       </scope>
-      <scope id="4474271214082913568" at="36,38,40,14" />
-      <scope id="4474271214082913588" at="47,0,51,0">
+      <scope id="4474271214082913568" at="37,38,41,14" />
+      <scope id="4474271214082913588" at="48,0,52,0">
         <var name="frame" id="4474271214082913591" />
       </scope>
-      <scope id="4474271214082913626" at="51,0,55,0">
+      <scope id="4474271214082913626" at="52,0,56,0">
         <var name="fileName" id="4474271214082913631" />
         <var name="position" id="4474271214082913633" />
         <var name="unitName" id="4474271214082913629" />
       </scope>
-      <scope id="4474271214082913529" at="22,75,27,5">
+      <scope id="4474271214082913529" at="23,75,28,5">
         <var name="frame" id="4474271214082913531" />
       </scope>
-      <scope id="4474271214082913564" at="35,18,41,5">
+      <scope id="4474271214082913564" at="36,18,42,5">
         <var name="frame" id="4474271214082913566" />
       </scope>
-      <scope id="4474271214082913667" at="56,197,62,53">
+      <scope id="4474271214082913667" at="57,197,64,53">
         <var name="lastPointer" id="1053276000964841971" />
         <var name="nextPointer" id="1053276000964841998" />
+        <var name="posProvider" id="4664028035453751818" />
       </scope>
-      <scope id="4474271214082913528" at="22,75,31,25" />
-      <scope id="4474271214082913648" at="55,0,64,0">
+      <scope id="4474271214082913528" at="23,75,32,25" />
+      <scope id="4474271214082913648" at="56,0,66,0">
         <var name="lastFileName" id="4474271214082913653" />
         <var name="lastFrameCount" id="4474271214082913657" />
         <var name="lastLineNumber" id="4474271214082913655" />
@@ -609,16 +611,16 @@
         <var name="nextLineNumber" id="4474271214082913663" />
         <var name="nextUnitName" id="4474271214082913659" />
       </scope>
-      <scope id="4474271214082913559" at="34,72,45,13">
+      <scope id="4474271214082913559" at="35,72,46,13">
         <var name="index" id="4474271214082913561" />
       </scope>
-      <scope id="4474271214082913522" at="21,0,33,0">
+      <scope id="4474271214082913522" at="22,0,34,0">
         <var name="frames" id="4474271214082913525" />
       </scope>
-      <scope id="4474271214082913553" at="33,0,47,0">
+      <scope id="4474271214082913553" at="34,0,48,0">
         <var name="frames" id="4474271214082913556" />
       </scope>
-      <unit id="4474271214082913515" at="14,0,68,0" name="jetbrains.mps.debug.api.DebuggableFramesSelector" />
+      <unit id="4474271214082913515" at="15,0,70,0" name="jetbrains.mps.debug.api.DebuggableFramesSelector" />
     </file>
   </root>
   <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913702">

@@ -5,21 +5,22 @@ package jetbrains.mps.debug.api.source;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.ide.common.FileOpenUtil;
 
 public class TextPositionProvider implements IPositionProvider<TextSourcePosition> {
-  private Project myProject;
+  private final Project myProject;
+
   public TextPositionProvider(Project project) {
     myProject = project;
   }
+
   @Nullable
-  @Override
-  public TextSourcePosition getPosition(@Nullable ILocation location) {
+  public TextSourcePosition getPosition(@Nullable ILocation location, @NotNull AbstractDebugSession session) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
@@ -31,19 +32,20 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
   }
   @Nullable
   @Override
+  public TextSourcePosition getPosition(@Nullable ILocation location) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+  @Nullable
+  @Override
   public TextSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    VirtualFile file = getFile(unitName, fileName);
-    if (file != null) {
-      return new TextSourcePosition(file, lineNumber);
-    }
-    return null;
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
   @Nullable
   public VirtualFile getFile(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
-    return FileOpenUtil.findFile(myProject, location.getUnitName(), location.getFileName());
+    return getFile(location.getUnitName(), location.getFileName());
   }
   @Nullable
   public VirtualFile getFile(@NonNls String unitName, @NonNls String fileName) {
