@@ -47,11 +47,17 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6759767305208041200(final PropertyMacroContext _context) {
     return _context.createUniqueName("ICON", null);
   }
+  public static Object propertyMacro_GetPropertyValue_5979521222239286118(final PropertyMacroContext _context) {
+    return _context.createUniqueName("RESOURCE_", null);
+  }
+  public static Object propertyMacro_GetPropertyValue_5979521222239286107(final PropertyMacroContext _context) {
+    return (String) Icon__BehaviorDescriptor.getFilename_id7Mb2akaesuN.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, 0x52fb86deea79b940L, "icon")));
+  }
   public static Object referenceMacro_GetReferent_6759767305208080925(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("map_IconContainer");
   }
   public static Object referenceMacro_GetReferent_6759767305208080928(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconContainerItem");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconField");
   }
   public static Object referenceMacro_GetReferent_2990235398086953122(final ReferenceMacroContext _context) {
     return (String) IconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
@@ -61,6 +67,12 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_2990235398086953187(final ReferenceMacroContext _context) {
     return (String) IconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
+  }
+  public static Object referenceMacro_GetReferent_5979521222239280705(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByMappingLabel("map_IconContainer");
+  }
+  public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
   }
   public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
     return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
@@ -76,6 +88,9 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_6759767305208041204(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconExpression"));
+  }
+  public static Iterable<SNode> sourceNodesQuery_5979521222239286126(final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "jetbrains.mps.lang.resources.structure.IconResourceExpression"));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

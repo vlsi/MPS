@@ -33,8 +33,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IconResource__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.IconResource");
+public final class Icon__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.Icon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> generate_id7Mb2akaesv8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build();
@@ -88,7 +88,7 @@ public final class IconResource__BehaviorDescriptor extends BaseBHDescriptor {
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 
-  /*package*/ IconResource__BehaviorDescriptor() {
+  /*package*/ Icon__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

@@ -19,20 +19,20 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class IconResourceDeclaration_Editor extends DefaultNodeEditor {
+public class IconDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_pxzsi4_a(editorContext, node);
+    return this.createCollection_m7x5bp_a(editorContext, node);
   }
-  private EditorCell createCollection_pxzsi4_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_m7x5bp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_pxzsi4_a");
+    editorCell.setCellId("Collection_m7x5bp_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createProperty_pxzsi4_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pxzsi4_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_pxzsi4_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_m7x5bp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m7x5bp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m7x5bp_c0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createProperty_pxzsi4_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_m7x5bp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -51,18 +51,18 @@ public class IconResourceDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_pxzsi4_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m7x5bp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_pxzsi4_b0");
+    editorCell.setCellId("Constant_m7x5bp_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_pxzsi4_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new IconResourceDeclaration_Editor.iconExpressionSingleRoleHandler_pxzsi4_c0(node, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, 0x7c8b08a50a39c6c1L, "iconExpression"), editorContext);
+  private EditorCell createRefNode_m7x5bp_c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new IconDeclaration_Editor.iconExpressionSingleRoleHandler_m7x5bp_c0(node, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, 0x7c8b08a50a39c6c1L, "iconExpression"), editorContext);
     return provider.createCell();
   }
-  private class iconExpressionSingleRoleHandler_pxzsi4_c0 extends SingleRoleCellProvider {
-    public iconExpressionSingleRoleHandler_pxzsi4_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class iconExpressionSingleRoleHandler_m7x5bp_c0 extends SingleRoleCellProvider {
+    public iconExpressionSingleRoleHandler_m7x5bp_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {

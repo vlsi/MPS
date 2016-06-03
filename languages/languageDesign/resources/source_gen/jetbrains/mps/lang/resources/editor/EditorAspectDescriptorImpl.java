@@ -22,27 +22,32 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResource_Editor());
+            return Collections.<ConceptEditor>singletonList(new Icon_Editor());
           }
           break;
         case 1:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResourceBundle_Editor());
+            return Collections.<ConceptEditor>singletonList(new IconBundle_Editor());
           }
           break;
         case 2:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResourceDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new IconDeclaration_Editor());
           }
           break;
         case 3:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
+            return Collections.<ConceptEditor>singletonList(new IconExpression_Editor());
           }
           break;
         case 4:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResourceReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new IconReference_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
           }
           break;
         default:
@@ -62,5 +67,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.IconResource"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.IconResourceBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.IconResourceDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconResourceExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.IconResourceReference"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.IconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.IconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.IconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "jetbrains.mps.lang.resources.structure.IconResourceExpression"));
 }

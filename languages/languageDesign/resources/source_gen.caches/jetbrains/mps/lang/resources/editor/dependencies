@@ -6,18 +6,19 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconBundle_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceReference_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResource_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.editor.Icon_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor" file="IconResourceBundle_Editor.java">
+  <dependency className="jetbrains.mps.lang.resources.editor.IconBundle_Editor" file="IconBundle_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -42,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.resources.editor.IconResourceDeclaration_Editor" file="IconResourceDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.lang.resources.editor.IconDeclaration_Editor" file="IconDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -63,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" file="IconResourceExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.resources.editor.IconExpression_Editor" file="IconExpression_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
@@ -77,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.resources.editor.IconResourceReference_Editor" file="IconResourceReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.resources.editor.IconReference_Editor" file="IconReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -95,7 +96,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.resources.editor.IconResource_Editor" file="IconResource_Editor.java">
+  <dependency className="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" file="IconResourceExpression_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.editor.Icon_Editor" file="Icon_Editor.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -108,7 +123,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
