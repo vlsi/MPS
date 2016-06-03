@@ -18,6 +18,6 @@
     <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
   </component>
 </module>

@@ -18,8 +18,8 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="Closures-runtime" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-workbench" />

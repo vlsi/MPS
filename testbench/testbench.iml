@@ -15,14 +15,14 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="analyzers" scope="TEST" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" scope="TEST" />
     <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="miscTests" />
+    <orderEntry type="module" module-name="tuples-runtime" />
+    <orderEntry type="module" module-name="misc-tests" />
     <orderEntry type="module" module-name="typesystemUi" scope="TEST" />
     <orderEntry type="module" module-name="mps-workbench" scope="TEST" />
     <orderEntry type="module" module-name="mps-platform" />

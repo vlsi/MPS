@@ -16,7 +16,7 @@
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="mps-core" exported="" />
@@ -34,7 +34,7 @@
     <orderEntry type="module" module-name="platform" exported="" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="persistence" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="migrations-runtime" />
   </component>

@@ -17,9 +17,9 @@
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="modelchecker" />

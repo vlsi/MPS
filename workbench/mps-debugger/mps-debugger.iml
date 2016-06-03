@@ -14,7 +14,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-platform" />

@@ -16,9 +16,9 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />

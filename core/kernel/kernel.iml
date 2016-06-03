@@ -25,8 +25,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="openapi" exported="" />
     <orderEntry type="module" module-name="smodel" exported="" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />

@@ -13,7 +13,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="generator-engine" />
@@ -28,4 +28,3 @@
     <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>
-
