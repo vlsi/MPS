@@ -51,6 +51,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -59,8 +60,9 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="7Mb2akaesqV">
-    <property role="TrG5h" value="IconResource" />
+    <property role="TrG5h" value="Icon" />
     <property role="EcuMT" value="8974276187400029883" />
+    <property role="3GE5qa" value="iconBundle" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="63hNSM1YIC9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -74,15 +76,16 @@
   </node>
   <node concept="1TIwiD" id="7Mb2akaesqX">
     <property role="19KtqR" value="true" />
-    <property role="TrG5h" value="IconResourceBundle" />
+    <property role="TrG5h" value="IconBundle" />
     <property role="EcuMT" value="8974276187400029885" />
+    <property role="3GE5qa" value="iconBundle" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesqY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icons" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="8974276187400029886" />
-      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconResourceDeclaration" />
+      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconDeclaration" />
     </node>
     <node concept="PrWs8" id="7Mb2akaesqZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -92,8 +95,9 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akaesr0">
-    <property role="TrG5h" value="IconResourceDeclaration" />
+    <property role="TrG5h" value="IconDeclaration" />
     <property role="EcuMT" value="8974276187400029888" />
+    <property role="3GE5qa" value="iconBundle" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesr1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -109,7 +113,7 @@
   <node concept="1TIwiD" id="7Mb2akaesr3">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="IconResourceExpression" />
+    <property role="TrG5h" value="IconExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
     <property role="EcuMT" value="8974276187400029891" />
@@ -119,24 +123,25 @@
       <property role="20kJfa" value="icon" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8974276187400029893" />
-      <ref role="20lvS9" node="7Mb2akaesqV" resolve="IconResource" />
+      <ref role="20lvS9" node="7Mb2akaesqV" resolve="Icon" />
     </node>
     <node concept="asaX9" id="7Mb2akaesr6" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="7Mb2akaesr7">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="IconResourceReference" />
+    <property role="TrG5h" value="IconReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
     <property role="EcuMT" value="8974276187400029895" />
+    <property role="3GE5qa" value="iconBundle" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7Mb2akaesr8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8974276187400029896" />
-      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconResourceDeclaration" />
+      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="7Mb2akaesra">

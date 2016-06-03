@@ -146,9 +146,15 @@
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="24kQdi" id="7Mb2akaesrc">
-    <ref role="1XX52x" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="1XX52x" to="1oap:7Mb2akaesqV" resolve="Icon" />
     <node concept="3EZMnI" id="63hNSM1YCme" role="2wV5jI">
       <node concept="1QoScp" id="63hNSM1Zu5o" role="3EZMnx">
         <property role="1QpmdY" value="true" />
@@ -244,7 +250,7 @@
                     <ref role="37wK5l" to="7a0s:1tyjSjK6Usc" resolve="createSelectIconButton" />
                     <node concept="pncrf" id="7Mb2akaesrL" role="37wK5m" />
                     <node concept="pqAIu" id="7Mb2akaesrM" role="37wK5m">
-                      <ref role="pqAIh" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+                      <ref role="pqAIh" to="1oap:7Mb2akaesqV" resolve="Icon" />
                       <ref role="pqAIg" to="1oap:7Mb2akaesrb" resolve="path" />
                     </node>
                     <node concept="1Q80Hx" id="7Mb2akaesrN" role="37wK5m" />
@@ -324,7 +330,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Mb2akaess0">
-    <ref role="1XX52x" to="1oap:7Mb2akaesr3" resolve="IconResourceExpression" />
+    <ref role="1XX52x" to="1oap:7Mb2akaesr3" resolve="IconExpression" />
     <node concept="3EZMnI" id="7Mb2akaess1" role="2wV5jI">
       <node concept="3F0ifn" id="7Mb2akaess2" role="3EZMnx">
         <property role="3F0ifm" value="icon" />
@@ -342,7 +348,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Mb2akaess7">
-    <ref role="1XX52x" to="1oap:7Mb2akaesqX" resolve="IconResourceBundle" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="1XX52x" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
     <node concept="3EZMnI" id="7Mb2akaess8" role="2wV5jI">
       <node concept="3F0ifn" id="7Mb2akaess9" role="3EZMnx">
         <property role="3F0ifm" value="Icons" />
@@ -375,7 +382,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Mb2akaessj">
-    <ref role="1XX52x" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="1XX52x" to="1oap:7Mb2akaesr0" resolve="IconDeclaration" />
     <node concept="3EZMnI" id="7Mb2akaessk" role="2wV5jI">
       <node concept="3F0A7n" id="7Mb2akaessl" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -391,7 +399,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Mb2akaessp">
-    <ref role="1XX52x" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="1XX52x" to="1oap:7Mb2akaesr7" resolve="IconReference" />
     <node concept="3EZMnI" id="7Mb2akaessq" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY2g" role="3EZMnx">
         <property role="1cu_pB" value="0" />

@@ -153,13 +153,17 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
   <node concept="13h7C7" id="7Mb2akaessz">
-    <ref role="13h7C2" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="13h7C2" to="1oap:7Mb2akaesqV" resolve="Icon" />
     <node concept="13hLZK" id="7Mb2akaess$" role="13h7CW">
       <node concept="3clFbS" id="7Mb2akaess_" role="2VODD2" />
     </node>
@@ -582,7 +586,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="7Mb2akaesve">
-    <ref role="13h7C2" to="1oap:7Mb2akaesqX" resolve="IconResourceBundle" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="13h7C2" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
     <node concept="13i0hz" id="7Mb2akaesvf" role="13h7CS">
       <property role="TrG5h" value="getJavaName" />
       <node concept="3Tm1VV" id="7Mb2akaesvg" role="1B3o_S" />
@@ -612,7 +617,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="7Mb2akaesvs">
-    <ref role="13h7C2" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
+    <property role="3GE5qa" value="iconBundle" />
+    <ref role="13h7C2" to="1oap:7Mb2akaesr7" resolve="IconReference" />
     <node concept="13hLZK" id="7Mb2akaesvt" role="13h7CW">
       <node concept="3clFbS" id="7Mb2akaesvu" role="2VODD2" />
     </node>
