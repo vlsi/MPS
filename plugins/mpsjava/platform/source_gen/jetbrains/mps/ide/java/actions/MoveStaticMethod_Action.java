@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public class MoveStaticMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,6 +62,7 @@ public class MoveStaticMethod_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
 
-    new MoveStaticMethodExecutable().execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveRefactoringRunnable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod"), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+    IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod");
+    new MoveStaticMethodExecutable().execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")), refactoring);
   }
 }

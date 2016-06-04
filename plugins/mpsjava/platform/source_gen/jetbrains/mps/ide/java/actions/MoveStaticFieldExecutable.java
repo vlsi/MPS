@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.ide.platform.refactoring.MoveNodeDialog;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -11,13 +12,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
+public class MoveStaticFieldExecutable extends MoveStaticMemberExecutable {
 
   /**
    * Shared between workbench action and plugin MoveContributor
    */
   @Override
-  public void execute(final MPSProject project, final SNode target, final MoveRefactoringRunnable runnable) {
+  public void execute(final MPSProject project, final SNode target, final IRefactoring refactoring) {
     final SNode whereToMove;
     whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
       @Override
@@ -39,7 +40,7 @@ public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
           return;
         }
 
-        runnable.run(whereToMove);
+        performRefactoring(target, whereToMove, project, refactoring);
       }
     });
   }

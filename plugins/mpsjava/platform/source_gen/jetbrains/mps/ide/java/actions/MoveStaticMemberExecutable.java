@@ -4,7 +4,14 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import java.util.Arrays;
 
-public interface MoveStaticMemberExecutable {
-  void execute(MPSProject project, SNode target, MoveRefactoringRunnable runnable);
+public abstract class MoveStaticMemberExecutable {
+  public abstract void execute(MPSProject project, SNode target, IRefactoring refactoring);
+  protected void performRefactoring(final SNode target, final SNode whereToMove, final MPSProject project, final IRefactoring refactoring) {
+    RefactoringAccessEx.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContext(refactoring, Arrays.asList("destination"), Arrays.asList(whereToMove), target, project));
+  }
 }
