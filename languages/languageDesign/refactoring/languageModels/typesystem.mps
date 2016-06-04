@@ -1470,31 +1470,5 @@
       <ref role="1YaFvo" to="tp1h:1Z$ZeXyO1xG" resolve="ExecuteRefactoringStatement" />
     </node>
   </node>
-  <node concept="1YbPZF" id="7WDAPLDemRe">
-    <property role="TrG5h" value="typeof_RefactoringExpression" />
-    <property role="3GE5qa" value="Context" />
-    <node concept="3clFbS" id="7WDAPLDemRf" role="18ibNy">
-      <node concept="1Z5TYs" id="7WDAPLDemYR" role="3cqZAp">
-        <node concept="mw_s8" id="7WDAPLDemZb" role="1ZfhKB">
-          <node concept="2c44tf" id="7WDAPLDemZ7" role="mwGJk">
-            <node concept="3uibUv" id="7WDAPLDen1z" role="2c44tc">
-              <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="7WDAPLDemYU" role="1ZfhK$">
-          <node concept="1Z2H0r" id="7WDAPLDemRl" role="mwGJk">
-            <node concept="1YBJjd" id="7WDAPLDemT5" role="1Z2MuG">
-              <ref role="1YBMHb" node="7WDAPLDemRh" resolve="refactoringExpression" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="7WDAPLDemRh" role="1YuTPh">
-      <property role="TrG5h" value="refactoringExpression" />
-      <ref role="1YaFvo" to="tp1h:7WDAPLDemPJ" resolve="RefactoringExpression" />
-    </node>
-  </node>
 </model>
 

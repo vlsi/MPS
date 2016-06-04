@@ -101,7 +101,6 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.NodeTarget_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringTarget" />
@@ -297,26 +296,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringExpression_Editor" file="RefactoringExpression_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.CreateRefcontextHint" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" file="RefactoringParameterReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />

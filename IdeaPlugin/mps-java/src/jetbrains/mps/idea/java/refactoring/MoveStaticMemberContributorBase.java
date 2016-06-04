@@ -14,6 +14,7 @@ import com.intellij.refactoring.move.moveMembers.MoveMembersProcessor.MoveMember
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.MoveRefactoringContributor;
 import jetbrains.mps.idea.core.refactoring.PsiAwareRefactoring;
@@ -25,6 +26,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +55,30 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
   public void invoke(@NotNull Project project, @NotNull List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
     final SNode target = nodes.get(0);
-    getRefactoringExecutable().execute(mpsProject, target, new MoveStaticMemberRefactoring());
+
+    MoveStaticMemberExecutable refactoringExecutable = getRefactoringExecutable();
+    SNode whereToMove = refactoringExecutable.askDestination(mpsProject, target);
+    if (whereToMove == null) {
+      return;
+    }
+    mpsProject.getModelAccess().runReadInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (!SNodeUtil.isAccessible(target, mpsProject.getRepository())) {
+          return;
+        }
+        if (!SNodeUtil.isAccessible(whereToMove, mpsProject.getRepository())) {
+          return;
+        }
+
+        RefactoringAccessEx.getInstance().getRefactoringFacade().execute(
+          RefactoringContext.createRefactoringContext(new MoveStaticMemberRefactoring(),
+            Arrays.asList("destination"),
+            Arrays.asList(whereToMove),
+            target,
+            mpsProject));
+      }
+    });
   }
 
   class MoveStaticMemberRefactoring extends PsiAwareRefactoring {

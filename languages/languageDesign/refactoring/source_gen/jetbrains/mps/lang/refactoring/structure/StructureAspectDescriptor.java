@@ -16,7 +16,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(50);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(49);
   /*package*/ final ConceptDescriptor myConceptAbstractMoveExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x2cfffca8ff395f2fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x1174ee44ac2L, "whatToMove", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false), new ConceptDescriptorBuilder.Link(0x1174ee44ac3L, "destination", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"whatToMove", "destination"}, new boolean[]{false, false}).abstract_().staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "1199619425400")).create();
   /*package*/ final ConceptDescriptor myConceptAbstractMoveNodeExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eee67c1L)).super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").version(1).super_(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L)).parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").parentIds(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "1199620122561")).create();
   /*package*/ final ConceptDescriptor myConceptAbstractMoveNodesExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eeedfb6L)).super_("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").version(1).super_(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L)).parents("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression").parentIds(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L)).abstract_().staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "1199620153270")).create();
@@ -58,7 +58,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptRefactoringArgument = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringArgument", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327d5dL)).version(1).interface_().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "478744034994715997")).create();
   /*package*/ final ConceptDescriptor myConceptRefactoringArgumentReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327dc4L)).version(1).interface_().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "478744034994716100")).create();
   /*package*/ final ConceptDescriptor myConceptRefactoringContext_ConceptFunctionParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61724aL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("refactoringContext", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "7953996722066256458")).create();
-  /*package*/ final ConceptDescriptor myConceptRefactoringExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringExpression", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x7f299b5c69396d6fL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7f299b5c69396d73L, "refactoring", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L), false)).references("refactoring").alias("refactoring", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "9163025738066652527")).create();
   /*package*/ final ConceptDescriptor myConceptRefactoringField = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringField", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0662L)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L), MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327d5dL)).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "6895093993902311010")).create();
   /*package*/ final ConceptDescriptor myConceptRefactoringFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L), MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327dc4L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "5497648299878398634")).create();
   /*package*/ final ConceptDescriptor myConceptRefactoringParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.refactoring.structure.RefactoringParameter", MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L), MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327d5dL)).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)", "6895093993902311012")).create();
@@ -110,20 +109,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptRefactoringArgument.getId(), 38);
     myIndexMap.put(myConceptRefactoringArgumentReference.getId(), 39);
     myIndexMap.put(myConceptRefactoringContext_ConceptFunctionParameter.getId(), 40);
-    myIndexMap.put(myConceptRefactoringExpression.getId(), 41);
-    myIndexMap.put(myConceptRefactoringField.getId(), 42);
-    myIndexMap.put(myConceptRefactoringFieldReference.getId(), 43);
-    myIndexMap.put(myConceptRefactoringParameter.getId(), 44);
-    myIndexMap.put(myConceptRefactoringParameterReference.getId(), 45);
-    myIndexMap.put(myConceptRefactoringTarget.getId(), 46);
-    myIndexMap.put(myConceptRepositoryOperation.getId(), 47);
-    myIndexMap.put(myConceptScopeOperation.getId(), 48);
-    myIndexMap.put(myConceptUpdateModelProcedure.getId(), 49);
+    myIndexMap.put(myConceptRefactoringField.getId(), 41);
+    myIndexMap.put(myConceptRefactoringFieldReference.getId(), 42);
+    myIndexMap.put(myConceptRefactoringParameter.getId(), 43);
+    myIndexMap.put(myConceptRefactoringParameterReference.getId(), 44);
+    myIndexMap.put(myConceptRefactoringTarget.getId(), 45);
+    myIndexMap.put(myConceptRepositoryOperation.getId(), 46);
+    myIndexMap.put(myConceptScopeOperation.getId(), 47);
+    myIndexMap.put(myConceptUpdateModelProcedure.getId(), 48);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractMoveExpression, myConceptAbstractMoveNodeExpression, myConceptAbstractMoveNodesExpression, myConceptAffectedNodesClause, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_Module, myConceptConceptFunctionParameter_SModel, myConceptConceptFunctionParameter_SNode, myConceptContextMemberOperation, myConceptContextType, myConceptCreateRefactoringContext, myConceptDoRefactorClause, myConceptDoWhenDoneClause, myConceptExecuteRefactoringStatement, myConceptGetModelsToUpdateClause, myConceptInitClause, myConceptIsApplicableToModelClause, myConceptIsApplicableToModuleClause, myConceptIsApplicableToNodeClause, myConceptIsRefactoringApplicable, myConceptMainProjectOperation, myConceptModelDescriptorOperation, myConceptModelTarget, myConceptModelsToGenerateByDefault, myConceptModelsToGenerateClause, myConceptModuleOperation, myConceptModuleTarget, myConceptMoveNodeToModelExpression, myConceptMoveNodeToNodeExpression, myConceptMoveNodesToModelExpression, myConceptMoveNodesToNodeExpression, myConceptNodeOperation, myConceptNodeTarget, myConceptNodesOperation, myConceptOperationContextOperation, myConceptProjectOperation, myConceptRefactoring, myConceptRefactoringAction, myConceptRefactoringArgument, myConceptRefactoringArgumentReference, myConceptRefactoringContext_ConceptFunctionParameter, myConceptRefactoringExpression, myConceptRefactoringField, myConceptRefactoringFieldReference, myConceptRefactoringParameter, myConceptRefactoringParameterReference, myConceptRefactoringTarget, myConceptRepositoryOperation, myConceptScopeOperation, myConceptUpdateModelProcedure);
+    return Arrays.asList(myConceptAbstractMoveExpression, myConceptAbstractMoveNodeExpression, myConceptAbstractMoveNodesExpression, myConceptAffectedNodesClause, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_Module, myConceptConceptFunctionParameter_SModel, myConceptConceptFunctionParameter_SNode, myConceptContextMemberOperation, myConceptContextType, myConceptCreateRefactoringContext, myConceptDoRefactorClause, myConceptDoWhenDoneClause, myConceptExecuteRefactoringStatement, myConceptGetModelsToUpdateClause, myConceptInitClause, myConceptIsApplicableToModelClause, myConceptIsApplicableToModuleClause, myConceptIsApplicableToNodeClause, myConceptIsRefactoringApplicable, myConceptMainProjectOperation, myConceptModelDescriptorOperation, myConceptModelTarget, myConceptModelsToGenerateByDefault, myConceptModelsToGenerateClause, myConceptModuleOperation, myConceptModuleTarget, myConceptMoveNodeToModelExpression, myConceptMoveNodeToNodeExpression, myConceptMoveNodesToModelExpression, myConceptMoveNodesToNodeExpression, myConceptNodeOperation, myConceptNodeTarget, myConceptNodesOperation, myConceptOperationContextOperation, myConceptProjectOperation, myConceptRefactoring, myConceptRefactoringAction, myConceptRefactoringArgument, myConceptRefactoringArgumentReference, myConceptRefactoringContext_ConceptFunctionParameter, myConceptRefactoringField, myConceptRefactoringFieldReference, myConceptRefactoringParameter, myConceptRefactoringParameterReference, myConceptRefactoringTarget, myConceptRepositoryOperation, myConceptScopeOperation, myConceptUpdateModelProcedure);
   }
 
   @Override
@@ -217,22 +215,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 40:
         return myConceptRefactoringContext_ConceptFunctionParameter;
       case 41:
-        return myConceptRefactoringExpression;
-      case 42:
         return myConceptRefactoringField;
-      case 43:
+      case 42:
         return myConceptRefactoringFieldReference;
-      case 44:
+      case 43:
         return myConceptRefactoringParameter;
-      case 45:
+      case 44:
         return myConceptRefactoringParameterReference;
-      case 46:
+      case 45:
         return myConceptRefactoringTarget;
-      case 47:
+      case 46:
         return myConceptRepositoryOperation;
-      case 48:
+      case 47:
         return myConceptScopeOperation;
-      case 49:
+      case 48:
         return myConceptUpdateModelProcedure;
       default:
         throw new IllegalStateException();

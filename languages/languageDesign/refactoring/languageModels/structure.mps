@@ -812,25 +812,5 @@
     <property role="EcuMT" value="5938312768538179915" />
     <ref role="1TJDcQ" node="6Tyhu1FomhH" resolve="ContextMemberOperation" />
   </node>
-  <node concept="1TIwiD" id="7WDAPLDemPJ">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="RefactoringExpression" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Context" />
-    <property role="34LRSv" value="refactoring" />
-    <property role="EcuMT" value="9163025738066652527" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="7WDAPLDemPN" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="refactoring" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="9163025738066652531" />
-      <ref role="20lvS9" node="5YKiRiBue95" resolve="Refactoring" />
-    </node>
-    <node concept="asaX9" id="7WDAPLDen2X" role="lGtFl">
-      <property role="YLQ7P" value="created for internal purposes" />
-    </node>
-  </node>
 </model>
 

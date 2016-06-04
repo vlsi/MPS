@@ -2122,12 +2122,6 @@
         <ref role="v9R2y" node="4WjcdlXSrJq" resolve="reduce_CreateRefactoringContext" />
       </node>
     </node>
-    <node concept="3aamgX" id="7WDAPLDq1Un" role="3acgRq">
-      <ref role="30HIoZ" to="tp1h:7WDAPLDemPJ" resolve="RefactoringExpression" />
-      <node concept="j$656" id="7WDAPLDq2IJ" role="1lVwrX">
-        <ref role="v9R2y" node="7WDAPLDedEM" resolve="reduce_RefactoringExpression" />
-      </node>
-    </node>
     <node concept="3aamgX" id="1Z$ZeXyO1$d" role="3acgRq">
       <ref role="30HIoZ" to="tp1h:1Z$ZeXyO1xG" resolve="ExecuteRefactoringStatement" />
       <node concept="gft3U" id="1Z$ZeXyO1$e" role="1lVwrX">
@@ -2752,74 +2746,6 @@
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="59D800tSF5T" role="1tU5fm">
           <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="7WDAPLDedEM">
-    <property role="TrG5h" value="reduce_RefactoringExpression" />
-    <property role="3GE5qa" value="Context" />
-    <ref role="3gUMe" to="tp1h:7WDAPLDemPJ" resolve="RefactoringExpression" />
-    <node concept="2YIFZL" id="7WDAPLDedEN" role="13RCb5">
-      <property role="TrG5h" value="create" />
-      <node concept="3cqZAl" id="7WDAPLDedEO" role="3clF45" />
-      <node concept="3Tm1VV" id="7WDAPLDedEP" role="1B3o_S" />
-      <node concept="3clFbS" id="7WDAPLDedEQ" role="3clF47">
-        <node concept="3cpWs8" id="7WDAPLDedER" role="3cqZAp">
-          <node concept="3cpWsn" id="7WDAPLDedES" role="3cpWs9">
-            <property role="TrG5h" value="context" />
-            <node concept="3uibUv" id="7WDAPLDeo6K" role="1tU5fm">
-              <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
-            </node>
-            <node concept="2YIFZM" id="7WDAPLDepBn" role="33vP2m">
-              <ref role="37wK5l" to="ge2m:4a0HOMfn6Wr" resolve="getRefactoringByClassName" />
-              <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
-              <node concept="Xl_RD" id="7WDAPLDepBo" role="37wK5m">
-                <property role="Xl_RC" value="" />
-                <node concept="17Uvod" id="7WDAPLDepBp" role="lGtFl">
-                  <property role="2qtEX9" value="value" />
-                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                  <node concept="3zFVjK" id="7WDAPLDepBq" role="3zH0cK">
-                    <node concept="3clFbS" id="7WDAPLDepBr" role="2VODD2">
-                      <node concept="3clFbF" id="7WDAPLDepBs" role="3cqZAp">
-                        <node concept="3cpWs3" id="7WDAPLDepBt" role="3clFbG">
-                          <node concept="2OqwBi" id="7WDAPLDepBu" role="3uHU7w">
-                            <node concept="2OqwBi" id="7WDAPLDepBv" role="2Oq$k0">
-                              <node concept="30H73N" id="7WDAPLDepBw" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="7WDAPLDeryd" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tp1h:7WDAPLDemPN" />
-                              </node>
-                            </node>
-                            <node concept="3TrcHB" id="7WDAPLDepBy" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                            </node>
-                          </node>
-                          <node concept="3cpWs3" id="7WDAPLDepBz" role="3uHU7B">
-                            <node concept="2OqwBi" id="7WDAPLDepB$" role="3uHU7B">
-                              <node concept="2OqwBi" id="7WDAPLDepB_" role="2Oq$k0">
-                                <node concept="2OqwBi" id="7WDAPLDepBA" role="2Oq$k0">
-                                  <node concept="30H73N" id="7WDAPLDepBB" role="2Oq$k0" />
-                                  <node concept="3TrEf2" id="7WDAPLDeqWP" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tp1h:7WDAPLDemPN" />
-                                  </node>
-                                </node>
-                                <node concept="I4A8Y" id="7WDAPLDepBD" role="2OqNvi" />
-                              </node>
-                              <node concept="LkI2h" id="7WDAPLDepBE" role="2OqNvi" />
-                            </node>
-                            <node concept="Xl_RD" id="7WDAPLDepBF" role="3uHU7w">
-                              <property role="Xl_RC" value="." />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="raruj" id="7WDAPLDepCp" role="lGtFl" />
-            </node>
-          </node>
         </node>
       </node>
     </node>

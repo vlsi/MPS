@@ -14,7 +14,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.framework.IRefactoring;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import java.util.Arrays;
 
 public class MoveStaticField_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,8 +64,21 @@ public class MoveStaticField_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-
-    IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField");
-    new MoveStaticFieldExecutable().execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")), refactoring);
+    MoveStaticFieldExecutable executable = new MoveStaticFieldExecutable();
+    final SNode whereToMove = executable.askDestination(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("target")));
+    if (whereToMove == null) {
+      return;
+    }
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
+          return;
+        }
+        if (!(SNodeUtil.isAccessible(whereToMove, ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
+          return;
+        }
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField", Arrays.asList("destination"), Arrays.asList(whereToMove), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      }
+    });
   }
 }
