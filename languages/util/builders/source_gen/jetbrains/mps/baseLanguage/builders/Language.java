@@ -20,6 +20,8 @@ import jetbrains.mps.baseLanguage.builders.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.baseLanguage.builders.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.baseLanguage.builders.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.builders.typesystem.TypesystemDescriptor;
 
@@ -70,6 +72,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

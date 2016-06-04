@@ -18,6 +18,8 @@ import jetbrains.mps.testbench.suite.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.testbench.suite.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.testbench.suite.structure.AdditionalStructurePropertiesImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)";
@@ -63,6 +65,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     return super.createAspect(aspectClass);
   }

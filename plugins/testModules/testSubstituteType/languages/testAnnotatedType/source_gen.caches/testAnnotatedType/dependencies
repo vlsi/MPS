@@ -9,12 +9,14 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testAnnotatedType.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="testAnnotatedType.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testAnnotatedType.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="testAnnotatedType.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="testAnnotatedType.structure.StructureAspectDescriptor" />
     <classNode dependClassName="testAnnotatedType.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

@@ -10,6 +10,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.generator.test.crossmodel.entity.structure.AdditionalStructurePropertiesImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)";
@@ -40,6 +42,9 @@ public class Language extends LanguageRuntime {
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     return super.createAspect(aspectClass);
   }

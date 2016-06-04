@@ -16,6 +16,8 @@ import jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.samples.Kaja.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.samples.Kaja.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.Kaja.typesystem.TypesystemDescriptor;
 
@@ -59,6 +61,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

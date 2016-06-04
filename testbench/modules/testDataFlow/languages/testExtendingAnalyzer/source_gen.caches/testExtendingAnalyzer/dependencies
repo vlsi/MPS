@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="testExtendingAnalyzer.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testExtendingAnalyzer.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="testExtendingAnalyzer.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="testExtendingAnalyzer.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

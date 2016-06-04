@@ -2,7 +2,7 @@
 <debug-info-v2>
   <root>
     <file name="Language.java">
-      <unit at="15,0,50,0" name="jetbrains.mps.vcs.mergehints.Language" />
+      <unit at="17,0,55,0" name="jetbrains.mps.vcs.mergehints.Language" />
     </file>
   </root>
 </debug-info-v2>

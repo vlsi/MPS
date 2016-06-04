@@ -11,6 +11,8 @@ import testOverridingType.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import testOverridingType.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import testOverridingType.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import testOverridingType.typesystem.TypesystemDescriptor;
 
@@ -45,6 +47,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new testOverridingType.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

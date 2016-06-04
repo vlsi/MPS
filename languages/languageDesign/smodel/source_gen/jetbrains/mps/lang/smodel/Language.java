@@ -22,6 +22,8 @@ import jetbrains.mps.lang.smodel.intentions.IntentionsDescriptor;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.lang.smodel.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.lang.smodel.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor;
 
@@ -75,6 +77,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

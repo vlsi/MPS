@@ -12,9 +12,11 @@
     <classNode dependClassName="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.heating.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="jetbrains.mps.samples.heating.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

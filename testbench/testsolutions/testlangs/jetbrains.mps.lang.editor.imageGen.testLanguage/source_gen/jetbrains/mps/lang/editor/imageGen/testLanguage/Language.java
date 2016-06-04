@@ -15,6 +15,8 @@ import jetbrains.mps.lang.editor.imageGen.testLanguage.editor.EditorAspectDescri
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.editor.imageGen.testLanguage.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.lang.editor.imageGen.testLanguage.structure.AdditionalStructurePropertiesImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "9bcd3d4b-c789-4f70-85e4-038ea20762b9(jetbrains.mps.lang.editor.imageGen.testLanguage)";
@@ -54,6 +56,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.editor.imageGen.testLanguage.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     return super.createAspect(aspectClass);
   }

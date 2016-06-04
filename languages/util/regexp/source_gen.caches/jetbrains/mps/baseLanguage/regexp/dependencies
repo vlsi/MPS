@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
@@ -22,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

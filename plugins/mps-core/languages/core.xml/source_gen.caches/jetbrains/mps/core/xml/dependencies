@@ -9,11 +9,13 @@
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.core.xml.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

@@ -8,12 +8,14 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testDefaultEditor.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="testDefaultEditor.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="testDefaultEditor.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

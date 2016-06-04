@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="BHL7.Language" file="Language.java">
     <classNode dependClassName="BHL7.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="BHL7.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="BHL7.structure.StructureAspectDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -10,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

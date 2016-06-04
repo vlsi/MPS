@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.transformation.test.errorReporting.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.transformation.test.errorReporting.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -50,6 +52,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.transformation.test.errorReporting.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == AdditionalStructureProperties.class) {
+      return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.transformation.test.errorReporting.textGen.TextGenAspectDescriptor();
