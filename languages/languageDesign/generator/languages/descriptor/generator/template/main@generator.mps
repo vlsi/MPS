@@ -3002,6 +3002,53 @@
               </node>
               <node concept="raruj" id="227lWzxU2ZB" role="lGtFl" />
             </node>
+            <node concept="3clFbJ" id="4OPgwxfRZQK" role="3cqZAp">
+              <node concept="3clFbC" id="4OPgwxfRZQL" role="3clFbw">
+                <node concept="3VsKOn" id="4OPgwxfRZQM" role="3uHU7w">
+                  <ref role="3VsUkX" to="ze1i:~AdditionalStructureProperties" resolve="AdditionalStructureProperties" />
+                </node>
+                <node concept="37vLTw" id="4OPgwxfRZQN" role="3uHU7B">
+                  <ref role="3cqZAo" node="227lWzxU2YJ" resolve="aspectClass" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4OPgwxfRZQO" role="3clFbx">
+                <node concept="3cpWs6" id="4OPgwxfRZQP" role="3cqZAp">
+                  <node concept="10QFUN" id="4OPgwxfRZQQ" role="3cqZAk">
+                    <node concept="16syzq" id="4OPgwxfRZQR" role="10QFUM">
+                      <ref role="16sUi3" node="227lWzxU2ZF" resolve="T" />
+                    </node>
+                    <node concept="1nCR9W" id="4OPgwxfRZQS" role="10QFUP">
+                      <property role="1nD$Q0" value="structure.StructurePropertiesDescriptor" />
+                      <node concept="3uibUv" id="4OPgwxfS1Yr" role="2lIhxL">
+                        <ref role="3uigEE" to="ze1i:~AdditionalStructureProperties" resolve="AdditionalStructureProperties" />
+                      </node>
+                      <node concept="17Uvod" id="4OPgwxfRZQU" role="lGtFl">
+                        <property role="2qtEX9" value="fqClassName" />
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                        <node concept="3zFVjK" id="4OPgwxfRZQV" role="3zH0cK">
+                          <node concept="3clFbS" id="4OPgwxfRZQW" role="2VODD2">
+                            <node concept="3clFbF" id="4OPgwxfRZQX" role="3cqZAp">
+                              <node concept="3cpWs3" id="4OPgwxfRZQY" role="3clFbG">
+                                <node concept="Xl_RD" id="4OPgwxfRZQZ" role="3uHU7w">
+                                  <property role="Xl_RC" value=".AdditionalStructurePropertiesImpl" />
+                                </node>
+                                <node concept="2OqwBi" id="4OPgwxfRZR0" role="3uHU7B">
+                                  <node concept="30H73N" id="4OPgwxfRZR1" role="2Oq$k0" />
+                                  <node concept="3TrcHB" id="4OPgwxfRZR2" role="2OqNvi">
+                                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="raruj" id="4OPgwxfRZR3" role="lGtFl" />
+            </node>
             <node concept="3cpWs6" id="227lWzxU2ZC" role="3cqZAp">
               <node concept="10Nm6u" id="227lWzxU2ZD" role="3cqZAk" />
             </node>
