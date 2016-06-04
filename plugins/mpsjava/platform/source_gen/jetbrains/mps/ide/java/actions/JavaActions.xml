@@ -45,12 +45,6 @@
     <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" class="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"></action>
-    <action id="jetbrains.mps.ide.java.actions.MoveStaticField_Action" class="jetbrains.mps.ide.java.actions.MoveStaticField_Action">
-      <keyboard-shortcut first-keystroke=" F6" keymap="$default" />
-    </action>
-    <action id="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" class="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action">
-      <keyboard-shortcut first-keystroke=" F6" keymap="$default" />
-    </action>
     <action id="jetbrains.mps.ide.java.actions.OverrideMethod_Action" class="jetbrains.mps.ide.java.actions.OverrideMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl O" keymap="$default" />
     </action>
@@ -87,8 +81,6 @@
       <reference ref="jetbrains.mps.ide.java.actions.IntroduceVariable_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" />
-      <reference ref="jetbrains.mps.ide.java.actions.MoveStaticField_Action" />
-      <reference ref="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.RenameVariable_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action" />
