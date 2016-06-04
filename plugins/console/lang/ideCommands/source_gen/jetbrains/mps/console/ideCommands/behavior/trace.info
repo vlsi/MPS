@@ -467,8 +467,6 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/3894227536041893272">
     <file name="ClickableGenerator__BehaviorDescriptor.java">
-      <node id="3894227536043377005" at="85,27,85,27" concept="1" />
-      <node id="3894227536043378215" at="88,27,88,27" concept="1" />
       <node id="3894227536041893272" at="39,0,40,0" concept="14" trace="CONCEPT" />
       <node id="3894227536041893272" at="40,0,41,0" concept="14" trace="REGISTRY" />
       <node id="3894227536041893272" at="42,0,43,0" concept="14" trace="execute_id7oNS25df64x" />
@@ -547,8 +545,6 @@
       <node id="3894227536043349070" at="53,101,102,7" concept="10" />
       <node id="3894227536041893272" at="50,0,121,0" concept="15" trace="execute_id7oNS25df64x#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/MPSProject;)V" />
       <scope id="3894227536041893272" at="47,63,47,63" />
-      <scope id="3894227536043377005" at="85,27,85,27" />
-      <scope id="3894227536043378215" at="88,27,88,27" />
       <scope id="3894227536043378214" at="68,27,69,36" />
       <scope id="3894227536043377004" at="91,28,92,37" />
       <scope id="3894227536043450862" at="104,37,105,79" />

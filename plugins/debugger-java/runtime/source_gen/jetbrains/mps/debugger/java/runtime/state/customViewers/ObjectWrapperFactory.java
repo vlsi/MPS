@@ -21,7 +21,6 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class ObjectWrapperFactory extends ValueWrapperFactory {
@@ -96,10 +95,7 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
     public Icon getPresentationIcon() {
       return getValue().getPresentationIcon();
     }
-    @Override
-    public SNode getNode() {
-      return null;
-    }
+
     @Override
     public WatchablesCategory getCategory() {
       return WatchablesCategory.NONE;

@@ -6,16 +6,16 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
+import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import java.util.List;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
@@ -42,10 +42,12 @@ public class JUnitCommand_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleBTestCase() throws Exception {
-      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(SimpleBTestCase_Test.class.getSimpleName())), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "8128243960970299078")));
+      this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public void test_startFailedBTestCase() throws Exception {
-      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(FailedBTestCase_Test.class.getSimpleName())));
+      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "7120092006645143730")));
+      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), wrappedTests);
     }
 
 
@@ -56,7 +58,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
       try {
         List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         ProcessHandler process = new JUnit_Command().createProcess(allTests);
-        TestRunState runState = new TestRunState(allTests);
+        TestRunState runState = new TestRunState(allTests, myProject);
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);

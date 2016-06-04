@@ -378,9 +378,6 @@
   </root>
   <root nodeRef="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)/6168415856807657480">
     <file name="Script.java">
-      <node id="5599300738479603517" at="172,29,172,29" concept="1" />
-      <node id="5599300738479603524" at="175,29,175,29" concept="1" />
-      <node id="5599300738479603569" at="182,29,182,29" concept="1" />
       <node id="6168415856807657481" at="50,0,51,0" concept="16" trace="LOG" />
       <node id="3395808176663646434" at="51,0,52,0" concept="16" trace="TIME_STATISTIC_RESULT_NAME" />
       <node id="5599300738479603255" at="52,0,53,0" concept="7" trace="startingTarget" />
@@ -439,7 +436,6 @@
       <node id="5599300738479603517" at="173,40,174,30" concept="2" />
       <node id="5599300738479603524" at="175,29,176,40" concept="6" />
       <node id="5599300738479603524" at="176,40,177,30" concept="2" />
-      <node id="5599300738479603549" at="178,29,179,45" concept="1" />
       <node id="5599300738479603562" at="178,29,179,45" concept="6" />
       <node id="5599300738479603549" at="179,45,180,40" concept="6" />
       <node id="5599300738479603549" at="180,40,181,30" concept="2" />
@@ -685,9 +681,6 @@
       <node id="7130238060580894255" at="236,0,336,0" concept="11" trace="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" />
       <node id="7130238060580894251" at="234,0,336,7" concept="6" />
       <node id="7130238060580894239" at="230,0,338,0" concept="11" trace="executeTargets#(Ljetbrains/mps/make/script/IScriptController;Ljava/lang/Iterable;Ljava/lang/Iterable;Ljetbrains/mps/internal/make/runtime/script/Script/ParametersPool;Ljetbrains/mps/internal/make/runtime/script/CompositeResult;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="5599300738479603517" at="172,29,172,29" />
-      <scope id="5599300738479603524" at="175,29,175,29" />
-      <scope id="5599300738479603569" at="182,29,182,29" />
       <scope id="6872280991287272236" at="364,29,364,29" />
       <scope id="2958721966247271894" at="441,0,441,36">
         <var name="ignore" id="2958721966247271895" />
@@ -706,7 +699,6 @@
       <scope id="2892614774105532379" at="111,33,112,18" />
       <scope id="2892614774105532359" at="115,22,116,53" />
       <scope id="116591080441874586" at="121,28,122,41" />
-      <scope id="5599300738479603549" at="178,29,179,45" />
       <scope id="5599300738479603516" at="185,30,186,39" />
       <scope id="4648565975300837033" at="208,37,209,23" />
       <scope id="7130238060580894647" at="214,37,215,23" />

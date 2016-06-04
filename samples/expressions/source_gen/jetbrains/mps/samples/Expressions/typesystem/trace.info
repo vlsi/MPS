@@ -20,7 +20,6 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467207965653">
     <file name="typeof_LogicalSimpleMathExpression_InferenceRule.java">
-      <node id="2073504467208624598" at="50,242,50,242" concept="0" />
       <node id="2073504467208033384" at="23,5,24,217" concept="5" />
       <node id="2073504467208033384" at="24,217,25,210" concept="5" />
       <node id="2073504467208033384" at="25,210,26,293" concept="2" />
@@ -31,7 +30,6 @@
       <node id="2073504467208098709" at="34,59,35,210" concept="5" />
       <node id="2073504467208098709" at="35,210,36,481" concept="2" />
       <node id="2073504467207965653" at="39,50,40,179" concept="6" />
-      <node id="2073504467207965653" at="42,68,43,102" concept="0" />
       <node id="2073504467207965653" at="42,68,43,102" concept="6" />
       <node id="2073504467207965653" at="45,30,46,17" concept="6" />
       <node id="2073504467208624598" at="48,67,49,63" concept="5" />
@@ -47,7 +45,6 @@
       <node id="2073504467208624598" at="48,0,53,0" concept="8" trace="createSimpleMathBooleanType_ngq3xd_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467207965653" at="22,0,39,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467207965653" at="20,61,20,61" />
-      <scope id="2073504467208624598" at="50,242,50,242" />
       <scope id="2073504467207965653" at="39,50,40,179" />
       <scope id="2073504467207965653" at="42,68,43,102" />
       <scope id="2073504467207965653" at="45,30,46,17" />
@@ -87,7 +84,6 @@
     <file name="SimpleMathBoolean_subtypeOf_Element_SubtypingRule.java">
       <node id="2073504467208085714" at="18,131,19,242" concept="6" />
       <node id="2073504467208085695" at="21,50,22,173" concept="6" />
-      <node id="2073504467208085695" at="24,68,25,102" concept="0" />
       <node id="2073504467208085695" at="24,68,25,102" concept="6" />
       <node id="2073504467208085695" at="27,27,28,17" concept="6" />
       <node id="2073504467208085695" at="16,0,18,0" concept="1" trace="SimpleMathBoolean_subtypeOf_Element_SubtypingRule#()V" />
@@ -116,8 +112,6 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208515079">
     <file name="typeof_NotSimpleMathExpression_InferenceRule.java">
-      <node id="2073504467208655871" at="43,242,43,242" concept="0" />
-      <node id="2073504467208655915" at="48,242,48,242" concept="0" />
       <node id="2073504467208515523" at="21,5,22,207" concept="5" />
       <node id="2073504467208515523" at="22,207,23,210" concept="5" />
       <node id="2073504467208515523" at="23,210,24,293" concept="2" />
@@ -125,7 +119,6 @@
       <node id="2073504467208516077" at="27,45,28,210" concept="5" />
       <node id="2073504467208516077" at="28,210,29,293" concept="2" />
       <node id="2073504467208515079" at="32,50,33,175" concept="6" />
-      <node id="2073504467208515079" at="35,68,36,102" concept="0" />
       <node id="2073504467208515079" at="35,68,36,102" concept="6" />
       <node id="2073504467208515079" at="38,30,39,17" concept="6" />
       <node id="2073504467208655871" at="41,67,42,63" concept="5" />
@@ -144,8 +137,6 @@
       <node id="2073504467208655915" at="46,0,51,0" concept="8" trace="createSimpleMathBooleanType_7rascm_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467208515079" at="20,0,32,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467208515079" at="18,57,18,57" />
-      <scope id="2073504467208655871" at="43,242,43,242" />
-      <scope id="2073504467208655915" at="48,242,48,242" />
       <scope id="2073504467208515079" at="32,50,33,175" />
       <scope id="2073504467208515079" at="35,68,36,102" />
       <scope id="2073504467208515079" at="38,30,39,17" />
@@ -188,7 +179,6 @@
       <node id="2073504467208525522" at="20,47,21,210" concept="5" />
       <node id="2073504467208525522" at="21,210,22,589" concept="2" />
       <node id="2073504467208524984" at="25,50,26,177" concept="6" />
-      <node id="2073504467208524984" at="28,68,29,102" concept="0" />
       <node id="2073504467208524984" at="28,68,29,102" concept="6" />
       <node id="2073504467208524984" at="31,30,32,17" concept="6" />
       <node id="2073504467208524984" at="16,0,18,0" concept="1" trace="typeof_UnarySimpleMathExpression_InferenceRule#()V" />
@@ -222,12 +212,10 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208540237">
     <file name="typeof_SimpleMathBooleanConstant_InferenceRule.java">
-      <node id="2073504467208601023" at="37,242,37,242" concept="0" />
       <node id="2073504467208540714" at="20,5,21,50" concept="5" />
       <node id="2073504467208540714" at="21,50,22,210" concept="5" />
       <node id="2073504467208540714" at="22,210,23,293" concept="2" />
       <node id="2073504467208540237" at="26,50,27,177" concept="6" />
-      <node id="2073504467208540237" at="29,68,30,102" concept="0" />
       <node id="2073504467208540237" at="29,68,30,102" concept="6" />
       <node id="2073504467208540237" at="32,30,33,17" concept="6" />
       <node id="2073504467208601023" at="35,67,36,63" concept="5" />
@@ -241,7 +229,6 @@
       <node id="2073504467208601023" at="35,0,40,0" concept="8" trace="createSimpleMathBooleanType_rs87p9_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467208540237" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467208540237" at="17,59,17,59" />
-      <scope id="2073504467208601023" at="37,242,37,242" />
       <scope id="2073504467208540237" at="26,50,27,177" />
       <scope id="2073504467208540237" at="29,68,30,102" />
       <scope id="2073504467208540237" at="32,30,33,17" />
@@ -271,12 +258,10 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208541211">
     <file name="typeof_SimpleMathIntegerConstant_InferenceRule.java">
-      <node id="2073504467208601170" at="37,242,37,242" concept="0" />
       <node id="2073504467208541616" at="20,5,21,50" concept="5" />
       <node id="2073504467208541616" at="21,50,22,210" concept="5" />
       <node id="2073504467208541616" at="22,210,23,293" concept="2" />
       <node id="2073504467208541211" at="26,50,27,177" concept="6" />
-      <node id="2073504467208541211" at="29,68,30,102" concept="0" />
       <node id="2073504467208541211" at="29,68,30,102" concept="6" />
       <node id="2073504467208541211" at="32,30,33,17" concept="6" />
       <node id="2073504467208601170" at="35,67,36,63" concept="5" />
@@ -290,7 +275,6 @@
       <node id="2073504467208601170" at="35,0,40,0" concept="8" trace="createSimpleMathIntegerType_611g7c_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467208541211" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467208541211" at="17,59,17,59" />
-      <scope id="2073504467208601170" at="37,242,37,242" />
       <scope id="2073504467208541211" at="26,50,27,177" />
       <scope id="2073504467208541211" at="29,68,30,102" />
       <scope id="2073504467208541211" at="32,30,33,17" />
@@ -322,7 +306,6 @@
     <file name="SimpleMathIntegerType_subtypeOf_Number_SubtypingRule.java">
       <node id="2073504467208542739" at="18,121,19,242" concept="6" />
       <node id="2073504467208542717" at="21,50,22,173" concept="6" />
-      <node id="2073504467208542717" at="24,68,25,102" concept="0" />
       <node id="2073504467208542717" at="24,68,25,102" concept="6" />
       <node id="2073504467208542717" at="27,27,28,17" concept="6" />
       <node id="2073504467208542717" at="16,0,18,0" concept="1" trace="SimpleMathIntegerType_subtypeOf_Number_SubtypingRule#()V" />
@@ -351,9 +334,6 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208952445">
     <file name="typeof_ArithmeticSimpleMathExpression_InferenceRule.java">
-      <node id="2073504467210590373" at="87,241,87,241" concept="0" />
-      <node id="2073504467209636580" at="92,241,92,241" concept="0" />
-      <node id="2073504467209636991" at="97,241,97,241" concept="0" />
       <node id="2073504467210590367" at="26,5,27,52" concept="5" />
       <node id="2073504467210590367" at="27,52,28,210" concept="5" />
       <node id="2073504467210590367" at="28,210,29,315" concept="2" />
@@ -375,7 +355,6 @@
       <node id="1387988544209571120" at="64,72,65,563" concept="5" />
       <node id="2073504467210047125" at="73,5,74,0" concept="7" />
       <node id="2073504467208952445" at="76,50,77,182" concept="6" />
-      <node id="2073504467208952445" at="79,68,80,102" concept="0" />
       <node id="2073504467208952445" at="79,68,80,102" concept="6" />
       <node id="2073504467208952445" at="82,30,83,17" concept="6" />
       <node id="2073504467210590373" at="85,66,86,63" concept="5" />
@@ -411,9 +390,6 @@
       <node id="1387988544209571096" at="41,0,73,5" concept="0" />
       <node id="2073504467208952445" at="25,0,76,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467208952445" at="23,64,23,64" />
-      <scope id="2073504467210590373" at="87,241,87,241" />
-      <scope id="2073504467209636580" at="92,241,92,241" />
-      <scope id="2073504467209636991" at="97,241,97,241" />
       <scope id="2073504467208952445" at="76,50,77,182" />
       <scope id="2073504467208952445" at="79,68,80,102" />
       <scope id="2073504467208952445" at="82,30,83,17" />
@@ -495,7 +471,6 @@
       <node id="2073504467209343325" at="20,53,21,210" concept="5" />
       <node id="2073504467209343325" at="21,210,22,598" concept="2" />
       <node id="2073504467209342370" at="25,50,26,176" concept="6" />
-      <node id="2073504467209342370" at="28,68,29,102" concept="0" />
       <node id="2073504467209342370" at="28,68,29,102" concept="6" />
       <node id="2073504467209342370" at="31,30,32,17" concept="6" />
       <node id="2073504467209342370" at="16,0,18,0" concept="1" trace="typeof_SimpleMathVarDeclaration_InferenceRule#()V" />
@@ -533,7 +508,6 @@
       <node id="930174696943018134" at="20,51,21,209" concept="5" />
       <node id="930174696943018134" at="21,209,22,566" concept="2" />
       <node id="2073504467209348344" at="25,50,26,174" concept="6" />
-      <node id="2073504467209348344" at="28,68,29,102" concept="0" />
       <node id="2073504467209348344" at="28,68,29,102" concept="6" />
       <node id="2073504467209348344" at="31,30,32,17" concept="6" />
       <node id="2073504467209348344" at="16,0,18,0" concept="1" trace="typeof_SimpleMathVarReference_InferenceRule#()V" />
@@ -567,10 +541,8 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467209504627">
     <file name="SimpleMathNumberType_subtypeOf_Element_SubtypingRule.java">
-      <node id="2073504467209570045" at="35,242,35,242" concept="0" />
       <node id="2073504467209570051" at="18,120,19,53" concept="6" />
       <node id="2073504467209504627" at="21,50,22,172" concept="6" />
-      <node id="2073504467209504627" at="24,68,25,102" concept="0" />
       <node id="2073504467209504627" at="24,68,25,102" concept="6" />
       <node id="2073504467209504627" at="27,27,28,17" concept="6" />
       <node id="2073504467209504627" at="30,39,31,16" concept="6" />
@@ -585,7 +557,6 @@
       <node id="2073504467209504627" at="30,0,33,0" concept="4" trace="surelyKeepsConcept#()Z" />
       <node id="2073504467209570045" at="33,0,38,0" concept="8" trace="createSimpleMathElementType_wcy28w_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2073504467209504627" at="16,65,16,65" />
-      <scope id="2073504467209570045" at="35,242,35,242" />
       <scope id="2073504467209504628" at="18,120,19,53" />
       <scope id="2073504467209504627" at="21,50,22,172" />
       <scope id="2073504467209504627" at="24,68,25,102" />
@@ -613,10 +584,8 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467209660703">
     <file name="SimpleMathLongType_subtypeOf_Float_SubtypingRule.java">
-      <node id="2073504467209660719" at="35,240,35,240" concept="0" />
       <node id="2073504467209660721" at="18,118,19,51" concept="6" />
       <node id="2073504467209660703" at="21,50,22,170" concept="6" />
-      <node id="2073504467209660703" at="24,68,25,102" concept="0" />
       <node id="2073504467209660703" at="24,68,25,102" concept="6" />
       <node id="2073504467209660703" at="27,27,28,17" concept="6" />
       <node id="2073504467209660703" at="30,39,31,16" concept="6" />
@@ -631,7 +600,6 @@
       <node id="2073504467209660703" at="30,0,33,0" concept="4" trace="surelyKeepsConcept#()Z" />
       <node id="2073504467209660719" at="33,0,38,0" concept="8" trace="createSimpleMathFloatType_rmkbnt_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2073504467209660703" at="16,61,16,61" />
-      <scope id="2073504467209660719" at="35,240,35,240" />
       <scope id="2073504467209660704" at="18,118,19,51" />
       <scope id="2073504467209660703" at="21,50,22,170" />
       <scope id="2073504467209660703" at="24,68,25,102" />
@@ -659,12 +627,10 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467209943151">
     <file name="typeof_SimpleMathLongConstant_InferenceRule.java">
-      <node id="2073504467209943740" at="37,239,37,239" concept="0" />
       <node id="2073504467209943667" at="20,5,21,54" concept="5" />
       <node id="2073504467209943667" at="21,54,22,210" concept="5" />
       <node id="2073504467209943667" at="22,210,23,290" concept="2" />
       <node id="2073504467209943151" at="26,50,27,174" concept="6" />
-      <node id="2073504467209943151" at="29,68,30,102" concept="0" />
       <node id="2073504467209943151" at="29,68,30,102" concept="6" />
       <node id="2073504467209943151" at="32,30,33,17" concept="6" />
       <node id="2073504467209943740" at="35,64,36,63" concept="5" />
@@ -678,7 +644,6 @@
       <node id="2073504467209943740" at="35,0,40,0" concept="8" trace="createSimpleMathLongType_j74srz_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467209943151" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467209943151" at="17,56,17,56" />
-      <scope id="2073504467209943740" at="37,239,37,239" />
       <scope id="2073504467209943151" at="26,50,27,174" />
       <scope id="2073504467209943151" at="29,68,30,102" />
       <scope id="2073504467209943151" at="32,30,33,17" />
@@ -708,10 +673,8 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467210017720">
     <file name="SimpleMathIntegerType_subtypeOf_Long_SubtypingRule.java">
-      <node id="2073504467210017736" at="35,239,35,239" concept="0" />
       <node id="2073504467210017738" at="18,121,19,50" concept="6" />
       <node id="2073504467210017720" at="21,50,22,173" concept="6" />
-      <node id="2073504467210017720" at="24,68,25,102" concept="0" />
       <node id="2073504467210017720" at="24,68,25,102" concept="6" />
       <node id="2073504467210017720" at="27,27,28,17" concept="6" />
       <node id="2073504467210017720" at="30,39,31,16" concept="6" />
@@ -726,7 +689,6 @@
       <node id="2073504467210017720" at="30,0,33,0" concept="4" trace="surelyKeepsConcept#()Z" />
       <node id="2073504467210017736" at="33,0,38,0" concept="8" trace="createSimpleMathLongType_alq2vz_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2073504467210017720" at="16,63,16,63" />
-      <scope id="2073504467210017736" at="35,239,35,239" />
       <scope id="2073504467210017721" at="18,121,19,50" />
       <scope id="2073504467210017720" at="21,50,22,173" />
       <scope id="2073504467210017720" at="24,68,25,102" />
@@ -754,24 +716,6 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467210316440">
     <file name="TypesystemDescriptor.java">
-      <node id="2073504467210323657" at="118,244,118,244" concept="0" />
-      <node id="2073504467210324235" at="123,244,123,244" concept="0" />
-      <node id="2073504467210335748" at="128,244,128,244" concept="0" />
-      <node id="2073504467210336005" at="156,242,156,242" concept="0" />
-      <node id="2073504467210336013" at="161,242,161,242" concept="0" />
-      <node id="2073504467210336011" at="166,242,166,242" concept="0" />
-      <node id="3453667744252263636" at="171,241,171,241" concept="0" />
-      <node id="3453667744252263641" at="176,241,176,241" concept="0" />
-      <node id="2073504467210336495" at="204,243,204,243" concept="0" />
-      <node id="2073504467210336503" at="209,243,209,243" concept="0" />
-      <node id="3453667744252461015" at="214,243,214,243" concept="0" />
-      <node id="3453667744252254625" at="219,242,219,242" concept="0" />
-      <node id="3453667744252249105" at="224,242,224,242" concept="0" />
-      <node id="2073504467211045082" at="252,241,252,241" concept="0" />
-      <node id="2073504467211045090" at="257,241,257,241" concept="0" />
-      <node id="2073504467211045088" at="262,241,262,241" concept="0" />
-      <node id="3453667744252267549" at="267,244,267,244" concept="0" />
-      <node id="3453667744252267554" at="272,244,272,244" concept="0" />
       <node id="2073504467210335750" at="109,99,110,56" concept="6" />
       <node id="2073504467210323657" at="116,70,117,65" concept="5" />
       <node id="2073504467210323657" at="117,65,118,244" concept="5" />
@@ -851,24 +795,6 @@
       <node id="2073504467211045088" at="260,0,265,0" concept="8" trace="createSimpleMathLongType_3ist9o_a0a1e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3453667744252267549" at="265,0,270,0" concept="8" trace="createSimpleMathIntegerType_3ist9o_b0a0a0a2e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3453667744252267554" at="270,0,275,0" concept="8" trace="createSimpleMathIntegerType_3ist9o_b0a0a0a2e_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2073504467210323657" at="118,244,118,244" />
-      <scope id="2073504467210324235" at="123,244,123,244" />
-      <scope id="2073504467210335748" at="128,244,128,244" />
-      <scope id="2073504467210336005" at="156,242,156,242" />
-      <scope id="2073504467210336013" at="161,242,161,242" />
-      <scope id="2073504467210336011" at="166,242,166,242" />
-      <scope id="3453667744252263636" at="171,241,171,241" />
-      <scope id="3453667744252263641" at="176,241,176,241" />
-      <scope id="2073504467210336495" at="204,243,204,243" />
-      <scope id="2073504467210336503" at="209,243,209,243" />
-      <scope id="3453667744252461015" at="214,243,214,243" />
-      <scope id="3453667744252254625" at="219,242,219,242" />
-      <scope id="3453667744252249105" at="224,242,224,242" />
-      <scope id="2073504467211045082" at="252,241,252,241" />
-      <scope id="2073504467211045090" at="257,241,257,241" />
-      <scope id="2073504467211045088" at="262,241,262,241" />
-      <scope id="3453667744252267549" at="267,244,267,244" />
-      <scope id="3453667744252267554" at="272,244,272,244" />
       <scope id="2073504467210323450" at="109,99,110,56" />
       <scope id="2073504467210336009" at="144,99,145,54" />
       <scope id="3453667744252170512" at="147,132,148,265" />
@@ -970,10 +896,8 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467210944275">
     <file name="SimpleMathFloatType_subtypeOf_Number_SubtypingRule.java">
-      <node id="2073504467210944554" at="35,241,35,241" concept="0" />
       <node id="2073504467210944556" at="18,119,19,52" concept="6" />
       <node id="2073504467210944275" at="21,50,22,171" concept="6" />
-      <node id="2073504467210944275" at="24,68,25,102" concept="0" />
       <node id="2073504467210944275" at="24,68,25,102" concept="6" />
       <node id="2073504467210944275" at="27,27,28,17" concept="6" />
       <node id="2073504467210944275" at="30,39,31,16" concept="6" />
@@ -988,7 +912,6 @@
       <node id="2073504467210944275" at="30,0,33,0" concept="4" trace="surelyKeepsConcept#()Z" />
       <node id="2073504467210944554" at="33,0,38,0" concept="8" trace="createSimpleMathNumberType_mxid1z_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2073504467210944275" at="16,63,16,63" />
-      <scope id="2073504467210944554" at="35,241,35,241" />
       <scope id="2073504467210944276" at="18,119,19,52" />
       <scope id="2073504467210944275" at="21,50,22,171" />
       <scope id="2073504467210944275" at="24,68,25,102" />
@@ -1016,12 +939,10 @@
   </root>
   <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467210944707">
     <file name="typeof_SimpleMathFloatConstant_InferenceRule.java">
-      <node id="2073504467210945308" at="37,240,37,240" concept="0" />
       <node id="2073504467210945243" at="20,5,21,55" concept="5" />
       <node id="2073504467210945243" at="21,55,22,210" concept="5" />
       <node id="2073504467210945243" at="22,210,23,291" concept="2" />
       <node id="2073504467210944707" at="26,50,27,175" concept="6" />
-      <node id="2073504467210944707" at="29,68,30,102" concept="0" />
       <node id="2073504467210944707" at="29,68,30,102" concept="6" />
       <node id="2073504467210944707" at="32,30,33,17" concept="6" />
       <node id="2073504467210945308" at="35,65,36,63" concept="5" />
@@ -1035,7 +956,6 @@
       <node id="2073504467210945308" at="35,0,40,0" concept="8" trace="createSimpleMathFloatType_v572xj_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2073504467210944707" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2073504467210944707" at="17,57,17,57" />
-      <scope id="2073504467210945308" at="37,240,37,240" />
       <scope id="2073504467210944707" at="26,50,27,175" />
       <scope id="2073504467210944707" at="29,68,30,102" />
       <scope id="2073504467210944707" at="32,30,33,17" />
@@ -1069,7 +989,6 @@
       <node id="8620208551721424561" at="20,56,21,210" concept="5" />
       <node id="8620208551721424561" at="21,210,22,423" concept="2" />
       <node id="8620208551721419345" at="25,50,26,181" concept="6" />
-      <node id="8620208551721419345" at="28,68,29,102" concept="0" />
       <node id="8620208551721419345" at="28,68,29,102" concept="6" />
       <node id="8620208551721419345" at="31,30,32,17" concept="6" />
       <node id="8620208551721419345" at="16,0,18,0" concept="1" trace="typeof_SimpleMathTypedVarDeclaration_InferenceRule#()V" />
@@ -1114,7 +1033,6 @@
       <node id="930174696942632551" at="31,212,32,209" concept="5" />
       <node id="930174696942632551" at="32,209,33,343" concept="2" />
       <node id="930174696942551209" at="36,50,37,171" concept="6" />
-      <node id="930174696942551209" at="39,68,40,102" concept="0" />
       <node id="930174696942551209" at="39,68,40,102" concept="6" />
       <node id="930174696942551209" at="42,30,43,17" concept="6" />
       <node id="930174696942551209" at="16,0,18,0" concept="1" trace="typeof_SimpleMathAssignment_InferenceRule#()V" />

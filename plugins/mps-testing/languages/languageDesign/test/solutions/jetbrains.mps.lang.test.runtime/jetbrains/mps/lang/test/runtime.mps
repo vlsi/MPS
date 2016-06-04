@@ -239,7 +239,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -7093,8 +7093,8 @@
                   <node concept="2YIFZM" id="2ky3Rs1tMB9" role="33vP2m">
                     <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
                     <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-                    <node concept="2YIFZM" id="2ky3Rs1tMBa" role="37wK5m">
-                      <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                    <node concept="2YIFZM" id="2$4oShLbUeY" role="37wK5m">
+                      <ref role="37wK5l" to="79ha:2$4oShLawGj" resolve="defaultConfigNoPluginsSpecified" />
                       <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
                     </node>
                   </node>

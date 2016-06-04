@@ -29,7 +29,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
     if (isExecutionInProcess()) {
       return new TransformationTestLightRunner();
     } else {
-      Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+      Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
       return new TransformationTestRunner(ideaEnv);
     }
   }

@@ -9,6 +9,8 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -21,6 +23,7 @@ import jetbrains.mps.vcs.util.MergeVersion;
 import com.intellij.openapi.diff.SimpleContent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
@@ -43,6 +46,13 @@ public class TestMergeAction_Action extends BaseAction {
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
       MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -75,13 +85,16 @@ public class TestMergeAction_Action extends BaseAction {
         }
 
         SimpleContent[] diffContents = Sequence.fromIterable(Sequence.fromArray(zipped)).select(new ISelector<SModel, SimpleContent>() {
-          public SimpleContent select(SModel m) {
-            return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
+          public SimpleContent select(final SModel m) {
+            final Wrappers._T<String> content = new Wrappers._T<String>();
+            ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                content.value = ModelPersistence.modelToString(m);
+              }
+            });
+            return new SimpleContent(content.value, MPSFileTypeFactory.MPS_FILE_TYPE);
           }
         }).toGenericArray(SimpleContent.class);
-
-
-
       }
     });
   }

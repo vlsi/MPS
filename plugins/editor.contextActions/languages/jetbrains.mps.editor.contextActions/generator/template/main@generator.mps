@@ -299,7 +299,7 @@
     <property role="TrG5h" value="switch_TransformationLocation_Sidebar_asString" />
     <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asStringArray" />
     <node concept="3aamgX" id="Z45Y15hYdX" role="3aUrZf">
-      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
+      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_ContextActionsTool" />
       <node concept="gft3U" id="Z45Y15hYek" role="1lVwrX">
         <node concept="2ShNRf" id="30NnNOoi6yT" role="gfFT$">
           <node concept="Tc6Ow" id="30NnNOoi6Rx" role="2ShVmc">
@@ -335,7 +335,7 @@
     <property role="TrG5h" value="switch_TransformationLocation_Sidebar_actionItemInterface" />
     <ref role="phYkn" to="tpc3:6VgTvK0odUq" resolve="switch_TransformationLocation_actionItemInterfaces" />
     <node concept="3aamgX" id="6VgTvK0orPc" role="3aUrZf">
-      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_Sidebar" />
+      <ref role="30HIoZ" to="s5fb:7L5lpRJILQC" resolve="TransformationLocation_ContextActionsTool" />
       <node concept="gft3U" id="6VgTvK0ospZ" role="1lVwrX">
         <node concept="3uibUv" id="6VgTvK0osq9" role="gfFT$">
           <ref role="3uigEE" to="1ne1:601$vVQgJ24" resolve="SidebarActionItem" />

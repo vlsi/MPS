@@ -20,7 +20,6 @@
       <node id="342110547581237064" at="22,59,23,211" concept="5" />
       <node id="342110547581237064" at="23,211,24,256" concept="2" />
       <node id="342110547581236440" at="28,50,29,175" concept="6" />
-      <node id="342110547581236440" at="31,68,32,102" concept="0" />
       <node id="342110547581236440" at="31,68,32,102" concept="6" />
       <node id="342110547581236440" at="34,30,35,17" concept="6" />
       <node id="342110547581236440" at="16,0,18,0" concept="1" trace="typeof_FigureParameter_InferenceRule#()V" />
@@ -61,7 +60,6 @@
       <node id="6568183682644076223" at="23,7,24,60" concept="5" />
       <node id="6568183682644076223" at="24,60,25,317" concept="5" />
       <node id="6568183682644034418" at="29,50,30,181" concept="6" />
-      <node id="6568183682644034418" at="32,68,33,102" concept="0" />
       <node id="6568183682644034418" at="32,68,33,102" concept="6" />
       <node id="6568183682644034418" at="35,30,36,17" concept="6" />
       <node id="6568183682644034418" at="19,0,21,0" concept="1" trace="check_FigureParameterAttributeField_NonTypesystemRule#()V" />
@@ -100,7 +98,6 @@
       <node id="9026300686792786362" at="24,7,25,60" concept="5" />
       <node id="9026300686792786362" at="25,60,26,374" concept="5" />
       <node id="9026300686792780079" at="30,50,31,176" concept="6" />
-      <node id="9026300686792780079" at="33,68,34,102" concept="0" />
       <node id="9026300686792780079" at="33,68,34,102" concept="6" />
       <node id="9026300686792780079" at="36,30,37,17" concept="6" />
       <node id="9026300686792780079" at="20,0,22,0" concept="1" trace="check_FigureParameterAttribute_NonTypesystemRule#()V" />
@@ -139,7 +136,6 @@
       <node id="9176911587996078226" at="23,7,24,60" concept="5" />
       <node id="9176911587996078226" at="24,60,25,326" concept="5" />
       <node id="9176911587995977871" at="29,50,30,182" concept="6" />
-      <node id="9176911587995977871" at="32,68,33,102" concept="0" />
       <node id="9176911587995977871" at="32,68,33,102" concept="6" />
       <node id="9176911587995977871" at="35,30,36,17" concept="6" />
       <node id="9176911587995977871" at="19,0,21,0" concept="1" trace="check_FigureParameterAttributeMethod_NonTypesystemRule#()V" />
@@ -178,7 +174,6 @@
       <node id="9176911587996551958" at="23,7,24,60" concept="5" />
       <node id="9176911587996551958" at="24,60,25,351" concept="5" />
       <node id="9176911587996519805" at="29,50,30,188" concept="6" />
-      <node id="9176911587996519805" at="32,68,33,102" concept="0" />
       <node id="9176911587996519805" at="32,68,33,102" concept="6" />
       <node id="9176911587996519805" at="35,30,36,17" concept="6" />
       <node id="9176911587996519805" at="19,0,21,0" concept="1" trace="check_FigureParameterAttributeViewProperty_NonTypesystemRule#()V" />
@@ -238,7 +233,6 @@
       <node id="9176911587997288594" at="23,7,24,60" concept="5" />
       <node id="9176911587997288594" at="24,60,25,347" concept="5" />
       <node id="9176911587997288581" at="29,50,30,179" concept="6" />
-      <node id="9176911587997288581" at="32,68,33,102" concept="0" />
       <node id="9176911587997288581" at="32,68,33,102" concept="6" />
       <node id="9176911587997288581" at="35,30,36,17" concept="6" />
       <node id="9176911587997288581" at="19,0,21,0" concept="1" trace="check_ExternalViewFigureParameter_NonTypesystemRule#()V" />

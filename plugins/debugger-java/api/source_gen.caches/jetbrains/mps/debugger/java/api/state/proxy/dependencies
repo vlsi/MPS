@@ -48,6 +48,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.ui.Icons" />

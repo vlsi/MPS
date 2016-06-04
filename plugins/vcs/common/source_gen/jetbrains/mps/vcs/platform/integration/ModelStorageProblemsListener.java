@@ -40,8 +40,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import jetbrains.mps.util.SNodeOperations;
@@ -241,11 +241,17 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }
     }
   }
-  private static File doBackup(IFile modelFile, SModel inMemory) {
+  private static File doBackup(IFile modelFile, final SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
       // as the model is already in repo, we can assume it's in supported persistence 
-      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      final Wrappers._T<String> modelData = new Wrappers._T<String>();
+      inMemory.getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          modelData.value = ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal());
+        }
+      });
+      MergeDriverBackupUtil.writeContentsToFile(modelData.value.getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
         com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + ModelStorageProblemsListener.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
       }

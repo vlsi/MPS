@@ -512,7 +512,6 @@
       <node id="1315974995649238414" at="57,29,60,5" concept="5" />
       <node id="6423044698582343337" at="60,5,63,5" concept="5" />
       <node id="6423044698582340297" at="63,5,66,5" concept="5" />
-      <node id="6423044698582357914" at="67,0,70,5" concept="0" />
       <node id="6423044698582357914" at="67,0,70,5" concept="5" />
       <node id="6423044698582424102" at="84,0,87,0" concept="6" trace="accept#(Ljetbrains/mps/ide/findusages/model/SearchResult;)Z" />
       <node id="6423044698582424111" at="88,0,91,0" concept="6" trace="visit#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
@@ -548,7 +547,6 @@
       <scope id="1697163102215652460" at="49,0,52,0">
         <var name="it" id="1697163102215652460" />
       </scope>
-      <scope id="6423044698582357914" at="67,0,70,5" />
       <scope id="6423044698582424102" at="84,0,87,0">
         <var name="it" id="6423044698582424102" />
       </scope>

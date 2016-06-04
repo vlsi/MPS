@@ -26,30 +26,30 @@ import java.io.File;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
 import java.net.URI;
-import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
-
   public LanguageTestWrapper(SNode test) {
     super(test);
   }
+
   @Override
   public boolean isTestCase() {
     return check_9og6tg_a0a2(getNode(), this);
   }
+
   private boolean isTestMethod() {
-    return check_9og6tg_a0a3(getNode(), this);
+    return check_9og6tg_a0a4(getNode(), this);
   }
+
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    if (check_9og6tg_a0a4(getNode(), this)) {
+    if (check_9og6tg_a0a6(getNode(), this)) {
       return TestNodeWrapperFactory.tryToWrap(((SNode) BHReflection.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), SMethodTrimmedId.create("getTestCase", null, "hGBgWVd"))));
     }
     if (isTestCase()) {
@@ -57,6 +57,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return null;
   }
+
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
@@ -73,6 +74,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       }
     });
   }
+
   @Override
   @NotNull
   public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
@@ -90,6 +92,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return super.getTestRunParameters();
   }
+
   private List<String> getPluginClasspath() {
     List<String> path = ListSequence.fromList(new ArrayList<String>());
     String pluginsPath = PathManager.getPreInstalledPluginsPath();
@@ -121,6 +124,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return path;
   }
+
   private List<String> getIdeaClasspath() {
     final List<String> result = ListSequence.fromList(new ArrayList<String>());
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
@@ -132,9 +136,8 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       }
     } catch (Throwable e) {
     }
-    Language testsLanguage = (Language) SNodeOperations.getModel(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()).getModule();
-    for (SModuleReference dep : CollectionSequence.fromCollection(testsLanguage.getRuntimeModulesReferences())) {
-      SModule module = dep.resolve(MPSModuleRepository.getInstance());
+    for (SModuleReference dep : Sequence.fromIterable(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL), "jetbrains.mps.lang.test").getLanguageRuntimes())) {
+      SModule module = dep.resolve(getRepo());
       JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
       if (facet != null) {
         ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
@@ -143,31 +146,27 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
     return result;
   }
+
   @NonNls
   @Override
   public String getFqName() {
     if (isTestCase()) {
-      return check_9og6tg_a0a0a9(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
+      return check_9og6tg_a0a0a61(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
     }
     return super.getFqName();
   }
+
   @NonNls
   @Override
   public String getName() {
     if (isTestMethod()) {
-      return check_9og6tg_a0a0a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), this);
+      return check_9og6tg_a0a0a81(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), this);
     }
-    return check_9og6tg_a1a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
+    return check_9og6tg_a1a81(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
   }
   private static boolean check_9og6tg_a0a2(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
-    }
-    return false;
-  }
-  private static boolean check_9og6tg_a0a3(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
     }
     return false;
   }
@@ -177,19 +176,25 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-  private static String check_9og6tg_a0a0a9(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static boolean check_9og6tg_a0a6(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
+    }
+    return false;
+  }
+  private static String check_9og6tg_a0a0a61(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
     }
     return null;
   }
-  private static String check_9og6tg_a0a0a01(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a81(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getTestName", null, "hGBohAB")));
     }
     return null;
   }
-  private static String check_9og6tg_a1a01(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a1a81(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getSimpleClassName", null, "hSQIE8p")));
     }

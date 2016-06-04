@@ -23,8 +23,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Set;
 import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 
@@ -101,7 +100,7 @@ public abstract class EnvironmentBase implements Environment {
     if (SetSequence.fromSet(myConfig.getLibs()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
     }
-    if (SetSequence.fromSet(myConfig.getPlugins()).isNotEmpty()) {
+    if (myConfig.getPlugins() != null && SetSequence.fromSet(myConfig.getPlugins()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
     }
     myLibInitializer.load(libContribs);
@@ -186,24 +185,30 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   protected static void setSystemProperties(boolean loadIdeaPlugins) {
-    boolean internalFlag = InternalFlag.isInternalMode();
-    System.setProperty("idea.is.internal", internalFlag + "");
+    System.setProperty("idea.is.internal", InternalFlag.isInternalMode() + "");
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", loadIdeaPlugins + "");
-    System.setProperty("idea.platform.prefix", "Idea");
   }
 
   protected static void setIdeaPluginsToLoad(EnvironmentConfig config) {
-    // todo try removing this hack 
     if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
+      // this is always true except when running from ant 
       setPluginPath();
-      // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(SetSequence.fromSet(config.getPlugins()).select(new ISelector<PluginDescriptor, String>() {
-        public String select(PluginDescriptor it) {
-          return it.getId();
-        }
-      }), ","));
+      setIdeaPluginsToLoad0(config);
     }
+  }
+
+  private static void setIdeaPluginsToLoad0(EnvironmentConfig config) {
+    StringBuilder result = new StringBuilder();
+    Set<PluginDescriptor> plugins = config.getPlugins();
+    if (plugins == null) {
+      return;
+    }
+    for (PluginDescriptor plugin : SetSequence.fromSet(plugins)) {
+      result.append(plugin.getId());
+      result.append(",");
+    }
+    System.setProperty("idea.load.plugins.id", result.toString());
   }
 
   protected static void setPluginPath() {

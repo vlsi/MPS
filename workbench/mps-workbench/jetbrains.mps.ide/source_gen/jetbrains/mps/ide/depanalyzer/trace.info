@@ -333,10 +333,8 @@
       <node id="4327272822834353548" at="94,66,95,46" concept="10" />
       <node id="5114262713294285752" at="54,12,56,7" concept="0" />
       <node id="4327272822834332264" at="24,0,27,0" concept="2" trace="CycleBuilder#(Lorg/jetbrains/mps/util/Condition;)V" />
-      <node id="5114262713294314663" at="33,52,36,5" concept="0" />
       <node id="5114262713294314663" at="33,52,36,5" concept="7" />
       <node id="4327272822834598927" at="62,0,65,0" concept="8" trace="accept#(Ljetbrains/mps/ide/depanalyzer/DepLink;)Z" />
-      <node id="5114262713294381741" at="82,47,85,5" concept="0" />
       <node id="5114262713294381741" at="82,47,85,5" concept="7" />
       <node id="4327272822834353548" at="94,0,97,0" concept="14" trace="eq_tn82ka_a0a0a0d0k#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="5114262713294375410" at="82,0,87,0" concept="8" trace="debug#(Ljetbrains/mps/ide/depanalyzer/DepLink;Ljava/lang/String;)V" />
@@ -357,13 +355,11 @@
       <scope id="4327272822834332264" at="24,0,27,0">
         <var name="elementMatch" id="4327272822834332284" />
       </scope>
-      <scope id="5114262713294314663" at="33,52,36,5" />
       <scope id="5114262713294280506" at="50,47,53,37" />
       <scope id="4327272822834598927" at="62,0,65,0">
         <var name="it" id="4327272822834598927" />
       </scope>
       <scope id="5114262713294375413" at="82,47,85,5" />
-      <scope id="5114262713294381741" at="82,47,85,5" />
       <scope id="5114262713294324702" at="88,38,91,26">
         <var name="rv" id="5114262713294327457" />
       </scope>

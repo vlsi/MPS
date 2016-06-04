@@ -60,7 +60,7 @@ public class NodeByConceptChooser extends NodeChooser {
 
   @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor) {
-    Set<SNode> instances = ((Set) manager.findInstances(myScope, Collections.singleton(myTargetConcept), false, monitor));
+    Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(myTargetConcept), false, monitor);
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

@@ -26,7 +26,6 @@
       <node id="2299894485109903431" at="32,57,33,220" concept="6" />
       <node id="2299894485109903431" at="33,220,34,817" concept="2" />
       <node id="3041831561922455919" at="39,50,40,179" concept="7" />
-      <node id="3041831561922455919" at="42,68,43,102" concept="0" />
       <node id="3041831561922455919" at="42,68,43,102" concept="7" />
       <node id="3041831561922455919" at="45,30,46,16" concept="7" />
       <node id="3041831561922455919" at="18,0,20,0" concept="1" trace="typeof_CustomConstructorUsage_InferenceRule#()V" />
@@ -82,7 +81,6 @@
       <node id="4739047193854376705" at="23,61,24,216" concept="6" />
       <node id="4739047193854376705" at="24,216,25,469" concept="2" />
       <node id="4739047193854376701" at="28,50,29,176" concept="7" />
-      <node id="4739047193854376701" at="31,68,32,102" concept="0" />
       <node id="4739047193854376701" at="31,68,32,102" concept="7" />
       <node id="4739047193854376701" at="34,30,35,16" concept="7" />
       <node id="4739047193854376707" at="37,79,38,63" concept="6" />
@@ -97,11 +95,7 @@
       <node id="4739047193854376701" at="31,0,34,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4739047193854376701" at="34,0,37,0" concept="5" trace="overrides#()Z" />
       <node id="4739047193854376707" at="42,39,45,5" concept="4" />
-      <node id="4739047193854376707" at="41,233,45,5" concept="0" />
-      <node id="4739047193854376707" at="41,233,45,5" concept="0" />
       <node id="4739047193854376705" at="21,132,26,5" concept="0" />
-      <node id="4739047193854376707" at="40,30,45,5" concept="0" />
-      <node id="4739047193854376707" at="40,30,45,5" concept="0" />
       <node id="4739047193854376701" at="21,0,28,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <node id="4739047193854376707" at="37,0,48,0" concept="8" trace="_quotation_createNode_c9qmyp_a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4739047193854376701" at="19,53,19,53" />
@@ -119,9 +113,7 @@
         <var name="argument" id="4739047193854376701" />
       </scope>
       <scope id="4739047193854376701" at="34,0,37,0" />
-      <scope id="4739047193854376707" at="41,233,45,5" />
       <scope id="4739047193854376702" at="21,132,26,5" />
-      <scope id="4739047193854376707" at="40,30,45,5" />
       <scope id="4739047193854376701" at="21,0,28,0">
         <var name="listCustomParameter" id="4739047193854376701" />
         <var name="status" id="4739047193854376701" />
@@ -144,7 +136,6 @@
       <node id="5379647004618398313" at="20,68,21,216" concept="6" />
       <node id="5379647004618398313" at="21,216,22,440" concept="2" />
       <node id="5379647004618398306" at="25,50,26,183" concept="7" />
-      <node id="5379647004618398306" at="28,68,29,102" concept="0" />
       <node id="5379647004618398306" at="28,68,29,102" concept="7" />
       <node id="5379647004618398306" at="31,30,32,17" concept="7" />
       <node id="5379647004618398306" at="16,0,18,0" concept="1" trace="typeof_CustomConstructorParameter_InferenceRule#()V" />
@@ -182,7 +173,6 @@
       <node id="5379647004618398331" at="20,77,21,216" concept="6" />
       <node id="5379647004618398331" at="21,216,22,603" concept="2" />
       <node id="5379647004618398324" at="25,50,26,192" concept="7" />
-      <node id="5379647004618398324" at="28,68,29,102" concept="0" />
       <node id="5379647004618398324" at="28,68,29,102" concept="7" />
       <node id="5379647004618398324" at="31,30,32,17" concept="7" />
       <node id="5379647004618398324" at="16,0,18,0" concept="1" trace="typeof_CustomConstructorParameterReference_InferenceRule#()V" />
@@ -220,7 +210,6 @@
       <node id="7085790726146868032" at="20,59,21,216" concept="6" />
       <node id="7085790726146868032" at="21,216,22,436" concept="2" />
       <node id="7085790726146865267" at="25,50,26,173" concept="7" />
-      <node id="7085790726146865267" at="28,68,29,102" concept="0" />
       <node id="7085790726146865267" at="28,68,29,102" concept="7" />
       <node id="7085790726146865267" at="31,30,32,17" concept="7" />
       <node id="7085790726146865267" at="16,0,18,0" concept="1" trace="typeof_CustomConstructor_InferenceRule#()V" />
@@ -258,7 +247,6 @@
       <node id="960932673514559399" at="26,9,27,62" concept="6" />
       <node id="960932673514559399" at="27,62,28,272" concept="6" />
       <node id="960932673514536096" at="33,50,34,179" concept="7" />
-      <node id="960932673514536096" at="36,68,37,102" concept="0" />
       <node id="960932673514536096" at="36,68,37,102" concept="7" />
       <node id="960932673514536096" at="39,30,40,17" concept="7" />
       <node id="960932673514536096" at="20,0,22,0" concept="1" trace="checkNumberOfArgs_NonTypesystemRule#()V" />

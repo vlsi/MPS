@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.debug.api.programState.AbstractWatchable" file="AbstractWatchable.java">
+    <classNode extendsClassName="jetbrains.mps.debug.api.programState.Watchable2" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.api.programState.GenericSourceCodeLocation" file="GenericSourceCodeLocation.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.programState.ILocation" />
+  </dependency>
   <dependency className="jetbrains.mps.debug.api.programState.ILocation" file="ILocation.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
@@ -23,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.programState.IWatchable" file="IWatchable.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
@@ -34,6 +42,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.ILocation" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.api.programState.Watchable2" file="Watchable2.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.programState.WatchablesCategory" file="WatchablesCategory.java">
     <classNode dependClassName="java.lang.Object" />

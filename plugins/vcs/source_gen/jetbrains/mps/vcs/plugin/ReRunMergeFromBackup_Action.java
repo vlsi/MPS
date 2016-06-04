@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.diff.MergeRequest;
@@ -107,7 +108,13 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         }
 
         // this.model came from repo, so it must be supported by ModelPersistence 
-        mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
+        final Wrappers._T<String> modelData = new Wrappers._T<String>();
+        ((SModel) MapSequence.fromMap(_params).get("model")).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            modelData.value = ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal());
+          }
+        });
+        mine = ReRunMergeFromBackup_Action.this.selectMineModel(modelData.value, mine, _params);
         if (mine == null) {
           return;
         }

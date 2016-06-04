@@ -8,6 +8,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.source.PositionProvider;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.debug.api.programState.GenericSourceCodeLocation;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.debug.api.source.SourcePosition;
 
@@ -50,18 +51,19 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   }
   @Override
   public boolean isDebuggablePosition(@NonNls String unitName, @NonNls String fileName, int position) {
-    return PositionProvider.getInstance(myProject).getPosition(unitName, fileName, position, mySession) != null;
+    return PositionProvider.getInstance(myProject).getPosition(new GenericSourceCodeLocation(unitName, fileName, position), mySession) != null;
   }
   @Override
   public boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount) {
     if (EqualUtil.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
       return true;
     }
-    SourcePosition lastPointer = PositionProvider.getInstance(myProject).getPosition(lastUnitName, lastFileName, lastLineNumber, mySession);
-    SourcePosition nextPointer = PositionProvider.getInstance(myProject).getPosition(nextUnitName, nextFileName, nextLineNumber, mySession);
-    return eq_xhry8p_a0d0h(lastPointer, nextPointer);
+    PositionProvider posProvider = PositionProvider.getInstance(myProject);
+    SourcePosition lastPointer = posProvider.getPosition(new GenericSourceCodeLocation(lastUnitName, lastFileName, lastLineNumber), mySession);
+    SourcePosition nextPointer = posProvider.getPosition(new GenericSourceCodeLocation(nextUnitName, nextFileName, nextLineNumber), mySession);
+    return eq_xhry8p_a0e0h(lastPointer, nextPointer);
   }
-  private static boolean eq_xhry8p_a0d0h(Object a, Object b) {
+  private static boolean eq_xhry8p_a0e0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

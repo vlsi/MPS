@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.debug.api.programState.Watchable2;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
 import com.intellij.openapi.application.ApplicationManager;
@@ -24,12 +25,12 @@ public class WatchableNode extends AbstractWatchableNode {
   private final AbstractUiState myState;
   private final AtomicBoolean myInitializationInProgress = new AtomicBoolean(false);
   private final List<_FunctionTypes._void_P0_E0> myCallbacks = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-  public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
-    super(watchable.getNode());
-    myWatchable = watchable;
+  public WatchableNode(@NotNull IWatchable w, AbstractUiState state) {
+    super((w instanceof Watchable2 ? ((Watchable2) w).getSourceNode() : ((w.getNode() == null ? null : w.getNode().getReference()))));
+    myWatchable = w;
     myState = state;
-    setNodeIdentifier(calculateNodeId());
-    setIcon(watchable.getPresentationIcon());
+    setNodeIdentifier(calculateNodeId(w));
+    setIcon(w.getPresentationIcon());
   }
   @Override
   protected void doUpdate() {
@@ -40,12 +41,12 @@ public class WatchableNode extends AbstractWatchableNode {
   public boolean isInitialized() {
     return myInitialized;
   }
-  protected String calculateNodeId() {
-    IValue value = myWatchable.getValue();
+  private static String calculateNodeId(IWatchable watchable) {
+    IValue value = watchable.getValue();
     if (value == null) {
-      return myWatchable.getName() + " = null";
+      return watchable.getName() + " = null";
     }
-    return myWatchable.getName() + " = " + value.getValuePresentation();
+    return watchable.getName() + " = " + value.getValuePresentation();
   }
   @Override
   public boolean isLeaf() {

@@ -391,9 +391,7 @@
       <node id="1519428872448357919" at="50,22,53,5" concept="6" />
       <node id="4282822416100099135" at="62,0,65,0" concept="7" trace="register#(Ljava/lang/String;Ljetbrains/mps/lang/dataFlow/DataFlowBuilder;)V" />
       <node id="8204202203348315516" at="78,43,81,5" concept="6" />
-      <node id="3689217605463174035" at="99,46,102,13" concept="0" />
       <node id="3689217605463174035" at="99,46,102,13" concept="6" />
-      <node id="3689217605463179319" at="103,46,106,13" concept="0" />
       <node id="3689217605463179319" at="103,46,106,13" concept="6" />
       <node id="4282822416100099081" at="112,0,115,0" concept="13" trace="getInstance#()Ljetbrains/mps/lang/dataFlow/DataFlowManager;" />
       <node id="3689217605462439544" at="36,0,40,0" concept="7" trace="beforeClassesUnloaded#(Ljava/util/Set;)V" />
@@ -439,12 +437,10 @@
         <var name="e" id="3689217605463168633" />
       </scope>
       <scope id="3689217605463168632" at="99,46,102,13" />
-      <scope id="3689217605463174035" at="99,46,102,13" />
       <scope id="3689217605463168635" at="103,0,106,13">
         <var name="e" id="3689217605463168637" />
       </scope>
       <scope id="3689217605463168636" at="103,46,106,13" />
-      <scope id="3689217605463179319" at="103,46,106,13" />
       <scope id="4282822416100099081" at="112,0,115,0" />
       <scope id="3689217605462439544" at="36,0,40,0">
         <var name="modules" id="1707564638117583598" />

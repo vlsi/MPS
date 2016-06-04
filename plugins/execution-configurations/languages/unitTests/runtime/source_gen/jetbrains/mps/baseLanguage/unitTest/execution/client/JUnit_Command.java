@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
+import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
@@ -67,6 +68,7 @@ public class JUnit_Command {
     }
     return this;
   }
+
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
     return new JUnit_Command().setVirtualMachineParameter_String(check_txeh3_a1a0a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
@@ -80,9 +82,11 @@ public class JUnit_Command {
     }
     return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
   }
+
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
+
   private static String getProgramParameters(final List<ITestNodeWrapper> tests) {
     final Wrappers._T<List<String>> testsCommandLine = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -120,12 +124,12 @@ public class JUnit_Command {
         runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
         testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0n(it.getTestRunParameters(), runParams.value);
+            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(it.getTestRunParameters(), runParams.value);
           }
         }).toListSequence();
         skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a31(it.getTestRunParameters(), runParams.value);
+            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(it.getTestRunParameters(), runParams.value);
           }
         }).select(new ISelector<ITestNodeWrapper, String>() {
           public String select(ITestNodeWrapper it) {
@@ -157,6 +161,7 @@ public class JUnit_Command {
       }
     }).toListSequence();
     ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
+    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
     return classpath;
   }
   private static List<String> collectFromLibFolder() {
@@ -169,6 +174,41 @@ public class JUnit_Command {
     }).toListSequence();
     return list;
   }
+  private static List<String> collectFromPreInstalledPluginsFolder() {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    File preinstalledFolder = new File(PathManager.getPreInstalledPluginsPath());
+    final File[] pluginFiles = preinstalledFolder.listFiles();
+    if (pluginFiles != null) {
+      for (final File pluginFile : pluginFiles) {
+        if (!(ClassloaderUtil.isJarOrZip(pluginFile))) {
+          File classesDir = new File(pluginFile, "classes");
+          if (classesDir.exists()) {
+            ListSequence.fromList(result).addElement(classesDir.getAbsolutePath());
+          }
+          File libDir = new File(pluginFile, "lib");
+          if (libDir.exists()) {
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(JUnit_Command.allJarsUnderRoot(libDir)));
+          }
+        }
+      }
+    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(JUnit_Command.allJarsUnderRoot(preinstalledFolder)));
+    return result;
+  }
+  private static List<String> allJarsUnderRoot(File root) {
+    List<String> res = ListSequence.fromList(new ArrayList<String>());
+    File[] children = root.listFiles();
+    if (children != null) {
+      for (final File childFile : children) {
+        if (ClassloaderUtil.isJarOrZip(childFile)) {
+          ListSequence.fromList(res).addElement(childFile.getAbsolutePath());
+        }
+      }
+    }
+
+    return res;
+  }
+
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
@@ -202,10 +242,10 @@ public class JUnit_Command {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0n(Object a, Object b) {
+  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a31(Object a, Object b) {
+  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean isNotEmptyString(String str) {

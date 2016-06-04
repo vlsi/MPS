@@ -5112,7 +5112,7 @@
             </node>
             <node concept="TSZUe" id="6u50yCprHkr" role="2OqNvi">
               <node concept="3B5_sB" id="6u50yCprHks" role="25WWJ7">
-                <ref role="3B5MYn" to="tp4k:6u50yCprH$i" resolve="ConceptFunctionParameter_SConcept" />
+                <ref role="3B5MYn" to="tp4k:6u50yCprH$i" resolve="ConceptFunctionParameter_SConceptClass" />
               </node>
             </node>
           </node>
@@ -5158,7 +5158,7 @@
   </node>
   <node concept="13h7C7" id="6u50yCprH$G">
     <property role="3GE5qa" value="Shared" />
-    <ref role="13h7C2" to="tp4k:6u50yCprH$i" resolve="ConceptFunctionParameter_SConcept" />
+    <ref role="13h7C2" to="tp4k:6u50yCprH$i" resolve="ConceptFunctionParameter_SConceptClass" />
     <node concept="13i0hz" id="6u50yCprH$R" role="13h7CS">
       <property role="TrG5h" value="getType" />
       <property role="13i0it" value="false" />

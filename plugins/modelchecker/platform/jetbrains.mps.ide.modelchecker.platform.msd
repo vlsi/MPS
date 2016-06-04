@@ -54,6 +54,7 @@
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" version="0" />
     <module reference="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" version="0" />
+    <module reference="fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41(jetbrains.mps.core.tool.environment)" version="0" />
     <module reference="bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)" version="0" />
     <module reference="5fa23c0a-216d-4571-a163-e286643e6f5f(jetbrains.mps.generator)" version="0" />
     <module reference="a381759b-acec-4e2e-8745-7bf905520fca(jetbrains.mps.ide.modelchecker.platform)" version="0" />

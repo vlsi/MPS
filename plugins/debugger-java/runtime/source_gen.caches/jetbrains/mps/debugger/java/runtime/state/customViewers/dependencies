@@ -20,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers" file="BaseLanguageCustomViewers.java">
@@ -106,7 +105,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.customViewers.PrimitiveWrapperFactory" file="PrimitiveWrapperFactory.java">

@@ -15,13 +15,24 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
@@ -29,6 +40,7 @@
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
+        <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
       <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
@@ -53,10 +65,21 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -68,11 +91,29 @@
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
@@ -189,6 +230,102 @@
         <node concept="TZ5HA" id="1nuoWSHKO0u" role="TZ5H$">
           <node concept="1dT_AC" id="1nuoWSHKO0v" role="1dT_Ay">
             <property role="1dT_AB" value="Invokes evaluation while blocking current thread (must be EDT by the way) and showing a progress window." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6k4GBOyidXt" role="jymVt" />
+    <node concept="2tJIrI" id="6k4GBOyiemQ" role="jymVt" />
+    <node concept="2YIFZL" id="6k4GBOyfB8p" role="jymVt">
+      <property role="TrG5h" value="modelNameFromLocation" />
+      <node concept="3uibUv" id="6k4GBOyfKDy" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="6k4GBOyfB8t" role="3clF47">
+        <node concept="3cpWs8" id="6k4GBOyig8R" role="3cqZAp">
+          <node concept="3cpWsn" id="6k4GBOyig8S" role="3cpWs9">
+            <property role="TrG5h" value="unitName" />
+            <node concept="3uibUv" id="6k4GBOyig8T" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="6k4GBOyigPm" role="33vP2m">
+              <node concept="37vLTw" id="6k4GBOyigKI" role="2Oq$k0">
+                <ref role="3cqZAo" node="6k4GBOyfC$V" resolve="location" />
+              </node>
+              <node concept="liA8E" id="6k4GBOyigWO" role="2OqNvi">
+                <ref role="37wK5l" to="y3sp:3DGS_W7MKZd" resolve="getUnitName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6k4GBOyfDKH" role="3cqZAp">
+          <node concept="3SKdUq" id="6k4GBOyfDKJ" role="3SKWNk">
+            <property role="3SKdUp" value="XXX no idea why we don't expect nested unit names, like com.package.A.B here." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6k4GBOyfE73" role="3cqZAp">
+          <node concept="3SKdUq" id="6k4GBOyfE75" role="3SKWNk">
+            <property role="3SKdUp" value="just kept the way it was in TraceInfoUtil.modelFqNameFromUnitName" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6k4GBOyfE9v" role="3cqZAp">
+          <node concept="3cpWsn" id="6k4GBOyfE9w" role="3cpWs9">
+            <property role="TrG5h" value="lastDot" />
+            <node concept="10Oyi0" id="6k4GBOyfE9q" role="1tU5fm" />
+            <node concept="2OqwBi" id="6k4GBOyfE9x" role="33vP2m">
+              <node concept="37vLTw" id="6k4GBOyigAr" role="2Oq$k0">
+                <ref role="3cqZAo" node="6k4GBOyig8S" resolve="unitName" />
+              </node>
+              <node concept="liA8E" id="6k4GBOyfE9z" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.lastIndexOf(int):int" resolve="lastIndexOf" />
+                <node concept="1Xhbcc" id="6k4GBOyfE9$" role="37wK5m">
+                  <property role="1XhdNS" value="." />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6k4GBOyfElq" role="3cqZAp">
+          <node concept="3K4zz7" id="6k4GBOyfG2g" role="3cqZAk">
+            <node concept="Xl_RD" id="6k4GBOyfGeO" role="3K4E3e">
+              <property role="Xl_RC" value="" />
+            </node>
+            <node concept="2OqwBi" id="6k4GBOyfG_U" role="3K4GZi">
+              <node concept="37vLTw" id="6k4GBOyigDc" role="2Oq$k0">
+                <ref role="3cqZAo" node="6k4GBOyig8S" resolve="unitName" />
+              </node>
+              <node concept="liA8E" id="6k4GBOyfGV7" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.substring(int,int):java.lang.String" resolve="substring" />
+                <node concept="3cmrfG" id="6k4GBOyfH$u" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="37vLTw" id="6k4GBOyfHSm" role="37wK5m">
+                  <ref role="3cqZAo" node="6k4GBOyfE9w" resolve="lastDot" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="6k4GBOyfFgt" role="3K4Cdx">
+              <node concept="3cmrfG" id="6k4GBOyfFsL" role="3uHU7w">
+                <property role="3cmrfH" value="-1" />
+              </node>
+              <node concept="37vLTw" id="6k4GBOyfEls" role="3uHU7B">
+                <ref role="3cqZAo" node="6k4GBOyfE9w" resolve="lastDot" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6k4GBOyfC$V" role="3clF46">
+        <property role="TrG5h" value="location" />
+        <node concept="3uibUv" id="6k4GBOyifMY" role="1tU5fm">
+          <ref role="3uigEE" to="y3sp:3DGS_W7MKYf" resolve="JavaLocation" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6k4GBOyid0F" role="1B3o_S" />
+      <node concept="P$JXv" id="6k4GBOyiesU" role="lGtFl">
+        <node concept="TZ5HA" id="6k4GBOyiesV" role="TZ5H$">
+          <node concept="1dT_AC" id="6k4GBOyiesW" role="1dT_Ay">
+            <property role="1dT_AB" value="Need this method where TraceInfoUtil has been used, just picked a place visible from all locations." />
           </node>
         </node>
       </node>

@@ -9,7 +9,6 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class JavaWatchpointValueWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myCachedValue;
@@ -34,9 +33,5 @@ public class JavaWatchpointValueWatchable extends JavaWatchable implements IWatc
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
-  }
-  @Override
-  public SNode getNode() {
-    return null;
   }
 }

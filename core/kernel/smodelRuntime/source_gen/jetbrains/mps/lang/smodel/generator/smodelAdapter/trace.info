@@ -235,14 +235,10 @@
       <node id="3930211753441979004" at="63,10,65,5" concept="1" />
       <node id="6407023681583007505" at="34,0,37,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1287809918884497321" at="40,59,43,5" concept="8" />
-      <node id="3912421253250207012" at="44,50,47,7" concept="1" />
       <node id="3912421253250207012" at="44,50,47,7" concept="8" />
-      <node id="3912421253250607786" at="47,7,50,7" concept="1" />
       <node id="3912421253250607786" at="47,7,50,7" concept="8" />
       <node id="6407023681583016445" at="72,57,75,7" concept="8" />
-      <node id="3912421253250267052" at="85,55,88,9" concept="1" />
       <node id="3912421253250267052" at="85,55,88,9" concept="8" />
-      <node id="3912421253250648194" at="88,9,91,9" concept="1" />
       <node id="3912421253250648194" at="88,9,91,9" concept="8" />
       <node id="6407023681583065611" at="98,0,101,0" concept="15" trace="getAttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/util/List;" />
       <node id="1341860900489782224" at="134,172,137,5" concept="8" />
@@ -379,12 +375,8 @@
       <scope id="6407023681583007505" at="34,0,37,0">
         <var name="it" id="6407023681583007505" />
       </scope>
-      <scope id="3912421253250207012" at="44,50,47,7" />
-      <scope id="3912421253250607786" at="47,7,50,7" />
       <scope id="6407023681583007557" at="54,94,57,17" />
       <scope id="6407023681583016443" at="72,57,75,7" />
-      <scope id="3912421253250267052" at="85,55,88,9" />
-      <scope id="3912421253250648194" at="88,9,91,9" />
       <scope id="6407023681583065611" at="98,0,101,0">
         <var name="descriptor" id="6407023681583065618" />
         <var name="node" id="6407023681583065616" />

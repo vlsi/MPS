@@ -37,7 +37,6 @@
       <node id="2687243112287830053" at="47,122,50,13" concept="3" />
       <node id="2687243112287755361" at="34,0,38,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="2687243112287755361" at="42,0,46,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="2687243112287755361" at="47,122,51,574" concept="0" />
       <node id="2687243112287755361" at="46,0,53,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="2687243112287755361" at="40,56,53,10" concept="6" />
       <node id="2687243112287755361" at="38,0,55,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -51,7 +50,6 @@
       <scope id="2687243112287755361" at="34,0,38,0" />
       <scope id="2687243112287755361" at="42,0,46,0" />
       <scope id="2687243112287755361" at="47,122,51,574" />
-      <scope id="2687243112287755568" at="47,122,51,574" />
       <scope id="2687243112287755361" at="46,0,53,0">
         <var name="_context" id="2687243112287755361" />
         <var name="operationContext" id="2687243112287755361" />

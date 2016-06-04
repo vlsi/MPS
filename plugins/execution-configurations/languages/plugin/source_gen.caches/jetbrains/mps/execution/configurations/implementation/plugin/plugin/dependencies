@@ -452,6 +452,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />

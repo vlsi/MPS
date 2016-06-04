@@ -18,26 +18,29 @@ package jetbrains.mps.idea.core.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +59,7 @@ import java.util.Set;
 public class NewRootAction extends AnAction {
   private EditableSModel myModel;
   private Project myProject;
-  private Map<String, SAbstractConcept> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SAbstractConcept>();
+  private Map<String, SAbstractConcept> myConceptFqNameToNodePointerMap = new LinkedHashMap<>();
 
   private static Logger LOG = LogManager.getLogger(NewRootAction.class);
 
@@ -66,25 +69,37 @@ public class NewRootAction extends AnAction {
 
   @Override
   public void actionPerformed(AnActionEvent e) {
-    final MyCreateFromTemplateDialog dialog = new MyCreateFromTemplateDialog(myProject);
-    dialog.setTitle(MPSBundle.message("create.new.root.dialog.title"));
-    ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+    Interaction interaction = ApplicationManager.getApplication().isUnitTestMode() ?
+      e.getData(HEADLESS_INTERACTION) : new UiInteraction();
+
+    assert interaction != null;
+
+    Pair<String, SAbstractConcept> choice = interaction.choose(myConceptFqNameToNodePointerMap);
+    if (choice == null) {
+      // cancelled
+      return;
+    }
+
+    String name = choice.first;
+    SAbstractConcept concept = choice.second;
+
+    Ref<SNodeReference> createdNode = new Ref<>();
+
+    ProjectHelper.getModelAccess(myProject).executeCommand(new Runnable() {
       @Override
       public void run() {
-        for (Map.Entry<String, SAbstractConcept> entry : myConceptFqNameToNodePointerMap.entrySet()) {
-          String conceptFqName = entry.getKey();
-          SAbstractConcept concept = entry.getValue();
-          dialog.getKindCombo().addItem(concept.getConceptAlias(), concept.getIcon(), conceptFqName);
-          dialog.setTemplateKindComponentsVisible(true);
-        }
+        SNode newNode = NodeFactoryManager.createNode(concept, null, null, myModel);
+        SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, name);
+        myModel.addRootNode(newNode);
+        myModel.save();
+
+        createdNode.set(newNode.getReference());
       }
     });
-    dialog.show();
 
-    final SNodeReference rootNode = dialog.getRootNode();
-    if (rootNode != null) {
+    if (!createdNode.isNull() && !ApplicationManager.getApplication().isUnitTestMode()) {
       FileEditorManager.getInstance(myProject).openFile(
-        NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(myProject), rootNode), true);
+        NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(myProject), createdNode.get()), true);
     }
   }
 
@@ -158,33 +173,58 @@ public class NewRootAction extends AnAction {
     });
   }
 
+  private class UiInteraction implements Interaction {
+    @Override
+    public Pair<String, SAbstractConcept> choose(Map<String, SAbstractConcept> concepts) {
+      MyCreateFromTemplateDialog dialog = new MyCreateFromTemplateDialog(myProject, concepts);
+      dialog.setTitle(MPSBundle.message("create.new.root.dialog.title"));
+
+      ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          for (Map.Entry<String, SAbstractConcept> entry : concepts.entrySet()) {
+            String conceptFqName = entry.getKey();
+            SAbstractConcept concept = entry.getValue();
+            dialog.getKindCombo().addItem(concept.getConceptAlias(), concept.getIcon(), conceptFqName);
+            dialog.setTemplateKindComponentsVisible(true);
+          }
+        }
+      });
+
+      dialog.show();
+      return dialog.getResult();
+    }
+  }
+
   private class MyCreateFromTemplateDialog extends CreateFromTemplateDialog {
-    protected MyCreateFromTemplateDialog(@NotNull Project project) {
+    private Pair<String, SAbstractConcept> myResult = null;
+    private Map<String, SAbstractConcept> myConcepts;
+
+    protected MyCreateFromTemplateDialog(@NotNull Project project, @NotNull Map<String, SAbstractConcept> concepts) {
       super(project);
+      myConcepts = concepts;
     }
 
-    public SNodeReference getRootNode() {
-      return myRootNode;
+    public Pair<String, SAbstractConcept> getResult() {
+      return myResult;
     }
-
-    private SNodeReference myRootNode = null;
 
     @Override
     protected void doOKAction() {
-      final SAbstractConcept concept = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
-      ProjectHelper.getModelAccess(myProject).executeCommand(new Runnable() {
-        @Override
-        public void run() {
-          SModel model = myModel;
-          final SNode newNode = NodeFactoryManager.createNode(concept, null, null, model);
-          SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, getNameField().getText());
-          model.addRootNode(newNode);
-          myModel.save();
-
-          myRootNode = newNode.getReference();
-        }
-      });
+      String name = getNameField().getText();
+      SAbstractConcept concept = myConcepts.get(getKindCombo().getSelectedName());
+      myResult = Pair.create(name, concept);
       super.doOKAction();
     }
+  }
+
+  public static final DataKey<Interaction> HEADLESS_INTERACTION = DataKey.create("newRootActionHeadlessInteraction");
+
+  public interface Interaction {
+    /**
+     * @param concepts List of concepts that the dialog has to offer to new node creation
+     * @return Name and concept (from the map param) for the node to create; or null if cancelled
+     */
+    Pair<String, SAbstractConcept> choose(Map<String, SAbstractConcept> concepts);
   }
 }

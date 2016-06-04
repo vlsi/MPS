@@ -106,6 +106,7 @@ public class Java_Command {
     }
     return this;
   }
+
   public ProcessHandler createProcess(String className) throws ExecutionException {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(className, ListSequence.fromList(myClassPath_ListString).select(new ISelector<String, File>() {
       public File select(String it) {
@@ -167,9 +168,11 @@ public class Java_Command {
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
     return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0e0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
   }
+
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
+
   public static boolean isUnitNode(SNode node) {
     return isNotEmptyString(Java_Command.getClassName(node));
   }
@@ -195,7 +198,7 @@ public class Java_Command {
       } else {
         return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
           public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
           }
         });
       }
@@ -307,6 +310,7 @@ public class Java_Command {
     writer.close();
     return tmpFile;
   }
+
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
@@ -406,10 +410,10 @@ public class Java_Command {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

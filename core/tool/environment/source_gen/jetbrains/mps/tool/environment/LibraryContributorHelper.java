@@ -32,6 +32,11 @@ import java.util.LinkedHashMap;
     myRootClassLoader = rootCLForLibraries;
   }
 
+  /**
+   * fixme this logic intersects with the classloading logic of the idea platform.
+   * however, e.g. in test mode idea urges us to put all the classes into the boot classpath,
+   * since the PluginClassLoaders are not created in the test mode.
+   */
   private Set<LibDescriptor> getPluginLibDescriptors() {
     Set<LibDescriptor> paths = new LinkedHashSet<LibDescriptor>();
 
@@ -50,6 +55,10 @@ import java.util.LinkedHashMap;
         File languagesFolder = new File(pluginDirectory, "languages");
         if (languagesFolder.exists() && languagesFolder.isDirectory()) {
           paths.add(new LibDescriptor(languagesFolder.getAbsolutePath(), pluginCL));
+        }
+        File classesFolder = new File(pluginDirectory, "classes");
+        if (classesFolder.exists() && classesFolder.isDirectory()) {
+          paths.add(new LibDescriptor(classesFolder.getAbsolutePath(), pluginCL));
         }
       }
     }

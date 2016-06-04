@@ -283,9 +283,6 @@
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/428466863025296200">
     <file name="AttachMappingLabel_Action.java">
-      <node id="1227316931926" at="166,27,166,27" concept="1" />
-      <node id="1227316931929" at="169,27,169,27" concept="1" />
-      <node id="7951506190797597685" at="172,27,172,27" concept="1" />
       <node id="428466863025296200" at="37,0,38,0" concept="13" trace="ICON" />
       <node id="428466863025296200" at="38,38,39,44" concept="15" />
       <node id="428466863025296200" at="39,44,40,35" concept="5" />
@@ -391,9 +388,6 @@
       <node id="1227316931925" at="132,0,187,0" concept="9" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1227316931918" at="130,5,187,24" concept="10" />
       <node id="428466863025296200" at="116,0,195,0" concept="9" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <scope id="1227316931926" at="166,27,166,27" />
-      <scope id="1227316931929" at="169,27,169,27" />
-      <scope id="7951506190797597685" at="172,27,172,27" />
       <scope id="428466863025296200" at="44,32,45,16" />
       <scope id="1227301419290" at="50,92,51,19" />
       <scope id="1227301736173" at="54,192,55,19" />

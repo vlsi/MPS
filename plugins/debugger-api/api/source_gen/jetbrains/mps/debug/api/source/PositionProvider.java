@@ -15,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.debug.api.programState.GenericSourceCodeLocation;
 import org.jetbrains.annotations.NonNls;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -36,7 +38,7 @@ public class PositionProvider implements ProjectComponent {
         }
       });
       if (provider != null) {
-        SourcePosition position = provider.getPosition(location);
+        SourcePosition position = provider.getPosition(location, session);
         if (position != null) {
           return position;
         }
@@ -44,23 +46,17 @@ public class PositionProvider implements ProjectComponent {
     }
     return null;
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.debug.api.source.PositionProvider#getPosition(ILocation, AbstractDebugSession) } instead
+   */
   @Nullable
-  public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber, @NotNull final AbstractDebugSession session) {
-    for (String key : MapSequence.fromMap(myKeysToProviders).keySet()) {
-      IPositionProvider provider = ListSequence.fromList(MapSequence.fromMap(myKeysToProviders).get(key)).findFirst(new IWhereFilter<IPositionProvider>() {
-        public boolean accept(IPositionProvider it) {
-          return it.accepts(session);
-        }
-      });
-      if (provider != null) {
-        SourcePosition position = provider.getPosition(unitName, fileName, lineNumber);
-        if (position != null) {
-          return position;
-        }
-      }
-    }
-    return null;
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber, @NotNull AbstractDebugSession session) {
+    return getPosition(new GenericSourceCodeLocation(unitName, fileName, lineNumber), session);
   }
+
   public void addProvider(@NotNull IPositionProvider provider, @NonNls String key) {
     List<IPositionProvider> providersForKey = MapSequence.fromMap(myKeysToProviders).get(key);
     if (providersForKey == null) {

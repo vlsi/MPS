@@ -60,20 +60,14 @@
       <node id="1218807115883" at="113,5,114,18" concept="6" />
       <node id="1218970649603" at="116,65,117,63" concept="5" />
       <node id="1218970649603" at="117,63,118,30" concept="5" />
-      <node id="1218970649603" at="118,30,119,221" concept="0" />
-      <node id="1218970649603" at="118,30,119,221" concept="0" />
       <node id="1218970649603" at="118,30,119,221" concept="1" />
       <node id="1218970649603" at="119,221,120,24" concept="6" />
       <node id="1218970653888" at="122,65,123,63" concept="5" />
       <node id="1218970653888" at="123,63,124,30" concept="5" />
-      <node id="1218970653888" at="124,30,125,225" concept="0" />
-      <node id="1218970653888" at="124,30,125,225" concept="0" />
       <node id="1218970653888" at="124,30,125,225" concept="1" />
       <node id="1218970653888" at="125,225,126,24" concept="6" />
       <node id="1218970658626" at="128,65,129,63" concept="5" />
       <node id="1218970658626" at="129,63,130,30" concept="5" />
-      <node id="1218970658626" at="130,30,131,222" concept="0" />
-      <node id="1218970658626" at="130,30,131,222" concept="0" />
       <node id="1218970658626" at="130,30,131,222" concept="1" />
       <node id="1218970658626" at="131,222,132,24" concept="6" />
       <node id="1218807115883" at="62,0,65,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
@@ -96,9 +90,7 @@
       <node id="1218807115883" at="65,20,86,9" concept="3" />
       <node id="1218807115883" at="91,62,112,7" concept="3" />
       <node id="1218807115883" at="88,5,113,5" concept="0" />
-      <node id="1218807115883" at="88,5,113,5" concept="0" />
       <node id="1218807115883" at="59,62,87,7" concept="3" />
-      <node id="1218807115883" at="56,93,88,5" concept="0" />
       <node id="1218807115883" at="56,93,88,5" concept="0" />
       <node id="1218807115883" at="55,0,116,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_ActionParameter_1218807115883#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1218807115883" at="62,44,63,199" />
@@ -107,9 +99,6 @@
       <scope id="1218970762873" at="79,205,80,41" />
       <scope id="1218807115883" at="94,44,95,350" />
       <scope id="1218969641798" at="106,64,107,334" />
-      <scope id="1218970649603" at="118,30,119,221" />
-      <scope id="1218970653888" at="124,30,125,225" />
-      <scope id="1218970658626" at="130,30,131,222" />
       <scope id="1218807115883" at="62,0,65,0" />
       <scope id="1218807208808" at="69,98,72,30">
         <var name="result" id="1218808137405" />
@@ -167,7 +156,6 @@
         <var name="childConcept" id="1218807115883" />
         <var name="outputConcept" id="1218807115883" />
       </scope>
-      <scope id="1218807115883" at="88,5,113,5" />
       <scope id="1218807115883" at="60,133,86,9">
         <var name="queryResult" id="1218807115883" />
       </scope>
@@ -175,7 +163,6 @@
         <var name="childConcept" id="1218807115883" />
         <var name="outputConcept" id="1218807115883" />
       </scope>
-      <scope id="1218807115883" at="56,93,88,5" />
       <scope id="1218807115883" at="55,208,114,18">
         <var name="result" id="1218807115883" />
       </scope>

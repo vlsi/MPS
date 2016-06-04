@@ -25,7 +25,6 @@
       <node id="8425555512443936533" at="34,70,35,221" concept="5" />
       <node id="8425555512443936533" at="35,221,36,285" concept="2" />
       <node id="1236696569510" at="42,50,43,174" concept="6" />
-      <node id="1236696569510" at="45,68,46,102" concept="0" />
       <node id="1236696569510" at="45,68,46,102" concept="6" />
       <node id="1236696569510" at="48,30,49,16" concept="6" />
       <node id="1236696569510" at="18,0,20,0" concept="1" trace="typeof_VarVariableDeclaration_InferenceRule#()V" />
@@ -80,7 +79,6 @@
       <node id="8067700594454596069" at="21,188,22,58" concept="5" />
       <node id="8067700594454596069" at="22,58,23,263" concept="5" />
       <node id="8067700594454594112" at="26,50,27,174" concept="6" />
-      <node id="8067700594454594112" at="29,68,30,102" concept="0" />
       <node id="8067700594454594112" at="29,68,30,102" concept="6" />
       <node id="8067700594454594112" at="32,30,33,17" concept="6" />
       <node id="8067700594454594112" at="18,0,20,0" concept="1" trace="check_VarVariableDeclaration_NonTypesystemRule#()V" />

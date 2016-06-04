@@ -90,7 +90,7 @@
       </node>
     </node>
     <node concept="A1WHu" id="33LYnHO_wN7" role="AmTjC">
-      <ref role="A1WHt" to="j2fg:33LYnHO_wMY" resolve="ExtendedInLanguages" />
+      <ref role="A1WHt" to="j2fg:33LYnHO_wMY" resolve="ContributedToFromUnusedLanguage" />
     </node>
   </node>
 </model>

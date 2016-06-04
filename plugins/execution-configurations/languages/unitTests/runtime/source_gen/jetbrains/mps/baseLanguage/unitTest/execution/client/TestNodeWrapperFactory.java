@@ -157,10 +157,13 @@ public enum TestNodeWrapperFactory {
 
   @Nullable
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
+
   public boolean canWrap(@NotNull SNode node) {
     return SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(getWrappedConcept()));
   }
+
   public abstract SAbstractConcept getWrappedConcept();
+
   public abstract boolean isRoot();
 
   @Nullable
@@ -191,6 +194,7 @@ public enum TestNodeWrapperFactory {
       }
     });
   }
+
   private static Iterable<SAbstractConcept> getWrappedNonRootConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {
@@ -198,6 +202,7 @@ public enum TestNodeWrapperFactory {
       }
     });
   }
+
   public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
     Iterable<SAbstractConcept> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).toGenericArray(SAbstractConcept.class), true, isRoot);

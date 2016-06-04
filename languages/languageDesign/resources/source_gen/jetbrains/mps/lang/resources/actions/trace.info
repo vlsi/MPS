@@ -28,8 +28,6 @@
       <node id="8814893218132458989" at="57,30,58,241" concept="1" />
       <node id="8814893218132458989" at="58,241,59,210" concept="1" />
       <node id="8814893218132458989" at="59,210,60,24" concept="6" />
-      <node id="8814893218132458989" at="57,30,59,210" concept="0" />
-      <node id="8814893218132458989" at="57,30,59,210" concept="0" />
       <node id="8814893218132458892" at="32,0,35,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
       <node id="8814893218132458892" at="39,0,42,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8814893218132458892" at="42,0,45,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -41,13 +39,11 @@
       <node id="8814893218132458892" at="35,20,50,9" concept="3" />
       <node id="8814893218132458892" at="29,62,51,7" concept="3" />
       <node id="8814893218132458892" at="26,93,52,5" concept="0" />
-      <node id="8814893218132458892" at="26,93,52,5" concept="0" />
       <node id="8814893218132458892" at="25,0,55,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_8814893218132458892#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="8814893218132458892" at="32,44,33,240" />
       <scope id="8814893218132458900" at="39,98,40,68" />
       <scope id="8814893218132458927" at="42,61,43,525" />
       <scope id="8814893218132458892" at="45,68,46,48" />
-      <scope id="8814893218132458989" at="57,30,59,210" />
       <scope id="8814893218132458892" at="32,0,35,0" />
       <scope id="8814893218132458892" at="39,0,42,0">
         <var name="model" id="8814893218132458892" />
@@ -79,7 +75,6 @@
         <var name="childConcept" id="8814893218132458892" />
         <var name="outputConcept" id="8814893218132458892" />
       </scope>
-      <scope id="8814893218132458892" at="26,93,52,5" />
       <scope id="8814893218132458892" at="25,209,53,18">
         <var name="result" id="8814893218132458892" />
       </scope>

@@ -56,8 +56,6 @@ public class MpsEnvironment extends EnvironmentBase {
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
 
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
-    EnvironmentBase.setSystemProperties(false);
-    EnvironmentBase.setPluginPath();
     registerFacetFactory();
     super.init(myPlatform.findComponent(LibraryInitializer.class));
   }

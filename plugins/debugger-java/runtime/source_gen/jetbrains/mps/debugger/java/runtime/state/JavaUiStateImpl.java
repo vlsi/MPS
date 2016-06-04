@@ -99,7 +99,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     assert getExecutionState().equals(AbstractDebugSession.ExecutionState.Paused);
 
     for (ThreadReference threadReference : getEventProcessor().getVirtualMachine().allThreads()) {
-      ListSequence.fromList(myThreads).addElement(new JavaThread(threadReference));
+      ListSequence.fromList(myThreads).addElement(new JavaThread(myDebugSession, threadReference));
     }
     assert myThreadIndex < ListSequence.fromList(myThreads).count();
   }

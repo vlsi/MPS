@@ -362,6 +362,14 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
+    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
+      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
+      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
+        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
+      </concept>
+      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+    </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
@@ -5129,6 +5137,54 @@
                 <property role="3SKdUp" value="as the model is already in repo, we can assume it's in supported persistence" />
               </node>
             </node>
+            <node concept="3cpWs8" id="1gbSomzw_Y7" role="3cqZAp">
+              <node concept="3cpWsn" id="1gbSomzw_Y8" role="3cpWs9">
+                <property role="TrG5h" value="modelData" />
+                <node concept="3uibUv" id="1gbSomzw_Y4" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+              </node>
+            </node>
+            <node concept="1QHqEK" id="1gbSomzwIvG" role="3cqZAp">
+              <node concept="1QHqEC" id="1gbSomzwIvI" role="1QHqEI">
+                <node concept="3clFbS" id="1gbSomzwIvK" role="1bW5cS">
+                  <node concept="3clFbF" id="1gbSomzwAPn" role="3cqZAp">
+                    <node concept="37vLTI" id="1gbSomzwAPp" role="3clFbG">
+                      <node concept="2YIFZM" id="1gbSomzw_Y9" role="37vLTx">
+                        <ref role="1Pybhc" to="5fzo:~ModelPersistence" resolve="ModelPersistence" />
+                        <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
+                        <node concept="2OqwBi" id="1gbSomzw_Ya" role="37wK5m">
+                          <node concept="liA8E" id="1gbSomzw_Yb" role="2OqNvi">
+                            <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                          </node>
+                          <node concept="1eOMI4" id="1gbSomzw_Yc" role="2Oq$k0">
+                            <node concept="10QFUN" id="1gbSomzw_Yd" role="1eOMHV">
+                              <node concept="3uibUv" id="1gbSomzw_Ye" role="10QFUM">
+                                <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+                              </node>
+                              <node concept="37vLTw" id="1gbSomzw_Yf" role="10QFUP">
+                                <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1gbSomzwAPt" role="37vLTJ">
+                        <ref role="3cqZAo" node="1gbSomzw_Y8" resolve="modelData" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="1gbSomzwLR_" role="ukAjM">
+                <node concept="37vLTw" id="1gbSomzwKXP" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                </node>
+                <node concept="liA8E" id="1gbSomzwMcQ" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="6KmbN9hT1cO" role="3cqZAp">
               <node concept="2YIFZM" id="6KmbN9hT1cP" role="3clFbG">
                 <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
@@ -5141,24 +5197,8 @@
                       <ref role="3cqZAo" to="18ew:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="6KmbN9hT1cQ" role="2Oq$k0">
-                    <ref role="1Pybhc" to="5fzo:~ModelPersistence" resolve="ModelPersistence" />
-                    <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
-                    <node concept="2OqwBi" id="281cAWY4Dqo" role="37wK5m">
-                      <node concept="liA8E" id="281cAWY4Fs6" role="2OqNvi">
-                        <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
-                      </node>
-                      <node concept="1eOMI4" id="281cAWY4zpK" role="2Oq$k0">
-                        <node concept="10QFUN" id="281cAWY4zpL" role="1eOMHV">
-                          <node concept="3uibUv" id="4X_MBffKR4E" role="10QFUM">
-                            <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                          </node>
-                          <node concept="37vLTw" id="2BHiRxghiu0" role="10QFUP">
-                            <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="1gbSomzw_Yg" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1gbSomzw_Y8" resolve="modelData" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="6KmbN9hT1cS" role="37wK5m">

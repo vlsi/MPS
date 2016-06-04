@@ -52,7 +52,7 @@ public class MpsSourcePosition extends SourcePosition {
 
   private MpsSourcePosition(GeneratedSourcePosition position, Project project) {
     mySourcePosition = position;
-    myNodePointer = position.getNodePointer();
+    myNodePointer = position.getNode();
     myProject = project;
 
     myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
@@ -147,31 +147,39 @@ public class MpsSourcePosition extends SourcePosition {
   }
 
   public SNode getNode() {
-    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    if (myNodePointer == null) {
+      return null;
+    }
+    // FIXME this is plain wrong. If you get a node, you're likely gonna access it,
+    // hence, it's outer code responsibility to ensure read access.
+    final SRepository repo = ProjectHelper.getProjectRepository(myProject);
+    return new ModelAccessHelper(repo).runReadAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return mySourcePosition.getNode();
+        return myNodePointer.resolve(repo);
       }
     });
   }
 
   @Nullable
-  public static MpsSourcePosition createPosition(final Project project, final String typeName, final String fileName, final int lineNumber) {
-    return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
+  public static MpsSourcePosition createPosition(Project project, String typeName, String fileName, int lineNumber) {
+    final GeneratedSourcePosition sourcePosition = GeneratedSourcePosition.fromLocation(project, typeName, fileName, lineNumber);
+    if (sourcePosition.getNode() == null) {
+      return null;
+    }
+    final SRepository repo = ProjectHelper.getProjectRepository(project);
+    final boolean isSolutionIdea = new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
       @Override
-      public MpsSourcePosition compute() {
-        GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
-        SNode node = sourcePosition.getNode();
+      public Boolean compute() {
+        SNode node = sourcePosition.getNode().resolve(repo);
         if (node == null) {
-          return null;
+          return false;
         }
         SModel modelDescriptor = node.getModel();
         SModule module = modelDescriptor.getModule();
-        if (!(module instanceof SolutionIdea)) {
-          return null;
-        }
-        return new MpsSourcePosition(sourcePosition, project);
+        return module instanceof SolutionIdea;
       }
     });
+    return isSolutionIdea ? new MpsSourcePosition(sourcePosition, project) : null;
   }
 }

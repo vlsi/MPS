@@ -123,9 +123,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)/1207742095107">
     <file name="NullValues_Test.java">
-      <node id="1207743956452" at="46,29,46,29" concept="1" />
-      <node id="7556115255731757630" at="95,29,95,29" concept="1" />
-      <node id="7556115255731760292" at="172,29,172,29" concept="1" />
       <node id="1207743649434" at="21,38,22,46" concept="9" />
       <node id="1207750514513" at="24,43,25,32" concept="10" />
       <node id="1207743956451" at="33,0,34,0" concept="5" trace="__CP__" />
@@ -266,9 +263,6 @@
       <node id="1207744018414" at="117,0,188,0" concept="8" trace="test_nullElements#()V" />
       <node id="1207743634282" at="20,50,115,5" concept="7" />
       <node id="1207742102352" at="20,0,117,0" concept="8" trace="test_nullValues#()V" />
-      <scope id="1207743956452" at="46,29,46,29" />
-      <scope id="7556115255731757630" at="95,29,95,29" />
-      <scope id="7556115255731760292" at="172,29,172,29" />
       <scope id="1207743926768" at="24,43,25,32" />
       <scope id="1207743956451" at="49,30,50,39" />
       <scope id="7556115255731757474" at="63,43,64,32" />
