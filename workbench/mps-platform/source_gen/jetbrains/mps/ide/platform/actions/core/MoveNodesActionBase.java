@@ -293,8 +293,8 @@ public class MoveNodesActionBase implements MoveNodesAction {
   }
 
   public static class NodeCreatingProcessor implements MoveNodesActionBase.NodeProcessor {
-    private NodeLocation myNodeLocation;
-    private Project myProject;
+    protected NodeLocation myNodeLocation;
+    protected Project myProject;
     public NodeCreatingProcessor(NodeLocation location, Project project) {
       myNodeLocation = location;
       myProject = project;
