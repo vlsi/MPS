@@ -618,6 +618,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateConceptReferencesParticipant" file="UpdateConceptReferencesParticipant.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
@@ -628,9 +629,11 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NodeData" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -701,8 +704,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.NodeReferenceUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="java.lang.Void" />
@@ -714,9 +717,11 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NamedNodeReference" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />

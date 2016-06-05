@@ -18,6 +18,7 @@
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
   </languages>
   <imports>
     <import index="c1ko" ref="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
@@ -81,7 +82,6 @@
     <import index="jmi8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.util(MPS.IDEA/)" />
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
-    <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" implicit="true" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -21647,7 +21647,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7Unu1d3zoMn">
-    <property role="3GE5qa" value="Actions" />
+    <property role="3GE5qa" value="Actions.moveStaticMember" />
     <property role="TrG5h" value="MoveStaticFieldExecutable" />
     <node concept="2tJIrI" id="7Unu1d3zpPT" role="jymVt" />
     <node concept="3clFb_" id="7WDAPLDUw_U" role="jymVt">
@@ -21762,7 +21762,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5WEQjf2JaYG">
-    <property role="3GE5qa" value="Actions" />
+    <property role="3GE5qa" value="Actions.moveStaticMember" />
     <property role="TrG5h" value="MoveStaticMethodExecutable" />
     <node concept="2tJIrI" id="5WEQjf2JE5e" role="jymVt" />
     <node concept="3clFb_" id="7WDAPLDUyjp" role="jymVt">
@@ -23492,7 +23492,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7WDAPLDH9Vs">
-    <property role="3GE5qa" value="Actions" />
+    <property role="3GE5qa" value="Actions.moveStaticMember" />
     <property role="TrG5h" value="MoveStaticMemberExecutable" />
     <property role="1sVAO0" value="true" />
     <node concept="3clFb_" id="7WDAPLDUxpK" role="jymVt">
@@ -23517,7 +23517,7 @@
     <node concept="3Tm1VV" id="7WDAPLDH9Vt" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7UBFs_LRfqR">
-    <property role="3GE5qa" value="Actions" />
+    <property role="3GE5qa" value="Actions.moveStaticMember" />
     <property role="TrG5h" value="MoveStaticField" />
     <node concept="2tJIrI" id="7UBFs_LRitG" role="jymVt" />
     <node concept="1lYeZD" id="7UBFs_LRiu8" role="jymVt">
@@ -23832,7 +23832,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7UBFs_LRQGh">
-    <property role="3GE5qa" value="Actions" />
+    <property role="3GE5qa" value="Actions.moveStaticMember" />
     <property role="TrG5h" value="MoveStaticMethod" />
     <node concept="2tJIrI" id="7UBFs_LRQW1" role="jymVt" />
     <node concept="1lYeZD" id="7UBFs_LRQW2" role="jymVt">

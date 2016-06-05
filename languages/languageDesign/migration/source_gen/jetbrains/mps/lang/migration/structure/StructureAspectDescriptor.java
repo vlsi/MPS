@@ -15,8 +15,9 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(36);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(37);
   /*package*/ final ConceptDescriptor myConceptAbstractNodeReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.AbstractNodeReference", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "3116305438947559628")).create();
+  /*package*/ final ConceptDescriptor myConceptClassifierMemberData = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ClassifierMemberData", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x7e209440ba59c1e7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7e209440ba59c1e8L, "nodeData", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL), false, false, false), new ConceptDescriptorBuilder.Link(0x7e209440ba59c1eaL, "classifierData", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL), false, false, false)).children(new String[]{"nodeData", "classifierData"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "9088427053758923239")).create();
   /*package*/ final ConceptDescriptor myConceptConceptMigrationReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ConceptMigrationReference", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x36182c4cf6238c96L, "migrationScript", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL), false, false, false), new ConceptDescriptorBuilder.Link(0x36182c4cf6238c99L, "oldConcept", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL), false, false, false)).children(new String[]{"migrationScript", "oldConcept"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "3897914186547825813")).create();
   /*package*/ final ConceptDescriptor myConceptConsequenceFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ConsequenceFunction", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532eb7L)).super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").version(1).super_(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L)).parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.lang.migration.structure.TransformConsequence").parentIds(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ef3L)).alias("function", "").sourceNode(new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "5636302460526210743")).create();
   /*package*/ final ConceptDescriptor myConceptDataDependency = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependency", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.ClassifierMember").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4f6b4ac0cd6d4af5L, "script", MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L), false)).references("script").sourceNode(new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "4950161090496546961")).create();
@@ -55,46 +56,47 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptAbstractNodeReference.getId(), 0);
-    myIndexMap.put(myConceptConceptMigrationReference.getId(), 1);
-    myIndexMap.put(myConceptConsequenceFunction.getId(), 2);
-    myIndexMap.put(myConceptDataDependency.getId(), 3);
-    myIndexMap.put(myConceptDataDependencyReference.getId(), 4);
-    myIndexMap.put(myConceptDirectNodeReference.getId(), 5);
-    myIndexMap.put(myConceptExecuteAfterDeclaration.getId(), 6);
-    myIndexMap.put(myConceptIMigrationUnit.getId(), 7);
-    myIndexMap.put(myConceptIncludeMigrationPart.getId(), 8);
-    myIndexMap.put(myConceptLinkPatternVariableReference.getId(), 9);
-    myIndexMap.put(myConceptListPatternVariableReference.getId(), 10);
-    myIndexMap.put(myConceptMigrationScript.getId(), 11);
-    myIndexMap.put(myConceptMigrationScriptReference.getId(), 12);
-    myIndexMap.put(myConceptMoveConcept.getId(), 13);
-    myIndexMap.put(myConceptMoveConceptMember.getId(), 14);
-    myIndexMap.put(myConceptMoveContainmentLink.getId(), 15);
-    myIndexMap.put(myConceptMoveNodeMigrationPart.getId(), 16);
-    myIndexMap.put(myConceptMoveNodeSpecialization.getId(), 17);
-    myIndexMap.put(myConceptMoveProperty.getId(), 18);
-    myIndexMap.put(myConceptMoveReferenceLink.getId(), 19);
-    myIndexMap.put(myConceptNodePatternVariableReference.getId(), 20);
-    myIndexMap.put(myConceptOrderDependency.getId(), 21);
-    myIndexMap.put(myConceptProducedDataDeclaration.getId(), 22);
-    myIndexMap.put(myConceptPropertyPatternVariableReference.getId(), 23);
-    myIndexMap.put(myConceptPureMigrationPart.getId(), 24);
-    myIndexMap.put(myConceptPureMigrationScript.getId(), 25);
-    myIndexMap.put(myConceptQuotationConsequence.getId(), 26);
-    myIndexMap.put(myConceptRefactoringLog.getId(), 27);
-    myIndexMap.put(myConceptRefactoringOption.getId(), 28);
-    myIndexMap.put(myConceptRefactoringOptions.getId(), 29);
-    myIndexMap.put(myConceptRefactoringOrderDependency.getId(), 30);
-    myIndexMap.put(myConceptRefactoringPart.getId(), 31);
-    myIndexMap.put(myConceptReflectionNodeReference.getId(), 32);
-    myIndexMap.put(myConceptRequiredDataDeclaration.getId(), 33);
-    myIndexMap.put(myConceptTransformConsequence.getId(), 34);
-    myIndexMap.put(myConceptTransformStatement.getId(), 35);
+    myIndexMap.put(myConceptClassifierMemberData.getId(), 1);
+    myIndexMap.put(myConceptConceptMigrationReference.getId(), 2);
+    myIndexMap.put(myConceptConsequenceFunction.getId(), 3);
+    myIndexMap.put(myConceptDataDependency.getId(), 4);
+    myIndexMap.put(myConceptDataDependencyReference.getId(), 5);
+    myIndexMap.put(myConceptDirectNodeReference.getId(), 6);
+    myIndexMap.put(myConceptExecuteAfterDeclaration.getId(), 7);
+    myIndexMap.put(myConceptIMigrationUnit.getId(), 8);
+    myIndexMap.put(myConceptIncludeMigrationPart.getId(), 9);
+    myIndexMap.put(myConceptLinkPatternVariableReference.getId(), 10);
+    myIndexMap.put(myConceptListPatternVariableReference.getId(), 11);
+    myIndexMap.put(myConceptMigrationScript.getId(), 12);
+    myIndexMap.put(myConceptMigrationScriptReference.getId(), 13);
+    myIndexMap.put(myConceptMoveConcept.getId(), 14);
+    myIndexMap.put(myConceptMoveConceptMember.getId(), 15);
+    myIndexMap.put(myConceptMoveContainmentLink.getId(), 16);
+    myIndexMap.put(myConceptMoveNodeMigrationPart.getId(), 17);
+    myIndexMap.put(myConceptMoveNodeSpecialization.getId(), 18);
+    myIndexMap.put(myConceptMoveProperty.getId(), 19);
+    myIndexMap.put(myConceptMoveReferenceLink.getId(), 20);
+    myIndexMap.put(myConceptNodePatternVariableReference.getId(), 21);
+    myIndexMap.put(myConceptOrderDependency.getId(), 22);
+    myIndexMap.put(myConceptProducedDataDeclaration.getId(), 23);
+    myIndexMap.put(myConceptPropertyPatternVariableReference.getId(), 24);
+    myIndexMap.put(myConceptPureMigrationPart.getId(), 25);
+    myIndexMap.put(myConceptPureMigrationScript.getId(), 26);
+    myIndexMap.put(myConceptQuotationConsequence.getId(), 27);
+    myIndexMap.put(myConceptRefactoringLog.getId(), 28);
+    myIndexMap.put(myConceptRefactoringOption.getId(), 29);
+    myIndexMap.put(myConceptRefactoringOptions.getId(), 30);
+    myIndexMap.put(myConceptRefactoringOrderDependency.getId(), 31);
+    myIndexMap.put(myConceptRefactoringPart.getId(), 32);
+    myIndexMap.put(myConceptReflectionNodeReference.getId(), 33);
+    myIndexMap.put(myConceptRequiredDataDeclaration.getId(), 34);
+    myIndexMap.put(myConceptTransformConsequence.getId(), 35);
+    myIndexMap.put(myConceptTransformStatement.getId(), 36);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractNodeReference, myConceptConceptMigrationReference, myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptDirectNodeReference, myConceptExecuteAfterDeclaration, myConceptIMigrationUnit, myConceptIncludeMigrationPart, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrationScript, myConceptMigrationScriptReference, myConceptMoveConcept, myConceptMoveConceptMember, myConceptMoveContainmentLink, myConceptMoveNodeMigrationPart, myConceptMoveNodeSpecialization, myConceptMoveProperty, myConceptMoveReferenceLink, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptPureMigrationPart, myConceptPureMigrationScript, myConceptQuotationConsequence, myConceptRefactoringLog, myConceptRefactoringOption, myConceptRefactoringOptions, myConceptRefactoringOrderDependency, myConceptRefactoringPart, myConceptReflectionNodeReference, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
+    return Arrays.asList(myConceptAbstractNodeReference, myConceptClassifierMemberData, myConceptConceptMigrationReference, myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptDirectNodeReference, myConceptExecuteAfterDeclaration, myConceptIMigrationUnit, myConceptIncludeMigrationPart, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrationScript, myConceptMigrationScriptReference, myConceptMoveConcept, myConceptMoveConceptMember, myConceptMoveContainmentLink, myConceptMoveNodeMigrationPart, myConceptMoveNodeSpecialization, myConceptMoveProperty, myConceptMoveReferenceLink, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptPureMigrationPart, myConceptPureMigrationScript, myConceptQuotationConsequence, myConceptRefactoringLog, myConceptRefactoringOption, myConceptRefactoringOptions, myConceptRefactoringOrderDependency, myConceptRefactoringPart, myConceptReflectionNodeReference, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
   }
 
   @Override
@@ -108,74 +110,76 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 0:
         return myConceptAbstractNodeReference;
       case 1:
-        return myConceptConceptMigrationReference;
+        return myConceptClassifierMemberData;
       case 2:
-        return myConceptConsequenceFunction;
+        return myConceptConceptMigrationReference;
       case 3:
-        return myConceptDataDependency;
+        return myConceptConsequenceFunction;
       case 4:
-        return myConceptDataDependencyReference;
+        return myConceptDataDependency;
       case 5:
-        return myConceptDirectNodeReference;
+        return myConceptDataDependencyReference;
       case 6:
-        return myConceptExecuteAfterDeclaration;
+        return myConceptDirectNodeReference;
       case 7:
-        return myConceptIMigrationUnit;
+        return myConceptExecuteAfterDeclaration;
       case 8:
-        return myConceptIncludeMigrationPart;
+        return myConceptIMigrationUnit;
       case 9:
-        return myConceptLinkPatternVariableReference;
+        return myConceptIncludeMigrationPart;
       case 10:
-        return myConceptListPatternVariableReference;
+        return myConceptLinkPatternVariableReference;
       case 11:
-        return myConceptMigrationScript;
+        return myConceptListPatternVariableReference;
       case 12:
-        return myConceptMigrationScriptReference;
+        return myConceptMigrationScript;
       case 13:
-        return myConceptMoveConcept;
+        return myConceptMigrationScriptReference;
       case 14:
-        return myConceptMoveConceptMember;
+        return myConceptMoveConcept;
       case 15:
-        return myConceptMoveContainmentLink;
+        return myConceptMoveConceptMember;
       case 16:
-        return myConceptMoveNodeMigrationPart;
+        return myConceptMoveContainmentLink;
       case 17:
-        return myConceptMoveNodeSpecialization;
+        return myConceptMoveNodeMigrationPart;
       case 18:
-        return myConceptMoveProperty;
+        return myConceptMoveNodeSpecialization;
       case 19:
-        return myConceptMoveReferenceLink;
+        return myConceptMoveProperty;
       case 20:
-        return myConceptNodePatternVariableReference;
+        return myConceptMoveReferenceLink;
       case 21:
-        return myConceptOrderDependency;
+        return myConceptNodePatternVariableReference;
       case 22:
-        return myConceptProducedDataDeclaration;
+        return myConceptOrderDependency;
       case 23:
-        return myConceptPropertyPatternVariableReference;
+        return myConceptProducedDataDeclaration;
       case 24:
-        return myConceptPureMigrationPart;
+        return myConceptPropertyPatternVariableReference;
       case 25:
-        return myConceptPureMigrationScript;
+        return myConceptPureMigrationPart;
       case 26:
-        return myConceptQuotationConsequence;
+        return myConceptPureMigrationScript;
       case 27:
-        return myConceptRefactoringLog;
+        return myConceptQuotationConsequence;
       case 28:
-        return myConceptRefactoringOption;
+        return myConceptRefactoringLog;
       case 29:
-        return myConceptRefactoringOptions;
+        return myConceptRefactoringOption;
       case 30:
-        return myConceptRefactoringOrderDependency;
+        return myConceptRefactoringOptions;
       case 31:
-        return myConceptRefactoringPart;
+        return myConceptRefactoringOrderDependency;
       case 32:
-        return myConceptReflectionNodeReference;
+        return myConceptRefactoringPart;
       case 33:
-        return myConceptRequiredDataDeclaration;
+        return myConceptReflectionNodeReference;
       case 34:
-        return myConceptTransformConsequence;
+        return myConceptRequiredDataDeclaration;
       case 35:
+        return myConceptTransformConsequence;
+      case 36:
         return myConceptTransformStatement;
       default:
         throw new IllegalStateException();

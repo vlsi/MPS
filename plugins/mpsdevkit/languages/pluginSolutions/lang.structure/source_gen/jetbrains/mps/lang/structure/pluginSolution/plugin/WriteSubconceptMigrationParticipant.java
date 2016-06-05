@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference;
+import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NamedNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant;
+import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -90,7 +90,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
 
   @Override
   public List<RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>> getChanges(final Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(LanguageStructureMigrationParticipant.OPTION)) || !(ListSequence.fromList(selectedOptions).contains(UpdateReferencesParticipant.OPTION)) || searchScope.resolve(initialState._1().getLanguage()) != null) {
+    if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(LanguageStructureMigrationParticipant.OPTION)) || !(ListSequence.fromList(selectedOptions).contains(UpdateReferencesParticipantBase.OPTION)) || searchScope.resolve(initialState._1().getLanguage()) != null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>>());
     }
 
