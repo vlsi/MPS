@@ -182,12 +182,12 @@ public abstract class KeymapHandler<E> {
 
   private static boolean isStrictlyFirstCaretPosition(EditorCell_Label label) {
     return label.isFirstCaretPosition() && StyleAttributesUtil.isFirstPositionAllowed(label.getStyle()) &&
-        CellTraversalUtil.getFirstLeaf(label.getContainingBigCell()) == label;
+        CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(label)) == label;
   }
 
   private static boolean isStrictlyLastCaretPosition(EditorCell_Label label) {
     return label.isLastCaretPosition() && StyleAttributesUtil.isLastPositionAllowed(label.getStyle()) &&
-        CellTraversalUtil.getLastLeaf(label.getContainingBigCell()) == label;
+        CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(label)) == label;
   }
 
   private EditorCell selectActionCell(KeyMapAction action, EditorCell keymapOwnerCell, EditorCell selectedCell, int actualCaretPosition,

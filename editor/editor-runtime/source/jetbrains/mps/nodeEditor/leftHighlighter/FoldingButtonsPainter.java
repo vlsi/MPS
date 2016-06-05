@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -57,7 +57,7 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
   }
 
   private void doRelayout() {
-    for (Iterator<Entry<CellInfo, FoldingButton>> it = myFoldingButtons.entrySet().iterator(); it.hasNext();) {
+    for (Iterator<Entry<CellInfo, FoldingButton>> it = myFoldingButtons.entrySet().iterator(); it.hasNext(); ) {
       Entry<CellInfo, FoldingButton> nextEntry = it.next();
       if (!nextEntry.getValue().relayout()) {
         it.remove();
@@ -98,9 +98,9 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
 
   private boolean isVisible(FoldingButton button, Rectangle clipBounds) {
     return !(clipBounds.y + clipBounds.height < button.getY() ||
-      clipBounds.y > button.getY() + button.getHeight() ||
-      clipBounds.x + clipBounds.width < -FoldingButton.HALF_WIDTH ||
-      clipBounds.x > FoldingButton.HALF_WIDTH);
+        clipBounds.y > button.getY() + button.getHeight() ||
+        clipBounds.x + clipBounds.width < -FoldingButton.HALF_WIDTH ||
+        clipBounds.x > FoldingButton.HALF_WIDTH);
   }
 
   @Override

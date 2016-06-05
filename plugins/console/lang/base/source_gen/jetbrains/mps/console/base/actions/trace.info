@@ -42,7 +42,6 @@
       <node id="3786816536599613947" at="31,190,47,10" concept="4" />
       <node id="3786816536599613947" at="29,62,49,7" concept="2" />
       <node id="3786816536599613947" at="26,93,50,5" concept="0" />
-      <node id="3786816536599613947" at="26,93,50,5" concept="0" />
       <node id="3786816536599613947" at="25,0,53,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_Command_3786816536599613947#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="3786816536599613947" at="38,60,39,24" />
       <scope id="3786816536599617473" at="33,105,36,26">
@@ -73,7 +72,6 @@
         <var name="childConcept" id="3786816536599613947" />
         <var name="outputConcept" id="3786816536599613947" />
       </scope>
-      <scope id="3786816536599613947" at="26,93,50,5" />
       <scope id="3786816536599613947" at="25,206,51,18">
         <var name="result" id="3786816536599613947" />
       </scope>
@@ -97,9 +95,7 @@
       <node id="1433263869220697092" at="65,63,66,227" concept="4" />
       <node id="1433263869220697092" at="67,21,68,155" concept="1" />
       <node id="1433263869220697092" at="69,5,70,14" concept="5" />
-      <node id="4615018937607084452" at="58,226,61,5" concept="0" />
       <node id="4615018937607084452" at="58,226,61,5" concept="2" />
-      <node id="1433263869220697092" at="66,227,69,5" concept="0" />
       <node id="1433263869220697092" at="66,227,69,5" concept="2" />
       <node id="4615018937607084452" at="56,0,64,0" concept="6" trace="createBLExpression_sma98h_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1433263869220697092" at="64,0,72,0" concept="6" trace="createExpressionStatement_sma98h_a0a0c#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -108,8 +104,6 @@
       <scope id="6081287228602317649" at="50,55,51,428" />
       <scope id="4615018937607084452" at="59,21,60,167" />
       <scope id="1433263869220697092" at="67,21,68,155" />
-      <scope id="4615018937607084452" at="58,226,61,5" />
-      <scope id="1433263869220697092" at="66,227,69,5" />
       <scope id="4615018937607084452" at="56,67,62,14">
         <var name="facade" id="4615018937607084452" />
         <var name="n1" id="4615018937607084452" />

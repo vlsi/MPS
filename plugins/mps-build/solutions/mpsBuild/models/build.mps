@@ -1848,6 +1848,9 @@
       <node concept="nCB5N" id="2ZTNkpv_1q2" role="nCB5Z">
         <ref role="nCB5Y" node="5_uX04TlQXW" resolve="mps-icons" />
       </node>
+      <node concept="nCB5N" id="2BwQuBWyGpr" role="nCB5Z">
+        <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
+      </node>
     </node>
     <node concept="398b33" id="5_uX04TlQXW" role="3989C9">
       <property role="TrG5h" value="mps-icons" />

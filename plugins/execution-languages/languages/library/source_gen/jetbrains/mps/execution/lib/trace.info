@@ -261,7 +261,6 @@
       <node id="8278380780105768314" at="69,0,72,0" concept="6" trace="setModelId#(Ljava/lang/String;)V" />
       <node id="8278380780105768339" at="76,42,79,5" concept="5" />
       <node id="8278380780105768384" at="86,10,89,5" concept="0" />
-      <node id="8278380780105768314" at="98,45,101,7" concept="0" />
       <node id="8278380780105768314" at="98,45,101,7" concept="5" />
       <node id="8278380780105768314" at="125,0,128,0" concept="6" trace="createCloneTemplate#()Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;" />
       <node id="8278380780105768314" at="128,0,131,0" concept="6" trace="getEditor#()Ljetbrains/mps/execution/lib/NodeByConcept_Configuration_Editor;" />
@@ -388,9 +387,7 @@
       <node id="670386341911209321" at="35,0,38,0" concept="6" trace="run#()V" />
       <node id="8278380780105768314" at="44,0,47,0" concept="6" trace="create#()Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;" />
       <node id="670386341911210759" at="26,108,31,7" concept="2" />
-      <node id="8278380780105768314" at="26,108,31,7" concept="0" />
       <node id="670386341911209319" at="33,80,38,7" concept="2" />
-      <node id="8278380780105768314" at="33,80,38,7" concept="0" />
       <node id="8278380780105768314" at="42,155,47,7" concept="13" />
       <node id="8278380780105768314" at="19,0,26,0" concept="6" trace="createEditor#()Ljetbrains/mps/execution/lib/ui/NodeByConceptChooser;" />
       <node id="8278380780105768314" at="26,0,33,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeByConcept_Configuration;)V" />
@@ -406,9 +403,7 @@
       <scope id="8278380780105768314" at="44,0,47,0" />
       <scope id="8278380780105768421" at="20,46,24,21" />
       <scope id="8278380780105768314" at="26,108,31,7" />
-      <scope id="8278380780105768449" at="26,108,31,7" />
       <scope id="8278380780105768314" at="33,80,38,7" />
-      <scope id="8278380780105768440" at="33,80,38,7" />
       <scope id="8278380780105768314" at="19,0,26,0" />
       <scope id="8278380780105768314" at="26,0,33,0">
         <var name="configuration" id="8278380780105768314" />
@@ -488,7 +483,6 @@
       <node id="1852093653602870458" at="78,48,81,5" concept="5" />
       <node id="8278380780105899300" at="85,40,88,5" concept="5" />
       <node id="8278380780105899347" at="95,10,98,5" concept="0" />
-      <node id="8278380780105899265" at="123,45,126,7" concept="0" />
       <node id="8278380780105899265" at="123,45,126,7" concept="5" />
       <node id="8278380780105899265" at="143,0,146,0" concept="1" trace="NodeBySeveralConcepts_Configuration#(Ljava/util/List;)V" />
       <node id="8278380780105899265" at="148,0,151,0" concept="6" trace="createCloneTemplate#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;" />
@@ -627,9 +621,7 @@
       <node id="8278380780105899265" at="39,0,42,0" concept="6" trace="create#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;" />
       <node id="8278380780105899265" at="17,0,22,0" concept="6" trace="createEditor#()Ljetbrains/mps/execution/lib/ui/NodeBySeveralConceptChooser;" />
       <node id="670386341911666434" at="22,116,27,7" concept="2" />
-      <node id="8278380780105899265" at="22,116,27,7" concept="0" />
       <node id="670386341911665067" at="29,88,34,7" concept="2" />
-      <node id="8278380780105899265" at="29,88,34,7" concept="0" />
       <node id="8278380780105899265" at="37,90,42,7" concept="13" />
       <node id="8278380780105899265" at="22,0,29,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
       <node id="8278380780105899265" at="29,0,36,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
@@ -645,9 +637,7 @@
       <scope id="8278380780105899265" at="39,0,42,0" />
       <scope id="8278380780105899265" at="17,0,22,0" />
       <scope id="8278380780105899265" at="22,116,27,7" />
-      <scope id="8278380780105899456" at="22,116,27,7" />
       <scope id="8278380780105899265" at="29,88,34,7" />
-      <scope id="8278380780105899447" at="29,88,34,7" />
       <scope id="8278380780105899265" at="37,90,43,24" />
       <scope id="8278380780105899265" at="22,0,29,0">
         <var name="configuration" id="8278380780105899265" />

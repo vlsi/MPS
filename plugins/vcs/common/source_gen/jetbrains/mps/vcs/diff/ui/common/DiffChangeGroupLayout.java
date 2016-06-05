@@ -5,7 +5,9 @@ package jetbrains.mps.vcs.diff.ui.common;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
@@ -19,23 +21,24 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
     myRightEditor = rightEditor;
     myChangeSet = changeSet;
     if (inspector) {
-      EditorComponent.RebuildListener rebuildListener = new EditorComponent.RebuildListener() {
-        public void editorRebuilt(EditorComponent editor) {
+      UpdaterListener updaterListener = new UpdaterListenerAdapter() {
+        @Override
+        public void editorUpdated(EditorComponent editorComponent) {
           invalidate();
         }
       };
-      myLeftEditor.getInspector().addRebuildListener(rebuildListener);
-      myRightEditor.getInspector().addRebuildListener(rebuildListener);
+      myLeftEditor.getInspector().getUpdater().addListener(updaterListener);
+      myRightEditor.getInspector().getUpdater().addListener(updaterListener);
     }
   }
   @NotNull
   @Override
-  public EditorComponent getLeftComponent() {
+  public jetbrains.mps.nodeEditor.EditorComponent getLeftComponent() {
     return myLeftEditor.getEditorComponent(myInspector);
   }
   @NotNull
   @Override
-  public EditorComponent getRightComponent() {
+  public jetbrains.mps.nodeEditor.EditorComponent getRightComponent() {
     return myRightEditor.getEditorComponent(myInspector);
   }
   @Override

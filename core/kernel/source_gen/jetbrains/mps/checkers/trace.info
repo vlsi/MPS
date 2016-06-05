@@ -858,7 +858,6 @@
       <node id="739403953008742145" at="111,0,114,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="7390982340086720412" at="124,89,127,5" concept="7" />
       <node id="7390982340086720433" at="129,0,132,0" concept="9" trace="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7390982340086720461" at="136,33,139,9" concept="1" />
       <node id="7390982340086720461" at="136,33,139,9" concept="8" />
       <node id="7390982340086720506" at="145,0,148,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="7390982340086720523" at="150,53,153,9" concept="8" />
@@ -920,7 +919,6 @@
       <scope id="7390982340086720433" at="129,0,132,0">
         <var name="n" id="7390982340086720433" />
       </scope>
-      <scope id="7390982340086720461" at="136,33,139,9" />
       <scope id="7390982340086720506" at="145,0,148,0" />
       <scope id="8887378328853481943" at="41,98,45,0">
         <var name="breakingNodePointer" id="8112532282171046257" />

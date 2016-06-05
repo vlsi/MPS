@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -183,13 +184,7 @@ public interface EditorCell {
    * @param y -coordinate
    * @return cell at the specified position
    */
-  default EditorCell findLeaf(int x, int y) {
-    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
-      return this;
-    } else {
-      return null;
-    }
-  }
+  EditorCell findLeaf(int x, int y);
 
   /**
    * Searching for the cell within the editor "line" which is closest to the specified position
@@ -205,13 +200,7 @@ public interface EditorCell {
    * @param condition
    * @return
    */
-  default EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition) {
-    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
-      return this;
-    } else {
-      return null;
-    }
-  }
+  EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition);
 
   boolean isSingleNodeCell();
 
@@ -264,4 +253,7 @@ public interface EditorCell {
   void setReferenceCell(boolean isReference);
 
   boolean isReferenceCell();
+
+  @NotNull
+  CellInfo getCellInfo();
 }

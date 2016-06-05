@@ -31,7 +31,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 
 public class TraceInfoTest extends PlatformMpsTest {
   private Project myProject;
@@ -193,8 +194,9 @@ public class TraceInfoTest extends PlatformMpsTest {
       method.invoke();
     } catch (Throwable t) {
       StackTraceElement stackTraceElement = t.getStackTrace()[0];
-      SNode node = TraceInfoUtil.getJavaNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
-      return node;
+      DebugInfo di = myTraceProvider.debugInfo(getModelName(stackTraceElement)).findFirst().get();
+      SNodeReference nodeRef = new BaseLanguageNodeLookup(di).getNodeAt(stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
+      return (nodeRef == null ? null : nodeRef.resolve(myProject.getRepository()));
     }
     return null;
   }

@@ -245,10 +245,6 @@
       <node id="8024509436353587614" at="82,470,83,24" concept="9" />
       <node id="8024509436353587586" at="85,66,86,46" concept="9" />
       <node id="8024509436353587609" at="88,67,89,46" concept="9" />
-      <node id="8024509436353587594" at="67,30,69,472" concept="1" />
-      <node id="8024509436353587594" at="67,30,69,472" concept="1" />
-      <node id="8024509436353587614" at="80,30,82,470" concept="1" />
-      <node id="8024509436353587614" at="80,30,82,470" concept="1" />
       <node id="2024340988248532135" at="19,0,22,0" concept="2" trace="JUnit4MethodWrapper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2024340988248532164" at="31,54,34,5" concept="6" />
       <node id="8024509436353587522" at="41,218,44,9" concept="6" />
@@ -278,8 +274,6 @@
       <scope id="8024509436353587610" at="73,36,74,183" />
       <scope id="8024509436353587586" at="85,66,86,46" />
       <scope id="8024509436353587609" at="88,67,89,46" />
-      <scope id="8024509436353587594" at="67,30,69,472" />
-      <scope id="8024509436353587614" at="80,30,82,470" />
       <scope id="2024340988248532135" at="19,0,22,0">
         <var name="method" id="2024340988248532141" />
       </scope>
@@ -1694,7 +1688,6 @@
       <node id="2034046503361626349" at="126,0,129,0" concept="7" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
       <node id="2034046503361626367" at="131,0,134,0" concept="7" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
       <node id="2034046503361626378" at="135,0,138,0" concept="7" trace="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
-      <node id="6062668769034833216" at="141,42,144,7" concept="1" />
       <node id="6062668769034833216" at="141,42,144,7" concept="6" />
       <node id="7453534428490638902" at="159,0,162,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
       <node id="7453534428490729428" at="171,0,174,0" concept="7" trace="select#(Ljava/net/URL;)Ljava/lang/String;" />
@@ -1802,7 +1795,6 @@
         <var name="it" id="2034046503361626378" />
       </scope>
       <scope id="6062668769034833215" at="141,42,144,7" />
-      <scope id="6062668769034833216" at="141,42,144,7" />
       <scope id="7453534428490638902" at="159,0,162,0">
         <var name="it" id="7453534428490638902" />
       </scope>

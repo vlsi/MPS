@@ -38,6 +38,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -197,25 +198,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   /**
-   * @deprecated Since MPS 3.3 use getCellsCount()
-   */
-  @Deprecated
-  public int getChildCount() {
-    return getCellsCount();
-  }
-
-  /**
-   * This method returns Cell from internal API. Leaving it here to be able to easily
-   * find those places using internal API.
-   *
-   * @deprecated use getCellAt() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getChildAt(int i) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCellAt(i);
-  }
-
-  /**
    * @deprecated since MPS 3.4 not used
    */
   @Deprecated
@@ -256,18 +238,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       return null;
     }
     return myCellListHandler.getElementRole();
-  }
-
-  /**
-   * Since MPS 3.3 use indexOf()
-   */
-  @Deprecated
-  public int getCellNumber(jetbrains.mps.nodeEditor.cells.EditorCell cell) {
-    if (usesBraces()) {
-      return indexOf(cell) - 1;
-    } else {
-      return indexOf(cell);
-    }
   }
 
   @Override
@@ -651,14 +621,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     home();
   }
 
-  /**
-   * @deprecated since MPS 3.3 use toggleCollapsed(true, programmatically)
-   */
-  @Deprecated
-  public void fold(boolean programmaticaly) {
-    toggleCollapsed(true);
-  }
-
   protected boolean isUnderFolded() {
     return CellTraversalUtil.getFoldedParent(this) != null;
   }
@@ -742,22 +704,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         getEditor().getCellTracker().addFoldableCell(this);
       }
     }
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use setFoldable()
-   */
-  @Deprecated
-  public void setCanBeFolded(boolean canBeFolded) {
-    setFoldable(canBeFolded);
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use toggleCollapsed(false, programmatically)
-   */
-  @Deprecated
-  public void unfold(boolean programmaticaly) {
-    toggleCollapsed(false);
   }
 
   @Override
@@ -1248,7 +1194,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public EditorCell findCell(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    public EditorCell findCell(@NotNull jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
       EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
       if (!(cell instanceof EditorCell_Collection)) {
         return null;

@@ -16,25 +16,21 @@ public class StandaloneMPSStackTraceFilter extends MPSStackTraceFilter {
   }
 
   @Override
-  protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber, Project project) {
-    Filter.Result res = super.detectTarget(hlStart, hlEnd, unitName, fileName, lineNumber, project);
+  protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber) {
+    Filter.Result res = super.detectTarget(hlStart, hlEnd, unitName, fileName, lineNumber);
     if (res != null) {
       return res;
     }
 
-    if (project != null) {
-      final VirtualFile virtualFile = FileOpenUtil.findFile(project, unitName, fileName);
-      if (virtualFile == null) {
-        return null;
-      }
-      return new Filter.Result(hlStart, hlEnd, new HyperlinkInfo() {
-        @Override
-        public void navigate(Project project) {
-          FileOpenUtil.openFile(project, virtualFile, lineNumber);
-        }
-      });
+    final VirtualFile virtualFile = FileOpenUtil.findFile(myProject, unitName, fileName);
+    if (virtualFile == null) {
+      return null;
     }
-
-    return null;
+    return new Filter.Result(hlStart, hlEnd, new HyperlinkInfo() {
+      @Override
+      public void navigate(Project project) {
+        FileOpenUtil.openFile(project, virtualFile, lineNumber);
+      }
+    });
   }
 }

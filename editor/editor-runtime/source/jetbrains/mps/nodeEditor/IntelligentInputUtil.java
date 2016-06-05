@@ -19,33 +19,29 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -244,7 +240,7 @@ public class IntelligentInputUtil {
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
 
     if (rtAction == null || !hasSideActions) {
-      final CellInfo cellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) cellForNewNode).getCellInfo();
+      final CellInfo cellInfo = cellForNewNode.getCellInfo();
       return putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
     }
 
@@ -363,7 +359,7 @@ public class IntelligentInputUtil {
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
 
     if (ltAction == null || !hasSideActions) {
-      CellInfo cellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) cellForNewNode).getCellInfo();
+      CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
         return putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
       } else {

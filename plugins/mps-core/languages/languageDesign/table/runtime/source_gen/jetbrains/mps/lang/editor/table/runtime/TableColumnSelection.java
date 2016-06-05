@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.nodeEditor.selection.SelectionRestoreException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;

@@ -18,13 +18,12 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentMultipleNodesAction;
-import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -327,7 +326,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     } else if (selectedCellsSize == 1) {
       EditorCell nodeCell = getFirstCell();
       final CellAction action = nodeCell.getAction(type);
-      if (action == null) return;
+      if (action == null) {
+        return;
+      }
 
       AbstractComputeRunnable<Boolean> canExecute = new AbstractComputeRunnable<Boolean>() {
         @Override

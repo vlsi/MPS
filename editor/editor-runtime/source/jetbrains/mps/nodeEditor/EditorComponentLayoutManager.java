@@ -64,7 +64,7 @@ public class EditorComponentLayoutManager implements LayoutManager {
       if (!component.getSize().equals(preferredSize)) {
         component.setSize(preferredSize);
         if (cell instanceof EditorCell_Basic)
-          ((EditorCell_Basic) cell).requestRelayout();
+          cell.requestRelayout();
         needRelayout = true;
       }
     }

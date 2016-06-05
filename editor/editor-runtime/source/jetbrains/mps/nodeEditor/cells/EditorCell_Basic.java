@@ -36,6 +36,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -191,12 +192,21 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getStyle().get(StyleAttributes.DRAW_BRACKETS);
   }
 
-
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
+   */
+  @Deprecated
   @Override
   public void setCellBackgroundColor(Color color) {
     getStyle().set(StyleAttributes.BACKGROUND_COLOR, color);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
+   */
+  @Deprecated
   @Override
   public Color getCellBackgroundColor() {
     return getStyle().get(StyleAttributes.BACKGROUND_COLOR);
@@ -532,6 +542,24 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findNearestLeafOnLine(int x, int y, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
   /**
    * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */
@@ -708,8 +736,9 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
       if (!parentSettings.isSkipBackground()) {
-        if (getCellBackgroundColor() != null) {
-          g.setColor(getCellBackgroundColor());
+        Color backgroundColor = getStyle().get(StyleAttributes.BACKGROUND_COLOR);
+        if (backgroundColor != null) {
+          g.setColor(backgroundColor);
           paintBackground(g);
         }
       }
@@ -855,6 +884,11 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   */
+  @Deprecated
   @Override
   public void switchCaretVisible() {
 
@@ -889,6 +923,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return EditorSettings.getInstance().getRangeSelectionForegroundColor();
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public Iterator<EditorCell_Collection> parents() {
     return new Iterator<EditorCell_Collection>() {
@@ -916,6 +954,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     };
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
@@ -960,6 +1002,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   @Override
   public EditorCell getContainingBigCell() {
     if (isBig() || getParent() == null) {
@@ -970,22 +1016,22 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   /**
    * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
-   * like: isAbove(cell, this)
-   */
-  @Deprecated
-  @Override
-  public boolean isAbove(EditorCell cell) {
-    return GeometryUtil.isAbove(cell, this);
-  }
-
-  /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
    * like: isAbove(this, cell)
    */
   @Deprecated
   @Override
-  public boolean isBelow(EditorCell cell) {
+  public boolean isAbove(EditorCell cell) {
     return GeometryUtil.isAbove(this, cell);
+  }
+
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isAbove(jetbrains.mps.openapi.editor.cells.EditorCell, jetbrains.mps.openapi.editor.cells.EditorCell)}
+   * like: isAbove(cell, this)
+   */
+  @Deprecated
+  @Override
+  public boolean isBelow(EditorCell cell) {
+    return GeometryUtil.isAbove(cell, this);
   }
 
   @Override
@@ -1008,8 +1054,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     EditorCell current = getPrevLeaf(condition);
 
     while (current != null) {
-      if (GeometryUtil.isAbove(this, current)) {
-        if (bestMatch != null && GeometryUtil.isAbove(bestMatch, current)) {
+      if (GeometryUtil.isAbove(current, this)) {
+        if (bestMatch != null && GeometryUtil.isAbove(current, bestMatch)) {
           break;
         }
 
@@ -1093,7 +1139,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getPrevLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
-        return current.isSelectable() && !GeometryUtil.isAbove(current, EditorCell_Basic.this) && !isBelow(current) && isToRight(current);
+        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToRight(current);
       }
     });
   }
@@ -1107,7 +1153,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getNextLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
-        return current.isSelectable() && !GeometryUtil.isAbove(current, EditorCell_Basic.this) && !isBelow(current) && isToLeft(current);
+        return current.isSelectable() && !GeometryUtil.isAbove(EditorCell_Basic.this, current) && !isBelow(current) && isToLeft(current);
       }
     });
   }

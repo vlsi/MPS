@@ -26,7 +26,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1212181746947">
     <file name="check_LinkDeclaration_NonTypesystemRule.java">
-      <node id="1227876791998" at="70,27,70,27" concept="1" />
       <node id="7376433222636453473" at="31,124,32,56" concept="13" />
       <node id="1212181840026" at="33,173,34,13" concept="12" />
       <node id="1212181840032" at="35,5,36,246" concept="11" />
@@ -43,7 +42,6 @@
       <node id="1227876818783" at="62,27,63,38" concept="6" />
       <node id="1227876818783" at="63,38,64,42" concept="6" />
       <node id="1227876818783" at="64,42,65,34" concept="12" />
-      <node id="1227876791990" at="66,27,67,206" concept="1" />
       <node id="1227876791991" at="66,27,67,206" concept="6" />
       <node id="1227876791990" at="67,206,68,38" concept="6" />
       <node id="1227876791990" at="68,38,69,28" concept="2" />
@@ -63,7 +61,6 @@
       <node id="2395585628928560440" at="104,62,105,71" concept="6" />
       <node id="2395585628928560440" at="105,71,106,259" concept="11" />
       <node id="1212181746947" at="111,50,112,156" concept="12" />
-      <node id="1212181746947" at="114,68,115,102" concept="1" />
       <node id="1212181746947" at="114,68,115,102" concept="12" />
       <node id="1212181746947" at="117,30,118,17" concept="12" />
       <node id="1212181746947" at="29,0,31,0" concept="3" trace="check_LinkDeclaration_NonTypesystemRule#()V" />
@@ -90,10 +87,8 @@
       <node id="1212181840047" at="37,91,86,7" concept="11" />
       <node id="1212181746947" at="31,0,111,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1212181746947" at="29,52,29,52" />
-      <scope id="1227876791998" at="70,27,70,27" />
       <scope id="1212181840025" at="33,173,34,13" />
       <scope id="1227876791997" at="52,27,53,83" />
-      <scope id="1227876791990" at="66,27,67,206" />
       <scope id="1227876791987" at="73,28,74,37" />
       <scope id="1212181746947" at="111,50,112,156" />
       <scope id="1212181746947" at="114,68,115,102" />
@@ -170,7 +165,6 @@
       <node id="576141512674073565" at="47,7,48,60" concept="11" />
       <node id="576141512674073565" at="48,60,49,765" concept="11" />
       <node id="1212181908803" at="53,50,54,160" concept="12" />
-      <node id="1212181908803" at="56,68,57,102" concept="1" />
       <node id="1212181908803" at="56,68,57,102" concept="12" />
       <node id="1212181908803" at="59,30,60,17" concept="12" />
       <node id="576141512674073633" at="62,72,63,46" concept="12" />
@@ -256,7 +250,6 @@
       <node id="1235136520823" at="70,60,71,73" concept="6" />
       <node id="1235136868149" at="73,9,74,14" concept="2" />
       <node id="1235133131950" at="78,50,79,168" concept="12" />
-      <node id="1235133131950" at="81,68,82,102" concept="1" />
       <node id="1235133131950" at="81,68,82,102" concept="12" />
       <node id="1235133131950" at="84,30,85,17" concept="12" />
       <node id="1235133131950" at="31,0,33,0" concept="3" trace="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule#()V" />
@@ -384,7 +377,6 @@
       <node id="5424895381998288260" at="106,158,107,52" concept="6" />
       <node id="5424895381998288260" at="107,52,108,75" concept="6" />
       <node id="1587916991969778163" at="115,50,116,168" concept="12" />
-      <node id="1587916991969778163" at="118,68,119,102" concept="1" />
       <node id="1587916991969778163" at="118,68,119,102" concept="12" />
       <node id="1587916991969778163" at="121,30,122,17" concept="12" />
       <node id="6714410169261876697" at="124,52,125,44" concept="12" />
@@ -591,7 +583,6 @@
       <node id="2854075155749508006" at="24,7,25,60" concept="11" />
       <node id="2854075155749508006" at="25,60,26,799" concept="11" />
       <node id="2854075155749507956" at="30,50,31,156" concept="12" />
-      <node id="2854075155749507956" at="33,68,34,102" concept="1" />
       <node id="2854075155749507956" at="33,68,34,102" concept="12" />
       <node id="2854075155749507956" at="36,30,37,17" concept="12" />
       <node id="2854075155749507956" at="19,0,21,0" concept="3" trace="check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule#()V" />
@@ -718,7 +709,6 @@
       <node id="4376713410984021563" at="25,60,26,60" concept="6" />
       <node id="4376713410984021563" at="26,60,27,257" concept="11" />
       <node id="4376713410984013095" at="31,50,32,159" concept="12" />
-      <node id="4376713410984013095" at="34,68,35,102" concept="1" />
       <node id="4376713410984013095" at="34,68,35,102" concept="12" />
       <node id="4376713410984013095" at="37,30,38,17" concept="12" />
       <node id="4376713410984013095" at="19,0,21,0" concept="3" trace="check_ConceptDeclaration_iconPath_NonTypesystemRule#()V" />
@@ -797,7 +787,6 @@
       <node id="2823239769520680200" at="49,58,50,54" concept="6" />
       <node id="2823239769520680200" at="50,54,51,459" concept="11" />
       <node id="6519915829969160778" at="54,50,55,159" concept="12" />
-      <node id="6519915829969160778" at="57,68,58,102" concept="1" />
       <node id="6519915829969160778" at="57,68,58,102" concept="12" />
       <node id="6519915829969160778" at="60,30,61,17" concept="12" />
       <node id="6519915829969160778" at="28,0,30,0" concept="3" trace="check_EditorForNonAbstractConcept_NonTypesystemRule#()V" />
@@ -867,7 +856,6 @@
       <node id="5624281226435558417" at="76,11,77,155" concept="11" />
       <node id="5624281226435558417" at="77,155,78,73" concept="6" />
       <node id="6579840439426125742" at="84,50,85,159" concept="12" />
-      <node id="6579840439426125742" at="87,68,88,102" concept="1" />
       <node id="6579840439426125742" at="87,68,88,102" concept="12" />
       <node id="6579840439426125742" at="90,30,91,17" concept="12" />
       <node id="5624281226435434061" at="93,71,94,46" concept="12" />
@@ -1029,7 +1017,6 @@
       <node id="7469468981580406086" at="36,60,37,56" concept="6" />
       <node id="7469468981580406086" at="37,56,38,281" concept="11" />
       <node id="7469468981580405274" at="42,50,43,168" concept="12" />
-      <node id="7469468981580405274" at="45,68,46,102" concept="1" />
       <node id="7469468981580405274" at="45,68,46,102" concept="12" />
       <node id="7469468981580405274" at="48,30,49,17" concept="12" />
       <node id="7469468981580405274" at="23,0,25,0" concept="3" trace="check_DuplicatedConceptName_NonTypesystemRule#()V" />
@@ -1084,7 +1071,6 @@
       <node id="7588428831943655193" at="38,9,39,152" concept="11" />
       <node id="7588428831943655193" at="39,152,40,71" concept="6" />
       <node id="7588428831943026926" at="45,50,46,159" concept="12" />
-      <node id="7588428831943026926" at="48,68,49,102" concept="1" />
       <node id="7588428831943026926" at="48,68,49,102" concept="12" />
       <node id="7588428831943026926" at="51,30,52,17" concept="12" />
       <node id="7588428831943026926" at="21,0,23,0" concept="3" trace="check_AttributeInfo_NonTypesystemRule#()V" />
@@ -1193,7 +1179,6 @@
       <node id="1447401809583290065" at="87,13,88,66" concept="11" />
       <node id="1447401809583290065" at="88,66,89,419" concept="11" />
       <node id="7805928457373101234" at="96,50,97,171" concept="12" />
-      <node id="7805928457373101234" at="99,68,100,102" concept="1" />
       <node id="7805928457373101234" at="99,68,100,102" concept="12" />
       <node id="7805928457373101234" at="102,30,103,17" concept="12" />
       <node id="4334967597390322082" at="105,63,106,46" concept="12" />
@@ -1342,7 +1327,6 @@
       <node id="8258695653169430090" at="33,7,34,60" concept="11" />
       <node id="8258695653169430090" at="34,60,35,483" concept="11" />
       <node id="8258695653169408455" at="39,50,40,168" concept="12" />
-      <node id="8258695653169408455" at="42,68,43,102" concept="1" />
       <node id="8258695653169408455" at="42,68,43,102" concept="12" />
       <node id="8258695653169408455" at="45,30,46,17" concept="12" />
       <node id="8258695653169408455" at="22,0,24,0" concept="3" trace="check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule#()V" />

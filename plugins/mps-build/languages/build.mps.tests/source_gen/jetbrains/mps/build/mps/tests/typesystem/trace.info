@@ -20,7 +20,6 @@
       <node id="8674425381621591023" at="31,9,32,62" concept="4" />
       <node id="8674425381621591023" at="32,62,33,268" concept="4" />
       <node id="1880188600397226919" at="38,50,39,174" concept="5" />
-      <node id="1880188600397226919" at="41,68,42,102" concept="0" />
       <node id="1880188600397226919" at="41,68,42,102" concept="5" />
       <node id="1880188600397226919" at="44,30,45,17" concept="5" />
       <node id="1880188600397226919" at="19,0,21,0" concept="1" trace="check_BuildMpsLayout_TestModules_NonTypesystemRule#()V" />

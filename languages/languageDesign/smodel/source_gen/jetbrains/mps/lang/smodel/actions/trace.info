@@ -741,16 +741,10 @@
       <node id="8519118779653927422" at="559,237,560,221" concept="2" />
       <node id="8519118779653927422" at="560,221,561,168" concept="2" />
       <node id="8519118779653927422" at="561,168,562,24" concept="8" />
-      <node id="8519118779653927422" at="559,237,561,168" concept="0" />
-      <node id="8519118779653927422" at="559,237,561,168" concept="0" />
       <node id="1926293835606259868" at="271,208,274,13" concept="5" />
-      <node id="8519118779653927422" at="558,30,561,168" concept="0" />
-      <node id="8519118779653927422" at="558,30,561,168" concept="0" />
       <node id="1926293835606179774" at="268,43,275,11" concept="5" />
       <node id="8519118779653927422" at="555,0,564,0" concept="11" trace="_quotation_createNode_dhec4r_a0b0a0b0a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1926293835606259871" at="272,34,273,27" />
-      <scope id="8519118779653927422" at="559,237,561,168" />
-      <scope id="8519118779653927422" at="558,30,561,168" />
       <scope id="1926293835606179775" at="269,214,274,13">
         <var name="operand" id="1926293835606250100" />
         <var name="seqType" id="5462094956390267087" />
@@ -772,14 +766,11 @@
       <node id="6870613620390467127" at="337,79,338,137" concept="8" />
       <node id="6870613620390508257" at="564,65,565,63" concept="7" />
       <node id="6870613620390508257" at="565,63,566,30" concept="7" />
-      <node id="6870613620390508257" at="566,30,567,229" concept="0" />
-      <node id="6870613620390508257" at="566,30,567,229" concept="0" />
       <node id="6870613620390508257" at="566,30,567,229" concept="2" />
       <node id="6870613620390508257" at="567,229,568,24" concept="8" />
       <node id="2965815627224954090" at="325,0,328,0" concept="11" trace="nodeSubstituteActionsBuilder_Precondition_SConceptOperation_2965815627224954090#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <node id="6870613620390508257" at="564,0,570,0" concept="11" trace="_quotation_createNode_8ogbp5_b0a0c0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2965815627224954091" at="325,197,326,209" />
-      <scope id="6870613620390508257" at="566,30,567,229" />
       <scope id="2965815627224954090" at="325,0,328,0">
         <var name="_context" id="2965815627224954090" />
         <var name="operationContext" id="2965815627224954090" />

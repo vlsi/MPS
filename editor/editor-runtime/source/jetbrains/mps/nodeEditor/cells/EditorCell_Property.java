@@ -119,7 +119,9 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     if (!SNodeUtil.isAccessible(getSNode(), MPSModuleRepository.getInstance())) {
       return false;
     }
-    if (myCommitInProgress) return false;
+    if (myCommitInProgress) {
+      return false;
+    }
     myCommitInProgress = true;
     try {
       boolean result = false;
@@ -210,14 +212,6 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   private boolean isTransactional() {
     return myModelAccessor instanceof TransactionalModelAccessor;
-  }
-
-  /**
-   * @deprecated since MPS 3.2 not used
-   */
-  @Deprecated
-  public static interface SynchronizationListener {
-    public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }
 
   @Override

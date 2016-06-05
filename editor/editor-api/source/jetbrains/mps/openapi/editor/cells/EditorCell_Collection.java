@@ -84,7 +84,7 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
   void removeCell(EditorCell editorCell);
 
   /**
-   * @deprecated since MPS 3.3 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
+   * @deprecated since MPS 3.4 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
    */
   @Deprecated
   void addEditorCellAt(int index, EditorCell cellToAdd, boolean ignoreBraces);

@@ -18,13 +18,10 @@
       <node id="1196268989250" at="22,214,23,200" concept="4" />
       <node id="1196268989250" at="23,200,24,301" concept="2" />
       <node id="1196267612159" at="27,50,28,166" concept="5" />
-      <node id="1196267612159" at="30,68,31,102" concept="0" />
       <node id="1196267612159" at="30,68,31,102" concept="5" />
       <node id="1196267612159" at="33,30,34,17" concept="5" />
       <node id="1196268989257" at="36,61,37,63" concept="4" />
       <node id="1196268989257" at="37,63,38,30" concept="4" />
-      <node id="1196268989257" at="38,30,39,227" concept="0" />
-      <node id="1196268989257" at="38,30,39,227" concept="0" />
       <node id="1196268989257" at="38,30,39,227" concept="2" />
       <node id="1196268989257" at="39,227,40,24" concept="5" />
       <node id="1196267612159" at="18,0,20,0" concept="1" trace="typeof_ComplexExpression_InferenceRule#()V" />
@@ -38,7 +35,6 @@
       <scope id="1196267612159" at="27,50,28,166" />
       <scope id="1196267612159" at="30,68,31,102" />
       <scope id="1196267612159" at="33,30,34,17" />
-      <scope id="1196268989257" at="38,30,39,227" />
       <scope id="1196267612159" at="18,0,20,0" />
       <scope id="1196268989250" at="21,5,24,301">
         <var name="_info_12389875345" id="1196268989250" />
@@ -72,19 +68,14 @@
       <node id="1196422206628" at="27,203,28,200" concept="4" />
       <node id="1196422206628" at="28,200,29,277" concept="2" />
       <node id="1196422182398" at="32,50,33,166" concept="5" />
-      <node id="1196422182398" at="35,68,36,102" concept="0" />
       <node id="1196422182398" at="35,68,36,102" concept="5" />
       <node id="1196422182398" at="38,30,39,17" concept="5" />
       <node id="381326360563794745" at="41,61,42,63" concept="4" />
       <node id="381326360563794745" at="42,63,43,30" concept="4" />
-      <node id="381326360563794745" at="43,30,44,227" concept="0" />
-      <node id="381326360563794745" at="43,30,44,227" concept="0" />
       <node id="381326360563794745" at="43,30,44,227" concept="2" />
       <node id="381326360563794745" at="44,227,45,24" concept="5" />
       <node id="1196422212476" at="47,61,48,63" concept="4" />
       <node id="1196422212476" at="48,63,49,30" concept="4" />
-      <node id="1196422212476" at="49,30,50,223" concept="0" />
-      <node id="1196422212476" at="49,30,50,223" concept="0" />
       <node id="1196422212476" at="49,30,50,223" concept="2" />
       <node id="1196422212476" at="50,223,51,24" concept="5" />
       <node id="1196422182398" at="18,0,20,0" concept="1" trace="typeof_DegreeComplexExpression_InferenceRule#()V" />
@@ -100,8 +91,6 @@
       <scope id="1196422182398" at="32,50,33,166" />
       <scope id="1196422182398" at="35,68,36,102" />
       <scope id="1196422182398" at="38,30,39,17" />
-      <scope id="381326360563794745" at="43,30,44,227" />
-      <scope id="1196422212476" at="49,30,50,223" />
       <scope id="1196422182398" at="18,0,20,0" />
       <scope id="381326360563794655" at="21,5,24,282">
         <var name="_info_12389875345" id="381326360563794655" />
@@ -139,13 +128,10 @@
     <file name="subtype_ComplexType_SubtypingRule.java">
       <node id="1196427154993" at="18,120,19,47" concept="5" />
       <node id="1196427128503" at="21,50,22,149" concept="5" />
-      <node id="1196427128503" at="24,68,25,102" concept="0" />
       <node id="1196427128503" at="24,68,25,102" concept="5" />
       <node id="1196427128503" at="27,27,28,17" concept="5" />
       <node id="1196427158386" at="30,60,31,63" concept="4" />
       <node id="1196427158386" at="31,63,32,30" concept="4" />
-      <node id="1196427158386" at="32,30,33,227" concept="0" />
-      <node id="1196427158386" at="32,30,33,227" concept="0" />
       <node id="1196427158386" at="32,30,33,227" concept="2" />
       <node id="1196427158386" at="33,227,34,24" concept="5" />
       <node id="1196427128503" at="16,0,18,0" concept="1" trace="subtype_ComplexType_SubtypingRule#()V" />
@@ -159,7 +145,6 @@
       <scope id="1196427128503" at="21,50,22,149" />
       <scope id="1196427128503" at="24,68,25,102" />
       <scope id="1196427128503" at="27,27,28,17" />
-      <scope id="1196427158386" at="32,30,33,227" />
       <scope id="1196427128503" at="16,0,18,0" />
       <scope id="1196427128503" at="18,0,21,0">
         <var name="doubleType" id="1196427128503" />
@@ -183,7 +168,6 @@
     <file name="Complex_is_Numeric_SubtypingRule.java">
       <node id="1196434496770" at="20,121,21,200" concept="5" />
       <node id="1196434481781" at="23,50,24,154" concept="5" />
-      <node id="1196434481781" at="26,68,27,102" concept="0" />
       <node id="1196434481781" at="26,68,27,102" concept="5" />
       <node id="1196434481781" at="29,27,30,17" concept="5" />
       <node id="1196434498632" at="32,61,33,63" concept="4" />
@@ -192,8 +176,6 @@
       <node id="1196434498632" at="35,237,36,479" concept="2" />
       <node id="1196434498632" at="36,479,37,24" concept="5" />
       <node id="1196434481781" at="18,0,20,0" concept="1" trace="Complex_is_Numeric_SubtypingRule#()V" />
-      <node id="1196434498632" at="34,30,36,479" concept="0" />
-      <node id="1196434498632" at="34,30,36,479" concept="0" />
       <node id="1196434481781" at="20,0,23,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196434481781" at="23,0,26,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1196434481781" at="26,0,29,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -205,7 +187,6 @@
       <scope id="1196434481781" at="26,68,27,102" />
       <scope id="1196434481781" at="29,27,30,17" />
       <scope id="1196434481781" at="18,0,20,0" />
-      <scope id="1196434498632" at="34,30,36,479" />
       <scope id="1196434481781" at="20,0,23,0">
         <var name="complexType" id="1196434481781" />
         <var name="status" id="1196434481781" />
@@ -230,13 +211,10 @@
       <node id="1196436242603" at="21,53,22,200" concept="4" />
       <node id="1196436242603" at="22,200,23,277" concept="2" />
       <node id="1196436222736" at="26,50,27,156" concept="5" />
-      <node id="1196436222736" at="29,68,30,102" concept="0" />
       <node id="1196436222736" at="29,68,30,102" concept="5" />
       <node id="1196436222736" at="32,30,33,17" concept="5" />
       <node id="1196436252436" at="35,61,36,63" concept="4" />
       <node id="1196436252436" at="36,63,37,30" concept="4" />
-      <node id="1196436252436" at="37,30,38,227" concept="0" />
-      <node id="1196436252436" at="37,30,38,227" concept="0" />
       <node id="1196436252436" at="37,30,38,227" concept="2" />
       <node id="1196436252436" at="38,227,39,24" concept="5" />
       <node id="1196436222736" at="17,0,19,0" concept="1" trace="typeof_ImaginaryUnit_InferenceRule#()V" />
@@ -250,7 +228,6 @@
       <scope id="1196436222736" at="26,50,27,156" />
       <scope id="1196436222736" at="29,68,30,102" />
       <scope id="1196436222736" at="32,30,33,17" />
-      <scope id="1196436252436" at="37,30,38,227" />
       <scope id="1196436222736" at="17,0,19,0" />
       <scope id="1196436242603" at="20,5,23,277">
         <var name="_info_12389875345" id="1196436242603" />
@@ -281,13 +258,10 @@
       <node id="381326360563853005" at="21,55,22,205" concept="4" />
       <node id="381326360563853005" at="22,205,23,282" concept="2" />
       <node id="381326360563851979" at="26,50,27,156" concept="5" />
-      <node id="381326360563851979" at="29,68,30,102" concept="0" />
       <node id="381326360563851979" at="29,68,30,102" concept="5" />
       <node id="381326360563851979" at="32,30,33,17" concept="5" />
       <node id="381326360563853416" at="35,61,36,63" concept="4" />
       <node id="381326360563853416" at="36,63,37,30" concept="4" />
-      <node id="381326360563853416" at="37,30,38,222" concept="0" />
-      <node id="381326360563853416" at="37,30,38,222" concept="0" />
       <node id="381326360563853416" at="37,30,38,222" concept="2" />
       <node id="381326360563853416" at="38,222,39,24" concept="5" />
       <node id="381326360563851979" at="17,0,19,0" concept="1" trace="typeof_ArgExpression_InferenceRule#()V" />
@@ -301,7 +275,6 @@
       <scope id="381326360563851979" at="26,50,27,156" />
       <scope id="381326360563851979" at="29,68,30,102" />
       <scope id="381326360563851979" at="32,30,33,17" />
-      <scope id="381326360563853416" at="37,30,38,222" />
       <scope id="381326360563851979" at="17,0,19,0" />
       <scope id="381326360563853005" at="20,5,23,282">
         <var name="_info_12389875345" id="381326360563853005" />
@@ -332,13 +305,10 @@
       <node id="381326360563857201" at="21,68,22,205" concept="4" />
       <node id="381326360563857201" at="22,205,23,282" concept="2" />
       <node id="381326360563855902" at="26,50,27,169" concept="5" />
-      <node id="381326360563855902" at="29,68,30,102" concept="0" />
       <node id="381326360563855902" at="29,68,30,102" concept="5" />
       <node id="381326360563855902" at="32,30,33,17" concept="5" />
       <node id="381326360563857263" at="35,61,36,63" concept="4" />
       <node id="381326360563857263" at="36,63,37,30" concept="4" />
-      <node id="381326360563857263" at="37,30,38,227" concept="0" />
-      <node id="381326360563857263" at="37,30,38,227" concept="0" />
       <node id="381326360563857263" at="37,30,38,227" concept="2" />
       <node id="381326360563857263" at="38,227,39,24" concept="5" />
       <node id="381326360563855902" at="17,0,19,0" concept="1" trace="typeof_ConjugateComplexExpression_InferenceRule#()V" />
@@ -352,7 +322,6 @@
       <scope id="381326360563855902" at="26,50,27,169" />
       <scope id="381326360563855902" at="29,68,30,102" />
       <scope id="381326360563855902" at="32,30,33,17" />
-      <scope id="381326360563857263" at="37,30,38,227" />
       <scope id="381326360563855902" at="17,0,19,0" />
       <scope id="381326360563857201" at="20,5,23,282">
         <var name="_info_12389875345" id="381326360563857201" />
@@ -383,13 +352,10 @@
       <node id="381326360563858323" at="21,54,22,205" concept="4" />
       <node id="381326360563858323" at="22,205,23,282" concept="2" />
       <node id="381326360563857384" at="26,50,27,155" concept="5" />
-      <node id="381326360563857384" at="29,68,30,102" concept="0" />
       <node id="381326360563857384" at="29,68,30,102" concept="5" />
       <node id="381326360563857384" at="32,30,33,17" concept="5" />
       <node id="381326360563858678" at="35,61,36,63" concept="4" />
       <node id="381326360563858678" at="36,63,37,30" concept="4" />
-      <node id="381326360563858678" at="37,30,38,222" concept="0" />
-      <node id="381326360563858678" at="37,30,38,222" concept="0" />
       <node id="381326360563858678" at="37,30,38,222" concept="2" />
       <node id="381326360563858678" at="38,222,39,24" concept="5" />
       <node id="381326360563857384" at="17,0,19,0" concept="1" trace="typeof_ImExpression_InferenceRule#()V" />
@@ -403,7 +369,6 @@
       <scope id="381326360563857384" at="26,50,27,155" />
       <scope id="381326360563857384" at="29,68,30,102" />
       <scope id="381326360563857384" at="32,30,33,17" />
-      <scope id="381326360563858678" at="37,30,38,222" />
       <scope id="381326360563857384" at="17,0,19,0" />
       <scope id="381326360563858323" at="20,5,23,282">
         <var name="_info_12389875345" id="381326360563858323" />
@@ -434,13 +399,10 @@
       <node id="381326360563859212" at="21,54,22,205" concept="4" />
       <node id="381326360563859212" at="22,205,23,282" concept="2" />
       <node id="381326360563858780" at="26,50,27,155" concept="5" />
-      <node id="381326360563858780" at="29,68,30,102" concept="0" />
       <node id="381326360563858780" at="29,68,30,102" concept="5" />
       <node id="381326360563858780" at="32,30,33,17" concept="5" />
       <node id="381326360563859251" at="35,61,36,63" concept="4" />
       <node id="381326360563859251" at="36,63,37,30" concept="4" />
-      <node id="381326360563859251" at="37,30,38,222" concept="0" />
-      <node id="381326360563859251" at="37,30,38,222" concept="0" />
       <node id="381326360563859251" at="37,30,38,222" concept="2" />
       <node id="381326360563859251" at="38,222,39,24" concept="5" />
       <node id="381326360563858780" at="17,0,19,0" concept="1" trace="typeof_ReExpression_InferenceRule#()V" />
@@ -454,7 +416,6 @@
       <scope id="381326360563858780" at="26,50,27,155" />
       <scope id="381326360563858780" at="29,68,30,102" />
       <scope id="381326360563858780" at="32,30,33,17" />
-      <scope id="381326360563859251" at="37,30,38,222" />
       <scope id="381326360563858780" at="17,0,19,0" />
       <scope id="381326360563859212" at="20,5,23,282">
         <var name="_info_12389875345" id="381326360563859212" />
@@ -485,13 +446,10 @@
       <node id="5584396657092302817" at="21,55,22,206" concept="4" />
       <node id="5584396657092302817" at="22,206,23,283" concept="2" />
       <node id="5584396657092301806" at="26,50,27,156" concept="5" />
-      <node id="5584396657092301806" at="29,68,30,102" concept="0" />
       <node id="5584396657092301806" at="29,68,30,102" concept="5" />
       <node id="5584396657092301806" at="32,30,33,17" concept="5" />
       <node id="5584396657092302861" at="35,61,36,63" concept="4" />
       <node id="5584396657092302861" at="36,63,37,30" concept="4" />
-      <node id="5584396657092302861" at="37,30,38,222" concept="0" />
-      <node id="5584396657092302861" at="37,30,38,222" concept="0" />
       <node id="5584396657092302861" at="37,30,38,222" concept="2" />
       <node id="5584396657092302861" at="38,222,39,24" concept="5" />
       <node id="5584396657092301806" at="17,0,19,0" concept="1" trace="typeof_AbsExpression_InferenceRule#()V" />
@@ -505,7 +463,6 @@
       <scope id="5584396657092301806" at="26,50,27,156" />
       <scope id="5584396657092301806" at="29,68,30,102" />
       <scope id="5584396657092301806" at="32,30,33,17" />
-      <scope id="5584396657092302861" at="37,30,38,222" />
       <scope id="5584396657092301806" at="17,0,19,0" />
       <scope id="5584396657092302817" at="20,5,23,283">
         <var name="_info_12389875345" id="5584396657092302817" />
@@ -534,7 +491,6 @@
     <file name="Complex_is_Object_weak_SubtypingRule.java">
       <node id="7587029747152134039" at="19,121,20,47" concept="5" />
       <node id="7587029747152134035" at="22,50,23,154" concept="5" />
-      <node id="7587029747152134035" at="25,68,26,102" concept="0" />
       <node id="7587029747152134035" at="25,68,26,102" concept="5" />
       <node id="7587029747152134035" at="28,27,29,16" concept="5" />
       <node id="7587029747152134041" at="31,60,32,63" concept="4" />
@@ -543,8 +499,6 @@
       <node id="7587029747152134041" at="34,227,35,435" concept="2" />
       <node id="7587029747152134041" at="35,435,36,24" concept="5" />
       <node id="7587029747152134035" at="17,0,19,0" concept="1" trace="Complex_is_Object_weak_SubtypingRule#()V" />
-      <node id="7587029747152134041" at="33,30,35,435" concept="0" />
-      <node id="7587029747152134041" at="33,30,35,435" concept="0" />
       <node id="7587029747152134035" at="19,0,22,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7587029747152134035" at="22,0,25,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7587029747152134035" at="25,0,28,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -556,7 +510,6 @@
       <scope id="7587029747152134035" at="25,68,26,102" />
       <scope id="7587029747152134035" at="28,27,29,16" />
       <scope id="7587029747152134035" at="17,0,19,0" />
-      <scope id="7587029747152134041" at="33,30,35,435" />
       <scope id="7587029747152134035" at="19,0,22,0">
         <var name="complexType" id="7587029747152134035" />
         <var name="status" id="7587029747152134035" />

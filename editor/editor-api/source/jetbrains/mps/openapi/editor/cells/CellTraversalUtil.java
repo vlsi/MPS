@@ -74,7 +74,6 @@ public class CellTraversalUtil {
    * Compares two cells.
    * Cell which is first is the editor is lesser.
    * <p/>
-   * <p/>
    * Comparing cells must have common parent.
    * Check getCommonParent(firstCell, secondCell) != null
    *
@@ -224,5 +223,12 @@ public class CellTraversalUtil {
    */
   public static CellTreeIterable iterateTree(@Nullable EditorCell root, @NotNull EditorCell start, boolean forward) {
     return new CellTreeIterable(root, start, forward);
+  }
+
+  public static EditorCell getContainingBigCell(@NotNull EditorCell cell) {
+    while (!cell.isBig() && cell.getParent() != null) {
+      cell = cell.getParent();
+    }
+    return cell;
   }
 }

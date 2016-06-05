@@ -34,7 +34,6 @@
       <node id="2248628811136262598" at="34,158,52,11" concept="1" />
       <node id="2248628811136262598" at="33,62,53,7" concept="2" />
       <node id="2248628811136262598" at="30,93,54,5" concept="0" />
-      <node id="2248628811136262598" at="30,93,54,5" concept="0" />
       <node id="2248628811136262598" at="29,0,57,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_IOperation_2248628811136262598#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="2248628811136262598" at="43,60,44,33" />
       <scope id="2248628811136262598" at="46,57,47,23" />
@@ -62,7 +61,6 @@
         <var name="childConcept" id="2248628811136262598" />
         <var name="outputConcept" id="2248628811136262598" />
       </scope>
-      <scope id="2248628811136262598" at="30,93,54,5" />
       <scope id="2248628811136262598" at="29,209,55,18">
         <var name="result" id="2248628811136262598" />
       </scope>
@@ -110,7 +108,6 @@
       <node id="7404423900570111860" at="98,0,101,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="7404423900570111860" at="88,0,95,0" concept="3" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7404423900570111860" at="101,0,108,0" concept="3" trace="isEnabled#()Z" />
-      <node id="7404423900570111860" at="86,93,108,7" concept="0" />
       <node id="7404423900570111860" at="86,93,108,7" concept="1" />
       <node id="7404423900570111860" at="85,0,111,0" concept="6" trace="sideTransform_ActionsFactory_IOperation_7404423900570111860#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
       <scope id="7404423900570111860" at="95,53,96,19" />
@@ -135,7 +132,6 @@
         <var name="pattern" id="7404423900570111860" />
       </scope>
       <scope id="7404423900570111860" at="101,0,108,0" />
-      <scope id="7404423900570111860" at="86,93,108,7" />
       <scope id="7404423900570111860" at="85,193,109,18">
         <var name="result" id="7404423900570111860" />
       </scope>

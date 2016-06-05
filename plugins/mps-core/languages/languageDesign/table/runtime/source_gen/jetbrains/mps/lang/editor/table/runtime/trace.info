@@ -128,7 +128,7 @@
       <node id="2410328448534410900" at="59,0,72,0" concept="2" trace="TableColumnSelection#(Ljetbrains/mps/openapi/editor/EditorComponent;Ljetbrains/mps/lang/editor/table/runtime/EditorCell_Table;I)V" />
       <node id="8096356944928004438" at="75,0,89,0" concept="9" trace="initActionMap#()V" />
       <node id="6365263270891632467" at="89,0,103,0" concept="9" trace="isSame#(Ljetbrains/mps/openapi/editor/selection/Selection;)Z" />
-      <node id="2390677225378655485" at="34,0,59,0" concept="2" trace="TableColumnSelection#(Ljetbrains/mps/openapi/editor/EditorComponent;Ljava/util/Map;Ljetbrains/mps/nodeEditor/cells/CellInfo;)V" />
+      <node id="2390677225378655485" at="34,0,59,0" concept="2" trace="TableColumnSelection#(Ljetbrains/mps/openapi/editor/EditorComponent;Ljava/util/Map;Ljetbrains/mps/openapi/editor/cells/CellInfo;)V" />
       <scope id="7105833981449992080" at="36,27,37,78" />
       <scope id="7105833981449992055" at="40,49,41,50" />
       <scope id="7105833981449992073" at="42,12,43,44" />

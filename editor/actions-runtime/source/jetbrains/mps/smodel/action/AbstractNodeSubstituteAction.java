@@ -184,9 +184,9 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
             if (cell != null) {
               EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
               if (errorCell != null) {
-                editorComponent.changeSelectionWRTFocusPolicy(((jetbrains.mps.nodeEditor.cells.EditorCell) errorCell));
+                editorComponent.changeSelectionWRTFocusPolicy(errorCell);
               } else {
-                editorComponent.changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
+                editorComponent.changeSelectionWRTFocusPolicy(cell);
               }
             }
           }

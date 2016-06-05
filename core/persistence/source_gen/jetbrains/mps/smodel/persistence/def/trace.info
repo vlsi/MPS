@@ -91,7 +91,6 @@
       <node id="9105127192430024485" at="133,12,135,7" concept="0" />
       <node id="4362914091961476096" at="154,10,156,5" concept="0" />
       <node id="4362914091961475567" at="35,0,38,0" concept="6" trace="addModelRef#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="4362914091961475615" at="39,27,42,7" concept="0" />
       <node id="4362914091961475615" at="39,27,42,7" concept="5" />
       <node id="4362914091961475713" at="54,0,57,0" concept="6" trace="getSModelReference#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
       <node id="1121566508702404727" at="61,90,64,5" concept="5" />
@@ -100,9 +99,7 @@
       <node id="6233597908537181450" at="83,0,86,0" concept="6" trace="isImplementationWithStubNode#(Ljava/lang/String;)Z" />
       <node id="6233597908537989533" at="88,51,91,5" concept="5" />
       <node id="5351433512194544530" at="96,22,99,5" concept="5" />
-      <node id="2615562934856440536" at="142,38,145,7" concept="0" />
       <node id="2615562934856440536" at="142,38,145,7" concept="5" />
-      <node id="4362914091961476046" at="149,27,152,7" concept="0" />
       <node id="4362914091961476046" at="149,27,152,7" concept="5" />
       <node id="4362914091961476129" at="158,0,161,0" concept="6" trace="readRole#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="4362914091961476139" at="161,0,164,0" concept="6" trace="readName#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -156,7 +153,6 @@
         <var name="index" id="4362914091961475571" />
         <var name="modelRef" id="4362914091961475576" />
       </scope>
-      <scope id="4362914091961475615" at="39,27,42,7" />
       <scope id="4362914091961475713" at="54,0,57,0">
         <var name="ix" id="4362914091961475718" />
       </scope>
@@ -169,8 +165,6 @@
       <scope id="6233597908537181450" at="83,0,86,0">
         <var name="nodeInfo" id="6233597908537181469" />
       </scope>
-      <scope id="2615562934856440536" at="142,38,145,7" />
-      <scope id="4362914091961476046" at="149,27,152,7" />
       <scope id="4362914091961476129" at="158,0,161,0">
         <var name="s" id="4362914091961476134" />
       </scope>

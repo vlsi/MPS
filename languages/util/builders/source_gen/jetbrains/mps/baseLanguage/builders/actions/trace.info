@@ -57,8 +57,6 @@
       <node id="7057666463730278808" at="61,62,81,7" concept="2" />
       <node id="7057666463730193405" at="89,62,109,7" concept="2" />
       <node id="7057666463730278808" at="58,93,82,5" concept="0" />
-      <node id="7057666463730278808" at="58,93,82,5" concept="0" />
-      <node id="7057666463730193405" at="86,93,110,5" concept="0" />
       <node id="7057666463730193405" at="86,93,110,5" concept="0" />
       <node id="7057666463730278808" at="57,0,85,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_Statement_7057666463730278808#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <node id="7057666463730193405" at="85,0,113,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_BuilderCreator_7057666463730193405#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
@@ -128,8 +126,6 @@
         <var name="childConcept" id="7057666463730193405" />
         <var name="outputConcept" id="7057666463730193405" />
       </scope>
-      <scope id="7057666463730278808" at="58,93,82,5" />
-      <scope id="7057666463730193405" at="86,93,110,5" />
       <scope id="7057666463730278808" at="57,208,83,18">
         <var name="result" id="7057666463730278808" />
       </scope>

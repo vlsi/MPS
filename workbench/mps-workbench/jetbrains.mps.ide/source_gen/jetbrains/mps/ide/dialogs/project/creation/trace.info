@@ -566,7 +566,6 @@
       <node id="1613125646032873414" at="87,44,90,9" concept="7" />
       <node id="1613125646032872971" at="105,39,108,7" concept="7" />
       <node id="1613125646032872984" at="112,0,115,0" concept="8" trace="getResult#()Ljetbrains/mps/smodel/Generator;" />
-      <node id="2990056072202845376" at="144,33,147,11" concept="1" />
       <node id="2990056072202845376" at="144,33,147,11" concept="7" />
       <node id="1613125646032873244" at="177,0,180,0" concept="8" trace="getTemplateModelPrefix#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
       <node id="1613125646032873284" at="187,5,190,5" concept="7" />
@@ -605,7 +604,6 @@
       <scope id="1613125646032873278" at="183,63,185,14" />
       <scope id="1613125646032872970" at="105,39,108,7" />
       <scope id="1613125646032872984" at="112,0,115,0" />
-      <scope id="2990056072202845376" at="144,33,147,11" />
       <scope id="1613125646032873244" at="177,0,180,0">
         <var name="sourceLanguage" id="1613125646032873247" />
       </scope>

@@ -161,7 +161,6 @@
       <node id="2746700844679861516" at="75,0,78,0" concept="9" trace="accept#(Ljava/lang/String;)Z" />
       <node id="2746700844679561147" at="97,30,100,11" concept="7" />
       <node id="2746700844679672721" at="105,5,108,5" concept="8" />
-      <node id="1564108971409412552" at="119,14,122,9" concept="1" />
       <node id="1564108971409412552" at="119,14,122,9" concept="8" />
       <node id="1564108971409412558" at="125,89,128,5" concept="8" />
       <node id="3532702333854217750" at="134,0,137,0" concept="9" trace="select#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -236,7 +235,6 @@
       </scope>
       <scope id="2746700844679661637" at="97,30,100,11" />
       <scope id="1564108971409412551" at="119,14,122,9" />
-      <scope id="1564108971409412552" at="119,14,122,9" />
       <scope id="3532702333854217750" at="134,0,137,0">
         <var name="it" id="3532702333854217750" />
       </scope>
@@ -1077,7 +1075,6 @@
       <node id="1455830106452731688" at="92,0,95,0" concept="9" trace="accept#(Ljava/lang/String;)Z" />
       <node id="6143390095478256587" at="105,18,108,9" concept="8" />
       <node id="1826900917522039039" at="117,12,120,7" concept="8" />
-      <node id="1376744028423385474" at="130,29,133,7" concept="1" />
       <node id="1376744028423385474" at="130,29,133,7" concept="8" />
       <node id="4073558277537640147" at="134,40,137,7" concept="8" />
       <node id="2831045607269887918" at="142,0,145,0" concept="9" trace="showSuccessfullInfoMessage#()V" />
@@ -1136,7 +1133,6 @@
         <var name="line" id="1455830106452731688" />
       </scope>
       <scope id="1376744028423385462" at="126,9,129,47" />
-      <scope id="1376744028423385474" at="130,29,133,7" />
       <scope id="2831045607269887918" at="142,0,145,0" />
       <scope id="4312697819658956470" at="154,0,157,0">
         <var name="a" id="4312697819658956470" />
@@ -1337,10 +1333,8 @@
       <node id="6590770702563546492" at="20,0,23,0" concept="3" trace="GitGlobalConfigFixesInstaller#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="7232396577010691560" at="25,61,28,5" concept="8" />
       <node id="8098913440253374029" at="30,131,33,7" concept="8" />
-      <node id="8098913440253374790" at="35,22,38,9" concept="1" />
       <node id="8098913440253374790" at="35,22,38,9" concept="8" />
       <node id="8098913440253374810" at="42,0,45,5" concept="8" />
-      <node id="8098913440253374837" at="50,30,53,7" concept="1" />
       <node id="8098913440253374837" at="50,30,53,7" concept="8" />
       <node id="5262371584936313197" at="77,0,80,0" concept="15" trace="getCoreAutocrlfValue#()Ljava/lang/String;" />
       <node id="6590770702563546839" at="58,0,62,0" concept="9" trace="getActionTitle#()Ljava/lang/String;" />
@@ -1366,8 +1360,6 @@
         <var name="project" id="6590770702563546493" />
       </scope>
       <scope id="8098913440253374784" at="35,22,38,9" />
-      <scope id="8098913440253374790" at="35,22,38,9" />
-      <scope id="8098913440253374837" at="50,30,53,7" />
       <scope id="5262371584936313197" at="77,0,80,0" />
       <scope id="8098913440253374766" at="29,9,33,7">
         <var name="currentValue" id="8098913440253374752" />

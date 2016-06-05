@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.behavior.Property__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -59,6 +60,10 @@ public class QueriesGenerated {
     _context.showErrorMessage(_context.getNode(), "Incomplete member declaration in the code, ignoring");
     return true;
   }
+  public static boolean baseMappingRule_Condition_6335866222570670327(final BaseMappingRuleContext _context) {
+    SNode p = SNodeOperations.getParent(_context.getNode());
+    return (SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement")) || SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).isEmpty();
+  }
   public static Object propertyMacro_GetPropertyValue_1224072736283(final PropertyMacroContext _context) {
     return "resource_" + _context.getNode().getNodeId().toString();
   }
@@ -99,7 +104,7 @@ public class QueriesGenerated {
     return (String) Property__BehaviorDescriptor.getBackingVarName_id1tRxQXfvLw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, 0x2463999e5366cff1L, "owningProperty")));
   }
   public static boolean ifMacro_Condition_3073231036165996124(final IfMacroContext _context) {
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0v()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0w()));
   }
   public static boolean ifMacro_Condition_1201570983175(final IfMacroContext _context) {
     return (boolean) Property__BehaviorDescriptor.isDefaultImplementation_idhEwIIZu.invoke(_context.getNode()) || (boolean) Property__BehaviorDescriptor.isCustomSetterOnlyImplementation_id2hzApTi_Lsg.invoke(_context.getNode()) || ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), false, new SAbstractConcept[]{})).isNotEmpty();
@@ -240,6 +245,9 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_1224072736321(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d0053f19bL, 0x11d0053f19dL, "resource"));
   }
+  public static Iterable<SNode> sourceNodesQuery_6335866222570895874(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+  }
   public static Iterable<SNode> sourceNodesQuery_1201570443454(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(Property__BehaviorDescriptor.getCustomPropertyImplementation_idhEwIIZM.invoke(_context.getNode()), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117b927a740L, "getAccessor")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, 0x11800267618L, "statementList")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
   }
@@ -249,7 +257,7 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
   }
-  private static SNode _quotation_createNode_x583g4_b0a0a0v() {
+  private static SNode _quotation_createNode_x583g4_b0a0a0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);

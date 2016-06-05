@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -68,7 +69,9 @@ public class APICellAdapter {
     }
     final String pattern = cell.renderText().getText();
 
-    if (pattern.equals("")) return false;
+    if (pattern.equals("")) {
+      return false;
+    }
 
     List<SubstituteAction> matchingActions = ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
@@ -113,25 +116,43 @@ public class APICellAdapter {
     }
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isFirstPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstPositionInBigCell();
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static boolean isLastPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
   }
 
   public static boolean isUnderFolded(EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
-      if (parent.isCollapsed()) return true;
+      if (parent.isCollapsed()) {
+        return true;
+      }
     }
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link EditorCell#getCellInfo()}
+   */
+  @Deprecated
   public static CellInfo getCellInfo(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellInfo();
+    return cell.getCellInfo();
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   public static EditorCell getContainingBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getContainingBigCell();
   }

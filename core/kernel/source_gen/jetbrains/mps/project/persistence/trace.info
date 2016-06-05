@@ -195,7 +195,6 @@
       <node id="842994667883030213" at="45,40,48,13" concept="5" />
       <node id="2184872129966134629" at="52,42,55,13" concept="5" />
       <node id="2184872129966407274" at="77,78,80,9" concept="6" />
-      <node id="1772246947774001156" at="142,27,145,7" concept="1" />
       <node id="1772246947774001156" at="142,27,145,7" concept="6" />
       <node id="7672529302541913057" at="35,55,39,11" concept="6" />
       <node id="4551512764131161324" at="57,33,61,11" concept="6" />
@@ -271,7 +270,6 @@
       <scope id="842994667883030485" at="142,0,145,7">
         <var name="e" id="842994667883030486" />
       </scope>
-      <scope id="1772246947774001156" at="142,27,145,7" />
       <scope id="842994667883030488" at="142,27,145,7" />
       <scope id="2184872129966415591" at="84,0,89,0" />
       <scope id="2184872129966423584" at="98,0,103,0" />
@@ -782,11 +780,8 @@
       <node id="842994667883031333" at="94,11,97,11" concept="5" />
       <node id="842994667883031350" at="98,0,101,11" concept="5" />
       <node id="842994667883031434" at="113,0,116,11" concept="5" />
-      <node id="7500439221912764284" at="129,28,132,7" concept="1" />
       <node id="7500439221912764284" at="129,28,132,7" concept="6" />
-      <node id="7500439221912764296" at="138,27,141,7" concept="1" />
       <node id="7500439221912764296" at="138,27,141,7" concept="6" />
-      <node id="7886766769490293344" at="152,27,155,7" concept="1" />
       <node id="7886766769490293344" at="152,27,155,7" concept="6" />
       <node id="7886766769490268294" at="161,73,164,5" concept="6" />
       <node id="7886766769490268311" at="164,5,167,5" concept="6" />
@@ -873,17 +868,14 @@
       <scope id="842994667883031434" at="113,0,116,11">
         <var name="entryElement" id="842994667883031435" />
       </scope>
-      <scope id="7500439221912764284" at="129,28,132,7" />
       <scope id="842994667883031729" at="138,0,141,7">
         <var name="e" id="842994667883031730" />
       </scope>
-      <scope id="7500439221912764296" at="138,27,141,7" />
       <scope id="842994667883031732" at="138,27,141,7" />
       <scope id="7886766769490293340" at="152,0,155,7">
         <var name="e" id="7886766769490293341" />
       </scope>
       <scope id="7886766769490293343" at="152,27,155,7" />
-      <scope id="7886766769490293344" at="152,27,155,7" />
       <scope id="7886766769490268365" at="175,62,178,41">
         <var name="facets" id="7886766769490268367" />
       </scope>
@@ -1117,7 +1109,6 @@
       <node id="7681855492434310953" at="127,0,130,0" concept="7" trace="compare#(Lorg/jetbrains/mps/openapi/language/SLanguage;Lorg/jetbrains/mps/openapi/language/SLanguage;)I" />
       <node id="7363351619055851977" at="142,0,145,0" concept="7" trace="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
       <node id="5705137293084116034" at="161,0,164,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Ljetbrains/mps/project/structure/modules/Dependency;" />
-      <node id="2700502034769110327" at="216,194,219,9" concept="1" />
       <node id="2700502034769110327" at="216,194,219,9" concept="6" />
       <node id="6936456474377237229" at="222,91,225,7" concept="6" />
       <node id="2907261777968756915" at="234,54,237,7" concept="6" />
@@ -1127,7 +1118,6 @@
       <node id="5221322343053250282" at="270,0,273,0" concept="7" trace="accept#(Ljava/lang/String;)Z" />
       <node id="5221322343053203682" at="278,77,281,7" concept="6" />
       <node id="2709156219364672177" at="317,0,320,0" concept="13" trace="setTimestamp#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="8222824327012643009" at="340,29,343,7" concept="1" />
       <node id="8222824327012643009" at="340,29,343,7" concept="6" />
       <node id="7363351619055803321" at="87,0,91,0" concept="7" trace="visit#(Lorg/jdom/Element;)V" />
       <node id="6936456474377111043" at="202,0,206,0" concept="13" trace="createDescriptor#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/persistence/Memento;Ljava/lang/String;[Ljetbrains/mps/project/structure/model/ModelRootDescriptor;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
@@ -1252,7 +1242,6 @@
         <var name="it" id="5705137293084116034" />
       </scope>
       <scope id="2680877670215461026" at="193,54,196,62" />
-      <scope id="2700502034769110327" at="216,194,219,9" />
       <scope id="5876291284226217085" at="251,100,254,5">
         <var name="key" id="5876291284226217086" />
       </scope>
@@ -1279,7 +1268,6 @@
         <var name="e" id="8222824327012643006" />
       </scope>
       <scope id="8222824327012643008" at="340,29,343,7" />
-      <scope id="8222824327012643009" at="340,29,343,7" />
       <scope id="4225662072197771880" at="76,16,80,58">
         <var name="id" id="3099829352124614382" />
         <var name="name" id="3099829352124621173" />
@@ -1741,14 +1729,12 @@
       <node id="5386339623102269794" at="26,0,28,0" concept="2" trace="SolutionDescriptorPersistence#()V" />
       <node id="2907261777969168057" at="73,64,76,11" concept="6" />
       <node id="842994667883033008" at="90,0,93,11" concept="5" />
-      <node id="148855744827197543" at="104,28,107,7" concept="1" />
       <node id="148855744827197543" at="104,28,107,7" concept="6" />
       <node id="842994667883033070" at="111,45,114,5" concept="6" />
       <node id="842994667883033083" at="114,5,117,5" concept="6" />
       <node id="1371785386182008624" at="118,90,121,5" concept="6" />
       <node id="842994667883033123" at="122,88,125,5" concept="6" />
       <node id="842994667883033182" at="144,50,147,5" concept="5" />
-      <node id="1772246947774001112" at="155,27,158,7" concept="1" />
       <node id="1772246947774001112" at="155,27,158,7" concept="6" />
       <node id="842994667883032891" at="42,0,46,11" concept="6" />
       <node id="1371785386182008034" at="48,74,52,11" concept="6" />
@@ -1805,7 +1791,6 @@
       <scope id="842994667883033008" at="90,0,93,11">
         <var name="entryElement" id="842994667883033009" />
       </scope>
-      <scope id="148855744827197543" at="104,28,107,7" />
       <scope id="2907261777969476743" at="131,62,134,32">
         <var name="facets" id="2907261777969476745" />
       </scope>
@@ -1818,7 +1803,6 @@
       <scope id="842994667883033225" at="155,0,158,7">
         <var name="e" id="842994667883033226" />
       </scope>
-      <scope id="1772246947774001112" at="155,27,158,7" />
       <scope id="842994667883033228" at="155,27,158,7" />
       <scope id="7363351619055973626" at="58,38,62,13" />
       <scope id="842994667883032969" at="85,93,89,11">

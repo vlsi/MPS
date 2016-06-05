@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -33,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -68,7 +68,6 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
 
   /**
-   *
    * @deprecated after MPS 3.4 side transform actions will be migrated from actions aspect to editor aspect
    * so the will be referenced directly from editor and  anchor tag will not be used.
    * Use {@link EditorCell_STHint#EditorCell_STHint(EditorCell, EditorCell, Side, CellInfo)}  }
@@ -84,7 +83,8 @@ public class EditorCell_STHint extends EditorCell_Constant {
     this(bigCell, anchorCell, null, null, side, restoreSelectionCellInto);
   }
 
-  private EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @Nullable CellSide oldSide, @Nullable String sideTransformTag, @Nullable Side side,
+  private EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @Nullable CellSide oldSide, @Nullable String sideTransformTag,
+      @Nullable Side side,
       @Nullable CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
@@ -101,7 +101,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
     setCellId(CELL_ID);
     setDefaultText(" ");
     setEditable(true);
-    setCellBackgroundColor(LightColors.BLUE);
+    getStyle().set(StyleAttributes.BACKGROUND_COLOR, LightColors.BLUE);
 
     getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
     getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -167,7 +167,9 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
     jetbrains.mps.nodeEditor.EditorComponent editorComponent = (jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent();
     EditorCell newlySelectedCell = myRestoreSelectionCellInfo.findCell(editorComponent);
-    if (newlySelectedCell == null) return;
+    if (newlySelectedCell == null) {
+      return;
+    }
     editorComponent.changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
       newlySelectedCell.end();
@@ -235,17 +237,17 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
     public STHintCellInfo(EditorCell_STHint rightTransformHintCell, EditorCell anchorCell) {
       super(rightTransformHintCell);
-      myAnchorCellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getCellInfo();
+      myAnchorCellInfo = anchorCell.getCellInfo();
     }
 
     @Override
-    public EditorCell findCell(EditorComponent editorComponent) {
+    public EditorCell findCell(@NotNull EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       return anchorCell != null ? getSTHintCell(anchorCell.getSNode(), editorComponent) : super.findCell(editorComponent);
     }
 
     @Override
-    public EditorCell findClosestCell(EditorComponent editorComponent) {
+    public EditorCell findClosestCell(@NotNull EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) {
         return super.findCell(editorComponent);

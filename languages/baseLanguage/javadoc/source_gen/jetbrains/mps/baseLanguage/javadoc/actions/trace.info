@@ -88,7 +88,6 @@
       <node id="2654407748854126405" at="43,37,101,9" concept="2" />
       <node id="2654407748854126405" at="42,18,102,7" concept="3" />
       <node id="2654407748854126405" at="28,93,103,5" concept="0" />
-      <node id="2654407748854126405" at="28,93,103,5" concept="0" />
       <node id="2654407748854126405" at="27,0,106,0" concept="8" trace="sideTransform_ActionsFactory_TextCommentLinePart_2654407748854126405#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
       <scope id="2654407748853894914" at="33,438,34,64" />
       <scope id="2654407748853944495" at="52,71,53,399" />
@@ -179,7 +178,6 @@
       <scope id="2654407748854126405" at="29,5,102,7">
         <var name="parameterObjects" id="2654407748854126405" />
       </scope>
-      <scope id="2654407748854126405" at="28,93,103,5" />
       <scope id="2654407748854126405" at="27,202,104,18">
         <var name="result" id="2654407748854126405" />
       </scope>
