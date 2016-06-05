@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
@@ -41,6 +41,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -48,6 +49,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * ModuleMaker is able to make sources of the given modules.
@@ -56,12 +58,14 @@ import java.util.Set;
  *
  * Underneath this class analyzes module dependencies,
  * chooses which of the modules are dirty, collects all the java sources and handles
- * them to the eclipse java compiler (the mps wrapper {@link JavaCompiler})
+ * them to the eclipse java compiler (the mps wrapper {@link EclipseJavaCompiler})
  *
  * fixme use bundle for this package
  * fixme check multiple computations of the same modules' dependencies (time wasting)
  */
 public final class ModuleMaker {
+  public final static Comparator<SModule> MODULE_BY_NAME_COMPARATOR = (module1, module2) -> module1.getModuleName().compareTo(module2.getModuleName());
+
   private final static String BUILDING_MODULES_MSG = "Building %d modules";
   private final static String CYCLE_FORMAT_MSG = "Processing cycle #%d: [%s]";
   private final static String COLLECTING_DEPENDENCIES_MSG = "Collecting dependent candidates";
@@ -145,7 +149,7 @@ public final class ModuleMaker {
     CompositeTracer tracer = new CompositeTracer(myTracer, monitor, String.format(BUILDING_MODULES_MSG, modules.size()), 12); // FIXME: 12 is a gorgeous number
     try {
       tracer.push(COLLECTING_DEPENDENCIES_MSG);
-      Set<SModule> candidates = new HashSet<SModule>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
+      Set<SModule> candidates = new LinkedHashSet<>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
       tracer.pop();
 
       tracer.push(LOADING_DEPENDENCIES_MSG);
@@ -157,7 +161,7 @@ public final class ModuleMaker {
       tracer.pop();
 
       tracer.push(BUILDING_MODULE_CYCLES_MSG);
-      List<Set<SModule>> schedule = new StronglyConnectedModules<SModule>(toCompile).getStronglyConnectedComponents();
+      List<Set<SModule>> schedule = new StronglyConnectedModules<>(toCompile).getStronglyConnectedComponents();
       tracer.pop();
 
       return compileCycles(compilerOptions, schedule, tracer.subTracer(toCompile.size()), dependencies);
@@ -172,7 +176,7 @@ public final class ModuleMaker {
 
   @NotNull
   private MPSCompilationResult compileCycles(@Nullable JavaCompilerOptions compilerOptions, List<Set<SModule>> cyclesToCompile, @NotNull CompositeTracer tracer, @NotNull Dependencies dependencies) {
-    List<MPSCompilationResult> cycleCompilationResults = new ArrayList<MPSCompilationResult>();
+    List<MPSCompilationResult> cycleCompilationResults = new ArrayList<>();
     try {
       int cycleNumber = 0;
       for (Set<SModule> modulesInCycle : cyclesToCompile) {
@@ -196,7 +200,7 @@ public final class ModuleMaker {
   private MPSCompilationResult combineCycleCompilationResults(List<MPSCompilationResult> results) {
     int errorCount = 0;
     int warnCount = 0;
-    Set<SModule> changedModules = new HashSet<SModule>();
+    Set<SModule> changedModules = new HashSet<>();
     for (MPSCompilationResult result : results) {
       errorCount += result.getErrorsCount();
       warnCount += result.getWarningsCount();
@@ -218,10 +222,12 @@ public final class ModuleMaker {
   private MPSCompilationResult compile(@NotNull ModulesContainer modulesContainer, @Nullable JavaCompilerOptions compilerOptions) {
     CompositeTracer tracer = new CompositeTracer(myTracer);
     InternalJavaCompiler internalJavaCompiler = new InternalJavaCompiler(modulesContainer, mySender, tracer, compilerOptions);
-
     return internalJavaCompiler.compile();
   }
 
+  /**
+   * The answer is always sorted by name
+   */
   private Set<SModule> getModulesToCompile(ModulesContainer modulesContainer) {
     Set<SModule> candidates = modulesContainer.getModules();
     myTracer.push("checking if " + candidates.size() + " modules are dirty", false);
@@ -270,7 +276,8 @@ public final class ModuleMaker {
     }
     myTracer.pop();
 
-    return toCompile;
+    Set<SModule> result = new TreeSet<>(MODULE_BY_NAME_COMPARATOR);
+    result.addAll(toCompile);
+    return result;
   }
-
 }

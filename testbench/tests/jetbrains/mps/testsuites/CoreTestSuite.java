@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.testsuites;
 
+import jetbrains.mps.compile.EclipseJavaCompilerTest;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
@@ -39,7 +40,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest.class,
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
-    jetbrains.mps.compile.JavaCompilerTest.class,
+    EclipseJavaCompilerTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,

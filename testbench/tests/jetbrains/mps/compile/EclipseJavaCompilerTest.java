@@ -37,7 +37,7 @@ import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class JavaCompilerTest extends CoreMpsTest {
+public class EclipseJavaCompilerTest extends CoreMpsTest {
   private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
   private static Project ourProject;
   private static Solution ourSolution;

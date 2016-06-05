@@ -25,6 +25,7 @@ import java.util.*;
 
 // TODO: remove another implementation graph from here!
 // FIXME: notice that we do tolerate cycles here
+//todo check for hotspot new GlobalDepMan().getModules();
 public class PluginSorter {
   private final Collection<ReloadableModule> myModules;
 

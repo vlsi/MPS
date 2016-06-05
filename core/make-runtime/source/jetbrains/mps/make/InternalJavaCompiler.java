@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.make.ModuleAnalyzer.ModuleAnalyzerResult;
@@ -25,6 +25,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -32,7 +33,9 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -50,7 +53,7 @@ class InternalJavaCompiler {
   private final static String PREPARING_TO_COMPILE_MSG = "Preparing to compile";
   private final static String COPYING_RESOURCES_MSG = "Copying resources";
   private final static String HANDLING_ERRORS_MSG = "Handling errors";
-  private final static String WRITING_CLASSES_MSG = "Writing class files";
+  private final static String WRITING_CLASSES_MSG = "Writing class file";
   private final static String ECLIPSE_COMPILER_MSG = "Running eclipse java compiler";
 
   @NotNull private final MessageSender mySender;
@@ -72,7 +75,7 @@ class InternalJavaCompiler {
     }
     myTracer.push(PREPARING_TO_COMPILE_MSG);
     ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer, mySender).analyze();
-    JavaCompiler compiler = new JavaCompiler();
+    EclipseJavaCompiler compiler = new EclipseJavaCompiler();
     for (SModule module : myModulesContainer.getModules()) {
       if (!myModulesContainer.areClassesUpToDate(module)) {
         if (ModulesContainer.isCompileInMps(module)) {
@@ -88,15 +91,18 @@ class InternalJavaCompiler {
       return MPSCompilationResult.nothingToDoCompilationResult();
     }
 
-    if (analysisResult.hasJavaToCompile) {
-      MPSCompilationResult result = compileJava(compiler);
+    MPSCompilationResult result;
+    if (!analysisResult.hasJavaToCompile) {
+      result = MPSCompilationResult.noJavaCompiledCompilationResult();
+    } else {
+      result = compileJava(compiler);
       reportModulesWithRemovalsAreNotChanged(analysisResult.modulesWithRemovals, result.getChangedModules());
+      invalidateCompiledClasses();
       return result;
     }
     copyResources();
-    invalidateCompiledClasses();
 
-    return MPSCompilationResult.noJavaCompiledCompilationResult();
+    return result;
   }
 
   private void copyResources() {
@@ -121,6 +127,7 @@ class InternalJavaCompiler {
     myTracer.pop();
   }
 
+  // FIXME!!!
   private void invalidateCompiledClasses() {
     myTracer.push(UPDATING_CLASSPATH_MSG);
     for (SModule module : myModulesContainer.getModules()) {
@@ -141,19 +148,19 @@ class InternalJavaCompiler {
   }
 
   @NotNull
-  private MPSCompilationResult compileJava(JavaCompiler compiler) {
+  private MPSCompilationResult compileJava(EclipseJavaCompiler compiler) {
     try {
       myTracer.push(COMPILING_JAVA_MSG);
       IClassPathItem classPath = computeDependenciesClassPath(myModulesContainer.getModules(), myTracer);
       final CompilationErrorsHandler errorsHandler = new CompilationErrorsHandler(myModulesContainer, mySender, classPath);
-      final CollectingResultsListener collectingResultsListener = new CollectingResultsListener(errorsHandler);
-
-      compiler.addCompilationResultListener(collectingResultsListener);
-      doCompileJava(compiler, classPath, myCompilerOptions);
-      compiler.removeCompilationResultListener(collectingResultsListener);
-
       CompilationHandler compilationHandler = new CompilationHandler(classPath, errorsHandler);
-      Set<SModule> changedModules = compilationHandler.process(collectingResultsListener.getResults());
+      final CollectingResultsListener listener = new CollectingResultsListener(errorsHandler);
+
+      compiler.addCompilationResultListener(listener);
+      doCompileJava(compiler, classPath, myCompilerOptions);
+      compiler.removeCompilationResultListener(listener);
+
+      Collection<SModule> changedModules = compilationHandler.process(listener.getResults());
 
       if (changedModules.isEmpty()){
         mySender.error(NO_CHANGES_AFTER_COMPILATION_ERROR);
@@ -164,7 +171,7 @@ class InternalJavaCompiler {
     }
   }
 
-  private void doCompileJava(JavaCompiler compiler, IClassPathItem classPath, @Nullable JavaCompilerOptions compilerOptions) {
+  private void doCompileJava(EclipseJavaCompiler compiler, IClassPathItem classPath, @Nullable JavaCompilerOptions compilerOptions) {
     try {
       myTracer.push(ECLIPSE_COMPILER_MSG, true);
       if (compilerOptions == null) {
@@ -220,10 +227,12 @@ class InternalJavaCompiler {
   private class CompilationHandler {
     private final IClassPathItem myClassPath;
     private final CompilationErrorsHandler myErrorsHandler;
+    private final ClassFileWriter writer;
 
     public CompilationHandler(IClassPathItem classPath, CompilationErrorsHandler errorsHandler) {
       myClassPath = classPath;
       myErrorsHandler = errorsHandler;
+      writer = new ClassFileWriter(myModulesContainer, mySender, myClassPath);
     }
 
     /**
@@ -232,15 +241,15 @@ class InternalJavaCompiler {
     public Set<SModule> process(List<CompilationResult> results) {
       ClassesErrorsTracker errorsTracker = new ClassesErrorsTracker();
       for (CompilationResult result : results) {
-        if (result.getErrors() != null) {
+        CategorizedProblem[] errors = result.getErrors();
+        if (errors != null && errors.length > 0) {
           myTracer.push(HANDLING_ERRORS_MSG);
           errorsTracker = myErrorsHandler.handle(result);
           myTracer.pop();
         }
       }
       myTracer.push(WRITING_CLASSES_MSG);
-      ClassFileWriter writer = new ClassFileWriter(myModulesContainer, mySender, myCompilerOptions, myClassPath, results, errorsTracker);
-      Set<SModule> changedModules = writer.write();
+      Set<SModule> changedModules = writer.write(results, errorsTracker);
       myTracer.pop();
       return changedModules;
     }

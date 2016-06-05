@@ -5346,7 +5346,7 @@
         <node concept="34ab3g" id="1LCdstw1GQV" role="3cqZAp">
           <property role="35gtTG" value="info" />
           <node concept="Xl_RD" id="1LCdstw1GQX" role="34bqiv">
-            <property role="Xl_RC" value="Making modules within project" />
+            <property role="Xl_RC" value="Building modules within project" />
           </node>
         </node>
         <node concept="3cpWs6" id="2BGPXkEwUCl" role="3cqZAp">

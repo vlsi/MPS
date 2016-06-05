@@ -47,7 +47,7 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
 
   private static MPSCompilationResult makeAllInCreatedEnvironment(final Project project) {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Making modules within project");
+      LOG.info("Building modules within project");
     }
     return new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {

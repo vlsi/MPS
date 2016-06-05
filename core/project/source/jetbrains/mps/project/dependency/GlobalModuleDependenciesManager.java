@@ -38,11 +38,11 @@ public class GlobalModuleDependenciesManager {
   private UsedModulesCollector myUsedModulesCollector = new UsedModulesCollector();
 
   public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
-    myModules = new HashSet<SModule>(modules);
+    myModules = new HashSet<>(modules);
   }
 
   public GlobalModuleDependenciesManager(@NotNull SModule module) {
-    myModules = new HashSet<SModule>();
+    myModules = new HashSet<>();
     myModules.add(module);
   }
 

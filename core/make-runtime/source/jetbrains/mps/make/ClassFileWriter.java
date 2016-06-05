@@ -19,7 +19,6 @@ import com.intellij.compiler.instrumentation.FailSafeClassReader;
 import com.intellij.compiler.instrumentation.InstrumentationClassFinder;
 import com.intellij.compiler.instrumentation.InstrumenterClassWriter;
 import com.intellij.compiler.notNullVerification.NotNullVerifyingInstrumenter;
-import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -40,8 +39,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -63,22 +62,30 @@ public class ClassFileWriter {
   private final ModulesContainer myModulesContainer;
   private final MessageSender mySender;
   private final ChangedModulesTracker myChangedModulesTracker = new ChangedModulesTracker();
-  private final List<CompilationResult> myResults;
-  private final ClassesErrorsTracker myErrorsTracker;
   private final InstrumentationClassFinder myFinder;
+  private final Map<String, InputStream> myClassFile2Bytes = new LinkedHashMap<>();
 
-  public ClassFileWriter(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender, JavaCompilerOptions options, IClassPathItem classPath,
-      List<CompilationResult> results, @NotNull ClassesErrorsTracker errorsTracker) {
+  // fixme think about class path
+  public ClassFileWriter(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender, IClassPathItem classPath) {
     myModulesContainer = modulesContainer;
     mySender = sender;
-    myResults = results;
-    myErrorsTracker = errorsTracker;
     myFinder = createInstrumentationClassFinder(classPath);
   }
 
   @NotNull
   private InstrumentationClassFinder createInstrumentationClassFinder(final IClassPathItem classPath) {
-    final List<URL> urls = new ArrayList<URL>();
+    final URL[] urlsArr = convertClassPathToUrls(classPath);
+    return new InstrumentationClassFinder(urlsArr) { // fixme separate platform cp from usual cp
+      @Override
+      protected InputStream lookupClassAfterClasspath(String internalClassName) {
+        return myClassFile2Bytes.get(internalClassName);
+      }
+    };
+  }
+
+  @NotNull
+  private static URL[] convertClassPathToUrls(IClassPathItem classPath) {
+    final List<URL> urls = new ArrayList<>();
     for (RealClassPathItem flatten : classPath.flatten()) {
       try {
         urls.add(new File(flatten.getPath()).toURI().toURL());
@@ -86,41 +93,33 @@ public class ClassFileWriter {
         e.printStackTrace();
       }
     }
-    final URL[] urlsArr = urls.toArray(new URL[urls.size()]);
-    final Map<String, InputStream> myClassFile2Bytes = fillClassFile2BytesMap();
-    return new InstrumentationClassFinder(urlsArr) { // fixme separate platform cp from usual cp
-      @Override
-      protected InputStream lookupClassBeforeClasspath(String internalClassName) {
-        return myClassFile2Bytes.get(internalClassName);
-      }
-    };
+    return urls.toArray(new URL[urls.size()]);
   }
 
-  private Map<String, InputStream> fillClassFile2BytesMap() {
-    Map<String, InputStream> resultingMap = new HashMap<String, InputStream>();
-    for (CompilationResult result : myResults) {
+  private void updateClassFile2BytesMap(List<CompilationResult> results) {
+    for (CompilationResult result : results) {
       for (ClassFile classFile : result.getClassFiles()) {
         String path = convertCompoundToPath(classFile.getCompoundName());
-        resultingMap.put(path, new ByteArrayInputStream(classFile.getBytes()));
+        myClassFile2Bytes.put(path, new ByteArrayInputStream(classFile.getBytes()));
       }
     }
-    return resultingMap;
   }
 
   /**
    * @return a set of changed modules
    */
   @NotNull
-  public Set<SModule> write() {
-    for (CompilationResult result : myResults) {
+  public Set<SModule> write(List<CompilationResult> results, ClassesErrorsTracker errorsTracker) {
+    updateClassFile2BytesMap(results);
+    for (CompilationResult result : results) {
       for (ClassFile cf : result.getClassFiles()) {
-        writeClassFile(cf);
+        writeClassFile(cf, errorsTracker);
       }
     }
     return myChangedModulesTracker.getModules();
   }
 
-  private void writeClassFile(@NotNull ClassFile cf) {
+  private void writeClassFile(@NotNull ClassFile cf, ClassesErrorsTracker errorsTracker) {
     String fqName = convertCompoundToFqName(cf.getCompoundName());
     String containerClassName = getContainerClassName(fqName); // the name up to dollar sign
     if (!myModulesContainer.containsClass(containerClassName)) {
@@ -131,7 +130,7 @@ public class ClassFileWriter {
       File outputDir = createOutputDir(fqName, moduleForClass);
       String className = NameUtil.shortNameFromLongName(fqName);
       File output = new File(outputDir, className + MPSExtentions.DOT_CLASSFILE);
-      if (!myErrorsTracker.hasError(containerClassName)) {
+      if (!errorsTracker.hasError(containerClassName)) {
         writeClassFile(cf, output);
       } else {
         if (output.exists() && !output.delete()) {

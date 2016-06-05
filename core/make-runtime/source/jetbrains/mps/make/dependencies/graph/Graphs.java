@@ -19,6 +19,7 @@ import jetbrains.mps.util.GraphUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class Graphs {
     int[] temparray = new int[count];
     int[][] result = new int[count][];
 
-    Map<IVertex, Integer> rootIndex = new HashMap<IVertex, Integer>(vertices.length);
+    Map<IVertex, Integer> rootIndex = new LinkedHashMap<IVertex, Integer>(vertices.length);
     for (int i = 0; i < vertices.length; i++) {
       rootIndex.put(vertices[i], i);
     }

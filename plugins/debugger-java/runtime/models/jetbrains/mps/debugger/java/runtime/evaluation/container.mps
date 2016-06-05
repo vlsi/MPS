@@ -2342,12 +2342,12 @@
                     <node concept="3cpWs8" id="6zsZmIC2DTn" role="3cqZAp">
                       <node concept="3cpWsn" id="6zsZmIC2DTo" role="3cpWs9">
                         <property role="TrG5h" value="javaCompiler" />
-                        <node concept="3uibUv" id="6zsZmIC2DTp" role="1tU5fm">
-                          <ref role="3uigEE" to="l46t:~JavaCompiler" resolve="JavaCompiler" />
+                        <node concept="3uibUv" id="3bsJdgL$elA" role="1tU5fm">
+                          <ref role="3uigEE" to="l46t:~EclipseJavaCompiler" resolve="EclipseJavaCompiler" />
                         </node>
                         <node concept="2ShNRf" id="6zsZmIC2Gkt" role="33vP2m">
                           <node concept="1pGfFk" id="6zsZmIC2I4_" role="2ShVmc">
-                            <ref role="37wK5l" to="l46t:~JavaCompiler.&lt;init&gt;()" resolve="JavaCompiler" />
+                            <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.&lt;init&gt;()" resolve="EclipseJavaCompiler" />
                           </node>
                         </node>
                       </node>
@@ -2494,7 +2494,7 @@
                                   <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                                 </node>
                                 <node concept="liA8E" id="6zsZmIC2LLa" role="2OqNvi">
-                                  <ref role="37wK5l" to="l46t:~JavaCompiler.addSource(java.lang.String,java.lang.String):void" resolve="addSource" />
+                                  <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.addSource(java.lang.String,java.lang.String):void" resolve="addSource" />
                                   <node concept="3cpWs3" id="6zsZmIC3koy" role="37wK5m">
                                     <node concept="2OqwBi" id="6zsZmIC3op9" role="3uHU7w">
                                       <node concept="2GrUjf" id="6zsZmIC3l_q" role="2Oq$k0">
@@ -2624,7 +2624,7 @@
                           <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                         </node>
                         <node concept="liA8E" id="6zsZmIC433o" role="2OqNvi">
-                          <ref role="37wK5l" to="l46t:~JavaCompiler.addCompilationResultListener(jetbrains.mps.compiler.CompilationResultListener):void" resolve="addCompilationResultListener" />
+                          <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.addCompilationResultListener(jetbrains.mps.compiler.CompilationResultListener):void" resolve="addCompilationResultListener" />
                           <node concept="37vLTw" id="6zsZmIC46Xc" role="37wK5m">
                             <ref role="3cqZAo" node="6zsZmIC43uD" resolve="compilationResult" />
                           </node>
@@ -2725,7 +2725,7 @@
                           <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                         </node>
                         <node concept="liA8E" id="6zsZmIC4bXA" role="2OqNvi">
-                          <ref role="37wK5l" to="l46t:~JavaCompiler.compile(jetbrains.mps.reloading.IClassPathItem,jetbrains.mps.compiler.JavaCompilerOptions):void" resolve="compile" />
+                          <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.compile(jetbrains.mps.reloading.IClassPathItem,jetbrains.mps.compiler.JavaCompilerOptions):void" resolve="compile" />
                           <node concept="2YIFZM" id="6zsZmIC4N2O" role="37wK5m">
                             <ref role="37wK5l" to="b0pz:~JavaModuleOperations.createClassPathItem(java.lang.Iterable,java.lang.String):jetbrains.mps.reloading.CompositeClassPathItem" resolve="createClassPathItem" />
                             <ref role="1Pybhc" to="b0pz:~JavaModuleOperations" resolve="JavaModuleOperations" />
@@ -2765,7 +2765,7 @@
                           <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                         </node>
                         <node concept="liA8E" id="6zsZmIC4gXz" role="2OqNvi">
-                          <ref role="37wK5l" to="l46t:~JavaCompiler.removeCompilationResultListener(jetbrains.mps.compiler.CompilationResultListener):void" resolve="removeCompilationResultListener" />
+                          <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.removeCompilationResultListener(jetbrains.mps.compiler.CompilationResultListener):void" resolve="removeCompilationResultListener" />
                           <node concept="37vLTw" id="6zsZmIC4ipf" role="37wK5m">
                             <ref role="3cqZAo" node="6zsZmIC43uD" resolve="compilationResult" />
                           </node>
@@ -2845,7 +2845,7 @@
                                 <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                               </node>
                               <node concept="liA8E" id="6zsZmIC5twx" role="2OqNvi">
-                                <ref role="37wK5l" to="l46t:~JavaCompiler.getClassLoader(java.lang.ClassLoader):java.lang.ClassLoader" resolve="getClassLoader" />
+                                <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.getClassLoader(java.lang.ClassLoader):java.lang.ClassLoader" resolve="getClassLoader" />
                                 <node concept="37vLTw" id="6zsZmIC5twy" role="37wK5m">
                                   <ref role="3cqZAo" node="IYmOvntYfA" resolve="parentloader" />
                                 </node>

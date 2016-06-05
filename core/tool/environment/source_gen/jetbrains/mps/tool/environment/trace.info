@@ -674,7 +674,7 @@
       <node id="3021026760599832816" at="35,5,36,104" concept="15" />
       <node id="6450649963068989202" at="43,134,44,100" concept="8" />
       <node id="3021026760598930851" at="44,100,45,36" concept="9" />
-      <node id="2046945161065713083" at="49,30,50,48" concept="3" />
+      <node id="2046945161065713083" at="49,30,50,50" concept="3" />
       <node id="3021026760600037914" at="53,45,54,131" concept="9" />
       <node id="4305429072761194507" at="60,69,61,71" concept="8" />
       <node id="7961687738092404090" at="62,27,63,80" concept="15" />
@@ -712,7 +712,7 @@
       <node id="4681254579908047858" at="77,0,89,0" concept="13" trace="reloadAllAfterMake#(Ljetbrains/mps/project/Project;Ljava/util/Set;)V" />
       <node id="3021026760600028080" at="59,0,76,0" concept="7" trace="makeOnFirstTimeOpened#(Ljetbrains/mps/project/Project;)Ljetbrains/mps/project/Project;" />
       <scope id="3021026760599570462" at="26,33,27,16" />
-      <scope id="2046945161065713083" at="49,30,50,48" />
+      <scope id="2046945161065713083" at="49,30,50,50" />
       <scope id="3021026760600037913" at="53,45,54,131" />
       <scope id="7961687738092400776" at="62,27,63,80" />
       <scope id="7421619855160694318" at="67,39,68,52" />

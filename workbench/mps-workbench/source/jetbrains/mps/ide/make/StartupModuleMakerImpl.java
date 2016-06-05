@@ -36,6 +36,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectLibraryManager;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
@@ -79,23 +80,23 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   private void compileProjectModules(boolean early) {
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
     final ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
+    final Collection<SModule> modules = new ModelAccessHelper(myMPSProject.getRepository()).runReadAction(this::getModules);
 
-    LOG.info("Making modules on startup");
-    monitor.start("Making modules", 10);
+    LOG.info("Building modules on startup");
+    monitor.start("Building modules", modules.size() + 1);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
       MPSCompilationResult mpsCompilationResult = new ModelComputeRunnable<>(() -> {
         monitor.advance(1);
-
         final ModuleMaker maker = new ModuleMaker();
         return myReloadManager.computeNoReload(() -> {
           JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
-          Collection<SModule> modules = getModules();
           return maker.make(modules, monitor.subTask(9), compilerOptions);
         });
       }).runRead(myMPSProject.getModelAccess());
       if (mpsCompilationResult.isReloadingNeeded()) {
         reloadClasses(mpsCompilationResult, indicator, early);
+        monitor.advance(1);
       }
     } finally {
       monitor.done();

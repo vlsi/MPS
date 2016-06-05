@@ -136,7 +136,7 @@
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
-    <classNode dependClassName="jetbrains.mps.compiler.JavaCompiler" />
+    <classNode dependClassName="jetbrains.mps.compiler.EclipseJavaCompiler" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptions" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />

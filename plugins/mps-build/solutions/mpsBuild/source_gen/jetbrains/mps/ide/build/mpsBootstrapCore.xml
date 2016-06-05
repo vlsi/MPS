@@ -4141,6 +4141,12 @@
     <jar destfile="${build.tmp}/antTasks/mps-logging.jar">
       <fileset dir="${build.tmp}/java/out/logging" />
     </jar>
+    <jar destfile="${build.tmp}/antTasks/mps-annotations.jar">
+      <fileset dir="${build.tmp}/java/out/mps-annotations" />
+    </jar>
+    <jar destfile="${build.tmp}/antTasks/mps-messaging.jar">
+      <fileset dir="${build.tmp}/java/out/mps-messaging" />
+    </jar>
     <jar destfile="${build.tmp}/antTasks/mps-behavior-api.jar">
       <fileset dir="${build.tmp}/java/out/mps-behavior-api" />
     </jar>

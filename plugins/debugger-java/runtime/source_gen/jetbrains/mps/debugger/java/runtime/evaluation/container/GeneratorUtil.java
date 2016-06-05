@@ -16,7 +16,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.smodel.resources.FResource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -47,7 +47,7 @@ public class GeneratorUtil {
         String source = null;
         final String desiredSourceUnitName = className + ".java";
         if (successful) {
-          JavaCompiler javaCompiler = new JavaCompiler();
+          EclipseJavaCompiler javaCompiler = new EclipseJavaCompiler();
           for (FResource res : Sequence.fromIterable(result.output()).ofType(FResource.class)) {
             Map<String, Object> contents = res.contents();
             for (String unitName : MapSequence.fromMap(contents).keySet()) {

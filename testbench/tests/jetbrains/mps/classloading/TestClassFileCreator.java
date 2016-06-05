@@ -16,7 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.compiler.CompilationResultAdapter;
-import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.make.ClassFileWriter;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.CommonPaths;
@@ -48,7 +48,7 @@ public class TestClassFileCreator {
   }
 
   public void create() {
-    JavaCompiler compiler = new JavaCompiler();
+    EclipseJavaCompiler compiler = new EclipseJavaCompiler();
     compiler.addSource(myTestClassName, myTestSourceCode);
     MyCompilationResultListener listener = new MyCompilationResultListener();
     compiler.addCompilationResultListener(listener);

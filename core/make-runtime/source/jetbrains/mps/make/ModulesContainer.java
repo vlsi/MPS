@@ -19,15 +19,17 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * sources saving and other utility methods are here
  */
 class ModulesContainer {
-  private Set<SModule> myModules;
+  private final Set<SModule> myModules;
   private final Dependencies myDependencies;
   private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
   private Map<String, SModule> myClassName2ModuleMap = new HashMap<String, SModule>();

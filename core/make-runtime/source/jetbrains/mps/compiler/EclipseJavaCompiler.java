@@ -42,9 +42,9 @@ import java.util.Map;
  * Works by consequently adding java source files by calling the method {@link #addSource(String, String)}
  * and once the method {@link #compile} after that
  */
-public class JavaCompiler {
-  private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
-  private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
+public class EclipseJavaCompiler {
+  private Map<String, CompilationUnit> myCompilationUnits = new HashMap<>();
+  private Map<String, byte[]> myClasses = new HashMap<>();
 
   @NotNull
   private static Map<String, String> addPresetCompilerOptions(@NotNull JavaCompilerOptions customCompilerOptions) {
@@ -76,7 +76,7 @@ public class JavaCompiler {
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
     Compiler compiler = new Compiler(new MyNameEnvironment(classPath), new ProceedingOnErrorsPolicy(), options, new RelayingRequestor(), new DefaultProblemFactory());
-    //compiler.options.verbose = true;
+//    compiler.options.verbose = true;
 
     try {
       Collection<CompilationUnit> compilationUnits = myCompilationUnits.values();
@@ -86,6 +86,11 @@ public class JavaCompiler {
     }
   }
 
+  /**
+   * The only usage is from evaluator module
+   * this logic must be realized at the calling site
+   */
+  @Deprecated
   public ClassLoader getClassLoader(ClassLoader parent) {
     return new MapClassLoader(parent);
   }

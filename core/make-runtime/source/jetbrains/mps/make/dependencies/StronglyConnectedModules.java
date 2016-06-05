@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.make.dependencies;
 
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.util.SModuleNameComparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -35,7 +34,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class StronglyConnectedModules<M extends SModule> {
-  private final static Comparator<SModule> MODULE_BY_NAME_COMPARATOR = new SModuleNameComparator();
   private final Set<M> myModules;
 
   public StronglyConnectedModules(Set<M> modules) {
@@ -102,7 +100,7 @@ public class StronglyConnectedModules<M extends SModule> {
     @Override
     public void fill(Map<SModule, SModuleDecorator<M>> map) {
       List<SModule> dependency = new ArrayList<SModule>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
-      Collections.sort(dependency, MODULE_BY_NAME_COMPARATOR);
+      Collections.sort(dependency, ModuleMaker.MODULE_BY_NAME_COMPARATOR);
       for (SModule module : dependency) {
         SModuleDecorator<M> next = map.get(module);
         if (next != null) {
@@ -124,7 +122,7 @@ public class StronglyConnectedModules<M extends SModule> {
 
     @Override
     public int compareTo(@NotNull SModuleDecorator<M> decorator) {
-      return MODULE_BY_NAME_COMPARATOR.compare(myModule, decorator.getModule());
+      return ModuleMaker.MODULE_BY_NAME_COMPARATOR.compare(myModule, decorator.getModule());
     }
 
     public String toString() {
