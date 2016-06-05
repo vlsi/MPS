@@ -174,9 +174,9 @@ public class RefactoringProcessor {
           public void run() {
             int steps = ListSequence.fromList(participantStates).count();
             progressMonitor.start("Searching for usages", steps);
-            for (RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS> participantStates : ListSequence.fromList(participantStates)) {
+            for (RefactoringParticipant.ParticipantState<?, ?, IP, FP, IS, FS> participantState : ListSequence.fromList(participantStates)) {
               try {
-                participantStates.findChanges(repository, selectedOptions, searchScope, progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
+                participantState.findChanges(repository, selectedOptions, searchScope, progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
               } catch (RuntimeException e) {
                 if (LOG.isEnabledFor(Level.ERROR)) {
                   LOG.error("Exception during usages search", e);

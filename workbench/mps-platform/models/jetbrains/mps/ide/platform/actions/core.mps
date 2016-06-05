@@ -9066,7 +9066,7 @@
                                 </node>
                                 <node concept="2Gpval" id="1OUHNoJWXN_" role="3cqZAp">
                                   <node concept="2GrKxI" id="1OUHNoJWXNA" role="2Gsz3X">
-                                    <property role="TrG5h" value="participantStates" />
+                                    <property role="TrG5h" value="participantState" />
                                   </node>
                                   <node concept="3clFbS" id="1OUHNoJWXNB" role="2LFqv$">
                                     <node concept="SfApY" id="2pO6eqQ1kwg" role="3cqZAp">
@@ -9074,7 +9074,7 @@
                                         <node concept="3clFbF" id="1OUHNoJWXNQ" role="3cqZAp">
                                           <node concept="2OqwBi" id="1OUHNoJWXNR" role="3clFbG">
                                             <node concept="2GrUjf" id="2vOGnLEonj0" role="2Oq$k0">
-                                              <ref role="2Gs0qQ" node="1OUHNoJWXNA" resolve="participantStates" />
+                                              <ref role="2Gs0qQ" node="1OUHNoJWXNA" resolve="participantState" />
                                             </node>
                                             <node concept="liA8E" id="1OUHNoJWXNV" role="2OqNvi">
                                               <ref role="37wK5l" node="5z_gLGerheL" resolve="findChanges" />
