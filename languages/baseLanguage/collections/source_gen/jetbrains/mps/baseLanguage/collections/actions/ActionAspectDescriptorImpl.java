@@ -47,65 +47,69 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 14:
           return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1522217801069421974());
         case 15:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862116());
+          return Collections.<NodeFactory>singletonList(new DefaultNodeFactory_.NodeFactory_8656797459614853042());
         case 16:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862119());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862116());
         case 17:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_4020503625588455826());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862119());
         case 18:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475150554());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_4020503625588455826());
         case 19:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475097267());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475150554());
         case 20:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475270085());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475097267());
         case 21:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475118079());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475270085());
         case 22:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241474511499());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475118079());
         case 23:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241474531795());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241474511499());
         case 24:
-          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735618985());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241474531795());
         case 25:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862122());
+          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735618985());
         case 26:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1522217801069385377());
+          return Collections.<NodeFactory>singletonList(new DefaultNodeFactory_.NodeFactory_8656797459614949039());
         case 27:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1522217801069396478());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862122());
         case 28:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862125());
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1522217801069385377());
         case 29:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862128());
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1522217801069396478());
         case 30:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_3055999550620994085());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862125());
         case 31:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225118817881());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862128());
         case 32:
-          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735615123());
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_3055999550620994085());
         case 33:
-          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735619032());
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225118817881());
         case 34:
-          return Arrays.asList(new NodeFactory[]{new closure_operations.NodeFactory_1225119114838(), new set_ascending_order.NodeFactory_1225119783187()});
+          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735615123());
         case 35:
-          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735619079());
+          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735619032());
         case 36:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_5699792037748117963());
+          return Arrays.asList(new NodeFactory[]{new closure_operations.NodeFactory_1225119114838(), new set_ascending_order.NodeFactory_1225119783187()});
         case 37:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7072176981128389277());
+          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735619079());
         case 38:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119174306());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_5699792037748117963());
         case 39:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475279119());
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7072176981128389277());
         case 40:
-          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475137153());
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119174306());
         case 41:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119188770());
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475279119());
         case 42:
+          return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475137153());
+        case 43:
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119188770());
+        case 44:
           return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119083460());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AddAllElementsOperation", "AddElementOperation", "AddFirstElementOperation", "AddLastElementOperation", "AllOperation", "AnyOperation", "CollectionType", "ComparatorSortOperation", "ContainsAllOperation", "ContainsOperation", "CustomContainerDeclaration", "FindFirstOperation", "FindLastOperation", "FoldLeftOperation", "FoldRightOperation", "GetElementOperation", "GetIndexOfOperation", "GetLastIndexOfOperation", "HashMapCreator", "HashSetCreator", "LinkedHashMapCreator", "LinkedHashSetCreator", "LinkedListCreator", "ListCreatorWithInit", "ListType", "PushOperation", "ReduceLeftOperation", "ReduceRightOperation", "RemoveAllElementsOperation", "RemoveElementOperation", "RemoveWhereOperation", "SelectOperation", "SequenceType", "SetType", "SortOperation", "SortedSetType", "TestAddElementOperation", "TestRemoveElementOperation", "TranslateOperation", "TreeMapCreator", "TreeSetCreator", "VisitAllOperation", "WhereOperation"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AddAllElementsOperation", "AddElementOperation", "AddFirstElementOperation", "AddLastElementOperation", "AllOperation", "AnyOperation", "CollectionType", "ComparatorSortOperation", "ContainsAllOperation", "ContainsOperation", "CustomContainerDeclaration", "FindFirstOperation", "FindLastOperation", "FoldLeftOperation", "FoldRightOperation", "ForEachStatement", "GetElementOperation", "GetIndexOfOperation", "GetLastIndexOfOperation", "HashMapCreator", "HashSetCreator", "LinkedHashMapCreator", "LinkedHashSetCreator", "LinkedListCreator", "ListCreatorWithInit", "ListType", "MultiForEachStatement", "PushOperation", "ReduceLeftOperation", "ReduceRightOperation", "RemoveAllElementsOperation", "RemoveElementOperation", "RemoveWhereOperation", "SelectOperation", "SequenceType", "SetType", "SortOperation", "SortedSetType", "TestAddElementOperation", "TestRemoveElementOperation", "TranslateOperation", "TreeMapCreator", "TreeSetCreator", "VisitAllOperation", "WhereOperation"};
 }

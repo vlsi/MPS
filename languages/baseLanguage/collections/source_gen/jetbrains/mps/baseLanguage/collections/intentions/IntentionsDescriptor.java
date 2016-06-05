@@ -64,8 +64,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         case 4:
           if (true) {
             // Concept: ForEachStatement 
-            intentions = new IntentionFactory[1];
+            intentions = new IntentionFactory[2];
             intentions[0] = new ConvertForEachStatementToForeachStatement_Intention();
+            intentions[1] = new ConvertToMultiForeach_Intention();
           }
           break;
         case 5:
@@ -121,7 +122,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[12];
+    IntentionFactory[] rv = new IntentionFactory[13];
     rv[0] = new ConvertForEachStatementToForeachStatement_Intention();
     rv[1] = new CreateInitializer_Intention();
     rv[2] = new add_init_values_Intention();
@@ -134,6 +135,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[9] = new AddAllSetElementsOperation_replace_Intention();
     rv[10] = new RemoveAllSetElementsOperation_replace_Intention();
     rv[11] = new ConvertForeachStatementToForEach_Intention();
+    rv[12] = new ConvertToMultiForeach_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

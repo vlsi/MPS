@@ -1475,5 +1475,31 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="7wz7QM0OWU$">
+    <property role="3GE5qa" value="foreach" />
+    <property role="TrG5h" value="ConvertToMultiForeach" />
+    <ref role="2ZfgGC" to="tp2q:gMGpvep" resolve="ForEachStatement" />
+    <node concept="2S6ZIM" id="7wz7QM0OWU_" role="2ZfVej">
+      <node concept="3clFbS" id="7wz7QM0OWUA" role="2VODD2">
+        <node concept="3clFbF" id="7wz7QM0OWUB" role="3cqZAp">
+          <node concept="Xl_RD" id="7wz7QM0OWUC" role="3clFbG">
+            <property role="Xl_RC" value="Convert to Multiple Foreach Statement" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="7wz7QM0OWUD" role="2ZfgGD">
+      <node concept="3clFbS" id="7wz7QM0OWUE" role="2VODD2">
+        <node concept="3clFbF" id="7wz7QM0QICa" role="3cqZAp">
+          <node concept="2OqwBi" id="7wz7QM0QILQ" role="3clFbG">
+            <node concept="2Sf5sV" id="7wz7QM0QIC9" role="2Oq$k0" />
+            <node concept="2DeJnW" id="7wz7QM0QJ2h" role="2OqNvi">
+              <ref role="1_rbq0" to="tp2q:7PXIfgo7YBM" resolve="MultiForEachStatement" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
