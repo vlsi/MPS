@@ -95,13 +95,17 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
           public boolean needsToPreserveOldNode() {
             return false;
           }
-          public void confirm(SModelReference finalState, SRepository repository, RefactoringSession refactoringSession) {
-            SModel usage = usageRef.resolve(repository);
-            if (usage instanceof SModelInternal && usage instanceof EditableSModel) {
-              ((SModelInternal) usage).addModelImport(finalState);
-              updateUsages((EditableSModel) usage, initialState, finalState);
-              ((SModelInternal) usage).deleteModelImport(initialState);
-            }
+          public void confirm(final SModelReference finalState, final SRepository repository, RefactoringSession refactoringSession) {
+            refactoringSession.registerChange(new Runnable() {
+              public void run() {
+                SModel usage = usageRef.resolve(repository);
+                if (usage instanceof SModelInternal && usage instanceof EditableSModel) {
+                  ((SModelInternal) usage).addModelImport(finalState);
+                  updateUsages((EditableSModel) usage, initialState, finalState);
+                  ((SModelInternal) usage).deleteModelImport(initialState);
+                }
+              }
+            });
           }
         };
         return change;
