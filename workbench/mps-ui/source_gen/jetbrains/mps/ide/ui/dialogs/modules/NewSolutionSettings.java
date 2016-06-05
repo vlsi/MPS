@@ -134,7 +134,7 @@ public class NewSolutionSettings extends JPanel {
     return mySolutionName;
   }
 
-  public static interface SolutionSettingsChangedListener {
+  public interface SolutionSettingsChangedListener {
     void changed();
   }
 }

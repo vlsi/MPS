@@ -60,7 +60,7 @@ public abstract class BreakpointsView implements DataProvider {
   @Nullable
   public abstract IBreakpoint getSelectedBreakpoint();
   public abstract void selectBreakpoint(@Nullable IBreakpoint breakpoint);
-  public static interface BreakpointSelectionListener {
+  public interface BreakpointSelectionListener {
     void breakpointSelected(@Nullable IBreakpoint breakpoint);
   }
 }

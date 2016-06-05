@@ -144,7 +144,7 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myTraceProvider;
   }
 
-  public static   enum ExecutionState {
+  public enum ExecutionState {
     Stopped(),
     Running(),
     Paused(),

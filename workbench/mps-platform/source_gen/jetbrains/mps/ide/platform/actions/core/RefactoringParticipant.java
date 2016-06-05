@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
-  static interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+  interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
     /**
      * 
      * @return null if participant ignores the node
@@ -66,13 +66,13 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(@NonNls List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
-  static interface Change<InitialDataObject, FinalDataObject> {
+  interface Change<InitialDataObject, FinalDataObject> {
     SearchResults getSearchResults();
     boolean needsToPreserveOldNode();
     void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 
-  static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+  interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
     String getId();
     SNode serializeInitialState(InitialDataObject initialState);
     InitialDataObject deserializeInitialState(SNode serialized);

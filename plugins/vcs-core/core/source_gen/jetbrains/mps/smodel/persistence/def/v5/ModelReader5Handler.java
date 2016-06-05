@@ -110,7 +110,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     myHandlersStack.push(current);
     myValues.push(result);
   }
-  private static interface ChildHandler {
+  private interface ChildHandler {
     void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {

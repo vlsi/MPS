@@ -9,7 +9,7 @@ public interface IFeedback {
   String getMessage();
   Object getSource();
   Throwable getException();
-  static   enum Severity {
+  enum Severity {
     ERROR("error"),
     WARNING("warning"),
     INFO("info");

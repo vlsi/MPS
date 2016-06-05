@@ -211,7 +211,7 @@ public class ToolComponent extends JComponent {
     return myViewType;
   }
 
-  public static interface IItem {
+  public interface IItem {
     String getLabel();
     Icon getIcon();
     String getFolderName();

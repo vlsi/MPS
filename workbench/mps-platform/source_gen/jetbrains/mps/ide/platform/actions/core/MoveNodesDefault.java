@@ -282,7 +282,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     });
   }
 
-  public static interface NodeProcessor {
+  public interface NodeProcessor {
     boolean isValid(List<SNode> nodesToMove);
     boolean isValid(SNode nodeToMove);
     List<SNode> getNodesToSearch(SNode nodeToMove);

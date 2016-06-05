@@ -5,7 +5,7 @@ package jetbrains.mps.ide.migration;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ScriptApplied {
-  static interface ScriptAppliedReference {
+  interface ScriptAppliedReference {
     SModule getModule();
     ScriptApplied resolve(MigrationComponent migrationComponent, boolean silently);
     boolean isAlreadyDone();

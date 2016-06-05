@@ -39,7 +39,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
   public Iterator<U> iterator() {
     return new ComparingSequence.ComparingIterator();
   }
-  public static   enum Kind {
+  public enum Kind {
     UNION(),
     INTERSECTION(),
     SUBSTRACTION(),

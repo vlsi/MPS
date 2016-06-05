@@ -235,7 +235,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       myWatchListeners.remove(listener);
     }
   }
-  public static interface IWatchListener {
+  public interface IWatchListener {
     void watchAdded(IEvaluationContainer model);
     void watchUpdated(IEvaluationContainer model);
     void watchRemoved(IEvaluationContainer model);

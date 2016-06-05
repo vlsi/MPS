@@ -389,7 +389,7 @@ __switch__:
     }
     return null;
   }
-  public static interface ConflictChecker {
+  public interface ConflictChecker {
     boolean isChangeConflicted(ModelChange change);
   }
   protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);

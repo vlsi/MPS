@@ -58,6 +58,7 @@ public class EnumClass_TextGen extends TextGenDescriptorBase {
     if (ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(ctx.getPrimaryInput())).count() > ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).count()) {
       tgs.append(";");
       tgs.newLine();
+      tgs.newLine();
       BaseClassConceptTextGen.members(ctx.getPrimaryInput(), ctx);
     } else {
       tgs.newLine();

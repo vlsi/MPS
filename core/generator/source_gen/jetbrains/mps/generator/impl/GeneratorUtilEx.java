@@ -135,7 +135,7 @@ public final class GeneratorUtilEx {
       return DismissTopMappingRuleException.MessageType.info;
     }
   }
-  public static interface ConsequenceDispatch {
+  public interface ConsequenceDispatch {
     void inlineSwitch(SNode ruleConsequence);
     void inlineTemplateWithContext(SNode ruleConsequence);
     void inlineTemplate(SNode ruleConsequence);

@@ -10,6 +10,7 @@ public enum Outcome {
   TERMINATE_VALUE(),
   BREAK(),
   NONE();
+
   private Outcome() {
   }
 }

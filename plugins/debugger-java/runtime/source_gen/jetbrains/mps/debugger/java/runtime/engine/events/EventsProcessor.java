@@ -389,7 +389,7 @@ public class EventsProcessor {
       return myIsStopped;
     }
   }
-  public static   enum StepKind {
+  public enum StepKind {
     Over(StepRequest.STEP_OVER),
     Into(StepRequest.STEP_INTO),
     Out(StepRequest.STEP_OUT);

@@ -40,7 +40,7 @@ public class ModuleDependencyChange extends DependencyChange {
   public ModuleDependencyChange.DependencyType getDependencyType() {
     return myType;
   }
-  public static   enum DependencyType {
+  public enum DependencyType {
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
         ((SModelBase) model).addDevKit(module);

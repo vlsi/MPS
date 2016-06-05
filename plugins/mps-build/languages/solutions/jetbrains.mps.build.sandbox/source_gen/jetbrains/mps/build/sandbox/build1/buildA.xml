@@ -5,7 +5,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/buildA" />
   <property name="aver" value="12.10" />
   <property name="environment" value="env" />
-  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.java.library.abcde-lib">

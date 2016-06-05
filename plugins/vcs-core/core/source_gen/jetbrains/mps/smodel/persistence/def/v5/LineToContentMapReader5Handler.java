@@ -91,7 +91,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     List<LineContent> result = (List<LineContent>) resultObject;
     my_accumulatorField.processText(value, myLocator);
   }
-  private static interface ChildHandler {
+  private interface ChildHandler {
     void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {

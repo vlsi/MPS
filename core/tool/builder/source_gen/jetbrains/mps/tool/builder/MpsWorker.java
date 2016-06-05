@@ -256,7 +256,7 @@ public abstract class MpsWorker {
     e.printStackTrace(new PrintWriter(writer));
     return writer.getBuffer();
   }
-  protected static interface AntLogger {
+  protected interface AntLogger {
     void log(String text, Level level);
   }
   public static class SystemOutLogger implements MpsWorker.AntLogger {

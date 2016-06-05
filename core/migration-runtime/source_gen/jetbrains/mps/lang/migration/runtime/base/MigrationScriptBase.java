@@ -61,7 +61,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
     }
   }
 
-  private static interface SNodePlacePointer {
+  private interface SNodePlacePointer {
     boolean isNodeInPlace();
     void insertOrReplace(SNode newNode);
     void remove();

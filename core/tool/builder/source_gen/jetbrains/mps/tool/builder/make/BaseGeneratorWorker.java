@@ -8,7 +8,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.GeneratorProperties;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.MResource;
@@ -41,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.messages.IMessageHandler;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.messages.IMessage;
 
 public abstract class BaseGeneratorWorker extends MpsWorker {

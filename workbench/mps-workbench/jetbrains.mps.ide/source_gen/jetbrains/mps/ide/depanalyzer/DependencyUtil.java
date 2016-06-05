@@ -221,7 +221,7 @@ public class DependencyUtil {
       }
     });
   }
-  public static   enum LinkType {
+  public enum LinkType {
     Depends("depends on"),
     ReexportsDep("reexports dependency on"),
     UsesLanguage("uses language"),
@@ -257,7 +257,7 @@ public class DependencyUtil {
    * OwnedGenerator - dependency between a language and its generators
    * SourceLanguage - dependency from generator to its owning language
    */
-  public static   enum Role {
+  public enum Role {
     None(),
     RegularDependency(),
     RuntimeDependency(),

@@ -121,11 +121,10 @@ public class ClassLikeMethodChecker {
 
   }
 
-  public static   enum ErrorState {
+  public enum ErrorState {
     OK(),
     REPAIRABLE(),
-    NON_REPAIRABLE();
-
+    NON_REPAIRABLE()
   }
   private static boolean neq_w7p7m_a0b0c(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

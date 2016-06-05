@@ -56,7 +56,7 @@ public class AskDialog extends DialogWrapper {
       close(DialogWrapper.OK_EXIT_CODE);
     }
   }
-  public static   enum DialogResults {
+  public enum DialogResults {
     Replace(),
     Skip(),
     All(),

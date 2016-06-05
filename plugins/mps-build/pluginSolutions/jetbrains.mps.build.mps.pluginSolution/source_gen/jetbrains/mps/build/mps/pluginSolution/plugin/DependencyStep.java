@@ -67,7 +67,7 @@ public class DependencyStep extends AbstractStep {
   public String getImageText() {
     return "Distribution Kind";
   }
-  public static   enum DependencyKind {
+  public enum DependencyKind {
     MPS("Plug-in for MPS"),
     IDEA("Plug-in for IntelliJ IDEA"),
     STANDALONE("Standalone IDE");

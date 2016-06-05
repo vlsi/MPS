@@ -256,7 +256,6 @@
       <node id="5680799519293372197" at="293,0,296,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="8597743085639790187" at="326,0,329,0" concept="10" trace="getGenerationErrors#()Ljava/util/List;" />
       <node id="8597743085639790191" at="329,0,332,0" concept="10" trace="getGenerationWarnings#()Ljava/util/List;" />
-      <node id="8597743085639790198" at="336,0,339,0" concept="10" trace="clear#()V" />
       <node id="6607750055058621913" at="88,40,92,5" concept="9" />
       <node id="3416062119153994267" at="233,23,237,9" concept="19" />
       <node id="8597743085639790195" at="332,0,336,0" concept="10" trace="cleanUp#()V" />
@@ -307,7 +306,6 @@
       <scope id="3416062119153994272" at="236,38,236,38" />
       <scope id="8597743085639790681" at="304,32,304,32" />
       <scope id="8597743085639790687" at="323,16,323,16" />
-      <scope id="8597743085639790761" at="337,25,337,25" />
       <scope id="6078875650364605979" at="82,0,83,37">
         <var name="ex" id="6078875650364605980" />
       </scope>
@@ -386,7 +384,6 @@
       </scope>
       <scope id="8597743085639790187" at="326,0,329,0" />
       <scope id="8597743085639790191" at="329,0,332,0" />
-      <scope id="8597743085639790198" at="336,0,339,0" />
       <scope id="3416062119153994972" at="169,38,173,84" />
       <scope id="3416062119153995014" at="177,38,181,84" />
       <scope id="3416062119153994288" at="233,23,237,9" />
@@ -523,8 +520,8 @@
       <unit id="6607750055058549114" at="259,52,268,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$4" />
       <unit id="9143630131837001683" at="105,32,118,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$1" />
       <unit id="5231899401011709668" at="285,77,299,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$7" />
-      <unit id="8597743085639790168" at="301,0,340,0" name="jetbrains.mps.testbench.ModuleGenerationHolder$MyMessageHandler" />
-      <unit id="8597743085639790147" at="64,0,341,0" name="jetbrains.mps.testbench.ModuleGenerationHolder" />
+      <unit id="8597743085639790168" at="301,0,337,0" name="jetbrains.mps.testbench.ModuleGenerationHolder$MyMessageHandler" />
+      <unit id="8597743085639790147" at="64,0,338,0" name="jetbrains.mps.testbench.ModuleGenerationHolder" />
     </file>
   </root>
   <root nodeRef="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)/9170334376388144449">

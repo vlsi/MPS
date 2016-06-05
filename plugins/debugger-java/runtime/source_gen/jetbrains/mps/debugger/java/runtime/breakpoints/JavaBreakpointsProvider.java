@@ -211,7 +211,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     public JComponent getMainComponent() {
       return myMainPanel;
     }
-    private static     enum SuspendPolicy {
+    private enum SuspendPolicy {
       ALL(EventRequest.SUSPEND_ALL),
       NONE(EventRequest.SUSPEND_NONE),
       THREAD(EventRequest.SUSPEND_EVENT_THREAD);

@@ -203,7 +203,7 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     }
   }
 
-  protected static interface LineCreator {
+  protected interface LineCreator {
     Line createLine(int first, int second, int level, LineDirection direction);
   }
   private class SimpleLineCreator implements ControlFlowGraph.LineCreator {

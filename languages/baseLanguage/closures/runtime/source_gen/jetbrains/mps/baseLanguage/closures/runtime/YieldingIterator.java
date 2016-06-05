@@ -68,6 +68,7 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     HAS_NEXT(),
     AT_END(),
     UNKNOWN();
+
     private State() {
     }
   }

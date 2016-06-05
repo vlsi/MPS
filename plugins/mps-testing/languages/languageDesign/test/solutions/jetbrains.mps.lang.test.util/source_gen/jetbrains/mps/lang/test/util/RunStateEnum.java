@@ -9,7 +9,5 @@ public enum RunStateEnum {
   READYTOEXECUTE(),
   RUNNING(),
   TERMINATING(),
-  TERMINATED();
-
-
+  TERMINATED()
 }

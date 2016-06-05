@@ -34,7 +34,7 @@ public class ClassifierSuccessors implements CoreComponent {
   public static ClassifierSuccessors getInstance() {
     return INSTANCE;
   }
-  public static interface Finder {
+  public interface Finder {
     List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope);
     boolean isIndexReady(Project project);
   }

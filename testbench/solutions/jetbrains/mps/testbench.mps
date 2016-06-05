@@ -3122,15 +3122,6 @@
           </node>
         </node>
       </node>
-      <node concept="3clFb_" id="7thksypCmTQ" role="jymVt">
-        <property role="TrG5h" value="clear" />
-        <node concept="3Tm1VV" id="7thksypCmTR" role="1B3o_S" />
-        <node concept="3cqZAl" id="7thksypCmTS" role="3clF45" />
-        <node concept="3clFbS" id="7thksypCn2D" role="3clF47" />
-        <node concept="2AHcQZ" id="3tYsUK_RZFU" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
     </node>
   </node>
   <node concept="312cEu" id="5oXcJSdWK6h">

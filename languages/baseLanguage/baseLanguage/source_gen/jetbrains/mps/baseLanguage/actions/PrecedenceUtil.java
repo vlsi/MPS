@@ -203,7 +203,7 @@ public class PrecedenceUtil {
     ParenthesisUtil.checkOperationWRTPriority(result);
     return result;
   }
-  private static   enum Precedence {
+  private enum Precedence {
     PARENTHESES(),
     ARRAY_OPARATIONS_AND_METHOD_CALLS(),
     DOT_EXPRESSION(),

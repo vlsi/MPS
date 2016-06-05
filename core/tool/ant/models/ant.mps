@@ -2600,27 +2600,6 @@
               </node>
             </node>
             <node concept="SfApY" id="3ufQioQQtsa" role="3cqZAp">
-              <node concept="TDmWw" id="3ufQioQQtsb" role="TEbGg">
-                <node concept="3clFbS" id="3ufQioQQtsc" role="TDEfX">
-                  <node concept="YS8fn" id="3ufQioQQtsd" role="3cqZAp">
-                    <node concept="2ShNRf" id="3ufQioQQtse" role="YScLw">
-                      <node concept="1pGfFk" id="3ufQioQQtsf" role="2ShVmc">
-                        <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.Throwable)" resolve="BuildException" />
-                        <node concept="37vLTw" id="3GM_nagT_AR" role="37wK5m">
-                          <ref role="3cqZAo" node="3ufQioQQtsh" resolve="e" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWsn" id="3ufQioQQtsh" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="3ufQioQQtsi" role="1tU5fm">
-                    <ref role="3uigEE" to="guwi:~FileNotFoundException" resolve="FileNotFoundException" />
-                  </node>
-                </node>
-              </node>
               <node concept="TDmWw" id="UQTJWazjPn" role="TEbGg">
                 <node concept="3cpWsn" id="UQTJWazjPo" role="TDEfY">
                   <property role="TrG5h" value="e" />

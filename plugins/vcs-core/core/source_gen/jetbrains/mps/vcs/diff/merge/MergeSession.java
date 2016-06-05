@@ -287,7 +287,7 @@ public final class MergeSession {
     }
     return -1;
   }
-  public static interface ChangesInvalidateHandler {
+  public interface ChangesInvalidateHandler {
     void someChangesInvalidated();
   }
   private class MyResultModelListener extends SModelAdapter {

@@ -6,6 +6,6 @@ package jetbrains.mps.internal.collections.runtime;
 public interface IEnumerator<T> {
   boolean moveNext();
   T current();
-  static interface Iterator<T> extends IEnumerator<T>, java.util.Iterator<T> {
+  interface Iterator<T> extends IEnumerator<T>, java.util.Iterator<T> {
   }
 }

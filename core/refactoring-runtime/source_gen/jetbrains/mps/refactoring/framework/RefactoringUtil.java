@@ -154,7 +154,7 @@ public class RefactoringUtil {
     return !(disabled);
   }
 
-  public static   enum Applicability {
+  public enum Applicability {
     APPLICABLE() {
       public boolean lessThan(RefactoringUtil.Applicability level) {
         return false;

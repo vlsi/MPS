@@ -74,7 +74,7 @@ public class HelpHelper {
   public static void showHelpForNode(SNode node) {
     BrowserUtil.browse(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
   }
-  public static   enum HelpType {
+  public enum HelpType {
     NODE("node"),
     ROOT_NODE("root"),
     ASPECT("aspect");

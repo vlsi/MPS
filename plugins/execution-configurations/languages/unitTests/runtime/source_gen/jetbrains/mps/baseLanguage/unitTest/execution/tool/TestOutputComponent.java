@@ -108,7 +108,7 @@ public class TestOutputComponent implements TestView {
       console.print(string, ConsoleViewContentType.NORMAL_OUTPUT);
     }
   }
-  private static interface IMessage {
+  private interface IMessage {
     void print();
   }
   public abstract class CompositeMessage implements TestOutputComponent.IMessage {

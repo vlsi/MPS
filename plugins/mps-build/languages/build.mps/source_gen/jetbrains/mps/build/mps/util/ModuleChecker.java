@@ -809,7 +809,7 @@ public class ModuleChecker {
     myReporter.report(message, node, cause);
   }
 
-  public static   enum CheckType {
+  public enum CheckType {
     CHECK(true, false, false),
     LOAD_IMPORTANT_PART(false, true, false),
     LOAD_ALL(true, false, true);

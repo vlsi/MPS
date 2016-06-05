@@ -7,6 +7,5 @@ public enum RuleType {
   DEFAULT(),
   MESSAGESTATEMENT(),
   CONSTRAINTS(),
-  TYPESYSTEM();
-
+  TYPESYSTEM()
 }

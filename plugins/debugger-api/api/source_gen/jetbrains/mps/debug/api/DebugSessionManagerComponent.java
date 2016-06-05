@@ -133,7 +133,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
   public static DebugSessionManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(DebugSessionManagerComponent.class);
   }
-  public static interface DebugSessionListener {
+  public interface DebugSessionListener {
     void registered(AbstractDebugSession session);
     void currentSessionChanged(AbstractDebugSession session);
     void detached(AbstractDebugSession session);

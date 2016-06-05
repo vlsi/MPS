@@ -6,7 +6,7 @@
   <property name="artifacts.buildMpsC" location="${build.dir}/artifacts/buildMpsC" />
   <property name="artifacts.JarFromA" location="${basedir}/jetbrains.mps.build.sandbox/samples" />
   <property name="environment" value="env" />
-  <property name="${env.JAVA_HOME}" value="${java.home}/.." />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes">

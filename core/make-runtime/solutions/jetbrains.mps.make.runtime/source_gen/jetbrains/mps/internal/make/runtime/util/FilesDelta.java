@@ -162,7 +162,7 @@ public class FilesDelta implements IDelta {
    * STALE are files that are likely to need removal, unless there's another subsequent 
    * delta that bring them back to life.
    */
-  public static   enum Status {
+  public enum Status {
     WRITTEN(),
     KEPT(),
     DELETED(),

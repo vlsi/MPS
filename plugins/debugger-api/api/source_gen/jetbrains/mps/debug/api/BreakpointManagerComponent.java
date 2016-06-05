@@ -266,7 +266,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);
   }
-  public static interface IBreakpointManagerListener {
+  public interface IBreakpointManagerListener {
     void breakpointAdded(@NotNull IBreakpoint breakpoint);
     void breakpointRemoved(@NotNull IBreakpoint breakpoint);
   }
@@ -283,7 +283,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
     public abstract void breakpointsChanged();
   }
-  public static interface IBreakpointsIO {
+  public interface IBreakpointsIO {
     @Nullable
     IBreakpoint readBreakpoint(@NotNull Element element);
     @Nullable

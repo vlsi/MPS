@@ -28,7 +28,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
   public Iterator<U> iterator() {
     return new PagingSequence.PagingIterator();
   }
-  public static   enum Page {
+  public enum Page {
     TAKE(),
     SKIP(),
     TAIL(),

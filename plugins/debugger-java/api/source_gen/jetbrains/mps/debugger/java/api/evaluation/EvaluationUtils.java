@@ -151,7 +151,7 @@ public abstract class EvaluationUtils {
    * 
    * @param <T> result
    */
-  public static interface Invocatable<T> {
+  public interface Invocatable<T> {
     T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
   /**
@@ -159,7 +159,7 @@ public abstract class EvaluationUtils {
    * 
    * @param <T> result
    */
-  public static interface EvaluationInvocatable<T> {
+  public interface EvaluationInvocatable<T> {
     T invoke() throws EvaluationException;
   }
   /**

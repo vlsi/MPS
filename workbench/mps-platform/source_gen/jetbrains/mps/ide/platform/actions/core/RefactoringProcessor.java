@@ -34,7 +34,7 @@ import org.apache.log4j.LogManager;
 
 public class RefactoringProcessor {
 
-  public static interface RefactoringUI {
+  public interface RefactoringUI {
     void prepare(Runnable task);
     void runSearch(final _FunctionTypes._void_P1_E0<? super ProgressMonitor> task);
     List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> options);

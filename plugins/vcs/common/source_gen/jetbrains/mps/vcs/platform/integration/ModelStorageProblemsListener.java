@@ -280,7 +280,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     dialog.show();
   }
 
-  public static   enum DiskMemoryConflictVersion implements ModelVersion {
+  public enum DiskMemoryConflictVersion implements ModelVersion {
     FILE_SYSTEM("filesystem"),
     MEMORY("memory");
 

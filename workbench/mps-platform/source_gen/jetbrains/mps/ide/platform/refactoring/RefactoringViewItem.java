@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface RefactoringViewItem {
   void close();
-  static interface RefactoringViewItemEx extends RefactoringViewItem {
+  interface RefactoringViewItemEx extends RefactoringViewItem {
     List<SNodeReference> getIncludedResultNodes();
   }
 }

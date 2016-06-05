@@ -26,7 +26,7 @@ public interface MigrationManager {
 
   MigrationManager.MigrationStep nextModuleStep();
 
-  static interface MigrationStep {
+  interface MigrationStep {
     String getDescription();
     boolean execute();
     void forceExecutionNextTime();

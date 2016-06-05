@@ -17,7 +17,7 @@ public class MakeNotification extends EventObject {
   public MakeNotification.Kind getKind() {
     return kind;
   }
-  public static   enum Kind {
+  public enum Kind {
     SCRIPT_ABOUT_TO_START(),
     SCRIPT_FINISHED(),
     SESSION_OPENED(),
