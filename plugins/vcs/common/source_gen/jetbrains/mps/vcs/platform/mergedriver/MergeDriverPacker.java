@@ -35,7 +35,7 @@ import org.apache.log4j.LogManager;
 
 public abstract class MergeDriverPacker {
   private static MergeDriverPacker ourInstance;
-  private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar");
+  private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar");
   protected static Iterable<String> mpsAddJars = Arrays.asList("diffutils-1.2.1.jar");
   private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all.jar", "xstream-1.4.8.jar", "guava-17.0.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
   private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");

@@ -4277,6 +4277,9 @@
           <node concept="Xl_RD" id="1s0vtrxdxHu" role="3g7hyw">
             <property role="Xl_RC" value="mps-logging.jar" />
           </node>
+          <node concept="Xl_RD" id="45CTGXmzjbh" role="3g7hyw">
+            <property role="Xl_RC" value="mps-annotations.jar" />
+          </node>
           <node concept="17QB3L" id="70B3qCBD4_m" role="3g7fb8" />
         </node>
       </node>
