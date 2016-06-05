@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.make;
 
-import com.sun.istack.internal.NotNull;
-import jetbrains.mps.messages.IMessage;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.List;
 import java.util.Set;
 
 /**

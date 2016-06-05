@@ -11506,6 +11506,27 @@
                 </node>
               </node>
             </node>
+            <node concept="2Vbh7Z" id="1s0vtrxeeJs" role="2VaTZU">
+              <node concept="2pNNFK" id="1s0vtrxeeJt" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="1s0vtrxeeJu" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="1s0vtrxeeJv" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="1s0vtrxeeJw" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/logging" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="1s0vtrxeeJx" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="1s0vtrxeeJy" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-logging.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2Vbh7Z" id="7$zBrXAvXeY" role="2VaTZU">
               <node concept="2pNNFK" id="7$zBrXAvXeZ" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
