@@ -3005,7 +3005,7 @@
             <node concept="3clFbJ" id="4OPgwxfRZQK" role="3cqZAp">
               <node concept="3clFbC" id="4OPgwxfRZQL" role="3clFbw">
                 <node concept="3VsKOn" id="4OPgwxfRZQM" role="3uHU7w">
-                  <ref role="3VsUkX" to="ze1i:~AdditionalStructureProperties" resolve="AdditionalStructureProperties" />
+                  <ref role="3VsUkX" to="ze1i:~ConceptPresentationAspect" resolve="ConceptPresentationAspect" />
                 </node>
                 <node concept="37vLTw" id="4OPgwxfRZQN" role="3uHU7B">
                   <ref role="3cqZAo" node="227lWzxU2YJ" resolve="aspectClass" />
@@ -3018,9 +3018,9 @@
                       <ref role="16sUi3" node="227lWzxU2ZF" resolve="T" />
                     </node>
                     <node concept="1nCR9W" id="4OPgwxfRZQS" role="10QFUP">
-                      <property role="1nD$Q0" value="structure.StructurePropertiesDescriptor" />
-                      <node concept="3uibUv" id="4OPgwxfS1Yr" role="2lIhxL">
-                        <ref role="3uigEE" to="ze1i:~AdditionalStructureProperties" resolve="AdditionalStructureProperties" />
+                      <property role="1nD$Q0" value="structure.ConceptPresentationAspectBase" />
+                      <node concept="3uibUv" id="oB65PMenmQ" role="2lIhxL">
+                        <ref role="3uigEE" to="ze1i:~ConceptPresentationAspect" resolve="ConceptPresentationAspect" />
                       </node>
                       <node concept="17Uvod" id="4OPgwxfRZQU" role="lGtFl">
                         <property role="2qtEX9" value="fqClassName" />
@@ -3030,7 +3030,7 @@
                             <node concept="3clFbF" id="4OPgwxfRZQX" role="3cqZAp">
                               <node concept="3cpWs3" id="4OPgwxfRZQY" role="3clFbG">
                                 <node concept="Xl_RD" id="4OPgwxfRZQZ" role="3uHU7w">
-                                  <property role="Xl_RC" value=".AdditionalStructurePropertiesImpl" />
+                                  <property role="Xl_RC" value=".ConceptPresentationAspectImpl" />
                                 </node>
                                 <node concept="2OqwBi" id="4OPgwxfRZR0" role="3uHU7B">
                                   <node concept="30H73N" id="4OPgwxfRZR1" role="2Oq$k0" />

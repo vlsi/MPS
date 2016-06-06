@@ -959,12 +959,12 @@ public class Switch_returnLanguageAspectDescriptor extends TemplateSwitchBase im
                       final SNode tnode19 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"));
                       try {
                         environment.nodeCopied(context17, tnode19, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5563425518153366968");
-                        SNodeAccessUtil.setProperty(tnode19, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5563425518153366971(new PropertyMacroContext(context17, "structure.StructurePropertiesDescriptor", propertyMacro_d4dvgd_c0a0c0b0b0d0b0c0b0c0b0d0e0c21))));
+                        SNodeAccessUtil.setProperty(tnode19, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5563425518153366971(new PropertyMacroContext(context17, "structure.ConceptPresentationAspectBase", propertyMacro_d4dvgd_c0a0c0b0b0d0b0c0b0c0b0d0e0c21))));
                         TemplateContext context19 = context17.subContext();
                         {
                           final SNode tnode20 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
                           try {
-                            environment.nodeCopied(context19, tnode20, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5563425518153375643");
+                            environment.nodeCopied(context19, tnode20, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/443349877946676662");
                             tnode20.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode20, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~ConceptPresentationAspect")));
                           } finally {
                           }

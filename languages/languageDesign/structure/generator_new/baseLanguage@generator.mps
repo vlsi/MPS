@@ -155,7 +155,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -2051,7 +2051,7 @@
       </node>
     </node>
     <node concept="2VPoh5" id="1gbSomzAejm" role="2VS0gm">
-      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="AdditionalStructurePropertiesImpl" />
+      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="ConceptPresentationAspectImpl" />
       <node concept="2VP$b9" id="1gbSomzAejn" role="2VPoh3">
         <node concept="3clFbS" id="1gbSomzAejo" role="2VODD2">
           <node concept="3clFbF" id="1gbSomzAejp" role="3cqZAp">
@@ -4959,17 +4959,17 @@
     </node>
   </node>
   <node concept="312cEu" id="1gbSomz_aDL">
-    <property role="TrG5h" value="AdditionalStructurePropertiesImpl" />
-    <node concept="3uibUv" id="1gbSomzAnri" role="1zkMxy">
-      <ref role="3uigEE" to="ze1i:~BaseAdditionalStructureProperties" resolve="BaseAdditionalStructureProperties" />
+    <property role="TrG5h" value="ConceptPresentationAspectImpl" />
+    <node concept="3uibUv" id="3kSuON6B_$9" role="1zkMxy">
+      <ref role="3uigEE" to="ze1i:~ConceptPresentationAspectBase" resolve="ConceptPresentationAspectBase" />
     </node>
     <node concept="312cEg" id="1gbSomz_aF3" role="jymVt">
       <property role="TrG5h" value="myConceptProps" />
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="1yvR2BJVbP9" role="1tU5fm">
-        <ref role="3uigEE" to="ze1i:~AdditionalConceptProperties" resolve="AdditionalConceptProperties" />
+      <node concept="3uibUv" id="3kSuON6BB2e" role="1tU5fm">
+        <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
       <node concept="1WS0z7" id="1gbSomz_aF5" role="lGtFl">
         <ref role="2rW$FS" node="1gbSomzBSCj" resolve="conceptPropFieldDecl" />
@@ -5020,7 +5020,7 @@
         <node concept="2OqwBi" id="1gbSomz_aG8" role="2Oq$k0">
           <node concept="2OqwBi" id="1gbSomz_aG9" role="2Oq$k0">
             <node concept="liA8E" id="1gbSomz_aGa" role="2OqNvi">
-              <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.helpUrl(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="helpUrl" />
+              <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.helpUrl(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="helpUrl" />
               <node concept="1W57fq" id="1gbSomz_aGb" role="lGtFl">
                 <node concept="3IZrLx" id="1gbSomz_aGc" role="3IZSJc">
                   <node concept="3clFbS" id="1gbSomz_aGd" role="2VODD2">
@@ -5067,11 +5067,11 @@
                 <node concept="2OqwBi" id="1yvR2BJXEV0" role="2Oq$k0">
                   <node concept="2ShNRf" id="1gbSomz_aME" role="2Oq$k0">
                     <node concept="1pGfFk" id="1gbSomz_aMF" role="2ShVmc">
-                      <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.&lt;init&gt;()" resolve="ConceptPropsBuilder" />
+                      <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.&lt;init&gt;()" resolve="ConceptPresentationBuilder" />
                     </node>
                   </node>
                   <node concept="liA8E" id="1yvR2BJXGgH" role="2OqNvi">
-                    <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
+                    <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
                     <node concept="1W57fq" id="1yvR2BJXLcU" role="lGtFl">
                       <node concept="3IZrLx" id="1yvR2BJXLcW" role="3IZSJc">
                         <node concept="3clFbS" id="1yvR2BJXLcY" role="2VODD2">
@@ -5089,7 +5089,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1gbSomz_aNT" role="2OqNvi">
-                  <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
+                  <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
                   <node concept="10Nm6u" id="1yvR2BJZK2f" role="37wK5m">
                     <node concept="1WS0z7" id="1yvR2BJZK2g" role="lGtFl">
                       <node concept="3JmXsc" id="1yvR2BJZK2h" role="3Jn$fo">
@@ -5239,7 +5239,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1yvR2BJXISq" role="2OqNvi">
-                <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
+                <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                 <node concept="1W57fq" id="1yvR2BJZMTL" role="lGtFl">
                   <node concept="3IZrLx" id="1yvR2BJZMTN" role="3IZSJc">
                     <node concept="3clFbS" id="1yvR2BJZMTP" role="2VODD2">
@@ -5280,7 +5280,7 @@
             </node>
           </node>
           <node concept="liA8E" id="1gbSomz_aQg" role="2OqNvi">
-            <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.icon(java.lang.String,java.lang.Class):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="icon" />
+            <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.icon(java.lang.String,java.lang.Class):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="icon" />
             <node concept="Xl_RD" id="3VkXNLtjkHX" role="37wK5m">
               <property role="Xl_RC" value="id" />
               <node concept="17Uvod" id="3VkXNLtjrLK" role="lGtFl">
@@ -5306,7 +5306,7 @@
               </node>
             </node>
             <node concept="3VsKOn" id="3VkXNLtjpWp" role="37wK5m">
-              <ref role="3VsUkX" node="1gbSomz_aDL" resolve="AdditionalConceptPropertiesImpl" />
+              <ref role="3VsUkX" node="1gbSomz_aDL" resolve="ConceptPresentationAspectImpl" />
             </node>
             <node concept="1W57fq" id="1gbSomz_aQh" role="lGtFl">
               <node concept="3IZrLx" id="1gbSomz_aQi" role="3IZSJc">
@@ -5416,7 +5416,7 @@
           </node>
         </node>
         <node concept="liA8E" id="1gbSomz_aSf" role="2OqNvi">
-          <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.create():jetbrains.mps.smodel.runtime.AdditionalConceptProperties" resolve="create" />
+          <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.create():jetbrains.mps.smodel.runtime.ConceptPresentation" resolve="create" />
         </node>
       </node>
       <node concept="3Tm6S6" id="1gbSomzEbRi" role="1B3o_S" />
@@ -5502,8 +5502,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="1gbSomzBEfT" role="3clF45">
-        <ref role="3uigEE" to="ze1i:~AdditionalConceptProperties" resolve="AdditionalConceptProperties" />
+      <node concept="3uibUv" id="3kSuON6BZ_7" role="3clF45">
+        <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
       <node concept="2AHcQZ" id="1gbSomz_aU7" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
