@@ -26,9 +26,6 @@ public interface IMessageHandler {
   /**
    * Null-safe handler which does nothing
    */
-  IMessageHandler NULL_HANDLER = new IMessageHandler() {
-    @Override
-    public void handle(@NotNull IMessage msg) {
-    }
+  IMessageHandler NULL_HANDLER = msg -> {
   };
 }

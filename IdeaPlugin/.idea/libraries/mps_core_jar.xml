@@ -2,6 +2,9 @@
   <library name="mps-core-jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-messaging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-annotations.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
