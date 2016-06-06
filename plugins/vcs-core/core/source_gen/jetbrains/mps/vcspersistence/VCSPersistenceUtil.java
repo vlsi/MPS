@@ -5,15 +5,15 @@ package jetbrains.mps.vcspersistence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.PersistenceUtil;
-import java.io.InputStream;
-import java.io.IOException;
-import java.io.ByteArrayInputStream;
+import jetbrains.mps.persistence.ByteArrayInputSource;
 import java.util.Collections;
+import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
+import java.io.InputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.smodel.SModelHeader;
 import org.xml.sax.InputSource;
+import java.io.ByteArrayInputStream;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.InvalidSModel;
@@ -43,12 +43,7 @@ public class VCSPersistenceUtil {
       return null;
     }
     try {
-      SModel model = factory.load(new PersistenceUtil.StreamDataSourceBase() {
-        @Override
-        public InputStream openInputStream() throws IOException {
-          return new ByteArrayInputStream(content);
-        }
-      }, Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
     } catch (IOException ex) {
@@ -84,12 +79,7 @@ public class VCSPersistenceUtil {
     }
 
     try {
-      final ModelLoadResult readModel = VCSPersistenceSupport.readModel(header, new PersistenceUtil.StreamDataSourceBase() {
-        @Override
-        public InputStream openInputStream() throws IOException {
-          return new ByteArrayInputStream(content);
-        }
-      }, ModelLoadingState.FULLY_LOADED);
+      final ModelLoadResult readModel = VCSPersistenceSupport.readModel(header, new ByteArrayInputSource(content), ModelLoadingState.FULLY_LOADED);
 
       jetbrains.mps.smodel.SModel model = readModel.getModel();
       if (model instanceof InvalidSModel) {

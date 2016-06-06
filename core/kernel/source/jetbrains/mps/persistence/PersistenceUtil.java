@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,12 +76,7 @@ public class PersistenceUtil {
       return null;
     }
     try {
-      SModel model = factory.load(new StreamDataSourceBase() {
-        @Override
-        public InputStream openInputStream() throws IOException {
-          return new ByteArrayInputStream(content);
-        }
-      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
     } catch (IOException ex) {
