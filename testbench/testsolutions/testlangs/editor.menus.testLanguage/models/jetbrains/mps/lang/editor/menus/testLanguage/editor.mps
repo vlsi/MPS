@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
-    <use id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage" version="0" />
+    <use id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,8 +12,8 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
-    <language id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage">
-      <concept id="6436886136983394210" name="jetbrains.mps.lang.editor.transformationMenu.testMetaLanguage.structure.TransformationLocation_Test" flags="ng" index="ZR7TO" />
+    <language id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage">
+      <concept id="6436886136983394210" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_Test" flags="ng" index="ZR7TO" />
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
@@ -119,14 +119,14 @@
     </language>
   </registry>
   <node concept="24kQdi" id="229s7wVD3at">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="PMmxH" id="229s7wVD3ay" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="IW6AY" id="229s7wVDf1n">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5_kqtpABUIF" role="IW6Ez">
       <node concept="ZR7TO" id="5_kqtpABUK1" role="1Qtc8$" />
@@ -147,7 +147,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="5oiZ4v5c5_K">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NamedTestMenu" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5c5_L" role="IW6Ez">
@@ -169,7 +169,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="5oiZ4v5mfRL">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithNonExecutableAction" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5mfRM" role="IW6Ez">
@@ -221,7 +221,7 @@
     <node concept="3Tm1VV" id="5oiZ4v5qnn2" role="1B3o_S" />
   </node>
   <node concept="3ICXOK" id="5oiZ4v5qnDK">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithExecutableAction" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5qnDL" role="IW6Ez">
@@ -255,12 +255,12 @@
     </node>
   </node>
   <node concept="3ICXOK" id="33LYnHO_wMY">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ContributedToFromUnusedLanguage" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
   </node>
   <node concept="3ICXOK" id="33LYnHOC7cL">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ContributedToFromUsedLanguage" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
   </node>

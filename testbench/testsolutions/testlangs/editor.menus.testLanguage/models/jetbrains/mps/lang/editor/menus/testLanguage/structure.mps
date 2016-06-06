@@ -31,7 +31,7 @@
   <node concept="1TIwiD" id="229s7wVD3am">
     <property role="EcuMT" value="2344528742722056854" />
     <property role="TrG5h" value="TransformationMenuTestConcept" />
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="transformation menu test concept" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>

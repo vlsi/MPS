@@ -28,29 +28,22 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="2X_LC_CP3rx">
-    <property role="3GE5qa" value="menu.transformation" />
-    <ref role="1XX52x" to="ue84:5_kqtpAy1uy" resolve="TransformationLocation_Test" />
-    <node concept="PMmxH" id="2X_LC_CP3rA" role="2wV5jI">
-      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-    </node>
-  </node>
   <node concept="24kQdi" id="3fN3Qovygyb">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="ue84:3fN3QovxAWl" resolve="TransformationFeature_Unavailable" />
     <node concept="PMmxH" id="3fN3Qovygyd" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="24kQdi" id="478VZjcfvNK">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="ue84:478VZjcfvKt" resolve="TransformationFeature_Optional" />
     <node concept="PMmxH" id="478VZjcfvNM" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="24kQdi" id="478VZjcfwBv">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="ue84:478VZjcfwBo" resolve="TransformationFeature_Required" />
     <node concept="PMmxH" id="478VZjcfwBx" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />

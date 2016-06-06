@@ -75,7 +75,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="3fN3QovvCzD">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <ref role="13h7C2" to="ue84:3fN3QovvCzu" resolve="TransformationLocation_WithFeatures" />
     <node concept="13hLZK" id="3fN3QovvCzE" role="13h7CW">
       <node concept="3clFbS" id="3fN3QovvCzF" role="2VODD2" />
