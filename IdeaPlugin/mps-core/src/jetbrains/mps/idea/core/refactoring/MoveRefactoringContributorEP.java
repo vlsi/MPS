@@ -21,7 +21,7 @@ public class MoveRefactoringContributorEP extends AbstractExtensionPointBean {
     }
   };
 
-  public MoveRefactoringContributor getContribitor() {
+  public MoveRefactoringContributor getContributor() {
     return myFactory.getValue();
   }
 }

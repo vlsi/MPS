@@ -58,7 +58,7 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
         }
 
         for (MoveRefactoringContributorEP ep : MoveRefactoringContributorEP.EP_NAME.getExtensions()) {
-          MoveRefactoringContributor c = ep.getContribitor();
+          MoveRefactoringContributor c = ep.getContributor();
           if (c.isAvailableFor(nodes)) {
             theContributor = c;
             break;

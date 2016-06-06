@@ -32,16 +32,18 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
-import javax.swing.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by danilla on 11/11/15.
@@ -51,6 +53,31 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
 
   /*package*/ UpdatePsiReferencesMoveParticipant(MPSPsiProvider psiProvider) {
     myPsiProvider = psiProvider;
+  }
+
+
+  private final static String RELOAD_REFACTORING_SESSION_FLAG = "refactoringSession.updatePsiReferences.reloadFlag";
+
+  private void reloadModelPsi(SModel smodel, RefactoringSession session) {
+    // we can do it once after all movements ad before any calls of myPsiProvider.getPsi(finalNode)
+    if (session.getObject(RELOAD_REFACTORING_SESSION_FLAG) == null) {
+      session.putObject(RELOAD_REFACTORING_SESSION_FLAG, new HashSet<SModelReference>());
+    }
+    Set<SModelReference> reloadedModels = (Set<SModelReference>) session.getObject(RELOAD_REFACTORING_SESSION_FLAG);
+    if (!reloadedModels.contains(smodel.getReference())) {
+      // TODO remove this once/if we map smodel events to psi events synchronously
+      // currently it's done in the end of command
+      // Reloading model is needed because later we use psi element corresponding to finalNode
+      // Saving is needed because in MPSPsiModel we rely in roots' virtual files in case of file-per-root persistence.
+      if (smodel instanceof EditableSModel) {
+        // unfortunately we don't do check if sNode is root, because afterMove() is called in random order
+        // not reflecting the order of actual moves
+        ((EditableSModel) smodel).save();
+        MPSPsiModel psiModel = myPsiProvider.getPsi(smodel);
+        psiModel.reloadAll();
+      }
+      reloadedModels.add(smodel.getReference());
+    }
   }
 
   @Override
@@ -63,19 +90,6 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
 
       @Override
       public SNode afterMove(SNode sNode) {
-        // TODO remove this once/if we map smodel events to psi events synchronously
-        // currently it's done in the end of command
-        // Reloading model is needed because later we use psi element corresponding to finalNode
-        // Saving is needed because in MPSPsiModel we rely in roots' virtual files in case of file-per-root persistence.
-        SModel smodel = sNode.getModel();
-        if (smodel instanceof EditableSModel) {
-          // unfortunately we don't do check if sNode is root, becauase afterMove() is called in random order
-          // not reflecting the order of actual moves
-          ((EditableSModel) smodel).save();
-          MPSPsiModel psiModel = myPsiProvider.getPsi(smodel);
-          psiModel.reloadAll();
-        }
-
         return sNode;
       }
     };
@@ -118,9 +132,8 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
 
         @Override
         public void confirm(final SNode finalNode, SRepository sRepository, RefactoringSession refactoringSession) {
-          if (finalNode.getModel() == movedNode.savedModel) {
-            return;
-          }
+
+          reloadModelPsi(finalNode.getModel(), refactoringSession);
 
           refactoringSession.registerChange(new Runnable() {
             @Override
