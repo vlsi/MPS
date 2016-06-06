@@ -30,6 +30,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import java.io.InputStream;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
@@ -148,7 +149,11 @@ public final class IconManager {
     if (icn == null) {
       return null;
     }
-    return ConceptIconLoader.getIconFor(icn.getResource());
+    InputStream res = icn.getResource();
+    if (res == null) {
+      return null;
+    }
+    return ConceptIconLoader.getIconFor(res);
   }
   @Deprecated
   @ToRemove(version = 3.4)

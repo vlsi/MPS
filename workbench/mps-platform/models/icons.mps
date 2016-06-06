@@ -1252,17 +1252,41 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="7yINo8Rk9na" role="3cqZAp">
+          <node concept="3cpWsn" id="7yINo8Rk9nb" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="3uibUv" id="7yINo8Rk9n6" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
+            </node>
+            <node concept="2OqwBi" id="7yINo8Rk9nc" role="33vP2m">
+              <node concept="37vLTw" id="7yINo8Rk9nd" role="2Oq$k0">
+                <ref role="3cqZAo" node="4qFb6JnFDNY" resolve="icn" />
+              </node>
+              <node concept="liA8E" id="7yINo8Rk9ne" role="2OqNvi">
+                <ref role="37wK5l" to="ze1i:~IconResource.getResource():java.io.InputStream" resolve="getResource" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7yINo8RkcD$" role="3cqZAp">
+          <node concept="3clFbS" id="7yINo8RkcDA" role="3clFbx">
+            <node concept="3cpWs6" id="7yINo8RkdHV" role="3cqZAp">
+              <node concept="10Nm6u" id="7yINo8RkdWS" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="7yINo8Rkdfw" role="3clFbw">
+            <node concept="10Nm6u" id="7yINo8Rkdu7" role="3uHU7w" />
+            <node concept="37vLTw" id="7yINo8RkcSH" role="3uHU7B">
+              <ref role="3cqZAo" node="7yINo8Rk9nb" resolve="res" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="4qFb6JnFJvT" role="3cqZAp">
           <node concept="2YIFZM" id="4qFb6JnEWb8" role="3cqZAk">
             <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
             <ref role="37wK5l" to="w1kc:~ConceptIconLoader.getIconFor(java.io.InputStream):javax.swing.Icon" resolve="getIconFor" />
-            <node concept="2OqwBi" id="4qFb6JnEWb9" role="37wK5m">
-              <node concept="37vLTw" id="4qFb6JnFN1x" role="2Oq$k0">
-                <ref role="3cqZAo" node="4qFb6JnFDNY" resolve="icn" />
-              </node>
-              <node concept="liA8E" id="4qFb6JnEWbb" role="2OqNvi">
-                <ref role="37wK5l" to="ze1i:~IconResource.getResource():java.io.InputStream" resolve="getResource" />
-              </node>
+            <node concept="37vLTw" id="7yINo8Rk9nf" role="37wK5m">
+              <ref role="3cqZAo" node="7yINo8Rk9nb" resolve="res" />
             </node>
           </node>
         </node>
