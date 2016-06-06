@@ -77,7 +77,7 @@ public class ClassFileWriter {
     final URL[] urlsArr = convertClassPathToUrls(classPath);
     return new InstrumentationClassFinder(urlsArr) { // fixme separate platform cp from usual cp
       @Override
-      protected InputStream lookupClassAfterClasspath(String internalClassName) {
+      protected InputStream lookupClassBeforeClasspath(String internalClassName) {
         return myClassFile2Bytes.get(internalClassName);
       }
     };

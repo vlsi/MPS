@@ -16,14 +16,13 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -32,40 +31,28 @@ import java.util.Set;
  * Created by apyshkin on 5/25/16.
  */
 class ModuleAnalyzer {
-  private final static String COMPILED_IN_IDEA_DEPENDS_ON_COMPILED_IN_MPS = "Module which compiled in IDEA depends on module which has to be compiled in MPS: %s";
-
   @NotNull private final ModulesContainer myModulesContainer;
-  @NotNull private final MessageSender mySender;
 
-  public ModuleAnalyzer(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender) {
+  public ModuleAnalyzer(@NotNull ModulesContainer modulesContainer) {
     myModulesContainer = modulesContainer;
-    mySender = new MessageSender(sender, this);
   }
 
   public ModuleAnalyzerResult analyze() {
-    List<IMessage> errors = new ArrayList<IMessage>();
+    List<IMessage> errors = new ArrayList<>();
     boolean hasJavaToCompile = false;
     boolean hasResourcesToUpdate = false;
-    for (SModule module : myModulesContainer.getModules()) {
-      if (!myModulesContainer.areClassesUpToDate(module)) {
-        if (ModulesContainer.isCompileInMps(module)) {
-          ModuleSources sources = myModulesContainer.getSources(module);
-          hasResourcesToUpdate |= !sources.isResourcesUpToDate();
-          hasJavaToCompile |= !sources.isJavaUpToDate();
-        } else {
-          String msg = String.format(COMPILED_IN_IDEA_DEPENDS_ON_COMPILED_IN_MPS, module.getModuleName()); // TODO how is this possible?
-          mySender.warn(msg, module);
-        }
-      }
-    }
+    Set<SModule> modulesWithRemovals = new HashSet<>();
+    Set<File> filesToDelete = new HashSet<>();
 
-    Set<SModule> modulesWithRemovals = new HashSet<SModule>();
-    Set<File> filesToDelete = new HashSet<File>();
     for (SModule module : myModulesContainer.getModules()) {
       if (!myModulesContainer.areClassesUpToDate(module)) {
-        if (ModulesContainer.isCompileInMps(module)) {
+        ModuleSources sources = myModulesContainer.getSources(module);
+        hasResourcesToUpdate |= !sources.isResourcesUpToDate();
+        hasJavaToCompile |= !sources.isJavaUpToDate();
+        Collection<File> filesToDelete0 = myModulesContainer.getSources(module).getFilesToDelete();
+        if (!filesToDelete0.isEmpty()) {
+          filesToDelete.addAll(filesToDelete0);
           modulesWithRemovals.add(module);
-          filesToDelete.addAll(myModulesContainer.getSources(module).getFilesToDelete());
         }
       }
     }

@@ -157,7 +157,7 @@ public final class ModuleMaker {
       tracer.pop();
 
       tracer.push(CALCULATING_DEPENDENCIES_TO_COMPILE_MSG);
-      Set<SModule> toCompile = getModulesToCompile(new ModulesContainer(candidates, dependencies));
+      Set<SModule> toCompile = buildDirtyModulesClosure(new ModulesContainer(candidates, dependencies));
       tracer.pop();
 
       tracer.push(BUILDING_MODULE_CYCLES_MSG);
@@ -228,7 +228,7 @@ public final class ModuleMaker {
   /**
    * The answer is always sorted by name
    */
-  private Set<SModule> getModulesToCompile(ModulesContainer modulesContainer) {
+  private Set<SModule> buildDirtyModulesClosure(ModulesContainer modulesContainer) {
     Set<SModule> candidates = modulesContainer.getModules();
     myTracer.push("checking if " + candidates.size() + " modules are dirty", false);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());

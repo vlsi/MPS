@@ -77,7 +77,6 @@ public class GenerateModelsInProcess {
         }
       }
     };
-    msgHandler.clear();
     Future<IResult> future = makeService.make(makeSession, resources, null, controller);
     // todo write message at the botoom of the window like idea does after compilation
   }

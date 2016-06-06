@@ -19,11 +19,9 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * sources saving and other utility methods are here
@@ -74,15 +72,15 @@ class ModulesContainer {
     return myModules;
   }
 
-  public void putClassForModule(@NotNull String className, @NotNull SModule module) {
+  void putClassForModule(@NotNull String className, @NotNull SModule module) {
     myClassName2ModuleMap.put(className, module);
   }
 
-  public SModule getModuleContainingClass(@NotNull String containerClassName) {
+  SModule getModuleContainingClass(@NotNull String containerClassName) {
     return myClassName2ModuleMap.get(containerClassName);
   }
 
-  public boolean containsClass(@NotNull String containerClassName) {
+  boolean containsClass(@NotNull String containerClassName) {
     return myClassName2ModuleMap.containsKey(containerClassName);
   }
 
@@ -90,7 +88,7 @@ class ModulesContainer {
     return m.isReadOnly() || !isCompileInMps(m);
   }
 
-  public static boolean isCompileInMps(@NotNull SModule m) {
+  static boolean isCompileInMps(@NotNull SModule m) {
     return SModuleOperations.isCompileInMps(m);
   }
 }

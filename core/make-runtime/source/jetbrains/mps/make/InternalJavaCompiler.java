@@ -35,7 +35,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -74,19 +73,20 @@ class InternalJavaCompiler {
       return MPSCompilationResult.ZERO_COMPILATION_RESULT;
     }
     myTracer.push(PREPARING_TO_COMPILE_MSG);
-    ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer, mySender).analyze();
+    ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer).analyze();
     EclipseJavaCompiler compiler = new EclipseJavaCompiler();
     for (SModule module : myModulesContainer.getModules()) {
       if (!myModulesContainer.areClassesUpToDate(module)) {
-        if (ModulesContainer.isCompileInMps(module)) {
-          for (JavaFile javaFile : myModulesContainer.getSources(module).getFilesToCompile()) {
-            compiler.addSource(javaFile.getClassName(), javaFile.getContents());
-            myModulesContainer.putClassForModule(javaFile.getClassName(), module);
-          }
+        for (JavaFile javaFile : myModulesContainer.getSources(module).getFilesToCompile()) {
+          compiler.addSource(javaFile.getClassName(), javaFile.getContents());
+          myModulesContainer.putClassForModule(javaFile.getClassName(), module);
         }
       }
     }
     myTracer.pop();
+
+    invalidateCompiledClasses(analysisResult.modulesWithRemovals);
+
     if (!analysisResult.hasJavaToCompile && !analysisResult.hasResourcesToUpdate) {
       return MPSCompilationResult.nothingToDoCompilationResult();
     }
@@ -97,7 +97,7 @@ class InternalJavaCompiler {
     } else {
       result = compileJava(compiler);
       reportModulesWithRemovalsAreNotChanged(analysisResult.modulesWithRemovals, result.getChangedModules());
-      invalidateCompiledClasses();
+      invalidateCompiledClasses(result.getChangedModules());
       return result;
     }
     copyResources();
@@ -128,12 +128,13 @@ class InternalJavaCompiler {
   }
 
   // FIXME!!!
-  private void invalidateCompiledClasses() {
+  private void invalidateCompiledClasses(Set<SModule> changedModules) {
+    ClassPathFactory cpFactory = ClassPathFactory.getInstance();
     myTracer.push(UPDATING_CLASSPATH_MSG);
-    for (SModule module : myModulesContainer.getModules()) {
+    for (SModule module : changedModules) {
       IFile classesGen = getJavaFacet(module).getClassesGen();
       if (classesGen != null) {
-        ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGen.getPath())); // fixme update the classes invalidation mechanism
+        cpFactory.invalidate(Collections.singleton(classesGen.getPath())); // fixme update the classes invalidation mechanism
       }
     }
     myTracer.pop();
