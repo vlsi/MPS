@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "Calculator"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fa3191L, "InputField"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12107017046L, "InputFieldReference"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fd5a98L, "OutputField"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, "jetbrains.mps.calculator.structure.Calculator"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fa3191L, "jetbrains.mps.calculator.structure.InputField"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12107017046L, "jetbrains.mps.calculator.structure.InputFieldReference"), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fd5a98L, "jetbrains.mps.calculator.structure.OutputField"));
 }

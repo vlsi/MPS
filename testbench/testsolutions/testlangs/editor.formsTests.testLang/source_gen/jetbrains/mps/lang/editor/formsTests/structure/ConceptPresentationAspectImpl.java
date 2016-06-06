@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "UsesPlatformCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, "UsesTextCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "VariousCheckboxes"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"));
 }

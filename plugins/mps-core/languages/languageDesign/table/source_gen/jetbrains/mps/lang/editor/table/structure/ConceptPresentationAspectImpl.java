@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "CellModel_HierarchycalTable"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL, "CellModel_Table"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL, "QueryFunction_TableModel"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL, "jetbrains.mps.lang.editor.table.structure.CellModel_Table"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL, "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
 }

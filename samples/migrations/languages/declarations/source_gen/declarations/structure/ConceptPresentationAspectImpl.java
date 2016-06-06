@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049329d71L, "NewComponent"), MetaAdapterFactory.getInterfaceConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c104932a602L, "NewComponentMember"), MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "OldComponent"), MetaAdapterFactory.getInterfaceConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c104931bb26L, "OldComponentMember"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049329d71L, "declarations.structure.NewComponent"), MetaAdapterFactory.getInterfaceConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c104932a602L, "declarations.structure.NewComponentMember"), MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "declarations.structure.OldComponent"), MetaAdapterFactory.getInterfaceConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c104931bb26L, "declarations.structure.OldComponentMember"));
 }

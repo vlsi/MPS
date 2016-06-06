@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, "Entry"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda96463L, "NodeA"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x7bb9ef7499a8e15dL, "TrivialKeeper"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, "jetbrains.mps.generator.test.crossmodel.entity.structure.Entry"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda96463L, "jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x7bb9ef7499a8e15dL, "jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper"));
 }

@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, "Conversation"), MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L, "Message"), MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f707L, "Participant"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f6fbL, "jetbrains.mps.samples.customizedDebugger.Highlevel.structure.Conversation"), MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L, "jetbrains.mps.samples.customizedDebugger.Highlevel.structure.Message"), MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f707L, "jetbrains.mps.samples.customizedDebugger.Highlevel.structure.Participant"));
 }

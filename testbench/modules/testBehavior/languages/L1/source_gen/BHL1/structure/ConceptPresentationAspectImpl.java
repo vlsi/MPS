@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24cbL, "A"), MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591eL, "A1"), MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24ccL, "I"), MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "I1"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24cbL, "BHL1.structure.A"), MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591eL, "BHL1.structure.A1"), MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24ccL, "BHL1.structure.I"), MetaAdapterFactory.getInterfaceConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL, "BHL1.structure.I1"));
 }

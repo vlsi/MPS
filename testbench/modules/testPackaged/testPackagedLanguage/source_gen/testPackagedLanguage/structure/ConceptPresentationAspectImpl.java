@@ -40,5 +40,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL, "TestConcept"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL, "testPackagedLanguage.structure.TestConcept"));
 }

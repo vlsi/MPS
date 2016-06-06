@@ -40,5 +40,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xdc54e1b286b349d2L, 0x9014a76af17af22aL, 0x4dd42fcf00ba54d2L, "Outlook"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xdc54e1b286b349d2L, 0x9014a76af17af22aL, 0x4dd42fcf00ba54d2L, "jetbrains.mps.make.outlook.structure.Outlook"));
 }

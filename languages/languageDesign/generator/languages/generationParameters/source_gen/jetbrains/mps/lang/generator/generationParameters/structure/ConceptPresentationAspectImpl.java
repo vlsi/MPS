@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x2a86294b8491c07cL, "DefaultGenerationParameterId"), MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x75bebc44281efab4L, "DefaultGeneratorParameter"), MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x75bebc44281efab8L, "DefaultGeneratorParameterContainer"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x2a86294b8491c07cL, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId"), MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x75bebc44281efab4L, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), MetaAdapterFactory.getConcept(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x75bebc44281efab8L, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"));
 }

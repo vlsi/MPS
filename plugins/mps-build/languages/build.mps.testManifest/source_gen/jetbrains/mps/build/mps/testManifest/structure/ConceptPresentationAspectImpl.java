@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876882L, "TestModuleManifest"), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, "TestModuleManifestRef"), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, "TestProjectConfiguration"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876882L, "jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest"), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, "jetbrains.mps.build.mps.testManifest.structure.TestModuleManifestRef"), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, "jetbrains.mps.build.mps.testManifest.structure.TestProjectConfiguration"));
 }

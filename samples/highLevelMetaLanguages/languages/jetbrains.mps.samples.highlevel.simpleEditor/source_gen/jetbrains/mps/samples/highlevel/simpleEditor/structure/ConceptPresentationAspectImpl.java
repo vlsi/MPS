@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08cc7fbbL, "EditorAspectDeclaration"), MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, "SimpleEditorDeclaration"), MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, "SimplePropertyReference"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08cc7fbbL, "jetbrains.mps.samples.highlevel.simpleEditor.structure.EditorAspectDeclaration"), MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, "jetbrains.mps.samples.highlevel.simpleEditor.structure.SimpleEditorDeclaration"), MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, "jetbrains.mps.samples.highlevel.simpleEditor.structure.SimplePropertyReference"));
 }

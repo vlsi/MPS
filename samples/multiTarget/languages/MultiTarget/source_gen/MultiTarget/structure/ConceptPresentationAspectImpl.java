@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf1dL, "Container"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L, "Member"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf8dL, "NumericValue"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf5fL, "StringValue"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf1dL, "MultiTarget.structure.Container"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L, "MultiTarget.structure.Member"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf8dL, "MultiTarget.structure.NumericValue"), MetaAdapterFactory.getConcept(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf5fL, "MultiTarget.structure.StringValue"));
 }

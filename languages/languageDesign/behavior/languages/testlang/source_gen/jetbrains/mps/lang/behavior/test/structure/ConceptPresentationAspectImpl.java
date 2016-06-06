@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "A"), MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b5eL, "B"), MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "C"), MetaAdapterFactory.getInterfaceConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6814L, "I"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b5eL, "jetbrains.mps.lang.behavior.test.structure.B"), MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C"), MetaAdapterFactory.getInterfaceConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6814L, "jetbrains.mps.lang.behavior.test.structure.I"));
 }

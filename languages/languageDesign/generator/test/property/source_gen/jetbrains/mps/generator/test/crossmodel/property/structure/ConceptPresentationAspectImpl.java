@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x4ccbf1da2ba1fe6dL, "Bean"), MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x4ccbf1da2ba1fe70L, "BeanProperty"), MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, "InitOp"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x4ccbf1da2ba1fe6dL, "jetbrains.mps.generator.test.crossmodel.property.structure.Bean"), MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x4ccbf1da2ba1fe70L, "jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty"), MetaAdapterFactory.getConcept(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, "jetbrains.mps.generator.test.crossmodel.property.structure.InitOp"));
 }

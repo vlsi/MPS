@@ -52,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x679b7b3bff651415L, "DummyBlock"), MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, "ManyStatements"), MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x2f0103435011b1f2L, "ManyStatementsContainer"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x679b7b3bff651415L, "testMoveElements.structure.DummyBlock"), MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, "testMoveElements.structure.ManyStatements"), MetaAdapterFactory.getConcept(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x2f0103435011b1f2L, "testMoveElements.structure.ManyStatementsContainer"));
 }

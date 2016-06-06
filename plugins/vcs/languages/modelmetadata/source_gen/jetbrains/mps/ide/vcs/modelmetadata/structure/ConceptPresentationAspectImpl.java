@@ -58,5 +58,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, "LanguageDependency"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "Model"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "ModelReference"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "ModuleReference"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, "jetbrains.mps.ide.vcs.modelmetadata.structure.LanguageDependency"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"));
 }
