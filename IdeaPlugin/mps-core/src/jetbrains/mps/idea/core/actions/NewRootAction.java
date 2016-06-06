@@ -31,6 +31,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -185,7 +186,7 @@ public class NewRootAction extends AnAction {
           for (Map.Entry<String, SAbstractConcept> entry : concepts.entrySet()) {
             String conceptFqName = entry.getKey();
             SAbstractConcept concept = entry.getValue();
-            dialog.getKindCombo().addItem(concept.getConceptAlias(), concept.getIcon(), conceptFqName);
+            dialog.getKindCombo().addItem(concept.getConceptAlias(), IconManager.getIcon(concept), conceptFqName);
             dialog.setTemplateKindComponentsVisible(true);
           }
         }
