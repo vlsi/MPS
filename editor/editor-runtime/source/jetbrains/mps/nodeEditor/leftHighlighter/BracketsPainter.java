@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.leftHighlighter.HighlighterBracket.BracketEdge;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 import java.awt.Color;
@@ -141,13 +140,13 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
   }
 
   public void removeBracket(EditorCell cell) {
-    myBrackets.remove(APICellAdapter.getCellInfo(cell));
+    myBrackets.remove(cell.getCellInfo());
     myAreaWidth = -1;
   }
 
   public void addBracket(EditorCell cell, EditorCell secondCell, Color c) {
-    CellInfo info1 = APICellAdapter.getCellInfo(cell);
-    CellInfo info2 = APICellAdapter.getCellInfo(secondCell);
+    CellInfo info1 = cell.getCellInfo();
+    CellInfo info2 = secondCell.getCellInfo();
     myBrackets.put(info1, new HighlighterBracket(info1, info2, c, getEditorComponent(), myRightToLeft));
     myAreaWidth = -1;
   }

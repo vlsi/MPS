@@ -39,6 +39,8 @@
     <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
     <import index="jgwk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.traversal(MPS.Editor/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="cd28" ref="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)" />
+    <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="t552" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.fileGenerator(MPS.Core/)" implicit="true" />
@@ -678,6 +680,9 @@
       <node concept="3cqZAl" id="7dwhomQPrCr" role="3clF45" />
       <node concept="3clFbS" id="7dwhomQPrCs" role="3clF47">
         <node concept="3clFbJ" id="7dwhomQPrCt" role="3cqZAp">
+          <node concept="1rXfSq" id="3J9H4udxcom" role="3clFbw">
+            <ref role="37wK5l" to="g51k:~EditorCell_Basic.isPunctuationLayout():boolean" resolve="isPunctuationLayout" />
+          </node>
           <node concept="3clFbS" id="7dwhomQPrCu" role="3clFbx">
             <node concept="3clFbF" id="7dwhomQPrCv" role="3cqZAp">
               <node concept="2OqwBi" id="7dwhomQPrCw" role="3clFbG">
@@ -723,9 +728,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="1rXfSq" id="3J9H4udxcom" role="3clFbw">
-            <ref role="37wK5l" to="g51k:~EditorCell_Basic.isPunctuationLayout():boolean" resolve="isPunctuationLayout" />
           </node>
         </node>
         <node concept="3clFbF" id="7dwhomQPrCQ" role="3cqZAp">
@@ -1106,6 +1108,9 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3uibUv" id="4RW1LZlfk_9" role="EKbjA">
+      <ref role="3uigEE" to="n7yi:~WithCaret" resolve="WithCaret" />
+    </node>
   </node>
   <node concept="312cEu" id="4iUaVbRglKh">
     <property role="TrG5h" value="AbstractLeftEditorHighlighterMessage" />
@@ -1182,8 +1187,8 @@
       </node>
       <node concept="37vLTG" id="4iUaVbRglKM" role="3clF46">
         <property role="TrG5h" value="cell" />
-        <node concept="3uibUv" id="4iUaVbRglKN" role="1tU5fm">
-          <ref role="3uigEE" to="g51k:~EditorCell" resolve="EditorCell" />
+        <node concept="3uibUv" id="29VACSeltkh" role="1tU5fm">
+          <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
         </node>
       </node>
       <node concept="3clFbS" id="4iUaVbRglKO" role="3clF47" />

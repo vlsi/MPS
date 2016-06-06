@@ -58,7 +58,6 @@
       <node id="3189788309731979156" at="40,201,56,10" concept="4" />
       <node id="3189788309731979156" at="38,62,58,7" concept="2" />
       <node id="3189788309731979156" at="35,93,59,5" concept="0" />
-      <node id="3189788309731979156" at="35,93,59,5" concept="0" />
       <node id="3189788309731979156" at="34,0,62,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_BuildMps_ModuleSource_3189788309731979156#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="3189788309731979156" at="47,60,48,25" />
       <scope id="3189788309731979162" at="42,105,45,23">
@@ -89,7 +88,6 @@
         <var name="childConcept" id="3189788309731979156" />
         <var name="outputConcept" id="3189788309731979156" />
       </scope>
-      <scope id="3189788309731979156" at="35,93,59,5" />
       <scope id="3189788309731979156" at="34,220,60,18">
         <var name="result" id="3189788309731979156" />
       </scope>

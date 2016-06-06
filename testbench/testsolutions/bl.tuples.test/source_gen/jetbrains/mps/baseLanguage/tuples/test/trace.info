@@ -335,7 +335,6 @@
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239714501613">
     <file name="NamedTuples_Test.java">
-      <node id="1239720100329" at="217,27,217,27" concept="1" />
       <node id="6278501903477416711" at="23,55,24,35" concept="13" />
       <node id="6278501903477416709" at="25,23,26,13" concept="12" />
       <node id="1239718507781" at="27,5,28,38" concept="11" />
@@ -496,7 +495,6 @@
       <node id="1239720095043" at="194,39,230,7" concept="12" />
       <node id="1239720061720" at="194,0,232,0" concept="10" trace="getSequence#()Ljava/lang/Iterable;" />
       <scope id="1239714501618" at="175,29,175,29" />
-      <scope id="1239720100329" at="217,27,217,27" />
       <scope id="6278501903477416705" at="25,23,26,13" />
       <scope id="1240933105392" at="95,38,96,36" />
       <scope id="8755343252890010280" at="133,49,134,28" />

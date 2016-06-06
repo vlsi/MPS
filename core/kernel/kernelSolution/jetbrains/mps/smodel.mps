@@ -1347,6 +1347,18 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
+    <node concept="Wx3nA" id="4JZCOBaqiKL" role="jymVt">
+      <property role="TrG5h" value="property_Concept_Rootable" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4JZCOBaqiKM" role="1B3o_S" />
+      <node concept="355D3s" id="4JZCOBaqiKN" role="33vP2m">
+        <ref role="355D3t" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        <ref role="355D3u" to="tpce:fX9Ktp8" resolve="rootable" />
+      </node>
+      <node concept="3uibUv" id="4JZCOBaqiKO" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="dqwjwH$T_7" role="jymVt">
       <property role="TrG5h" value="property_Property_Id" />
       <property role="3TUv4t" value="true" />
@@ -2456,29 +2468,6 @@
       <node concept="37vLTG" id="7eX9cM$ZbHo" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="7eX9cM$ZbHp" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2YIFZL" id="2g2TIDe2mdl" role="jymVt">
-      <property role="TrG5h" value="getConceptDeclaration_IsRootable" />
-      <node concept="10P_77" id="2g2TIDe2mdr" role="3clF45" />
-      <node concept="3Tm1VV" id="2g2TIDe2mdn" role="1B3o_S" />
-      <node concept="3clFbS" id="2g2TIDe2mdo" role="3clF47">
-        <node concept="3clFbF" id="2g2TIDe2mds" role="3cqZAp">
-          <node concept="2OqwBi" id="2g2TIDe2mdu" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm_ii" role="2Oq$k0">
-              <ref role="3cqZAo" node="2g2TIDe2mdp" resolve="concept" />
-            </node>
-            <node concept="3TrcHB" id="2g2TIDe2ykF" role="2OqNvi">
-              <ref role="3TsBF5" to="tpce:fX9Ktp8" resolve="rootable" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="2g2TIDe2mdp" role="3clF46">
-        <property role="TrG5h" value="concept" />
-        <node concept="3Tqbb2" id="2g2TIDe2mdq" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-        </node>
       </node>
     </node>
     <node concept="2YIFZL" id="2g2TIDe2TTm" role="jymVt">

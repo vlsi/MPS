@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
   private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Execute in the same process ", true);
@@ -309,7 +308,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   public void resetEditorModelWith(final String modelName) {
     setModelValue(modelName);
     if (myModel != null && myModel.getModule() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           myModelChooser.setText(modelName);
           String moduleName = myModel.getModule().getModuleName();

@@ -21,8 +21,10 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.Collection;
 import java.util.List;
@@ -170,8 +172,35 @@ public interface EditorCell {
 
   EditorCell getRootParent();
 
-  // TODO: deprecate at the moment we have GeometryUtil published in ope-API package
+  /**
+   * Searching for a cell (child cell if this is {@link EditorCell_Collection}) at the
+   * specified position. Returns the leaf (non-collection) cell or null if corresponding
+   * cell was not found.
+   * <p>
+   * {@link EditorCell_Collection} implementors can perform a translation of x,y coordinates
+   * in this method.
+   *
+   * @param x -coordinate
+   * @param y -coordinate
+   * @return cell at the specified position
+   */
   EditorCell findLeaf(int x, int y);
+
+  /**
+   * Searching for the cell within the editor "line" which is closest to the specified position
+   * by x-coordinate. First searching for the cells on the specified "line" (intersecting with
+   * specified y-coordinate) and then looking for the best match (the closest cell). Returns the
+   * leaf (non-collection) cell or null if corresponding cell was not found.
+   * <p>
+   * {@link EditorCell_Collection} implementors can perform a translation of x,y coordinates
+   * in this method.
+   *
+   * @param x
+   * @param y
+   * @param condition
+   * @return
+   */
+  EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition);
 
   boolean isSingleNodeCell();
 
@@ -224,4 +253,7 @@ public interface EditorCell {
   void setReferenceCell(boolean isReference);
 
   boolean isReferenceCell();
+
+  @NotNull
+  CellInfo getCellInfo();
 }

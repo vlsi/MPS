@@ -51,7 +51,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelection() != null;
+    return context.getEditorComponent().getSelectionManager().getSelection() != null;
   }
 
   @Override

@@ -2086,6 +2086,9 @@
                   <node concept="2ShNRf" id="3UdBmwRq22D" role="25WWJ7">
                     <node concept="1pGfFk" id="3UdBmwRq22E" role="2ShVmc">
                       <ref role="37wK5l" to="y3sp:2Y$mRnIClRb" resolve="JavaThread" />
+                      <node concept="37vLTw" id="6k4GBOyf37G" role="37wK5m">
+                        <ref role="3cqZAo" node="3L_P6qKH8fj" resolve="myDebugSession" />
+                      </node>
                       <node concept="37vLTw" id="3UdBmwRq22F" role="37wK5m">
                         <ref role="3cqZAo" node="3UdBmwRq22t" resolve="threadReference" />
                       </node>

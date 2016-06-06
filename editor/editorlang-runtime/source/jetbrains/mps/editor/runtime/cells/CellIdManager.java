@@ -24,14 +24,6 @@ public class CellIdManager {
     return "component_" + editorComponentName;
   }
 
-  /**
-   * @deprecated Should be removed as well as CellModel_ConceptProperty
-   */
-  @Deprecated
-  public static String createConceptPropertyId(String conceptPropertyName) {
-    return "conceptProperty_" + conceptPropertyName;
-  }
-
   public static String createPropertyId(String propertyName) {
     return "property_" + propertyName;
   }

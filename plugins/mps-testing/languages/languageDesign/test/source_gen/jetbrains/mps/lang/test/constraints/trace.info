@@ -142,7 +142,6 @@
       <node id="5449224527592427049" at="67,0,72,0" concept="5" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5449224527592427013" at="54,0,62,0" concept="5" trace="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
       <node id="5449224527592427006" at="52,122,72,14" concept="7" />
-      <node id="5449224527592362452" at="52,122,73,0" concept="0" />
       <node id="5449224527592362452" at="51,0,75,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="5449224527592362452" at="45,56,75,10" concept="7" />
       <node id="5449224527592362452" at="43,0,77,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -175,7 +174,6 @@
         <var name="prefix" id="5449224527592427017" />
       </scope>
       <scope id="5449224527592362452" at="52,122,73,0" />
-      <scope id="5449224527592362463" at="52,122,73,0" />
       <scope id="5449224527592362452" at="51,0,75,0">
         <var name="_context" id="5449224527592362452" />
         <var name="operationContext" id="5449224527592362452" />

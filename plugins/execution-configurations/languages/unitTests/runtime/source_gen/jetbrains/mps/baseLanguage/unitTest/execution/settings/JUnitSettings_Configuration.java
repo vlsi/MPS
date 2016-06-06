@@ -20,7 +20,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -40,7 +39,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     } else {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (eq_jtq3ac_a0c0a0a0a1(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())) {
+      if (eq_jtq3ac_a0c0a0a1(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())) {
         return;
       }
       if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
@@ -141,7 +140,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean hasTests(final Project project) {
     final boolean[] hasTests = {true};
     final JUnitSettings_Configuration settings = this;
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         hasTests[0] = getJUnitRunType().hasTests(settings, project);
       }
@@ -231,7 +230,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
-  private static boolean eq_jtq3ac_a0c0a0a0a1(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0c0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

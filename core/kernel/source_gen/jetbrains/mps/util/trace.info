@@ -390,7 +390,6 @@
   </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/4972886494893373483">
     <file name="LongestCommonSubsequenceFinder.java">
-      <node id="4972886494893402206" at="101,29,101,29" concept="1" />
       <node id="4972886494893401571" at="18,0,19,0" concept="6" trace="myA" />
       <node id="4972886494893401577" at="19,0,20,0" concept="6" trace="myB" />
       <node id="4972886494893401597" at="20,0,21,0" concept="6" trace="myCommonLengths" />
@@ -473,7 +472,6 @@
       <node id="4972886494893402199" at="82,16,120,7" concept="8" />
       <node id="4972886494893402139" at="78,62,121,5" concept="9" />
       <node id="4972886494893402109" at="75,0,124,0" concept="10" trace="getDifferentIndices#()Ljava/util/List;" />
-      <scope id="4972886494893402206" at="101,29,101,29" />
       <scope id="4972886494893401773" at="38,125,39,70" />
       <scope id="4972886494893401793" at="40,18,41,99" />
       <scope id="4972886494893402057" at="64,67,65,16" />

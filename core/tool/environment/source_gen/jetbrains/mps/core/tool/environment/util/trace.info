@@ -487,7 +487,6 @@
       <node id="2329394428277189087" at="32,39,33,61" concept="4" />
       <node id="5900076103425047615" at="36,0,37,0" concept="14" trace="LOG" />
       <node id="5900076103425047623" at="15,0,18,0" concept="2" trace="MapPathMacrosProvider#(Ljava/util/Map;)V" />
-      <node id="2329394428277189087" at="31,52,34,5" concept="1" />
       <node id="2329394428277189087" at="31,52,34,5" concept="8" />
       <node id="5900076103425047637" at="18,0,22,0" concept="9" trace="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="5900076103425047648" at="22,0,26,0" concept="9" trace="getUserNames#()Ljava/util/Set;" />
@@ -501,7 +500,6 @@
       <scope id="5900076103425047623" at="15,0,18,0">
         <var name="macros" id="5900076103425047633" />
       </scope>
-      <scope id="2329394428277189087" at="31,52,34,5" />
       <scope id="5900076103425047675" at="31,52,34,5" />
       <scope id="5900076103425047637" at="18,0,22,0">
         <var name="name" id="5900076103425047640" />

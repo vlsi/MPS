@@ -36,6 +36,7 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -56,7 +57,7 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
+public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label, WithCaret {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
@@ -94,12 +95,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isFirstPositionInBigCell() {
-    return CellTraversalUtil.getFirstLeaf(getContainingBigCell()) == this && isFirstCaretPosition();
+    return CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(this)) == this && isFirstCaretPosition();
   }
 
   @Override
   public boolean isLastPositionInBigCell() {
-    return CellTraversalUtil.getLastLeaf(getContainingBigCell()) == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
+    return CellTraversalUtil.getLastLeaf(CellTraversalUtil.getContainingBigCell(this)) == this && isLastCaretPosition() &&
+        !getTextLine().hasNonTrivialSelection();
   }
 
   public boolean canPasteText() {
@@ -732,7 +734,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
-    EditorCell containingBigCell = getContainingBigCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell containingBigCell = CellTraversalUtil.getContainingBigCell(this);
     return containingBigCell != null && CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
         getText().equals(getSelectedText());
   }

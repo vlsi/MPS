@@ -252,7 +252,6 @@
     <file name="DemoApplication_Configuration.java">
       <node id="1448685625140440252" at="41,39,42,345" concept="7" />
       <node id="1448685625140199409" at="45,73,46,40" concept="2" />
-      <node id="8750596094204760417" at="45,73,46,40" concept="0" />
       <node id="8750596094204760417" at="49,76,50,57" concept="2" />
       <node id="8750596094204760417" at="51,5,52,49" concept="6" />
       <node id="8750596094204760417" at="52,49,53,41" concept="2" />
@@ -287,10 +286,8 @@
       <node id="1448685625140440250" at="41,0,44,0" concept="5" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
       <node id="8750596094204760417" at="45,0,48,0" concept="5" trace="checkConfiguration#()V" />
       <node id="8750596094204760417" at="58,73,61,5" concept="4" />
-      <node id="8750596094204760417" at="67,14,70,9" concept="0" />
       <node id="8750596094204760417" at="67,14,70,9" concept="4" />
       <node id="8750596094204760417" at="74,0,77,0" concept="5" trace="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
-      <node id="8750596094204760417" at="85,45,88,7" concept="0" />
       <node id="8750596094204760417" at="85,45,88,7" concept="4" />
       <node id="8750596094204760417" at="101,0,104,0" concept="1" trace="DemoApplication_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration_Factory;Ljava/lang/String;)V" />
       <node id="8750596094204760417" at="112,0,115,0" concept="5" trace="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
@@ -314,7 +311,6 @@
       <scope id="8750596094204760417" at="93,22,93,22" />
       <scope id="1448685625140440251" at="41,39,42,345" />
       <scope id="8750596094204760417" at="45,73,46,40" />
-      <scope id="974940122351373409" at="45,73,46,40" />
       <scope id="8750596094204760417" at="59,26,60,81" />
       <scope id="8750596094204760417" at="65,33,66,42" />
       <scope id="8750596094204760417" at="68,35,69,93" />
@@ -400,9 +396,7 @@
       <node id="7883882861861669812" at="26,43,27,48" concept="2" />
       <node id="1529002684853853979" at="27,48,28,17" concept="7" />
       <node id="1252300412034435554" at="30,110,31,50" concept="2" />
-      <node id="8750596094204760417" at="30,110,31,50" concept="0" />
       <node id="1252300412034409357" at="33,82,34,52" concept="2" />
-      <node id="8750596094204760417" at="33,82,34,52" concept="0" />
       <node id="8750596094204760417" at="36,88,37,18" concept="2" />
       <node id="8750596094204760417" at="18,0,21,0" concept="5" trace="disposeEditor#()V" />
       <node id="8750596094204760417" at="30,0,33,0" concept="5" trace="applyEditorTo#(Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration;)V" />
@@ -410,9 +404,7 @@
       <node id="8750596094204760417" at="36,0,39,0" concept="1" trace="DemoApplication_Configuration_Editor#(Lcom/intellij/openapi/options/SettingsEditor;)V" />
       <node id="8750596094204760417" at="21,0,30,0" concept="5" trace="createEditor#()Ljavax/swing/JPanel;" />
       <scope id="8750596094204760417" at="18,31,19,29" />
-      <scope id="4777576391478076302" at="30,110,31,50" />
       <scope id="8750596094204760417" at="30,110,31,50" />
-      <scope id="4777576391478076300" at="33,82,34,52" />
       <scope id="8750596094204760417" at="33,82,34,52" />
       <scope id="8750596094204760417" at="36,88,37,18" />
       <scope id="8750596094204760417" at="18,0,21,0" />

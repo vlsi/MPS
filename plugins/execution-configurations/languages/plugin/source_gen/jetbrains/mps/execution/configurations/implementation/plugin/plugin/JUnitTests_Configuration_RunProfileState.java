@@ -16,9 +16,10 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import com.intellij.execution.executors.DefaultDebugExecutor;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import com.intellij.execution.process.ProcessHandler;
@@ -56,8 +57,9 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
     boolean debugExecutor = executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID);
     jUnitSettings.setDebug(debugExecutor);
-    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project));
-    TestRunState runState = new TestRunState(testNodes);
+    MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
+    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(mpsProject);
+    TestRunState runState = new TestRunState(testNodes, mpsProject);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
     if (jUnitSettings.canLightExecute(testNodes)) {

@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:32667737-240a-422b-b048-8918d4b92152(jetbrains.mps.execution.impl.configurations.util@tests)/8410090958587088828">
-    <file name="JUnitUtil.java">
-      <node id="6339244025082286221" at="19,100,20,99" concept="4" />
-      <node id="6339244025082286252" at="25,45,26,211" concept="5" />
-      <node id="6339244025082286260" at="28,13,29,34" concept="0" />
-      <node id="6339244025082286264" at="29,34,30,95" concept="1" />
-      <node id="6339244025082286270" at="33,7,34,18" concept="5" />
-      <node id="6339244025082286253" at="36,81,37,46" concept="5" />
-      <node id="6339244025082286250" at="25,0,28,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6339244025082286253" at="36,0,39,0" concept="6" trace="eq_slstu0_a0a0a0a0a0a0a0a0a0a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="6339244025082286242" at="23,41,28,13" concept="4" />
-      <node id="6339244025082286238" at="22,25,31,9" concept="2" />
-      <node id="6339244025082286232" at="22,0,33,0" concept="3" trace="run#()V" />
-      <node id="6339244025082286228" at="20,99,33,7" concept="1" />
-      <node id="4154239884395520385" at="19,0,36,0" concept="6" trace="wrapTests#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;)Ljava/util/List;" />
-      <scope id="6339244025082286251" at="25,45,26,211" />
-      <scope id="6339244025082286253" at="36,81,37,46" />
-      <scope id="6339244025082286250" at="25,0,28,0">
+    <file name="JUnitWrapHelper.java">
+      <node id="2983330400683353225" at="20,0,21,0" concept="3" trace="myAccess" />
+      <node id="2983330400683353376" at="22,46,23,22" concept="2" />
+      <node id="6339244025082286221" at="26,101,27,99" concept="6" />
+      <node id="6339244025082286252" at="32,45,33,84" concept="7" />
+      <node id="6339244025082286260" at="35,13,36,34" concept="0" />
+      <node id="6339244025082286264" at="36,34,37,95" concept="2" />
+      <node id="6339244025082286270" at="40,7,41,18" concept="7" />
+      <node id="6339244025082286253" at="43,81,44,46" concept="7" />
+      <node id="2983330400683341415" at="22,0,25,0" concept="1" trace="JUnitWrapHelper#(Lorg/jetbrains/mps/openapi/module/ModelAccess;)V" />
+      <node id="6339244025082286250" at="32,0,35,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6339244025082286253" at="43,0,46,0" concept="8" trace="eq_4klmab_a0a0a0a0a0a0a0a0a0a0a1a4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6339244025082286242" at="30,75,35,13" concept="6" />
+      <node id="6339244025082286238" at="29,25,38,9" concept="4" />
+      <node id="6339244025082286232" at="29,0,40,0" concept="5" trace="run#()V" />
+      <node id="6339244025082286228" at="27,99,40,7" concept="2" />
+      <node id="2983330400683354166" at="26,0,43,0" concept="5" trace="wrapTests#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;)Ljava/util/List;" />
+      <scope id="2983330400683341418" at="22,46,23,22" />
+      <scope id="6339244025082286251" at="32,45,33,84" />
+      <scope id="6339244025082286253" at="43,81,44,46" />
+      <scope id="2983330400683341415" at="22,0,25,0">
+        <var name="access" id="2983330400683352735" />
+      </scope>
+      <scope id="6339244025082286250" at="32,0,35,0">
         <var name="it" id="6339244025082286250" />
       </scope>
-      <scope id="6339244025082286253" at="36,0,39,0">
+      <scope id="6339244025082286253" at="43,0,46,0">
         <var name="a" id="6339244025082286253" />
         <var name="b" id="6339244025082286253" />
       </scope>
-      <scope id="6339244025082286241" at="23,41,30,95">
+      <scope id="6339244025082286241" at="30,75,37,95">
         <var name="mainNode" id="6339244025082286243" />
       </scope>
-      <scope id="6339244025082286233" at="22,25,31,9" />
-      <scope id="6339244025082286238" at="22,25,31,9">
-        <var name="name" id="6339244025082286239" />
+      <scope id="6339244025082286233" at="29,25,38,9" />
+      <scope id="6339244025082286238" at="29,25,38,9">
+        <var name="nodeRef" id="6339244025082286239" />
       </scope>
-      <scope id="6339244025082286232" at="22,0,33,0" />
-      <scope id="6339244025082286220" at="19,100,34,18">
+      <scope id="6339244025082286232" at="29,0,40,0" />
+      <scope id="6339244025082286220" at="26,101,41,18">
         <var name="result" id="6339244025082286222" />
       </scope>
-      <scope id="4154239884395520385" at="19,0,36,0">
+      <scope id="2983330400683354166" at="26,0,43,0">
         <var name="model" id="4154239884395881352" />
-        <var name="names" id="6339244025082286272" />
+        <var name="nodes" id="6339244025082286272" />
       </scope>
-      <unit id="6339244025082286250" at="24,243,28,11" name="jetbrains.mps.execution.impl.configurations.util.JUnitUtil$2" />
-      <unit id="6339244025082286232" at="21,45,33,5" name="jetbrains.mps.execution.impl.configurations.util.JUnitUtil$1" />
-      <unit id="8410090958587088828" at="18,0,40,0" name="jetbrains.mps.execution.impl.configurations.util.JUnitUtil" />
+      <unit id="6339244025082286250" at="31,243,35,11" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper$2" />
+      <unit id="6339244025082286232" at="28,31,40,5" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper$1" />
+      <unit id="8410090958587088828" at="19,0,47,0" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper" />
     </file>
   </root>
 </debug-info-v2>

@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor.EditorAspectDescriptorImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage)";
@@ -32,9 +30,6 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == EditorAspectDescriptor.class) {
-      return (T) new EditorAspectDescriptorImpl();
-    }
     return super.createAspect(aspectClass);
   }
 }

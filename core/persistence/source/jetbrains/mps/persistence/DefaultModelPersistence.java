@@ -97,7 +97,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
       LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
 
       if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-        header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
+        header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(header.getModelReference())));
       }
 
       // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.

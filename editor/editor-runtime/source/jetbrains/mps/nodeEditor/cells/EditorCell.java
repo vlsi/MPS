@@ -50,20 +50,20 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
-   * and check the condition upon returned cell
+   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */
   @Deprecated
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
    */
   @Deprecated
   EditorCell findCellWeak(int x, int y);
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
    */
   @Deprecated
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
@@ -81,36 +81,90 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorComponent getEditor();
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
+   */
+  @Deprecated
   void switchCaretVisible();
 
+  /**
+   * @deprecated since MPS 3.4 this methods will be protected in {@link EditorCell_Basic} class.
+   * It is used only by sub-classes of {@link EditorCell_Basic}
+   */
+  @Deprecated
   boolean isPunctuationLayout();
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
+   */
+  @Deprecated
   Color getCellBackgroundColor();
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
+   */
+  @Deprecated
   void setCellBackgroundColor(Color color);
 
-  // TODO: move this method to open API
-  CellInfo getCellInfo();
-
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   Iterator<EditorCell_Collection> parents();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isFirstPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   boolean isFirstPositionInBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link GeometryUtil#isLastPositionInBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   boolean isLastPositionInBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
+   */
+  @Deprecated
   boolean isFirstCaretPosition();
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   * This method will be removed from {@link EditorCell} interface after MPS 3.4
+   */
+  @Deprecated
   boolean isLastCaretPosition();
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   EditorCell getContainingBigCell();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   boolean isAncestorOf(EditorCell cell);
 
   /**
    * @deprecated since MPS 3.4 use code like:
-   * instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   * <code>instanceof {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}</code>
    */
   @Deprecated
   boolean isLeaf();

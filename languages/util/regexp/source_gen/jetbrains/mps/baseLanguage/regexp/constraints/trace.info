@@ -340,7 +340,6 @@
       <node id="3796137614137565252" at="22,84,23,119" concept="7" />
       <node id="3796137614137565252" at="26,40,27,20" concept="8" />
       <node id="3796137614137565252" at="30,70,31,37" concept="7" />
-      <node id="3796137614137565252" at="31,37,32,79" concept="0" />
       <node id="3796137614137565256" at="31,37,32,79" concept="8" />
       <node id="3796137614137565252" at="34,7,35,22" concept="8" />
       <node id="3796137614137565252" at="17,0,20,0" concept="2" trace="LiteralReplacement_Constraints#()V" />
@@ -350,7 +349,6 @@
       <node id="3796137614137565252" at="21,0,37,0" concept="6" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="3796137614137565252" at="17,43,18,170" />
       <scope id="3796137614137565252" at="26,40,27,20" />
-      <scope id="3796137614137565255" at="31,37,32,79" />
       <scope id="3796137614137565252" at="30,70,32,79">
         <var name="propertyName" id="3796137614137565252" />
       </scope>
@@ -374,7 +372,6 @@
       <node id="5533535376639427526" at="22,84,23,119" concept="7" />
       <node id="5533535376639427526" at="26,37,27,20" concept="8" />
       <node id="5533535376639427526" at="30,42,31,49" concept="7" />
-      <node id="5533535376639427526" at="31,49,32,172" concept="0" />
       <node id="5533535376639427530" at="31,49,32,172" concept="8" />
       <node id="5533535376639427526" at="34,7,35,22" concept="8" />
       <node id="5533535376639427526" at="17,0,20,0" concept="2" trace="PredefinedSymbolClassDeclaration_Constraints#()V" />
@@ -384,7 +381,6 @@
       <node id="5533535376639427526" at="21,0,37,0" concept="6" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="5533535376639427526" at="17,57,18,179" />
       <scope id="5533535376639427526" at="26,37,27,20" />
-      <scope id="5533535376639427529" at="31,49,32,172" />
       <scope id="5533535376639427526" at="30,42,32,172">
         <var name="propertyName" id="5533535376639427526" />
       </scope>
@@ -407,7 +403,6 @@
       <node id="5533535376639522935" at="22,84,23,119" concept="7" />
       <node id="5533535376639522935" at="26,37,27,20" concept="8" />
       <node id="5533535376639522935" at="30,42,31,49" concept="7" />
-      <node id="5533535376639522935" at="31,49,32,374" concept="0" />
       <node id="5533535376639522940" at="31,49,32,374" concept="8" />
       <node id="5533535376639522935" at="34,7,35,22" concept="8" />
       <node id="5533535376639522951" at="37,55,38,43" concept="8" />
@@ -419,7 +414,6 @@
       <node id="5533535376639522935" at="21,0,37,0" concept="6" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="5533535376639522935" at="17,42,18,164" />
       <scope id="5533535376639522935" at="26,37,27,20" />
-      <scope id="5533535376639522938" at="31,49,32,374" />
       <scope id="5533535376639522951" at="37,55,38,43" />
       <scope id="5533535376639522935" at="30,42,32,374">
         <var name="propertyName" id="5533535376639522935" />
@@ -446,7 +440,6 @@
       <node id="698920857052391451" at="22,84,23,119" concept="7" />
       <node id="698920857052391451" at="26,40,27,20" concept="8" />
       <node id="698920857052391451" at="30,70,31,37" concept="7" />
-      <node id="698920857052391451" at="31,37,32,137" concept="0" />
       <node id="698920857052391455" at="31,37,32,137" concept="8" />
       <node id="698920857052391451" at="34,7,35,22" concept="8" />
       <node id="698920857052391451" at="17,0,20,0" concept="2" trace="StringLiteralRegexp_Constraints#()V" />
@@ -456,7 +449,6 @@
       <node id="698920857052391451" at="21,0,37,0" concept="6" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="698920857052391451" at="17,44,18,166" />
       <scope id="698920857052391451" at="26,40,27,20" />
-      <scope id="698920857052391454" at="31,37,32,137" />
       <scope id="698920857052391451" at="30,70,32,137">
         <var name="propertyName" id="698920857052391451" />
       </scope>

@@ -220,7 +220,6 @@
       <node id="286176397450364062" at="323,0,326,0" concept="1" trace="RootContentElementHandler#()V" />
       <node id="286176397450364062" at="354,0,357,0" concept="1" trace="NodeElementHandler#()V" />
       <node id="286176397450364367" at="373,79,376,9" concept="6" />
-      <node id="5132159629682542730" at="426,59,429,9" concept="0" />
       <node id="5132159629682542730" at="426,59,429,9" concept="6" />
       <node id="286176397450364062" at="445,0,448,0" concept="1" trace="PropertyElementHandler#()V" />
       <node id="286176397450364062" at="467,0,470,0" concept="1" trace="LinkElementHandler#()V" />
@@ -433,7 +432,6 @@
       <scope id="286176397450364062" at="367,32,370,15">
         <var name="role" id="503775773880551843" />
       </scope>
-      <scope id="5132159629682542730" at="426,59,429,9" />
       <scope id="286176397450364062" at="445,0,448,0" />
       <scope id="286176397450364062" at="467,0,470,0" />
       <scope id="286176397450364062" at="49,0,53,0">
@@ -781,14 +779,11 @@
       <node id="4362914091961475679" at="45,10,47,5" concept="0" />
       <node id="4362914091961476096" at="96,10,98,5" concept="0" />
       <node id="4362914091961475567" at="31,0,34,0" concept="7" trace="addModelRef#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="4362914091961475615" at="35,27,38,7" concept="0" />
       <node id="4362914091961475615" at="35,27,38,7" concept="6" />
       <node id="4362914091961475713" at="50,0,53,0" concept="7" trace="getSModelReference#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
       <node id="1121566508702404727" at="57,90,60,5" concept="6" />
       <node id="6233597908537989533" at="75,51,78,5" concept="6" />
-      <node id="2615562934856440536" at="84,38,87,7" concept="0" />
       <node id="2615562934856440536" at="84,38,87,7" concept="6" />
-      <node id="4362914091961476046" at="91,27,94,7" concept="0" />
       <node id="4362914091961476046" at="91,27,94,7" concept="6" />
       <node id="4362914091961476129" at="100,0,103,0" concept="7" trace="readRole#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="4362914091961476139" at="103,0,106,0" concept="7" trace="readName#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -822,12 +817,9 @@
         <var name="index" id="4362914091961475571" />
         <var name="modelRef" id="4362914091961475576" />
       </scope>
-      <scope id="4362914091961475615" at="35,27,38,7" />
       <scope id="4362914091961475713" at="50,0,53,0">
         <var name="ix" id="4362914091961475718" />
       </scope>
-      <scope id="2615562934856440536" at="84,38,87,7" />
-      <scope id="4362914091961476046" at="91,27,94,7" />
       <scope id="4362914091961476129" at="100,0,103,0">
         <var name="s" id="4362914091961476134" />
       </scope>

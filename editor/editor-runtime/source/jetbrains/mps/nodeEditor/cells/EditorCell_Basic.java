@@ -36,6 +36,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -191,12 +192,21 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return getStyle().get(StyleAttributes.DRAW_BRACKETS);
   }
 
-
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().set(StyleAttributes.BACKGROUND_COLOR, color)</code>
+   */
+  @Deprecated
   @Override
   public void setCellBackgroundColor(Color color) {
     getStyle().set(StyleAttributes.BACKGROUND_COLOR, color);
   }
 
+  /**
+   * @deprecated since MPS 3.4 use:
+   * <code>cell.getStyle().get(StyleAttributes.BACKGROUND_COLOR)</code>
+   */
+  @Deprecated
   @Override
   public Color getCellBackgroundColor() {
     return getStyle().get(StyleAttributes.BACKGROUND_COLOR);
@@ -533,13 +543,25 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   @Override
-  public final jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
-    return GeometryUtil.findLeaf(this, x, y);
+  public jetbrains.mps.openapi.editor.cells.EditorCell findLeaf(int x, int y) {
+    if (getX() <= x && x < getX() + getWidth() && getY() <= y && y < getY() + getHeight()) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.cells.EditorCell findNearestLeafOnLine(int x, int y, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    if (getY() <= y && y < getY() + getHeight() && condition.met(this)) {
+      return this;
+    } else {
+      return null;
+    }
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findLeaf(jetbrains.mps.openapi.editor.cells.EditorCell, int, int)}
-   * and check the condition upon returned cell
+   * @deprecated since MPS 3.4 use {@link #findLeaf(int, int)} and check the condition upon returned cell
    */
   @Deprecated
   @Override
@@ -551,7 +573,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
+   * using {@link com.intellij.openapi.util.Conditions#TRUE} as a parameter
    */
   @Deprecated
   @Override
@@ -560,7 +583,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   /**
-   * @deprecated since MPS 3.4 use {@link GeometryUtil#findNearestCell(jetbrains.mps.openapi.editor.cells.EditorCell, int, int, Condition)}
+   * @deprecated since MPS 3.4 use {@link #findNearestLeafOnLine(int, int, Condition)}
    */
   @Deprecated
   @Override
@@ -713,8 +736,9 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
       if (!parentSettings.isSkipBackground()) {
-        if (getCellBackgroundColor() != null) {
-          g.setColor(getCellBackgroundColor());
+        Color backgroundColor = getStyle().get(StyleAttributes.BACKGROUND_COLOR);
+        if (backgroundColor != null) {
+          g.setColor(backgroundColor);
           paintBackground(g);
         }
       }
@@ -860,6 +884,11 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   }
 
+  /**
+   * @deprecated since MPS 3.4 some cells can implement {@link jetbrains.mps.openapi.editor.cells.optional.WithCaret}
+   * interface in order to have this method.
+   */
+  @Deprecated
   @Override
   public void switchCaretVisible() {
 
@@ -870,6 +899,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return new DefaultCellInfo(this);
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public boolean isAncestorOf(EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
@@ -890,6 +923,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return EditorSettings.getInstance().getRangeSelectionForegroundColor();
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public Iterator<EditorCell_Collection> parents() {
     return new Iterator<EditorCell_Collection>() {
@@ -917,6 +954,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     };
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
@@ -961,6 +1002,10 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link jetbrains.mps.openapi.editor.cells.CellTraversalUtil#getContainingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell)}
+   */
+  @Deprecated
   @Override
   public EditorCell getContainingBigCell() {
     if (isBig() || getParent() == null) {

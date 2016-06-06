@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -55,10 +56,22 @@ public class Insert_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isFirstCaretPosition()) {
-      if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
-        EditorActionUtils.callInsertBeforeAction(editorCell);
-        return;
+    if (editorCell instanceof WithCaret) {
+      WithCaret withCaret = ((WithCaret) editorCell);
+      if (withCaret.isFirstCaretPosition()) {
+        if (!(withCaret.isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
+          EditorActionUtils.callInsertBeforeAction(editorCell);
+          return;
+        }
+      }
+    } else if (editorCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+      // TODO: remove this branch after MPS 3.4 
+      jetbrains.mps.nodeEditor.cells.EditorCell internalCell = ((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
+      if (internalCell.isFirstCaretPosition()) {
+        if (!(internalCell.isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
+          EditorActionUtils.callInsertBeforeAction(editorCell);
+          return;
+        }
       }
     }
 

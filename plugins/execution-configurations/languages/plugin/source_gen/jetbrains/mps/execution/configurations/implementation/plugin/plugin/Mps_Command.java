@@ -64,6 +64,7 @@ public class Mps_Command {
     }
     return this;
   }
+
   public ProcessHandler createProcess() throws ExecutionException {
     return new Mps_Command().setVirtualMachineParameters_String(myVirtualMachineParameters_String).setJrePath_String(myJrePath_String).setConfigurationPath_String(myConfigurationPath_String).setSystemPath_String(mySystemPath_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(null);
   }
@@ -82,9 +83,11 @@ public class Mps_Command {
       throw new ExecutionException("Only one instance of MPS is allowed to be executed at once.");
     }
   }
+
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
+
   public static String getDefaultVirtualMachineParameters() {
     return IterableUtils.join(ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()), " ");
   }
@@ -114,6 +117,7 @@ public class Mps_Command {
       }
     }).toListSequence();
   }
+
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable

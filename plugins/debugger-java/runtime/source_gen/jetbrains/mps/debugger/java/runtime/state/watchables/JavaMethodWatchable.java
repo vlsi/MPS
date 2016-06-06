@@ -10,7 +10,8 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.runtime.ui.Icons;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.Collections;
@@ -41,11 +42,14 @@ import java.util.Collections;
   public Icon getPresentationIcon() {
     return Icons.METHOD_BREAKPOINT;
   }
+
+  @Nullable
   @Override
-  public SNode getNode() {
+  public SNodeReference getSourceNode() {
     //  todo from location??? 
     return null;
   }
+
   private class JavaMethodValue implements IValue {
     private final String myPresentation;
     private JavaMethodValue() {

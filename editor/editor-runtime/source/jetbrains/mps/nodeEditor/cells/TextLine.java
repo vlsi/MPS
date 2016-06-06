@@ -561,41 +561,10 @@ public class TextLine {
     return myFontMetrics;
   }
 
-  /**
-   * @deprecated since MPS 3.3 not used anymore
-   */
-  @Deprecated
-  public void insertText(String insertion) {
-    if (getStartTextSelectionPosition() < getEndTextSelectionPosition()) {
-      insertTextAtTextualSelection(insertion);
-    } else {
-      insertTextAtCaretPosition(insertion);
-    }
-  }
-
-  /**
-   * @deprecated since MPS 3.3 not used anymore
-   */
-  @Deprecated
-  public void insertTextAtCaretPosition(String insertion) {
-    doSetText(myText.substring(0, getCaretPosition()) + insertion + myText.substring(getCaretPosition()));
-    setStartTextSelectionPosition(getCaretPosition());
-    doSetCaretPosition(getCaretPosition() + insertion.length());
-    setEndTextSelectionPosition(getCaretPosition());
-  }
-
-  /**
-   * @deprecated since MPS 3.3 not used anymore
-   */
-  @Deprecated
-  public void insertTextAtTextualSelection(String insertion) {
-    doSetText(myText.substring(0, getStartTextSelectionPosition()) + insertion + myText.substring(getEndTextSelectionPosition()));
-    setEndTextSelectionPosition(getStartTextSelectionPosition() + insertion.length());
-    doSetCaretPosition(getEndTextSelectionPosition());
-  }
-
   public String getTextuallySelectedText() {
-    if (getStartTextSelectionPosition() > getEndTextSelectionPosition()) return "";
+    if (getStartTextSelectionPosition() > getEndTextSelectionPosition()) {
+      return "";
+    }
     return myText.substring(getStartTextSelectionPosition(), getEndTextSelectionPosition());
   }
 

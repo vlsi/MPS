@@ -14,6 +14,8 @@ import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -25,7 +27,8 @@ import java.util.Map;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.debug.api.programState.Watchable2;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -58,8 +61,9 @@ public class VariablesTree extends MPSTree implements DataProvider {
       @Override
       public void actionPerformed(ActionEvent e) {
         AbstractWatchableNode selectedNode = findSelectedNode();
-        if (selectedNode != null) {
-          selectedNode.openNode(false, true);
+        if (selectedNode != null && selectedNode.getNode() != null) {
+          final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+          new EditorNavigator(mpsProject).shallFocus(false).shallSelect(true).open(selectedNode.getNode());
         }
       }
     });
@@ -90,10 +94,10 @@ public class VariablesTree extends MPSTree implements DataProvider {
 
     //  collecting nodes 
     Map<WatchablesCategory, List<IWatchable>> orphanesByCategory = MapSequence.fromMap(new HashMap<WatchablesCategory, List<IWatchable>>());
-    Map<WatchablesCategory, Map<SNode, List<IWatchable>>> nodeToVarsMapByCategory = MapSequence.fromMap(new HashMap<WatchablesCategory, Map<SNode, List<IWatchable>>>());
+    Map<WatchablesCategory, Map<SNodeReference, List<IWatchable>>> nodeToVarsMapByCategory = MapSequence.fromMap(new HashMap<WatchablesCategory, Map<SNodeReference, List<IWatchable>>>());
     for (IWatchable watchable : watchables) {
       WatchablesCategory category = watchable.getCategory();
-      SNode node = watchable.getNode();
+      SNodeReference node = (watchable instanceof Watchable2 ? ((Watchable2) watchable).getSourceNode() : ((watchable.getNode() == null ? null : watchable.getNode().getReference())));
       if (node == null) {
         List<IWatchable> orphanes = MapSequence.fromMap(orphanesByCategory).get(category);
         if (orphanes == null) {
@@ -102,9 +106,9 @@ public class VariablesTree extends MPSTree implements DataProvider {
         }
         orphanes.add(watchable);
       } else {
-        Map<SNode, List<IWatchable>> nodeToVarsMap = MapSequence.fromMap(nodeToVarsMapByCategory).get(category);
+        Map<SNodeReference, List<IWatchable>> nodeToVarsMap = MapSequence.fromMap(nodeToVarsMapByCategory).get(category);
         if (nodeToVarsMap == null) {
-          nodeToVarsMap = MapSequence.fromMap(new LinkedHashMap<SNode, List<IWatchable>>(16, (float) 0.75, false));
+          nodeToVarsMap = MapSequence.fromMap(new LinkedHashMap<SNodeReference, List<IWatchable>>(16, (float) 0.75, false));
           MapSequence.fromMap(nodeToVarsMapByCategory).put(category, nodeToVarsMap);
         }
         List<IWatchable> watchableList = MapSequence.fromMap(nodeToVarsMap).get(node);
@@ -119,16 +123,16 @@ public class VariablesTree extends MPSTree implements DataProvider {
 
     for (WatchablesCategory category : keys) {
       List<IWatchable> orphanes = MapSequence.fromMap(orphanesByCategory).get(category);
-      Map<SNode, List<IWatchable>> nodeToVarsMap = MapSequence.fromMap(nodeToVarsMapByCategory).get(category);
+      Map<SNodeReference, List<IWatchable>> nodeToVarsMap = MapSequence.fromMap(nodeToVarsMapByCategory).get(category);
       if (orphanes == null) {
         orphanes = ListSequence.fromList(new ArrayList<IWatchable>());
       }
       if (nodeToVarsMap == null) {
-        nodeToVarsMap = MapSequence.fromMap(new HashMap<SNode, List<IWatchable>>());
+        nodeToVarsMap = MapSequence.fromMap(new HashMap<SNodeReference, List<IWatchable>>());
       }
       //  sorting 
-      List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
-      nodes.addAll(MapSequence.fromMap(nodeToVarsMap).keySet());
+      List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
+      ListSequence.fromList(nodes).addSequence(SetSequence.fromSet(MapSequence.fromMap(nodeToVarsMap).keySet()));
       Collections.sort(nodes, new ToStringComparator());
       Collections.sort(orphanes, new Comparator<IWatchable>() {
         @Override
@@ -138,7 +142,7 @@ public class VariablesTree extends MPSTree implements DataProvider {
       });
 
       //  adding nodes 
-      for (SNode snode : MapSequence.fromMap(nodeToVarsMap).keySet()) {
+      for (SNodeReference snode : MapSequence.fromMap(nodeToVarsMap).keySet()) {
         List<IWatchable> watchablesWithNodes = MapSequence.fromMap(nodeToVarsMap).get(snode);
         if (ListSequence.fromList(watchablesWithNodes).count() == 1) {
           rootTreeNode.add(new WatchableNode(ListSequence.fromList(watchablesWithNodes).first(), myUiState));
@@ -183,19 +187,19 @@ public class VariablesTree extends MPSTree implements DataProvider {
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
+    if (MPSCommonDataKeys.NODE.is(dataId)) {
       AbstractWatchableNode selectedNode = findSelectedNode();
-      if (selectedNode != null) {
-        return selectedNode.getNode();
+      if (selectedNode != null && selectedNode.getNode() != null) {
+        return selectedNode.getNode().resolve(ProjectHelper.getProjectRepository(getProject()));
       }
-    } else if (dataId.equals(MPS_DEBUGGER_VALUE.getName())) {
+    } else if (MPS_DEBUGGER_VALUE.is(dataId)) {
       AbstractWatchableNode selectedNode = findSelectedNode();
       if (selectedNode != null) {
         if (selectedNode instanceof WatchableNode) {
           return ((WatchableNode) selectedNode).getValue();
         }
       }
-    } else if (dataId.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
+    } else if (MPSCommonDataKeys.TREE_NODE.is(dataId)) {
       return findSelectedNode();
     }
     return null;

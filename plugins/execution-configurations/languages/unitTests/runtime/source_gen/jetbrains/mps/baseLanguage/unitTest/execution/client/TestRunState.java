@@ -12,9 +12,9 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.util.Key;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NotNull;
@@ -38,8 +38,12 @@ public class TestRunState {
   private boolean myIsTerminated;
   private String myAvailableText = null;
   private Key myKey = null;
-  public TestRunState(Iterable<? extends ITestNodeWrapper> tests) {
-    this.initTestState(Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+
+  private final Project myProject;
+
+  public TestRunState(Iterable<? extends ITestNodeWrapper> tests, Project project) {
+    myProject = project;
+    initTestState(Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.isTestCase();
       }
@@ -49,8 +53,9 @@ public class TestRunState {
       }
     }));
   }
+
   private void initTestState(final Iterable<? extends ITestNodeWrapper> testCases, final Iterable<? extends ITestNodeWrapper> testMethods) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         TestRunState.this.addTestCases(testCases);
         TestRunState.this.addTestMethods(testMethods);
@@ -65,6 +70,7 @@ public class TestRunState {
 
     this.initView();
   }
+
   private void addTestCases(Iterable<? extends ITestNodeWrapper> testCases) {
     for (ITestNodeWrapper testCase : Sequence.fromIterable(testCases)) {
       List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
@@ -72,6 +78,7 @@ public class TestRunState {
       MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
     }
   }
+
   private void addTestMethods(Iterable<? extends ITestNodeWrapper> testMethods) {
     for (ITestNodeWrapper testMethod : Sequence.fromIterable(testMethods)) {
       ITestNodeWrapper testCase = testMethod.getTestCase();
@@ -85,19 +92,23 @@ public class TestRunState {
       }
     }
   }
+
   private void updateView() {
     for (TestView view : this.myViewsList) {
       view.update();
     }
   }
+
   private void initView() {
     for (TestView view : this.myViewsList) {
       view.init();
     }
   }
+
   public void addView(TestView testView) {
     SetSequence.fromSet(this.myViewsList).addElement(testView);
   }
+
   public void onTestStarted(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -106,6 +117,7 @@ public class TestRunState {
     });
     this.startTest(event.getTestCaseName(), event.getTestMethodName());
   }
+
   public void onTestFinished(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -115,6 +127,7 @@ public class TestRunState {
     this.finishTest();
     this.completeTestEvent(event);
   }
+
   public void onTestFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -123,6 +136,7 @@ public class TestRunState {
     });
     this.failTest();
   }
+
   public void onTestAssumptionFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -151,6 +165,7 @@ public class TestRunState {
       this.updateView();
     }
   }
+
   private void finishTest() {
     synchronized (lock) {
       if (this.myCurrentCompleted) {
@@ -161,18 +176,21 @@ public class TestRunState {
       this.myCurrentMethod = null;
     }
   }
+
   private void failTest() {
     synchronized (lock) {
       this.myFailedTests++;
       this.updateView();
     }
   }
+
   private void ignoreTest() {
     synchronized (lock) {
       this.myCurrentCompleted = false;
       this.updateView();
     }
   }
+
   private void looseTestInternal(String test, String method) {
     synchronized (lock) {
       this.myLostTest = test;
@@ -182,6 +200,7 @@ public class TestRunState {
       this.myLostMethod = null;
     }
   }
+
   public void terminate() {
     synchronized (lock) {
       checkConsistency();
@@ -189,10 +208,12 @@ public class TestRunState {
       this.updateView();
     }
   }
+
   private void checkConsistency() {
     assert this.myCompletedTests <= this.myTotalTests;
     assert this.myFailedTests <= this.myCompletedTests;
   }
+
   public void outputText(String text, @NotNull Key key) {
     synchronized (lock) {
       this.myAvailableText = text;
@@ -202,6 +223,7 @@ public class TestRunState {
       this.myKey = null;
     }
   }
+
   private void completeTestEvent(TestEvent event) {
     String testCaseName = event.getTestCaseName();
     String testMethodName = event.getTestMethodName();
@@ -211,6 +233,7 @@ public class TestRunState {
       removeUsedMethod(testCaseName, testMethodName);
     }
   }
+
   private void removeUsedMethod(String testCaseName, String testMethodName) {
     String methodKey = testCaseName + '.' + testMethodName;
     synchronized (this.myTestMethods) {
@@ -219,9 +242,10 @@ public class TestRunState {
       }
     }
   }
+
   private void removeUsedTestCase(final String testCaseName) {
     final List<String> methodsToRemove = ListSequence.fromList(new LinkedList<String>());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
           if (testCase.getFqName().equals(testCaseName)) {
@@ -241,51 +265,67 @@ public class TestRunState {
       }
     }
   }
+
   public List<String> getUnusedMethods() {
     return this.myTestMethods;
   }
+
   public int getTotalTests() {
     return this.myTotalTests;
   }
+
   public int getFailedTests() {
     return this.myFailedTests;
   }
+
   public int getCompletedTests() {
     return this.myCompletedTests;
   }
+
   public String getCurrentClass() {
     return this.myCurrentClass;
   }
+
   public String getCurrentMethod() {
     return this.myCurrentMethod;
   }
+
   public void setToken(String token) {
     this.myCurrentToken = token;
   }
+
   public String getToken() {
     return this.myCurrentToken;
   }
+
   public String getLostMethod() {
     return this.myLostMethod;
   }
+
   public String getLostClass() {
     return this.myLostTest;
   }
+
   public boolean isTerminated() {
     return this.myIsTerminated;
   }
+
   public String getAvailableText() {
     return this.myAvailableText;
   }
+
   public Key getKey() {
     return this.myKey;
   }
+
   public void addListener(TestStateListener listener) {
     ListSequence.fromList(this.myListeners).addElement(listener);
   }
+
   public void removeListener(TestStateListener listener) {
     ListSequence.fromList(this.myListeners).removeElement(listener);
   }
+
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {
     return this.myTestToMethodsMap;
   }

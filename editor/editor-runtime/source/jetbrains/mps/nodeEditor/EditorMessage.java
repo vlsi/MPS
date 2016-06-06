@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 
 import java.awt.Graphics;
@@ -28,11 +28,11 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   boolean isValid(EditorComponent editorComponent);
 
-  jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editorComponent);
+  EditorCell getCell(EditorComponent editorComponent);
 
   EditorCell getCellForParentNodeInMainEditor(EditorComponent editor);
 
-  boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor);
+  boolean acceptCell(EditorCell cell, EditorComponent editor);
 
   boolean showInEditor();
 

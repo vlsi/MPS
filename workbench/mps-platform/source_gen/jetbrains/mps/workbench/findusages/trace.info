@@ -85,7 +85,6 @@
       <node id="558005353045366907" at="128,32,131,9" concept="7" />
       <node id="7188925165894382843" at="142,36,145,7" concept="7" />
       <node id="4614401897484748035" at="148,83,151,7" concept="7" />
-      <node id="4614401897484748141" at="156,25,159,11" concept="0" />
       <node id="4614401897484748141" at="156,25,159,11" concept="7" />
       <node id="4614401897484748105" at="164,63,167,13" concept="7" />
       <node id="2810982631457565114" at="188,46,191,9" concept="6" />
@@ -157,7 +156,6 @@
       </scope>
       <scope id="1578360511945558535" at="117,84,120,7" />
       <scope id="558005353045333710" at="128,32,131,9" />
-      <scope id="4614401897484748141" at="156,25,159,11" />
       <scope id="2810982631457565113" at="188,46,191,9" />
       <scope id="2810982631457565114" at="188,46,191,9">
         <var name="m" id="2810982631457565119" />
@@ -285,7 +283,6 @@
       <node id="2810982631457565452" at="38,0,40,0" concept="2" trace="MyFileTypeIdIndexer#()V" />
       <node id="2810982631457565475" at="29,0,32,0" concept="8" trace="disposeComponent#()V" />
       <node id="8091930109923280326" at="43,44,46,7" concept="7" />
-      <node id="1883068367456156473" at="51,29,54,9" concept="0" />
       <node id="1883068367456156473" at="51,29,54,9" concept="7" />
       <node id="3822554386093950684" at="58,37,61,7" concept="7" />
       <node id="2810982631457565466" at="25,0,29,0" concept="8" trace="initComponent#()V" />
@@ -304,7 +301,6 @@
       <scope id="2810982631457565462" at="23,0,25,0" />
       <scope id="2810982631457565452" at="38,0,40,0" />
       <scope id="2810982631457565475" at="29,0,32,0" />
-      <scope id="1883068367456156473" at="51,29,54,9" />
       <scope id="2810982631457565466" at="25,0,29,0" />
       <scope id="8091930109923280423" at="51,0,55,38">
         <var name="t" id="8091930109923280424" />
@@ -583,7 +579,6 @@
       <node id="5122318299906072369" at="297,20,300,9" concept="7" />
       <node id="5122318299906072369" at="300,9,303,9" concept="7" />
       <node id="5122318299906072369" at="303,9,306,9" concept="7" />
-      <node id="5122318299906072369" at="309,32,312,38" concept="0" />
       <node id="5122318299906072409" at="314,5,317,5" concept="6" />
       <node id="5122318299906072425" at="317,5,320,5" concept="6" />
       <node id="2566197375814063275" at="322,54,325,5" concept="7" />
@@ -603,7 +598,6 @@
       <node id="2566197375814064304" at="475,0,480,0" concept="8" trace="addClassifierReference#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMClassType;)V" />
       <node id="2566197375814064396" at="484,0,489,0" concept="8" trace="addEnumConstReference#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMEnumValue;)V" />
       <node id="303301571174689069" at="46,0,52,0" concept="8" trace="ref#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
-      <node id="5122318299906065238" at="234,34,241,40" concept="0" />
       <node id="2566197375814063344" at="332,48,339,5" concept="7" />
       <node id="303301571174692286" at="341,47,348,5" concept="7" />
       <node id="2566197375814063404" at="350,0,357,0" concept="8" trace="addAnnotationsToParameter#(Ljava/util/List;)V" />
@@ -777,7 +771,6 @@
       <scope id="5122318299906065174" at="246,7,249,7">
         <var name="exception" id="5122318299906065178" />
       </scope>
-      <scope id="5122318299906072385" at="309,32,312,38" />
       <scope id="5122318299906072409" at="314,5,317,5">
         <var name="exception" id="5122318299906072325" />
       </scope>
@@ -854,7 +847,6 @@
       <scope id="2566197375814062190" at="136,56,143,5">
         <var name="refSuperclass" id="2566197375814062198" />
       </scope>
-      <scope id="5122318299906065243" at="234,34,241,40" />
       <scope id="2566197375814063343" at="332,48,339,5" />
       <scope id="2566197375814063377" at="341,47,348,5" />
       <scope id="2566197375814063404" at="350,0,357,0">

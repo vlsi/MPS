@@ -10,9 +10,14 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.debugger.java.api.state.JavaUiState;
+import java.util.List;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaThisObject extends JavaWatchable implements IWatchable {
@@ -40,16 +45,28 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
   public Icon getPresentationIcon() {
     return myValue.getPresentationIcon();
   }
+
+  @Nullable
   @Override
-  public SNode getNode() {
-    JavaLocation location = myStackFrame.getLocation();
+  public SNodeReference getSourceNode() {
+    final JavaLocation location = myStackFrame.getLocation();
     if (location == null) {
       return null;
     }
-    return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    TraceInfoProvider traceProvider = myStackFrame.getThread().getDebugSession().getTraceProvider();
+    for (Iterator<DebugInfo> it = traceProvider.debugInfo(JavaUiState.modelNameFromLocation(location)).iterator(); it.hasNext();) {
+      DebugInfo di = it.next();
+      List<SNodeReference> unitNodes = di.getUnitNodesForPosition(location.getFileName(), location.getLineNumber());
+      if (!(unitNodes.isEmpty())) {
+        return unitNodes.get(0);
+      }
+    }
+    return null;
   }
+
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.THIS_OBJECT;
   }
+
 }

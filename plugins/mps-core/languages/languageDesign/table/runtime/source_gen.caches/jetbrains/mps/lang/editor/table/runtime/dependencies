@@ -88,12 +88,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionInfoImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionRestoreException" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellInfo" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />

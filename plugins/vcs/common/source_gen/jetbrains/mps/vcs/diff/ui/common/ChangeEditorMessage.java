@@ -90,12 +90,12 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public void paint(Graphics graphics, EditorComponent editor, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
+  public void paint(Graphics graphics, EditorComponent editor, EditorCell cell) {
     if (!(myHighlighted)) {
       return;
     }
     if (isDirectCell(cell)) {
-      cell.paintSelection(graphics, getColor(), false);
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paintSelection(graphics, getColor(), false);
       repaintConflictedMessages(graphics, cell);
     } else {
       if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
@@ -138,7 +138,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         }
       });
       if (messageToRepaint != null) {
-        ((ChangeEditorMessage) messageToRepaint).paint(graphics, (EditorComponent) cell.getEditorComponent(), (jetbrains.mps.nodeEditor.cells.EditorCell) parent);
+        ((ChangeEditorMessage) messageToRepaint).paint(graphics, (EditorComponent) cell.getEditorComponent(), parent);
       }
     }
   }

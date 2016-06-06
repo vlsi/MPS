@@ -714,7 +714,6 @@
       <node id="5464540062512873482" at="302,110,303,109" concept="3" />
       <node id="2889732820753212848" at="311,6,312,129" concept="9" />
       <node id="6405599828488845161" at="315,0,316,0" concept="12" trace="OPTION" />
-      <node id="1817798995039488713" at="205,235,207,161" concept="1" />
       <node id="972152238150137018" at="220,10,222,5" concept="1" />
       <node id="625080419371537361" at="53,0,56,0" concept="2" trace="MoveNodeRefactoringLogParticipant_extension#()V" />
       <node id="625080419371537363" at="56,0,59,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveNodeRefactoringParticipant;" />
@@ -734,7 +733,6 @@
       <node id="5464540062512861273" at="166,0,169,0" concept="7" trace="getFromVersion#()I" />
       <node id="1817798995039504596" at="169,85,172,7" concept="6" />
       <node id="1817798995039477934" at="175,0,178,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/platform/actions/core/RefactoringParticipant/Option;" />
-      <node id="3947813777275446249" at="185,232,188,144" concept="1" />
       <node id="3628660716137567628" at="194,161,197,7" concept="6" />
       <node id="3628660716137567628" at="197,7,200,7" concept="6" />
       <node id="972152238150685293" at="225,232,228,5" concept="6" />
@@ -764,7 +762,6 @@
       <node id="3947813777275163735" at="90,0,97,0" concept="7" trace="getSerializedInitial#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3947813777275112040" at="97,0,104,0" concept="7" trace="getSerializedFinal#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1817798995039476850" at="173,91,180,9" concept="6" />
-      <node id="3628660716137567628" at="193,233,200,7" concept="1" />
       <node id="1817798995039488713" at="203,0,210,0" concept="13" trace="createRefactoringOption_29rp6m_a0a0a0a1a6m#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="972152238149882560" at="217,0,224,0" concept="7" trace="getAvailableOptions#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <node id="3947813777274826435" at="107,0,115,0" concept="4" trace="myDataCollector" />
@@ -824,7 +821,6 @@
       <scope id="3947813777275103767" at="83,190,85,55" />
       <scope id="3947813777275379053" at="124,35,126,48" />
       <scope id="3947813777275474858" at="130,28,132,86" />
-      <scope id="1817798995039488713" at="205,235,207,161" />
       <scope id="5464540062512417517" at="301,48,303,109">
         <var name="fromVersion" id="5464540062512853327" />
       </scope>
@@ -858,7 +854,6 @@
       <scope id="1817798995039477934" at="175,0,178,0">
         <var name="it" id="1817798995039477934" />
       </scope>
-      <scope id="3947813777275446249" at="185,232,188,144" />
       <scope id="972152238150178353" at="212,84,215,44">
         <var name="sourceModule" id="972152238150646792" />
         <var name="sourceNode" id="972152238150646785" />
@@ -925,7 +920,6 @@
         <var name="newNode" id="2889732820753584694" />
       </scope>
       <scope id="1817798995039501045" at="173,91,180,9" />
-      <scope id="3628660716137567628" at="193,233,200,7" />
       <scope id="1817798995039488713" at="203,0,210,0">
         <var name="p0" id="1817798995039488713" />
         <var name="p1" id="1817798995039488713" />

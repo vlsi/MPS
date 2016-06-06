@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,6 +35,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class DebugInfo {
   private final Map<SNodeReference, DebugInfoRoot> myRoots = new HashMap<SNodeReference, DebugInfoRoot>();
@@ -122,7 +124,12 @@ public class DebugInfo {
     return Collections.emptyList();
   }
 
+  /**
+   * @deprecated cumbersome contract
+   */
+  @Deprecated
   @NotNull
+  @ToRemove(version = 0)
   public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
     Map<DebugInfoRoot, List<T>> result = new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false);
     for (DebugInfoRoot root : getRootsForFile(file)) {
@@ -140,6 +147,79 @@ public class DebugInfo {
       }
     }
     return result;
+  }
+
+  /**
+   * @see
+   */
+  @NotNull
+  public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line) {
+    return getTracedNodesForPosition(fileName, line, null);
+  }
+
+    /**
+     * Look up all {@link TraceablePositionInfo} that cover specified location, sort them by distance of starting line from the
+     * line specified (closes coming first), prepare {@code SNodeReference} and yield the list.
+     * Takes an optional code that may further filter out {@link TraceablePositionInfo} according to specific needs. Consumer can respect certain
+     * approaches to code generation, language differences and relation of line and position.
+     *
+     * @param fileName name of generated file with text
+     * @param line index of line in question
+     * @param extraProcessing optional code that takes sorted list of {@linkplain TraceablePositionInfo positions} that span specified line, the one with
+     *                        closest start coming first. The list could be modified/augmented or even emptied, positions left in the list are translated
+     *                        to respective node references and constitute the outcome of the method. Consumer list argument is never {@code null}.
+     */
+  @NotNull
+  public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line, @Nullable Consumer<List<TraceablePositionInfo>> extraProcessing) {
+    // XXX implementation note: this method, much like the next one, getVariableNodesForPosition, is identical to getUnitNodesForPosition
+    //     and all are worth refactoring (though not the way it used to be in TraceInfoUtil)
+    //     Perhaps, can throw in some Java 8?
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    ArrayList<SNodeReference> traceNode = new ArrayList<SNodeReference>();
+    for (DebugInfoRoot dr : getRootsForFile(fileName)) {
+      ArrayList<TraceablePositionInfo> positionInfos = new ArrayList<TraceablePositionInfo>(dr.getPositions());
+      Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      ArrayList<TraceablePositionInfo> infosForLine = new ArrayList<TraceablePositionInfo>(positionInfos.size());
+      for (TraceablePositionInfo tpi : positionInfos) {
+        if (tpi.contains(fileName, line)) {
+          infosForLine.add(tpi);
+        }
+      }
+      if (extraProcessing != null) {
+        extraProcessing.accept(infosForLine);
+      }
+      for (TraceablePositionInfo tpi : infosForLine) {
+        traceNode.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(tpi.getNodeId())));
+      }
+    }
+    return traceNode;
+  }
+
+
+  /**
+   * Look up for variable nodes within scope that covers specified line of the file.
+   * List is sorted in reverse order, with variables from the bottom (most nested) coming first.
+   * <p/>
+   * The reason I don't want to expose ScopePositionInfo and let clients filter positions themselves is
+   * that they'd need access to DebugInfoRoot as well (to find out container node/model), and the API would get too complicated.
+   */
+  @NotNull
+  public List<SNodeReference> getVariableNodesForPosition(@NotNull String fileName, int line, @NotNull String varName) {
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    ArrayList<SNodeReference> rv = new ArrayList<SNodeReference>();
+    for (DebugInfoRoot dr : getRootsForFile(fileName)) {
+      ArrayList<ScopePositionInfo> positionInfos = new ArrayList<>(dr.getScopePositions());
+      Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      for (ScopePositionInfo spi : positionInfos) {
+        if (!spi.contains(fileName, line)) {
+          continue;
+        }
+        if (spi.getVarNames().contains(varName)) {
+          rv.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(spi.getVarId(varName))));
+        }
+      }
+    }
+    return rv;
   }
 
   /**

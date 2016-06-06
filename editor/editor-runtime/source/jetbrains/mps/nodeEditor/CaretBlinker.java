@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.util.WeakSet;
 
 import javax.swing.SwingUtilities;
@@ -104,7 +105,12 @@ public class CaretBlinker extends ApplicationAdapter {
               @Override
               public void run() {
                 if (!editor.isDisposed() && editor.isActive()) {
-                  ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
+                  if (selectedCell instanceof WithCaret) {
+                    ((WithCaret) selectedCell).switchCaretVisible();
+                  } else {
+                    // TODO: remove this branch after MPS 3.4
+                    ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
+                  }
                   editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
                 }
               }

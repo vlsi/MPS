@@ -67,20 +67,12 @@
       <node id="1219331742419" at="92,227,93,435" concept="3" />
       <node id="1219331742419" at="93,435,94,24" concept="9" />
       <node id="4723230619342922312" at="22,0,24,0" concept="1" trace="QueriesUtil#()V" />
-      <node id="1196777970339" at="82,184,84,165" concept="0" />
-      <node id="1196777970339" at="82,184,84,165" concept="0" />
-      <node id="1196777970339" at="84,165,86,166" concept="0" />
-      <node id="1196777970339" at="84,165,86,166" concept="0" />
-      <node id="1219331742419" at="91,30,93,435" concept="0" />
-      <node id="1219331742419" at="91,30,93,435" concept="0" />
       <node id="1196275120554" at="51,233,54,5" concept="6" />
       <node id="1219331728661" at="73,0,76,0" concept="12" trace="getJavaLangObject#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1170730182552" at="25,228,29,5" concept="6" />
       <node id="1170869717775" at="32,188,36,5" concept="5" />
       <node id="1170874244159" at="40,228,44,5" concept="6" />
       <node id="1196276308421" at="64,30,69,5" concept="6" />
-      <node id="1196777970339" at="80,30,86,166" concept="0" />
-      <node id="1196777970339" at="80,30,86,166" concept="0" />
       <node id="1196275284506" at="56,22,63,5" concept="6" />
       <node id="1219331742419" at="89,0,96,0" concept="12" trace="_quotation_createNode_w9106s_a0a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1170874151016" at="39,0,47,0" concept="12" trace="getTypeVars_from_Closure_enclosingClass#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -96,9 +88,6 @@
         <var name="typeVarRef" id="1170869780787" />
       </scope>
       <scope id="1170874244163" at="41,33,43,43" />
-      <scope id="1196777970339" at="82,184,84,165" />
-      <scope id="1196777970339" at="84,165,86,166" />
-      <scope id="1219331742419" at="91,30,93,435" />
       <scope id="1196276308422" at="65,428,68,22">
         <var name="thisExpr" id="1196276396238" />
       </scope>
@@ -117,7 +106,6 @@
       <scope id="1170874151018" at="39,89,45,195">
         <var name="enclosingClass" id="1170874244153" />
       </scope>
-      <scope id="1196777970339" at="80,30,86,166" />
       <scope id="1219331742419" at="89,0,96,0" />
       <scope id="1170874151016" at="39,0,47,0">
         <var name="inputClosure" id="1170874222693" />
@@ -228,7 +216,6 @@
       <node id="1238944138205" at="170,0,172,0" concept="1" trace="ClosureContextData#()V" />
       <node id="1238940452353" at="32,59,35,5" concept="6" />
       <node id="1238940569616" at="38,68,41,5" concept="6" />
-      <node id="6163537227498187201" at="44,36,47,11" concept="0" />
       <node id="6163537227498187201" at="44,36,47,11" concept="6" />
       <node id="1238941738638" at="71,100,74,5" concept="6" />
       <node id="1238942236891" at="96,95,99,5" concept="6" />
@@ -311,7 +298,6 @@
       <scope id="6017788484734288443" at="89,36,91,81" />
       <scope id="1238943927299" at="146,64,148,32" />
       <scope id="1238944138205" at="170,0,172,0" />
-      <scope id="6163537227498187201" at="44,36,47,11" />
       <scope id="1238941047644" at="62,110,65,72">
         <var name="contextData" id="3087992888568584371" />
       </scope>
@@ -502,7 +488,6 @@
       <node id="8428317315592447796" at="63,125,66,5" concept="6" />
       <node id="8428317315592447825" at="69,46,72,7" concept="6" />
       <node id="8428317315592447838" at="76,0,79,0" concept="12" trace="getList_ContextOwner_VariablesUsedInClosure#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljava/util/List;" />
-      <node id="6163537227498181650" at="90,41,93,11" concept="0" />
       <node id="6163537227498181650" at="90,41,93,11" concept="6" />
       <node id="7706854513804995258" at="95,9,98,9" concept="6" />
       <node id="8428317315592447684" at="45,0,49,0" concept="12" trace="find_Closure_generatedClosureAdapter_constructor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -547,7 +532,6 @@
         <var name="generator" id="8428317315592447844" />
         <var name="inputNode" id="8428317315592447842" />
       </scope>
-      <scope id="6163537227498181650" at="90,41,93,11" />
       <scope id="8428317315592447614" at="27,31,31,7">
         <var name="generatedClass" id="8428317315592447616" />
       </scope>

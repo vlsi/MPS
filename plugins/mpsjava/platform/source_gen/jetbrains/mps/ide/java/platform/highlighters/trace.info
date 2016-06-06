@@ -439,7 +439,7 @@
     <file name="ToDoMessage.java">
       <node id="525317265757014267" at="14,76,15,44" concept="16" />
       <node id="5916754392152656889" at="14,0,17,0" concept="2" trace="ToDoMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;)V" />
-      <node id="5916754392152656906" at="17,0,20,0" concept="9" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
+      <node id="5916754392152656906" at="17,0,20,0" concept="9" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="5916754392152656915" at="18,84,18,84" />
       <scope id="5916754392152656892" at="14,76,15,44" />
       <scope id="5916754392152656889" at="14,0,17,0">

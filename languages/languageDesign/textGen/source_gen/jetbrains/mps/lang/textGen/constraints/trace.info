@@ -33,7 +33,6 @@
       <node id="1233750346381" at="44,84,45,119" concept="8" />
       <node id="1233750346381" at="48,37,49,20" concept="9" />
       <node id="1233750346381" at="52,42,53,37" concept="8" />
-      <node id="1233750346381" at="53,37,54,338" concept="0" />
       <node id="1233750421355" at="53,37,54,338" concept="9" />
       <node id="1233750346381" at="56,7,57,22" concept="9" />
       <node id="1233758203985" at="59,99,60,89" concept="9" />
@@ -51,7 +50,6 @@
       <scope id="1233750346381" at="30,42,31,16" />
       <scope id="1233750346381" at="37,51,38,66" />
       <scope id="1233750346381" at="48,37,49,20" />
-      <scope id="1233750418026" at="53,37,54,338" />
       <scope id="1233758188296" at="59,99,60,89" />
       <scope id="1233750346381" at="52,42,54,338">
         <var name="propertyName" id="1233750346381" />
@@ -269,7 +267,6 @@
       <node id="7166719696753590028" at="52,0,55,0" concept="12" trace="trim_p9uqyx_a0a0a1a1a0b0a1a2#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="7166719696753421208" at="26,0,30,0" concept="7" trace="hasOwnValidator#()Z" />
       <node id="7166719696753427473" at="38,9,44,9" concept="14" />
-      <node id="7166719696753421208" at="32,41,44,9" concept="0" />
       <node id="7166719696753421208" at="30,0,46,0" concept="7" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="7166719696753421208" at="24,119,46,7" concept="3" />
       <node id="7166719696753421208" at="22,0,49,0" concept="7" trace="getSpecifiedProperties#()Ljava/util/Map;" />
@@ -292,7 +289,6 @@
         <var name="str" id="7166719696753590028" />
       </scope>
       <scope id="7166719696753421208" at="26,0,30,0" />
-      <scope id="7166719696753421213" at="32,41,44,9" />
       <scope id="7166719696753421208" at="31,70,44,9">
         <var name="propertyName" id="7166719696753421208" />
       </scope>
@@ -360,7 +356,6 @@
       <node id="998325320688548830" at="29,90,30,131" concept="8" />
       <node id="998325320688548830" at="33,44,34,20" concept="9" />
       <node id="998325320688548830" at="41,63,42,58" concept="9" />
-      <node id="998325320688548830" at="45,122,46,211" concept="0" />
       <node id="998325320688548859" at="45,122,46,211" concept="9" />
       <node id="998325320688548830" at="50,7,51,22" concept="9" />
       <node id="998325320688548830" at="53,0,54,0" concept="11" trace="breakingNode_g51ca1_a0a0a0a0a1a0b0a1a2" />
@@ -376,7 +371,6 @@
       <scope id="998325320688548830" at="33,44,34,20" />
       <scope id="998325320688548830" at="41,63,42,58" />
       <scope id="998325320688548830" at="45,122,46,211" />
-      <scope id="998325320688548834" at="45,122,46,211" />
       <scope id="998325320688548830" at="24,0,27,0" />
       <scope id="998325320688548830" at="32,0,36,0" />
       <scope id="998325320688548830" at="40,0,44,0" />

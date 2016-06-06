@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558:jetbrains.mps.baseLanguage.structure.ForStatement" />
@@ -10,15 +9,14 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:5d73334e-5a3b-4ea5-bf0c-57e352c702de(jetbrains.mps.analyzers.sandbox.test)/7985661997283617007">
     <file name="Ff.java">
-      <node id="7985661997283619979" at="9,19,10,18" concept="6" />
-      <node id="7985661997283672858" at="11,20,12,26" concept="2" />
-      <node id="7985661997283672867" at="15,22,16,15" concept="7" />
-      <node id="7985661997283617009" at="7,0,9,0" concept="1" trace="Ff#()V" />
-      <node id="7985661997283672853" at="10,18,13,5" concept="4" />
-      <node id="7985661997283672865" at="14,33,17,7" concept="4" />
-      <node id="7985661997283672863" at="13,5,18,5" concept="3" />
-      <node id="7985661997283672849" at="10,18,18,5" concept="0" />
-      <node id="7985661997283617013" at="9,0,20,0" concept="5" trace="f#()V" />
+      <node id="7985661997283619979" at="9,19,10,18" concept="5" />
+      <node id="7985661997283672858" at="11,20,12,26" concept="1" />
+      <node id="7985661997283672867" at="15,22,16,15" concept="6" />
+      <node id="7985661997283617009" at="7,0,9,0" concept="0" trace="Ff#()V" />
+      <node id="7985661997283672853" at="10,18,13,5" concept="3" />
+      <node id="7985661997283672865" at="14,33,17,7" concept="3" />
+      <node id="7985661997283672863" at="13,5,18,5" concept="2" />
+      <node id="7985661997283617013" at="9,0,20,0" concept="4" trace="f#()V" />
       <scope id="7985661997283617012" at="7,15,7,15" />
       <scope id="7985661997283672857" at="11,20,12,26" />
       <scope id="7985661997283672866" at="15,22,16,15" />
@@ -27,7 +25,6 @@
       <scope id="7985661997283672863" at="13,5,18,5">
         <var name="i" id="7985661997283672871" />
       </scope>
-      <scope id="7985661997283672850" at="10,18,18,5" />
       <scope id="7985661997283617016" at="9,19,18,5">
         <var name="s" id="7985661997283619980" />
       </scope>

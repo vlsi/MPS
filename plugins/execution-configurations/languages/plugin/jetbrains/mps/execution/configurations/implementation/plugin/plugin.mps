@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="1" />
+    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="0" />
     <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="0" />
     <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="0" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
@@ -114,8 +114,9 @@
     <import index="drpl" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.make(MPS.Platform/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
-    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="yha4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose(MPS.Platform/)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" implicit="true" />
     <import index="jmgz" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose.base(MPS.Platform/)" implicit="true" />
@@ -2169,6 +2170,19 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1I6I6y47u0T" role="3cqZAp">
+          <node concept="3cpWsn" id="1I6I6y47u0U" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="1I6I6y47u0S" role="1tU5fm">
+              <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="2YIFZM" id="1I6I6y47u0V" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="21ER0p" id="1I6I6y47u0W" role="37wK5m" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5gyVhZ1884n" role="3cqZAp">
           <node concept="3cpWsn" id="5gyVhZ1884o" role="3cpWs9">
             <property role="TrG5h" value="testNodes" />
@@ -2178,10 +2192,8 @@
               </node>
               <node concept="2XshWL" id="5gyVhZ1884u" role="2OqNvi">
                 <ref role="2WH_rO" to="tty3:5gyVhZ1bm9b" resolve="getTests" />
-                <node concept="2YIFZM" id="5gyVhZ1ayh4" role="2XxRq1">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="21ER0p" id="5gyVhZ1ayh5" role="37wK5m" />
+                <node concept="37vLTw" id="1I6I6y47u0X" role="2XxRq1">
+                  <ref role="3cqZAo" node="1I6I6y47u0U" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -2203,6 +2215,9 @@
                 <ref role="37wK5l" to="sfqd:56tRMpP_fiW" resolve="TestRunState" />
                 <node concept="37vLTw" id="1b7CZFPLqBO" role="37wK5m">
                   <ref role="3cqZAo" node="5gyVhZ1884o" resolve="testNodes" />
+                </node>
+                <node concept="37vLTw" id="1I6I6y47uUv" role="37wK5m">
+                  <ref role="3cqZAo" node="1I6I6y47u0U" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -13093,7 +13108,14 @@
           <node concept="37vLTw" id="5vt46J2TVj5" role="37wK5m">
             <ref role="3cqZAo" node="5vt46J2OZVk" resolve="fakeProcess" />
           </node>
-          <node concept="10Nm6u" id="3R5sklYRYKV" role="37wK5m" />
+          <node concept="2OqwBi" id="6LTrB$DY_DM" role="37wK5m">
+            <node concept="37vLTw" id="6LTrB$DY_cC" role="2Oq$k0">
+              <ref role="3cqZAo" node="5vt46J2OZVk" resolve="fakeProcess" />
+            </node>
+            <node concept="liA8E" id="6LTrB$DYAjb" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+            </node>
+          </node>
           <node concept="10Nm6u" id="3R5sklYRYM6" role="37wK5m" />
         </node>
         <node concept="3clFbF" id="5iYlssmQ58v" role="3cqZAp">
@@ -13293,6 +13315,9 @@
         <node concept="3clFbF" id="6aXQB014oL" role="3cqZAp">
           <node concept="10Nm6u" id="6aXQB014oK" role="3clFbG" />
         </node>
+      </node>
+      <node concept="2AHcQZ" id="6LTrB$DYAl2" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

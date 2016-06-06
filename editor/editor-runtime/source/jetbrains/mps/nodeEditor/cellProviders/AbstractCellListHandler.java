@@ -56,38 +56,12 @@ public abstract class AbstractCellListHandler {
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 
-  /**
-   * After MPS 3.2 remove this method.
-   * Left here for compatibility reasons with the existing code.
-   *
-   * @deprecated since MPS 3.2 all subclasses should override doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore)
-   */
-  @Deprecated
-  protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
-  }
+  protected abstract void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore);
 
-  /**
-   * TODO: make this method abstract after MPS 3.2
-   * All sub-classes should override this method starting from MPS 3.2
-   */
-  protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
-    doInsertNode(anchorNode, insertBefore);
-  }
-
-  /**
-   * After MPS 3.2 move all code from the body of this method into insertNewChild() and remove this method.
-   *
-   * @deprecated since MPS 3.2 use insertNewChild() instead.
-   */
-  @Deprecated
-  public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
+  public void insertNewChild(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SNode anchorNode = getAnchorNode(anchorCell);
     SNode nodeToInsert = createNodeToInsert(editorContext);
     doInsertNode(nodeToInsert, anchorNode, insertBefore);
-  }
-
-  public void insertNewChild(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
-    startInsertMode(editorContext, anchorCell, insertBefore);
   }
 
   public abstract EditorCell createNodeCell(EditorContext editorContext, SNode node);

@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -31,8 +32,10 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -310,6 +313,11 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
     }
 
     @Override
+    public EditorCell findNearestLeafOnLine(int x, int y, Condition<EditorCell> condition) {
+      return null;
+    }
+
+    @Override
     public boolean isSingleNodeCell() {
       return false;
     }
@@ -416,6 +424,12 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
     @Override
     public boolean isReferenceCell() {
       return false;
+    }
+
+    @NotNull
+    @Override
+    public CellInfo getCellInfo() {
+      return new DefaultCellInfo(this);
     }
   }
 }

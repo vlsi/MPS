@@ -14,6 +14,8 @@
     <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.DefaultTraceInfoProvider" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoProvider" />
     <classNode dependClassName="jetbrains.mps.util.annotation.UseCarefully" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -178,6 +180,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.GenericSourceCodeLocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.PositionProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />

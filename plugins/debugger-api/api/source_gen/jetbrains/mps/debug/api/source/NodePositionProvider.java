@@ -5,16 +5,20 @@ package jetbrains.mps.debug.api.source;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import java.util.Iterator;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.util.NameUtil;
+import java.util.List;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   private final MPSProject myProject;
@@ -22,59 +26,89 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   public NodePositionProvider(MPSProject mpsProject) {
     myProject = mpsProject;
   }
+
+
   @Nullable
-  @Override
-  public NodeSourcePosition getPosition(@Nullable ILocation location) {
+  public NodeSourcePosition getPosition(@Nullable ILocation location, @NotNull AbstractDebugSession session) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
-    SNodeReference node = getSNodePointer(location);
+    SNodeReference node = getSNodePointer(location, session);
     if (node != null) {
       return new NodeSourcePosition(node);
     }
     return null;
   }
+
   @Nullable
-  @Override
-  public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    SNodeReference node = getSNodePointer(unitName, fileName, lineNumber);
-    if (node != null) {
-      return new NodeSourcePosition(node);
-    }
-    return null;
-  }
-  @Nullable
-  public SNodeReference getSNodePointer(@Nullable ILocation location) {
-    if (location == null || location instanceof NullLocation) {
-      return null;
-    }
-    return getSNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
-  }
-  @Nullable
-  public SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNodeReference>() {
-      @Override
+  protected SNodeReference getSNodePointer(@NotNull final ILocation location, @NotNull final AbstractDebugSession session) {
+    final SRepository repo = session.getProject().getRepository();
+    // XXX we need model read just to make sure reference could get resolved. Instead, a dedicated operation 
+    // in the SRepository might be worth adding (once this access is over, it's all the same about whether next attempt to resolve the reference would succeed or not) 
+    return new ModelAccessHelper(repo).runReadAction(new Computable<SNodeReference>() {
       public SNodeReference compute() {
-        SNode node = getNode(unitName, fileName, position);
-        if (node == null) {
-          return null;
+        for (Iterator<DebugInfo> it = session.getTraceProvider().debugInfo(NameUtil.namespaceFromLongName(location.getUnitName())).iterator(); it.hasNext();) {
+          DebugInfo next = it.next();
+          List<SNodeReference> nodes = next.getTracedNodesForPosition(location.getFileName(), location.getLineNumber());
+          for (SNodeReference nodeRef : nodes) {
+            if (nodeRef.resolve(repo) != null) {
+              return nodeRef;
+            }
+          }
         }
-        return new SNodePointer(node);
+        return null;
       }
     });
   }
+
   @Nullable
+  @Override
+  @Deprecated
+  public NodeSourcePosition getPosition(@Nullable ILocation location) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+
+  @Nullable
+  @Override
+  @Deprecated
+  public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+
+  @Nullable
+  @Deprecated
+  protected SNodeReference getSNodePointer(@Nullable ILocation location) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+
+  @Nullable
+  @Deprecated
+  protected SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
+  }
+
+  /**
+   * 
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) } shall be sufficient}
+   */
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getNode(@Nullable ILocation location) {
-    if (location == null || location instanceof NullLocation) {
-      return null;
-    }
-    return getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
+
+  /**
+   * 
+   * @deprecated {@link jetbrains.mps.debug.api.source.NodePositionProvider#getSNodePointer(ILocation, AbstractDebugSession) shall be sufficient}
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
-    // FIXME pass proper repository into TraceInfo to perform lookup with respect to context 
-    return TraceInfoUtil.getNode(unitName, fileName, position);
+    throw new UnsupportedOperationException("This method is deprecated. Nobody invokes it");
   }
+
   @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;

@@ -17,12 +17,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -68,7 +67,7 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public void putUserObject(Object key, Object value) {
     if (myUserObjects == null) {
-      myUserObjects = new HashMap<Object, Object>(1);
+      myUserObjects = new HashMap<>(1);
     }
     myUserObjects.put(key, value);
   }
@@ -103,7 +102,7 @@ public class DefaultEditorMessage implements EditorMessage {
 
   @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
+    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }
@@ -112,7 +111,7 @@ public class DefaultEditorMessage implements EditorMessage {
 
   @Override
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
+    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }
@@ -124,16 +123,13 @@ public class DefaultEditorMessage implements EditorMessage {
     editorComponent.changeSelection(getCellInBothWays(editorComponent));
   }
 
-  protected jetbrains.mps.openapi.editor.cells.EditorCell getCellInBothWays(final EditorComponent editor) {
-    return ModelAccess.instance().runReadAction(new Computable<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-      @Override
-      public jetbrains.mps.openapi.editor.cells.EditorCell compute() {
-        jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCell(editor);
-        if (editorCell != null) {
-          return editorCell;
-        }
-        return getCellForParentNodeInMainEditor(editor);
+  protected EditorCell getCellInBothWays(final EditorComponent editor) {
+    return new ModelAccessHelper(editor.getRepository()).runReadAction(() -> {
+      EditorCell editorCell = getCell(editor);
+      if (editorCell != null) {
+        return editorCell;
       }
+      return getCellForParentNodeInMainEditor(editor);
     });
   }
 
@@ -143,37 +139,39 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
-    if (editor == null) return null;
+  public EditorCell getCell(EditorComponent editor) {
+    if (editor == null) {
+      return null;
+    }
     return editor.getBigValidCellForNode(getNode());
   }
 
   @Override
   public EditorCell getCellForParentNodeInMainEditor(final EditorComponent editor) {
-    return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        if (getNode() == null) return null;
-        if (editor instanceof InspectorEditorComponent) {
-          return null;
-        }
-        SNode parent = getNode().getParent();
-        EditorCell result = null;
-        while (parent != null) {
-          result = editor.getBigValidCellForNode(parent);
-          if (result != null) {
-            return result;
-          }
-          parent = parent.getParent();
-        }
-        return result;
+    return new ModelAccessHelper(editor.getRepository()).runReadAction(() -> {
+      if (getNode() == null) {
+        return null;
       }
+      if (editor instanceof InspectorEditorComponent) {
+        return null;
+      }
+      SNode parent = getNode().getParent();
+      while (parent != null) {
+        EditorCell result = editor.getBigValidCellForNode(parent);
+        if (result != null) {
+          return result;
+        }
+        parent = parent.getParent();
+      }
+      return null;
     });
   }
 
   @Override
-  public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor) {
-    if (cell == null) return false;
+  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+    if (cell == null) {
+      return false;
+    }
     return cell.isBig() && editor.isValid(cell) && cell.getSNode() == getNode();
   }
 
@@ -215,21 +213,25 @@ public class DefaultEditorMessage implements EditorMessage {
 
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
     if (myIntentionProviders == null) {
-      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
+      myIntentionProviders = new ArrayList<>(1);
     }
     myIntentionProviders.add(intentionProvider);
   }
 
   @Override
   public QuickFixProvider getIntentionProvider() {
-    if (myIntentionProviders == null) return null;
-    if (myIntentionProviders.isEmpty()) return null;
+    if (myIntentionProviders == null) {
+      return null;
+    }
+    if (myIntentionProviders.isEmpty()) {
+      return null;
+    }
     return myIntentionProviders.get(0);
   }
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
-    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
+    ArrayList<QuickFixProvider> result = new ArrayList<>(1);
     if (myIntentionProviders != null) {
       result.addAll(myIntentionProviders);
     }

@@ -117,6 +117,16 @@ public class ModelFileToRootDispatchingEditor extends MPSFileNodeEditor implemen
     });
   }
 
+  @Override
+  public void selectNotify() {
+    // guard from NPE in super.selectNotify()
+  }
+
+  @Override
+  public void deselectNotify() {
+    // guard from NPE in super.deselectNotify()
+  }
+
   private boolean iKnowThisNode(int offset, SRepository repository) {
     return getNode(offset, repository) != null;
   }

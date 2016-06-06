@@ -26,11 +26,8 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
-import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -90,13 +87,6 @@ public abstract class BaseNodeEditor implements Editor {
   }
 
   @Override
-  @NotNull
-  @Deprecated
-  public IOperationContext getOperationContext() {
-    return new ProjectOperationContext(myProject);
-  }
-
-  @Override
   public SNodeReference getCurrentlyEditedNode() {
     return myCurrentlyEditedNode;
   }
@@ -152,9 +142,13 @@ public abstract class BaseNodeEditor implements Editor {
     @Override
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSEditorDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      if (dataId.equals(MPSEditorDataKeys.MPS_EDITOR.getName())) {
+        return BaseNodeEditor.this;
+      }
       Object data = BaseNodeEditor.this.getData(dataId);
-      if (data != null) return data;
+      if (data != null) {
+        return data;
+      }
       EditorComponent ec = getCurrentEditorComponent();
       return ec == null ? null : ec.getData(dataId);
     }
@@ -184,7 +178,9 @@ public abstract class BaseNodeEditor implements Editor {
   }
 
   private void pauseOrResumeHighlighter() {
-    if (myEditorComponent == null) return;
+    if (myEditorComponent == null) {
+      return;
+    }
     myEditorComponent.getHighlighter().setPaused(!mySelected);
   }
 
@@ -240,7 +236,9 @@ public abstract class BaseNodeEditor implements Editor {
 
   @Override
   public void loadState(@NotNull EditorState state) {
-    if (!(state instanceof BaseEditorState)) return;
+    if (!(state instanceof BaseEditorState)) {
+      return;
+    }
 
     final BaseEditorState s = (BaseEditorState) state;
     final EditorContext editorContext = getEditorContext();

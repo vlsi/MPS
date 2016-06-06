@@ -39,7 +39,6 @@
       <node id="1280144168199506928" at="49,20,67,9" concept="3" />
       <node id="1280144168199506928" at="38,62,68,7" concept="3" />
       <node id="1280144168199506928" at="35,93,69,5" concept="0" />
-      <node id="1280144168199506928" at="35,93,69,5" concept="0" />
       <node id="1280144168199506928" at="34,0,72,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_SolutionRef_1280144168199506928#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1280144168199506972" at="44,58,45,46" />
       <scope id="1280144168199506990" at="59,61,60,46" />
@@ -77,7 +76,6 @@
         <var name="childConcept" id="1280144168199506928" />
         <var name="outputConcept" id="1280144168199506928" />
       </scope>
-      <scope id="1280144168199506928" at="35,93,69,5" />
       <scope id="1280144168199506928" at="34,210,70,18">
         <var name="result" id="1280144168199506928" />
       </scope>
@@ -114,7 +112,6 @@
       <node id="1280144168199520224" at="82,20,101,9" concept="3" />
       <node id="1280144168199520224" at="76,62,102,7" concept="3" />
       <node id="1280144168199520224" at="73,93,103,5" concept="0" />
-      <node id="1280144168199520224" at="73,93,103,5" concept="0" />
       <node id="1280144168199520224" at="72,0,106,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_JUnit3TestCaseRef_1280144168199520224#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1280144168199520224" at="79,44,80,545" />
       <scope id="1280144168199520319" at="93,61,94,106" />
@@ -146,7 +143,6 @@
         <var name="childConcept" id="1280144168199520224" />
         <var name="outputConcept" id="1280144168199520224" />
       </scope>
-      <scope id="1280144168199520224" at="73,93,103,5" />
       <scope id="1280144168199520224" at="72,216,104,18">
         <var name="result" id="1280144168199520224" />
       </scope>
@@ -182,7 +178,6 @@
       <node id="1280144168199633207" at="116,20,135,9" concept="3" />
       <node id="1280144168199633207" at="110,62,136,7" concept="3" />
       <node id="1280144168199633207" at="107,93,137,5" concept="0" />
-      <node id="1280144168199633207" at="107,93,137,5" concept="0" />
       <node id="1280144168199633207" at="106,0,140,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_JUnit4TestCaseRef_1280144168199633207#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1280144168199633207" at="113,44,114,545" />
       <scope id="1280144168199633325" at="127,61,128,106" />
@@ -214,7 +209,6 @@
         <var name="childConcept" id="1280144168199633207" />
         <var name="outputConcept" id="1280144168199633207" />
       </scope>
-      <scope id="1280144168199633207" at="107,93,137,5" />
       <scope id="1280144168199633207" at="106,216,138,18">
         <var name="result" id="1280144168199633207" />
       </scope>
@@ -253,7 +247,6 @@
       <node id="1280144168199742766" at="155,20,174,9" concept="3" />
       <node id="1280144168199742766" at="144,62,175,7" concept="3" />
       <node id="1280144168199742766" at="141,93,176,5" concept="0" />
-      <node id="1280144168199742766" at="141,93,176,5" concept="0" />
       <node id="1280144168199742766" at="140,0,179,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_TestCaseRef_1280144168199742766#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1280144168199742812" at="150,60,151,219" />
       <scope id="1280144168199742910" at="166,61,167,175" />
@@ -291,7 +284,6 @@
         <var name="childConcept" id="1280144168199742766" />
         <var name="outputConcept" id="1280144168199742766" />
       </scope>
-      <scope id="1280144168199742766" at="141,93,176,5" />
       <scope id="1280144168199742766" at="140,210,177,18">
         <var name="result" id="1280144168199742766" />
       </scope>

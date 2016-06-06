@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.textgen.trace.TraceInfoProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 
 public abstract class AbstractDebugSession<State extends AbstractUiState> {
   protected ProcessHandler myProcessHandler;
@@ -20,6 +22,8 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   protected final AtomicReference<State> myUiState = new AtomicReference<State>(createUiState());
   protected final IDebuggableFramesSelector myDebuggableFramesSelector;
   protected final Project myProject;
+  private TraceInfoProvider myTraceProvider;
+
   public AbstractDebugSession(Project p) {
     myProject = p;
     myDebuggableFramesSelector = new DebuggableFramesSelector(p, this);
@@ -127,9 +131,19 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public Project getIdeaProject() {
     return myProject;
   }
+
   public jetbrains.mps.project.Project getProject() {
-    return ProjectHelper.toMPSProject(myProject);
+    return ProjectHelper.fromIdeaProject(myProject);
   }
+
+  @NotNull
+  public TraceInfoProvider getTraceProvider() {
+    if (myTraceProvider == null) {
+      myTraceProvider = new DefaultTraceInfoProvider(getProject().getRepository());
+    }
+    return myTraceProvider;
+  }
+
   public static   enum ExecutionState {
     Stopped(),
     Running(),

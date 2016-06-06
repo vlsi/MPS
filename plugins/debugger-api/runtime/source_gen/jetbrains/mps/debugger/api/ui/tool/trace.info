@@ -88,7 +88,6 @@
       <node id="4474271214083120345" at="61,25,64,5" concept="4" />
       <node id="4474271214083120403" at="70,134,73,5" concept="5" />
       <node id="4474271214083120434" at="80,0,83,0" concept="6" trace="createDescriptorInternal#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/configurations/RunProfile;)Ljetbrains/mps/debugger/api/ui/tool/DebuggerToolContentBuilder/MyRunContentDescriptor;" />
-      <node id="6225536200579577638" at="86,31,89,7" concept="0" />
       <node id="6225536200579577638" at="86,31,89,7" concept="5" />
       <node id="4474271214083120611" at="115,63,118,5" concept="5" />
       <node id="2850299710592987207" at="130,54,133,11" concept="5" />
@@ -121,7 +120,6 @@
         <var name="ui" id="4474271214083120437" />
       </scope>
       <scope id="6225536200579577618" at="86,31,89,7" />
-      <scope id="6225536200579577638" at="86,31,89,7" />
       <scope id="4474271214083120655" at="143,27,146,22" />
       <scope id="2850299710592986636" at="130,54,134,22" />
       <scope id="4474271214083120270" at="138,0,142,0" />

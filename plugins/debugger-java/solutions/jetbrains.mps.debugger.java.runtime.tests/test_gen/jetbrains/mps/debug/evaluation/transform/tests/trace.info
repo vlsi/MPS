@@ -1991,13 +1991,7 @@
       <node id="8441349676536441192" at="2046,275,2051,7" concept="0" />
       <node id="3619281710184384012" at="2111,275,2116,7" concept="0" />
       <node id="1939066678961233651" at="2132,235,2138,7" concept="0" />
-      <node id="1939066678961233651" at="2132,235,2138,7" concept="0" />
       <node id="1939066678961233663" at="2145,235,2151,7" concept="0" />
-      <node id="1939066678961233663" at="2145,235,2151,7" concept="0" />
-      <node id="1939066678961233651" at="2131,32,2138,7" concept="0" />
-      <node id="1939066678961233651" at="2131,32,2138,7" concept="0" />
-      <node id="1939066678961233663" at="2144,32,2151,7" concept="0" />
-      <node id="1939066678961233663" at="2144,32,2151,7" concept="0" />
       <node id="1939066678961233651" at="2128,0,2141,0" concept="8" trace="_quotation_createNode_n7zrdh_a0fc0m13#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1939066678961233663" at="2141,0,2154,0" concept="8" trace="_quotation_createNode_n7zrdh_a0fc0p13#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5543996881668550054" at="179,0,243,0" concept="4" trace="test_lowLevelVariable#()V" />
@@ -2228,10 +2222,6 @@
       <scope id="5543996881668550053" at="161,0,166,0" />
       <scope id="5543996881668550053" at="166,0,171,0" />
       <scope id="5543996881668550053" at="171,0,176,0" />
-      <scope id="1939066678961233651" at="2132,235,2138,7" />
-      <scope id="1939066678961233663" at="2145,235,2151,7" />
-      <scope id="1939066678961233651" at="2131,32,2138,7" />
-      <scope id="1939066678961233663" at="2144,32,2151,7" />
       <scope id="1939066678961233651" at="2128,84,2139,26">
         <var name="facade" id="1939066678961233651" />
         <var name="quotedNode_2" id="1939066678961233651" />

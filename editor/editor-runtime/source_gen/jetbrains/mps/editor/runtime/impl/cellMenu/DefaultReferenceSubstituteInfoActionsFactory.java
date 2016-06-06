@@ -56,7 +56,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     EditorComponent editor = (EditorComponent) mySubstituteInfo.getEditorContext().getEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BHReflection.invoke(myLinkDeclaration, SMethodTrimmedId.create("getGenuineRole", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAe"))));
 
-    if (referenceCell != null && CellTraversalUtil.getFirstLeaf(((jetbrains.mps.nodeEditor.cells.EditorCell) referenceCell).getContainingBigCell()) == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
+    if (referenceCell != null && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(referenceCell)) == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       String role = SNodeOperations.getContainingLinkRole(mySourceNode);
       SNode roleLink = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(parent), role));

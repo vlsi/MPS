@@ -20,7 +20,6 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
@@ -70,7 +69,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
     if (anchorTag != null) {
       anchorCell = selectedCell;
     } else {
-      EditorCell nodeMainCell = APICellAdapter.getContainingBigCell(selectedCell);
+      EditorCell nodeMainCell = CellTraversalUtil.getContainingBigCell(selectedCell);
       EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell,
           cell -> SideTransformTagUtils.getDefaultSideTransformTag().equals(cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG)) && cell.getSNode() == node,
           true, true);

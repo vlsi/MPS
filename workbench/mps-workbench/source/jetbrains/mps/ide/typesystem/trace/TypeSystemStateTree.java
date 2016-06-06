@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -169,8 +169,9 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   private TypeSystemStateTreeNode createNode(String category, Set<Block> entries, Color color) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category + " (" + entries.size() + ")");
-    if (color == null)
+    if (color == null) {
       color = Color.LIGHT_GRAY;
+    }
     result.setColor(color);
     for (Block block : entries) {
       result.add(new BlockTreeNode(block, myState, myEditorComponent));
@@ -293,20 +294,20 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   }
 
   private class TypeEditorMessage extends DefaultEditorMessage {
-    private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
+    private EditorCell myCell;
 
-    public TypeEditorMessage(jetbrains.mps.openapi.editor.cells.EditorCell cell, String message) {
+    public TypeEditorMessage(EditorCell cell, String message) {
       super(cell.getSNode(), StyleRegistry.getInstance().getSimpleColor(Color.blue), message, myMessageOwner);
       this.myCell = cell;
     }
 
     @Override
-    public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent component) {
+    public EditorCell getCell(EditorComponent component) {
       return myCell;
     }
 
     @Override
-    public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent component) {
+    public boolean acceptCell(EditorCell cell, EditorComponent component) {
       return myCell == cell;
     }
 

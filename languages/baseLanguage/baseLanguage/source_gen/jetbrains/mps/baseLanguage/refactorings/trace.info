@@ -278,7 +278,6 @@
       <node id="4946830740863976401" at="16,41,17,17" concept="8" />
       <node id="4946830740863976401" at="19,64,20,202" concept="8" />
       <node id="4946830740863976401" at="23,51,24,19" concept="8" />
-      <node id="4946830740863976401" at="25,5,26,225" concept="0" />
       <node id="4946830740863976404" at="25,5,26,225" concept="8" />
       <node id="4946830740863976401" at="11,0,13,0" concept="1" trace="ConvertAnonymousClass_Target#()V" />
       <node id="4946830740863976401" at="13,0,16,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
@@ -291,7 +290,6 @@
       <scope id="4946830740863976401" at="16,41,17,17" />
       <scope id="4946830740863976401" at="19,64,20,202" />
       <scope id="4946830740863976401" at="23,51,24,19" />
-      <scope id="4946830740863976403" at="25,5,26,225" />
       <scope id="4946830740863976401" at="11,0,13,0" />
       <scope id="4946830740863976401" at="13,0,16,0" />
       <scope id="4946830740863976401" at="16,0,19,0" />
@@ -440,7 +438,6 @@
       <node id="5161277940733430261" at="17,41,18,17" concept="8" />
       <node id="5161277940733430261" at="20,64,21,208" concept="8" />
       <node id="5161277940733430261" at="24,51,25,19" concept="8" />
-      <node id="5161277940733430261" at="26,5,27,75" concept="0" />
       <node id="5161277940733430299" at="26,5,27,75" concept="8" />
       <node id="5161277940733430261" at="12,0,14,0" concept="1" trace="ChangeMethodSignature_Target#()V" />
       <node id="5161277940733430261" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
@@ -453,7 +450,6 @@
       <scope id="5161277940733430261" at="17,41,18,17" />
       <scope id="5161277940733430261" at="20,64,21,208" />
       <scope id="5161277940733430261" at="24,51,25,19" />
-      <scope id="5161277940733430298" at="26,5,27,75" />
       <scope id="5161277940733430261" at="12,0,14,0" />
       <scope id="5161277940733430261" at="14,0,17,0" />
       <scope id="5161277940733430261" at="17,0,20,0" />
@@ -528,7 +524,6 @@
       <node id="7874812549549771310" at="19,58,20,16" concept="8" />
       <node id="7874812549549771310" at="23,51,24,19" concept="8" />
       <node id="4413749148913391051" at="25,5,26,817" concept="8" />
-      <node id="7874812549549771310" at="25,5,26,817" concept="0" />
       <node id="7874812549549771310" at="11,0,13,0" concept="1" trace="RenameMethod_Target#()V" />
       <node id="7874812549549771310" at="13,0,16,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
       <node id="7874812549549771310" at="16,0,19,0" concept="6" trace="allowMultipleTargets#()Z" />
@@ -540,7 +535,6 @@
       <scope id="7874812549549771310" at="16,41,17,17" />
       <scope id="7874812549549771310" at="19,58,20,16" />
       <scope id="7874812549549771310" at="23,51,24,19" />
-      <scope id="4413749148913389809" at="25,5,26,817" />
       <scope id="7874812549549771310" at="11,0,13,0" />
       <scope id="7874812549549771310" at="13,0,16,0" />
       <scope id="7874812549549771310" at="16,0,19,0" />
@@ -607,20 +601,12 @@
       <node id="9118878263582108379" at="42,14,44,9" concept="0" />
       <node id="9118878263582143849" at="65,12,67,7" concept="0" />
       <node id="9118878263582143922" at="71,12,73,7" concept="0" />
-      <node id="9118878263582143937" at="111,30,113,206" concept="0" />
-      <node id="9118878263582143937" at="111,30,113,206" concept="0" />
       <node id="9118878263582100185" at="30,0,33,0" concept="6" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
       <node id="9118878263582100185" at="33,0,36,0" concept="6" trace="getUserFriendlyName#()Ljava/lang/String;" />
       <node id="9118878263582111464" at="47,153,50,11" concept="5" />
       <node id="9118878263582111520" at="78,86,81,5" concept="5" />
       <node id="9118878263582123091" at="91,39,94,5" concept="5" />
       <node id="9118878263582123091" at="95,39,98,5" concept="5" />
-      <node id="8794595397332155110" at="103,30,106,206" concept="0" />
-      <node id="8794595397332155110" at="103,30,106,206" concept="0" />
-      <node id="9118878263582123091" at="90,182,94,5" concept="0" />
-      <node id="9118878263582123091" at="90,182,94,5" concept="0" />
-      <node id="9118878263582123091" at="94,5,98,5" concept="0" />
-      <node id="9118878263582123091" at="94,5,98,5" concept="0" />
       <node id="9118878263582100185" at="25,0,30,0" concept="1" trace="MakeFieldStatic#()V" />
       <node id="9118878263582108368" at="39,25,44,9" concept="5" />
       <node id="9118878263582111376" at="46,68,51,9" concept="4" />
@@ -629,8 +615,6 @@
       <node id="9118878263582100185" at="78,0,84,0" concept="6" trace="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="9118878263582143937" at="109,0,116,0" concept="10" trace="_quotation_createNode_so6etp_a0a0a4a3a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8794595397332155110" at="101,0,109,0" concept="10" trace="_quotation_createNode_so6etp_a0a0e0d0a#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="9118878263582123091" at="88,30,98,5" concept="0" />
-      <node id="9118878263582123091" at="88,30,98,5" concept="0" />
       <node id="5938312768538404215" at="39,0,53,0" concept="6" trace="run#()V" />
       <node id="5938312768538158043" at="37,60,53,7" concept="2" />
       <node id="9118878263582143804" at="59,233,75,5" concept="4" />
@@ -649,15 +633,11 @@
       <scope id="9118878263582111522" at="79,78,80,18" />
       <scope id="9118878263582123091" at="92,31,93,192" />
       <scope id="9118878263582123091" at="96,31,97,196" />
-      <scope id="9118878263582143937" at="111,30,113,206" />
       <scope id="9118878263582100185" at="25,28,28,41" />
       <scope id="9118878263582100185" at="30,0,33,0" />
       <scope id="9118878263582100185" at="33,0,36,0" />
       <scope id="9118878263582111379" at="47,153,50,11" />
-      <scope id="8794595397332155110" at="103,30,106,206" />
       <scope id="9118878263582111519" at="78,86,82,78" />
-      <scope id="9118878263582123091" at="90,182,94,5" />
-      <scope id="9118878263582123091" at="94,5,98,5" />
       <scope id="9118878263582100185" at="25,0,30,0" />
       <scope id="9118878263582111376" at="46,68,51,9">
         <var name="result" id="9118878263582111377" />
@@ -680,7 +660,6 @@
         <var name="parameter_1" id="8794595397332155110" />
         <var name="parameter_2" id="8794595397332155110" />
       </scope>
-      <scope id="9118878263582123091" at="88,30,98,5" />
       <scope id="5938312768538404216" at="39,25,51,9" />
       <scope id="5938312768538404215" at="39,0,53,0" />
       <scope id="9118878263582143807" at="60,149,74,66">
@@ -723,7 +702,6 @@
       <node id="9118878263582108237" at="17,41,18,17" concept="8" />
       <node id="9118878263582108237" at="20,58,21,16" concept="8" />
       <node id="9118878263582108237" at="24,51,25,19" concept="8" />
-      <node id="9118878263582108237" at="26,5,27,1126" concept="0" />
       <node id="9118878263582108240" at="26,5,27,1126" concept="8" />
       <node id="9118878263582108237" at="12,0,14,0" concept="1" trace="MakeFieldStatic_Target#()V" />
       <node id="9118878263582108237" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
@@ -736,7 +714,6 @@
       <scope id="9118878263582108237" at="17,41,18,17" />
       <scope id="9118878263582108237" at="20,58,21,16" />
       <scope id="9118878263582108237" at="24,51,25,19" />
-      <scope id="9118878263582108239" at="26,5,27,1126" />
       <scope id="9118878263582108237" at="12,0,14,0" />
       <scope id="9118878263582108237" at="14,0,17,0" />
       <scope id="9118878263582108237" at="17,0,20,0" />

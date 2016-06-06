@@ -1848,6 +1848,9 @@
       <node concept="nCB5N" id="2ZTNkpv_1q2" role="nCB5Z">
         <ref role="nCB5Y" node="5_uX04TlQXW" resolve="mps-icons" />
       </node>
+      <node concept="nCB5N" id="2BwQuBWyGpr" role="nCB5Z">
+        <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
+      </node>
     </node>
     <node concept="398b33" id="5_uX04TlQXW" role="3989C9">
       <property role="TrG5h" value="mps-icons" />
@@ -12903,7 +12906,7 @@
         </node>
         <node concept="1SiIV0" id="3zjMY$962B9" role="3bR37C">
           <node concept="3bR9La" id="3zjMY$962Ba" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
           </node>
         </node>
@@ -23614,6 +23617,12 @@
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2Mnhr$7i4o0" role="3bR37C">
+          <node concept="3bR9La" id="2Mnhr$7i4o1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5xa9wY2vh9W" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -24227,7 +24236,7 @@
         </node>
         <node concept="1SiIV0" id="6IZ_b08qDHa" role="3bR37C">
           <node concept="3bR9La" id="6IZ_b08qDHb" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
@@ -24431,7 +24440,7 @@
         </node>
         <node concept="1SiIV0" id="6IZ_b08qDGe" role="3bR37C">
           <node concept="3bR9La" id="6IZ_b08qDGf" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>

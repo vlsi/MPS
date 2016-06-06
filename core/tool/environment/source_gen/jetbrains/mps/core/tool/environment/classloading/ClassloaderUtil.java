@@ -31,6 +31,7 @@ public class ClassloaderUtil {
   private static Class[] EMPTY_CLASS_ARRAY = new Class[0];
   private ClassloaderUtil() {
   }
+
   public static void clearJarURLCache() {
     try {
       // new URLConnection(null) { 
@@ -50,9 +51,11 @@ public class ClassloaderUtil {
       //  Do nothing. 
     }
   }
+
   public static Logger getLogger() {
     return LogManager.getLogger("ClassloaderUtil");
   }
+
   public static UrlClassLoader initClassloader(final List<URL> classpathElements) {
     PathManager.loadProperties();
     try {
@@ -82,6 +85,7 @@ public class ClassloaderUtil {
     }
     return newClassLoader;
   }
+
   public static void filterClassPath(final List<URL> classpathElements) {
     final String ignoreProperty = System.getProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH);
     if (ignoreProperty == null) {
@@ -96,6 +100,7 @@ public class ClassloaderUtil {
       }
     }
   }
+
   public static void addParentClasspath(List<URL> aClasspathElements) throws MalformedURLException {
     final ClassLoader loader = ClassloaderUtil.class.getClassLoader();
     if (loader instanceof URLClassLoader) {
@@ -128,10 +133,12 @@ public class ClassloaderUtil {
       }
     }
   }
+
   public static void addIDEALibraries(List<URL> classpathElements) {
     final String ideaHomePath = PathManager.getHomePath();
     ClassloaderUtil.addAllFromLibFolder(ideaHomePath, classpathElements);
   }
+
   @SuppressWarnings(value = {"HardCodedStringLiteral"})
   public static void addAllFromLibFolder(final String aFolderPath, List<URL> classPath) {
     try {
@@ -149,6 +156,7 @@ public class ClassloaderUtil {
       ClassloaderUtil.getLogger().error(null, e);
     }
   }
+
   public static void addLibraries(List<URL> classPath, File fromDir, final URL selfRootUrl) throws MalformedURLException {
     final File[] files = fromDir.listFiles();
     if (files != null) {
@@ -164,6 +172,7 @@ public class ClassloaderUtil {
       }
     }
   }
+
   @SuppressWarnings(value = {"HardCodedStringLiteral"})
   public static boolean isJarOrZip(File file) {
     if (file.isDirectory()) {
@@ -172,6 +181,7 @@ public class ClassloaderUtil {
     final String name = file.getName();
     return StringUtil.endsWithIgnoreCase(name, ".jar") || StringUtil.endsWithIgnoreCase(name, ".zip");
   }
+
   public static void addAdditionalClassPath(List<URL> classPath) {
     try {
       // noinspection HardCodedStringLiteral 
@@ -184,6 +194,7 @@ public class ClassloaderUtil {
       ClassloaderUtil.getLogger().error(null, e);
     }
   }
+
   @SuppressWarnings(value = {"HardCodedStringLiteral"})
   public static boolean isLoadingOfExternalPluginsDisabled() {
     return !("true".equalsIgnoreCase(System.getProperty("idea.plugins.load", "true")));

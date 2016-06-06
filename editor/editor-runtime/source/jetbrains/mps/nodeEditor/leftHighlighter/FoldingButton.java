@@ -17,9 +17,8 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -51,7 +50,7 @@ class FoldingButton {
 
   FoldingButton(@NotNull EditorCell_Collection cell, @NotNull Color background) {
     //TODO: Can we hold cell directly instad of CellInfo here?
-    myCellInfo = APICellAdapter.getCellInfo(cell);
+    myCellInfo = cell.getCellInfo();
     assert myCellInfo != null : "CellInfo unavailable for: " + cell;
     myEditor = cell.getEditorComponent();
     myBackgroundColor = background;
@@ -96,7 +95,9 @@ class FoldingButton {
   }
 
   void paint(Graphics g) {
-    if (myIsHidden) return;
+    if (myIsHidden) {
+      return;
+    }
     Color borderColor = getBorderColor();
     if (!myIsFolded) {
       int xs[] = {-HALF_WIDTH, -HALF_WIDTH, 0, HALF_WIDTH, HALF_WIDTH};
@@ -133,14 +134,16 @@ class FoldingButton {
   }
 
   private EditorCell getCell() {
-    return myCellInfo.findCell((jetbrains.mps.nodeEditor.EditorComponent) myEditor);
+    return myCellInfo.findCell(myEditor);
   }
 
   void activate(int x, int y) {
     EditorCell cell = getCell();
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
-      if (CellTraversalUtil.getFoldedParent(collection) != null) return;
+      if (CellTraversalUtil.getFoldedParent(collection) != null) {
+        return;
+      }
       if (collection.isCollapsed()) {
         collection.unfold();
       } else {

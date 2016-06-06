@@ -133,10 +133,6 @@
       <node id="7271443492838023362" at="194,0,197,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="7271443492838023362" at="197,0,200,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="7271443492838023362" at="205,20,208,5" concept="5" />
-      <node id="7271443492838111673" at="216,227,219,165" concept="0" />
-      <node id="7271443492838111673" at="216,227,219,165" concept="0" />
-      <node id="7271443492838111673" at="215,30,219,165" concept="0" />
-      <node id="7271443492838111673" at="215,30,219,165" concept="0" />
       <node id="7271443492838163857" at="79,54,84,8" concept="3" />
       <node id="7271443492838023362" at="86,0,91,0" concept="7" trace="createParameterReference#(Ljava/util/List;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7271443492838163974" at="123,56,128,5" concept="6" />
@@ -228,11 +224,9 @@
       <scope id="7271443492838023362" at="205,20,208,5">
         <var name="c" id="7271443492838023362" />
       </scope>
-      <scope id="7271443492838111673" at="216,227,219,165" />
       <scope id="7271443492838163913" at="98,229,102,18" />
       <scope id="7271443492838163913" at="104,232,108,18" />
       <scope id="7271443492838163913" at="110,219,114,18" />
-      <scope id="7271443492838111673" at="215,30,219,165" />
       <scope id="7271443492838163856" at="79,54,84,8" />
       <scope id="7271443492838023362" at="86,0,91,0">
         <var name="argumentNumber" id="7271443492838163908" />

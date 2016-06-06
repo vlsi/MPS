@@ -14,7 +14,7 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
   private final TestLightExecutor myExecutor;
 
   public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future, TestLightExecutor executor) {
-    super(fakeProcess, null, null);
+    super(fakeProcess, fakeProcess.toString(), null);
     myFuture = future;
     myExecutor = executor;
   }
@@ -50,6 +50,7 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
   }
 
   @Nullable
+  @Override
   public OutputStream getProcessInput() {
     return null;
   }
