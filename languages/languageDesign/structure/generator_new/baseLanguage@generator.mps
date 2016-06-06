@@ -2011,10 +2011,7 @@
     </node>
   </node>
   <node concept="bUwia" id="2JhcMFotRh_">
-    <property role="TrG5h" value="MAPPING_descriptors" />
-    <node concept="1puMqW" id="7NTi8jMcg35" role="1puA0r">
-      <ref role="1puQsG" node="7NTi8jMcg37" resolve="SetLanguageIdsInConcepts" />
-    </node>
+    <property role="TrG5h" value="MAPPING_struc_descriptor" />
     <node concept="2VPoh5" id="4qsoKztiJiX" role="2VS0gm">
       <ref role="2VPoh2" node="4qsoKztinkA" resolve="StructureAspectDescriptor" />
       <node concept="2VP$b9" id="2HxhKZ3tvk6" role="2VPoh3">
@@ -2044,41 +2041,6 @@
                   </node>
                 </node>
                 <node concept="3GX2aA" id="2HxhKZ3tvkn" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2VPoh5" id="1gbSomzAejm" role="2VS0gm">
-      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="ConceptPresentationAspectImpl" />
-      <node concept="2VP$b9" id="1gbSomzAejn" role="2VPoh3">
-        <node concept="3clFbS" id="1gbSomzAejo" role="2VODD2">
-          <node concept="3clFbF" id="1gbSomzAejp" role="3cqZAp">
-            <node concept="22lmx$" id="1gbSomzAejq" role="3clFbG">
-              <node concept="2OqwBi" id="1gbSomzAejr" role="3uHU7w">
-                <node concept="2OqwBi" id="1gbSomzAejs" role="2Oq$k0">
-                  <node concept="2OqwBi" id="1gbSomzAejt" role="2Oq$k0">
-                    <node concept="1iwH7S" id="1gbSomzAeju" role="2Oq$k0" />
-                    <node concept="1r8y6K" id="1gbSomzAejv" role="2OqNvi" />
-                  </node>
-                  <node concept="2RRcyG" id="1gbSomzAejw" role="2OqNvi">
-                    <ref role="2RRcyH" to="tpce:fKAxPRU" resolve="DataTypeDeclaration" />
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="1gbSomzAejx" role="2OqNvi" />
-              </node>
-              <node concept="2OqwBi" id="1gbSomzAejy" role="3uHU7B">
-                <node concept="2OqwBi" id="1gbSomzAejz" role="2Oq$k0">
-                  <node concept="2OqwBi" id="1gbSomzAej$" role="2Oq$k0">
-                    <node concept="1iwH7S" id="1gbSomzAej_" role="2Oq$k0" />
-                    <node concept="1r8y6K" id="1gbSomzAejA" role="2OqNvi" />
-                  </node>
-                  <node concept="2RRcyG" id="1gbSomzAejB" role="2OqNvi">
-                    <ref role="2RRcyH" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="1gbSomzAejC" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -5564,6 +5526,33 @@
           <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="bUwia" id="6bQry1$bMFM">
+    <property role="TrG5h" value="MAPPING_pres_descriptor" />
+    <node concept="2VPoh5" id="1gbSomzAejm" role="2VS0gm">
+      <ref role="2VPoh2" node="1gbSomz_aDL" resolve="ConceptPresentationAspectImpl" />
+      <node concept="2VP$b9" id="1gbSomzAejn" role="2VPoh3">
+        <node concept="3clFbS" id="1gbSomzAejo" role="2VODD2">
+          <node concept="3clFbF" id="1gbSomzAejp" role="3cqZAp">
+            <node concept="2OqwBi" id="1gbSomzAejy" role="3clFbG">
+              <node concept="2OqwBi" id="1gbSomzAejz" role="2Oq$k0">
+                <node concept="2OqwBi" id="1gbSomzAej$" role="2Oq$k0">
+                  <node concept="1iwH7S" id="1gbSomzAej_" role="2Oq$k0" />
+                  <node concept="1r8y6K" id="1gbSomzAejA" role="2OqNvi" />
+                </node>
+                <node concept="2RRcyG" id="1gbSomzAejB" role="2OqNvi">
+                  <ref role="2RRcyH" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                </node>
+              </node>
+              <node concept="3GX2aA" id="1gbSomzAejC" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1puMqW" id="6bQry1$c5s_" role="1puA0r">
+      <ref role="1puQsG" node="7NTi8jMcg37" resolve="SetLanguageIdsInConcepts" />
     </node>
   </node>
 </model>
