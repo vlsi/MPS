@@ -190,12 +190,14 @@ public class ClassFileWriter {
     return containerClassName;
   }
 
+  // FIXME
   @NotNull
   private byte[] instrumentNotNull(@NotNull byte[] classContent) throws MalformedURLException {
-    FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
-    ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
-    NotNullVerifyingInstrumenter.processClassFile(reader, writer);
-    return writer.toByteArray();
+//    FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
+//    ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
+//    NotNullVerifyingInstrumenter.processClassFile(reader, writer);
+//    return writer.toByteArray();
+    return classContent;
   }
 
   @NotNull
