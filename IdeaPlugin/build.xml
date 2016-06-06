@@ -184,7 +184,6 @@
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="${junit.debug.arg}"/>
-      <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5011"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
@@ -214,88 +213,88 @@
       <test name="jetbrains.mps.idea.java.tests.JavaTestSuite"/>
     </junit>
 
-    <!--<junit fork="true"-->
-           <!--dir="."-->
-           <!--haltonfailure="false"-->
-           <!--showoutput="true"-->
-           <!--enableTestListenerEvents="false">-->
-      <!--<jvmarg value="-ea"/>-->
-      <!--<jvmarg value="-Xss1024k"/>-->
-      <!--<jvmarg value="-Xmx1024m"/>-->
-      <!--<jvmarg value="-XX:MaxPermSize=128m"/>-->
-      <!--<jvmarg value="${junit.debug.arg}"/>-->
-      <!--<formatter type="xml"/>-->
-      <!--<sysproperty key="idea.platform.prefix" value="Idea"/>-->
-      <!--<sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>-->
-      <!--<sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>-->
-      <!--<sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>-->
-      <!--<sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>-->
-      <!--<sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>-->
-      <!--<sysproperty key="file.encoding" value="UTF-8"/>-->
-      <!--<env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> &lt;!&ndash; @see #1 above &ndash;&gt;-->
-      <!--<classpath>-->
-        <!--<fileset dir="${ideaPath}/lib">-->
-          <!--<include name="**/*.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${ideaPath}/plugins/junit/lib">-->
-          <!--<include name="junit-rt.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>-->
-        <!--<fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">-->
-          <!--<include name="*.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${plugins.sandbox.dir}/plugins/mps-testing">-->
-          <!--<include name="**/*.jar"/>-->
-        <!--</fileset>-->
-        <!--<pathelement path="${java.class.path}"/>-->
-      <!--</classpath>-->
-      <!--<test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>-->
-    <!--</junit>-->
+    <junit fork="true"
+           dir="."
+           haltonfailure="false"
+           showoutput="true"
+           enableTestListenerEvents="false">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1024m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
+      <jvmarg value="${junit.debug.arg}"/>
+      <formatter type="xml"/>
+      <sysproperty key="idea.platform.prefix" value="Idea"/>
+      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
+      <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
+      <sysproperty key="file.encoding" value="UTF-8"/>
+      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
+      <classpath>
+        <fileset dir="${ideaPath}/lib">
+          <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/plugins/junit/lib">
+          <include name="junit-rt.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-testing">
+          <include name="**/*.jar"/>
+        </fileset>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+      <test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>
+    </junit>
 
-    <!--<junit fork="true"-->
-           <!--dir="."-->
-           <!--haltonfailure="false"-->
-           <!--showoutput="true"-->
-           <!--enableTestListenerEvents="true">-->
-      <!--<jvmarg value="-ea"/>-->
-      <!--<jvmarg value="-Xss1024k"/>-->
-      <!--<jvmarg value="-Xmx1024m"/>-->
-      <!--<jvmarg value="${junit.debug.arg}"/>-->
-      <!--<formatter type="xml"/>-->
-      <!--<sysproperty key="idea.platform.prefix" value="Idea"/>-->
-      <!--<sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>-->
-      <!--<sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>-->
-      <!--<sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>-->
-      <!--<sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>-->
-      <!--<sysproperty key="idea.home.path" value="${ideaPath}"/>-->
-      <!--<sysproperty key="jdk.home.path" value="${jdkPath}"/>-->
-      <!--<sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>-->
-      <!--<sysproperty key="file.encoding" value="UTF-8"/>-->
-      <!--<env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> &lt;!&ndash; @see #1 above &ndash;&gt;-->
-      <!--<classpath>-->
-        <!--<fileset dir="${ideaPath}/lib">-->
-          <!--<include name="**/*.jar"/>-->
-          <!--<exclude name="rt/jps-plugin-system.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${ideaPath}/plugins/junit/lib">-->
-          <!--<include name="junit-rt.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${ideaPath}/plugins/devkit/lib">-->
-          <!--<include name="devkit-jps-plugin.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>-->
-        <!--<fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">-->
-          <!--<include name="*.jar"/>-->
-        <!--</fileset>-->
-        <!--<fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib/jps">-->
-          <!--<include name="*.jar"/>-->
-        <!--</fileset>-->
-        <!--<file file="${plugins.sandbox.dir}/plugins/mps-java/lib/jps/mps-java-jps-plugin.jar"/>-->
-        <!--<file file="${plugins.sandbox.dir}/plugins/mps-java/lib/mps-java-common.jar"/>-->
-        <!--<pathelement path="${java.class.path}"/>-->
-      <!--</classpath>-->
-      <!--<test name="jetbrains.mps.jps.make.tests.JpsMakeTestSuite"/>-->
-    <!--</junit>-->
+    <junit fork="true"
+           dir="."
+           haltonfailure="false"
+           showoutput="true"
+           enableTestListenerEvents="true">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1024m"/>
+      <jvmarg value="${junit.debug.arg}"/>
+      <formatter type="xml"/>
+      <sysproperty key="idea.platform.prefix" value="Idea"/>
+      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
+      <sysproperty key="idea.home.path" value="${ideaPath}"/>
+      <sysproperty key="jdk.home.path" value="${jdkPath}"/>
+      <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
+      <sysproperty key="file.encoding" value="UTF-8"/>
+      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
+      <classpath>
+        <fileset dir="${ideaPath}/lib">
+          <include name="**/*.jar"/>
+          <exclude name="rt/jps-plugin-system.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/plugins/junit/lib">
+          <include name="junit-rt.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/plugins/devkit/lib">
+          <include name="devkit-jps-plugin.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib/jps">
+          <include name="*.jar"/>
+        </fileset>
+        <file file="${plugins.sandbox.dir}/plugins/mps-java/lib/jps/mps-java-jps-plugin.jar"/>
+        <file file="${plugins.sandbox.dir}/plugins/mps-java/lib/mps-java-common.jar"/>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+      <test name="jetbrains.mps.jps.make.tests.JpsMakeTestSuite"/>
+    </junit>
 
   </target>
 
