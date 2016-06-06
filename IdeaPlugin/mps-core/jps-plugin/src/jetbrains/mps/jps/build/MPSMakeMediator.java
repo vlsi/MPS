@@ -166,10 +166,6 @@ public class MPSMakeMediator {
     private void processMessage(IMessage msg, Kind kind) {
       myContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, kind, msg.getText()));
     }
-
-    @Override
-    public void clear() {
-    }
   }
 
   private static class MakeFacetWrapper {
