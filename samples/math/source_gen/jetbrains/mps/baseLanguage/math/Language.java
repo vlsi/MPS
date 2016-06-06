@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.math.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.baseLanguage.math.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.baseLanguage.math.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.math.typesystem.TypesystemDescriptor;
@@ -73,7 +73,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {

@@ -16,8 +16,7 @@
 package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 
-public interface AdditionalStructureProperties extends ILanguageAspect {
-  AdditionalConceptProperties getDescriptor(SAbstractConcept concept);
+public interface ConceptPresentationAspect extends ILanguageAspect {
+  ConceptPresentation getDescriptor(SAbstractConcept concept);
 }

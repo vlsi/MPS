@@ -12,7 +12,7 @@ import testDefaultEditor.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import testDefaultEditor.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import testDefaultEditor.structure.AdditionalStructurePropertiesImpl;
 
 public class Language extends LanguageRuntime {
@@ -50,7 +50,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new testDefaultEditor.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     return super.createAspect(aspectClass);

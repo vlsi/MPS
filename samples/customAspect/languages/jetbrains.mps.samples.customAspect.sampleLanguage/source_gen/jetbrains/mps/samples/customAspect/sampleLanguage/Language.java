@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.customAspect.sampleLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.customAspect.sampleLanguage.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor;
 import jetbrains.mps.samples.customAspect.sampleLanguage.documentation.DocumentationDescriptor;
@@ -47,7 +47,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass.getName().equals("jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor")) {

@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
@@ -17,7 +18,6 @@ import jetbrains.mps.lang.access.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.access.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
 import jetbrains.mps.lang.access.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.access.typesystem.TypesystemDescriptor;
@@ -64,7 +64,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.access.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {

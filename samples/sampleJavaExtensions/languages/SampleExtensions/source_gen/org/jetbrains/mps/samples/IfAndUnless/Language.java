@@ -17,7 +17,7 @@ import org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import org.jetbrains.mps.samples.IfAndUnless.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor;
@@ -64,7 +64,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new org.jetbrains.mps.samples.IfAndUnless.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {

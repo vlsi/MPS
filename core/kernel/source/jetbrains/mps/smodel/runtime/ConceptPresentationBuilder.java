@@ -21,39 +21,39 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ConceptPropsBuilder {
+public class ConceptPresentationBuilder {
   private String myHelpUrl;
   private String myShortDescription;
   private IconResource myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
-  public ConceptPropsBuilder helpUrl(String helpUrl) {
+  public ConceptPresentationBuilder helpUrl(String helpUrl) {
     myHelpUrl = helpUrl;
     return this;
   }
 
-  public ConceptPropsBuilder shortDesc(String desc) {
+  public ConceptPresentationBuilder shortDesc(String desc) {
     myShortDescription = desc;
     return this;
   }
 
-  public ConceptPropsBuilder icon(String icnResId, Class resourceProvider) {
+  public ConceptPresentationBuilder icon(String icnResId, Class resourceProvider) {
     myIcon = new IconResource(icnResId, resourceProvider);
     return this;
   }
 
-  public ConceptPropsBuilder deprecated(boolean deprecated) {
+  public ConceptPresentationBuilder deprecated(boolean deprecated) {
     myIsDeprecated = deprecated;
     return this;
   }
 
-  public ConceptPropsBuilder deprecated(SConceptFeature ... f) {
+  public ConceptPresentationBuilder deprecated(SConceptFeature ... f) {
     myDeprecatedFeatures.addAll(Arrays.asList(f));
     return this;
   }
 
-  public AdditionalConceptProperties create(){
-    return new AdditionalConceptProperties(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures);
+  public ConceptPresentation create(){
+    return new ConceptPresentation(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures);
   }
 }

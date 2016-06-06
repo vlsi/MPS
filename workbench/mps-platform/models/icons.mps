@@ -1192,9 +1192,9 @@
       <node concept="3clFbS" id="4qFb6JnEW9$" role="3clF47">
         <node concept="3cpWs8" id="4qFb6JnFbNF" role="3cqZAp">
           <node concept="3cpWsn" id="4qFb6JnFbNG" role="3cpWs9">
-            <property role="TrG5h" value="props" />
-            <node concept="3uibUv" id="4qFb6JnFbNA" role="1tU5fm">
-              <ref role="3uigEE" to="ze1i:~AdditionalConceptProperties" resolve="AdditionalConceptProperties" />
+            <property role="TrG5h" value="pres" />
+            <node concept="3uibUv" id="7vaskyDScAO" role="1tU5fm">
+              <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
             </node>
             <node concept="2OqwBi" id="4qFb6JnFbNH" role="33vP2m">
               <node concept="2YIFZM" id="4qFb6JnFbNI" role="2Oq$k0">
@@ -1202,7 +1202,7 @@
                 <ref role="37wK5l" to="vndm:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="4qFb6JnFbNJ" role="2OqNvi">
-                <ref role="37wK5l" to="vndm:~ConceptRegistry.getConceptProperties(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.AdditionalConceptProperties" resolve="getConceptProperties" />
+                <ref role="37wK5l" to="vndm:~ConceptRegistry.getConceptProperties(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConceptPresentation" resolve="getConceptProperties" />
                 <node concept="37vLTw" id="4qFb6JnFbNK" role="37wK5m">
                   <ref role="3cqZAo" node="4qFb6JnEWbn" resolve="concept" />
                 </node>
@@ -1214,7 +1214,7 @@
           <node concept="3clFbC" id="4qFb6JnFg0U" role="3clFbw">
             <node concept="10Nm6u" id="4qFb6JnFg50" role="3uHU7w" />
             <node concept="37vLTw" id="4qFb6JnFfgV" role="3uHU7B">
-              <ref role="3cqZAo" node="4qFb6JnFbNG" resolve="props" />
+              <ref role="3cqZAo" node="4qFb6JnFbNG" resolve="pres" />
             </node>
           </node>
           <node concept="3clFbS" id="4qFb6JnFBM_" role="3clFbx">
@@ -1231,10 +1231,10 @@
             </node>
             <node concept="2OqwBi" id="4qFb6JnFDNZ" role="33vP2m">
               <node concept="37vLTw" id="4qFb6JnFDO0" role="2Oq$k0">
-                <ref role="3cqZAo" node="4qFb6JnFbNG" resolve="props" />
+                <ref role="3cqZAo" node="4qFb6JnFbNG" resolve="pres" />
               </node>
               <node concept="liA8E" id="4qFb6JnFDO1" role="2OqNvi">
-                <ref role="37wK5l" to="ze1i:~AdditionalConceptProperties.getIcon():jetbrains.mps.smodel.runtime.IconResource" resolve="getIcon" />
+                <ref role="37wK5l" to="ze1i:~ConceptPresentation.getIcon():jetbrains.mps.smodel.runtime.IconResource" resolve="getIcon" />
               </node>
             </node>
           </node>

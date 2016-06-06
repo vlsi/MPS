@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.smodel.runtime.AdditionalConceptProperties;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPropertiesRegistry {
@@ -26,12 +26,12 @@ public class ConceptPropertiesRegistry {
     myLanguageRegistry = languageRegistry;
   }
 
-  public AdditionalConceptProperties getConceptProperties(SAbstractConcept concept) {
+  public ConceptPresentation getConceptProperties(SAbstractConcept concept) {
     LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
     if (languageRuntime == null) {
       return null;
     }
-    AdditionalStructureProperties structureProps = languageRuntime.getAspect(AdditionalStructureProperties.class);
+    ConceptPresentationAspect structureProps = languageRuntime.getAspect(ConceptPresentationAspect.class);
     if (structureProps == null) {
       return null;
     }

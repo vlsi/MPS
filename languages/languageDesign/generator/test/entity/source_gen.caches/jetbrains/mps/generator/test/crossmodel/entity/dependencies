@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.generator.test.crossmodel.entity.structure.AdditionalStructurePropertiesImpl" />
     <classNode dependClassName="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.AdditionalStructureProperties" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

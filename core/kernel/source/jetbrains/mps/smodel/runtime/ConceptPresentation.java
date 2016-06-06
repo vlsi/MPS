@@ -20,14 +20,14 @@ import org.jetbrains.mps.openapi.language.SConceptFeature;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AdditionalConceptProperties {
+public class ConceptPresentation {
   private String myHelpUrl;
   private String myShortDescription;
   private IconResource myIcon;
   private boolean myIsDeprecated;
   private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
 
-  public AdditionalConceptProperties(String helpUrl, String shortDescription, IconResource icon, boolean isDeprecated,
+  public ConceptPresentation(String helpUrl, String shortDescription, IconResource icon, boolean isDeprecated,
       Set<SConceptFeature> deprecatedFeatures) {
     myHelpUrl = helpUrl;
     myShortDescription = shortDescription;

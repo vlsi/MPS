@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
-import jetbrains.mps.smodel.runtime.AdditionalConceptProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
@@ -140,11 +140,11 @@ public final class IconManager {
   }
 
   private static Icon getIconForExactConcept(SAbstractConcept concept) {
-    AdditionalConceptProperties props = ConceptRegistry.getInstance().getConceptProperties(concept);
-    if (props == null) {
+    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(concept);
+    if (pres == null) {
       return null;
     }
-    IconResource icn = props.getIcon();
+    IconResource icn = pres.getIcon();
     if (icn == null) {
       return null;
     }

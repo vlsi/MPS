@@ -15,5 +15,5 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public abstract class BaseAdditionalStructureProperties implements AdditionalStructureProperties {
+public abstract class ConceptPresentationAspectBase implements ConceptPresentationAspect {
 }

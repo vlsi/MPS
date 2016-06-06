@@ -18,7 +18,7 @@ import jetbrains.mps.samples.languagePatterns.Basic.editor.EditorAspectDescripto
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.samples.languagePatterns.Basic.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.AdditionalStructureProperties;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.languagePatterns.Basic.structure.AdditionalStructurePropertiesImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.languagePatterns.Basic.typesystem.TypesystemDescriptor;
@@ -68,7 +68,7 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.languagePatterns.Basic.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == AdditionalStructureProperties.class) {
+    if (aspectClass == ConceptPresentationAspect.class) {
       return (T) new AdditionalStructurePropertiesImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {

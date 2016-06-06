@@ -5020,7 +5020,7 @@
         <node concept="2OqwBi" id="1gbSomz_aG8" role="2Oq$k0">
           <node concept="2OqwBi" id="1gbSomz_aG9" role="2Oq$k0">
             <node concept="liA8E" id="1gbSomz_aGa" role="2OqNvi">
-              <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.helpUrl(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="helpUrl" />
+              <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.helpUrl(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="helpUrl" />
               <node concept="1W57fq" id="1gbSomz_aGb" role="lGtFl">
                 <node concept="3IZrLx" id="1gbSomz_aGc" role="3IZSJc">
                   <node concept="3clFbS" id="1gbSomz_aGd" role="2VODD2">
@@ -5071,7 +5071,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1yvR2BJXGgH" role="2OqNvi">
-                    <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="deprecated" />
+                    <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
                     <node concept="1W57fq" id="1yvR2BJXLcU" role="lGtFl">
                       <node concept="3IZrLx" id="1yvR2BJXLcW" role="3IZSJc">
                         <node concept="3clFbS" id="1yvR2BJXLcY" role="2VODD2">
@@ -5089,7 +5089,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1gbSomz_aNT" role="2OqNvi">
-                  <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="deprecated" />
+                  <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
                   <node concept="10Nm6u" id="1yvR2BJZK2f" role="37wK5m">
                     <node concept="1WS0z7" id="1yvR2BJZK2g" role="lGtFl">
                       <node concept="3JmXsc" id="1yvR2BJZK2h" role="3Jn$fo">
@@ -5239,7 +5239,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1yvR2BJXISq" role="2OqNvi">
-                <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="shortDesc" />
+                <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                 <node concept="1W57fq" id="1yvR2BJZMTL" role="lGtFl">
                   <node concept="3IZrLx" id="1yvR2BJZMTN" role="3IZSJc">
                     <node concept="3clFbS" id="1yvR2BJZMTP" role="2VODD2">
@@ -5280,7 +5280,7 @@
             </node>
           </node>
           <node concept="liA8E" id="1gbSomz_aQg" role="2OqNvi">
-            <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.icon(java.lang.String,java.lang.Class):jetbrains.mps.smodel.runtime.ConceptPropsBuilder" resolve="icon" />
+            <ref role="37wK5l" to="ze1i:~ConceptPropsBuilder.icon(java.lang.String,java.lang.Class):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="icon" />
             <node concept="Xl_RD" id="3VkXNLtjkHX" role="37wK5m">
               <property role="Xl_RC" value="id" />
               <node concept="17Uvod" id="3VkXNLtjrLK" role="lGtFl">
