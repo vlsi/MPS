@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import BHL2.structure.AdditionalStructurePropertiesImpl;
+import BHL2.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d9c7536e-76b5-498f-8064-0955dd8aebcb(BHL2)";
@@ -46,7 +46,7 @@ public class Language extends LanguageRuntime {
       return (T) new BHL2.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

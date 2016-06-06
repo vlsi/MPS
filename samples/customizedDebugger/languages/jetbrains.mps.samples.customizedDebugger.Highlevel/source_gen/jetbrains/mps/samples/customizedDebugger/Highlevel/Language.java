@@ -13,7 +13,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.customizedDebugger.Highlevel.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.samples.customizedDebugger.Highlevel.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.samples.customizedDebugger.Highlevel.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "bdab7456-dc1d-4dc5-b5bf-ab059630252d(jetbrains.mps.samples.customizedDebugger.Highlevel)";
@@ -49,7 +49,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.samples.customizedDebugger.Highlevel.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

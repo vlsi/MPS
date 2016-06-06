@@ -8,12 +8,12 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.generator.test.xmodel.lang1.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.generator.test.xmodel.lang1.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b2d9d19b-9a47-47a4-93f4-0c9390001bf2(jetbrains.mps.generator.test.xmodel.lang1)";
@@ -49,7 +49,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.generator.test.xmodel.lang1.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

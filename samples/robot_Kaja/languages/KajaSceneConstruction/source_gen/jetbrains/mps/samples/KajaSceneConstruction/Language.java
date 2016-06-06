@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.samples.KajaSceneConstruction.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.samples.KajaSceneConstruction.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b56912a3-674f-4530-b0cf-55261b526a1f(jetbrains.mps.samples.KajaSceneConstruction)";
@@ -46,7 +46,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.samples.KajaSceneConstruction.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

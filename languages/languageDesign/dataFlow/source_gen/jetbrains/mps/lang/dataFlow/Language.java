@@ -21,7 +21,7 @@ import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.lang.dataFlow.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.lang.dataFlow.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.dataFlow.typesystem.TypesystemDescriptor;
 
@@ -74,7 +74,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.lang.dataFlow.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

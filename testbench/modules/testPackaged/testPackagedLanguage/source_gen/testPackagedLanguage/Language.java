@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testPackagedLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import testPackagedLanguage.structure.AdditionalStructurePropertiesImpl;
+import testPackagedLanguage.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)";
@@ -42,7 +42,7 @@ public class Language extends LanguageRuntime {
       return (T) new testPackagedLanguage.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

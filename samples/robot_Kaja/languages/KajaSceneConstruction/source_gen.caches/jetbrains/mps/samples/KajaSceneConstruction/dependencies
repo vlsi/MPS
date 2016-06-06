@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />

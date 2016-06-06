@@ -8,7 +8,6 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl;
@@ -21,7 +20,8 @@ import org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import org.jetbrains.mps.samples.ParallelFor.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import org.jetbrains.mps.samples.ParallelFor.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import org.jetbrains.mps.samples.ParallelFor.typesystem.TypesystemDescriptor;
 
@@ -74,7 +74,7 @@ public class Language extends LanguageRuntime {
       return (T) new org.jetbrains.mps.samples.ParallelFor.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

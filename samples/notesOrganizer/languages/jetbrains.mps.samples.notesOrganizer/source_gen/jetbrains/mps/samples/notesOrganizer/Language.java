@@ -17,7 +17,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.samples.notesOrganizer.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.samples.notesOrganizer.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.notesOrganizer.typesystem.TypesystemDescriptor;
@@ -65,7 +65,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.samples.notesOrganizer.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.notesOrganizer.textGen.TextGenAspectDescriptor();

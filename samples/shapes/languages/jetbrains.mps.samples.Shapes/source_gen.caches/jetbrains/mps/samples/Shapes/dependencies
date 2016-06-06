@@ -14,11 +14,11 @@
     <classNode dependClassName="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.intentions.IntentionsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "ce517356-fc9a-4e78-8606-6e7a36ff0671(jetbrains.mps.traceInfo.testWeavingGenerated.data)";
@@ -42,7 +42,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

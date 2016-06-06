@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testSubtypingB.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="testSubtypingB.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testSubtypingB.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testSubtypingB.structure.StructureAspectDescriptor" />
     <classNode dependClassName="testSubtypingB.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

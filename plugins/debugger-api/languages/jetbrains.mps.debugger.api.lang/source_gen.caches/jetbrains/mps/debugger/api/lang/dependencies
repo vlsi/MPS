@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.intentions.IntentionsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
@@ -21,8 +21,8 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

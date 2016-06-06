@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testWrappedType.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testWrappedType.intentions.IntentionsDescriptor" />
-    <classNode dependClassName="testWrappedType.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testWrappedType.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testWrappedType.structure.StructureAspectDescriptor" />
     <classNode dependClassName="testWrappedType.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

@@ -8,7 +8,7 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.test.crossmodel.entity.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.generator.test.crossmodel.entity.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />

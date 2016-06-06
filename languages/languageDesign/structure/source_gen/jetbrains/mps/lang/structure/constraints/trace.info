@@ -19,7 +19,7 @@
       <unit at="13,0,85,0" name="jetbrains.mps.lang.structure.constraints.ConstraintsAspectDescriptor" />
     </file>
     <file name="IconContainer.java">
-      <unit at="8,0,12,0" name="jetbrains.mps.lang.structure.constraints.IconContainer" />
+      <unit at="7,0,11,0" name="jetbrains.mps.lang.structure.constraints.IconContainer" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104840465">
@@ -34,7 +34,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104840673">
     <file name="ConceptDeclaration_Constraints.java">
       <node id="1213104840673" at="30,43,31,159" concept="11" />
-      <node id="2098761829388394981" at="33,43,34,222" concept="6" />
+      <node id="2098761829388394981" at="33,51,34,230" concept="6" />
       <node id="1213104840673" at="38,47,39,16" concept="6" />
       <node id="1213104840673" at="45,59,46,46" concept="6" />
       <node id="5773544763889222101" at="49,118,50,210" concept="6" />
@@ -55,7 +55,7 @@
       <node id="1213104840673" at="98,0,99,0" concept="9" trace="canBeRootBreakingPoint" />
       <node id="1213104840673" at="99,0,100,0" concept="9" trace="breakingNode_8geshg_a0a0a0a0a1a0b0a1a7" />
       <node id="1213104840673" at="30,0,33,0" concept="0" trace="ConceptDeclaration_Constraints#()V" />
-      <node id="1213104840673" at="33,0,36,0" concept="4" trace="getInstanceIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+      <node id="1213104840673" at="33,0,36,0" concept="4" trace="getInstanceIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1213104840673" at="61,0,64,5" concept="3" />
       <node id="1213104840673" at="94,0,97,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="1213104840673" at="37,0,41,0" concept="4" trace="hasOwnDefaultScopeProvider#()Z" />
@@ -73,7 +73,7 @@
       <node id="1213104840673" at="70,131,91,7" concept="1" />
       <node id="1213104840673" at="68,0,94,0" concept="4" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="1213104840673" at="30,43,31,159" />
-      <scope id="1426851521647353924" at="33,43,34,222" />
+      <scope id="1426851521647353924" at="33,51,34,230" />
       <scope id="1213104840673" at="38,47,39,16" />
       <scope id="1213104840673" at="45,59,46,46" />
       <scope id="1213104840673" at="49,118,50,210" />

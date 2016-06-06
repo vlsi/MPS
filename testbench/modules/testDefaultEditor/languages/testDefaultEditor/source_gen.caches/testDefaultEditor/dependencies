@@ -15,7 +15,7 @@
     <classNode dependClassName="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="testDefaultEditor.intentions.IntentionsDescriptor" />
-    <classNode dependClassName="testDefaultEditor.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testDefaultEditor.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testDefaultEditor.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

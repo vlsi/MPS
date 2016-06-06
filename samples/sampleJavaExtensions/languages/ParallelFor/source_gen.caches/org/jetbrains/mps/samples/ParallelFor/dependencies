@@ -14,8 +14,8 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.structure.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

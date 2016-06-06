@@ -17,14 +17,14 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.scripts.ScriptsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.test.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

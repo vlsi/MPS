@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />

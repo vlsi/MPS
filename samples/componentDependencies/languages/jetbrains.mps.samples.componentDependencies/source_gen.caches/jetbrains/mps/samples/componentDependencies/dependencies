@@ -10,12 +10,12 @@
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.samples.componentDependencies.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.componentDependencies.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

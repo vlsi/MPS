@@ -15,7 +15,7 @@ import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import testExtendingAnalyzer.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import testExtendingAnalyzer.structure.AdditionalStructurePropertiesImpl;
+import testExtendingAnalyzer.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "3ac033a0-bffa-48e3-a843-a40cbdd89859(testExtendingAnalyzer)";
@@ -56,7 +56,7 @@ public class Language extends LanguageRuntime {
       return (T) new testExtendingAnalyzer.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

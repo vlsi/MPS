@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.sampleXML.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.sampleXML.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.sampleXML.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.sampleXML.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

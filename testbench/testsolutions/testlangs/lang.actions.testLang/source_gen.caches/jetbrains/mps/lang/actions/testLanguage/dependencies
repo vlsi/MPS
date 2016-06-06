@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />

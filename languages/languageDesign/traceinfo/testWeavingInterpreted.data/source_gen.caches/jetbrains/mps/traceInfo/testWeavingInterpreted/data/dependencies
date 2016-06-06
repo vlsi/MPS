@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

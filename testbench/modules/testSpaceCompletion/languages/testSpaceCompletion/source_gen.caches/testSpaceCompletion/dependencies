@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testSpaceCompletion.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="testSpaceCompletion.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testSpaceCompletion.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testSpaceCompletion.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testMoveElements.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="testMoveElements.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testMoveElements.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testMoveElements.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

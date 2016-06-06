@@ -19,7 +19,7 @@ import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.debugger.api.lang.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.debugger.api.lang.structure.AdditionalStructurePropertiesImpl;
+import jetbrains.mps.debugger.api.lang.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.debugger.api.lang.typesystem.TypesystemDescriptor;
 
@@ -69,7 +69,7 @@ public class Language extends LanguageRuntime {
       return (T) new jetbrains.mps.debugger.api.lang.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

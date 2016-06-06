@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.typesystem.TypesystemDescriptor" />

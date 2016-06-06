@@ -8,7 +8,7 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />

@@ -15,13 +15,13 @@
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

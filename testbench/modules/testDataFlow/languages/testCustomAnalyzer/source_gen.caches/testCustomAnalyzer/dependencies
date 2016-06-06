@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="testCustomAnalyzer.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="testCustomAnalyzer.structure.AdditionalStructurePropertiesImpl" />
+    <classNode dependClassName="testCustomAnalyzer.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="testCustomAnalyzer.structure.StructureAspectDescriptor" />
     <classNode dependClassName="testCustomAnalyzer.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

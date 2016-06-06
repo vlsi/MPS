@@ -11552,6 +11552,12 @@
               <ref role="3bR37D" node="14x5$qAUbkv" resolve="jetbrains.mps.lang.resources" />
             </node>
           </node>
+          <node concept="1SiIV0" id="3NpSYASrBkU" role="3bR37C">
+            <node concept="3bR9La" id="3NpSYASrBkV" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7YI57w6K0rx" resolve="jetbrains.mps.lang.smodel#1139186730696" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgru_Z" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgru_Y" role="1SiIV1">
@@ -31142,6 +31148,9 @@
     </node>
     <node concept="m$_wf" id="1JaUSFUm4G_" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.editor.contextActionsTool" />
+      <node concept="m$f5U" id="EPbpPrikW8" role="m$_yh">
+        <ref role="m$f5T" node="1JaUSFUm4EW" resolve="mps-context-actions-tool" />
+      </node>
       <node concept="3_J27D" id="1JaUSFUm4GB" role="m$_yQ">
         <node concept="3Mxwew" id="1JaUSFUm4GC" role="3MwsjC">
           <property role="3MwjfP" value="MPS Context Actions Tool" />
@@ -31192,9 +31201,6 @@
       </node>
       <node concept="m$_yC" id="1JaUSFUm4GS" role="m$_yJ">
         <ref role="m$_y1" node="4k71ibbKLe8" resolve="jetbrains.mps.core" />
-      </node>
-      <node concept="m$f5U" id="EPbpPrikW8" role="m$_yh">
-        <ref role="m$f5T" node="1JaUSFUm4EW" resolve="mps-context-actions-tool" />
       </node>
     </node>
     <node concept="398rNT" id="1JaUSFUm4GT" role="1l3spd">

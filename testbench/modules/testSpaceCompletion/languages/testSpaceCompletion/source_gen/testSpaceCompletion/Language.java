@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testSpaceCompletion.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import testSpaceCompletion.structure.AdditionalStructurePropertiesImpl;
+import testSpaceCompletion.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "4dd3c558-f0fc-4807-bade-5d6bcad6b3f1(testSpaceCompletion)";
@@ -42,7 +42,7 @@ public class Language extends LanguageRuntime {
       return (T) new testSpaceCompletion.structure.StructureAspectDescriptor();
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new AdditionalStructurePropertiesImpl();
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

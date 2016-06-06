@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <root>
-    <file name="AdditionalStructurePropertiesImpl.java">
-      <unit at="14,0,69,0" name="jetbrains.mps.build.mps.tests.structure.AdditionalStructurePropertiesImpl" />
+    <file name="ConceptPresentationAspectImpl.java">
+      <unit at="14,0,69,0" name="jetbrains.mps.build.mps.tests.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="18,0,62,0" name="jetbrains.mps.build.mps.tests.structure.StructureAspectDescriptor" />
