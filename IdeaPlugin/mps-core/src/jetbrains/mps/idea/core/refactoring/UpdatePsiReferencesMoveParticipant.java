@@ -95,7 +95,7 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
 
     final PsiElement psiElement = movedNode.psiElement;
 
-    final SearchResults<PsiReference> searchResults = getAffectedNodes(psiElement);
+    final SearchResults<SNode> searchResults = getAffectedNodes(psiElement);
     final List<UsageInfo> usageInfos = new ArrayList<UsageInfo>();
 
     for (SearchResult result : searchResults.getSearchResults()) {
@@ -104,11 +104,11 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     }
 
     List<Change<NodePsiData, SNode>> changes = new ArrayList<Change<NodePsiData, SNode>>();
-    for (final SearchResult<PsiReference> oneSearchResult : searchResults.getSearchResults()) {
+    for (final SearchResult<SNode> oneSearchResult : searchResults.getSearchResults()) {
       changes.add(new Change<NodePsiData, SNode>() {
         @Override
-        public SearchResults getSearchResults() {
-          return new SearchResults<PsiReference>(searchResults.getSearchedNodes(), Collections.singletonList(oneSearchResult));
+        public SearchResults<SNode> getSearchResults() {
+          return new SearchResults<SNode>(searchResults.getSearchedNodes(), Collections.singletonList(oneSearchResult));
         }
 
         @Override
@@ -137,7 +137,7 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     return changes;
   }
 
-  private SearchResults getAffectedNodes(PsiElement psiElement) {
+  private SearchResults<SNode> getAffectedNodes(PsiElement psiElement) {
     SearchResults<SNode> results = new SearchResults<SNode>();
 
     // todo search scope?
