@@ -53,31 +53,33 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 17:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_3073231036166227544());
         case 18:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1159218040860());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1704216628350805216());
         case 19:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1158857529258());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1159218040860());
         case 20:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_434283027167909682());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1158857529258());
         case 21:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_434283027167909705());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_434283027167909682());
         case 22:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1158938591701());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_434283027167909705());
         case 23:
-          return Collections.<NodeFactory>singletonList(new SingleLineComment_factories.NodeFactory_4123120730936387298());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1158938591701());
         case 24:
-          return Arrays.asList(new NodeFactory[]{new BL_node_factories.NodeFactory_1178291730239(), new FieldConversions.NodeFactory_3207672282897614589()});
+          return Collections.<NodeFactory>singletonList(new SingleLineComment_factories.NodeFactory_4123120730936387298());
         case 25:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_2509912883396146006());
+          return Arrays.asList(new NodeFactory[]{new BL_node_factories.NodeFactory_1178291730239(), new FieldConversions.NodeFactory_3207672282897614589()});
         case 26:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1183997671100());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_2509912883396146006());
         case 27:
-          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1183997675651());
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1183997671100());
         case 28:
+          return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_1183997675651());
+        case 29:
           return Collections.<NodeFactory>singletonList(new BL_node_factories.NodeFactory_3450034536571911384());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractForStatement", "AdditionalForLoopVariable", "AnnotationMethodDeclaration", "BaseAssignmentExpression", "BinaryOperation", "BitwiseNotExpression", "BlockStatement", "ClassConcept", "ConstructorDeclaration", "DoWhileStatement", "FieldDeclaration", "ForStatement", "ForeachStatement", "GenericNewExpression", "IfStatement", "ImplicitAnnotationInstanceValue", "InstanceMethodDeclaration", "Interface", "NotExpression", "ParenthesizedExpression", "PrefixDecrementExpression", "PrefixIncrementExpression", "ReturnStatement", "SingleLineComment", "StaticFieldDeclaration", "StaticMethodDeclaration", "TryCatchStatement", "TryStatement", "WhileStatement"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractForStatement", "AdditionalForLoopVariable", "AnnotationMethodDeclaration", "BaseAssignmentExpression", "BinaryOperation", "BitwiseNotExpression", "BlockStatement", "ClassConcept", "ConstructorDeclaration", "DoWhileStatement", "FieldDeclaration", "ForStatement", "ForeachStatement", "GenericNewExpression", "IfStatement", "ImplicitAnnotationInstanceValue", "InstanceMethodDeclaration", "Interface", "LocalVariableDeclaration", "NotExpression", "ParenthesizedExpression", "PrefixDecrementExpression", "PrefixIncrementExpression", "ReturnStatement", "SingleLineComment", "StaticFieldDeclaration", "StaticMethodDeclaration", "TryCatchStatement", "TryStatement", "WhileStatement"};
 }

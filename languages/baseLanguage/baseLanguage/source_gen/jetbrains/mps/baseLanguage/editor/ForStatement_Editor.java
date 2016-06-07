@@ -271,6 +271,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
+    DeleteFirstForLoopVarComma.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

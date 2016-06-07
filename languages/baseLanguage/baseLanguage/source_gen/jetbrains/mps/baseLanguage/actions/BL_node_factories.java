@@ -310,13 +310,33 @@ public class BL_node_factories {
   }
   public static class NodeFactory_2256531611052034561 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ns07og_a0a0a0ab());
+      {
+        final SNode original = sampleNode;
+        if (SNodeOperations.isInstanceOf(original, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), SNodeOperations.copyNode(SLinkOperations.getTarget(original, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+        }
+      }
+      if ((SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")) == null)) {
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ns07og_a0a0a1a0ab());
+      }
     }
-    private static SNode _quotation_createNode_ns07og_a0a0a0ab() {
+    private static SNode _quotation_createNode_ns07og_a0a0a1a0ab() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), null, null, false);
       return quotedNode_1;
+    }
+  }
+  public static class NodeFactory_1704216628350805216 implements NodeFactory {
+    public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+      {
+        final SNode next = sampleNode;
+        if (SNodeOperations.isInstanceOf(next, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable"))) {
+          SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(next, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), SNodeOperations.copyNode(SLinkOperations.getTarget(next, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), SNodeOperations.copyNode(SLinkOperations.getTarget(next, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"))));
+        }
+      }
     }
   }
 }
