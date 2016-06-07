@@ -218,11 +218,11 @@
       <node id="1217271585523" at="16,47,17,116" concept="3" />
       <node id="1217271585523" at="17,116,18,91" concept="3" />
       <node id="1225979304340" at="23,49,24,35" concept="3" />
-      <node id="1215444253193" at="24,35,25,268" concept="3" />
+      <node id="1215444253193" at="24,35,25,275" concept="3" />
       <node id="1225979304340" at="23,0,27,0" concept="4" trace="test_ForLoop#()V" />
       <node id="1217271585523" at="15,0,20,0" concept="4" trace="test_ForLoop#()V" />
       <scope id="1217271585523" at="16,47,18,91" />
-      <scope id="1225979304340" at="23,49,25,268" />
+      <scope id="1225979304340" at="23,49,25,275" />
       <scope id="1225979304340" at="23,0,27,0" />
       <scope id="1217271585523" at="15,0,20,0" />
       <unit id="1217271585523" at="21,0,30,0" name="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
@@ -238,7 +238,7 @@
       <node id="1217271585641" at="28,105,29,116" concept="3" />
       <node id="1217271585641" at="29,116,30,162" concept="3" />
       <node id="1225979305378" at="35,62,36,35" concept="3" />
-      <node id="1215444224366" at="36,35,37,265" concept="3" />
+      <node id="1215444224366" at="36,35,37,272" concept="3" />
       <node id="1217271585641" at="40,104,41,230" concept="5" />
       <node id="1217271585641" at="41,230,42,124" concept="3" />
       <node id="1217271585641" at="44,107,45,230" concept="5" />
@@ -252,7 +252,7 @@
       <scope id="1217271585641" at="18,60,20,117" />
       <scope id="1217271585641" at="23,102,25,159" />
       <scope id="1217271585641" at="28,105,30,162" />
-      <scope id="1225979305378" at="35,62,37,265" />
+      <scope id="1225979305378" at="35,62,37,272" />
       <scope id="1217271585641" at="40,104,42,124">
         <var name="operation" id="1217271585641" />
       </scope>
@@ -276,7 +276,7 @@
       <node id="1217271585692" at="23,105,24,116" concept="3" />
       <node id="1217271585692" at="24,116,25,158" concept="3" />
       <node id="1225979305996" at="30,58,31,35" concept="3" />
-      <node id="1215444198405" at="31,35,32,265" concept="3" />
+      <node id="1215444198405" at="31,35,32,272" concept="3" />
       <node id="1217271585692" at="35,107,36,230" concept="5" />
       <node id="1217271585692" at="36,230,37,124" concept="3" />
       <node id="1225979305996" at="30,0,34,0" concept="4" trace="test_UnusedAssignment#()V" />
@@ -285,7 +285,7 @@
       <node id="1217271585692" at="22,0,27,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551#()V" />
       <scope id="1217271585692" at="18,56,20,109" />
       <scope id="1217271585692" at="23,105,25,158" />
-      <scope id="1225979305996" at="30,58,32,265" />
+      <scope id="1225979305996" at="30,58,32,272" />
       <scope id="1217271585692" at="35,107,37,124">
         <var name="operation" id="1217271585692" />
       </scope>
@@ -565,7 +565,7 @@
       <node id="1217271586411" at="23,105,24,116" concept="3" />
       <node id="1217271586411" at="24,116,25,159" concept="3" />
       <node id="1225979301883" at="30,59,31,35" concept="3" />
-      <node id="1215444268436" at="31,35,32,265" concept="3" />
+      <node id="1215444268436" at="31,35,32,272" concept="3" />
       <node id="1217271586411" at="35,107,36,230" concept="5" />
       <node id="1217271586411" at="36,230,37,124" concept="3" />
       <node id="1225979301883" at="30,0,34,0" concept="4" trace="test_DataFlowInClosure#()V" />
@@ -574,7 +574,7 @@
       <node id="1217271586411" at="22,0,27,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928941627#()V" />
       <scope id="1217271586411" at="18,57,20,111" />
       <scope id="1217271586411" at="23,105,25,159" />
-      <scope id="1225979301883" at="30,59,32,265" />
+      <scope id="1225979301883" at="30,59,32,272" />
       <scope id="1217271586411" at="35,107,37,124">
         <var name="operation" id="1217271586411" />
       </scope>
@@ -593,7 +593,7 @@
       <node id="1217271586585" at="23,87,24,116" concept="3" />
       <node id="1217271586585" at="24,116,25,156" concept="3" />
       <node id="1225979304892" at="30,74,31,35" concept="3" />
-      <node id="1215444400381" at="31,35,32,255" concept="3" />
+      <node id="1215444400381" at="31,35,32,262" concept="3" />
       <node id="1217271586585" at="35,89,36,230" concept="5" />
       <node id="1217271586585" at="36,230,37,124" concept="3" />
       <node id="1225979304892" at="30,0,34,0" concept="4" trace="test_UnexpectedReturnInAnonymousClass#()V" />
@@ -602,7 +602,7 @@
       <node id="1217271586585" at="22,0,27,0" concept="4" trace="test_NodeReturnExpectedErrorCheck6923385624929494145#()V" />
       <scope id="1217271586585" at="18,72,20,141" />
       <scope id="1217271586585" at="23,87,25,156" />
-      <scope id="1225979304892" at="30,74,32,255" />
+      <scope id="1225979304892" at="30,74,32,262" />
       <scope id="1217271586585" at="35,89,37,124">
         <var name="operation" id="1217271586585" />
       </scope>
@@ -686,7 +686,7 @@
       <node id="1217271587074" at="28,105,29,116" concept="3" />
       <node id="1217271587074" at="29,116,30,156" concept="3" />
       <node id="1225979303691" at="35,56,36,35" concept="3" />
-      <node id="1215444376244" at="36,35,37,265" concept="3" />
+      <node id="1215444376244" at="36,35,37,272" concept="3" />
       <node id="1217271587074" at="40,107,41,230" concept="5" />
       <node id="1217271587074" at="41,230,42,124" concept="3" />
       <node id="1217271587074" at="44,107,45,230" concept="5" />
@@ -700,7 +700,7 @@
       <scope id="1217271587074" at="18,54,20,105" />
       <scope id="1217271587074" at="23,105,25,156" />
       <scope id="1217271587074" at="28,105,30,156" />
-      <scope id="1225979303691" at="35,56,37,265" />
+      <scope id="1225979303691" at="35,56,37,272" />
       <scope id="1217271587074" at="40,107,42,124">
         <var name="operation" id="1217271587074" />
       </scope>
@@ -775,7 +775,7 @@
       <node id="1217271587918" at="23,102,24,116" concept="3" />
       <node id="1217271587918" at="24,116,25,158" concept="3" />
       <node id="1225979303578" at="30,61,31,35" concept="3" />
-      <node id="1215444237482" at="31,35,32,265" concept="3" />
+      <node id="1215444237482" at="31,35,32,272" concept="3" />
       <node id="1217271587918" at="35,104,36,230" concept="5" />
       <node id="1217271587918" at="36,230,37,124" concept="3" />
       <node id="1225979303578" at="30,0,34,0" concept="4" trace="test_IfStatementDataFlow#()V" />
@@ -784,7 +784,7 @@
       <node id="1217271587918" at="22,0,27,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755#()V" />
       <scope id="1217271587918" at="18,59,20,115" />
       <scope id="1217271587918" at="23,102,25,158" />
-      <scope id="1225979303578" at="30,61,32,265" />
+      <scope id="1225979303578" at="30,61,32,272" />
       <scope id="1217271587918" at="35,104,37,124">
         <var name="operation" id="1217271587918" />
       </scope>
@@ -7158,11 +7158,11 @@
       <node id="7209837885462471125" at="16,53,17,116" concept="3" />
       <node id="7209837885462471125" at="17,116,18,103" concept="3" />
       <node id="7209837885462539568" at="23,55,24,41" concept="3" />
-      <node id="7209837885462541929" at="24,41,25,274" concept="3" />
+      <node id="7209837885462541929" at="24,41,25,281" concept="3" />
       <node id="7209837885462539568" at="23,0,27,0" concept="4" trace="test_ReturnFromTry#()V" />
       <node id="7209837885462471125" at="15,0,20,0" concept="4" trace="test_ReturnFromTry#()V" />
       <scope id="7209837885462471125" at="16,53,18,103" />
-      <scope id="7209837885462539568" at="23,55,25,274" />
+      <scope id="7209837885462539568" at="23,55,25,281" />
       <scope id="7209837885462539568" at="23,0,27,0" />
       <scope id="7209837885462471125" at="15,0,20,0" />
       <unit id="7209837885462471125" at="21,0,30,0" name="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test$TestBody" />

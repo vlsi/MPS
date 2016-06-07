@@ -415,17 +415,23 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
    */
   @Nullable
   public IntentionExecutable getIntentionById(SNode node, EditorContext editorContext, String id) {
+    List<IntentionExecutable> result = getIntentionsById(node, editorContext, id);
+
+    assert result.size() <= 1;
+    return result.isEmpty() ? null : result.get(0);
+  }
+
+  @NotNull
+  public List<IntentionExecutable> getIntentionsById(SNode node, EditorContext editorContext, String id) {
     QueryDescriptor query = new QueryDescriptor();
     query.setCurrentNodeOnly(true);
     Collection<Pair<IntentionExecutable, SNode>> intentions = getAvailableIntentions(query, node, editorContext);
-    List<IntentionExecutable> result = new ArrayList<IntentionExecutable>();
+    List<IntentionExecutable> result = new ArrayList<>();
     for (Pair<IntentionExecutable, SNode> intention : intentions) {
       if (intention.o1.getDescriptor().getPersistentStateKey().equals(id)) {
         result.add(intention.o1);
       }
     }
-
-    assert result.size() <= 1;
-    return result.isEmpty() ? null : result.get(0);
+    return result;
   }
 }

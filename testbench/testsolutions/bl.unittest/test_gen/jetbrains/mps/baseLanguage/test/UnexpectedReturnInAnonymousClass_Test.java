@@ -29,7 +29,7 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
   public static class TestBody extends BaseTestBody {
     public void test_UnexpectedReturnInAnonymousClass() throws Exception {
       addNodeById("1217271586587");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444400359"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444400359"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), false, false, false);
     }
 
     public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Exception {

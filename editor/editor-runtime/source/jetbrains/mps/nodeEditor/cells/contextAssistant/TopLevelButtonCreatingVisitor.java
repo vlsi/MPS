@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
+import com.intellij.openapi.ui.popup.ListPopupStep;
+import com.intellij.openapi.ui.popup.PopupStep;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 
@@ -27,10 +30,10 @@ import java.awt.event.ActionEvent;
  * A menu item visitor that creates a top-level button for the visited menu item.
  */
 class TopLevelButtonCreatingVisitor implements MenuItemVisitor<JButton> {
-  private final ActionItemExecutor myActionItemExecutor;
+  private final ListPopupStep<MenuItem> myStep;
 
-  TopLevelButtonCreatingVisitor(ActionItemExecutor actionItemExecutor) {
-    myActionItemExecutor = actionItemExecutor;
+  TopLevelButtonCreatingVisitor(ListPopupStep<MenuItem> step) {
+    myStep = step;
   }
 
   @Override
@@ -38,13 +41,31 @@ class TopLevelButtonCreatingVisitor implements MenuItemVisitor<JButton> {
     return new JButton(new AbstractAction(actionItem.getLabelText("")) {
       @Override
       public void actionPerformed(ActionEvent e) {
-        myActionItemExecutor.executeActionItem(actionItem);
+        executeFinalChoice(myStep, actionItem);
       }
     });
   }
 
+  private static <T> void executeFinalChoice(ListPopupStep<T> step, T value) {
+    PopupStep popupStep = step.onChosen(value, true);
+    if (popupStep != PopupStep.FINAL_CHOICE) {
+      return;
+    }
+
+    Runnable finalRunnable = step.getFinalRunnable();
+    if (finalRunnable == null) {
+      return;
+    }
+
+    finalRunnable.run();
+  }
+
   @Override
   public JButton visit(SubMenu subMenu) {
-    return new StepComboBoxButton(subMenu.getText(), new MenuItemListStep(myActionItemExecutor, subMenu.getItems()));
+    PopupStep subStep = myStep.onChosen(subMenu, false);
+    if (!(subStep instanceof ListPopupStep)) {
+      throw new IllegalStateException("sub-step for " + subMenu + " must be a ListPopupStep but was " + subStep);
+    }
+    return new StepComboBoxButton(subMenu.getText(), (ListPopupStep<?>) subStep);
   }
 }

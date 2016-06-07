@@ -73,6 +73,8 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createProperty_djd04t_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_djd04t_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_djd04t_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_djd04t_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_djd04t_h0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_djd04t_a0(EditorContext editorContext, SNode node) {
@@ -139,6 +141,31 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_allowWarnings");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createConstant_djd04t_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include self:");
+    editorCell.setCellId("Constant_djd04t_g0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_djd04t_h0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("includeSelf");
+    provider.setNoTargetText("<no includeSelf>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_includeSelf");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);

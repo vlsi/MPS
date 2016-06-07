@@ -28,10 +28,10 @@ import java.util.Collections;
 import java.util.List;
 
 class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableByLeftArrow {
-  public static final MenuItemListStep EMPTY = new MenuItemListStep(null, Collections.<MenuItem>emptyList());
+  public static final MenuItemListStep EMPTY = new MenuItemListStep(null, Collections.emptyList());
   private final ActionItemExecutor myActionItemExecutor;
 
-  public MenuItemListStep(ActionItemExecutor actionItemExecutor, List<MenuItem> items) {
+  MenuItemListStep(ActionItemExecutor actionItemExecutor, List<MenuItem> items) {
     super(null, items);
     myActionItemExecutor = actionItemExecutor;
   }
@@ -75,12 +75,7 @@ class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableBy
   }
 
   private Runnable getRunnableFor(final ActionItem item) {
-    return new Runnable() {
-      @Override
-      public void run() {
-        myActionItemExecutor.executeActionItem(item);
-      }
-    };
+    return () -> myActionItemExecutor.executeActionItem(item);
   }
 
   public MenuItemListStep subList(int fromIndex) {

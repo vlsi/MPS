@@ -40,7 +40,7 @@ public final class CheckNodeForErrorMessagesOperation__BehaviorDescriptor extend
   /*package*/ static void perform_iddCRb6FLnvk(@NotNull SNode __thisNode__, SNode node) {
     final SNode nodeToCheck = node;
     final SNode operation = __thisNode__;
-    NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaadL, "allowErrors")), SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaaeL, "allowWarnings")));
+    NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaadL, "allowErrors")), SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0xbd376db27cdbaaeL, "allowWarnings")), SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, 0x33f30f661f8cdca2L, "includeSelf")));
   }
   /*package*/ static String getDefaultName_id7scb9XJdmH2(@NotNull SNode __thisNode__) {
     return "ErrorMessagesCheck";

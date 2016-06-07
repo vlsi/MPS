@@ -37,7 +37,7 @@ class PanelCustomizations {
    * Configures focus settings so that left/right arrows can be used for focus traversal and the first child is focused on click.
    * @param component the component to configure (a container)
    */
-  public static <T extends JComponent> T setupMenuBar(T component) {
+  static <T extends JComponent> T setupMenuBar(T component) {
     component.setFocusCycleRoot(true);
     component.setFocusTraversalPolicy(new LayoutFocusTraversalPolicy());
     addFocusTraversalKey(component, KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, KeyEvent.VK_LEFT);
@@ -49,7 +49,7 @@ class PanelCustomizations {
 
   private static void addFocusTraversalKey(JComponent component, int keySetId, int additionalKey) {
     KeyboardFocusManager keyboardFocusManager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-    Set<AWTKeyStroke> keyStrokes = new HashSet<AWTKeyStroke>(keyboardFocusManager.getDefaultFocusTraversalKeys(keySetId));
+    Set<AWTKeyStroke> keyStrokes = new HashSet<>(keyboardFocusManager.getDefaultFocusTraversalKeys(keySetId));
     keyStrokes.add(AWTKeyStroke.getAWTKeyStroke(additionalKey, 0));
     component.setFocusTraversalKeys(keySetId, keyStrokes);
   }
