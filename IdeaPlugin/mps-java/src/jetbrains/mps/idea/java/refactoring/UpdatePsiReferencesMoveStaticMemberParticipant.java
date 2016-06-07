@@ -23,26 +23,54 @@ import com.intellij.psi.PsiImportStaticReferenceElement;
 import com.intellij.psi.PsiImportStaticStatement;
 import com.intellij.psi.PsiMember;
 import com.intellij.psi.PsiReference;
+import com.intellij.refactoring.move.moveClassesOrPackages.CommonMoveUtil;
 import com.intellij.refactoring.move.moveMembers.MoveMemberHandler;
 import com.intellij.refactoring.move.moveMembers.MoveMembersOptions;
 import com.intellij.refactoring.move.moveMembers.MoveMembersProcessor.MoveMembersUsageInfo;
-import jetbrains.mps.ide.findusages.model.SearchResult;
+import com.intellij.usageView.UsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.PsiSearchResult;
+import jetbrains.mps.idea.core.refactoring.UpdatePsiReferencesMoveParticipant;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-public class UpdatePsiReferencesMoveStaticMemberParticipant {
+public class UpdatePsiReferencesMoveStaticMemberParticipant extends UpdatePsiReferencesMoveParticipant {
 
+  public UpdatePsiReferencesMoveStaticMemberParticipant(MPSPsiProvider psiProvider) {
+    super(psiProvider);
+  }
+
+  @Override
+  protected void updateUsages(List<UsageInfo> usageInfos, PsiElement targetElement, PsiElement psiElement) {
+    Map<PsiElement, PsiElement> old2New = Collections.singletonMap(psiElement, targetElement);
+    CommonMoveUtil.retargetUsages(usageInfos.toArray(UsageInfo.EMPTY_ARRAY), old2New);
+
+    final PsiMember psiMember = (PsiMember) psiElement;
+    final PsiClass targetClass = (PsiClass) targetElement;
+    updatePsiUsages(psiMember, targetClass, usageInfos.stream().map(UsageInfo::getReference).collect(Collectors.toList()));
+  }
+
+  @Deprecated
   public static void updatePsiUsages(MPSPsiProvider psiProvider, SNode member, SNode whereMoved, SearchResults<SNode> usages) {
     final PsiMember psiMember = (PsiMember) psiProvider.getPsi(member);
     final PsiClass targetClass = (PsiClass) psiProvider.getPsi(whereMoved);
+    updatePsiUsages(psiMember, targetClass, usages.getSearchResults()
+      .stream()
+      .filter(sNodeSearchResult -> sNodeSearchResult instanceof PsiSearchResult)
+      .map(sNodeSearchResult -> ((PsiSearchResult) sNodeSearchResult).getReference())
+      .collect(Collectors.toList()));
+  }
+
+  public static void updatePsiUsages(PsiMember psiMember, PsiClass targetClass, Iterable<PsiReference> usages) {
 
     MoveMembersOptions options = new MoveMembersOptions() {
       @Override
@@ -70,10 +98,7 @@ public class UpdatePsiReferencesMoveStaticMemberParticipant {
 
     List<PsiImportStaticStatement> importStatements = new ArrayList<PsiImportStaticStatement>();
 
-    for (SearchResult<SNode> result : usages.getSearchResults()) {
-      if (!(result instanceof PsiSearchResult)) continue;
-      PsiReference psiRef = ((PsiSearchResult) result).getReference();
-
+    for (PsiReference psiRef : usages) {
       if (psiRef instanceof PsiImportStaticReferenceElement) {
         PsiImportStaticStatement importStatement = findImportStatement((PsiImportStaticReferenceElement) psiRef);
         assert importStatement != null;
