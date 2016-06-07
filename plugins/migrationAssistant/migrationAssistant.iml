@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="kernel" />

@@ -24,7 +24,7 @@
     <orderEntry type="library" exported="" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
+    <orderEntry type="library" scope="TEST" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="environment" scope="TEST" />
     <orderEntry type="library" name="javac2" level="project" />

@@ -29,6 +29,6 @@
     <orderEntry type="module" module-name="platform" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Idea-platform" level="project" />
   </component>
 </module>

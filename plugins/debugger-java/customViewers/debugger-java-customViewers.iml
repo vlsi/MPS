@@ -12,7 +12,7 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="debugger-java-api" />
