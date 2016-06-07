@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />

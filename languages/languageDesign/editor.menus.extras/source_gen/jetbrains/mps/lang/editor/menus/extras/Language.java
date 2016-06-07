@@ -15,7 +15,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.menus.extras.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import jetbrains.mps.lang.intentions.contextAssistant.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.editor.menus.extras.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "cffe907e-d3de-433f-89d6-57d9c449c0e2(jetbrains.mps.lang.editor.menus.extras)";
