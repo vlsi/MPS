@@ -9308,6 +9308,12 @@
               <ref role="3bR37D" node="7Kfy9QB6L4B" resolve="jetbrains.mps.lang.dataFlow" />
             </node>
           </node>
+          <node concept="1SiIV0" id="26HxXQQ1cHo" role="3bR37C">
+            <node concept="3bR9La" id="26HxXQQ1cHp" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruI9" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruI8" role="1SiIV1">
