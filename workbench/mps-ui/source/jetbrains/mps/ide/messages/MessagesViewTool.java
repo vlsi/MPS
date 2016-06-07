@@ -73,6 +73,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     myNavigationManager = navigationManager;
     myToolWindowManager = toolWindowManager;
     myDefaultList = new MyMessageList("Messages");
+    Disposer.register(this, myDefaultList);
     // default list doesn't need too much attention, don't activate it on any message
     myDefaultList.setActivateOnMessage(false);
     myDefaultList.setTitleUpdateFormat("{1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}");
