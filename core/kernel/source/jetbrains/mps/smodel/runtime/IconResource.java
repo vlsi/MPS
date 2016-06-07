@@ -27,6 +27,26 @@ public class IconResource {
   }
 
   public InputStream getResource() {
-    return myResourceProvider.getResourceAsStream(myIconResId);
+    return  myResourceProvider.getResourceAsStream(myIconResId);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    IconResource that = (IconResource) o;
+
+    return myIconResId != null ? myIconResId.equals(that.myIconResId) : that.myIconResId == null;
+
+  }
+
+  @Override
+  public int hashCode() {
+    return myIconResId != null ? myIconResId.hashCode() : 0;
   }
 }
