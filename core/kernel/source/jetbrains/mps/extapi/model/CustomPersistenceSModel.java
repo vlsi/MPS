@@ -62,13 +62,19 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   @Override
-  public synchronized SModel getSModelInternal() {
+  public SModel getSModelInternal() {
     if (myModel == null) {
-      myModel = loadSModel();
-      myModel.setModelDescriptor(this);
-      setLoadingState(ModelLoadingState.FULLY_LOADED);
+      final ModelLoadingState oldState;
+      synchronized (this) {
+        oldState = getLoadingState();
+        if (myModel == null) {
+          myModel = loadSModel();
+          myModel.setModelDescriptor(this);
+          setLoadingState(ModelLoadingState.FULLY_LOADED);
+        }
+      }
+      fireModelStateChanged(oldState, getLoadingState());
     }
-    fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     return myModel;
   }
 
