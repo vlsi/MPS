@@ -13,5 +13,6 @@ public class ShowAsIntentions_ActionGroup extends GeneratedActionGroup {
     ShowAsIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action");
     ShowAsIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action");
     ShowAsIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action");
+    ShowAsIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanModel_Action");
   }
 }

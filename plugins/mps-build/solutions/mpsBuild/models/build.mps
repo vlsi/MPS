@@ -26980,6 +26980,18 @@
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5WwfO6A6qZ" role="3bR37C">
+          <node concept="3bR9La" id="5WwfO6A6r0" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5WwfO6A6r1" role="3bR37C">
+          <node concept="3bR9La" id="5WwfO6A6r2" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="307DWrMiIBc" resolve="jetbrains.mps.lang.generator.plan" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5bqL32k0kwS" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -31148,9 +31160,6 @@
     </node>
     <node concept="m$_wf" id="1JaUSFUm4G_" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.editor.contextActionsTool" />
-      <node concept="m$f5U" id="EPbpPrikW8" role="m$_yh">
-        <ref role="m$f5T" node="1JaUSFUm4EW" resolve="mps-context-actions-tool" />
-      </node>
       <node concept="3_J27D" id="1JaUSFUm4GB" role="m$_yQ">
         <node concept="3Mxwew" id="1JaUSFUm4GC" role="3MwsjC">
           <property role="3MwjfP" value="MPS Context Actions Tool" />
@@ -31201,6 +31210,9 @@
       </node>
       <node concept="m$_yC" id="1JaUSFUm4GS" role="m$_yJ">
         <ref role="m$_y1" node="4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
+      <node concept="m$f5U" id="EPbpPrikW8" role="m$_yh">
+        <ref role="m$f5T" node="1JaUSFUm4EW" resolve="mps-context-actions-tool" />
       </node>
     </node>
     <node concept="398rNT" id="1JaUSFUm4GT" role="1l3spd">
