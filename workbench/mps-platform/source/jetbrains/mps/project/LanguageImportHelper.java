@@ -63,9 +63,20 @@ public final class LanguageImportHelper {
   private final MPSProject myProject;
   private Runnable myOnCloseActivity;
   private ShortcutSet myShortcut;
+  private Interaction myInteraction;
 
   public LanguageImportHelper(@NotNull MPSProject project) {
     myProject = project;
+    myInteraction = new UiInteraction();
+  }
+
+  /**
+   * Construct import helper with a custom interaction, typically non-ui, which is the default. Used for testing.
+   * @param interaction Custom interaction object
+   */
+  public LanguageImportHelper(@NotNull MPSProject project, @NotNull Interaction interaction) {
+    myProject = project;
+    myInteraction = interaction;
   }
 
   /**
@@ -76,7 +87,7 @@ public final class LanguageImportHelper {
    * @param runnable code to execute once language to import has been picked or selection dialog has been closed
    * @return <code>this</code> for convenience
    */
-  @SuppressWarnings("unused") // in use from idea plugin, MakeDirAModel.
+  @SuppressWarnings("unused") // in use from iadea plugin, MakeDirAModel.
   public LanguageImportHelper setOnCloseActivity(@Nullable Runnable runnable) {
     myOnCloseActivity = runnable;
     return this;
@@ -99,7 +110,7 @@ public final class LanguageImportHelper {
    * @param devkit affected devkit, the one to add new export
    */
   public void addExportedLanguage(@NotNull final DevKit devkit) {
-    showPanel(new jetbrains.mps.util.Callback<SLanguage>() {
+    chooseLanguage(new jetbrains.mps.util.Callback<SLanguage>() {
       @Override
       public void call(final SLanguage param) {
         final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<Set<SLanguage>>() {
@@ -159,7 +170,7 @@ public final class LanguageImportHelper {
    * @param model affected model, the one to get another language to use
    */
   public void addUsedLanguage(@NotNull final SModel model) {
-    showPanel(new jetbrains.mps.util.Callback<SLanguage>() {
+    chooseLanguage(new jetbrains.mps.util.Callback<SLanguage>() {
       @Override
       public void call(final SLanguage param) {
         final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<Set<SLanguage>>() {
@@ -222,16 +233,11 @@ public final class LanguageImportHelper {
 
   @NotNull
   /*package*/ Set<SLanguage> chooseModulesToImport(Set<SLanguage> candidates) {
-    SelectLanguagesDialog dialog = new SelectLanguagesDialog(myProject.getProject(), candidates);
-    dialog.show();
-    if (dialog.isOK()) {
-      return dialog.getSelectedModules();
-    }
-    return Collections.emptySet();
+    return myInteraction.chooseAdditionalLanguages(candidates);
   }
 
 
-  private void showPanel(final jetbrains.mps.util.Callback<SLanguage> addLanguageAction) {
+  private void chooseLanguage(final jetbrains.mps.util.Callback<SLanguage> addLanguageAction) {
     final BaseModuleModel languagesData = new BaseModuleModel(myProject, "language") {
       @Override
       public SModuleReference[] find(SearchScope scope) {
@@ -245,13 +251,9 @@ public final class LanguageImportHelper {
     };
     languagesData.setPromptText("Import language:");
 
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject.getProject(), languagesData, null);
-    if (myShortcut != null) {
-      popup.setCheckBoxShortcut(myShortcut);
-    }
     // we used to allow multiple selection, but didn't handle it in any special way
     // (each selected language would trigger own extra dialog to import extended, which is odd)
-    popup.invoke(new Callback() {
+    myInteraction.chooseLanguage(languagesData, new Callback() {
       private SModuleReference myModuleRef;
       @Override
       public void elementChosen(Object element) {
@@ -267,6 +269,40 @@ public final class LanguageImportHelper {
           myOnCloseActivity.run();
         }
       }
-    }, ModalityState.current(), false);
+    });
+  }
+
+  /**
+   * Instance of this class behaves like a user who uses this import helper.
+   * It answers this import helper's questions as to what language to import and what additional languages to import afterwards.
+   * Interaction via showing dialog windows in a special case.
+   * This class is used to make LanguageImportHelper testable in headless mode.
+   */
+  public interface Interaction {
+    void chooseLanguage(BaseModuleModel model, Callback addLanguageAction);
+    Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> candidates);
+  }
+
+  private class UiInteraction implements Interaction {
+    @Override
+    public void chooseLanguage(BaseModuleModel model, Callback addLanguageAction) {
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject.getProject(), model, null);
+      if (myShortcut != null) {
+        popup.setCheckBoxShortcut(myShortcut);
+      }
+      // we used to allow multiple selection, but didn't handle it in any special way
+      // (each selected language would trigger own extra dialog to import extended, which is odd)
+      popup.invoke(addLanguageAction, ModalityState.current(), false);
+    }
+
+    @Override
+    public Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> candidates) {
+      SelectLanguagesDialog dialog = new SelectLanguagesDialog(myProject.getProject(), candidates);
+      dialog.show();
+      if (dialog.isOK()) {
+        return dialog.getSelectedModules();
+      }
+      return Collections.emptySet();
+    }
   }
 }

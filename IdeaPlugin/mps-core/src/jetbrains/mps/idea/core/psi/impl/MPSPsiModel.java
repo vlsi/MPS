@@ -329,6 +329,12 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         @Override
         public void run() {
           SModel model = myModelReference.resolve(repo);
+          // fixme when DefaultModelRoot.createModel() doens't do register() anymore, it shouldn't be needed
+          // happens in tests for creating file-per-root persisted model in a directory, when no languages is chosen
+          // i.e. creation of model is cancelled
+          if (model == null) {
+            return;
+          }
           DataSource source = model.getSource();
           if (source instanceof FileDataSource) {
             mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) source).getFile());

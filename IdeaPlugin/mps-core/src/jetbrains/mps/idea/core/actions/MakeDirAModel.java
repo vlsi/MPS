@@ -18,27 +18,31 @@ package jetbrains.mps.idea.core.actions;
 
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.LanguageImportHelper;
-import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
@@ -52,6 +56,7 @@ import java.util.Map;
  */
 public class MakeDirAModel extends NewModelActionBase {
   private static Logger LOG = LogManager.getLogger(MakeDirAModel.class);
+  public static final DataKey<LanguageImportHelper.Interaction> LANGUAGE_IMPORT_INTERACTION = DataKey.create("languageImportInteraction");
 
   public MakeDirAModel() {
     super("Use MPS language here", null, IdeIcons.LANGUAGE_ICON);
@@ -59,22 +64,62 @@ public class MakeDirAModel extends NewModelActionBase {
 
   @Override
   public void actionPerformed(AnActionEvent anActionEvent) {
-    SModel model = createModel(anActionEvent);
+    EditableSModel model = createModel(anActionEvent);
     if (model == null) {
       return;
     }
 
-    new LanguageImportHelper(ProjectHelper.fromIdeaProject(myProject)).setOnCloseActivity(
+    MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    assert mpsProject != null;
+    assert repository != null;
+
+    LanguageImportHelper importHelper = ApplicationManager.getApplication().isUnitTestMode() ?
+      new LanguageImportHelper(mpsProject, LANGUAGE_IMPORT_INTERACTION.getData(anActionEvent.getDataContext())) :
+      new LanguageImportHelper(mpsProject);
+
+    importHelper.setOnCloseActivity(
       new Runnable() {
         @Override
         public void run() {
+          ModelAccess modelAccess = repository.getModelAccess();
+          boolean noImportHasBeenAdded = new ModelAccessHelper(modelAccess).runReadAction(new Computable<Boolean>() {
+            @Override
+            public Boolean compute() {
+              return ((SModelInternal) model).importedLanguageIds().isEmpty();
+            }
+          });
+          if (noImportHasBeenAdded) {
+            // was cancelled
+            // todo have better way to signal cancellation
+            // fixme DefaultModelRoot currently registers model when created, which is bad
+            // hence, here we have to deregister it in case of cancellation
+            // another solution is to extend api of LanguageImportHelper and have means to choose language
+            // _before_ creating the model
+            modelAccess.runWriteAction(new Runnable() {
+              @Override
+              public void run() {
+                ((SModuleBase) model.getModule()).unregisterModel((SModelBase) model);
+              }
+            });
+            return;
+          }
+
+          // writing file only now, this way VCS dialog doesn't get in the way and make the language chooser disappear
+          modelAccess.runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+              model.save();
+            }
+          });
+
           ProjectView.getInstance(myProject).refresh();
         }
       }
     ).addUsedLanguage(model);
   }
 
-  private SModel createModel(final AnActionEvent e) {
+  private EditableSModel createModel(final AnActionEvent e) {
     return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
@@ -109,11 +154,10 @@ public class MakeDirAModel extends NewModelActionBase {
 
         model.setChanged(true);
         model.load();
-        model.save();
 
         //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
-        ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
-        new MissingDependenciesFixer(model).fixModuleDependencies();
+//        ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+//        new MissingDependenciesFixer(model).fixModuleDependencies();
 
         return model;
       }

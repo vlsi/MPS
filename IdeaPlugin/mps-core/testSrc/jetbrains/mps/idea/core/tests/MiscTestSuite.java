@@ -25,7 +25,8 @@ import jetbrains.mps.RuntimeFlags;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProjectViewTests.class,
                      FacetTests.class,
-                     EditorTests.class})
+                     EditorTests.class,
+                     UseLanguageInPackageTest.class})
 public class MiscTestSuite {
   @BeforeClass
   public static void setTestMode() {
