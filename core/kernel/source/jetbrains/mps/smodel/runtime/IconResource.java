@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.classloading.ModuleClassLoader;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -32,6 +33,12 @@ public class IconResource {
   }
 
   public InputStream getResource() {
+    ClassLoader cl = myResourceProvider.getClassLoader();
+    if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()){
+      LOG.error("Icon is acquired from a disposed classloader. This will lead to a memleak. \n" +
+          "Do care about classes reloading when you hold an IconResource for a long time. \n" +
+          "Resource provider=" + myResourceProvider.getSimpleName() + "; iconId=" + myIconResId, new Throwable());
+    }
     InputStream result = myResourceProvider.getResourceAsStream(myIconResId);
     if (result == null) {
       LOG.warn("Unable to get icon's InputStream. Resource provider=" + myResourceProvider.getSimpleName() + "; iconId:=" + myIconResId);
