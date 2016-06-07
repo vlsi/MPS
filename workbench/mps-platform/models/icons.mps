@@ -550,11 +550,24 @@
               </node>
             </node>
             <node concept="3clFbJ" id="5vfjF5c9S4S" role="3cqZAp">
-              <node concept="3y3z36" id="5vfjF5c9S4T" role="3clFbw">
-                <node concept="37vLTw" id="5vfjF5c9S4U" role="3uHU7B">
-                  <ref role="3cqZAo" node="5vfjF5c9S4n" resolve="alternativeIcon" />
+              <node concept="1Wc70l" id="6sF$6PexKCU" role="3clFbw">
+                <node concept="3y3z36" id="5vfjF5c9S4T" role="3uHU7B">
+                  <node concept="37vLTw" id="5vfjF5c9S4U" role="3uHU7B">
+                    <ref role="3cqZAo" node="5vfjF5c9S4n" resolve="alternativeIcon" />
+                  </node>
+                  <node concept="10Nm6u" id="5vfjF5c9S4V" role="3uHU7w" />
                 </node>
-                <node concept="10Nm6u" id="5vfjF5c9S4V" role="3uHU7w" />
+                <node concept="3y3z36" id="6sF$6PexNzG" role="3uHU7w">
+                  <node concept="10Nm6u" id="6sF$6PexNGP" role="3uHU7w" />
+                  <node concept="2OqwBi" id="6sF$6PexNmm" role="3uHU7B">
+                    <node concept="37vLTw" id="6sF$6PexNmn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5vfjF5c9S4n" resolve="alternativeIcon" />
+                    </node>
+                    <node concept="liA8E" id="6sF$6PexNmo" role="2OqNvi">
+                      <ref role="37wK5l" to="ze1i:~IconResource.getResource():java.io.InputStream" resolve="getResource" />
+                    </node>
+                  </node>
+                </node>
               </node>
               <node concept="9aQIb" id="5vfjF5c9S4W" role="9aQIa">
                 <node concept="3clFbS" id="5vfjF5c9S4X" role="9aQI4">

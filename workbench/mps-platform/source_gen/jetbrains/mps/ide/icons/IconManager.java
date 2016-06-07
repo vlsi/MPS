@@ -80,7 +80,7 @@ public final class IconManager {
     Icon mainIcon = getIcon(SNodeOperations.getConcept(node));
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       IconResource alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
-      if (alternativeIcon != null) {
+      if (alternativeIcon != null && alternativeIcon.getResource() != null) {
         mainIcon = ConceptIconLoader.getIconFor(alternativeIcon.getResource());
       } else {
         mainIcon = getIcon(SNodeOperations.getConcept(node));
