@@ -13,14 +13,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class DeleteFirstForLoopVar {
+public class HandleFirstForLoopVar {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new DeleteFirstForLoopVar.DeleteFirstForLoopVar_DELETE(node));
-    editorCell.setAction(CellActionType.BACKSPACE, new DeleteFirstForLoopVar.DeleteFirstForLoopVar_BACKSPACE(node));
+    editorCell.setAction(CellActionType.DELETE, new HandleFirstForLoopVar.HandleFirstForLoopVar_DELETE(node));
+    editorCell.setAction(CellActionType.INSERT, new HandleFirstForLoopVar.HandleFirstForLoopVar_INSERT(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new HandleFirstForLoopVar.HandleFirstForLoopVar_BACKSPACE(node));
   }
-  public static class DeleteFirstForLoopVar_DELETE extends AbstractCellAction {
+  public static class HandleFirstForLoopVar_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public DeleteFirstForLoopVar_DELETE(SNode node) {
+    public HandleFirstForLoopVar_DELETE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {
@@ -36,9 +37,21 @@ public class DeleteFirstForLoopVar {
       }
     }
   }
-  public static class DeleteFirstForLoopVar_BACKSPACE extends AbstractCellAction {
+  public static class HandleFirstForLoopVar_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public DeleteFirstForLoopVar_BACKSPACE(SNode node) {
+    public HandleFirstForLoopVar_INSERT(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, 0xe5318742b9d1411L, "additionalVar"))).insertElement(0, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable")), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, 0x10a6979f36bL, "variable"))));
+    }
+  }
+  public static class HandleFirstForLoopVar_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public HandleFirstForLoopVar_BACKSPACE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {

@@ -7787,7 +7787,7 @@
       <node concept="3F1sOY" id="gDDwm4u" role="3EZMnx">
         <property role="1$x2rV" value=" " />
         <ref role="1NtTu8" to="tpee:gDDuvdF" />
-        <ref role="1ERwB7" node="ETMmLKkRnQ" resolve="DeleteFirstForLoopVar" />
+        <ref role="1ERwB7" node="ETMmLKkRnQ" resolve="HandleFirstForLoopVar" />
         <ref role="34QXea" node="ETMmLKnkcF" resolve="AddForStatementVar" />
         <node concept="2V7CMv" id="Tj67gFBCDv" role="3F10Kt">
           <property role="2V7CMs" value="ext_2_RTransform" />
@@ -18113,7 +18113,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="ETMmLKkRnQ">
-    <property role="TrG5h" value="DeleteFirstForLoopVar" />
+    <property role="TrG5h" value="HandleFirstForLoopVar" />
     <ref role="1h_SK9" to="tpee:gDDw8bY" resolve="ForStatement" />
     <node concept="1hA7zw" id="ETMmLKkRnR" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
@@ -18190,6 +18190,38 @@
                     <node concept="1P9Npp" id="ETMmLKkYMe" role="2OqNvi">
                       <node concept="37vLTw" id="6fzZqhWqjPy" role="1P9ThW">
                         <ref role="3cqZAo" node="1uA_ZU16bg9" resolve="n" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="30aj87ramfj" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="30aj87ramfk" role="1hA7z_">
+        <node concept="3clFbS" id="30aj87ramfl" role="2VODD2">
+          <node concept="3clFbF" id="30aj87raqer" role="3cqZAp">
+            <node concept="2OqwBi" id="30aj87ravHn" role="3clFbG">
+              <node concept="2OqwBi" id="30aj87raqp_" role="2Oq$k0">
+                <node concept="0IXxy" id="30aj87raqeq" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="30aj87rar78" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpee:Tj67gFBhgh" />
+                </node>
+              </node>
+              <node concept="2Ke4WJ" id="30aj87raGu2" role="2OqNvi">
+                <node concept="2ShNRf" id="30aj87raJOH" role="25WWJ7">
+                  <node concept="2fJWfE" id="30aj87rb6Ia" role="2ShVmc">
+                    <node concept="3Tqbb2" id="30aj87rb6Ic" role="3zrR0E">
+                      <ref role="ehGHo" to="tpee:1__AKt9a7wu" resolve="AdditionalForLoopVariable" />
+                    </node>
+                    <node concept="2OqwBi" id="30aj87rbgXQ" role="1wAG5O">
+                      <node concept="0IXxy" id="30aj87rbdvn" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="30aj87rbltC" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:gDDuvdF" />
                       </node>
                     </node>
                   </node>

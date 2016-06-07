@@ -238,7 +238,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
       EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);
-      DeleteFirstForLoopVar.setCellActions(editorCell, myOwnerNode, myEditorContext);
+      HandleFirstForLoopVar.setCellActions(editorCell, myOwnerNode, myEditorContext);
       editorCell.addKeyMap(new AddForStatementVar());
     }
     @Override
