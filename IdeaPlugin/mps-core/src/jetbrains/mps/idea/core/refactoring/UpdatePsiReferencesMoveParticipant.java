@@ -22,33 +22,33 @@ import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.refactoring.move.moveClassesOrPackages.CommonMoveUtil;
 import com.intellij.refactoring.util.MoveRenameUsageInfo;
 import com.intellij.usageView.UsageInfo;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by danilla on 11/11/15.
  */
-public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBase<PsiElement, SNode, SNode, SNode> implements MoveNodeRefactoringParticipant<PsiElement, SNode> {
+public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
   private MPSPsiProvider myPsiProvider;
 
   public UpdatePsiReferencesMoveParticipant(MPSPsiProvider psiProvider) {
@@ -81,47 +81,43 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
   }
 
   @Override
-  public MoveNodeRefactoringDataCollector<PsiElement, SNode> getDataCollector() {
-    return new MoveNodeRefactoringDataCollector<PsiElement, SNode>() {
+  public MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> getDataCollector() {
+    return new MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
       @Override
-      public PsiElement beforeMove(SNode sNode) {
-        return myPsiProvider.getPsi(sNode);
+      public SNodeReference beforeMove(SNode sNode) {
+        return sNode.getReference();
       }
 
       @Override
-      public SNode afterMove(SNode sNode) {
-        return sNode;
+      public SNodeReference afterMove(SNode sNode) {
+        return sNode.getReference();
       }
     };
   }
 
   @Override
-  public List<Option> getAvailableOptions(PsiElement movedNode, SRepository sRepository) {
+  public List<Option> getAvailableOptions(SNodeReference movedNode, SRepository sRepository) {
     return Collections.emptyList();
   }
 
   @Override
-  public List<Change<PsiElement, SNode>> getChanges(final PsiElement movedNode, SRepository sRepository, List<Option> list, SearchScope searchScope) {
+  public List<Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference nodeToMove, SRepository sRepository, List<Option> list, SearchScope searchScope) {
     // NOTE: this will be called as many times as many projects there are open currently
     // because extension points are per application, but psiProvider is per project.
     // Every MPSPsiProvider (which is per project) happens to build psi models for all models, including other
     // projects
 
 
-    final SearchResults<SNode> searchResults = getAffectedNodes(movedNode);
-    final List<UsageInfo> usageInfos = new ArrayList<UsageInfo>();
+    final SNode resolvedNodeToMove = nodeToMove.resolve(sRepository);
+    PsiElement psiNodeToMove = myPsiProvider.getPsi(resolvedNodeToMove);
+    final List<PsiReference> usages = getAffectedNodes(psiNodeToMove);
 
-    for (SearchResult result : searchResults.getSearchResults()) {
-      PsiReference psiRef = ((PsiSearchResult) result).getReference();
-      usageInfos.add(new MoveRenameUsageInfo(psiRef, psiRef.resolve()));
-    }
-
-    List<Change<PsiElement, SNode>> changes = new ArrayList<Change<PsiElement, SNode>>();
-    for (final SearchResult<SNode> oneSearchResult : searchResults.getSearchResults()) {
-      changes.add(new Change<PsiElement, SNode>() {
+    List<Change<SNodeReference, SNodeReference>> changes = new ArrayList<>();
+    for (final PsiReference usage : usages) {
+      changes.add(new Change<SNodeReference, SNodeReference>() {
         @Override
         public SearchResults<SNode> getSearchResults() {
-          return new SearchResults<SNode>(searchResults.getSearchedNodes(), Collections.singletonList(oneSearchResult));
+          return new SearchResults<>(Collections.singleton(resolvedNodeToMove), Collections.singletonList(new PsiSearchResult(usage)));
         }
 
         @Override
@@ -130,16 +126,17 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
         }
 
         @Override
-        public void confirm(final SNode finalNode, SRepository sRepository, RefactoringSession refactoringSession) {
+        public void confirm(final SNodeReference finalNode, SRepository sRepository, RefactoringSession refactoringSession) {
 
-          reloadModelPsi(finalNode.getModel(), refactoringSession);
+          reloadModelPsi(finalNode.resolve(sRepository).getModel(), refactoringSession);
 
           refactoringSession.registerChange(new Runnable() {
             @Override
             public void run() {
               PsiElement targetElement = myPsiProvider.getPsi(finalNode);
               assert targetElement != null : "Failed to get PSI for target node of move refactoring";
-              updateUsages(usageInfos, targetElement, movedNode);
+              final List<UsageInfo> usageInfos = Collections.singletonList(new MoveRenameUsageInfo(usage, usage.resolve()));
+              updateUsages(usageInfos, targetElement, psiNodeToMove);
             }
           });
         }
@@ -153,18 +150,11 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     CommonMoveUtil.retargetUsages(usageInfos.toArray(UsageInfo.EMPTY_ARRAY), old2New);
   }
 
-  private SearchResults<SNode> getAffectedNodes(PsiElement psiElement) {
-    SearchResults<SNode> results = new SearchResults<SNode>();
-
-    // todo search scope?
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiElement).findAll();
-    for (PsiReference ref : psiRefs) {
-      PsiElement element = ref.getElement();
-      if (element instanceof MPSPsiNode) continue;
-
-      results.add(new PsiSearchResult(ref));
-    }
-    return results;
+  private List<PsiReference> getAffectedNodes(PsiElement psiElement) {
+    return ReferencesSearch.search(psiElement).findAll()
+      .stream()
+      .filter(psiReference -> !(psiReference.getElement() instanceof MPSPsiNode))
+      .collect(Collectors.toList());
   }
 
 }
