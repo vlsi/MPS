@@ -1702,6 +1702,21 @@
     <node concept="lpD6D" id="3tdVfQ1wy3s" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3tdVfQ1wj1h" resolve="ChangingTypeToArrayTypeInParam5" />
     </node>
+    <node concept="lpD6D" id="30aj87r8$IJ" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:30aj87r8fKr" resolve="ForStatementAdditionalVariableAddition" />
+    </node>
+    <node concept="lpD6D" id="30aj87r8$VS" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:30aj87r8$ec" resolve="ForStatementAdditionalVariableAdditionAndRemoval" />
+    </node>
+    <node concept="lpD6D" id="30aj87r8_92" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:30aj87r8$zJ" resolve="ForStatementAdditionalVariableBackspace" />
+    </node>
+    <node concept="lpD6D" id="30aj87r8_md" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:30aj87r8$rp" resolve="ForStatementAdditionalVariableDelete" />
+    </node>
+    <node concept="lpD6D" id="30aj87r8_zp" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:30aj87r8$AK" resolve="ForStatementAdditionalVariableDeleteWithNoAdditionalVariables" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3cU" role="lpD6w">
       <ref role="lpD7u" to="ryl9:i1rv7Qv" resolve="AssignLeftTransform" />
     </node>
