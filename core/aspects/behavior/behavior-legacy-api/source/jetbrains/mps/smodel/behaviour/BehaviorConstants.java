@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
- * Seems to be unused, remove generator rul
- * @deprecated
+ * @deprecated will removed after constraints usages are rewritten
  */
+@ToRemove(version = 3.4)
+@Deprecated
 public final class BehaviorConstants {
   public static final String GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME = "getDefaultConcreteConceptFqName";
   public static final String CAN_BE_A_CHILD_METHOD_NAME = "canBeAChild";

@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.language.ConceptInLoadingStorage;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -33,8 +32,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Registry for behavior descriptors. Currently contains {@link BHDescriptor} and old legacy {@link BehaviorDescriptor}.
- * <p/>
+ * A registry for behavior descriptors. Currently contains {@link BHDescriptor}
+ *
  * Created by apyshkin on 7/15/15.
  */
 public class BehaviorRegistryImpl implements BehaviorRegistry {
@@ -83,7 +82,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
         if (behaviorAspect == null) {
           descriptor = new EmptyBHDescriptor(this, concept);
         } else if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
-          descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(concept);
+          descriptor = behaviorAspect.getDescriptor(concept);
           if (descriptor == null) {
             // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
             descriptor = new EmptyBHDescriptor(this, concept);
