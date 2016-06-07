@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.io.InputStream;
 
 public class IconResource {
+  private static final Logger LOG = LogManager.getLogger(IconResource.class);
+
   private String myIconResId;
   private Class myResourceProvider;
 
@@ -27,7 +32,11 @@ public class IconResource {
   }
 
   public InputStream getResource() {
-    return  myResourceProvider.getResourceAsStream(myIconResId);
+    InputStream result = myResourceProvider.getResourceAsStream(myIconResId);
+    if (result == null) {
+      LOG.warn("Unable to get icon's InputStream. Resource provider=" + myResourceProvider.getSimpleName() + "; iconId:=" + myIconResId);
+    }
+    return result;
   }
 
   @Override
