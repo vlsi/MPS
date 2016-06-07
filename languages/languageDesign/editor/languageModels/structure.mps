@@ -4633,6 +4633,7 @@
     <property role="TrG5h" value="TransformationMenuPart_Action" />
     <property role="34LRSv" value="action" />
     <property role="EcuMT" value="1638911550608610278" />
+    <property role="R4oN_" value="action with custom code" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="PrWs8" id="3EZUZhna5Bj" role="PzmwI">
       <ref role="PrY4T" node="3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
@@ -4826,6 +4827,7 @@
     <property role="TrG5h" value="TransformationMenuPart_SubMenu" />
     <property role="34LRSv" value="submenu" />
     <property role="EcuMT" value="4056398722183895535" />
+    <property role="R4oN_" value="submenu with further parts" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="4VZjoGvnt2N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

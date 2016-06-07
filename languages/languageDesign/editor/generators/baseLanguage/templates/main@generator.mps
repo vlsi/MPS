@@ -31771,31 +31771,6 @@
       <node concept="3Tm1VV" id="4sA1wzjglzA" role="1B3o_S" />
     </node>
   </node>
-  <node concept="jVnub" id="1A4kJjm6nft">
-    <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="switch_TransformationFeature_notDeclared" />
-    <node concept="3aamgX" id="1A4kJjm6nfu" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpc2:1A4kJjlVEvM" resolve="TransformationFeature_ActionType" />
-      <node concept="j$656" id="1A4kJjm6nfv" role="1lVwrX">
-        <ref role="v9R2y" node="1A4kJjm63at" resolve="reduce_TransformationFeature_ActionType" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="1A4kJjm6nfw" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpc2:1A4kJjlVDm7" resolve="TransformationFeature_DescriptionText" />
-      <node concept="j$656" id="1A4kJjm6nfx" role="1lVwrX">
-        <ref role="v9R2y" node="1A4kJjm63ay" resolve="reduce_TransformationFeature_DescriptionText" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="1A4kJjm6nfy" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
-      <node concept="j$656" id="1A4kJjm6nfz" role="1lVwrX">
-        <ref role="v9R2y" node="1A4kJjm63aB" resolve="reduce_TransformationFeature_IconNode" />
-      </node>
-    </node>
-  </node>
   <node concept="jVnub" id="291CjQFbWfJ">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="switch_TransformationMenuPart_declare" />

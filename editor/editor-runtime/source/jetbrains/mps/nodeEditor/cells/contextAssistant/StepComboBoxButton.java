@@ -20,7 +20,7 @@ import com.intellij.openapi.ui.popup.ListPopupStep;
 class StepComboBoxButton extends AbstractStepComboBoxButton {
   private final ListPopupStep<?> myStep;
 
-  public StepComboBoxButton(String text, ListPopupStep<?> step) {
+  StepComboBoxButton(String text, ListPopupStep<?> step) {
     super(text);
     myStep = step;
   }
