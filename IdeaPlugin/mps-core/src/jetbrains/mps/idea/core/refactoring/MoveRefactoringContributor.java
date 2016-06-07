@@ -1,6 +1,6 @@
 package jetbrains.mps.idea.core.refactoring;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface MoveRefactoringContributor {
 
-  boolean isAvailableFor(@NotNull List<SNode> nodes);
+  boolean isAvailableFor(MPSProject mpsProject, @NotNull List<SNode> nodes);
 
-  void invoke(@NotNull Project project, @NotNull List<SNode> nodes);
+  void invoke(@NotNull MPSProject project, @NotNull List<SNode> nodes);
 }

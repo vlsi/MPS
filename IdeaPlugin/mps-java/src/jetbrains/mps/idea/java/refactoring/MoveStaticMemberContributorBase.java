@@ -1,6 +1,5 @@
 package jetbrains.mps.idea.java.refactoring;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.idea.core.refactoring.MoveRefactoringContributor;
@@ -25,7 +24,7 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
   abstract MoveStaticMemberExecutable getRefactoringExecutable();
 
   @Override
-  public boolean isAvailableFor(@NotNull List<SNode> nodes) {
+  public boolean isAvailableFor(MPSProject mpsProject, @NotNull List<SNode> nodes) {
     // see MoveStaticField_Target.allowMultipleTargets == false
     // TODO maybe call the above method
     if (nodes.size() != 1) return false;
@@ -34,8 +33,7 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
   }
 
   @Override
-  public void invoke(@NotNull Project project, @NotNull List<SNode> nodes) {
-    final MPSProject mpsProject = project.getComponent(MPSProject.class);
+  public void invoke(@NotNull MPSProject mpsProject, @NotNull List<SNode> nodes) {
     final SNode target = nodes.get(0);
 
     MoveStaticMemberExecutable refactoringExecutable = getRefactoringExecutable();

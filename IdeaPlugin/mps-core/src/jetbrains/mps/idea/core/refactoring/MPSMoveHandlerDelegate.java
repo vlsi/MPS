@@ -33,8 +33,8 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
   public boolean canMove(PsiElement[] elements, @Nullable PsiElement targetContainer) {
     if (elements.length == 0) return false;
 
-    for (int i=0; i<elements.length; i++) {
-      if (!(elements[i] instanceof MPSPsiRealNode)) {
+    for (PsiElement element : elements) {
+      if (!(element instanceof MPSPsiRealNode)) {
         return false;
       }
     }
@@ -59,14 +59,14 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
 
         for (MoveRefactoringContributorEP ep : MoveRefactoringContributorEP.EP_NAME.getExtensions()) {
           MoveRefactoringContributor c = ep.getContributor();
-          if (c.isAvailableFor(nodes)) {
+          if (c.isAvailableFor(mpsProject, nodes)) {
             theContributor = c;
             break;
           }
         }
 
         if (theContributor != null) {
-          theContributor.invoke(project, nodes);
+          theContributor.invoke(mpsProject, nodes);
         }
       }
     });
