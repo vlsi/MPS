@@ -433,7 +433,6 @@ public final class BinaryPersistence {
       String name = is.readString();
       SLanguage l = MetaAdapterFactory.getLanguage(id, name);
       myModelData.addLanguage(l);
-      myMetaInfoProvider.setLanguageName(id, name);
     }
   }
 

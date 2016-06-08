@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -281,15 +282,27 @@ public class ValidationUtil {
 
     LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
     for (SLanguage lang : ((SModelInternal) model).importedLanguageIds()) {
-      if (languageRegistry.getLanguage(lang) == null) {
+      final LanguageRuntime lr = languageRegistry.getLanguage(lang);
+      if (lr == null) {
         if (!processor.process(new MissingImportedLanguageError(model, lang))) {
+          return;
+        }
+      } else if (!lang.getQualifiedName().equals(lr.getNamespace())) {
+        final String msg = String.format("Stale language import '%s', actual name is '%s'", lang.getQualifiedName(), lr.getNamespace());
+        if (!processor.process(new ValidationProblem(Severity.WARNING, msg))) {
           return;
         }
       }
     }
     for (SLanguage lang : ((SModelInternal) model).getLanguagesEngagedOnGeneration()) {
-      if (languageRegistry.getLanguage(lang) == null) {
+      final LanguageRuntime lr = languageRegistry.getLanguage(lang);
+      if (lr == null) {
         if (!processor.process(new MissingImportedLanguageError(model, lang))) {
+          return;
+        }
+      } else if (!lang.getQualifiedName().equals(lr.getNamespace())) {
+        final String msg = String.format("Stale language import '%s', actual name is '%s'", lang.getQualifiedName(), lr.getNamespace());
+        if (!processor.process(new ValidationProblem(Severity.WARNING, msg))) {
           return;
         }
       }
