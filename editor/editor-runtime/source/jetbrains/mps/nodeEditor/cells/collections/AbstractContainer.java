@@ -205,7 +205,8 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   private void removeEntry(@NotNull Entry<T> entry) {
-    assert deleteEntry(entry) != null;
+    Entry<T> removedEntry = deleteEntry(entry);
+    assert removedEntry != null;
     decSize();
 
     Entry<T> firstEntry = getFirstEntry();
