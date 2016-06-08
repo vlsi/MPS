@@ -46,8 +46,13 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import javax.swing.SwingUtilities;
+import com.intellij.diff.contents.DiffContent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.diff.requests.DiffRequest;
+import com.intellij.diff.requests.SimpleDiffRequest;
+import com.intellij.diff.DiffManager;
+import com.intellij.diff.DiffDialogHints;
 import jetbrains.mps.vcs.util.ModelVersion;
 import com.intellij.openapi.ui.TestDialog;
 import com.intellij.openapi.application.Application;
@@ -271,13 +276,10 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
     SModel onDisk = VCSPersistenceUtil.loadModel(modelFile);
     com.intellij.openapi.project.Project project = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, onDisk, inMemory, "Filesystem version (Read-Only)", "Memory Version", null);
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        dialog.toFront();
-      }
-    });
-    dialog.show();
+    List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), new ModelDiffContent(onDisk), new ModelDiffContent(inMemory));
+    List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Filesystem version (Read-Only)", "Memory Version");
+    DiffRequest request = new SimpleDiffRequest("Model file and model in memory differs", contents, titles);
+    DiffManager.getInstance().showDiff(project, request, DiffDialogHints.MODAL);
   }
 
   public enum DiskMemoryConflictVersion implements ModelVersion {

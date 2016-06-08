@@ -20,11 +20,17 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import java.util.List;
+import com.intellij.diff.contents.DiffContent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.diff.DiffContentFactory;
+import com.intellij.diff.requests.DiffRequest;
+import com.intellij.diff.requests.SimpleDiffRequest;
+import jetbrains.mps.vcs.platform.integration.ModelDiffViewer;
+import com.intellij.diff.DiffManager;
 import com.intellij.openapi.vcs.VcsException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
@@ -38,8 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -64,18 +68,25 @@ public class VcsActionsUtil {
       VirtualFile vFile = VirtualFileUtils.getVirtualFile(iFile);
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile);
       VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(vFile);
-      ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, vFile);
-      SModel oldModel = VCSPersistenceUtil.loadModel(content.getContent().getBytes(FileUtil.DEFAULT_CHARSET), MPSExtentions.MODEL);
+      ContentRevision revision = vcs.getDiffProvider().createFileContent(revisionNumber, vFile);
       final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
+      final Wrappers._T<String> title = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           newModel.value = node.getModel();
           id.value = node.getNodeId();
+          title.value = node.getName();
         }
       });
-      String[] titles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
-      ModelDifferenceDialog.showRootDifference(project, oldModel, newModel.value, id.value, titles[0], titles[1], bounds, null);
+
+      List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), DiffContentFactory.getInstance().create(revision.getContent(), vFile.getFileType()), DiffContentFactory.getInstance().create(project, vFile));
+      List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), revisionNumber.asString() + " (Read-Only)", "Your Version");
+      DiffRequest request = new SimpleDiffRequest(title.value, contents, titles);
+      // put hint to show only one root and navigate 
+      request.putUserData(ModelDiffViewer.DIFF_SHOW_ROOTID, id.value);
+      request.putUserData(ModelDiffViewer.DIFF_NAVIGATE_TO, bounds);
+      DiffManager.getInstance().showDiff(project, request);
     } catch (VcsException e) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("", e);

@@ -16,8 +16,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.persistence.PersistenceUtil;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import java.util.List;
+import com.intellij.diff.contents.DiffContent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.vcs.platform.integration.ModelDiffContent;
+import com.intellij.diff.requests.DiffRequest;
+import com.intellij.diff.requests.SimpleDiffRequest;
+import com.intellij.diff.DiffManager;
 
 public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,11 +68,10 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     DataSource datasource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
     assert datasource instanceof FileDataSource;
-    final SModel diskModel = PersistenceUtil.loadModel(((FileDataSource) datasource).getFile());
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), diskModel, ((SModel) MapSequence.fromMap(_params).get("model")), "Disk", "Memory", null).show();
-      }
-    });
+    SModel diskModel = PersistenceUtil.loadModel(((FileDataSource) datasource).getFile());
+    List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), new ModelDiffContent(diskModel), new ModelDiffContent(((SModel) MapSequence.fromMap(_params).get("model"))));
+    List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Disk", "Memory");
+    DiffRequest request = new SimpleDiffRequest(((SModel) MapSequence.fromMap(_params).get("model")).getName() + "", contents, titles);
+    DiffManager.getInstance().showDiff(((Project) MapSequence.fromMap(_params).get("project")), request);
   }
 }

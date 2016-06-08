@@ -28,11 +28,16 @@ import java.io.StringReader;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
-import com.intellij.openapi.diff.MergeRequest;
-import com.intellij.openapi.diff.DiffRequestFactory;
-import com.intellij.openapi.diff.DiffManager;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.diff.merge.MergeRequest;
+import com.intellij.diff.DiffRequestFactory;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.diff.DiffManager;
 import java.io.IOException;
 import org.apache.log4j.Level;
+import com.intellij.diff.InvalidDiffRequestException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestUtil;
@@ -118,9 +123,12 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         if (mine == null) {
           return;
         }
-        MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null, null);
-        mergeRequest.setVersionTitles(new String[]{"Mine", "Base version", "Repository"});
-        DiffManager.getInstance().getDiffTool().show(mergeRequest);
+        VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
+        assert file != null;
+        List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), mine, base, repository);
+        List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Mine", "Base version", "Repository");
+        MergeRequest request = DiffRequestFactory.getInstance().createMergeRequest(((Project) MapSequence.fromMap(_params).get("project")), file.getFileType(), FileDocumentManager.getInstance().getDocument(file), contents, null, titles, null);
+        DiffManager.getInstance().showMerge(((Project) MapSequence.fromMap(_params).get("project")), request);
         return;
       } catch (IOException e) {
         if (LOG.isEnabledFor(Level.WARN)) {
@@ -128,6 +136,10 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         }
         // Skip this backup 
         continue;
+      } catch (InvalidDiffRequestException e) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("", e);
+        }
       }
     }
     Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");

@@ -28,12 +28,6 @@
 
   <xi:include href="MPSVcs.xml" xpointer="xpointer(/components/*)"/>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent</implementation-class>
-    </component>
-  </application-components>
-
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>

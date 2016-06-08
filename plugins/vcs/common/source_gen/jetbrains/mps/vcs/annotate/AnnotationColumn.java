@@ -107,12 +107,15 @@ import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import com.intellij.openapi.diff.DiffContent;
-import com.intellij.openapi.diff.SimpleContent;
-import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import com.intellij.diff.contents.DiffContent;
+import com.intellij.diff.DiffContentFactory;
+import com.intellij.diff.requests.DiffRequest;
+import com.intellij.diff.requests.SimpleDiffRequest;
+import jetbrains.mps.vcs.platform.integration.ModelDiffViewer;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import com.intellij.diff.DiffManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
@@ -609,105 +612,106 @@ __switch__:
     @Override
     public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
-      if (revisionNumber != null) {
-        final Project project = getProject();
-        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
-          @Override
-          public void run(@NotNull ProgressIndicator pi) {
-            CommittedChangesProvider<CommittedChangeList, ChangeBrowserSettings> provider = myVcs.getCommittedChangesProvider();
+      if (revisionNumber == null) {
+        return;
+      }
 
-            try {
-              Pair<CommittedChangeList, FilePath> pair = null;
-              if (provider != null) {
-                pair = provider.getOneList(myVirtualFile, revisionNumber);
+      final Project project = getProject();
+      ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
+        @Override
+        public void run(@NotNull ProgressIndicator pi) {
+          CommittedChangesProvider<CommittedChangeList, ChangeBrowserSettings> provider = myVcs.getCommittedChangesProvider();
+
+          try {
+            Pair<CommittedChangeList, FilePath> pair = null;
+            if (provider != null) {
+              pair = provider.getOneList(myVirtualFile, revisionNumber);
+            }
+            FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0e0c54(pair) == null ? new FilePathImpl(myVirtualFile) : check_5mnya_a0a2a2a0a0a0a4a2tb(pair));
+            CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0e0c54(pair);
+            if (cl == null) {
+              VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
+              return;
+            }
+            List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, String>() {
+              public String select(Change c) {
+                return ChangesUtil.getFilePath(c).getName().toLowerCase();
               }
-              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c54(pair) == null ? new FilePathImpl(myVirtualFile) : check_5mnya_a0a2a2a0a0a0a1a1a2tb(pair));
-              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0c54(pair);
-              if (cl == null) {
-                VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
-                return;
+            }, true).toListSequence();
+            final File ioFile = targetPath.getIOFile();
+            Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+              public boolean accept(Change c) {
+                return c.getAfterRevision() != null && c.getAfterRevision().getFile().getIOFile().equals(ioFile);
               }
-              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, String>() {
-                public String select(Change c) {
-                  return ChangesUtil.getFilePath(c).getName().toLowerCase();
-                }
-              }, true).toListSequence();
-              final File ioFile = targetPath.getIOFile();
-              Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+            });
+            if (change != null) {
+              final String name = ioFile.getName();
+              change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
                 public boolean accept(Change c) {
-                  return c.getAfterRevision() != null && c.getAfterRevision().getFile().getIOFile().equals(ioFile);
+                  return c.getAfterRevision() != null && c.getAfterRevision().getFile().getName().equals(name);
                 }
               });
-              if (change != null) {
-                final String name = ioFile.getName();
-                change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
-                  public boolean accept(Change c) {
-                    return c.getAfterRevision() != null && c.getAfterRevision().getFile().getName().equals(name);
-                  }
-                });
 
-                ContentRevision before = change.getBeforeRevision();
-                ContentRevision after = change.getAfterRevision();
+              ContentRevision before = change.getBeforeRevision();
+              ContentRevision after = change.getAfterRevision();
 
-                if (pi.isCanceled()) {
-                  return;
-                }
-                pi.setText("Loading model after change");
-
-                assert after != null;
-                FileType[] filetypes = {(before == null ? null : before.getFile().getFileType()), after.getFile().getFileType()};
-                final boolean isPerRoot = MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(filetypes[1]) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(filetypes[1]);
-
-                final SModel afterModel = VCSPersistenceUtil.loadModel(after.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[1].getDefaultExtension()));
-
-                if (pi.isCanceled()) {
-                  return;
-                }
-                pi.setText("Loading model before change");
-
-                final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
-                if (before == null) {
-                  beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
-                } else {
-                  beforeModel.value = VCSPersistenceUtil.loadModel(before.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[0].getDefaultExtension()));
-                }
-
-                final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
-                ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
-                  public SNodeId invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a0a22a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
-                    SNode node = afterModel.getNode(nodeId);
-                    if ((node == null)) {
-                      node = beforeModel.value.getNode(nodeId);
-                    }
-                    return rootId.value = check_5mnya_a0d0a0a22a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
-                  }
-                }));
-
-                final String[] titles = {(before == null ? "<no revision>" : before.getRevisionNumber().asString()), after.getRevisionNumber().asString()};
-                DiffContent[] diffContents = new DiffContent[]{new SimpleContent((before == null ? "" : before.getContent()), filetypes[0]), new SimpleContent(after.getContent(), filetypes[1])};
-                final DiffRequest diffRequest = new SimpleDiffRequest(project, diffContents, titles);
-
-                ApplicationManager.getApplication().invokeLater(new Runnable() {
-                  public void run() {
-                    if (isPerRoot || rootId.value != null) {
-                      ModelDifferenceDialog.showRootDifference(project, beforeModel.value, afterModel, rootId.value, titles[0], titles[1], null, diffRequest);
-                    } else {
-                      new ModelDifferenceDialog(project, beforeModel.value, afterModel, titles[0], titles[1], diffRequest).show();
-                    }
-                  }
-                });
+              if (pi.isCanceled()) {
+                return;
               }
-            } catch (final VcsException ve) {
+              pi.setText("Loading model after change");
+
+              assert after != null;
+              FileType[] filetypes = {(before == null ? null : before.getFile().getFileType()), after.getFile().getFileType()};
+              boolean isPerRoot = MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(filetypes[1]) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(filetypes[1]);
+
+              final SModel afterModel = VCSPersistenceUtil.loadModel(after.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[1].getDefaultExtension()));
+
+              if (pi.isCanceled()) {
+                return;
+              }
+              pi.setText("Loading model before change");
+
+              final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
+              if (before == null) {
+                beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
+              } else {
+                beforeModel.value = VCSPersistenceUtil.loadModel(before.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[0].getDefaultExtension()));
+              }
+              final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
+              final Wrappers._T<String> rootName = new Wrappers._T<String>();
+              ProjectHelper.fromIdeaProject(project).getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
+                public String invoke() {
+                  SNodeId nodeId = check_5mnya_a0a0a0a22a8a2a0a0a0a4a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
+                  SNode node = afterModel.getNode(nodeId);
+                  if ((node == null)) {
+                    node = beforeModel.value.getNode(nodeId);
+                  }
+                  SNode root = SNodeOperations.getContainingRoot(node);
+                  rootId.value = check_5mnya_a0e0a0a22a8a2a0a0a0a4a2tb(root);
+                  return rootName.value = (((root == null) ? "" : root.getName())) + " (" + SModelOperations.getModelName(afterModel) + ")";
+                }
+              }));
+
+              List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), DiffContentFactory.getInstance().create((before == null ? "" : before.getContent()), filetypes[0]), DiffContentFactory.getInstance().create(after.getContent(), filetypes[1]));
+              List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), (before == null ? "<no revision>" : before.getRevisionNumber().asString()), after.getRevisionNumber().asString());
+              final DiffRequest request = new SimpleDiffRequest(rootName.value, contents, titles);
+              // put hint to show only one root 
+              request.putUserData(ModelDiffViewer.DIFF_SHOW_ROOTID, rootId.value);
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 public void run() {
-                  VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
+                  DiffManager.getInstance().showDiff(project, request);
                 }
               });
             }
+          } catch (final VcsException ve) {
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
+              }
+            });
           }
-        });
-      }
+        }
+      });
     }
   }
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
@@ -735,31 +739,31 @@ __switch__:
     }
     return null;
   }
-  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a2tb(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static FilePath check_5mnya_a0a2a2a0a0a0a4a2tb(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
-  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static FilePath check_5mnya_a0a0c0c0a0a0a0e0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
-  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0e0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getFirst();
     }
     return null;
   }
-  private static SNodeId check_5mnya_a0a0a0a22a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0a0a0a22a8a2a0a0a0a4a2tb(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
-  private static SNodeId check_5mnya_a0d0a0a22a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
+  private static SNodeId check_5mnya_a0e0a0a22a8a2a0a0a0a4a2tb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
