@@ -4766,7 +4766,7 @@
   <node concept="1TIwiD" id="5OVd5tVffW9">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuReference_Named" />
-    <property role="34LRSv" value="named menu" />
+    <property role="34LRSv" value="named menu &lt;{menu}&gt;" />
     <property role="EcuMT" value="6718020819487620873" />
     <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
     <node concept="1TJgyj" id="5OVd5tVffWa" role="1TKVEi">
@@ -4780,7 +4780,7 @@
   <node concept="1TIwiD" id="5OVd5tVffWc">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuReference_Default" />
-    <property role="34LRSv" value="default menu" />
+    <property role="34LRSv" value="default menu for &lt;{concept}&gt;" />
     <property role="EcuMT" value="6718020819487620876" />
     <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
     <node concept="1TJgyj" id="5OVd5tVffWd" role="1TKVEi">
