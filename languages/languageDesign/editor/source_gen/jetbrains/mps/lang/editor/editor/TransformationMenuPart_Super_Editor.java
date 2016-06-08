@@ -7,6 +7,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class TransformationMenuPart_Super_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -18,6 +24,14 @@ public class TransformationMenuPart_Super_Editor extends DefaultNodeEditor {
     if (bigCell != null) {
       bigCell.setBig(true);
     }
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuPart_Super_Editor.ReplaceWith_TransformationMenuPart_cellMenu_j2seuy_a0a()}));
     return editorCell;
+  }
+  public static class ReplaceWith_TransformationMenuPart_cellMenu_j2seuy_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_TransformationMenuPart_cellMenu_j2seuy_a0a() {
+    }
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart");
+    }
   }
 }

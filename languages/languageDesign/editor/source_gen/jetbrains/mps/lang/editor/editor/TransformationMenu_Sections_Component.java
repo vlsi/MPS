@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class TransformationMenu_Sections_Component implements ConceptEditorComponent {
   @NotNull
@@ -83,12 +82,9 @@ public class TransformationMenu_Sections_Component implements ConceptEditorCompo
       }
     }
     private EditorCell createConstant_b13n4h_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no items>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_b13n4h_a0a");
-      Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
-      editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<no items>");
       return editorCell;
     }
   }

@@ -13,7 +13,7 @@ public class TransformationMenuPart_Editor extends DefaultNodeEditor {
     return this.createError_g9mqko_a(editorContext, node);
   }
   private EditorCell createError_g9mqko_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "choose menu item type");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_g9mqko_a");
     editorCell.setBig(true);
     return editorCell;

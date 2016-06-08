@@ -7,8 +7,16 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -29,7 +37,18 @@ public class TransformationMenuPart_IncludeMenu_Editor extends DefaultNodeEditor
   }
   private EditorCell createComponent_xaduas_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuPart_IncludeMenu_Editor.ReplaceWith_TransformationMenuPart_cellMenu_xaduas_a0a0()}));
     return editorCell;
+  }
+  public static class ReplaceWith_TransformationMenuPart_cellMenu_xaduas_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_TransformationMenuPart_cellMenu_xaduas_a0a0() {
+    }
+    public SAbstractConcept getReplacementConcept() {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart");
+    }
   }
   private EditorCell createRefNode_xaduas_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new TransformationMenuPart_IncludeMenu_Editor.menuReferenceSingleRoleHandler_xaduas_b0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, 0x5d3b34577b3f7ee5L, "menuReference"), editorContext);
