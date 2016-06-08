@@ -10,6 +10,7 @@ import java.util.List;
  * danilla 6/13/13
  */
 
+@Deprecated
 public interface MoveRefactoringContributor {
 
   boolean isAvailableFor(MPSProject mpsProject, @NotNull List<SNode> nodes);
