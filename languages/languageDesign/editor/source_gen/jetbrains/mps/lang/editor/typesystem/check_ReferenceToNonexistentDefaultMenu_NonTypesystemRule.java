@@ -9,12 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.editor.editor.DefaultTransformationMenuUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -28,18 +23,12 @@ public class check_ReferenceToNonexistentDefaultMenu_NonTypesystemRule extends A
   public void applyRule(final SNode ref, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept"));
 
-    List<SNode> aspects = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(concept, LanguageAspect.EDITOR);
-    if (ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode a) {
-        return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
+    if ((DefaultTransformationMenuUtil.findDefaultMenuForConcept(concept) == null)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new ReferenceMessageTarget("concept");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(ref, "Default transformation menu for " + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not defined. Implicit default menu will be used.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2823239769520680200", null, errorTarget);
       }
-    })) {
-      return;
-    }
-    {
-      MessageTarget errorTarget = new NodeMessageTarget();
-      errorTarget = new ReferenceMessageTarget("concept");
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(ref, "Default transformation menu for " + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not defined. Implicit default menu will be used.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2823239769520680200", null, errorTarget);
     }
   }
   public SAbstractConcept getApplicableConcept() {

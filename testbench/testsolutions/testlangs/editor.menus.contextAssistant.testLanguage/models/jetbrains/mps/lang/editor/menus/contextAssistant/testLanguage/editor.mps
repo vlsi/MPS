@@ -6,8 +6,8 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.menus.contextActions" version="0" />
-    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant" version="0" />
+    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus" version="0" />
+    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -211,26 +211,26 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
     </language>
-    <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.menus.contextActions">
-      <concept id="8954657570916343208" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationLocation_ContextActionsTool" flags="ng" index="2jZ$wP" />
-      <concept id="8954657570916343205" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
+    <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus">
+      <concept id="8954657570916343208" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationLocation_ContextActionsTool" flags="ng" index="2jZ$wP" />
+      <concept id="8954657570916343205" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
         <child id="8954657570916343206" name="query" index="2jZ$wV" />
       </concept>
-      <concept id="8954657570916342474" name="jetbrains.mps.editor.menus.contextActions.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
-      <concept id="8954657570916342471" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
+      <concept id="8954657570916342474" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
+      <concept id="8954657570916342471" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
         <child id="8954657570916343203" name="query" index="2jZ$wY" />
       </concept>
-      <concept id="7291101478621922220" name="jetbrains.mps.editor.menus.contextActions.structure.QueryFunction_TransformationMenu_Tooltip" flags="ig" index="1jIJ66" />
+      <concept id="7291101478621922220" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Tooltip" flags="ig" index="1jIJ66" />
     </language>
-    <language id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant">
-      <concept id="2468431357014363369" name="jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
-      <concept id="2926686622729992785" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
+    <language id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras">
+      <concept id="2468431357014363369" name="jetbrains.mps.lang.editor.menus.extras.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
+      <concept id="2926686622729992785" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
         <reference id="2926686622729992786" name="intention" index="caduC" />
       </concept>
-      <concept id="2319156231054332300" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_PluginAction" flags="ng" index="yzXR2">
+      <concept id="2319156231054332300" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_PluginAction" flags="ng" index="yzXR2">
         <reference id="2319156231054332308" name="action" index="yzXRq" />
       </concept>
-      <concept id="4736696158595695479" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
+      <concept id="4736696158595695479" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
         <reference id="4736696158595695482" name="refactoring" index="BGudP" />
       </concept>
     </language>

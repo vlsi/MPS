@@ -8,12 +8,16 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -35,9 +39,18 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
   private EditorCell createConstant_9zto5v_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default menu for");
     editorCell.setCellId("Constant_9zto5v_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, TransformationMenuReference_Default_Editor._StyleParameter_QueryFunction_9zto5v_a0a0(editorContext, node));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_Editor.ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0()}));
     return editorCell;
+  }
+  private static SNode _StyleParameter_QueryFunction_9zto5v_a0a0(EditorContext editorContext, SNode node) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept")) == null)) {
+      return null;
+    }
+    return DefaultTransformationMenuUtil.findDefaultMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept")));
   }
   public static class ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0() {

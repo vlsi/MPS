@@ -17,6 +17,8 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.editor.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
+import jetbrains.mps.lang.editor.findUsages.FindUsagesDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.editor.intentions.IntentionsDescriptor;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
@@ -66,6 +68,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
+    }
+    if (aspectClass == FindUsageAspectDescriptor.class) {
+      return (T) new FindUsagesDescriptor();
     }
     if (aspectClass == IntentionAspectDescriptor.class) {
       return (T) new IntentionsDescriptor();
