@@ -2235,15 +2235,36 @@
           <node concept="3clFbS" id="3EZUZhmZoha" role="3clFbx">
             <node concept="3SKdUt" id="3EZUZhmZsLy" role="3cqZAp">
               <node concept="3SKdUq" id="3EZUZhmZsL$" role="3SKWNk">
-                <property role="3SKdUp" value="Only allow parameterizable menu parts as children" />
+                <property role="3SKdUp" value="Only allow parameterizable or abstract menu parts as children" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7ZeGB_HoOcT" role="3cqZAp">
+              <node concept="3SKdUq" id="7ZeGB_HoOcV" role="3SKWNk">
+                <property role="3SKdUp" value="(allow abstract menu parts to avoid showing 'TransformationMenuPart cannot" />
+              </node>
+              <node concept="3SKdUq" id="7ZeGB_HoOBY" role="3SKWNk">
+                <property role="3SKdUp" value="be child of parameterized' and" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7ZeGB_Hp35J" role="3cqZAp">
+              <node concept="3SKdUq" id="7ZeGB_Hp35K" role="3SKWNk">
+                <property role="3SKdUp" value="instead let the typesystem rule show the message about the concept being abstract)." />
               </node>
             </node>
             <node concept="3cpWs6" id="3EZUZhmZrjr" role="3cqZAp">
-              <node concept="2OqwBi" id="3EZUZhmZrLV" role="3cqZAk">
-                <node concept="otxO1" id="3EZUZhmZrxJ" role="2Oq$k0" />
-                <node concept="2Zo12i" id="3EZUZhmZrZX" role="2OqNvi">
-                  <node concept="chp4Y" id="3EZUZhmZs9F" role="2Zo12j">
-                    <ref role="cht4Q" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+              <node concept="22lmx$" id="7ZeGB_HoMQw" role="3cqZAk">
+                <node concept="2OqwBi" id="7ZeGB_HoNk5" role="3uHU7B">
+                  <node concept="otxO1" id="7ZeGB_HoN1n" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="7ZeGB_HoNFp" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3EZUZhmZrLV" role="3uHU7w">
+                  <node concept="otxO1" id="3EZUZhmZrxJ" role="2Oq$k0" />
+                  <node concept="2Zo12i" id="3EZUZhmZrZX" role="2OqNvi">
+                    <node concept="chp4Y" id="3EZUZhmZs9F" role="2Zo12j">
+                      <ref role="cht4Q" to="tpc2:3EZUZhmYaO$" resolve="IParameterizableMenuPart" />
+                    </node>
                   </node>
                 </node>
               </node>
