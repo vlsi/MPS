@@ -42,6 +42,24 @@
       <unit id="121597702824512946" at="9,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" />
     </file>
   </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2153278993333625967">
+    <file name="NonexistentDefaultMenu_Test.java">
+      <node id="2153278993333625967" at="17,95,18,122" concept="0" />
+      <node id="2153278993333625967" at="18,122,19,160" concept="0" />
+      <node id="2153278993333625967" at="25,97,26,230" concept="2" />
+      <node id="2153278993333625967" at="26,230,27,124" concept="0" />
+      <node id="2153278993333625967" at="25,0,29,0" concept="1" trace="test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810#()V" />
+      <node id="2153278993333625967" at="16,0,21,0" concept="1" trace="test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810#()V" />
+      <scope id="2153278993333625967" at="17,95,19,160" />
+      <scope id="2153278993333625967" at="25,97,27,124">
+        <var name="operation" id="2153278993333625967" />
+      </scope>
+      <scope id="2153278993333625967" at="25,0,29,0" />
+      <scope id="2153278993333625967" at="16,0,21,0" />
+      <unit id="2153278993333625967" at="22,0,31,0" name="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test$TestBody" />
+      <unit id="2153278993333625967" at="14,0,32,0" name="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2344528742722136214">
     <file name="MenuLoadingUtils.java">
       <node id="6436886136983367784" at="22,104,23,75" concept="2" />

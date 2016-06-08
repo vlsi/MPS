@@ -22,8 +22,9 @@
     <import index="u59o" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus.transformation(MPS.Editor/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="ue84" ref="r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="wtc3" ref="r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpc6" ref="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)" implicit="true" />
   </imports>
@@ -64,6 +65,21 @@
       <concept id="1216989428737" name="jetbrains.mps.lang.test.structure.TestNode" flags="ng" index="1qefOq">
         <child id="1216989461394" name="nodeToCheck" index="1qenE9" />
       </concept>
+      <concept id="2153278993333648098" name="jetbrains.mps.lang.test.structure.ScopeEntry" flags="ng" index="3A5S4R">
+        <reference id="2153278993333851780" name="kind" index="3A66Ph" />
+        <child id="2153278993333648101" name="nodes" index="3A5S4K" />
+      </concept>
+      <concept id="2153278993333631257" name="jetbrains.mps.lang.test.structure.MockScopeProvider" flags="ng" index="3A5Wbc">
+        <child id="2153278993333648147" name="entries" index="3A5S36" />
+        <child id="2153278993334044549" name="node" index="3A7nLg" />
+      </concept>
+      <concept id="2153278993333862929" name="jetbrains.mps.lang.test.structure.NamedNodeReference" flags="ng" index="3A63B4">
+        <reference id="2153278993333862930" name="node" index="3A63B7" />
+      </concept>
+      <concept id="2153278993334181113" name="jetbrains.mps.lang.test.structure.InfoStatementReference" flags="ng" index="3A7QsG" />
+      <concept id="2153278993334166130" name="jetbrains.mps.lang.test.structure.NodeInfoCheckOperation" flags="ng" index="3A7TAB">
+        <child id="2153278993334179757" name="statementRef" index="3A7QLS" />
+      </concept>
     </language>
     <language id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage">
       <concept id="4740302442485120029" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional" flags="ng" index="2dXhfD" />
@@ -73,6 +89,9 @@
       <concept id="3743352646564481246" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithFeatures" flags="ng" index="GzouS" />
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr">
+        <reference id="6718020819487620877" name="concept" index="A1WHq" />
+      </concept>
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
@@ -254,6 +273,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1156235010670" name="alias" index="OYydz" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1546,6 +1566,30 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6K07tEmWQN" role="1B3o_S" />
+  </node>
+  <node concept="1lH9Xt" id="1RxYXnVXyhJ">
+    <property role="TrG5h" value="NonexistentDefaultMenu" />
+    <node concept="1qefOq" id="1RxYXnVXz$e" role="1SKRRt">
+      <node concept="3A5Wbc" id="1RxYXnVYpoz" role="1qenE9">
+        <node concept="3A5S4R" id="1RxYXnVYpo$" role="3A5S36">
+          <property role="OYydz" value="AbsConcDec" />
+          <ref role="3A66Ph" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+          <node concept="3A63B4" id="1RxYXnVZ8u2" role="3A5S4K">
+            <ref role="3A63B7" to="wtc3:1RxYXnVXyhK" resolve="ConceptWithoutDefaultMenu" />
+          </node>
+        </node>
+        <node concept="A1WHr" id="1RxYXnVZjGA" role="3A7nLg">
+          <ref role="A1WHq" to="wtc3:1RxYXnVXyhK" resolve="ConceptWithoutDefaultMenu" />
+          <node concept="7CXmI" id="1RxYXnVZlgx" role="lGtFl">
+            <node concept="3A7TAB" id="1RxYXnW0RBy" role="7EUXB">
+              <node concept="3A7QsG" id="1RxYXnW27OO" role="3A7QLS">
+                <ref role="39XzEq" to="tpc6:2sIapMU2iO8" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

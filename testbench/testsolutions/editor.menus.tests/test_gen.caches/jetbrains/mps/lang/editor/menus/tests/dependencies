@@ -134,6 +134,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test" file="NonexistentDefaultMenu_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" file="UsedLanguagesUtils.java">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />

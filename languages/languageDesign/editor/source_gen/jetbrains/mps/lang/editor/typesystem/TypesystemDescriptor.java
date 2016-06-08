@@ -189,6 +189,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ReferenceToNonexistentDefaultMenu_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_StyleAttributeDeclaration_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

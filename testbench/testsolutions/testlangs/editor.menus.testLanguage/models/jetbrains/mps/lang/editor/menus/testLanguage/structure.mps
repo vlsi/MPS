@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -33,6 +33,11 @@
     <property role="TrG5h" value="TransformationMenuTestConcept" />
     <property role="3GE5qa" value="" />
     <property role="34LRSv" value="transformation menu test concept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVXyhK">
+    <property role="EcuMT" value="2153278993333625968" />
+    <property role="TrG5h" value="ConceptWithoutDefaultMenu" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
