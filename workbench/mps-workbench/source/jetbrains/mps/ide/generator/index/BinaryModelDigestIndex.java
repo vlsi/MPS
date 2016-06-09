@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.BinaryModelPersistence;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.persistence.ByteArrayInputSource;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -49,6 +48,6 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   protected Map<String, String> calculateDigest(final byte[] content) {
-    return BinaryModelPersistence.getDigestMap(content);
+    return BinaryModelPersistence.getDigestMap(new ByteArrayInputSource(content));
   }
 }

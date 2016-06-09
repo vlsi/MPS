@@ -51,6 +51,6 @@ import javax.swing.Icon;
   @Override
   public Icon doGetIcon() {
     //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
-    return myNodeResult.getConcept().getIcon();
+    return IconManager.getIcon(myNodeResult.getConcept());
   }
 }

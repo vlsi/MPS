@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.tableTests.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.lang.editor.tableTests.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "df8799e7-254a-406f-bd67-f4cc27337152(jetbrains.mps.lang.editor.tableTests)";
@@ -46,6 +48,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

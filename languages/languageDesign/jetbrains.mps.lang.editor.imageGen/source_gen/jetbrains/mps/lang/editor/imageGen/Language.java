@@ -15,6 +15,8 @@ import jetbrains.mps.lang.editor.imageGen.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.lang.editor.imageGen.plugin.FacetAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.lang.editor.imageGen.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "1839bec5-cea6-41df-b9e0-c405ff35c41e(jetbrains.mps.lang.editor.imageGen)";
@@ -54,6 +56,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.editor.imageGen.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return (T) new ConceptPresentationAspectImpl();
     }
     return super.createAspect(aspectClass);
   }

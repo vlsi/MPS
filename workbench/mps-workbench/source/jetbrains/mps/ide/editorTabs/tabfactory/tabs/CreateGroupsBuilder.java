@@ -112,7 +112,7 @@ public class CreateGroupsBuilder {
 
     public CreateAction(SConcept concept, RelationDescriptor descriptor) {
       //todo pass concepts instead of nodes
-      super(concept.getConceptAlias().replaceAll("_", "__"), "", concept.getIcon());
+      super(concept.getConceptAlias().replaceAll("_", "__"), "", IconManager.getIcon(concept));
       myConcept = concept;
       myDescriptor = descriptor;
     }

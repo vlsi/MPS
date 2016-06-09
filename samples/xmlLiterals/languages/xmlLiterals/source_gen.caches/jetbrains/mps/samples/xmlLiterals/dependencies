@@ -16,9 +16,11 @@
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

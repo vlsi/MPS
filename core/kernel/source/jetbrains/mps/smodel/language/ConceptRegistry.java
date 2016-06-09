@@ -20,18 +20,13 @@ import jetbrains.mps.core.aspects.behaviour.BehaviorRegistryImpl;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +37,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
   private final LanguageRegistry myLanguageRegistry;
   private final StructureRegistry myStructureRegistry;
+  private final ConceptPropertiesRegistry myConcPropsRegistry;
   private final BehaviorRegistry myBehaviorRegistry;
   private final ConstraintsRegistry myConstraintsRegistry;
 
@@ -49,6 +45,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   public ConceptRegistry(@NotNull LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
     myStructureRegistry = new StructureRegistry(languageRegistry);
+    myConcPropsRegistry = new ConceptPropertiesRegistry(languageRegistry);
     myBehaviorRegistry = new BehaviorRegistryImpl(languageRegistry);
     myConstraintsRegistry = new ConstraintsRegistry(languageRegistry);
   }
@@ -89,6 +86,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     return myStructureRegistry.getConceptDescriptor(id);
+  }
+
+  public ConceptPresentation getConceptProperties(@NotNull SAbstractConcept concept){
+    return myConcPropsRegistry.getConceptProperties(concept);
   }
 
   @NotNull

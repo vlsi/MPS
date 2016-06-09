@@ -27,10 +27,10 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
+        <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -1631,8 +1631,8 @@
             <node concept="3clFbJ" id="4DHwkIM$tBj" role="3cqZAp">
               <node concept="3clFbS" id="4DHwkIM$tBk" role="3clFbx">
                 <node concept="3cpWs6" id="1fdcuoJ0cYR" role="3cqZAp">
-                  <node concept="1QGGTA" id="1fdcuoJ0dCb" role="3cqZAk">
-                    <node concept="1QGGSu" id="1fdcuoJ0dCd" role="1QGGTw">
+                  <node concept="2SwGe0" id="14excHa38yu" role="3cqZAk">
+                    <node concept="1QGGSu" id="1fdcuoJ0dCd" role="2SwzYu">
                       <property role="1QGGTI" value="${module}/icons/abstractException.png" />
                     </node>
                   </node>
@@ -1646,8 +1646,8 @@
               </node>
             </node>
             <node concept="3cpWs6" id="1fdcuoJ0fbJ" role="3cqZAp">
-              <node concept="1QGGTA" id="1fdcuoJ0fbK" role="3cqZAk">
-                <node concept="1QGGSu" id="1fdcuoJ0fbL" role="1QGGTw">
+              <node concept="2SwGe0" id="14excHa38Lz" role="3cqZAk">
+                <node concept="1QGGSu" id="1fdcuoJ0fbL" role="2SwzYu">
                   <property role="1QGGTI" value="${module}/icons/exceptionClass.png" />
                 </node>
               </node>
@@ -1666,8 +1666,8 @@
         <node concept="3clFbJ" id="1cLdD6E6WI$" role="3cqZAp">
           <node concept="3clFbS" id="1cLdD6E6WIA" role="3clFbx">
             <node concept="3cpWs6" id="1cLdD6E6WIH" role="3cqZAp">
-              <node concept="1QGGTA" id="1fdcuoJ0g85" role="3cqZAk">
-                <node concept="1QGGSu" id="1fdcuoJ0g86" role="1QGGTw">
+              <node concept="2SwGe0" id="14excHa390C" role="3cqZAk">
+                <node concept="1QGGSu" id="1fdcuoJ0g86" role="2SwzYu">
                   <property role="1QGGTI" value="${module}/icons/abstractClass.png" />
                 </node>
               </node>
@@ -3335,8 +3335,8 @@
       <node concept="3clFbS" id="1fdcuoJ0Wvh" role="2VODD2">
         <node concept="3clFbF" id="1fdcuoJ0Xq3" role="3cqZAp">
           <node concept="3K4zz7" id="1fdcuoJ0Yrj" role="3clFbG">
-            <node concept="1QGGTA" id="1fdcuoJ0YFn" role="3K4E3e">
-              <node concept="1QGGSu" id="1fdcuoJ0YFp" role="1QGGTw">
+            <node concept="2SwGe0" id="14excHa39o4" role="3K4E3e">
+              <node concept="1QGGSu" id="1fdcuoJ0YFp" role="2SwzYu">
                 <property role="1QGGTI" value="${module}/icons/abstractMethod.png" />
               </node>
             </node>

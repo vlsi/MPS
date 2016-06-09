@@ -52,6 +52,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" filepath="$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" filepath="$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" filepath="$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/builder/mps-ant.iml" filepath="$PROJECT_DIR$/core/tool/builder/mps-ant.iml" group="ant" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/core/mps-core/mps-core.iml" group="core" />
@@ -59,7 +60,8 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" filepath="$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" filepath="$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" filepath="$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/mps-idea-plugin-api.iml" filepath="$PROJECT_DIR$/MPSPlugin/mps-idea-plugin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" filepath="$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" filepath="$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/mps-java.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/mps-java.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" filepath="$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" filepath="$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" group="workbench" />

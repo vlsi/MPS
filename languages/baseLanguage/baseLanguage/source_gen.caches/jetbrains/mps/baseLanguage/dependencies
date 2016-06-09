@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.ScriptsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
@@ -27,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

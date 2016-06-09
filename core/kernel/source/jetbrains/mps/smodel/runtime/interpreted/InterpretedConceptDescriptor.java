@@ -78,7 +78,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private String conceptAlias;
   private String shortDescription;
   private String helpURL;
-  private Icon myIcon;
   private StaticScope staticScope;
   private volatile boolean myIsInitialized = false;
 
@@ -222,7 +221,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           }
         }
 
-        myIcon = ConceptIconLoader.getIconForConcept(declaration);
         mySourceNodeRef = declaration.getReference();
       }
     });
@@ -383,11 +381,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return helpURL;
-  }
-
-  @Override
-  public Icon getIcon() {
-    return myIcon;
   }
 
   @Nullable

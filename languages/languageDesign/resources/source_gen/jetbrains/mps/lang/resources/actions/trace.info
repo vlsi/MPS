@@ -16,17 +16,17 @@
   <root nodeRef="r:b921e97e-c79b-49a1-bb6f-d836bc131175(jetbrains.mps.lang.resources.actions)/8814893218132458891">
     <file name="QueriesGenerated.java">
       <node id="8814893218132458892" at="25,209,26,93" concept="5" />
-      <node id="8814893218132458892" at="27,5,28,206" concept="5" />
-      <node id="8814893218132458892" at="28,206,29,62" concept="5" />
-      <node id="8814893218132458910" at="32,44,33,240" concept="6" />
+      <node id="8814893218132458892" at="27,5,28,198" concept="5" />
+      <node id="8814893218132458892" at="28,198,29,62" concept="5" />
+      <node id="8814893218132458910" at="32,44,33,232" concept="6" />
       <node id="8814893218132458988" at="39,98,40,68" concept="6" />
-      <node id="8814893218132458928" at="42,61,43,525" concept="6" />
+      <node id="8814893218132458928" at="42,61,43,517" concept="6" />
       <node id="8814893218132458892" at="45,68,46,48" concept="6" />
       <node id="8814893218132458892" at="52,5,53,18" concept="6" />
       <node id="8814893218132458989" at="55,81,56,63" concept="5" />
       <node id="8814893218132458989" at="56,63,57,30" concept="5" />
-      <node id="8814893218132458989" at="57,30,58,241" concept="1" />
-      <node id="8814893218132458989" at="58,241,59,210" concept="1" />
+      <node id="8814893218132458989" at="57,30,58,233" concept="1" />
+      <node id="8814893218132458989" at="58,233,59,210" concept="1" />
       <node id="8814893218132458989" at="59,210,60,24" concept="6" />
       <node id="8814893218132458892" at="32,0,35,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
       <node id="8814893218132458892" at="39,0,42,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -40,9 +40,9 @@
       <node id="8814893218132458892" at="29,62,51,7" concept="3" />
       <node id="8814893218132458892" at="26,93,52,5" concept="0" />
       <node id="8814893218132458892" at="25,0,55,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_8814893218132458892#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="8814893218132458892" at="32,44,33,240" />
+      <scope id="8814893218132458892" at="32,44,33,232" />
       <scope id="8814893218132458900" at="39,98,40,68" />
-      <scope id="8814893218132458927" at="42,61,43,525" />
+      <scope id="8814893218132458927" at="42,61,43,517" />
       <scope id="8814893218132458892" at="45,68,46,48" />
       <scope id="8814893218132458892" at="32,0,35,0" />
       <scope id="8814893218132458892" at="39,0,42,0">

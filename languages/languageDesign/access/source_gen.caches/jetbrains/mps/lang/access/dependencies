@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.lang.access.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.access.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.access.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.access.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.access.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.access.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
@@ -20,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +40,7 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childNodeConcept, containingLink, canCreateConnector, setConnectorCallback)});
-    myIcon = SNodeOperations.asSConcept(childNodeConcept).getIcon();
+    myIcon = IconManager.getIcon(SNodeOperations.asSConcept(childNodeConcept));
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();

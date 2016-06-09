@@ -3962,6 +3962,93 @@
       <unit id="346011455443120471" at="10,0,27,0" name="jetbrains.mps.editorTest.AddConstructorNotAllowed2_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3461663384198511643">
+    <file name="ForStatementAdditionalVariableAddition_Test.java">
+      <node id="3461663384198511643" at="13,78,14,102" concept="3" />
+      <node id="3461663384198511643" at="14,102,15,114" concept="3" />
+      <node id="3461663384198511643" at="21,51,22,72" concept="3" />
+      <node id="3461663384198595456" at="22,72,23,25" concept="3" />
+      <node id="3461663384198511643" at="12,0,17,0" concept="6" trace="test_ForStatementAdditionalVariableAddition#()V" />
+      <node id="3461663384198511643" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3461663384198511643" at="13,78,15,114" />
+      <scope id="3461663384198511643" at="21,51,23,25" />
+      <scope id="3461663384198511643" at="12,0,17,0" />
+      <scope id="3461663384198511643" at="20,0,25,0" />
+      <unit id="3461663384198511643" at="18,0,26,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableAddition_Test$TestBody" />
+      <unit id="3461663384198511643" at="10,0,27,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableAddition_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3461663384198595468">
+    <file name="ForStatementAdditionalVariableAdditionAndRemoval_Test.java">
+      <node id="3461663384198595468" at="13,88,14,102" concept="3" />
+      <node id="3461663384198595468" at="14,102,15,124" concept="3" />
+      <node id="3461663384198595468" at="21,51,22,72" concept="3" />
+      <node id="3461663384198595489" at="22,72,23,25" concept="3" />
+      <node id="3461663384198596175" at="23,25,24,71" concept="3" />
+      <node id="3461663384198596185" at="24,71,25,71" concept="3" />
+      <node id="3461663384198596200" at="25,71,26,71" concept="3" />
+      <node id="3461663384198596217" at="26,71,27,71" concept="3" />
+      <node id="3461663384198596236" at="27,71,28,71" concept="3" />
+      <node id="3461663384198596257" at="28,71,29,71" concept="3" />
+      <node id="3461663384198596280" at="29,71,30,72" concept="3" />
+      <node id="3461663384198595468" at="12,0,17,0" concept="6" trace="test_ForStatementAdditionalVariableAdditionAndRemoval#()V" />
+      <node id="3461663384198595468" at="20,0,32,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3461663384198595468" at="13,88,15,124" />
+      <scope id="3461663384198595468" at="12,0,17,0" />
+      <scope id="3461663384198595468" at="21,51,30,72" />
+      <scope id="3461663384198595468" at="20,0,32,0" />
+      <unit id="3461663384198595468" at="18,0,33,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableAdditionAndRemoval_Test$TestBody" />
+      <unit id="3461663384198595468" at="10,0,34,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableAdditionAndRemoval_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3461663384198596313">
+    <file name="ForStatementAdditionalVariableDelete_Test.java">
+      <node id="3461663384198596313" at="13,76,14,102" concept="3" />
+      <node id="3461663384198596313" at="14,102,15,112" concept="3" />
+      <node id="3461663384198596313" at="21,51,22,72" concept="3" />
+      <node id="3461663384198596332" at="22,72,23,69" concept="3" />
+      <node id="3461663384198596313" at="12,0,17,0" concept="6" trace="test_ForStatementAdditionalVariableDelete#()V" />
+      <node id="3461663384198596313" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3461663384198596313" at="13,76,15,112" />
+      <scope id="3461663384198596313" at="21,51,23,69" />
+      <scope id="3461663384198596313" at="12,0,17,0" />
+      <scope id="3461663384198596313" at="20,0,25,0" />
+      <unit id="3461663384198596313" at="18,0,26,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableDelete_Test$TestBody" />
+      <unit id="3461663384198596313" at="10,0,27,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3461663384198596847">
+    <file name="ForStatementAdditionalVariableBackspace_Test.java">
+      <node id="3461663384198596847" at="13,79,14,102" concept="3" />
+      <node id="3461663384198596847" at="14,102,15,115" concept="3" />
+      <node id="3461663384198596847" at="21,51,22,72" concept="3" />
+      <node id="3461663384198596863" at="22,72,23,72" concept="3" />
+      <node id="3461663384198596847" at="12,0,17,0" concept="6" trace="test_ForStatementAdditionalVariableBackspace#()V" />
+      <node id="3461663384198596847" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3461663384198596847" at="13,79,15,115" />
+      <scope id="3461663384198596847" at="21,51,23,72" />
+      <scope id="3461663384198596847" at="12,0,17,0" />
+      <scope id="3461663384198596847" at="20,0,25,0" />
+      <unit id="3461663384198596847" at="18,0,26,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableBackspace_Test$TestBody" />
+      <unit id="3461663384198596847" at="10,0,27,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableBackspace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3461663384198597040">
+    <file name="ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test.java">
+      <node id="3461663384198597040" at="13,101,14,102" concept="3" />
+      <node id="3461663384198597040" at="14,102,15,137" concept="3" />
+      <node id="3461663384198597040" at="21,51,22,72" concept="3" />
+      <node id="3461663384198597056" at="22,72,23,69" concept="3" />
+      <node id="3461663384198597040" at="12,0,17,0" concept="6" trace="test_ForStatementAdditionalVariableDeleteWithNoAdditionalVariables#()V" />
+      <node id="3461663384198597040" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3461663384198597040" at="13,101,15,137" />
+      <scope id="3461663384198597040" at="21,51,23,69" />
+      <scope id="3461663384198597040" at="12,0,17,0" />
+      <scope id="3461663384198597040" at="20,0,25,0" />
+      <unit id="3461663384198597040" at="18,0,26,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test$TestBody" />
+      <unit id="3461663384198597040" at="10,0,27,0" name="jetbrains.mps.editorTest.ForStatementAdditionalVariableDeleteWithNoAdditionalVariables_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3498805908282577297">
     <file name="PasteSingleStatement_Test.java">
       <node id="3498805908282577297" at="13,60,14,102" concept="3" />

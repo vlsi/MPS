@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * T could be a concept fq name or any other id-like object
  * Thread-safe storage class.
  * Using ThreadLocal to get rid of concurrency flaws.
  * ConcurrentMap is not suitable since,
- * for example, during the parallel generation we are likely to get {@link NullSafeIllegalBehaviorDescriptor}
+ * for example, during the parallel generation we are likely to get {@link jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor}
  * for some of the core baseLanguage concepts (e.g. ConstructorDeclaration). Illegal behavior descriptor breaks
  * the generation, so that implementation is unacceptable.
  *

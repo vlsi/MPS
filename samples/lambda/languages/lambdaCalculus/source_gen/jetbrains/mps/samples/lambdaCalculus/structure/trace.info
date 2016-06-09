@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <root>
+    <file name="ConceptPresentationAspectImpl.java">
+      <unit at="14,0,207,0" name="jetbrains.mps.samples.lambdaCalculus.structure.ConceptPresentationAspectImpl" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,154,0" name="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor" />
+      <unit at="17,0,153,0" name="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info-v2>

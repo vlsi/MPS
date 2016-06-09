@@ -17,10 +17,12 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

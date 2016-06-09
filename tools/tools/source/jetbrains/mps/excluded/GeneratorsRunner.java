@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import static org.junit.Assert.assertNull;
 
@@ -45,7 +46,9 @@ public class GeneratorsRunner {
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
-    CompilerXml.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins", "testbench"));
+    CompilerXml.updateCompilerExcludes(COMPILER_XML_FILE,
+        Utils.files("languages", "samples", "core", "plugins", "testbench"),
+        new File[]{new File("IdeaPlugin")});
   }
 
   public static void main(String[] args) throws JDOMException, IOException {

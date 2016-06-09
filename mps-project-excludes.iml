@@ -2,10 +2,6 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/IdeaPlugin">
-      <sourceFolder url="file://$MODULE_DIR$/IdeaPlugin/build/plugins-sandbox/plugins/tests/blProject/src" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/IdeaPlugin/build" />
-    </content>
     <content url="file://$MODULE_DIR$/build">
       <excludeFolder url="file://$MODULE_DIR$/build/artifacts" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />

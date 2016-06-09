@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <root>
+    <file name="ConceptPresentationAspectImpl.java">
+      <unit at="14,0,75,0" name="decl.structure.ConceptPresentationAspectImpl" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,66,0" name="decl.structure.StructureAspectDescriptor" />
+      <unit at="17,0,65,0" name="decl.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info-v2>

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -131,7 +132,7 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @Nullable
   @Override
-  public Icon getInstanceIcon(SNode node) {
+  public IconResource getInstanceIcon(SNode node) {
     return null;
   }
 

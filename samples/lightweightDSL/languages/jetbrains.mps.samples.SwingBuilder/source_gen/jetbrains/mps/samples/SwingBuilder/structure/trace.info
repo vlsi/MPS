@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info-v2>
   <root>
+    <file name="ConceptPresentationAspectImpl.java">
+      <unit at="14,0,135,0" name="jetbrains.mps.samples.SwingBuilder.structure.ConceptPresentationAspectImpl" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,106,0" name="jetbrains.mps.samples.SwingBuilder.structure.StructureAspectDescriptor" />
+      <unit at="17,0,105,0" name="jetbrains.mps.samples.SwingBuilder.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info-v2>

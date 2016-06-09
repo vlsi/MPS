@@ -32,7 +32,7 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
     SNode iconNode = mySubstituteAction.getIconNode("");
     if (iconNode != null) {
       // todo should pass concept here, not concept node 
-      icon = ((SNodeOperations.isInstanceOf(iconNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && !((mySubstituteAction.isReferentPresentation()))) ? SNodeOperations.asSConcept(((SNode) iconNode)).getIcon() : IconManager.getIconFor(iconNode));
+      icon = ((SNodeOperations.isInstanceOf(iconNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && !((mySubstituteAction.isReferentPresentation()))) ? IconManager.getIcon(SNodeOperations.asSConcept(((SNode) iconNode))) : IconManager.getIconFor(iconNode));
     } else {
       icon = IdeIcons.DEFAULT_ICON;
     }

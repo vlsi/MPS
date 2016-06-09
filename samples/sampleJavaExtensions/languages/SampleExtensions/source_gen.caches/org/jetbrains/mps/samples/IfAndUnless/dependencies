@@ -14,12 +14,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.structure.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

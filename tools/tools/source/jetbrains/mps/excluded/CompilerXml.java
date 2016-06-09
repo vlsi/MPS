@@ -19,6 +19,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +36,8 @@ class CompilerXml {
   private static final String DIRECTORY = "directory";
   private static final String URL = "url";
 
-  public static void updateCompilerExcludes(File compilerXmlFile, File... sourceDirs) throws JDOMException, IOException {
+  // excludes generated dirs of the sourceDirs. also excludes explicitly the excludeDirs
+  public static void updateCompilerExcludes(File compilerXmlFile, File[] sourceDirs, File[] excludeDirs) throws JDOMException, IOException {
     Document compiler = JDOMUtil.loadDocument(compilerXmlFile);
 
     Element rootElement = Utils.getComponentWithName(compiler, COMPILER_CONFIGURATION);
@@ -45,10 +47,16 @@ class CompilerXml {
     List<String> paths = new ArrayList<String>();
     for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(sourceDirs).entrySet()) {
       for (String sourcePath : module.getValue()) {
-        paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(sourcePath));
+        paths.add(convertRelPathToProject(sourcePath));
       }
     }
+
     Collections.sort(paths);
+
+    for (File excludedDir : excludeDirs) {
+      paths.add(convertRelPathToProject(excludedDir.getAbsolutePath()));
+    }
+
     for (String path : paths) {
       Element excludedDir = new Element(DIRECTORY);
       excludedDir.setAttribute(URL, path);
@@ -57,5 +65,10 @@ class CompilerXml {
     }
 
     JDOMUtil.writeDocument(compiler, compilerXmlFile);
+  }
+
+  @NotNull
+  private static String convertRelPathToProject(String sourcePath) {
+    return PATH_START_PROJECT + Utils.getRelativeProjectPath(sourcePath);
   }
 }

@@ -15,6 +15,8 @@ import jetbrains.mps.samples.customizedDebugger.Bottomline.editor.EditorAspectDe
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.samples.customizedDebugger.Bottomline.plugin.FacetAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.samples.customizedDebugger.Bottomline.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -55,6 +57,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.customizedDebugger.Bottomline.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.TextGenAspectDescriptor();

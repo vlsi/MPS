@@ -11,12 +11,14 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

@@ -99,9 +99,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
-        <child id="1182160096073" name="cls" index="YeSDq" />
-      </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -245,9 +242,6 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
-      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
-        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
-      </concept>
     </language>
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
@@ -3601,41 +3595,10 @@
                   <node concept="liA8E" id="1NiMOxiwPJ3" role="2OqNvi">
                     <ref role="37wK5l" to="dush:~ModelFactory.load(org.jetbrains.mps.openapi.persistence.DataSource,java.util.Map):org.jetbrains.mps.openapi.model.SModel" resolve="load" />
                     <node concept="2ShNRf" id="1NiMOxiwPIt" role="37wK5m">
-                      <node concept="YeOm9" id="1NiMOxiwPIu" role="2ShVmc">
-                        <node concept="1Y3b0j" id="1NiMOxiwPIv" role="YeSDq">
-                          <property role="2bfB8j" value="true" />
-                          <property role="1sVAO0" value="false" />
-                          <property role="1EXbeo" value="false" />
-                          <ref role="1Y3XeK" to="pa15:~PersistenceUtil$StreamDataSourceBase" resolve="PersistenceUtil.StreamDataSourceBase" />
-                          <ref role="37wK5l" to="pa15:~PersistenceUtil$StreamDataSourceBase.&lt;init&gt;()" resolve="PersistenceUtil.StreamDataSourceBase" />
-                          <node concept="3Tm1VV" id="1NiMOxiwPIw" role="1B3o_S" />
-                          <node concept="3clFb_" id="1NiMOxiwPIx" role="jymVt">
-                            <property role="TrG5h" value="openInputStream" />
-                            <property role="DiZV1" value="false" />
-                            <property role="od$2w" value="false" />
-                            <node concept="2AHcQZ" id="1NiMOxiwPIy" role="2AJF6D">
-                              <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                            </node>
-                            <node concept="3uibUv" id="1NiMOxiwPIz" role="Sfmx6">
-                              <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-                            </node>
-                            <node concept="3clFbS" id="1NiMOxiwPI$" role="3clF47">
-                              <node concept="3cpWs6" id="1NiMOxiwPI_" role="3cqZAp">
-                                <node concept="2ShNRf" id="1NiMOxiwPJ4" role="3cqZAk">
-                                  <node concept="1pGfFk" id="1NiMOxiwPJ5" role="2ShVmc">
-                                    <ref role="37wK5l" to="guwi:~ByteArrayInputStream.&lt;init&gt;(byte[])" resolve="ByteArrayInputStream" />
-                                    <node concept="37vLTw" id="1NiMOxiwPIB" role="37wK5m">
-                                      <ref role="3cqZAo" node="1NiMOxiwPI3" resolve="content" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3Tm1VV" id="1NiMOxiwPIC" role="1B3o_S" />
-                            <node concept="3uibUv" id="1NiMOxiwPID" role="3clF45">
-                              <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
-                            </node>
-                          </node>
+                      <node concept="1pGfFk" id="ZeugxXF2R_" role="2ShVmc">
+                        <ref role="37wK5l" to="pa15:~ByteArrayInputSource.&lt;init&gt;(byte[])" resolve="ByteArrayInputSource" />
+                        <node concept="37vLTw" id="ZeugxXF33E" role="37wK5m">
+                          <ref role="3cqZAo" node="1NiMOxiwPI3" resolve="content" />
                         </node>
                       </node>
                     </node>
@@ -3911,41 +3874,10 @@
                     <ref role="3cqZAo" node="1NiMOxix3Zl" resolve="header" />
                   </node>
                   <node concept="2ShNRf" id="1NiMOxixx$5" role="37wK5m">
-                    <node concept="YeOm9" id="1NiMOxixx$6" role="2ShVmc">
-                      <node concept="1Y3b0j" id="1NiMOxixx$7" role="YeSDq">
-                        <property role="2bfB8j" value="true" />
-                        <property role="1sVAO0" value="false" />
-                        <property role="1EXbeo" value="false" />
-                        <ref role="1Y3XeK" to="pa15:~PersistenceUtil$StreamDataSourceBase" resolve="PersistenceUtil.StreamDataSourceBase" />
-                        <ref role="37wK5l" to="pa15:~PersistenceUtil$StreamDataSourceBase.&lt;init&gt;()" resolve="PersistenceUtil.StreamDataSourceBase" />
-                        <node concept="3Tm1VV" id="1NiMOxixx$8" role="1B3o_S" />
-                        <node concept="3clFb_" id="1NiMOxixx$9" role="jymVt">
-                          <property role="TrG5h" value="openInputStream" />
-                          <property role="DiZV1" value="false" />
-                          <property role="od$2w" value="false" />
-                          <node concept="2AHcQZ" id="1NiMOxixx$a" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                          </node>
-                          <node concept="3uibUv" id="1NiMOxixx$b" role="Sfmx6">
-                            <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-                          </node>
-                          <node concept="3clFbS" id="1NiMOxixx$c" role="3clF47">
-                            <node concept="3cpWs6" id="1NiMOxixx$d" role="3cqZAp">
-                              <node concept="2ShNRf" id="1NiMOxixx$e" role="3cqZAk">
-                                <node concept="1pGfFk" id="1NiMOxixx$f" role="2ShVmc">
-                                  <ref role="37wK5l" to="guwi:~ByteArrayInputStream.&lt;init&gt;(byte[])" resolve="ByteArrayInputStream" />
-                                  <node concept="37vLTw" id="1NiMOxixx$g" role="37wK5m">
-                                    <ref role="3cqZAo" node="1NiMOxiwVEw" resolve="content" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3Tm1VV" id="1NiMOxixx$h" role="1B3o_S" />
-                          <node concept="3uibUv" id="1NiMOxixx$i" role="3clF45">
-                            <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
-                          </node>
-                        </node>
+                    <node concept="1pGfFk" id="ZeugxXF412" role="2ShVmc">
+                      <ref role="37wK5l" to="pa15:~ByteArrayInputSource.&lt;init&gt;(byte[])" resolve="ByteArrayInputSource" />
+                      <node concept="37vLTw" id="ZeugxXF4mn" role="37wK5m">
+                        <ref role="3cqZAo" node="1NiMOxiwVEw" resolve="content" />
                       </node>
                     </node>
                   </node>

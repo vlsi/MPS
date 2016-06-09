@@ -24,7 +24,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.NodeOrConcept;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

@@ -8,6 +8,7 @@
   <imports>
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -61,13 +62,16 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
   <node concept="1YbPZF" id="7Mb2akaesvL">
-    <property role="TrG5h" value="typeof_IconResourceExpression" />
+    <property role="TrG5h" value="typeof_IconExpression" />
     <node concept="3clFbS" id="7Mb2akaesvM" role="18ibNy">
       <node concept="1Z5TYs" id="7Mb2akaesvN" role="3cqZAp">
         <node concept="mw_s8" id="7Mb2akaesvO" role="1ZfhKB">
@@ -88,11 +92,12 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaesvU" role="1YuTPh">
       <property role="TrG5h" value="icon" />
-      <ref role="1YaFvo" to="1oap:7Mb2akaesr3" resolve="IconResourceExpression" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr3" resolve="IconExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="7Mb2akaesvV">
     <property role="TrG5h" value="typeof_IconResourceDeclaration" />
+    <property role="3GE5qa" value="iconBundle" />
     <node concept="3clFbS" id="7Mb2akaesvW" role="18ibNy">
       <node concept="1ZobV4" id="7Mb2akaesvX" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -119,11 +124,12 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaesw6" role="1YuTPh">
       <property role="TrG5h" value="ird" />
-      <ref role="1YaFvo" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr0" resolve="IconDeclaration" />
     </node>
   </node>
   <node concept="1YbPZF" id="7Mb2akaesw7">
     <property role="TrG5h" value="typeof_IconResourceReference" />
+    <property role="3GE5qa" value="iconBundle" />
     <node concept="3clFbS" id="7Mb2akaesw8" role="18ibNy">
       <node concept="1Z5TYs" id="7Mb2akaesw9" role="3cqZAp">
         <node concept="mw_s8" id="7Mb2akaeswa" role="1ZfhKB">
@@ -144,7 +150,32 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaeswg" role="1YuTPh">
       <property role="TrG5h" value="irr" />
-      <ref role="1YaFvo" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr7" resolve="IconReference" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5bVxHVEur_I">
+    <property role="TrG5h" value="typeof_IconResourceExpression" />
+    <node concept="3clFbS" id="5bVxHVEur_J" role="18ibNy">
+      <node concept="1Z5TYs" id="5bVxHVEur_K" role="3cqZAp">
+        <node concept="mw_s8" id="5bVxHVEur_L" role="1ZfhKB">
+          <node concept="2c44tf" id="5bVxHVEur_M" role="mwGJk">
+            <node concept="3uibUv" id="5bVxHVEuuHc" role="2c44tc">
+              <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5bVxHVEur_O" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5bVxHVEur_P" role="mwGJk">
+            <node concept="1YBJjd" id="5bVxHVEur_Q" role="1Z2MuG">
+              <ref role="1YBMHb" node="5bVxHVEur_R" resolve="iconResourceExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5bVxHVEur_R" role="1YuTPh">
+      <property role="TrG5h" value="iconResourceExpression" />
+      <ref role="1YaFvo" to="1oap:5bVxHVEuklu" resolve="IconResourceExpression" />
     </node>
   </node>
 </model>

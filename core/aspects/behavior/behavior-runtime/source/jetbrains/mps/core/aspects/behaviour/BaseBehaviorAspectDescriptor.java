@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,16 +31,21 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * Appeared only in 3.3, previously generated behavior aspect descriptors do not extend this class
  */
 public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDescriptor {
+  private final static String DEFAULT_CONCEPT_NAME = "<random concept name from BaseBehaviorAspectDescriptor; method should not have been used>";
+
   /**
-   * Main API for behavior aspect descriptor.
-   * Will move up to the interface after 3.3
+   * @deprecated use {@link #getDescriptor(SAbstractConcept)} instead
    */
   @Nullable
   @ToRemove(version = 3.4)
   public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    return getDescriptor(MetaAdapterFactory.getConcept(conceptId, "<random concept name from IntentionAspectBase; method should not have been used>"));
+    return getDescriptor(MetaAdapterFactory.getConcept(conceptId, DEFAULT_CONCEPT_NAME));
   }
 
+  /**
+   * Main API for behavior aspect descriptor.
+   * Will move up to the interface after 3.4
+   */
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     //default implementation to be removed after 3.4
@@ -53,12 +57,5 @@ public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDesc
     }
 
     return null;
-  }
-
-  @Nullable
-  @ToRemove(version = 3.4)
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    throw new UnsupportedOperationException();
   }
 }

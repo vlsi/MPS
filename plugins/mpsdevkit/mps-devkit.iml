@@ -28,7 +28,7 @@
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-util" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="module" module-name="mps-icons" />

@@ -204,8 +204,7 @@ public class ConceptDescriptorBuilder {
         shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope,
-        sourceNodeRef,
-        myIcon);
+        sourceNodeRef);
   }
 
   public static class Link {

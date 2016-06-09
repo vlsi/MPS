@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -74,37 +75,52 @@ public class ConceptIconLoader {
   }
 
   private static Icon getIconFor(IFile file) {
-    ImageIcon icon = null;
-    if (file.exists()) {
-      byte[] image = new byte[(int) file.length()];
-      InputStream is = null;
+    if (!file.exists()) {
+      return null;
+    }
+
+    InputStream is = null;
+    try {
+      is = file.openInputStream();
+      return getIconFor(is);
+    } catch (IOException e) {
+      LOG.error(null, e);
+      return null;
+    } finally {
       try {
-        is = file.openInputStream();
-        int current = 0;
-        while (true) {
-          int result = is.read(image, current, image.length - current);
-          if (result == -1 || result == 0) {
-            break;
-          } else {
-            current += result;
-          }
+        if (is != null) {
+          is.close();
         }
       } catch (IOException e) {
         LOG.error(null, e);
-      } finally {
-        try {
-          if (is != null) {
-            is.close();
-          }
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
-      icon = new ImageIcon(image);
-      if ((icon.getImageLoadStatus() & IMAGE_LOADED) == 0) {
-        icon = null;
       }
     }
-    return icon;
+  }
+
+  public static Icon getIconFor(@NotNull InputStream is) {
+    byte[] image = new byte[0];
+    try {
+      image = new byte[is.available()];
+    } catch (IOException e) {
+      LOG.error(null, e);
+    }
+    try {
+      int current = 0;
+      while (true) {
+        int result = is.read(image, current, image.length - current);
+        if (result == -1 || result == 0) {
+          break;
+        } else {
+          current += result;
+        }
+      }
+    } catch (IOException e) {
+      LOG.error(null, e);
+    }
+    ImageIcon icon = new ImageIcon(image);
+    if ((icon.getImageLoadStatus() & IMAGE_LOADED) != 0) {
+      return icon;
+    }
+    return null;
   }
 }

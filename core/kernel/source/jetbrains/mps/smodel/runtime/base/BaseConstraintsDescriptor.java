@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
@@ -28,13 +29,17 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -44,6 +49,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -368,10 +375,29 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   @Nullable
   @Override
-  public Icon getInstanceIcon(SNode node) {
+  public IconResource getInstanceIcon(SNode node) {
     //compatibility code introduced before 3.4
     //we can remove this code when users migrate to new method in constraints
-    return ConceptIconLoader.loadIcon(node.getConcept().getDeclarationNode(), getAlternativeIcon(node));
+    return new IconResource("", null) {
+      @Override
+      public InputStream getResource() {
+        String iconPath = MacrosFactory.forModule((AbstractModule) node.getConcept().getDeclarationNode().getModel().getModule()).expandPath(
+            getAlternativeIcon(node));
+        if (iconPath == null) {
+          return null;
+        }
+
+        IFile file = FileSystem.getInstance().getFileByPath(iconPath);
+        if (!file.exists()) {
+          return null;
+        }
+        try {
+          return file.openInputStream();
+        } catch (IOException e) {
+          return null;
+        }
+      }
+    };
   }
 
   @Deprecated

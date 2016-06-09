@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -152,8 +151,10 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
-      jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(source.openInputStream());
-      Map<String, String> result = BinaryPersistence.getDigestMap(model);
+      SModelHeader binaryModelHeader = BinaryPersistence.readHeader(source);
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
+      final ModelLoadResult loadedModel = BinaryPersistence.readModel(binaryModelHeader, source, false);
+      Map<String, String> result = BinaryPersistence.getDigestMap(loadedModel.getModel(), binaryModelHeader.getMetaInfoProvider());
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
     } catch (ModelReadException ignored) {
@@ -161,19 +162,6 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
     } catch (IOException e) {
       /* ignore */
     }
-    return null;
-  }
-
-  public static Map<String, String> getDigestMap(byte[] input) {
-    try {
-      jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(new ByteArrayInputStream(input));
-      Map<String, String> result = BinaryPersistence.getDigestMap(model);
-      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(input));
-      return result;
-
-    } catch (ModelReadException ignored) {
-    }
-
     return null;
   }
 

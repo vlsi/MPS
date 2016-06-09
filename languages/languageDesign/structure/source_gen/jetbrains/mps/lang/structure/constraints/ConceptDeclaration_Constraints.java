@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -30,8 +30,8 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptDeclaration_Constraints() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
   }
-  public Icon getInstanceIcon(SNode node) {
-    return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) ? IconContainer.ICON_a0a0b : IconContainer.ICON_a0a0b_0);
+  public IconResource getInstanceIcon(SNode node) {
+    return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) ? IconContainer.RESOURCE_a0a0b : IconContainer.RESOURCE_a0a0b_0);
   }
 
   @Override

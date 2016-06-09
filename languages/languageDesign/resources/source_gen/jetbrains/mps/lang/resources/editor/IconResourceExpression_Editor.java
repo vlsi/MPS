@@ -21,16 +21,14 @@ public class IconResourceExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mgsg6_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_mgsg6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_mgsg6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mgsg6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mgsg6_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mgsg6_d0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_mgsg6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
-    editorCell.setCellId("Constant_mgsg6_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_mgsg6_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
   private EditorCell createConstant_mgsg6_b0(EditorContext editorContext, SNode node) {
@@ -40,7 +38,7 @@ public class IconResourceExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNode_mgsg6_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new IconResourceExpression_Editor.iconSingleRoleHandler_mgsg6_c0(node, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"), editorContext);
+    SingleRoleCellProvider provider = new IconResourceExpression_Editor.iconSingleRoleHandler_mgsg6_c0(node, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, 0x52fb86deea79b940L, "icon"), editorContext);
     return provider.createCell();
   }
   private class iconSingleRoleHandler_mgsg6_c0 extends SingleRoleCellProvider {

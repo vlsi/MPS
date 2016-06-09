@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,15 +109,6 @@ public final class BinaryPersistence {
     }
   }
 
-  @NotNull
-  public static SModel readModel(@NotNull final InputStream content) throws ModelReadException {
-    try {
-      return loadModel(content, false, null).getModel();
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.toString(), e);
-    }
-  }
-
   public static void writeModel(@NotNull SModel model, @NotNull StreamDataSource dataSource) throws IOException {
     if (dataSource.isReadOnly()) {
       throw new IOException(String.format("`%s' is read-only", dataSource.getLocation()));
@@ -134,12 +125,12 @@ public final class BinaryPersistence {
     }
   }
 
-  public static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model) {
+  public static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model, @Nullable MetaModelInfoProvider mmiProvider) {
     Map<String, String> result = new LinkedHashMap<String, String>();
     IdInfoRegistry meta = null;
     DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
     try {
-      BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(model.getReference()), model);
+      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo(model.getReference()) : mmiProvider, model);
       ModelOutputStream mos = new ModelOutputStream(os);
       meta = bp.saveModelProperties(mos);
       mos.flush();

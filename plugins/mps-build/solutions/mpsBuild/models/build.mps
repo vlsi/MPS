@@ -9308,6 +9308,12 @@
               <ref role="3bR37D" node="7Kfy9QB6L4B" resolve="jetbrains.mps.lang.dataFlow" />
             </node>
           </node>
+          <node concept="1SiIV0" id="26HxXQQ1cHo" role="3bR37C">
+            <node concept="3bR9La" id="26HxXQQ1cHp" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruI9" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruI8" role="1SiIV1">
@@ -11550,6 +11556,12 @@
             <node concept="3bR9La" id="568H86IHHlH" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="14x5$qAUbkv" resolve="jetbrains.mps.lang.resources" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="3NpSYASrBkU" role="3bR37C">
+            <node concept="3bR9La" id="3NpSYASrBkV" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7YI57w6K0rx" resolve="jetbrains.mps.lang.smodel#1139186730696" />
             </node>
           </node>
         </node>
@@ -26972,6 +26984,18 @@
           <node concept="3bR9La" id="6IZ_b08qDNr" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5WwfO6A6qZ" role="3bR37C">
+          <node concept="3bR9La" id="5WwfO6A6r0" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5WwfO6A6r1" role="3bR37C">
+          <node concept="3bR9La" id="5WwfO6A6r2" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="307DWrMiIBc" resolve="jetbrains.mps.lang.generator.plan" />
           </node>
         </node>
       </node>

@@ -15,6 +15,8 @@ import org.jetbrains.mps.samples.DecisionTable.dataFlow.DataFlowAspectDescriptor
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import org.jetbrains.mps.samples.DecisionTable.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import org.jetbrains.mps.samples.DecisionTable.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import org.jetbrains.mps.samples.DecisionTable.typesystem.TypesystemDescriptor;
 
@@ -56,6 +58,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new org.jetbrains.mps.samples.DecisionTable.structure.StructureAspectDescriptor();
+    }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return (T) new ConceptPresentationAspectImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();

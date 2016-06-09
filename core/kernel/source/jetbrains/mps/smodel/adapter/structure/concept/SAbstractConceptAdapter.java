@@ -333,30 +333,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return d.getHelpUrl();
   }
 
-  @Override
-  @Nullable
-  public Icon getIcon() {
-    SAbstractConceptAdapter current = this;
-    while (current != null) {
-      ConceptDescriptor cd = current.getConceptDescriptor();
-      if (cd == null) {
-        return null;
-      }
-      Icon icon = cd.getIcon();
-      if (icon != null) {
-        return icon;
-      }
-      current = (current instanceof SConceptAdapter) ? ((SConceptAdapter) ((SConceptAdapter) current).getSuperConcept()) : null;
-    }
-
-    //compatibility code, can be removed after 3.4
-    SNode dn = getDeclarationNode();
-    if (dn == null) {
-      return null;
-    }
-    return ConceptIconLoader.getIconForConcept(dn);
-  }
-
   /**
    * @return true iff the underlying descriptor is present
    */

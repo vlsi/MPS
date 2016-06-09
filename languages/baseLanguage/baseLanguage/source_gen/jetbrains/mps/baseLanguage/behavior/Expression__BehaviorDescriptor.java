@@ -55,7 +55,7 @@ public final class Expression__BehaviorDescriptor extends BaseBHDescriptor {
     return (boolean) Expression__BehaviorDescriptor.constant_id1653mnvAgr2.invoke(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(__thisNode__)));
   }
   /*package*/ static Object getCompileTimeConstantValue_idi1LP2xI(@NotNull SNode __thisNode__, SModule module) {
-    throw new UnsupportedOperationException();
+    return null;
   }
   /*package*/ static boolean isLegalAsStatement_idi26MfYG(@NotNull SNode __thisNode__) {
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3bL, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
