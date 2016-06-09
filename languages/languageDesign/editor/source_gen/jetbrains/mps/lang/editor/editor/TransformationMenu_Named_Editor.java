@@ -12,10 +12,11 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -71,6 +72,10 @@ public class TransformationMenu_Named_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("conceptDeclaration");
     }
+    Style style = new StyleImpl();
+    SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
