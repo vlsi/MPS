@@ -77,9 +77,6 @@
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.paths.PluginPathMacroInstaller</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.workbench.action.IRegistryManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.action.DummyRegistryManager</implementation-class>
     </component>

@@ -7,7 +7,7 @@
       <properties>
         <property name="home.idea_ce" value="$APPLICATION_HOME_DIR$/" />
         <property name="plugin.version" value="MPS-3.0.SNAPSHOT" />
-        <property name="home.idea_ce.plugins" value="$PLUGINS_PATH$/" />
+        <property name="home.idea_ce.plugins" value="$APPLICATION_PLUGINS_DIR$/" />
         <property name="plugin.prefix" value="" />
       </properties>
       <executeOn event="beforeCompilation" target="preBuildCore" />

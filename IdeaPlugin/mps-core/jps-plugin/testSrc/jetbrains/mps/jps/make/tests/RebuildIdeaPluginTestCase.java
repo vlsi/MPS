@@ -46,10 +46,10 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
   @NonNls
   private static final String JAR_EXT = ".jar";
   @NonNls
-  private static final String PLUGINS_PATH_ENV = "PLUGINS_PATH";
+  private static final String APPLICATION_PLUGINS_DIR_ENV = "APPLICATION_PLUGINS_DIR";
   private static final String JDK_NAME = "1.8";
   private String IDEA_HOME;
-  private String PLUGINS_PATH;
+  private String APPLLICATION_PLUGINS_DIR;
   private String JAVA_HOME;
 
   @NotNull
@@ -60,13 +60,13 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
 
   private void setUpParameters() {
     IDEA_HOME = PathManager.getHomePathFor(PathManager.class);
-    PLUGINS_PATH = PathManager.getPluginsPath();
+    APPLLICATION_PLUGINS_DIR = PathManager.getPluginsPath();
     JAVA_HOME = System.getProperty("jdk.home.path");
     if (JAVA_HOME == null) {
       JAVA_HOME = System.getenv(JAVA_HOME_ENV);
     }
     assert IDEA_HOME != null;
-    assert PLUGINS_PATH != null;
+    assert APPLLICATION_PLUGINS_DIR != null;
     assert JAVA_HOME != null;
   }
 
@@ -91,24 +91,24 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     copyToProject("../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
 
     // this is the counter-part of pre-building and copying core jars before compiling IdeaPlugin sources
-    copyToProject(PLUGINS_PATH + "/mps-core/lib", "IdeaPlugin/mps-core/lib");
-    copyToProject(PLUGINS_PATH + "/mps-core/languages", "IdeaPlugin/mps-core/languages");
+    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-core/lib", "IdeaPlugin/mps-core/lib");
+    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-core/languages", "IdeaPlugin/mps-core/languages");
 
-    copyToProject(PLUGINS_PATH + "/mps-testing/lib/jetbrains.mps.lang.test.util.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.util.jar");
-    copyToProject(PLUGINS_PATH + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
-    copyToProject(PLUGINS_PATH + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.runtime.jar");
+    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/lib/jetbrains.mps.lang.test.util.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.util.jar");
+    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
+    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.runtime.jar");
 
     loadProject(projectDir);
     setUpJdk();
     setUpIdeaSdk();
-    addBuildParameter(PLUGINS_PATH_ENV, PLUGINS_PATH);
+    addBuildParameter(APPLICATION_PLUGINS_DIR_ENV, APPLLICATION_PLUGINS_DIR);
     rebuildAll();
   }
 
   @NotNull
   @Override
   protected Map<String, String> getAdditionalPathVariables() {
-    return Collections.singletonMap(PLUGINS_PATH_ENV, PLUGINS_PATH);
+    return Collections.singletonMap(APPLICATION_PLUGINS_DIR_ENV, APPLLICATION_PLUGINS_DIR);
   }
 
   private void setUpJdk() {

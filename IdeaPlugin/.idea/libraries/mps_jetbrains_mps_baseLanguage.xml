@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="mps.jetbrains.mps.baseLanguage">
     <CLASSES>
-      <root url="jar://$PLUGINS_PATH$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
