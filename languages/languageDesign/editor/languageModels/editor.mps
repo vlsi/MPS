@@ -10248,15 +10248,10 @@
       </node>
       <node concept="2iRkQZ" id="7dwhomQPJxh" role="2iSdaV" />
     </node>
-    <node concept="3EZMnI" id="6QkX39$SEO2" role="2wV5jI">
-      <node concept="PMmxH" id="2wdLO7KhY9Y" role="3EZMnx">
-        <property role="1cu_pB" value="0" />
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6QkX39$SEO3" role="2iSdaV" />
-      <node concept="VPXOz" id="6QkX39$SEO5" role="3F10Kt">
-        <property role="VOm3f" value="true" />
-      </node>
+    <node concept="PMmxH" id="2wdLO7KhY9Y" role="2wV5jI">
+      <property role="1cu_pB" value="0" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <ref role="1k5W1q" node="i0pPgF8" resolve="rootCellModelStyle" />
     </node>
   </node>
   <node concept="24kQdi" id="6_IODUXv1gN">
