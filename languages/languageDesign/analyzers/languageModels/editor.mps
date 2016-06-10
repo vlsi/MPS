@@ -913,5 +913,12 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="3eVfSJeeWpn">
+    <property role="3GE5qa" value="Rules" />
+    <ref role="1XX52x" to="bj1v:3eVfSJeeWos" resolve="ProgramParameter" />
+    <node concept="3F0ifn" id="3eVfSJeeWpp" role="2wV5jI">
+      <property role="3F0ifm" value="program" />
+    </node>
+  </node>
 </model>
 

@@ -15,7 +15,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -498,11 +498,6 @@
       <ref role="20lvS9" node="4ipeeu8UrBu" resolve="ConceptCondition" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7jE3VEJNDMv">
-    <property role="TrG5h" value="InsertBeforePosition" />
-    <property role="EcuMT" value="8424563347437821087" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
   <node concept="1TIwiD" id="7jE3VEJNFWz">
     <property role="TrG5h" value="InsertPosition" />
     <property role="EcuMT" value="8424563347437829923" />
@@ -578,6 +573,18 @@
         <ref role="trN6q" node="5JpT3MjX6u9" resolve="Analyzer" />
       </node>
     </node>
+  </node>
+  <node concept="1TIwiD" id="7jE3VEJNDMv">
+    <property role="TrG5h" value="InsertBeforePosition" />
+    <property role="EcuMT" value="8424563347437821087" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="3eVfSJeeWos">
+    <property role="EcuMT" value="3727642986272245276" />
+    <property role="3GE5qa" value="Rules" />
+    <property role="TrG5h" value="ProgramParameter" />
+    <property role="34LRSv" value="program" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>
 

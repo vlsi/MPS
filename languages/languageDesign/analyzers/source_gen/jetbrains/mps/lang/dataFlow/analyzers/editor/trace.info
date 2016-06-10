@@ -11,7 +11,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,127,0" name="jetbrains.mps.lang.dataFlow.analyzers.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,132,0" name="jetbrains.mps.lang.dataFlow.analyzers.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/3325264799421258462">
@@ -117,6 +117,31 @@
       </scope>
       <unit id="3325264799421258462" at="34,0,60,0" name="jetbrains.mps.lang.dataFlow.analyzers.editor.InstructionParameter_Editor$typeSingleRoleHandler_dh6vg8_a0" />
       <unit id="3325264799421258462" at="18,0,77,0" name="jetbrains.mps.lang.dataFlow.analyzers.editor.InstructionParameter_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/3727642986272245335">
+    <file name="ProgramParameter_Editor.java">
+      <node id="3727642986272245335" at="12,79,13,61" concept="6" />
+      <node id="3727642986272245337" at="15,87,16,93" concept="5" />
+      <node id="3727642986272245337" at="16,93,17,46" concept="2" />
+      <node id="3727642986272245337" at="17,46,18,28" concept="2" />
+      <node id="3727642986272245337" at="18,28,19,34" concept="2" />
+      <node id="3727642986272245337" at="19,34,20,22" concept="6" />
+      <node id="3727642986272245335" at="12,0,15,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="3727642986272245337" at="15,0,22,0" concept="4" trace="createConstant_88mgfn_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="3727642986272245335" at="12,79,13,61" />
+      <scope id="3727642986272245335" at="12,0,15,0">
+        <var name="editorContext" id="3727642986272245335" />
+        <var name="node" id="3727642986272245335" />
+      </scope>
+      <scope id="3727642986272245337" at="15,87,20,22">
+        <var name="editorCell" id="3727642986272245337" />
+      </scope>
+      <scope id="3727642986272245337" at="15,0,22,0">
+        <var name="editorContext" id="3727642986272245337" />
+        <var name="node" id="3727642986272245337" />
+      </scope>
+      <unit id="3727642986272245335" at="11,0,23,0" name="jetbrains.mps.lang.dataFlow.analyzers.editor.ProgramParameter_Editor" />
     </file>
   </root>
   <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/3993089038373626370">

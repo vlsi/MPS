@@ -938,5 +938,31 @@
       <ref role="1YaFvo" to="bj1v:nUEAIXlVr8" resolve="Rule" />
     </node>
   </node>
+  <node concept="1YbPZF" id="3eVfSJefSr2">
+    <property role="TrG5h" value="typeof_ProgramParameter" />
+    <property role="3GE5qa" value="Rules" />
+    <node concept="3clFbS" id="3eVfSJefSr3" role="18ibNy">
+      <node concept="1Z5TYs" id="3eVfSJefSF3" role="3cqZAp">
+        <node concept="mw_s8" id="3eVfSJefSFn" role="1ZfhKB">
+          <node concept="2c44tf" id="3eVfSJefSFj" role="mwGJk">
+            <node concept="3uibUv" id="3eVfSJefSGs" role="2c44tc">
+              <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3eVfSJefSF6" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3eVfSJefSrf" role="mwGJk">
+            <node concept="1YBJjd" id="3eVfSJefSsZ" role="1Z2MuG">
+              <ref role="1YBMHb" node="3eVfSJefSr5" resolve="programParameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3eVfSJefSr5" role="1YuTPh">
+      <property role="TrG5h" value="programParameter" />
+      <ref role="1YaFvo" to="bj1v:3eVfSJeeWos" resolve="ProgramParameter" />
+    </node>
+  </node>
 </model>
 

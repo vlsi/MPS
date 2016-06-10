@@ -108,19 +108,15 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.Analyzer_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ApplicableNodeReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ConceptCondition_Constraints" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.EmitInstruction_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.InstructionReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.IsOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ProgramParameter_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.Rule_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.dataFlow.analyzers.constraints.EmitInstruction_Constraints" file="EmitInstruction_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.constraints.InstructionReference_Constraints" file="InstructionReference_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
@@ -168,6 +164,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.dataFlow.analyzers.constraints.ProgramParameter_Constraints" file="ProgramParameter_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.constraints.Rule_Constraints" file="Rule_Constraints.java">
