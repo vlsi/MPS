@@ -273,6 +273,7 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Empty_zg23bd_i0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

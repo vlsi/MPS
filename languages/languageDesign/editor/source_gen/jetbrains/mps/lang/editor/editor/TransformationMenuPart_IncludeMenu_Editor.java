@@ -20,6 +20,9 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
 public class TransformationMenuPart_IncludeMenu_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,6 +36,7 @@ public class TransformationMenuPart_IncludeMenu_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createRefNode_xaduas_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xaduas_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xaduas_d0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_xaduas_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_xaduas_a0(EditorContext editorContext, SNode node) {
@@ -115,5 +119,16 @@ public class TransformationMenuPart_IncludeMenu_Editor extends DefaultNodeEditor
     protected String getNoTargetText() {
       return "current node";
     }
+  }
+  private EditorCell createEmpty_xaduas_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+    editorCell.setCellId("Empty_xaduas_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
 }
