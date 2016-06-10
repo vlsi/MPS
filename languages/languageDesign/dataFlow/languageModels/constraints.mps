@@ -126,6 +126,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
+      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
@@ -337,6 +338,26 @@
                   </node>
                   <node concept="3JvlWi" id="1_dIXlWD3rO" role="2OqNvi" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="3eVfSJejhwT">
+    <ref role="1M2myG" to="tp41:2$iKY2cjNc$" resolve="GetCodeForExpression" />
+    <node concept="nKS2y" id="3eVfSJejhx6" role="1MLUbF">
+      <node concept="3clFbS" id="3eVfSJejhx7" role="2VODD2">
+        <node concept="3clFbF" id="3eVfSJejhCg" role="3cqZAp">
+          <node concept="2OqwBi" id="3eVfSJejipF" role="3clFbG">
+            <node concept="2OqwBi" id="3eVfSJejhPO" role="2Oq$k0">
+              <node concept="nLn13" id="3eVfSJejhCf" role="2Oq$k0" />
+              <node concept="2Rxl7S" id="3eVfSJeji67" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="3eVfSJejiAy" role="2OqNvi">
+              <node concept="chp4Y" id="3eVfSJejiHU" role="cj9EA">
+                <ref role="cht4Q" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
               </node>
             </node>
           </node>
