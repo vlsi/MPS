@@ -91,19 +91,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
-  private final MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
+  private final MyToggleAction myWarningsAction = new MyToggleAction("Show Warning Messages", Icons.WARNING_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasWarnings();
     }
   };
-  private final MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", Icons.INFORMATION_ICON) {
+  private final MyToggleAction myInfoAction = new MyToggleAction("Show Informational Messages", Icons.INFORMATION_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasInfo();
     }
   };
-  private final MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", Icons.AUTOSCROLLS_ICON) {
+  private final MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll to Source", Icons.AUTOSCROLLS_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasHintObjects();
@@ -635,7 +635,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages limit", null, String.valueOf(MessageList.this.myMaxListSize),
+      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages Limit", null, String.valueOf(MessageList.this.myMaxListSize),
           new InputValidatorEx() {
             @Nullable
             @Override
