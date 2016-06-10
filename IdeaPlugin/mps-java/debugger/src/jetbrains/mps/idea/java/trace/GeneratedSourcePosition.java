@@ -43,6 +43,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Optional;
+import java.util.stream.Stream;
+
 /**
  * Use this class for mapping debugger position (type, file, line number) to
  * some stuff as: node, psi file.
@@ -94,8 +97,8 @@ public class GeneratedSourcePosition {
   }
 
   public static GeneratedSourcePosition fromLocation(Project project, String unitName, String fileName, int line) {
-    DebugInfo di = new DefaultTraceInfoProvider(ProjectHelper.getProjectRepository(project)).debugInfo(NameUtil.namespaceFromLongName(unitName)).findFirst().get();
-    return new GeneratedSourcePosition(di == null ? null : new BaseLanguageNodeLookup(di).getNodeAt(fileName, line), unitName, fileName, line);
+    Optional<DebugInfo> di = new DefaultTraceInfoProvider(ProjectHelper.getProjectRepository(project)).debugInfo(NameUtil.namespaceFromLongName(unitName)).findFirst();
+    return new GeneratedSourcePosition(!di.isPresent() ? null : new BaseLanguageNodeLookup(di.get()).getNodeAt(fileName, line), unitName, fileName, line);
   }
 
 
