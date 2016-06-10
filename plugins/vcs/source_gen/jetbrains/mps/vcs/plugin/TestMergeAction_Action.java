@@ -16,16 +16,23 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileChooser.FileChooser;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
-import com.intellij.openapi.diff.SimpleContent;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.diff.merge.MergeRequest;
+import com.intellij.diff.DiffRequestFactory;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.diff.DiffManager;
+import com.intellij.diff.InvalidDiffRequestException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -74,28 +81,29 @@ public class TestMergeAction_Action extends BaseAction {
       public void run() {
         VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
 
-        final String resFile;
-        SModel[] zipped;
+        final String resFilePath;
+        String[] zipped;
         try {
-          zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
-          resFile = File.createTempFile("mpstmp", ".result").getAbsolutePath();
+          zipped = MergeBackupUtil.loadZippedModelsAsText(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
+          resFilePath = File.createTempFile("mpstmp", MPSExtentions.DOT_MODEL).getAbsolutePath();
         } catch (Exception e) {
           e.printStackTrace();
           return;
         }
 
-        SimpleContent[] diffContents = Sequence.fromIterable(Sequence.fromArray(zipped)).select(new ISelector<SModel, SimpleContent>() {
-          public SimpleContent select(final SModel m) {
-            final Wrappers._T<String> content = new Wrappers._T<String>();
-            ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
-              public void run() {
-                content.value = ModelPersistence.modelToString(m);
-              }
-            });
-            return new SimpleContent(content.value, MPSFileTypeFactory.MPS_FILE_TYPE);
+        VirtualFile resFile = VirtualFileUtils.getVirtualFile(resFilePath);
+        List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), zipped);
+        List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Local Version", "Merge Result", "Remote Version");
+        try {
+          MergeRequest request = DiffRequestFactory.getInstance().createMergeRequest(((Project) MapSequence.fromMap(_params).get("project")), MPSFileTypeFactory.MPS_FILE_TYPE, FileDocumentManager.getInstance().getDocument(resFile), contents, "Merge files from " + vFile + " and save result to " + resFilePath, titles, null);
+          DiffManager.getInstance().showMerge(((Project) MapSequence.fromMap(_params).get("project")), request);
+        } catch (InvalidDiffRequestException e) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("", e);
           }
-        }).toGenericArray(SimpleContent.class);
+        }
       }
     });
   }
+  protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 }

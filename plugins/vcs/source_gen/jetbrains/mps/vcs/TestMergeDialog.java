@@ -18,14 +18,25 @@ import java.util.Scanner;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
-import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.project.MPSExtentions;
+import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.diff.merge.MergeRequest;
+import com.intellij.diff.DiffRequestFactory;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.diff.DiffManager;
+import com.intellij.diff.InvalidDiffRequestException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /**
  * Class for analyzing merge driver dumps
@@ -66,25 +77,25 @@ public class TestMergeDialog {
     }
     TestMergeDialog.ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     IconLoader.activate();
-    final SModel[] models = new SModel[3];
+    final String[] models = new String[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
-      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
+      final String[] zipped = MergeBackupUtil.loadZippedModelsAsText(new File(args[0]), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
       models[0] = zipped[0];
       models[1] = zipped[1];
       models[2] = zipped[2];
       if (args.length == 1) {
-        resultFile = File.createTempFile("mpstmd", "").getAbsolutePath();
+        resultFile = File.createTempFile("mpstmd", MPSExtentions.DOT_MODEL).getAbsolutePath();
       } else {
         resultFile = args[1];
       }
     } else
     if (args.length == 4 || args.length == 3) {
-      models[0] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[0])), false);
-      models[1] = VCSPersistenceSupport.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[1])), false);
-      models[2] = ModelPersistence.readModel(new FileDataSource(FileSystem.getInstance().getFileByPath(args[2])), false);
+      models[0] = FileUtil.loadFile(new File(args[0]));
+      models[1] = FileUtil.loadFile(new File(args[1]));
+      models[2] = FileUtil.loadFile(new File(args[2]));
       if (args.length == 3) {
-        resultFile = File.createTempFile("", "").getAbsolutePath();
+        resultFile = File.createTempFile("", MPSExtentions.DOT_MODEL).getAbsolutePath();
       } else {
         resultFile = args[3];
       }
@@ -92,6 +103,18 @@ public class TestMergeDialog {
       System.err.println("There must be 1-4 parameters");
       return;
     }
-    final String finalResultFile = resultFile;
+
+    VirtualFile resFile = VirtualFileUtils.getVirtualFile(resultFile);
+    List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), models);
+    List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Local Version", "Merge Result", "Remote Version");
+    try {
+      MergeRequest request = DiffRequestFactory.getInstance().createMergeRequest(ourProject, MPSFileTypeFactory.MPS_FILE_TYPE, FileDocumentManager.getInstance().getDocument(resFile), contents, "Merge files and save result to " + resultFile, titles, null);
+      DiffManager.getInstance().showMerge(ourProject, request);
+    } catch (InvalidDiffRequestException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("", e);
+      }
+    }
   }
+  protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 }
