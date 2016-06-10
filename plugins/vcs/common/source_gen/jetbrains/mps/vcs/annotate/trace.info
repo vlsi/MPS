@@ -79,8 +79,6 @@
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/309173295241373953">
     <file name="AnnotationColumn.java">
-      <node id="8595271971828756900" at="394,27,394,27" concept="1" />
-      <node id="8595271971828756903" at="397,27,397,27" concept="1" />
       <node id="984655430730269535" at="123,0,124,0" concept="16" trace="ANNOTATION_COLOR" />
       <node id="4207419944012115539" at="124,0,125,0" concept="7" trace="myFont" />
       <node id="391337651435638531" at="125,0,126,0" concept="7" trace="myAspectSubcolumns" />
@@ -522,8 +520,6 @@
       <node id="5841940560826287359" at="621,0,714,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <node id="5841940560826287346" at="619,43,714,9" concept="6" />
       <node id="5841940560826267452" at="612,0,716,0" concept="11" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="8595271971828756900" at="394,27,394,27" />
-      <scope id="8595271971828756903" at="397,27,397,27" />
       <scope id="8595271971828756402" at="591,35,591,35" />
       <scope id="775786118952886434" at="718,46,718,46" />
       <scope id="775786118952885772" at="721,69,721,69" />
@@ -1597,9 +1593,6 @@
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/8955628568092675853">
     <file name="EditorUtils.java">
-      <node id="8955628568092676103" at="65,27,65,27" concept="1" />
-      <node id="8955628568092676107" at="68,27,68,27" concept="1" />
-      <node id="8955628568092676100" at="75,28,75,28" concept="1" />
       <node id="8955628568092676100" at="21,0,22,0" concept="7" trace="__CP__" />
       <node id="8955628568092676100" at="27,28,28,54" concept="0" />
       <node id="8955628568092676100" at="28,54,29,35" concept="13" />
@@ -1629,7 +1622,6 @@
       <node id="8955628568092676103" at="66,38,67,28" concept="2" />
       <node id="8955628568092676107" at="68,27,69,38" concept="6" />
       <node id="8955628568092676107" at="69,38,70,28" concept="2" />
-      <node id="8955628568092676110" at="71,27,72,59" concept="1" />
       <node id="8955628568092676111" at="71,27,72,59" concept="6" />
       <node id="8955628568092676110" at="72,59,73,39" concept="6" />
       <node id="8955628568092676110" at="73,39,74,28" concept="2" />
@@ -1656,12 +1648,8 @@
       <node id="8955628568092676098" at="15,81,93,20" concept="13" />
       <node id="8955628568092675853" at="15,0,95,0" concept="17" trace="getCellDescendants#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Iterable;" />
       <scope id="8955628568092675853" at="13,24,13,24" />
-      <scope id="8955628568092676103" at="65,27,65,27" />
-      <scope id="8955628568092676107" at="68,27,68,27" />
-      <scope id="8955628568092676100" at="75,28,75,28" />
       <scope id="8955628568092676108" at="30,27,31,105" />
       <scope id="8955628568092676117" at="40,28,41,105" />
-      <scope id="8955628568092676110" at="71,27,72,59" />
       <scope id="8955628568092676100" at="78,28,79,37" />
       <scope id="8955628568092675853" at="13,0,15,0" />
       <scope id="8955628568092676100" at="27,28,29,35" />

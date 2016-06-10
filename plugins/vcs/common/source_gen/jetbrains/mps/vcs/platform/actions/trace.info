@@ -573,10 +573,6 @@
   </root>
   <root nodeRef="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)/8230098746512809101">
     <file name="VcsActionsUtil.java">
-      <node id="8230098746512809234" at="147,27,147,27" concept="1" />
-      <node id="8230098746512809236" at="150,27,150,27" concept="1" />
-      <node id="8230098746512809252" at="153,27,153,27" concept="1" />
-      <node id="8230098746512809233" at="156,28,156,28" concept="1" />
       <node id="5864860390570954316" at="55,9,56,44" concept="10" />
       <node id="5864860390571454227" at="56,44,57,25" concept="10" />
       <node id="5864860390571230325" at="58,45,59,52" concept="5" />
@@ -650,7 +646,6 @@
       <node id="8230098746512809101" at="191,0,192,0" concept="14" trace="LOG" />
       <node id="8230098746512809423" at="52,0,54,0" concept="3" trace="VcsActionsUtil#()V" />
       <node id="5864860390572693857" at="62,0,65,0" concept="9" trace="compute#()Ljava/lang/String;" />
-      <node id="8230098746512809192" at="90,30,93,7" concept="1" />
       <node id="8230098746512809192" at="90,30,93,7" concept="8" />
       <node id="8230098746512809273" at="176,73,179,5" concept="8" />
       <node id="8230098746512809317" at="186,0,189,0" concept="9" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
@@ -676,10 +671,6 @@
       <node id="8230098746512809231" at="97,135,173,15" concept="11" />
       <node id="8230098746512809226" at="97,0,175,0" concept="15" trace="collectUnversionedFiles#(Lcom/intellij/openapi/vcs/impl/VcsFileStatusProvider;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/Iterable;" />
       <scope id="8230098746512809426" at="52,28,52,28" />
-      <scope id="8230098746512809234" at="147,27,147,27" />
-      <scope id="8230098746512809236" at="150,27,150,27" />
-      <scope id="8230098746512809252" at="153,27,153,27" />
-      <scope id="8230098746512809233" at="156,28,156,28" />
       <scope id="5864860390570733825" at="58,45,59,52" />
       <scope id="5864860390572693859" at="62,35,63,34" />
       <scope id="8230098746512809192" at="91,41,92,24" />
@@ -699,7 +690,6 @@
       <scope id="8230098746512809233" at="156,28,158,28" />
       <scope id="5864860390572693857" at="62,0,65,0" />
       <scope id="2034046503361616736" at="76,27,79,39" />
-      <scope id="8230098746512809192" at="90,30,93,7" />
       <scope id="8230098746512809237" at="139,27,142,34" />
       <scope id="8230098746512809233" at="143,28,146,34" />
       <scope id="8230098746512809317" at="186,0,189,0">
