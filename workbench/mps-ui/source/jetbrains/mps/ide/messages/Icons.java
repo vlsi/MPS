@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
 
 import javax.swing.Icon;
@@ -24,5 +25,6 @@ public class Icons {
   public static final Icon ERROR_ICON = General.Error;
   public static final Icon WARNING_ICON = General.Warning;
   public static final Icon AUTOSCROLLS_ICON = General.AutoscrollToSource;
+  public static final Icon CLEAR_ICON = Actions.GC;
 }
 

@@ -295,6 +295,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
     group.add(new MessagesLimitAction());
+    group.add(new ClearAction());
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
@@ -487,12 +488,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     populateActions(myList, group);
     group.addSeparator();
 
-    group.add(new AnAction("Clear", null, null) {
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        clear();
-      }
-    });
+    group.add(new ClearAction());
 
     return group;
   }
@@ -908,6 +904,17 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     @Override
     public String getPreviousOccurenceActionName() {
       return UsageViewBundle.message("action.previous.occurrence");
+    }
+  }
+
+  private class ClearAction extends AnAction {
+    public ClearAction() {
+      super("Clear", "Clear all messages", Icons.CLEAR_ICON);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent e) {
+      clear();
     }
   }
 }
