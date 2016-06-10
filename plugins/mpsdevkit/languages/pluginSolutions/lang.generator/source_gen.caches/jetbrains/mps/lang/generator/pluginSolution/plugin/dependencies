@@ -81,7 +81,6 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanDialog" file="DeriveGenPlanDialog.java">
-    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePanel" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.ui.ValidationInfo" />
@@ -106,8 +105,8 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.matcher.CompositeItemProvider" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProvider" />
+    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" />
+    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />

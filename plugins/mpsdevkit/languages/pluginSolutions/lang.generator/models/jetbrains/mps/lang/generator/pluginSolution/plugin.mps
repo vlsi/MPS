@@ -38,7 +38,6 @@
     <import index="bjdw" ref="r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)" />
     <import index="cuxm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.goTo.ui(MPS.Platform/)" />
     <import index="vyjg" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose.models(MPS.Platform/)" />
-    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
@@ -48,7 +47,6 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="1l1f" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.util.gotoByName(MPS.IDEA/)" />
-    <import index="rjzg" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.goTo.matcher(MPS.Platform/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
@@ -290,9 +288,6 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
-      </concept>
-      <concept id="1206629501431" name="jetbrains.mps.baseLanguage.structure.InstanceInitializer" flags="lg" index="3KIgzJ">
-        <child id="1206629521979" name="statementList" index="3KIlGz" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
@@ -3423,8 +3418,8 @@
     <node concept="312cEg" id="5PAPEu$jT6k" role="jymVt">
       <property role="TrG5h" value="myChoosePanel" />
       <node concept="3Tm6S6" id="5PAPEu$jT6l" role="1B3o_S" />
-      <node concept="3uibUv" id="5PAPEu$kCoC" role="1tU5fm">
-        <ref role="3uigEE" to="1l1f:~ChooseByNamePanel" resolve="ChooseByNamePanel" />
+      <node concept="3uibUv" id="BO14BJg7fU" role="1tU5fm">
+        <ref role="3uigEE" to="cuxm:~ChooseByNamePanel" resolve="ChooseByNamePanel" />
       </node>
     </node>
     <node concept="2tJIrI" id="13VSvAcNAsL" role="jymVt" />
@@ -4083,130 +4078,27 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5PAPEu$k2ZW" role="3cqZAp">
-          <node concept="37vLTI" id="5PAPEu$k5ow" role="3clFbG">
-            <node concept="2ShNRf" id="5PAPEu$k9Kq" role="37vLTx">
-              <node concept="YeOm9" id="5PAPEu$kgjC" role="2ShVmc">
-                <node concept="1Y3b0j" id="5PAPEu$kgjF" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="1l1f:~ChooseByNamePanel" resolve="ChooseByNamePanel" />
-                  <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.ide.util.gotoByName.ChooseByNameModel,java.lang.String,boolean,com.intellij.psi.PsiElement)" resolve="ChooseByNamePanel" />
-                  <node concept="3Tm1VV" id="5PAPEu$kgjG" role="1B3o_S" />
-                  <node concept="2OqwBi" id="5PAPEu$keBN" role="37wK5m">
-                    <node concept="37vLTw" id="5PAPEu$ke7u" role="2Oq$k0">
-                      <ref role="3cqZAo" node="13VSvAcKrNR" resolve="myProject" />
-                    </node>
-                    <node concept="liA8E" id="5PAPEu$kg3U" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="5PAPEu$kh2u" role="37wK5m">
-                    <ref role="3cqZAo" node="13VSvAcNwyC" resolve="chooseModel" />
-                  </node>
-                  <node concept="Xl_RD" id="5PAPEu$khqz" role="37wK5m">
-                    <property role="Xl_RC" value="" />
-                  </node>
-                  <node concept="3clFbT" id="5PAPEu$khWc" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                  <node concept="10Nm6u" id="5PAPEu$kiu4" role="37wK5m" />
-                  <node concept="3KIgzJ" id="5PAPEu$kji7" role="jymVt">
-                    <node concept="3clFbS" id="5PAPEu$kji9" role="3KIlGz">
-                      <node concept="3clFbF" id="5PAPEu$kkd6" role="3cqZAp">
-                        <node concept="37vLTI" id="5PAPEu$kkuM" role="3clFbG">
-                          <node concept="2ShNRf" id="5PAPEu$kkGw" role="37vLTx">
-                            <node concept="1pGfFk" id="5PAPEu$knuI" role="2ShVmc">
-                              <ref role="37wK5l" to="rjzg:~CompositeItemProvider.&lt;init&gt;(com.intellij.ide.util.gotoByName.ChooseByNameItemProvider...)" resolve="CompositeItemProvider" />
-                              <node concept="2ShNRf" id="5PAPEu$knHF" role="37wK5m">
-                                <node concept="1pGfFk" id="5PAPEu$kp1p" role="2ShVmc">
-                                  <ref role="37wK5l" to="rjzg:~MPSPackageItemProvider.&lt;init&gt;(com.intellij.psi.PsiElement)" resolve="MPSPackageItemProvider" />
-                                  <node concept="10Nm6u" id="5PAPEu$kpiK" role="37wK5m" />
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="5PAPEu$kpYI" role="37wK5m">
-                                <ref role="3cqZAo" to="1l1f:~ChooseByNameBase.myProvider" resolve="myProvider" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="5PAPEu$kkd5" role="37vLTJ">
-                            <ref role="3cqZAo" to="1l1f:~ChooseByNameBase.myProvider" resolve="myProvider" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2tJIrI" id="1AWsIjA$bH8" role="jymVt" />
-                  <node concept="2tJIrI" id="1AWsIjA$c0Y" role="jymVt" />
-                  <node concept="3clFb_" id="1AWsIjA$ckW" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="showTextFieldPanel" />
-                    <property role="DiZV1" value="false" />
-                    <property role="od$2w" value="false" />
-                    <node concept="3Tmbuc" id="1AWsIjA$ckX" role="1B3o_S" />
-                    <node concept="3cqZAl" id="1AWsIjA$ckZ" role="3clF45" />
-                    <node concept="3clFbS" id="1AWsIjA$cl3" role="3clF47">
-                      <node concept="3SKdUt" id="1AWsIjA$eGR" role="3cqZAp">
-                        <node concept="3SKdUq" id="1AWsIjA$eGS" role="3SKWNk">
-                          <property role="3SKdUp" value="intentionally no-op" />
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="1AWsIjA$f5M" role="3cqZAp">
-                        <node concept="3SKdUq" id="1AWsIjA$f5O" role="3SKWNk">
-                          <property role="3SKdUp" value="if not overridden, there's grey rectangle behind the dialog that dissapears on Esc or focus lost." />
-                        </node>
-                      </node>
-                      <node concept="3SKdUt" id="1AWsIjA$g6i" role="3cqZAp">
-                        <node concept="3SKdUq" id="1AWsIjA$g6k" role="3SKWNk">
-                          <property role="3SKdUp" value="Oh yes, don't try to find this in the documentation." />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="1AWsIjA$cl4" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="2tJIrI" id="5PAPEu$kW1i" role="jymVt" />
-                  <node concept="3clFb_" id="5PAPEu$kWjQ" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="doClose" />
-                    <property role="DiZV1" value="false" />
-                    <property role="od$2w" value="false" />
-                    <node concept="3Tmbuc" id="5PAPEu$kWjR" role="1B3o_S" />
-                    <node concept="3cqZAl" id="5PAPEu$kWjT" role="3clF45" />
-                    <node concept="37vLTG" id="5PAPEu$kWjU" role="3clF46">
-                      <property role="TrG5h" value="ok" />
-                      <node concept="10P_77" id="5PAPEu$kWjV" role="1tU5fm" />
-                    </node>
-                    <node concept="3clFbS" id="5PAPEu$kWjZ" role="3clF47">
-                      <node concept="3clFbJ" id="5PAPEu$kX4i" role="3cqZAp">
-                        <node concept="3clFbS" id="5PAPEu$kX4k" role="3clFbx">
-                          <node concept="3clFbF" id="5PAPEu$l0ai" role="3cqZAp">
-                            <node concept="2OqwBi" id="5PAPEu$l1Cr" role="3clFbG">
-                              <node concept="37vLTw" id="5PAPEu$l1gY" role="2Oq$k0">
-                                <ref role="3cqZAo" to="1l1f:~ChooseByNameBase.myActionListener" resolve="myActionListener" />
-                              </node>
-                              <node concept="liA8E" id="5PAPEu$l1QV" role="2OqNvi">
-                                <ref role="37wK5l" to="1l1f:~ChooseByNamePopupComponent$Callback.elementChosen(java.lang.Object):void" resolve="elementChosen" />
-                                <node concept="1rXfSq" id="5PAPEu$l2hB" role="37wK5m">
-                                  <ref role="37wK5l" to="1l1f:~ChooseByNameBase.getChosenElement():java.lang.Object" resolve="getChosenElement" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="5PAPEu$kXmN" role="3clFbw">
-                          <ref role="3cqZAo" node="5PAPEu$kWjU" resolve="ok" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="5PAPEu$kWk0" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
+        <node concept="3clFbF" id="BO14BJg2vv" role="3cqZAp">
+          <node concept="37vLTI" id="BO14BJg3Yj" role="3clFbG">
+            <node concept="2YIFZM" id="BO14BJg53p" role="37vLTx">
+              <ref role="37wK5l" to="cuxm:~MpsPopupFactory.createPanelForPackage(com.intellij.openapi.project.Project,com.intellij.ide.util.gotoByName.ChooseByNameModel,boolean):jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" resolve="createPanelForPackage" />
+              <ref role="1Pybhc" to="cuxm:~MpsPopupFactory" resolve="MpsPopupFactory" />
+              <node concept="2OqwBi" id="BO14BJg577" role="37wK5m">
+                <node concept="37vLTw" id="BO14BJg578" role="2Oq$k0">
+                  <ref role="3cqZAo" node="13VSvAcKrNR" resolve="myProject" />
+                </node>
+                <node concept="liA8E" id="BO14BJg579" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                 </node>
               </node>
+              <node concept="37vLTw" id="BO14BJg57a" role="37wK5m">
+                <ref role="3cqZAo" node="13VSvAcNwyC" resolve="chooseModel" />
+              </node>
+              <node concept="3clFbT" id="BO14BJg5zf" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
             </node>
-            <node concept="37vLTw" id="5PAPEu$k2ZU" role="37vLTJ">
+            <node concept="37vLTw" id="BO14BJg2vt" role="37vLTJ">
               <ref role="3cqZAo" node="5PAPEu$jT6k" resolve="myChoosePanel" />
             </node>
           </node>

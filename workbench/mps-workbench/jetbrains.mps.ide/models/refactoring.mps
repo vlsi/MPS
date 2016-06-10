@@ -3720,7 +3720,7 @@
               <ref role="3cqZAo" node="2v0NNHY7Bze" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="le0dhZSpLc" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -3751,7 +3751,7 @@
               <ref role="3cqZAo" node="2v0NNHY7Bze" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="2v0NNHY9Jl1" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
             </node>
           </node>
         </node>
@@ -5274,7 +5274,7 @@
               <ref role="3cqZAo" node="6YK8y67pnoM" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="6YK8y67pnr6" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -5305,7 +5305,7 @@
               <ref role="3cqZAo" node="6YK8y67pnoM" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="6YK8y67pnrG" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
             </node>
           </node>
         </node>

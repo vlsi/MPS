@@ -602,7 +602,7 @@
                 <ref role="3cqZAo" node="m2MuEX6ppL" resolve="myChooser" />
               </node>
               <node concept="liA8E" id="30VS_eRpd$o" role="2OqNvi">
-                <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+                <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
               </node>
             </node>
             <node concept="liA8E" id="30VS_eRpi0z" role="2OqNvi">
@@ -627,7 +627,7 @@
               <ref role="3cqZAo" node="m2MuEX6ppL" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="$BWYFf6flT" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
             </node>
           </node>
         </node>
@@ -688,7 +688,7 @@
               <ref role="3cqZAo" node="m2MuEX6ppL" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="29u3Sr2Sq2k" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
