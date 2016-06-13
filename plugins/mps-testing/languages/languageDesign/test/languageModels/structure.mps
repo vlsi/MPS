@@ -16,7 +16,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -50,7 +50,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -246,8 +248,8 @@
     <property role="R4oN_" value="tag for checking either type errors or error messages, attached to some node" />
     <property role="EcuMT" value="1215601147424" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3zy9SwK6V1b" role="PzmwI">
-      <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
+    <node concept="PrWs8" id="1kgh5Yab39U" role="PzmwI">
+      <ref role="PrY4T" node="1kgh5Yab2sH" resolve="INodesTestMethod" />
     </node>
     <node concept="PrWs8" id="3zy9SwK6V3d" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -840,6 +842,9 @@
         <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
+    <node concept="PrWs8" id="1kgh5Yab3a1" role="PzmwI">
+      <ref role="PrY4T" node="1kgh5Yab2sH" resolve="INodesTestMethod" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3aUmKV2nYBN">
     <property role="TrG5h" value="ScopesExpectedNode" />
@@ -1238,6 +1243,13 @@
       <property role="20kJfa" value="node" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1kgh5Yab2sH">
+    <property role="EcuMT" value="1517788251554588461" />
+    <property role="TrG5h" value="INodesTestMethod" />
+    <node concept="PrWs8" id="1kgh5Yab39S" role="PrDN$">
+      <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
     </node>
   </node>
 </model>

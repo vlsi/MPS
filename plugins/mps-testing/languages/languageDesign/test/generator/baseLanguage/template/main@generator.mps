@@ -1881,7 +1881,7 @@
       </node>
       <node concept="2tJIrI" id="7Uk8E1kIle$" role="jymVt" />
       <node concept="3clFb_" id="hLF7ERe" role="jymVt">
-        <property role="TrG5h" value="test_Operation" />
+        <property role="TrG5h" value="test_NodesTestMethod" />
         <node concept="3cqZAl" id="hLF7ERf" role="3clF45" />
         <node concept="3Tm1VV" id="hLF7ERg" role="1B3o_S" />
         <node concept="3clFbS" id="hLF7ERh" role="3clF47">
@@ -1889,10 +1889,10 @@
             <node concept="3cpWsn" id="hLF7ESi" role="3cpWs9">
               <property role="TrG5h" value="operation" />
               <node concept="3Tqbb2" id="hLF7ESj" role="1tU5fm">
-                <ref role="ehGHo" to="tp5g:hG7unSw" resolve="NodeCheckOperation" />
+                <ref role="ehGHo" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
               </node>
               <node concept="1PxgMI" id="i2npJ_Q" role="33vP2m">
-                <ref role="1m5ApE" to="tp5g:hG7unSw" resolve="NodeCheckOperation" />
+                <ref role="1m5ApE" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
                 <node concept="1rXfSq" id="2YdNGB0TIox" role="1m5AlR">
                   <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
                   <node concept="Xl_RD" id="2YdNGB0SmGL" role="37wK5m">
@@ -1922,35 +1922,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="1rXfSq" id="7Uk8E1kI9ap" role="1PxMeX">
-                  <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
-                  <node concept="Xl_RD" id="hQFbu1g" role="37wK5m">
-                    <property role="Xl_RC" value="nodeId" />
-                    <node concept="17Uvod" id="hQFbu1h" role="lGtFl">
-                      <property role="2qtEX9" value="value" />
-                      <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                      <node concept="3zFVjK" id="hQFbu1i" role="3zH0cK">
-                        <node concept="3clFbS" id="hQFbu1j" role="2VODD2">
-                          <node concept="3clFbF" id="hQFbu1k" role="3cqZAp">
-                            <node concept="2OqwBi" id="1R1KclLA1bB" role="3clFbG">
-                              <node concept="2OqwBi" id="1R1KclLA1bC" role="2Oq$k0">
-                                <node concept="liA8E" id="24cAaiVCalv" role="2OqNvi">
-                                  <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
-                                </node>
-                                <node concept="2JrnkZ" id="1R1KclLA1bD" role="2Oq$k0">
-                                  <node concept="30H73N" id="1R1KclLA1bE" role="2JrQYb" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="1R1KclLA1bG" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -1960,7 +1931,7 @@
                 <ref role="3cqZAo" node="hLF7ESi" resolve="operation" />
               </node>
               <node concept="2qgKlT" id="hPnBSkn" role="2OqNvi">
-                <ref role="37wK5l" to="tp5o:dCRb6FLnvk" resolve="perform" />
+                <ref role="37wK5l" to="tp5o:1kgh5YabdhC" resolve="perform" />
                 <node concept="1rXfSq" id="2YdNGB0TI1_" role="37wK5m">
                   <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
                   <node concept="Xl_RD" id="hPnBSkq" role="37wK5m">
@@ -1977,12 +1948,11 @@
                                   <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                                 </node>
                                 <node concept="2JrnkZ" id="1R1KclLA1gw" role="2Oq$k0">
-                                  <node concept="2OqwBi" id="1R1KclLA1gx" role="2JrQYb">
-                                    <node concept="2OqwBi" id="1R1KclLA1gy" role="2Oq$k0">
-                                      <node concept="30H73N" id="1R1KclLA1gz" role="2Oq$k0" />
-                                      <node concept="1mfA1w" id="1R1KclLA1g$" role="2OqNvi" />
+                                  <node concept="2OqwBi" id="1R1KclLA1gy" role="2JrQYb">
+                                    <node concept="30H73N" id="1R1KclLA1gz" role="2Oq$k0" />
+                                    <node concept="2qgKlT" id="38gbJV10Sn$" role="2OqNvi">
+                                      <ref role="37wK5l" to="tp5o:38gbJV0XvZR" resolve="getAnnotatedNode" />
                                     </node>
-                                    <node concept="1mfA1w" id="1R1KclLA1g_" role="2OqNvi" />
                                   </node>
                                 </node>
                               </node>
@@ -2008,8 +1978,8 @@
                   <node concept="30H73N" id="hLF7ETa" role="2Oq$k0" />
                   <node concept="2Rf3mk" id="hLF7ETb" role="2OqNvi">
                     <node concept="1xMEDy" id="hLF7ETc" role="1xVPHs">
-                      <node concept="chp4Y" id="hLF7ETd" role="ri$Ld">
-                        <ref role="cht4Q" to="tp5g:hG7unSw" resolve="NodeCheckOperation" />
+                      <node concept="chp4Y" id="1kgh5Yabg4q" role="ri$Ld">
+                        <ref role="cht4Q" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
                       </node>
                     </node>
                   </node>
@@ -2029,7 +1999,7 @@
               <node concept="3clFbF" id="hLF7ETj" role="3cqZAp">
                 <node concept="2OqwBi" id="hLF7ETk" role="3clFbG">
                   <node concept="30H73N" id="hLF7ETl" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="hLF7ETm" role="2OqNvi">
+                  <node concept="2qgKlT" id="1kgh5YabnoJ" role="2OqNvi">
                     <ref role="37wK5l" to="tpe5:hGBohAB" resolve="getTestName" />
                   </node>
                 </node>

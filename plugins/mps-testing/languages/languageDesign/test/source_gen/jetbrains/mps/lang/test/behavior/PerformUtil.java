@@ -25,7 +25,7 @@ public class PerformUtil {
   }
 
   public static void checkNodeHasMessageWithStatus(SNode operation, MessageStatus messageStatus) {
-    final SNode nodeToCheck = NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
+    final SNode nodeToCheck = INodesTestMethod__BehaviorDescriptor.getAnnotatedNode_id38gbJV0XvZR.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, messageStatus);
 

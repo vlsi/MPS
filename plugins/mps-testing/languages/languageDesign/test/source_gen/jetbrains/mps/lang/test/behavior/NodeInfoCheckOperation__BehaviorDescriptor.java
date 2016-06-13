@@ -33,9 +33,9 @@ public final class NodeInfoCheckOperation__BehaviorDescriptor extends BaseBHDesc
   public static final SMethod<SNode> getReference_id7eBNsYUkslm = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7eBNsYUkslm").registry(REGISTRY).build();
   public static final SMethod<SNode> getReferencedRuleNode_id2wBFdLy8qmt = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getReferencedRuleNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2wBFdLy8qmt").registry(REGISTRY).build();
   public static final SMethod<String> getDefaultName_id7scb9XJdmH2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7scb9XJdmH2").registry(REGISTRY).build();
-  public static final SMethod<Void> perform_iddCRb6FLnvk = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("dCRb6FLnvk").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> perform_id1kgh5YabdhC = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1kgh5YabdhC").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(canAttachReference_id2wBFdLy7HtS, attachReference_id2wBFdLy8qmn, getReference_id7eBNsYUkslm, getReferencedRuleNode_id2wBFdLy8qmt, getDefaultName_id7scb9XJdmH2, perform_iddCRb6FLnvk);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(canAttachReference_id2wBFdLy7HtS, attachReference_id2wBFdLy8qmn, getReference_id7eBNsYUkslm, getReferencedRuleNode_id2wBFdLy8qmt, getDefaultName_id7scb9XJdmH2, perform_id1kgh5YabdhC);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -63,7 +63,7 @@ public final class NodeInfoCheckOperation__BehaviorDescriptor extends BaseBHDesc
     }
     return "Node" + name + "Check";
   }
-  /*package*/ static void perform_iddCRb6FLnvk(@NotNull SNode __thisNode__, SNode node) {
+  /*package*/ static void perform_id1kgh5YabdhC(@NotNull SNode __thisNode__, SNode node) {
     PerformUtil.checkNodeHasMessageWithStatus(__thisNode__, MessageStatus.OK);
   }
 
@@ -95,7 +95,7 @@ public final class NodeInfoCheckOperation__BehaviorDescriptor extends BaseBHDesc
       case 4:
         return (T) ((String) getDefaultName_id7scb9XJdmH2(node));
       case 5:
-        perform_iddCRb6FLnvk(node, (SNode) parameters[0]);
+        perform_id1kgh5YabdhC(node, (SNode) parameters[0]);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);
