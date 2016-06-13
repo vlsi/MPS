@@ -176,7 +176,7 @@ public class EditorCell_Image extends EditorCell_Basic {
       return null;
     }
     if (!ourIconCache.containsKey(fullPath)){
-      ourIconCache.put(fullPath, ConceptIconLoader.loadIcon(iconPath, false));
+      ourIconCache.put(fullPath, ConceptIconLoader.loadIcon(iconPath));
     }
     return ourIconCache.get(fullPath);
   }

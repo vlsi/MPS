@@ -2228,14 +2228,11 @@
       </node>
       <node concept="3clFbS" id="5XBRz5LKZRI" role="3clF47">
         <node concept="3clFbF" id="5XBRz5LL0gq" role="3cqZAp">
-          <node concept="2YIFZM" id="5XBRz5LL0CO" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
+          <node concept="2YIFZM" id="Z6TQiSSWdl" role="3clFbG">
+            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String):javax.swing.Icon" resolve="loadIcon" />
             <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
-            <node concept="37vLTw" id="5XBRz5LL0CP" role="37wK5m">
+            <node concept="37vLTw" id="Z6TQiSSWdm" role="37wK5m">
               <ref role="3cqZAo" node="5XBRz5LKZRD" resolve="iconPath" />
-            </node>
-            <node concept="37vLTw" id="5XBRz5LL0CQ" role="37wK5m">
-              <ref role="3cqZAo" node="5XBRz5LKZRG" resolve="cache" />
             </node>
           </node>
         </node>
@@ -2243,6 +2240,9 @@
       <node concept="3Tm1VV" id="5XBRz5LKZRJ" role="1B3o_S" />
       <node concept="3uibUv" id="5XBRz5LKZRK" role="3clF45">
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+      <node concept="2AHcQZ" id="Z6TQiSSNh4" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="Z6TQiSPs3g" role="jymVt" />

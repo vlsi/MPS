@@ -122,7 +122,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           Icon icon = null;
           String iconPath = MacrosFactory.forModule((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"))).expandPath("${language_descriptor}/icons/buildProject.png");
           if ((iconPath != null && iconPath.length() > 0)) {
-            icon = ConceptIconLoader.loadIcon(iconPath, false);
+            icon = ConceptIconLoader.loadIcon(iconPath);
           }
           RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", icon);
 

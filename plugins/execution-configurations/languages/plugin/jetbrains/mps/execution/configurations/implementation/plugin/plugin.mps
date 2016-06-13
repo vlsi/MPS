@@ -144,7 +144,7 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
     </language>
@@ -9381,13 +9381,10 @@
                       <node concept="3clFbF" id="2diPio0Ifxf" role="3cqZAp">
                         <node concept="37vLTI" id="2diPio0Ifxh" role="3clFbG">
                           <node concept="2YIFZM" id="5vfjF5cfa7J" role="37vLTx">
-                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
                             <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
+                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String):javax.swing.Icon" resolve="loadIcon" />
                             <node concept="37vLTw" id="5vfjF5cfa7K" role="37wK5m">
                               <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
-                            </node>
-                            <node concept="3clFbT" id="5vfjF5cfa7L" role="37wK5m">
-                              <property role="3clFbU" value="false" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="2diPio0Ifxl" role="37vLTJ">

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -33,19 +31,11 @@ import java.util.Map;
 
 public class ConceptIconLoader {
   public static final org.apache.log4j.Logger LOG = LogManager.getLogger(ConceptIconLoader.class);
-  private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
 
-  public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
-    Icon icon = ourPathsToIcons.get(iconPath);
-    if (icon == null) {
-      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
-      icon = getIconFor(file);
-      if (icon != null && cache) {
-        ourPathsToIcons.put(iconPath, icon);
-      }
-    }
-    return icon;
+  public static Icon loadIcon(@NonNls String iconPath) {
+    IFile file = FileSystem.getInstance().getFileByPath(iconPath);
+    return getIconFor(file);
   }
 
   private static Icon getIconFor(IFile file) {

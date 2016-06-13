@@ -298,8 +298,9 @@ public final class IconManager {
     return getIcon(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
 
+  @Deprecated
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
-    return ConceptIconLoader.loadIcon(iconPath, cache);
+    return ConceptIconLoader.loadIcon(iconPath);
   }
 
   @Deprecated
