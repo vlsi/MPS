@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
@@ -35,8 +34,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EditorCell_Image extends EditorCell_Basic {
+  private static Map<String, Icon> ourIconCache = new HashMap<String, Icon>();
 
   private ImageAlignment myAlignment = ImageAlignment.justify;
   private Icon myIcon;
@@ -173,7 +175,10 @@ public class EditorCell_Image extends EditorCell_Basic {
     if (fullPath == null) {
       return null;
     }
-    return ConceptIconLoader.loadIcon(iconPath, true);
+    if (!ourIconCache.containsKey(fullPath)){
+      ourIconCache.put(fullPath, ConceptIconLoader.loadIcon(iconPath, false));
+    }
+    return ourIconCache.get(fullPath);
   }
 
   @Nullable
