@@ -36,25 +36,6 @@ public class ConceptIconLoader {
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
 
-  @Deprecated
-  //for compatibility purposes only
-  public static String getIconForConcept(org.jetbrains.mps.openapi.model.SNode concept) {
-    while (concept != null) {
-      String icon = loadIcon(concept, concept.getProperty(SNodeUtil.property_Concept_Icon));
-      if (icon != null) {
-        return icon;
-      }
-      concept = concept.getReferenceTarget(SNodeUtil.link_ConceptDeclaration_extends);
-    }
-    return null;
-  }
-
-  @Deprecated
-  //for compatibility purposes only
-  public static String loadIcon(org.jetbrains.mps.openapi.model.SNode anchorNode, String path) {
-    return MacrosFactory.forModule((AbstractModule) anchorNode.getModel().getModule()).expandPath(path);
-  }
-
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
     Icon icon = ourPathsToIcons.get(iconPath);
     if (icon == null) {

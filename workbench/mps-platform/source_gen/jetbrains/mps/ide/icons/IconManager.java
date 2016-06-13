@@ -39,14 +39,17 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
-import jetbrains.mps.smodel.ConceptIconLoader;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.AbstractModule;
 import java.util.EnumMap;
 import java.io.InputStream;
 import java.io.FileInputStream;
@@ -244,12 +247,22 @@ public final class IconManager {
     }
 
     // compatibility code, can be removed after 3.4 
-    SNode dn = concept.getDeclarationNode();
+    SNode dn = SNodeOperations.cast(concept.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     if (dn == null) {
       return null;
     }
-    final String icon = ConceptIconLoader.getIconForConcept(dn);
-    return new IconManager.DeprecatedIconResource(icon);
+
+    while (dn != null) {
+      String path = SPropertyOperations.getString(dn, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"));
+      // for compatibility purposes only 
+      String icon = MacrosFactory.forModule((AbstractModule) SNodeOperations.getModel(dn).getModule()).expandPath(path);
+      if (icon != null) {
+        return new IconManager.DeprecatedIconResource(icon);
+      }
+      dn = SLinkOperations.getTarget(dn, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
+    }
+    // end compatibility code 
+    return null;
   }
 
   private static IconResource getIconForExactConcept(SAbstractConcept concept) {
@@ -374,5 +387,6 @@ public final class IconManager {
       return myIcon.hashCode();
     }
   }
+
   protected static Logger LOG = LogManager.getLogger(IconManager.class);
 }

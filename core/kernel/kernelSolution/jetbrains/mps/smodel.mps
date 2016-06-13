@@ -1383,18 +1383,6 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
-    <node concept="Wx3nA" id="5vfjF5cgbAT" role="jymVt">
-      <property role="TrG5h" value="property_Concept_Icon" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="5vfjF5cgbAU" role="1B3o_S" />
-      <node concept="355D3s" id="5vfjF5cgbAV" role="33vP2m">
-        <ref role="355D3t" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-        <ref role="355D3u" to="tpce:gSMwhzt" resolve="iconPath" />
-      </node>
-      <node concept="3uibUv" id="5vfjF5cgbAW" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="7BIvS$tLduj" role="jymVt" />
     <node concept="Wx3nA" id="7BIvS$tLokT" role="jymVt">
       <property role="TrG5h" value="conceptId_BaseConcept" />
