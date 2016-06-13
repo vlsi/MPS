@@ -8,6 +8,7 @@
   </languages>
   <imports>
     <import index="j2fg" ref="r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)" />
+    <import index="wtc3" ref="r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage">
@@ -23,6 +24,10 @@
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
+      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
+        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
+      </concept>
+      <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
       </concept>
@@ -91,6 +96,27 @@
     </node>
     <node concept="A1WHu" id="33LYnHO_wN7" role="AmTjC">
       <ref role="A1WHt" to="j2fg:33LYnHO_wMY" resolve="ContributedToFromUnusedLanguage" />
+    </node>
+  </node>
+  <node concept="3ICXOK" id="Vk$nhxzDeQ">
+    <property role="TrG5h" value="MenuForBaseInUnusedExtendingLanguage" />
+    <ref role="7LAce" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
+    <node concept="1Qtc8_" id="Vk$nhxzDz9" role="IW6Ez">
+      <node concept="ZR7TO" id="Vk$nhxzDzf" role="1Qtc8$" />
+      <node concept="IWgqT" id="Vk$nhxzDzi" role="1Qtc8A">
+        <node concept="1hCUdq" id="Vk$nhxzDzk" role="1hCUd6">
+          <node concept="3clFbS" id="Vk$nhxzDzm" role="2VODD2">
+            <node concept="3clFbF" id="Vk$nhxzDFZ" role="3cqZAp">
+              <node concept="Xl_RD" id="Vk$nhxzDFY" role="3clFbG">
+                <property role="Xl_RC" value="This menu should not be visible anywhere since the language is not used" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="Vk$nhxzDzo" role="IWgqQ">
+          <node concept="3clFbS" id="Vk$nhxzDzq" role="2VODD2" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

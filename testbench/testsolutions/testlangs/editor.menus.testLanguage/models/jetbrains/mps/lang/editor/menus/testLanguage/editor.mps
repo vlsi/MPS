@@ -264,5 +264,17 @@
     <property role="TrG5h" value="ContributedToFromUsedLanguage" />
     <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
   </node>
+  <node concept="24kQdi" id="Vk$nhxzCx5">
+    <property role="3GE5qa" value="Scopes" />
+    <ref role="1XX52x" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
+    <node concept="PMmxH" id="Vk$nhxzCx7" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    </node>
+  </node>
+  <node concept="3ICXOK" id="3iBZoP55j1v">
+    <property role="3GE5qa" value="Scopes" />
+    <property role="TrG5h" value="NamedMenuForBase" />
+    <ref role="7LAce" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
+  </node>
 </model>
 

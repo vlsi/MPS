@@ -28,7 +28,9 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUnusedLanguage" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.ScopesTestConceptBase_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.TransformationMenuTestConcept_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.TransformationMenuTestConcept_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithExecutableAction" />
@@ -40,6 +42,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase" file="NamedMenuForBase.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu" file="NamedTestMenu.java">
     <classNode dependClassName="java.lang.Override" />
@@ -55,6 +65,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.ScopesTestConceptBase_Editor" file="ScopesTestConceptBase_Editor.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.TransformationMenuTestConcept_Editor" file="TransformationMenuTestConcept_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />

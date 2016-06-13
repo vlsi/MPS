@@ -4379,6 +4379,12 @@
             <ref role="3bR37D" node="2X_LC_CP7fo" resolve="jetbrains.mps.lang.editor.menus.testMetaLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2mvci7PwKru" role="3bR37C">
+          <node concept="3bR9La" id="2mvci7PwKrv" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="33LYnHOCppR" resolve="jetbrains.mps.lang.editor.menus.testExtendingLanguage" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="6wRXAC4uQ1Q" role="3989C9">

@@ -40,5 +40,12 @@
     <property role="TrG5h" value="ConceptWithoutDefaultMenu" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="Vk$nhxzCwi">
+    <property role="EcuMT" value="1068638940632614930" />
+    <property role="TrG5h" value="ScopesTestConceptBase" />
+    <property role="3GE5qa" value="Scopes" />
+    <property role="34LRSv" value="scopes test concept - base" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

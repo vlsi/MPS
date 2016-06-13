@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ConceptWithoutDefaultMenu = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ScopesTestConceptBase = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuTestConcept = new ConceptPresentationBuilder().create();
 
   @Override
@@ -20,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0d.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0e.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -29,6 +30,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           }
           break;
         case 1:
+          if (true) {
+            return props_ScopesTestConceptBase;
+          }
+          break;
+        case 2:
           if (true) {
             return props_TransformationMenuTestConcept;
           }
@@ -46,5 +52,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x1de1fbd5fbf62470L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ConceptWithoutDefaultMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x1de1fbd5fbf62470L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ConceptWithoutDefaultMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
 }

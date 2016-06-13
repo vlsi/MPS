@@ -895,7 +895,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.menus.tests" depends="java.compile.jetbrains.mps.lang.editor.menus.testLanguage, java.compile.jetbrains.mps.lang.editor.menus.testMetaLanguage, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.editor.menus.tests" depends="java.compile.jetbrains.mps.lang.editor.menus.testExtendingLanguage, java.compile.jetbrains.mps.lang.editor.menus.testLanguage, java.compile.jetbrains.mps.lang.editor.menus.testMetaLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -916,6 +916,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testExtendingLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testLanguage" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testMetaLanguage" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
