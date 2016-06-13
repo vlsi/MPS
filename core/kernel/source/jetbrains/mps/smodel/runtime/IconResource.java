@@ -32,9 +32,13 @@ public class IconResource {
     myResourceProvider = resourceProvider;
   }
 
+  public boolean isValid() {
+    return getResource() != null;
+  }
+
   public InputStream getResource() {
     ClassLoader cl = myResourceProvider.getClassLoader();
-    if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()){
+    if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()) {
       LOG.error("Icon is acquired from a disposed classloader. This will lead to a memleak. \n" +
           "Do care about classes reloading when you hold an IconResource for a long time. \n" +
           "Resource provider=" + myResourceProvider.getSimpleName() + "; iconId=" + myIconResId, new Throwable());

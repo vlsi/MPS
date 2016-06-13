@@ -5,6 +5,10 @@ package jetbrains.mps.ide.icons;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.awt.Component;
 import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.ConceptIconLoader;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -24,9 +27,6 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
@@ -57,6 +57,10 @@ public final class IconManager {
    * [MM] this usage of LanguageAspect is reviewed
    */
   private static Map<LanguageAspect, Icon> ourAspectsToIcons;
+
+  private static Map<IconResource, Icon> ourResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
+  private static Map<SAbstractConcept, Icon> ourConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, Icon>());
+
   public static final Icon EMPTY_ICON = new Icon() {
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
@@ -72,19 +76,18 @@ public final class IconManager {
   };
   private IconManager() {
   }
+
   public static Icon getIconFor(@NotNull final SNode node) {
     if (!(SNodeOperations.getConcept(node).isValid())) {
       return IdeIcons.UNKNOWN_ICON;
     }
 
-    Icon mainIcon = getIcon(SNodeOperations.getConcept(node));
+    Icon mainIcon = null;
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      IconResource alternativeIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
-      if (alternativeIcon != null && alternativeIcon.getResource() != null) {
-        mainIcon = ConceptIconLoader.getIconFor(alternativeIcon.getResource());
-      } else {
-        mainIcon = getIcon(SNodeOperations.getConcept(node));
-      }
+      mainIcon = IconManager.getIconFromConstraints(node);
+    }
+    if (mainIcon == null) {
+      mainIcon = getIcon(SNodeOperations.getConcept(node));
     }
     if (mainIcon == null) {
       if ((SNodeOperations.getParent(node) == null)) {
@@ -93,6 +96,35 @@ public final class IconManager {
         return IdeIcons.DEFAULT_NODE_ICON;
       }
     }
+
+    return addIconFeatures(mainIcon, node);
+  }
+
+  public static Icon getIcon(SAbstractConcept concept) {
+    if (!(MapSequence.fromMap(ourConceptToIcon).containsKey(concept))) {
+      Icon icon = getIconForConceptNoCache(concept);
+      MapSequence.fromMap(ourConceptToIcon).put(concept, icon);
+    }
+    return MapSequence.fromMap(ourConceptToIcon).get(concept);
+  }
+
+  private static Icon getIconFromConstraints(final SNode node) {
+    IconResource altIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
+    if (altIcon == null) {
+      return null;
+    }
+    if (MapSequence.fromMap(ourResToIcon).containsKey(altIcon)) {
+      return MapSequence.fromMap(ourResToIcon).get(altIcon);
+    }
+    if (!(altIcon.isValid())) {
+      return null;
+    }
+    Icon icon = ConceptIconLoader.getIconFor(altIcon.getResource());
+    MapSequence.fromMap(ourResToIcon).put(altIcon, icon);
+    return icon;
+  }
+
+  private static Icon addIconFeatures(Icon mainIcon, final SNode node) {
     SModel model = SNodeOperations.getModel(node);
     if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
       return mainIcon;
@@ -114,15 +146,8 @@ public final class IconManager {
     }
     return result;
   }
-  private static Map<SAbstractConcept, Icon> ourConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, Icon>());
-  public static Icon getIcon(SAbstractConcept concept) {
-    if (!(MapSequence.fromMap(ourConceptToIcon).containsKey(concept))) {
-      Icon icon = getIconForConceptNoCache(concept);
-      MapSequence.fromMap(ourConceptToIcon).put(concept, icon);
-    }
-    return MapSequence.fromMap(ourConceptToIcon).get(concept);
-  }
-  public static Icon getIconForConceptNoCache(SAbstractConcept concept) {
+
+  private static Icon getIconForConceptNoCache(SAbstractConcept concept) {
     SAbstractConceptAdapter current = ((SAbstractConceptAdapter) concept);
     while (current != null) {
       Icon icon = getIconForExactConcept(current);
@@ -155,11 +180,13 @@ public final class IconManager {
     }
     return ConceptIconLoader.getIconFor(res);
   }
+
   @Deprecated
   @ToRemove(version = 3.4)
   public static Icon getIconForConceptFQName(String conceptFQName) {
     return getIcon(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
+
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
@@ -194,6 +221,7 @@ public final class IconManager {
     }
     return EMPTY_ICON;
   }
+
   public static Icon getIconFor(SModel model) {
     if (model == null) {
       return IdeIcons.UNKNOWN_ICON;
@@ -222,6 +250,7 @@ public final class IconManager {
 
     return IdeIcons.MODEL_ICON;
   }
+
   public static Icon getIconFor(SModule module) {
     if (module instanceof Generator) {
       return IdeIcons.GENERATOR_ICON;
@@ -237,9 +266,11 @@ public final class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
+
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
     return ConceptIconLoader.loadIcon(iconPath, cache);
   }
+
   public static Icon getIconFor(MPSModuleOwner owner) {
     if (owner instanceof MPSProject) {
       return IdeIcons.PROJECT_ICON;
@@ -249,6 +280,7 @@ public final class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
+
   @Deprecated
   @ToRemove(version = 3.3)
   public static Icon getIconForAspect(LanguageAspect aspect) {
@@ -259,6 +291,7 @@ public final class IconManager {
     }
     return icon;
   }
+
   static {
     // [MM] this usage of LanguageAspect is reviewed 
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
