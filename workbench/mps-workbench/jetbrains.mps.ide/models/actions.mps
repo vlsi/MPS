@@ -192,7 +192,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
     </language>
@@ -1011,6 +1011,10 @@
         <property role="TrG5h" value="scripts" />
       </node>
       <node concept="2a7GMi" id="4pH6NAGIG89" role="ftvYc" />
+      <node concept="10WQ6h" id="5WjfCaA2my1" role="ftvYc">
+        <property role="TrG5h" value="run" />
+      </node>
+      <node concept="2a7GMi" id="5WjfCaA2mvN" role="ftvYc" />
       <node concept="10WQ6h" id="2tmN3ZB4Vsm" role="ftvYc">
         <property role="TrG5h" value="favorites" />
       </node>
@@ -1021,6 +1025,7 @@
       <node concept="tCFHf" id="hYoRn0d" role="ftvYc">
         <ref role="tCJdB" node="hYoPViv" resolve="ModelProperties" />
       </node>
+      <node concept="2a7GMi" id="4iEnX$wf3FE" role="ftvYc" />
     </node>
   </node>
   <node concept="tC5Ba" id="hyf4HGL">
@@ -15938,6 +15943,7 @@
     </node>
     <node concept="tT9cl" id="5AK6Piks2Oc" role="2f5YQi">
       <ref role="tU$_T" node="hyf4Hgq" resolve="ModelActions" />
+      <ref role="2f8Tey" node="5WjfCaA2my1" resolve="run" />
     </node>
     <node concept="tT9cl" id="2g2Z_LfznQZ" role="2f5YQi">
       <ref role="tU$_T" node="miYJQAr2Uj" resolve="CommonModuleActions" />
