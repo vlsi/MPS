@@ -9380,10 +9380,10 @@
                     <node concept="3clFbS" id="2diPio0Ihe6" role="3clFbx">
                       <node concept="3clFbF" id="2diPio0Ifxf" role="3cqZAp">
                         <node concept="37vLTI" id="2diPio0Ifxh" role="3clFbG">
-                          <node concept="2YIFZM" id="5vfjF5cfa7J" role="37vLTx">
-                            <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
-                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String):javax.swing.Icon" resolve="loadIcon" />
-                            <node concept="37vLTw" id="5vfjF5cfa7K" role="37wK5m">
+                          <node concept="2YIFZM" id="Z6TQiSV82M" role="37vLTx">
+                            <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                            <ref role="37wK5l" to="sn11:Z6TQiSUz$I" resolve="loadIcon" />
+                            <node concept="37vLTw" id="Z6TQiSV82N" role="37wK5m">
                               <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
                             </node>
                           </node>

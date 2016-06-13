@@ -34,7 +34,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ConceptIconLoader;
+import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
@@ -122,7 +122,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           Icon icon = null;
           String iconPath = MacrosFactory.forModule((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"))).expandPath("${language_descriptor}/icons/buildProject.png");
           if ((iconPath != null && iconPath.length() > 0)) {
-            icon = ConceptIconLoader.loadIcon(iconPath);
+            icon = IconManager.loadIcon(iconPath);
           }
           RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", icon);
 

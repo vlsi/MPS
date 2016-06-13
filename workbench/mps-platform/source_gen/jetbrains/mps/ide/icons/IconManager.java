@@ -44,7 +44,6 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
@@ -56,6 +55,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.awt.MediaTracker;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
+import java.io.IOException;
+import javax.swing.ImageIcon;
 
 public final class IconManager {
   /**
@@ -130,8 +134,8 @@ public final class IconManager {
     try {
       Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
       if (language == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't find a language " + namespace);
+        if (LOG_1559249318.isEnabledFor(Level.ERROR)) {
+          LOG_1559249318.error("Can't find a language " + namespace);
         }
       } else {
         try {
@@ -153,8 +157,8 @@ public final class IconManager {
         }
       }
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
+      if (LOG_1559249318.isEnabledFor(Level.ERROR)) {
+        LOG_1559249318.error("", e);
       }
     }
     return EMPTY_ICON;
@@ -287,7 +291,7 @@ public final class IconManager {
     if (!(ir.isValid())) {
       return null;
     }
-    Icon icon = ConceptIconLoader.getIconFor(ir.getResource());
+    Icon icon = loadIcon(ir.getResource());
     MapSequence.fromMap(ourResToIcon).put(ir, icon);
     return icon;
   }
@@ -300,7 +304,7 @@ public final class IconManager {
 
   @Deprecated
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
-    return ConceptIconLoader.loadIcon(iconPath);
+    return loadIcon(iconPath);
   }
 
   @Deprecated
@@ -366,8 +370,8 @@ public final class IconManager {
       try {
         return new FileInputStream(myIcon);
       } catch (FileNotFoundException e) {
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("Can't load icon " + myIcon, e);
+        if (LOG_1559249318.isEnabledFor(Level.WARN)) {
+          LOG_1559249318.warn("Can't load icon " + myIcon, e);
         }
         return null;
       }
@@ -389,5 +393,59 @@ public final class IconManager {
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(IconManager.class);
+  public static final Logger LOG = LogManager.getLogger(IconManager.class);
+  private static final int IMAGE_LOADED = ~(((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING)));
+  public static Icon loadIcon(@NonNls String iconPath) {
+    IFile file = FileSystem.getInstance().getFileByPath(iconPath);
+    return getIconFor(file);
+  }
+  private static Icon getIconFor(IFile file) {
+    if (!(file.exists())) {
+      return null;
+    }
+    InputStream is = null;
+    try {
+      is = file.openInputStream();
+      return loadIcon(is);
+    } catch (IOException e) {
+      LOG.error(null, e);
+      return null;
+    } finally {
+      try {
+        if (is != null) {
+          is.close();
+        }
+      } catch (IOException e) {
+        LOG.error(null, e);
+      }
+    }
+  }
+  public static Icon loadIcon(@NotNull InputStream is) {
+    byte[] image = new byte[0];
+    try {
+      image = new byte[is.available()];
+    } catch (IOException e) {
+      LOG.error(null, e);
+    }
+    try {
+      int current = 0;
+      while (true) {
+        int result = is.read(image, current, image.length - current);
+        if (result == -1 || result == 0) {
+          break;
+        } else {
+          current += result;
+        }
+      }
+    } catch (IOException e) {
+      LOG.error(null, e);
+    }
+    ImageIcon icon = new ImageIcon(image);
+    if ((icon.getImageLoadStatus() & IMAGE_LOADED) != 0) {
+      return icon;
+    }
+    return null;
+  }
+
+  protected static Logger LOG_1559249318 = LogManager.getLogger(IconManager.class);
 }
