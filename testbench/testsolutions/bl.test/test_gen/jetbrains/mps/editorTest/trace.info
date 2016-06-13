@@ -7831,11 +7831,11 @@
       <node id="6080342878134138487" at="23,51,24,72" concept="3" />
       <node id="6080342878134191715" at="24,72,25,71" concept="3" />
       <node id="6080342878134191975" at="25,71,26,78" concept="3" />
-      <node id="5089341527822479916" at="26,78,27,24" concept="3" />
+      <node id="5089341527822479916" at="26,78,27,27" concept="3" />
       <node id="6080342878134138487" at="14,0,19,0" concept="6" trace="test_EmptyEnumConstantCreationTest#()V" />
       <node id="6080342878134138487" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="6080342878134138487" at="15,69,17,105" />
-      <scope id="6080342878134138487" at="23,51,27,24" />
+      <scope id="6080342878134138487" at="23,51,27,27" />
       <scope id="6080342878134138487" at="14,0,19,0" />
       <scope id="6080342878134138487" at="22,0,29,0" />
       <unit id="6080342878134138487" at="20,0,30,0" name="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test$TestBody" />
@@ -8714,6 +8714,27 @@
       <scope id="6181413376134300552" at="20,0,25,0" />
       <unit id="6181413376134300552" at="18,0,26,0" name="jetbrains.mps.editorTest.MethodAddGenericCaret_Test$TestBody" />
       <unit id="6181413376134300552" at="10,0,27,0" name="jetbrains.mps.editorTest.MethodAddGenericCaret_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181497615141144339">
+    <file name="CreateEnumConstantReference_Test.java">
+      <node id="6181497615141144339" at="13,67,14,102" concept="3" />
+      <node id="6181497615141144339" at="14,102,15,103" concept="3" />
+      <node id="6181497615141144339" at="21,51,22,72" concept="3" />
+      <node id="6181497615141164224" at="22,72,23,24" concept="3" />
+      <node id="6181497615141144339" at="12,0,17,0" concept="6" trace="test_CreateEnumConstantReference#()V" />
+      <node id="6181497615141144339" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="6181497615141144339" at="13,67,15,103" />
+      <scope id="6181497615141144339" at="21,51,23,24" />
+      <scope id="6181497615141144339" at="12,0,17,0" />
+      <scope id="6181497615141144339" at="20,0,25,0" />
+      <unit id="6181497615141144339" at="18,0,26,0" name="jetbrains.mps.editorTest.CreateEnumConstantReference_Test$TestBody" />
+      <unit id="6181497615141144339" at="10,0,27,0" name="jetbrains.mps.editorTest.CreateEnumConstantReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181497615141161785">
+    <file name="TestDays.java">
+      <unit id="6181497615141161785" at="6,0,11,0" name="jetbrains.mps.editorTest.TestDays" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6224545524884062545">
@@ -9607,11 +9628,11 @@
       <node id="7045533117182160904" at="23,51,24,72" concept="3" />
       <node id="7045533117182210441" at="24,72,25,71" concept="3" />
       <node id="7045533117182210948" at="25,71,26,78" concept="3" />
-      <node id="7045533117182211233" at="26,78,27,24" concept="3" />
+      <node id="7045533117182211233" at="26,78,27,27" concept="3" />
       <node id="7045533117182160904" at="14,0,19,0" concept="6" trace="test_EmptyEnumConstantCreationWithConstructorTest#()V" />
       <node id="7045533117182160904" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="7045533117182160904" at="15,84,17,120" />
-      <scope id="7045533117182160904" at="23,51,27,24" />
+      <scope id="7045533117182160904" at="23,51,27,27" />
       <scope id="7045533117182160904" at="14,0,19,0" />
       <scope id="7045533117182160904" at="22,0,29,0" />
       <unit id="7045533117182160904" at="20,0,30,0" name="jetbrains.mps.editorTest.EmptyEnumConstantCreationWithConstructorTest_Test$TestBody" />

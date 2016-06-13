@@ -225,6 +225,10 @@
       <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf">
         <child id="492581319488141108" name="method" index="2HKRsH" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -15637,7 +15641,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="4qwYiuMwb8G" role="3cqZAp">
-        <property role="2TTd_B" value="abc" />
+        <property role="2TTd_B" value="en_abc" />
       </node>
     </node>
     <node concept="Qs71p" id="5hxHU7NKWu7" role="LiZbd">
@@ -15645,7 +15649,7 @@
       <property role="TrG5h" value="Foo" />
       <node concept="3Tm1VV" id="5hxHU7NKWu8" role="1B3o_S" />
       <node concept="QsSxf" id="4qwYiuMw38D" role="Qtgdg">
-        <property role="TrG5h" value="abc" />
+        <property role="TrG5h" value="en_abc" />
         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
     </node>
@@ -15679,7 +15683,7 @@
         <node concept="3clFbS" id="676KKEeTgSv" role="3clF47" />
       </node>
       <node concept="QsSxf" id="676KKEeTgSL" role="Qtgdg">
-        <property role="TrG5h" value="abc" />
+        <property role="TrG5h" value="en_abc" />
         <ref role="37wK5l" node="676KKEeTgSr" resolve="Foo" />
       </node>
     </node>
@@ -15695,7 +15699,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="676KKEeTnix" role="3cqZAp">
-        <property role="2TTd_B" value="abc" />
+        <property role="2TTd_B" value="en_abc" />
       </node>
     </node>
   </node>
@@ -53112,6 +53116,60 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5n95PhUqosj">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="CreateEnumConstantReference" />
+    <node concept="9aQIb" id="5n95PhUqotp" role="LiRBU">
+      <node concept="3clFbS" id="5n95PhUqotr" role="9aQI4">
+        <node concept="LIFWc" id="5n95PhUqsVS" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_u338ov_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="5n95PhUqsVU" role="LiZbd">
+      <node concept="3clFbS" id="5n95PhUqsVV" role="9aQI4">
+        <node concept="3clFbF" id="5n95PhUqt0N" role="3cqZAp">
+          <node concept="Rm8GO" id="5n95PhUqt0M" role="3clFbG">
+            <ref role="1Px2BO" node="5n95PhUqsGT" resolve="TestDays" />
+            <ref role="Rm8GQ" node="5n95PhUqsKB" resolve="Wed" />
+            <node concept="LIFWc" id="5n95PhUqt63" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="3" />
+              <property role="p6zMs" value="3" />
+              <property role="LIFWd" value="property_name_1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="5n95PhUqtj1" role="LjaKd">
+      <node concept="2TK7Tu" id="5n95PhUqtj0" role="3cqZAp">
+        <property role="2TTd_B" value="Wed" />
+      </node>
+    </node>
+  </node>
+  <node concept="Qs71p" id="5n95PhUqsGT">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="TestDays" />
+    <node concept="3Tm1VV" id="5n95PhUqsGU" role="1B3o_S" />
+    <node concept="QsSxf" id="5n95PhUqsIU" role="Qtgdg">
+      <property role="TrG5h" value="Mon" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
+    <node concept="QsSxf" id="5n95PhUqsJp" role="Qtgdg">
+      <property role="TrG5h" value="Tue" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
+    <node concept="QsSxf" id="5n95PhUqsKB" role="Qtgdg">
+      <property role="TrG5h" value="Wed" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
   </node>
 </model>
