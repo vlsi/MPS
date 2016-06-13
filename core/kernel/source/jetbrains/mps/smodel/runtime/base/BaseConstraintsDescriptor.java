@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ConceptIconLoader;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;

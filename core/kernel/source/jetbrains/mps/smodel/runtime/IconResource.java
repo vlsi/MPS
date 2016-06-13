@@ -36,6 +36,15 @@ public class IconResource {
     return getResource() != null;
   }
 
+  /**
+   * For internal use only
+   * Tmp solution until we migrate to non-static IconManager.
+   */
+  public boolean isAlreadyReloaded(){
+    ClassLoader cl = myResourceProvider.getClassLoader();
+    return cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed();
+  }
+
   public InputStream getResource() {
     ClassLoader cl = myResourceProvider.getClassLoader();
     if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()) {
