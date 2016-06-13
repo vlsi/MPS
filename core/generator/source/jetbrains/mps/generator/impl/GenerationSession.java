@@ -36,6 +36,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -49,6 +50,7 @@ import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.NameUtil;
@@ -247,6 +249,7 @@ class GenerationSession {
             Checkpoint checkpointStep = (Checkpoint) planStep;
             SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointStep);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
+            final CheckpointState cpState = cpBuilder.create(checkpointStep);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
             //
@@ -254,10 +257,12 @@ class GenerationSession {
             if (myStepArguments != null) {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpBuilder);
-              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository()).build(checkpointModel, stepLabels);
+
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository(), Collections.singletonMap(currInputModel, checkpointModel)).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
+              new ModelImports(checkpointModel).addModelImport(myOriginalInputModel.getReference());
             }
-            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(checkpointStep));
+            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
             transitionTrace = new TransitionTrace(checkpointStep);
             transitionTrace.reset(currInputModel);
             myStepArguments = null;
