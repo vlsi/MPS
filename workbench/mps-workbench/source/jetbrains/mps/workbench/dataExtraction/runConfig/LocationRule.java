@@ -23,10 +23,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.awt.Frame;
@@ -39,6 +41,36 @@ public class LocationRule implements GetDataRule {
   @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
+    final MPSProject mpsProject = getProject(dataProvider);
+    if (mpsProject == null) {
+      return null;
+    }
+    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<MPSLocation>() {
+      @Override
+      public MPSLocation compute() {
+        List<SNode> nodes = MPSDataKeys.NODES.getData(dataProvider);
+        if (nodes != null && nodes.size() > 1) {
+          return new MPSLocation(mpsProject, new MPSPsiElement(nodes, mpsProject));
+        }
+        SNode node = MPSDataKeys.NODE.getData(dataProvider);
+        if (node != null) {
+          return new MPSLocation(mpsProject, new MPSPsiElement(node, mpsProject));
+        }
+        SModel model =  MPSDataKeys.MODEL.getData(dataProvider);
+        if (model != null) {
+          return new MPSLocation(mpsProject, new MPSPsiElement(model, mpsProject));
+        }
+        SModule module = MPSDataKeys.MODULE.getData(dataProvider);
+        if (module != null) {
+          return new MPSLocation(mpsProject, new MPSPsiElement(module, mpsProject));
+        }
+        return new MPSLocation(mpsProject, new MPSPsiElement(mpsProject));
+      }
+    });
+  }
+
+  @Nullable
+  private static MPSProject getProject(DataProvider dataProvider) {
     MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataProvider);
     if (mpsProject == null) {
       Project ideaProject = MPSDataKeys.PROJECT.getData(dataProvider);
@@ -52,26 +84,7 @@ public class LocationRule implements GetDataRule {
         return null;
       }
       mpsProject = ProjectHelper.fromIdeaProject(ideaProject);
-      if (mpsProject == null) {
-        return null;
-      }
     }
-    List<SNode> nodes = MPSDataKeys.NODES.getData(dataProvider);
-    if (nodes != null && nodes.size() > 1) {
-      return new MPSLocation(mpsProject, new MPSPsiElement(nodes, mpsProject));
-    }
-    SNode node = MPSDataKeys.NODE.getData(dataProvider);
-    if (node != null) {
-      return new MPSLocation(mpsProject, new MPSPsiElement(node, mpsProject));
-    }
-    SModel model =  MPSDataKeys.MODEL.getData(dataProvider);
-    if (model != null) {
-      return new MPSLocation(mpsProject, new MPSPsiElement(model, mpsProject));
-    }
-    SModule module = MPSDataKeys.MODULE.getData(dataProvider);
-    if (module != null) {
-      return new MPSLocation(mpsProject, new MPSPsiElement(module, mpsProject));
-    }
-    return new MPSLocation(mpsProject, new MPSPsiElement(mpsProject));
+    return mpsProject;
   }
 }
