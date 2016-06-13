@@ -38,9 +38,9 @@ public class ConceptIconLoader {
 
   @Deprecated
   //for compatibility purposes only
-  public static Icon getIconForConcept(org.jetbrains.mps.openapi.model.SNode concept) {
+  public static String getIconForConcept(org.jetbrains.mps.openapi.model.SNode concept) {
     while (concept != null) {
-      Icon icon = loadIcon(concept, concept.getProperty(SNodeUtil.property_Concept_Icon));
+      String icon = loadIcon(concept, concept.getProperty(SNodeUtil.property_Concept_Icon));
       if (icon != null) {
         return icon;
       }
@@ -51,15 +51,8 @@ public class ConceptIconLoader {
 
   @Deprecated
   //for compatibility purposes only
-  public static Icon loadIcon(org.jetbrains.mps.openapi.model.SNode anchorNode, String path) {
-    String iconPath = MacrosFactory.forModule((AbstractModule) anchorNode.getModel().getModule()).expandPath(path);
-    if (iconPath != null) {
-      Icon icon = loadIcon(iconPath, true);
-      if (icon != null) {
-        return icon;
-      }
-    }
-    return null;
+  public static String loadIcon(org.jetbrains.mps.openapi.model.SNode anchorNode, String path) {
+    return MacrosFactory.forModule((AbstractModule) anchorNode.getModel().getModule()).expandPath(path);
   }
 
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
