@@ -104,7 +104,7 @@ public final class IconManager {
    * This field should be used in getIcon(concept) method only
    */
   private static Map<SAbstractConcept, IconResource> ourConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, IconResource>());
-  public static Icon getIcon(SAbstractConcept concept) {
+  public static Icon getIconFor(SAbstractConcept concept) {
     // tmp solution to invalidate reloaded icons. May lead to constrained memleaks. Should be rewritten later 
     IconResource cached = MapSequence.fromMap(ourConceptToIcon).get(concept);
     if (cached != null && cached.isAlreadyReloaded()) {
@@ -124,7 +124,7 @@ public final class IconManager {
     return getIconForResource(actual);
   }
 
-  public static Icon getIconForNamespace(String namespace) {
+  public static Icon getIconFor(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
       Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
@@ -289,6 +289,16 @@ public final class IconManager {
     Icon icon = IconLoadHelper.loadIcon(ir.getResource());
     MapSequence.fromMap(ourResToIcon).put(ir, icon);
     return icon;
+  }
+
+  @Deprecated
+  public static Icon getIcon(SAbstractConcept concept) {
+    return getIconFor(concept);
+  }
+
+  @Deprecated
+  public static Icon getIconForNamespace(String namespace) {
+    return getIconFor(namespace);
   }
 
   @Deprecated
