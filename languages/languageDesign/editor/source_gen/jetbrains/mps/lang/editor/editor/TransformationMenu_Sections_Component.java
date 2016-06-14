@@ -84,6 +84,9 @@ public class TransformationMenu_Sections_Component implements ConceptEditorCompo
     private EditorCell createConstant_b13n4h_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_b13n4h_a0a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no items>");
       return editorCell;
     }
