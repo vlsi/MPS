@@ -36614,13 +36614,13 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/873949054148909010">
     <file name="DefaultTransformationMenuUtil.java">
-      <node id="873949054148912705" at="13,64,14,357" concept="8" />
-      <node id="873949054148910595" at="13,0,16,0" concept="10" trace="findDefaultMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="873949054148910598" at="13,64,14,357" />
-      <scope id="873949054148910595" at="13,0,16,0">
+      <node id="873949054148912705" at="14,73,15,357" concept="8" />
+      <node id="873949054148910595" at="14,0,17,0" concept="10" trace="findDefaultMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="873949054148910598" at="14,73,15,357" />
+      <scope id="873949054148910595" at="14,0,17,0">
         <var name="concept" id="873949054148910854" />
       </scope>
-      <unit id="873949054148909010" at="12,0,17,0" name="jetbrains.mps.lang.editor.editor.DefaultTransformationMenuUtil" />
+      <unit id="873949054148909010" at="13,0,18,0" name="jetbrains.mps.lang.editor.editor.DefaultTransformationMenuUtil" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/8740634663377282528">

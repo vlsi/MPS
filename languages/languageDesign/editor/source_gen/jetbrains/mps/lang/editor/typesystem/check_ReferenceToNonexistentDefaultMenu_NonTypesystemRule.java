@@ -22,6 +22,9 @@ public class check_ReferenceToNonexistentDefaultMenu_NonTypesystemRule extends A
   }
   public void applyRule(final SNode ref, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept"));
+    if ((concept == null)) {
+      return;
+    }
 
     if ((DefaultTransformationMenuUtil.findDefaultMenuForConcept(concept) == null)) {
       {
