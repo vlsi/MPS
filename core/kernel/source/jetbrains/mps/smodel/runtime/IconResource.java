@@ -20,16 +20,17 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
 
 public class IconResource {
   private static final Logger LOG = LogManager.getLogger(IconResource.class);
 
   private String myIconResId;
-  private Class myResourceProvider;
+  private WeakReference<Class> myResourceProvider;
 
   public IconResource(String iconResId, Class resourceProvider) {
     myIconResId = iconResId;
-    myResourceProvider = resourceProvider;
+    myResourceProvider = new WeakReference<Class>(resourceProvider);
   }
 
   public boolean isValid() {
@@ -40,23 +41,37 @@ public class IconResource {
    * For internal use only
    * Tmp solution until we migrate to non-static IconManager.
    */
-  public boolean isAlreadyReloaded(){
-    ClassLoader cl = myResourceProvider.getClassLoader();
+  public boolean isAlreadyReloaded() {
+    Class c = myResourceProvider.get();
+    if (c == null) {
+      return true;
+    }
+    ClassLoader cl = c.getClassLoader();
     return cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed();
   }
 
   public InputStream getResource() {
-    ClassLoader cl = myResourceProvider.getClassLoader();
-    if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()) {
-      LOG.error("Icon is acquired from a disposed classloader. This will lead to a memleak. \n" +
-          "Do care about classes reloading when you hold an IconResource for a long time. \n" +
-          "Resource provider=" + myResourceProvider.getSimpleName() + "; iconId=" + myIconResId, new Throwable());
+    Class c = myResourceProvider.get();
+    if (c == null) {
+      showDisposedError("<class already GC'ed>");
+      return null;
     }
-    InputStream result = myResourceProvider.getResourceAsStream(myIconResId);
+    ClassLoader cl = c.getClassLoader();
+    if (cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed()) {
+      String rp = c.getSimpleName();
+      showDisposedError(rp);
+    }
+    InputStream result = c.getResourceAsStream(myIconResId);
     if (result == null) {
-      LOG.warn("Unable to get icon's InputStream. Resource provider=" + myResourceProvider.getSimpleName() + "; iconId:=" + myIconResId);
+      LOG.warn("Unable to get icon's InputStream. Resource provider=" + c.getSimpleName() + "; iconId:=" + myIconResId);
     }
     return result;
+  }
+
+  private void showDisposedError(String rp) {
+    LOG.error("Icon is acquired from a disposed classloader. This will lead to a memleak. \n" +
+        "Do care about classes reloading when you hold an IconResource for a long time. \n" +
+        "Resource provider=" + rp + "; iconId=" + myIconResId, new Throwable());
   }
 
   @Override
