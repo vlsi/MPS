@@ -110,12 +110,12 @@
     <file name="CustomPropertyAccess_Test.java">
       <node id="6799807267502338718" at="17,77,18,113" concept="1" />
       <node id="6799807267502338718" at="18,113,19,131" concept="1" />
-      <node id="6799807267502338718" at="25,79,26,230" concept="4" />
-      <node id="6799807267502338718" at="26,230,27,124" concept="1" />
+      <node id="6799807267502338718" at="25,79,26,242" concept="4" />
+      <node id="6799807267502338718" at="26,242,27,123" concept="1" />
       <node id="6799807267502338718" at="25,0,29,0" concept="3" trace="test_ErrorMessagesCheck6799807267508922004#()V" />
       <node id="6799807267502338718" at="16,0,21,0" concept="3" trace="test_ErrorMessagesCheck6799807267508922004#()V" />
       <scope id="6799807267502338718" at="17,77,19,131" />
-      <scope id="6799807267502338718" at="25,79,27,124">
+      <scope id="6799807267502338718" at="25,79,27,123">
         <var name="operation" id="6799807267502338718" />
       </scope>
       <scope id="6799807267502338718" at="25,0,29,0" />
