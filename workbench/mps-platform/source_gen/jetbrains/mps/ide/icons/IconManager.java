@@ -37,6 +37,9 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -45,6 +48,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.String2IconResourceAdapter_Deprecated;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
@@ -220,13 +224,21 @@ public final class IconManager {
     }
     RowIcon result = new RowIcon(2);
     result.setIcon(mainIcon, 0);
-    result.setIcon(((Icon) BHReflection.invoke(node, SMethodTrimmedId.create("getAdditionalIcon", null, "4mxbjAOAE$e"))), 1);
-    List<Icon> markIcons = ((List<Icon>) BHReflection.invoke(node, SMethodTrimmedId.create("getMarkIcons", null, "3pOfV45ExLD")));
-    if (markIcons != null) {
-      LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
+    result.setIcon(getIconForResource(((IconResource) BHReflection.invoke(node, SMethodTrimmedId.create("getSideIcon", null, "6TtJ6IUjtJX")))), 1);
+    List<Icon> markIcons = ListSequence.fromList(((List<IconResource>) BHReflection.invoke(node, SMethodTrimmedId.create("getIconMarks", null, "6TtJ6IUkhQJ")))).select(new ISelector<IconResource, Icon>() {
+      public Icon select(IconResource it) {
+        return getIconForResource(it);
+      }
+    }).where(new IWhereFilter<Icon>() {
+      public boolean accept(Icon it) {
+        return it != null;
+      }
+    }).toListSequence();
+    if (ListSequence.fromList(markIcons).isNotEmpty()) {
+      LayeredIcon layeredIcon = new LayeredIcon(ListSequence.fromList(markIcons).count() + 1);
       layeredIcon.setIcon(result, 0);
-      for (int i = 0; i < markIcons.size(); i++) {
-        layeredIcon.setIcon(markIcons.get(i), i + 1);
+      for (int i = 0; i < ListSequence.fromList(markIcons).count(); i++) {
+        layeredIcon.setIcon(ListSequence.fromList(markIcons).getElement(i), i + 1);
       }
       return layeredIcon;
     }
@@ -274,7 +286,10 @@ public final class IconManager {
    * This field should be used in getIcon(resource) method only
    */
   private static Map<IconResource, Icon> ourResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
-  private static Icon getIconForResource(IconResource ir) {
+  private static Icon getIconForResource(@Nullable IconResource ir) {
+    if (ir == null) {
+      return null;
+    }
     if (ir.isAlreadyReloaded()) {
       MapSequence.fromMap(ourResToIcon).removeKey(ir);
     }

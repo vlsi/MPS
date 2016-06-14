@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> isInTemplates_idhEwIMij = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInTemplates").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMij").registry(REGISTRY).build();
   public static final SMethod<Icon> getAdditionalIcon_id4mxbjAOAE$e = new SMethodBuilder<Icon>(new SJavaCompoundTypeImpl(Icon.class)).name("getAdditionalIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4mxbjAOAE$e").registry(REGISTRY).build();
   public static final SMethod<IconResource> getSideIcon_id6TtJ6IUjtJX = new SMethodBuilder<IconResource>(new SJavaCompoundTypeImpl(IconResource.class)).name("getSideIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUjtJX").registry(REGISTRY).build();
-  public static final SMethod<List<IconResource>> getIconMarks_id6TtJ6IUkhQJ = new SMethodBuilder<List<IconResource>>(new SJavaCompoundTypeImpl(List.class)).name("getIconMarks").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUkhQJ").registry(REGISTRY).build();
+  public static final SMethod<List<IconResource>> getIconMarks_id6TtJ6IUkhQJ = new SMethodBuilder<List<IconResource>>(new SJavaCompoundTypeImpl((Class<List<IconResource>>) ((Class) Object.class))).name("getIconMarks").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUkhQJ").registry(REGISTRY).build();
   public static final SMethod<List<Icon>> getMarkIcons_id3pOfV45ExLD = new SMethodBuilder<List<Icon>>(new SJavaCompoundTypeImpl(List.class)).name("getMarkIcons").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3pOfV45ExLD").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
   public static final SMethod<String> getDetailedPresentation_id22G2W3WJ92t = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDetailedPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("22G2W3WJ92t").registry(REGISTRY).build();
@@ -58,11 +59,18 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static IconResource getSideIcon_id6TtJ6IUjtJX(@NotNull SNode __thisNode__) {
     // todo compatibility code to be removed after 3.4 
-    return new Icon2IconResourceAdapter_Deprecated(BaseConcept__BehaviorDescriptor.getAdditionalIcon_id4mxbjAOAE$e.invoke(__thisNode__));
+    Icon icon = BaseConcept__BehaviorDescriptor.getAdditionalIcon_id4mxbjAOAE$e.invoke(__thisNode__);
+    if (icon == null) {
+      return null;
+    }
+    return new Icon2IconResourceAdapter_Deprecated(icon);
   }
   /*package*/ static List<IconResource> getIconMarks_id6TtJ6IUkhQJ(@NotNull SNode __thisNode__) {
     // todo compatibility code to be removed after 3.4 
     List<Icon> markIcons = BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invoke(__thisNode__);
+    if (markIcons == null) {
+      return Collections.emptyList();
+    }
     return ListSequence.fromList(markIcons).select(new ISelector<Icon, IconResource>() {
       public IconResource select(Icon it) {
         return ((IconResource) new Icon2IconResourceAdapter_Deprecated(it));

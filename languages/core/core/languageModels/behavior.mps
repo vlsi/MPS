@@ -355,12 +355,36 @@
             <property role="3SKdUp" value="todo compatibility code to be removed after 3.4" />
           </node>
         </node>
+        <node concept="3cpWs8" id="3xihEZ31DC_" role="3cqZAp">
+          <node concept="3cpWsn" id="3xihEZ31DCA" role="3cpWs9">
+            <property role="TrG5h" value="icon" />
+            <node concept="3uibUv" id="3xihEZ31DC$" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+            </node>
+            <node concept="BsUDl" id="3xihEZ31DCB" role="33vP2m">
+              <ref role="37wK5l" node="4mxbjAOAE$e" resolve="getAdditionalIcon" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3xihEZ31E3v" role="3cqZAp">
+          <node concept="3clFbS" id="3xihEZ31E3x" role="3clFbx">
+            <node concept="3cpWs6" id="3xihEZ31Ec3" role="3cqZAp">
+              <node concept="10Nm6u" id="3xihEZ31Eem" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="3xihEZ31E9Y" role="3clFbw">
+            <node concept="10Nm6u" id="3xihEZ31Eb1" role="3uHU7w" />
+            <node concept="37vLTw" id="3xihEZ31E4Y" role="3uHU7B">
+              <ref role="3cqZAo" node="3xihEZ31DCA" resolve="icon" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6TtJ6IUlTmW" role="3cqZAp">
           <node concept="2ShNRf" id="6TtJ6IUl812" role="3clFbG">
             <node concept="1pGfFk" id="6TtJ6IUlf0g" role="2ShVmc">
-              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="DeprecatedString2IconResourceAdapter" />
-              <node concept="BsUDl" id="6TtJ6IUlQLt" role="37wK5m">
-                <ref role="37wK5l" node="4mxbjAOAE$e" resolve="getAdditionalIcon" />
+              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="Icon2IconResourceAdapter_Deprecated" />
+              <node concept="37vLTw" id="3xihEZ31DCC" role="37wK5m">
+                <ref role="3cqZAo" node="3xihEZ31DCA" resolve="icon" />
               </node>
             </node>
           </node>
@@ -371,9 +395,8 @@
       <property role="TrG5h" value="getIconMarks" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="6TtJ6IUkhQK" role="1B3o_S" />
-      <node concept="3uibUv" id="6TtJ6IUkjez" role="3clF45">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="6TtJ6IUkjf3" role="11_B2D">
+      <node concept="_YKpA" id="3Sf5lW8hONI" role="3clF45">
+        <node concept="3uibUv" id="3Sf5lW8hONK" role="_ZDj9">
           <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
         </node>
       </node>
@@ -396,6 +419,22 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="3Sf5lW8hKyk" role="3cqZAp">
+          <node concept="3clFbS" id="3Sf5lW8hKym" role="3clFbx">
+            <node concept="3cpWs6" id="3Sf5lW8hLc8" role="3cqZAp">
+              <node concept="2YIFZM" id="3Sf5lW8hLsE" role="3cqZAk">
+                <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3Sf5lW8hLac" role="3clFbw">
+            <node concept="10Nm6u" id="3Sf5lW8hLb9" role="3uHU7w" />
+            <node concept="37vLTw" id="3Sf5lW8hKDV" role="3uHU7B">
+              <ref role="3cqZAo" node="6TtJ6IUlR0s" resolve="markIcons" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="6TtJ6IUlQMR" role="3cqZAp">
           <node concept="2OqwBi" id="6TtJ6IUlTN4" role="3cqZAk">
             <node concept="2OqwBi" id="6TtJ6IUlRJf" role="2Oq$k0">
@@ -410,7 +449,7 @@
                         <node concept="10QFUN" id="6TtJ6IUlUWt" role="1eOMHV">
                           <node concept="2ShNRf" id="6TtJ6IUlUWp" role="10QFUP">
                             <node concept="1pGfFk" id="6TtJ6IUlUWq" role="2ShVmc">
-                              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="DeprecatedString2IconResourceAdapter" />
+                              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="Icon2IconResourceAdapter_Deprecated" />
                               <node concept="37vLTw" id="6TtJ6IUlUWr" role="37wK5m">
                                 <ref role="3cqZAo" node="6TtJ6IUlT35" resolve="it" />
                               </node>
