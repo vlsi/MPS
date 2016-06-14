@@ -15,13 +15,14 @@ import java.awt.event.MouseEvent;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
@@ -73,7 +74,7 @@ public class TodoViewer extends JPanel {
     ThreadUtils.assertEDT();
     removeAll();
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
-    com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getProject());
+    com.intellij.openapi.project.Project project = ((MPSProject) getProject()).getProject();
     myUsagesView = new UsagesView(project, viewOptions);
     UsagesView.RerunAction searchTodoAction = new UsagesView.RerunAction(myUsagesView, "Search again");
     myUsagesView.setActions(searchTodoAction, new UsagesView.RebuildAction(myUsagesView), new AnAction("Close", "", AllIcons.Actions.Cancel) {
@@ -82,9 +83,9 @@ public class TodoViewer extends JPanel {
       }
     }, PinToolwindowTabAction.getPinAction());
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
-    searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new ProjectScope(myProject)));
+    searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new GenericHolder<Project>(myProject), new ProjectScope(myProject)));
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
-    searchTodoAction.actionPerformed(AnActionEvent.createFromInputEvent(searchTodoAction, null, ActionPlaces.UNKNOWN));
+    searchTodoAction.actionPerformed(AnActionEvent.createFromInputEvent(searchTodoAction, null, ActionPlaces.TODO_VIEW_TOOLBAR));
     getTool().openToolLater(true);
   }
   public static class MyNodeRepresentator implements INodeRepresentator<SNode> {
