@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.String2IconResourceAdapter_Deprecated;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -50,9 +51,6 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
 import java.util.EnumMap;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -256,7 +254,7 @@ public final class IconManager {
       // for compatibility purposes only 
       String icon = MacrosFactory.forModule((AbstractModule) SNodeOperations.getModel(dn).getModule()).expandPath(path);
       if (icon != null) {
-        return new IconManager.DeprecatedIconResource(icon);
+        return new String2IconResourceAdapter_Deprecated(icon);
       }
       dn = SLinkOperations.getTarget(dn, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
     }
@@ -353,49 +351,5 @@ public final class IconManager {
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TYPESYSTEM, IdeIcons.TYPESYSTEM_MODEL_ICON);
   }
 
-  private static class DeprecatedIconResource extends IconResource {
-    private final String myIcon;
-    public DeprecatedIconResource(@NotNull String icon) {
-      super(null, null);
-      myIcon = icon;
-    }
-    @Override
-    public boolean isValid() {
-      return true;
-    }
-    @Override
-    public boolean isAlreadyReloaded() {
-      return false;
-    }
-    @Override
-    public InputStream getResource() {
-      if (myIcon == null) {
-        return null;
-      }
-      try {
-        return new FileInputStream(myIcon);
-      } catch (FileNotFoundException e) {
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("Can't load icon " + myIcon, e);
-        }
-        return null;
-      }
-    }
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) {
-        return true;
-      }
-      if (o == null || getClass() != o.getClass()) {
-        return false;
-      }
-      IconManager.DeprecatedIconResource that = (IconManager.DeprecatedIconResource) o;
-      return myIcon.equals(that.myIcon);
-    }
-    @Override
-    public int hashCode() {
-      return myIcon.hashCode();
-    }
-  }
   protected static Logger LOG = LogManager.getLogger(IconManager.class);
 }

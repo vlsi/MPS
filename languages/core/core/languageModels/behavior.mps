@@ -8,6 +8,7 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -26,11 +27,13 @@
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="cavf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.legacy(MPS.Core/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
+      <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
         <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
@@ -192,6 +195,21 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -275,6 +293,7 @@
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
+      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -310,6 +329,111 @@
           <node concept="10Nm6u" id="4mxbjAOAG1h" role="3clFbG" />
         </node>
       </node>
+      <node concept="P$JXv" id="6TtJ6IUj_KT" role="lGtFl">
+        <node concept="TZ5HI" id="6TtJ6IUj_KU" role="3nqlJM">
+          <node concept="TZ5HA" id="6TtJ6IUj_KV" role="3HnX3l">
+            <node concept="1dT_AC" id="6TtJ6IUj_Lr" role="1dT_Ay">
+              <property role="1dT_AB" value="use getSideIcon() instead" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6TtJ6IUj_KW" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="6TtJ6IUjtJX" role="13h7CS">
+      <property role="TrG5h" value="getSideIcon" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="6TtJ6IUjtJY" role="1B3o_S" />
+      <node concept="3uibUv" id="6TtJ6IUjvli" role="3clF45">
+        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+      </node>
+      <node concept="3clFbS" id="6TtJ6IUjtK0" role="3clF47">
+        <node concept="3SKdUt" id="6TtJ6IUkjld" role="3cqZAp">
+          <node concept="3SKdUq" id="6TtJ6IUkjle" role="3SKWNk">
+            <property role="3SKdUp" value="todo compatibility code to be removed after 3.4" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6TtJ6IUlTmW" role="3cqZAp">
+          <node concept="2ShNRf" id="6TtJ6IUl812" role="3clFbG">
+            <node concept="1pGfFk" id="6TtJ6IUlf0g" role="2ShVmc">
+              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="DeprecatedString2IconResourceAdapter" />
+              <node concept="BsUDl" id="6TtJ6IUlQLt" role="37wK5m">
+                <ref role="37wK5l" node="4mxbjAOAE$e" resolve="getAdditionalIcon" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="6TtJ6IUkhQJ" role="13h7CS">
+      <property role="TrG5h" value="getIconMarks" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="6TtJ6IUkhQK" role="1B3o_S" />
+      <node concept="3uibUv" id="6TtJ6IUkjez" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="6TtJ6IUkjf3" role="11_B2D">
+          <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6TtJ6IUkhQM" role="3clF47">
+        <node concept="3SKdUt" id="6TtJ6IUkjl1" role="3cqZAp">
+          <node concept="3SKdUq" id="6TtJ6IUkjl2" role="3SKWNk">
+            <property role="3SKdUp" value="todo compatibility code to be removed after 3.4" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6TtJ6IUlR0r" role="3cqZAp">
+          <node concept="3cpWsn" id="6TtJ6IUlR0s" role="3cpWs9">
+            <property role="TrG5h" value="markIcons" />
+            <node concept="_YKpA" id="6TtJ6IUlRbh" role="1tU5fm">
+              <node concept="3uibUv" id="6TtJ6IUlRbj" role="_ZDj9">
+                <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+              </node>
+            </node>
+            <node concept="BsUDl" id="6TtJ6IUlR0t" role="33vP2m">
+              <ref role="37wK5l" node="3pOfV45ExLD" resolve="getMarkIcons" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6TtJ6IUlQMR" role="3cqZAp">
+          <node concept="2OqwBi" id="6TtJ6IUlTN4" role="3cqZAk">
+            <node concept="2OqwBi" id="6TtJ6IUlRJf" role="2Oq$k0">
+              <node concept="37vLTw" id="6TtJ6IUlR0u" role="2Oq$k0">
+                <ref role="3cqZAo" node="6TtJ6IUlR0s" resolve="markIcons" />
+              </node>
+              <node concept="3$u5V9" id="6TtJ6IUlT31" role="2OqNvi">
+                <node concept="1bVj0M" id="6TtJ6IUlT33" role="23t8la">
+                  <node concept="3clFbS" id="6TtJ6IUlT34" role="1bW5cS">
+                    <node concept="3clFbF" id="6TtJ6IUlTcI" role="3cqZAp">
+                      <node concept="1eOMI4" id="6TtJ6IUlUWs" role="3clFbG">
+                        <node concept="10QFUN" id="6TtJ6IUlUWt" role="1eOMHV">
+                          <node concept="2ShNRf" id="6TtJ6IUlUWp" role="10QFUP">
+                            <node concept="1pGfFk" id="6TtJ6IUlUWq" role="2ShVmc">
+                              <ref role="37wK5l" to="unno:Z6TQiSRD5N" resolve="DeprecatedString2IconResourceAdapter" />
+                              <node concept="37vLTw" id="6TtJ6IUlUWr" role="37wK5m">
+                                <ref role="3cqZAo" node="6TtJ6IUlT35" resolve="it" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3uibUv" id="6TtJ6IUlV4o" role="10QFUM">
+                            <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="6TtJ6IUlT35" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="6TtJ6IUlT36" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="ANE8D" id="6TtJ6IUlUgK" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3pOfV45ExLD" role="13h7CS">
       <property role="TrG5h" value="getMarkIcons" />
@@ -332,6 +456,18 @@
         <node concept="3uibUv" id="3pOfV45EBR0" role="11_B2D">
           <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
         </node>
+      </node>
+      <node concept="P$JXv" id="6TtJ6IUkjfA" role="lGtFl">
+        <node concept="TZ5HI" id="6TtJ6IUkjfB" role="3nqlJM">
+          <node concept="TZ5HA" id="6TtJ6IUkjfC" role="3HnX3l">
+            <node concept="1dT_AC" id="6TtJ6IUkjkR" role="1dT_Ay">
+              <property role="1dT_AB" value="use getIconMarks instead" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6TtJ6IUkjfD" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="13i0hz" id="hEwIMiw" role="13h7CS">

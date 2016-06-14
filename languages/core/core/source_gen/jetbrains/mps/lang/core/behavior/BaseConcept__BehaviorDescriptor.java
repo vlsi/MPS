@@ -13,12 +13,16 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
@@ -32,13 +36,15 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<Boolean> isInTemplates_idhEwIMij = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInTemplates").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMij").registry(REGISTRY).build();
   public static final SMethod<Icon> getAdditionalIcon_id4mxbjAOAE$e = new SMethodBuilder<Icon>(new SJavaCompoundTypeImpl(Icon.class)).name("getAdditionalIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4mxbjAOAE$e").registry(REGISTRY).build();
+  public static final SMethod<IconResource> getSideIcon_id6TtJ6IUjtJX = new SMethodBuilder<IconResource>(new SJavaCompoundTypeImpl(IconResource.class)).name("getSideIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUjtJX").registry(REGISTRY).build();
+  public static final SMethod<List<IconResource>> getIconMarks_id6TtJ6IUkhQJ = new SMethodBuilder<List<IconResource>>(new SJavaCompoundTypeImpl(List.class)).name("getIconMarks").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUkhQJ").registry(REGISTRY).build();
   public static final SMethod<List<Icon>> getMarkIcons_id3pOfV45ExLD = new SMethodBuilder<List<Icon>>(new SJavaCompoundTypeImpl(List.class)).name("getMarkIcons").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3pOfV45ExLD").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
   public static final SMethod<String> getDetailedPresentation_id22G2W3WJ92t = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDetailedPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("22G2W3WJ92t").registry(REGISTRY).build();
   public static final SMethod<Integer> getMetaLevel_id3t0v3yFOD1A = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMetaLevel").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3t0v3yFOD1A").registry(REGISTRY).build();
   public static final SMethod<Boolean> substituteInAmbigousPosition_id1653mnvAgq$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("substituteInAmbigousPosition").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq$").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isInTemplates_idhEwIMij, getAdditionalIcon_id4mxbjAOAE$e, getMarkIcons_id3pOfV45ExLD, getPresentation_idhEwIMiw, getDetailedPresentation_id22G2W3WJ92t, getMetaLevel_id3t0v3yFOD1A, substituteInAmbigousPosition_id1653mnvAgq$);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isInTemplates_idhEwIMij, getAdditionalIcon_id4mxbjAOAE$e, getSideIcon_id6TtJ6IUjtJX, getIconMarks_id6TtJ6IUkhQJ, getMarkIcons_id3pOfV45ExLD, getPresentation_idhEwIMiw, getDetailedPresentation_id22G2W3WJ92t, getMetaLevel_id3t0v3yFOD1A, substituteInAmbigousPosition_id1653mnvAgq$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -46,9 +52,24 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static boolean isInTemplates_idhEwIMij(@NotNull SNode __thisNode__) {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(__thisNode__));
   }
+  @Deprecated
   /*package*/ static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
     return null;
   }
+  /*package*/ static IconResource getSideIcon_id6TtJ6IUjtJX(@NotNull SNode __thisNode__) {
+    // todo compatibility code to be removed after 3.4 
+    return new Icon2IconResourceAdapter_Deprecated(BaseConcept__BehaviorDescriptor.getAdditionalIcon_id4mxbjAOAE$e.invoke(__thisNode__));
+  }
+  /*package*/ static List<IconResource> getIconMarks_id6TtJ6IUkhQJ(@NotNull SNode __thisNode__) {
+    // todo compatibility code to be removed after 3.4 
+    List<Icon> markIcons = BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invoke(__thisNode__);
+    return ListSequence.fromList(markIcons).select(new ISelector<Icon, IconResource>() {
+      public IconResource select(Icon it) {
+        return ((IconResource) new Icon2IconResourceAdapter_Deprecated(it));
+      }
+    }).toListSequence();
+  }
+  @Deprecated
   /*package*/ static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
     return new ArrayList<Icon>();
   }
@@ -111,12 +132,16 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
       case 1:
         return (T) ((Icon) getAdditionalIcon_id4mxbjAOAE$e(node));
       case 2:
-        return (T) ((List<Icon>) getMarkIcons_id3pOfV45ExLD(node));
+        return (T) ((IconResource) getSideIcon_id6TtJ6IUjtJX(node));
       case 3:
-        return (T) ((String) getPresentation_idhEwIMiw(node));
+        return (T) ((List<IconResource>) getIconMarks_id6TtJ6IUkhQJ(node));
       case 4:
-        return (T) ((String) getDetailedPresentation_id22G2W3WJ92t(node));
+        return (T) ((List<Icon>) getMarkIcons_id3pOfV45ExLD(node));
       case 5:
+        return (T) ((String) getPresentation_idhEwIMiw(node));
+      case 6:
+        return (T) ((String) getDetailedPresentation_id22G2W3WJ92t(node));
+      case 7:
         return (T) ((Integer) getMetaLevel_id3t0v3yFOD1A(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -130,7 +155,7 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 6:
+      case 8:
         return (T) ((Boolean) substituteInAmbigousPosition_id1653mnvAgq$(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
