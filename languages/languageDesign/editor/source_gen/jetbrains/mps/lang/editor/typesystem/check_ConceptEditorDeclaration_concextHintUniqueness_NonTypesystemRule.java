@@ -29,7 +29,7 @@ import java.util.LinkedList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -76,7 +76,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
           SetSequence.fromSet(visitedLanguages).addElement(module.getModuleName());
         }
       }
-      SModel editorModel = LanguageAspect.EDITOR.get(nextLanguage);
+      SModel editorModel = SModuleOperations.getAspect(nextLanguage, "editor");
       if (editorModel != null) {
         CollectionSequence.fromCollection(duplicatingEditorDeclarations).addSequence(ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -84,7 +84,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     Iterable<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     Iterable<SModel> structures = Sequence.fromIterable(languages).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
-        return LanguageAspect.STRUCTURE.get(it);
+        return SModuleOperations.getAspect(it, "structure");
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

@@ -88,10 +88,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -208,9 +204,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -254,9 +248,6 @@
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
-      </concept>
-      <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
-        <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
@@ -387,25 +378,6 @@
     <property role="TrG5h" value="IconManager" />
     <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="277Nzj6qTEk" role="1B3o_S" />
-    <node concept="Wx3nA" id="axXFkGpDcC" role="jymVt">
-      <property role="TrG5h" value="ourAspectsToIcons" />
-      <node concept="3Tm6S6" id="axXFkGpDcD" role="1B3o_S" />
-      <node concept="3rvAFt" id="axXFkGpDcI" role="1tU5fm">
-        <node concept="3uibUv" id="axXFkGpDcJ" role="3rvQeY">
-          <ref role="3uigEE" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-        </node>
-        <node concept="3uibUv" id="axXFkGpDcK" role="3rvSg0">
-          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-        </node>
-      </node>
-      <node concept="z59LJ" id="7IH442cOwFV" role="lGtFl">
-        <node concept="TZ5HA" id="7IH442cOwFW" role="TZ5H$">
-          <node concept="1dT_AC" id="7IH442cOwFX" role="1dT_Ay">
-            <property role="1dT_AB" value="[MM] this usage of LanguageAspect is reviewed" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="Wx3nA" id="277Nzj6qTEH" role="jymVt">
       <property role="TrG5h" value="EMPTY_ICON" />
       <property role="3TUv4t" value="true" />
@@ -1093,49 +1065,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7IH442cOuOT" role="3cqZAp" />
-        <node concept="3SKdUt" id="7IH442cOwxS" role="3cqZAp">
-          <node concept="3SKdUq" id="7IH442cOwxT" role="3SKWNk">
-            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7IH442cOt4N" role="3cqZAp">
-          <node concept="3cpWsn" id="7IH442cOt4O" role="3cpWs9">
-            <property role="TrG5h" value="oldAspect" />
-            <node concept="3uibUv" id="7IH442cOt4L" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-            </node>
-            <node concept="2YIFZM" id="7IH442cOt4P" role="33vP2m">
-              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.getOldAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getOldAspect" />
-              <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
-              <node concept="37vLTw" id="7IH442cOt4Q" role="37wK5m">
-                <ref role="3cqZAo" node="2eVlusX1NX8" resolve="model" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="277Nzj6qTKb" role="3cqZAp">
-          <node concept="3y3z36" id="7IH442cOsDr" role="3clFbw">
-            <node concept="10Nm6u" id="7IH442cOsFX" role="3uHU7w" />
-            <node concept="37vLTw" id="7IH442cOt4R" role="3uHU7B">
-              <ref role="3cqZAo" node="7IH442cOt4O" resolve="oldAspect" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="277Nzj6qTKx" role="3clFbx">
-            <node concept="3cpWs6" id="277Nzj6qTKy" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqystTK" role="3cqZAk">
-                <ref role="37wK5l" node="277Nzj6qTOk" resolve="getIconForAspect" />
-                <node concept="2YIFZM" id="7IH442cOsId" role="37wK5m">
-                  <ref role="37wK5l" to="vndm:~LanguageAspectSupport.getOldAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getOldAspect" />
-                  <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
-                  <node concept="37vLTw" id="7IH442cOsIe" role="37wK5m">
-                    <ref role="3cqZAo" node="2eVlusX1NX8" resolve="model" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7IH442cOuLb" role="3cqZAp" />
         <node concept="3cpWs8" id="7IH442cOtIJ" role="3cqZAp">
           <node concept="3cpWsn" id="7IH442cOtIK" role="3cpWs9">
             <property role="TrG5h" value="newAspect" />
@@ -2390,6 +2319,9 @@
     <node concept="2tJIrI" id="Z6TQiSPs3g" role="jymVt" />
     <node concept="2YIFZL" id="277Nzj6qTLb" role="jymVt">
       <property role="TrG5h" value="getIconFor" />
+      <node concept="2AHcQZ" id="Z6TQiSQ8T8" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
       <node concept="3Tm1VV" id="277Nzj6qTLc" role="1B3o_S" />
       <node concept="3uibUv" id="277Nzj6qTLd" role="3clF45">
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
@@ -2451,351 +2383,8 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="Z6TQiSQ8T8" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="2tJIrI" id="Z6TQiSPsLX" role="jymVt" />
-    <node concept="2YIFZL" id="277Nzj6qTOk" role="jymVt">
-      <property role="TrG5h" value="getIconForAspect" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="277Nzj6qTOl" role="1B3o_S" />
-      <node concept="3uibUv" id="277Nzj6qTOm" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-      </node>
-      <node concept="37vLTG" id="277Nzj6qTOn" role="3clF46">
-        <property role="TrG5h" value="aspect" />
-        <node concept="3uibUv" id="277Nzj6qTOo" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="277Nzj6qTOp" role="3clF47">
-        <node concept="3SKdUt" id="7IH442cOwln" role="3cqZAp">
-          <node concept="3SKdUq" id="7IH442cOwlo" role="3SKWNk">
-            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="axXFkGpDf1" role="3cqZAp">
-          <node concept="3cpWsn" id="axXFkGpDf2" role="3cpWs9">
-            <property role="TrG5h" value="icon" />
-            <node concept="3uibUv" id="axXFkGpDf3" role="1tU5fm">
-              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-            </node>
-            <node concept="3EllGN" id="axXFkGpDf4" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxgm8uA" role="3ElVtu">
-                <ref role="3cqZAo" node="277Nzj6qTOn" resolve="aspect" />
-              </node>
-              <node concept="37vLTw" id="2BHiRxeoicQ" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="axXFkGpDcp" role="3cqZAp">
-          <node concept="3clFbS" id="axXFkGpDcq" role="3clFbx">
-            <node concept="3cpWs6" id="axXFkGpDeU" role="3cqZAp">
-              <node concept="10M0yZ" id="axXFkGpDfe" role="3cqZAk">
-                <ref role="3cqZAo" to="xnls:~IdeIcons.MODEL_ICON" resolve="MODEL_ICON" />
-                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="axXFkGpDeQ" role="3clFbw">
-            <node concept="10Nm6u" id="axXFkGpDeT" role="3uHU7w" />
-            <node concept="37vLTw" id="3GM_nagTxiX" role="3uHU7B">
-              <ref role="3cqZAo" node="axXFkGpDf2" resolve="icon" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="axXFkGpDfb" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTwPz" role="3cqZAk">
-            <ref role="3cqZAo" node="axXFkGpDf2" resolve="icon" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7IH442cOrXD" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="7IH442cOs36" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="7IH442cOsb3" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="7IH442cOsdk" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="Z6TQiSPtwF" role="jymVt" />
-    <node concept="1Pe0a1" id="axXFkGpDcP" role="jymVt">
-      <node concept="3clFbS" id="axXFkGpDcQ" role="1Pe0a2">
-        <node concept="3SKdUt" id="7IH442cOw0N" role="3cqZAp">
-          <node concept="3SKdUq" id="7IH442cOw3L" role="3SKWNk">
-            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDes" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDeu" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeoniW" role="37vLTJ">
-              <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-            </node>
-            <node concept="2ShNRf" id="axXFkGpDex" role="37vLTx">
-              <node concept="1pGfFk" id="axXFkGpDey" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~EnumMap.&lt;init&gt;(java.lang.Class)" resolve="EnumMap" />
-                <node concept="3uibUv" id="axXFkGpDez" role="1pMfVU">
-                  <ref role="3uigEE" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-                <node concept="3uibUv" id="axXFkGpDe$" role="1pMfVU">
-                  <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-                </node>
-                <node concept="3VsKOn" id="axXFkGpDe_" role="37wK5m">
-                  <ref role="3VsUkX" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDd1" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDd2" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDd3" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeohaG" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDd5" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDd6" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.ACTIONS_MODEL_ICON" resolve="ACTIONS_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDd7" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDd8" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDd9" role="37vLTJ">
-              <node concept="37vLTw" id="7IH442cOkFt" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdb" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdc" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.BEHAVIOR_MODEL_ICON" resolve="BEHAVIOR_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdd" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDde" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdf" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeon3D" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdh" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdi" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.CONSTRAINTS_MODEL_ICON" resolve="CONSTRAINTS_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdj" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdk" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdl" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeorFC" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdn" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdo" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.DATA_FLOW_MODEL_ICON" resolve="DATA_FLOW_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdp" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdq" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdr" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeogq_" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdt" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdu" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.EDITOR_MODEL_ICON" resolve="EDITOR_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdv" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdw" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdx" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoic$" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdz" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDd$" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.FIND_USAGES_MODEL_ICON" resolve="FIND_USAGES_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDd_" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdA" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdB" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeon8T" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdD" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdE" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.INTENTIONS_MODEL_ICON" resolve="INTENTIONS_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdF" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdG" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdH" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoq87" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdJ" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.PLUGIN" resolve="PLUGIN" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdK" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.PLUGIN_MODEL_ICON" resolve="PLUGIN_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdL" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdM" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdN" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoryi" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdP" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.REFACTORINGS" resolve="REFACTORINGS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdQ" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.REFACTORINGS_MODEL_ICON" resolve="REFACTORINGS_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdR" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdS" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdT" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeop0B" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdV" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.SCRIPTS" resolve="SCRIPTS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdW" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.MODEL_ICON" resolve="MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDdX" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdY" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdZ" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeodlv" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDe1" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDe2" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.STRUCTURE_MODEL_ICON" resolve="STRUCTURE_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDe9" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDea" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDeb" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeogpV" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDed" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEST" resolve="TEST" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDee" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.TEST_MODEL_ICON" resolve="TEST_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDef" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDeg" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDeh" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoicu" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDej" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDek" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.TEXT_GEN_MODEL_ICON" resolve="TEXT_GEN_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="axXFkGpDel" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDem" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDen" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoq9W" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDep" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDeq" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.TYPESYSTEM_MODEL_ICON" resolve="TYPESYSTEM_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="Z6TQiSRQqD" role="jymVt" />
   </node>
   <node concept="312cEu" id="2gYvKAyU8B3">
     <property role="TrG5h" value="CachingIconManager" />
