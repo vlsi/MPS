@@ -8,7 +8,7 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl;
+import jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testExtendingAnalyzer.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
@@ -47,7 +47,7 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
       if (aspectClass == DataFlowAspectDescriptor.class) {
-        return (T) new DataFlowAspectDescriptorImpl();
+        return (T) new DefaultDataFlowDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
@@ -65,8 +65,10 @@ public class Language extends LanguageRuntime {
         return (T) new testExtendingAnalyzer.structure.StructureAspectDescriptor();
       }
     }
-    if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new ConceptPresentationAspectImpl();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
     }
     return super.createAspect(aspectClass);
   }

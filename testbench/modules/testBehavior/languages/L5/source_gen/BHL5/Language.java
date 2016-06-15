@@ -51,8 +51,10 @@ public class Language extends LanguageRuntime {
         return (T) new BHL5.structure.StructureAspectDescriptor();
       }
     }
-    if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new ConceptPresentationAspectImpl();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
     }
     return super.createAspect(aspectClass);
   }

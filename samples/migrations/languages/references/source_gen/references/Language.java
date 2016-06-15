@@ -8,8 +8,6 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import references.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
-import references.migration.MigrationDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import references.structure.ConceptPresentationAspectImpl;
@@ -42,18 +40,15 @@ public class Language extends LanguageRuntime {
         return (T) new EditorAspectDescriptorImpl();
       }
     }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor")) {
-      if (aspectClass == MigrationDescriptor.class) {
-        return (T) new MigrationDescriptorImpl();
-      }
-    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {
         return (T) new references.structure.StructureAspectDescriptor();
       }
     }
-    if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new ConceptPresentationAspectImpl();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
     }
     return super.createAspect(aspectClass);
   }
