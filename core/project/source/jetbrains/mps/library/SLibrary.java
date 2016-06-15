@@ -79,6 +79,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   void attach() {
     LOG.debug("Attaching " + this);
+    // without this the performance drops because of the heavy idea local filesystem listening mechanism
     myFile.addListener(this);
     collectAndRegisterModules();
   }

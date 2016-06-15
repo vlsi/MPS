@@ -65,10 +65,6 @@
       <skipForDefaultProject/>
     </component>
     <component>
-      <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
-      <implementation-class>jetbrains.mps.vcs.integration.ModuleVcsPathPresenter</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
     </component>
     <component>
@@ -119,6 +115,9 @@
 
     <projectService serviceInterface="com.intellij.openapi.vcs.AbstractVcsHelper"
                     serviceImplementation="jetbrains.mps.vcs.platform.integration.MPSVcsHelper" overrides="true"/>
+
+    <projectService serviceInterface="com.intellij.openapi.vcs.impl.VcsPathPresenter"
+                    serviceImplementation="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
