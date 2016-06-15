@@ -58,6 +58,7 @@
     <classNode dependClassName="com.intellij.util.PlatformIcons" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Deprecated" />

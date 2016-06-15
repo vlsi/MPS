@@ -49,6 +49,7 @@ import jetbrains.mps.util.String2IconResourceAdapter_Deprecated;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
+import java.io.InputStream;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
@@ -299,7 +300,11 @@ public final class IconManager {
     if (!(ir.isValid())) {
       return null;
     }
-    Icon icon = IconLoadHelper.loadIcon(ir.getResource());
+    InputStream r = ir.getResource();
+    if (r == null) {
+      return null;
+    }
+    Icon icon = IconLoadHelper.loadIcon(r);
     MapSequence.fromMap(ourResToIcon).put(ir, icon);
     return icon;
   }
