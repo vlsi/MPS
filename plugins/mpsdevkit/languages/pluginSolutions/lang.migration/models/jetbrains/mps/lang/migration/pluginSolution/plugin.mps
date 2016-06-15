@@ -2268,7 +2268,7 @@
                     <node concept="1Y3b0j" id="1xRmxf63uFl" role="YeSDq">
                       <property role="2bfB8j" value="true" />
                       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+                      <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
                       <node concept="3clFb_" id="1xRmxf63uFm" role="jymVt">
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getParticipant" />
@@ -2308,19 +2308,6 @@
                           <node concept="3clFbF" id="1xRmxf63uFz" role="3cqZAp">
                             <node concept="37vLTw" id="1xRmxf63uF$" role="3clFbG">
                               <ref role="3cqZAo" node="1xRmxf63uEV" resolve="searchResults" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFb_" id="1xRmxf63uF_" role="jymVt">
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="needsToPreserveOldNode" />
-                        <node concept="10P_77" id="1xRmxf63uFA" role="3clF45" />
-                        <node concept="3Tm1VV" id="1xRmxf63uFB" role="1B3o_S" />
-                        <node concept="3clFbS" id="1xRmxf63uFC" role="3clF47">
-                          <node concept="3clFbF" id="1xRmxf63uFD" role="3cqZAp">
-                            <node concept="3clFbT" id="1xRmxf63uFE" role="3clFbG">
-                              <property role="3clFbU" value="false" />
                             </node>
                           </node>
                         </node>
@@ -4920,8 +4907,8 @@
               <node concept="YeOm9" id="361hHoA2j_7" role="2ShVmc">
                 <node concept="1Y3b0j" id="361hHoA2j_8" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
                   <node concept="3clFb_" id="5c9yDr4IBbG" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="getSearchResults" />
@@ -4934,19 +4921,6 @@
                       <node concept="3cpWs6" id="5c9yDr4IBcv" role="3cqZAp">
                         <node concept="37vLTw" id="5c9yDr4IBcw" role="3cqZAk">
                           <ref role="3cqZAo" node="5c9yDr4IBbL" resolve="results" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFb_" id="2wqpb2$LZD2" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="needsToPreserveOldNode" />
-                    <node concept="10P_77" id="2wqpb2$LZD3" role="3clF45" />
-                    <node concept="3Tm1VV" id="2wqpb2$LZD4" role="1B3o_S" />
-                    <node concept="3clFbS" id="2wqpb2$LZD5" role="3clF47">
-                      <node concept="3clFbF" id="3r9sVr9SAPO" role="3cqZAp">
-                        <node concept="3clFbT" id="3r9sVr9SAPN" role="3clFbG">
-                          <property role="3clFbU" value="false" />
                         </node>
                       </node>
                     </node>
@@ -5519,7 +5493,7 @@
                   <node concept="1Y3b0j" id="2aY$7DLS_A1" role="YeSDq">
                     <property role="2bfB8j" value="true" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+                    <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
                     <node concept="3clFb_" id="2aY$7DLS_A2" role="jymVt">
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getParticipant" />
@@ -5555,19 +5529,6 @@
                             <node concept="1pGfFk" id="2aY$7DLMonr" role="2ShVmc">
                               <ref role="37wK5l" to="g4jo:J2bOg02HbW" resolve="SearchResults" />
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFb_" id="2aY$7DLS_Ad" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="needsToPreserveOldNode" />
-                      <node concept="10P_77" id="2aY$7DLS_Ae" role="3clF45" />
-                      <node concept="3Tm1VV" id="2aY$7DLS_Af" role="1B3o_S" />
-                      <node concept="3clFbS" id="2aY$7DLS_Ag" role="3clF47">
-                        <node concept="3clFbF" id="2aY$7DLS_Ah" role="3cqZAp">
-                          <node concept="3clFbT" id="2aY$7DLS_Ai" role="3clFbG">
-                            <property role="3clFbU" value="false" />
                           </node>
                         </node>
                       </node>
@@ -6517,8 +6478,8 @@
                               <node concept="YeOm9" id="4B0FDdRJCvr" role="2ShVmc">
                                 <node concept="1Y3b0j" id="4B0FDdRJCvs" role="YeSDq">
                                   <property role="2bfB8j" value="true" />
-                                  <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
                                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
                                   <node concept="3Tm1VV" id="4B0FDdRJCv_" role="1B3o_S" />
                                   <node concept="3clFb_" id="4B0FDdRJCvA" role="jymVt">
                                     <property role="1EzhhJ" value="false" />
@@ -6531,19 +6492,6 @@
                                       <node concept="3clFbF" id="4B0FDdRJCvE" role="3cqZAp">
                                         <node concept="37vLTw" id="4B0FDdRJCvF" role="3clFbG">
                                           <ref role="3cqZAo" node="4B0FDdRJCv2" resolve="searchResults" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3clFb_" id="4B0FDdRJCvG" role="jymVt">
-                                    <property role="1EzhhJ" value="false" />
-                                    <property role="TrG5h" value="needsToPreserveOldNode" />
-                                    <node concept="10P_77" id="4B0FDdRJCvH" role="3clF45" />
-                                    <node concept="3Tm1VV" id="4B0FDdRJCvI" role="1B3o_S" />
-                                    <node concept="3clFbS" id="4B0FDdRJCvJ" role="3clF47">
-                                      <node concept="3clFbF" id="4B0FDdRJCvK" role="3cqZAp">
-                                        <node concept="3clFbT" id="4B0FDdRJCvL" role="3clFbG">
-                                          <property role="3clFbU" value="false" />
                                         </node>
                                       </node>
                                     </node>

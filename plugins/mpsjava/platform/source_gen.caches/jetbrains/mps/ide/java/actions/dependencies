@@ -886,16 +886,16 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveStaticFieldExecutable" file="MoveStaticFieldExecutable.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.MoveRefactoringRunnable" />
     <classNode extendsClassName="jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable" />
   </dependency>
@@ -939,6 +939,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.MoveStaticMethodExecutable" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="java.util.HashMap" />
@@ -962,16 +963,16 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.MoveStaticMethodExecutable" file="MoveStaticMethodExecutable.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.MoveRefactoringRunnable" />
     <classNode extendsClassName="jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable" />
   </dependency>

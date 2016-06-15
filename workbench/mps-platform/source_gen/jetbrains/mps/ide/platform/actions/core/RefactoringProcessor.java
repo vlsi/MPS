@@ -44,7 +44,7 @@ public class RefactoringProcessor {
     List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> options);
   }
 
-  public static interface RefactoringUI extends RefactoringProcessor.RefactoringSearchUI {
+  public interface RefactoringUI extends RefactoringProcessor.RefactoringSearchUI {
     void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession session);
   }
 

@@ -279,12 +279,9 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
     // todo: write guard migration with 'execute after' 
 
-    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
+    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
       public SearchResults getSearchResults() {
         return results;
-      }
-      public boolean needsToPreserveOldNode() {
-        return false;
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
         final SNode targetNode = finalState.resolve(repository);

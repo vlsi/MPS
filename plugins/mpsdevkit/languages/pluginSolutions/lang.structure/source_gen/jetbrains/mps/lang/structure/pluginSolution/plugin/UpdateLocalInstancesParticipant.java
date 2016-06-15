@@ -91,15 +91,12 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
         final SNodeReference nodeRef = instance.getReference();
         final SearchResults searchResults = new SearchResults();
         searchResults.add(new SearchResult<SNode>(instance, "instance"));
-        RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {
+        RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new RefactoringParticipant.ChangeBase<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {
           public MoveNodeRefactoringParticipant<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> getParticipant() {
             return UpdateLocalInstancesParticipant.this;
           }
           public SearchResults getSearchResults() {
             return searchResults;
-          }
-          public boolean needsToPreserveOldNode() {
-            return false;
           }
           public void confirm(final Tuples._2<F, SNodeReference> finalState, final SRepository repository, final RefactoringSession refactoringSession) {
             refactoringSession.registerChange(new Runnable() {

@@ -88,12 +88,9 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
       public RefactoringParticipant.Change<SModelReference, SModelReference> select(SModel it) {
         final SModelReference usageRef = it.getReference();
         final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SModel>(), sourceModel.value), ListSequence.fromListAndArray(new ArrayList<SearchResult<SModel>>(), new SearchResult<SModel>(it, "dependent model")));
-        RefactoringParticipant.Change<SModelReference, SModelReference> change = new RefactoringParticipant.Change<SModelReference, SModelReference>() {
+        RefactoringParticipant.Change<SModelReference, SModelReference> change = new RefactoringParticipant.ChangeBase<SModelReference, SModelReference>() {
           public SearchResults getSearchResults() {
             return searchResults;
-          }
-          public boolean needsToPreserveOldNode() {
-            return false;
           }
           public void confirm(final SModelReference finalState, final SRepository repository, RefactoringSession refactoringSession) {
             refactoringSession.registerChange(new Runnable() {

@@ -83,12 +83,9 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
           final SNodeReference containingNode = ref.getSourceNode().getReference();
           final SReferenceLink role = ref.getLink();
           final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), movingNode), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
-          RefactoringParticipant.Change<SNodeReference, String> change = new RefactoringParticipant.Change<SNodeReference, String>() {
+          RefactoringParticipant.Change<SNodeReference, String> change = new RefactoringParticipant.ChangeBase<SNodeReference, String>() {
             public SearchResults getSearchResults() {
               return searchResults;
-            }
-            public boolean needsToPreserveOldNode() {
-              return false;
             }
             public void confirm(final String finalState, final SRepository repository, RefactoringSession refactoringSession) {
               refactoringSession.registerChange(new Runnable() {
@@ -99,7 +96,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
                   }
                   if (node.getModel() instanceof EditableSModel && node.getReference(role) instanceof jetbrains.mps.smodel.SReference) {
                     ((jetbrains.mps.smodel.SReference) node.getReference(role)).setResolveInfo(finalState);
-                    as_xv67ae_a0a1a2a0a0a0a0a2a0a0d0a0a0a0a5a1a8(node.getModel(), EditableSModel.class).setChanged(true);
+                    as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a5a1a8(node.getModel(), EditableSModel.class).setChanged(true);
                   }
                 }
               });
@@ -113,7 +110,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
   private static boolean eq_xv67ae_a0a0a0a0a0a0a0a4a1a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static <T> T as_xv67ae_a0a1a2a0a0a0a0a2a0a0d0a0a0a0a5a1a8(Object o, Class<T> type) {
+  private static <T> T as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a5a1a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

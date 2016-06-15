@@ -189,15 +189,12 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
       final SReferenceLink role = ref.getLink();
       final String resolveInfo = SLinkOperations.getResolveInfo(ref);
       final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), ref.getTargetNode()), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
-      RefactoringParticipant.Change<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>> change = new RefactoringParticipant.Change<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>>() {
+      RefactoringParticipant.Change<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>> change = new RefactoringParticipant.ChangeBase<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>>() {
         public MoveNodeRefactoringParticipant<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>> getParticipant() {
           return UpdateReferencesParticipantBase.this;
         }
         public SearchResults getSearchResults() {
           return searchResults;
-        }
-        public boolean needsToPreserveOldNode() {
-          return false;
         }
         public void confirm(final UpdateReferencesParticipantBase.NodeData<T> finalState, final SRepository repository, final RefactoringSession refactoringSession) {
           refactoringSession.registerChange(new Runnable() {

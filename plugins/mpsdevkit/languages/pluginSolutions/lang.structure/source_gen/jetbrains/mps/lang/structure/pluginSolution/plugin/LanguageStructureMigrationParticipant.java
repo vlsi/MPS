@@ -181,12 +181,12 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
 
     // todo: write guard migration with 'execute after' 
 
-    RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {
+    RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> change = new RefactoringParticipant.ChangeBase<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>() {
       public SearchResults getSearchResults() {
         return results;
       }
-      public boolean needsToPreserveOldNode() {
-        return true;
+      public RefactoringParticipant.KeepOldNodes needsToPreserveOldNode() {
+        return RefactoringParticipant.KeepOldNodes.KEEP;
       }
       public void confirm(Tuples._2<F, SNodeReference> finalState, SRepository repository, RefactoringSession refactoringSession) {
         Language sourceModule = as_kz6lmo_a0a0a2a0a0i0q(check_kz6lmo_a0a0a2a0a0i0q(check_kz6lmo_a0a0a0c0a0a8a61(initialState._1().resolve(repository))), Language.class);

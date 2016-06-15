@@ -42178,8 +42178,8 @@
                           <node concept="YeOm9" id="2ziiPwwJLfO" role="2ShVmc">
                             <node concept="1Y3b0j" id="2ziiPwwJLfP" role="YeSDq">
                               <property role="2bfB8j" value="true" />
-                              <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
                               <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                              <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
                               <node concept="3clFb_" id="2ziiPwwJQyJ" role="jymVt">
                                 <property role="1EzhhJ" value="false" />
                                 <property role="TrG5h" value="getSearchResults" />
@@ -42192,17 +42192,6 @@
                                     <node concept="37vLTw" id="2ziiPwwKNmk" role="3clFbG">
                                       <ref role="3cqZAo" node="1xRmxf63uEV" resolve="searchResults" />
                                     </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFb_" id="2ziiPwwJQyT" role="jymVt">
-                                <property role="1EzhhJ" value="false" />
-                                <property role="TrG5h" value="needsToPreserveOldNode" />
-                                <node concept="10P_77" id="2ziiPwwJQyU" role="3clF45" />
-                                <node concept="3Tm1VV" id="2ziiPwwJQyV" role="1B3o_S" />
-                                <node concept="3clFbS" id="2ziiPwwJQz0" role="3clF47">
-                                  <node concept="3clFbF" id="2ziiPwwJQz2" role="3cqZAp">
-                                    <node concept="3clFbT" id="2ziiPwwJQz1" role="3clFbG" />
                                   </node>
                                 </node>
                               </node>

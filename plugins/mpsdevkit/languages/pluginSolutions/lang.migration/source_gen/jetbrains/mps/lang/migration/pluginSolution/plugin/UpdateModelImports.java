@@ -56,15 +56,12 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
     if (!(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
-    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), new RefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
       public MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> getParticipant() {
         return UpdateModelImports.this;
       }
       public SearchResults getSearchResults() {
         return new SearchResults();
-      }
-      public boolean needsToPreserveOldNode() {
-        return false;
       }
       public void confirm(final SNodeReference finalState, final SRepository repository, RefactoringSession refactoringSession) {
         refactoringSession.registerChange(new Runnable() {

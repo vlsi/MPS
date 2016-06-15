@@ -23744,8 +23744,8 @@
                   </node>
                   <node concept="2ShNRf" id="5$FcEFNiMF9" role="37wK5m">
                     <node concept="3rGOSV" id="5$FcEFNiNfK" role="2ShVmc">
-                      <node concept="3uibUv" id="5$FcEFNiNAT" role="3rHrn6">
-                        <ref role="3uigEE" to="lfzw:1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
+                      <node concept="3uibUv" id="7tV5ZLw9vkc" role="3rHrn6">
+                        <ref role="3uigEE" to="lfzw:7tV5ZLw8bTF" resolve="MoveNodesActionBase.NodeProcessor" />
                       </node>
                       <node concept="_YKpA" id="5$FcEFNiOOh" role="3rHtpV">
                         <node concept="3Tqbb2" id="5$FcEFNiP6A" role="_ZDj9" />
@@ -24134,8 +24134,8 @@
                   </node>
                   <node concept="2ShNRf" id="7Sw_42UC8my" role="37wK5m">
                     <node concept="3rGOSV" id="7Sw_42UC8mz" role="2ShVmc">
-                      <node concept="3uibUv" id="7Sw_42UC8m$" role="3rHrn6">
-                        <ref role="3uigEE" to="lfzw:1hLOda5bgWh" resolve="MoveNodesActionBase.NodeProcessor" />
+                      <node concept="3uibUv" id="7tV5ZLw9xr9" role="3rHrn6">
+                        <ref role="3uigEE" to="lfzw:7tV5ZLw8bTF" resolve="MoveNodesActionBase.NodeProcessor" />
                       </node>
                       <node concept="_YKpA" id="7Sw_42UC8m_" role="3rHtpV">
                         <node concept="3Tqbb2" id="7Sw_42UC8mA" role="_ZDj9" />
@@ -24196,15 +24196,18 @@
                                   <node concept="3cqZAl" id="7Sw_42UC8mZ" role="3clF45" />
                                   <node concept="3Tm1VV" id="7Sw_42UC8n0" role="1B3o_S" />
                                   <node concept="37vLTG" id="7Sw_42UC8n1" role="3clF46">
-                                    <property role="TrG5h" value="nodesToMove" />
+                                    <property role="TrG5h" value="nodesRootsToMove" />
                                     <node concept="_YKpA" id="7Sw_42UC8n2" role="1tU5fm">
                                       <node concept="3Tqbb2" id="7Sw_42UC8n3" role="_ZDj9" />
                                     </node>
                                   </node>
-                                  <node concept="37vLTG" id="7Sw_42UC8n4" role="3clF46">
-                                    <property role="TrG5h" value="whichOfThemToRemove" />
-                                    <node concept="_YKpA" id="7Sw_42UC8n5" role="1tU5fm">
-                                      <node concept="3Tqbb2" id="7Sw_42UC8n6" role="_ZDj9" />
+                                  <node concept="37vLTG" id="7tV5ZLw9$mO" role="3clF46">
+                                    <property role="TrG5h" value="ifKeepOldNodes" />
+                                    <node concept="3rvAFt" id="7tV5ZLw9$mP" role="1tU5fm">
+                                      <node concept="3Tqbb2" id="7tV5ZLw9$mQ" role="3rvQeY" />
+                                      <node concept="3uibUv" id="7tV5ZLw9$mR" role="3rvSg0">
+                                        <ref role="3uigEE" to="lfzw:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                      </node>
                                     </node>
                                   </node>
                                   <node concept="37vLTG" id="7Sw_42UC8n7" role="3clF46">
@@ -24237,7 +24240,7 @@
                                         <node concept="liA8E" id="7Sw_42UC8ni" role="2OqNvi">
                                           <ref role="37wK5l" to="lfzw:5sZ4VOA2LeY" resolve="copy" />
                                           <node concept="37vLTw" id="7Sw_42UC8nj" role="37wK5m">
-                                            <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesToMove" />
+                                            <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesRootsToMove" />
                                           </node>
                                         </node>
                                       </node>
@@ -24289,27 +24292,9 @@
                                         </node>
                                       </node>
                                       <node concept="37vLTw" id="7wz7QM0R_iR" role="2GsD0m">
-                                        <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesToMove" />
+                                        <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesRootsToMove" />
                                       </node>
                                       <node concept="2GrKxI" id="7wz7QM0R_iT" role="2Gsz3X">
-                                        <property role="TrG5h" value="oldNode" />
-                                      </node>
-                                    </node>
-                                    <node concept="2Gpval" id="7wz7QM0SC1Q" role="3cqZAp">
-                                      <node concept="3clFbS" id="7wz7QM0SC1S" role="2LFqv$">
-                                        <node concept="3clFbF" id="7wz7QM0SC1T" role="3cqZAp">
-                                          <node concept="2OqwBi" id="7wz7QM0SC1U" role="3clFbG">
-                                            <node concept="2GrUjf" id="7wz7QM0SC21" role="2Oq$k0">
-                                              <ref role="2Gs0qQ" node="7wz7QM0SC20" resolve="oldNode" />
-                                            </node>
-                                            <node concept="3YRAZt" id="7wz7QM0SC1W" role="2OqNvi" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                      <node concept="37vLTw" id="7wz7QM0SC1Y" role="2GsD0m">
-                                        <ref role="3cqZAo" node="7Sw_42UC8n4" resolve="whichOfThemToRemove" />
-                                      </node>
-                                      <node concept="2GrKxI" id="7wz7QM0SC20" role="2Gsz3X">
                                         <property role="TrG5h" value="oldNode" />
                                       </node>
                                     </node>
@@ -24397,6 +24382,32 @@
                                             </node>
                                           </node>
                                         </node>
+                                        <node concept="3clFbJ" id="7tV5ZLw74NB" role="3cqZAp">
+                                          <node concept="3clFbS" id="7tV5ZLw74NC" role="3clFbx">
+                                            <node concept="3clFbF" id="7tV5ZLw74ND" role="3cqZAp">
+                                              <node concept="2OqwBi" id="7tV5ZLw74NE" role="3clFbG">
+                                                <node concept="2GrUjf" id="7tV5ZLw74O2" role="2Oq$k0">
+                                                  <ref role="2Gs0qQ" node="7wz7QM0RC2B" resolve="oldNode" />
+                                                </node>
+                                                <node concept="3YRAZt" id="7tV5ZLw74NG" role="2OqNvi" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="3clFbC" id="7tV5ZLw74NH" role="3clFbw">
+                                            <node concept="Rm8GO" id="7tV5ZLw74NI" role="3uHU7w">
+                                              <ref role="1Px2BO" to="lfzw:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                              <ref role="Rm8GQ" to="lfzw:7tV5ZLw0pQW" resolve="REMOVE" />
+                                            </node>
+                                            <node concept="3EllGN" id="7tV5ZLw74NJ" role="3uHU7B">
+                                              <node concept="2GrUjf" id="7tV5ZLw74O3" role="3ElVtu">
+                                                <ref role="2Gs0qQ" node="7wz7QM0RC2B" resolve="oldNode" />
+                                              </node>
+                                              <node concept="37vLTw" id="7tV5ZLw74NL" role="3ElQJh">
+                                                <ref role="3cqZAo" node="7tV5ZLw9$mO" resolve="ifKeepOldNodes" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="3clFbF" id="7wz7QM0RC2e" role="3cqZAp">
                                           <node concept="2OqwBi" id="7wz7QM0RC2f" role="3clFbG">
                                             <node concept="37vLTw" id="7wz7QM0RC2g" role="2Oq$k0">
@@ -24420,7 +24431,7 @@
                                         </node>
                                       </node>
                                       <node concept="37vLTw" id="7wz7QM0RC2_" role="2GsD0m">
-                                        <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesToMove" />
+                                        <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesRootsToMove" />
                                       </node>
                                       <node concept="2GrKxI" id="7wz7QM0RC2B" role="2Gsz3X">
                                         <property role="TrG5h" value="oldNode" />
