@@ -2927,6 +2927,12 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4oe_K8bgxuL" role="3bR37C">
+          <node concept="3bR9La" id="4oe_K8bgxuM" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="398rNT" id="5bAGsVFhMuh" role="1l3spd">
