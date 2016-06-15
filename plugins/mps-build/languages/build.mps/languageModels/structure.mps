@@ -12,7 +12,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -258,27 +258,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4278635856200794928" />
       <ref role="20lvS9" node="2L4pT56gD3S" resolve="BuildMps_Language" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="3HwLahs6iyg">
-    <property role="TrG5h" value="BuildMps_ModuleJarRuntime" />
-    <property role="3GE5qa" value="Project.Runtime" />
-    <property role="34LRSv" value="jar" />
-    <property role="EcuMT" value="4278635856200804496" />
-    <ref role="1TJDcQ" node="2L4pT56gSBR" resolve="BuildMps_ModuleRuntime" />
-    <node concept="asaX9" id="4xPRg7rCqhj" role="lGtFl" />
-    <node concept="1TJgyj" id="3HwLahs6iyk" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="path" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="4278635856200804500" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="2rlufiQSRlY" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="customLocation" />
-      <property role="IQ2ns" value="2798275735916344702" />
-      <ref role="20lvS9" to="3ior:4RsV8qJGJpc" resolve="BuildSource_JavaExternalJarRef" />
     </node>
   </node>
   <node concept="1TIwiD" id="3HwLahs6lLg">

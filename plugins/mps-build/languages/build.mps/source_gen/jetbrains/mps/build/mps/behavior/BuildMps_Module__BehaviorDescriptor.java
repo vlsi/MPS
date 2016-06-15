@@ -88,33 +88,6 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    for (SNode lr : Sequence.fromIterable(closure.getLanguagesWithRuntime())) {
-      for (SNode runtime : SLinkOperations.getChildren(lr, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x2c4467914643be24L, "runtime"))) {
-        if (!(SNodeOperations.isInstanceOf(runtime, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime")))) {
-          continue;
-        }
-
-        SNode jarRuntime = SNodeOperations.cast(runtime, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"));
-        if ((SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")) != null)) {
-          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")), artifacts);
-          if (dependencyTarget != null) {
-            if ((boolean) dependencyTarget._1()) {
-              builder.addWithContent(dependencyTarget._0());
-            } else {
-              builder.add(dependencyTarget._0());
-            }
-            needsFetch = true;
-          }
-        } else {
-          if (SNodeOperations.getContainingRoot(lr) == SNodeOperations.getContainingRoot(__thisNode__)) {
-            continue;
-          }
-
-          ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(jarRuntime, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x3b60c4a45c192894L, "path")));
-        }
-      }
-    }
-
     for (SNode path : ListSequence.fromList(requiredJars)) {
       Tuples._2<SNode, String> resource = artifacts.getResource(SNodeOperations.cast(artifacts.toOriginalNode(path), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")));
       SNode artifact = SNodeOperations.as(resource._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));

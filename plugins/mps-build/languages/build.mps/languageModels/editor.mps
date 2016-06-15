@@ -1215,52 +1215,6 @@
       <node concept="l2Vlx" id="3HwLahs6gcS" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3HwLahs6iyl">
-    <property role="3GE5qa" value="Project.Runtime" />
-    <ref role="1XX52x" to="kdzh:3HwLahs6iyg" resolve="BuildMps_ModuleJarRuntime" />
-    <node concept="3EZMnI" id="3HwLahs6iyn" role="2wV5jI">
-      <node concept="3F0ifn" id="3HwLahs6iyq" role="3EZMnx">
-        <property role="3F0ifm" value="jar" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3F1sOY" id="3HwLahs6iys" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:3HwLahs6iyk" />
-      </node>
-      <node concept="3EZMnI" id="2rlufiQSZ3T" role="3EZMnx">
-        <node concept="VPM3Z" id="2rlufiQSZ3U" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="2rlufiQSZ3V" role="3EZMnx">
-          <property role="3F0ifm" value="use from" />
-          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-        </node>
-        <node concept="3F1sOY" id="2rlufiQSZ3W" role="3EZMnx">
-          <ref role="1NtTu8" to="kdzh:2rlufiQSRlY" />
-        </node>
-        <node concept="l2Vlx" id="2rlufiQSZ3X" role="2iSdaV" />
-        <node concept="pkWqt" id="2rlufiQSZ3Y" role="pqm2j">
-          <node concept="3clFbS" id="2rlufiQSZ3Z" role="2VODD2">
-            <node concept="3clFbF" id="2rlufiQSZ40" role="3cqZAp">
-              <node concept="2OqwBi" id="2_1mL0eofTy" role="3clFbG">
-                <node concept="2OqwBi" id="2rlufiQSZ42" role="2Oq$k0">
-                  <node concept="pncrf" id="2rlufiQSZ43" role="2Oq$k0" />
-                  <node concept="Bykcj" id="2_1mL0eofTv" role="2OqNvi">
-                    <node concept="1aIX9F" id="2_1mL0eofTw" role="1xVPHs">
-                      <node concept="26LbJo" id="2_1mL0eofTx" role="1aIX9E">
-                        <ref role="26LbJp" to="kdzh:2rlufiQSRlY" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="2_1mL0eofTz" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="l2Vlx" id="3HwLahs6iyp" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="3HwLahs6lLj">
     <property role="3GE5qa" value="Project.Sources" />
     <ref role="1XX52x" to="kdzh:3HwLahs6lLg" resolve="BuildMps_ModuleModelRoot" />

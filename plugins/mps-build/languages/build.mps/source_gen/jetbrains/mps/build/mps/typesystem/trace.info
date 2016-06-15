@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="8,0,32,0" name="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
+      <unit at="8,0,28,0" name="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307201">
@@ -387,47 +387,6 @@
         <var name="node" id="2531699772406320928" />
       </scope>
       <unit id="2531699772406320928" at="19,0,59,0" name="jetbrains.mps.build.mps.typesystem.ReloadRequired_QuickFix" />
-    </file>
-  </root>
-  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200804509">
-    <file name="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java">
-      <node id="1258644073389052168" at="21,121,22,266" concept="7" />
-      <node id="1258644073389052213" at="24,7,25,60" concept="7" />
-      <node id="1258644073389052213" at="25,60,26,247" concept="7" />
-      <node id="4278635856200804509" at="30,50,31,166" concept="8" />
-      <node id="4278635856200804509" at="33,68,34,102" concept="8" />
-      <node id="4278635856200804509" at="36,30,37,17" concept="8" />
-      <node id="4278635856200804509" at="19,0,21,0" concept="1" trace="check_BuildMps_ModuleJarRuntime_NonTypesystemRule#()V" />
-      <node id="4278635856200804509" at="30,0,33,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="4278635856200804509" at="33,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="4278635856200804509" at="36,0,39,0" concept="6" trace="overrides#()Z" />
-      <node id="1258644073389052213" at="23,76,27,7" concept="0" />
-      <node id="1258644073389052178" at="22,266,28,5" concept="5" />
-      <node id="4278635856200804509" at="21,0,30,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="4278635856200804509" at="19,62,19,62" />
-      <scope id="4278635856200804509" at="30,50,31,166" />
-      <scope id="4278635856200804509" at="33,68,34,102" />
-      <scope id="4278635856200804509" at="36,30,37,17" />
-      <scope id="4278635856200804509" at="19,0,21,0" />
-      <scope id="1258644073389052213" at="24,7,26,247">
-        <var name="_reporter_2309309498" id="1258644073389052213" />
-        <var name="errorTarget" id="1258644073389052213" />
-      </scope>
-      <scope id="4278635856200804509" at="30,0,33,0" />
-      <scope id="4278635856200804509" at="33,0,36,0">
-        <var name="argument" id="4278635856200804509" />
-      </scope>
-      <scope id="4278635856200804509" at="36,0,39,0" />
-      <scope id="1258644073389052179" at="23,76,27,7" />
-      <scope id="4278635856200804510" at="21,121,28,5">
-        <var name="relativePath" id="1258644073389052169" />
-      </scope>
-      <scope id="4278635856200804509" at="21,0,30,0">
-        <var name="jarEntry" id="4278635856200804509" />
-        <var name="status" id="4278635856200804509" />
-        <var name="typeCheckingContext" id="4278635856200804509" />
-      </scope>
-      <unit id="4278635856200804509" at="18,0,40,0" name="jetbrains.mps.build.mps.typesystem.check_BuildMps_ModuleJarRuntime_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200826398">
