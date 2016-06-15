@@ -9,7 +9,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -158,7 +158,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -5580,6 +5580,23 @@
     <ref role="phYkn" to="ucur:1KHvivZJsL7" resolve="InstantiateAspectDescriptor" />
     <node concept="3aamgX" id="1na$wSWf3eT" role="3aUrZf">
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
+      <node concept="j$656" id="4WrOGsLZCZW" role="1lVwrX">
+        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="GeneratedClassInstantiation" />
+        <node concept="3cpWs3" id="3XrE5vcrH7O" role="v9R3O">
+          <node concept="Xl_RD" id="3XrE5vcrH7P" role="3uHU7w">
+            <property role="Xl_RC" value=".StructureAspectDescriptor" />
+          </node>
+          <node concept="2OqwBi" id="4WrOGsLZD2f" role="3uHU7B">
+            <node concept="v3LJS" id="4WrOGsLZD1q" role="2Oq$k0">
+              <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+            </node>
+            <node concept="LkI2h" id="4WrOGsLZD4F" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3B5_sB" id="4WrOGsLZMQi" role="v9R3O">
+          <ref role="3B5MYn" to="ze1i:~StructureAspectDescriptor" resolve="StructureAspectDescriptor" />
+        </node>
+      </node>
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
@@ -5610,23 +5627,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="j$656" id="4WrOGsLZCZW" role="1lVwrX">
-        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="GeneratedClassInstantiation" />
-        <node concept="3cpWs3" id="3XrE5vcrH7O" role="v9R3O">
-          <node concept="Xl_RD" id="3XrE5vcrH7P" role="3uHU7w">
-            <property role="Xl_RC" value=".StructureAspectDescriptor" />
-          </node>
-          <node concept="2OqwBi" id="4WrOGsLZD2f" role="3uHU7B">
-            <node concept="v3LJS" id="4WrOGsLZD1q" role="2Oq$k0">
-              <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-            </node>
-            <node concept="LkI2h" id="4WrOGsLZD4F" role="2OqNvi" />
-          </node>
-        </node>
-        <node concept="3B5_sB" id="4WrOGsLZMQi" role="v9R3O">
-          <ref role="3B5MYn" to="ze1i:~StructureAspectDescriptor" resolve="StructureAspectDescriptor" />
         </node>
       </node>
     </node>
