@@ -2369,6 +2369,21 @@
         <ref role="ehGHo" to="tpe3:hGB2rPm" resolve="ITestCase" />
       </node>
     </node>
+    <node concept="13i0hz" id="2YuxGLzlW4s" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="isMpsStartRequired" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpe5:2RMg39tmiFh" resolve="isMpsStartRequired" />
+      <node concept="3Tm1VV" id="2YuxGLzlW4t" role="1B3o_S" />
+      <node concept="3clFbS" id="2YuxGLzlW4y" role="3clF47">
+        <node concept="3clFbF" id="2YuxGLzlX6k" role="3cqZAp">
+          <node concept="3clFbT" id="2YuxGLzlX6j" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="2YuxGLzlW4z" role="3clF45" />
+    </node>
     <node concept="13i0hz" id="Vk$nhx_OIW" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0is" value="false" />
@@ -2499,17 +2514,9 @@
                 <node concept="2OqwBi" id="3iBZoP54Fs3" role="2Oq$k0">
                   <node concept="2YIFZM" id="3iBZoP54Fs4" role="2Oq$k0">
                     <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                    <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
-                    <node concept="37vLTw" id="1kgh5Yae9Ys" role="37wK5m">
-                      <ref role="3cqZAo" node="1kgh5Yae9j2" resolve="node" />
-                    </node>
-                    <node concept="2OqwBi" id="3iBZoP54Fs6" role="37wK5m">
-                      <node concept="BsUDl" id="3iBZoP54Fs7" role="2Oq$k0">
-                        <ref role="37wK5l" node="4IvydoGvimX" resolve="getCheckingReference" />
-                      </node>
-                      <node concept="liA8E" id="3iBZoP54Fs8" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
-                      </node>
+                    <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SReference):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
+                    <node concept="BsUDl" id="3iBZoP54Fs7" role="37wK5m">
+                      <ref role="37wK5l" node="4IvydoGvimX" resolve="getCheckingReference" />
                     </node>
                   </node>
                   <node concept="liA8E" id="3iBZoP54Fs9" role="2OqNvi">

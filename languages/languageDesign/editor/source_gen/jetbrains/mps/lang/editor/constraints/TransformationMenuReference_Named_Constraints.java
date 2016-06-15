@@ -17,12 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.scope.FilteringScope;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TransformationMenuReference_Named_Constraints extends BaseConstraintsDescriptor {
@@ -49,21 +43,13 @@ public class TransformationMenuReference_Named_Constraints extends BaseConstrain
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              final Scope allNamedMenus = new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), _context.getLinkTarget());
 
-              // Uses the scope of allowed concepts (for default menus) to restrict the set of named menus to those 
-              // that reference allowed concepts. 
-              final Scope allowedConcepts = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").getDeclarationNode());
-              if (allowedConcepts == null) {
-                return new EmptyScope();
+              if (scope == null) {
+                return MenuScopes.getNamedMenus(_context.getContextNode(), _context.getContextRole(), _context.getPosition());
               }
 
-              return new FilteringScope(allNamedMenus) {
-                @Override
-                public boolean isExcluded(SNode node) {
-                  return !(allowedConcepts.contains(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration"))));
-                }
-              };
+              return scope;
             }
           }
         };
@@ -71,5 +57,5 @@ public class TransformationMenuReference_Named_Constraints extends BaseConstrain
     });
     return references;
   }
-  private static SNodePointer breakingNode_bj2kbe_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "4202667662394333183");
+  private static SNodePointer breakingNode_bj2kbe_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "2710939522624954061");
 }

@@ -276,5 +276,23 @@
     <property role="TrG5h" value="NamedMenuForBase" />
     <ref role="7LAce" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
   </node>
+  <node concept="IW6AY" id="2mcvySy0$_I">
+    <property role="3GE5qa" value="Include" />
+    <ref role="7LAce" to="wtc3:2mcvySy0$_k" resolve="Derived" />
+  </node>
+  <node concept="IW6AY" id="2mcvySy0$A8">
+    <property role="3GE5qa" value="Include" />
+    <ref role="7LAce" to="wtc3:2mcvySy0$_j" resolve="Base" />
+  </node>
+  <node concept="3ICXOK" id="2mcvySy0$Ay">
+    <property role="3GE5qa" value="Include" />
+    <property role="TrG5h" value="Base_NamedTransformationMenu" />
+    <ref role="7LAce" to="wtc3:2mcvySy0$_j" resolve="Base" />
+  </node>
+  <node concept="3ICXOK" id="2mcvySy0$AW">
+    <property role="3GE5qa" value="Include" />
+    <property role="TrG5h" value="Derived_NamedTransformationMenu" />
+    <ref role="7LAce" to="wtc3:2mcvySy0$_k" resolve="Derived" />
+  </node>
 </model>
 

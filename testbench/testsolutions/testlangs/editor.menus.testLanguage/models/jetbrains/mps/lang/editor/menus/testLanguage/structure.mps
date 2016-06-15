@@ -47,5 +47,17 @@
     <property role="34LRSv" value="scopes test concept - base" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="2mcvySy0$_j">
+    <property role="EcuMT" value="2705676212746996051" />
+    <property role="TrG5h" value="Base" />
+    <property role="3GE5qa" value="Include" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2mcvySy0$_k">
+    <property role="EcuMT" value="2705676212746996052" />
+    <property role="3GE5qa" value="Include" />
+    <property role="TrG5h" value="Derived" />
+    <ref role="1TJDcQ" node="2mcvySy0$_j" resolve="Base" />
+  </node>
 </model>
 

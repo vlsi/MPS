@@ -15,20 +15,24 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(5);
+  /*package*/ final ConceptDescriptor myConceptBase = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testLanguage.structure.Base", MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)", "2705676212746996051")).create();
   /*package*/ final ConceptDescriptor myConceptConceptWithoutDefaultMenu = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testLanguage.structure.ConceptWithoutDefaultMenu", MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x1de1fbd5fbf62470L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)", "2153278993333625968")).create();
+  /*package*/ final ConceptDescriptor myConceptDerived = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived", MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L)).super_("jetbrains.mps.lang.editor.menus.testLanguage.structure.Base").version(1).super_(MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L)).parents("jetbrains.mps.lang.editor.menus.testLanguage.structure.Base").parentIds(MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L)).sourceNode(new SNodePointer("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)", "2705676212746996052")).create();
   /*package*/ final ConceptDescriptor myConceptScopesTestConceptBase = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase", MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).alias("scopes test concept - base", "").sourceNode(new SNodePointer("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)", "1068638940632614930")).create();
   /*package*/ final ConceptDescriptor myConceptTransformationMenuTestConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept", MetaIdFactory.conceptId(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).alias("transformation menu test concept", "").sourceNode(new SNodePointer("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)", "2344528742722056854")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptConceptWithoutDefaultMenu.getId(), 0);
-    myIndexMap.put(myConceptScopesTestConceptBase.getId(), 1);
-    myIndexMap.put(myConceptTransformationMenuTestConcept.getId(), 2);
+    myIndexMap.put(myConceptBase.getId(), 0);
+    myIndexMap.put(myConceptConceptWithoutDefaultMenu.getId(), 1);
+    myIndexMap.put(myConceptDerived.getId(), 2);
+    myIndexMap.put(myConceptScopesTestConceptBase.getId(), 3);
+    myIndexMap.put(myConceptTransformationMenuTestConcept.getId(), 4);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptWithoutDefaultMenu, myConceptScopesTestConceptBase, myConceptTransformationMenuTestConcept);
+    return Arrays.asList(myConceptBase, myConceptConceptWithoutDefaultMenu, myConceptDerived, myConceptScopesTestConceptBase, myConceptTransformationMenuTestConcept);
   }
 
   @Override
@@ -40,10 +44,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptConceptWithoutDefaultMenu;
+        return myConceptBase;
       case 1:
-        return myConceptScopesTestConceptBase;
+        return myConceptConceptWithoutDefaultMenu;
       case 2:
+        return myConceptDerived;
+      case 3:
+        return myConceptScopesTestConceptBase;
+      case 4:
         return myConceptTransformationMenuTestConcept;
       default:
         throw new IllegalStateException();
