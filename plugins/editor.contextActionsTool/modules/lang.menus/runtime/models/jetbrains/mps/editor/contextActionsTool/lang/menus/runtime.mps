@@ -8,10 +8,18 @@
     <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
@@ -100,8 +108,9 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="601$vVQgJ28" role="1B3o_S" />
       <node concept="3clFbS" id="601$vVQgJ29" role="3clF47" />
-      <node concept="3uibUv" id="601$vVQgJ2a" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      <node concept="17QB3L" id="3uJzduifiHI" role="3clF45" />
+      <node concept="2AHcQZ" id="3uJzduifiI7" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3clFb_" id="601$vVQgJ2b" role="jymVt">
@@ -111,8 +120,11 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="601$vVQgJ2c" role="1B3o_S" />
       <node concept="3clFbS" id="601$vVQgJ2d" role="3clF47" />
-      <node concept="3uibUv" id="601$vVQgJ2e" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      <node concept="3uibUv" id="3uJzduifiHl" role="3clF45">
+        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+      </node>
+      <node concept="2AHcQZ" id="3uJzduifiIV" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
   </node>

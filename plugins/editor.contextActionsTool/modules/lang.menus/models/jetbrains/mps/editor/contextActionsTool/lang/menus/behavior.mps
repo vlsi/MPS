@@ -12,6 +12,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -107,8 +108,8 @@
       <node concept="3clFbS" id="7L5lpRJILFs" role="3clF47">
         <node concept="3clFbF" id="7L5lpRJILMY" role="3cqZAp">
           <node concept="2c44tf" id="7L5lpRJILMO" role="3clFbG">
-            <node concept="3uibUv" id="7L5lpRJILPj" role="2c44tc">
-              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+            <node concept="3uibUv" id="3uJzduifiDq" role="2c44tc">
+              <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
             </node>
           </node>
         </node>

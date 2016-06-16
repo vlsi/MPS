@@ -15,8 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
-import javax.swing.Icon;
-import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase;
@@ -54,8 +53,8 @@ public class Extras extends TransformationMenuBase {
       }
 
       @Override
-      public Icon getIcon() {
-        return MPSIcons.Nodes.Refactoring;
+      public IconResource getIcon() {
+        return IconContainer.RESOURCE_a0a2e3;
       }
       @Override
       public String getTooltipText() {
@@ -79,8 +78,8 @@ public class Extras extends TransformationMenuBase {
       }
 
       @Override
-      public Icon getIcon() {
-        return MPSIcons.Nodes.Action;
+      public IconResource getIcon() {
+        return IconContainer.RESOURCE_a0a2e4;
       }
       @Override
       public String getTooltipText() {
@@ -104,7 +103,7 @@ public class Extras extends TransformationMenuBase {
       }
 
       @Override
-      public Icon getIcon() {
+      public IconResource getIcon() {
         return null;
       }
       @Override

@@ -4,7 +4,7 @@ package jetbrains.mps.editor.contextActionsTool.tests;
 
 import junit.framework.TestCase;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 import java.util.List;
 import jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent;
 import jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemConverter;
@@ -18,7 +18,7 @@ public class IconLoading_Test extends TestCase {
   public void test_noClassDefFoundErrorWhenLoadingIcon() throws Exception {
     MenuItem item = new IconLoading_Test.SidebarItemBase() {
       @Override
-      public Icon getIcon() {
+      public IconResource getIcon() {
         throw new NoClassDefFoundError("Simulated error when loading an icon");
       }
     };
@@ -29,7 +29,7 @@ public class IconLoading_Test extends TestCase {
   public void test_runtimeExceptionWhenLoadingIcon() throws Exception {
     MenuItem item = new IconLoading_Test.SidebarItemBase() {
       @Override
-      public Icon getIcon() {
+      public IconResource getIcon() {
         throw new RuntimeException("Simulated exception when loading an icon");
       }
     };
@@ -43,7 +43,7 @@ public class IconLoading_Test extends TestCase {
       return null;
     }
     @Override
-    public Icon getIcon() {
+    public IconResource getIcon() {
       return null;
     }
   }

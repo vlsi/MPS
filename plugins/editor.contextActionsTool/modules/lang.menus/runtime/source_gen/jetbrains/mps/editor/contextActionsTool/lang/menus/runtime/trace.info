@@ -5,11 +5,11 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:df7b9224-e397-4e2d-bdfc-e44150ec7d1a(jetbrains.mps.editor.contextActionsTool.lang.menus.runtime)/6917971026857095300">
     <file name="SidebarActionItem.java">
-      <node id="6917971026857095303" at="9,0,10,0" concept="1" trace="getTooltipText#()Ljava/lang/String;" />
-      <node id="6917971026857095307" at="10,0,11,0" concept="1" trace="getIcon#()Ljavax/swing/Icon;" />
-      <scope id="6917971026857095303" at="9,0,10,0" />
-      <scope id="6917971026857095307" at="10,0,11,0" />
-      <unit id="6917971026857095300" at="8,0,12,0" name="jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem" />
+      <node id="6917971026857095303" at="10,0,12,0" concept="1" trace="getTooltipText#()Ljava/lang/String;" />
+      <node id="6917971026857095307" at="12,0,14,0" concept="1" trace="getIcon#()Ljetbrains/mps/smodel/runtime/IconResource;" />
+      <scope id="6917971026857095303" at="10,0,12,0" />
+      <scope id="6917971026857095307" at="12,0,14,0" />
+      <unit id="6917971026857095300" at="9,0,15,0" name="jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem" />
     </file>
   </root>
   <root nodeRef="r:df7b9224-e397-4e2d-bdfc-e44150ec7d1a(jetbrains.mps.editor.contextActionsTool.lang.menus.runtime)/7086369660076263053">

@@ -287,7 +287,7 @@ public final class IconManager {
    * This field should be used in getIcon(resource) method only
    */
   private static Map<IconResource, Icon> ourResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
-  private static Icon getIconForResource(@Nullable IconResource ir) {
+  public static Icon getIconForResource(@Nullable IconResource ir) {
     if (ir == null) {
       return null;
     }

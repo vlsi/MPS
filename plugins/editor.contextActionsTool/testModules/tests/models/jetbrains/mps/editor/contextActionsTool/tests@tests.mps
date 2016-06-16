@@ -12,6 +12,7 @@
     <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
     <import index="dfte" ref="r:df7b9224-e397-4e2d-bdfc-e44150ec7d1a(jetbrains.mps.editor.contextActionsTool.lang.menus.runtime)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -160,8 +161,8 @@
                       <property role="DiZV1" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="5Xa7gk5bXLi" role="1B3o_S" />
-                      <node concept="3uibUv" id="5Xa7gk5bXLj" role="3clF45">
-                        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+                      <node concept="3uibUv" id="2BgStrdbsZv" role="3clF45">
+                        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
                       </node>
                       <node concept="2AHcQZ" id="5Xa7gk5bXLn" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -247,8 +248,8 @@
                       <property role="DiZV1" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="5Xa7gk5dumF" role="1B3o_S" />
-                      <node concept="3uibUv" id="5Xa7gk5dumG" role="3clF45">
-                        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+                      <node concept="3uibUv" id="2BgStrdbthA" role="3clF45">
+                        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
                       </node>
                       <node concept="2AHcQZ" id="5Xa7gk5dumH" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -336,8 +337,8 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="5Xa7gk5bRwX" role="1B3o_S" />
-        <node concept="3uibUv" id="5Xa7gk5bRwZ" role="3clF45">
-          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+        <node concept="3uibUv" id="2BgStrdbsB0" role="3clF45">
+          <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
         </node>
         <node concept="3clFbS" id="5Xa7gk5bRx2" role="3clF47">
           <node concept="3clFbF" id="5Xa7gk5bRx4" role="3cqZAp">

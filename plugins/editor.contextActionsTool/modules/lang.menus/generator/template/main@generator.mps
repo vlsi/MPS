@@ -10,6 +10,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpc3" ref="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <import index="dfte" ref="r:df7b9224-e397-4e2d-bdfc-e44150ec7d1a(jetbrains.mps.editor.contextActionsTool.lang.menus.runtime)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -148,8 +149,8 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="4sA1wzjmG3X" role="1B3o_S" />
-        <node concept="3uibUv" id="4sA1wzjmG3Z" role="3clF45">
-          <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+        <node concept="3uibUv" id="3uJzduifnF1" role="3clF45">
+          <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
         </node>
         <node concept="3clFbS" id="4sA1wzjmG42" role="3clF47">
           <node concept="3clFbF" id="4sA1wzjmG44" role="3cqZAp">
