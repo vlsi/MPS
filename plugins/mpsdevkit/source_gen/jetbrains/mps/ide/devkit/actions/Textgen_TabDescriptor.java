@@ -20,7 +20,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class Textgen_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.TextGen;
@@ -74,6 +76,6 @@ public class Textgen_TabDescriptor extends RelationDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TEXT_GEN, node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
+    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.TEXT_GEN, node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration")), null));
   }
 }

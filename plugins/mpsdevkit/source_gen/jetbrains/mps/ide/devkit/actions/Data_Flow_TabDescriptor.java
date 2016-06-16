@@ -20,7 +20,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.DataFlow;
@@ -77,6 +79,6 @@ public class Data_Flow_TabDescriptor extends RelationDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.DATA_FLOW, node, MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
+    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.DATA_FLOW, node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")), null));
   }
 }

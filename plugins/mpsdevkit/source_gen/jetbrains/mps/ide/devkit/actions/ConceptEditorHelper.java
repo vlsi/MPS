@@ -16,11 +16,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -55,24 +50,6 @@ public class ConceptEditorHelper {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(slang, node)));
     }
     return result;
-  }
-  public static SNode createNewConceptAspectInstance(SNode applicableNode, SAbstractConcept concept, SModel model) {
-    SNode conceptAspect = (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
-    BHReflection.invoke(conceptAspect, SMethodTrimmedId.create("setBaseConcept", null, "5r_35Ihc58c"), applicableNode);
-    SModelOperations.addRootNode(model, conceptAspect);
-
-    return conceptAspect;
-  }
-  public static SNode createNewConceptAspectInstance(LanguageAspect aspect, SNode applicableNode, SAbstractConcept concept) {
-    // [MM] this LanguageAspect usage is reviewed 
-    Language language = SModelUtil.getDeclaringLanguage(applicableNode);
-    assert language != null : "Language shouldn't be null for " + applicableNode;
-
-    SModel md = aspect.get(language);
-    if (md == null) {
-      md = aspect.createNew(language);
-    }
-    return createNewConceptAspectInstance(applicableNode, concept, md);
   }
   public static List<SNode> sortRootsByConcept(List<SNode> roots, final SAbstractConcept[] conceptOrder) {
     return ListSequence.fromList(roots).sort(new ISelector<SNode, Integer>() {

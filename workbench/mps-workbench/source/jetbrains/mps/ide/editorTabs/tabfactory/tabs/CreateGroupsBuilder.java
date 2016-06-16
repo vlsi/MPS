@@ -139,6 +139,7 @@ public class CreateGroupsBuilder {
         @Override
         public void run() {
           String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(myProject.getRepository()), SNodeUtil.property_BaseConcept_virtualPackage);
+          // TODO: remove this code. Virtual package is specified inside ConceptAspectsHelper class
           SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
           myCallback.changeNode(created[0].getReference());
         }

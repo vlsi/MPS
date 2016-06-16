@@ -20,6 +20,9 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Actions_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Action;
@@ -67,6 +70,6 @@ public class Actions_TabDescriptor extends RelationDescriptor {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.ACTIONS, node);
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.ACTIONS, node, concept);
+    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.ACTIONS, node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(((SAbstractConcept) concept)), null));
   }
 }
