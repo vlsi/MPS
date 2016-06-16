@@ -11,6 +11,7 @@
     <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
+    <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
@@ -130,7 +131,7 @@
         <node concept="3clFbJ" id="76aXy8jgU92" role="3cqZAp">
           <node concept="2OqwBi" id="76aXy8jgVex" role="3clFbw">
             <node concept="liA8E" id="76aXy8jgY55" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.isDisposed():boolean" resolve="isDisposed" />
+              <ref role="37wK5l" to="1m72:~ComponentManager.isDisposed():boolean" resolve="isDisposed" />
             </node>
             <node concept="2YIFZM" id="76aXy8jgV9R" role="2Oq$k0">
               <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />

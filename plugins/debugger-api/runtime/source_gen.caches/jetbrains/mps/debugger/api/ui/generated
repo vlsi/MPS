@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3d9hu2icyj6lv979isz0czjftkagjk" />
+<dependencies version="2" modelHash="3d9hu2icyj6lv979isz0czjftkagjk">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6h1heeyunwz3h5emx1ak6zc5dvtc746" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-ehdvs3jj52f084eo8ebxa8rd8els0m7" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-6wvs8f695joy4fkuk9j9n6mx5cwzvgl" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-9o9bx20r34ykwhg9dkbrtgolki9tnc9" />
+  <common hash="-er7h7ghy7z4sihclemvvyr7aszk7h85" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2392684134639614907" name="DebugActionsUtil" hash="2ywg638jnx32ezl4dsbwco8mfntrgue">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="DebugActionsUtil.java" />
+  </source>
+</dependencies>
 
