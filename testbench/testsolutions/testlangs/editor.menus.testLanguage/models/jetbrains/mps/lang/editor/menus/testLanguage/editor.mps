@@ -208,7 +208,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5oiZ4v5qnn1">
-    <property role="3GE5qa" value="menu.transformation" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ActionExecuteTestHelper" />
     <node concept="Wx3nA" id="5oiZ4v5qnnM" role="jymVt">
       <property role="2dlcS1" value="false" />
