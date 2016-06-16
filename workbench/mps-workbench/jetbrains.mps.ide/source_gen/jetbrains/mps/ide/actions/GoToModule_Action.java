@@ -74,10 +74,6 @@ public class GoToModule_Action extends BaseAction {
       private SModuleReference myModuleRef;
       public void elementChosen(Object p0) {
         myModuleRef = goToModuleModel.getModelObject(p0);
-      }
-
-      @Override
-      public void onClose() {
         if (myModuleRef != null) {
           new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModuleRef);
         }
