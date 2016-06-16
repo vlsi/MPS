@@ -53,6 +53,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import jetbrains.mps.editor.runtime.EditorUtil;
@@ -73,6 +74,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ueqr71_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ueqr71_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ueqr71_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ueqr71_d0(editorContext, node));
+    editorCell.addEditorCell(this.createContextAssistant_ueqr71_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_ueqr71_a0(EditorContext editorContext, SNode node) {
@@ -929,6 +932,20 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("ReadOnlyModelAccessor_ueqr71_a0g61b2a");
       return editorCell;
     }
+  }
+  private EditorCell createConstant_ueqr71_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_ueqr71_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createContextAssistant_ueqr71_e0(final EditorContext editorContext, final SNode node) {
+    EditorCell editorCell = new EditorCell_ContextAssistantComponent(editorContext, node);
+    editorCell.setCellId("ContextAssistant_ueqr71_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
   private EditorCell createCollection_ueqr71_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
