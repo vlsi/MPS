@@ -70,13 +70,19 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   }
 
   protected void ensureInitialized() {
-    if (myDescriptors != null) return;
+    if (myDescriptors != null) {
+      return;
+    }
     jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (myDescriptors != null) return;
-        synchronized (this) {
-          if (myDescriptors != null) return;
+        if (myDescriptors != null) {
+          return;
+        }
+        synchronized (StructureAspectInterpreted.this) {
+          if (myDescriptors != null) {
+            return;
+          }
 
           final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
           if (structureModel == null) {

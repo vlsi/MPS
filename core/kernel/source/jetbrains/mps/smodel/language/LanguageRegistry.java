@@ -163,8 +163,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       if (LanguageRuntime.class.isAssignableFrom(rtClass)) {
         return rtClass.asSubclass(LanguageRuntime.class).newInstance();
       }
+      LOG.error(String.format("Incompatible language runtime class for module %s; resort to interpreted runtime", l.getModuleName()));
       return new InterpretedLanguageRuntime(l);
     } catch (ClassNotFoundException ex) {
+      // would like to have error + exception here, but there are tests (e.g. ModulesReloadTest) that legitimately expect non-compiled modules
+      LOG.warn(String.format("Missing language runtime class for module %s (make failed?); resort to interpreted runtime", l.getModuleName()));
       return new InterpretedLanguageRuntime(l);
     } catch (InstantiationException e) {
       LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);

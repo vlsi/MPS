@@ -1328,6 +1328,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="41ztCAMEtLV" role="1B3o_S" />
       <node concept="355D3s" id="dqwjwHwzjS" role="33vP2m">
+        <property role="B6XcY" value="true" />
         <ref role="355D3t" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
         <ref role="355D3u" to="tpce:5OIo7_R7SN0" resolve="conceptId" />
       </node>
@@ -1340,6 +1341,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="7NTi8jMdqsm" role="1B3o_S" />
       <node concept="355D3s" id="7NTi8jMdqsn" role="33vP2m">
+        <property role="B6XcY" value="true" />
         <ref role="355D3t" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
         <ref role="355D3u" to="tpce:7NTi8jM8Rgz" resolve="languageId" />
       </node>
@@ -1352,6 +1354,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="4JZCOBaqiKM" role="1B3o_S" />
       <node concept="355D3s" id="4JZCOBaqiKN" role="33vP2m">
+        <property role="B6XcY" value="true" />
         <ref role="355D3t" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
         <ref role="355D3u" to="tpce:fX9Ktp8" resolve="rootable" />
       </node>
@@ -1364,6 +1367,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="dqwjwH$T_8" role="1B3o_S" />
       <node concept="355D3s" id="dqwjwH$T_9" role="33vP2m">
+        <property role="B6XcY" value="true" />
         <ref role="355D3t" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
         <ref role="355D3u" to="tpce:dqwjwHwEjp" resolve="propertyId" />
       </node>
@@ -1376,6 +1380,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="dqwjwH$TMJ" role="1B3o_S" />
       <node concept="355D3s" id="dqwjwH$TMK" role="33vP2m">
+        <property role="B6XcY" value="true" />
         <ref role="355D3t" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
         <ref role="355D3u" to="tpce:dqwjwHwEj$" resolve="linkId" />
       </node>
