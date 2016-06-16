@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,24 +16,24 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.EditorPanelManager;
-import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * User: shatalin
- * Date: 20/07/14
+ * Date: 16/06/16
  */
-public class InspectorEditorContext extends EditorContext {
-  public InspectorEditorContext(EditorComponent editorComponent, @Nullable SModel model,
-      @NotNull SRepository repository, ContextAssistantManager contextAssistantManager, EditorPanelManager editorPanelManager) {
-    super(editorComponent, model, repository, contextAssistantManager, editorPanelManager);
+public class EditorPanelManagerImpl implements EditorPanelManager {
+  private Project myProject;
+
+  public EditorPanelManagerImpl(Project project) {
+    myProject = project;
   }
 
   @Override
-  public Object createMemento() {
-    return new Memento(this, true);
+  public void openEditor(@NotNull SNode node) {
+    NavigationSupport.getInstance().openNode(myProject, node, true, false);
   }
 }

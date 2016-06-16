@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -63,17 +64,19 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;
+  private EditorPanelManager myEditorPanelManager;
 
   public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository) {
-    this(editorComponent, model, repository, new DisabledContextAssistantManager());
+    this(editorComponent, model, repository, new DisabledContextAssistantManager(), null);
   }
 
   public EditorContext(@NotNull EditorComponent nodeEditorComponent, @Nullable SModel model, @NotNull SRepository repository,
-      @NotNull ContextAssistantManager contextAssistantManager) {
+      @NotNull ContextAssistantManager contextAssistantManager, @Nullable EditorPanelManager editorPanelManager) {
     myNodeEditorComponent = nodeEditorComponent;
     myModel = model;
     myRepository = repository;
     myContextAssistantManager = contextAssistantManager;
+    myEditorPanelManager = editorPanelManager;
   }
 
   public EditorComponent getNodeEditorComponent() {
@@ -345,5 +348,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   void reset() {
     myEditorManager = null;
+  }
+
+  @Nullable
+  @Override
+  public EditorPanelManager getEditorPanelManager() {
+    return myEditorPanelManager;
   }
 }

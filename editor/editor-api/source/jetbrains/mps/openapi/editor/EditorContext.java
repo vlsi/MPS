@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -96,4 +97,14 @@ public interface EditorContext {
 
   @NotNull
   ContextAssistantManager getContextAssistantManager();
+
+  /**
+   * Returning {@link EditorPanelManager} instance allowing manipulations with
+   * other MPS editors if available.
+   *
+   * @return editor panel manager or null if there is no {@link EditorPanelManager}
+   * instance available in the current context
+   */
+  @Nullable
+  EditorPanelManager getEditorPanelManager();
 }

@@ -22,6 +22,7 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
+import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
@@ -38,7 +39,11 @@ public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(SRepository repository) {
-    super(repository, true, false);
+    this(repository, null);
+  }
+
+  public NodeEditorComponent(SRepository repository, EditorPanelManager editorPanelManager) {
+    super(repository, true, false, editorPanelManager);
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
@@ -61,7 +66,9 @@ public class NodeEditorComponent extends EditorComponent {
         if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
           return;
         }
-        if (!isShowing()) return;
+        if (!isShowing()) {
+          return;
+        }
         adjustInspector();
       }
     });
@@ -83,7 +90,9 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (selectedNode.getModel() == null) return;
+        if (selectedNode.getModel() == null) {
+          return;
+        }
 
         inspect(selectedNode);
       }
@@ -110,7 +119,9 @@ public class NodeEditorComponent extends EditorComponent {
   @Override
   public void rebuildEditorContent() {
     SNode editedNode = getEditedNode();
-    if (editedNode == null || !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, getEditorContext().getRepository())) return;
+    if (editedNode == null || !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, getEditorContext().getRepository())) {
+      return;
+    }
     super.rebuildEditorContent();
   }
 

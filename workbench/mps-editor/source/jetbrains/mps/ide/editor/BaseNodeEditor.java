@@ -21,6 +21,7 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorPanelManagerImpl;
 import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
@@ -159,7 +160,7 @@ public abstract class BaseNodeEditor implements Editor {
       myEditorPanel.remove(myReplace);
       myReplace = null;
     }
-    NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository());
+    NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository(), new EditorPanelManagerImpl(myProject));
     EditorExtensionUtil.extendUsingProject(editorComponent, myProject);
     setEditorComponent(editorComponent);
   }

@@ -24,14 +24,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.InspectorEditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.Arrays;
 
 public class InspectorEditorComponent extends EditorComponent {
 
@@ -41,12 +40,20 @@ public class InspectorEditorComponent extends EditorComponent {
     this(p, false, false);
   }
 
+  public InspectorEditorComponent(@NotNull SRepository p, EditorPanelManager editorPanelManager) {
+    this(p, false, false, editorPanelManager);
+  }
+
   public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
-    this(repository, false, rightToLeft);
+    this(repository, false, rightToLeft, null);
   }
 
   public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft) {
-    super(repository, showGutter, rightToLeft);
+    this(repository, showGutter, rightToLeft, null);
+  }
+
+  public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft, EditorPanelManager editorPanelManager) {
+    super(repository, showGutter, rightToLeft, editorPanelManager);
     myNode = null;
     myNodePointer = null;
     myContainingRoot = null;
@@ -57,7 +64,7 @@ public class InspectorEditorComponent extends EditorComponent {
   @NotNull
   @Override
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new InspectorEditorContext(this, model, repository, createContextAssistantManager(repository));
+    return new InspectorEditorContext(this, model, repository, createContextAssistantManager(repository), getEditorPanelManager());
   }
 
   @Override
@@ -84,7 +91,9 @@ public class InspectorEditorComponent extends EditorComponent {
 
   protected boolean updateContainingRoot(SNode node) {
     final SNode newroot = node == null ? null : node.getContainingRoot();
-    if (myContainingRoot == newroot) return false;
+    if (myContainingRoot == newroot) {
+      return false;
+    }
     myContainingRoot = newroot;
     return true;
   }
@@ -92,7 +101,9 @@ public class InspectorEditorComponent extends EditorComponent {
   @Override
   public SNode getNodeForTypechecking() {
     SNode editedNode = getEditedNode();
-    if (editedNode == null) return null;
+    if (editedNode == null) {
+      return null;
+    }
     // assuming the parameter is always a descendant of the current containing root, but may have been detached from the model
     return editedNode.getModel() != null ? editedNode.getContainingRoot() : myContainingRoot;
   }

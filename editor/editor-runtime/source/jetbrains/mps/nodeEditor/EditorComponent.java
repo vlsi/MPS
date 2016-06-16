@@ -105,6 +105,7 @@ import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.ActionHandler;
+import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -364,6 +365,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private final EditorHighlighter myHighlighter = new EditorHighlighter(this);
 
+  private EditorPanelManager myEditorPanelManager;
+
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
   }
@@ -372,9 +375,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     this(repository, showErrorsGutter, rightToLeft, true);
   }
 
+  public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, EditorPanelManager editorPanelManager) {
+    this(repository, showErrorsGutter, rightToLeft, true, editorPanelManager);
+  }
+
   protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
+    this(repository, showErrorsGutter, rightToLeft, createUI, null);
+  }
+
+  // TODO: create EditorOptions class and use it as single constructor parameter to encapsulate all editor creation options
+  protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI,
+      EditorPanelManager editorPanelManager) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
+    myEditorPanelManager = editorPanelManager;
     setEditorContext(null, repository);
     myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
     myRootCell.setSelectable(false);
@@ -2689,11 +2703,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @NotNull
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new EditorContext(this, model, repository, createContextAssistantManager(repository));
+    return new EditorContext(this, model, repository, createContextAssistantManager(repository), getEditorPanelManager());
   }
 
   protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
     return new DefaultContextAssistantManager(this, repository);
+  }
+
+  protected EditorPanelManager getEditorPanelManager() {
+    return myEditorPanelManager;
   }
 
   @Override
