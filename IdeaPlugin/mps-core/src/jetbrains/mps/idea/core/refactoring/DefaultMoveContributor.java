@@ -22,37 +22,6 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
 
   private final MoveNodesActionBase myMoveNodesActionBase = new MoveNodesActionBase();
 
-  public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveParticipant> {
-    private Project myProject;
-    private UpdatePsiReferencesMoveParticipant myParticipant;
-
-    public UpdatePsiReferencesParticipant_extension(Project project) {
-      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
-      myProject = project;
-    }
-
-    public UpdatePsiReferencesMoveParticipant get() {
-      if (myParticipant == null) {
-        myParticipant = new UpdatePsiReferencesMoveParticipant(MPSPsiProvider.getInstance(myProject));
-      }
-      return myParticipant;
-    }
-  }
-
-  public static ExtensionDescriptor extDescriptor(final Project project) {
-    return new ExtensionDescriptor() {
-      @Override
-      public Iterable<? extends ExtensionPoint> getExtensionPoints() {
-        return Collections.emptyList();
-      }
-
-      @Override
-      public Iterable<? extends Extension> getExtensions() {
-        return Collections.singletonList(new UpdatePsiReferencesParticipant_extension(project));
-      }
-    };
-  }
-
   @Override
   public boolean isAvailableFor(MPSProject mpsProject, @NotNull List<SNode> nodes) {
     return myMoveNodesActionBase.isApplicable(mpsProject, nodes);

@@ -18,9 +18,14 @@ package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
+import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
 
 /**
  * Created by danilla on 12/11/15.
@@ -29,13 +34,40 @@ public class RegisterMoveNodePsiParticipant implements ProjectComponent {
   private Project myProject;
   private ExtensionDescriptor myExtensionDescriptor;
 
+  public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveParticipant> {
+    private Project myProject;
+    private UpdatePsiReferencesMoveParticipant myParticipant;
+
+    public UpdatePsiReferencesParticipant_extension(Project project) {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+      myProject = project;
+    }
+
+    public UpdatePsiReferencesMoveParticipant get() {
+      if (myParticipant == null) {
+        myParticipant = new UpdatePsiReferencesMoveParticipant(MPSPsiProvider.getInstance(myProject));
+      }
+      return myParticipant;
+    }
+  }
+
   public RegisterMoveNodePsiParticipant(Project project) {
     myProject = project;
   }
 
   @Override
   public void projectOpened() {
-    ExtensionRegistry.getInstance().registerExtensionDescriptor(myExtensionDescriptor = DefaultMoveContributor.extDescriptor(myProject));
+    ExtensionRegistry.getInstance().registerExtensionDescriptor(myExtensionDescriptor = new ExtensionDescriptor() {
+      @Override
+      public Iterable<? extends ExtensionPoint> getExtensionPoints() {
+        return Collections.emptyList();
+      }
+
+      @Override
+      public Iterable<? extends Extension> getExtensions() {
+        return Collections.singletonList(new UpdatePsiReferencesParticipant_extension(myProject));
+      }
+    });
   }
 
   @Override

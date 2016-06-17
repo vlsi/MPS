@@ -19,7 +19,6 @@ package jetbrains.mps.idea.java.refactoring;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.refactoring.UpdatePsiReferencesMoveParticipant;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
@@ -32,15 +31,15 @@ public class RegisterMoveStaticMemberPsiParticipant implements ProjectComponent 
   private Project myProject;
   private ExtensionDescriptor myExtensionDescriptor;
 
-  public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveParticipant> {
+  public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveStaticMemberParticipant> {
     private Project myProject;
-    private UpdatePsiReferencesMoveParticipant myParticipant;
+    private UpdatePsiReferencesMoveStaticMemberParticipant myParticipant;
     public UpdatePsiReferencesParticipant_extension(Project project) {
       super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
       myProject = project;
     }
     @Override
-    public UpdatePsiReferencesMoveParticipant get() {
+    public UpdatePsiReferencesMoveStaticMemberParticipant get() {
       if (myParticipant == null) {
         myParticipant = new UpdatePsiReferencesMoveStaticMemberParticipant(MPSPsiProvider.getInstance(myProject));
       }

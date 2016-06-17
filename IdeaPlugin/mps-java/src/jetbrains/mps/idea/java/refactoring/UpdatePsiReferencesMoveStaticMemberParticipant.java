@@ -23,7 +23,6 @@ import com.intellij.psi.PsiImportStaticReferenceElement;
 import com.intellij.psi.PsiImportStaticStatement;
 import com.intellij.psi.PsiMember;
 import com.intellij.psi.PsiReference;
-import com.intellij.refactoring.move.moveClassesOrPackages.CommonMoveUtil;
 import com.intellij.refactoring.move.moveMembers.MoveMemberHandler;
 import com.intellij.refactoring.move.moveMembers.MoveMembersOptions;
 import com.intellij.refactoring.move.moveMembers.MoveMembersProcessor.MoveMembersUsageInfo;
@@ -37,10 +36,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class UpdatePsiReferencesMoveStaticMemberParticipant extends UpdatePsiReferencesMoveParticipant {
