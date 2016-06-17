@@ -36,7 +36,7 @@ public class MoveConcepts extends MoveNodesActionBase {
 
   public static class MoveConcepts_extension extends Extension.Default<MoveNodesAction> {
     public MoveConcepts_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodesAction");
+      super("jetbrains.mps.ide.platform.MoveNodesActionEP");
     }
     public MoveNodesAction get() {
       return new MoveConcepts();

@@ -26,7 +26,7 @@ public class MoveStaticMethod extends MoveNodesActionBase {
 
   public static class MoveStaticMethod_extension extends Extension.Default<MoveNodesAction> {
     public MoveStaticMethod_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodesAction");
+      super("jetbrains.mps.ide.platform.MoveNodesActionEP");
     }
     public MoveNodesAction get() {
       return new MoveStaticMethod();

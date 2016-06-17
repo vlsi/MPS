@@ -25,7 +25,7 @@ public class MoveStaticField extends MoveNodesActionBase {
 
   public static class MoveStaticField_extension extends Extension.Default<MoveNodesAction> {
     public MoveStaticField_extension() {
-      super("jetbrains.mps.ide.platform.MoveNodesAction");
+      super("jetbrains.mps.ide.platform.MoveNodesActionEP");
     }
     public MoveNodesAction get() {
       return new MoveStaticField();

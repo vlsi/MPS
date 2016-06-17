@@ -3471,7 +3471,7 @@
     <node concept="1lYeZD" id="2nHUN3yznpY" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveConcepts_extension" />
-      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesAction" />
+      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesActionEP" />
       <node concept="3Tm1VV" id="2nHUN3yznpZ" role="1B3o_S" />
       <node concept="q3mfD" id="2nHUN3yznq5" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -4794,7 +4794,7 @@
     </node>
     <node concept="1lYeZD" id="6gEjUfBtl6D" role="jymVt">
       <property role="TrG5h" value="MovePropertyUp_extension" />
-      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesAction" />
+      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesActionEP" />
       <node concept="q3mfD" id="3BInSoF4BuF" role="jymVt">
         <property role="TrG5h" value="get" />
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
@@ -4904,7 +4904,7 @@
     </node>
     <node concept="1lYeZD" id="3BInSoF4sL_" role="jymVt">
       <property role="TrG5h" value="MoveContainmentLinkUp_extension" />
-      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesAction" />
+      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesActionEP" />
       <node concept="3Tm1VV" id="3BInSoF4sLA" role="1B3o_S" />
       <node concept="q3mfD" id="3BInSoF4Xfb" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -5051,7 +5051,7 @@
     </node>
     <node concept="1lYeZD" id="3BInSoF4ZeL" role="jymVt">
       <property role="TrG5h" value="MoveRefrenceLinkUp_extension" />
-      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesAction" />
+      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesActionEP" />
       <node concept="3Tm1VV" id="3BInSoF4ZeM" role="1B3o_S" />
       <node concept="q3mfD" id="3BInSoF4ZeN" role="jymVt">
         <property role="TrG5h" value="get" />

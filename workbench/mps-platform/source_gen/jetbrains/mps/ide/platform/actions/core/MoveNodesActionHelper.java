@@ -16,7 +16,7 @@ import org.apache.log4j.LogManager;
 
 public class MoveNodesActionHelper {
   public static MoveNodesAction getRefactoring(final MPSProject project, final List<SNode> nodesToMove) {
-    Iterable<MoveNodesAction> specialRefactorings = new ExtensionPoint<MoveNodesAction>("jetbrains.mps.ide.platform.MoveNodesAction").getObjects();
+    Iterable<MoveNodesAction> specialRefactorings = new ExtensionPoint<MoveNodesAction>("jetbrains.mps.ide.platform.MoveNodesActionEP").getObjects();
     Iterable<MoveNodesAction> applicableRefactorings = Sequence.fromIterable(specialRefactorings).where(new IWhereFilter<MoveNodesAction>() {
       public boolean accept(MoveNodesAction it) {
         return it.isApplicable(project, nodesToMove);

@@ -544,6 +544,9 @@
     <node concept="PrWs8" id="XJPDfCGCFL" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="PrWs8" id="30kw7F06p7_" role="PzmwI">
+      <ref role="PrY4T" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
     <node concept="1QGGSu" id="4Q8sAA5iKgx" role="rwd14">
       <property role="1QGGTI" value="${module}/icons/refactoring.png" />
     </node>

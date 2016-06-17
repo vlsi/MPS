@@ -1285,7 +1285,7 @@
     </node>
   </node>
   <node concept="vrV6u" id="1F5g4zQqSPo">
-    <property role="TrG5h" value="MoveNodesAction" />
+    <property role="TrG5h" value="MoveNodesActionEP" />
     <node concept="3uibUv" id="1F5g4zQwWpf" role="luc8K">
       <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
     </node>
@@ -10380,7 +10380,7 @@
             </node>
             <node concept="2OqwBi" id="30kw7F05kWG" role="33vP2m">
               <node concept="2O5UvJ" id="30kw7F05kWH" role="2Oq$k0">
-                <ref role="2O5UnU" node="1F5g4zQqSPo" resolve="MoveNodesAction" />
+                <ref role="2O5UnU" node="1F5g4zQqSPo" resolve="MoveNodesActionEP" />
               </node>
               <node concept="SfwO_" id="30kw7F05kWI" role="2OqNvi" />
             </node>
