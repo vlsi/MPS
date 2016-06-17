@@ -884,64 +884,6 @@
       <unit id="7295777740694844259" at="20,0,116,0" name="jetbrains.mps.util.SNodeCompare" />
     </file>
   </root>
-  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/7952719687879824640">
-    <file name="String2IconResourceAdapter_Deprecated.java">
-      <node id="7952719687879824641" at="20,0,21,0" concept="6" trace="myIcon" />
-      <node id="7952719687879824646" at="22,70,23,22" concept="17" />
-      <node id="7952719687879824649" at="23,22,24,18" concept="5" />
-      <node id="7952719687879824663" at="27,28,28,16" concept="12" />
-      <node id="7952719687879824670" at="31,38,32,17" concept="12" />
-      <node id="7952719687879824679" at="36,25,37,18" concept="12" />
-      <node id="7952719687879824686" at="39,9,40,41" concept="12" />
-      <node id="7952719687879824692" at="42,41,43,49" concept="5" />
-      <node id="7952719687879824697" at="44,7,45,18" concept="12" />
-      <node id="7952719687879824713" at="50,20,51,18" concept="12" />
-      <node id="7952719687879824726" at="53,50,54,19" concept="12" />
-      <node id="7952719687879824728" at="55,5,56,91" concept="11" />
-      <node id="7952719687879824734" at="56,91,57,38" concept="12" />
-      <node id="7952719687879824746" at="60,25,61,29" concept="12" />
-      <node id="7952719687879824640" at="63,0,64,0" concept="15" trace="LOG" />
-      <node id="7952719687879824677" at="35,36,38,5" concept="9" />
-      <node id="7952719687879824692" at="41,39,44,7" concept="9" />
-      <node id="7952719687879824708" at="49,35,52,5" concept="9" />
-      <node id="7952719687879824715" at="52,5,55,5" concept="9" />
-      <node id="7952719687879824659" at="26,0,30,0" concept="10" trace="isValid#()Z" />
-      <node id="7952719687879824666" at="30,0,34,0" concept="10" trace="isAlreadyReloaded#()Z" />
-      <node id="7952719687879824742" at="59,0,63,0" concept="10" trace="hashCode#()I" />
-      <node id="7952719687879824644" at="21,0,26,0" concept="3" trace="String2IconResourceAdapter_Deprecated#(Ljava/lang/String;)V" />
-      <node id="7952719687879824684" at="38,5,46,5" concept="19" />
-      <node id="7952719687879824702" at="48,0,59,0" concept="10" trace="equals#(Ljava/lang/Object;)Z" />
-      <node id="7952719687879824673" at="34,0,48,0" concept="10" trace="getResource#()Ljava/io/InputStream;" />
-      <scope id="7952719687879824662" at="27,28,28,16" />
-      <scope id="7952719687879824669" at="31,38,32,17" />
-      <scope id="7952719687879824678" at="36,25,37,18" />
-      <scope id="7952719687879824685" at="39,9,40,41" />
-      <scope id="7952719687879824692" at="42,41,43,49" />
-      <scope id="7952719687879824712" at="50,20,51,18" />
-      <scope id="7952719687879824725" at="53,50,54,19" />
-      <scope id="7952719687879824745" at="60,25,61,29" />
-      <scope id="7952719687879824645" at="22,70,24,18" />
-      <scope id="7952719687879824659" at="26,0,30,0" />
-      <scope id="7952719687879824666" at="30,0,34,0" />
-      <scope id="7952719687879824690" at="41,0,45,18">
-        <var name="e" id="7952719687879824699" />
-      </scope>
-      <scope id="7952719687879824691" at="41,39,45,18" />
-      <scope id="7952719687879824742" at="59,0,63,0" />
-      <scope id="7952719687879824644" at="21,0,26,0">
-        <var name="icon" id="7952719687879824655" />
-      </scope>
-      <scope id="7952719687879824707" at="49,35,57,38">
-        <var name="that" id="7952719687879824729" />
-      </scope>
-      <scope id="7952719687879824676" at="35,36,46,5" />
-      <scope id="7952719687879824702" at="48,0,59,0">
-        <var name="o" id="7952719687879824705" />
-      </scope>
-      <scope id="7952719687879824673" at="34,0,48,0" />
-      <unit id="7952719687879824640" at="18,0,65,0" name="jetbrains.mps.util.String2IconResourceAdapter_Deprecated" />
-    </file>
-  </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/8018595893829093050">
     <file name="DisjointSets.java">
       <node id="8018595893829093195" at="15,0,16,0" concept="6" trace="myParent" />
