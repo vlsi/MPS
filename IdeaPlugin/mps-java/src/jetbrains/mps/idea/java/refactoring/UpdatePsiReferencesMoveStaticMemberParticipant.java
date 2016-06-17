@@ -50,12 +50,14 @@ public class UpdatePsiReferencesMoveStaticMemberParticipant extends UpdatePsiRef
   }
 
   @Override
-  protected void updateUsages(List<UsageInfo> usageInfos, PsiElement targetElement, PsiElement psiElement) {
-    Map<PsiElement, PsiElement> old2New = Collections.singletonMap(psiElement, targetElement);
-    CommonMoveUtil.retargetUsages(usageInfos.toArray(UsageInfo.EMPTY_ARRAY), old2New);
+  public KeepOldNodes shouldKeepOldNode() {
+    return KeepOldNodes.POSTPONE_REMOVE;
+  }
 
-    final PsiMember psiMember = (PsiMember) psiElement;
-    final PsiClass targetClass = (PsiClass) targetElement;
+  @Override
+  protected void updateUsages(List<UsageInfo> usageInfos, PsiElement oldElement, PsiElement targetElement) {
+    final PsiMember psiMember = (PsiMember) oldElement;
+    final PsiClass targetClass = ((PsiMember) targetElement).getContainingClass();
     updatePsiUsages(psiMember, targetClass, usageInfos.stream().map(UsageInfo::getReference).collect(Collectors.toList()));
   }
 

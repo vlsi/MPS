@@ -100,6 +100,10 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     return Collections.emptyList();
   }
 
+  public KeepOldNodes shouldKeepOldNode() {
+    return KeepOldNodes.REMOVE;
+  }
+
   @Override
   public List<Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference nodeToMove, SRepository sRepository, List<Option> list, SearchScope searchScope) {
     // NOTE: this will be called as many times as many projects there are open currently
@@ -108,21 +112,21 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     // projects
 
 
-    final SNode resolvedNodeToMove = nodeToMove.resolve(sRepository);
-    PsiElement psiNodeToMove = myPsiProvider.getPsi(resolvedNodeToMove);
+    PsiElement psiNodeToMove = myPsiProvider.getPsi(nodeToMove.resolve(sRepository));
     final List<PsiReference> usages = getAffectedNodes(psiNodeToMove);
 
     List<Change<SNodeReference, SNodeReference>> changes = new ArrayList<>();
     for (final PsiReference usage : usages) {
+      final List<UsageInfo> usageInfos = Collections.singletonList(new MoveRenameUsageInfo(usage, usage.resolve()));
       changes.add(new Change<SNodeReference, SNodeReference>() {
         @Override
         public SearchResults<SNode> getSearchResults() {
-          return new SearchResults<>(Collections.singleton(resolvedNodeToMove), Collections.singletonList(new PsiSearchResult(usage)));
+          return new SearchResults<>(Collections.singleton(nodeToMove.resolve(sRepository)), Collections.singletonList(new PsiSearchResult(usage)));
         }
 
         @Override
-        public boolean needsToPreserveOldNode() {
-          return false;
+        public KeepOldNodes needsToPreserveOldNode() {
+          return shouldKeepOldNode();
         }
 
         @Override
@@ -130,13 +134,20 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
 
           reloadModelPsi(finalNode.resolve(sRepository).getModel(), refactoringSession);
 
+          PsiElement psiNodeToMove1;
+          if (shouldKeepOldNode() != KeepOldNodes.REMOVE) {
+            reloadModelPsi(nodeToMove.resolve(sRepository).getModel(), refactoringSession);
+            psiNodeToMove1 = myPsiProvider.getPsi(nodeToMove.resolve(sRepository));
+          } else {
+            psiNodeToMove1 = psiNodeToMove;
+          }
+
           refactoringSession.registerChange(new Runnable() {
             @Override
             public void run() {
               PsiElement targetElement = myPsiProvider.getPsi(finalNode);
               assert targetElement != null : "Failed to get PSI for target node of move refactoring";
-              final List<UsageInfo> usageInfos = Collections.singletonList(new MoveRenameUsageInfo(usage, usage.resolve()));
-              updateUsages(usageInfos, targetElement, psiNodeToMove);
+              updateUsages(usageInfos, psiNodeToMove1, targetElement);
             }
           });
         }
@@ -145,7 +156,7 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     return changes;
   }
 
-  protected void updateUsages(List<UsageInfo> usageInfos, PsiElement targetElement, PsiElement psiElement) {
+  protected void updateUsages(List<UsageInfo> usageInfos, PsiElement psiElement, PsiElement targetElement) {
     Map<PsiElement, PsiElement> old2New = Collections.singletonMap(psiElement, targetElement);
     CommonMoveUtil.retargetUsages(usageInfos.toArray(UsageInfo.EMPTY_ARRAY), old2New);
   }
