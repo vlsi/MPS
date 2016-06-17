@@ -83,7 +83,7 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
     }) != null;
   }
   /*package*/ static String getGeneratedClassName_id7w5LXrJJkLe(@NotNull SAbstractConcept __thisConcept__) {
-    return "MigrationDescriptorImpl";
+    return "MigrationDescriptor";
   }
   /*package*/ static SNode getDescriptor_idUBgfI9eMAt(@NotNull SNode __thisNode__) {
     return SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "2260648088429212842");
