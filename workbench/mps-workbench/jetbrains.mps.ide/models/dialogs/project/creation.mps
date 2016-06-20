@@ -44,6 +44,7 @@
     <import index="emwx" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.lang.model(JDK/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
@@ -4987,7 +4988,12 @@
             </node>
             <node concept="2ShNRf" id="1pyYjDPRarp" role="33vP2m">
               <node concept="1pGfFk" id="7D9ej8jTkL2" role="2ShVmc">
-                <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;()" resolve="DefaultModelRoot" />
+                <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;(jetbrains.mps.vfs.openapi.FileSystem)" resolve="DefaultModelRoot" />
+                <node concept="2ShNRf" id="1OabvAside8" role="37wK5m">
+                  <node concept="1pGfFk" id="1OabvAsieJD" role="2ShVmc">
+                    <ref role="37wK5l" to="4hrd:~IdeaFileSystem.&lt;init&gt;()" resolve="IdeaFileSystem" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

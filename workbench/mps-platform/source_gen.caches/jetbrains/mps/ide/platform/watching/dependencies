@@ -51,7 +51,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFileSystemProvider" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFileSystem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

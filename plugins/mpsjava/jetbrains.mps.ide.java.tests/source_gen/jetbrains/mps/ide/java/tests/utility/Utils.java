@@ -213,7 +213,7 @@ public class Utils {
     SModule mod2 = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
+    JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot(FileSystem.getInstance());
     binSRoot.setModule(mod1);
     binSRoot.setContentRoot(binPath);
     binSRoot.addFile(JavaClassStubsModelRoot.SOURCE_ROOTS, binPath);

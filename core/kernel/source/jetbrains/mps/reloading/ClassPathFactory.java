@@ -40,14 +40,14 @@ public class ClassPathFactory {
   private static final Object LOCK = new Object();
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
 
-  private static jetbrains.mps.vfs.openapi.FileSystem provider = new IoFileSystem();
+  private static jetbrains.mps.vfs.openapi.FileSystem ourFileSystem = new IoFileSystem();
 
   // FIXME rewrite without IFile, write class path item tests about jars in jars
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     synchronized (LOCK) {
       if (myCache.containsKey(path)) return myCache.get(path);
-      IFile iFile = provider.getFile(path);
+      IFile iFile = ourFileSystem.getFile(path);
       path = iFile.getPath();
       boolean isPackaged = iFile.isPackaged() || path.endsWith(".jar") || path.endsWith(".zip");
       boolean isDirectory = iFile.isDirectory();

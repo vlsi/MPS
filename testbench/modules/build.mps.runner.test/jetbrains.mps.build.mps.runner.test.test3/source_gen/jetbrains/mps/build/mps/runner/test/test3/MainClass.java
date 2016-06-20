@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.impl.IoFile;
 
 public class MainClass {
   public static void mpsMain() {
@@ -14,7 +14,7 @@ public class MainClass {
       public void run() {
         ModelAccess.instance().runWriteAction(new Computable<Boolean>() {
           public Boolean compute() {
-            IFile okFile = new IoFileSystem().getFile("ok.log");
+            IFile okFile = new IoFile("ok.log");
             return okFile.createNewFile();
           }
         });

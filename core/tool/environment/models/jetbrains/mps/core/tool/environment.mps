@@ -30,6 +30,7 @@
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="hhlx" ref="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" />
+    <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -4316,18 +4317,23 @@
                               <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                               <node concept="2ShNRf" id="4937uxYQnsz" role="37wK5m">
                                 <node concept="1pGfFk" id="4937uxYQns$" role="2ShVmc">
-                                  <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
-                                  <node concept="3cpWs3" id="4937uxYQns_" role="37wK5m">
-                                    <node concept="2OqwBi" id="4937uxYQnsA" role="3uHU7B">
-                                      <node concept="37vLTw" id="3GM_nagTwhk" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="4937uxYQnsi" resolve="jar" />
+                                  <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.ClassLoader)" resolve="LibDescriptor" />
+                                  <node concept="2ShNRf" id="1OabvAsg6I3" role="37wK5m">
+                                    <node concept="1pGfFk" id="1OabvAsgpEq" role="2ShVmc">
+                                      <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
+                                      <node concept="3cpWs3" id="4937uxYQns_" role="37wK5m">
+                                        <node concept="2OqwBi" id="4937uxYQnsA" role="3uHU7B">
+                                          <node concept="37vLTw" id="3GM_nagTwhk" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="4937uxYQnsi" resolve="jar" />
+                                          </node>
+                                          <node concept="liA8E" id="4937uxYQnsC" role="2OqNvi">
+                                            <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="1OabvAsgpEv" role="3uHU7w">
+                                          <ref role="3cqZAo" node="4937uxYQn8n" resolve="MODULES_PREFIX" />
+                                        </node>
                                       </node>
-                                      <node concept="liA8E" id="4937uxYQnsC" role="2OqNvi">
-                                        <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                                      </node>
-                                    </node>
-                                    <node concept="37vLTw" id="3eUNqOk8Nxb" role="3uHU7w">
-                                      <ref role="3cqZAo" node="4937uxYQn8n" resolve="MODULES_PREFIX" />
                                     </node>
                                   </node>
                                   <node concept="37vLTw" id="3GM_nagTtKK" role="37wK5m">
@@ -4391,13 +4397,18 @@
                           <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                           <node concept="2ShNRf" id="4937uxYQntc" role="37wK5m">
                             <node concept="1pGfFk" id="4937uxYQntd" role="2ShVmc">
-                              <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
-                              <node concept="2OqwBi" id="4937uxYQnte" role="37wK5m">
-                                <node concept="37vLTw" id="3GM_nagTrEi" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4937uxYQnsG" resolve="languagesFolder" />
-                                </node>
-                                <node concept="liA8E" id="4937uxYQntg" role="2OqNvi">
-                                  <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                              <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.ClassLoader)" resolve="LibDescriptor" />
+                              <node concept="2ShNRf" id="1OabvAsgpVK" role="37wK5m">
+                                <node concept="1pGfFk" id="1OabvAsgqw5" role="2ShVmc">
+                                  <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
+                                  <node concept="2OqwBi" id="4937uxYQnte" role="37wK5m">
+                                    <node concept="37vLTw" id="3GM_nagTrEi" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4937uxYQnsG" resolve="languagesFolder" />
+                                    </node>
+                                    <node concept="liA8E" id="4937uxYQntg" role="2OqNvi">
+                                      <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                               <node concept="37vLTw" id="3GM_nagTwv_" role="37wK5m">
@@ -4459,13 +4470,18 @@
                           <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                           <node concept="2ShNRf" id="2$4oShLaOOV" role="37wK5m">
                             <node concept="1pGfFk" id="2$4oShLaOOW" role="2ShVmc">
-                              <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
-                              <node concept="2OqwBi" id="2$4oShLaOOX" role="37wK5m">
-                                <node concept="37vLTw" id="2$4oShLaOOY" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="2$4oShLaOOC" resolve="classesFolder" />
-                                </node>
-                                <node concept="liA8E" id="2$4oShLaOOZ" role="2OqNvi">
-                                  <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                              <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.ClassLoader)" resolve="LibDescriptor" />
+                              <node concept="2ShNRf" id="1OabvAsgqDM" role="37wK5m">
+                                <node concept="1pGfFk" id="1OabvAsgrwC" role="2ShVmc">
+                                  <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
+                                  <node concept="2OqwBi" id="2$4oShLaOOX" role="37wK5m">
+                                    <node concept="37vLTw" id="2$4oShLaOOY" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="2$4oShLaOOC" resolve="classesFolder" />
+                                    </node>
+                                    <node concept="liA8E" id="2$4oShLaOOZ" role="2OqNvi">
+                                      <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                               <node concept="37vLTw" id="2$4oShLaOP0" role="37wK5m">

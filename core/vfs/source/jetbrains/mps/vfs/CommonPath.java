@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 /**
  * Represents a familiar path to any file or folder on disk.
@@ -40,7 +41,7 @@ public class CommonPath extends AbstractPath {
   private final String mySeparator;
   private final char mySeparatorChar;
 
-  public CommonPath(@NotNull String path) {
+  private CommonPath(@NotNull String path) {
     mySeparatorChar = path.contains(WIN_SEPARATOR) ? WIN_SEPARATOR_CHAR : UNIX_SEPARATOR_CHAR;
     mySeparator = String.valueOf(mySeparatorChar);
     myRelativeFlag = (path.length() > 0 && path.charAt(0) != mySeparatorChar); // path does not start with sep; TODO: NB! NOT DEALING WITH DRIVE LETTERS ON WINDOWS LIKE C:\\System
@@ -60,14 +61,14 @@ public class CommonPath extends AbstractPath {
     }
   }
 
-  public CommonPath(char separator, boolean relative, @NotNull String... parts) {
+  private CommonPath(char separator, boolean relative, @NotNull String... parts) {
     if (parts.length == 0 || parts[0] == null) {
       throw new IllegalArgumentException();
     }
     mySeparatorChar = separator;
     mySeparator = String.valueOf(mySeparatorChar);
     myRelativeFlag = relative;
-    myParts = Arrays.asList(parts);
+    myParts = Arrays.asList(parts).stream().map(path -> path + "").collect(Collectors.toList());
     StringJoiner joiner = new StringJoiner(mySeparator);
     myParts.forEach(joiner::add);
     myPath = joiner.toString();
@@ -84,6 +85,9 @@ public class CommonPath extends AbstractPath {
     return mySeparatorChar;
   }
 
+  /**
+   * remove all doubling separators
+   */
   private String toCanonical(@NotNull String path) {
     int lastNonSepSymb = path.length() - 1;
     while (lastNonSepSymb >= 0 && path.charAt(lastNonSepSymb) == mySeparatorChar) {
@@ -93,7 +97,15 @@ public class CommonPath extends AbstractPath {
     while (firstNonSepSymb <= lastNonSepSymb && path.charAt(firstNonSepSymb) == mySeparatorChar) {
       ++firstNonSepSymb;
     }
-    return path.substring(firstNonSepSymb, lastNonSepSymb + 1);
+    int index = 0;
+    char[] result = new char[path.length()];
+    for (int i = firstNonSepSymb; i <= lastNonSepSymb; ++i) {
+      if (index > 0 && result[index - 1] == mySeparatorChar && mySeparatorChar == path.charAt(i)) {
+        continue;
+      }
+      result[index++] = path.charAt(i);
+    }
+    return String.valueOf(result, 0, index);
   }
 
   public static CommonPath fromString(@NotNull String path) {
@@ -107,6 +119,11 @@ public class CommonPath extends AbstractPath {
   @Override
   public boolean isRelative() {
     return myRelativeFlag;
+  }
+
+  @Override
+  public char getSeparator() {
+    return mySeparatorChar;
   }
 
   @Override
@@ -143,7 +160,7 @@ public class CommonPath extends AbstractPath {
   @NotNull
   public CommonPath toIndependentPath() {
     if (mySeparatorChar == UNIX_SEPARATOR_CHAR) {
-      return this;
+      return copy();
     }
     return new CommonPath(UNIX_SEPARATOR_CHAR, myRelativeFlag, myParts);
   }
@@ -152,7 +169,7 @@ public class CommonPath extends AbstractPath {
   @NotNull
   public CommonPath toSystemPath() {
     if (mySeparatorChar == SYSTEM_SEPARATOR_CHAR) {
-      return this;
+      return copy();
     }
     return new CommonPath(SYSTEM_SEPARATOR_CHAR, myRelativeFlag, myParts);
   }
@@ -163,22 +180,8 @@ public class CommonPath extends AbstractPath {
   }
 
   @Override
-  public boolean endsWith(@NotNull Path other) {
-    if (getNameCount() != other.getNameCount()) {
-      return false;
-    }
-
-    return false;
-  }
-
-  @Override
-  public boolean startsWith(@NotNull Path other) {
-    return false;
-  }
-
-  @Override
   public boolean startsWith(@NotNull String other) {
-    return false;
+    return startsWith(CommonPath.fromString(other));
   }
 
   @NotNull
@@ -211,6 +214,14 @@ public class CommonPath extends AbstractPath {
 
   @Override
   public String toString() {
+    if (!myRelativeFlag) {
+      return mySeparatorChar + myPath;
+    }
     return myPath;
+  }
+
+  @Override
+  public CommonPath copy() {
+    return new CommonPath(mySeparatorChar, myRelativeFlag, myParts);
   }
 }

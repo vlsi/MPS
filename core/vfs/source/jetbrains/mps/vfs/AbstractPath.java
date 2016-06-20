@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
+ * Common base class
+ *
  * Created by apyshkin on 6/19/16.
  */
-public abstract class AbstractPath implements Path {
+abstract class AbstractPath implements Path {
   @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof Path)) {
@@ -35,4 +39,48 @@ public abstract class AbstractPath implements Path {
     }
     return result;
   }
+
+  @Override
+  public boolean endsWith(@NotNull Path other) {
+    if (isRelative() && !other.isRelative()) {
+      return false;
+    }
+    if (getSeparator() != other.getSeparator()) {
+      return false;
+    }
+
+    if (getNameCount() < other.getNameCount()) {
+      return false;
+    }
+    for (int i = 0; i < other.getNameCount(); ++i) {
+      if (!getName(getNameCount() - 1 - i).equals(other.getName(other.getNameCount() - 1 - i))) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  @Override
+  public boolean startsWith(@NotNull Path other) {
+    if (!isRelative() && other.isRelative()) {
+      return false;
+    }
+    if (getSeparator() != other.getSeparator()) {
+      return false;
+    }
+
+    if (getNameCount() < other.getNameCount()) {
+      return false;
+    }
+    for (int i = 0; i < other.getNameCount(); ++i) {
+      if (!getName(i).equals(other.getName(i))) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  public abstract Path copy();
 }

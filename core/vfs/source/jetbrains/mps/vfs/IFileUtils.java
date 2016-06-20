@@ -56,7 +56,7 @@ public class IFileUtils {
   }
 
   public static boolean isJarFile(@NotNull IFile file) {
-    return file.toPath().isJar();
+    return file.getPath().endsWith(Path.DOT_JAR);
   }
 
   /**

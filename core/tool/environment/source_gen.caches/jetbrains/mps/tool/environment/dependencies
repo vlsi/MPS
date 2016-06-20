@@ -101,6 +101,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>

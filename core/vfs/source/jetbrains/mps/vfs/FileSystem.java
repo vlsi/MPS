@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
  * Works as a factory for IFile, also provides file system listening mechanism (e.g. {@link #addListener(FileSystemListener)}.
  * Currently it is a singleton
  */
-public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
+public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSystemExt {
   /**
    * @deprecated use it only when you really do not care about the file system implementation. Otherwise consider using context {@link IFile#getFileSystem()};
    * This singleton (as always) will be available via core MPSComponents some time later.

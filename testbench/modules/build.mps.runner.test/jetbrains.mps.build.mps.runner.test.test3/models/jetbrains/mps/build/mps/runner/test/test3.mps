@@ -109,14 +109,9 @@
                               <node concept="3uibUv" id="7GotP_EY3z" role="1tU5fm">
                                 <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                               </node>
-                              <node concept="2OqwBi" id="1E8U0XDKusJ" role="33vP2m">
-                                <node concept="2ShNRf" id="1E8U0XDKsV4" role="2Oq$k0">
-                                  <node concept="1pGfFk" id="1E8U0XDKuo4" role="2ShVmc">
-                                    <ref role="37wK5l" to="amo1:~IoFileSystemProvider.&lt;init&gt;()" resolve="IoFileSystemProvider" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="1E8U0XDKv5V" role="2OqNvi">
-                                  <ref role="37wK5l" to="amo1:~IoFileSystemProvider.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                              <node concept="2ShNRf" id="1OabvAshcRk" role="33vP2m">
+                                <node concept="1pGfFk" id="1OabvAshd0Q" role="2ShVmc">
+                                  <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.io.File)" resolve="IoFile" />
                                   <node concept="Xl_RD" id="1E8U0XDKvjR" role="37wK5m">
                                     <property role="Xl_RC" value="ok.log" />
                                   </node>

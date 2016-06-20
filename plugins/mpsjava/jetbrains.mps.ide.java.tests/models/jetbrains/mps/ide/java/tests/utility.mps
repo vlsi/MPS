@@ -1985,6 +1985,10 @@
             <node concept="2ShNRf" id="Tb4Psnn76P" role="33vP2m">
               <node concept="1pGfFk" id="Tb4Psnn76Q" role="2ShVmc">
                 <ref role="37wK5l" to="ft0j:5JsnGMj1qiZ" resolve="JavaClassStubsModelRoot" />
+                <node concept="2YIFZM" id="7x_ZEMaSmT$" role="37wK5m">
+                  <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                  <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
+                </node>
               </node>
             </node>
             <node concept="3uibUv" id="Tb4Psnn76R" role="1tU5fm">

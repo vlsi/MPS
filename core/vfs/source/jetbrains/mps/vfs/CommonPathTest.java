@@ -15,27 +15,14 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * These parameters are used by idea virtual file system
- *
- * Created by apyshkin on 6/19/16.
+ * Testing {@link CommonPath}
  */
-public final class IdeaCachingContext implements CachingContext {
-  private final boolean mySynchronous;
-  private final boolean myRecursive;
-
-  public IdeaCachingContext(boolean synchronous, boolean recursive) {
-    mySynchronous = synchronous;
-    myRecursive = recursive;
-  }
-
+public class CommonPathTest extends PathTest {
   @Override
-  public boolean isRecursive() {
-    return myRecursive;
-  }
-
-  @Override
-  public boolean isSynchronous() {
-    return mySynchronous;
+  public Path create(@NotNull String path) {
+    return CommonPath.fromString(path);
   }
 }

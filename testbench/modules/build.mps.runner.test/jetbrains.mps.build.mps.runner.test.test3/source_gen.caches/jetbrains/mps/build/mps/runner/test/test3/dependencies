@@ -7,7 +7,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFileSystemProvider" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFile" />
   </dependency>
 </dependenciesRoot>
 

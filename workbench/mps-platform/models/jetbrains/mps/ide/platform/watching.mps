@@ -1868,6 +1868,7 @@
       </node>
       <node concept="3Tm6S6" id="4kWM61TNra0" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="1OabvAshn1q" role="jymVt" />
     <node concept="3clFbW" id="6KWQXOSp6oy" role="jymVt">
       <node concept="3cqZAl" id="6KWQXOSp6oz" role="3clF45" />
       <node concept="3Tm1VV" id="6KWQXOSp6o$" role="1B3o_S" />
@@ -1879,16 +1880,16 @@
             </node>
             <node concept="2OqwBi" id="5gUstTWi1xG" role="37vLTx">
               <node concept="liA8E" id="5gUstTWi1xH" role="2OqNvi">
-                <ref role="37wK5l" to="4hrd:~IdeaFileSystemProvider.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
+                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getListenersContainer():jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" resolve="getListenersContainer" />
               </node>
               <node concept="1eOMI4" id="5gUstTWi1xI" role="2Oq$k0">
                 <node concept="10QFUN" id="5gUstTWi1xJ" role="1eOMHV">
-                  <node concept="3uibUv" id="5gUstTWi1xK" role="10QFUM">
-                    <ref role="3uigEE" to="4hrd:~IdeaFileSystemProvider" resolve="IdeaFileSystemProvider" />
+                  <node concept="3uibUv" id="1OabvAshhOk" role="10QFUM">
+                    <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
                   </node>
                   <node concept="2OqwBi" id="5gUstTWi1xL" role="10QFUP">
                     <node concept="liA8E" id="5gUstTWi1xM" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileSystemProvider():jetbrains.mps.vfs.FileSystemProvider" resolve="getFileSystemProvider" />
+                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileSystemExt():jetbrains.mps.vfs.FileSystemExt" resolve="getFileSystemExt" />
                     </node>
                     <node concept="2YIFZM" id="5gUstTWi1xN" role="2Oq$k0">
                       <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
@@ -1902,6 +1903,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1OabvAshmRH" role="jymVt" />
     <node concept="3clFb_" id="3Fdn9B$XlaL" role="jymVt">
       <property role="TrG5h" value="update" />
       <node concept="3cqZAl" id="3Fdn9B$XlaM" role="3clF45" />

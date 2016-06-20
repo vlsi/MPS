@@ -36,8 +36,8 @@ public final class FileRefresh implements Runnable {
   }
 
   private void refreshRecursivelyIntoJars(IFile file) {
-    FileSystem.getInstance().refresh(file);
     if (!(file instanceof CachingFile)) return;
+    ((CachingFile) file).refresh(new IdeaCachingContext(true, false));
     if (file.isDirectory()) {
       for (IFile child: file.getChildren()) {
         refreshRecursivelyIntoJars(child);

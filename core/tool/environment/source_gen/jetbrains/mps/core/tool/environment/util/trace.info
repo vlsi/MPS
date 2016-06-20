@@ -515,52 +515,52 @@
   </root>
   <root nodeRef="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)/5900076103425675110">
     <file name="SetLibraryContributor.java">
-      <node id="2675718132411473490" at="14,0,15,0" concept="5" trace="myName" />
-      <node id="5900076103425675113" at="15,0,16,0" concept="5" trace="myLibraryPaths" />
-      <node id="2675718132411474210" at="17,79,18,18" concept="4" />
-      <node id="5900076103425675121" at="18,18,19,34" concept="4" />
-      <node id="5900076103425675133" at="23,40,24,55" concept="11" />
-      <node id="5900076103425675142" at="28,36,29,17" concept="11" />
-      <node id="3177404568152303826" at="32,103,33,86" concept="10" />
-      <node id="3177404568152303838" at="34,54,35,102" concept="4" />
-      <node id="3177404568152303848" at="36,5,37,49" concept="11" />
-      <node id="3727517784853356397" at="40,85,41,49" concept="11" />
-      <node id="1455266293622613435" at="45,28,46,42" concept="11" />
-      <node id="3177404568152303833" at="33,86,36,5" concept="7" />
-      <node id="3727517784853355649" at="40,0,43,0" concept="15" trace="fromSet#(Ljava/lang/String;Ljava/util/Set;)Ljetbrains/mps/core/tool/environment/util/SetLibraryContributor;" />
-      <node id="5900076103425675117" at="17,0,21,0" concept="2" trace="SetLibraryContributor#(Ljava/lang/String;Ljava/util/Set;)V" />
-      <node id="5900076103425675130" at="22,0,26,0" concept="9" trace="getPaths#()Ljava/util/Set;" />
-      <node id="5900076103425675138" at="27,0,31,0" concept="9" trace="hiddenLanguages#()Z" />
-      <node id="1455266293622596881" at="44,0,48,0" concept="9" trace="toString#()Ljava/lang/String;" />
-      <node id="3727517784853312471" at="32,0,39,0" concept="15" trace="fromMap#(Ljava/lang/String;Ljava/util/Map;)Ljetbrains/mps/core/tool/environment/util/SetLibraryContributor;" />
-      <scope id="5900076103425675132" at="23,40,24,55" />
-      <scope id="5900076103425675141" at="28,36,29,17" />
-      <scope id="3177404568152303837" at="34,54,35,102" />
-      <scope id="3727517784853355652" at="40,85,41,49" />
-      <scope id="1455266293622596887" at="45,28,46,42" />
-      <scope id="5900076103425675120" at="17,79,19,34" />
-      <scope id="3177404568152303833" at="33,86,36,5">
+      <node id="2675718132411473490" at="15,0,16,0" concept="5" trace="myName" />
+      <node id="5900076103425675113" at="16,0,17,0" concept="5" trace="myLibraryPaths" />
+      <node id="2675718132411474210" at="18,79,19,18" concept="4" />
+      <node id="5900076103425675121" at="19,18,20,34" concept="4" />
+      <node id="5900076103425675133" at="24,40,25,55" concept="11" />
+      <node id="5900076103425675142" at="29,36,30,17" concept="11" />
+      <node id="3177404568152303826" at="33,103,34,86" concept="10" />
+      <node id="3177404568152303838" at="35,54,36,114" concept="4" />
+      <node id="3177404568152303848" at="37,5,38,49" concept="11" />
+      <node id="3727517784853356397" at="41,85,42,49" concept="11" />
+      <node id="1455266293622613435" at="46,28,47,42" concept="11" />
+      <node id="3177404568152303833" at="34,86,37,5" concept="7" />
+      <node id="3727517784853355649" at="41,0,44,0" concept="15" trace="fromSet#(Ljava/lang/String;Ljava/util/Set;)Ljetbrains/mps/core/tool/environment/util/SetLibraryContributor;" />
+      <node id="5900076103425675117" at="18,0,22,0" concept="2" trace="SetLibraryContributor#(Ljava/lang/String;Ljava/util/Set;)V" />
+      <node id="5900076103425675130" at="23,0,27,0" concept="9" trace="getPaths#()Ljava/util/Set;" />
+      <node id="5900076103425675138" at="28,0,32,0" concept="9" trace="hiddenLanguages#()Z" />
+      <node id="1455266293622596881" at="45,0,49,0" concept="9" trace="toString#()Ljava/lang/String;" />
+      <node id="3727517784853312471" at="33,0,40,0" concept="15" trace="fromMap#(Ljava/lang/String;Ljava/util/Map;)Ljetbrains/mps/core/tool/environment/util/SetLibraryContributor;" />
+      <scope id="5900076103425675132" at="24,40,25,55" />
+      <scope id="5900076103425675141" at="29,36,30,17" />
+      <scope id="3177404568152303837" at="35,54,36,114" />
+      <scope id="3727517784853355652" at="41,85,42,49" />
+      <scope id="1455266293622596887" at="46,28,47,42" />
+      <scope id="5900076103425675120" at="18,79,20,34" />
+      <scope id="3177404568152303833" at="34,86,37,5">
         <var name="libPath" id="3177404568152303835" />
       </scope>
-      <scope id="3727517784853355649" at="40,0,43,0">
+      <scope id="3727517784853355649" at="41,0,44,0">
         <var name="libs" id="3727517784853356138" />
         <var name="name" id="2675718132411470344" />
       </scope>
-      <scope id="5900076103425675117" at="17,0,21,0">
+      <scope id="5900076103425675117" at="18,0,22,0">
         <var name="libraryPaths" id="5900076103425675127" />
         <var name="name" id="2675718132411470877" />
       </scope>
-      <scope id="5900076103425675130" at="22,0,26,0" />
-      <scope id="5900076103425675138" at="27,0,31,0" />
-      <scope id="1455266293622596881" at="44,0,48,0" />
-      <scope id="3727517784853312474" at="32,103,37,49">
+      <scope id="5900076103425675130" at="23,0,27,0" />
+      <scope id="5900076103425675138" at="28,0,32,0" />
+      <scope id="1455266293622596881" at="45,0,49,0" />
+      <scope id="3727517784853312474" at="33,103,38,49">
         <var name="libs" id="3177404568152303827" />
       </scope>
-      <scope id="3727517784853312471" at="32,0,39,0">
+      <scope id="3727517784853312471" at="33,0,40,0">
         <var name="libToClassLoader" id="3177404568152298191" />
         <var name="name" id="2675718132411474728" />
       </scope>
-      <unit id="5900076103425675110" at="13,0,49,0" name="jetbrains.mps.core.tool.environment.util.SetLibraryContributor" />
+      <unit id="5900076103425675110" at="14,0,50,0" name="jetbrains.mps.core.tool.environment.util.SetLibraryContributor" />
     </file>
   </root>
   <root nodeRef="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)/8638838189258348895">

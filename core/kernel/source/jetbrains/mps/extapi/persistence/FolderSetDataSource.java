@@ -71,7 +71,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       myPaths.put(path.getPath(), listener);
       if (!(myListeners.isEmpty())) {
-        ((jetbrains.mps.vfs.FileSystem) path.getFileSystem()).addListener(listener);
+        ((jetbrains.mps.vfs.FileSystemExt) path.getFileSystem()).addListener(listener);
       }
     } finally {
       myLock.writeLock().unlock();

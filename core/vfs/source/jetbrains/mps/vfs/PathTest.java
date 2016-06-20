@@ -15,113 +15,129 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
  * Testing {@link Path} classes
  */
-public class PathTest {
+public abstract class PathTest {
+  public abstract Path create(@NotNull String path);
+
   @Test
   public void nameTest1() {
-    Path path = new CommonPath("//////");
+    Path path = create("//////");
     Assert.assertEquals(1, path.getNameCount());
   }
 
   @Test
   public void nameTest2() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertEquals(4, path.getNameCount());
   }
 
   @Test
   public void endsWithTest1() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertTrue(path.endsWith("d"));
   }
 
   @Test
   public void endsWithTest2() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertTrue(path.endsWith("c/d"));
   }
 
   @Test
   public void endsWithTest3() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertTrue(path.endsWith("/a/b/c/d/"));
   }
 
   @Test
   public void endsWithTest4() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertTrue(path.endsWith("/a//b/c/d///"));
   }
 
   @Test
   public void endsWithTest5() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertFalse(path.endsWith("/"));
   }
 
   @Test
   public void endsWithTest6() {
-    Path path = new CommonPath("/");
+    Path path = create("/");
     Assert.assertFalse(path.endsWith("d/"));
   }
 
   @Test
   public void startsWithTest1() {
-    Path path = new CommonPath("//////a/b/c/d/");
+    Path path = create("//////a/b/c/d/");
     Assert.assertFalse(path.startsWith("d"));
   }
 
   @Test
   public void startsWithTest2() {
-    Path path = new CommonPath("//////a/b/c/d/");
-    Assert.assertTrue(path.endsWith("a"));
+    Path path = create("//////a/b/c/d/");
+    Assert.assertFalse(path.startsWith("a"));
   }
 
   @Test
   public void startsWithTest3() {
-    Path path = new CommonPath("//////a/b/c/d/");
-    Assert.assertTrue(path.endsWith("/a/b/"));
+    Path path = create("//////a/b/c/d/");
+    Assert.assertTrue(path.startsWith("/a/b/"));
   }
 
   @Test
   public void startsWithTest4() {
-    Path path = new CommonPath("//////a/b/c/d/");
-    Assert.assertFalse(path.endsWith("a/b"));
+    Path path = create("//////a/b/c/d/");
+    Assert.assertFalse(path.startsWith("a/b"));
   }
 
   @Test
   public void rootTest1() {
-    Path path = new CommonPath("/");
-    Assert.assertEquals(new CommonPath(""), path);
+    Path path = create("/");
+    Assert.assertEquals(create(""), path);
   }
 
 
   @Test
   public void rootTest2() {
-    Path path = new CommonPath("/");
-    Assert.assertEquals(new CommonPath("//"), path);
+    Path path = create("/");
+    Assert.assertEquals(create("//"), path);
   }
 
   @Test
   public void rootParentIsNull() {
-    Path path = new CommonPath("/");
+    Path path = create("/");
     Assert.assertEquals(null, path.getParent());
   }
 
   @Test
+  public void separatorTest1() {
+    Path path = create("a\\b\\c");
+    Assert.assertEquals(create("a/b/c"), path.toIndependentPath());
+  }
+
+  @Test
+  public void separatorTest2() {
+    Path path = create("\\\\a\\b\\c");
+    Assert.assertEquals(create("/a/b/c"), path.toIndependentPath());
+  }
+
+  @Test
   public void parentTest1() {
-    Path path = new CommonPath("a\\b\\c");
-    Assert.assertEquals(new CommonPath("a/b/c"), path.toIndependentPath());
+    Path path = create("/a/b/c/asdf/cx.xml");
+    Assert.assertEquals(create("/a/b/c/asdf/"), path.getParent());
   }
 
   @Test
   public void parentTest2() {
-    Path path = new CommonPath("/a/b/c");
-    Assert.assertEquals(new CommonPath("a/b"), path.getParent());
+    Path path = create("/a/b/c");
+    Assert.assertEquals(create("/a/b"), path.getParent());
   }
 }

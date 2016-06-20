@@ -120,7 +120,7 @@ public interface IFile {
   @ToRemove(version = 3.4)
   @Deprecated
   default boolean isPackaged() {
-    return isArchive() || isInArchive();
+    return isInArchive();
   }
 
   /**
@@ -131,7 +131,7 @@ public interface IFile {
   default void refresh() {
     if (this instanceof CachingFile) {
       CachingFile me = (CachingFile) this;
-      me.refresh(new IdeaCachingContext(false, false));
+      me.refresh(new IdeaCachingContext(true, false));
     }
   }
 

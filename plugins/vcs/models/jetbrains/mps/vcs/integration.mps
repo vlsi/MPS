@@ -1243,8 +1243,8 @@
       <node concept="3clFbS" id="5ooWrzQB8DS" role="3clF47">
         <node concept="3clFbJ" id="5ooWrzQB8El" role="3cqZAp">
           <node concept="2ZW3vV" id="4rXN3wkfYLF" role="3clFbw">
-            <node concept="3uibUv" id="4rXN3wkg3KV" role="2ZW6by">
-              <ref role="3uigEE" to="4hrd:~IdeaFileSystemProvider" resolve="IdeaFileSystemProvider" />
+            <node concept="3uibUv" id="1OabvAshbKn" role="2ZW6by">
+              <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
             </node>
             <node concept="2OqwBi" id="5ooWrzQB8Ep" role="2ZW6bz">
               <node concept="37vLTw" id="2BHiRxgm745" role="2Oq$k0">

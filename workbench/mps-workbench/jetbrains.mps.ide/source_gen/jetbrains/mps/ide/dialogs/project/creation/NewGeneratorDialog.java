@@ -6,8 +6,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import javax.swing.JTextField;
-
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.openapi.project.Project;
@@ -36,6 +34,7 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;

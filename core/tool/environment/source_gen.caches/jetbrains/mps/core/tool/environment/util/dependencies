@@ -75,6 +75,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFile" />
     <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />
   </dependency>
 </dependenciesRoot>

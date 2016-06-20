@@ -289,7 +289,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   // FIXME rewrite without IFile, write class path item tests about jars in jars
   private static File transformFile(IFile f) throws IOException {
-    if (!FileSystem.getInstance().isPackaged(f)) {
+    if (!f.isInArchive()) {
       return new File(f.getPath());
     }
 

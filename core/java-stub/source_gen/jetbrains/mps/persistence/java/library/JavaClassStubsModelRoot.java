@@ -4,8 +4,6 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.java.stub.PackageScopeControl;
-import jetbrains.mps.vfs.FileSystemExt;
-import jetbrains.mps.vfs.Path;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -20,6 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.vfs.Path;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,18 +30,22 @@ import org.jetbrains.annotations.Nullable;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   private PackageScopeControl myPackageScope;
+
   public JavaClassStubsModelRoot(FileSystem fileSystem) {
     super(fileSystem);
   }
+
   @Override
   public String getType() {
     return JavaClassStubConstants.STUB_TYPE;
   }
+
   @Override
   public SModel getModel(SModelId id) {
     // todo implement 
     return null;
   }
+
   @Override
   public void load(Memento memento) {
     super.load(memento);
@@ -61,6 +64,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       myPackageScope.save(memento.createChild("PackageScope"));
     }
   }
+
   @Override
   public Iterable<SModel> loadModels() {
     final List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
@@ -103,6 +107,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
 
     return result;
   }
+
   private void collectJarFiles(final IFile file, Collection<String> excluded, Set<IFile> files) {
     if (CollectionSequence.fromCollection(excluded).contains(file.getPath())) {
       return;
@@ -118,18 +123,22 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       collectJarFiles(child, excluded, files);
     }
   }
+
   @Override
   public boolean canCreateModels() {
     return false;
   }
+
   @Override
   public boolean canCreateModel(String string) {
     return false;
   }
+
   @Override
   public SModel createModel(String string) {
     return null;
   }
+
   public void getModelDescriptors(final List<SModel> result, IFile file, String prefix, SModule module) {
     List<IFile> children = file.getChildren();
     for (IFile subdir : ListSequence.fromList(children).where(new IWhereFilter<IFile>() {

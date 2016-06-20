@@ -34,6 +34,7 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="ddon" ref="r:58ba176b-8a52-400c-bf27-725996471cb9(jetbrains.mps.core.tool.environment.common)" />
     <import index="gn4j" ref="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" />
+    <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3642,9 +3643,14 @@
                 <node concept="TSZUe" id="DMIDDhkMjT" role="2OqNvi">
                   <node concept="2ShNRf" id="2Koq9V0qYzy" role="25WWJ7">
                     <node concept="1pGfFk" id="2Koq9V0qYzz" role="2ShVmc">
-                      <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
-                      <node concept="37vLTw" id="DMIDDhkh6t" role="37wK5m">
-                        <ref role="3cqZAo" node="2Koq9V0qYzr" resolve="libPath" />
+                      <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.ClassLoader)" resolve="LibDescriptor" />
+                      <node concept="2ShNRf" id="1OabvAsfYKX" role="37wK5m">
+                        <node concept="1pGfFk" id="1OabvAsg0sQ" role="2ShVmc">
+                          <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
+                          <node concept="37vLTw" id="1OabvAsg0tk" role="37wK5m">
+                            <ref role="3cqZAo" node="2Koq9V0qYzr" resolve="libPath" />
+                          </node>
+                        </node>
                       </node>
                       <node concept="2OqwBi" id="2Koq9V0r8RZ" role="37wK5m">
                         <node concept="37vLTw" id="2Koq9V0r3DV" role="2Oq$k0">

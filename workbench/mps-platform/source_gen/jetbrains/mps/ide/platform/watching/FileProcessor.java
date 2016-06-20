@@ -30,9 +30,11 @@ public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
+
   public FileProcessor() {
     listenersContainer = ((IdeaFileSystem) FileSystem.getInstance().getFileSystemExt()).getListenersContainer();
   }
+
   @Override
   public void update(ProgressMonitor monitor) {
     if (MapSequence.fromMap(dataMap).isEmpty()) {

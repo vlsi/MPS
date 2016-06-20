@@ -22,7 +22,8 @@ import java.io.File;
 
 /**
  * Alike to the {@link java.nio.file.Path}.
- * Might be absolute or relative.
+ * Might be absolute or relative. The path is split up into so-called name components. Let us call
+ * the first name component the <em>root</em> component.
  *
  * The aim of this class is to get rid of working with the file paths (simply Strings) in the client code.
  * This comprises working with separators as well as working with archives.
@@ -30,6 +31,9 @@ import java.io.File;
  * Created by apyshkin on 6/17/16.
  */
 public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable {
+  /**
+   * current system defaults
+   */
   char SYSTEM_SEPARATOR_CHAR = File.separatorChar;
   String SYSTEM_SEPARATOR = File.separator;
 
@@ -60,6 +64,11 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
    * @return whether the given path is relative or absolute
    */
   boolean isRelative();
+
+  /**
+   * @return the separator of this path
+   */
+  char getSeparator();
 
   /**
    * @return null iff it is a root folder, the parent Path instance otherwise
@@ -101,20 +110,20 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
   @NotNull Path toIndependentPath();
 
   /**
-   * Separator will become {@link #UNIX_SEPARATOR_CHAR}
+   * Separator will become {@link #SYSTEM_SEPARATOR_CHAR}
    */
   @NotNull Path toSystemPath();
 
   /**
    * Tests if this path ends with the given path.
    *
-   * <p> If the given path has <em>N</em> elements, and it is relative
+   * If the given path has <em>N</em> elements, and it is relative
    * and this path has <em>N</em> or more elements, then this path ends with
    * the given path if the last <em>N</em> elements of each path, starting at
    * the element farthest from the root, are equal.
    *
-   * <p> If the given path is absolute then this path ends with the
-   * given path if the root component of this path <em>ends with</em> the root
+   * If the given path is absolute then this path ends with the
+   * given path if the root component of this path ends with the root
    * component of the given path, and the corresponding elements of both paths
    * are equal.
    * If this path does not have a root component and the given path has a root component
@@ -124,6 +133,16 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
 
   boolean endsWith(@NotNull Path other);
 
+  /**
+   * Tests if this path starts with the given path.
+   *
+   * The logic is absolutely the same as in the {@link #endsWith(String)}
+   *
+   * Whether or not the root component of this path starts with the root
+   * component of the given path is file system specific. If this path does
+   * not have a root component and the given path has a root component then
+   * this path does not start with the given path.
+   */
   boolean startsWith(@NotNull Path other);
 
   boolean startsWith(@NotNull String other);

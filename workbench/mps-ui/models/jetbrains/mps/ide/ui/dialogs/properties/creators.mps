@@ -30,6 +30,7 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -899,10 +900,15 @@
                             <node concept="3clFbS" id="3tOCygy3A$i" role="1bW5cS">
                               <node concept="3clFbF" id="162iOiMQOUO" role="3cqZAp">
                                 <node concept="2YIFZM" id="162iOiMQOW1" role="3clFbG">
-                                  <ref role="37wK5l" to="6qgz:~ModelRootDescriptor.getJavaStubsModelRoot(java.lang.String):jetbrains.mps.project.structure.model.ModelRootDescriptor" resolve="getJavaStubsModelRoot" />
                                   <ref role="1Pybhc" to="6qgz:~ModelRootDescriptor" resolve="ModelRootDescriptor" />
-                                  <node concept="37vLTw" id="162iOiMQOXc" role="37wK5m">
-                                    <ref role="3cqZAo" node="3tOCygy3A$y" resolve="it" />
+                                  <ref role="37wK5l" to="6qgz:~ModelRootDescriptor.getJavaStubsModelRoot(jetbrains.mps.vfs.IFile):jetbrains.mps.project.structure.model.ModelRootDescriptor" resolve="getJavaStubsModelRoot" />
+                                  <node concept="2ShNRf" id="1OabvAsh_0V" role="37wK5m">
+                                    <node concept="1pGfFk" id="1OabvAshIab" role="2ShVmc">
+                                      <ref role="37wK5l" to="4hrd:~IdeaFile.&lt;init&gt;(java.lang.String)" resolve="IdeaFile" />
+                                      <node concept="37vLTw" id="1OabvAshIdf" role="37wK5m">
+                                        <ref role="3cqZAo" node="3tOCygy3A$y" resolve="it" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>

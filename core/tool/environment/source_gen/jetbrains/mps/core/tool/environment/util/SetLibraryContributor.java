@@ -8,9 +8,8 @@ import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.vfs.impl.IoFile;
-
 import java.util.LinkedHashSet;
+import jetbrains.mps.vfs.impl.IoFile;
 
 public class SetLibraryContributor implements LibraryContributor {
   private final String myName;
