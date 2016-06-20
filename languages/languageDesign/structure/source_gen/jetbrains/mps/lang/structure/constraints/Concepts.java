@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -48,7 +48,7 @@ public class Concepts {
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return LanguageAspect.STRUCTURE.is(it);
+        return SModuleOperations.isAspect(it, "structure");
       }
     })).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

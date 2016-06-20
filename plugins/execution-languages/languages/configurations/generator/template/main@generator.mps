@@ -806,7 +806,7 @@
     </node>
     <node concept="2rT7sh" id="6iagqa2tmPf" role="2rTMjI">
       <property role="TrG5h" value="IconResourceToIconField" />
-      <ref role="2rTdP9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+      <ref role="2rTdP9" to="1oap:7Mb2akaesqV" resolve="Icon" />
       <ref role="2rZz_L" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
     <node concept="2rT7sh" id="52CUgX5ZyzT" role="2rTMjI">
@@ -974,7 +974,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="6iagqa2tmNe" role="3acgRq">
-      <ref role="30HIoZ" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+      <ref role="30HIoZ" to="1oap:7Mb2akaesqV" resolve="Icon" />
       <ref role="2sgKRv" node="6iagqa2tmPf" resolve="IconResourceToIconField" />
       <node concept="30G5F_" id="6iagqa2tmNg" role="30HLyM">
         <node concept="3clFbS" id="6iagqa2tmNh" role="2VODD2">
@@ -4810,7 +4810,7 @@
   </node>
   <node concept="13MO4I" id="6iagqa2tmNE">
     <property role="TrG5h" value="reduce_IconResource" />
-    <ref role="3gUMe" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+    <ref role="3gUMe" to="1oap:7Mb2akaesqV" resolve="Icon" />
     <node concept="Wx3nA" id="6iagqa2tmNI" role="13RCb5">
       <property role="TrG5h" value="ICON" />
       <property role="3TUv4t" value="true" />

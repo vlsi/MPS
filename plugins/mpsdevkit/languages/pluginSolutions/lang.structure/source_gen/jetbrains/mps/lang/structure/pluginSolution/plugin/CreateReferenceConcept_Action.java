@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -72,7 +72,7 @@ public class CreateReferenceConcept_Action extends BaseAction {
 
     // find editor model 
     Language language = Language.getLanguageFor(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)));
-    SModel editorModel = LanguageAspect.EDITOR.get(language);
+    SModel editorModel = SModuleOperations.getAspect(language, "editor");
 
     // editor 
     SNode editor = _quotation_createNode_vn7eng_a0n0a(concept, link);

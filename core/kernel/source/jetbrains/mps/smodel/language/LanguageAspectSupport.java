@@ -96,6 +96,14 @@ public class LanguageAspectSupport {
     return Collections.emptyList();
   }
 
+  public static Collection<SLanguage> getAdditionalLanguages(SModel model) {
+    LanguageAspect oldAspect = getOldAspect(model);
+    if (oldAspect != null) return oldAspect.getMainLanguages();
+    LanguageAspectDescriptor newAspect = getNewAspect(model);
+    if (newAspect != null) return newAspect.getAdditionalLanguages();
+    return Collections.emptyList();
+  }
+
   public static boolean isLanguageModelNameForbidden(String modelName) {
     String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
     for (LanguageAspect aspect : LanguageAspect.values()) {

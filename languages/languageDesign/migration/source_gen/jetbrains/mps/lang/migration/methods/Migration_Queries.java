@@ -5,7 +5,7 @@ package jetbrains.mps.lang.migration.methods;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class Migration_Queries {
   public static void init(SNode c, SModel futureModel) {
     SModule module = futureModel.getModule();
-    if (LanguageAspect.MIGRATION.is(futureModel)) {
+    if (SModuleOperations.isAspect(futureModel, "migration")) {
       Language lang = (Language) module;
       int currentVersion = lang.getLanguageVersion();
       SPropertyOperations.set(c, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"), "" + (currentVersion));

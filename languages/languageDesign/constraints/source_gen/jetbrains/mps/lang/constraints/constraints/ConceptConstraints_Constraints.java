@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
@@ -99,7 +99,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel()))) {
+              if (!(SModuleOperations.isAspect(_context.getModel(), "constraints"))) {
                 return new EmptyScope();
               }
 
@@ -143,7 +143,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
+    return SModuleOperations.isAspect(model, "constraints") || SModelStereotype.isGeneratorModel(model);
   }
   private static SModel check_guz8cy_a0c0a0b0a0a0b0a1a0b0f(Language checkedDotOperand) {
     if (null != checkedDotOperand) {

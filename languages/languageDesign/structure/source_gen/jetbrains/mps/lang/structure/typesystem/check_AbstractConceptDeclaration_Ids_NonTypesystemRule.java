@@ -121,11 +121,11 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
   public boolean overrides() {
     return false;
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
   private static boolean eq_hcbjaj_a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
   private static boolean eq_hcbjaj_a0a0a0a0a0a0a0a0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
