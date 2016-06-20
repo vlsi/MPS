@@ -9,9 +9,9 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.structure.StructureAspectDescriptor" />

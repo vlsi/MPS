@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.execution.settings.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.structure.ConceptPresentationAspectImpl" />
@@ -18,7 +19,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />

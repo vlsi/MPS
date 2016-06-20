@@ -10,10 +10,10 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.constraints.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptPresentationAspectImpl" />
