@@ -32,6 +32,11 @@ public class InternalFlag {
     return ourInstance;
   }
 
+  @Deprecated
+  /**
+   * Use method isInternalMode
+   * @Deprecated in 3.4
+   */
   public static boolean isSystemInternal() {
     return "true".equals(System.getProperty("mps.internal"));
   }
