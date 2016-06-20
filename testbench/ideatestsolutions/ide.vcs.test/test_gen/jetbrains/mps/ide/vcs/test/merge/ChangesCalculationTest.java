@@ -5,8 +5,9 @@ package jetbrains.mps.ide.vcs.test.merge;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.junit.BeforeClass;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import org.junit.Test;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -42,7 +43,7 @@ public class ChangesCalculationTest extends ChangesTestBase {
   public static void init2() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ROOT_ID = SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705").getNodeId();
+        ROOT_ID = new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705").getNodeId();
       }
     });
   }
