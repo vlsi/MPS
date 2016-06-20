@@ -4702,7 +4702,7 @@
           </node>
         </node>
         <node concept="3B5_sB" id="qmfyRQRmQx" role="v9R3O">
-          <ref role="3B5MYn" node="5Cioe7RLEwT" resolve="ConstraintsAspectDescriptor" />
+          <ref role="3B5MYn" to="ze1i:~ConstraintsAspectDescriptor" resolve="ConstraintsAspectDescriptor" />
         </node>
       </node>
     </node>

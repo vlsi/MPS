@@ -4525,7 +4525,7 @@
           </node>
         </node>
         <node concept="3B5_sB" id="4WrOGsLZMQi" role="v9R3O">
-          <ref role="3B5MYn" node="7ZU0Lz4JC2c" resolve="TextGenAspectDescriptor" />
+          <ref role="3B5MYn" to="yfwt:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
         </node>
       </node>
     </node>
