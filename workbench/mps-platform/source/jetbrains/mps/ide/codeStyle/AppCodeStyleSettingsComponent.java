@@ -19,7 +19,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,8 @@ import org.jetbrains.annotations.Nullable;
 @State(
     name = "CodeStyleSettingsManager",
     storages = {
-        @Storage(file = StoragePathMacros.APP_CONFIG + "/other.xml")
+        @Storage("code.style.schemes"),
+        @Storage(value = "other.xml", deprecated = true)
     }
 )
 public class AppCodeStyleSettingsComponent implements ApplicationComponent, PersistentStateComponent<CodeStyleSettings> {

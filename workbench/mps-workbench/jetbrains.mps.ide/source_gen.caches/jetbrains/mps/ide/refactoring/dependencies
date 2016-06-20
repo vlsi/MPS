@@ -111,7 +111,6 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
-    <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializerUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

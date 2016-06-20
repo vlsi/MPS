@@ -19,8 +19,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.openapi.components.StorageScheme;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -31,10 +29,7 @@ import java.util.List;
 
 @State(
     name = "MigrationProperties",
-    storages = {
-        @Storage(file = StoragePathMacros.PROJECT_FILE),
-        @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/migration.xml", scheme = StorageScheme.DIRECTORY_BASED)
-    },
+    storages = @Storage("migration.xml"),
     reloadable = true
 )
 public class ProjectMigrationProperties extends MigrationProperties implements ProjectComponent,

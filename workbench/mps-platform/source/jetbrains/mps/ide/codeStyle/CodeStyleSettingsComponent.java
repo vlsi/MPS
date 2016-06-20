@@ -19,8 +19,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
@@ -28,11 +26,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 
 @State(
-  name = "CodeStyleSettings",
-  storages = {
-    @Storage(file = StoragePathMacros.PROJECT_FILE),
-    @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/codeStyleSettings.xml", scheme = StorageScheme.DIRECTORY_BASED)
-  }
+    name = "CodeStyleSettings",
+    storages = @Storage("codeStyleSettings.xml")
 )
 public class CodeStyleSettingsComponent implements PersistentStateComponent<CodeStyleSettings>, ProjectComponent {
   private CodeStyleSettings myState = new CodeStyleSettings();

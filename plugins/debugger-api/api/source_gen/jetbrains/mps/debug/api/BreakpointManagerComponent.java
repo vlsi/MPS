@@ -4,6 +4,7 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
@@ -29,8 +30,8 @@ import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
-@State(name = "BreakpointManager", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
-})
+@State(name = "BreakpointManager", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
+)
 public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(BreakpointManagerComponent.class));
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";

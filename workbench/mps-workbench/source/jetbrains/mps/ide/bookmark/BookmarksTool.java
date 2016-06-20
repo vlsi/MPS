@@ -18,6 +18,7 @@ package jetbrains.mps.ide.bookmark;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
@@ -32,12 +33,7 @@ import javax.swing.JScrollPane;
 
 @State(
   name = "BookmarksTool",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
 )
 public class BookmarksTool extends BaseProjectTool implements PersistentStateComponent<BookmarksTool.MyState> {
   JScrollPane myComponent;

@@ -18,13 +18,10 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.BaseLibraryManager;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -34,10 +31,7 @@ import java.io.File;
 
 @State(
   name = "ProjectLibraryManager",
-  storages = {
-    @Storage(file = StoragePathMacros.PROJECT_FILE),
-    @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/libraries.xml", scheme = StorageScheme.DIRECTORY_BASED)
-  }
+  storages = @Storage("libraries.xml")
 )
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;

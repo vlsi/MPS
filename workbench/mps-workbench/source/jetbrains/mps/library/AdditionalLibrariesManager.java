@@ -18,8 +18,6 @@ package jetbrains.mps.library;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,11 +32,7 @@ import java.util.Set;
  */
 @State(
   name = "AdditionalLibrariesManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/AdditionalLibrariesManager.xml"
-    )}
+  storages = @Storage("AdditionalLibrariesManager.xml")
 )
 public class AdditionalLibrariesManager extends BaseLibraryManager implements ApplicationComponent {
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();

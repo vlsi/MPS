@@ -99,9 +99,6 @@
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
-      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
-        <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -5511,20 +5508,13 @@
       </node>
       <node concept="2B6LJw" id="3SnNvqCaJUd" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
-        <node concept="2BsdOp" id="3SnNvqCaJUe" role="2B70Vg">
-          <node concept="2AHcQZ" id="3SnNvqCaJUf" role="2BsfMF">
-            <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-            <node concept="2B6LJw" id="3SnNvqCaJUg" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.id()" resolve="id" />
-              <node concept="Xl_RD" id="3SnNvqCaJUh" role="2B70Vg">
-                <property role="Xl_RC" value="other" />
-              </node>
-            </node>
-            <node concept="2B6LJw" id="3SnNvqCaJUi" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-              <node concept="Xl_RD" id="3SnNvqCaJUj" role="2B70Vg">
-                <property role="Xl_RC" value="$WORKSPACE_FILE$" />
-              </node>
+        <node concept="2AHcQZ" id="ftM8OcNI9r" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="4PleL4OPU3t" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="10M0yZ" id="ftM8OcNcf3" role="2B70Vg">
+              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
+              <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
             </node>
           </node>
         </node>

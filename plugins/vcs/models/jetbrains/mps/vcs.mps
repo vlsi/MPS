@@ -2,13 +2,13 @@
 <model ref="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -91,15 +91,9 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1188214482800" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression" flags="nn" index="2B6yp$">
-        <child id="1188214506790" name="annotationInstance" index="2B6CgM" />
-      </concept>
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
-        <child id="1188220173759" name="item" index="2BsfMF" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -205,7 +199,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1786,22 +1780,13 @@
       </node>
       <node concept="2B6LJw" id="38_6U8fKzlr" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
-        <node concept="2BsdOp" id="38_6U8fKzlt" role="2B70Vg">
-          <node concept="2B6yp$" id="38_6U8fKzlu" role="2BsfMF">
-            <node concept="2AHcQZ" id="38_6U8fKzlv" role="2B6CgM">
-              <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-              <node concept="2B6LJw" id="38_6U8fKzlw" role="2B76xF">
-                <ref role="2B6OnR" to="1m72:~Storage.id()" resolve="id" />
-                <node concept="Xl_RD" id="38_6U8fKzly" role="2B70Vg">
-                  <property role="Xl_RC" value="other" />
-                </node>
-              </node>
-              <node concept="2B6LJw" id="38_6U8fKzlz" role="2B76xF">
-                <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-                <node concept="Xl_RD" id="38_6U8fKzl_" role="2B70Vg">
-                  <property role="Xl_RC" value="$WORKSPACE_FILE$" />
-                </node>
-              </node>
+        <node concept="2AHcQZ" id="ftM8OcQJy8" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="4PleL4OPLOk" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="10M0yZ" id="ftM8OcNcf3" role="2B70Vg">
+              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
+              <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
             </node>
           </node>
         </node>

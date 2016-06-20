@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
@@ -82,12 +83,7 @@ import java.util.Set;
 
 @State(
     name = "MPSProjectPane",
-    storages = {
-        @Storage(
-            id = "other",
-            file = "$WORKSPACE_FILE$"
-        )
-    }
+    storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
 )
 public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectViewPaneOverride {
   private static final Logger LOG = LogManager.getLogger(ProjectPane.class);

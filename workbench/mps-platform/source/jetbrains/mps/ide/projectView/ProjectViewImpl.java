@@ -21,23 +21,16 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ex.ToolWindowManagerEx;
-import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 @State(
-    name="ProjectView",
-    storages= {
-        @Storage(
-            file = StoragePathMacros.WORKSPACE_FILE
-        )}
+    name = "ProjectView",
+    storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
 )
 public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectViewImpl {
 
@@ -86,8 +79,12 @@ public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectVi
   private boolean viewSelectionChangedOverride() {
     // the current view ID is set in the super.showPane(), which must be called before
     final AbstractProjectViewPane newPane = getProjectViewPaneById(getCurrentViewId());
-    if (newPane == null) return false;
-    if (!(newPane instanceof ProjectViewPaneOverride)) return false;
+    if (newPane == null) {
+      return false;
+    }
+    if (!(newPane instanceof ProjectViewPaneOverride)) {
+      return false;
+    }
 
     ((ProjectViewPaneOverride) newPane).restoreExpandedPathsOverride();
     return true;

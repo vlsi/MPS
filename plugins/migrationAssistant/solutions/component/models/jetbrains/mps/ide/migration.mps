@@ -57,8 +57,8 @@
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
-    <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
+    <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
@@ -93,9 +93,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
-        <child id="1188220173759" name="item" index="2BsfMF" />
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
@@ -1219,22 +1216,13 @@
       </node>
       <node concept="2B6LJw" id="5SsFeroaakd" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
-        <node concept="2BsdOp" id="5SsFeroaake" role="2B70Vg">
-          <node concept="2AHcQZ" id="5OVuudBqM2y" role="2BsfMF">
-            <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-            <node concept="2B6LJw" id="5OVuudBqM8T" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-              <node concept="10M0yZ" id="5OVuudBqMaD" role="2B70Vg">
-                <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
-                <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
-              </node>
-            </node>
-            <node concept="2B6LJw" id="4BrXpLdA3nv" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.scheme()" resolve="scheme" />
-              <node concept="Rm8GO" id="4BrXpLdA3rw" role="2B70Vg">
-                <ref role="Rm8GQ" to="1m72:~StorageScheme.DIRECTORY_BASED" resolve="DIRECTORY_BASED" />
-                <ref role="1Px2BO" to="1m72:~StorageScheme" resolve="StorageScheme" />
-              </node>
+        <node concept="2AHcQZ" id="ftM8OcOf4v" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="4PleL4ONw24" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="10M0yZ" id="ftM8OcNcf3" role="2B70Vg">
+              <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
+              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
             </node>
           </node>
         </node>

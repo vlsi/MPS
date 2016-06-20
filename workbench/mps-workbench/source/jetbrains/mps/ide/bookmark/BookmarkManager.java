@@ -21,6 +21,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -47,12 +48,7 @@ import java.util.List;
 
 @State(
   name = "MPSBookmarkManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+  storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
 )
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(BookmarkManager.class);

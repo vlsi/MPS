@@ -7841,51 +7841,51 @@
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/8838506468326925850">
     <file name="OverrideImplementMethodComponent.java">
-      <node id="4535866081768291176" at="16,0,17,0" concept="5" trace="myState" />
-      <node id="4535866081768177393" at="25,36,26,46" concept="10" />
-      <node id="8432634623182781139" at="29,34,30,19" concept="4" />
-      <node id="9017026880110477666" at="34,26,35,61" concept="4" />
-      <node id="4535866081768350955" at="39,71,40,20" concept="4" />
-      <node id="4535866081768348941" at="43,60,44,19" concept="10" />
-      <node id="9017026880110478652" at="50,0,51,0" concept="5" trace="addReturnsOnImplement" />
-      <node id="9017026880110478660" at="51,0,52,0" concept="5" trace="addOverrideAnnotation" />
-      <node id="9017026880110478664" at="52,0,53,0" concept="5" trace="removeAttributes" />
-      <node id="8838506468326925852" at="17,0,19,0" concept="3" trace="OverrideImplementMethodComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="9017026880110468802" at="53,0,55,0" concept="3" trace="State#()V" />
-      <node id="8838506468326993771" at="19,0,22,0" concept="8" trace="projectOpened#()V" />
-      <node id="7157902761908219761" at="33,31,36,5" concept="7" />
-      <node id="4535866081768177365" at="46,0,49,0" concept="8" trace="projectClosed#()V" />
-      <node id="4535866081768177383" at="28,0,32,0" concept="8" trace="disposeComponent#()V" />
-      <node id="4535866081768177373" at="38,0,42,0" concept="8" trace="loadState#(Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;)V" />
-      <node id="4535866081768177369" at="42,0,46,0" concept="8" trace="getState#()Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;" />
-      <node id="4535866081768177387" at="22,0,28,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="4535866081768177379" at="32,0,38,0" concept="8" trace="initComponent#()V" />
-      <scope id="8838506468326925855" at="17,94,17,94" />
-      <scope id="8838506468326993774" at="20,31,20,31" />
-      <scope id="4535866081768177368" at="47,31,47,31" />
-      <scope id="9017026880110468805" at="53,20,53,20" />
-      <scope id="4535866081768177392" at="25,36,26,46" />
-      <scope id="4535866081768177386" at="29,34,30,19" />
-      <scope id="7157902761908219762" at="34,26,35,61" />
-      <scope id="4535866081768177378" at="39,71,40,20" />
-      <scope id="4535866081768177372" at="43,60,44,19" />
-      <scope id="8838506468326925852" at="17,0,19,0">
+      <node id="4535866081768291176" at="17,0,18,0" concept="5" trace="myState" />
+      <node id="4535866081768177393" at="26,36,27,46" concept="10" />
+      <node id="8432634623182781139" at="30,34,31,19" concept="4" />
+      <node id="9017026880110477666" at="35,26,36,61" concept="4" />
+      <node id="4535866081768350955" at="40,71,41,20" concept="4" />
+      <node id="4535866081768348941" at="44,60,45,19" concept="10" />
+      <node id="9017026880110478652" at="51,0,52,0" concept="5" trace="addReturnsOnImplement" />
+      <node id="9017026880110478660" at="52,0,53,0" concept="5" trace="addOverrideAnnotation" />
+      <node id="9017026880110478664" at="53,0,54,0" concept="5" trace="removeAttributes" />
+      <node id="8838506468326925852" at="18,0,20,0" concept="3" trace="OverrideImplementMethodComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="9017026880110468802" at="54,0,56,0" concept="3" trace="State#()V" />
+      <node id="8838506468326993771" at="20,0,23,0" concept="8" trace="projectOpened#()V" />
+      <node id="7157902761908219761" at="34,31,37,5" concept="7" />
+      <node id="4535866081768177365" at="47,0,50,0" concept="8" trace="projectClosed#()V" />
+      <node id="4535866081768177383" at="29,0,33,0" concept="8" trace="disposeComponent#()V" />
+      <node id="4535866081768177373" at="39,0,43,0" concept="8" trace="loadState#(Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;)V" />
+      <node id="4535866081768177369" at="43,0,47,0" concept="8" trace="getState#()Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;" />
+      <node id="4535866081768177387" at="23,0,29,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="4535866081768177379" at="33,0,39,0" concept="8" trace="initComponent#()V" />
+      <scope id="8838506468326925855" at="18,94,18,94" />
+      <scope id="8838506468326993774" at="21,31,21,31" />
+      <scope id="4535866081768177368" at="48,31,48,31" />
+      <scope id="9017026880110468805" at="54,20,54,20" />
+      <scope id="4535866081768177392" at="26,36,27,46" />
+      <scope id="4535866081768177386" at="30,34,31,19" />
+      <scope id="7157902761908219762" at="35,26,36,61" />
+      <scope id="4535866081768177378" at="40,71,41,20" />
+      <scope id="4535866081768177372" at="44,60,45,19" />
+      <scope id="8838506468326925852" at="18,0,20,0">
         <var name="coreComponents" id="4450057996090661301" />
         <var name="project" id="9017026880110500544" />
       </scope>
-      <scope id="9017026880110468802" at="53,0,55,0" />
-      <scope id="8838506468326993771" at="19,0,22,0" />
-      <scope id="4535866081768177382" at="33,31,36,5" />
-      <scope id="4535866081768177365" at="46,0,49,0" />
-      <scope id="4535866081768177383" at="28,0,32,0" />
-      <scope id="4535866081768177373" at="38,0,42,0">
+      <scope id="9017026880110468802" at="54,0,56,0" />
+      <scope id="8838506468326993771" at="20,0,23,0" />
+      <scope id="4535866081768177382" at="34,31,37,5" />
+      <scope id="4535866081768177365" at="47,0,50,0" />
+      <scope id="4535866081768177383" at="29,0,33,0" />
+      <scope id="4535866081768177373" at="39,0,43,0">
         <var name="state" id="4535866081768177376" />
       </scope>
-      <scope id="4535866081768177369" at="42,0,46,0" />
-      <scope id="4535866081768177387" at="22,0,28,0" />
-      <scope id="4535866081768177379" at="32,0,38,0" />
-      <unit id="9017026880110468800" at="49,0,56,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent$State" />
-      <unit id="8838506468326925850" at="13,0,57,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent" />
+      <scope id="4535866081768177369" at="43,0,47,0" />
+      <scope id="4535866081768177387" at="23,0,29,0" />
+      <scope id="4535866081768177379" at="33,0,39,0" />
+      <unit id="9017026880110468800" at="50,0,57,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent$State" />
+      <unit id="8838506468326925850" at="14,0,58,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent" />
     </file>
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/9121891594395290775">

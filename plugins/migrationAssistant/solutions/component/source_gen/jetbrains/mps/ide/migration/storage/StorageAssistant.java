@@ -25,8 +25,8 @@ import java.io.IOException;
 /**
  * This migrates the project from an old file-based format to a directory-based
  */
-@State(name = "StorageAssistant", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
-})
+@State(name = "StorageAssistant", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
+)
 public class StorageAssistant extends AbstractProjectComponent implements PersistentStateComponent<StorageAssistant.MyState> {
   private StorageAssistant.MyState myState = new StorageAssistant.MyState();
   public StorageAssistant(Project project) {

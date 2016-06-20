@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.ui.content.Content;
 
-@State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
+@State(name = "ConsoleHistory", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 )
 public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStateComponent<ConsoleTool.MyState> {
 

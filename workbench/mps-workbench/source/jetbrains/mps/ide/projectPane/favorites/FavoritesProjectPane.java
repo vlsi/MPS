@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -52,12 +53,7 @@ import java.util.List;
 
 @State(
     name = "Favorites",
-    storages = {
-        @Storage(
-            id = "other",
-            file = "$WORKSPACE_FILE$"
-        )
-    }
+    storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
 )
 public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = "Favorites";

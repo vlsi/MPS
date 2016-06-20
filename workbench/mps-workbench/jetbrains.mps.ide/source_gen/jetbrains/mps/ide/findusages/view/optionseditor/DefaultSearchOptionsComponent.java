@@ -4,6 +4,7 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
@@ -14,8 +15,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.startup.StartupManager;
 
-@State(name = "DefaultSearchOptions3", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
-})
+@State(name = "DefaultSearchOptions3", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
+)
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private DefaultOptionsContainer myDefaultOptions = null;
   private Project myProject;

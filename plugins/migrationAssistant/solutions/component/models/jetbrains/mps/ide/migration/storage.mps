@@ -37,9 +37,6 @@
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
-      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
-        <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
@@ -210,15 +207,13 @@
       </node>
       <node concept="2B6LJw" id="5SsFeroaafj" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
-        <node concept="2BsdOp" id="5SsFeroaafk" role="2B70Vg">
-          <node concept="2AHcQZ" id="5OVuudBqM2y" role="2BsfMF">
-            <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-            <node concept="2B6LJw" id="5OVuudBqM8T" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-              <node concept="10M0yZ" id="5OVuudBqMaD" role="2B70Vg">
-                <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
-                <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
-              </node>
+        <node concept="2AHcQZ" id="ftM8OcObfj" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="4PleL4OOsu2" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="10M0yZ" id="ftM8OcNcf3" role="2B70Vg">
+              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
+              <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
             </node>
           </node>
         </node>
