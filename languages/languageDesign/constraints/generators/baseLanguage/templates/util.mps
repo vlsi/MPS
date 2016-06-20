@@ -21,18 +21,21 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -256,6 +259,46 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="6xpZJctAiQv">
+    <property role="TrG5h" value="ConstraintsStrings" />
+    <node concept="Wx3nA" id="~BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME" role="jymVt">
+      <property role="TrG5h" value="CAN_BE_A_PARENT_METHOD_NAME" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6xpZJctAa1e" role="1B3o_S" />
+      <node concept="17QB3L" id="6xpZJctAjc4" role="1tU5fm" />
+      <node concept="Xl_RD" id="6xpZJctAa1g" role="33vP2m">
+        <property role="Xl_RC" value="canBeAParent" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="~BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME" role="jymVt">
+      <property role="TrG5h" value="CAN_BE_AN_ANCESTOR_METHOD_NAME" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6xpZJctAa1h" role="1B3o_S" />
+      <node concept="17QB3L" id="6xpZJctAjF9" role="1tU5fm" />
+      <node concept="Xl_RD" id="6xpZJctAa1j" role="33vP2m">
+        <property role="Xl_RC" value="canBeAnAncestor" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="~BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME" role="jymVt">
+      <property role="TrG5h" value="CAN_BE_A_CHILD_METHOD_NAME" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6xpZJctAa1b" role="1B3o_S" />
+      <node concept="17QB3L" id="6xpZJctAjFp" role="1tU5fm" />
+      <node concept="Xl_RD" id="6xpZJctAa1d" role="33vP2m">
+        <property role="Xl_RC" value="canBeAChild" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="~BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME" role="jymVt">
+      <property role="TrG5h" value="CAN_BE_A_ROOT_METHOD_NAME" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6xpZJctAa1k" role="1B3o_S" />
+      <node concept="17QB3L" id="6xpZJctAjFC" role="1tU5fm" />
+      <node concept="Xl_RD" id="6xpZJctAa1m" role="33vP2m">
+        <property role="Xl_RC" value="canBeARoot" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="6xpZJctAiQw" role="1B3o_S" />
   </node>
 </model>
 

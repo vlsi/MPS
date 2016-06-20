@@ -32,7 +32,6 @@
     <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="behavior-api" />
     <orderEntry type="module" module-name="behavior-runtime" />
-    <orderEntry type="module" module-name="behavior-legacy-api" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />

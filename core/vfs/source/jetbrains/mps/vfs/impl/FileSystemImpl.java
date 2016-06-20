@@ -113,6 +113,11 @@ public final class FileSystemImpl implements FileSystem {
 
   @Override
   @NotNull public IFile getFile(@NotNull String path) {
-    return myDefaultFSProvider.getFile(path);
+    try {
+      PerfUtil.TRACER.push("getting fil", false);
+      return myDefaultFSProvider.getFile(path);
+    } finally {
+      PerfUtil.TRACER.pop();
+    }
   }
 }

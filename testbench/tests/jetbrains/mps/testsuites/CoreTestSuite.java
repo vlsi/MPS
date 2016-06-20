@@ -56,6 +56,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
+    jetbrains.mps.vfs.UniPathTest.class,
+    jetbrains.mps.vfs.CommonPathTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
     jetbrains.mps.smodel.ModelImplementationTest.class,
     jetbrains.mps.smodel.ModelListenerTest.class,

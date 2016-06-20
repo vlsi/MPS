@@ -25,9 +25,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="openapi" exported="" />
     <orderEntry type="module" module-name="smodel" exported="" />
-    <orderEntry type="module" module-name="tuples-runtime" />
-    <orderEntry type="module" module-name="closures-runtime" />
-    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="tuples-runtime" exported="" />
+    <orderEntry type="module" module-name="closures-runtime" exported="" />
+    <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />

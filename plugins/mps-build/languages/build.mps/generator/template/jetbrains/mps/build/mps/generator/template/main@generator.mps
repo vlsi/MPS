@@ -11624,13 +11624,23 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNNFK" id="36zc_GPy335" role="3o6s8t">
+                <node concept="2pNNFK" id="7kvrUpppixy" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="36zc_GPy336" role="2pNNFR">
+                  <node concept="2pNUuL" id="7kvrUpppixz" role="2pNNFR">
                     <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="36zc_GPy337" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-behavior-legacy-api" />
+                    <node concept="2pMdtt" id="7kvrUpppix$" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/vfs" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="7kvrUpppiyk" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="7kvrUpppiyl" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="7kvrUpppiym" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/util-core" />
                     </node>
                   </node>
                 </node>

@@ -38,9 +38,14 @@ public class Pair<T1, T2> {
     if (this == obj) return true;
     if (!(obj instanceof Pair)) return false;
     Pair pair = (Pair) obj;
-    return EqualUtil.equals(pair.o1, o1) && EqualUtil.equals(pair.o2, o2);
+    return equalsWithNull(pair.o1, o1) && equalsWithNull(pair.o2, o2);
   }
 
+  private static boolean equalsWithNull(Object o1, Object o2) {
+    if (o1 == null && o2 == null) return true;
+    if (o1 != null && o2 != null) return o1.equals(o2);
+    return false;
+  }
 
   public String toString() {
     return "(" + o1 + ", " + o2 + ")";

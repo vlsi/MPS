@@ -17,6 +17,7 @@
 package jetbrains.mps.jps.persistence;
 
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
@@ -69,7 +70,7 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
       FolderSetDataSource source = new FolderSetDataSource();
       JavaStubModelHeader header = (JavaStubModelHeader) mdata.getHeader();
       for (String s : header.getPaths()) {
-        source.addPath(s, this);
+        source.addPath(new IdeaFile(s), this);
       }
       final JavaClassStubModelDescriptor md = new JavaClassStubModelDescriptor(header.getReference(), source);
       md.setModelRoot(this);

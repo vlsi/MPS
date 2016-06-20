@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -402,20 +401,6 @@ public class NameUtil {
     return modelRef.getName().getLongName();
   }
 
-  /**
-   * @deprecated there's implicit assumption string passed is name of the model. If all you care about is stereotype stripping,
-   * use {@link SModelStereotype#withoutStereotype(String)} instead. If you got model or model reference, use corresponding getModelLongName()
-   * from this class.
-   * To make it true OOP at last, introduce ModelName class with getLongName() and getStereotype() methods, to get rid of this ugly static helpers
-   * @see org.jetbrains.mps.openapi.model.SModelName
-   * @param name not null
-   * @return name without stereotype part
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static String getModelLongName(String name) {
-    return SModelStereotype.withoutStereotype(name);
-  }
 
   public static String compactModelName(SModelReference ref) {
     String compactNamespace = NameUtil.compactNamespace(ref.getName().getLongName());

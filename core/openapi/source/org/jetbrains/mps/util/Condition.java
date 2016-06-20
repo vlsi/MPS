@@ -16,19 +16,9 @@
 package org.jetbrains.mps.util;
 
 public interface Condition<T> {
-  public boolean met(T object);
+  boolean met(T object);
 
-  public static final Condition TRUE_CONDITION = new Condition() {
-    @Override
-    public boolean met(Object object) {
-      return true;
-    }
-  };
+  Condition TRUE_CONDITION = object -> true;
 
-  public static final Condition FALSE_CONDITION = new Condition() {
-    @Override
-    public boolean met(Object object) {
-      return false;
-    }
-  };
+  Condition FALSE_CONDITION = object -> false;
 }

@@ -846,8 +846,8 @@
               <node concept="2OqwBi" id="14qpOexi$Zh" role="3clFbG">
                 <node concept="1eOMI4" id="14qpOexi$XU" role="2Oq$k0">
                   <node concept="10QFUN" id="14qpOexi$XR" role="1eOMHV">
-                    <node concept="3uibUv" id="14qpOexi$XW" role="10QFUM">
-                      <ref role="3uigEE" to="7sic:~IFileEx" resolve="IFileEx" />
+                    <node concept="3uibUv" id="3vjn6$4yXJ5" role="10QFUM">
+                      <ref role="3uigEE" to="3ju5:~CachingFile" resolve="CachingFile" />
                     </node>
                     <node concept="37vLTw" id="14qpOexi$XX" role="10QFUP">
                       <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />
@@ -855,14 +855,25 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="14qpOexi_f_" role="2OqNvi">
-                  <ref role="37wK5l" to="7sic:~IFileEx.refresh():void" resolve="refresh" />
+                  <ref role="37wK5l" to="3ju5:~CachingFile.refresh(jetbrains.mps.vfs.CachingContext):void" resolve="refresh" />
+                  <node concept="2ShNRf" id="3vjn6$4yYiI" role="37wK5m">
+                    <node concept="1pGfFk" id="3vjn6$4yZFn" role="2ShVmc">
+                      <ref role="37wK5l" to="3ju5:~IdeaCachingContext.&lt;init&gt;(boolean,boolean)" resolve="IdeaCachingContext" />
+                      <node concept="3clFbT" id="3vjn6$4yZHM" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="3clFbT" id="3vjn6$4yZNA" role="37wK5m">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
           <node concept="2ZW3vV" id="14qpOexi$u2" role="3clFbw">
-            <node concept="3uibUv" id="14qpOexi$J7" role="2ZW6by">
-              <ref role="3uigEE" to="7sic:~IFileEx" resolve="IFileEx" />
+            <node concept="3uibUv" id="3vjn6$4yXIx" role="2ZW6by">
+              <ref role="3uigEE" to="3ju5:~CachingFile" resolve="CachingFile" />
             </node>
             <node concept="37vLTw" id="14qpOexi$s_" role="2ZW6bz">
               <ref role="3cqZAo" node="14qpOexipHW" resolve="f" />

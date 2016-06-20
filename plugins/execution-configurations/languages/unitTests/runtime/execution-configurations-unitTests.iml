@@ -39,6 +39,5 @@
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="behavior-api" />
-    <orderEntry type="module" module-name="behavior-legacy-api" />
   </component>
 </module>

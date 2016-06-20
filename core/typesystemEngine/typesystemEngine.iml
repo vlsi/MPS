@@ -13,6 +13,5 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="module" module-name="components" />
   </component>
 </module>

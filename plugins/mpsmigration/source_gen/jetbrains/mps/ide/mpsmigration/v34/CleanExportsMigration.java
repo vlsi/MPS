@@ -22,7 +22,8 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.vfs.ex.IFileEx;
+import jetbrains.mps.vfs.CachingFile;
+import jetbrains.mps.vfs.IdeaCachingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CleanExportsMigration extends BaseProjectMigration implements CleanupProjectMigration {
@@ -110,8 +111,8 @@ public class CleanExportsMigration extends BaseProjectMigration implements Clean
     if (f == null) {
       return;
     }
-    if (f instanceof IFileEx) {
-      ((IFileEx) f).refresh();
+    if (f instanceof CachingFile) {
+      ((CachingFile) f).refresh(new IdeaCachingContext(true, false));
     }
     if (f.isDirectory()) {
       for (IFile cf : ListSequence.fromList(f.getChildren())) {

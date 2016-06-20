@@ -74,7 +74,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
 
     for (CachedModelData mdata : models) {
-      IFile file = FileSystem.getInstance().getFileByPath(mdata.getFile());
+      IFile file = myFileSystem.getFile(mdata.getFile());
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
       if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {

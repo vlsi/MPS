@@ -27,7 +27,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="79pl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.base(MPS.Core/)" />
@@ -3340,8 +3339,8 @@
                   <property role="Xl_RC" value="static_" />
                 </node>
                 <node concept="10M0yZ" id="hDMN3RA" role="3uHU7w">
-                  <ref role="1PxDUh" to="cm63:~BehaviorConstants" resolve="BehaviorConstants" />
-                  <ref role="3cqZAo" to="cm63:~BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME" resolve="CAN_BE_A_CHILD_METHOD_NAME" />
+                  <ref role="1PxDUh" to="tp1v:6xpZJctAiQv" resolve="ConstraintsStrings" />
+                  <ref role="3cqZAo" to="tp1v:~BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME" resolve="CAN_BE_A_CHILD_METHOD_NAME" />
                 </node>
               </node>
             </node>
@@ -3438,8 +3437,8 @@
                   <property role="Xl_RC" value="static_" />
                 </node>
                 <node concept="10M0yZ" id="hDMN3S5" role="3uHU7w">
-                  <ref role="1PxDUh" to="cm63:~BehaviorConstants" resolve="BehaviorConstants" />
-                  <ref role="3cqZAo" to="cm63:~BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME" resolve="CAN_BE_A_PARENT_METHOD_NAME" />
+                  <ref role="1PxDUh" to="tp1v:6xpZJctAiQv" resolve="ConstraintsStrings" />
+                  <ref role="3cqZAo" to="tp1v:~BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME" resolve="CAN_BE_A_PARENT_METHOD_NAME" />
                 </node>
               </node>
             </node>
@@ -3518,8 +3517,8 @@
                   <property role="Xl_RC" value="static_" />
                 </node>
                 <node concept="10M0yZ" id="hQO1ld0" role="3uHU7w">
-                  <ref role="1PxDUh" to="cm63:~BehaviorConstants" resolve="BehaviorConstants" />
-                  <ref role="3cqZAo" to="cm63:~BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME" resolve="CAN_BE_A_ROOT_METHOD_NAME" />
+                  <ref role="1PxDUh" to="tp1v:6xpZJctAiQv" resolve="ConstraintsStrings" />
+                  <ref role="3cqZAo" to="tp1v:~BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME" resolve="CAN_BE_A_ROOT_METHOD_NAME" />
                 </node>
               </node>
             </node>
@@ -3584,8 +3583,8 @@
                   <property role="Xl_RC" value="static_" />
                 </node>
                 <node concept="10M0yZ" id="6O3HjXnmFXW" role="3uHU7w">
-                  <ref role="1PxDUh" to="cm63:~BehaviorConstants" resolve="BehaviorConstants" />
-                  <ref role="3cqZAo" to="cm63:~BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME" resolve="CAN_BE_AN_ANCESTOR_METHOD_NAME" />
+                  <ref role="1PxDUh" to="tp1v:6xpZJctAiQv" resolve="ConstraintsStrings" />
+                  <ref role="3cqZAo" to="tp1v:~BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME" resolve="CAN_BE_AN_ANCESTOR_METHOD_NAME" />
                 </node>
               </node>
             </node>

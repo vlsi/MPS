@@ -12,6 +12,5 @@
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="components" />
   </component>
 </module>

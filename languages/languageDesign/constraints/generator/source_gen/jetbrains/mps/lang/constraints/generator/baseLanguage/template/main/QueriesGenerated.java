@@ -12,7 +12,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorConstants;
+import jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.ConstraintsStrings;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -72,16 +72,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1213106765283(final PropertyMacroContext _context) {
-    return "static_" + BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME;
+    return "static_" + ConstraintsStrings.CAN_BE_A_CHILD_METHOD_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_1213106765314(final PropertyMacroContext _context) {
-    return "static_" + BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME;
+    return "static_" + ConstraintsStrings.CAN_BE_A_PARENT_METHOD_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_1227085912913(final PropertyMacroContext _context) {
-    return "static_" + BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME;
+    return "static_" + ConstraintsStrings.CAN_BE_A_ROOT_METHOD_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_7855321458717409144(final PropertyMacroContext _context) {
-    return "static_" + BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME;
+    return "static_" + ConstraintsStrings.CAN_BE_AN_ANCESTOR_METHOD_NAME;
   }
   public static Object propertyMacro_GetPropertyValue_7423954551252434626(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();

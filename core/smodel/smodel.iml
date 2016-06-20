@@ -16,5 +16,6 @@
     <orderEntry type="module" module-name="logging" exported="" />
     <orderEntry type="module" module-name="mps-annotations" exported="" />
     <orderEntry type="module" module-name="vfs" exported="" />
+    <orderEntry type="module" module-name="util-core" exported="" />
   </component>
 </module>

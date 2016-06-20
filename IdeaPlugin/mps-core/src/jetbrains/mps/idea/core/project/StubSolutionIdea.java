@@ -27,6 +27,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
@@ -147,7 +149,7 @@ public abstract class StubSolutionIdea extends StubSolution {
 
     for (VirtualFile f : roots) {
       String localPath = getLocalPath(f);
-      JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot();
+      JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(new IdeaFileSystem());
       modelRoot.setContentRoot(localPath);
       modelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, localPath);
       result.add(modelRoot);
@@ -166,7 +168,7 @@ public abstract class StubSolutionIdea extends StubSolution {
     for (VirtualFile f : roots) {
       String localPath = getLocalPath(f);
       if (!seenPaths.add(localPath)) continue;
-      solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(localPath));
+      solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(new IdeaFile(localPath)));
     }
   }
 
