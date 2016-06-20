@@ -38,7 +38,11 @@ import java.util.TreeSet;
  * @author Artem Tikhomirov
  */
 final class SerializeSupport {
-  private static final String ELEMENT_DEBUG_INFO = "debug-info-v2";
+  //Achtung! For now this must be in sync with FileType.TRACE_CACHE's data!!
+  private static final String ELEMENT_DEBUG_INFO = "debug-info";
+
+  private static final String ATTR_VER = "version";
+  private static final String CURRENT_VERSION = "2";
   private static final String ELEMENT_ROOT = "root";
   private static final String ELEMENT_FILE = "file";
   private static final String ELEMENT_NODE_INFO = "node";
@@ -56,6 +60,7 @@ final class SerializeSupport {
   @NotNull
   public static Element serialize(@NotNull DebugInfo debugInfo) {
     Element top = new Element(ELEMENT_DEBUG_INFO);
+    top.setAttribute(ATTR_VER, CURRENT_VERSION);
 
     DebugInfoRoot[] roots = sortedRoots(debugInfo);
     TreeSet<SAbstractConcept> allConcepts = new TreeSet<SAbstractConcept>(new Comparator<SAbstractConcept>() {
@@ -86,6 +91,10 @@ final class SerializeSupport {
   @NotNull
   public static DebugInfo restore(@NotNull Element top) {
     if (!ELEMENT_DEBUG_INFO.equals(top.getName())) {
+      return new DebugInfo();
+    }
+    if (!CURRENT_VERSION.equals(top.getAttributeValue(ATTR_VER))) {
+      //drop older versions
       return new DebugInfo();
     }
     DebugInfo rv = new DebugInfo();
