@@ -4,7 +4,6 @@ core/openapi/classes
 core/aspects/behavior/behavior-runtime/classes
 core/aspects/behavior/behavior-api/classes
 :core
-core/aspects/behavior/behavior-legacy-api/classes
 core/analyzers/classes
 core/util/classes
 core/components/classes

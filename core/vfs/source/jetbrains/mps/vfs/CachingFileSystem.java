@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
+
 /**
- * A factory for {@link FileSystemImpl}
- * FIXME do not need those
+ * special fs for the caching files
  *
- * Created by apyshkin on 6/17/16.
+ * Created by apyshkin on 6/20/16.
  */
-@ToRemove(version = 0.0)
-@Deprecated
-public interface FSProvider {
-  @NotNull FileSystem createFS();
+public interface CachingFileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
+  /**
+   * group refresh
+   */
+  void refresh(@NotNull CachingContext context, Collection<CachingFile> files);
+
+  @NotNull CachingFile getFile(@NotNull String path);
 }

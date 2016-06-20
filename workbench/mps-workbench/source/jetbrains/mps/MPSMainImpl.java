@@ -28,9 +28,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
+@SuppressWarnings({"UnusedDeclaration"})
 public class MPSMainImpl {
   public static void start(final String[] args) {
-
     ensureCachesInvalidatedIfRunningNewerBuild();
 
     try {

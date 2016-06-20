@@ -33,6 +33,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 /**
  * An implementation of RepositoryReader, which is lazy (in a way that it tries not load the same module twice)
@@ -114,8 +115,8 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   /**
    * not intended to be called explicitly anymore.
    * @see #update()
-   * @param refreshFiles if true, then the caller needs to handle EDT lock, because deeper the synchronous recursive file system refresh would be called.
-   *                     FIXME need to get rid of that synchronous refresh
+   * @param refreshFiles if true, then the caller needs to handle EDT lock, because deeper the synchronous recursive file system refreshLibRoots would be called.
+   *                     FIXME need to get rid of that synchronous refreshLibRoots
    *
    */
   @Deprecated
@@ -153,9 +154,17 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
       unloadLib.dispose();
     }
 
+    if (refreshFiles) {
+      refreshLibRoots(toLoad);
+    }
     for (SLibrary loadLib : toLoad) {
       loadLib.attach(refreshFiles);
     }
+  }
+
+  private void refreshLibRoots(List<SLibrary> toLoad) {
+    List<IFile> collect = toLoad.stream().map(SLibrary::getFileToListen).collect(Collectors.toList());
+    new FileRefresh(collect).run();
   }
 
   //----------bootstrap modules

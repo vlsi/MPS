@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.vfs.CachingFile;
+import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.DefaultCachingContext;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -35,6 +38,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.stream.Collectors;
 
 /**
  * evgeny, 11/3/12
@@ -57,7 +61,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     myLock.writeLock().lock();
     try {
 
-      if (myPaths.containsKey(path)) {
+      if (myPaths.containsKey(path.getPath())) {
         return;
       }
 
@@ -71,7 +75,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       myPaths.put(path.getPath(), listener);
       if (!(myListeners.isEmpty())) {
-        ((jetbrains.mps.vfs.FileSystemExt) path.getFileSystem()).addListener(listener);
+        ((jetbrains.mps.vfs.FileSystem) path.getFileSystem()).addListener(listener);
       }
     } finally {
       myLock.writeLock().unlock();
@@ -104,8 +108,9 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public void refresh() {
     Collection<IFile> toRefresh = getFiles();
     FileSystem fs = FileSystem.getInstance();
-    for (IFile f : toRefresh) {
-      fs.refresh(f);
+    if (fs instanceof CachingFileSystem) {
+      Set<CachingFile> collect = toRefresh.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
+      ((CachingFileSystem) fs).refresh(new DefaultCachingContext(true, false), collect);
     }
   }
 

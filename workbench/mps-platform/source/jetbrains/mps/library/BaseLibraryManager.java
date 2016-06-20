@@ -25,6 +25,7 @@ import jetbrains.mps.library.BaseLibraryManager.LibraryState;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -76,7 +77,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   public final Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (Library lib : getUILibraries()) {
-      result.add(new LibDescriptor(new IdeaFile(lib.getPath())));
+      result.add(new LibDescriptor(FileSystem.getInstance().getFile(lib.getPath())));
     }
     return result;
   }

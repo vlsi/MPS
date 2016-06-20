@@ -9,7 +9,6 @@ if [ "${UNAME}" = "Linux" ]; then
 elif [ "${UNAME}" = "Darwin" ]; then
     mps_home=`pwd`
     mps_home=`dirname "$mps_home"`
-    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.8/Home
 else 
     echo "Unknown OS: ${UNAME}"
     exit;
@@ -17,4 +16,4 @@ fi
 
 mkdir $mps_home/help
 export ANT_OPTS=-Xmx1024m
-ant -f $mps_home/build/build.xml clean base -Dmps_home=$mps_home -Dbuild.number=141.2500 -Dversion=3.3 -Dbuild.vcs.number=HEAD -Dteamcity.buildConfName=local
+ant -f $mps_home/build/build.xml base -Dmps_home=$mps_home -Dbuild.number=145.2500 -Dversion=3.4 -Dbuild.vcs.number=HEAD -Dteamcity.buildConfName=local

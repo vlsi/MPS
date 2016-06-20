@@ -1213,14 +1213,9 @@
           <node concept="2ShNRf" id="5JsnGMj1qiU" role="3cqZAk">
             <node concept="1pGfFk" id="5JsnGMj1qiV" role="2ShVmc">
               <ref role="37wK5l" node="5JsnGMj1qiZ" resolve="JavaClassStubsModelRoot" />
-              <node concept="2OqwBi" id="1OabvAsf_w6" role="37wK5m">
-                <node concept="2YIFZM" id="1OabvAsf_mX" role="2Oq$k0">
-                  <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                  <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
-                </node>
-                <node concept="liA8E" id="1OabvAsf_Wv" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~FileSystem.getFileSystemExt():jetbrains.mps.vfs.FileSystemExt" resolve="getFileSystemExt" />
-                </node>
+              <node concept="2YIFZM" id="1OabvAsf_mX" role="37wK5m">
+                <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
               </node>
             </node>
           </node>

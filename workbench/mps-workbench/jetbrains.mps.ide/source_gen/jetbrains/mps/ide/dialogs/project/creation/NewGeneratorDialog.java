@@ -164,7 +164,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(language.getDescriptorFile().getFileSystem());
     templateModelsRoot.setContentRoot(templateModelsDir);
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());

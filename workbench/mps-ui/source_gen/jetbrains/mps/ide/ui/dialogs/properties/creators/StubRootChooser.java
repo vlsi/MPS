@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
@@ -47,7 +47,7 @@ public class StubRootChooser implements Computable<List<String>> {
       if (res == Messages.YES) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
-            return ModelRootDescriptor.getJavaStubsModelRoot(new IdeaFile(it));
+            return ModelRootDescriptor.getJavaStubsModelRoot(new IdeaFileSystem().getFile(it));
           }
         }));
       }

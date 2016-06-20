@@ -1887,14 +1887,9 @@
                   <node concept="3uibUv" id="1OabvAshhOk" role="10QFUM">
                     <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
                   </node>
-                  <node concept="2OqwBi" id="5gUstTWi1xL" role="10QFUP">
-                    <node concept="liA8E" id="5gUstTWi1xM" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getFileSystemExt():jetbrains.mps.vfs.FileSystemExt" resolve="getFileSystemExt" />
-                    </node>
-                    <node concept="2YIFZM" id="5gUstTWi1xN" role="2Oq$k0">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                      <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
-                    </node>
+                  <node concept="2YIFZM" id="5gUstTWi1xN" role="10QFUP">
+                    <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                    <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                   </node>
                 </node>
               </node>

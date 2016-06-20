@@ -20,13 +20,17 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.CachingContext;
+import jetbrains.mps.vfs.CachingFile;
+import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.DefaultCachingContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -35,12 +39,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystem extends FileSystemComponent implements FileSystemExt, SafeWriteRequestor {
+public class IdeaFileSystem extends FileSystemComponent implements FileSystem, CachingFileSystem, SafeWriteRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
@@ -48,12 +55,16 @@ public class IdeaFileSystem extends FileSystemComponent implements FileSystemExt
   public IdeaFileSystem() {
   }
 
+  @Override
+  public void refresh(@NotNull CachingContext context, Collection<CachingFile> files) {
+    Set<VirtualFile> virtualFiles = files.stream().map(file -> ((IdeaFile) file).getVirtualFile()).collect(Collectors.toSet());
+    RefreshQueue.getInstance().refresh(!context.isSynchronous(), context.isRecursive(), null, virtualFiles);
+  }
+
   @NotNull
   @Override
-  public IFile getFile(@NotNull String path) {
-    // fix for MPS-10350; todo move
-    path = path.replace("//", "/").replace("\\\\", "\\");
-    return new IdeaFile(path);
+  public IdeaFile getFile(@NotNull String path) {
+    return new IdeaFile(this, path);
   }
 
   @Override
@@ -66,25 +77,19 @@ public class IdeaFileSystem extends FileSystemComponent implements FileSystemExt
     myListeners.removeListener(listener);
   }
 
-  @Override
-  public void disposeComponent() {
-    super.disposeComponent();
-    FileSystem.getInstance().setFileSystemExt(new IoFileSystem());
-  }
-
   public FileSystemListenersContainer getListenersContainer() {
     return myListeners;
   }
 
   @Override
-  public boolean isFileIgnored(String name) {
+  public boolean isFileIgnored(@NotNull String name) {
     return FileTypeManager.getInstance().isFileIgnored(name);
   }
 
   @Override
   public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
-    final List<IFile> newFiles = new ArrayList<IFile>();
-    final List<IFile> updatedFiles = new ArrayList<IFile>();
+    final List<IFile> newFiles = new ArrayList<>();
+    final List<IFile> updatedFiles = new ArrayList<>();
     for (IFile file : writtenFiles) {
       if (file.exists()) {
         updatedFiles.add(file);
@@ -92,31 +97,29 @@ public class IdeaFileSystem extends FileSystemComponent implements FileSystemExt
         newFiles.add(file);
       }
     }
-    ApplicationManager.getApplication().invokeLater(new IdeaWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            // Recreate files using VFS
-            for (IFile file : newFiles) {
-              OutputStream out = null;
-              try {
-                // No need to close InputStream: it will be closed by loadFromStream()
-                byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
+    ApplicationManager.getApplication().invokeLater(new IdeaWriteAction(() -> {
+      // Recreate files using VFS
+      for (IFile file : newFiles) {
+        OutputStream out = null;
+        try {
+          // No need to close InputStream: it will be closed by loadFromStream()
+          byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
 
-                out = file.openOutputStream();
-                out.write(content);
-              } catch (IOException e) {
-                LOG.error(null, e);
-              } finally {
-                FileUtil.closeFileSafe(out);
-              }
-            }
+          out = file.openOutputStream();
+          out.write(content);
+        } catch (IOException e) {
+          LOG.error(null, e);
+        } finally {
+          FileUtil.closeFileSafe(out);
+        }
+      }
 
-            // Refresh added files
-            for (IFile file : updatedFiles) {
-              FileSystem.getInstance().refresh(file);
-            }
-          }
-        })
+      // Refresh added files
+      Set<CachingFile> ideaFiles = updatedFiles.stream()
+          .filter(file -> file instanceof IdeaFile)
+          .map(file -> ((IdeaFile) file)).collect(Collectors.toSet());
+      refresh(new DefaultCachingContext(true, false), ideaFiles);
+    })
     );
   }
 

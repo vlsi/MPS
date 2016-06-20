@@ -70,7 +70,7 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
       FolderSetDataSource source = new FolderSetDataSource();
       JavaStubModelHeader header = (JavaStubModelHeader) mdata.getHeader();
       for (String s : header.getPaths()) {
-        source.addPath(new IdeaFile(s), this);
+        source.addPath(new IdeaFile(fileSystem, s), this);
       }
       final JavaClassStubModelDescriptor md = new JavaClassStubModelDescriptor(header.getReference(), source);
       md.setModelRoot(this);

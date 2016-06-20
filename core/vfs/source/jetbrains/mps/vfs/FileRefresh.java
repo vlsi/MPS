@@ -15,7 +15,16 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.PerfUtil;
+import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Utility to perform recursive refresh.
@@ -24,27 +33,50 @@ import org.jetbrains.annotations.NotNull;
  */
 public final class FileRefresh implements Runnable {
   @NotNull
-  private final IFile myFile;
+  private final List<IFile> myFiles;
+  private final DefaultCachingContext myDefaultCachingContext = new DefaultCachingContext(true, false);
 
   public FileRefresh(@NotNull IFile file) {
-    myFile = file;
+    this(Collections.singletonList(file));
+  }
+
+  public FileRefresh(@NotNull List<IFile> list) {
+    myFiles = list;
   }
 
   @Override
   public void run() {
-    refreshRecursivelyIntoJars(myFile);
+    PerfUtil.TRACER.push("Refreshing files", true);
+    refreshRecursivelyIntoJars(new HashSet<>(myFiles));
+    PerfUtil.TRACER.pop();
   }
 
-  private void refreshRecursivelyIntoJars(IFile file) {
-    if (!(file instanceof CachingFile)) return;
-    ((CachingFile) file).refresh(new IdeaCachingContext(true, false));
-    if (file.isDirectory()) {
-      for (IFile child: file.getChildren()) {
-        refreshRecursivelyIntoJars(child);
+  private void refreshRecursivelyIntoJars(Set<IFile> files) {
+    Set<CachingFile> cachingFiles = files.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
+    if (!cachingFiles.isEmpty()) {
+      CachingFileSystem fs = cachingFiles.iterator().next().getFileSystem();
+      while (!cachingFiles.isEmpty()) {
+        fs.refresh(myDefaultCachingContext, cachingFiles);
+        cachingFiles = cachingFiles.stream().flatMap(
+            file -> {
+              if (!file.isInArchive() && file.isDirectory()) {
+                List<IFile> children = file.getChildren();
+                return children != null ? children.stream().map(iFile -> (CachingFile) iFile) : Stream.empty();
+              } else if (IFileUtils.isJarFile(file)) {
+                return Stream.of(((CachingFile) IFileUtils.stepIntoJar(file)));
+              }
+              return Stream.empty();
+            }).collect(Collectors.toSet());
       }
-    } else if (IFileUtils.isJarFile(file)) {
-      IFile jarRoot = IFileUtils.stepIntoJar(file);
-      refreshRecursivelyIntoJars(jarRoot);
     }
+
+//    if (file.isDirectory()) {
+//      for (IFile child: file.getChildren()) {
+//        refreshRecursivelyIntoJars(child);
+//      }
+//    } else if (IFileUtils.isJarFile(file)) {
+//      IFile jarRoot = IFileUtils.stepIntoJar(file);
+//      refreshRecursivelyIntoJars(jarRoot);
+//    }
   }
 }

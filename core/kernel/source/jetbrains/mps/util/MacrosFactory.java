@@ -22,6 +22,7 @@ import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +37,7 @@ public class MacrosFactory {
   public static final String PROJECT = "${project}";
   public static final String MPS_HOME = "${mps_home}";
 
-  static final char SEPARATOR_CHAR = '/';
+  static final char SEPARATOR_CHAR = Path.UNIX_SEPARATOR_CHAR;
 
   public static MacroHelper forModuleFile(IFile moduleFile) {
     String[] extensions = new String[]{MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_IDEMODULE, MPSExtentions.PACKAGED_MODULE};
@@ -186,10 +187,10 @@ public class MacrosFactory {
 
   private static class HomeMacros extends Macros {
     @Override
-    protected String expand(String path, IFile anchorFile) {
+    protected String expand(String path, @Nullable IFile anchorFile) {
       if (path.startsWith(MPS_HOME)) {
         String relativePath = removePrefix(path);
-        IFile file = anchorFile.getFileSystem().getFile(PathManager.getHomePath()).getDescendant(relativePath);
+        IFile file = FileSystem.getInstance().getFile(PathManager.getHomePath()).getDescendant(relativePath);
         return IFileUtils.getCanonicalPath(file);
       }
 
@@ -210,7 +211,7 @@ public class MacrosFactory {
   private static class Macros {
     private static final Logger LOG = LogManager.getLogger(Macros.class);
 
-    protected String expand(String path, IFile anchorFile) {
+    protected String expand(String path, @Nullable IFile anchorFile) {
       if (!containsMacro(path)) return path;
       String macro = path.substring(2, path.indexOf("}"));
 
@@ -277,10 +278,10 @@ public class MacrosFactory {
   }
 
   private static class MacroHelperImpl implements MacroHelper {
-    final IFile anchorFile;
+    @Nullable final IFile anchorFile; // what is null anchorFile??
     final Macros macros;
 
-    private MacroHelperImpl(IFile anchorFile, Macros macros) {
+    private MacroHelperImpl(@Nullable IFile anchorFile, Macros macros) {
       this.anchorFile = anchorFile;
       this.macros = macros;
     }
@@ -296,7 +297,7 @@ public class MacrosFactory {
         path = path.replace('\\', SEPARATOR_CHAR);
       }
 
-      if (!FileSystem.getInstance().isPackaged(anchorFile)) {
+      if (anchorFile == null || !anchorFile.isInArchive()) {
         path = path.replace(SEPARATOR_CHAR, File.separatorChar);
       }
 

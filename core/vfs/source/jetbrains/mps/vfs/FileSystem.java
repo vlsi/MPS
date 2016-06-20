@@ -16,15 +16,13 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Works as a factory for IFile, also provides file system listening mechanism (e.g. {@link #addListener(FileSystemListener)}.
- * Currently it is a singleton
+ * Currently it is a singleton; will be moved to the core components
  */
-public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSystemExt {
+public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
   /**
    * @deprecated use it only when you really do not care about the file system implementation. Otherwise consider using context {@link IFile#getFileSystem()};
    * This singleton (as always) will be available via core MPSComponents some time later.
@@ -32,7 +30,7 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSy
   @ToRemove(version = 3.4)
   @Deprecated
   static FileSystem getInstance() {
-    return FileSystemImpl.getInstance();
+    return FileSystemExtPoint.getFS();
   }
 
   /**
@@ -41,18 +39,11 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSy
   @Deprecated
   @NotNull
   @ToRemove(version = 3.4)
-  IFile getFileByPath(@NotNull String path);
+  default IFile getFileByPath(@NotNull String path) {
+    return getFile(path);
+  }
 
-  /**
-   * main api
-   */
   @NotNull IFile getFile(@NotNull String path);
-
-  @ToRemove(version = 3.4)
-  void setFileSystemExt(@NotNull FileSystemExt provider);
-
-  @ToRemove(version = 3.4)
-  @NotNull FileSystemExt getFileSystemExt();
 
   /**
    * @deprecated the place is in the file interface, not here
@@ -60,7 +51,9 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSy
    */
   @ToRemove(version = 3.4)
   @Deprecated
-  boolean isPackaged(@NotNull IFile file);
+  default boolean isPackaged(@NotNull IFile file) {
+    return file.isPackaged();
+  }
 
   /**
    * @deprecated pure platform method with one usage, will be removed!
@@ -74,18 +67,15 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSy
    */
   @ToRemove(version = 3.4)
   @Deprecated
-  @Nullable IFile getBundleHome(@NotNull IFile file);
-
-  /**
-   * @deprecated the place is in the file interface, not here
-   */
-  @ToRemove(version = 3.4)
-  @Deprecated
-  boolean setTimeStamp(@NotNull IFile file, long time);
+  default boolean setTimeStamp(@NotNull IFile file, long time) {
+    return file.setTimeStamp(time);
+  }
 
   @ToRemove(version = 3.4)
   @Deprecated
-  void refresh(@NotNull IFile file);
+  default void refresh(@NotNull IFile file) {
+    file.refresh();
+  }
 
   /**
    * AP: I am going to rewrite the whole fs listening subsystem
@@ -94,11 +84,13 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem, FileSy
 
   void removeListener(FileSystemListener listener);
 
+  @ToRemove(version = 3.4)
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 
   /**
    * Write files from appropriate thread and with appropriate locks
-   * @return  false - error occurred
+   * @param r code to execute within platform write lock
+   * @return <code>false</code> if an exception was encountered
    */
-  boolean runWriteTransaction(Runnable r);
+  boolean runWriteTransaction(@NotNull Runnable r);
 }

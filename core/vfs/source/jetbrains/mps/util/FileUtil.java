@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.vfs.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

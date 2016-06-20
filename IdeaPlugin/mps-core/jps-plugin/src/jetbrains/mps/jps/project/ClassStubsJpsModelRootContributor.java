@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.jps.model.JpsProject;
 import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.library.JpsOrderRootType;
@@ -63,7 +64,7 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
       List<File> roots = lib.getFiles(JpsOrderRootType.COMPILED);
       for (File root : roots) {
         String path = root.getPath();
-        JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(new IdeaFileSystem());
+        JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(FileSystem.getInstance());
         modelRoot.setContentRoot(path);
         modelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, path);
         modelRoots.add(modelRoot);

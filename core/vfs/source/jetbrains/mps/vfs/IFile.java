@@ -16,6 +16,8 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -131,7 +133,7 @@ public interface IFile {
   default void refresh() {
     if (this instanceof CachingFile) {
       CachingFile me = (CachingFile) this;
-      me.refresh(new IdeaCachingContext(true, false));
+      me.refresh(new DefaultCachingContext(true, false));
     }
   }
 

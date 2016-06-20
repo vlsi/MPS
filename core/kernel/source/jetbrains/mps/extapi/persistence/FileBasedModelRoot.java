@@ -17,7 +17,6 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +47,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     this(fileSystem, new String[]{SOURCE_ROOTS, EXCLUDED});
   }
 
-  protected FileBasedModelRoot(FileSystem fileSystem, String[] supportedFileKinds) {
+  protected FileBasedModelRoot(@NotNull FileSystem fileSystem, String[] supportedFileKinds) {
     myFileSystem = fileSystem;
     for (String kind : supportedFileKinds) {
       filesForKind.put(kind, new ArrayList<>());
@@ -191,7 +190,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         IFile file = myFileSystem.getFile(path);
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
-        ((jetbrains.mps.vfs.FileSystemExt) myFileSystem).addListener(listener);
+        ((jetbrains.mps.vfs.FileSystem) myFileSystem).addListener(listener);
       }
     }
   }
@@ -199,7 +198,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Override
   public void dispose() {
     for (PathListener listener : myListeners) {
-      ((jetbrains.mps.vfs.FileSystemExt) myFileSystem).removeListener(listener);
+      ((jetbrains.mps.vfs.FileSystem) myFileSystem).removeListener(listener);
     }
     myListeners.clear();
     super.dispose();

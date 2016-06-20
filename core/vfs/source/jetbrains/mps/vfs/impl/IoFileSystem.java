@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -27,8 +27,11 @@ import java.io.File;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IoFileSystem implements FileSystemExt {
+public class IoFileSystem implements FileSystem {
   private static final Logger LOG = LogManager.getLogger(IoFileSystem.class);
+
+  public IoFileSystem() {
+  }
 
   @NotNull
   @Override
@@ -46,14 +49,14 @@ public class IoFileSystem implements FileSystemExt {
 
       File jarFile = new File(jarPath);
 
-      return new JarEntryFile(jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData(jarFile), jarFile, entryPath);
+      return new JarEntryFile(jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData(jarFile), jarFile, entryPath, this);
     } else {
-      return new IoFile(path);
+      return new IoFile(path, this);
     }
   }
 
   @Override
-  public boolean isFileIgnored(String name) {
+  public boolean isFileIgnored(@NotNull String name) {
     return false;
   }
 

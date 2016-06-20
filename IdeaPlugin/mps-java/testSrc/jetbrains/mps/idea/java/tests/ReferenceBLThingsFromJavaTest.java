@@ -45,7 +45,7 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
     VirtualFile sourceRoot = sourceRoots[0];
     final IFile modelFile = copyResource(sourceRoot.getPath() + "/blModel.mps", "blModel.mps", "/tests/blProject/models/blModel.mps");
 
-    DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot(modelFile.getFileSystem());
     root.setContentRoot(modelFile.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelFile.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

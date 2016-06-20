@@ -32,7 +32,7 @@ public class FileProcessor extends ReloadParticipant {
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
 
   public FileProcessor() {
-    listenersContainer = ((IdeaFileSystem) FileSystem.getInstance().getFileSystemExt()).getListenersContainer();
+    listenersContainer = ((IdeaFileSystem) FileSystem.getInstance()).getListenersContainer();
   }
 
   @Override

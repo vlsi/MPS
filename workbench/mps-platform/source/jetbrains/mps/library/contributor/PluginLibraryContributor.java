@@ -21,7 +21,9 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.LanguageLibrary;
 import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -54,9 +56,9 @@ public final class PluginLibraryContributor implements LibraryContributor {
   @NotNull
   private LibDescriptor createLibDescriptor(String path, ClassLoader classLoader) {
     if (!InternalFlag.isInternalMode()) {
-      return new LibDescriptor(new IoFile(path), classLoader);
+      return new LibDescriptor(new IoFileSystem().getFile(path), classLoader);
     } else {
-      return new LibDescriptor(new IdeaFile(path), classLoader);
+      return new LibDescriptor(new IdeaFileSystem().getFile(path), classLoader);
     }
   }
 

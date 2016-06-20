@@ -16,26 +16,21 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.impl.FileSystemImpl;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * An interface that is implemented by objects that perform match operations on
- * paths.
- *
- * @see FileSystemImpl#getPathMatcher
+ * Class for file system registration
  */
-@ToRemove(version = 0.0)
-@Deprecated
-@FunctionalInterface
-public interface PathMatcher {
-  /**
-   * Tells if given path matches this matcher's pattern.
-   *
-   * @param   path
-   *          the path to match
-   *
-   * @return  {@code true} if, and only if, the path matches this
-   *          matcher's pattern
-   */
-  boolean matches(Path path);
+@ToRemove(version = 3.4)
+public final class FileSystemExtPoint {
+  private static FileSystem ourFS = new IoFileSystem();
+
+  public static void setFS(@NotNull FileSystem fileSystem) {
+    ourFS = fileSystem;
+  }
+
+  public static FileSystem getFS() {
+    return ourFS;
+  }
 }

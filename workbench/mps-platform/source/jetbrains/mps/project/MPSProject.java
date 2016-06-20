@@ -17,12 +17,17 @@ package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -40,6 +45,24 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   @Override
   public void initComponent() {
     NotFoundModulesListener listener = new NotFoundModulesListener(this);
+    IdeaFileSystem ideaFileSystem = (IdeaFileSystem) FileSystem.getInstance();
+    ideaFileSystem.addListener(new FileSystemListener() {
+      @Nullable
+      @Override
+      public IFile getFileToListen() {
+        return ideaFileSystem.getFile(myProject.getBaseDir().getPath());
+      }
+
+      @Override
+      public Iterable<FileSystemListener> getListenerDependencies() {
+        return null;
+      }
+
+      @Override
+      public void update(ProgressMonitor monitor, FileSystemEvent event) {
+
+      }
+    });
     myListeners.add(listener);
     addListener(listener);
   }

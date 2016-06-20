@@ -20,11 +20,11 @@ package jetbrains.mps.vfs;
  *
  * Created by apyshkin on 6/19/16.
  */
-public final class IdeaCachingContext implements CachingContext {
+public final class DefaultCachingContext implements CachingContext {
   private final boolean mySynchronous;
   private final boolean myRecursive;
 
-  public IdeaCachingContext(boolean synchronous, boolean recursive) {
+  public DefaultCachingContext(boolean synchronous, boolean recursive) {
     mySynchronous = synchronous;
     myRecursive = recursive;
   }

@@ -35,7 +35,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -51,6 +50,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -176,7 +176,7 @@ public class NewModuleUtil {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(null);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(descriptorFile.getFileSystem());
     templateModelsRoot.setContentRoot(descriptorFile.getParent().getPath());
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
@@ -257,7 +257,7 @@ public class NewModuleUtil {
     }
 
     //  default descriptorModel roots 
-    DefaultModelRoot modelRoot = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot modelRoot = new DefaultModelRoot(descriptorFile.getFileSystem());
     modelRoot.setContentRoot(modelsDir.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
     descriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());

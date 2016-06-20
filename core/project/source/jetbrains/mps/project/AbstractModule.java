@@ -49,7 +49,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -95,7 +94,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public static final String CLASSES_GEN = "classes_gen";
   public static final String CLASSES = "classes";
 
-  private static final jetbrains.mps.vfs.FileSystem ourFS = jetbrains.mps.vfs.FileSystem.getInstance();
   @Nullable
   protected final IFile myDescriptorFile;
   @NotNull private final FileSystem myFileSystem;
@@ -117,7 +115,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (descriptorFile != null) {
       myFileSystem = descriptorFile.getFileSystem();
     } else {
-      myFileSystem = ourFS;
+      myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance();
     }
   }
 
@@ -614,7 +612,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void attach(@NotNull SRepository repository) {
     super.attach(repository);
     if (myDescriptorFile != null) {
-      ourFS.addListener(this);
+      ((jetbrains.mps.vfs.FileSystem) myFileSystem).addListener(this);
     }
     initFacetsAndModels();
   }
@@ -671,7 +669,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void dispose() {
     assertCanChange();
     LOG.trace("Disposing the module " + this);
-    ourFS.removeListener(this);
+    ((jetbrains.mps.vfs.FileSystem) myFileSystem).removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
     }

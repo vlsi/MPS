@@ -16,8 +16,8 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.Path;
-import jetbrains.mps.vfs.UniPath;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -43,11 +43,13 @@ public class JarEntryFile implements IFileEx {
   private File myJarFile;
   private String myEntryPath;
   private static final IoFileSystem FS = new IoFileSystem();
+  private final FileSystem myFileSystem;
 
-  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, FileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = path.replace(File.separator, "/");
+    myFileSystem = fileSystem;
     if (myEntryPath.endsWith("/")) {
       myEntryPath = myEntryPath.substring(0, myEntryPath.length() - 1);
     }
@@ -79,7 +81,7 @@ public class JarEntryFile implements IFileEx {
     if (myEntryPath.isEmpty()) {
       return null;
     } else {
-      return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
+      return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath), myFileSystem);
     }
   }
 
@@ -89,10 +91,10 @@ public class JarEntryFile implements IFileEx {
 
     List<IFile> result = new ArrayList<IFile>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
-      result.add(new JarEntryFile(myJarFileData, myJarFile, e));
+      result.add(new JarEntryFile(myJarFileData, myJarFile, e, myFileSystem));
     }
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
+      result.add(new JarEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e, myFileSystem));
     }
 
     return result;
@@ -112,7 +114,7 @@ public class JarEntryFile implements IFileEx {
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
-    return new JarEntryFile(myJarFileData, myJarFile, path);
+    return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
   }
 
   @Override
@@ -199,7 +201,7 @@ public class JarEntryFile implements IFileEx {
 
   @Override
   public IFile getBundleHome() {
-    return new IoFile(myJarFile);
+    return new IoFile(myJarFile, myFileSystem);
   }
 
   @Override

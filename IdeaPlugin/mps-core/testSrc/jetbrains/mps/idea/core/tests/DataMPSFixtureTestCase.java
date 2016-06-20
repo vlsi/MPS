@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.tests;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.testFramework.PlatformTestUtil;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -68,7 +69,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
   protected abstract void prepareTestData(MPSFacetConfiguration configuration) throws Exception;
 
   protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException {
-    IFile targetFile = FileSystem.getInstance().getFileByPath(toPath);
+    IFile targetFile = new IdeaFile(fileSystem, toPath);
 
     return copyResource(resName, fromPath, targetFile);
   }

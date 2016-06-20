@@ -34,6 +34,7 @@ import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
+import jetbrains.mps.project.FileModelRootContext;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
@@ -43,6 +44,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -149,7 +151,7 @@ public abstract class StubSolutionIdea extends StubSolution {
 
     for (VirtualFile f : roots) {
       String localPath = getLocalPath(f);
-      JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(new IdeaFileSystem());
+      JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(FileSystem.getInstance());
       modelRoot.setContentRoot(localPath);
       modelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, localPath);
       result.add(modelRoot);
@@ -168,7 +170,7 @@ public abstract class StubSolutionIdea extends StubSolution {
     for (VirtualFile f : roots) {
       String localPath = getLocalPath(f);
       if (!seenPaths.add(localPath)) continue;
-      solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(new IdeaFile(localPath)));
+      solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(FileSystem.getInstance().getFile(localPath)));
     }
   }
 

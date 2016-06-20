@@ -36,7 +36,7 @@ import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
@@ -203,6 +203,10 @@ public final class ModulesMiner {
       assert file.getPath().contains(DOT_JAR + JAR_SEPARATOR + MODULES_DIR); // note: we must be scanning for modules in the 'modules' directory
     }
     List<IFile> children = file.getChildren();
+    if (children == null) {
+      LOG.warn("#getChildren returned null for " + file);
+      return;
+    }
     ArrayList<IFile> folders = new ArrayList<IFile>();
     for (IFile child : children) {
       if (!child.isDirectory()) {

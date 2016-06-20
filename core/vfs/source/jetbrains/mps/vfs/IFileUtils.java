@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
@@ -67,7 +68,7 @@ public class IFileUtils {
   @ToRemove(version = 3.4)
   @NotNull
   public static IFile stepIntoJar(@NotNull IFile jarFile) {
-    assert isJarFile(jarFile);
+    assert isJarFile(jarFile) : jarFile;
     return jarFile.getFileSystem().getFile(jarFile.getPath() + JAR_SEPARATOR); // the reason of this juggling is specifically our IoFileSystem
   }
 
@@ -95,8 +96,7 @@ public class IFileUtils {
     if (index == -1) {
       return FileUtil.getCanonicalPath(absolutePath);
     } else {
-      return FileUtil.getCanonicalPath(absolutePath.substring(0, index))
-        + "!" + absolutePath.substring(index + 1);
+      return FileUtil.getCanonicalPath(absolutePath.substring(0, index)) + "!" + absolutePath.substring(index + 1);
     }
   }
 

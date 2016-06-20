@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -49,7 +50,7 @@ public class UniPath extends AbstractPath {
     myPath = CommonPath.fromString(archiveStrings[0]);
     int index = 0;
     while (++index < archiveStrings.length) {
-      CommonPath archivePart = CommonPath.fromString(Path.UNIX_SEPARATOR + archiveStrings[index]);
+      CommonPath archivePart = CommonPath.fromString(UNIX_SEPARATOR + archiveStrings[index]);
       myArchivePaths.add(archivePart.toIndependentPath());
     }
   }
@@ -128,8 +129,25 @@ public class UniPath extends AbstractPath {
     return null;
   }
 
+  @NotNull
   @Override
-  public Path toAbsolutePath() {
+  public UniPath toAbsolute() {
+    if (!isRelative()) {
+      return copy();
+    } else {
+      return new UniPath(myPath.toAbsolute());
+    }
+  }
+
+  @NotNull
+  @Override
+  public Path toNormal() {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public Path toCanonical() throws IOException {
     return null;
   }
 
@@ -212,11 +230,6 @@ public class UniPath extends AbstractPath {
   }
 
   @Override
-  public int compareTo(@NotNull Path path) {
-    return toString().compareTo(path.toString()); //FIXME
-  }
-
-  @Override
   public String toString() {
     String res = myPath.toString();
     for (Path path : myArchivePaths) {
@@ -225,6 +238,7 @@ public class UniPath extends AbstractPath {
     return res;
   }
 
+  @NotNull
   @Override
   public UniPath copy() {
     return UniPath.fromArchivePaths(myPath, myArchivePaths);

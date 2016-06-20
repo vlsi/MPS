@@ -16,8 +16,8 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.Path;
-import jetbrains.mps.vfs.UniPath;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
@@ -34,16 +34,22 @@ import java.util.List;
  * TODO rewrite using {@link Path}.
  */
 public class IoFile implements IFileEx {
-  private final static FileSystem FS = new IoFileSystem();
-
   @NotNull private File myFile; // always absolute
+  private FileSystem myFileSystem;
 
-  public IoFile(@NotNull String path) {
-    this(new File(path));
+  public IoFile(@NotNull String path, FileSystem fileSystem) {
+    this(new File(path), fileSystem);
   }
 
-  public IoFile(@NotNull File file) {
+  public IoFile(@NotNull File file, FileSystem fileSystem) {
     myFile = file.getAbsoluteFile();
+    myFileSystem = fileSystem;
+  }
+
+  @NotNull
+  @Override
+  public FileSystem getFileSystem() {
+    return myFileSystem;
   }
 
   @NotNull
@@ -58,7 +64,7 @@ public class IoFile implements IFileEx {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(parentFile);
+    return new IoFile(parentFile, myFileSystem);
   }
 
   @Override
@@ -76,11 +82,6 @@ public class IoFile implements IFileEx {
   @Override
   public UniPath toPath() {
     return UniPath.fromString(myFile.getPath());
-  }
-
-  @NotNull
-  private static String toSystemDependentName(@NotNull String aFileName) {
-    return aFileName.replace(Path.UNIX_SEPARATOR_CHAR, File.separatorChar).replace('\\', File.separatorChar);
   }
 
   @NotNull
@@ -167,7 +168,7 @@ public class IoFile implements IFileEx {
 
     List<IFile> result = new ArrayList<IFile>(files.length);
     for (File f : files) {
-      result.add(new IoFile(f));
+      result.add(new IoFile(f, myFileSystem));
     }
     return result;
   }
@@ -175,7 +176,7 @@ public class IoFile implements IFileEx {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    return new IoFile(new File(myFile, suffix));
+    return new IoFile(new File(myFile, suffix), myFileSystem);
   }
 
   @Override
@@ -240,11 +241,5 @@ public class IoFile implements IFileEx {
   @Override
   public boolean setTimeStamp(long time) {
     return myFile.setLastModified(time);
-  }
-
-  @NotNull
-  @Override
-  public FileSystem getFileSystem() {
-    return FS;
   }
 }

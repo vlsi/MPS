@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.vfs.path.CommonPath;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 
 /**

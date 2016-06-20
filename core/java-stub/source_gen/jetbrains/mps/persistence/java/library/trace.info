@@ -165,13 +165,13 @@
   </root>
   <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746414">
     <file name="JavaClassStubModelRootFactory.java">
-      <node id="6619269785060746425" at="16,29,17,84" concept="10" />
+      <node id="6619269785060746425" at="16,29,17,65" concept="10" />
       <node id="2092535526958470784" at="23,50,24,91" concept="10" />
       <node id="2092535526958476618" at="25,5,26,20" concept="10" />
       <node id="2092535526958457213" at="22,62,25,5" concept="7" />
       <node id="6619269785060746421" at="14,0,19,0" concept="8" trace="create#()Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
       <node id="2092535526958456886" at="21,0,28,0" concept="8" trace="create#(Lorg/jetbrains/mps/openapi/persistence/ModelRootContext;)Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
-      <scope id="6619269785060746424" at="16,29,17,84" />
+      <scope id="6619269785060746424" at="16,29,17,65" />
       <scope id="2092535526958457215" at="23,50,24,91" />
       <scope id="2092535526958456894" at="22,62,26,20" />
       <scope id="6619269785060746421" at="14,0,19,0" />

@@ -11,7 +11,7 @@ import java.util.Arrays;
 import jetbrains.mps.core.tool.environment.util.PathManager;
 import java.io.File;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
-import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import java.util.Collections;
 import java.util.List;
 import java.net.URL;
@@ -50,16 +50,16 @@ import java.util.LinkedHashMap;
         if (libFolder.exists() && libFolder.isDirectory()) {
           pluginCL = createPluginClassLoader(libFolder);
           for (File jar : libFolder.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER)) {
-            paths.add(new LibDescriptor(new IoFile(jar.getAbsolutePath() + MODULES_PREFIX), pluginCL));
+            paths.add(new LibDescriptor(new IoFileSystem().getFile(jar.getAbsolutePath() + MODULES_PREFIX), pluginCL));
           }
         }
         File languagesFolder = new File(pluginDirectory, "languages");
         if (languagesFolder.exists() && languagesFolder.isDirectory()) {
-          paths.add(new LibDescriptor(new IoFile(languagesFolder.getAbsolutePath()), pluginCL));
+          paths.add(new LibDescriptor(new IoFileSystem().getFile(languagesFolder.getAbsolutePath()), pluginCL));
         }
         File classesFolder = new File(pluginDirectory, "classes");
         if (classesFolder.exists() && classesFolder.isDirectory()) {
-          paths.add(new LibDescriptor(new IoFile(classesFolder.getAbsolutePath()), pluginCL));
+          paths.add(new LibDescriptor(new IoFileSystem().getFile(classesFolder.getAbsolutePath()), pluginCL));
         }
       }
     }

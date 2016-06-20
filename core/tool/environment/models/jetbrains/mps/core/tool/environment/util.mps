@@ -3644,10 +3644,14 @@
                   <node concept="2ShNRf" id="2Koq9V0qYzy" role="25WWJ7">
                     <node concept="1pGfFk" id="2Koq9V0qYzz" role="2ShVmc">
                       <ref role="37wK5l" to="je6q:~LibDescriptor.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.ClassLoader)" resolve="LibDescriptor" />
-                      <node concept="2ShNRf" id="1OabvAsfYKX" role="37wK5m">
-                        <node concept="1pGfFk" id="1OabvAsg0sQ" role="2ShVmc">
-                          <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
-                          <node concept="37vLTw" id="1OabvAsg0tk" role="37wK5m">
+                      <node concept="2OqwBi" id="6UQiGMPnF99" role="37wK5m">
+                        <node concept="2YIFZM" id="6UQiGMPnEPp" role="2Oq$k0">
+                          <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                          <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
+                        </node>
+                        <node concept="liA8E" id="6UQiGMPnFyu" role="2OqNvi">
+                          <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                          <node concept="37vLTw" id="6UQiGMPnFOS" role="37wK5m">
                             <ref role="3cqZAo" node="2Koq9V0qYzr" resolve="libPath" />
                           </node>
                         </node>

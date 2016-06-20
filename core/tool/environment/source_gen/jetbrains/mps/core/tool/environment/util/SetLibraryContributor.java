@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.FileSystem;
 
 public class SetLibraryContributor implements LibraryContributor {
   private final String myName;
@@ -33,7 +33,7 @@ public class SetLibraryContributor implements LibraryContributor {
   public static SetLibraryContributor fromMap(String name, Map<String, ClassLoader> libToClassLoader) {
     Set<LibDescriptor> libs = SetSequence.fromSet(new LinkedHashSet<LibDescriptor>());
     for (String libPath : libToClassLoader.keySet()) {
-      SetSequence.fromSet(libs).addElement(new LibDescriptor(new IoFile(libPath), libToClassLoader.get(libPath)));
+      SetSequence.fromSet(libs).addElement(new LibDescriptor(FileSystem.getInstance().getFile(libPath), libToClassLoader.get(libPath)));
     }
     return new SetLibraryContributor(name, libs);
   }

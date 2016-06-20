@@ -26,7 +26,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="cm63" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.behaviour(MPS.Core/)" />
     <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util(MPS.Core/)" />
     <import index="k6ay" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.search(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
@@ -41,7 +40,7 @@
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="9r19" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.core.aspects.behaviour.api(jetbrains.mps.lang.behavior.api/)" />
     <import index="manl" ref="d936855b-48da-4812-a8a0-2bfddd633ac4/java:jetbrains.mps.core.aspects.behaviour(jetbrains.mps.lang.behavior.runtime/)" />
-    <import index="cm64" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.smodel.behaviour(jetbrains.mps.lang.behavior.api/)" />
+    <import index="cm63" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.smodel.behaviour(jetbrains.mps.lang.behavior.api/)" />
     <import index="u65r" ref="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)" />
   </imports>
   <registry>
@@ -11260,8 +11259,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5$gQw6IZvc9" role="10QFUP">
-              <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
-              <ref role="37wK5l" to="cm64:~BHReflection.invoke(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
+              <ref role="1Pybhc" to="cm63:~BHReflection" resolve="BHReflection" />
+              <ref role="37wK5l" to="cm63:~BHReflection.invoke(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
               <node concept="10Nm6u" id="5$gQw6IZvca" role="37wK5m" />
               <node concept="10Nm6u" id="5$gQw6IZvcb" role="37wK5m" />
               <node concept="Xl_RD" id="5$gQw6IZvcc" role="37wK5m">
@@ -15135,8 +15134,8 @@
           <node concept="1eOMI4" id="3ZhVC3HXXjQ" role="3clFbG">
             <node concept="10QFUN" id="3ZhVC3HXXjR" role="1eOMHV">
               <node concept="2YIFZM" id="3ZhVC3HXXic" role="10QFUP">
-                <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
-                <ref role="37wK5l" to="cm64:~BHReflection.invoke(org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                <ref role="1Pybhc" to="cm63:~BHReflection" resolve="BHReflection" />
+                <ref role="37wK5l" to="cm63:~BHReflection.invoke(org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
                 <node concept="2YIFZM" id="3ZhVC3HXXid" role="37wK5m">
                   <ref role="37wK5l" to="i51s:~SNodeOperations.asSConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="asSConcept" />
                   <ref role="1Pybhc" to="i51s:~SNodeOperations" resolve="SNodeOperations" />
@@ -15492,8 +15491,8 @@
                 </node>
                 <node concept="gft3U" id="3ZhVC3HY3zu" role="UU_$l">
                   <node concept="2YIFZM" id="3ZhVC3HY43z" role="gfFT$">
-                    <ref role="37wK5l" to="cm64:~BHReflection.invoke(org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                    <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
+                    <ref role="37wK5l" to="cm63:~BHReflection.invoke(org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                    <ref role="1Pybhc" to="cm63:~BHReflection" resolve="BHReflection" />
                     <node concept="2YIFZM" id="3ZhVC3HY43$" role="37wK5m">
                       <ref role="37wK5l" to="i51s:~SNodeOperations.asSConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="asSConcept" />
                       <ref role="1Pybhc" to="i51s:~SNodeOperations" resolve="SNodeOperations" />
@@ -16410,8 +16409,8 @@
           <node concept="1eOMI4" id="3ZhVC3HXwpw" role="3clFbG">
             <node concept="10QFUN" id="3ZhVC3HXwpx" role="1eOMHV">
               <node concept="2YIFZM" id="3ZhVC3HXwn_" role="10QFUP">
-                <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
-                <ref role="37wK5l" to="cm64:~BHReflection.invokeSpecial(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
+                <ref role="1Pybhc" to="cm63:~BHReflection" resolve="BHReflection" />
+                <ref role="37wK5l" to="cm63:~BHReflection.invokeSpecial(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
                 <node concept="10Nm6u" id="3ZhVC3HXwnA" role="37wK5m">
                   <node concept="5jKBG" id="3ZhVC3HXwnB" role="lGtFl">
                     <ref role="v9R2y" node="hP3lrBm" resolve="reduce_ThisOrSuperNodeExpression" />
@@ -16813,8 +16812,8 @@
               </node>
               <node concept="gft3U" id="3ZhVC3HX_cM" role="UU_$l">
                 <node concept="2YIFZM" id="3ZhVC3HX_Ja" role="gfFT$">
-                  <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
-                  <ref role="37wK5l" to="cm64:~BHReflection.invokeSpecial(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
+                  <ref role="1Pybhc" to="cm63:~BHReflection" resolve="BHReflection" />
+                  <ref role="37wK5l" to="cm63:~BHReflection.invokeSpecial(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SAbstractConcept,jetbrains.mps.core.aspects.behaviour.api.SMethodId,java.lang.Object...):java.lang.Object" resolve="invokeSpecial" />
                   <node concept="10Nm6u" id="3ZhVC3HX_Jb" role="37wK5m">
                     <node concept="5jKBG" id="3ZhVC3HX_Jc" role="lGtFl">
                       <ref role="v9R2y" node="hP3lrBm" resolve="reduce_ThisOrSuperNodeExpression" />

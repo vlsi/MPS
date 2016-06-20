@@ -46,7 +46,7 @@ public class VfsTest extends PlatformMpsTest {
   private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(Runnable testRunnable) {
-      FileSystem.getInstance().setFileSystemExt(new IoFileSystem());
+      FileSystemExtPoint.setFS(new IoFileSystem());
       testRunnable.run();
     }
   };
@@ -54,7 +54,7 @@ public class VfsTest extends PlatformMpsTest {
   private static final TestInvoker IDEA_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(final Runnable testRunnable) {
-      FileSystem.getInstance().setFileSystemExt(new IdeaFileSystem());
+      FileSystemExtPoint.setFS(new IdeaFileSystem());
       final Throwable[] ex = new Throwable[1];
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

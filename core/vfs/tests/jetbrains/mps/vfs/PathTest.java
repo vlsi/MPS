@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**

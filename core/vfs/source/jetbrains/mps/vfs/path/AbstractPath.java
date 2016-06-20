@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,6 +23,11 @@ import org.jetbrains.annotations.NotNull;
  * Created by apyshkin on 6/19/16.
  */
 abstract class AbstractPath implements Path {
+  @Override
+  public int compareTo(@NotNull Path path) {
+    return toString().compareTo(path.toString()); //FIXME
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof Path)) {
@@ -82,5 +87,4 @@ abstract class AbstractPath implements Path {
     return true;
   }
 
-  public abstract Path copy();
 }

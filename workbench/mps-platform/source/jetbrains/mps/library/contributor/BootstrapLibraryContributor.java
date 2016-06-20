@@ -17,8 +17,10 @@ package jetbrains.mps.library.contributor;
 
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -41,9 +43,9 @@ public final class BootstrapLibraryContributor implements LibraryContributor {
   @NotNull
   private LibDescriptor createLibDescriptor(String path) {
     if (!InternalFlag.isInternalMode()) {
-      return new LibDescriptor(new IoFile(path));
+      return new LibDescriptor(new IoFileSystem().getFile(path));
     } else {
-      return new LibDescriptor(new IdeaFile(path));
+      return new LibDescriptor(new IdeaFileSystem().getFile(path));
     }
   }
 

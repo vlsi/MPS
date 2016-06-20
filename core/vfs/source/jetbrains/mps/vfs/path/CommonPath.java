@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -186,24 +187,38 @@ public class CommonPath extends AbstractPath {
 
   @NotNull
   @Override
-  public Path relativize(@NotNull Path other) {
-    return null;
-  }
-
-  @Override
-  public Path toAbsolutePath() {
+  public CommonPath relativize(@NotNull Path other) {
     return null;
   }
 
   @NotNull
   @Override
-  public Path resolve(@NotNull Path other) {
+  public CommonPath toAbsolute() {
+//    return new File(myPath).getAbsolutePath();
     return null;
   }
 
   @NotNull
   @Override
-  public Path resolve(@NotNull String other) {
+  public Path toNormal() {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public Path toCanonical() throws IOException {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public CommonPath resolve(@NotNull Path other) {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public CommonPath resolve(@NotNull String other) {
     return null;
   }
 
@@ -220,6 +235,7 @@ public class CommonPath extends AbstractPath {
     return myPath;
   }
 
+  @NotNull
   @Override
   public CommonPath copy() {
     return new CommonPath(mySeparatorChar, myRelativeFlag, myParts);

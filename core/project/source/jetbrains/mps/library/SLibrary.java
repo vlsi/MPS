@@ -17,6 +17,7 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.util.PerfUtil;
 import jetbrains.mps.vfs.FileRefresh;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -81,7 +82,9 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
   void attach(boolean refreshFiles) {
     LOG.debug("Attaching " + this);
     FileSystem.getInstance().addListener(this);
+    PerfUtil.TRACER.push("attaching library", false);
     collectAndRegisterModules(refreshFiles);
+    PerfUtil.TRACER.pop();
   }
 
   void dispose() {
@@ -111,23 +114,26 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
     }
   }
 
-  void collectAndRegisterModules(boolean refreshFiles) {
+  private void collectAndRegisterModules(boolean refreshFiles) {
     if (refreshFiles) {
-      new FileRefresh(myFile).run();
     }
     final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
     List<ModuleHandle> moduleHandles = new ArrayList<ModuleHandle>(modulesMiner.getCollectedModules());
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
+    PerfUtil.TRACER.push("creating modules", false);
     for (ModuleHandle moduleHandle : moduleHandles) {
       SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
       if (module != null) {
         loaded.add(module);
       }
     }
+    PerfUtil.TRACER.pop();
+    PerfUtil.TRACER.push("onModuleLoad", false);
     for (SModule module : loaded) {
       ((AbstractModule) module).onModuleLoad();
     }
+    PerfUtil.TRACER.pop();
   }
 
   @Override

@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.path;
 
+import jetbrains.mps.vfs.Watchable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Alike to the {@link java.nio.file.Path}.
@@ -30,7 +32,7 @@ import java.io.File;
  *
  * Created by apyshkin on 6/17/16.
  */
-public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable {
+public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable, PathUtil {
   /**
    * current system defaults
    */
@@ -171,6 +173,15 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
    */
   @NotNull Path relativize(@NotNull Path other);
 
+  @NotNull Path resolve(@NotNull Path other);
+
+  @NotNull Path resolve(@NotNull String other);
+
+  /**
+   * @return the path, which is equals to this one but not the same
+   */
+  @NotNull Path copy();
+
   /**
    * Returns a {@code Path} object representing the absolute path of this
    * path.
@@ -186,23 +197,51 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
    * @throws  java.io.IOError
    *          if an I/O error occurs
    */
-  Path toAbsolutePath();
+  @NotNull Path toAbsolute();
 
-  @NotNull Path resolve(@NotNull Path other);
+  /**
+   * @see #toCanonical()
+   * it tries to do the same without actual access to the file system
+   */
+  @NotNull Path toNormal();
 
-  @NotNull Path resolve(@NotNull String other);
+  /**
+   * Returns the canonical pathname string of this abstract pathname.
+   *
+   * A canonical pathname is both absolute and unique.  The precise
+   * definition of canonical form is system-dependent.  This method first
+   * converts this pathname to absolute form if necessary, as if by invoking the
+   * {@link #toAbsolute()} method, and then maps it to its unique form in a
+   * system-dependent way.  This typically involves removing redundant names
+   * such as "." and ".." from the pathname, resolving
+   * symbolic links (on UNIX platforms), and converting drive letters to a
+   * standard case (on Microsoft Windows platforms).
+   *
+   * Every pathname that denotes an existing file or directory has a
+   * unique canonical form.  Every pathname that denotes a nonexistent file
+   * or directory also has a unique canonical form.  The canonical form of
+   * the pathname of a nonexistent file or directory may be different from
+   * the canonical form of the same pathname after the file or directory is
+   * created.  Similarly, the canonical form of the pathname of an existing
+   * file or directory may be different from the canonical form of the same
+   * pathname after the file or directory is deleted.
+   *
+   * @return  The canonical pathname string denoting the same file or
+   *          directory as this abstract pathname
+   *
+   * @throws  IOException
+   *          If an I/O error occurs, which is possible because the
+   *          construction of the canonical pathname may require
+   *          filesystem queries
+   *
+   * @see File#getCanonicalFile()
+   */
+  @NotNull Path toCanonical() throws IOException;
 
 //  @NotNull Path subpath(int beginIndex, int endIndex);
-//
-//
-//  Path normalize();
 //
 //
 //  Path resolveSibling(Path other);
 //
 //  Path resolveSibling(String other);
-//
-//  Path relativize(Path other);
-//
-//  @NotNull Path toAbsolutePath();
 }

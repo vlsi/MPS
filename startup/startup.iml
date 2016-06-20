@@ -24,5 +24,6 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Idea-extensions" level="project" />
+    <orderEntry type="module" module-name="util-core" />
   </component>
 </module>
