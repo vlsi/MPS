@@ -54,9 +54,8 @@ import java.util.Set;
  * evgeny, 11/9/12
  */
 public class DefaultModelRoot extends FileBasedModelRoot {
-
-  public DefaultModelRoot() {
-    super(new String[]{SOURCE_ROOTS});
+  public DefaultModelRoot(jetbrains.mps.vfs.openapi.FileSystem fileSystem) {
+    super(fileSystem, new String[]{SOURCE_ROOTS});
   }
 
   @Override
@@ -81,7 +80,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
     for (String path : getFiles(SOURCE_ROOTS)) {
       String relativePath = contentHome != null ? makeRelative(contentHome, path) : null;
-      collectModels(FileSystem.getInstance().getFileByPath(path), "", relativePath, options, result);
+      collectModels(myFileSystem.getFile(path), "", relativePath, options, result);
     }
     return result;
   }
@@ -247,7 +246,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
     String relPath = NameUtil.pathFromNamespace(filenameSuffix) + "." + extension;
     options.put(ModelFactory.OPTION_RELPATH, relPath);
-    IFile file = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + relPath);
+    IFile file = myFileSystem.getFile(sourceRoot + File.separator + relPath);
     return new FileDataSource(file, this);
   }
 
@@ -262,7 +261,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isLanguageAspectsSourceRoot(String sourceRoot) {
-    final String rootName = FileSystem.getInstance().getFileByPath(sourceRoot).getName();
+    final String rootName = FileSystem.getInstance().getFile(sourceRoot).getName();
     return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
   }
 

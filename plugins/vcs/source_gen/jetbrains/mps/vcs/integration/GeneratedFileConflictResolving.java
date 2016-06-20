@@ -10,7 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileEvent;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -42,7 +42,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
   }
   private void resolveIfNeeded(VirtualFileEvent e) {
-    if (e.getRequestor() instanceof IdeaFileSystemProvider) {
+    if (e.getRequestor() instanceof IdeaFileSystem) {
       VirtualFile file = e.getFile();
       if (SModelFileTracker.getInstance(myMpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file)) != null) {
         return;

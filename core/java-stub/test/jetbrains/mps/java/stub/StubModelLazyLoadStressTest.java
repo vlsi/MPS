@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -82,7 +83,7 @@ public class StubModelLazyLoadStressTest {
       if (new File(path).isFile() && path.endsWith(".jar")) {
         path += "!/java/util/regex/";
       }
-      dataSource.addPath(path, null);
+      dataSource.addPath(new IoFileSystem().getFile(path), null);
     }
     JavaClassStubModelDescriptor model = new JavaClassStubModelDescriptor(modelRef, dataSource) {
       @Override

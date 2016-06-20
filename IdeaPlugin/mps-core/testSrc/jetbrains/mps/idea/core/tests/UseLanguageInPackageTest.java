@@ -16,11 +16,9 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPSIPane;
 import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import com.intellij.idea.IdeaTestApplication;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -34,28 +32,22 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.projectView.TestProjectTreeStructure;
 import com.intellij.psi.PsiDirectory;
-import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import com.intellij.testFramework.MapDataContext;
-import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.TestActionEvent;
-import com.intellij.testFramework.fixtures.HeavyIdeaTestFixture;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.actions.MakeDirAModel;
-import jetbrains.mps.idea.core.actions.MarkModelRootAction;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.LanguageImportHelper;
 import jetbrains.mps.project.LanguageImportHelper.Interaction;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
@@ -89,7 +81,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     VirtualFile sourceRoot = sourceRoots[0];
 //    final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/otherPsiTest.mps", "otherPsiTest.mps", "/tests/psiProject/models/jetbrains/mps/otherPsiTest.mps");
 
-    DefaultModelRoot root = new DefaultModelRoot();
+    DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
     root.setContentRoot(sourceRootPath);
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, sourceRootPath);
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

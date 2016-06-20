@@ -13,6 +13,5 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="components" />
-    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>

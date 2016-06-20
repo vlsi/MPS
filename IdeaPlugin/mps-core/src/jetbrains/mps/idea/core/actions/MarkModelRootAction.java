@@ -25,6 +25,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -52,7 +53,7 @@ public class MarkModelRootAction extends AnAction {
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     for (VirtualFile vFile : vFiles) {
-      DefaultModelRoot root = new DefaultModelRoot();
+      DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
       String path = VirtualFileManager.extractPath(vFile.getUrl());
       root.setContentRoot(path);
       root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);

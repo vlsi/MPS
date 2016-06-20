@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.project.FileModelRootContext;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -34,6 +36,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootContext;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import org.jetbrains.mps.openapi.persistence.SModelIdFactory;
@@ -289,12 +292,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     }
     INSTANCE = this;
 
-    setModelRootFactory(DEFAULT_MODEL_ROOT, new ModelRootFactory() {
-      @Override
-      public ModelRoot create() {
-        return new DefaultModelRoot();
-      }
-    });
+    setModelRootFactory(DEFAULT_MODEL_ROOT, new DefaultModelRootFactory());
     setNodeIdFactory(jetbrains.mps.smodel.SNodeId.TYPE, new SNodeIdFactory() {
       @Override
       public SNodeId create(String text) {
@@ -338,5 +336,22 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   public void enableFastFindUsages() {
     isDisabled = false;
+  }
+
+  private static class DefaultModelRootFactory implements ModelRootFactory {
+    @NotNull
+    @Override
+    public ModelRoot create() {
+      return new DefaultModelRoot(FileSystem.getInstance());
+    }
+
+    @NotNull
+    @Override
+    public ModelRoot create(@NotNull ModelRootContext context) {
+      if (context instanceof FileModelRootContext) {
+        return new DefaultModelRoot(((FileModelRootContext) context).getFileSystem());
+      }
+      return create();
+    }
   }
 }

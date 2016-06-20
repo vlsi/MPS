@@ -4,6 +4,9 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.java.stub.PackageScopeControl;
+import jetbrains.mps.vfs.FileSystemExt;
+import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -16,7 +19,6 @@ import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,8 +31,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   private PackageScopeControl myPackageScope;
-  public JavaClassStubsModelRoot() {
-    super();
+  public JavaClassStubsModelRoot(FileSystem fileSystem) {
+    super(fileSystem);
   }
   @Override
   public String getType() {
@@ -70,7 +72,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
 
     for (IFile file : CollectionSequence.fromCollection(files).select(new ISelector<String, IFile>() {
       public IFile select(String it) {
-        return FileSystem.getInstance().getFileByPath(it);
+        return myFileSystem.getFile(it);
       }
     })) {
       collectJarFiles(file, excludedFiles, jarsToLoad);
@@ -86,7 +88,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
 
     SetSequence.fromSet(jarsToLoad).select(new ISelector<IFile, IFile>() {
       public IFile select(IFile it) {
-        return FileSystem.getInstance().getFileByPath(it.getPath() + "!/");
+        return myFileSystem.getFile(it.getPath() + Path.ARCHIVE_SEPARATOR);
       }
     }).visitAll(new IVisitor<IFile>() {
       public void visit(IFile it) {
@@ -179,7 +181,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           }
           ListSequence.fromList(result).addElement(smd);
         }
-        smd.getSource().addPath(subdir.getPath(), this);
+        smd.getSource().addPath(subdir, this);
       }
       getModelDescriptors(result, subdir, pack, module);
     }

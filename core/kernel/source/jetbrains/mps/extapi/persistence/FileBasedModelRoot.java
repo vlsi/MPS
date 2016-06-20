@@ -16,9 +16,10 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -35,21 +36,22 @@ import java.util.Map;
  * evgeny, 12/11/12
  */
 public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
-
   public static final String EXCLUDED = "excluded";
   public static final String SOURCE_ROOTS = "sourceRoot";
+  protected final FileSystem myFileSystem;
 
   private String contentRoot;
   protected Map<String, List<String>> filesForKind = new LinkedHashMap<String, List<String>>();
   private final List<PathListener> myListeners = new ArrayList<PathListener>();
 
-  protected FileBasedModelRoot() {
-    this(new String[]{SOURCE_ROOTS, EXCLUDED});
+  protected FileBasedModelRoot(@NotNull FileSystem fileSystem) {
+    this(fileSystem, new String[]{SOURCE_ROOTS, EXCLUDED});
   }
 
-  protected FileBasedModelRoot(String[] supportedFileKinds) {
+  protected FileBasedModelRoot(FileSystem fileSystem, String[] supportedFileKinds) {
+    myFileSystem = fileSystem;
     for (String kind : supportedFileKinds) {
-      filesForKind.put(kind, new ArrayList<String>());
+      filesForKind.put(kind, new ArrayList<>());
     }
   }
 
@@ -186,18 +188,18 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       if (EXCLUDED.equals(kind)) continue;
 
       for (String path : filesForKind.get(kind)) {
-        IFile file = FileSystem.getInstance().getFileByPath(path);
+        IFile file = myFileSystem.getFile(path);
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
-        FileSystem.getInstance().addListener(listener);
+        ((jetbrains.mps.vfs.FileSystem) myFileSystem).addListener(listener);
       }
     }
   }
 
   @Override
   public void dispose() {
-    for (PathListener pathListener : myListeners) {
-      FileSystem.getInstance().removeListener(pathListener);
+    for (PathListener listener : myListeners) {
+      ((jetbrains.mps.vfs.FileSystem) myFileSystem).removeListener(listener);
     }
     myListeners.clear();
     super.dispose();

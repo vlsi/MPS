@@ -17,10 +17,10 @@
 package jetbrains.mps.jps.make.testEnvironment;
 
 
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.module.JpsModule;
@@ -84,7 +84,7 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
   }
 
   protected DefaultModelRoot createModelRoot(String models) {
-    DefaultModelRoot dmr = new DefaultModelRoot();
+    DefaultModelRoot dmr = new DefaultModelRoot(new IdeaFileSystem());
     dmr.setContentRoot(models);
     dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
     return dmr;

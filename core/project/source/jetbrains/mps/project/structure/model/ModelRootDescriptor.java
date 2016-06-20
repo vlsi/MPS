@@ -70,13 +70,12 @@ public final class ModelRootDescriptor {
     return new ModelRootDescriptor(stream.readString(), MementoStreamUtil.readMemento(null, stream));
   }
 
-  public static ModelRootDescriptor getJavaStubsModelRoot(String path) {
-    return getJavaStubsModelRoot(path, Collections.EMPTY_LIST);
+  public static ModelRootDescriptor getJavaStubsModelRoot(IFile file) {
+    return getJavaStubsModelRoot(file, Collections.EMPTY_LIST);
   }
 
-  public static ModelRootDescriptor getJavaStubsModelRoot(String path, final Collection<ModelRootDescriptor> modelRootDescriptors) {
-    final IFile file = FileSystem.getInstance().getFileByPath(path);
-    path = file.getParent().getPath();
+  public static ModelRootDescriptor getJavaStubsModelRoot(IFile file, final Collection<ModelRootDescriptor> modelRootDescriptors) {
+    String path = file.getParent().getPath();
 
     for (ModelRootDescriptor descriptor : modelRootDescriptors) {
       if(descriptor.memento.get("contentPath").equals(path)) {

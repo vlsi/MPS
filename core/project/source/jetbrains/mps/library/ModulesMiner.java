@@ -31,10 +31,15 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.impl.JarEntryFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -56,9 +61,9 @@ import java.util.Set;
  */
 public final class ModulesMiner {
   private static final Logger LOG = LogManager.getLogger(ModulesMiner.class);
-  public static final String JAR = ".jar";
+  private static final String DOT_JAR = JarEntryFile.DOT_JAR;
   public static final String META_INF = "META-INF";
-  public static final String JAR_SEPARATOR = "!/";
+  private static final String JAR_SEPARATOR = Path.ARCHIVE_SEPARATOR;
   public static final String MODULE_XML = "module.xml";
   public static final String MODULES_DIR = "modules";
   public static final String META_INF_MODULE_XML = META_INF + "/" + MODULE_XML; // deployment descriptor resides at abc-lang.jar!/META-INF/module.xml
@@ -163,7 +168,13 @@ public final class ModulesMiner {
     if (!needProcess(file)) return;
 
     if (IFileUtils.isJarFile(file)) { // ends with .jar
-      readModuleDescriptorsFromFolder(IFileUtils.stepIntoJar(file));
+      IFile jarFile = null;
+      if (file instanceof IoFile) {
+        jarFile = new IoFileSystem().getFile(file.getPath() + JAR_SEPARATOR);
+      } else if (file instanceof CachingFile) {
+        jarFile = IFileUtils.stepIntoJar(file);
+      }
+      readModuleDescriptorsFromFolder(jarFile);
     } else if (file.getPath().endsWith(JAR_SEPARATOR)) { // ends with .jar/!
       IFile moduleXml = file.getDescendant(META_INF).getDescendant(MODULE_XML);
       if (moduleXml.exists() && !moduleXml.isDirectory()) {
@@ -189,7 +200,7 @@ public final class ModulesMiner {
    */
   private void readModuleDescriptorsFromFolder0(IFile file, Location insideTheJar) {
     if (insideTheJar == Location.INSIDE_THE_JAR) {
-      assert file.getPath().contains(JAR + JAR_SEPARATOR + MODULES_DIR); // note: we must be scanning for modules in the 'modules' directory
+      assert file.getPath().contains(DOT_JAR + JAR_SEPARATOR + MODULES_DIR); // note: we must be scanning for modules in the 'modules' directory
     }
     List<IFile> children = file.getChildren();
     ArrayList<IFile> folders = new ArrayList<IFile>();
@@ -292,6 +303,7 @@ public final class ModulesMiner {
     if (descriptor == null || descriptorFile.isReadOnly()) {
       return;
     }
+    jetbrains.mps.vfs.openapi.FileSystem fileSystem = descriptorFile.getFileSystem();
 
     excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor));
     excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor));
@@ -299,11 +311,11 @@ public final class ModulesMiner {
     excludeClassesGen(descriptorFile, descriptor);
 
     for (String p : descriptor.getSourcePaths()) {
-      myExcludes.add(getFileSystem().getFileByPath(p));
+      myExcludes.add(fileSystem.getFile(p));
     }
 
     for (String entry : descriptor.getAdditionalJavaStubPaths()) {
-      myExcludes.add(getFileSystem().getFileByPath(entry));
+      myExcludes.add(descriptorFile.getFileSystem().getFile(entry));
     }
 
     if (descriptor instanceof LanguageDescriptor) {
@@ -318,7 +330,7 @@ public final class ModulesMiner {
       myExcludes.add(sourceDir);
       // todo: why?
       if (!sourceDir.isReadOnly()) {
-        myExcludes.add(getFileSystem().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+        myExcludes.add(sourceDir.getFileSystem().getFile(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
       }
     }
   }

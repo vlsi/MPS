@@ -24,13 +24,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.impl.IoFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -38,14 +37,10 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -111,7 +106,7 @@ public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
   private void addContributorWithPaths(Iterable<? extends String> paths) {
     Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
     for (String path : paths) {
-      libraryPaths.add(new LibDescriptor(path));
+      libraryPaths.add(new LibDescriptor(new IoFile(path)));
     }
     addContributor(SetLibraryContributor.fromSet("Library paths", libraryPaths));
   }

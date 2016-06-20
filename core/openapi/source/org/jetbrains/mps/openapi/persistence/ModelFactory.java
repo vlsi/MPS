@@ -25,11 +25,10 @@ import java.util.Map;
  * Creates models (instances of SModel) from data sources
  */
 public interface ModelFactory {
-
-  static final String OPTION_MODULEREF = "moduleReference";
-  static final String OPTION_PACKAGE = "package";
-  static final String OPTION_RELPATH = "relativePath";
-  static final String OPTION_MODELNAME = "modelName";
+  String OPTION_MODULEREF = "moduleReference";
+  String OPTION_PACKAGE = "package";
+  String OPTION_RELPATH = "relativePath";
+  String OPTION_MODELNAME = "modelName";
 
   /**
    * Boolean value, indicates we don't care to build complete model on load, rather read content as-is,
@@ -37,7 +36,7 @@ public interface ModelFactory {
    * We use this mechanism from merge driver and various tools that are going to access nodes from
    * the model but are not going to expose this model anywhere else.
    */
-  static final String OPTION_CONTENT_ONLY = "contentOnly";
+  String OPTION_CONTENT_ONLY = "contentOnly";
 
   /**
    * Instantiates a model on a given data source. Options can be used to pass additional parameters

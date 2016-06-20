@@ -47,6 +47,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -276,7 +277,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
+    DefaultModelRoot modelRoot = new DefaultModelRoot(new IoFileSystem());
     modelRoot.setContentRoot(runtimeSolutionDescriptorFile.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, runtimeSolutionDescriptorFile.getParent().getPath());
 
@@ -296,7 +297,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     d.setNamespace(languageNamespace);
     d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
+    DefaultModelRoot modelRoot = new DefaultModelRoot(new IoFileSystem());
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     modelRoot.setContentRoot(languageModels.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
@@ -318,7 +319,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
+    DefaultModelRoot modelRoot = new DefaultModelRoot(new IoFileSystem());
     modelRoot.setContentRoot(descriptorFile.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, descriptorFile.getParent().getPath());
 

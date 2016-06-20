@@ -15,10 +15,35 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+
 /**
- * Factories that create model roots. They are registered through PersistenceFacade and associated with one or more file types.
+ * Factories which create model roots.
+ * They are registered through {@link PersistenceFacade}.
+ * E.g. in the case of model roots associated with files there might be
+ * different factories associated with one or more file types.
+ *
+ * @see ModelRoot
  */
 public interface ModelRootFactory {
 
-  ModelRoot create();
+  /**
+   * Creates a model root, typical factory pattern.
+   *
+   * @return a new model root
+   * @deprecated use the one below instead
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
+  @NotNull ModelRoot create();
+
+  /**
+   * Creates a model root.
+   * @param context -- context which is passed to the factory method
+   * @return a new model root
+   */
+  default @NotNull ModelRoot create(@NotNull ModelRootContext context) {
+    return create();
+  }
 }

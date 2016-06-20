@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library.contributor;
 
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 public interface RepositoryPathDescriptor {
@@ -22,5 +23,5 @@ public interface RepositoryPathDescriptor {
    * @return a path to the repository modules or repository module configuration file (TODO)
    */
   @NotNull
-  String getPath();
+  IFile getPath();
 }

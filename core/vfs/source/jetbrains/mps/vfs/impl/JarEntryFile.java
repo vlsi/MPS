@@ -16,7 +16,10 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -29,10 +32,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Todo rewrite using {@link Path}
+ */
 public class JarEntryFile implements IFileEx {
+  public static final String JAR = "jar";
+  public static final String DOT_JAR = "." + JAR;
+
   private AbstractJarFileData myJarFileData;
   private File myJarFile;
   private String myEntryPath;
+  private static final IoFileSystem FS = new IoFileSystem();
 
   JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path) {
     myJarFileData = jarFileData;
@@ -43,6 +53,13 @@ public class JarEntryFile implements IFileEx {
     }
   }
 
+  @NotNull
+  @Override
+  public FileSystem getFileSystem() {
+    return FS;
+  }
+
+  @NotNull
   @Override
   public String getName() {
     String result = myEntryPath;
@@ -82,8 +99,18 @@ public class JarEntryFile implements IFileEx {
   }
 
   @Override
+  public boolean isArchive() {
+    return true;
+  }
+
+  @Override
+  public boolean isInArchive() {
+    return true;
+  }
+
+  @Override
   @NotNull
-  public IFile getDescendant(String suffix) {
+  public IFile getDescendant(@NotNull String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path);
   }
@@ -97,6 +124,12 @@ public class JarEntryFile implements IFileEx {
   @Override
   public String getPath() {
     return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
+  }
+
+  @NotNull
+  @Override
+  public UniPath toPath() {
+    return UniPath.fromString(getPath());
   }
 
   @Override
@@ -165,11 +198,6 @@ public class JarEntryFile implements IFileEx {
   }
 
   @Override
-  public boolean isPackaged() {
-    return true;
-  }
-
-  @Override
   public IFile getBundleHome() {
     return new IoFile(myJarFile);
   }
@@ -177,10 +205,6 @@ public class JarEntryFile implements IFileEx {
   @Override
   public boolean setTimeStamp(long time) {
     return false;
-  }
-
-  @Override
-  public void refresh() {
   }
 
   @Override

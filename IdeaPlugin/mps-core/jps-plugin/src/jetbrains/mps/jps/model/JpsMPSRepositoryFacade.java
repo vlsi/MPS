@@ -36,6 +36,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.FileModelRootContext;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -46,6 +47,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
@@ -60,6 +62,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootContext;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.io.File;
@@ -148,6 +151,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
         // use optimized implementation of default model root
         PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
+          @NotNull
           @Override
           public ModelRoot create() {
             return new CachedDefaultModelRoot(myRepo);
@@ -155,9 +159,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         });
 
         PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
+          @NotNull
           @Override
-          public ModelRoot create() {
-            return new CachedJavaClassStubsModelRoot(myRepo);
+          public ModelRoot create(@NotNull ModelRootContext context) {
+            return new CachedJavaClassStubsModelRoot(FileSystem.getInstance(), myRepo);
           }
         });
 

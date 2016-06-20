@@ -18,6 +18,5 @@
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="components" />
-    <orderEntry type="module" module-name="behavior-api" />
   </component>
 </module>

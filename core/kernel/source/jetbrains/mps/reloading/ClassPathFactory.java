@@ -16,9 +16,9 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,14 +40,16 @@ public class ClassPathFactory {
   private static final Object LOCK = new Object();
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
 
+  private static jetbrains.mps.vfs.openapi.FileSystem provider = new IoFileSystem();
+
   // FIXME rewrite without IFile, write class path item tests about jars in jars
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     synchronized (LOCK) {
       if (myCache.containsKey(path)) return myCache.get(path);
-      IFile iFile = FileSystem.getInstance().getFileByPath(path);
+      IFile iFile = provider.getFile(path);
       path = iFile.getPath();
-      boolean isPackaged = FileSystem.getInstance().isPackaged(iFile) || path.endsWith(".jar") || path.endsWith(".zip");
+      boolean isPackaged = iFile.isPackaged() || path.endsWith(".jar") || path.endsWith(".zip");
       boolean isDirectory = iFile.isDirectory();
       File file = new File(path);
       boolean exists = iFile.exists() || file.exists();

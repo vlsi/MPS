@@ -16,6 +16,7 @@
 package jetbrains.mps.library.contributor;
 
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.util.PathManager;
 
 import java.util.HashSet;
@@ -29,7 +30,7 @@ public final class WorkbenchLibraryContributor implements LibraryContributor {
   public Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     if (InternalFlag.isInternalMode()) {
-      res.add(new LibDescriptor(PathManager.getWorkbenchPath(), null));
+      res.add(new LibDescriptor(new IdeaFile(PathManager.getWorkbenchPath()), null));
     }
     return res;
   }

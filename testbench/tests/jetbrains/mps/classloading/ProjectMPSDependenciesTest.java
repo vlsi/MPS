@@ -27,6 +27,7 @@ import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.impl.IoFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -35,7 +36,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -90,7 +90,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private void addContributorWithPaths(Iterable<? extends String> paths) {
     Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
     for (String path : paths) {
-      libraryPaths.add(new LibDescriptor(path));
+      libraryPaths.add(new LibDescriptor(new IoFile(path)));
     }
     addContributor(SetLibraryContributor.fromSet("Library paths", libraryPaths));
   }

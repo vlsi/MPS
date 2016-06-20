@@ -30,7 +30,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -108,7 +108,7 @@ public class Utils {
       boolean language = child.getName().endsWith(MPSExtentions.DOT_LANGUAGE);
       if (!(solution || language)) continue;
 
-      final IFile moduleIFile = new IoFileSystemProvider().getFile(child.getAbsolutePath());
+      final IFile moduleIFile = new IoFileSystem().getFile(child.getAbsolutePath());
       IFile moduleDir = moduleIFile.getParent();
       MacroHelper expander = new MyMacroHelper(moduleIFile);
 

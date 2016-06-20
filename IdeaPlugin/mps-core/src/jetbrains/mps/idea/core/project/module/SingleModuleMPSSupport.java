@@ -26,6 +26,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
@@ -101,7 +102,7 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport {
     descriptor.setOutputPath(outputPath);
     descriptor.setCompileInMPS(false);
 
-    FileBasedModelRoot root = new DefaultModelRoot();
+    FileBasedModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
     root.setContentRoot(moduleContentRoot.getPath());
 
     for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots()) {

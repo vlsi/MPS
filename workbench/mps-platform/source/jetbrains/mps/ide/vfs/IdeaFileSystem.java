@@ -20,14 +20,13 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
-import com.intellij.openapi.vfs.SavingRequestor;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemProvider;
+import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -41,17 +40,19 @@ import java.util.List;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor {
-  private static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
+public class IdeaFileSystem extends FileSystemComponent implements FileSystemExt, SafeWriteRequestor {
+  private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
 
-  public IdeaFileSystemProvider() {
+  public IdeaFileSystem() {
   }
 
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
+    // fix for MPS-10350; todo move
+    path = path.replace("//", "/").replace("\\\\", "\\");
     return new IdeaFile(path);
   }
 
@@ -68,7 +69,7 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
   @Override
   public void disposeComponent() {
     super.disposeComponent();
-    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+    FileSystem.getInstance().setFileSystemExt(new IoFileSystem());
   }
 
   public FileSystemListenersContainer getListenersContainer() {

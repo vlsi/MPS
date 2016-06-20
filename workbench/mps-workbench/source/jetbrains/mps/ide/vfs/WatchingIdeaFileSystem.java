@@ -19,13 +19,13 @@ import java.util.Map;
  *
  * danilla 8/7/13
  */
-public class WatchingIdeaFileSystemProvider extends IdeaFileSystemProvider {
-  private static final Logger LOG = LogManager.getLogger(WatchingIdeaFileSystemProvider.class);
+public class WatchingIdeaFileSystem extends IdeaFileSystem {
+  private static final Logger LOG = LogManager.getLogger(WatchingIdeaFileSystem.class);
   private final WatchedRoots myWatchedRoots;
 
   private final Map<FileSystemListener, String> myListenerToPathMap = new HashMap<FileSystemListener, String>();
 
-  public WatchingIdeaFileSystemProvider(@NotNull WatchedRoots watchedRoots) {
+  public WatchingIdeaFileSystem(@NotNull WatchedRoots watchedRoots) {
     myWatchedRoots = watchedRoots;
   }
 

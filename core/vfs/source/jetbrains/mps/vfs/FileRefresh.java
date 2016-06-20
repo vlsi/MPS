@@ -1,6 +1,6 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
  *
+ * Copyright 2003-2015 JetBrains s.r.o.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public final class FileRefresh implements Runnable {
-
   @NotNull
   private final IFile myFile;
 
@@ -38,6 +37,7 @@ public final class FileRefresh implements Runnable {
 
   private void refreshRecursivelyIntoJars(IFile file) {
     FileSystem.getInstance().refresh(file);
+    if (!(file instanceof CachingFile)) return;
     if (file.isDirectory()) {
       for (IFile child: file.getChildren()) {
         refreshRecursivelyIntoJars(child);

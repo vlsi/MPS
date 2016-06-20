@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
@@ -33,8 +34,8 @@ import java.util.List;
 
 public class IFileUtils {
   private static final Logger LOG = LogManager.getLogger(IFileUtils.class);
-  private static final String JAR_SEPARATOR = "!/";
-  private static final String JAR = ".jar";
+  private static final String JAR_SEPARATOR = Path.ARCHIVE_SEPARATOR;
+  private static final String DOT_JAR = Path.DOT_JAR;
 
   public static boolean copyFileContent(IFile oldFile, IFile newFile) {
     BufferedInputStream in = null;
@@ -55,26 +56,27 @@ public class IFileUtils {
   }
 
   public static boolean isJarFile(@NotNull IFile file) {
-    return file.getPath().endsWith(JAR);
+    return file.toPath().isJar();
   }
 
   /**
+   * Fixme: will be replaced with the simple call getDescendant.
    * Resulting file is already inside jar, i.e. file in JarFileSystem, because we added JAR_SEPARATOR
    * @param jarFile shall be {@link #isJarFile(IFile) java archive file}
    */
+  @ToRemove(version = 3.4)
   @NotNull
   public static IFile stepIntoJar(@NotNull IFile jarFile) {
     assert isJarFile(jarFile);
-    return FileSystem.getInstance().getFileByPath(jarFile.getPath() + JAR_SEPARATOR);
+    return jarFile.getFileSystem().getFile(jarFile.getPath() + JAR_SEPARATOR); // the reason of this juggling is specifically our IoFileSystem
   }
 
-
   public static IFile createTmpDir() {
-    IFile tmpHome = FileSystem.getInstance().getFileByPath(System.getProperty("java.io.tmpdir"));
+    IFile tmpHome = FileSystem.getInstance().getFile(System.getProperty("java.io.tmpdir"));
     // For e.g. Mac, tmpdir might reside under /var/folders, with canonical path /private/var/folders
     // IDEA's VirtualFile seems to be incapable to notice changes done through other location, which may lead to
     // puzzling failures (i.e. U see the file at fs location, but VirtualFile for the same (though, aliased) location doesn't list it).
-    tmpHome = FileSystem.getInstance().getFileByPath(getCanonicalPath(tmpHome));
+    tmpHome = FileSystem.getInstance().getFile(getCanonicalPath(tmpHome));
     int i = 1;
     String prefix = "mps-" + new SimpleDateFormat("yyyy-MM-dd-").format(new Date());
     while (tmpHome.getDescendant(prefix + i).exists()) {

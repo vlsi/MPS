@@ -18,14 +18,11 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.PlatformMpsTest;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -49,7 +46,7 @@ public class VfsTest extends PlatformMpsTest {
   private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(Runnable testRunnable) {
-      FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+      FileSystem.getInstance().setFileSystemExt(new IoFileSystem());
       testRunnable.run();
     }
   };
@@ -57,7 +54,7 @@ public class VfsTest extends PlatformMpsTest {
   private static final TestInvoker IDEA_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(final Runnable testRunnable) {
-      FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
+      FileSystem.getInstance().setFileSystemExt(new IdeaFileSystem());
       final Throwable[] ex = new Throwable[1];
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

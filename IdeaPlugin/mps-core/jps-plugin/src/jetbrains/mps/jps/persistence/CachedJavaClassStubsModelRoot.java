@@ -23,6 +23,7 @@ import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.idea.core.module.JavaStubModelHeader;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -38,7 +39,8 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
 
   private CachedRepositoryData myCachedRepository;
 
-  public CachedJavaClassStubsModelRoot(CachedRepositoryData repo) {
+  public CachedJavaClassStubsModelRoot(FileSystem fileSystem, CachedRepositoryData repo) {
+    super(fileSystem);
     myCachedRepository = repo;
   }
 

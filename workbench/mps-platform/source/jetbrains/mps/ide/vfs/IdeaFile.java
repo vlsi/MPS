@@ -23,11 +23,15 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.ArchiveFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.vfs.CachingContext;
+import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -42,17 +46,16 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Evgeny Gerashchenko
+ * TODO rewrite using {@link Path}; rewrite {@link #getChildren(),#getDescendant(String)} behavior in the case of jar system
  */
-class IdeaFile implements IFileEx {
+public class IdeaFile implements IFileEx, CachingFile {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
-  public static final String FILE_PROTOCOL_PREFIX = "file://";
-  public static final int FILE_PROTOCOL_PREFIX_LENGTH = FILE_PROTOCOL_PREFIX.length();
+
+  private final static jetbrains.mps.vfs.openapi.FileSystem ourFileSystem = new IdeaFileSystem();
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -60,7 +63,7 @@ class IdeaFile implements IFileEx {
   private String myPath;
   private VirtualFile myVirtualFile = null;
 
-  IdeaFile(@NotNull String path) {
+  public IdeaFile(@NotNull String path) {
     myPath = path;
   }
 
@@ -79,6 +82,12 @@ class IdeaFile implements IFileEx {
     }
   }
 
+  @NotNull
+  @Override
+  public UniPath toPath() {
+    return UniPath.fromString(getPath());
+  }
+
   @Override
   public URL getUrl() throws MalformedURLException {
     if (findVirtualFile()) {
@@ -88,6 +97,13 @@ class IdeaFile implements IFileEx {
     }
   }
 
+  @NotNull
+  @Override
+  public jetbrains.mps.vfs.openapi.FileSystem getFileSystem() {
+    return ourFileSystem;
+  }
+
+  @NotNull
   @Override
   public String getName() {
     if (findVirtualFile()) {
@@ -123,13 +139,13 @@ class IdeaFile implements IFileEx {
       }
       return Collections.unmodifiableList(result);
     } else {
-      return Arrays.asList();
+      return Collections.emptyList();
     }
   }
 
   @Override
   @NotNull
-  public IFile getDescendant(String suffix) {
+  public IFile getDescendant(@NotNull String suffix) {
     String path = getPath();
     String separator = path.contains("!") ? "/" : File.separator;
     return new IdeaFile(path + (path.endsWith(separator) ? "" : separator) + suffix);
@@ -304,7 +320,7 @@ class IdeaFile implements IFileEx {
     }
   }
 
-  VirtualFile getVirtualFile() {
+  public VirtualFile getVirtualFile() {
     findVirtualFile();
     return myVirtualFile;
   }
@@ -323,31 +339,38 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
-  public void refresh() {
-    ApplicationManager.getApplication().assertWriteAccessAllowed();
+  public void refresh(@NotNull CachingContext context) {
+    if (context.isSynchronous()) {
+      ApplicationManager.getApplication().assertWriteAccessAllowed();
+    }
     if (findVirtualFile()) {
       myVirtualFile.getChildren(); // This was added to force refresh
       // synchronous non-recursive refresh
-      myVirtualFile.refresh(false, false);
+      myVirtualFile.refresh(!context.isSynchronous(), context.isRecursive());
     } else {
       findVirtualFile(true);
     }
   }
 
   @Override
-  public boolean isPackaged() {
+  public boolean isInArchive() {
     if (findVirtualFile()) {
-      return myVirtualFile.getFileSystem() instanceof JarFileSystem;
+      return myVirtualFile.getFileSystem() instanceof ArchiveFileSystem;
     } else {
       return myPath.contains("!");
     }
   }
 
   @Override
+  public boolean isArchive() {
+    return myPath.endsWith(JarFileSystem.PROTOCOL) || myPath.endsWith(JarFileSystem.JAR_SEPARATOR);
+  }
+
+  @Override
   public IFile getBundleHome() {
     if (findVirtualFile()) {
-      if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
-        VirtualFile fileForJar = ((JarFileSystem) myVirtualFile.getFileSystem()).getVirtualFileForJar(myVirtualFile);
+      if (myVirtualFile.getFileSystem() instanceof ArchiveFileSystem) {
+        VirtualFile fileForJar = ((ArchiveFileSystem) myVirtualFile.getFileSystem()).getLocalByEntry(myVirtualFile);
         if (fileForJar == null) {
           return null;
         }
@@ -368,6 +391,9 @@ class IdeaFile implements IFileEx {
     return findVirtualFile(false);
   }
 
+  /**
+   * in the case when the underlying virtual file is not valid we perform a "refresh"
+   */
   private boolean findVirtualFile(boolean withRefresh) {
     if (myVirtualFile == null || !myVirtualFile.isValid()) {
       myVirtualFile = findIdeaFile(myPath, withRefresh);
@@ -375,6 +401,7 @@ class IdeaFile implements IFileEx {
     return myVirtualFile != null;
   }
 
+  // obviously all string-processing methods might be cached
   @Nullable
   private static VirtualFile findIdeaFile(String path, boolean withRefresh) {
     LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
@@ -383,19 +410,19 @@ class IdeaFile implements IFileEx {
       String jarPath = path.substring(0, index);
       String entryPath = path.substring(index + 1);
 
-      assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path: " + path;
+      assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in DOT_JAR entry path: " + path;
       entryPath = entryPath.replace('\\', '/');
       if (entryPath.startsWith("/")) {
         entryPath = entryPath.substring(1);
       }
 
-      JarFileSystem jarFileSystem = JarFileSystem.getInstance();
       VirtualFile jarFile;
       if (withRefresh) {
         jarFile = localFileSystem.refreshAndFindFileByPath(jarPath);
       } else {
         jarFile = localFileSystem.findFileByPath(jarPath);
       }
+      JarFileSystem jarFileSystem = JarFileSystem.getInstance();
       if (jarFile != null) {
         VirtualFile jarRootFile = jarFileSystem.getJarRootForLocalFile(jarFile);
         if (jarRootFile != null) {
@@ -459,9 +486,11 @@ class IdeaFile implements IFileEx {
     }
   }
 
-  public static IdeaFileSystemProvider ourRequestor() {
-    FileSystemProvider provider = FileSystem.getInstance().getFileSystemProvider();
-    assert provider instanceof IdeaFileSystemProvider;
-    return (IdeaFileSystemProvider) provider;
+  public static IdeaFileSystem ourRequestor() {
+    jetbrains.mps.vfs.openapi.FileSystem provider = FileSystem.getInstance().getFileSystemExt();
+    assert provider instanceof IdeaFileSystem;
+    return (IdeaFileSystem) provider;
   }
+
+  private static jetbrains.mps.vfs.openapi.FileSystem ourProvider = new IdeaFileSystem();
 }

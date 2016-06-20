@@ -6,6 +6,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import javax.swing.JTextField;
+
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.openapi.project.Project;
@@ -163,7 +165,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(new IdeaFileSystem());
     templateModelsRoot.setContentRoot(templateModelsDir);
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());

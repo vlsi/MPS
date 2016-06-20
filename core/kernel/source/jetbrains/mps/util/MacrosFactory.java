@@ -189,7 +189,7 @@ public class MacrosFactory {
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MPS_HOME)) {
         String relativePath = removePrefix(path);
-        IFile file = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant(relativePath);
+        IFile file = anchorFile.getFileSystem().getFile(PathManager.getHomePath()).getDescendant(relativePath);
         return IFileUtils.getCanonicalPath(file);
       }
 

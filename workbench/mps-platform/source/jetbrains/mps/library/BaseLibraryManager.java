@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.library.BaseLibraryManager.LibraryState;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
@@ -75,7 +76,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   public final Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (Library lib : getUILibraries()) {
-      result.add(new LibDescriptor(lib.getPath()));
+      result.add(new LibDescriptor(new IdeaFile(lib.getPath())));
     }
     return result;
   }

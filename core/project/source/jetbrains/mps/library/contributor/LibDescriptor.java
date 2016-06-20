@@ -15,25 +15,26 @@
  */
 package jetbrains.mps.library.contributor;
 
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class LibDescriptor implements RepositoryPathDescriptor {
-  private final String myPath;
+  private final IFile myPath;
   @Nullable private final ClassLoader myPluginClassLoader;
 
-  public LibDescriptor(@NotNull String libraryPath, @Nullable ClassLoader pluginDescriptor) {
-    myPath = libraryPath;
+  public LibDescriptor(@NotNull IFile file, @Nullable ClassLoader pluginDescriptor) {
+    myPath = file;
     myPluginClassLoader = pluginDescriptor;
   }
 
-  public LibDescriptor(@NotNull String libraryPath) {
-    this(libraryPath, null);
+  public LibDescriptor(@NotNull IFile file) {
+    this(file, null);
   }
 
   @NotNull
   @Override
-  public String getPath() {
+  public IFile getPath() {
     return myPath;
   }
 

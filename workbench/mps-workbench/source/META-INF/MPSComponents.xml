@@ -11,8 +11,8 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.ide.vfs.FileSystemProviderComponent</interface-class>
-      <implementation-class>jetbrains.mps.ide.vfs.WatchingIdeaFileSystemProvider</implementation-class>
+      <interface-class>jetbrains.mps.ide.vfs.FileSystemComponent</interface-class>
+      <implementation-class>jetbrains.mps.ide.vfs.WatchingIdeaFileSystem</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.smodel.ModelAccess</interface-class>

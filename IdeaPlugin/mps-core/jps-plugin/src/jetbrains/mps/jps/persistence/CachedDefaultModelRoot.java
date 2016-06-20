@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -44,7 +44,8 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
 
   private CachedRepositoryData myCachedRepository;
 
-  public CachedDefaultModelRoot(CachedRepositoryData repo) {
+  public CachedDefaultModelRoot(FileSystem fileSystem, CachedRepositoryData repo) {
+    super(fileSystem);
     myCachedRepository = repo;
   }
 

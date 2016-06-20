@@ -18,7 +18,10 @@ package jetbrains.mps.library.contributor;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.LanguageLibrary;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.vfs.impl.IoFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +48,16 @@ public final class PluginLibraryContributor implements LibraryContributor {
       throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
     }
     final String libraryPath = new File(plugin.getPath(), library.dir).getCanonicalPath();
-    return new LibDescriptor(libraryPath, plugin.getPluginClassLoader());
+    return createLibDescriptor(libraryPath, plugin.getPluginClassLoader());
+  }
+
+  @NotNull
+  private LibDescriptor createLibDescriptor(String path, ClassLoader classLoader) {
+    if (!InternalFlag.isInternalMode()) {
+      return new LibDescriptor(new IoFile(path), classLoader);
+    } else {
+      return new LibDescriptor(new IdeaFile(path), classLoader);
+    }
   }
 
   @Override

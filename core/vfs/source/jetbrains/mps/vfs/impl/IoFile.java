@@ -16,6 +16,9 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.Path;
+import jetbrains.mps.vfs.UniPath;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,17 +29,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * IFile implementation via {@link java.io.File}
+ * TODO rewrite using {@link Path}.
+ */
 public class IoFile implements IFileEx {
-  private File myFile;
+  private final static FileSystem FS = new IoFileSystem();
 
-  IoFile(@NotNull String path) {
+  @NotNull private File myFile; // always absolute
+
+  public IoFile(@NotNull String path) {
     this(new File(path));
   }
 
-  IoFile(@NotNull File file) {
+  public IoFile(@NotNull File file) {
     myFile = file.getAbsoluteFile();
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myFile.getName();
@@ -45,7 +55,9 @@ public class IoFile implements IFileEx {
   @Override
   public IFile getParent() {
     File parentFile = myFile.getParentFile();
-    if (parentFile == null) return null;
+    if (parentFile == null) {
+      return null;
+    }
     return new IoFile(parentFile);
   }
 
@@ -57,7 +69,23 @@ public class IoFile implements IFileEx {
   @NotNull
   @Override
   public String getPath() {
-    return myFile.getAbsolutePath();
+    return toSystemIndependentName(myFile.getAbsolutePath());
+  }
+
+  @NotNull
+  @Override
+  public UniPath toPath() {
+    return UniPath.fromString(myFile.getPath());
+  }
+
+  @NotNull
+  private static String toSystemDependentName(@NotNull String aFileName) {
+    return aFileName.replace(Path.UNIX_SEPARATOR_CHAR, File.separatorChar).replace('\\', File.separatorChar);
+  }
+
+  @NotNull
+  private static String toSystemIndependentName(@NotNull String aFileName) {
+    return aFileName.replace(File.separatorChar, Path.UNIX_SEPARATOR_CHAR).replace('\\', Path.UNIX_SEPARATOR_CHAR);
   }
 
   @Override
@@ -104,8 +132,9 @@ public class IoFile implements IFileEx {
 
   @Override
   public boolean delete() {
-    for (IFile child : getChildren()) {
-      child.delete();
+    List<IFile> children = getChildren();
+    if (children != null) {
+      children.forEach(IFile::delete);
     }
     return myFile.delete();
   }
@@ -145,8 +174,18 @@ public class IoFile implements IFileEx {
 
   @Override
   @NotNull
-  public IFile getDescendant(String suffix) {
+  public IFile getDescendant(@NotNull String suffix) {
     return new IoFile(new File(myFile, suffix));
+  }
+
+  @Override
+  public boolean isArchive() {
+    return myFile.getAbsolutePath().endsWith(".jar");
+  }
+
+  @Override
+  public boolean isInArchive() {
+    return false;
   }
 
   @Override
@@ -194,11 +233,6 @@ public class IoFile implements IFileEx {
   }
 
   @Override
-  public boolean isPackaged() {
-    return false;
-  }
-
-  @Override
   public IFile getBundleHome() {
     return getParent();
   }
@@ -208,7 +242,9 @@ public class IoFile implements IFileEx {
     return myFile.setLastModified(time);
   }
 
+  @NotNull
   @Override
-  public void refresh() {
+  public FileSystem getFileSystem() {
+    return FS;
   }
 }

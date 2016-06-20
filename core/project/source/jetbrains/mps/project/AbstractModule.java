@@ -47,8 +47,9 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -94,8 +95,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public static final String CLASSES_GEN = "classes_gen";
   public static final String CLASSES = "classes";
 
+  private static final jetbrains.mps.vfs.FileSystem ourFS = jetbrains.mps.vfs.FileSystem.getInstance();
   @Nullable
   protected final IFile myDescriptorFile;
+  @NotNull private final FileSystem myFileSystem;
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
@@ -109,8 +112,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     this(null);
   }
 
-  protected AbstractModule(@Nullable IFile myDescriptorFile) {
-    this.myDescriptorFile = myDescriptorFile;
+  protected AbstractModule(@Nullable IFile descriptorFile) {
+    myDescriptorFile = descriptorFile;
+    if (descriptorFile != null) {
+      myFileSystem = descriptorFile.getFileSystem();
+    } else {
+      myFileSystem = ourFS;
+    }
   }
 
   //----reference
@@ -329,7 +337,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     DeploymentDescriptor deplDescriptor = descriptor.getDeploymentDescriptor();
     if (deplDescriptor == null) return;
 
-    final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
+    final IFile bundleHomeFile = getDescriptorFile().getBundleHome();
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
@@ -396,12 +404,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // 3
     for (String jarFile : deplDescriptor.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
-          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+          ? myFileSystem.getFile(PathManager.getHomePath() + jarFile)
           : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
         String path = jar.getPath();
         descriptor.getAdditionalJavaStubPaths().add(path);
-        descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
+        descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(jar));
       }
     }
   }
@@ -539,7 +547,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public boolean isPackaged() {
 //    assertCanRead(); getModuleSourceDir() doesn't require read, why isPackaged() does?
-    return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
+    return getModuleSourceDir() == null || getModuleSourceDir().isInArchive();
   }
 
   /**
@@ -606,7 +614,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void attach(@NotNull SRepository repository) {
     super.attach(repository);
     if (myDescriptorFile != null) {
-      FileSystem.getInstance().addListener(this);
+      ourFS.addListener(this);
     }
     initFacetsAndModels();
   }
@@ -663,7 +671,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void dispose() {
     assertCanChange();
     LOG.trace("Disposing the module " + this);
-    FileSystem.getInstance().removeListener(this);
+    ourFS.removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
     }
@@ -699,7 +707,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           continue;
         }
 
-        ModelRoot root = modelRootFactory.create();
+        ModelRoot root = modelRootFactory.create(new FileModelRootContext(myFileSystem));
         root.load(modelRoot.getMemento());
         result.add(root);
       } catch (Exception e) {

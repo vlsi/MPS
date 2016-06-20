@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,27 @@
  */
 package jetbrains.mps.vfs;
 
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-
-import java.util.Set;
-
 /**
- * evgeny, 11/2/12
+ * These parameters are used by idea virtual file system
+ *
+ * Created by apyshkin on 6/19/16.
  */
-public interface FileSystemListener {
-  @Nullable
-  IFile getFileToListen();
+public final class IdeaCachingContext implements CachingContext {
+  private final boolean myRecursive;
+  private final boolean mySynchronous;
 
-  // todo remove it, too complicated
-  Iterable<FileSystemListener> getListenerDependencies();
+  public IdeaCachingContext(boolean recursive, boolean synchronous) {
+    myRecursive = recursive;
+    mySynchronous = synchronous;
+  }
 
-  void update(ProgressMonitor monitor, FileSystemEvent event);
+  @Override
+  public boolean isRecursive() {
+    return myRecursive;
+  }
 
-  interface FileSystemEvent {
-    Set<IFile> getCreated();
-    Set<IFile> getRemoved();
-    Set<IFile> getChanged();
-    void notify(FileSystemListener listener);
+  @Override
+  public boolean isSynchronous() {
+    return mySynchronous;
   }
 }

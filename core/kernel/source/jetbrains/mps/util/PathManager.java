@@ -32,9 +32,9 @@ public final class PathManager {
   private static final Logger LOG = LogManager.getLogger(PathManager.class);
 
   private static final String FILE = "file";
-  private static final String JAR = "jar";
+  public static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
-  private static final String DOT_JAR = ".jar";
+  public static final String DOT_JAR = ".jar";
 
   private static final String PROTOCOL_DELIMITER = ":";
   private static final String PLUGINS_PATH = "plugins";

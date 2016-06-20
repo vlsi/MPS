@@ -8,6 +8,7 @@ core/aspects/behavior/behavior-legacy-api/classes
 core/analyzers/classes
 core/components/classes
 core/platform/classes
+core/vfs/classes
 core/kernel/classes
 core/kernel/resources/classes
 core/logging/classes

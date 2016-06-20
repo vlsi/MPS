@@ -23,7 +23,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 // todo: rewrite this. all methods should have same signature!
@@ -37,14 +36,14 @@ public class ProjectPathUtil {
       return folderWithClassesGen.getDescendant("classes_gen");
     } else {
       // packaged
-      IFile bundleHome = FileSystem.getInstance().getBundleHome(descriptorFile);
+      IFile bundleHome = descriptorFile.getBundleHome();
       if (bundleHome == null) return null;
 
       // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
       String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
       String jarPath = isGenerator ? (mainPath + "-generator.jar") : (mainPath + ".jar");
 
-      return FileSystem.getInstance().getFileByPath(jarPath);
+      return descriptorFile.getFileSystem().getFile(jarPath);
     }
   }
 
@@ -55,8 +54,8 @@ public class ProjectPathUtil {
     }
     if (moduleDescriptor.isReadOnly()) {
       // packaged
-      String filename = FileSystem.getInstance().getBundleHome(moduleDescriptor).getPath() + "!";
-      return FileSystem.getInstance().getFileByPath(filename);
+      String filename = moduleDescriptor.getBundleHome().getPath() + "!";
+      return moduleDescriptor.getFileSystem().getFile(filename);
     }
     IFile parent = moduleDescriptor.getParent();
     return parent != null ? parent.getDescendant("classes") : null;
@@ -75,7 +74,7 @@ public class ProjectPathUtil {
       return null;
     }
     if (generatorOutputPath != null) {
-      return FileSystem.getInstance().getFileByPath(generatorOutputPath);
+      return moduleSourceDir.getFileSystem().getFile(generatorOutputPath);
     }
     // todo: ???
     if (moduleSourceDir != null) {

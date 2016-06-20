@@ -26,6 +26,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.projectView.BaseProjectViewTestCase;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -69,7 +70,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
     String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
-    DefaultModelRoot root = new DefaultModelRoot();
+    DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
     root.setContentRoot(path);
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

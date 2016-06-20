@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.ex;
+package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.IFile;
-
-public interface IFileEx extends IFile {
-  boolean isPackaged();
-  IFile getBundleHome();
-  boolean setTimeStamp(long time);
-  void refresh();
+/**
+ * Context for the {@link CachingFile#refresh(CachingContext)}
+ *
+ * Created by apyshkin on 6/19/16.
+ */
+public interface CachingContext {
+  boolean isRecursive();
+  boolean isSynchronous();
 }

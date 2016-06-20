@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -52,7 +53,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  public void addPath(@NotNull String path, ModelRoot modelRoot) {
+  public void addPath(@NotNull IFile path, ModelRoot modelRoot) {
     myLock.writeLock().lock();
     try {
 
@@ -66,12 +67,11 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
         myListenerDependencies.add((FileSystemListener) modelRoot.getModule());
       }
 
-      IFile file = FileSystem.getInstance().getFileByPath(path);
-      PathListener listener = new PathListener(file, this);
+      PathListener listener = new PathListener(path, this);
 
-      myPaths.put(path, listener);
+      myPaths.put(path.getPath(), listener);
       if (!(myListeners.isEmpty())) {
-        FileSystem.getInstance().addListener(listener);
+        ((jetbrains.mps.vfs.FileSystem) path.getFileSystem()).addListener(listener);
       }
     } finally {
       myLock.writeLock().unlock();
@@ -116,8 +116,8 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     for (IFile path : paths) {
       String fsPath = path.getPath();
       //at least some programs don't change timestamp of a directory inside jar file after deleting a file in it
-      if (fsPath.contains("!/")){
-        IFile jarFile = FileSystem.getInstance().getFileByPath(fsPath.substring(0, fsPath.lastIndexOf("!/")));
+      if (fsPath.contains(Path.ARCHIVE_SEPARATOR)){
+        IFile jarFile = path.getFileSystem().getFile(fsPath.substring(0, fsPath.lastIndexOf("!/")));
         if (jarFile != null){
           max = Math.max(max, jarFile.lastModified());
           continue; // no need to go deep into jar contents

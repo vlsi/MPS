@@ -1,0 +1,189 @@
+/*
+ * Copyright 2003-2016 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.vfs;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+
+/**
+ * Alike to the {@link java.nio.file.Path}.
+ * Might be absolute or relative.
+ *
+ * The aim of this class is to get rid of working with the file paths (simply Strings) in the client code.
+ * This comprises working with separators as well as working with archives.
+ *
+ * Created by apyshkin on 6/17/16.
+ */
+public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchable {
+  char SYSTEM_SEPARATOR_CHAR = File.separatorChar;
+  String SYSTEM_SEPARATOR = File.separator;
+
+  /**
+   * any path one can get from this API must use this separator
+   * default separator is UNIX-style
+   */
+  char UNIX_SEPARATOR_CHAR = '/'; // this is used for so-called independent paths
+  String UNIX_SEPARATOR = String.valueOf(UNIX_SEPARATOR_CHAR);
+
+  char WIN_SEPARATOR_CHAR = '\\'; // this is used for so-called dependent paths
+  String WIN_SEPARATOR = String.valueOf(WIN_SEPARATOR_CHAR);
+
+  String ZIP = "zip";
+  String DOT_ZIP = "." + ZIP;
+
+  String JAR = "jar";
+  String DOT_JAR = "." + JAR;
+
+  /**
+   * e.g /Users/ap/foo/bar/abc/my-archive.jar!/my/path/within/jar/module.xml
+   *
+   * NB: might be any ZIP as well
+   */
+  String ARCHIVE_SEPARATOR = "!/";
+
+  /**
+   * @return whether the given path is relative or absolute
+   */
+  boolean isRelative();
+
+  /**
+   * @return null iff it is a root folder, the parent Path instance otherwise
+   */
+  @Nullable Path getParent();
+
+  /**
+   * @return the total number of folders and files in this path
+   *
+   * TODO do I need this??
+   */
+  int getNameCount();
+
+  /**
+   * simply a shortcut
+   * @return the actual file name (the last in the whole path)
+   *
+   * TODO do I need this??
+   */
+  default @NotNull String getFileName() {
+    return getName(getNameCount() - 1);
+  }
+
+  /**
+   * @return the index-th name of folder/file
+   * @throws  IllegalArgumentException
+   *          if {@code index} is negative, {@code index} is greater than or
+   *          equal to the number of elements, or this path has zero name
+   *          elements
+   *
+   * TODO do I need this??
+   */
+  @NotNull
+  String getName(int index);
+
+  /**
+   * Separator will become {@link #UNIX_SEPARATOR_CHAR}
+   */
+  @NotNull Path toIndependentPath();
+
+  /**
+   * Separator will become {@link #UNIX_SEPARATOR_CHAR}
+   */
+  @NotNull Path toSystemPath();
+
+  /**
+   * Tests if this path ends with the given path.
+   *
+   * <p> If the given path has <em>N</em> elements, and it is relative
+   * and this path has <em>N</em> or more elements, then this path ends with
+   * the given path if the last <em>N</em> elements of each path, starting at
+   * the element farthest from the root, are equal.
+   *
+   * <p> If the given path is absolute then this path ends with the
+   * given path if the root component of this path <em>ends with</em> the root
+   * component of the given path, and the corresponding elements of both paths
+   * are equal.
+   * If this path does not have a root component and the given path has a root component
+   * then this path does not end with the given path.
+   */
+  boolean endsWith(@NotNull String other);
+
+  boolean endsWith(@NotNull Path other);
+
+  boolean startsWith(@NotNull Path other);
+
+  boolean startsWith(@NotNull String other);
+
+  /**
+   * Constructs a relative path between this path and a given path.
+   *
+   * p2.relativize(p1.resolve(p2)) must be equal to p2
+   *
+   * <p> Relativization is the inverse of {@link #resolve(Path) resolution}.
+   * This method attempts to construct a {@link #isRelative()}  relative} path
+   * that when {@link #resolve(Path) resolved} against this path, yields a
+   * path that locates the same file as the given path. For example, on UNIX,
+   * if this path is {@code "/a/b"} and the given path is {@code "/a/b/c/d"}
+   * then the resulting relative path would be {@code "c/d"}.
+   * When either paths are relative then a relative path also can be constructed (as if we are looking from the current directory).
+   * A relative path cannot be constructed if only one of the paths {@link #isRelative()}.
+   * If this path and the given path are * {@link #equals equal} then an <i>empty path</i> is returned.
+   *
+   * @return  the resulting relative path, or an empty path if both paths are
+   *          equal
+   *
+   * @throws  IllegalArgumentException
+   *          if {@code other} is not a {@code Path} that can be relativized
+   *          against this path
+   */
+  @NotNull Path relativize(@NotNull Path other);
+
+  /**
+   * Returns a {@code Path} object representing the absolute path of this
+   * path.
+   *
+   * <p> If this path is not {@link Path#isRelative()} relative} then it is absolute and this
+   * method simply returns this path. Otherwise, this method resolves the path
+   * in an implementation dependent manner, typically by resolving the path
+   * against a file system default directory. Depending on the implementation,
+   * this method may throw an I/O error if the file system is not accessible.
+   *
+   * @return  a {@code Path} object representing the absolute path
+   *
+   * @throws  java.io.IOError
+   *          if an I/O error occurs
+   */
+  Path toAbsolutePath();
+
+  @NotNull Path resolve(@NotNull Path other);
+
+  @NotNull Path resolve(@NotNull String other);
+
+//  @NotNull Path subpath(int beginIndex, int endIndex);
+//
+//
+//  Path normalize();
+//
+//
+//  Path resolveSibling(Path other);
+//
+//  Path resolveSibling(String other);
+//
+//  Path relativize(Path other);
+//
+//  @NotNull Path toAbsolutePath();
+}

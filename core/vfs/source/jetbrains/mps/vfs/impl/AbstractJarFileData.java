@@ -21,8 +21,8 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.Set;
 
-public class AbstractJarFileData {
-  protected File myFile;
+class AbstractJarFileData {
+  private final File myFile;
 
   public AbstractJarFileData(File file) {
     myFile = file;

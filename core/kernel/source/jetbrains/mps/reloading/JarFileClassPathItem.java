@@ -23,6 +23,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -63,7 +64,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
       path = path.substring(0, path.length() - 2);
     }
     try {
-      myFile = transformFile(FileSystem.getInstance().getFileByPath(path));
+      myFile = transformFile(new IoFileSystem().getFile(path));
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
     } catch (IOException e) {
       LOG.error("invalid class path: " + path, e);

@@ -40,9 +40,9 @@ class JarFileData extends AbstractJarFileData {
 
   private final Object myLock = new Object();
   private boolean isInitialized = false;
-  private Map<String, Set<String>> myFiles = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
-  private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
+  private Map<String, Set<String>> myFiles = new HashMap<>();
+  private Map<String, Set<String>> mySubDirectories = new HashMap<>();
+  private Map<String, ZipEntry> myEntries = new HashMap<>();
 
   JarFileData(File file) {
     super(file);
@@ -88,16 +88,12 @@ class JarFileData extends AbstractJarFileData {
   }
 
   private Set<String> getDirectoriesFor(String dir) {
-    if (mySubDirectories.get(dir) == null) {
-      mySubDirectories.put(dir, new HashSet<String>());
-    }
+    mySubDirectories.putIfAbsent(dir, new HashSet<String>());
     return mySubDirectories.get(dir);
   }
 
   private Set<String> getFilesFor(String dir) {
-    if (myFiles.get(dir) == null) {
-      myFiles.put(dir, new HashSet<String>());
-    }
+    myFiles.putIfAbsent(dir, new HashSet<String>());
     return myFiles.get(dir);
   }
 
@@ -105,7 +101,7 @@ class JarFileData extends AbstractJarFileData {
   InputStream openStream(String path) throws IOException {
     ensureInitialized();
 
-    ZipFile zipFile = new ZipFile(myFile);
+    ZipFile zipFile = new ZipFile(getFile());
     ZipEntry entry = myEntries.get(path);
     return new MyInputStream(zipFile, entry);
   }
@@ -124,7 +120,7 @@ class JarFileData extends AbstractJarFileData {
       isInitialized = true;
       ZipFile zipFile = null;
       try {
-        zipFile = new ZipFile(myFile);
+        zipFile = new ZipFile(getFile());
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
 
         while (entries.hasMoreElements()) {

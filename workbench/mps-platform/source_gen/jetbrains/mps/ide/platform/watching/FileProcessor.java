@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,7 +31,7 @@ public class FileProcessor extends ReloadParticipant {
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
   public FileProcessor() {
-    listenersContainer = ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).getListenersContainer();
+    listenersContainer = ((IdeaFileSystem) FileSystem.getInstance().getFileSystemExt()).getListenersContainer();
   }
   @Override
   public void update(ProgressMonitor monitor) {

@@ -185,7 +185,8 @@ public class Solution extends ReloadableModuleBase {
 
     for (String path : CommonPaths.getMPSPaths(classType)) {
       final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
-      final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(path, modelRootDescriptors);
+      IFile pathFile = myDescriptorFile.getFileSystem().getFile(path);
+      final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(pathFile, modelRootDescriptors);
       if (javaStubsModelRoot != null) {
         modelRootDescriptors.add(javaStubsModelRoot);
         populateModelRoot(classType, javaStubsModelRoot);

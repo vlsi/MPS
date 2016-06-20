@@ -19,5 +19,6 @@
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="module" module-name="vfs" />
   </component>
 </module>

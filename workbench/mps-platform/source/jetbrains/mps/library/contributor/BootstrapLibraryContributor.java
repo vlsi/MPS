@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.library.contributor;
 
+import jetbrains.mps.InternalFlag;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.impl.IoFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,11 +32,21 @@ public final class BootstrapLibraryContributor implements LibraryContributor {
   public Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     for (String path : PathManager.getBootstrapPaths()) {
-      res.add(new LibDescriptor(path));
+      res.add(createLibDescriptor(path));
     }
-    res.add(new LibDescriptor(PathManager.getLanguagesPath()));
+    res.add(createLibDescriptor(PathManager.getLanguagesPath()));
     return res;
   }
+
+  @NotNull
+  private LibDescriptor createLibDescriptor(String path) {
+    if (!InternalFlag.isInternalMode()) {
+      return new LibDescriptor(new IoFile(path));
+    } else {
+      return new LibDescriptor(new IdeaFile(path));
+    }
+  }
+
 
   @Override
   public boolean hiddenLanguages() {

@@ -16,7 +16,7 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.FileSystemProvider;
+import jetbrains.mps.vfs.FileSystemExt;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -27,12 +27,14 @@ import java.io.File;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IoFileSystemProvider implements FileSystemProvider {
-  private static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
+public class IoFileSystem implements FileSystemExt {
+  private static final Logger LOG = LogManager.getLogger(IoFileSystem.class);
 
   @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
+    // fix for MPS-10350; todo move
+    path = path.replace("//", "/").replace("\\\\", "\\");
     if (path.contains("!")) {
       int index = path.indexOf("!");
       String jarPath = path.substring(0, index);

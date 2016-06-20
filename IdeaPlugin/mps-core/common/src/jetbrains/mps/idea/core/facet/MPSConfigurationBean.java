@@ -150,9 +150,6 @@ public class MPSConfigurationBean {
       if (factory == null || (root = factory.create()) == null) {
         continue;
       }
-      if (root == null) {
-        continue;
-      }
       root.load(modelRootDescriptor.getMemento());
       rv.add(root);
     }

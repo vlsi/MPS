@@ -15,27 +15,29 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * The main method is {@link #getFile(String)} which creates a proper {@code IFile}
+ * depending on the implementation.
+ *
  * @author Evgeny Gerashchenko
  */
-public interface FileSystemProvider {
+public interface FileSystemExt extends jetbrains.mps.vfs.openapi.FileSystem {
   /**
-   * Creates an appropriate IFile from the path parameter, depending on the current fs provider and paths itself
+   * These two methods are part of the platform functionality.
+   * @see jetbrains.mps.ide.vfs.IdeaFileSystem implementation for details
    */
-  @NotNull
-  IFile getFile(@NotNull String path);
-
-  /**
-   * Part of platform functionality.
-   * @see jetbrains.mps.ide.vfs.IdeaFileSystemProvider implementation for details
-   */
+  @ToRemove(version = 3.4)
   boolean isFileIgnored(String name);
+
+  @ToRemove(version = 3.4)
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 
   /**
-   * @see FileSystem#runWriteTransaction(Runnable)
+   * @see FileSystemImpl#runWriteTransaction(Runnable)
    * @param r code to execute within platform write lock
    * @return <code>false</code> if an exception was encountered
    */

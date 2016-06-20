@@ -22,7 +22,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
-import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
+import jetbrains.mps.ide.vfs.FileSystemComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.migration.MPSMigration;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -51,7 +51,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   private MPSMigration myMigration;
   private Platform myPlatform;
 
-  public MPSCoreComponents(FileSystemProviderComponent fsProvider,
+  public MPSCoreComponents(FileSystemComponent fsProvider,
       ManagingFS fs,
       ModelAccess access,
       UndoHandler handler) {
