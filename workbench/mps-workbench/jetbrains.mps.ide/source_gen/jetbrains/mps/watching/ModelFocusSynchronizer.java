@@ -45,6 +45,9 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
           }
           mpsProject.getModelAccess().runReadInEDT(new Runnable() {
             public void run() {
+              if (project.isDisposed()) {
+                return;
+              }
               Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
               for (VirtualFile vf : FileEditorManager.getInstance(project).getSelectedFiles()) {
                 if (vf instanceof MPSNodeVirtualFile) {
