@@ -2473,6 +2473,9 @@
               <node concept="Xl_RD" id="6gjr9XnnBSn" role="37wK5m">
                 <property role="Xl_RC" value="kernel" />
               </node>
+              <node concept="Xl_RD" id="2qLBPEM_KpV" role="37wK5m">
+                <property role="Xl_RC" value="logging" />
+              </node>
               <node concept="Xl_RD" id="54NGB9X$QUO" role="37wK5m">
                 <property role="Xl_RC" value="openapi" />
               </node>
