@@ -4297,9 +4297,17 @@
                       <node concept="3clFbF" id="3pzB6wMVHVX" role="3cqZAp">
                         <node concept="2OqwBi" id="3pzB6wMVHVY" role="3clFbG">
                           <node concept="2OqwBi" id="3pzB6wMVHVZ" role="2Oq$k0">
-                            <node concept="2ShNRf" id="3pzB6wMVHWb" role="2Oq$k0">
-                              <node concept="1pGfFk" id="3pzB6wMVHWc" role="2ShVmc">
-                                <ref role="37wK5l" to="1gam:5OeL7nc8$v7" resolve="JavaCompileFacetInitializer" />
+                            <node concept="2OqwBi" id="5nerzVuvej8" role="2Oq$k0">
+                              <node concept="2ShNRf" id="3pzB6wMVHWb" role="2Oq$k0">
+                                <node concept="1pGfFk" id="3pzB6wMVHWc" role="2ShVmc">
+                                  <ref role="37wK5l" to="1gam:5OeL7nc8$v7" resolve="JavaCompileFacetInitializer" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="5nerzVuveql" role="2OqNvi">
+                                <ref role="37wK5l" to="1gam:5OeL7nc8$wR" resolve="skipCompilation" />
+                                <node concept="37vLTw" id="5nerzVuvexY" role="37wK5m">
+                                  <ref role="3cqZAo" to="jo3e:5nerzVuuG97" resolve="mySkipCompilation" />
+                                </node>
                               </node>
                             </node>
                             <node concept="liA8E" id="3pzB6wMVHW1" role="2OqNvi">

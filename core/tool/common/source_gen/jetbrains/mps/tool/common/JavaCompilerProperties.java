@@ -5,6 +5,7 @@ package jetbrains.mps.tool.common;
 
 public class JavaCompilerProperties {
   private static final String TARGET_JAVA_VERSION = "target";
+  private static final String SKIP_COMPILATION = "skipCompilation";
   private Script myScript;
   public JavaCompilerProperties(Script script) {
     myScript = script;
@@ -16,5 +17,10 @@ public class JavaCompilerProperties {
   public String getTargetJavaVersion() {
     return myScript.getProperty(TARGET_JAVA_VERSION);
   }
-
+  public void setSkipCompilation(boolean skipCompilation) {
+    myScript.putProperty(SKIP_COMPILATION, Boolean.toString(skipCompilation));
+  }
+  public boolean isSkipCompilation() {
+    return Boolean.valueOf(myScript.getProperty(SKIP_COMPILATION));
+  }
 }

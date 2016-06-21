@@ -115,7 +115,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
       @Override
       public void setup(IPropertiesPool ppool) {
-        new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
+        new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
         new TextGenFacetInitializer(session).populate(ppool);
       }
     };
