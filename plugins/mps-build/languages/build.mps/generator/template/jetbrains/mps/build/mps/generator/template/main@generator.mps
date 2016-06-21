@@ -3418,21 +3418,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="Kfbl0tE7$8" role="3cqZAp" />
-            <node concept="3cpWs8" id="5FYEjygh0lM" role="3cqZAp">
-              <node concept="3cpWsn" id="5FYEjygh0lN" role="3cpWs9">
-                <property role="TrG5h" value="reporter" />
-                <node concept="3uibUv" id="5FYEjygh0lK" role="1tU5fm">
-                  <ref role="3uigEE" to="tken:6tgFcy$kZBa" resolve="ModuleChecker.Reporter" />
-                </node>
-                <node concept="2ShNRf" id="5FYEjygh0lO" role="33vP2m">
-                  <node concept="1pGfFk" id="5FYEjygh0lP" role="2ShVmc">
-                    <ref role="37wK5l" to="tken:6tgFcy$l45m" resolve="ModuleChecker.Reporter" />
-                    <node concept="1iwH7S" id="5FYEjygh0lQ" role="37wK5m" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="5FYEjygh0r1" role="3cqZAp" />
             <node concept="3cpWs8" id="1jjYQYShPdy" role="3cqZAp">
               <node concept="3cpWsn" id="1jjYQYShPdz" role="3cpWs9">
                 <property role="TrG5h" value="parts" />
@@ -3582,8 +3567,8 @@
                       </node>
                     </node>
                     <node concept="2YIFZM" id="5FYEjyggO3v" role="2Oq$k0">
-                      <ref role="37wK5l" to="tken:6tgFcy$pHfm" resolve="createModuleChecker" />
                       <ref role="1Pybhc" to="tken:3HwLahs69DJ" resolve="ModuleLoader" />
+                      <ref role="37wK5l" to="tken:16ApZ_pNEbP" resolve="createModuleChecker" />
                       <node concept="37vLTw" id="5FYEjyggO3x" role="37wK5m">
                         <ref role="3cqZAo" node="2L4pT56hSIo" resolve="module" />
                       </node>
@@ -3594,9 +3579,6 @@
                         <ref role="3cqZAo" node="2hkCNA7Z2nu" resolve="pathConverter" />
                       </node>
                       <node concept="1iwH7S" id="5FYEjyggO5_" role="37wK5m" />
-                      <node concept="37vLTw" id="5FYEjygh0lR" role="37wK5m">
-                        <ref role="3cqZAo" node="5FYEjygh0lN" resolve="reporter" />
-                      </node>
                     </node>
                   </node>
                 </node>

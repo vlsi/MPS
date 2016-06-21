@@ -49,8 +49,8 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -1238,8 +1238,6 @@ public class QueriesGenerated {
       VisibleModules visibleModules = new VisibleModules(project);
       visibleModules.collect();
 
-      ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(_context);
-
       Iterable<SNode> parts = SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"));
       parts = Sequence.fromIterable(parts).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -1261,7 +1259,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        ModuleLoader.createModuleChecker(module, visibleModules, pathConverter, _context, reporter).check(ModuleChecker.CheckType.LOAD_ALL);
+        ModuleLoader.createModuleChecker(module, visibleModules, pathConverter, _context).check(ModuleChecker.CheckType.LOAD_ALL);
       }
 
       // move generators outside language 

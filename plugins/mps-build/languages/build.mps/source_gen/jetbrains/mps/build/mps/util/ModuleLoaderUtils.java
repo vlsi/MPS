@@ -24,13 +24,13 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 
 public class ModuleLoaderUtils {
-  public static SNode getOriginalModule(SNode module, TemplateQueryContext genContext) {
+  /*package*/ static SNode getOriginalModule(SNode module, TemplateQueryContext genContext) {
     SNode originalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     return (originalModule != null ? originalModule : module);
   }
 
-  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
-    MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, originalModule, reporter);
+  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode module, ModuleChecker.Reporter reporter) {
+    MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, module, reporter);
     String path = moduleDescriptorFile.getPath();
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       return LanguageDescriptorPersistence.loadLanguageDescriptor(moduleDescriptorFile, helper);
@@ -47,10 +47,10 @@ public class ModuleLoaderUtils {
     private final TemplateQueryContext genContext;
     private final SNode originalModule;
     private final ModuleChecker.Reporter reporter;
-    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
+    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode module, ModuleChecker.Reporter reporter) {
       this.moduleSourceDir = moduleSourceDir;
       this.genContext = genContext;
-      this.originalModule = originalModule;
+      this.originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
       this.reporter = reporter;
     }
     @Override

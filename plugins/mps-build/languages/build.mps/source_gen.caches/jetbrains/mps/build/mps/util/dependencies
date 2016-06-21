@@ -78,6 +78,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.ModuleChecker" file="ModuleChecker.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

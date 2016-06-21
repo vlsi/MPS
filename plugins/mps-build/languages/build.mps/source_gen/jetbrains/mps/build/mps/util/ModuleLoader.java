@@ -17,12 +17,10 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ModuleLoader {
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
-    SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
-
     String moduleFilePath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext()));
     if (moduleFilePath == null) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())) + ")", originalModule, null);
-      return new ModuleChecker(module, originalModule, visible, pathConverter, null, null, reporter);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())) + ")", null, null);
+      return new ModuleChecker(module, visible, pathConverter, null, null, reporter);
     }
 
     try {
@@ -33,28 +31,35 @@ public class ModuleLoader {
 
     IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
     if (!(file.exists())) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + moduleFilePath + ")", originalModule, null);
-      return new ModuleChecker(module, originalModule, visible, pathConverter, null, null, reporter);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + moduleFilePath + ")", null, null);
+      return new ModuleChecker(module, visible, pathConverter, null, null, reporter);
     }
     if (file.isDirectory()) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file is a directory (" + moduleFilePath + ")", originalModule, null);
-      return new ModuleChecker(module, originalModule, visible, pathConverter, null, null, reporter);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file is a directory (" + moduleFilePath + ")", null, null);
+      return new ModuleChecker(module, visible, pathConverter, null, null, reporter);
     }
 
     ModuleDescriptor md = null;
     try {
-      md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, originalModule, reporter);
+      md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, module, reporter);
       if (md.getLoadException() != null) {
-        reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + md.getLoadException().getMessage(), originalModule, null);
+        reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + md.getLoadException().getMessage(), null, null);
       }
     } catch (Exception ex) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + ex.getMessage(), originalModule, ex);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + ex.getMessage(), null, ex);
       ex.printStackTrace(System.err);
     }
 
-    return new ModuleChecker(module, originalModule, visible, pathConverter, file, md, reporter);
+    return new ModuleChecker(module, visible, pathConverter, file, md, reporter);
   }
+
+  public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
+    SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
+    return createModuleChecker(module, visible, pathConverter, genContext, new ModuleChecker.Reporter(genContext, originalModule));
+  }
+
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter) {
-    return createModuleChecker(module, visible, pathConverter, null, new ModuleChecker.Reporter(null));
+    return createModuleChecker(module, visible, pathConverter, null, new ModuleChecker.Reporter(null, module));
   }
+
 }
