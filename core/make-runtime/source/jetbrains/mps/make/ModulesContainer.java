@@ -46,13 +46,8 @@ class ModulesContainer {
     return moduleSources;
   }
 
-  public boolean hasNoExcludedModule() {
-    for (SModule m : myModules) {
-      if (!isExcluded(m)) {
-        return true;
-      }
-    }
-    return false;
+  public boolean hasModuleToCompile() {
+    return myModules.stream().anyMatch(module -> !isExcluded(module));
   }
 
   public boolean isDirty(@NotNull SModule m) {

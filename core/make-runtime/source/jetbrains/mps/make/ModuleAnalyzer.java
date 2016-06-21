@@ -15,19 +15,18 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.messages.IMessage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
+ * module sources analysis before compilation.
+ *
  * Created by apyshkin on 5/25/16.
  */
 class ModuleAnalyzer {
@@ -38,7 +37,6 @@ class ModuleAnalyzer {
   }
 
   public ModuleAnalyzerResult analyze() {
-    List<IMessage> errors = new ArrayList<>();
     boolean hasJavaToCompile = false;
     boolean hasResourcesToUpdate = false;
     Set<SModule> modulesWithRemovals = new HashSet<>();
@@ -57,7 +55,7 @@ class ModuleAnalyzer {
       }
     }
 
-    return ModuleAnalyzerResult.build(hasJavaToCompile, hasResourcesToUpdate, modulesWithRemovals, filesToDelete, errors);
+    return ModuleAnalyzerResult.build(hasJavaToCompile, hasResourcesToUpdate, modulesWithRemovals, filesToDelete);
   }
 
   /**
@@ -69,18 +67,15 @@ class ModuleAnalyzer {
     public final boolean hasResourcesToUpdate;
     @NotNull public final Set<SModule> modulesWithRemovals;
     @NotNull public final Set<File> filesToDelete;
-    @NotNull public final List<IMessage> messages;
 
     private ModuleAnalyzerResult(
         boolean hasJavaToCompile,
         boolean hasResourcesToUpdate,
         @NotNull Set<SModule> modulesWithRemovals,
-        @NotNull Set<File> filesToDelete,
-        @NotNull List<IMessage> messages) {
+        @NotNull Set<File> filesToDelete) {
       this.hasJavaToCompile = hasJavaToCompile;
       this.hasResourcesToUpdate = hasResourcesToUpdate;
       this.modulesWithRemovals = modulesWithRemovals;
-      this.messages = messages;
       this.filesToDelete = filesToDelete;
     }
 
@@ -88,9 +83,8 @@ class ModuleAnalyzer {
         boolean hasJavaToCompile,
         boolean hasResourcesToUpdate,
         Set<SModule> modulesWithRemovals,
-        Set<File> filesToDelete,
-        List<IMessage> errors) {
-      return new ModuleAnalyzerResult(hasJavaToCompile, hasResourcesToUpdate, modulesWithRemovals, filesToDelete, errors);
+        Set<File> filesToDelete) {
+      return new ModuleAnalyzerResult(hasJavaToCompile, hasResourcesToUpdate, modulesWithRemovals, filesToDelete);
     }
   }
 

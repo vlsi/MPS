@@ -69,27 +69,23 @@ class InternalJavaCompiler {
 
   @NotNull
   public MPSCompilationResult compile() {
-    if (!myModulesContainer.hasNoExcludedModule()) {
+    if (!myModulesContainer.hasModuleToCompile()) {
       return MPSCompilationResult.ZERO_COMPILATION_RESULT;
     }
+
     myTracer.push(PREPARING_TO_COMPILE_MSG);
+
     ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer).analyze();
-    EclipseJavaCompiler compiler = new EclipseJavaCompiler();
-    for (SModule module : myModulesContainer.getModules()) {
-      if (!myModulesContainer.areClassesUpToDate(module)) {
-        for (JavaFile javaFile : myModulesContainer.getSources(module).getFilesToCompile()) {
-          compiler.addSource(javaFile.getClassName(), javaFile.getContents());
-          myModulesContainer.putClassForModule(javaFile.getClassName(), module);
-        }
-      }
-    }
-    myTracer.pop();
-
-    invalidateCompiledClasses(analysisResult.modulesWithRemovals);
-
     if (!analysisResult.hasJavaToCompile && !analysisResult.hasResourcesToUpdate) {
+      myTracer.pop();
       return MPSCompilationResult.nothingToDoCompilationResult();
     }
+
+    analysisResult.filesToDelete.forEach(FileUtil::delete); // removing all stale files
+    EclipseJavaCompiler compiler = collectSources();
+    invalidateCompiledClasses(analysisResult.modulesWithRemovals);
+
+    myTracer.pop();
 
     MPSCompilationResult result;
     if (!analysisResult.hasJavaToCompile) {
@@ -103,6 +99,22 @@ class InternalJavaCompiler {
     copyResources();
 
     return result;
+  }
+
+  /**
+   * @return eclipse java compiler with sources attached
+   */
+  private EclipseJavaCompiler collectSources() {
+    EclipseJavaCompiler compiler = new EclipseJavaCompiler();
+    for (SModule module : myModulesContainer.getModules()) {
+      if (!myModulesContainer.areClassesUpToDate(module)) {
+        for (JavaFile javaFile : myModulesContainer.getSources(module).getFilesToCompile()) {
+          compiler.addSource(javaFile.getClassName(), javaFile.getContents());
+          myModulesContainer.putClassForModule(javaFile.getClassName(), module);
+        }
+      }
+    }
+    return compiler;
   }
 
   private void copyResources() {

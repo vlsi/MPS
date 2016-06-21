@@ -74,7 +74,7 @@ public class ModuleSources {
   }
 
   public boolean isUpToDate() {
-    return myFilesToDelete.isEmpty() && myFilesToCompile.isEmpty() && myResourcesToCopy.isEmpty();
+    return isJavaUpToDate() && isResourcesUpToDate();
   }
 
   public boolean isJavaUpToDate() {
