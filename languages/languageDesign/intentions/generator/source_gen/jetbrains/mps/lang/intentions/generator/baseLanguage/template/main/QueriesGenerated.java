@@ -166,6 +166,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_2230972008180722563(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
   }
+  public static boolean ifMacro_Condition_8879227374728238185(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
+  }
+  public static boolean ifMacro_Condition_8879227374728208773(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
+  }
   public static boolean ifMacro_Condition_7506079045411026961(final IfMacroContext _context) {
     return ((Boolean) _context.getVariable("var:isError"));
   }
