@@ -11,6 +11,7 @@
   <property name="teamcity.buildConfName" value="local" />
   <property file="${basedir}/build.number" prefix="loaded.for.idea.platform.build.number" />
   <property name="idea.platform.build.number" value="${loaded.for.idea.platform.build.number.idea.platform.build.number}" />
+  <property name="mps.build.counter" value="SNAPSHOT" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />
   <property name="artifacts.mpsTroveCollections" location="${build.dir}/artifacts/mpsTroveCollections" />
@@ -168,6 +169,14 @@
     </zip>
     <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${mpsBootstrapCore.version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
     <copy todir="${build.layout}">
+      <fileset file="${basedir}/build.txt" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="SNAPSHOT" replace="${mps.build.counter}" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <copy todir="${build.layout}">
       <fileset file="${basedir}/about.txt" />
     </copy>
     <copy todir="${build.layout}">
@@ -181,7 +190,7 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <echo file="${build.layout}/build.properties">mps.build.number=${build.number}${line.separator}mps.date=${date}${line.separator}mps.build.vcs.number=${build.vcs.number}${line.separator}mps.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">mps.build.number=${build.number}${line.separator}mps.date=${date}${line.separator}mps.build.vcs.number=${build.vcs.number}${line.separator}mps.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents">

@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
   </languages>
   <imports />
   <registry>
@@ -18069,6 +18069,16 @@
         </node>
       </node>
     </node>
+    <node concept="2kB4xC" id="7i$e6qbZNLR" role="1l3spd">
+      <property role="TrG5h" value="mps.build.counter" />
+      <node concept="aVJcg" id="7i$e6qbZNMg" role="aVJcv">
+        <node concept="NbPM2" id="7i$e6qbZNMf" role="aVJcq">
+          <node concept="3Mxwew" id="7i$e6qbZNMe" role="3MwsjC">
+            <property role="3MwjfP" value="SNAPSHOT" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="398rNT" id="3IKDaVZoWUz" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
       <node concept="55IIr" id="3IKDaVZoWU$" role="398pKh" />
@@ -18328,6 +18338,22 @@
             <node concept="3Mxwey" id="6DMiG0xqdhg" role="3MwsjC">
               <ref role="3Mxwex" node="d_WKSiP3Fm" resolve="idea.platform.build.number" />
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="28jJK3" id="3$BamnXnUZ_" role="39821P">
+        <node concept="1688n2" id="7i$e6qbZNMm" role="28jJR8">
+          <property role="1688n3" value="SNAPSHOT" />
+          <property role="1688n6" value="gi" />
+          <node concept="NbPM2" id="7i$e6qbZNMo" role="1688n0">
+            <node concept="3Mxwey" id="7i$e6qbZNMs" role="3MwsjC">
+              <ref role="3Mxwex" node="7i$e6qbZNLR" resolve="mps.build.counter" />
+            </node>
+          </node>
+        </node>
+        <node concept="55IIr" id="3$BamnXnUZB" role="28jJRO">
+          <node concept="2Ry0Ak" id="3$BamnXnV1p" role="iGT6I">
+            <property role="2Ry0Am" value="build.txt" />
           </node>
         </node>
       </node>
