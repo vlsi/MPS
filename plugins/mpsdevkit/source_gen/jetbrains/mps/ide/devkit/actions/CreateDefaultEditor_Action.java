@@ -95,7 +95,11 @@ public class CreateDefaultEditor_Action extends BaseAction {
     assert ((SNode) BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("getConceptDeclaration", null, "67EYkym$wx3"))) != null;
     assert eq_e50aup_a0d0h(((SNode) BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("getConceptDeclaration", null, "67EYkym$wx3"))), conceptDeclaration);
     BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("createDefaultEditor", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "2$SWsiCt8Y$"), ((boolean) false));
-    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
+    if (((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorPanelManager() != null) {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorPanelManager().openEditor(editorDeclaration);
+    } else {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
+    }
   }
   private static boolean eq_e50aup_a0d0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

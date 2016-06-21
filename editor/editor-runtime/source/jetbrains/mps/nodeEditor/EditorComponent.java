@@ -72,6 +72,7 @@ import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
 import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
 import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
+import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
@@ -1369,7 +1370,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private EditorContext createEditorContextForActions() {
-    return new EditorContext(this, getEditedNode() != null ? getEditedNode().getModel() : null, myRepository);
+    return new EditorContext(this, getEditedNode() != null ? getEditedNode().getModel() : null, myRepository, myEditorConfiguration,
+        new DisabledContextAssistantManager());
   }
 
   @NotNull
