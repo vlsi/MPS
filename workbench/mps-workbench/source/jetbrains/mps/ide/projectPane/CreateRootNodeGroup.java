@@ -108,16 +108,26 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     enable(event.getPresentation());
 
-    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllLanguageImports(targetModel));
 
     Collection<SLanguage> mainLanguages = LanguageAspectSupport.getMainLanguages(targetModel);
     for (SLanguage mainLang: mainLanguages){
-      modelLanguages.remove(mainLang);
-
       addActionsForRoots(mainLang, targetModel, this);
-      addSeparator();
     }
+    addSeparator();
 
+    Collection<SLanguage> additionalLanguages = LanguageAspectSupport.getAdditionalLanguages(targetModel);
+    additionalLanguages.removeAll(mainLanguages);
+    for (SLanguage addLang: additionalLanguages){
+      String name = addLang.getQualifiedName();
+      DefaultActionGroup langGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
+      addActionsForRoots(addLang, targetModel, langGroup);
+      add(langGroup);
+    }
+    addSeparator();
+
+    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllLanguageImports(targetModel));
+    modelLanguages.removeAll(mainLanguages);
+    mainLanguages.removeAll(additionalLanguages);
     Collections.sort(modelLanguages, new ToStringComparator());
 
     ArrayList<DefaultActionGroup> byLanguage = new ArrayList<DefaultActionGroup>();

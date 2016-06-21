@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
 
@@ -54,7 +54,7 @@ public class BuildAllConstraints_Action extends BaseAction {
         Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
         models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
           public SModel select(Language it) {
-            return LanguageAspect.CONSTRAINTS.get(it);
+            return SModuleOperations.getAspect(it, "constraints");
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {

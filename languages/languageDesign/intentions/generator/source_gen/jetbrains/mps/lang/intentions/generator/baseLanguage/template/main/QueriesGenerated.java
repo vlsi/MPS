@@ -8,7 +8,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,6 +25,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.intentions.util.TypeCalculator;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
@@ -36,7 +38,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3914914270862159528(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"))).isNotEmpty() || ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty()) && LanguageAspect.INTENTIONS.is(model);
+    return (ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"))).isNotEmpty() || ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty()) && SModuleOperations.isAspect(model, "intentions");
+  }
+  public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "intentions") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), null)).isNotEmpty();
   }
   public static Object propertyMacro_GetPropertyValue_1889794043260133526(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -214,6 +219,12 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_5337495886742237353(final SourceSubstituteMacroNodeContext _context) {
     return TypeCalculator.parameterType(_context.getNode());
+  }
+  public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".IntentionsDescriptor";
+  }
+  public static Object templateArgumentQuery_5700381506346626450(final TemplateArgumentContext _context) {
+    return SNodeOperations.getNode("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)", "~IntentionAspectDescriptor");
   }
   public static Iterable<SNode> sourceNodesQuery_1889794043260277244(final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:i1"));

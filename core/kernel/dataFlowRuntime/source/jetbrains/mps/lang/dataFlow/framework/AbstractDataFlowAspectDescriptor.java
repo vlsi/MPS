@@ -32,4 +32,5 @@ public abstract class AbstractDataFlowAspectDescriptor implements DataFlowAspect
   public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
     return Collections.emptyList();
   }
+
 }

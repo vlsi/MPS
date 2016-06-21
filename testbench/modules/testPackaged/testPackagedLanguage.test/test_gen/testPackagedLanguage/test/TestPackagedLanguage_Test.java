@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import javax.swing.Icon;
@@ -30,7 +30,7 @@ public class TestPackagedLanguage_Test extends TestCase {
   public void test_testStructureModel() throws Exception {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel struc = LanguageAspect.STRUCTURE.get(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class));
+        SModel struc = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class), "structure");
         Assert.assertNotNull(struc);
         Assert.assertEquals(ListSequence.fromList(SModelOperations.roots(struc, null)).count(), 1);
       }
@@ -39,7 +39,7 @@ public class TestPackagedLanguage_Test extends TestCase {
   public void test_testEditorModel() throws Exception {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel editor = LanguageAspect.EDITOR.get(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class));
+        SModel editor = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class), "editor");
         Assert.assertNotNull(editor);
         Assert.assertEquals(ListSequence.fromList(SModelOperations.roots(editor, null)).count(), 1);
       }

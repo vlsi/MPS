@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -37,7 +37,7 @@ public class SampleDeclMigration extends MigrationScriptBase {
     // get all old instances in all models of the module 
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return !(LanguageAspect.MIGRATION.is(it));
+        return !(SModuleOperations.isAspect(it, "migration"));
       }
     });
     Iterable<SNode> components = SNodeOperations.ofConcept(Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {

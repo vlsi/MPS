@@ -14,10 +14,11 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -60,7 +61,7 @@ public final class GoToRulesHelper {
     if (language == null) {
       return Collections.emptyList();
     }
-    SModel typesystem = LanguageAspect.TYPESYSTEM.get(language);
+    SModel typesystem = SModuleOperations.getAspect(language, "typesystem");
     if (typesystem == null) {
       return Collections.emptyList();
     }
@@ -74,8 +75,10 @@ public final class GoToRulesHelper {
 
     return rules;
   }
-  private static Language getDeclaringLanguage(SNode concept) {
-    SModule module = concept.getModel().getModule();
+  private static Language getDeclaringLanguage(@NotNull SNode concept) {
+    SModel model = concept.getModel();
+    assert model != null : "This editor has had to be closed as the concept node was already removed";
+    SModule module = model.getModule();
     if (module instanceof Language) {
       return (Language) module;
     }

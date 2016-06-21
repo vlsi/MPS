@@ -12,10 +12,10 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
         <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
     </language>

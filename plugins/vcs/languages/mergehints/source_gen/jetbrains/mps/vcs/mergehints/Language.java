@@ -37,17 +37,25 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == EditorAspectDescriptor.class) {
-      return (T) new EditorAspectDescriptorImpl();
+    if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
+      if (aspectClass == EditorAspectDescriptor.class) {
+        return (T) new EditorAspectDescriptorImpl();
+      }
     }
-    if (aspectClass == IntentionAspectDescriptor.class) {
-      return (T) new IntentionsDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
+      if (aspectClass == IntentionAspectDescriptor.class) {
+        return (T) new IntentionsDescriptor();
+      }
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor();
+      }
     }
-    if (aspectClass == ConceptPresentationAspect.class) {
-      return (T) new ConceptPresentationAspectImpl();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
     }
     return super.createAspect(aspectClass);
   }

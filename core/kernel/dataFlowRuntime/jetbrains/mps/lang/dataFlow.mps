@@ -2,11 +2,10 @@
 <model ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6/r:a1d8bbbf-d4f0-431f-8dcd-a6badc777315(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.dataFlow)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -28,8 +27,9 @@
     <import index="48b2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.cleanup(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -67,10 +67,6 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
-      </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -270,6 +266,12 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
+    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
+      <concept id="6171083915388330090" name="jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression" flags="ng" index="1qvjxa">
+        <reference id="6171083915388597767" name="aspect" index="1quiSB" />
+        <child id="6171083915388330091" name="lang" index="1qvjxb" />
+      </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -505,6 +507,14 @@
     </node>
     <node concept="2tJIrI" id="3LlMlIU2hrS" role="jymVt" />
     <node concept="3clFbW" id="3HJD4JbIvBv" role="jymVt">
+      <node concept="2AHcQZ" id="qrAFe9j8mh" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="qrAFe9j8me" role="lGtFl">
+        <node concept="TZ5HI" id="qrAFe9j8mf" role="3nqlJM">
+          <node concept="TZ5HA" id="qrAFe9j8mg" role="3HnX3l" />
+        </node>
+      </node>
       <node concept="3Tm1VV" id="3HJD4JbIvBw" role="1B3o_S" />
       <node concept="37vLTG" id="3HJD4JbIvBx" role="3clF46">
         <property role="TrG5h" value="dataFlowManager" />
@@ -526,14 +536,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="qrAFe9j8me" role="lGtFl">
-        <node concept="TZ5HI" id="qrAFe9j8mf" role="3nqlJM">
-          <node concept="TZ5HA" id="qrAFe9j8mg" role="3HnX3l" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="qrAFe9j8mh" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="3clFb_" id="3LlMlIU252u" role="jymVt">
@@ -677,6 +679,7 @@
               </node>
               <node concept="3clFbS" id="3HJD4JbIvCn" role="3clFbx">
                 <node concept="3clFbF" id="3HJD4JbIvCo" role="3cqZAp">
+                  <node concept="15s5l7" id="3LlMlIU2jJE" role="lGtFl" />
                   <node concept="2OqwBi" id="3HJD4JbIvCp" role="3clFbG">
                     <node concept="37vLTw" id="qrAFe9ji_f" role="2Oq$k0">
                       <ref role="3cqZAo" node="qrAFe9jhSa" resolve="dataFlowBuilder" />
@@ -691,7 +694,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="15s5l7" id="3LlMlIU2jJE" role="lGtFl" />
                 </node>
                 <node concept="3zACq4" id="3HJD4JbIvCx" role="3cqZAp" />
               </node>
@@ -2004,26 +2006,17 @@
   <node concept="312cEu" id="3HJD4JbIwf_">
     <property role="TrG5h" value="DataFlowBuilder" />
     <property role="1sVAO0" value="true" />
+    <node concept="3uibUv" id="4dNj9j_76Qf" role="EKbjA">
+      <ref role="3uigEE" to="1fjm:~IDataFlowBuilder" resolve="IDataFlowBuilder" />
+    </node>
     <node concept="2tJIrI" id="4dNj9j_5KJa" role="jymVt" />
     <node concept="3Tm1VV" id="3HJD4JbIwfA" role="1B3o_S" />
     <node concept="3clFb_" id="3HJD4JbIwfE" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="build" />
-      <node concept="3Tm1VV" id="3HJD4JbIwfF" role="1B3o_S" />
-      <node concept="3cqZAl" id="3HJD4JbIwfG" role="3clF45" />
-      <node concept="37vLTG" id="3HJD4JbIwfH" role="3clF46">
-        <property role="TrG5h" value="operationContext" />
-        <node concept="3uibUv" id="3HJD4JbIwfI" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-        </node>
+      <node concept="2AHcQZ" id="4dNj9j_5KJN" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
-      <node concept="37vLTG" id="3HJD4JbIwfJ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="3HJD4JbIwfK" role="1tU5fm">
-          <ref role="3uigEE" node="3HJD4JbIvKw" resolve="DataFlowBuilderContext" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3HJD4JbIwfL" role="3clF47" />
       <node concept="P$JXv" id="4dNj9j_5KJK" role="lGtFl">
         <node concept="TZ5HI" id="4dNj9j_5KJL" role="3nqlJM">
           <node concept="TZ5HA" id="4dNj9j_5KJM" role="3HnX3l" />
@@ -2045,9 +2038,21 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="4dNj9j_5KJN" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      <node concept="3Tm1VV" id="3HJD4JbIwfF" role="1B3o_S" />
+      <node concept="3cqZAl" id="3HJD4JbIwfG" role="3clF45" />
+      <node concept="37vLTG" id="3HJD4JbIwfH" role="3clF46">
+        <property role="TrG5h" value="operationContext" />
+        <node concept="3uibUv" id="3HJD4JbIwfI" role="1tU5fm">
+          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
+        </node>
       </node>
+      <node concept="37vLTG" id="3HJD4JbIwfJ" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="3HJD4JbIwfK" role="1tU5fm">
+          <ref role="3uigEE" node="3HJD4JbIvKw" resolve="DataFlowBuilderContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3HJD4JbIwfL" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4dNj9j_5KkV" role="jymVt" />
     <node concept="3clFb_" id="4dNj9j_5Kld" role="jymVt">
@@ -2073,12 +2078,41 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="4dNj9j_76Qf" role="EKbjA">
-      <ref role="3uigEE" to="1fjm:~IDataFlowBuilder" resolve="IDataFlowBuilder" />
-    </node>
   </node>
   <node concept="312cEu" id="3HJD4JbIwfM">
     <property role="TrG5h" value="DataFlowManager" />
+    <node concept="2AHcQZ" id="qrAFe9joRj" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="5uYjGaoZrK7" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="5uYjGaoZvcq" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="5uYjGaoZvdv" role="2B70Vg">
+          <property role="$nhwW" value="3.4" />
+        </node>
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="qrAFe9joRg" role="lGtFl">
+      <node concept="TZ5HI" id="qrAFe9joRh" role="3nqlJM">
+        <node concept="TZ5HA" id="qrAFe9joRi" role="3HnX3l">
+          <node concept="1dT_AC" id="5uYjGaoZwh0" role="1dT_Ay">
+            <property role="1dT_AB" value="use " />
+          </node>
+          <node concept="1dT_AA" id="5uYjGaoZwhp" role="1dT_Ay">
+            <node concept="92FcH" id="5uYjGaoZwoZ" role="qph3F">
+              <node concept="TZ5HA" id="5uYjGaoZwp1" role="2XjZqd" />
+              <node concept="VXe08" id="5uYjGaoZIgd" role="92FcQ">
+                <ref role="VXe09" node="3HJD4JbIvBk" resolve="MPSProgramBuilder" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5uYjGaoZwho" role="1dT_Ay">
+            <property role="1dT_AB" value=" directly to build program" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="3HJD4JbIwfN" role="1B3o_S" />
     <node concept="3uibUv" id="3MUxWWhZPrm" role="EKbjA">
       <ref role="3uigEE" to="wyuk:~CoreComponent" resolve="CoreComponent" />
@@ -2473,20 +2507,14 @@
             <node concept="3cpWs8" id="77rbAYG3qRZ" role="3cqZAp">
               <node concept="3cpWsn" id="77rbAYG3qRH" role="3cpWs9">
                 <property role="TrG5h" value="dfaModel" />
+                <node concept="1qvjxa" id="1ZE6IpOfBBP" role="33vP2m">
+                  <ref role="1quiSB" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
+                  <node concept="37vLTw" id="1ZE6IpOfBHA" role="1qvjxb">
+                    <ref role="3cqZAo" node="77rbAYG3qRG" resolve="l" />
+                  </node>
+                </node>
                 <node concept="3uibUv" id="77rbAYG3qS0" role="1tU5fm">
                   <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-                </node>
-                <node concept="2OqwBi" id="77rbAYG3qS1" role="33vP2m">
-                  <node concept="Rm8GO" id="77rbAYG3qT7" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-                    <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                  </node>
-                  <node concept="liA8E" id="77rbAYG3qS3" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                    <node concept="37vLTw" id="3GM_nagTBkK" role="37wK5m">
-                      <ref role="3cqZAo" node="77rbAYG3qRG" resolve="l" />
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -2701,38 +2729,6 @@
           <node concept="37vLTw" id="2BHiRxeogqE" role="3cqZAk">
             <ref role="3cqZAo" node="1km689rKrob" resolve="INSTANCE" />
           </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3UR2Jj" id="qrAFe9joRg" role="lGtFl">
-      <node concept="TZ5HI" id="qrAFe9joRh" role="3nqlJM">
-        <node concept="TZ5HA" id="qrAFe9joRi" role="3HnX3l">
-          <node concept="1dT_AC" id="5uYjGaoZwh0" role="1dT_Ay">
-            <property role="1dT_AB" value="use " />
-          </node>
-          <node concept="1dT_AA" id="5uYjGaoZwhp" role="1dT_Ay">
-            <node concept="92FcH" id="5uYjGaoZwoZ" role="qph3F">
-              <node concept="TZ5HA" id="5uYjGaoZwp1" role="2XjZqd" />
-              <node concept="VXe08" id="5uYjGaoZIgd" role="92FcQ">
-                <ref role="VXe09" node="3HJD4JbIvBk" resolve="MPSProgramBuilder" />
-              </node>
-            </node>
-          </node>
-          <node concept="1dT_AC" id="5uYjGaoZwho" role="1dT_Ay">
-            <property role="1dT_AB" value=" directly to build program" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2AHcQZ" id="qrAFe9joRj" role="2AJF6D">
-      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-    </node>
-    <node concept="2AHcQZ" id="5uYjGaoZrK7" role="2AJF6D">
-      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-      <node concept="2B6LJw" id="5uYjGaoZvcq" role="2B76xF">
-        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-        <node concept="3b6qkQ" id="5uYjGaoZvdv" role="2B70Vg">
-          <property role="$nhwW" value="3.4" />
         </node>
       </node>
     </node>

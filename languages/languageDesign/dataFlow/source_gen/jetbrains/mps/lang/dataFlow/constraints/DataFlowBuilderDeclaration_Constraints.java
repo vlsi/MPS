@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -56,7 +56,7 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
     return properties;
   }
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.DATA_FLOW.is(model);
+    return SModuleOperations.isAspect(model, "dataFlow");
   }
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");
 }

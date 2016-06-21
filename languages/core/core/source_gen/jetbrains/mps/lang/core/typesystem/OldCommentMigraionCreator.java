@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -38,7 +39,7 @@ public class OldCommentMigraionCreator {
     if (language == null) {
       return false;
     }
-    SModel migrationModel = LanguageAspect.MIGRATION.get(language);
+    SModel migrationModel = SModuleOperations.getAspect(language, "migration");
     return migrationModel == null || ListSequence.fromList(SModelOperations.roots(((SModel) migrationModel), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_l7ib1f_a0a0a0a0a0a0d0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), getMigrationName(SNodeOperations.asSConcept(node)));
@@ -54,7 +55,7 @@ public class OldCommentMigraionCreator {
     return ((Language) module);
   }
   private SModel getOrCreateMigrationModel(Language language) {
-    SModel migrationModel = LanguageAspect.MIGRATION.get(language);
+    SModel migrationModel = SModuleOperations.getAspect(language, "migration");
     if (migrationModel == null) {
       migrationModel = LanguageAspect.MIGRATION.createNew(language);
       if (migrationModel instanceof SModelInternal) {

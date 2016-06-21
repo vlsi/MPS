@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -32,7 +32,7 @@ public class EditorComponentDeclaration_Constraints extends BaseConstraintsDescr
     return result;
   }
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.EDITOR.is(model) || SModelStereotype.isGeneratorModel(model);
+    return SModuleOperations.isAspect(model, "editor") || SModelStereotype.isGeneratorModel(model);
   }
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090208782");
 }

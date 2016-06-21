@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -81,7 +81,7 @@ public class MigrationsCheckUtil {
     if (!(module instanceof Language)) {
       return Collections.emptyMap();
     }
-    SModel migModel = LanguageAspect.MIGRATION.get((Language) module);
+    SModel migModel = SModuleOperations.getAspect(module, "migration");
     if (migModel == null) {
       return Collections.emptyMap();
     }

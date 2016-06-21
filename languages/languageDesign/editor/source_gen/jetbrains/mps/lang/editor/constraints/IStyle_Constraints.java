@@ -19,7 +19,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -52,7 +52,7 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
 
         Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
           public SModel select(Language it) {
-            return LanguageAspect.EDITOR.get(it);
+            return SModuleOperations.getAspect(it, "editor");
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {

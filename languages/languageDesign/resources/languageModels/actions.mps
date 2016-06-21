@@ -15,7 +15,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconResourceReference" flags="nn" index="1QGGTy" />
+      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconReference" flags="nn" index="1QGGTy" />
     </language>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
@@ -108,10 +108,10 @@
     <node concept="3FOIzC" id="7DkMEQRMfQc" role="3FOPby">
       <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="tYCnQ" id="7DkMEQRMfQe" role="tZc4B">
-        <ref role="uz4UX" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
+        <ref role="uz4UX" to="1oap:7Mb2akaesr7" resolve="IconReference" />
         <node concept="uMFAO" id="7DkMEQRMfQf" role="uz6Si">
           <node concept="3Tqbb2" id="7DkMEQRMfQl" role="uMOYW">
-            <ref role="ehGHo" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
+            <ref role="ehGHo" to="1oap:7Mb2akaesr0" resolve="IconDeclaration" />
           </node>
           <node concept="uNCsQ" id="7DkMEQRMfQh" role="uO7ob">
             <node concept="3clFbS" id="7DkMEQRMfQi" role="2VODD2">
@@ -119,7 +119,7 @@
                 <node concept="2OqwBi" id="7DkMEQRMfQy" role="3clFbG">
                   <node concept="1Q6Npb" id="7DkMEQRMfQv" role="2Oq$k0" />
                   <node concept="1j9C0f" id="7DkMEQRMfQC" role="2OqNvi">
-                    <ref role="1j9C0d" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
+                    <ref role="1j9C0d" to="1oap:7Mb2akaesr0" resolve="IconDeclaration" />
                   </node>
                 </node>
               </node>
@@ -154,7 +154,7 @@
                           <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                         </node>
                         <node concept="3TUQnm" id="2wdLO7Kh2IF" role="2Oq$k0">
-                          <ref role="3TV0OU" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
+                          <ref role="3TV0OU" to="1oap:7Mb2akaesr7" resolve="IconReference" />
                         </node>
                       </node>
                       <node concept="Xl_RD" id="7DkMEQRMfR1" role="3uHU7w">
