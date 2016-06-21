@@ -23,8 +23,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.structure.constraints.Scopes;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.lang.structure.constraints.Scopes;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TransformationMenu_Default_Constraints extends BaseConstraintsDescriptor {
@@ -66,7 +69,13 @@ public class TransformationMenu_Default_Constraints extends BaseConstraintsDescr
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Scopes.forConceptsInSameLanguage(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+            {
+              SConcept acd = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+              if (!(SNodeOperations.getModel(_context.getContextNode()).getModule() instanceof Language)) {
+                return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, acd);
+              }
+              return Scopes.forConceptsInSameLanguage(SNodeOperations.getModel(_context.getContextNode()), acd);
+            }
           }
         };
       }

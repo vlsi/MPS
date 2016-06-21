@@ -31,9 +31,11 @@
     <import index="hjmg" ref="r:963517d7-70d8-4c26-b98a-77234c4cb04a(jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="tpc7" ref="r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpc6" ref="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -115,6 +117,10 @@
         <reference id="4052780437578824735" name="ref" index="3AHY9a" />
       </concept>
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
+      <concept id="1225989773458" name="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" flags="nn" index="1MFPAf">
+        <reference id="1225989811227" name="intention" index="1MFYO6" />
+        <child id="8933192351751916178" name="parameter" index="1v$tAf" />
+      </concept>
     </language>
     <language id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage">
       <concept id="4740302442485120029" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional" flags="ng" index="2dXhfD" />
@@ -148,6 +154,7 @@
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
       <concept id="6718020819487620872" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference" flags="ng" index="A1WHv" />
+      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
@@ -170,6 +177,7 @@
       <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
         <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
+      <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
       </concept>
@@ -334,6 +342,9 @@
     </language>
     <language id="4eb772b0-4df3-414a-b894-63abeb912f56" name="jetbrains.mps.lang.editor.menus.testLanguage">
       <concept id="2344528742722056854" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept" flags="ng" index="rbkbI" />
+      <concept id="5339489019635910984" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder" flags="ng" index="1NpImL">
+        <child id="5339489019635910985" name="node" index="1NpImK" />
+      </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
@@ -367,6 +378,9 @@
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
         <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
@@ -866,7 +880,7 @@
   <node concept="LiM7Y" id="5oiZ4v5m6f4">
     <property role="TrG5h" value="Action_CanExecuteIsGeneratedCorrectly" />
     <property role="3YCmrE" value="Checks that canExecute of TransformationMenuPart_Action works" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="rbkbI" id="5oiZ4v5m6lA" role="LiRBU">
       <node concept="LIFWc" id="5oiZ4v5m6lT" role="lGtFl">
         <property role="LIFWa" value="0" />
@@ -946,7 +960,7 @@
   <node concept="LiM7Y" id="5oiZ4v5qmJJ">
     <property role="TrG5h" value="Action_ExecuteIsGeneratedCorrectly" />
     <property role="3YCmrE" value="Checks that execute of TransformationMenuPart_Action works" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="rbkbI" id="5oiZ4v5qmJK" role="LiRBU">
       <node concept="LIFWc" id="5oiZ4v5qmJL" role="lGtFl">
         <property role="LIFWa" value="0" />
@@ -1040,7 +1054,7 @@
   <node concept="LiM7Y" id="5_kqtpAxGJe">
     <property role="TrG5h" value="LoadDefaultMenu" />
     <property role="3YCmrE" value="default menu defined for a concept and a location can be loaded" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="3clFbS" id="5_kqtpAxGLf" role="LjaKd">
       <node concept="3cpWs8" id="5_kqtpAxGMz" role="3cqZAp">
         <node concept="3cpWsn" id="5_kqtpAxGMA" role="3cpWs9">
@@ -1135,7 +1149,7 @@
   <node concept="LiM7Y" id="5oiZ4v5c4em">
     <property role="TrG5h" value="LoadNamedMenu" />
     <property role="3YCmrE" value="named menu defined for a concept and a location can be loaded" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="3clFbS" id="5oiZ4v5c4en" role="LjaKd">
       <node concept="3cpWs8" id="5oiZ4v5c4eo" role="3cqZAp">
         <node concept="3cpWsn" id="5oiZ4v5c4ep" role="3cpWs9">
@@ -1233,7 +1247,7 @@
   <node concept="LiM7Y" id="33LYnHO_zyl">
     <property role="TrG5h" value="ContributionFromUnusedLanguage" />
     <property role="3YCmrE" value="contribution from unused language should not appear in the menu" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="rbkbI" id="33LYnHO_zyn" role="LiRBU">
       <node concept="LIFWc" id="33LYnHO_zyq" role="lGtFl">
         <property role="LIFWa" value="0" />
@@ -1292,7 +1306,7 @@
   <node concept="LiM7Y" id="33LYnHOC7Qe">
     <property role="TrG5h" value="ContributionFromUsedLanguage" />
     <property role="3YCmrE" value="contribution from used language should appear in the menu" />
-    <property role="3GE5qa" value="runtime" />
+    <property role="3GE5qa" value="RunTime" />
     <node concept="rbkbI" id="33LYnHOC7Qf" role="LiRBU">
       <node concept="LIFWc" id="33LYnHOC7Qg" role="lGtFl">
         <property role="LIFWa" value="0" />
@@ -1389,7 +1403,7 @@
   </node>
   <node concept="1lH9Xt" id="478VZjcfCwL">
     <property role="TrG5h" value="FeaturesAndLocations" />
-    <property role="3GE5qa" value="designtime" />
+    <property role="3GE5qa" value="DesignTime" />
     <node concept="1qefOq" id="478VZjcfH3k" role="1SKRRt">
       <node concept="1Qtc8_" id="478VZjcfH3l" role="1qenE9">
         <node concept="IWgqT" id="478VZjcfH3m" role="1Qtc8A">
@@ -1680,7 +1694,7 @@
   </node>
   <node concept="1lH9Xt" id="1RxYXnVXyhJ">
     <property role="TrG5h" value="NonexistentDefaultMenu" />
-    <property role="3GE5qa" value="designtime" />
+    <property role="3GE5qa" value="DesignTime" />
     <node concept="1qefOq" id="1RxYXnVXz$e" role="1SKRRt">
       <node concept="3A5Wbc" id="1RxYXnVYpoz" role="1qenE9">
         <node concept="3A5S4R" id="1RxYXnVYpo$" role="3A5S36">
@@ -1705,7 +1719,7 @@
   </node>
   <node concept="1lH9Xt" id="Vk$nhxzsTp">
     <property role="TrG5h" value="EditorCellMenuScopes" />
-    <property role="3GE5qa" value="designtime" />
+    <property role="3GE5qa" value="DesignTime" />
     <node concept="1qefOq" id="Vk$nhxzCx9" role="1SKRRt">
       <node concept="24kQdi" id="Vk$nhxzCxb" role="1qenE9">
         <ref role="1XX52x" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
@@ -1747,7 +1761,7 @@
   </node>
   <node concept="1lH9Xt" id="2mcvySy0$_d">
     <property role="TrG5h" value="Include_MenuAndTargetNodeCorrespondence" />
-    <property role="3GE5qa" value="designtime" />
+    <property role="3GE5qa" value="DesignTime" />
     <node concept="1LZb2c" id="5ZcqSl_QO1a" role="1SL9yI">
       <property role="TrG5h" value="targetNodeForMenuShouldReturnMenuConcept" />
       <node concept="3cqZAl" id="5ZcqSl_QO1b" role="3clF45" />
@@ -1826,7 +1840,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5XkRVC1EtKD">
-    <property role="3GE5qa" value="designtime" />
+    <property role="3GE5qa" value="DesignTime" />
     <property role="TrG5h" value="ContributionScopes" />
     <node concept="3A5Wbc" id="5XkRVC1EtLj" role="LiRBU">
       <node concept="3A5S4R" id="5XkRVC1EtLk" role="3A5S36">
@@ -1891,6 +1905,133 @@
             <property role="p6zMq" value="21" />
             <property role="p6zMs" value="21" />
             <property role="LIFWd" value="property_name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="37GYs0qW$wr">
+    <property role="3GE5qa" value="DesignTime.MenuConversion" />
+    <property role="TrG5h" value="ConvertNamedMenuToDefault" />
+    <node concept="3clFbS" id="37GYs0qW_bd" role="LjaKd">
+      <node concept="1MFPAf" id="37GYs0qW_fq" role="3cqZAp">
+        <ref role="1MFYO6" to="tpc7:37GYs0qXkK4" resolve="ConvertMenu" />
+        <node concept="35c_gC" id="7JT4LO$rYba" role="1v$tAf">
+          <ref role="35c_gD" to="tpc2:1qY_lWSjJNx" resolve="TransformationMenu_Default" />
+        </node>
+      </node>
+    </node>
+    <node concept="1NpImL" id="4CpFf$TvYmN" role="LiRBU">
+      <node concept="3ICXOK" id="37GYs0qWJH9" role="1NpImK">
+        <property role="TrG5h" value="somemenu" />
+        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="1Qtc8_" id="37GYs0qX4Ia" role="IW6Ez">
+          <node concept="ZR7TO" id="37GYs0qX4Io" role="1Qtc8$" />
+          <node concept="IWgqT" id="37GYs0qX4Iz" role="1Qtc8A">
+            <node concept="1hCUdq" id="37GYs0qX4I_" role="1hCUd6">
+              <node concept="3clFbS" id="37GYs0qX4IB" role="2VODD2">
+                <node concept="3clFbF" id="37GYs0qX4Vr" role="3cqZAp">
+                  <node concept="Xl_RD" id="37GYs0qX4Vq" role="3clFbG">
+                    <property role="Xl_RC" value="some action" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="IWg2L" id="37GYs0qX4ID" role="IWgqQ">
+              <node concept="3clFbS" id="37GYs0qX4IF" role="2VODD2" />
+            </node>
+          </node>
+        </node>
+        <node concept="LIFWc" id="4CpFf$TvYJz" role="lGtFl">
+          <property role="LIFWa" value="1" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="Constant_s529lh_a0" />
+        </node>
+      </node>
+    </node>
+    <node concept="1NpImL" id="4CpFf$TvYw8" role="LiZbd">
+      <node concept="IW6AY" id="37GYs0qX5qR" role="1NpImK">
+        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="1Qtc8_" id="37GYs0qXjZ2" role="IW6Ez">
+          <node concept="ZR7TO" id="37GYs0qXjZ3" role="1Qtc8$" />
+          <node concept="IWgqT" id="37GYs0qXjZ4" role="1Qtc8A">
+            <node concept="1hCUdq" id="37GYs0qXjZ5" role="1hCUd6">
+              <node concept="3clFbS" id="37GYs0qXjZ6" role="2VODD2">
+                <node concept="3clFbF" id="37GYs0qXjZ7" role="3cqZAp">
+                  <node concept="Xl_RD" id="37GYs0qXjZ8" role="3clFbG">
+                    <property role="Xl_RC" value="some action" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="IWg2L" id="37GYs0qXjZ9" role="IWgqQ">
+              <node concept="3clFbS" id="37GYs0qXjZa" role="2VODD2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4CpFf$Tw92T">
+    <property role="3GE5qa" value="DesignTime.MenuConversion" />
+    <property role="TrG5h" value="ConvertDefaultMenuToNamed" />
+    <node concept="3clFbS" id="4CpFf$Tw92U" role="LjaKd">
+      <node concept="1MFPAf" id="4CpFf$Tw92V" role="3cqZAp">
+        <ref role="1MFYO6" to="tpc7:37GYs0qXkK4" resolve="ConvertMenu" />
+        <node concept="35c_gC" id="4CpFf$Tw92W" role="1v$tAf">
+          <ref role="35c_gD" to="tpc2:4Sf$XywF4VC" resolve="TransformationMenu_Named" />
+        </node>
+      </node>
+    </node>
+    <node concept="1NpImL" id="4CpFf$Tw92X" role="LiRBU">
+      <node concept="IW6AY" id="4CpFf$Tw$To" role="1NpImK">
+        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="1Qtc8_" id="4CpFf$Tw92Z" role="IW6Ez">
+          <node concept="ZR7TO" id="4CpFf$Tw930" role="1Qtc8$" />
+          <node concept="IWgqT" id="4CpFf$Tw931" role="1Qtc8A">
+            <node concept="1hCUdq" id="4CpFf$Tw932" role="1hCUd6">
+              <node concept="3clFbS" id="4CpFf$Tw933" role="2VODD2">
+                <node concept="3clFbF" id="4CpFf$Tw934" role="3cqZAp">
+                  <node concept="Xl_RD" id="4CpFf$Tw935" role="3clFbG">
+                    <property role="Xl_RC" value="some action" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="IWg2L" id="4CpFf$Tw936" role="IWgqQ">
+              <node concept="3clFbS" id="4CpFf$Tw937" role="2VODD2" />
+            </node>
+          </node>
+        </node>
+        <node concept="LIFWc" id="4CpFf$Tw_9r" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_ctejw1_a0" />
+        </node>
+      </node>
+    </node>
+    <node concept="1NpImL" id="4CpFf$Tw939" role="LiZbd">
+      <node concept="3ICXOK" id="4CpFf$Tw_gy" role="1NpImK">
+        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="1Qtc8_" id="4CpFf$Tw93b" role="IW6Ez">
+          <node concept="ZR7TO" id="4CpFf$Tw93c" role="1Qtc8$" />
+          <node concept="IWgqT" id="4CpFf$Tw93d" role="1Qtc8A">
+            <node concept="1hCUdq" id="4CpFf$Tw93e" role="1hCUd6">
+              <node concept="3clFbS" id="4CpFf$Tw93f" role="2VODD2">
+                <node concept="3clFbF" id="4CpFf$Tw93g" role="3cqZAp">
+                  <node concept="Xl_RD" id="4CpFf$Tw93h" role="3clFbG">
+                    <property role="Xl_RC" value="some action" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="IWg2L" id="4CpFf$Tw93i" role="IWgqQ">
+              <node concept="3clFbS" id="4CpFf$Tw93j" role="2VODD2" />
+            </node>
           </node>
         </node>
       </node>

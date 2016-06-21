@@ -18,6 +18,7 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
+      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -32,6 +33,17 @@
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
+      </concept>
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
+        <child id="1106270802874" name="cellLayout" index="2iSdaV" />
+        <child id="1073389446424" name="childCellModel" index="3EZMnx" />
+      </concept>
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+        <property id="1073389577007" name="text" index="3F0ifm" />
+      </concept>
+      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
         <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
@@ -293,6 +305,21 @@
     <property role="3GE5qa" value="Include" />
     <property role="TrG5h" value="Derived_NamedTransformationMenu" />
     <ref role="7LAce" to="wtc3:2mcvySy0$_k" resolve="Derived" />
+  </node>
+  <node concept="24kQdi" id="4CpFf$TvO_$">
+    <ref role="1XX52x" to="wtc3:4CpFf$TvO_8" resolve="NodeHolder" />
+    <node concept="3EZMnI" id="4CpFf$TvWoq" role="2wV5jI">
+      <node concept="2iRfu4" id="4CpFf$TvWor" role="2iSdaV" />
+      <node concept="3F0ifn" id="4CpFf$TvWoz" role="3EZMnx">
+        <property role="3F0ifm" value="node holder&lt;" />
+      </node>
+      <node concept="3F1sOY" id="4CpFf$TvO_D" role="3EZMnx">
+        <ref role="1NtTu8" to="wtc3:4CpFf$TvO_9" />
+      </node>
+      <node concept="3F0ifn" id="4CpFf$TvWoF" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+      </node>
+    </node>
   </node>
 </model>
 
