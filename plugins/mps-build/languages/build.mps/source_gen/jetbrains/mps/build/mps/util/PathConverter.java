@@ -36,18 +36,15 @@ public class PathConverter {
       public void visit(SNode it) {
         String path = normalizePath(BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(it, Context.defaultContext()), true);
         if (path != null && path.length() > 1) {
-          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))));
+          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, it));
         } else {
-          ListSequence.fromList(withoutPath).addElement(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")));
+          ListSequence.fromList(withoutPath).addElement(it);
         }
       }
     });
-    if (workingDirectory != null) {
-      ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(this.workingDirectory, (SNode) null));
-    }
     macros = ListSequence.fromList(result).sort(new ISelector<Tuples._2<String, SNode>, Integer>() {
       public Integer select(Tuples._2<String, SNode> it) {
-        return it._0().length() * 2 - ((it._1() == null ? 1 : 0));
+        return it._0().length() * 2;
       }
     }, false);
     macrosWithoutPath = withoutPath;
@@ -62,9 +59,11 @@ public class PathConverter {
     path = normalizePath(path, false);
     String withSlash = normalizePath(path, true);
     List<SNode> result = new ArrayList<SNode>();
+    final boolean startsWithMacroPrefix = path.startsWith("$");
     for (Tuples._2<String, SNode> m : Sequence.fromIterable(macros)) {
-      String mdir = (path.startsWith("$") && m._1() != null ? "${" + SPropertyOperations.getString(m._1(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/" : m._0());
-      mdir = (mdir == null ? "" : mdir);
+      String mdir = (startsWithMacroPrefix ? "${" + SPropertyOperations.getString(m._1(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/" : m._0());
+      // XXX what's the check path.length < mdir.length supposed to do? If the path is shorter 
+      // than macro path, it would never match? 
       String currPath = (path.length() < mdir.length() ? withSlash : path);
 
       if (currPath.startsWith(mdir)) {
@@ -72,17 +71,21 @@ public class PathConverter {
         ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m._1(), currPath));
       }
     }
-    for (SNode m : Sequence.fromIterable(macrosWithoutPath)) {
-      String mdir = "${" + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/";
-      String currPath = (path.length() < mdir.length() ? withSlash : path);
-      if (currPath.startsWith(mdir)) {
-        currPath = currPath.substring(mdir.length());
-        ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m, currPath));
+    if (workingDirectory != null && withSlash.startsWith(workingDirectory)) {
+      ListSequence.fromList(result).addElement(pathBuilder.buildRelative(withSlash.substring(workingDirectory.length())));
+    }
+    if (startsWithMacroPrefix) {
+      for (SNode m : Sequence.fromIterable(macrosWithoutPath)) {
+        String mdir = "${" + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/";
+        String currPath = (path.length() < mdir.length() ? withSlash : path);
+        if (currPath.startsWith(mdir)) {
+          currPath = currPath.substring(mdir.length());
+          ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m, currPath));
+        }
       }
     }
     if (ListSequence.fromList(result).isEmpty()) {
       throw new PathConverter.PathConvertException("source path (" + path + ") should be under working directory (" + workingDirectory + "), or any macros default directory");
-
     }
     return result;
   }
