@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.path;
 
-import jetbrains.mps.vfs.path.CommonPath;
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 
 /**

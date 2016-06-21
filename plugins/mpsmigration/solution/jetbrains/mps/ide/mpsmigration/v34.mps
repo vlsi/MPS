@@ -858,7 +858,7 @@
                   <ref role="37wK5l" to="3ju5:~CachingFile.refresh(jetbrains.mps.vfs.CachingContext):void" resolve="refresh" />
                   <node concept="2ShNRf" id="3vjn6$4yYiI" role="37wK5m">
                     <node concept="1pGfFk" id="3vjn6$4yZFn" role="2ShVmc">
-                      <ref role="37wK5l" to="3ju5:~IdeaCachingContext.&lt;init&gt;(boolean,boolean)" resolve="IdeaCachingContext" />
+                      <ref role="37wK5l" to="3ju5:~DefaultCachingContext.&lt;init&gt;(boolean,boolean)" resolve="DefaultCachingContext" />
                       <node concept="3clFbT" id="3vjn6$4yZHM" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>

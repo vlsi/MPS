@@ -21,7 +21,6 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;

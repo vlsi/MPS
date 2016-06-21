@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ReadUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedInputStream;

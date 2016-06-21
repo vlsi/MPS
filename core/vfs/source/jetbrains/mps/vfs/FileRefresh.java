@@ -54,7 +54,7 @@ public final class FileRefresh implements Runnable {
   private void refreshRecursivelyIntoJars(Set<IFile> files) {
     Set<CachingFile> cachingFiles = files.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
     if (!cachingFiles.isEmpty()) {
-      CachingFileSystem fs = cachingFiles.iterator().next().getFileSystem();
+      CachingFileSystem fs = cachingFiles.iterator().next().getFileSystem(); // simply the first file
       while (!cachingFiles.isEmpty()) {
         fs.refresh(myDefaultCachingContext, cachingFiles);
         cachingFiles = cachingFiles.stream().flatMap(

@@ -22,8 +22,8 @@
     <classNode dependClassName="jetbrains.mps.project.facets.TestsFacet" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vfs.CachingFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.DefaultCachingContext" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.IdeaCachingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />

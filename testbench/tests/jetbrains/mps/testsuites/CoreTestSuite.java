@@ -19,6 +19,8 @@ import jetbrains.mps.compile.EclipseJavaCompilerTest;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.vfs.path.CommonPathTest;
+import jetbrains.mps.vfs.path.UniPathTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
@@ -56,8 +58,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
-    jetbrains.mps.vfs.UniPathTest.class,
-    jetbrains.mps.vfs.CommonPathTest.class,
+    UniPathTest.class,
+    CommonPathTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
     jetbrains.mps.smodel.ModelImplementationTest.class,
     jetbrains.mps.smodel.ModelListenerTest.class,

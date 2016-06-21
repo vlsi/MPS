@@ -42,6 +42,8 @@ public interface ModelRootFactory {
    * Creates a model root.
    * @param context -- context which is passed to the factory method
    * @return a new model root
+   *
+   * consider using {@link ModelRootContext#EMPTY_CONTEXT} if you do not need context
    */
   default @NotNull ModelRoot create(@NotNull ModelRootContext context) {
     return create();
