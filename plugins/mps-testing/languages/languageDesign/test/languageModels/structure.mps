@@ -495,6 +495,13 @@
       <property role="IQ2ns" value="1225989811227" />
       <ref role="20lvS9" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
     </node>
+    <node concept="1TJgyj" id="7JT4LO$qcEi" role="1TKVEi">
+      <property role="IQ2ns" value="8933192351751916178" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQJ5G8s">
     <property role="R5$K7" value="true" />

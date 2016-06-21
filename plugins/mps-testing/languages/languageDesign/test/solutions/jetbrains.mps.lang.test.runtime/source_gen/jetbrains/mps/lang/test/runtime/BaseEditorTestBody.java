@@ -32,10 +32,14 @@ import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
-import jetbrains.mps.intentions.IntentionsManager;
-import java.util.Collection;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
+import jetbrains.mps.util.Pair;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.intentions.IntentionsManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -271,31 +275,66 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
-    final Throwable[] ts = new Throwable[1];
+    invokeMatchingIntention(node, new Condition<IntentionExecutable>() {
+      @Override
+      public boolean met(IntentionExecutable intention) {
+        return intention.getDescriptor().getPersistentStateKey().equals(name);
+      }
+      @Override
+      public String toString() {
+        return "name: " + name;
+      }
+    });
+  }
+
+  protected void invokeParameterizedIntention(final String name, final Object parameter, SNode node) throws InterruptedException, InvocationTargetException {
+    invokeMatchingIntention(node, new Condition<IntentionExecutable>() {
+      @Override
+      public boolean met(IntentionExecutable intention) {
+        return intention instanceof ParameterizedIntentionExecutable && intention.getDescriptor().getPersistentStateKey().equals(name) && parameter.equals(((ParameterizedIntentionExecutable) intention).getParameter());
+      }
+
+      @Override
+      public String toString() {
+        return String.format("name: %s, parameter: %s", name, parameter);
+      }
+    });
+  }
+
+  protected void invokeMatchingIntention(final SNode node, final Condition<IntentionExecutable> intentionCondition) throws InterruptedException, InvocationTargetException {
     runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            try {
-              myCurrentEditorComponent.getEditorContext().select(node);
-              IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-              query.setCurrentNodeOnly(true);
-              Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myCurrentEditorComponent.getEditorContext());
-              for (Pair<IntentionExecutable, SNode> intention : intentions) {
-                if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
-                  intention.o1.execute(intention.o2, myCurrentEditorComponent.getEditorContext());
-                }
-              }
-            } catch (Throwable t) {
-              ts[0] = t;
-            }
+            myCurrentEditorComponent.getEditorContext().select(node);
+            Pair<IntentionExecutable, SNode> singleMatch = getMatchingIntentionFor(node, intentionCondition);
+            singleMatch.o1.execute(singleMatch.o2, myCurrentEditorComponent.getEditorContext());
           }
         });
       }
     });
-    if (ts[0] != null) {
-      throw new RuntimeException("Failure during intention invoke", ts[0]);
+  }
+
+  private Pair<IntentionExecutable, SNode> getMatchingIntentionFor(final SNode node, final Condition<IntentionExecutable> intentionCondition) {
+    Collection<Pair<IntentionExecutable, SNode>> intentions = getAvailableIntentionsForNode(node);
+
+    List<Pair<IntentionExecutable, SNode>> matches = CollectionSequence.fromCollection(intentions).where(new IWhereFilter<Pair<IntentionExecutable, SNode>>() {
+      public boolean accept(Pair<IntentionExecutable, SNode> it) {
+        return intentionCondition.met(it.o1);
+      }
+    }).toListSequence();
+
+    if (ListSequence.fromList(matches).count() != 1) {
+      throw new RuntimeException("Found " + ListSequence.fromList(matches).count() + " intentions matching " + intentionCondition);
     }
+
+    return ListSequence.fromList(matches).getElement(0);
+  }
+
+  private Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentionsForNode(final SNode node) {
+    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+    query.setCurrentNodeOnly(true);
+    return IntentionsManager.getInstance().getAvailableIntentions(query, node, myCurrentEditorComponent.getEditorContext());
   }
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
