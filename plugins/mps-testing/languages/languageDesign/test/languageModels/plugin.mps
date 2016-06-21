@@ -11,6 +11,7 @@
   </languages>
   <imports>
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -86,13 +87,13 @@
         <property role="2V$B1Q" value="jetbrains.mps.lang.test" />
       </node>
     </node>
-    <node concept="1QGGSu" id="4lJsQ5yF4MG" role="3vqPLo">
-      <node concept="1QGGTy" id="4lJsQ5yF4MI" role="3xaMm5">
-        <ref role="1QGGTH" node="4lJsQ5yENiu" resolve="TESTSMODEL" />
-      </node>
-    </node>
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
       <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Language+tests+language#Languagetestslanguage-introduction" />
+    </node>
+    <node concept="1QGGSu" id="P5ZkC6x0ka" role="3vqPLo">
+      <node concept="1QGGTy" id="P5ZkC6x0kd" role="3xaMm5">
+        <ref role="1QGGTH" node="4lJsQ5yENiu" resolve="TESTSMODEL" />
+      </node>
     </node>
   </node>
   <node concept="1QGGSo" id="4lJsQ5yENit">

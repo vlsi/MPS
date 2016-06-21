@@ -37,17 +37,14 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconBundle" flags="ng" index="1QGGSo">
-        <child id="8974276187400029886" name="icons" index="1QGGSr" />
-      </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
-      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconReference" flags="nn" index="1QGGTy">
-        <reference id="8974276187400029896" name="declaration" index="1QGGTH" />
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
+        <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
-      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconDeclaration" flags="ng" index="1QGGT_">
-        <child id="8974276187400029889" name="iconExpression" index="1QGGT$" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
     </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
@@ -107,9 +104,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -784,22 +778,14 @@
       </node>
     </node>
     <node concept="1QGGSu" id="4lJsQ5yF4MG" role="3vqPLo">
-      <node concept="1QGGTy" id="4lJsQ5yF4MI" role="3xaMm5">
-        <ref role="1QGGTH" node="4lJsQ5yENiu" resolve="PLUGINMODEL" />
+      <node concept="1QGGTA" id="P5ZkC6wcby" role="3xaMm5">
+        <node concept="1QGGSu" id="P5ZkC6wcb$" role="1QGGTw">
+          <property role="1QGGTI" value="${module}/icons/pluginModel.png" />
+        </node>
       </node>
     </node>
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
       <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Plugin" />
-    </node>
-  </node>
-  <node concept="1QGGSo" id="4lJsQ5yENit">
-    <property role="TrG5h" value="PluginAspect" />
-    <node concept="1QGGT_" id="4lJsQ5yENiu" role="1QGGSr">
-      <property role="TrG5h" value="PLUGINMODEL" />
-      <node concept="10M0yZ" id="4lJsQ5yEPWD" role="1QGGT$">
-        <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-        <ref role="3cqZAo" to="xnls:~IdeIcons.PLUGIN_MODEL_ICON" resolve="PLUGIN_MODEL_ICON" />
-      </node>
     </node>
   </node>
 </model>

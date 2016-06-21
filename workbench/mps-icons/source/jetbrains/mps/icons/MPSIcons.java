@@ -122,20 +122,7 @@ public class MPSIcons {
     public static final Icon UsagesFinder = IconLoader.getIcon("/nodes/usagesFinder.png");
 
     public static class Models {
-      public static final Icon StructureModel = IconLoader.getIcon("/nodes/models/structureModel.png");
-      public static final Icon EditorModel = IconLoader.getIcon("/nodes/models/editorModel.png");
-      public static final Icon ActionsModel = IconLoader.getIcon("/nodes/models/actionsModel.png");
       public static final Icon TemplatesModel = IconLoader.getIcon("/nodes/models/templatesModel.png");
-      public static final Icon TypesystemModel = IconLoader.getIcon("/nodes/models/typesystemModel.png");
-      public static final Icon IntentionsModel = IconLoader.getIcon("/nodes/models/intentionsModel.png");
-      public static final Icon FindUsagesModel = IconLoader.getIcon("/nodes/models/findUsagesModel.png");
-      public static final Icon PluginModel = IconLoader.getIcon("/nodes/models/pluginModel.png");
-      public static final Icon BehaviourModel = IconLoader.getIcon("/nodes/models/behaviorModel.png");
-      public static final Icon ConstraintsModel = IconLoader.getIcon("/nodes/models/constraintsModel.png");
-      public static final Icon DataFlowModel = IconLoader.getIcon("/nodes/models/dataFlowModel.png");
-      public static final Icon RefactoringsModel = IconLoader.getIcon("/nodes/models/refactoringsModel.png");
-      public static final Icon StubsModel = IconLoader.getIcon("/nodes/models/stubsModel.png");
-      public static final Icon TextGenModel = IconLoader.getIcon("/nodes/models/textGenModel.png");
       public static final Icon AccessoryModel = IconLoader.getIcon("/nodes/models/accessoryModel.png");
     }
   }

@@ -9,17 +9,19 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ExtensionDescriptor.java">
       <unit at="9,0,18,0" name="jetbrains.mps.lang.typesystem.plugin.ExtensionDescriptor" />
     </file>
+    <file name="IconContainer.java">
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.typesystem.plugin.IconContainer" />
+    </file>
   </root>
   <root nodeRef="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)/3193873080290339088">
     <file name="LanguageAspectsEP_extension.java">
-      <node id="3193873080290339088" at="27,40,28,57" concept="11" />
+      <node id="3193873080290339088" at="27,40,28,57" concept="10" />
       <node id="3193873080290339088" at="32,48,33,28" concept="8" />
       <node id="3193873080290339088" at="36,73,37,58" concept="7" />
       <node id="3193873080290339088" at="39,44,40,48" concept="7" />
@@ -41,7 +43,7 @@
       <node id="3193873080290339088" at="27,0,30,0" concept="2" trace="LanguageAspectsEP_extension#()V" />
       <node id="3193873080290339088" at="32,0,35,0" concept="6" trace="getPresentableAspectName#()Ljava/lang/String;" />
       <node id="3193873080290339088" at="67,0,70,0" concept="6" trace="canCreate#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="3193873080290339088" at="87,0,90,0" concept="10" trace="eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3193873080290339088" at="87,0,90,0" concept="9" trace="eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="3193873080290339088" at="39,0,43,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="3193873080290339088" at="45,0,49,0" concept="6" trace="getMainLanguages#()Ljava/util/Collection;" />
       <node id="3193873080290339088" at="49,0,53,0" concept="6" trace="getGenerator#()Ljetbrains/mps/smodel/language/LanguageAspectGenerator;" />
@@ -101,33 +103,6 @@
       <unit id="3193873080290339088" at="38,58,43,9" name="jetbrains.mps.lang.typesystem.plugin.LanguageAspectsEP_extension$2" />
       <unit id="3193873080290339088" at="31,15,85,5" name="jetbrains.mps.lang.typesystem.plugin.LanguageAspectsEP_extension$1" />
       <unit id="3193873080290339088" at="26,0,91,0" name="jetbrains.mps.lang.typesystem.plugin.LanguageAspectsEP_extension" />
-    </file>
-  </root>
-  <root nodeRef="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)/5003344573136319645">
-    <file name="IconResourceBundle_TypesystemAspect.java">
-      <node id="5003344573136319645" at="12,0,13,0" concept="9" trace="INSTANCE" />
-      <node id="5003344573136319645" at="14,5,15,61" concept="3" />
-      <node id="5003344573136319645" at="20,37,21,26" concept="8" />
-      <node id="5003344573136319645" at="23,39,24,26" concept="8" />
-      <node id="5003344573136319645" at="26,67,27,56" concept="8" />
-      <node id="5003344573136319645" at="18,0,20,0" concept="2" trace="IconResourceBundle_TypesystemAspect#()V" />
-      <node id="5003344573136319645" at="20,0,23,0" concept="6" trace="getKeys#()Ljava/lang/Iterable;" />
-      <node id="5003344573136319645" at="23,0,26,0" concept="6" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-      <node id="5003344573136319645" at="26,0,29,0" concept="10" trace="getInstance#()Ljetbrains/mps/lang/typesystem/plugin/IconResourceBundle_TypesystemAspect;" />
-      <node id="5003344573136319645" at="13,0,18,0" concept="4" trace="icons" />
-      <scope id="5003344573136319645" at="18,48,18,48" />
-      <scope id="5003344573136319645" at="14,5,15,61" />
-      <scope id="5003344573136319645" at="20,37,21,26" />
-      <scope id="5003344573136319645" at="23,39,24,26" />
-      <scope id="5003344573136319645" at="26,67,27,56" />
-      <scope id="5003344573136319645" at="18,0,20,0" />
-      <scope id="5003344573136319645" at="20,0,23,0" />
-      <scope id="5003344573136319645" at="23,0,26,0">
-        <var name="key" id="5003344573136319645" />
-      </scope>
-      <scope id="5003344573136319645" at="26,0,29,0" />
-      <unit id="5003344573136319645" at="13,40,17,3" name="jetbrains.mps.lang.typesystem.plugin.IconResourceBundle_TypesystemAspect$1" />
-      <unit id="5003344573136319645" at="11,0,30,0" name="jetbrains.mps.lang.typesystem.plugin.IconResourceBundle_TypesystemAspect" />
     </file>
   </root>
 </debug-info-v2>
