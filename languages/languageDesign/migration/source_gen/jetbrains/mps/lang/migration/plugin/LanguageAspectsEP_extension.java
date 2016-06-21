@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
-import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -51,10 +50,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return null;
       }
       @Nullable
-      public Icon getIcon() {
-        return ICON;
-      }
-      @Nullable
       public String getHelpUrl() {
         return "http://confluence.jetbrains.com/display/MPSD33/Migrations";
       }
@@ -80,7 +75,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final Icon ICON = null;
 
     };
   }
