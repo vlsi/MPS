@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root>
     <file name="Generator.java">
       <unit at="18,0,64,0" name="jetbrains.mps.lang.descriptor.Generator" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

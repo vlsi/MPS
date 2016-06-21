@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/141865155246494254">
     <file name="mpsDataFlow.xml">
       <unit id="141865155246494254" at="1,0,618,10" name="jetbrains.mps.ide.build.tests.mpsDataFlow" />
@@ -75,5 +75,5 @@
       <unit id="7438002853058266164" at="1,0,1477,10" name="jetbrains.mps.ide.build.tests.mpsBehavior" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

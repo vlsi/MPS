@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root nodeRef="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)/138593292063253314">
     <file name="test3.xml">
       <unit id="138593292063253314" at="1,0,268,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test3" />
@@ -20,5 +20,5 @@
       <unit id="5712055271175358329" at="1,0,284,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test2" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

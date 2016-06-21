@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root nodeRef="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)/1293230950168428284">
     <file name="InternalClassifier_Test.java">
       <unit id="1293230950168428284" at="12,0,17,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test$TestBody" />
       <unit id="1293230950168428284" at="9,0,18,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

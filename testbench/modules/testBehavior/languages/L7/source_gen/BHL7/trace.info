@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root>
     <file name="Language.java">
       <unit at="16,0,54,0" name="BHL7.Language" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 
