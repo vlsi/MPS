@@ -503,6 +503,18 @@
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="7i$e6qceT2W" role="jymVt">
+      <property role="TrG5h" value="PROPERTIES_FILE_NAME" />
+      <property role="3TUv4t" value="true" />
+      <node concept="Xl_RD" id="7i$e6qceT2X" role="33vP2m">
+        <property role="Xl_RC" value="idea.properties" />
+      </node>
+      <node concept="17QB3L" id="7i$e6qceT2Y" role="1tU5fm" />
+      <node concept="3Tm6S6" id="7i$e6qceT2Z" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7i$e6qceT30" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="4937uxYQn6K" role="jymVt">
       <property role="TrG5h" value="PROPERTY_SYSTEM_PATH" />
       <property role="3TUv4t" value="true" />
@@ -1203,8 +1215,17 @@
                 <node concept="37vLTw" id="2BHiRxgm_nk" role="37wK5m">
                   <ref role="3cqZAo" node="4937uxYQnbQ" resolve="file" />
                 </node>
-                <node concept="Xl_RD" id="4937uxYQnbY" role="37wK5m">
-                  <property role="Xl_RC" value="build.number" />
+                <node concept="2YIFZM" id="7i$e6qceWvX" role="37wK5m">
+                  <ref role="1Pybhc" to="ddon:4wzCSi1lrrl" resolve="FileUtil" />
+                  <ref role="37wK5l" to="ddon:7vzkp06OmZF" resolve="toSystemDependentName" />
+                  <node concept="3cpWs3" id="7i$e6qceXa9" role="37wK5m">
+                    <node concept="37vLTw" id="7i$e6qceXhr" role="3uHU7w">
+                      <ref role="3cqZAo" node="7i$e6qceT2W" resolve="PROPERTIES_FILE_NAME" />
+                    </node>
+                    <node concept="Xl_RD" id="7i$e6qceWvY" role="3uHU7B">
+                      <property role="Xl_RC" value="bin/" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

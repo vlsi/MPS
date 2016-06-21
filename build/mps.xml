@@ -9,8 +9,7 @@
   </tstamp>
   <property name="build.vcs.number" value="HEAD" />
   <property name="teamcity.buildConfName" value="local" />
-  <property file="${basedir}/build.number" prefix="loaded.for.idea.platform.build.number" />
-  <property name="idea.platform.build.number" value="${loaded.for.idea.platform.build.number.idea.platform.build.number}" />
+  <loadfile property="idea.platform.build.number" srcFile="${basedir}/lib/build.txt" />
   <property name="mps.build.counter" value="SNAPSHOT" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />

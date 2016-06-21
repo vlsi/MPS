@@ -53,10 +53,6 @@
       <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
         <child id="2755237150521975437" name="value" index="aVJcq" />
       </concept>
-      <concept id="244868996532550359" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile" flags="ng" index="hGsBp">
-        <property id="244868996532550362" name="propertyName" index="hGsBk" />
-        <child id="244868996532550360" name="fileName" index="hGsBm" />
-      </concept>
       <concept id="244868996532454372" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithDate" flags="ng" index="hHN3E">
         <property id="244868996532454384" name="pattern" index="hHN3Y" />
       </concept>
@@ -235,6 +231,9 @@
       </concept>
       <concept id="4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" flags="ng" index="3Mxwey">
         <reference id="4903714810883702018" name="macro" index="3Mxwex" />
+      </concept>
+      <concept id="8404904817668627802" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithFileContent" flags="ng" index="3SJUkW">
+        <child id="8404904817668744912" name="fileName" index="3SIlUQ" />
       </concept>
       <concept id="202934866059043946" name="jetbrains.mps.build.structure.BuildLayout_EchoProperties" flags="ng" index="1TblL5">
         <child id="202934866059043948" name="fileName" index="1TblL3" />
@@ -18060,11 +18059,13 @@
     </node>
     <node concept="2kB4xC" id="d_WKSiP3Fm" role="1l3spd">
       <property role="TrG5h" value="idea.platform.build.number" />
-      <node concept="hGsBp" id="d_WKSiPeCU" role="aVJcv">
-        <property role="hGsBk" value="idea.platform.build.number" />
-        <node concept="55IIr" id="d_WKSiPeCV" role="hGsBm">
-          <node concept="2Ry0Ak" id="d_WKSiPeCW" role="iGT6I">
-            <property role="2Ry0Am" value="build.number" />
+      <node concept="3SJUkW" id="7i$e6qcbdh3" role="aVJcv">
+        <node concept="55IIr" id="7i$e6qcbdh4" role="3SIlUQ">
+          <node concept="2Ry0Ak" id="7i$e6qcbdha" role="iGT6I">
+            <property role="2Ry0Am" value="lib" />
+            <node concept="2Ry0Ak" id="7i$e6qcbdhf" role="2Ry0An">
+              <property role="2Ry0Am" value="build.txt" />
+            </node>
           </node>
         </node>
       </node>

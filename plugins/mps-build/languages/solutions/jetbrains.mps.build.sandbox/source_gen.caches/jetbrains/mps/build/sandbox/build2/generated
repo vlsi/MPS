@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7emjy2a4uloq7vbta6rnj0qtuas0j5h" />
+<dependencies version="2" modelHash="-7emjy2a4uloq7vbta6rnj0qtuas0j5h">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="2stoexj073865mfmvjkst29lte6dasf" />
+  <common hash="-ca9hi4ec9vgogq9almuvibo6idwk40a" />
+  <source id="2769948622284624385" name="myCore" hash="-9jfcfb52xwvuqpa5x82y2ca9jaxk7wp">
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <file name="myCore.properties" />
+    <file name="myCore.xml" />
+  </source>
+</dependencies>
 
