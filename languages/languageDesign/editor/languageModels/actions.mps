@@ -3956,7 +3956,7 @@
     </node>
   </node>
   <node concept="37WguZ" id="6VgTvK0rmAI">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IExtensibleMenuPart_factory" />
     <node concept="37WvkG" id="6VgTvK0rmAJ" role="37WGs$">
       <ref role="37XkoT" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
@@ -4050,7 +4050,7 @@
     </node>
   </node>
   <node concept="3FK_9_" id="5qocf8PuKoB">
-    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="3GE5qa" value="Menu.Locations" />
     <property role="TrG5h" value="TransformationLocationActions" />
     <node concept="3FOIzC" id="5qocf8PuKoC" role="3FOPby">
       <ref role="3FOWKa" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
@@ -4129,7 +4129,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5qocf8PzXo6">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="TransformationMenuActionsUtil" />
     <node concept="2YIFZL" id="5qocf8PzXrb" role="jymVt">
       <property role="TrG5h" value="getSubconceptsWithCurrentChildConceptsExcluded" />
@@ -4317,7 +4317,7 @@
     </node>
   </node>
   <node concept="3FK_9_" id="5qocf8P$c79">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="TransformationFeatureActions" />
     <node concept="3FOIzC" id="5qocf8P$c7a" role="3FOPby">
       <ref role="3FOWKa" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
