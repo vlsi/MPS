@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
@@ -233,13 +234,16 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
   }
 
   public boolean isApplicable(List<SNodeReference> initialStates, SRepository repository) {
+    final SModule sourceModule = check_29rp6m_a0a0o(check_29rp6m_a0a0a41(ListSequence.fromList(initialStates).first().resolve(repository)));
+    if (!(sourceModule instanceof Language)) {
+      return false;
+    }
     for (SModule module : Sequence.fromIterable(repository.getModules())) {
       if (MigrationModuleUtil.isModuleMigrateable(module) && !(MigrationModuleUtil.allDependenciesActual(module))) {
         return false;
       }
     }
-    final SModule sourceModule = check_29rp6m_a0b0o(check_29rp6m_a0a1a41(ListSequence.fromList(initialStates).first().resolve(repository)));
-    return sourceModule instanceof Language;
+    return true;
   }
   @Override
   public List<RefactoringParticipant.Option> getAvailableOptions(List<SNodeReference> initialStates, SRepository repository) {
@@ -250,10 +254,19 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     }
   }
 
-  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope) {
-    if (!(isApplicable(ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), initialState), repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
-      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
+  @Override
+  public List<List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>> getChanges(List<SNodeReference> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    if (!(isApplicable(initialStates, repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
+      return ListSequence.fromList(initialStates).select(new ISelector<SNodeReference, List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>>() {
+        public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> select(SNodeReference it) {
+          return ((List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>) ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>()));
+        }
+      }).toListSequence();
     }
+    return super.getChanges(initialStates, repository, selectedOptions, searchScope, progressMonitor);
+  }
+
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope) {
     final SNode sourceNode = initialState.resolve(repository);
     final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
     final List<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> participantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>>() {
@@ -321,13 +334,13 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
 
   protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
-  private static SModule check_29rp6m_a0b0o(SModel checkedDotOperand) {
+  private static SModule check_29rp6m_a0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_29rp6m_a0a1a41(SNode checkedDotOperand) {
+  private static SModel check_29rp6m_a0a0a41(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
