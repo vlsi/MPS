@@ -2,8 +2,8 @@
 <model ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -2162,6 +2162,20 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="3861025227901287711" />
       <ref role="20lvS9" to="iuxj:5M4a$b5iL2N" resolve="XmlBaseAttribute" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7i$e6qc6TPq">
+    <property role="EcuMT" value="8404904817668627802" />
+    <property role="3GE5qa" value="Macro" />
+    <property role="TrG5h" value="BuildVariableMacroInitWithFileContent" />
+    <property role="34LRSv" value="load file" />
+    <ref role="1TJDcQ" node="2oW$psGOu6E" resolve="BuildVariableMacroInitValue" />
+    <node concept="1TJgyj" id="7i$e6qc7mrg" role="1TKVEi">
+      <property role="IQ2ns" value="8404904817668744912" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fileName" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
   </node>
 </model>

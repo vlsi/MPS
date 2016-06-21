@@ -29,6 +29,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="nq57" ref="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" implicit="true" />
+    <import index="ot6o" ref="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -6721,6 +6722,20 @@
           <property role="1413C4" value="paren-attrs" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7i$e6qc7mrF">
+    <property role="3GE5qa" value="Macro" />
+    <ref role="1XX52x" to="3ior:7i$e6qc6TPq" resolve="BuildVariableMacroInitWithFileContent" />
+    <node concept="3EZMnI" id="7i$e6qc7mrH" role="2wV5jI">
+      <node concept="3F0ifn" id="7i$e6qc7mrI" role="3EZMnx">
+        <property role="3F0ifm" value="load from file" />
+        <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="7i$e6qc7ms2" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:7i$e6qc7mrg" />
+      </node>
+      <node concept="l2Vlx" id="7i$e6qc7mrM" role="2iSdaV" />
     </node>
   </node>
 </model>

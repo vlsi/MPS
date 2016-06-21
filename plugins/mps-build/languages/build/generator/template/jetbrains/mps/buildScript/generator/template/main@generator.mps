@@ -6827,6 +6827,71 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="7i$e6qc7x0R" role="3acgRq">
+      <ref role="30HIoZ" to="3ior:7i$e6qc6TPq" resolve="BuildVariableMacroInitWithFileContent" />
+      <node concept="gft3U" id="7i$e6qc7CDq" role="1lVwrX">
+        <node concept="hGZu2" id="7i$e6qc7CDr" role="gfFT$">
+          <node concept="2pNNFK" id="7i$e6qc7G7S" role="hGZu1">
+            <property role="2pNNFO" value="loadfile" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="7i$e6qc7Gvn" role="2pNNFR">
+              <property role="2pNUuO" value="property" />
+              <node concept="2pMdtt" id="7i$e6qc7Gvp" role="2pMdts">
+                <property role="2pMdty" value="pname" />
+                <node concept="17Uvod" id="7i$e6qc7Gvr" role="lGtFl">
+                  <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                  <property role="2qtEX9" value="text" />
+                  <node concept="3zFVjK" id="7i$e6qc7Gvs" role="3zH0cK">
+                    <node concept="3clFbS" id="7i$e6qc7Gvt" role="2VODD2">
+                      <node concept="3clFbF" id="7i$e6qc7GBU" role="3cqZAp">
+                        <node concept="2OqwBi" id="7i$e6qc7GS2" role="3clFbG">
+                          <node concept="30H73N" id="7i$e6qc7GBT" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="7i$e6qc7Hv1" role="2OqNvi">
+                            <ref role="37wK5l" to="vbkb:d_WKSiPASu" resolve="getMacroName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2pNUuL" id="7i$e6qc7PQ2" role="2pNNFR">
+              <property role="2pNUuO" value="srcFile" />
+              <node concept="2pMdtt" id="7i$e6qc7Y8a" role="2pMdts">
+                <property role="2pMdty" value="./file.txt" />
+                <node concept="17Uvod" id="7i$e6qc7Y8c" role="lGtFl">
+                  <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                  <property role="2qtEX9" value="text" />
+                  <node concept="3zFVjK" id="7i$e6qc7Y8d" role="3zH0cK">
+                    <node concept="3clFbS" id="7i$e6qc7Y8e" role="2VODD2">
+                      <node concept="3clFbF" id="7i$e6qc7YgE" role="3cqZAp">
+                        <node concept="2OqwBi" id="7i$e6qc7YgF" role="3clFbG">
+                          <node concept="2qgKlT" id="7i$e6qc7YgG" role="2OqNvi">
+                            <ref role="37wK5l" to="vbkb:7ro1ZztyOh5" resolve="getAntPath" />
+                            <node concept="2YIFZM" id="7i$e6qc7YgH" role="37wK5m">
+                              <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
+                              <ref role="37wK5l" to="o3n2:19KdqCVerNJ" resolve="defaultContext" />
+                              <node concept="1iwH7S" id="7i$e6qc7YgI" role="37wK5m" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="7i$e6qc7YgJ" role="2Oq$k0">
+                            <node concept="30H73N" id="7i$e6qc7YgK" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="7i$e6qc7YQA" role="2OqNvi">
+                              <ref role="3Tt5mk" to="3ior:7i$e6qc7mrg" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="Y2EImGIgYF" role="3acgRq">
       <ref role="30HIoZ" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
       <ref role="2sgKRv" node="5KZfyKsVtMX" resolve="javamodule" />
