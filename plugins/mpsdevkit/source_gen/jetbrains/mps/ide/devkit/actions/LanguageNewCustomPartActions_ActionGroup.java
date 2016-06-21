@@ -11,10 +11,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.LanguageAspect;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
@@ -31,10 +30,6 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
 
     LanguageNewCustomPartActions_ActionGroup.this.removeAll();
 
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      // [MM] this LanguageAspect usage is reviewed 
-      LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), aspect);
-    }
     for (LanguageAspectDescriptor ad : LanguageAspectSupport.collectAspects()) {
       LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));
     }

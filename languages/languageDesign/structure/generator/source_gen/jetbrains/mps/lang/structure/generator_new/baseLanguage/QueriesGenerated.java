@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration__BehaviorDescriptor;
@@ -30,9 +32,9 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -61,6 +63,9 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_5934105035579769278(final BaseMappingRuleContext _context) {
     return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+  }
+  public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "structure") && SModelOperations.roots(((SModel) _context.getVariable("model")), null).iterator().hasNext();
   }
   public static Object propertyMacro_GetPropertyValue_1174698175154(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
@@ -342,6 +347,18 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_5466719438543278065(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
+  }
+  public static Object templateArgumentQuery_2704640723575854425(final TemplateArgumentContext _context) {
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".StructureAspectDescriptor";
+  }
+  public static Object templateArgumentQuery_2704640723575854430(final TemplateArgumentContext _context) {
+    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)", "~StructureAspectDescriptor");
+  }
+  public static Object templateArgumentQuery_2704640723575854746(final TemplateArgumentContext _context) {
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ConceptPresentationAspectImpl";
+  }
+  public static Object templateArgumentQuery_2704640723575854751(final TemplateArgumentContext _context) {
+    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)", "~ConceptPresentationAspect");
   }
   public static Iterable<SNode> sourceNodesQuery_1174698255353(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"));

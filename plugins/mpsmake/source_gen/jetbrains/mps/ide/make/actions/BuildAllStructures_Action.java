@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
 
@@ -49,12 +49,12 @@ public class BuildAllStructures_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
         models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
           public SModel select(Language it) {
-            return LanguageAspect.STRUCTURE.get(it);
+            return SModuleOperations.getAspect(it, "structure");
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {

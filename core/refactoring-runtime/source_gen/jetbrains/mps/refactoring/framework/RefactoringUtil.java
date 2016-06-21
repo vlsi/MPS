@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -45,7 +45,7 @@ public class RefactoringUtil {
   }
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
-    SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
+    SModel refModelDescriptor = SModuleOperations.getAspect(language, "refactorings");
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor;
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);

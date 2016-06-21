@@ -34,42 +34,57 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum LanguageAspect {
+  //mostly migrated
   STRUCTURE("structure", BootstrapLanguages.structureLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Structure"),
 
+  //mostly migrated
   EDITOR("editor", BootstrapLanguages.editorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor"),
 
+  //mostly migrated
   ACTIONS("actions", BootstrapLanguages.actionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor+Actions"),
 
+  //mostly migrated
   CONSTRAINTS("constraints", BootstrapLanguages.constraintsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Constraints"),
 
+  //mostly migrated
   BEHAVIOR("behavior", BootstrapLanguages.behaviorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Behavior"),
 
+  //mostly migrated
   TYPESYSTEM("typesystem", BootstrapLanguages.typesystemLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Typesystem"),
 
+  //mostly migrated
   REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
+  //mostly migrated
   SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), null),
 
+  //mostly migrated
   INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
+  //mostly migrated
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
-  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
-    @Override
-    public Collection<SLanguage> getMainLanguages() {
-      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
-      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
-      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
-      return result;
-    }
-  },
+  //migrated, uncomment when migration is finished [compatibility] and deprecate this class
+//  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
+//    @Override
+//    public Collection<SLanguage> getMainLanguages() {
+//      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
+//      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
+//      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
+//      return result;
+//    }
+//  },
 
+  //mostly migrated
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
+  //mostly migrated
   TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
 
+  //mostly migrated
   TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
+  //mostly migrated
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
   public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";
@@ -159,20 +174,5 @@ public enum LanguageAspect {
     ArrayList<SLanguage> res = new ArrayList<SLanguage>();
     res.add(MetaAdapterFactory.getLanguage(getMainLanguage()));
     return res;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //not used in MPS
-  //use jetbrains.mps.smodel.language.LanguageAspectSupport.getAspectModels()
-  public static Collection<SModel> getAspectModels(Language l) {
-    Set<SModel> result = new HashSet<SModel>();
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      SModel asp = aspect.get(l);
-      if (asp != null) {
-        result.add(asp);
-      }
-    }
-    return result;
   }
 }

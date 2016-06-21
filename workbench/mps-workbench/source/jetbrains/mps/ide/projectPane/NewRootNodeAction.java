@@ -30,17 +30,21 @@ import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
@@ -81,6 +85,10 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     modelAccess.executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
+        SLanguage l = myNodeConcept.getLanguage();
+        if (!SModelOperations.getAllLanguageImports(myModel).contains(l)){
+          ((SModelInternal)myModel).addLanguage(l);
+        }
         final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
         SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
         myModel.addRootNode(node);

@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Set;
@@ -36,7 +36,7 @@ public class EditorCellIdScope extends FilteringScope {
     Iterable<Language> depLanguages = Sequence.fromIterable(((Iterable<SModule>) new GlobalModuleDependenciesManager(model.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))).ofType(Language.class);
     return Sequence.fromIterable(withExtendedLanguages(depLanguages, model.getRepository())).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
-        return ((SModel) LanguageAspect.EDITOR.get(it));
+        return SModuleOperations.getAspect(it, "editor");
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

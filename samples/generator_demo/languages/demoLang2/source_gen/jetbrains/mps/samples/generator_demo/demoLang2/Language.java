@@ -39,8 +39,10 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == EditorAspectDescriptor.class) {
-      return ((T) new EditorAspectDescriptorBase());
+    if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
+      if (aspectClass == EditorAspectDescriptor.class) {
+        return (T) new EditorAspectDescriptorBase();
+      }
     }
     return super.createAspect(aspectClass);
   }

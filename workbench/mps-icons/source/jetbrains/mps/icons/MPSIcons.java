@@ -50,8 +50,6 @@ public class MPSIcons {
     public static final Icon CellKeyMap = IconLoader.getIcon("/cellExplorer/cellKeyMap.png");
     public static final Icon CellProperty = IconLoader.getIcon("/cellExplorer/cellProperty.png");
     public static final Icon Cells = IconLoader.getIcon("/cellExplorer/cells.png");
-    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
-    public static final Icon CellTree = IconLoader.getIcon("/cellExplorer/cellTree.png");
   }
 
   public static class Debug {
@@ -65,8 +63,6 @@ public class MPSIcons {
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
     public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
-    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
-    public static final Icon NewProject = IconLoader.getIcon("/general/newProject.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
     public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
     public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
@@ -122,20 +118,7 @@ public class MPSIcons {
     public static final Icon UsagesFinder = IconLoader.getIcon("/nodes/usagesFinder.png");
 
     public static class Models {
-      public static final Icon StructureModel = IconLoader.getIcon("/nodes/models/structureModel.png");
-      public static final Icon EditorModel = IconLoader.getIcon("/nodes/models/editorModel.png");
-      public static final Icon ActionsModel = IconLoader.getIcon("/nodes/models/actionsModel.png");
       public static final Icon TemplatesModel = IconLoader.getIcon("/nodes/models/templatesModel.png");
-      public static final Icon TypesystemModel = IconLoader.getIcon("/nodes/models/typesystemModel.png");
-      public static final Icon IntentionsModel = IconLoader.getIcon("/nodes/models/intentionsModel.png");
-      public static final Icon FindUsagesModel = IconLoader.getIcon("/nodes/models/findUsagesModel.png");
-      public static final Icon PluginModel = IconLoader.getIcon("/nodes/models/pluginModel.png");
-      public static final Icon BehaviourModel = IconLoader.getIcon("/nodes/models/behaviorModel.png");
-      public static final Icon ConstraintsModel = IconLoader.getIcon("/nodes/models/constraintsModel.png");
-      public static final Icon DataFlowModel = IconLoader.getIcon("/nodes/models/dataFlowModel.png");
-      public static final Icon RefactoringsModel = IconLoader.getIcon("/nodes/models/refactoringsModel.png");
-      public static final Icon StubsModel = IconLoader.getIcon("/nodes/models/stubsModel.png");
-      public static final Icon TextGenModel = IconLoader.getIcon("/nodes/models/textGenModel.png");
       public static final Icon AccessoryModel = IconLoader.getIcon("/nodes/models/accessoryModel.png");
     }
   }
@@ -162,6 +145,4 @@ public class MPSIcons {
 
   public static final Icon MPS16x16 = IconLoader.getIcon("/MPS_16.png");
   public static final Icon MPSFavIcon = IconLoader.getIcon("/MPS_favicon.png");
-
-  //public static final Icon Templ = IconLoader.getIcon("/");
 }

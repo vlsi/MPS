@@ -24,7 +24,7 @@ import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -57,9 +57,8 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
             SModule sourceModule = SNodeOperations.getModel(_context.getEnclosingNode()).getModule();
             Collection<Language> langs = new GlobalModuleDependenciesManager(sourceModule).getUsedLanguages();
             for (Language language : langs) {
-              SModel strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
-              SModel strucModel = strucModelDescriptor;
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(strucModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+              SModel sm = SModuleOperations.getAspect(language, "structure");
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(sm, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1081773326031")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
                 }
