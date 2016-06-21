@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -88,7 +89,7 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
     }
     return result;
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SNode myParameter;
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
@@ -116,6 +117,9 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
     @Override
     public IntentionDescriptor getDescriptor() {
       return AddPropertyMacroParam_property_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

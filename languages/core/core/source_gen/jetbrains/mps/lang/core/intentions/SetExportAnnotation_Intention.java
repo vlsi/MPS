@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -65,7 +66,7 @@ public final class SetExportAnnotation_Intention extends IntentionDescriptorBase
       }
     }).toListSequence();
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SConcept myParameter;
     public IntentionImplementation(SConcept parameter) {
       myParameter = parameter;
@@ -84,6 +85,9 @@ public final class SetExportAnnotation_Intention extends IntentionDescriptorBase
     @Override
     public IntentionDescriptor getDescriptor() {
       return SetExportAnnotation_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__Behavio
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -78,7 +79,7 @@ public final class AddReferenceMacroParam_link_Intention extends IntentionDescri
     }
     return result;
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SNode myParameter;
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
@@ -106,6 +107,9 @@ public final class AddReferenceMacroParam_link_Intention extends IntentionDescri
     @Override
     public IntentionDescriptor getDescriptor() {
       return AddReferenceMacroParam_link_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

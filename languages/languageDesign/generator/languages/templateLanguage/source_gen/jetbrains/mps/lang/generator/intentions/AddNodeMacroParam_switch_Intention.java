@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -62,7 +63,7 @@ public final class AddNodeMacroParam_switch_Intention extends IntentionDescripto
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     return SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SNode myParameter;
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
@@ -83,6 +84,9 @@ public final class AddNodeMacroParam_switch_Intention extends IntentionDescripto
     @Override
     public IntentionDescriptor getDescriptor() {
       return AddNodeMacroParam_switch_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

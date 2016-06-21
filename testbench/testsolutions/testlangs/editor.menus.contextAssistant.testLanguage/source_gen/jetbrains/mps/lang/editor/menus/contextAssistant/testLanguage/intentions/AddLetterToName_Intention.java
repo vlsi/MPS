@@ -15,6 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -47,7 +48,7 @@ public final class AddLetterToName_Intention extends IntentionDescriptorBase imp
   private List<Character> parameter(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromListAndArray(new ArrayList<Character>(), 'a', 'b', 'c', 'd');
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private char myParameter;
     public IntentionImplementation(char parameter) {
       myParameter = parameter;
@@ -63,6 +64,9 @@ public final class AddLetterToName_Intention extends IntentionDescriptorBase imp
     @Override
     public IntentionDescriptor getDescriptor() {
       return AddLetterToName_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }
