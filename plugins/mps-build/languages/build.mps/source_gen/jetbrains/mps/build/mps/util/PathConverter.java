@@ -17,10 +17,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.build.behavior.BuildFolderMacro__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import java.io.IOException;
 
@@ -58,7 +57,13 @@ public class PathConverter {
     }, false);
     macrosWithoutPath = withoutPath;
   }
-  public List<SNode> convertPath(String path, SModel model) throws PathConverter.PathConvertException {
+
+  /**
+   * Produce a path node using supplied path factory/builder to instatiate them
+   * 
+   * @return never null
+   */
+  public List<SNode> convertPath(String path, PathBuilder pathBuilder) throws PathConverter.PathConvertException {
     path = normalizePath(path, false);
     String withSlash = normalizePath(path, true);
     List<SNode> result = new ArrayList<SNode>();
@@ -69,20 +74,16 @@ public class PathConverter {
 
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
-      } else {
-        continue;
+        ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m._1(), currPath));
       }
-      ListSequence.fromList(result).addElement(buildRelative(currPath, m._1(), model));
     }
     for (SNode m : Sequence.fromIterable(macrosWithoutPath)) {
       String mdir = "${" + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/";
       String currPath = (path.length() < mdir.length() ? withSlash : path);
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
-      } else {
-        continue;
+        ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m, currPath));
       }
-      ListSequence.fromList(result).addElement(buildRelative(currPath, m, model));
     }
     if (ListSequence.fromList(result).isEmpty()) {
       throw new PathConverter.PathConvertException("source path (" + path + ") should be under working directory (" + workingDirectory + "), or any macros default directory");
@@ -97,35 +98,7 @@ public class PathConverter {
     if (!(fullPath.startsWith(baseDir))) {
       throw new PathConverter.PathConvertException(String.format("specified path '%s' does not start with base dir '%s'", fullPath, baseDir));
     }
-    return buildRelative(fullPath.substring(baseDir.length(), fullPath.length()), null, model);
-  }
-
-  private static SNode buildRelative(String currPath, SNode macro, SModel model) {
-    SNode relPath;
-    if (macro == null) {
-      relPath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath")));
-    } else {
-      relPath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")));
-      SLinkOperations.setTarget(SNodeOperations.cast(relPath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro"), macro);
-    }
-    buildCompositePath(relPath, currPath, model);
-    return relPath;
-  }
-
-  private static void buildCompositePath(SNode result, String path, SModel model) {
-    SNode last = null;
-    for (String fname : path.split("/")) {
-      if ((fname != null && fname.length() > 0)) {
-        SNode npath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
-        SPropertyOperations.set(npath, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), fname);
-        if (last == null) {
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), npath);
-        } else {
-          SLinkOperations.setTarget(last, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), npath);
-        }
-        last = npath;
-      }
-    }
+    return new PathBuilder(model).buildRelative(fullPath.substring(baseDir.length(), fullPath.length()));
   }
 
   private static String normalizePath(String path, boolean addSlash) {
@@ -149,4 +122,7 @@ public class PathConverter {
       super(message);
     }
   }
+
+
+
 }

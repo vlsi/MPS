@@ -781,7 +781,7 @@ public class ModuleChecker {
     // XXX why on earth do we produce list here and ignore all but first element everywhere? 
     try {
       // apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one (despite thefact PathConverter is build from 'origin' project in ModuleLoader) 
-      return myPathConverter.convertPath(path, SNodeOperations.getModel(myModule));
+      return myPathConverter.convertPath(path, new PathBuilder(SNodeOperations.getModel(myModule)));
     } catch (PathConverter.PathConvertException ex) {
       report(ex.getMessage(), myOriginalModule, ex);
       return null;

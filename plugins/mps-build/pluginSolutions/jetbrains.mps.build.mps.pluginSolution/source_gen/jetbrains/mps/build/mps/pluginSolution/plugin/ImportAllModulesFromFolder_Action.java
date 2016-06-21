@@ -26,7 +26,6 @@ import org.apache.log4j.Level;
 import java.util.Collection;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.build.mps.util.PathConverter;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -111,8 +110,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
         visible.collect();
 
-        PathConverter converter = new PathConverter(((SNode) MapSequence.fromMap(_params).get("node")));
-
         List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
         for (ModulesMiner.ModuleHandle handle : modules) {
           SModuleReference modRef = handle.getDescriptor().getModuleReference();
@@ -120,7 +117,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
             continue;
           }
 
-          ImportModuleHelper helper = new ImportModuleHelper(((SNode) MapSequence.fromMap(_params).get("node")), converter, handle.getFile(), handle.getDescriptor());
+          ImportModuleHelper helper = new ImportModuleHelper(((SNode) MapSequence.fromMap(_params).get("node")), handle.getFile(), handle.getDescriptor());
           helper.create();
           helpers.add(helper);
         }
