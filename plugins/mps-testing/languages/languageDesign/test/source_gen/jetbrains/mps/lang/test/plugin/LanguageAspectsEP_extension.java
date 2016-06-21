@@ -80,7 +80,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final Icon ICON = IconResourceBundle_TestsAspect.getInstance().getResource("TESTSMODEL");
+      private final Icon ICON = Icons.TestModel;
 
     };
   }

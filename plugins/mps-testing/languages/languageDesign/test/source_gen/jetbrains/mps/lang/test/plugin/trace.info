@@ -16,6 +16,9 @@
     <file name="ExtensionDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.test.plugin.ExtensionDescriptor" />
     </file>
+    <file name="IconContainer.java">
+      <unit at="8,0,12,0" name="jetbrains.mps.lang.test.plugin.IconContainer" />
+    </file>
   </root>
   <root nodeRef="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)/3193873080290339088">
     <file name="LanguageAspectsEP_extension.java">
@@ -103,31 +106,10 @@
       <unit id="3193873080290339088" at="26,0,91,0" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension" />
     </file>
   </root>
-  <root nodeRef="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)/5003344573136319645">
-    <file name="IconResourceBundle_TestsAspect.java">
-      <node id="5003344573136319645" at="12,0,13,0" concept="9" trace="INSTANCE" />
-      <node id="5003344573136319645" at="14,5,15,50" concept="3" />
-      <node id="5003344573136319645" at="20,37,21,26" concept="8" />
-      <node id="5003344573136319645" at="23,39,24,26" concept="8" />
-      <node id="5003344573136319645" at="26,62,27,51" concept="8" />
-      <node id="5003344573136319645" at="18,0,20,0" concept="2" trace="IconResourceBundle_TestsAspect#()V" />
-      <node id="5003344573136319645" at="20,0,23,0" concept="6" trace="getKeys#()Ljava/lang/Iterable;" />
-      <node id="5003344573136319645" at="23,0,26,0" concept="6" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-      <node id="5003344573136319645" at="26,0,29,0" concept="10" trace="getInstance#()Ljetbrains/mps/lang/test/plugin/IconResourceBundle_TestsAspect;" />
-      <node id="5003344573136319645" at="13,0,18,0" concept="4" trace="icons" />
-      <scope id="5003344573136319645" at="18,43,18,43" />
-      <scope id="5003344573136319645" at="14,5,15,50" />
-      <scope id="5003344573136319645" at="20,37,21,26" />
-      <scope id="5003344573136319645" at="23,39,24,26" />
-      <scope id="5003344573136319645" at="26,62,27,51" />
-      <scope id="5003344573136319645" at="18,0,20,0" />
-      <scope id="5003344573136319645" at="20,0,23,0" />
-      <scope id="5003344573136319645" at="23,0,26,0">
-        <var name="key" id="5003344573136319645" />
-      </scope>
-      <scope id="5003344573136319645" at="26,0,29,0" />
-      <unit id="5003344573136319645" at="13,40,17,3" name="jetbrains.mps.lang.test.plugin.IconResourceBundle_TestsAspect$1" />
-      <unit id="5003344573136319645" at="11,0,30,0" name="jetbrains.mps.lang.test.plugin.IconResourceBundle_TestsAspect" />
+  <root nodeRef="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)/4343640488433004631">
+    <file name="Icons.java">
+      <node id="4343640488433004659" at="9,0,10,0" concept="9" trace="TestModel" />
+      <unit id="4343640488433004631" at="8,0,11,0" name="jetbrains.mps.lang.test.plugin.Icons" />
     </file>
   </root>
 </debug-info-v2>
