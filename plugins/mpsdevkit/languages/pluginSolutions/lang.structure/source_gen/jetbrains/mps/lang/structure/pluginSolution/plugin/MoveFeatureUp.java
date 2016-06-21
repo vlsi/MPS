@@ -83,10 +83,10 @@ public class MoveFeatureUp extends MoveNodesActionBase {
     }
 
     if (merge) {
-      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.ExistingTargetProcessor(mergeTarget.value.getReference(), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)), null);
+      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.ExistingTargetProcessor(mergeTarget.value.getReference(), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
 
     } else {
-      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)), null);
+      doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
     }
   }
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesAction> {

@@ -30,9 +30,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -172,7 +172,7 @@ public class MoveNodesActionBase implements MoveNodesAction {
     }
 
     MoveNodesActionBase.NodeProcessor processor = new MoveNodesActionBase.NodeCreatingProcessor(newLocation, project);
-    doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), processor).withValues(nodesToMove), null);
+    doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), processor).withValues(nodesToMove));
   }
 
   @NotNull
@@ -201,7 +201,7 @@ public class MoveNodesActionBase implements MoveNodesAction {
   }
 
 
-  public void doMove(final MPSProject project, final Map<MoveNodesActionBase.NodeProcessor, List<SNode>> processorToMoveRoots, final _FunctionTypes._void_P1_E0<? super RefactoringSession> initRefactoringSession) {
+  public void doMove(final MPSProject project, final Map<MoveNodesActionBase.NodeProcessor, List<SNode>> processorToMoveRoots) {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -240,12 +240,6 @@ public class MoveNodesActionBase implements MoveNodesAction {
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
     RefactoringProcessor.performRefactoring(project, getName(), participants, allNodes, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Iterable<RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
       public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(Iterable<RefactoringParticipant.ParticipantState<?, ?, SNode, SNode, SNode, SNode>> participantStates, RefactoringSession refactoringSession) {
-
-        // todo remove 
-        if (initRefactoringSession != null) {
-          initRefactoringSession.invoke(refactoringSession);
-        }
-        // todo remove end 
 
         return doRefactor(processorToMoveRoots, allNodeIndices, moveRootsToDescendants, participantStates, refactoringSession);
       }

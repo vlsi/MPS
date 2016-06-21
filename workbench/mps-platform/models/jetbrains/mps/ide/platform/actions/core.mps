@@ -2491,7 +2491,6 @@
                 </node>
               </node>
             </node>
-            <node concept="10Nm6u" id="3BJTP_NtOHZ" role="37wK5m" />
           </node>
         </node>
       </node>
@@ -3069,37 +3068,6 @@
             <node concept="1bVj0M" id="5$FcEFMZqkM" role="37wK5m">
               <node concept="3clFbS" id="5$FcEFMZqkN" role="1bW5cS">
                 <node concept="3clFbH" id="5$FcEFMZqkO" role="3cqZAp" />
-                <node concept="3SKdUt" id="5$FcEFMZqkP" role="3cqZAp">
-                  <node concept="3SKdUq" id="5$FcEFMZqkQ" role="3SKWNk">
-                    <property role="3SKdUp" value="todo remove" />
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="5$FcEFMZqkR" role="3cqZAp">
-                  <node concept="3clFbS" id="5$FcEFMZqkS" role="3clFbx">
-                    <node concept="3clFbF" id="5$FcEFMZqkT" role="3cqZAp">
-                      <node concept="2Sg_IR" id="5$FcEFMZqkU" role="3clFbG">
-                        <node concept="37vLTw" id="5$FcEFMZqkV" role="2SgG2M">
-                          <ref role="3cqZAo" node="5$FcEFMZqnd" resolve="initRefactoringSession" />
-                        </node>
-                        <node concept="37vLTw" id="5$FcEFMZqkW" role="2SgHGx">
-                          <ref role="3cqZAo" node="5$FcEFMZqn5" resolve="refactoringSession" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3y3z36" id="5$FcEFMZqkX" role="3clFbw">
-                    <node concept="10Nm6u" id="5$FcEFMZqkY" role="3uHU7w" />
-                    <node concept="37vLTw" id="5$FcEFMZqkZ" role="3uHU7B">
-                      <ref role="3cqZAo" node="5$FcEFMZqnd" resolve="initRefactoringSession" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="5$FcEFMZqmN" role="3cqZAp">
-                  <node concept="3SKdUq" id="5$FcEFMZqmO" role="3SKWNk">
-                    <property role="3SKdUp" value="todo remove end" />
-                  </node>
-                </node>
-                <node concept="3clFbH" id="5$FcEFMZqmP" role="3cqZAp" />
                 <node concept="3cpWs6" id="5$FcEFMZqmQ" role="3cqZAp">
                   <node concept="1rXfSq" id="5$FcEFMZTcg" role="3cqZAk">
                     <ref role="37wK5l" node="5$FcEFMZPbM" resolve="doRefactor" />
@@ -3161,16 +3129,6 @@
           </node>
           <node concept="3uibUv" id="5$FcEFNfiIL" role="3rvQeY">
             <ref role="3uigEE" node="7tV5ZLw8bTF" resolve="MoveNodesActionBase.NodeProcessor" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="5$FcEFMZqnd" role="3clF46">
-        <property role="TrG5h" value="initRefactoringSession" />
-        <property role="3TUv4t" value="true" />
-        <node concept="1ajhzC" id="5$FcEFMZqne" role="1tU5fm">
-          <node concept="3cqZAl" id="5$FcEFMZqnf" role="1ajl9A" />
-          <node concept="3uibUv" id="5$FcEFMZqng" role="1ajw0F">
-            <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
           </node>
         </node>
       </node>

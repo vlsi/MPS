@@ -58,7 +58,7 @@ public class MoveStaticField extends MoveNodesActionBase {
     }
     project.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)), null);
+        doMove(project, MapSequence.<MoveNodesActionBase.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesActionBase.NodeProcessor, List<SNode>>(), new MoveNodesActionBase.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
       }
     });
   }

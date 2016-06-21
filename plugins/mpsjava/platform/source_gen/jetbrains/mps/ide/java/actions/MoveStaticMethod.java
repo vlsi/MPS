@@ -86,7 +86,7 @@ public class MoveStaticMethod extends MoveNodesActionBase {
               myNodeLocation.insertNode(myProject.getRepository(), newNode);
             }
           }
-        }).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)), null);
+        }).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
       }
     });
   }
