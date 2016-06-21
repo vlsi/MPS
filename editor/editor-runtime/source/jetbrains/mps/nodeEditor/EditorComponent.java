@@ -88,6 +88,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -105,7 +107,6 @@ import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.ActionHandler;
-import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -244,7 +245,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private final Object myAdditionalPaintersLock = new Object();
-  private boolean myHasUI;
 
   private Map<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean> myCollapseStates = new HashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
@@ -344,6 +344,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected SNodeReference myNodePointer;
   @NotNull
   private EditorContext myEditorContext;
+  @NotNull
+  private final EditorConfiguration myEditorConfiguration;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
 
@@ -365,30 +367,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private final EditorHighlighter myHighlighter = new EditorHighlighter(this);
 
-  private EditorPanelManager myEditorPanelManager;
-
   public EditorComponent(@NotNull SRepository repository) {
-    this(repository, false, false);
+    this(repository, EditorConfigurationBuilder.buildDefault());
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link #EditorComponent(SRepository, EditorConfiguration)}
+   */
+  @Deprecated
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
-    this(repository, showErrorsGutter, rightToLeft, true);
+    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showErrorsGutter).rightToLeft(rightToLeft).build());
   }
 
-  public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, EditorPanelManager editorPanelManager) {
-    this(repository, showErrorsGutter, rightToLeft, true, editorPanelManager);
-  }
-
+  /**
+   * @deprecated since MPS 3.4 use {@link #EditorComponent(SRepository, EditorConfiguration)}
+   */
+  @Deprecated
   protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
-    this(repository, showErrorsGutter, rightToLeft, createUI, null);
+    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showErrorsGutter).rightToLeft(rightToLeft).withUI(createUI).build());
   }
 
-  // TODO: create EditorOptions class and use it as single constructor parameter to encapsulate all editor creation options
-  protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI,
-      EditorPanelManager editorPanelManager) {
-    setLayout(new EditorComponentLayoutManager(this));
+  protected EditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     myRepository = repository;
-    myEditorPanelManager = editorPanelManager;
+    myEditorConfiguration = configuration;
+
+    setLayout(new EditorComponentLayoutManager(this));
     setEditorContext(null, repository);
     myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
     myRootCell.setSelectable(false);
@@ -646,8 +649,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     attachListeners();
     enablePasteFromHistory();
 
-    if (createUI) {
-      createUI(rightToLeft, showErrorsGutter);
+    if (configuration.withUI) {
+      createUI(configuration);
     }
   }
 
@@ -655,13 +658,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   // - extract all UI-free common logic into a super-class (AbstractEditorComponent)
   // - let HeadlessEditorComponent extend AbstractEditorComponent
   // - make this method again a part of constructor for this class
-  private void createUI(boolean rightToLeft, boolean showErrorsGutter) {
-    myHasUI = true;
-
+  private void createUI(EditorConfiguration editorConfiguration) {
     myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
 
     myScrollPane = ScrollPaneFactory.createScrollPane();
-    if (rightToLeft) {
+    if (editorConfiguration.rightToLeft) {
       myScrollPane.setLayout(new LeftHandScrollbarLayout());
     }
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -709,8 +710,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
-    myMessagesGutter = new MessagesGutter(this, rightToLeft);
-    if (showErrorsGutter) {
+    myMessagesGutter = new MessagesGutter(this, editorConfiguration.rightToLeft);
+    if (editorConfiguration.showErrorsGutter) {
       getVerticalScrollBar().setPersistentUI(myMessagesGutter);
     } else {
       getVerticalScrollBar().setPersistentUI(new ButtonlessScrollBarUI() {
@@ -720,7 +721,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
-    myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
+    myLeftHighlighter = new LeftEditorHighlighter(this, editorConfiguration.rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
@@ -780,7 +781,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   boolean hasUI() {
-    return myHasUI;
+    return myEditorConfiguration.withUI;
   }
 
   private void enablePasteFromHistory() {
@@ -845,16 +846,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public JViewport getViewport() {
-    assert myHasUI;
+    assert hasUI();
     return myScrollPane.getViewport();
   }
 
   Point getViewPosition() {
-    return myHasUI ? getViewport().getViewPosition() : new Point(0, 0);
+    return hasUI() ? getViewport().getViewPosition() : new Point(0, 0);
   }
 
   void setViewPosition(Point point) {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     getViewport().setViewPosition(point);
@@ -862,7 +863,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   public MyScrollBar getVerticalScrollBar() {
-    assert myHasUI;
+    assert hasUI();
     return myVerticalScrollBar;
   }
 
@@ -1221,19 +1222,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   // TODO pool this method up to NodeEditorComponent
   @NotNull
   public MessagesGutter getMessagesGutter() {
-    assert myHasUI;
+    assert hasUI();
     return myMessagesGutter;
   }
 
   @NotNull
   public LeftEditorHighlighter getLeftEditorHighlighter() {
-    assert myHasUI;
+    assert hasUI();
     return myLeftHighlighter;
   }
 
   @NotNull
   public SearchPanel getSearchPanel() {
-    assert myHasUI;
+    assert hasUI();
     if (mySearchPanel == null) {
       mySearchPanel = new SearchPanel(this);
     }
@@ -1245,7 +1246,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public JPanel getUpperPanel() {
-    assert myHasUI;
+    assert hasUI();
     if (myUpperPanel == null) {
       myUpperPanel = new JPanel();
       myUpperPanel.setLayout(new GridLayout(0, 1));
@@ -1373,19 +1374,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   public JComponent getExternalComponent() {
-    assert myHasUI;
+    assert hasUI();
     return myContainer;
   }
 
   public void repaintExternalComponent() {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     getExternalComponent().repaint();
   }
 
   public void validateExternalComponent() {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     getExternalComponent().validate();
@@ -1397,6 +1398,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 // TODO: uncomment this assertion. Was commented out because this method is called indirectly from the dispose() method (failing tests).
 //    assert !isDisposed();
     return myEditorContext;
+  }
+
+  @NotNull
+  protected EditorConfiguration getEditorConfiguration() {
+    return myEditorConfiguration;
   }
 
   @NotNull
@@ -1472,7 +1478,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myUpdater.dispose();
 
-    if (myHasUI) {
+    if (hasUI()) {
       myLeftHighlighter.dispose();
       myMessagesGutter.dispose();
     }
@@ -1727,7 +1733,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     myLeftHighlighter.relayout(true);
@@ -1737,21 +1743,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void leftHighlightCell(EditorCell cell, Color c) {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     myLeftHighlighter.highlight(cell, cell, c);
   }
 
   public void leftHighlightCells(EditorCell cell, EditorCell cell2, Color c) {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     myLeftHighlighter.highlight(cell, cell2, c);
   }
 
   public void leftUnhighlightCell(EditorCell cell) {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     myLeftHighlighter.unHighlight(cell);
@@ -2097,7 +2103,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   // TODO: replace this method with selection listener
   private void showCellInViewPort(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
-    if (!myHasUI) {
+    if (!hasUI()) {
       return;
     }
     if (getVisibleRect().isEmpty()) {
@@ -2135,7 +2141,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    if (!myHasUI || getVisibleRect().isEmpty()) {
+    if (!hasUI() || getVisibleRect().isEmpty()) {
       return;
     }
 
@@ -2297,13 +2303,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public boolean getScrollableTracksViewportWidth() {
-    assert myHasUI;
+    assert hasUI();
     return myScrollPane.getViewport().getWidth() > getPreferredSize().width;
   }
 
   @Override
   public boolean getScrollableTracksViewportHeight() {
-    assert myHasUI;
+    assert hasUI();
     return myScrollPane.getViewport().getHeight() > getPreferredSize().height;
   }
 
@@ -2703,15 +2709,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @NotNull
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new EditorContext(this, model, repository, createContextAssistantManager(repository), getEditorPanelManager());
+    return new EditorContext(this, model, repository, getEditorConfiguration(), createContextAssistantManager(repository));
   }
 
   protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
     return new DefaultContextAssistantManager(this, repository);
-  }
-
-  protected EditorPanelManager getEditorPanelManager() {
-    return myEditorPanelManager;
   }
 
   @Override
@@ -3256,7 +3258,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public int getUnitIncrement(int direction) {
-      assert myHasUI;
+      assert hasUI();
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableUnitIncrement(vr, SwingConstants.VERTICAL, direction);
@@ -3264,7 +3266,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public int getBlockIncrement(int direction) {
-      assert myHasUI;
+      assert hasUI();
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableBlockIncrement(vr, SwingConstants.VERTICAL, direction);

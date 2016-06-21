@@ -32,13 +32,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -85,7 +84,9 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
 
   @Override
   public void disposeComponent() {
-    if (myInspectorComponent == null) return;
+    if (myInspectorComponent == null) {
+      return;
+    }
     myInspectorComponent.dispose();
     unregister();
   }
@@ -110,7 +111,8 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
             InspectorTool.this.myMessagePanel = new MyMessagePanel();
             myComponent = new MyPanel();
             jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
-            myInspectorComponent = new InspectorEditorComponent(project.getRepository(), new EditorPanelManagerImpl(project));
+            myInspectorComponent = new InspectorEditorComponent(project.getRepository(),
+                new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
             EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
             myMessagePanel.setNode(null);

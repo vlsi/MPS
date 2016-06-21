@@ -20,6 +20,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
@@ -55,6 +57,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private final EditorComponent myNodeEditorComponent;
   private final SRepository myRepository;
   private final SModel myModel;
+  private final EditorConfiguration myConfiguration;
   private EditorManager myEditorManager;
 
   private EditorCell myContextCell;
@@ -64,19 +67,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;
-  private EditorPanelManager myEditorPanelManager;
 
   public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository) {
-    this(editorComponent, model, repository, new DisabledContextAssistantManager(), null);
+    this(editorComponent, model, repository, EditorConfigurationBuilder.buildDefault(), new DisabledContextAssistantManager());
   }
 
-  public EditorContext(@NotNull EditorComponent nodeEditorComponent, @Nullable SModel model, @NotNull SRepository repository,
-      @NotNull ContextAssistantManager contextAssistantManager, @Nullable EditorPanelManager editorPanelManager) {
-    myNodeEditorComponent = nodeEditorComponent;
+  public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository, EditorConfiguration configuration,
+      @NotNull ContextAssistantManager contextAssistantManager) {
+    myNodeEditorComponent = editorComponent;
     myModel = model;
     myRepository = repository;
     myContextAssistantManager = contextAssistantManager;
-    myEditorPanelManager = editorPanelManager;
+    myConfiguration = configuration;
   }
 
   public EditorComponent getNodeEditorComponent() {
@@ -353,6 +355,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Nullable
   @Override
   public EditorPanelManager getEditorPanelManager() {
-    return myEditorPanelManager;
+    return myConfiguration.editorPanelManager;
   }
 }

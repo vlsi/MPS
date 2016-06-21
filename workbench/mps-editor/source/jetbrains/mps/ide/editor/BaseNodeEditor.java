@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorPanelManagerImpl;
 import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
@@ -160,7 +161,7 @@ public abstract class BaseNodeEditor implements Editor {
       myEditorPanel.remove(myReplace);
       myReplace = null;
     }
-    NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository(), new EditorPanelManagerImpl(myProject));
+    NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository(), new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(myProject)));
     EditorExtensionUtil.extendUsingProject(editorComponent, myProject);
     setEditorComponent(editorComponent);
   }

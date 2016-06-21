@@ -6,7 +6,7 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -41,6 +41,7 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="cd28" ref="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)" />
     <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
+    <import index="7oz1" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.configuration(MPS.Editor/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="t552" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.fileGenerator(MPS.Core/)" implicit="true" />
@@ -174,7 +175,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3037,18 +3038,27 @@
       <node concept="3Tm1VV" id="2qx2hw9gxhJ" role="1B3o_S" />
       <node concept="3clFbS" id="2qx2hw9gxhK" role="3clF47">
         <node concept="XkiVB" id="2qx2hw9gz2u" role="3cqZAp">
-          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean,boolean)" resolve="EditorComponent" />
+          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.nodeEditor.configuration.EditorConfiguration)" resolve="EditorComponent" />
           <node concept="37vLTw" id="2qx2hw9gzFV" role="37wK5m">
             <ref role="3cqZAo" node="HonEu9vgRQ" resolve="repository" />
           </node>
-          <node concept="3clFbT" id="73THaLqa8_U" role="37wK5m">
-            <property role="3clFbU" value="false" />
-          </node>
-          <node concept="3clFbT" id="73THaLqa913" role="37wK5m">
-            <property role="3clFbU" value="false" />
-          </node>
-          <node concept="3clFbT" id="73THaLqa9rb" role="37wK5m">
-            <property role="3clFbU" value="false" />
+          <node concept="2OqwBi" id="3gquIuDv0Ro" role="37wK5m">
+            <node concept="2OqwBi" id="3gquIuDuZYh" role="2Oq$k0">
+              <node concept="2ShNRf" id="3gquIuDuWFK" role="2Oq$k0">
+                <node concept="1pGfFk" id="3gquIuDuZVa" role="2ShVmc">
+                  <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.&lt;init&gt;()" resolve="EditorConfigurationBuilder" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3gquIuDv0cI" role="2OqNvi">
+                <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.withUI(boolean):jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" resolve="withUI" />
+                <node concept="3clFbT" id="3gquIuDv0NY" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3gquIuDv16p" role="2OqNvi">
+              <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.build():jetbrains.mps.nodeEditor.configuration.EditorConfiguration" resolve="build" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="4AUcghxsOv6" role="3cqZAp">
@@ -3102,7 +3112,7 @@
     <node concept="3UR2Jj" id="7jFHz5ktb41" role="lGtFl">
       <node concept="TZ5HA" id="7jFHz5ktb5i" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5ktb5j" role="1dT_Ay">
-          <property role="1dT_AB" value="\This editor component was designed to be used in headless mode. Instance of this editor component can be created" />
+          <property role="1dT_AB" value="This editor component was designed to be used in headless mode. Instance of this editor component can be created" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5ktb7k" role="TZ5H$">

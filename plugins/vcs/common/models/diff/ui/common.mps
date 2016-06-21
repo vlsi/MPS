@@ -79,6 +79,7 @@
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="7oz1" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.configuration(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -8357,7 +8358,7 @@
             </node>
             <node concept="2ShNRf" id="42hl10VHazv" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazw" role="2ShVmc">
-                <ref role="37wK5l" to="zyr2:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean)" resolve="InspectorEditorComponent" />
+                <ref role="37wK5l" to="zyr2:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.nodeEditor.configuration.EditorConfiguration)" resolve="InspectorEditorComponent" />
                 <node concept="2OqwBi" id="2crodf9ScxV" role="37wK5m">
                   <node concept="37vLTw" id="2crodf9Sc8H" role="2Oq$k0">
                     <ref role="3cqZAo" node="2crodf9S7vZ" resolve="project" />
@@ -8366,8 +8367,23 @@
                     <ref role="37wK5l" to="z1c3:~IProject.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="2BHiRxgm7oG" role="37wK5m">
-                  <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
+                <node concept="2OqwBi" id="P7yXAe1T$3" role="37wK5m">
+                  <node concept="2OqwBi" id="P7yXAe1Qpb" role="2Oq$k0">
+                    <node concept="2ShNRf" id="P7yXAe1lyS" role="2Oq$k0">
+                      <node concept="1pGfFk" id="P7yXAe1QbF" role="2ShVmc">
+                        <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.&lt;init&gt;()" resolve="EditorConfigurationBuilder" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="P7yXAe1R1$" role="2OqNvi">
+                      <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.rightToLeft(boolean):jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" resolve="rightToLeft" />
+                      <node concept="37vLTw" id="P7yXAe1RAj" role="37wK5m">
+                        <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="P7yXAe1UdC" role="2OqNvi">
+                    <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.build():jetbrains.mps.nodeEditor.configuration.EditorConfiguration" resolve="build" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -9277,15 +9293,35 @@
         </node>
         <node concept="3clFbS" id="6dXf3jYXvmu" role="3clF47">
           <node concept="XkiVB" id="6dXf3jYXyXK" role="3cqZAp">
-            <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean)" resolve="EditorComponent" />
+            <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.nodeEditor.configuration.EditorConfiguration)" resolve="EditorComponent" />
             <node concept="37vLTw" id="6dXf3jYXvmR" role="37wK5m">
               <ref role="3cqZAo" node="6dXf3jYXvmo" resolve="repository" />
             </node>
-            <node concept="37vLTw" id="6dXf3jYXvmS" role="37wK5m">
-              <ref role="3cqZAo" node="6dXf3jYXvmq" resolve="showGutter" />
-            </node>
-            <node concept="37vLTw" id="6dXf3jYXvmT" role="37wK5m">
-              <ref role="3cqZAo" node="6dXf3jYXvms" resolve="rightToLeft" />
+            <node concept="2OqwBi" id="3gquIuDtRrx" role="37wK5m">
+              <node concept="2OqwBi" id="3gquIuDtOuD" role="2Oq$k0">
+                <node concept="2OqwBi" id="3gquIuDtLzg" role="2Oq$k0">
+                  <node concept="2ShNRf" id="3gquIuDtcfg" role="2Oq$k0">
+                    <node concept="1pGfFk" id="3gquIuDtJYy" role="2ShVmc">
+                      <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.&lt;init&gt;()" resolve="EditorConfigurationBuilder" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3gquIuDtLQX" role="2OqNvi">
+                    <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.showErrorsGutter(boolean):jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" resolve="showErrorsGutter" />
+                    <node concept="37vLTw" id="3gquIuDtOpI" role="37wK5m">
+                      <ref role="3cqZAo" node="6dXf3jYXvmq" resolve="showGutter" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3gquIuDtONb" role="2OqNvi">
+                  <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.rightToLeft(boolean):jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" resolve="rightToLeft" />
+                  <node concept="37vLTw" id="3gquIuDtRmh" role="37wK5m">
+                    <ref role="3cqZAo" node="6dXf3jYXvms" resolve="rightToLeft" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3gquIuDtRKv" role="2OqNvi">
+                <ref role="37wK5l" to="7oz1:~EditorConfigurationBuilder.build():jetbrains.mps.nodeEditor.configuration.EditorConfiguration" resolve="build" />
+              </node>
             </node>
           </node>
           <node concept="3clFbF" id="6dXf3jYXvmv" role="3cqZAp">

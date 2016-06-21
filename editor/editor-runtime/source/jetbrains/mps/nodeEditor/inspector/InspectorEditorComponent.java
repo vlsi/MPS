@@ -24,6 +24,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.InspectorEditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import org.jetbrains.annotations.NotNull;
@@ -37,23 +39,27 @@ public class InspectorEditorComponent extends EditorComponent {
   private SNode myContainingRoot;
 
   public InspectorEditorComponent(@NotNull SRepository p) {
-    this(p, false, false);
+    this(p, EditorConfigurationBuilder.buildDefault());
   }
 
-  public InspectorEditorComponent(@NotNull SRepository p, EditorPanelManager editorPanelManager) {
-    this(p, false, false, editorPanelManager);
-  }
-
+  /**
+   * @deprecated since MPS 3.4 use {@link #InspectorEditorComponent(SRepository, EditorConfiguration)}
+   */
+  @Deprecated
   public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
-    this(repository, false, rightToLeft, null);
+    this(repository, new EditorConfigurationBuilder().rightToLeft(rightToLeft).build());
   }
 
+  /**
+   * @deprecated since MPS 3.4 use {@link #InspectorEditorComponent(SRepository, EditorConfiguration)}
+   */
+  @Deprecated
   public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft) {
-    this(repository, showGutter, rightToLeft, null);
+    this(repository, new EditorConfigurationBuilder().showErrorsGutter(showGutter).rightToLeft(rightToLeft).build());
   }
 
-  public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft, EditorPanelManager editorPanelManager) {
-    super(repository, showGutter, rightToLeft, editorPanelManager);
+  public InspectorEditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
+    super(repository, configuration);
     myNode = null;
     myNodePointer = null;
     myContainingRoot = null;
@@ -64,7 +70,7 @@ public class InspectorEditorComponent extends EditorComponent {
   @NotNull
   @Override
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new InspectorEditorContext(this, model, repository, createContextAssistantManager(repository), getEditorPanelManager());
+    return new InspectorEditorContext(this, model, repository, getEditorConfiguration(), createContextAssistantManager(repository));
   }
 
   @Override

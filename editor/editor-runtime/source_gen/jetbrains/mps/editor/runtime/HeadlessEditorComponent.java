@@ -5,9 +5,10 @@ package jetbrains.mps.editor.runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 
 /**
- * \This editor component was designed to be used in headless mode. Instance of this editor component can be created
+ * This editor component was designed to be used in headless mode. Instance of this editor component can be created
  * in order to:
  * 
  * - render the node tree as projection-specific text
@@ -17,7 +18,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class HeadlessEditorComponent extends EditorComponent {
   public HeadlessEditorComponent(SNode node, SRepository repository) {
-    super(repository, false, false, false);
+    super(repository, new EditorConfigurationBuilder().withUI(false).build());
     setNoVirtualFile(true);
     editNode(node);
   }

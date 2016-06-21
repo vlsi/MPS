@@ -21,8 +21,9 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
-import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
@@ -39,12 +40,15 @@ public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(SRepository repository) {
-    this(repository, null);
+    this(repository, new EditorConfigurationBuilder().showErrorsGutter(true).build());
   }
 
-  public NodeEditorComponent(SRepository repository, EditorPanelManager editorPanelManager) {
-    super(repository, true, false, editorPanelManager);
+  public NodeEditorComponent(SRepository repository, EditorConfigurationBuilder confBuilder) {
+    this(repository, confBuilder.showErrorsGutter(true).build());
+  }
 
+  private NodeEditorComponent(SRepository repository, EditorConfiguration configuration) {
+    super(repository, configuration);
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
       protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent editorComponent, SingularSelection newSelection) {

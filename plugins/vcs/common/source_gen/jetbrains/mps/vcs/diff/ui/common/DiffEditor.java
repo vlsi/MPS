@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.IProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -42,7 +43,7 @@ public class DiffEditor implements EditorMessageOwner {
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   public DiffEditor(final IProject project, SNode node, String contentTitle, boolean isLeftEditor) {
     myMainEditorComponent = new DiffEditor.MainEditorComponent(project.getRepository(), true, isLeftEditor);
-    myInspector = new InspectorEditorComponent(project.getRepository(), isLeftEditor);
+    myInspector = new InspectorEditorComponent(project.getRepository(), new EditorConfigurationBuilder().rightToLeft(isLeftEditor).build());
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.setNoVirtualFile(true);
@@ -145,7 +146,7 @@ public class DiffEditor implements EditorMessageOwner {
   public class MainEditorComponent extends EditorComponent {
     private DiffFileEditor myDiffFileEditor;
     public MainEditorComponent(SRepository repository, boolean showGutter, boolean rightToLeft) {
-      super(repository, showGutter, rightToLeft);
+      super(repository, new EditorConfigurationBuilder().showErrorsGutter(showGutter).rightToLeft(rightToLeft).build());
       myDiffFileEditor = new DiffFileEditor(this);
       setDefaultPopupGroupId(((String) BHReflection.invoke(SNodeOperations.getNode("r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)", "426251916200108583"), SMethodTrimmedId.create("getGeneratedClassFQName", MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), "hEwJa8g"))));
     }
