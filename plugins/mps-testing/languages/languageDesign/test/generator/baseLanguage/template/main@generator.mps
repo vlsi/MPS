@@ -1351,6 +1351,12 @@
         <ref role="v9R2y" node="57tnvWi0wkj" resolve="reduce_SwitchToInspector" />
       </node>
     </node>
+    <node concept="3aamgX" id="wUiM63T5dp" role="3acgRq">
+      <ref role="30HIoZ" to="tp5g:wUiM63T4Ip" resolve="IsIntentionApplicableExpression" />
+      <node concept="j$656" id="wUiM63T5dq" role="1lVwrX">
+        <ref role="v9R2y" node="wUiM63T5dn" resolve="reduce_IsIntentionApplicableExpression" />
+      </node>
+    </node>
   </node>
   <node concept="13MO4I" id="hByHiPj">
     <property role="TrG5h" value="reduce_TestNodeReference" />
@@ -3173,6 +3179,66 @@
         <node concept="3Tm1VV" id="ORe5oEa7zf" role="1B3o_S" />
         <node concept="3cqZAl" id="ORe5oEa7$B" role="3clF45" />
         <node concept="3uibUv" id="2YdNGB0UeSD" role="Sfmx6">
+          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="wUiM63T5dn">
+    <property role="TrG5h" value="reduce_IsIntentionApplicableExpression" />
+    <property role="3GE5qa" value="expression" />
+    <ref role="3gUMe" to="tp5g:wUiM63T4Ip" resolve="IsIntentionApplicableExpression" />
+    <node concept="312cEu" id="wUiM63Tb7$" role="13RCb5">
+      <property role="TrG5h" value="A" />
+      <property role="1sVAO0" value="true" />
+      <node concept="3Tm1VV" id="wUiM63Tb7_" role="1B3o_S" />
+      <node concept="3uibUv" id="wUiM63Tb7A" role="1zkMxy">
+        <ref role="3uigEE" to="tp6m:hPMdj4e" resolve="BaseEditorTestBody" />
+      </node>
+      <node concept="3clFbW" id="wUiM63Tb7B" role="jymVt">
+        <node concept="3cqZAl" id="wUiM63Tb7C" role="3clF45" />
+        <node concept="3Tm1VV" id="wUiM63Tb7D" role="1B3o_S" />
+        <node concept="3clFbS" id="wUiM63Tb7E" role="3clF47">
+          <node concept="3clFbF" id="wUiM63Tdds" role="3cqZAp">
+            <node concept="1rXfSq" id="wUiM63Tddr" role="3clFbG">
+              <ref role="37wK5l" to="tp6m:wUiM63Rdn6" resolve="isIntentionApplicable" />
+              <node concept="Xl_RD" id="wUiM63Tdmn" role="37wK5m">
+                <property role="Xl_RC" value="id" />
+                <node concept="17Uvod" id="wUiM63TfJt" role="lGtFl">
+                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                  <property role="2qtEX9" value="value" />
+                  <node concept="3zFVjK" id="wUiM63TfJu" role="3zH0cK">
+                    <node concept="3clFbS" id="wUiM63TfJv" role="2VODD2">
+                      <node concept="3clFbF" id="wUiM63Tg7N" role="3cqZAp">
+                        <node concept="2OqwBi" id="wUiM63ThpV" role="3clFbG">
+                          <node concept="2OqwBi" id="wUiM63TgjF" role="2Oq$k0">
+                            <node concept="30H73N" id="wUiM63Tg7M" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="wUiM63TgUK" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp5g:wUiM63T4Iq" />
+                            </node>
+                          </node>
+                          <node concept="2qgKlT" id="wUiM63Ti6m" role="2OqNvi">
+                            <ref role="37wK5l" to="tp3m:2ytFvC$HDcE" resolve="getGeneratedId" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="wUiM63Te4p" role="37wK5m">
+                <node concept="37vLTw" id="wUiM63TdUc" role="2Oq$k0">
+                  <ref role="3cqZAo" to="tp6m:hSQ1pHb" resolve="myStart" />
+                </node>
+                <node concept="liA8E" id="wUiM63TesZ" role="2OqNvi">
+                  <ref role="37wK5l" to="tp6m:hQJuSEb" resolve="getNode" />
+                </node>
+              </node>
+              <node concept="raruj" id="wUiM63Tfz3" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+        <node concept="3uibUv" id="wUiM63Tb8s" role="Sfmx6">
           <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
         </node>
       </node>

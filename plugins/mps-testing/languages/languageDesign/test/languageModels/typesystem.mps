@@ -31,6 +31,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -150,6 +153,9 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
+        <child id="1180636770616" name="createdType" index="3zrR0E" />
+      </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -719,6 +725,34 @@
     <node concept="1YaCAy" id="7JT4LO$rKvi" role="1YuTPh">
       <property role="TrG5h" value="invokeIntentionStatement" />
       <ref role="1YaFvo" to="tp5g:hPMFPyi" resolve="InvokeIntentionStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="wUiM63T4IZ">
+    <property role="TrG5h" value="typeof_IsIntentionApplicableExpression" />
+    <property role="3GE5qa" value="expression" />
+    <node concept="3clFbS" id="wUiM63T4J0" role="18ibNy">
+      <node concept="1Z5TYs" id="wUiM63T4PR" role="3cqZAp">
+        <node concept="mw_s8" id="wUiM63T4Qb" role="1ZfhKB">
+          <node concept="2ShNRf" id="wUiM63T4Q7" role="mwGJk">
+            <node concept="3zrR0B" id="wUiM63T51S" role="2ShVmc">
+              <node concept="3Tqbb2" id="wUiM63T51U" role="3zrR0E">
+                <ref role="ehGHo" to="tpee:f_0P_4Y" resolve="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="wUiM63T4PU" role="1ZfhK$">
+          <node concept="1Z2H0r" id="wUiM63T4J6" role="mwGJk">
+            <node concept="1YBJjd" id="wUiM63T4KQ" role="1Z2MuG">
+              <ref role="1YBMHb" node="wUiM63T4J2" resolve="isIntentionApplicableExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="wUiM63T4J2" role="1YuTPh">
+      <property role="TrG5h" value="isIntentionApplicableExpression" />
+      <ref role="1YaFvo" to="tp5g:wUiM63T4Ip" resolve="IsIntentionApplicableExpression" />
     </node>
   </node>
 </model>

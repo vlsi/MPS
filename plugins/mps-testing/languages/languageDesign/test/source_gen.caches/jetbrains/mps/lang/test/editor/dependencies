@@ -198,6 +198,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.IRuleReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.InvokeActionStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.InvokeIntentionStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.IsIntentionApplicableExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.LogEvent_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.MPSActionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.MockAnnotation_Editor" />
@@ -362,6 +363,19 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.editor.IsIntentionApplicableExpression_Editor" file="IsIntentionApplicableExpression_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

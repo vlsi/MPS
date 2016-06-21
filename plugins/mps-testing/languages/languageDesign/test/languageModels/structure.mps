@@ -1259,5 +1259,19 @@
       <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
     </node>
   </node>
+  <node concept="1TIwiD" id="wUiM63T4Ip">
+    <property role="EcuMT" value="592868908271422361" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="IsIntentionApplicableExpression" />
+    <property role="34LRSv" value="is intention applicable" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="wUiM63T4Iq" role="1TKVEi">
+      <property role="IQ2ns" value="592868908271422362" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="intention" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
+    </node>
+  </node>
 </model>
 

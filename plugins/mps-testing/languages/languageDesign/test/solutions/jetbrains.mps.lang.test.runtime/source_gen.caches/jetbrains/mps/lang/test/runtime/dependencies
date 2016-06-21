@@ -24,7 +24,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -34,16 +33,15 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSFileNodeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
-    <classNode dependClassName="jetbrains.mps.intentions.ParameterizedIntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodeDifference" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.CellReference" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.IntentionTester" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionById" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionByIdAndParameter" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeEditorComponent" />
@@ -53,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.nodefs.NodeVirtualFileSystem" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -61,7 +60,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
     <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -159,6 +157,28 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.IntentionTester" file="IntentionTester.java">
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionById" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher" file="KeyEventsDispatcher.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
@@ -200,6 +220,21 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.MatchIntentionById" file="MatchIntentionById.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="org.jetbrains.mps.util.Condition" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.MatchIntentionByIdAndParameter" file="MatchIntentionByIdAndParameter.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.ParameterizedIntentionExecutable" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" file="MouseEventsDispatcher.java">
     <classNode dependClassName="java.awt.Component" />

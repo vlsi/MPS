@@ -34,12 +34,7 @@ import jetbrains.mps.project.Project;
 import java.awt.Component;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.intentions.IntentionExecutable;
-import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
-import jetbrains.mps.util.Pair;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.intentions.IntentionsManager;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -274,67 +269,24 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     new MouseEventsDispatcher(this).processSecondaryMouseEvent(targetComponent, x, y, eventType);
   }
 
-  protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
-    invokeMatchingIntention(node, new Condition<IntentionExecutable>() {
-      @Override
-      public boolean met(IntentionExecutable intention) {
-        return intention.getDescriptor().getPersistentStateKey().equals(name);
-      }
-      @Override
-      public String toString() {
-        return "name: " + name;
-      }
-    });
+  protected void invokeIntention(String id, SNode node) throws InterruptedException, InvocationTargetException {
+    invokeMatchingIntention(node, new MatchIntentionById(id));
   }
 
-  protected void invokeParameterizedIntention(final String name, final Object parameter, SNode node) throws InterruptedException, InvocationTargetException {
-    invokeMatchingIntention(node, new Condition<IntentionExecutable>() {
-      @Override
-      public boolean met(IntentionExecutable intention) {
-        return intention instanceof ParameterizedIntentionExecutable && intention.getDescriptor().getPersistentStateKey().equals(name) && parameter.equals(((ParameterizedIntentionExecutable) intention).getParameter());
-      }
-
-      @Override
-      public String toString() {
-        return String.format("name: %s, parameter: %s", name, parameter);
-      }
-    });
+  protected void invokeParameterizedIntention(String id, Object parameter, SNode node) throws InterruptedException, InvocationTargetException {
+    invokeMatchingIntention(node, new MatchIntentionByIdAndParameter(id, parameter));
   }
 
-  protected void invokeMatchingIntention(final SNode node, final Condition<IntentionExecutable> intentionCondition) throws InterruptedException, InvocationTargetException {
-    runUndoableInEDTAndWait(new Runnable() {
-      public void run() {
-        myProject.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            myCurrentEditorComponent.getEditorContext().select(node);
-            Pair<IntentionExecutable, SNode> singleMatch = getMatchingIntentionFor(node, intentionCondition);
-            singleMatch.o1.execute(singleMatch.o2, myCurrentEditorComponent.getEditorContext());
-          }
-        });
-      }
-    });
+  protected void invokeMatchingIntention(final SNode node, Condition<IntentionExecutable> intentionCondition) throws InterruptedException, InvocationTargetException {
+    new IntentionTester(this).invokeMatchingIntention(node, intentionCondition);
   }
 
-  private Pair<IntentionExecutable, SNode> getMatchingIntentionFor(final SNode node, final Condition<IntentionExecutable> intentionCondition) {
-    Collection<Pair<IntentionExecutable, SNode>> intentions = getAvailableIntentionsForNode(node);
-
-    List<Pair<IntentionExecutable, SNode>> matches = CollectionSequence.fromCollection(intentions).where(new IWhereFilter<Pair<IntentionExecutable, SNode>>() {
-      public boolean accept(Pair<IntentionExecutable, SNode> it) {
-        return intentionCondition.met(it.o1);
-      }
-    }).toListSequence();
-
-    if (ListSequence.fromList(matches).count() != 1) {
-      throw new RuntimeException("Found " + ListSequence.fromList(matches).count() + " intentions matching " + intentionCondition);
-    }
-
-    return ListSequence.fromList(matches).getElement(0);
+  protected boolean isIntentionApplicable(String intentionId, SNode node) throws InterruptedException, InvocationTargetException {
+    return new IntentionTester(this).isIntentionApplicable(intentionId, node);
   }
 
-  private Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentionsForNode(final SNode node) {
-    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setCurrentNodeOnly(true);
-    return IntentionsManager.getInstance().getAvailableIntentions(query, node, myCurrentEditorComponent.getEditorContext());
+  public EditorContext getEditorContext() {
+    return myCurrentEditorComponent.getEditorContext();
   }
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
@@ -395,6 +347,14 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       throw new IllegalArgumentException("Impossible to switch back from inspector: the component is not a InspectorEditorComponent: " + myCurrentEditorComponent);
     }
     myCurrentEditorComponent = myFileNodeEditor.getNodeEditor().getCurrentEditorComponent();
+  }
+
+  public void runUndoableCommandInEDTAndWait(final Runnable runnable) throws InterruptedException, InvocationTargetException {
+    runUndoableInEDTAndWait(new Runnable() {
+      public void run() {
+        getProject().getModelAccess().executeCommand(runnable);
+      }
+    });
   }
 
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {
