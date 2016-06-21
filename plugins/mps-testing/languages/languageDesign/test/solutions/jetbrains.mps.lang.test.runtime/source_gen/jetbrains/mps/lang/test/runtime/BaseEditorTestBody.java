@@ -405,18 +405,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         return myFileNodeEditor;
       }
     });
-    final Throwable[] ts = new Throwable[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        try {
-          runnable.run();
-        } catch (Throwable t) {
-          ts[0] = t;
-        }
-      }
-    });
-    if (ts[0] != null) {
-      throw new RuntimeException("Failure during editor test execution", ts[0]);
+    Exception exception = ThreadUtils.runInUIThreadAndWait(runnable);
+    if (exception != null) {
+      throw new RuntimeException("Failure during editor test execution", exception);
     }
     flushEDTEvents();
     // some actions (Copy/Paste) are running one more command later 
