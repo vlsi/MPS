@@ -50,8 +50,6 @@ public class MPSIcons {
     public static final Icon CellKeyMap = IconLoader.getIcon("/cellExplorer/cellKeyMap.png");
     public static final Icon CellProperty = IconLoader.getIcon("/cellExplorer/cellProperty.png");
     public static final Icon Cells = IconLoader.getIcon("/cellExplorer/cells.png");
-    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
-    public static final Icon CellTree = IconLoader.getIcon("/cellExplorer/cellTree.png");
   }
 
   public static class Debug {
@@ -65,8 +63,6 @@ public class MPSIcons {
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
     public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
-    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
-    public static final Icon NewProject = IconLoader.getIcon("/general/newProject.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
     public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
     public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
@@ -149,6 +145,4 @@ public class MPSIcons {
 
   public static final Icon MPS16x16 = IconLoader.getIcon("/MPS_16.png");
   public static final Icon MPSFavIcon = IconLoader.getIcon("/MPS_favicon.png");
-
-  //public static final Icon Templ = IconLoader.getIcon("/");
 }
