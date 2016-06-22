@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -18,7 +20,6 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
 
@@ -33,11 +34,14 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @NotNull
       public Collection<SModel> getAspectModels(final SModule language) {
+        if (!((language instanceof Language))) {
+          return Collections.emptyList();
+        }
         Iterable<SModel> allModels = language.getModels();
         return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             String fullName = it.getModelName();
-            return eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
+            return eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
           }
         }).ofType(SModel.class).toListSequence();
       }
@@ -78,7 +82,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
     };
   }
-  private static boolean eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b(Object a, Object b) {
+  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
