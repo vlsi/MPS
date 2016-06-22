@@ -1,38 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4j0cqa8f4a3p8s5z7qdikakyk5l7cla">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6h1heeyunwz3h5emx1ak6zc5dvtc746" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-ehdvs3jj52f084eo8ebxa8rd8els0m7" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-6wvs8f695joy4fkuk9j9n6mx5cwzvgl" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-9o9bx20r34ykwhg9dkbrtgolki9tnc9" />
-  <common hash="coluetp8ybb12fymo66cks73l3tdnks" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="3187167456722649969" name="JavaWatchpointWatchable" hash="-8e8xbhzjuhqgf4oo4ney7ajza1dpinu">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="JavaWatchpointWatchable.java" />
-  </source>
-  <source id="3187167456722650105" name="JavaWatchpointValueWatchable" hash="-68cqxmkjjm3gqtmn24qeaq9uuabgvgt">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="JavaWatchpointValueWatchable.java" />
-  </source>
-  <source id="3187167456722650178" name="JavaReturnWatchable" hash="2f31zovdu6dnupxt6saeo3ko6c2j68r">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="JavaReturnWatchable.java" />
-  </source>
-  <source id="3187167456722650243" name="JavaMethodWatchable" hash="-dyf6jxsx4dfe71j4s7mhvm1fvdb0d0g">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="JavaMethodWatchable.java" />
-  </source>
-  <source id="3187167456722650363" name="JavaExceptionWatchable" hash="1mssf87ma6tc3w79bk06pnhswlxnzi">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="JavaExceptionWatchable.java" />
-  </source>
-  <source id="3187167456722821378" name="EventWatchablesCreator" hash="bup4l55z4ehd245u9v3vdu59g16nfla">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="EventWatchablesCreator.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-4j0cqa8f4a3p8s5z7qdikakyk5l7cla" />
 

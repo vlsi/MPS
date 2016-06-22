@@ -101,8 +101,8 @@ public class MigrationComponent extends AbstractProjectComponent {
   public void disposeComponent() {
     UIUtil.invokeLaterIfNeeded(new Runnable() {
       public void run() {
-        // TODO: get rid off this HACK
-        // In NoPendingMigrationsTest Idea project has already disposed here
+        // TODO: get rid off this HACK 
+        // In NoPendingMigrationsTest Idea project has already disposed here 
         if (myProject.isDisposed()) {
           return;
         }

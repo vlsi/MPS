@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="ref.migration.MigrationDescriptorImpl" file="MigrationDescriptorImpl.java">
+  <dependency className="ref.migration.MigrationDescriptor" file="MigrationDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="ref.migration.SampleRefMigration" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
   <dependency className="ref.migration.SampleRefMigration" file="SampleRefMigration.java">
     <classNode dependClassName="java.lang.Iterable" />

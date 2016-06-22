@@ -11,8 +11,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
-    <file name="MigrationDescriptorImpl.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.migration.MigrationDescriptorImpl" />
+    <file name="MigrationDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.migration.MigrationDescriptor" />
     </file>
   </root>
   <root nodeRef="r:2cad94ae-7a5e-484a-a104-c211cb3b0451(jetbrains.mps.baseLanguage.javadoc.migration)/1940294142325444048">

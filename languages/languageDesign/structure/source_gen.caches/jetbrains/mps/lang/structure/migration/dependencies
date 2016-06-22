@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.migration.MigrationDescriptorImpl" file="MigrationDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.structure.migration.MigrationDescriptor" file="MigrationDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.CopyIconsToResources" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetSIds" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" file="SetOldConceptIds_Empty.java">
     <classNode dependClassName="java.lang.Override" />
