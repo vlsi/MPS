@@ -175,4 +175,19 @@ public enum LanguageAspect {
     res.add(MetaAdapterFactory.getLanguage(getMainLanguage()));
     return res;
   }
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //not used in MPS
+  //use jetbrains.mps.smodel.language.LanguageAspectSupport.getAspectModels()
+  public static Collection<SModel> getAspectModels(Language l) {
+    Set<SModel> result = new HashSet<SModel>();
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      SModel asp = aspect.get(l);
+      if (asp != null) {
+        result.add(asp);
+      }
+    }
+    return result;
+  }
 }
