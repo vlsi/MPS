@@ -5523,16 +5523,6 @@
     <property role="34LRSv" value="createdNode" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="6VAVyI4xoxY">
-    <property role="1pbfSe" value="210995543" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="AddConceptMenuItem" />
-    <property role="R5$K7" value="false" />
-    <property role="EcuMT" value="7991336459489871998" />
-    <node concept="PrWs8" id="19MPkFufPlL" role="PzmwI">
-      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
-    </node>
-  </node>
   <node concept="PlHQZ" id="6VAVyI4xoxZ">
     <property role="1pbfSe" value="210995542" />
     <property role="3GE5qa" value="Menu.Substitute" />
