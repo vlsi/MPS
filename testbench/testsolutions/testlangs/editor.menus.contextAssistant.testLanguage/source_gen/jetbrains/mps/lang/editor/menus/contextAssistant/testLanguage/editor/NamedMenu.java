@@ -4,15 +4,15 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import org.jetbrains.annotations.NotNull;
@@ -23,8 +23,8 @@ import jetbrains.mps.intentions.IntentionExecutable;
 
 public class NamedMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
       result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
@@ -38,9 +38,9 @@ public class NamedMenu extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
     }
 
@@ -74,7 +74,7 @@ public class NamedMenu extends TransformationMenuBase {
     }
 
     @Override
-    protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
+    protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
       return new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0.Item(context, executable);
     }
 
@@ -89,9 +89,9 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  private static class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0.Item(context);
     }
 

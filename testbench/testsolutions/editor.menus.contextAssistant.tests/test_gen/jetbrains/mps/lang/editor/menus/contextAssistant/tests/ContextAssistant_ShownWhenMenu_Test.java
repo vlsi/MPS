@@ -4,12 +4,12 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
 import java.util.List;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 
 @MPSLaunch
 public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest {
@@ -29,7 +29,7 @@ public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest 
 
       Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
 
-      List<MenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
+      List<TransformationMenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
       Assert.assertNotNull(activeItems);
       Assert.assertTrue(activeItems.size() > 0);
     }

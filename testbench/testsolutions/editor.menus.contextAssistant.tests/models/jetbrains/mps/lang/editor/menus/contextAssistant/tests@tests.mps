@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)">
+<model ref="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)">
   <persistence version="9" />
   <languages>
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
@@ -179,8 +179,8 @@
           <property role="TrG5h" value="activeItems" />
           <node concept="3uibUv" id="5ngDOM8uWhv" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
-            <node concept="3uibUv" id="4vIOBiht1Fj" role="11_B2D">
-              <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+            <node concept="3uibUv" id="6ed47gd8kcY" role="11_B2D">
+              <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
             </node>
           </node>
           <node concept="2OqwBi" id="jKDdcutlDu" role="33vP2m">

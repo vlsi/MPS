@@ -18,14 +18,16 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldChildNodeSubstituteInfoHolder;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
@@ -133,9 +135,7 @@ public class Parent_Editor extends DefaultNodeEditor {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
+        elementCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(elementCell), new OldChildNodeSubstituteInfoHolder(new DefaultChildSubstituteInfo(myOwnerNode, elementNode, super.getLinkDeclaration(), myEditorContext))));
       }
     }
     private EditorCell createConstant_vx0ep_a0b1a(EditorContext editorContext, SNode node) {
@@ -144,8 +144,9 @@ public class Parent_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
-      editorCell.setTransformationMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu"));
+      editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu"));
       editorCell.setDefaultText("");
+      editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       return editorCell;
     }
   }

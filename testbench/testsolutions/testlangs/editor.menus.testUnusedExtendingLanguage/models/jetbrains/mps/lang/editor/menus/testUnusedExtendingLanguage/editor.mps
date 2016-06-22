@@ -23,10 +23,10 @@
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
-      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
-        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
+      <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
+        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
       </concept>
+      <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
@@ -100,7 +100,7 @@
   </node>
   <node concept="3ICXOK" id="Vk$nhxzDeQ">
     <property role="TrG5h" value="MenuForBaseInUnusedExtendingLanguage" />
-    <ref role="7LAce" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
+    <ref role="aqKnT" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
     <node concept="1Qtc8_" id="Vk$nhxzDz9" role="IW6Ez">
       <node concept="ZR7TO" id="Vk$nhxzDzf" role="1Qtc8$" />
       <node concept="IWgqT" id="Vk$nhxzDzi" role="1Qtc8A">

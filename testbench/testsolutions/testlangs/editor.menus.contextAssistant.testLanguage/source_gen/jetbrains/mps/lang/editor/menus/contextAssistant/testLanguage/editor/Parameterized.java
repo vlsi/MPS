@@ -4,15 +4,15 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.ParameterizedMenuPart;
+import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
@@ -23,19 +23,19 @@ public class Parameterized extends TransformationMenuBase {
     super(true);
   }
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ACTIONS_TOOL).contains(_context.getMenuLocation())) {
       result.add(new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0());
     }
     return result;
   }
 
-  private static class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Object> {
+  private static class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Object, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
-    protected List<MenuItem> createItems(Object parameter, TransformationMenuContext context) {
+    protected List<TransformationMenuItem> createItems(Object parameter, TransformationMenuContext context) {
       return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
     }
     @NotNull
@@ -44,13 +44,13 @@ public class Parameterized extends TransformationMenuBase {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
     }
   }
-  private static class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     private final Object myParameterObject;
     public TransformationMenuPart_Action_3h2zbg_a0a(Object parameterObject) {
       myParameterObject = parameterObject;
     }
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a.Item(context);
     }
 
