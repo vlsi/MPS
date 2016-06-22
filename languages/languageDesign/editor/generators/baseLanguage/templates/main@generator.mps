@@ -9384,35 +9384,7 @@
                                 <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                                 <node concept="2ShNRf" id="6sslvsbIBRN" role="37wK5m">
                                   <node concept="1pGfFk" id="6sslvsbIBRO" role="2ShVmc">
-                                    <ref role="37wK5l" to="9eyi:~DefaultEmptyCellMenu.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellMenu" />
-                                    <node concept="35c_gC" id="6sslvsbIBRP" role="37wK5m">
-                                      <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                                      <node concept="1ZhdrF" id="6sslvsbIBRQ" role="lGtFl">
-                                        <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
-                                        <property role="2qtEX8" value="conceptDeclaration" />
-                                        <node concept="3$xsQk" id="6sslvsbIBRR" role="3$ytzL">
-                                          <node concept="3clFbS" id="6sslvsbIBRS" role="2VODD2">
-                                            <node concept="3clFbF" id="6sslvsbIBRT" role="3cqZAp">
-                                              <node concept="2OqwBi" id="6sslvsbIBRU" role="3clFbG">
-                                                <node concept="2OqwBi" id="6sslvsbIBRV" role="2Oq$k0">
-                                                  <node concept="30H73N" id="6sslvsbIBRW" role="2Oq$k0" />
-                                                  <node concept="2Xjw5R" id="6sslvsbIBRX" role="2OqNvi">
-                                                    <node concept="1xMEDy" id="6sslvsbIBRY" role="1xVPHs">
-                                                      <node concept="chp4Y" id="6sslvsbIBRZ" role="ri$Ld">
-                                                        <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
-                                                      </node>
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                                <node concept="3TrEf2" id="6sslvsbIBS0" role="2OqNvi">
-                                                  <ref role="3Tt5mk" to="tpc2:gXXX56I" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
+                                    <ref role="37wK5l" to="9eyi:~DefaultEmptyCellMenu.&lt;init&gt;(org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellMenu" />
                                     <node concept="359W_D" id="6sslvsbIBS1" role="37wK5m">
                                       <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
                                       <ref role="359W_F" to="tpck:4uZwTti3__2" />
@@ -27962,35 +27934,7 @@
                                 <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                                 <node concept="2ShNRf" id="6sslvsbI4Dy" role="37wK5m">
                                   <node concept="1pGfFk" id="6sslvsbI6oX" role="2ShVmc">
-                                    <ref role="37wK5l" to="9eyi:~DefaultEmptyCellMenu.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellMenu" />
-                                    <node concept="35c_gC" id="6sslvsbI7dl" role="37wK5m">
-                                      <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                                      <node concept="1ZhdrF" id="6sslvsbIdMN" role="lGtFl">
-                                        <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
-                                        <property role="2qtEX8" value="conceptDeclaration" />
-                                        <node concept="3$xsQk" id="6sslvsbIdMO" role="3$ytzL">
-                                          <node concept="3clFbS" id="6sslvsbIdMP" role="2VODD2">
-                                            <node concept="3clFbF" id="6sslvsbIeAy" role="3cqZAp">
-                                              <node concept="2OqwBi" id="6sslvsbIoep" role="3clFbG">
-                                                <node concept="2OqwBi" id="6sslvsbIeQu" role="2Oq$k0">
-                                                  <node concept="30H73N" id="6sslvsbIeAx" role="2Oq$k0" />
-                                                  <node concept="2Xjw5R" id="6sslvsbIfgY" role="2OqNvi">
-                                                    <node concept="1xMEDy" id="6sslvsbIfh0" role="1xVPHs">
-                                                      <node concept="chp4Y" id="6sslvsbIfm_" role="ri$Ld">
-                                                        <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
-                                                      </node>
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                                <node concept="3TrEf2" id="6sslvsbIq0W" role="2OqNvi">
-                                                  <ref role="3Tt5mk" to="tpc2:gXXX56I" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
+                                    <ref role="37wK5l" to="9eyi:~DefaultEmptyCellMenu.&lt;init&gt;(org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellMenu" />
                                     <node concept="359W_D" id="6sslvsbI8pg" role="37wK5m">
                                       <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
                                       <ref role="359W_F" to="tpck:4uZwTti3__2" />
