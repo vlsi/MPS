@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports />
@@ -226,14 +226,14 @@
     <property role="3GE5qa" value="attributes" />
     <property role="EcuMT" value="5169995583184591161" />
     <ref role="1TJDcQ" node="gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJPH" role="rwd14">
+      <property role="1QGGTI" value="${module}/icons/annotationLink.png" />
+    </node>
     <node concept="M6xJ_" id="6_gUeuqOeS6" role="lGtFl">
       <property role="Hh88m" value="" />
       <node concept="tn0Fv" id="166$sc$NVlL" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
-    </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJPH" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/annotationLink.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="2ULFgo8_XDh">
@@ -385,6 +385,7 @@
       <property role="TrG5h" value="anchorTag" />
       <property role="IQ2nx" value="779128492853935960" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="iitbxChBSM" role="lGtFl" />
     </node>
     <node concept="M6xJ_" id="Fg1jLUUBDq" role="lGtFl">
       <property role="Hh88m" value="sideTransformInfo" />
