@@ -8159,8 +8159,8 @@
             <property role="TrG5h" value="menuItems" />
             <node concept="3uibUv" id="5Xa7gk5bqdi" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="5Xa7gk5bqdl" role="11_B2D">
-                <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+              <node concept="3uibUv" id="6TZ37rLBbEN" role="11_B2D">
+                <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
               </node>
             </node>
             <node concept="2OqwBi" id="5Xa7gk5bqdw" role="33vP2m">
@@ -8237,8 +8237,8 @@
         <property role="TrG5h" value="menuItems" />
         <node concept="3uibUv" id="5Xa7gk5bu$O" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="5Xa7gk5bu$P" role="11_B2D">
-            <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+          <node concept="3uibUv" id="6TZ37rLBbYS" role="11_B2D">
+            <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
           </node>
         </node>
       </node>
@@ -8265,13 +8265,13 @@
                   <ref role="2Gs0qQ" node="5Xa7gk5bvfm" resolve="inItem" />
                 </node>
                 <node concept="liA8E" id="5Xa7gk5bvfs" role="2OqNvi">
-                  <ref role="37wK5l" to="uddc:~MenuItem.accept(jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor):java.lang.Object" resolve="accept" />
+                  <ref role="37wK5l" to="uddc:~TransformationMenuItem.accept(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor):java.lang.Object" resolve="accept" />
                   <node concept="2ShNRf" id="5Xa7gk5bvft" role="37wK5m">
                     <node concept="YeOm9" id="5Xa7gk5bvfu" role="2ShVmc">
                       <node concept="1Y3b0j" id="5Xa7gk5bvfv" role="YeSDq">
                         <property role="2bfB8j" value="true" />
                         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                        <ref role="1Y3XeK" to="uddc:~MenuItemVisitor" resolve="MenuItemVisitor" />
+                        <ref role="1Y3XeK" to="uddc:~TransformationMenuItemVisitor" resolve="TransformationMenuItemVisitor" />
                         <node concept="3Tm1VV" id="5Xa7gk5bvfw" role="1B3o_S" />
                         <node concept="3clFb_" id="5Xa7gk5bvfx" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -8414,8 +8414,8 @@
       <node concept="37vLTG" id="5Xa7gk5bvgm" role="3clF46">
         <property role="TrG5h" value="inItems" />
         <node concept="_YKpA" id="5Xa7gk5bvgn" role="1tU5fm">
-          <node concept="3uibUv" id="5Xa7gk5bvgo" role="_ZDj9">
-            <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+          <node concept="3uibUv" id="6TZ37rLBcsq" role="_ZDj9">
+            <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
           </node>
         </node>
       </node>

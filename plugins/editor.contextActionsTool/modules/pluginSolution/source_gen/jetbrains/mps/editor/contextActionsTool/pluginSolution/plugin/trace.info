@@ -876,9 +876,9 @@
     <file name="ItemConverter.java">
       <node id="6866332489278647353" at="25,0,26,0" concept="5" trace="myMenuProvider" />
       <node id="6866332489278652216" at="27,60,28,34" concept="4" />
-      <node id="6866332489278661470" at="31,80,32,70" concept="9" />
-      <node id="6866332489278670390" at="32,70,33,35" concept="10" />
-      <node id="6866332489278679351" at="36,82,37,100" concept="9" />
+      <node id="6866332489278661470" at="31,80,32,84" concept="9" />
+      <node id="6866332489278670390" at="32,84,33,35" concept="10" />
+      <node id="6866332489278679351" at="36,96,37,100" concept="9" />
       <node id="6866332489278679358" at="37,100,38,41" concept="4" />
       <node id="6866332489278679363" at="38,41,39,19" concept="10" />
       <node id="6866332489278682087" at="46,50,47,96" concept="4" />
@@ -934,8 +934,8 @@
       <node id="6866332489278831295" at="102,0,108,0" concept="2" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;Ljavax/swing/Icon;Ljava/lang/String;)V" />
       <node id="6866332489278886642" at="65,69,76,7" concept="19" />
       <node id="6866332489278902350" at="77,0,88,7" concept="19" />
-      <node id="6866332489278682073" at="43,60,56,9" concept="4" />
-      <node id="6866332489278682069" at="42,127,57,5" concept="6" />
+      <node id="6866332489278682073" at="43,74,56,9" concept="4" />
+      <node id="6866332489278682069" at="42,141,57,5" concept="6" />
       <node id="6866332489278682066" at="42,0,59,0" concept="14" trace="convertItems#(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)V" />
       <node id="6866332489278853694" at="63,0,89,5" concept="7" />
       <node id="6866332489278847650" at="60,0,93,0" concept="14" trace="convertActionItem#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;)Ljetbrains/mps/editor/contextActionsTool/pluginSolution/plugin/ToolComponent/IItem;" />
@@ -960,7 +960,7 @@
       <scope id="6866332489278652208" at="27,0,30,0">
         <var name="menuProvider" id="6866332489278652215" />
       </scope>
-      <scope id="6866332489278679350" at="36,82,39,19">
+      <scope id="6866332489278679350" at="36,96,39,19">
         <var name="uiItems" id="6866332489278679352" />
       </scope>
       <scope id="6866332489278682103" at="51,44,54,22">
@@ -1008,9 +1008,9 @@
         <var name="icon" id="6866332489278831322" />
         <var name="tooltip" id="6866332489278831332" />
       </scope>
-      <scope id="6866332489278682072" at="43,60,56,9" />
-      <scope id="6866332489278682068" at="42,127,57,5" />
-      <scope id="6866332489278682069" at="42,127,57,5">
+      <scope id="6866332489278682072" at="43,74,56,9" />
+      <scope id="6866332489278682068" at="42,141,57,5" />
+      <scope id="6866332489278682069" at="42,141,57,5">
         <var name="inItem" id="6866332489278682070" />
       </scope>
       <scope id="6866332489278682066" at="42,0,59,0">

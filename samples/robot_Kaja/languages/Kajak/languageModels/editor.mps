@@ -84,6 +84,9 @@
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
+        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+      </concept>
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt" />
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
@@ -141,9 +144,6 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
-        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
-      </concept>
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
@@ -1215,7 +1215,7 @@
   </node>
   <node concept="IW6AY" id="XxBehblfyo">
     <property role="3GE5qa" value="command" />
-    <ref role="7LAce" to="c2kz:2RDssu5VwCm" resolve="EmptyLine" />
+    <ref role="aqKnT" to="c2kz:2RDssu5VwCm" resolve="EmptyLine" />
     <node concept="1Qtc8_" id="6V0bp$oQSUR" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQT_6" role="1Qtc8$" />
       <node concept="IWgqT" id="XxBehblfyz" role="1Qtc8A">
@@ -1520,7 +1520,7 @@
   <node concept="3ICXOK" id="u67o_MSLci">
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="OtherCommands" />
-    <ref role="7LAce" to="c2kz:2RDssu5VwCm" resolve="EmptyLine" />
+    <ref role="aqKnT" to="c2kz:2RDssu5VwCm" resolve="EmptyLine" />
     <node concept="1Qtc8_" id="6V0bp$oQU9N" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oQUyP" role="1Qtc8$" />
       <node concept="IWgqT" id="u67o_MSLcR" role="1Qtc8A">
