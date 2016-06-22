@@ -18,9 +18,11 @@
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test" file="ContextAssistant_HandlesExceptionsFromIsApplicable_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
@@ -59,10 +61,12 @@
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_ShownWhenMenu_Test" file="ContextAssistant_ShownWhenMenu_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
