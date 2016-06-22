@@ -23,24 +23,27 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.util.Collection;
 import java.util.Collections;
 
 public abstract class LanguageAspectDescriptor {
+  private static final Icon MODEL_ICON = new ImageIcon(LanguageAspectDescriptor.class.getResource("/jetbrains/mps/smodel/language/model.png"));
+
   public abstract String getPresentableAspectName();
 
   @NotNull
   public abstract Collection<SModel> getAspectModels(SModule language);
 
-  public boolean hasAspect(SModule language){
+  public boolean hasAspect(SModule language) {
     return !getAspectModels(language).isEmpty();
   }
 
-  public boolean canCreate(SModule language){
+  public boolean canCreate(SModule language) {
     return false;
   }
 
-  public void create(SModule language){
+  public void create(SModule language) {
 
   }
 
@@ -48,22 +51,22 @@ public abstract class LanguageAspectDescriptor {
   public abstract Collection<SLanguage> getMainLanguages();
 
   @NotNull
-  public Collection<SLanguage> getAdditionalLanguages(){
+  public Collection<SLanguage> getAdditionalLanguages() {
     return Collections.emptyList();
   }
 
   @Nullable
-  public LanguageAspectGenerator getGenerator(){
+  public LanguageAspectGenerator getGenerator() {
     return null;
   }
 
   @Nullable
-  public Icon getIcon(){
-    return null;
+  public Icon getIcon() {
+    return MODEL_ICON;
   }
 
   @Nullable
-  public String getHelpUrl(){
+  public String getHelpUrl() {
     return null;
   }
 }
