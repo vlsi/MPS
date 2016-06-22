@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.transformation;
+package jetbrains.mps.lang.editor.menus.transformation;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.editor.menus.*;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
-import java.util.List;
-
-public interface TransformationMenuItemFactory {
-  /**
-   * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu of the current node's concept.
-   *
-   * @param menuLookup a menu reference, may be null
-   * @return menu items for the node, not null but possibly empty
-   */
-  @NotNull
-  List<MenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
+/**
+ * @author simon
+ */
+public interface TransformationMenuPart extends jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext> {
 }

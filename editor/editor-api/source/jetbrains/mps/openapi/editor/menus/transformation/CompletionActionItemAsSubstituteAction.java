@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor.menus.transformation;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -25,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
   private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
-  private final CompletionActionItem myActionItem;
+  public final CompletionActionItem myActionItem;
   private final SNode mySourceNode;
 
   public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
@@ -33,9 +34,13 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
     mySourceNode = sourceNode;
   }
 
+  public IconResource getIcon(String pattern) {
+    return myActionItem.getIcon(pattern);
+  }
+
   @Override
   public SNode getIconNode(String pattern) {
-    return myActionItem.getIconNode(pattern);
+    return null;
   }
 
   @Override

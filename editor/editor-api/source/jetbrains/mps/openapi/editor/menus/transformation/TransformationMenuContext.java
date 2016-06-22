@@ -16,8 +16,12 @@
 package jetbrains.mps.openapi.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.List;
 
 public interface TransformationMenuContext {
   @NotNull
@@ -30,15 +34,17 @@ public interface TransformationMenuContext {
   EditorContext getEditorContext();
 
   /**
-   * Returns a factory object that can be used to create items from other menus.
-   */
-  @NotNull
-  TransformationMenuItemFactory getMenuItemFactory();
-
-  /**
    * Returns a context similar to the current one but with node changed to {@code node}. May return this instance if {@code node} is the same as the current
    * node.
    */
   @NotNull
   TransformationMenuContext withNode(@NotNull SNode node);
+
+  /**
+   * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
+   *
+   * @param menuLookup a menu reference, may be null
+   * @return menu items for the node, not null but possibly empty
+   */
+  List<TransformationMenuItem> createItems(@Nullable MenuLookup<TransformationMenu> menuLookup);
 }

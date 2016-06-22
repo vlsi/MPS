@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.transformation.CompositeMenuPart;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.TransformationMenuPart;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -34,12 +35,12 @@ public abstract class TransformationMenuBase implements TransformationMenu {
     myIsContribution = isContribution;
   }
 
-  protected abstract List<MenuPart> getParts(TransformationMenuContext context);
+  protected abstract List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context);
 
   @NotNull
   @Override
-  public List<MenuItem> createMenuItems(TransformationMenuContext context) {
-    return new CompositeMenuPart(getParts(context)).createItems(context);
+  public List<TransformationMenuItem> createMenuItems(TransformationMenuContext context) {
+    return new CompositeMenuPart<>(getParts(context)).createItems(context);
   }
 
   @Override

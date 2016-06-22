@@ -15,28 +15,29 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
-public abstract class IncludeMenuMenuPart implements MenuPart {
+public abstract class IncludeMenuMenuPart implements TransformationMenuPart {
   @NotNull
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
+  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
     SNode newNode = getNode(context);
 
     TransformationMenuContext newContext = newNode == null ? context : context.withNode(newNode);
 
-    return newContext.getMenuItemFactory().createItems(getMenuLookup(context));
+    return newContext.createItems(getMenuLookup(context));
   }
 
   @Nullable
-  protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
+  protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext context) {
     return null;
   }
 

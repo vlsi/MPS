@@ -19,13 +19,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class SubMenu implements MenuItem {
+public class SubMenu implements TransformationMenuItem {
   @NotNull
   private final String myText;
   @NotNull
-  private final List<MenuItem> myItems;
+  private final List<TransformationMenuItem> myItems;
 
-  public SubMenu(@NotNull String text, @NotNull List<MenuItem> items) {
+  public SubMenu(@NotNull String text, @NotNull List<TransformationMenuItem> items) {
     myText = text;
     myItems = items;
   }
@@ -36,12 +36,12 @@ public class SubMenu implements MenuItem {
   }
 
   @NotNull
-  public List<MenuItem> getItems() {
+  public List<TransformationMenuItem> getItems() {
     return myItems;
   }
 
   @Override
-  public <ResultT> ResultT accept(MenuItemVisitor<ResultT> visitor) {
+  public <ResultT> ResultT accept(TransformationMenuItemVisitor<ResultT> visitor) {
     return visitor.visit(this);
   }
 

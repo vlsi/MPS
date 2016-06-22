@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -33,15 +33,15 @@ import java.util.function.Function;
  * <p>
  * Uses the provided {@link ModelAccess} instance to call {@link ActionItem#canExecute(String)} in a read action.
  */
-class CanExecuteFilter implements Function<List<MenuItem>, List<MenuItem>> {
+class CanExecuteFilter implements Function<List<TransformationMenuItem>, List<TransformationMenuItem>> {
   private final ModelAccess myModelAccess;
-  private final MenuItemVisitor<MenuItem> myExecutableItemConverter;
+  private final TransformationMenuItemVisitor<TransformationMenuItem> myExecutableItemConverter;
 
   CanExecuteFilter(ModelAccess modelAccess) {
     myModelAccess = modelAccess;
-    myExecutableItemConverter = new MenuItemVisitor<MenuItem>() {
+    myExecutableItemConverter = new TransformationMenuItemVisitor<TransformationMenuItem>() {
       @Override
-      public MenuItem visit(ActionItem actionItem) {
+      public TransformationMenuItem visit(ActionItem actionItem) {
         if (!canExecuteActionItem(actionItem)) {
           return null;
         }
@@ -62,8 +62,8 @@ class CanExecuteFilter implements Function<List<MenuItem>, List<MenuItem>> {
       }
 
       @Override
-      public MenuItem visit(SubMenu subMenu) {
-        List<MenuItem> executableItems = apply(subMenu.getItems());
+      public TransformationMenuItem visit(SubMenu subMenu) {
+        List<TransformationMenuItem> executableItems = apply(subMenu.getItems());
         if (executableItems.isEmpty()) {
           return null;
         }
@@ -75,11 +75,11 @@ class CanExecuteFilter implements Function<List<MenuItem>, List<MenuItem>> {
 
   @NotNull
   @Override
-  public List<MenuItem> apply(List<MenuItem> menuItems) {
-    List<MenuItem> result = new ArrayList<>();
+  public List<TransformationMenuItem> apply(List<TransformationMenuItem> menuItems) {
+    List<TransformationMenuItem> result = new ArrayList<>();
 
-    for (MenuItem item : menuItems) {
-      MenuItem executableItem = item.accept(myExecutableItemConverter);
+    for (TransformationMenuItem item : menuItems) {
+      TransformationMenuItem executableItem = item.accept(myExecutableItemConverter);
 
       if (executableItem != null) {
         result.add(executableItem);

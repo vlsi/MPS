@@ -133,6 +133,30 @@ public class ChildSubstituteActionsUtil {
 
     return actions;
   }
+  public static boolean hasActionBuilders(Language language) {
+    SModel actionsModelDescr = LanguageAspect.ACTIONS.get(language);
+    if (actionsModelDescr == null) {
+      return false;
+    }
+    SModel sModel = actionsModelDescr;
+    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).isNotEmpty();
+  }
+  public static boolean hasActionBuilders(Language language, final SNode concept) {
+    SModel actionsModelDescr = LanguageAspect.ACTIONS.get(language);
+    if (actionsModelDescr == null) {
+      return false;
+    }
+    SModel sModel = actionsModelDescr;
+    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, 0x102ebd353e0L, "actionsBuilder"));
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_9d7dvo_a0a0a0a0a0a3a8(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept")), concept);
+      }
+    }).isNotEmpty();
+  }
   private static List<SNode> getAllActionsBuilders(List<Language> languages) {
     List<SNode> result = new ArrayList<SNode>();
     for (Language language : ListSequence.fromList(languages)) {
@@ -162,5 +186,8 @@ public class ChildSubstituteActionsUtil {
       }
     }
     return true;
+  }
+  private static boolean eq_9d7dvo_a0a0a0a0a0a3a8(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

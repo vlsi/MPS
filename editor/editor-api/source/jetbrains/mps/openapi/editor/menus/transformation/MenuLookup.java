@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+
+import jetbrains.mps.openapi.editor.descriptor.Menu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -24,6 +25,6 @@ import java.util.Collection;
 /**
  * Looks up a collection of menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
  */
-public interface TransformationMenuLookup {
-  @NotNull Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages);
+public interface MenuLookup<T extends Menu> {
+  Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages);
 }

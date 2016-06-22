@@ -13,16 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.menus.transformation;
+package jetbrains.mps.nodeEditor.menus;
 
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.Menu;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -31,21 +28,21 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Creates a list of {@link MenuItem}s given a {@link TransformationMenuContext} and a {@link TransformationMenuLookup}. Tracks used combinations of lookup and
+ * Creates a list of items given a context and a {@link MenuLookup}. Tracks used combinations of lookup and
  * context node: if the items for a given combination are requested twice, it emits a warning and returns an empty list of items.
  */
-class CircularReferenceSafeMenuItemFactory {
+public class CircularReferenceSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> {
   private static final Logger LOG = Logger.getLogger(CircularReferenceSafeMenuItemFactory.class);
   private final ArrayDeque<Key> myKeyStack = new ArrayDeque<>();
   private final Collection<SLanguage> myUsedLanguages;
 
-  CircularReferenceSafeMenuItemFactory(Collection<SLanguage> usedLanguages) {
+  public CircularReferenceSafeMenuItemFactory(Collection<SLanguage> usedLanguages) {
     myUsedLanguages = usedLanguages;
   }
 
   @NotNull
-  public List<MenuItem> createItems(@NotNull TransformationMenuContext context, @NotNull TransformationMenuLookup menuLookup) {
-    Key key = new Key(menuLookup, context.getNode());
+  public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup) {
+    Key<ContextT> key = new Key<>(menuLookup, context);
 
     if (myKeyStack.contains(key)) {
       LOG.error("Menu for key '" + key + "' requested more than once, returning empty menu to prevent endless recursion");
@@ -56,14 +53,14 @@ class CircularReferenceSafeMenuItemFactory {
     myKeyStack.addLast(key);
 
     try {
-      Collection<TransformationMenu> menus = menuLookup.lookup(myUsedLanguages);
+      Collection<? extends MenuT> menus = menuLookup.lookup(myUsedLanguages);
 
       if (menus.isEmpty()) {
         return Collections.emptyList();
       }
 
-      List<MenuItem> result = new ArrayList<>();
-      for (TransformationMenu menu : menus) {
+      List<ItemT> result = new ArrayList<>();
+      for (MenuT menu : menus) {
         result.addAll(menu.createMenuItems(context));
       }
       return result;
@@ -72,15 +69,15 @@ class CircularReferenceSafeMenuItemFactory {
     }
   }
 
-  private static class Key {
+  private static class Key<ContextT> {
     @NotNull
-    private final TransformationMenuLookup myLookup;
+    private final MenuLookup myLookup;
     @NotNull
-    private final SNode myNode;
+    private final ContextT myContext;
 
-    public Key(@NotNull TransformationMenuLookup lookup, @NotNull SNode node) {
+    public Key(@NotNull MenuLookup lookup, @NotNull ContextT context) {
       myLookup = lookup;
-      myNode = node;
+      myContext = context;
     }
 
     @Override
@@ -94,20 +91,20 @@ class CircularReferenceSafeMenuItemFactory {
 
       Key key = (Key) o;
 
-      return myLookup.equals(key.myLookup) && myNode.equals(key.myNode);
+      return myLookup.equals(key.myLookup) && myContext.equals(key.myContext);
     }
 
     @Override
     public int hashCode() {
       int result = myLookup.hashCode();
-      result = 31 * result + myNode.hashCode();
+      result = 31 * result + myContext.hashCode();
       return result;
     }
 
     @Override
     public String toString() {
       return "(lookup=" + myLookup +
-          ", node=" + myNode + ')';
+          ", node=" + myContext + ')';
     }
   }
 }

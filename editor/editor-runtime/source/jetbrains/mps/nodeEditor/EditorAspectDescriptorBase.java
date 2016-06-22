@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeAware;
@@ -39,8 +40,12 @@ import java.util.stream.Collectors;
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor, LanguageRuntimeAware {
   private EditorsCache myEditorsCache;
   private EditorComponentsCache myEditorComponentsCache;
+
   private DefaultTransformationMenusCache myDefaultTransformationMenusCache;
   private NamedTransformationMenusCache myNamedTransformationMenusCache;
+
+  private DefaultSubstituteMenusCache myDefaultSubstituteMenusCache;
+  private NamedSubstituteMenusCache myNamedSubstituteMenusCache;
 
   @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
@@ -100,6 +105,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     myEditorComponentsCache = new EditorComponentsCache(languageRuntime);
     myDefaultTransformationMenusCache = new DefaultTransformationMenusCache(languageRuntime);
     myNamedTransformationMenusCache = new NamedTransformationMenusCache(languageRuntime);
+    myDefaultSubstituteMenusCache = new DefaultSubstituteMenusCache(languageRuntime);
+    myNamedSubstituteMenusCache= new NamedSubstituteMenusCache(languageRuntime);
   }
 
   private void clearCachesIfStale() {
@@ -111,11 +118,37 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDefaultSubstituteMenus(SAbstractConcept concept, @NotNull Collection<SLanguage> usedLanguages) {
+    return myDefaultSubstituteMenusCache.get(concept);
+  }
+
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getNamedSubstituteMenus(NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
+    return myNamedSubstituteMenusCache.get(menuId);
+  }
+
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedTransformationMenuId menuId) {
+    return Collections.emptyList();
+  }
+
   private void clearAllCaches() {
     myEditorsCache.clear();
     myEditorComponentsCache.clear();
     myDefaultTransformationMenusCache.clear();
     myNamedTransformationMenusCache.clear();
+    myDefaultSubstituteMenusCache.clear();
+    myNamedSubstituteMenusCache.clear();
   }
 
   private static class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
@@ -163,6 +196,31 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     @Override
     protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedTransformationMenuId key) {
       return descriptor.getDeclaredNamedTransformationMenus(key);
+    }
+  }
+
+
+  private class DefaultSubstituteMenusCache extends EditorAspectContributionsCache<SAbstractConcept, SubstituteMenu> {
+    private DefaultSubstituteMenusCache(@NotNull LanguageRuntime languageRuntime) {
+      super(languageRuntime);
+    }
+
+    @NotNull
+    @Override
+    protected Collection<SubstituteMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, SAbstractConcept key) {
+      return descriptor.getDeclaredDefaultSubstituteMenus(key);
+    }
+  }
+
+  private class NamedSubstituteMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, SubstituteMenu> {
+    private NamedSubstituteMenusCache(@NotNull LanguageRuntime languageRuntime) {
+      super(languageRuntime);
+    }
+
+    @NotNull
+    @Override
+    protected Collection<SubstituteMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedTransformationMenuId key) {
+      return descriptor.getDeclaredNamedSubstituteMenus(key);
     }
   }
 }

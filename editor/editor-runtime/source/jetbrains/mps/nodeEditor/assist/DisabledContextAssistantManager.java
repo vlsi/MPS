@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -47,7 +47,7 @@ public class DisabledContextAssistantManager implements ContextAssistantManager 
 
   @Nullable
   @Override
-  public List<MenuItem> getActiveMenuItems() {
+  public List<TransformationMenuItem> getActiveMenuItems() {
     return null;
   }
 }

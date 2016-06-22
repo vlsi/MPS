@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.apache.log4j.Logger;
@@ -97,10 +98,10 @@ public class ReferenceConceptUtil {
   }
 
 
-  public static SReferenceLink getCharacteristicReference(final SConcept concept) {
+  public static SReferenceLink getCharacteristicReference(final SAbstractConcept concept) {
     String expectedReferentRole = null;
     String alias = concept.getConceptAlias();
-    if (alias != null) {
+    if (!alias.isEmpty()) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
       final Matcher matcher = SMART_ALIAS.matcher(alias);
       if (!matcher.matches()) {
@@ -140,10 +141,10 @@ public class ReferenceConceptUtil {
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
-  public static boolean hasSmartAlias(SConcept concept) {
+  public static boolean hasSmartAlias(SAbstractConcept concept) {
     String conceptAlias = concept.getConceptAlias();
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
-    return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
+    return !conceptAlias.isEmpty() && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
 @Deprecated
@@ -157,7 +158,7 @@ public class ReferenceConceptUtil {
     return matcher.group(1) + referentPresentation + matcher.group(3);
   }
 
-  public static String getPresentationFromSmartAlias(SConcept concept, String referentPresentation) {
+  public static String getPresentationFromSmartAlias(SAbstractConcept concept, String referentPresentation) {
     String conceptAlias = concept.getConceptAlias();
     // handle pattern 'xxx <{_referent_role_}> yyy'
     final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);

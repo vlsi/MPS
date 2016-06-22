@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.assist;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -44,5 +44,5 @@ public interface ContextAssistantManager {
    * @return the currently active (visible) menu items, or {@code null}.
    */
   @Nullable
-  List<MenuItem> getActiveMenuItems();
+  List<TransformationMenuItem> getActiveMenuItems();
 }

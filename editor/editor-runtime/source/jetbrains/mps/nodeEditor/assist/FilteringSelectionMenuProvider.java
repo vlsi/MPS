@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.assist;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,16 +27,16 @@ import java.util.function.Function;
  */
 class FilteringSelectionMenuProvider implements SelectionMenuProvider {
   private final SelectionMenuProvider mySource;
-  private final Function<List<MenuItem>, List<MenuItem>> myFilter;
+  private final Function<List<TransformationMenuItem>, List<TransformationMenuItem>> myFilter;
 
-  FilteringSelectionMenuProvider(SelectionMenuProvider source, Function<List<MenuItem>, List<MenuItem>> filter) {
+  FilteringSelectionMenuProvider(SelectionMenuProvider source, Function<List<TransformationMenuItem>, List<TransformationMenuItem>> filter) {
     mySource = source;
     myFilter = filter;
   }
 
   @NotNull
   @Override
-  public List<MenuItem> getMenuItems(@NotNull Selection selection) {
+  public List<TransformationMenuItem> getMenuItems(@NotNull Selection selection) {
     return myFilter.apply(mySource.getMenuItems(selection));
   }
 }

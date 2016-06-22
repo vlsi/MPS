@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.menus.transformation;
 
-public interface MenuItemVisitor<ResultT> {
+public interface TransformationMenuItemVisitor<ResultT> {
   ResultT visit(ActionItem actionItem);
   ResultT visit(SubMenu subMenu);
 }

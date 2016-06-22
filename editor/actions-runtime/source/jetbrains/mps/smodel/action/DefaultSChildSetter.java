@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 public class DefaultSChildSetter extends AbstractChildNodeSetter {
   private static final Logger LOG = LogManager.getLogger(DefaultSChildSetter.class);
 
-  SContainmentLink myLink;
+  private SContainmentLink myLink;
 
   public DefaultSChildSetter(SContainmentLink link) {
     myLink = link;
@@ -41,7 +41,7 @@ public class DefaultSChildSetter extends AbstractChildNodeSetter {
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
     if (newChild != null && !newChild.getConcept().isSubConceptOf(myLink.getTargetConcept())) {
       LOG.error("couldn't set instance of " + newChild.getConcept().getName() +
-        " as child '" + myLink.getRoleName() + "' to " + SNodeOperations.getDebugText(parentNode));
+        " as child '" + myLink.getName() + "' to parent" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
       return newChild;
     }
 

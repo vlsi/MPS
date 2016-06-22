@@ -16,9 +16,10 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
+import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collection;
 import java.util.Collections;
 
-public class NamedMenuLookup implements TransformationMenuLookup {
+public abstract class NamedMenuLookup<T extends Menu> implements MenuLookup<T> {
   @NotNull
   private final LanguageRegistry myLanguageRegistry;
   @NotNull
@@ -66,12 +67,24 @@ public class NamedMenuLookup implements TransformationMenuLookup {
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages) {
+  public Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages) {
     EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myId.getConcept().getLanguage());
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
-
-    return aspectDescriptor.getNamedTransformationMenus(myId, usedLanguages);
+    return getForAspectDescriptor(aspectDescriptor, usedLanguages);
   }
+
+  @NotNull
+  public LanguageRegistry getLanguageRegistry() {
+    return myLanguageRegistry;
+  }
+
+  @NotNull
+  public NamedTransformationMenuId getId() {
+    return myId;
+  }
+
+  protected abstract Collection<T> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, @NotNull Collection<SLanguage> usedLanguages);
+
 }
