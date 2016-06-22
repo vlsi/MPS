@@ -42,7 +42,7 @@ public final class ContextExpression_TransformationMenu__BehaviorDescriptor exte
     if ((menuOrContribution == null)) {
       return null;
     }
-    return ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(menuOrContribution);
+    return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(menuOrContribution);
   }
 
   /*package*/ ContextExpression_TransformationMenu__BehaviorDescriptor() {

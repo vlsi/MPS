@@ -30,9 +30,9 @@ public final class QueryFunction_TransformationMenu_Parameter__BehaviorDescripto
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
-  public static final SMethod<Boolean> isParameterized_id3EZUZhmZmdP = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EZUZhmZmdP").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isParameterized_id1quYWAD0TOG = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD0TOG").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExpectedReturnType_idhEwIGRD, isParameterized_id3EZUZhmZmdP);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExpectedReturnType_idhEwIGRD, isParameterized_id1quYWAD0TOG);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -40,8 +40,7 @@ public final class QueryFunction_TransformationMenu_Parameter__BehaviorDescripto
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return _quotation_createNode_w4ui80_a0a0(check_w4ui80_a0a0a0(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), false, false)));
   }
-  /*package*/ static boolean isParameterized_id3EZUZhmZmdP(@NotNull SNode __thisNode__) {
-    // Cannot use parameter when computing a list of parameter values (obviously) 
+  /*package*/ static boolean isParameterized_id1quYWAD0TOG(@NotNull SNode __thisNode__) {
     return false;
   }
 
@@ -64,7 +63,7 @@ public final class QueryFunction_TransformationMenu_Parameter__BehaviorDescripto
       case 0:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
       case 1:
-        return (T) ((Boolean) isParameterized_id3EZUZhmZmdP(node));
+        return (T) ((Boolean) isParameterized_id1quYWAD0TOG(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -106,7 +105,7 @@ public final class QueryFunction_TransformationMenu_Parameter__BehaviorDescripto
   }
   private static SNode check_w4ui80_a0a0a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, 0x3abfebf456f8c85fL, "parameterType"));
+      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, 0x169efbc9a9002d10L, "parameterTypeNew"));
     }
     return null;
   }

@@ -14,6 +14,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldChildNodeSubstituteInfoHolder;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 
@@ -49,11 +52,11 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     return editorCell;
   }
   private EditorCell createRefNode_lo76ij_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new TransformationMenuPart_Parameterized_Editor.parameterTypeSingleRoleHandler_lo76ij_c0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, 0x3abfebf456f8c85fL, "parameterType"), editorContext);
+    SingleRoleCellProvider provider = new TransformationMenuPart_Parameterized_Editor.parameterTypeNewSingleRoleHandler_lo76ij_c0(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, 0x169efbc9a9002d10L, "parameterTypeNew"), editorContext);
     return provider.createCell();
   }
-  private class parameterTypeSingleRoleHandler_lo76ij_c0 extends SingleRoleCellProvider {
-    public parameterTypeSingleRoleHandler_lo76ij_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class parameterTypeNewSingleRoleHandler_lo76ij_c0 extends SingleRoleCellProvider {
+    public parameterTypeNewSingleRoleHandler_lo76ij_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -62,9 +65,9 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell), new OldChildNodeSubstituteInfoHolder(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext))));
       if (editorCell.getRole() == null) {
-        editorCell.setRole("parameterType");
+        editorCell.setRole("parameterTypeNew");
       }
       if (true) {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -73,12 +76,13 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_parameterType");
+      editorCell.setCellId("empty_parameterTypeNew");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "<no parameterType>";
+      return "<no parameterTypeNew>";
     }
   }
   private EditorCell createConstant_lo76ij_d0(EditorContext editorContext, SNode node) {
@@ -114,7 +118,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell), new OldChildNodeSubstituteInfoHolder(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext))));
       if (editorCell.getRole() == null) {
         editorCell.setRole("parameterQuery");
       }
@@ -124,6 +128,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_parameterQuery");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -163,7 +168,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell), new OldChildNodeSubstituteInfoHolder(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext))));
       if (editorCell.getRole() == null) {
         editorCell.setRole("part");
       }
@@ -179,6 +184,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_part");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {

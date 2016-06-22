@@ -83,6 +83,9 @@
         <property id="1214316229833" name="underlined" index="2USNnj" />
         <child id="1221219051630" name="query" index="1mkY_M" />
       </concept>
+      <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
+        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+      </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt">
@@ -142,9 +145,6 @@
       </concept>
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
-      </concept>
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
-        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
@@ -1016,7 +1016,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="3QmSL4cIVd">
-    <ref role="7LAce" to="eynw:4Jke6BA4ffD" resolve="BLCommand" />
+    <ref role="aqKnT" to="eynw:4Jke6BA4ffD" resolve="BLCommand" />
     <node concept="1Qtc8_" id="6V0bp$oLZAb" role="IW6Ez">
       <node concept="2j_NTm" id="6V0bp$oLZLu" role="1Qtc8$" />
       <node concept="IWgqT" id="3QmSL4cIXn" role="1Qtc8A">
@@ -1080,7 +1080,7 @@
   </node>
   <node concept="3ICXOK" id="7PU0zk4VAyV">
     <property role="TrG5h" value="CommandHolder_Empty_ContextAssistantMenu" />
-    <ref role="7LAce" to="eynw:jysm2GH4xb" resolve="CommandHolder" />
+    <ref role="aqKnT" to="eynw:jysm2GH4xb" resolve="CommandHolder" />
   </node>
 </model>
 

@@ -18,15 +18,15 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class check_ITransformationMenu_hasUniqueName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_ITransformationMenu_hasUniqueName_NonTypesystemRule() {
+public class check_IMenu_hasUniqueName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_IMenu_hasUniqueName_NonTypesystemRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode otherNode : ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu")))) {
       if (otherNode == node) {
         continue;
       }
-      if (eq_lcdd36_a0b0a0b(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(otherNode), INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node))) {
+      if (eq_fsojcd_a0b0a0b(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(otherNode), INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
@@ -36,7 +36,7 @@ public class check_ITransformationMenu_hasUniqueName_NonTypesystemRule extends A
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu");
+    return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -44,7 +44,7 @@ public class check_ITransformationMenu_hasUniqueName_NonTypesystemRule extends A
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_lcdd36_a0b0a0b(Object a, Object b) {
+  private static boolean eq_fsojcd_a0b0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
