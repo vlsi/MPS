@@ -18,6 +18,7 @@
     <import index="89o2" ref="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -667,8 +668,8 @@
       <node concept="3Tm1VV" id="hWp9X11" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="7HchRGXY44m" role="13h7CS">
-      <property role="TrG5h" value="getAdditionalIcon" />
-      <ref role="13i0hy" to="tpcu:4mxbjAOAE$e" resolve="getAdditionalIcon" />
+      <property role="TrG5h" value="getSideIcon" />
+      <ref role="13i0hy" to="tpcu:6TtJ6IUjtJX" resolve="getSideIcon" />
       <node concept="3clFbS" id="7HchRGXY44p" role="3clF47">
         <node concept="3clFbF" id="7HchRGXY4c9" role="3cqZAp">
           <node concept="2OqwBi" id="7HchRGXY4ca" role="3clFbG">
@@ -679,10 +680,10 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="7HchRGXY44q" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-      </node>
       <node concept="3Tm1VV" id="7HchRGXY44r" role="1B3o_S" />
+      <node concept="3uibUv" id="4h$e$JHpsg9" role="3clF45">
+        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+      </node>
     </node>
     <node concept="13hLZK" id="hEwJ6LN" role="13h7CW">
       <node concept="3clFbS" id="hEwJ6LO" role="2VODD2" />
