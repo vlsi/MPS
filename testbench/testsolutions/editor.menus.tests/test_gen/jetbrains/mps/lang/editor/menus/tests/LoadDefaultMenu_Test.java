@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -26,10 +26,10 @@ public class LoadDefaultMenu_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6436886136983447642", "");
-      List<MenuItem> items = MenuLoadingUtils.loadDefaultMenu(getEditorComponent(), "test location");
+      List<TransformationMenuItem> items = MenuLoadingUtils.loadDefaultMenu(getEditorComponent(), "test location");
 
-      Assert.assertTrue("default menu should contain an item labelled 'default menu item'", ListSequence.fromList(items).any(new IWhereFilter<MenuItem>() {
-        public boolean accept(MenuItem it) {
+      Assert.assertTrue("default menu should contain an item labelled 'default menu item'", ListSequence.fromList(items).any(new IWhereFilter<TransformationMenuItem>() {
+        public boolean accept(TransformationMenuItem it) {
           return it instanceof ActionItem && "default menu item".equals(((ActionItem) it).getLabelText(""));
         }
       }));

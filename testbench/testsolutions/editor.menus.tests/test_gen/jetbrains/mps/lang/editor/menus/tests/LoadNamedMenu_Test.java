@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.SNodePointer;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,10 +27,10 @@ public class LoadNamedMenu_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6202297022023746489", "");
-      List<MenuItem> items = MenuLoadingUtils.loadNamedMenu(getEditorComponent(), new SNodePointer("r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)", "6202297022023752048"), "test location");
+      List<TransformationMenuItem> items = MenuLoadingUtils.loadNamedMenu(getEditorComponent(), new SNodePointer("r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)", "6202297022023752048"), "test location");
 
-      Assert.assertTrue("named menu should contain an item labelled 'named menu item'", ListSequence.fromList(items).any(new IWhereFilter<MenuItem>() {
-        public boolean accept(MenuItem it) {
+      Assert.assertTrue("named menu should contain an item labelled 'named menu item'", ListSequence.fromList(items).any(new IWhereFilter<TransformationMenuItem>() {
+        public boolean accept(TransformationMenuItem it) {
           return it instanceof ActionItem && "named menu item".equals(((ActionItem) it).getLabelText(""));
         }
       }));
