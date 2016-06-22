@@ -103,6 +103,10 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -522,6 +526,28 @@
       <ref role="2VtyIY" to="9n97:ghIDlF6GD9" resolve="getAspectModels" />
       <node concept="3Tm1VV" id="2Y$EcRKO3dY" role="1B3o_S" />
       <node concept="3clFbS" id="2Y$EcRKO3e0" role="3clF47">
+        <node concept="3clFbJ" id="4wvOFLnKxem" role="3cqZAp">
+          <node concept="3clFbS" id="4wvOFLnKxeo" role="3clFbx">
+            <node concept="3cpWs6" id="4wvOFLnKz5d" role="3cqZAp">
+              <node concept="2YIFZM" id="4wvOFLnK$VW" role="3cqZAk">
+                <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="4wvOFLnKyix" role="3clFbw">
+            <node concept="1eOMI4" id="4wvOFLnKyqG" role="3fr31v">
+              <node concept="2ZW3vV" id="4wvOFLnKyMc" role="1eOMHV">
+                <node concept="3uibUv" id="4wvOFLnKySd" role="2ZW6by">
+                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                </node>
+                <node concept="37vLTw" id="4wvOFLnKyyQ" role="2ZW6bz">
+                  <ref role="3cqZAo" node="2Y$EcRKO3e2" resolve="language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="2Y$EcRKO5lh" role="3cqZAp">
           <node concept="3cpWsn" id="2Y$EcRKO5li" role="3cpWs9">
             <property role="TrG5h" value="allModels" />
