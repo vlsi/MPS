@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.Set;
@@ -73,51 +72,17 @@ public class MacrosFactory {
     return path.startsWith("${") && path.contains("}");
   }
 
-  /**
-   * @deprecated use forModuleFile
-   */
-  @Deprecated
-  public static OldMacros moduleDescriptor(SModule module) {
-    IFile descriptorFile = ((AbstractModule)module).getDescriptorFile();
-    MacroHelper macroHelper = forModuleFile(descriptorFile);
-    Macros macros = macroHelper instanceof MacroHelperImpl
-      ? ((MacroHelperImpl) macroHelper).macros
-      : new HomeMacros();
-    return new OldMacros(macros);
-  }
-
-  @Deprecated
-  public static class OldMacros {
-
-    private final Macros macros;
-
-    private OldMacros(Macros macros) {
-      this.macros = macros;
-    }
-
-    @Deprecated
-    public String shrinkPath(String absolutePath, IFile anchorFile) {
-      return macros.shrink(absolutePath, anchorFile);
-    }
-
-    @Deprecated
-    public String expandPath(String path, IFile anchorFile) {
-      return macros.expand(path, anchorFile);
-    }
-  }
 
   private static class ModuleMacros extends HomeMacros {
     @Override
     protected String expand(String path, IFile anchorFile) {
-      for (String d : descriptors) {
-        if (path.startsWith(d)) {
-          IFile anchorFolder = anchorFile.getParent();
-          if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
-            anchorFolder = anchorFolder.getParent();
-          }
-          String modelRelativePath = removePrefix(path);
-          return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+      if (path.startsWith(MODULE)) {
+        IFile anchorFolder = anchorFile.getParent();
+        if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+          anchorFolder = anchorFolder.getParent();
         }
+        String modelRelativePath = removePrefix(path);
+        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
 
       return super.expand(path, anchorFile);
@@ -314,21 +279,5 @@ public class MacrosFactory {
 
       return absolutePath.replace(File.separatorChar, SEPARATOR_CHAR);
     }
-  }
-
-  //---------stuff to remove
-
-  //remove after 3.0, only MODULE matters
-  public static final String[] descriptors = new String[]{"${solution_descriptor}", "${language_descriptor}", "${module_descriptor}", MODULE};
-
-  @Deprecated //remove when language descriptor is fully in xml file
-  public static boolean containsNonMPSMacros(String path) {
-    if(path == null) return false;
-    return path.contains("${") && !(path.contains("${solution_descriptor}") ||
-      path.contains("${language_descriptor}") ||
-      path.contains("${module_descriptor}") ||
-      path.contains("${module}") ||
-      path.contains(MacrosFactory.PROJECT) ||
-      path.contains(MacrosFactory.MPS_HOME));
   }
 }

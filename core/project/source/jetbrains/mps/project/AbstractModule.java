@@ -437,12 +437,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       return canonicalPath;
     }
 
-    if (MacrosFactory.containsNonMPSMacros(macroHelper.shrinkPath(originalPath))) {
-      return originalPath;
-    } else {
-      // ignore paths starts from ${module}/${project} etc
-      return null;
-    }
+    // we used to keep originalPath if it has a macro not known to MPS here.
+    // However, the check has been deprecated in 2012 and thus removed. I'm not 100% sure what
+    // 'meaningless' in the contract of the method means. Of course, unknown macros make no sense for us
+    // and thus null is legitimate answer, OTOH, custom macros might have a lot of meaning to someone else.
+    //
+    // ignore paths starts from ${module}/${project} etc
+    return null;
   }
 
 
