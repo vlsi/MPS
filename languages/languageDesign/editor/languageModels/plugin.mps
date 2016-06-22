@@ -13,12 +13,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
-      </concept>
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -58,13 +53,6 @@
         <property role="2V$B1Q" value="jetbrains.mps.lang.editor" />
       </node>
     </node>
-    <node concept="1QGGSu" id="4lJsQ5yF4MG" role="3vqPLo">
-      <node concept="1QGGTA" id="P5ZkC6w54$" role="3xaMm5">
-        <node concept="1QGGSu" id="P5ZkC6w54A" role="1QGGTw">
-          <property role="1QGGTI" value="${module}/icons/editorModel.png" />
-        </node>
-      </node>
-    </node>
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
       <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Editor" />
     </node>
@@ -73,6 +61,9 @@
         <property role="2V$B1T" value="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" />
         <property role="2V$B1Q" value="jetbrains.mps.lang.editor.table" />
       </node>
+    </node>
+    <node concept="1QGGSu" id="P5ZkC6w54A" role="3vqPLo">
+      <property role="1QGGTI" value="${module}/icons/editorModel.png" />
     </node>
   </node>
 </model>

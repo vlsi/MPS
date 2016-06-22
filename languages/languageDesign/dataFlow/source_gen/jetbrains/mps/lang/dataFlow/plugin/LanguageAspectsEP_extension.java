@@ -23,6 +23,7 @@ import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.util.IconUtil;
 
 public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspectDescriptor> {
   public LanguageAspectsEP_extension() {
@@ -84,7 +85,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final Icon ICON = IconContainer.ICON_a61a0a0a1;
+      private final Icon ICON = IconUtil.getIcon("dataFlowModel.png");
 
     };
   }
