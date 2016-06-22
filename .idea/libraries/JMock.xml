@@ -1,15 +1,16 @@
 <component name="libraryTable">
   <library name="JMock">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib/jmock-2.5.1" />
+      <root url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib/jmock-2.5.1" />
+      <root url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib/jmock-2.5.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/plugins/mps-core-ex/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/lib" recursive="false" type="SOURCES" />
     <jarDirectory url="file://$PROJECT_DIR$/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1" recursive="false" type="SOURCES" />
   </library>
 </component>

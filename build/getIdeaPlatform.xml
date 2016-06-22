@@ -50,7 +50,11 @@
   </target>
 
   <target name="force-resolve" depends="install-ivy, cleanCache">
-    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different" />
+    <ivy:resolve file="ivy.xml"/>
+    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
+
+    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar"/>
+    <ivy:retrieve pattern="../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">

@@ -177,6 +177,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
@@ -554,7 +555,7 @@
                               <node concept="2OqwBi" id="35RBNT8Dujv" role="2Oq$k0">
                                 <node concept="Xjq3P" id="35RBNT8Duju" role="2Oq$k0" />
                                 <node concept="liA8E" id="35RBNT8Duj$" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="35RBNT8Duj_" role="37wK5m">
                                     <property role="3cmrfH" value="2" />
                                   </node>
@@ -576,10 +577,10 @@
                           <node concept="2OqwBi" id="35RBNT8DujO" role="3clFbG">
                             <node concept="Xjq3P" id="35RBNT8DujN" role="2Oq$k0" />
                             <node concept="liA8E" id="35RBNT8DujS" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTk" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAheTl" role="37wK5m">
                                   <node concept="1pGfFk" id="41innpAheTm" role="2ShVmc">
                                     <ref role="37wK5l" to="ud0o:5mqBoD3U3Ub" resolve="IFacet.Name" />
@@ -647,7 +648,7 @@
                             <node concept="2OqwBi" id="7HNoKHArsCA" role="2Oq$k0">
                               <node concept="Xjq3P" id="7HNoKHArsC_" role="2Oq$k0" />
                               <node concept="liA8E" id="7HNoKHArsCE" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxglF33" role="37wK5m">
                                   <ref role="3cqZAo" node="7HNoKHArorr" resolve="fct" />
                                 </node>
@@ -662,10 +663,10 @@
                           <node concept="2OqwBi" id="7HNoKHArsEI" role="3clFbG">
                             <node concept="Xjq3P" id="7HNoKHArsEH" role="2Oq$k0" />
                             <node concept="liA8E" id="7HNoKHArsEM" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTo" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTp" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTq" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTr" role="2ShVmc">
@@ -685,7 +686,7 @@
                             <node concept="2OqwBi" id="7HNoKHArsDb" role="2Oq$k0">
                               <node concept="Xjq3P" id="7HNoKHArsDa" role="2Oq$k0" />
                               <node concept="liA8E" id="7HNoKHArsDf" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgmeLi" role="37wK5m">
                                   <ref role="3cqZAo" node="7HNoKHArorr" resolve="fct" />
                                 </node>
@@ -700,10 +701,10 @@
                           <node concept="2OqwBi" id="7HNoKHArsEX" role="3clFbG">
                             <node concept="Xjq3P" id="7HNoKHArsEY" role="2Oq$k0" />
                             <node concept="liA8E" id="7HNoKHArsEZ" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTu" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTv" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTw" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTx" role="2ShVmc">
@@ -723,7 +724,7 @@
                             <node concept="2OqwBi" id="7HNoKHArsCX" role="2Oq$k0">
                               <node concept="Xjq3P" id="7HNoKHArsCW" role="2Oq$k0" />
                               <node concept="liA8E" id="7HNoKHArsD1" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm9DP" role="37wK5m">
                                   <ref role="3cqZAo" node="7HNoKHArorr" resolve="fct" />
                                 </node>
@@ -738,10 +739,10 @@
                           <node concept="2OqwBi" id="7HNoKHArsF7" role="3clFbG">
                             <node concept="Xjq3P" id="7HNoKHArsF8" role="2Oq$k0" />
                             <node concept="liA8E" id="7HNoKHArsF9" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheT$" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheT_" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTA" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTB" role="2ShVmc">
@@ -761,7 +762,7 @@
                             <node concept="2OqwBi" id="7HNoKHArsK7" role="2Oq$k0">
                               <node concept="Xjq3P" id="7HNoKHArsK6" role="2Oq$k0" />
                               <node concept="liA8E" id="7HNoKHArsKb" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgmP8g" role="37wK5m">
                                   <ref role="3cqZAo" node="7HNoKHArorr" resolve="fct" />
                                 </node>
@@ -776,10 +777,10 @@
                           <node concept="2OqwBi" id="7HNoKHArsKp" role="3clFbG">
                             <node concept="Xjq3P" id="7HNoKHArsKo" role="2Oq$k0" />
                             <node concept="liA8E" id="7HNoKHArsKt" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTE" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTF" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTG" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTH" role="2ShVmc">
@@ -998,7 +999,7 @@
                               <node concept="2OqwBi" id="7Lza_WeTGri" role="2Oq$k0">
                                 <node concept="Xjq3P" id="7Lza_WeTGrj" role="2Oq$k0" />
                                 <node concept="liA8E" id="7Lza_WeTGrk" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="7Lza_WeTGrl" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -1020,10 +1021,10 @@
                           <node concept="2OqwBi" id="7Lza_WeTGrq" role="3clFbG">
                             <node concept="Xjq3P" id="7Lza_WeTGrr" role="2Oq$k0" />
                             <node concept="liA8E" id="7Lza_WeTGrs" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTK" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAheTL" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHoQp" resolve="tname" />
                                 </node>
@@ -1063,7 +1064,7 @@
                                   <node concept="2OqwBi" id="3K2tewwslbl" role="2Oq$k0">
                                     <node concept="Xjq3P" id="3K2tewwslbm" role="2Oq$k0" />
                                     <node concept="liA8E" id="3K2tewwslbn" role="2OqNvi">
-                                      <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                      <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                       <node concept="3cmrfG" id="3K2tewwslbo" role="37wK5m">
                                         <property role="3cmrfH" value="1" />
                                       </node>
@@ -1085,10 +1086,10 @@
                               <node concept="2OqwBi" id="3K2tewwslbt" role="3clFbG">
                                 <node concept="Xjq3P" id="3K2tewwslbu" role="2Oq$k0" />
                                 <node concept="liA8E" id="3K2tewwslbv" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                                   <node concept="2YIFZM" id="41innpAheUD" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                     <node concept="3clFbT" id="41innpAheUE" role="37wK5m">
                                       <property role="3clFbU" value="true" />
                                     </node>
@@ -1103,7 +1104,7 @@
                                   <node concept="2OqwBi" id="3K2tewwskes" role="2Oq$k0">
                                     <node concept="Xjq3P" id="3K2tewwsker" role="2Oq$k0" />
                                     <node concept="liA8E" id="3K2tewwskex" role="2OqNvi">
-                                      <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                      <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                       <node concept="3cmrfG" id="3K2tewwskey" role="37wK5m">
                                         <property role="3cmrfH" value="1" />
                                       </node>
@@ -1125,10 +1126,10 @@
                               <node concept="2OqwBi" id="3K2tewwskeL" role="3clFbG">
                                 <node concept="Xjq3P" id="3K2tewwskeK" role="2Oq$k0" />
                                 <node concept="liA8E" id="3K2tewwskeP" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                                   <node concept="2YIFZM" id="41innpAheUF" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                     <node concept="2YIFZM" id="41innpAheUG" role="37wK5m">
                                       <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                                       <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
@@ -1220,7 +1221,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHlPO" role="2Oq$k0">
                               <node concept="Xjq3P" id="4pYhUbPHlPN" role="2Oq$k0" />
                               <node concept="liA8E" id="4pYhUbPHlPS" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxglWLv" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1235,10 +1236,10 @@
                           <node concept="2OqwBi" id="4pYhUbPHlQ3" role="3clFbG">
                             <node concept="Xjq3P" id="4pYhUbPHlQ2" role="2Oq$k0" />
                             <node concept="liA8E" id="4pYhUbPHlQ7" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTM" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTN" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTO" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTP" role="2ShVmc">
@@ -1258,7 +1259,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHlQp" role="2Oq$k0">
                               <node concept="Xjq3P" id="4pYhUbPHlQq" role="2Oq$k0" />
                               <node concept="liA8E" id="4pYhUbPHlQr" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm__4" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1273,10 +1274,10 @@
                           <node concept="2OqwBi" id="4pYhUbPHlQv" role="3clFbG">
                             <node concept="Xjq3P" id="4pYhUbPHlQw" role="2Oq$k0" />
                             <node concept="liA8E" id="4pYhUbPHlQx" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTS" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTT" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheTU" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheTV" role="2ShVmc">
@@ -1296,7 +1297,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHlQF" role="2Oq$k0">
                               <node concept="Xjq3P" id="4pYhUbPHlQG" role="2Oq$k0" />
                               <node concept="liA8E" id="4pYhUbPHlQH" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxglRtT" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1311,10 +1312,10 @@
                           <node concept="2OqwBi" id="4pYhUbPHlQL" role="3clFbG">
                             <node concept="Xjq3P" id="4pYhUbPHlQM" role="2Oq$k0" />
                             <node concept="liA8E" id="4pYhUbPHlQN" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheTY" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheTZ" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheU0" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheU1" role="2ShVmc">
@@ -1334,7 +1335,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHlQW" role="2Oq$k0">
                               <node concept="Xjq3P" id="4pYhUbPHlQX" role="2Oq$k0" />
                               <node concept="liA8E" id="4pYhUbPHlQY" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxglQ_8" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1349,10 +1350,10 @@
                           <node concept="2OqwBi" id="4pYhUbPHlR2" role="3clFbG">
                             <node concept="Xjq3P" id="4pYhUbPHlR3" role="2Oq$k0" />
                             <node concept="liA8E" id="4pYhUbPHlR4" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheU4" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAheU5" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAheU6" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAheU7" role="2ShVmc">
@@ -1372,7 +1373,7 @@
                             <node concept="2OqwBi" id="4nIolHFC$T7" role="2Oq$k0">
                               <node concept="Xjq3P" id="4nIolHFC$T6" role="2Oq$k0" />
                               <node concept="liA8E" id="4nIolHFC$Tb" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgmkmA" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1387,10 +1388,10 @@
                           <node concept="2OqwBi" id="4nIolHFC$Tq" role="3clFbG">
                             <node concept="Xjq3P" id="4nIolHFC$Tp" role="2Oq$k0" />
                             <node concept="liA8E" id="4nIolHFC$Tu" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUa" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="10M0yZ" id="41innpAheUb" role="37wK5m">
                                   <ref role="1PxDUh" node="35RBNT8Dbu4" resolve="Mockups" />
                                   <ref role="3cqZAo" node="4nIolHFC_5o" resolve="DefaultJob" />
@@ -1404,7 +1405,7 @@
                             <node concept="2OqwBi" id="1HN6OkgSMDe" role="2Oq$k0">
                               <node concept="Xjq3P" id="1HN6OkgSMDf" role="2Oq$k0" />
                               <node concept="liA8E" id="1HN6OkgSMDg" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm7go" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1419,10 +1420,10 @@
                           <node concept="2OqwBi" id="1HN6OkgSMDk" role="3clFbG">
                             <node concept="Xjq3P" id="1HN6OkgSMDl" role="2Oq$k0" />
                             <node concept="liA8E" id="1HN6OkgSMDm" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUc" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="10M0yZ" id="41innpAheUd" role="37wK5m">
                                   <ref role="1PxDUh" node="35RBNT8Dbu4" resolve="Mockups" />
                                   <ref role="3cqZAo" node="1HN6OkgSMDs" resolve="DefaultConfig" />
@@ -1436,7 +1437,7 @@
                             <node concept="2OqwBi" id="6Inl9lJpiSy" role="2Oq$k0">
                               <node concept="Xjq3P" id="6Inl9lJpiSx" role="2Oq$k0" />
                               <node concept="liA8E" id="6Inl9lJpiSA" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm_ql" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1451,10 +1452,10 @@
                           <node concept="2OqwBi" id="6Inl9lJpknr" role="3clFbG">
                             <node concept="Xjq3P" id="6Inl9lJpknq" role="2Oq$k0" />
                             <node concept="liA8E" id="6Inl9lJpknv" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUe" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAheUf" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
@@ -1467,7 +1468,7 @@
                             <node concept="2OqwBi" id="699nk12GLhh" role="2Oq$k0">
                               <node concept="Xjq3P" id="699nk12GLhi" role="2Oq$k0" />
                               <node concept="liA8E" id="699nk12GLhj" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxghiUY" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1482,10 +1483,10 @@
                           <node concept="2OqwBi" id="699nk12GLhn" role="3clFbG">
                             <node concept="Xjq3P" id="699nk12GLho" role="2Oq$k0" />
                             <node concept="liA8E" id="699nk12GLhp" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUg" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAheUh" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
@@ -1498,7 +1499,7 @@
                             <node concept="2OqwBi" id="6Inl9lJpkn_" role="2Oq$k0">
                               <node concept="Xjq3P" id="6Inl9lJpkn$" role="2Oq$k0" />
                               <node concept="liA8E" id="6Inl9lJpknD" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm5V1" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1513,10 +1514,10 @@
                           <node concept="2OqwBi" id="6Inl9lJpknN" role="3clFbG">
                             <node concept="Xjq3P" id="6Inl9lJpknM" role="2Oq$k0" />
                             <node concept="liA8E" id="6Inl9lJpknR" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUi" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="10Nm6u" id="41innpAheUj" role="37wK5m" />
                               </node>
                             </node>
@@ -1527,7 +1528,7 @@
                             <node concept="2OqwBi" id="3r8x156Zwra" role="2Oq$k0">
                               <node concept="Xjq3P" id="3r8x156Zwrb" role="2Oq$k0" />
                               <node concept="liA8E" id="3r8x156Zwrc" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm9WU" role="37wK5m">
                                   <ref role="3cqZAo" node="4pYhUbPHlPw" resolve="trg" />
                                 </node>
@@ -1542,10 +1543,10 @@
                           <node concept="2OqwBi" id="3r8x156Zwrg" role="3clFbG">
                             <node concept="Xjq3P" id="3r8x156Zwrh" role="2Oq$k0" />
                             <node concept="liA8E" id="3r8x156Zwri" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUk" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="10Nm6u" id="41innpAheUl" role="37wK5m" />
                               </node>
                             </node>
@@ -1689,7 +1690,7 @@
                               <node concept="2OqwBi" id="4nIolHFCM6l" role="2Oq$k0">
                                 <node concept="Xjq3P" id="4nIolHFCM6k" role="2Oq$k0" />
                                 <node concept="liA8E" id="4nIolHFCM6p" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4nIolHFCM6q" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -1707,10 +1708,10 @@
                               <node concept="2OqwBi" id="4nIolHFCM6A" role="37wK5m">
                                 <node concept="Xjq3P" id="4nIolHFCM6B" role="2Oq$k0" />
                                 <node concept="liA8E" id="4nIolHFCM6C" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAheUI" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAheUJ" role="37wK5m">
                                       <ref role="3VsUkX" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
@@ -1720,10 +1721,10 @@
                               <node concept="2OqwBi" id="4nIolHFCM6F" role="37wK5m">
                                 <node concept="Xjq3P" id="4nIolHFCM6G" role="2Oq$k0" />
                                 <node concept="liA8E" id="4nIolHFCM6H" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAheUK" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAheUL" role="37wK5m">
                                       <ref role="3VsUkX" to="i9so:5mqBoD3U3Wy" resolve="IJobMonitor" />
                                     </node>
@@ -1733,10 +1734,10 @@
                               <node concept="2OqwBi" id="5ZxuLcd_M3N" role="37wK5m">
                                 <node concept="Xjq3P" id="5ZxuLcd_M3M" role="2Oq$k0" />
                                 <node concept="liA8E" id="5ZxuLcd_M3R" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAheUM" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAheUN" role="37wK5m">
                                       <ref role="3VsUkX" to="yo81:2U8Fq3GMElN" resolve="IPropertiesAccessor" />
                                     </node>
@@ -1746,10 +1747,10 @@
                               <node concept="2OqwBi" id="43l$qHE9d1V" role="37wK5m">
                                 <node concept="Xjq3P" id="43l$qHE9d1G" role="2Oq$k0" />
                                 <node concept="liA8E" id="43l$qHE9d24" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAheUO" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAheUP" role="37wK5m">
                                       <ref role="3VsUkX" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
                                     </node>
@@ -1763,10 +1764,10 @@
                           <node concept="2OqwBi" id="4nIolHFCM6O" role="3clFbG">
                             <node concept="Xjq3P" id="4nIolHFCM6N" role="2Oq$k0" />
                             <node concept="liA8E" id="4nIolHFCM6S" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUm" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2Sg_IR" id="41innpAheUn" role="37wK5m">
                                   <node concept="37vLTw" id="41innpAheUo" role="2SgG2M">
                                     <ref role="3cqZAo" node="3vZ67aZykQB" resolve="fun" />
@@ -1843,7 +1844,7 @@
                               <node concept="2OqwBi" id="6FENe8yigVp" role="2Oq$k0">
                                 <node concept="Xjq3P" id="6FENe8yigVo" role="2Oq$k0" />
                                 <node concept="liA8E" id="6FENe8yigVt" role="2OqNvi">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6FENe8yigVu" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -1865,10 +1866,10 @@
                           <node concept="2OqwBi" id="6FENe8yigVJ" role="3clFbG">
                             <node concept="Xjq3P" id="6FENe8yigVI" role="2Oq$k0" />
                             <node concept="liA8E" id="6FENe8yigVN" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUp" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAheUq" role="37wK5m">
                                   <ref role="3cqZAo" node="6FENe8yigXk" resolve="res" />
                                 </node>
@@ -1935,7 +1936,7 @@
                             <node concept="2OqwBi" id="6FENe8yigX4" role="2Oq$k0">
                               <node concept="Xjq3P" id="6FENe8yigX5" role="2Oq$k0" />
                               <node concept="liA8E" id="6FENe8yigX6" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgmapy" role="37wK5m">
                                   <ref role="3cqZAo" node="6FENe8yigWM" resolve="result" />
                                 </node>
@@ -1950,10 +1951,10 @@
                           <node concept="2OqwBi" id="6FENe8yigXc" role="3clFbG">
                             <node concept="Xjq3P" id="6FENe8yigXd" role="2Oq$k0" />
                             <node concept="liA8E" id="6FENe8yigXe" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUr" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="10Nm6u" id="41innpAheUs" role="37wK5m" />
                               </node>
                             </node>
@@ -2075,7 +2076,7 @@
                             <node concept="2OqwBi" id="3vZ67aZympP" role="2Oq$k0">
                               <node concept="Xjq3P" id="3vZ67aZympO" role="2Oq$k0" />
                               <node concept="liA8E" id="3vZ67aZympT" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="3GM_nagTAP9" role="37wK5m">
                                   <ref role="3cqZAo" node="3vZ67aZympr" resolve="monitor" />
                                 </node>
@@ -2090,10 +2091,10 @@
                           <node concept="2OqwBi" id="3vZ67aZymq8" role="3clFbG">
                             <node concept="Xjq3P" id="3vZ67aZymq7" role="2Oq$k0" />
                             <node concept="liA8E" id="3vZ67aZymqc" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUt" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAheUu" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
@@ -2239,7 +2240,7 @@
                             <node concept="2OqwBi" id="4231y0oL6BD" role="2Oq$k0">
                               <node concept="Xjq3P" id="4231y0oL6BE" role="2Oq$k0" />
                               <node concept="liA8E" id="4231y0oL6BF" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgheIf" role="37wK5m">
                                   <ref role="3cqZAo" node="4231y0oL6Bm" resolve="mons" />
                                 </node>
@@ -2257,10 +2258,10 @@
                                 <node concept="2OqwBi" id="4TqQgK0rbmb" role="10QFUP">
                                   <node concept="Xjq3P" id="4TqQgK0rbmc" role="2Oq$k0" />
                                   <node concept="liA8E" id="4TqQgK0rbmd" role="2OqNvi">
-                                    <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                     <node concept="2YIFZM" id="41innpAheUT" role="37wK5m">
                                       <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                      <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                      <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                       <node concept="3VsKOn" id="41innpAheUU" role="37wK5m">
                                         <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                                       </node>
@@ -2276,7 +2277,7 @@
                             <node concept="2OqwBi" id="4231y0oL6BM" role="2Oq$k0">
                               <node concept="Xjq3P" id="4231y0oL6BN" role="2Oq$k0" />
                               <node concept="liA8E" id="4231y0oL6BO" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgkZ0I" role="37wK5m">
                                   <ref role="3cqZAo" node="4231y0oL6Bm" resolve="mons" />
                                 </node>
@@ -2294,10 +2295,10 @@
                                 <node concept="2OqwBi" id="4TqQgK0rbA8" role="10QFUP">
                                   <node concept="Xjq3P" id="4TqQgK0rbA9" role="2Oq$k0" />
                                   <node concept="liA8E" id="4TqQgK0rbAa" role="2OqNvi">
-                                    <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                     <node concept="2YIFZM" id="41innpAheUV" role="37wK5m">
                                       <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                      <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                      <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                       <node concept="3VsKOn" id="41innpAheUW" role="37wK5m">
                                         <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                                       </node>
@@ -2357,7 +2358,7 @@
                             <node concept="2OqwBi" id="4HGj3MeUuPL" role="2Oq$k0">
                               <node concept="Xjq3P" id="4HGj3MeUuPM" role="2Oq$k0" />
                               <node concept="liA8E" id="4HGj3MeUuPN" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm_sH" role="37wK5m">
                                   <ref role="3cqZAo" node="4HGj3MeUuQh" resolve="jmon" />
                                 </node>
@@ -2372,10 +2373,10 @@
                           <node concept="2OqwBi" id="4HGj3MeUuQo" role="3clFbG">
                             <node concept="Xjq3P" id="4HGj3MeUuQn" role="2Oq$k0" />
                             <node concept="liA8E" id="4HGj3MeUuQs" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUz" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAheU$" role="37wK5m">
                                   <node concept="1pGfFk" id="41innpAheU_" role="2ShVmc">
                                     <ref role="37wK5l" to="i9so:7NBK4ktlwwS" resolve="IProgress.Stub" />
@@ -2390,7 +2391,7 @@
                             <node concept="2OqwBi" id="4HGj3MeUuQ1" role="2Oq$k0">
                               <node concept="Xjq3P" id="4HGj3MeUuQ2" role="2Oq$k0" />
                               <node concept="liA8E" id="4HGj3MeUuQ3" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                                 <node concept="37vLTw" id="2BHiRxgm5MR" role="37wK5m">
                                   <ref role="3cqZAo" node="4HGj3MeUuQh" resolve="jmon" />
                                 </node>
@@ -2405,10 +2406,10 @@
                           <node concept="2OqwBi" id="4HGj3MeUx6A" role="3clFbG">
                             <node concept="Xjq3P" id="4HGj3MeUx6B" role="2Oq$k0" />
                             <node concept="liA8E" id="4HGj3MeUx6C" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAheUA" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAheUB" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
@@ -3438,7 +3439,7 @@
                           <node concept="2OqwBi" id="3SVf9h63iEY" role="3clFbG">
                             <node concept="2OqwBi" id="3SVf9h63iEZ" role="2Oq$k0">
                               <node concept="1rXfSq" id="4hiugqyyYjl" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                 <node concept="3cmrfG" id="3SVf9h63iF1" role="37wK5m">
                                   <property role="3cmrfH" value="1" />
                                 </node>
@@ -3457,10 +3458,10 @@
                         </node>
                         <node concept="3clFbF" id="3SVf9h63iF5" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyzcJ$" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOtR" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOtS" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOtT" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOtU" role="2ShVmc">
@@ -3482,7 +3483,7 @@
                           <node concept="2OqwBi" id="7Lza_WeTGk$" role="3clFbG">
                             <node concept="2OqwBi" id="7Lza_WeTGk_" role="2Oq$k0">
                               <node concept="1rXfSq" id="4hiugqyyZc9" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                 <node concept="3cmrfG" id="7Lza_WeTGkB" role="37wK5m">
                                   <property role="3cmrfH" value="1" />
                                 </node>
@@ -3501,10 +3502,10 @@
                         </node>
                         <node concept="3clFbF" id="7Lza_WeTGkF" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyzbGy" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOtY" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOtZ" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOu0" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOu1" role="2ShVmc">
@@ -3530,7 +3531,7 @@
                           <node concept="2OqwBi" id="7Lza_WeTGts" role="3clFbG">
                             <node concept="2OqwBi" id="7Lza_WeTGtm" role="2Oq$k0">
                               <node concept="1rXfSq" id="4hiugqyz9ZF" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                 <node concept="3cmrfG" id="7Lza_WeTGtl" role="37wK5m">
                                   <property role="3cmrfH" value="1" />
                                 </node>
@@ -3549,10 +3550,10 @@
                         </node>
                         <node concept="3clFbF" id="7Lza_WeTGtF" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyza51" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOu7" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOu8" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOu9" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOua" role="2ShVmc">
@@ -3576,7 +3577,7 @@
                         <node concept="3clFbF" id="3SVf9h63iZK" role="3cqZAp">
                           <node concept="2OqwBi" id="3SVf9h63iZT" role="3clFbG">
                             <node concept="1rXfSq" id="4hiugqyz5Ia" role="2Oq$k0">
-                              <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                               <node concept="37vLTw" id="3GM_nagTxZZ" role="37wK5m">
                                 <ref role="3cqZAo" node="7Lza_WeTGt7" resolve="tgen" />
                               </node>
@@ -3588,10 +3589,10 @@
                         </node>
                         <node concept="3clFbF" id="3SVf9h63iZZ" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyzgem" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOuf" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOug" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuh" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOui" role="2ShVmc">
@@ -3616,7 +3617,7 @@
                         <node concept="3clFbF" id="7yt8TLDcvLH" role="3cqZAp">
                           <node concept="2OqwBi" id="7yt8TLDcvLI" role="3clFbG">
                             <node concept="1rXfSq" id="4hiugqyz9DQ" role="2Oq$k0">
-                              <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                               <node concept="37vLTw" id="3GM_nagTtMZ" role="37wK5m">
                                 <ref role="3cqZAo" node="7Lza_WeTGt7" resolve="tgen" />
                               </node>
@@ -3628,10 +3629,10 @@
                         </node>
                         <node concept="3clFbF" id="7yt8TLDcvLM" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyyU8J" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOuo" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOup" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuq" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOur" role="2ShVmc">
@@ -3658,7 +3659,7 @@
                           <node concept="2OqwBi" id="7Lza_WeTGkP" role="3clFbG">
                             <node concept="2OqwBi" id="7Lza_WeTGkQ" role="2Oq$k0">
                               <node concept="1rXfSq" id="4hiugqyzey4" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                 <node concept="3cmrfG" id="7Lza_WeTGkS" role="37wK5m">
                                   <property role="3cmrfH" value="1" />
                                 </node>
@@ -3677,10 +3678,10 @@
                         </node>
                         <node concept="3clFbF" id="7Lza_WeTGkW" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyyZWN" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOux" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOuy" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuz" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOu$" role="2ShVmc">
@@ -3714,7 +3715,7 @@
                           <node concept="2OqwBi" id="7Lza_WeTGtY" role="3clFbG">
                             <node concept="2OqwBi" id="7Lza_WeTGtZ" role="2Oq$k0">
                               <node concept="1rXfSq" id="4hiugqyzfgW" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                 <node concept="3cmrfG" id="7Lza_WeTGu1" role="37wK5m">
                                   <property role="3cmrfH" value="1" />
                                 </node>
@@ -3733,10 +3734,10 @@
                         </node>
                         <node concept="3clFbF" id="7Lza_WeTGu8" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyz9P2" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOuH" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOuI" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuJ" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOuK" role="2ShVmc">
@@ -3757,7 +3758,7 @@
                         <node concept="3clFbF" id="3SVf9h63j0I" role="3cqZAp">
                           <node concept="2OqwBi" id="3SVf9h63j0J" role="3clFbG">
                             <node concept="1rXfSq" id="4hiugqyz8GL" role="2Oq$k0">
-                              <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                               <node concept="37vLTw" id="3GM_nagTAmf" role="37wK5m">
                                 <ref role="3cqZAo" node="7Lza_WeTGtd" resolve="ttextgen" />
                               </node>
@@ -3769,10 +3770,10 @@
                         </node>
                         <node concept="3clFbF" id="3SVf9h63j0Q" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyzeD8" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOuO" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOuP" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuQ" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOuR" role="2ShVmc">
@@ -3797,7 +3798,7 @@
                         <node concept="3clFbF" id="3SVf9h63j12" role="3cqZAp">
                           <node concept="2OqwBi" id="3SVf9h63j13" role="3clFbG">
                             <node concept="1rXfSq" id="4hiugqyzfaG" role="2Oq$k0">
-                              <ref role="37wK5l" to="mg6i:~Expectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
                               <node concept="37vLTw" id="3GM_nagTr78" role="37wK5m">
                                 <ref role="3cqZAo" node="7Lza_WeTGtd" resolve="ttextgen" />
                               </node>
@@ -3809,10 +3810,10 @@
                         </node>
                         <node concept="3clFbF" id="3SVf9h63j1a" role="3cqZAp">
                           <node concept="1rXfSq" id="4hiugqyz8S2" role="3clFbG">
-                            <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                            <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                             <node concept="2YIFZM" id="4O1dS63KOuX" role="37wK5m">
                               <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                              <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                               <node concept="2OqwBi" id="4O1dS63KOuY" role="37wK5m">
                                 <node concept="2ShNRf" id="4O1dS63KOuZ" role="2Oq$k0">
                                   <node concept="3g6Rrh" id="4O1dS63KOv0" role="2ShVmc">
@@ -6307,7 +6308,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHosx" role="3clFbG">
                               <node concept="2OqwBi" id="4pYhUbPHosr" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzaiY" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="4pYhUbPHosq" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -6326,10 +6327,10 @@
                           </node>
                           <node concept="3clFbF" id="4pYhUbPHosE" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9wp" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cws6w" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="4pYhUbPHou5" role="37wK5m">
                                   <node concept="2ShNRf" id="4pYhUbPHosH" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="4pYhUbPHosN" role="2ShVmc">
@@ -6449,7 +6450,7 @@
                             <node concept="2OqwBi" id="4pYhUbPHot3" role="3clFbG">
                               <node concept="2OqwBi" id="4pYhUbPHot4" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyS9H" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="4pYhUbPHot6" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -6468,10 +6469,10 @@
                           </node>
                           <node concept="3clFbF" id="4pYhUbPHota" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzbWw" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cws6E" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="4pYhUbPHoua" role="37wK5m">
                                   <node concept="2ShNRf" id="4pYhUbPHotd" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="4pYhUbPHote" role="2ShVmc">
@@ -6778,7 +6779,7 @@
                             <node concept="2OqwBi" id="19NA7t5uNzr" role="3clFbG">
                               <node concept="2OqwBi" id="19NA7t5uNzs" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzjWR" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="19NA7t5uNzu" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -6797,10 +6798,10 @@
                           </node>
                           <node concept="3clFbF" id="19NA7t5uNzy" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9sz" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwrXs" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="19NA7t5uNz_" role="37wK5m">
                                   <node concept="2ShNRf" id="19NA7t5uNzA" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="19NA7t5uNzB" role="2ShVmc">
@@ -6826,7 +6827,7 @@
                             <node concept="2OqwBi" id="1$sXkFTGoAs" role="3clFbG">
                               <node concept="2OqwBi" id="1$sXkFTGoAt" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzffi" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1$sXkFTGoAv" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -6845,10 +6846,10 @@
                           </node>
                           <node concept="3clFbF" id="1$sXkFTGoAz" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz8SE" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwo_U" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1$sXkFTGoAA" role="37wK5m">
                                   <node concept="2ShNRf" id="1$sXkFTGoAB" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1$sXkFTGoAC" role="2ShVmc">
@@ -6874,7 +6875,7 @@
                             <node concept="2OqwBi" id="19NA7t5uNyM" role="3clFbG">
                               <node concept="2OqwBi" id="19NA7t5uNyN" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzc9F" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="19NA7t5uNyP" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -6893,10 +6894,10 @@
                           </node>
                           <node concept="3clFbF" id="19NA7t5uNyT" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyZ6Q" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwql9" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="19NA7t5uNyW" role="37wK5m">
                                   <node concept="2ShNRf" id="19NA7t5uNyX" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="19NA7t5uNyY" role="2ShVmc">
@@ -7159,7 +7160,7 @@
                             <node concept="2OqwBi" id="1sBdHUIEg4$" role="3clFbG">
                               <node concept="2OqwBi" id="1sBdHUIEg4_" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZcn" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1sBdHUIEg4B" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7178,10 +7179,10 @@
                           </node>
                           <node concept="3clFbF" id="1sBdHUIEg4F" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz974" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwsdS" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1sBdHUIEg4I" role="37wK5m">
                                   <node concept="2ShNRf" id="1sBdHUIEg4J" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1sBdHUIEg4K" role="2ShVmc">
@@ -7207,7 +7208,7 @@
                             <node concept="2OqwBi" id="1sBdHUIEg4R" role="3clFbG">
                               <node concept="2OqwBi" id="1sBdHUIEg4S" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz0$T" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1sBdHUIEg4U" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7226,10 +7227,10 @@
                           </node>
                           <node concept="3clFbF" id="1sBdHUIEg4Y" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzhxc" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwn5P" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1sBdHUIEg51" role="37wK5m">
                                   <node concept="2ShNRf" id="1sBdHUIEg52" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1sBdHUIEg53" role="2ShVmc">
@@ -7255,7 +7256,7 @@
                             <node concept="2OqwBi" id="1sBdHUIEg5a" role="3clFbG">
                               <node concept="2OqwBi" id="1sBdHUIEg5b" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz92i" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1sBdHUIEg5d" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7274,10 +7275,10 @@
                           </node>
                           <node concept="3clFbF" id="1sBdHUIEg5h" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk_u" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwrZ6" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1sBdHUIEg5k" role="37wK5m">
                                   <node concept="2ShNRf" id="1sBdHUIEg5l" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1sBdHUIEg5m" role="2ShVmc">
@@ -7303,7 +7304,7 @@
                             <node concept="2OqwBi" id="1sBdHUIEg6o" role="3clFbG">
                               <node concept="2OqwBi" id="1sBdHUIEg6p" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzhXa" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1sBdHUIEg6r" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7322,10 +7323,10 @@
                           </node>
                           <node concept="3clFbF" id="1sBdHUIEg6v" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyIW9" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwsd$" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1sBdHUIEg6y" role="37wK5m">
                                   <node concept="2ShNRf" id="1sBdHUIEg6z" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1sBdHUIEg6$" role="2ShVmc">
@@ -7655,7 +7656,7 @@
                             <node concept="2OqwBi" id="1$sXkFTGnvO" role="3clFbG">
                               <node concept="2OqwBi" id="1$sXkFTGnvP" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8Lw" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="1$sXkFTGnvR" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7674,10 +7675,10 @@
                           </node>
                           <node concept="3clFbF" id="1$sXkFTGnvV" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzbUL" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwngk" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="1$sXkFTGnvY" role="37wK5m">
                                   <node concept="2ShNRf" id="1$sXkFTGnvZ" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="1$sXkFTGnw0" role="2ShVmc">
@@ -7849,7 +7850,7 @@
                             <node concept="2OqwBi" id="2QRVCSBQ_VH" role="3clFbG">
                               <node concept="2OqwBi" id="2QRVCSBQ_VI" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzk2K" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2QRVCSBQ_VK" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -7868,10 +7869,10 @@
                           </node>
                           <node concept="3clFbF" id="2QRVCSBQ_VO" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9sV" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwneG" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="2QRVCSBQ_VR" role="37wK5m">
                                   <node concept="2ShNRf" id="2QRVCSBQ_VS" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="2QRVCSBQ_VT" role="2ShVmc">
@@ -8210,7 +8211,7 @@
                             <node concept="2OqwBi" id="Xix98UO8vn" role="3clFbG">
                               <node concept="2OqwBi" id="Xix98UO8vo" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz9Fi" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="Xix98UO8vq" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -8229,10 +8230,10 @@
                           </node>
                           <node concept="3clFbF" id="Xix98UO8vu" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9IQ" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cws6O" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="Xix98UO8vx" role="37wK5m">
                                   <node concept="2ShNRf" id="Xix98UO8vy" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="Xix98UO8vz" role="2ShVmc">
@@ -8258,7 +8259,7 @@
                             <node concept="2OqwBi" id="Xix98UO8vE" role="3clFbG">
                               <node concept="2OqwBi" id="Xix98UO8vF" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzfE9" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="Xix98UO8vH" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -8277,10 +8278,10 @@
                           </node>
                           <node concept="3clFbF" id="Xix98UO8vL" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzhpW" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwsdq" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="Xix98UO8vO" role="37wK5m">
                                   <node concept="2ShNRf" id="Xix98UO8vP" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="Xix98UO8vQ" role="2ShVmc">
@@ -8306,7 +8307,7 @@
                             <node concept="2OqwBi" id="Xix98UO8Yh" role="3clFbG">
                               <node concept="2OqwBi" id="Xix98UO8Yi" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz4k$" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="Xix98UO8Yk" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -8325,10 +8326,10 @@
                           </node>
                           <node concept="3clFbF" id="Xix98UO8Yo" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz8aZ" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwsdI" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="Xix98UO8Yr" role="37wK5m">
                                   <node concept="2ShNRf" id="Xix98UO8Ys" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="Xix98UO8Yt" role="2ShVmc">
@@ -8354,7 +8355,7 @@
                             <node concept="2OqwBi" id="Xix98UO8vX" role="3clFbG">
                               <node concept="2OqwBi" id="Xix98UO8vY" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz99h" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="Xix98UO8w0" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -8373,10 +8374,10 @@
                           </node>
                           <node concept="3clFbF" id="Xix98UO8w4" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz3y0" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="oHZP2cwn5Z" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="Xix98UO8w7" role="37wK5m">
                                   <node concept="2ShNRf" id="Xix98UO8w8" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="Xix98UO8w9" role="2ShVmc">
@@ -9120,7 +9121,7 @@
                             <node concept="2OqwBi" id="4nIolHFCK7t" role="3clFbG">
                               <node concept="2OqwBi" id="4nIolHFCK7u" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyYcg" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="4nIolHFCK7w" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9139,10 +9140,10 @@
                           </node>
                           <node concept="3clFbF" id="4nIolHFCK7$" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzkaj" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq5N" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq5O" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq5P" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq5Q" role="2ShVmc">
@@ -9168,7 +9169,7 @@
                             <node concept="2OqwBi" id="5TwCKnRGaRa" role="3clFbG">
                               <node concept="2OqwBi" id="5TwCKnRGaR4" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8Pi" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="5TwCKnRGaR3" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9187,10 +9188,10 @@
                           </node>
                           <node concept="3clFbF" id="5TwCKnRGaRg" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz2Zj" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq5W" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq5X" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -9201,7 +9202,7 @@
                             <node concept="2OqwBi" id="4nIolHFCK9x" role="3clFbG">
                               <node concept="2OqwBi" id="4nIolHFCK9r" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz9iO" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4nIolHFCK9q" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9220,10 +9221,10 @@
                           </node>
                           <node concept="3clFbF" id="4nIolHFCK9B" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzf1f" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq5Y" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq5Z" role="37wK5m">
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
@@ -9250,7 +9251,7 @@
                             <node concept="2OqwBi" id="4nIolHFCKbA" role="3clFbG">
                               <node concept="2OqwBi" id="4nIolHFCKbw" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzhC1" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="4nIolHFCKbv" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9269,13 +9270,13 @@
                           </node>
                           <node concept="3clFbF" id="6Zh9WO6IZN0" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyIke" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq66" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.onConsecutiveCalls(org.jmock.api.Action...):org.jmock.api.Action" resolve="onConsecutiveCalls" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.onConsecutiveCalls(org.jmock.api.Action...):org.jmock.api.Action" resolve="onConsecutiveCalls" />
                                 <node concept="2YIFZM" id="41innpAhzyh" role="37wK5m">
                                   <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                  <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                   <node concept="2ShNRf" id="41innpAhzyi" role="37wK5m">
                                     <node concept="Tc6Ow" id="41innpAhzyj" role="2ShVmc">
                                       <node concept="3uibUv" id="41innpAhzyk" role="HW$YZ">
@@ -9292,7 +9293,7 @@
                                 </node>
                                 <node concept="2YIFZM" id="41innpAhzyn" role="37wK5m">
                                   <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                  <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                   <node concept="10Nm6u" id="41innpAhzyo" role="37wK5m" />
                                 </node>
                               </node>
@@ -9303,7 +9304,7 @@
                             <node concept="2OqwBi" id="6Zh9WO6IZKL" role="3clFbG">
                               <node concept="2OqwBi" id="6Zh9WO6IZKM" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzkkb" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="6Zh9WO6IZKO" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9390,10 +9391,10 @@
                           </node>
                           <node concept="3clFbF" id="6Zh9WO6IZKS" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzkp8" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6g" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq6h" role="37wK5m">
                                   <ref role="3cqZAo" node="6Zh9WO6J2Yw" resolve="makejob" />
                                 </node>
@@ -9707,7 +9708,7 @@
                             <node concept="2OqwBi" id="15_i8ywnxFY" role="3clFbG">
                               <node concept="2OqwBi" id="15_i8ywnxFZ" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyYZk" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="15_i8ywnxG1" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -9794,10 +9795,10 @@
                           </node>
                           <node concept="3clFbF" id="15_i8ywnxGu" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9GJ" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6j" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq6k" role="37wK5m">
                                   <ref role="3cqZAo" node="15_i8ywnxG6" resolve="makejob" />
                                 </node>
@@ -10128,7 +10129,7 @@
                             <node concept="2OqwBi" id="2FXnOGhi8R6" role="3clFbG">
                               <node concept="2OqwBi" id="2FXnOGhi8R7" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZ5s" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2FXnOGhi8R9" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10147,10 +10148,10 @@
                           </node>
                           <node concept="3clFbF" id="2FXnOGhi8Rd" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzfeY" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6l" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq6m" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq6n" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq6o" role="2ShVmc">
@@ -10176,7 +10177,7 @@
                             <node concept="2OqwBi" id="2FXnOGhi8Rp" role="3clFbG">
                               <node concept="2OqwBi" id="2FXnOGhi8Rq" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz9Ad" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="2FXnOGhi8Rs" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10195,10 +10196,10 @@
                           </node>
                           <node concept="3clFbF" id="2FXnOGhi8Rw" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzbZq" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6u" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq6v" role="37wK5m">
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
@@ -10225,7 +10226,7 @@
                             <node concept="2OqwBi" id="699nk12GDNI" role="3clFbG">
                               <node concept="2OqwBi" id="699nk12GDNC" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzbc1" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="699nk12GDNB" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10244,10 +10245,10 @@
                           </node>
                           <node concept="3clFbF" id="699nk12GDNO" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyYjf" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6A" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq6B" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -10258,7 +10259,7 @@
                             <node concept="2OqwBi" id="2FXnOGhi8RF" role="3clFbG">
                               <node concept="2OqwBi" id="2FXnOGhi8RG" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzhjD" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2FXnOGhi8RI" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10277,10 +10278,10 @@
                           </node>
                           <node concept="3clFbF" id="2FXnOGhi8RM" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyZAp" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6C" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq6D" role="37wK5m">
                                   <node concept="Tc6Ow" id="41innpAhq6E" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq6F" role="HW$YZ">
@@ -10302,7 +10303,7 @@
                             <node concept="2OqwBi" id="2FXnOGhi8V3" role="3clFbG">
                               <node concept="2OqwBi" id="2FXnOGhi8UX" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzcJO" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2FXnOGhi8UW" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10321,10 +10322,10 @@
                           </node>
                           <node concept="3clFbF" id="2FXnOGhi8V9" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzkoS" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6I" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq6J" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq6K" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq6L" role="2HTBi0">
@@ -10347,7 +10348,7 @@
                             <node concept="2OqwBi" id="2FXnOGhi8Vn" role="3clFbG">
                               <node concept="2OqwBi" id="2FXnOGhi8Vo" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz2cw" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2FXnOGhi8Vq" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10366,10 +10367,10 @@
                           </node>
                           <node concept="3clFbF" id="2FXnOGhi8Vu" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzhLk" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6P" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq6Q" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq6R" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq6S" role="2HTBi0">
@@ -10393,7 +10394,7 @@
                             <node concept="2OqwBi" id="6Zh9WO6J8on" role="3clFbG">
                               <node concept="2OqwBi" id="6Zh9WO6J8oo" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyJZB" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="6Zh9WO6J8oq" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10480,10 +10481,10 @@
                           </node>
                           <node concept="3clFbF" id="6Zh9WO6J8oR" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz966" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6X" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq6Y" role="37wK5m">
                                   <ref role="3cqZAo" node="6Zh9WO6J8ov" resolve="makejob" />
                                 </node>
@@ -10888,7 +10889,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsRR" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsRS" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyJzU" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsRU" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10907,10 +10908,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsRY" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9yh" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq6Z" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq70" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq71" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq72" role="2ShVmc">
@@ -10936,7 +10937,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsSa" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsSb" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzcMD" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="6MIhxWfXsSd" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -10955,10 +10956,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsSh" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk0H" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq78" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq79" role="37wK5m">
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
@@ -10985,7 +10986,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsSs" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsSt" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyTKK" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsSv" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11004,10 +11005,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsSz" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz8sH" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7g" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq7h" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -11018,7 +11019,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsSC" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsSD" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZ5S" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsSF" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11037,10 +11038,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsSJ" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk_W" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7i" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7j" role="37wK5m">
                                   <node concept="Tc6Ow" id="41innpAhq7k" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7l" role="HW$YZ">
@@ -11062,7 +11063,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsST" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsSU" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz9_v" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsSW" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11081,10 +11082,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsT0" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzfe7" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7o" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7p" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7q" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7r" role="2HTBi0">
@@ -11107,7 +11108,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsTa" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsTb" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZun" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsTd" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11126,10 +11127,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsTh" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzeDC" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7v" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7w" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7x" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7y" role="2HTBi0">
@@ -11153,7 +11154,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsX7" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsX8" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyMCH" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsXa" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11172,10 +11173,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsXe" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzcaZ" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7A" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7B" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7C" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7D" role="2HTBi0">
@@ -11198,7 +11199,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsXo" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsXp" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8W3" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXsXr" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11217,10 +11218,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsXv" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz8$1" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7H" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7I" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7J" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7K" role="2HTBi0">
@@ -11244,7 +11245,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXthw" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXthx" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzgvG" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXthz" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11263,10 +11264,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXthB" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk2w" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7O" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7P" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7Q" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7R" role="2HTBi0">
@@ -11289,7 +11290,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXthL" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXthM" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzeUu" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXthO" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11308,10 +11309,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXthS" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyJmU" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq7V" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq7W" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq7X" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq7Y" role="2HTBi0">
@@ -11334,7 +11335,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXti4" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXti5" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyI1D" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="6MIhxWfXti7" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11353,10 +11354,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXtib" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyZ8L" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq82" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq83" role="37wK5m">
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
@@ -11383,7 +11384,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXtim" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXtin" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyI7l" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6MIhxWfXtip" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11402,10 +11403,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXtit" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyZC7" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8a" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq8b" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -11417,7 +11418,7 @@
                             <node concept="2OqwBi" id="6MIhxWfXsTC" role="3clFbG">
                               <node concept="2OqwBi" id="6MIhxWfXsTD" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8oS" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="6MIhxWfXsTF" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11504,10 +11505,10 @@
                           </node>
                           <node concept="3clFbF" id="6MIhxWfXsU8" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzg6e" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8d" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq8e" role="37wK5m">
                                   <ref role="3cqZAo" node="6MIhxWfXsTK" resolve="makejob" />
                                 </node>
@@ -11874,7 +11875,7 @@
                             <node concept="2OqwBi" id="35psf6$xNAD" role="3clFbG">
                               <node concept="2OqwBi" id="35psf6$xNAE" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzka3" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="35psf6$xNAG" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11893,10 +11894,10 @@
                           </node>
                           <node concept="3clFbF" id="35psf6$xNAK" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz5Mc" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8f" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq8g" role="37wK5m">
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
@@ -11923,7 +11924,7 @@
                             <node concept="2OqwBi" id="35psf6$xNAV" role="3clFbG">
                               <node concept="2OqwBi" id="35psf6$xNAW" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzeya" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="35psf6$xNAY" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11942,10 +11943,10 @@
                           </node>
                           <node concept="3clFbF" id="35psf6$xNB2" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz3$m" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8n" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq8o" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -11956,7 +11957,7 @@
                             <node concept="2OqwBi" id="35psf6$xNB7" role="3clFbG">
                               <node concept="2OqwBi" id="35psf6$xNB8" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzktF" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="35psf6$xNBa" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -11975,10 +11976,10 @@
                           </node>
                           <node concept="3clFbF" id="35psf6$xNBe" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyPV9" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8p" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq8q" role="37wK5m">
                                   <node concept="Tc6Ow" id="41innpAhq8r" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq8s" role="HW$YZ">
@@ -12000,7 +12001,7 @@
                             <node concept="2OqwBi" id="35psf6$xNBD" role="3clFbG">
                               <node concept="2OqwBi" id="35psf6$xNBE" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz3CU" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="35psf6$xNBG" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12019,10 +12020,10 @@
                           </node>
                           <node concept="3clFbF" id="35psf6$xNBK" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk$e" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8v" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq8w" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq8x" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq8y" role="2HTBi0">
@@ -12507,7 +12508,7 @@
                             <node concept="2OqwBi" id="4HGj3MeUsWg" role="3clFbG">
                               <node concept="2OqwBi" id="4HGj3MeUsWh" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzhi3" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4HGj3MeUsWj" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12529,7 +12530,7 @@
                                     </node>
                                   </node>
                                   <node concept="1rXfSq" id="4hiugqyzeTw" role="10QFUP">
-                                    <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                     <node concept="2ShNRf" id="4HGj3MeUsWs" role="37wK5m">
                                       <node concept="YeOm9" id="4HGj3MeUsWt" role="2ShVmc">
                                         <node concept="1Y3b0j" id="4HGj3MeUsWu" role="YeSDq">
@@ -12603,7 +12604,7 @@
                           </node>
                           <node concept="3clFbF" id="4HGj3MeUsWP" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzc1g" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2ShNRf" id="4HGj3MeUsWR" role="37wK5m">
                                 <node concept="YeOm9" id="4HGj3MeUsWS" role="2ShVmc">
                                   <node concept="1Y3b0j" id="4HGj3MeUsWT" role="YeSDq">
@@ -12684,7 +12685,7 @@
                             <node concept="2OqwBi" id="4HGj3MeUuxA" role="3clFbG">
                               <node concept="2OqwBi" id="4HGj3MeUuxB" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8sR" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4HGj3MeUuxD" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12699,32 +12700,32 @@
                               <node concept="liA8E" id="4HGj3MeUuxG" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:70hZ3jyJvfD" resolve="setup" />
                                 <node concept="1rXfSq" id="4hiugqyzkzq" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAhqbs" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAhqbt" role="37wK5m">
                                       <ref role="3VsUkX" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="1rXfSq" id="4hiugqyzhs1" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAhqbu" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAhqbv" role="37wK5m">
                                       <ref role="3VsUkX" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="1rXfSq" id="4hiugqyzeEw" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
-                                  <node concept="2YIFZM" id="41innpAhqbw" role="37wK5m">
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
+                                  <node concept="2YIFZM" id="3rVxTa_g92X" role="37wK5m">
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.anything():org.hamcrest.Matcher" resolve="anything" />
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.any(java.lang.Class):org.hamcrest.Matcher" resolve="any" />
-                                    <node concept="3VsKOn" id="41innpAhqbx" role="37wK5m">
-                                      <ref role="3VsUkX" to="wyt6:~Iterable" resolve="Iterable" />
+                                    <node concept="3uibUv" id="3rVxTa_gy8V" role="3PaCim">
+                                      <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
                                   </node>
                                 </node>
@@ -12735,7 +12736,7 @@
                             <node concept="2OqwBi" id="2pfHV77kHhg" role="3clFbG">
                               <node concept="2OqwBi" id="2pfHV77kHha" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZbR" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="2pfHV77kHh9" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12750,10 +12751,10 @@
                               <node concept="liA8E" id="2pfHV77kHhk" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:6vhB1lBPZPh" resolve="useMonitor" />
                                 <node concept="1rXfSq" id="4hiugqyzkkN" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAhqby" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="41innpAhqbz" role="37wK5m">
                                       <ref role="3VsUkX" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
                                     </node>
@@ -12766,7 +12767,7 @@
                             <node concept="2OqwBi" id="4HGj3MeUsXF" role="3clFbG">
                               <node concept="2OqwBi" id="4HGj3MeUsXG" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZxR" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4HGj3MeUsXI" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12781,7 +12782,7 @@
                               <node concept="liA8E" id="4HGj3MeUsXL" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:3bEKrlZKk50" resolve="reportFeedback" />
                                 <node concept="1rXfSq" id="4hiugqyyZ41" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2ShNRf" id="4HGj3MeUsXN" role="37wK5m">
                                     <node concept="YeOm9" id="4HGj3MeUsXO" role="2ShVmc">
                                       <node concept="1Y3b0j" id="4HGj3MeUsXP" role="YeSDq">
@@ -12878,7 +12879,7 @@
                             <node concept="2OqwBi" id="2pfHV77kJ1i" role="3clFbG">
                               <node concept="2OqwBi" id="2pfHV77kJ1j" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz9Rz" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="2pfHV77kJ1l" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12893,10 +12894,10 @@
                               <node concept="liA8E" id="2pfHV77kJ1o" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:6vhB1lBPZPh" resolve="useMonitor" />
                                 <node concept="1rXfSq" id="4hiugqyzhr4" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="41innpAhqbD" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNull" />
                                     <node concept="3VsKOn" id="41innpAhqbE" role="37wK5m">
                                       <ref role="3VsUkX" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
                                     </node>
@@ -12910,7 +12911,7 @@
                             <node concept="2OqwBi" id="jPX$_PRhr4" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhr5" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzbVS" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="jPX$_PRhr7" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12929,10 +12930,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhrb" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz3_l" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8A" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq8B" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq8C" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq8D" role="2ShVmc">
@@ -12958,7 +12959,7 @@
                             <node concept="2OqwBi" id="6Zh9WO6J9VJ" role="3clFbG">
                               <node concept="2OqwBi" id="6Zh9WO6J9VD" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8om" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="6Zh9WO6J9VC" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -12977,10 +12978,10 @@
                           </node>
                           <node concept="3clFbF" id="6Zh9WO6J9VP" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz8a9" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8J" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="3clFbT" id="41innpAhq8K" role="37wK5m">
                                   <property role="3clFbU" value="true" />
                                 </node>
@@ -12991,7 +12992,7 @@
                             <node concept="2OqwBi" id="jPX$_PRhrn" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhro" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyXfr" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="jPX$_PRhrq" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13010,10 +13011,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhru" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyYn8" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8L" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2YIFZM" id="41innpAhq8M" role="37wK5m">
                                   <ref role="37wK5l" node="3vZ67aZykQb" resolve="job" />
                                   <ref role="1Pybhc" node="35RBNT8Dbu4" resolve="Mockups" />
@@ -13040,7 +13041,7 @@
                             <node concept="2OqwBi" id="jPX$_PRhrD" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhrE" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzhQT" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="jPX$_PRhrG" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13059,10 +13060,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhrK" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzk8W" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8T" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq8U" role="37wK5m">
                                   <node concept="Tc6Ow" id="41innpAhq8V" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq8W" role="HW$YZ">
@@ -13084,7 +13085,7 @@
                             <node concept="2OqwBi" id="jPX$_PRht_" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhtv" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZap" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="jPX$_PRhtu" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13103,10 +13104,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhtF" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzbM9" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq8Z" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq90" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq91" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq92" role="2ShVmc">
@@ -13132,7 +13133,7 @@
                             <node concept="2OqwBi" id="jPX$_PRhtT" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhtN" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzbGu" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="jPX$_PRhtM" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13151,10 +13152,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhtZ" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyIqv" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq98" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2OqwBi" id="41innpAhq99" role="37wK5m">
                                   <node concept="2ShNRf" id="41innpAhq9a" role="2Oq$k0">
                                     <node concept="3g6Rrh" id="41innpAhq9b" role="2ShVmc">
@@ -13249,7 +13250,7 @@
                             <node concept="2OqwBi" id="jPX$_PRhuP" role="3clFbG">
                               <node concept="2OqwBi" id="jPX$_PRhuQ" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz2We" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="jPX$_PRhuS" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13268,10 +13269,10 @@
                           </node>
                           <node concept="3clFbF" id="jPX$_PRhuW" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyZFa" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq9i" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq9j" role="37wK5m">
                                   <ref role="3cqZAo" node="6Zh9WO6J9Xv" resolve="genjob" />
                                 </node>
@@ -13282,7 +13283,7 @@
                           <node concept="3clFbF" id="6Zh9WO6J9Y2" role="3cqZAp">
                             <node concept="2OqwBi" id="6Zh9WO6J9Y5" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz8lp" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.never(java.lang.Object):java.lang.Object" resolve="never" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.never(java.lang.Object):java.lang.Object" resolve="never" />
                                 <node concept="37vLTw" id="3GM_nagTwEK" role="37wK5m">
                                   <ref role="3cqZAo" node="jPX$_PRhqr" resolve="make" />
                                 </node>
@@ -13658,7 +13659,7 @@
                             <node concept="2OqwBi" id="5XvfMqimey8" role="3clFbG">
                               <node concept="2OqwBi" id="5XvfMqimey2" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz8Fl" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.atLeast(int):org.jmock.syntax.ReceiverClause" resolve="atLeast" />
                                   <node concept="3cmrfG" id="5XvfMqimey1" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13677,10 +13678,10 @@
                           </node>
                           <node concept="3clFbF" id="5XvfMqimeye" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyHXv" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq9k" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="2ShNRf" id="41innpAhq9l" role="37wK5m">
                                   <node concept="2HTt$P" id="41innpAhq9m" role="2ShVmc">
                                     <node concept="3uibUv" id="41innpAhq9n" role="2HTBi0">
@@ -13703,7 +13704,7 @@
                             <node concept="2OqwBi" id="5XvfMqimeyy" role="3clFbG">
                               <node concept="2OqwBi" id="5XvfMqimeyo" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyTtM" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="5XvfMqimeyn" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13835,10 +13836,10 @@
                           </node>
                           <node concept="3clFbF" id="5XvfMqimeyC" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz9tT" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq9t" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq9u" role="37wK5m">
                                   <ref role="3cqZAo" node="5XvfMqimeyJ" resolve="cj" />
                                 </node>
@@ -13850,7 +13851,7 @@
                             <node concept="2OqwBi" id="5XvfMqilZwh" role="3clFbG">
                               <node concept="2OqwBi" id="5XvfMqilZwb" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyz4o9" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="5XvfMqilZwa" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -13870,10 +13871,10 @@
                                     <node concept="3qTvmN" id="3cX1hHA_k3t" role="11_B2D" />
                                   </node>
                                   <node concept="1rXfSq" id="4hiugqyz95$" role="10QFUP">
-                                    <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                     <node concept="2YIFZM" id="41innpAhqbM" role="37wK5m">
                                       <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                      <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                      <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                       <node concept="3VsKOn" id="41innpAhqbN" role="37wK5m">
                                         <ref role="3VsUkX" to="wyt6:~Class" resolve="Class" />
                                       </node>
@@ -13885,10 +13886,10 @@
                           </node>
                           <node concept="3clFbF" id="5XvfMqilZwt" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyJRi" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq9v" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq9w" role="37wK5m">
                                   <ref role="3cqZAo" node="5XvfMqilZw2" resolve="vars" />
                                 </node>
@@ -13899,7 +13900,7 @@
                             <node concept="2OqwBi" id="5XvfMqilUzn" role="3clFbG">
                               <node concept="2OqwBi" id="5XvfMqilUzh" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyQPn" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="5XvfMqilUzg" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -14044,10 +14045,10 @@
                           </node>
                           <node concept="3clFbF" id="5XvfMqilUNr" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyyIe2" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2YIFZM" id="41innpAhq9z" role="37wK5m">
                                 <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
                                 <node concept="37vLTw" id="41innpAhq9$" role="37wK5m">
                                   <ref role="3cqZAo" node="5XvfMqilUNJ" resolve="mj" />
                                 </node>
@@ -14318,7 +14319,7 @@
                           <node concept="3clFbF" id="6KRD$9FAtL9" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAtLc" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz6Ji" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTwwK" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14326,10 +14327,10 @@
                               <node concept="liA8E" id="6KRD$9FAtLg" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz9ne" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7e1" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu2d" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- started" />
                                     </node>
@@ -14341,7 +14342,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu2P" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu2Q" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzcKc" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTAJk" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14349,10 +14350,10 @@
                               <node concept="liA8E" id="6KRD$9FAu2T" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyyRvD" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7ea" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu2W" role="37wK5m">
                                       <property role="Xl_RC" value="∞ -- done 30%" />
                                     </node>
@@ -14364,7 +14365,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu2E" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu2F" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyyYYY" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTt0C" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14372,10 +14373,10 @@
                               <node concept="liA8E" id="6KRD$9FAu2I" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzfh2" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7dV" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu2L" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 30%" />
                                     </node>
@@ -14387,7 +14388,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu2v" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu2w" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyyVvI" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTrqG" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14395,10 +14396,10 @@
                               <node concept="liA8E" id="6KRD$9FAu2z" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz8qN" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw785" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu2A" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Mid -- started" />
                                     </node>
@@ -14410,7 +14411,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu2k" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu2l" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzhNv" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTvKN" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14418,10 +14419,10 @@
                               <node concept="liA8E" id="6KRD$9FAu2o" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzknQ" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7e7" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu2r" role="37wK5m">
                                       <property role="Xl_RC" value="∞ -- done 40%" />
                                     </node>
@@ -14433,7 +14434,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu30" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu31" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyyJ3g" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTByx" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14441,10 +14442,10 @@
                               <node concept="liA8E" id="6KRD$9FAu34" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz8VS" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw788" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu37" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 40%" />
                                     </node>
@@ -14456,7 +14457,7 @@
                           <node concept="3clFbF" id="6KRD$9FAwLq" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAwLr" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzhSM" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTzTz" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14464,10 +14465,10 @@
                               <node concept="liA8E" id="6KRD$9FAwLu" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzk1Z" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vf" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAwLx" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Mid -- done 20%" />
                                     </node>
@@ -14479,7 +14480,7 @@
                           <node concept="3clFbF" id="2hjnQOL95$e" role="3cqZAp">
                             <node concept="2OqwBi" id="2hjnQOL95$f" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz5zz" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagT$ij" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14487,10 +14488,10 @@
                               <node concept="liA8E" id="2hjnQOL95$i" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzhUy" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7ed" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="2hjnQOL95$l" role="37wK5m">
                                       <property role="Xl_RC" value="∞ -- done 80%" />
                                     </node>
@@ -14502,7 +14503,7 @@
                           <node concept="3clFbF" id="2hjnQOL95$m" role="3cqZAp">
                             <node concept="2OqwBi" id="2hjnQOL95$n" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz8p6" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTA$e" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14510,10 +14511,10 @@
                               <node concept="liA8E" id="2hjnQOL95$q" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyyKOz" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7eg" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="2hjnQOL95$t" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 80%" />
                                     </node>
@@ -14525,7 +14526,7 @@
                           <node concept="3clFbF" id="2hjnQOL95RN" role="3cqZAp">
                             <node concept="2OqwBi" id="2hjnQOL95RO" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyziXO" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTttK" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14533,10 +14534,10 @@
                               <node concept="liA8E" id="2hjnQOL95RR" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzbTv" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vr" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="2hjnQOL95RU" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Mid -- done 100%" />
                                     </node>
@@ -14548,7 +14549,7 @@
                           <node concept="3clFbF" id="2347YQfbp16" role="3cqZAp">
                             <node concept="2OqwBi" id="2347YQfbp17" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz8$D" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTxOc" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14556,10 +14557,10 @@
                               <node concept="liA8E" id="2347YQfbp1a" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyyZvT" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vl" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="2347YQfbp1d" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Mid -- finished" />
                                     </node>
@@ -14571,7 +14572,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu3m" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu3n" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzhvD" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTxln" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14579,10 +14580,10 @@
                               <node concept="liA8E" id="6KRD$9FAu3q" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzcaB" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7dY" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu3t" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Bot -- started" />
                                     </node>
@@ -14594,7 +14595,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu3x" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu3y" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz9xf" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTxUA" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14602,10 +14603,10 @@
                               <node concept="liA8E" id="6KRD$9FAu3_" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzc4Z" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vi" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu3C" role="37wK5m">
                                       <property role="Xl_RC" value="∞ -- done 90%" />
                                     </node>
@@ -14617,7 +14618,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu3G" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu3H" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyziUV" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTzLU" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14625,10 +14626,10 @@
                               <node concept="liA8E" id="6KRD$9FAu3K" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz8ET" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7dS" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu3N" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 90%" />
                                     </node>
@@ -14640,7 +14641,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu3R" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu3S" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz8pJ" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTBz5" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14648,10 +14649,10 @@
                               <node concept="liA8E" id="6KRD$9FAu3V" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz4zv" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vo" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu3Y" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Bot -- done 10%" />
                                     </node>
@@ -14663,7 +14664,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu4d" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu4e" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyyI7t" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagT_UI" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14671,10 +14672,10 @@
                               <node concept="liA8E" id="6KRD$9FAu4h" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyyZvb" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7e4" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu4k" role="37wK5m">
                                       <property role="Xl_RC" value="∞ -- done 100%" />
                                     </node>
@@ -14686,7 +14687,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu4o" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu4p" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzhkf" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagT_hZ" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14694,10 +14695,10 @@
                               <node concept="liA8E" id="6KRD$9FAu4s" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzky2" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw8vc" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu4v" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 100%" />
                                     </node>
@@ -14709,7 +14710,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu4z" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu4$" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyyZ3X" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTwTn" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14717,10 +14718,10 @@
                               <node concept="liA8E" id="6KRD$9FAu4B" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz3xK" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7cU" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu4E" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top/Bot -- done 100%" />
                                     </node>
@@ -14732,7 +14733,7 @@
                           <node concept="3clFbF" id="2hjnQOL96Nu" role="3cqZAp">
                             <node concept="2OqwBi" id="2hjnQOL96Nv" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyz9KQ" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTv0M" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14740,10 +14741,10 @@
                               <node concept="liA8E" id="2hjnQOL96Ny" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyzfbf" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7dP" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="2hjnQOL96N_" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- done 100%" />
                                     </node>
@@ -14755,7 +14756,7 @@
                           <node concept="3clFbF" id="6KRD$9FAu4T" role="3cqZAp">
                             <node concept="2OqwBi" id="6KRD$9FAu4U" role="3clFbG">
                               <node concept="1rXfSq" id="4hiugqyzbow" role="2Oq$k0">
-                                <ref role="37wK5l" to="mg6i:~Expectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
+                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.oneOf(java.lang.Object):java.lang.Object" resolve="oneOf" />
                                 <node concept="37vLTw" id="3GM_nagTBMT" role="37wK5m">
                                   <ref role="3cqZAo" node="6KRD$9FAtKM" resolve="logger" />
                                 </node>
@@ -14763,10 +14764,10 @@
                               <node concept="liA8E" id="6KRD$9FAu4X" role="2OqNvi">
                                 <ref role="37wK5l" to="jqcx:6KRD$9FAvg4" resolve="info" />
                                 <node concept="1rXfSq" id="4hiugqyz9dj" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="oHZP2cw7ej" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.equal(java.lang.Object):org.hamcrest.Matcher" resolve="equal" />
                                     <node concept="Xl_RD" id="6KRD$9FAu50" role="37wK5m">
                                       <property role="Xl_RC" value="∞/Top -- finished" />
                                     </node>

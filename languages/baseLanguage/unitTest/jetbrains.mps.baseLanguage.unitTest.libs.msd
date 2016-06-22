@@ -2,8 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.unitTest.libs" uuid="83f155ff-422c-4b5a-a2f2-b459302dd215" moduleVersion="0" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}/lib" type="java_classes">
-      <sourceRoot location="jmock-2.5.1" />
-      <sourceRoot location="hamcrest-library-1.3.jar" />
+      <sourceRoot location="." />
     </modelRoot>
     <modelRoot contentPath="${mps_home}/lib" type="java_classes">
       <sourceRoot location="junit-4.12.jar" />
@@ -14,12 +13,14 @@
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <stubModelEntries>
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <stubModelEntry path="${mps_home}/lib/junit-4.12.jar" />
     <stubModelEntry path="${mps_home}/lib/hamcrest-core-1.3.jar" />
+    <stubModelEntry path="${module}/lib/hamcrest-library-1.3-sources.jar" />
     <stubModelEntry path="${module}/lib/hamcrest-library-1.3.jar" />
+    <stubModelEntry path="${module}/lib/jmock-2.8.2-sources.jar" />
+    <stubModelEntry path="${module}/lib/jmock-2.8.2.jar" />
+    <stubModelEntry path="${module}/lib/jmock-junit4-2.8.2-sources.jar" />
+    <stubModelEntry path="${module}/lib/jmock-junit4-2.8.2.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

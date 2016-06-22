@@ -64,7 +64,7 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(Expectations.aNonNull(IPropertiesPool.class)), with(Expectations.aNonNull(Iterable.class)), with(Expectations.any(Iterable.class)));
+        exactly(1).of(mons).setup(with(Expectations.aNonNull(IPropertiesPool.class)), with(Expectations.aNonNull(Iterable.class)), with(Expectations.<Iterable>anything()));
         exactly(1).of(cmon).reportFeedback(with(Expectations.aNonNull(IFeedback.class)));
 
         final IQuery[] query = new IQuery[1];

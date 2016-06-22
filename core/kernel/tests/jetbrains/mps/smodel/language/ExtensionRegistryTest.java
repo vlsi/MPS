@@ -21,8 +21,10 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -30,18 +32,17 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-@RunWith(JMock.class)
 public class ExtensionRegistryTest {
 
   private static final String EP1 = "foo.bar";
   private static final String EP2 = "baz.qux";
 
-  private Mockery context;
+  @Rule
+  public final JUnitRuleMockery context = new JUnitRuleMockery();
   private ExtensionRegistry myExtensionRegistry;
 
   @Before
   public void createContext() {
-    context = new Mockery();
     if (ExtensionRegistry.getInstance() == null) {
       myExtensionRegistry = new ExtensionRegistry(null, null);
       myExtensionRegistry.init();
@@ -50,7 +51,6 @@ public class ExtensionRegistryTest {
 
   @After
   public void checkAndCleanup() {
-    context.assertIsSatisfied();
     if (myExtensionRegistry != null) {
       assert myExtensionRegistry == ExtensionRegistry.getInstance();
       ExtensionRegistry.getInstance().dispose();

@@ -3905,12 +3905,14 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <library jar="jmock-2.5.1.jar" />
-        <library jar="jmock-junit3-2.5.1.jar" />
-        <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="/lib/junit-4.12.jar" />
         <library jar="hamcrest-core-1.3.jar" />
         <library jar="hamcrest-library-1.3.jar" />
+        <library jar="hamcrest-library-1.3-sources.jar" />
+        <library jar="jmock-2.8.2-sources.jar" />
+        <library jar="jmock-2.8.2.jar" />
+        <library jar="jmock-junit4-2.8.2-sources.jar" />
+        <library jar="jmock-junit4-2.8.2.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.libs.msd" />
       </module>
     </echoxml>
@@ -3922,13 +3924,16 @@
       <zipfileset file="${mps_home}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.libs.msd" prefix="module" />
     </jar>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
-      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2.jar" />
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
-      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2-sources.jar" />
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
-      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2.jar" />
+    </copy>
+    <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
+      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2-sources.jar" />
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/lib/junit-4.12.jar" />
@@ -3938,6 +3943,9 @@
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3.jar" />
+    </copy>
+    <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
+      <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3-sources.jar" />
     </copy>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
@@ -13104,12 +13112,14 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/mps-tool" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
         <fileset file="${mps_home}/lib/junit-4.12.jar" />
         <fileset file="${mps_home}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3.jar" />
+        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3-sources.jar" />
+        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2-sources.jar" />
+        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2.jar" />
+        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2-sources.jar" />
+        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.annotations-lib" />
