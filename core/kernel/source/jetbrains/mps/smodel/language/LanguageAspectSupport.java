@@ -55,6 +55,7 @@ public class LanguageAspectSupport {
     assert language instanceof Language;
     //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
 
+    //todo order on new aspects must be set and be stable
     //order is important here
     LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
     for (LanguageAspect la : LanguageAspect.values()) {
@@ -77,30 +78,30 @@ public class LanguageAspectSupport {
   public static String getHelpUrl(SModel model) {
     if (!(model.getModule() instanceof Language)) return null;
 
-    for (LanguageAspect la : LanguageAspect.values()) {
-      if (la.is(model)) return la.getHelpURL();
-    }
-
     for (LanguageAspectDescriptor d : collectAspects()) {
       if (d.getAspectModels(model.getModule()).contains(model)) return d.getHelpUrl();
+    }
+
+    for (LanguageAspect la : LanguageAspect.values()) {
+      if (la.is(model)) return la.getHelpURL();
     }
 
     return null;
   }
 
   public static Collection<SLanguage> getMainLanguages(SModel model) {
-    LanguageAspect oldAspect = getOldAspect(model);
-    if (oldAspect != null) return oldAspect.getMainLanguages();
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect != null) return newAspect.getMainLanguages();
+    LanguageAspect oldAspect = getOldAspect(model);
+    if (oldAspect != null) return oldAspect.getMainLanguages();
     return Collections.emptyList();
   }
 
   public static Collection<SLanguage> getAdditionalLanguages(SModel model) {
-    LanguageAspect oldAspect = getOldAspect(model);
-    if (oldAspect != null) return oldAspect.getMainLanguages();
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect != null) return newAspect.getAdditionalLanguages();
+    LanguageAspect oldAspect = getOldAspect(model);
+    if (oldAspect != null) return oldAspect.getMainLanguages();
     return Collections.emptyList();
   }
 
