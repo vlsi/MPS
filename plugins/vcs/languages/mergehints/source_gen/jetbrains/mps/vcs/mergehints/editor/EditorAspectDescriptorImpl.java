@@ -33,7 +33,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
     HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
     int counter = 0;

@@ -14626,25 +14626,6 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="7b4l56GofPl">
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <ref role="1XX52x" to="tpc2:6VAVyI4xoxY" resolve="AddConceptMenuItem" />
-    <node concept="3EZMnI" id="7b4l56GofPq" role="2wV5jI">
-      <node concept="l2Vlx" id="7b4l56GofPr" role="2iSdaV" />
-      <node concept="3F0ifn" id="7b4l56GofPn" role="3EZMnx">
-        <property role="3F0ifm" value="add concept" />
-      </node>
-      <node concept="1iCGBv" id="7b4l56GofPz" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:6VAVyI4xoy9" />
-        <node concept="1sVBvm" id="7b4l56GofP_" role="1sWHZn">
-          <node concept="3F0A7n" id="7b4l56GofPK" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="1pfqmFIhqj9">
     <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="1XX52x" to="tpc2:2RDMjbOTqI4" resolve="SubstituteMenu_Default" />

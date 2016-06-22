@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,11 +39,13 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase{
   private final SContainmentLink myLink;
 
   public DefaultEmptyCellMenu(SAbstractConcept concept, SContainmentLink link) {
-    myConcept = concept;
     myLink = link;
   }
 
-  private final SAbstractConcept myConcept;
+  public DefaultEmptyCellMenu(SContainmentLink link) {
+    myLink = link;
+  }
+
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
@@ -62,8 +65,7 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase{
           return null;
         }
       });
-    } else {
-      return Collections.singletonList(new ConceptMenusMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
     }
+    return new ArrayList<>();
   }
 }
