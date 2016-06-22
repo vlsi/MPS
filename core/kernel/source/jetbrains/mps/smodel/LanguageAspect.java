@@ -65,15 +65,15 @@ public enum LanguageAspect {
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
   //migrated, uncomment when migration is finished [compatibility] and deprecate this class
-//  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
-//    @Override
-//    public Collection<SLanguage> getMainLanguages() {
-//      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
-//      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
-//      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
-//      return result;
-//    }
-//  },
+  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
+    @Override
+    public Collection<SLanguage> getMainLanguages() {
+      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
+      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
+      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
+      return result;
+    }
+  },
 
   //mostly migrated
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
