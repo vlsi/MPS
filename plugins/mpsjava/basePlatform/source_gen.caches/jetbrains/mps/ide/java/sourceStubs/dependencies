@@ -79,9 +79,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.java.stub.JavaPackageNameStub" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.openapi.FileSystem" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
@@ -91,10 +89,8 @@
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" file="JavaSourceStubModelRootFactory.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.FileModelRootContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRootContext" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" file="MPSJavaSrcDataSource.java">

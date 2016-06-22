@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -27,25 +26,12 @@ import org.jetbrains.annotations.NotNull;
  * @see ModelRoot
  */
 public interface ModelRootFactory {
-
   /**
    * Creates a model root, typical factory pattern.
+   * Newly created model root is supposed to initialized with
+   * {@link ModelRoot#load(Memento)}
    *
    * @return a new model root
-   * @deprecated use the one below instead
    */
-  @ToRemove(version = 3.4)
-  @Deprecated
   @NotNull ModelRoot create();
-
-  /**
-   * Creates a model root.
-   * @param context -- context which is passed to the factory method
-   * @return a new model root
-   *
-   * consider using {@link ModelRootContext#EMPTY_CONTEXT} if you do not need context
-   */
-  default @NotNull ModelRoot create(@NotNull ModelRootContext context) {
-    return create();
-  }
 }

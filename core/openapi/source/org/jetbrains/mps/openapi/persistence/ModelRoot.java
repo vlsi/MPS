@@ -23,6 +23,10 @@ import org.jetbrains.mps.openapi.module.SModule;
  * Represents a logically connected group of models that come from a related physical origin, such as a file or a directory.
  * For implementation consider extending {@link jetbrains.mps.extapi.persistence.ModelRootBase}, {@link jetbrains.mps.extapi.persistence.FolderModelRootBase}
  * or {@link jetbrains.mps.extapi.persistence.FileBasedModelRoot}.
+ *
+ * The model root MPS workflow is as follows:
+ * 1. ModelRoot is constructed;
+ * 2. The method {@link #load(Memento)} is called to fill {@code ModelRoot} with data.
  */
 public interface ModelRoot {
 

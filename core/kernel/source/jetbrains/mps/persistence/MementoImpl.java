@@ -23,7 +23,6 @@ import java.util.*;
  * evgeny, 11/16/12
  */
 public class MementoImpl implements Memento {
-
   private String type;
   private Map<String, String> values;
   private Map<String, List<Memento>> children;

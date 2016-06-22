@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.project.MementoWithFS;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -35,91 +37,95 @@ import java.util.Map;
  * evgeny, 12/11/12
  */
 public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
-  public static final String EXCLUDED = "excluded";
   public static final String SOURCE_ROOTS = "sourceRoot";
-  protected final FileSystem myFileSystem;
+  public static final String EXCLUDED = "excluded";
 
-  private String contentRoot;
-  protected Map<String, List<String>> filesForKind = new LinkedHashMap<String, List<String>>();
-  private final List<PathListener> myListeners = new ArrayList<PathListener>();
+  public static final String CONTENT_PATH = "contentPath";
+  public static final String LOCATION = "location";
 
-  protected FileBasedModelRoot(@NotNull FileSystem fileSystem) {
-    this(fileSystem, new String[]{SOURCE_ROOTS, EXCLUDED});
+  protected FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
+  private String myContentRoot;
+  protected Map<String, List<String>> myFilesForKind = new LinkedHashMap<>();
+  private final List<PathListener> myListeners = new ArrayList<>();
+
+  protected FileBasedModelRoot() {
+    this(new String[]{SOURCE_ROOTS, EXCLUDED});
   }
 
-  protected FileBasedModelRoot(@NotNull FileSystem fileSystem, String[] supportedFileKinds) {
-    myFileSystem = fileSystem;
+  protected FileBasedModelRoot(String[] supportedFileKinds) {
     for (String kind : supportedFileKinds) {
-      filesForKind.put(kind, new ArrayList<>());
+      myFilesForKind.put(kind, new ArrayList<>());
     }
   }
 
   public final String getContentRoot() {
-    return contentRoot;
+    return myContentRoot;
   }
 
   public final void setContentRoot(String path) {
     checkNotRegistered();
 
-    this.contentRoot = path;
+    myContentRoot = path;
   }
 
   public final Collection<String> getSupportedFileKinds() {
-    return new ArrayList<String>(filesForKind.keySet());
+    return new ArrayList<>(myFilesForKind.keySet());
   }
 
   public final Collection<String> getFiles(String kind) {
-    List<String> strings = filesForKind.get(kind);
-    return strings == null ? Collections.<String>emptyList() : new ArrayList<String>(strings);
+    List<String> strings = myFilesForKind.get(kind);
+    return strings == null ? Collections.emptyList() : new ArrayList<>(strings);
   }
 
   public final boolean containsFile(String kind, String file) {
-    List<String> strings = filesForKind.get(kind);
-    if (strings == null) {
-      return false;
-    }
-    return strings.contains(file);
+    List<String> strings = myFilesForKind.get(kind);
+    return strings != null && strings.contains(file);
   }
 
   public final void addFiles(String kind, Collection<String> files) {
     checkNotRegistered();
 
-    if (!filesForKind.containsKey(kind)) {
+    if (!myFilesForKind.containsKey(kind)) {
       throw new IllegalArgumentException("unknown kind");
     }
     if (files == null || files.isEmpty()) {
       return;
     }
 
-    filesForKind.get(kind).addAll(files);
+    myFilesForKind.get(kind).addAll(files);
   }
 
   public final void addFile(String kind, String file) {
-    addFiles(kind, Arrays.asList(file));
+    addFiles(kind, Collections.singletonList(file));
   }
 
   public final void deleteFile(String kind, String file) {
     checkNotRegistered();
 
-    if (!filesForKind.containsKey(kind)) {
+    if (!myFilesForKind.containsKey(kind)) {
       throw new IllegalArgumentException("unknown kind");
     }
 
-    filesForKind.get(kind).remove(file);
+    myFilesForKind.get(kind).remove(file);
   }
 
   public final void clearFiles(String kind) {
     checkNotRegistered();
 
-    if (!filesForKind.containsKey(kind)) {
+    if (!myFilesForKind.containsKey(kind)) {
       throw new IllegalArgumentException("unknown kind");
     }
 
-    filesForKind.get(kind).clear();
+    myFilesForKind.get(kind).clear();
   }
 
   @Override
   public String getPresentation() {
+    return getPresentation0();
+  }
+
+  @NotNull
+  private String getPresentation0() {
     return "(" + getType() + ") " + (getContentRoot() != null ? getContentRoot() : "no path");
   }
 
@@ -138,17 +144,17 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public void save(Memento memento) {
-    memento.put("contentPath", contentRoot);
+    memento.put(CONTENT_PATH, myContentRoot);
     memento.put("type", getType());
     for (String kind : getSupportedFileKinds()) {
-      List<String> files = filesForKind.get(kind);
+      List<String> files = myFilesForKind.get(kind);
 
       for (String s : files) {
         Memento modelRoot = memento.createChild(kind);
-        if (s.equals(contentRoot)) {
-          modelRoot.put("location", ".");
-        } else if (s.startsWith(contentRoot + "/")) {
-          modelRoot.put("location", s.substring(contentRoot.length() + 1));
+        if (s.equals(myContentRoot)) {
+          modelRoot.put(LOCATION, ".");
+        } else if (s.startsWith(myContentRoot + "/")) { // todo get rid of
+          modelRoot.put(LOCATION, s.substring(myContentRoot.length() + 1));
         } else {
           modelRoot.put("path", s);
         }
@@ -160,17 +166,20 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public void load(Memento memento) {
     checkNotRegistered();
 
-    contentRoot = FileUtil.stripLastSlashes(memento.get("contentPath"));
+    if (memento instanceof MementoWithFS) {
+      myFileSystem = ((MementoWithFS) memento).getFileSystem();
+    }
+    myContentRoot = FileUtil.stripLastSlashes(memento.get(CONTENT_PATH));
     for (String kind : getSupportedFileKinds()) {
-      List<String> files = filesForKind.get(kind);
+      List<String> files = myFilesForKind.get(kind);
       files.clear();
       for (Memento root : memento.getChildren(kind)) {
-        String relPath = root.get("location");
+        String relPath = root.get(LOCATION);
         if (relPath != null) {
           if (relPath.equals(".")) {
-            files.add(contentRoot);
+            files.add(myContentRoot);
           } else {
-            files.add(contentRoot + "/" + relPath);
+            files.add(myContentRoot + "/" + relPath);
           }
         } else {
           files.add(root.get("path"));
@@ -186,7 +195,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     for (String kind : getSupportedFileKinds()) {
       if (EXCLUDED.equals(kind)) continue;
 
-      for (String path : filesForKind.get(kind)) {
+      for (String path : myFilesForKind.get(kind)) {
         IFile file = myFileSystem.getFile(path);
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
@@ -229,20 +238,23 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
     FileBasedModelRoot that = (FileBasedModelRoot) o;
 
-    if (contentRoot != null ? !contentRoot.equals(that.contentRoot) : that.contentRoot != null) return false;
-    if (filesForKind != null ? !filesForKind.equals(that.filesForKind) : that.filesForKind != null) return false;
-
-    return true;
+    return EqualUtil.equals(myContentRoot, that.myContentRoot) && EqualUtil.equals(myFilesForKind, that.myFilesForKind);
   }
 
   @Override
   public final int hashCode() {
-    int result = contentRoot != null ? contentRoot.hashCode() : 0;
-    result = 31 * result + (filesForKind != null ? filesForKind.hashCode() : 0);
+    int result = myContentRoot != null ? myContentRoot.hashCode() : 0;
+    result = 31 * result + (myFilesForKind != null ? myFilesForKind.hashCode() : 0);
     return result;
   }
 
+  @Override
+  public String toString() {
+    return getPresentation0();
+  }
+
   private final class PathListener implements FileSystemListener {
+
     private IFile path;
 
     private PathListener(@NotNull IFile path) {

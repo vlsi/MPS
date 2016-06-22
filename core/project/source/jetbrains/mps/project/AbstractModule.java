@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.SDependencyImpl;
@@ -376,17 +377,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
             }
           } else {
             // trying to load new format : replacing paths like **.jar!/module ->
-            String contentPath = rootDescriptor.getMemento().get("contentPath");
+            String contentPath = rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH);
             List<String> paths = new LinkedList<String>();
-            for (Memento sourceRoot : rootDescriptor.getMemento().getChildren("sourceRoot")) {
+            for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
               paths.add(contentPath + File.separator + sourceRoot.get("location"));
             }
-            newMemento.put("contentPath", bundleParent.getPath());
-            Memento newMementoChild = newMemento.createChild("sourceRoot");
+            newMemento.put(FileBasedModelRoot.CONTENT_PATH, bundleParent.getPath());
+            Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
             for (String path : paths) {
               String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
               if (convertedPath != null) {
-                newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
+                newMementoChild.put("location", convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
                 update = true;
               }
             }
@@ -705,8 +706,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           continue;
         }
 
-        ModelRoot root = modelRootFactory.create(new FileModelRootContext(myFileSystem));
-        root.load(modelRoot.getMemento());
+        ModelRoot root = modelRootFactory.create();
+        Memento mementoWithFS = new MementoWithFS(modelRoot.getMemento(), myFileSystem);
+        root.load(mementoWithFS);
         result.add(root);
       } catch (Exception e) {
         LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);

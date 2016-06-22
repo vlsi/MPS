@@ -22,10 +22,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 
 /**
- * File system listener.
- *
  * The client points the file he wants to know about and also
- * enumerates some other listeners.
+ * enumerates some other listeners, which are supposed to get notifications before the client.
  *
  * FIXME: AP: too complicated: revise and remove
  *

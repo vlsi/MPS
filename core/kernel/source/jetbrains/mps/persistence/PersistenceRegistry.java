@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.project.FileModelRootContext;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -342,16 +341,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     @NotNull
     @Override
     public ModelRoot create() {
-      return new DefaultModelRoot(FileSystem.getInstance());
-    }
-
-    @NotNull
-    @Override
-    public ModelRoot create(@NotNull ModelRootContext context) {
-      if (context instanceof FileModelRootContext) {
-        return new DefaultModelRoot(((FileModelRootContext) context).getFileSystem());
-      }
-      return create();
+      return new DefaultModelRoot();
     }
   }
 }

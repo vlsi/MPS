@@ -21,17 +21,17 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.EventListener;
 
 public interface ModelRootEntry extends Disposable {
-  public ModelRoot getModelRoot();
+  ModelRoot getModelRoot();
 
-  public String getDetailsText();
+  String getDetailsText();
 
-  public boolean isValid();
+  boolean isValid();
 
-  public ModelRootEntryEditor getEditor();
+  ModelRootEntryEditor getEditor();
 
-  public void addModelRootEntryListener(ModelRootEntryListener listener);
+  void addModelRootEntryListener(ModelRootEntryListener listener);
 
-  public interface ModelRootEntryListener extends EventListener {
-    public void fireDataChanged();
+  interface ModelRootEntryListener extends EventListener {
+    void fireDataChanged();
   }
 }

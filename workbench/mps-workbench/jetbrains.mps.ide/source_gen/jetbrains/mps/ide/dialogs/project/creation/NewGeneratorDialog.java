@@ -34,7 +34,6 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -164,7 +163,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot(language.getDescriptorFile().getFileSystem());
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
     templateModelsRoot.setContentRoot(templateModelsDir);
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());

@@ -54,8 +54,8 @@ import java.util.Set;
  * evgeny, 11/9/12
  */
 public class DefaultModelRoot extends FileBasedModelRoot {
-  public DefaultModelRoot(jetbrains.mps.vfs.openapi.FileSystem fileSystem) {
-    super(fileSystem, new String[]{SOURCE_ROOTS});
+  public DefaultModelRoot() {
+    super(new String[]{SOURCE_ROOTS});
   }
 
   @Override

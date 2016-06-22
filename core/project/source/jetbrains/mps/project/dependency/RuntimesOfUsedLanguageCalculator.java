@@ -127,7 +127,7 @@ class RuntimesOfUsedLanguageCalculator {
           if (!myChecked) {
             LOG.warn(String.format("The source module of the used language cannot be found: %s", usedLang));
             if (usedLang.toString().contains("lang.core")) {
-              LOG.error(new Throwable());
+              LOG.error("", new Throwable());
             }
             continue;
           } else {

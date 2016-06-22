@@ -40,8 +40,7 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
 
   private CachedRepositoryData myCachedRepository;
 
-  public CachedJavaClassStubsModelRoot(FileSystem fileSystem, CachedRepositoryData repo) {
-    super(fileSystem);
+  public CachedJavaClassStubsModelRoot(CachedRepositoryData repo) {
     myCachedRepository = repo;
   }
 

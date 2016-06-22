@@ -25,13 +25,13 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
+import jetbrains.mps.vfs.FileSystem;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -391,7 +391,7 @@ public class ModuleChecker {
         continue;
       }
 
-      DefaultModelRoot mr = new DefaultModelRoot(FileSystem.getInstance());
+      DefaultModelRoot mr = new DefaultModelRoot();
       mr.load(modelRootDescriptor.getMemento());
       for (String path : mr.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
         if (path == null) {

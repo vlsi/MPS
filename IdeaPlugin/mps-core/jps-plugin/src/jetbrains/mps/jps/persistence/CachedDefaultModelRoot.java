@@ -44,8 +44,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
 
   private CachedRepositoryData myCachedRepository;
 
-  public CachedDefaultModelRoot(FileSystem fileSystem, CachedRepositoryData repo) {
-    super(fileSystem);
+  public CachedDefaultModelRoot(CachedRepositoryData repo) {
     myCachedRepository = repo;
   }
 

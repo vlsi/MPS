@@ -60,6 +60,9 @@
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -1983,12 +1986,8 @@
           <node concept="3cpWsn" id="Tb4Psnn76O" role="3cpWs9">
             <property role="TrG5h" value="binSRoot" />
             <node concept="2ShNRf" id="Tb4Psnn76P" role="33vP2m">
-              <node concept="1pGfFk" id="Tb4Psnn76Q" role="2ShVmc">
-                <ref role="37wK5l" to="ft0j:5JsnGMj1qiZ" resolve="JavaClassStubsModelRoot" />
-                <node concept="2YIFZM" id="7x_ZEMaSmT$" role="37wK5m">
-                  <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                  <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
-                </node>
+              <node concept="HV5vD" id="6aShalczsu$" role="2ShVmc">
+                <ref role="HV5vE" to="ft0j:5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
               </node>
             </node>
             <node concept="3uibUv" id="Tb4Psnn76R" role="1tU5fm">

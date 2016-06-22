@@ -33,11 +33,8 @@
   <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.FileModelRootContext" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRootContext" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
   <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
@@ -62,7 +59,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.openapi.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.path.Path" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

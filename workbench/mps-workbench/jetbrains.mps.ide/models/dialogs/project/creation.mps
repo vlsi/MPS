@@ -4988,12 +4988,7 @@
             </node>
             <node concept="2ShNRf" id="1pyYjDPRarp" role="33vP2m">
               <node concept="1pGfFk" id="7D9ej8jTkL2" role="2ShVmc">
-                <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;(jetbrains.mps.vfs.openapi.FileSystem)" resolve="DefaultModelRoot" />
-                <node concept="2ShNRf" id="1OabvAside8" role="37wK5m">
-                  <node concept="1pGfFk" id="1OabvAsieJD" role="2ShVmc">
-                    <ref role="37wK5l" to="4hrd:~IdeaFileSystem.&lt;init&gt;()" resolve="IdeaFileSystem" />
-                  </node>
-                </node>
+                <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;()" resolve="DefaultModelRoot" />
               </node>
             </node>
           </node>

@@ -1,11 +1,9 @@
 package jetbrains.mps.jps.project;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import jetbrains.mps.project.FileModelRootContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.impl.IoFileSystem;

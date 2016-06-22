@@ -19,6 +19,8 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -31,36 +33,38 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Base model root implementation which relies on module. Note that the model root might be not attached to module.
+ *
  * evgeny, 10/23/12
  */
 public abstract class ModelRootBase implements ModelRoot {
-
   private static Logger LOG = Logger.getLogger(ModelRootBase.class);
 
-  private SModule myModule;
-  private volatile SRepository myRepository;
+  @Nullable private SModule myModule;
+  @Nullable private volatile SRepository myRepository;
   private final Set<SModel> myModels = new HashSet<SModel>();
   private ModuleListener myModuleListener;
 
+  @Nullable
   @Override
   public SModule getModule() {
     return myModule;
   }
 
-  public void setModule(SModule module) {
+  public void setModule(@NotNull SModule module) {
     assert myModule == null;
     checkNotRegistered();
     myModule = module;
   }
 
-  protected final void assertCanRead() {
-    SRepository repository = myRepository;
+  private void assertCanRead() {
+    final SRepository repository = myRepository;
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
     }
   }
 
-  protected final void assertCanChange() {
+  private void assertCanChange() {
     final SRepository repo = myRepository;
     if (repo != null) {
       repo.getModelAccess().checkWriteAccess();
@@ -70,7 +74,7 @@ public abstract class ModelRootBase implements ModelRoot {
   @Override
   public final Iterable<SModel> getModels() {
     assertCanRead();
-    return new ArrayList<SModel>(myModels);
+    return new ArrayList<>(myModels);
   }
 
   //returns all models under the model root
@@ -79,7 +83,8 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Override
   public boolean canCreateModels() {
-    return !getModule().isReadOnly();
+    SModule module = getModule();
+    return module != null && !module.isReadOnly();
   }
 
   public void attach() {
@@ -95,19 +100,20 @@ public abstract class ModelRootBase implements ModelRoot {
       unregister(model);
     }
     if (myModuleListener != null) {
+      assert myModule != null;
       myModule.removeModuleListener(myModuleListener);
     }
     assert myModels.isEmpty();
     myRepository = null;
   }
 
-  protected void checkNotRegistered() {
+  void checkNotRegistered() {
     if (isRegistered()) {
       throw new IllegalStateException("cannot change properties of the registered root");
     }
   }
 
-  public boolean isRegistered() {
+  public final boolean isRegistered() {
     return myRepository != null;
   }
 
@@ -143,11 +149,11 @@ public abstract class ModelRootBase implements ModelRoot {
       } else if (oldModel == model) {
         //do nothing
       } else if (oldModel.getModelRoot() != model.getModelRoot()) {
-        LOG.error("Trying to load model `" + model.getModelName() + "' which is already loaded by another model root");
+        LOG.warn("Trying to load model `" + model.getModelName() + "' which is already loaded by another model root");
       } else if (loaded.contains(model.getModelId())) {
-        LOG.error("loadModels() returned model `" + model.getModelName() + "' twice");
+        LOG.warn("loadModels() returned model `" + model.getModelName() + "' twice");
       } else {
-        LOG.debug("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
+        LOG.warn("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
       }
       loaded.add(model.getModelId());
     }

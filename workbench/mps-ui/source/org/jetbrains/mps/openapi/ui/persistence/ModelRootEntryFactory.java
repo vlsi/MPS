@@ -18,5 +18,5 @@ package org.jetbrains.mps.openapi.ui.persistence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public interface ModelRootEntryFactory {
-  public ModelRootEntry getModelRootEntry(ModelRoot modelRoot);
+  ModelRootEntry getModelRootEntry(ModelRoot modelRoot);
 }

@@ -30,8 +30,12 @@ import java.util.stream.Collectors;
 /**
  * Represents a familiar path to any file or folder on disk.
  * Also might be a path within the archive (from the archive root)
+ * As any path a {@code CommonPath} represents a wrapper around path (= string).
+ *
+ * To work with archives consider using {@link UniPath}.
  *
  * TODO create a pool of common paths (might be useful) ? or string interning?
+ *
  * Created by apyshkin on 6/17/16.
  */
 @Immutable

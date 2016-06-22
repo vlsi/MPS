@@ -14355,11 +14355,7 @@
                 </node>
                 <node concept="2ShNRf" id="6m8wrPAU4aS" role="33vP2m">
                   <node concept="1pGfFk" id="6m8wrPAU4aT" role="2ShVmc">
-                    <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;(jetbrains.mps.vfs.openapi.FileSystem)" resolve="DefaultModelRoot" />
-                    <node concept="2YIFZM" id="1OabvAsgNZn" role="37wK5m">
-                      <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                      <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
-                    </node>
+                    <ref role="37wK5l" to="pa15:~DefaultModelRoot.&lt;init&gt;()" resolve="DefaultModelRoot" />
                   </node>
                 </node>
               </node>

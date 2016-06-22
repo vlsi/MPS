@@ -5,21 +5,11 @@ package jetbrains.mps.ide.java.sourceStubs;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.ModelRootContext;
-import jetbrains.mps.project.FileModelRootContext;
 
 public class JavaSourceStubModelRootFactory implements ModelRootFactory {
   @NotNull
   @Override
   public ModelRoot create() {
     return new JavaSourceStubModelRoot();
-  }
-
-  @NotNull
-  public ModelRoot create(@NotNull ModelRootContext context) {
-    if (context instanceof FileModelRootContext) {
-      return new JavaSourceStubModelRoot(((FileModelRootContext) context).getFileSystem());
-    }
-    return create();
   }
 }

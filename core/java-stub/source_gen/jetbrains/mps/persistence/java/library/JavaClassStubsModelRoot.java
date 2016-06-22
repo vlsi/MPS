@@ -4,7 +4,6 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.java.stub.PackageScopeControl;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -30,10 +29,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   private PackageScopeControl myPackageScope;
-
-  public JavaClassStubsModelRoot(FileSystem fileSystem) {
-    super(fileSystem);
-  }
 
   @Override
   public String getType() {
