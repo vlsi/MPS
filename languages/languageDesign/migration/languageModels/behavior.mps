@@ -566,13 +566,11 @@
       <property role="2Ki8OM" value="true" />
       <property role="TrG5h" value="getGeneratedClassName" />
       <node concept="3Tm1VV" id="7w5LXrJJo0r" role="1B3o_S" />
-      <node concept="3uibUv" id="7w5LXrJJDDq" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6MF1e$78kTf" role="3clF45" />
       <node concept="3clFbS" id="7w5LXrJJo0t" role="3clF47">
         <node concept="3clFbF" id="7w5LXrJJHHx" role="3cqZAp">
           <node concept="Xl_RD" id="5Fumpqe5AxM" role="3clFbG">
-            <property role="Xl_RC" value="MigrationDescriptorImpl" />
+            <property role="Xl_RC" value="MigrationDescriptor" />
           </node>
         </node>
       </node>
