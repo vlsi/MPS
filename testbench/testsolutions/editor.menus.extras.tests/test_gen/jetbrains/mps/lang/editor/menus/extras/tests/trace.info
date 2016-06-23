@@ -107,18 +107,18 @@
       <node id="8874023590560473074" at="36,53,37,217" concept="0" />
       <node id="8874023590560472662" at="37,217,38,0" concept="4" />
       <node id="6820996345401652555" at="38,0,39,93" concept="2" />
-      <node id="6820996345401655024" at="45,128,46,42" concept="3" />
+      <node id="6820996345401655024" at="45,142,46,42" concept="3" />
       <node id="6820996345401672814" at="48,12,49,0" concept="4" />
       <node id="6820996345401622575" at="49,0,50,177" concept="2" />
       <node id="6820996345401656667" at="50,177,51,0" concept="4" />
       <node id="6820996345401657594" at="51,0,52,67" concept="0" />
       <node id="6820996345401622063" at="26,0,31,0" concept="1" trace="test_InapplicableIntention_NotIncludedInMenu#()V" />
-      <node id="6820996345401628503" at="43,0,48,0" concept="1" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuItem;" />
+      <node id="6820996345401628503" at="43,0,48,0" concept="1" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
       <node id="6820996345401622806" at="41,27,48,12" concept="2" />
       <node id="6820996345401675449" at="41,0,54,0" concept="1" trace="run#()V" />
       <node id="6820996345401675447" at="39,93,54,9" concept="0" />
       <node id="6820996345401622063" at="34,0,56,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="6820996345401628517" at="45,128,46,42" />
+      <scope id="6820996345401628517" at="45,142,46,42" />
       <scope id="6820996345401622063" at="27,79,29,135" />
       <scope id="6820996345401622063" at="26,0,31,0" />
       <scope id="6820996345401628503" at="43,0,48,0">
@@ -148,18 +148,18 @@
       <node id="8874023590560469169" at="36,53,37,217" concept="0" />
       <node id="8874023590560471128" at="37,217,38,0" concept="4" />
       <node id="8874023590560440633" at="38,0,39,93" concept="2" />
-      <node id="8874023590560440662" at="45,128,46,42" concept="3" />
+      <node id="8874023590560440662" at="45,142,46,42" concept="3" />
       <node id="8874023590560440669" at="48,12,49,0" concept="4" />
       <node id="8874023590560440670" at="49,0,50,177" concept="2" />
       <node id="8874023590560440678" at="50,177,51,0" concept="4" />
       <node id="8874023590560440679" at="51,0,52,67" concept="0" />
       <node id="8874023590560440629" at="26,0,31,0" concept="1" trace="test_ApplicableIntention_IncludedInMenu#()V" />
-      <node id="8874023590560440651" at="43,0,48,0" concept="1" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuItem;" />
+      <node id="8874023590560440651" at="43,0,48,0" concept="1" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
       <node id="8874023590560440644" at="41,27,48,12" concept="2" />
       <node id="8874023590560440642" at="41,0,54,0" concept="1" trace="run#()V" />
       <node id="8874023590560440641" at="39,93,54,9" concept="0" />
       <node id="8874023590560440629" at="34,0,56,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="8874023590560440661" at="45,128,46,42" />
+      <scope id="8874023590560440661" at="45,142,46,42" />
       <scope id="8874023590560440629" at="27,74,29,130" />
       <scope id="8874023590560440629" at="26,0,31,0" />
       <scope id="8874023590560440651" at="43,0,48,0">

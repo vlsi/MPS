@@ -618,8 +618,8 @@
                         <property role="TrG5h" value="createItem" />
                         <property role="1EzhhJ" value="false" />
                         <node concept="3Tmbuc" id="5UD30_PTHto" role="1B3o_S" />
-                        <node concept="3uibUv" id="5UD30_PTHtp" role="3clF45">
-                          <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+                        <node concept="3uibUv" id="7Bgcg3woZkG" role="3clF45">
+                          <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
                         </node>
                         <node concept="37vLTG" id="5UD30_PTHtq" role="3clF46">
                           <property role="TrG5h" value="context" />
@@ -788,8 +788,8 @@
                         <property role="TrG5h" value="createItem" />
                         <property role="1EzhhJ" value="false" />
                         <node concept="3Tmbuc" id="7GARn1zME5c" role="1B3o_S" />
-                        <node concept="3uibUv" id="7GARn1zME5d" role="3clF45">
-                          <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+                        <node concept="3uibUv" id="7Bgcg3wp0eX" role="3clF45">
+                          <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
                         </node>
                         <node concept="37vLTG" id="7GARn1zME5e" role="3clF46">
                           <property role="TrG5h" value="context" />
