@@ -80,9 +80,9 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
   /**
    * AP: I am going to rewrite the whole fs listening subsystem
    */
-  void addListener(FileSystemListener listener);
+  void addListener(@NotNull FileSystemListener listener);
 
-  void removeListener(FileSystemListener listener);
+  void removeListener(@NotNull FileSystemListener listener);
 
   @ToRemove(version = 3.4)
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);

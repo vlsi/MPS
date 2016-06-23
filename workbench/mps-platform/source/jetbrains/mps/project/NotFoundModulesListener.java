@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +76,7 @@ public class NotFoundModulesListener implements ProjectModuleLoadingListener {
     }
 
     @Override
-    public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       for (IFile file : event.getCreated()) {
         if (file.equals(myModuleFile)) {
           myMpsProject.update();

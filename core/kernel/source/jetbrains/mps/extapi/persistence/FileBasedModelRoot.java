@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
@@ -26,7 +27,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -227,7 +227,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     update();
   }
 
@@ -273,7 +273,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
 
     @Override
-    public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       event.notify(FileBasedModelRoot.this);
     }
   }

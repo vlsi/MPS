@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
@@ -210,7 +211,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     fireChanged(monitor);
   }
 
@@ -266,7 +267,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     }
 
     @Override
-    public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       event.notify(myDelegate);
     }
   }

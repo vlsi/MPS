@@ -49,16 +49,19 @@ public class FSChangesWatcher implements ApplicationComponent {
     myVirtualFileManager = virtualFileManager;
     myReloadManager = reloadManager;
   }
+
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Model Changes Watcher";
   }
+
   @Override
   public void initComponent() {
     initComponent(false);
   }
+
   public void initComponent(boolean force) {
     if (myConnection == null && (force || !(RuntimeFlags.isTestMode()))) {
       myConnection = myBus.connect();
@@ -66,6 +69,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
     }
   }
+
   @Override
   public void disposeComponent() {
     if (myConnection == null) {
@@ -75,9 +79,11 @@ public class FSChangesWatcher implements ApplicationComponent {
     myConnection.disconnect();
     myConnection = null;
   }
+
   public static FSChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(FSChangesWatcher.class);
   }
+
   private class BulkFileChangesListener implements BulkFileListener {
     private BulkFileChangesListener() {
     }

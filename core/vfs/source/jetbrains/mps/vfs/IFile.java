@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.io.IOException;
@@ -168,6 +169,13 @@ public interface IFile {
    */
   @Nullable List<IFile> getChildren();
 
+  default void addListener(@NotNull FileListener listener) {
+    getFileSystem().addListener(new FileListenerAdapter(this, listener));
+  }
+
+  default void removeListener(@NotNull FileListener listener) {
+    getFileSystem().removeListener(new FileListenerAdapter(this, listener));
+  }
 
   /**
    * fixme if it is the same as in java.io.File then we need to enforce it

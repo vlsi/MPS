@@ -10,6 +10,7 @@ public abstract class ReloadManager {
   public static ReloadManager getInstance() {
     return INSTANCE;
   }
+
   protected static void setInstance(ReloadManager instance) {
     INSTANCE = instance;
   }

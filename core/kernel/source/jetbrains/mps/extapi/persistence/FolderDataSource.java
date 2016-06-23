@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.vfs.FileSystemEvent;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -192,7 +193,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemListener.FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     Set<String> affectedStreams = new HashSet<String>();
     for (IFile file : event.getChanged()) {
       if (isIncluded(file)) {

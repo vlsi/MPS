@@ -77,10 +77,10 @@ public class IoFileSystem implements FileSystem {
   }
 
   @Override
-  public void addListener(FileSystemListener listener) {
+  public void addListener(@NotNull FileSystemListener listener) {
   }
 
   @Override
-  public void removeListener(FileSystemListener listener) {
+  public void removeListener(@NotNull FileSystemListener listener) {
   }
 }

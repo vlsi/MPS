@@ -13,25 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.openapi;
+package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
- * A file factory abstraction.
+ * A listener to a file
  *
- * Created by apyshkin on 6/19/16.
+ * Created by apyshkin on 6/23/16.
  */
-public interface FileSystem {
+public interface FileListener {
   /**
-   * Creates an appropriate IFile from the path parameter,
-   * depending on the current fs provider and paths itself
+   * listener gets here all the events
    */
-  @NotNull IFile getFile(@NotNull String path);
-
-  void addListener(@NotNull FileSystemListener listener);
-
-  void removeListener(@NotNull FileSystemListener listener);
+  void update(ProgressMonitor monitor, @NotNull FileSystemEvent event);
 }

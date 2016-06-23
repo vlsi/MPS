@@ -1057,6 +1057,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsUbK" role="jymVt" />
     <node concept="3clFb_" id="7mrRUyVUvcf" role="jymVt">
       <property role="TrG5h" value="getComponentName" />
       <node concept="3Tm1VV" id="7mrRUyVUvcg" role="1B3o_S" />
@@ -1080,6 +1081,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsUbL" role="jymVt" />
     <node concept="3clFb_" id="7mrRUyVUvcn" role="jymVt">
       <property role="TrG5h" value="initComponent" />
       <node concept="3Tm1VV" id="7mrRUyVUvco" role="1B3o_S" />
@@ -1098,6 +1100,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsUbM" role="jymVt" />
     <node concept="3clFb_" id="7mrRUyVUvcY" role="jymVt">
       <property role="TrG5h" value="initComponent" />
       <node concept="37vLTG" id="7mrRUyVUvcZ" role="3clF46">
@@ -1179,6 +1182,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsUbN" role="jymVt" />
     <node concept="3clFb_" id="7mrRUyVUvdy" role="jymVt">
       <property role="TrG5h" value="disposeComponent" />
       <node concept="3Tm1VV" id="7mrRUyVUvdz" role="1B3o_S" />
@@ -1231,6 +1235,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsUbO" role="jymVt" />
     <node concept="2YIFZL" id="7mrRUyVUvb7" role="jymVt">
       <property role="TrG5h" value="instance" />
       <node concept="3Tm1VV" id="7mrRUyVUvb8" role="1B3o_S" />
@@ -1254,6 +1259,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsWNs" role="jymVt" />
     <node concept="312cEu" id="7mrRUyVUv4h" role="jymVt">
       <property role="TrG5h" value="BulkFileChangesListener" />
       <property role="2bfB8j" value="true" />
@@ -2019,7 +2025,7 @@
                 <node concept="3clFbF" id="4kWM61TM0Il" role="3cqZAp">
                   <node concept="2OqwBi" id="4kWM61TM1YI" role="3clFbG">
                     <node concept="liA8E" id="4kWM61TM365" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystemListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemListener$FileSystemEvent):void" resolve="update" />
+                      <ref role="37wK5l" to="3ju5:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemEvent):void" resolve="update" />
                       <node concept="2OqwBi" id="4kWM61TM56h" role="37wK5m">
                         <node concept="liA8E" id="4kWM61TM56i" role="2OqNvi">
                           <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
@@ -2148,7 +2154,7 @@
                       <ref role="3cqZAo" node="4kWM61TNFhe" resolve="listener" />
                     </node>
                     <node concept="liA8E" id="4kWM61TOm4c" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~FileSystemListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemListener$FileSystemEvent):void" resolve="update" />
+                      <ref role="37wK5l" to="3ju5:~FileListener.update(org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.vfs.FileSystemEvent):void" resolve="update" />
                       <node concept="2OqwBi" id="4kWM61TOm4d" role="37wK5m">
                         <node concept="liA8E" id="4kWM61TOm4e" role="2OqNvi">
                           <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
@@ -3134,8 +3140,8 @@
       <property role="TrG5h" value="ListenerData" />
       <property role="2bfB8j" value="true" />
       <node concept="3Tm6S6" id="3Fdn9B$ZcaL" role="1B3o_S" />
-      <node concept="3uibUv" id="4kWM61TLzPV" role="EKbjA">
-        <ref role="3uigEE" to="3ju5:~FileSystemListener$FileSystemEvent" resolve="FileSystemListener.FileSystemEvent" />
+      <node concept="3uibUv" id="7f2aAtsPxd" role="EKbjA">
+        <ref role="3uigEE" to="3ju5:~FileSystemEvent" resolve="FileSystemEvent" />
       </node>
       <node concept="312cEg" id="3Fdn9B$Wmdi" role="jymVt">
         <property role="TrG5h" value="added" />
@@ -5409,6 +5415,7 @@
                 <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
+            <node concept="2tJIrI" id="7f2aAtsmrd" role="jymVt" />
             <node concept="3clFb_" id="491od_XIMYc" role="jymVt">
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="sessionClosed" />
@@ -5535,11 +5542,8 @@
             <node concept="37vLTw" id="491od_XPcl_" role="37vLTx">
               <ref role="3cqZAo" node="491od_XP6cu" resolve="projectManager" />
             </node>
-            <node concept="2OqwBi" id="491od_XP7zq" role="37vLTJ">
-              <node concept="Xjq3P" id="491od_XP7jp" role="2Oq$k0" />
-              <node concept="2OwXpG" id="491od_XPaAM" role="2OqNvi">
-                <ref role="2Oxat5" node="491od_XP45s" resolve="myProjectManager" />
-              </node>
+            <node concept="37vLTw" id="7f2aAtsRHE" role="37vLTJ">
+              <ref role="3cqZAo" node="491od_XP45s" resolve="myProjectManager" />
             </node>
           </node>
         </node>
@@ -5587,6 +5591,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTL" role="jymVt" />
     <node concept="3clFb_" id="491od_XFHfk" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
@@ -5635,15 +5640,14 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTM" role="jymVt" />
     <node concept="3clFb_" id="491od_XFHfq" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="491od_XFHfr" role="1B3o_S" />
-      <node concept="3uibUv" id="491od_XFHft" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="7f2aAtsRXD" role="3clF45" />
       <node concept="2AHcQZ" id="491od_XFHfu" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
       </node>
@@ -5658,6 +5662,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTN" role="jymVt" />
     <node concept="3clFb_" id="491od_XIFbC" role="jymVt">
       <property role="TrG5h" value="setMakeService" />
       <node concept="3cqZAl" id="491od_XIFbD" role="3clF45" />
@@ -5731,6 +5736,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTO" role="jymVt" />
     <node concept="3clFb_" id="491od_YF3_y" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="suspendReloads" />
@@ -5775,6 +5781,7 @@
       </node>
       <node concept="3cqZAl" id="491od_YF5i3" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTP" role="jymVt" />
     <node concept="3clFb_" id="491od_YFbJp" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="resumeReloads" />
@@ -5983,6 +5990,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTQ" role="jymVt" />
     <node concept="3clFb_" id="491od_YVpXH" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addReloadListener" />
@@ -6014,6 +6022,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTR" role="jymVt" />
     <node concept="3clFb_" id="491od_YVpXO" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="removeReloadListener" />
@@ -6045,6 +6054,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTS" role="jymVt" />
     <node concept="3clFb_" id="491od_Z4A9w" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="computeNoReload" />
@@ -6098,6 +6108,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="hgOMa3jKTT" role="jymVt" />
     <node concept="3clFb_" id="4SUKy4FUGep" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="flush" />
@@ -6820,6 +6831,7 @@
       <node concept="3Tm1VV" id="2dPVqhJsQDx" role="1B3o_S" />
       <node concept="3clFbS" id="2dPVqhJsQDz" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="7f2aAtsR3H" role="jymVt" />
     <node concept="3clFb_" id="491od_XJVMt" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="update" />
@@ -6833,6 +6845,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsR47" role="jymVt" />
     <node concept="3clFb_" id="1O5dHlM77AI" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="wantsToShowProgress" />
@@ -6848,6 +6861,7 @@
       <node concept="3Tm1VV" id="1O5dHlM77A8" role="1B3o_S" />
       <node concept="10P_77" id="1O5dHlM77AF" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="7f2aAtsR4y" role="jymVt" />
     <node concept="3clFb_" id="491od_XJVMz" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="isEmpty" />
@@ -6908,6 +6922,7 @@
         <ref role="3uigEE" node="491od_XJZeq" resolve="ReloadManager" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7f2aAtsngW" role="jymVt" />
     <node concept="2YIFZL" id="491od_XKbEN" role="jymVt">
       <property role="TrG5h" value="setInstance" />
       <property role="DiZV1" value="false" />

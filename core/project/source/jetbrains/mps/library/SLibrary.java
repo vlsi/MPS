@@ -17,8 +17,9 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
-import jetbrains.mps.util.PerfUtil;
-import jetbrains.mps.vfs.FileRefresh;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileSystemEvent;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,8 +27,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -44,23 +43,22 @@ import java.util.concurrent.atomic.AtomicReference;
  *
  * evgeny, 11/3/12
  */
-public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
+public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
-  @NotNull
-  private final IFile myFile;
+  @NotNull private final IFile myFile;
   private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
   private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
 
   public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
-    myFile = FileSystem.getInstance().getFileByPath(pathDescriptor.getPath());
+    myFile = pathDescriptor.getPath();
     myHidden = hidden;
   }
 
   @NotNull
-  private IFile getFile() {
+  public IFile getFile() {
     return myFile;
   }
 
@@ -79,66 +77,52 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
     return moduleHandles;
   }
 
-  void attach(boolean refreshFiles) {
+  void attach() {
     LOG.debug("Attaching " + this);
-    FileSystem.getInstance().addListener(this);
-    PerfUtil.TRACER.push("attaching library", false);
-    collectAndRegisterModules(refreshFiles);
-    PerfUtil.TRACER.pop();
+    myFile.addListener(this);
+    collectAndRegisterModules();
   }
 
   void dispose() {
     LOG.debug("Disposing " + this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    FileSystem.getInstance().removeListener(this);
-  }
-
-  @NotNull
-  @Override
-  public IFile getFileToListen() {
-    return getFile();
+    myFile.removeListener(this);
   }
 
   @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     for (IFile f : event.getCreated()) {
       if (ModulesMiner.isSourceModuleFile(f)) {
-        collectAndRegisterModules(false);
+        collectAndRegisterModules();
         return;
       }
     }
   }
 
-  private void collectAndRegisterModules(boolean refreshFiles) {
-    if (refreshFiles) {
-    }
+  private void collectAndRegisterModules() {
     final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
     List<ModuleHandle> moduleHandles = new ArrayList<ModuleHandle>(modulesMiner.getCollectedModules());
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
-    PerfUtil.TRACER.push("creating modules", false);
     for (ModuleHandle moduleHandle : moduleHandles) {
       SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
       if (module != null) {
         loaded.add(module);
       }
     }
-    PerfUtil.TRACER.pop();
-    PerfUtil.TRACER.push("onModuleLoad", false);
     for (SModule module : loaded) {
       ((AbstractModule) module).onModuleLoad();
     }
-    PerfUtil.TRACER.pop();
   }
 
   @Override
   public boolean isHidden() {
     return myHidden;
+  }
+
+  @Override
+  public String toString() {
+    return "SLibrary [path " + myFile + "; plugin " + myPluginClassLoader + "]";
   }
 
   @Override
@@ -149,14 +133,9 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
     SLibrary library = (SLibrary) o;
 
     if (myHidden != library.myHidden) return false;
-    if (myPluginClassLoader == null ? library.myPluginClassLoader != null : !myPluginClassLoader.equals(library.myPluginClassLoader)) return false;
-    return myFile.equals(library.myFile);
 
-  }
+    return EqualUtil.equals(myPluginClassLoader, library.myPluginClassLoader) && myFile.equals(library.myFile);
 
-  @Override
-  public String toString() {
-    return "SLibrary [path " + myFile + "; plugin " + myPluginClassLoader + "]";
   }
 
   @Override

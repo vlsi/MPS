@@ -15,14 +15,10 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.util.PerfUtil;
-import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -46,15 +42,15 @@ public final class FileRefresh implements Runnable {
 
   @Override
   public void run() {
-    PerfUtil.TRACER.push("Refreshing files", true);
-    refreshRecursivelyIntoJars(new HashSet<>(myFiles));
-    PerfUtil.TRACER.pop();
+    refreshRecursivelyIntoJars(myFiles);
   }
 
-  private void refreshRecursivelyIntoJars(Set<IFile> files) {
-    Set<CachingFile> cachingFiles = files.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
+  // not allowing nulls
+  private void refreshRecursivelyIntoJars(List<IFile> files) {
+    List<CachingFile> cachingFiles = files.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).distinct().collect(Collectors.toList());
     if (!cachingFiles.isEmpty()) {
-      CachingFileSystem fs = cachingFiles.iterator().next().getFileSystem(); // simply the first file
+      CachingFile firstFile = cachingFiles.get(0);
+      CachingFileSystem fs = firstFile.getFileSystem(); // simply the first file
       while (!cachingFiles.isEmpty()) {
         fs.refresh(myDefaultCachingContext, cachingFiles);
         cachingFiles = cachingFiles.stream().flatMap(
@@ -66,17 +62,8 @@ public final class FileRefresh implements Runnable {
                 return Stream.of(((CachingFile) IFileUtils.stepIntoJar(file)));
               }
               return Stream.empty();
-            }).collect(Collectors.toSet());
+            }).distinct().collect(Collectors.toList());
       }
     }
-
-//    if (file.isDirectory()) {
-//      for (IFile child: file.getChildren()) {
-//        refreshRecursivelyIntoJars(child);
-//      }
-//    } else if (IFileUtils.isJarFile(file)) {
-//      IFile jarRoot = IFileUtils.stepIntoJar(file);
-//      refreshRecursivelyIntoJars(jarRoot);
-//    }
   }
 }

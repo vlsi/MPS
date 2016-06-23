@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -164,7 +165,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     for (IFile file : event.getChanged()) {
       if (file.equals(myFile)) {
         fireChanged(monitor);

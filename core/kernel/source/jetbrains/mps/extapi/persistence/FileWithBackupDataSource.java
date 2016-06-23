@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.vfs.FileSystemEvent;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -58,7 +59,7 @@ public class FileWithBackupDataSource extends FileDataSource {
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     IFile mainFile = getFile();
     IFile backupFile = getBackupFile();
     boolean isChanged = false;
@@ -127,7 +128,7 @@ public class FileWithBackupDataSource extends FileDataSource {
     }
 
     @Override
-    public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       event.notify(FileWithBackupDataSource.this);
     }
   }

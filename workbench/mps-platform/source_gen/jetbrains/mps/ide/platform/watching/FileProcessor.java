@@ -22,6 +22,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -178,7 +179,7 @@ public class FileProcessor extends ReloadParticipant {
     }
   }
 
-  private class ListenerData implements FileSystemListener.FileSystemEvent {
+  private class ListenerData implements FileSystemEvent {
     private Set<IFile> added = new HashSet<IFile>();
     private Set<IFile> removed = new HashSet<IFile>();
     private Set<IFile> changed = new HashSet<IFile>();

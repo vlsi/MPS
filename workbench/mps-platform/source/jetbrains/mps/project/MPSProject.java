@@ -18,10 +18,10 @@ package jetbrains.mps.project;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
@@ -59,7 +59,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
       }
 
       @Override
-      public void update(ProgressMonitor monitor, FileSystemEvent event) {
+      public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
 
       }
     });

@@ -13,25 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs.openapi;
+package jetbrains.mps.vfs;
 
-import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
+
+import java.util.Set;
 
 /**
- * A file factory abstraction.
+ * FS event
  *
- * Created by apyshkin on 6/19/16.
+ * Created by apyshkin on 6/23/16.
  */
-public interface FileSystem {
+public interface FileSystemEvent {
+  Set<IFile> getCreated();
+
+  Set<IFile> getRemoved();
+
+  Set<IFile> getChanged();
+
   /**
-   * Creates an appropriate IFile from the path parameter,
-   * depending on the current fs provider and paths itself
+   * ???
+   * @param listener
    */
-  @NotNull IFile getFile(@NotNull String path);
-
-  void addListener(@NotNull FileSystemListener listener);
-
-  void removeListener(@NotNull FileSystemListener listener);
+  @ToRemove(version = 3.4)
+  @Deprecated
+  void notify(FileSystemListener listener);
 }

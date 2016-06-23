@@ -38,6 +38,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     public void sessionOpened(MakeNotification notification) {
       suspendReloads();
     }
+
     @Override
     public void sessionClosed(MakeNotification notification) {
       resumeReloads();
@@ -50,13 +51,14 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   private AtomicInteger mySuspendCount = new AtomicInteger(0);
 
   public ReloadManagerComponent(ProjectManager projectManager) {
-    this.myProjectManager = projectManager;
+    myProjectManager = projectManager;
     myQueue.setRestartTimerOnAdd(true);
   }
 
   public void initComponent() {
     ReloadManager.setInstance(this);
   }
+
   public void disposeComponent() {
     ReloadManager.setInstance(null);
     if (myMakeService != null) {
@@ -64,11 +66,13 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myMakeService = null;
     }
   }
+
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Reload Manager";
   }
+
   public void setMakeService(IMakeService ms) {
     if (ms != null) {
       ms.addListener(myMakeListener);
@@ -79,11 +83,13 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
     myMakeService = ms;
   }
+
   public void suspendReloads() {
     int count = mySuspendCount.incrementAndGet();
     assert count >= 0;
     myQueue.suspend();
   }
+
   public void resumeReloads() {
     int count = mySuspendCount.decrementAndGet();
     assert count >= 0;
@@ -110,14 +116,17 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
     queueReloadSession();
   }
+
   @Override
   public void addReloadListener(ReloadListener listener) {
     ListSequence.fromList(myReloadListeners).addElement(listener);
   }
+
   @Override
   public void removeReloadListener(ReloadListener listener) {
     ListSequence.fromList(myReloadListeners).removeElement(listener);
   }
+
   @Override
   public <T> T computeNoReload(Computable<T> computable) {
     try {
@@ -127,6 +136,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       resumeReloads();
     }
   }
+
   @Override
   public void flush() {
     // synchronously commit all pending reload requests 

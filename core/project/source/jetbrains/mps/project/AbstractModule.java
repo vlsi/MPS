@@ -48,6 +48,7 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -636,7 +637,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     assertCanChange();
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {

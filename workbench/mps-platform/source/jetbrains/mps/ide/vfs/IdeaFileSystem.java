@@ -47,7 +47,7 @@ import java.util.stream.Collectors;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystem extends FileSystemComponent implements FileSystem, CachingFileSystem, SafeWriteRequestor {
+public class IdeaFileSystem extends IdeaFSComponent implements FileSystem, CachingFileSystem, SafeWriteRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
@@ -68,12 +68,12 @@ public class IdeaFileSystem extends FileSystemComponent implements FileSystem, C
   }
 
   @Override
-  public void addListener(FileSystemListener listener) {
+  public void addListener(@NotNull FileSystemListener listener) {
     myListeners.addListener(listener);
   }
 
   @Override
-  public void removeListener(FileSystemListener listener) {
+  public void removeListener(@NotNull FileSystemListener listener) {
     myListeners.removeListener(listener);
   }
 

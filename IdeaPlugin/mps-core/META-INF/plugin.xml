@@ -28,7 +28,7 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.ide.vfs.FileSystemComponent</interface-class>
+      <interface-class>jetbrains.mps.ide.vfs.IdeaFSComponent</interface-class>
       <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystem</implementation-class>
     </component>
     <component>

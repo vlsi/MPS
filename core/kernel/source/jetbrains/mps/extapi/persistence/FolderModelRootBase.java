@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.vfs.FileSystemEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystem;
@@ -88,7 +89,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     update();
   }
 

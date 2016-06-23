@@ -19,6 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.RepositoryContributor;
+import jetbrains.mps.vfs.FileRefresh;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -158,12 +160,12 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
       refreshLibRoots(toLoad);
     }
     for (SLibrary loadLib : toLoad) {
-      loadLib.attach(refreshFiles);
+      loadLib.attach();
     }
   }
 
   private void refreshLibRoots(List<SLibrary> toLoad) {
-    List<IFile> collect = toLoad.stream().map(SLibrary::getFileToListen).collect(Collectors.toList());
+    List<IFile> collect = toLoad.stream().map(SLibrary::getFile).collect(Collectors.toList());
     new FileRefresh(collect).run();
   }
 

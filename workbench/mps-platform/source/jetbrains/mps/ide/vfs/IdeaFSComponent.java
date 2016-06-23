@@ -7,10 +7,11 @@ import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * idea component to set the caching idea file system as a current fs.
+ *
  * danilla 8/7/13
  */
-
-public abstract class FileSystemComponent implements ApplicationComponent, FileSystem {
+public abstract class IdeaFSComponent implements ApplicationComponent, FileSystem {
   private FileSystem myOldFileSystem;
 
   // component stuff

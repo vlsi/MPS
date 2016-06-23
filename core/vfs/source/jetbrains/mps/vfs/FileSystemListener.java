@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -26,27 +27,19 @@ import java.util.Set;
  * enumerates some other listeners, which are supposed to get notifications before the client.
  *
  * FIXME: AP: too complicated: revise and remove
- *
- * evgeny, 11/2/12
+ * FIXME this listener attaches to {@link IFile} obviously.
+ * @deprecated use {@link FileListener} in the case when you do not need to have any dependencies. Otherwise carry on with this one.
  */
 @Deprecated
-public interface FileSystemListener {
-  @Nullable IFile getFileToListen();
-
-  // todo remove it, too complicated
+@ToRemove(version = 3.5)
+public interface FileSystemListener extends FileListener {
+  /**
+   * todo remove it, too complicated
+   * null means no deps
+   */
   @ToRemove(version = 3.4)
   @Deprecated
-  Iterable<FileSystemListener> getListenerDependencies();
+  @Nullable Iterable<FileSystemListener> getListenerDependencies();
 
-  /**
-   * listener gets here all the events
-   */
-  void update(ProgressMonitor monitor, FileSystemEvent event);
-
-  interface FileSystemEvent {
-    Set<IFile> getCreated();
-    Set<IFile> getRemoved();
-    Set<IFile> getChanged();
-    void notify(FileSystemListener listener);
-  }
+  @Nullable IFile getFileToListen();
 }
