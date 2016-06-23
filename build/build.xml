@@ -7,16 +7,22 @@
     <ant antfile="./jetpad/build.xml" target="resolve" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
-  <target name="build" depends="platform, base"/>
-
-  <target name="base" depends="platform">
+  <target name="getResourcesAndBuildAll">
     <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getHelp" />
     <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getMachelp" />
     <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getJdk" />
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
+  </target>
+
+  <target name="assemble">
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="assemble"/>
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="publishTCArtifacts"/>
   </target>
+
+  <target name="base" depends="platform, getResourcesAndBuildAll, assemble">
+  </target>
+
+  <target name="build" depends="platform, base"/>
 
   <target name="exe" depends="base">
     <property name="build.distribution" value="${basedir}/artifacts/mpsDistribution"/>
