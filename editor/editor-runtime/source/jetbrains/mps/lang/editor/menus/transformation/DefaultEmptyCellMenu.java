@@ -38,10 +38,6 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase{
 
   private final SContainmentLink myLink;
 
-  public DefaultEmptyCellMenu(SAbstractConcept concept, SContainmentLink link) {
-    myLink = link;
-  }
-
   public DefaultEmptyCellMenu(SContainmentLink link) {
     myLink = link;
   }

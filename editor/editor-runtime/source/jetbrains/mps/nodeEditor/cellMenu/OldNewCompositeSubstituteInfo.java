@@ -16,7 +16,9 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
 
 import java.util.List;
 
@@ -42,5 +44,13 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
 
     return myNewSubstituteInfo.createActions();
+  }
+
+  @Override
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    if (myOldSubstituteInfoHolder.isApplicable()) {
+      return myOldSubstituteInfoHolder.getSubstituteInfo().getInequalitiesSystem(contextCell);
+    }
+    return myNewSubstituteInfo.getInequalitiesSystem(contextCell);
   }
 }

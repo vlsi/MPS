@@ -17,19 +17,69 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 
 /**
  * @author simon
  */
 public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   public final static String SUBSTITUTE = "jetbrains.mps.nodeEditor.cellMenu.SUBSTITUTE";
+  private SContainmentLink myLink;
+  private SNode myParentNode;
+  private SNode myCurrentChild;
 
   public SChildSubstituteInfo(EditorCell editorCell) {
     super(editorCell);
   }
 
+  public SChildSubstituteInfo(EditorCell editorCell, SNode parentNode, SContainmentLink link, SNode currentChild) {
+    super(editorCell);
+    myParentNode = parentNode;
+    myLink =  link;
+    myCurrentChild = currentChild;
+  }
+
   @Override
   protected DefaultTransformationMenuContext createTransformationContext() {
     return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), SUBSTITUTE);
+  }
+
+  @Override
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    if (myParentNode == null || myLink == null) {
+      return null;
+    }
+    //todo merge with DefaultSChildSubstituteInfo
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    final SNode copy = CopyUtil.copy(Collections.singletonList(getSourceNode().getContainingRoot()), mapping).get(0);
+    getModelForTypechecking().addRootNode(copy);
+
+    final SAbstractConcept concept = myLink.getTargetConcept();
+    boolean holeIsAType = concept.isSubConceptOf(SNodeUtil.concept_IType);
+
+
+    SNode parent = mapping.get(myParentNode);
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
+    if (myCurrentChild != null) {
+      SNode child = mapping.get(myCurrentChild);
+      parent.insertChildBefore(myLink, hole, child);
+      parent.removeChild(child);
+    } else {
+      parent.addChild(myLink, hole);
+    }
+    InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
+    inequationsForHole.replaceRefs(mapping);
+    return inequationsForHole;
   }
 }
