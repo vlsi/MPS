@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -53,8 +52,8 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
   public FileDataSource(@NotNull IFile file, ModelRoot modelRoot) {
-    this.myFile = file;
-    this.myModelRoot = modelRoot;
+    myFile = file;
+    myModelRoot = modelRoot;
   }
 
   @NotNull
@@ -74,7 +73,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFile) || myFile.isReadOnly();
+    return myFile.isInArchive() || myFile.isReadOnly();
   }
 
   @NotNull
@@ -95,7 +94,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public void refresh() {
-    FileSystem.getInstance().refresh(myFile);
+    myFile.refresh();
   }
 
   @Override
@@ -115,7 +114,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   protected void startListening() {
-    FileSystem.getInstance().addListener(this);
+    myFile.getFileSystem().addListener(this);
   }
 
   @Override
@@ -136,7 +135,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   protected void stopListening() {
-    FileSystem.getInstance().removeListener(this);
+    myFile.getFileSystem().removeListener(this);
   }
 
   @NotNull

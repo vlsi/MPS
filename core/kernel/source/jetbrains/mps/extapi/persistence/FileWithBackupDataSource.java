@@ -33,7 +33,6 @@ import java.util.Collections;
  * storage when content doesn't fit into the original file because of the format restrictions.
  */
 public class FileWithBackupDataSource extends FileDataSource {
-
   private BackupFileListener myBackupFileListener;
 
   public FileWithBackupDataSource(@NotNull IFile file, ModelRoot modelRoot) {
@@ -42,7 +41,8 @@ public class FileWithBackupDataSource extends FileDataSource {
 
   @NotNull
   public IFile getBackupFile() {
-    return FileSystem.getInstance().getFileByPath(getFile().getPath() + "~");
+    IFile file = getFile();
+    return file.getFileSystem().getFile(file.getPath() + "~");
   }
 
   @Override
@@ -55,7 +55,7 @@ public class FileWithBackupDataSource extends FileDataSource {
   @Override
   public void refresh() {
     super.refresh();
-    FileSystem.getInstance().refresh(getBackupFile());
+    getBackupFile().refresh();
   }
 
   @Override
@@ -85,13 +85,14 @@ public class FileWithBackupDataSource extends FileDataSource {
   @Override
   protected void startListening() {
     super.startListening();
-    myBackupFileListener = new BackupFileListener(getBackupFile());
-    FileSystem.getInstance().addListener(myBackupFileListener);
+    IFile backupFile = getBackupFile();
+    myBackupFileListener = new BackupFileListener(backupFile);
+    backupFile.getFileSystem().addListener(myBackupFileListener);
   }
 
   @Override
   protected void stopListening() {
-    FileSystem.getInstance().removeListener(myBackupFileListener);
+    getBackupFile().getFileSystem().removeListener(myBackupFileListener);
     myBackupFileListener = null;
     super.stopListening();
   }

@@ -33,9 +33,8 @@ public interface FileSystemEvent {
 
   /**
    * ???
-   * @param listener
    */
   @ToRemove(version = 3.4)
-  @Deprecated
+//  @Deprecated
   void notify(FileSystemListener listener);
 }

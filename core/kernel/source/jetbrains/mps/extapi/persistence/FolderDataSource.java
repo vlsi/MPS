@@ -75,7 +75,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
 
   @Override
   public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFolder);
+    return myFolder.isPackaged(); // !!! legacy
   }
 
   @NotNull
@@ -142,7 +142,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().addListener(this);
+        myFolder.getFileSystem().addListener(this);
       }
       myListeners.add(listener);
     }
@@ -153,7 +153,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().removeListener(this);
+        myFolder.getFileSystem().removeListener(this);
       }
     }
   }

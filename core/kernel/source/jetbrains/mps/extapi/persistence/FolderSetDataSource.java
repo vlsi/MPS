@@ -17,11 +17,12 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -107,10 +108,9 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   @Override
   public void refresh() {
-    Collection<IFile> toRefresh = getFiles();
-    FileSystem fs = FileSystem.getInstance();
+    FileSystem fs = getFS();
     if (fs instanceof CachingFileSystem) {
-      Set<CachingFile> collect = toRefresh.stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
+      Set<CachingFile> collect = getFiles().stream().filter(file -> file instanceof CachingFile).map(file -> (CachingFile) file).collect(Collectors.toSet());
       ((CachingFileSystem) fs).refresh(new DefaultCachingContext(true, false), collect);
     }
   }
@@ -123,7 +123,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
       String fsPath = path.getPath();
       //at least some programs don't change timestamp of a directory inside jar file after deleting a file in it
       if (fsPath.contains(Path.ARCHIVE_SEPARATOR)){
-        IFile jarFile = path.getFileSystem().getFile(fsPath.substring(0, fsPath.lastIndexOf("!/")));
+        IFile jarFile = path.getFileSystem().getFile(fsPath.substring(0, fsPath.lastIndexOf(Path.ARCHIVE_SEPARATOR)));
         if (jarFile != null){
           max = Math.max(max, jarFile.lastModified());
           continue; // no need to go deep into jar contents
@@ -148,6 +148,12 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     }
   }
 
+  private FileSystem getFS() {
+    List<IFile> toRefresh = new ArrayList<>(getFiles());
+    if (toRefresh.isEmpty()) return FileSystemExtPoint.getFS();
+    return toRefresh.get(0).getFileSystem();
+  }
+
   @NotNull
   @Override
   public String getLocation() {
@@ -160,7 +166,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     try {
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
-          FileSystem.getInstance().addListener(pathListener);
+          getFS().addListener(pathListener);
         }
       }
       myListeners.add(listener);
@@ -176,7 +182,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
-          FileSystem.getInstance().removeListener(pathListener);
+          getFS().removeListener(pathListener);
         }
       }
     } finally {

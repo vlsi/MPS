@@ -199,7 +199,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         IFile file = myFileSystem.getFile(path);
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
-        ((jetbrains.mps.vfs.FileSystem) myFileSystem).addListener(listener);
+        myFileSystem.addListener(listener);
       }
     }
   }
@@ -207,7 +207,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Override
   public void dispose() {
     for (PathListener listener : myListeners) {
-      ((jetbrains.mps.vfs.FileSystem) myFileSystem).removeListener(listener);
+      myFileSystem.removeListener(listener);
     }
     myListeners.clear();
     super.dispose();
