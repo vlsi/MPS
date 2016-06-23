@@ -32,22 +32,33 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * Inits all mps distribution modules
+ * When on sources {@link InternalFlag#isInternalMode()} almost the same happens
+ */
 public final class RepositoryInitializingComponent implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
-  private BootstrapLibraryContributor myBootstrapLibraryContributor;
-  private PluginLibraryContributor myPluginLibraryContributor;
-  private WorkbenchLibraryContributor myWorkbenchLibraryContributor;
   private final FileSystem myFS;
+  private final List<LibraryContributor> myContributors = new ArrayList<>();
 
   /**
+   * Notice, when we are starting from sources we want to treat all our mps modules as source modules. Such modules are a subject
+   * to a frequent changes, so we'd rather to load the with idea fs.
+   *
+   * In the case of usual mps distribution all modules enlisted here are read-only, so they cannot be changed.
+   * Thus we aren't supposed to use idea fs here (according to the idea fs recommendations) and we are using io-based fs.
+   *
    * @param coreComponents -- we want to load bootstrap libraries after we have all core components instatiated
    * @param registryManager -- please see {@link ApplicationPluginManager#initComponent()}. fixme get rid of this dep
    * @param ideaPluginFacetComponent -- we want to load plugin library contributor after we have chosen the right idea plugin facet
@@ -59,26 +70,23 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
       @SuppressWarnings("UnusedParameters") PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
-    myFS = FileSystemExtPoint.getFS();
+    myFS = InternalFlag.isInternalMode() ? FileSystemExtPoint.getFS() : new IoFileSystem();
+    myContributors.add(new BootstrapLibraryContributor(myFS));
+    if (InternalFlag.isInternalMode()) {
+      myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
+    }
+    myContributors.add(new PluginLibraryContributor(myFS));
   }
 
   @Override
   public void initComponent() {
     improveLoadingOnSources();
-    myBootstrapLibraryContributor = new BootstrapLibraryContributor(myFS);
-    myWorkbenchLibraryContributor = new WorkbenchLibraryContributor(myFS);
-    myPluginLibraryContributor = new PluginLibraryContributor(myFS);
-    final List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
-
     final Application application = ApplicationManager.getApplication();
     application.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        application.runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            myLibraryInitializer.loadRefreshed(contributors);
-          }
+        application.runWriteAction(() -> {
+          myLibraryInitializer.loadRefreshed(myContributors);
         });
       }
     }, ModalityState.defaultModalityState());
@@ -86,17 +94,15 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
 
   private void improveLoadingOnSources() {
     if (InternalFlag.isInternalMode()) {
-      myFS.getFile(PathManager.getHomePath()).addListener(new FileListener() {
-        @Override
-        public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-        }
-      });
+      myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
     }
   }
 
   @Override
   public void disposeComponent() {
-    myLibraryInitializer.unload(Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor));
+    List<LibraryContributor> contributors = new ArrayList<>(myContributors);
+    Collections.reverse(contributors);
+    myLibraryInitializer.unload(contributors);
   }
 
   @NotNull

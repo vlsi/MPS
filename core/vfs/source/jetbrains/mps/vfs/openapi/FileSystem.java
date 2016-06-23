@@ -31,6 +31,9 @@ public interface FileSystem {
    */
   @NotNull IFile getFile(@NotNull String path);
 
+  /**
+   * fixme two methods belong to caching fs
+   */
   void addListener(@NotNull FileSystemListener listener);
 
   void removeListener(@NotNull FileSystemListener listener);
