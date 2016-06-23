@@ -22,6 +22,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.LanguageLibrary;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
@@ -38,6 +39,11 @@ import java.util.Set;
  */
 public final class PluginLibraryContributor implements LibraryContributor {
   private static final Logger LOG = LogManager.getLogger(PluginLibraryContributor.class);
+  private final jetbrains.mps.vfs.openapi.FileSystem myFileSystem;
+
+  public PluginLibraryContributor(jetbrains.mps.vfs.openapi.FileSystem fileSystem) {
+    myFileSystem = fileSystem;
+  }
 
   @NotNull
   private LibDescriptor createLibDescriptor(LanguageLibrary library) throws IOException {
@@ -56,9 +62,9 @@ public final class PluginLibraryContributor implements LibraryContributor {
   @NotNull
   private LibDescriptor createLibDescriptor(String path, ClassLoader classLoader) {
     if (!InternalFlag.isInternalMode()) {
-      return new LibDescriptor(new IoFileSystem().getFile(path), classLoader);
+      return new LibDescriptor(myFileSystem.getFile(path), classLoader);
     } else {
-      return new LibDescriptor(new IdeaFileSystem().getFile(path), classLoader);
+      return new LibDescriptor(myFileSystem.getFile(path), classLoader);
     }
   }
 

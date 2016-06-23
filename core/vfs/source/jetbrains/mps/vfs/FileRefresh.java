@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vfs;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -28,8 +30,9 @@ import java.util.stream.Stream;
  * @author Artem Tikhomirov
  */
 public final class FileRefresh implements Runnable {
-  @NotNull
-  private final List<IFile> myFiles;
+  private final static Logger LOG = LogManager.getLogger(FileRefresh.class);
+
+  @NotNull private final List<IFile> myFiles;
   private final DefaultCachingContext myDefaultCachingContext = new DefaultCachingContext(true, false);
 
   public FileRefresh(@NotNull IFile file) {
@@ -42,7 +45,9 @@ public final class FileRefresh implements Runnable {
 
   @Override
   public void run() {
+    LOG.info("Refreshing " + myFiles.size() + " file(s)");
     refreshRecursivelyIntoJars(myFiles);
+    LOG.info("Refreshing is done");
   }
 
   // not allowing nulls

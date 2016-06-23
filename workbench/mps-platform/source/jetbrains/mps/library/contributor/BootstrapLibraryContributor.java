@@ -16,11 +16,9 @@
 package jetbrains.mps.library.contributor;
 
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -30,6 +28,12 @@ import java.util.Set;
  * Contributes bootstrap modules -- MPS core
  */
 public final class BootstrapLibraryContributor implements LibraryContributor {
+  private final FileSystem myFileSystem;
+
+  public BootstrapLibraryContributor(FileSystem fileSystem) {
+    myFileSystem = fileSystem;
+  }
+
   @Override
   public Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
@@ -42,10 +46,11 @@ public final class BootstrapLibraryContributor implements LibraryContributor {
 
   @NotNull
   private LibDescriptor createLibDescriptor(String path) {
-    if (!InternalFlag.isInternalMode()) {
-      return new LibDescriptor(new IoFileSystem().getFile(path));
+    if (InternalFlag.isInternalMode()) {
+      // on sources all the modules are sources
+      return new LibDescriptor(myFileSystem.getFile(path));
     } else {
-      return new LibDescriptor(new IdeaFileSystem().getFile(path));
+      return new LibDescriptor(new IoFileSystem().getFile(path));
     }
   }
 

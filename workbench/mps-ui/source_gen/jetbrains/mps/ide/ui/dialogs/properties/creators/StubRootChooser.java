@@ -7,6 +7,7 @@ import java.util.List;
 import java.awt.Component;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,7 +48,7 @@ public class StubRootChooser implements Computable<List<String>> {
       if (res == Messages.YES) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
-            return ModelRootDescriptor.getJavaStubsModelRoot(new IdeaFileSystem().getFile(it));
+            return ModelRootDescriptor.getJavaStubsModelRoot(FileSystem.getInstance().getFile(it));
           }
         }));
       }

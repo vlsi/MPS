@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.ide.vfs;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.vfs.FileSystemListener;
+import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Map;
@@ -34,26 +33,35 @@ import java.util.Map;
  * AP
  */
 public final class ProjectRootListenerComponent implements ProjectComponent {
-  private final WatchingIdeaFileSystemProvider myProvider;
-  private final Project myProject;
-  private final Map<Project, FileSystemListener> myProject2ListenerMap = new HashMap<>();
+  private static final Logger LOG = LogManager.getLogger(ProjectRootListenerComponent.class);
 
-  public ProjectRootListenerComponent(@NotNull WatchingIdeaFileSystemProvider provider, Project project) {
-    myProvider = provider;
+  private final WatchingIdeaFileSystem myFileSystem;
+  private final Project myProject;
+  private final Map<Project, FileListener> myProject2ListenerMap = new HashMap<>();
+  private IFile myFile;
+
+  public ProjectRootListenerComponent(@NotNull WatchingIdeaFileSystem fileSystem, Project project) {
+    myFileSystem = fileSystem;
     myProject = project;
   }
 
   @Override
   public void initComponent() {
-    EmptyFSListener listener = new EmptyFSListener(myProject);
-    myProvider.addListener(listener);
-    myProject2ListenerMap.put(myProject, listener);
+    String basePath = myProject.getBasePath();
+    if (basePath!= null) {
+      myFile = myFileSystem.getFile(basePath);
+      EmptyFSListener listener = new EmptyFSListener();
+      myFile.addListener(listener);
+      myProject2ListenerMap.put(myProject, listener);
+    } else {
+      LOG.warn("Could not find base path of the project " + myProject);
+    }
   }
 
   @Override
   public void disposeComponent() {
-    FileSystemListener removed = myProject2ListenerMap.remove(myProject);
-    myProvider.removeListener(removed);
+    FileListener removed = myProject2ListenerMap.remove(myProject);
+    myFile.removeListener(removed);
   }
 
   @NotNull
@@ -70,26 +78,9 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
   public void projectClosed() {
   }
 
-  private static class EmptyFSListener implements FileSystemListener {
-    private IFile myFile;
-
-    EmptyFSListener(Project project) {
-      myFile = new IdeaFile(project.getBaseDir());
-    }
-
-    @Nullable
+  private static class EmptyFSListener implements FileListener {
     @Override
-    public IFile getFileToListen() {
-      return myFile;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return null;
-    }
-
-    @Override
-    public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     }
   }
 }

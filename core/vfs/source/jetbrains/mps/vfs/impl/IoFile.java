@@ -35,13 +35,13 @@ import java.util.List;
  */
 public class IoFile implements IFileEx {
   @NotNull private File myFile; // always absolute
-  private FileSystem myFileSystem;
+  private IoFileSystem myFileSystem;
 
-  public IoFile(@NotNull String path, FileSystem fileSystem) {
+  IoFile(@NotNull String path, IoFileSystem fileSystem) {
     this(new File(path), fileSystem);
   }
 
-  public IoFile(@NotNull File file, FileSystem fileSystem) {
+  IoFile(@NotNull File file, IoFileSystem fileSystem) {
     myFile = file.getAbsoluteFile();
     myFileSystem = fileSystem;
   }

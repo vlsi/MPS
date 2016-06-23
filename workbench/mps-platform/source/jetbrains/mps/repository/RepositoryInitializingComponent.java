@@ -20,14 +20,22 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +45,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
   private BootstrapLibraryContributor myBootstrapLibraryContributor;
   private PluginLibraryContributor myPluginLibraryContributor;
   private WorkbenchLibraryContributor myWorkbenchLibraryContributor;
+  private final FileSystem myFS;
 
   /**
    * @param coreComponents -- we want to load bootstrap libraries after we have all core components instatiated
@@ -46,16 +55,19 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
   public RepositoryInitializingComponent(MPSCoreComponents coreComponents,
       IRegistryManager registryManager,
       IdeaPluginFacetComponent ideaPluginFacetComponent,
+      IdeaFSComponent fs,
       @SuppressWarnings("UnusedParameters") PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
+    myFS = FileSystemExtPoint.getFS();
   }
 
   @Override
   public void initComponent() {
-    myBootstrapLibraryContributor = new BootstrapLibraryContributor();
-    myWorkbenchLibraryContributor = new WorkbenchLibraryContributor();
-    myPluginLibraryContributor = new PluginLibraryContributor();
+    improveLoadingOnSources();
+    myBootstrapLibraryContributor = new BootstrapLibraryContributor(myFS);
+    myWorkbenchLibraryContributor = new WorkbenchLibraryContributor(myFS);
+    myPluginLibraryContributor = new PluginLibraryContributor(myFS);
     final List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
 
     final Application application = ApplicationManager.getApplication();
@@ -70,6 +82,16 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
         });
       }
     }, ModalityState.defaultModalityState());
+  }
+
+  private void improveLoadingOnSources() {
+    if (InternalFlag.isInternalMode()) {
+      myFS.getFile(PathManager.getHomePath()).addListener(new FileListener() {
+        @Override
+        public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
+        }
+      });
+    }
   }
 
   @Override

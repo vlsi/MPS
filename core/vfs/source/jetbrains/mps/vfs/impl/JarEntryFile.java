@@ -43,9 +43,9 @@ public class JarEntryFile implements IFileEx {
   private File myJarFile;
   private String myEntryPath;
   private static final IoFileSystem FS = new IoFileSystem();
-  private final FileSystem myFileSystem;
+  private final IoFileSystem myFileSystem;
 
-  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, FileSystem fileSystem) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IoFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = path.replace(File.separator, "/");

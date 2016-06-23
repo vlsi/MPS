@@ -162,6 +162,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     for (SLibrary loadLib : toLoad) {
       loadLib.attach();
     }
+    LOG.info("Library update is finished");
   }
 
   private void refreshLibRoots(List<SLibrary> toLoad) {

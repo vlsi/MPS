@@ -19,6 +19,8 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.openapi.FileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,11 +29,17 @@ import java.util.Set;
  * Contributes workbench modules -- IDE and platform (idea) layers
  */
 public final class WorkbenchLibraryContributor implements LibraryContributor {
+  private final FileSystem myFs;
+
+  public WorkbenchLibraryContributor(@NotNull FileSystem fs) {
+    myFs = fs;
+  }
+
   @Override
   public Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     if (InternalFlag.isInternalMode()) {
-      res.add(new LibDescriptor(new IdeaFileSystem().getFile(PathManager.getWorkbenchPath()), null));
+      res.add(new LibDescriptor(myFs.getFile(PathManager.getWorkbenchPath()), null));
     }
     return res;
   }
