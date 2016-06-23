@@ -30,7 +30,7 @@ public class check_IMenu_hasUniqueName_NonTypesystemRule extends AbstractNonType
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Duplicate transformation menu or contribution defined: " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "286080166051471253", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Duplicate menu or contribution defined: " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "286080166051471253", null, errorTarget);
         }
       }
     }

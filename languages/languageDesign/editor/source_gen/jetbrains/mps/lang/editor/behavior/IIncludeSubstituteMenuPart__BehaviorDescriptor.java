@@ -19,6 +19,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.structure.constraints.Scopes;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
@@ -51,13 +52,13 @@ public final class IIncludeSubstituteMenuPart__BehaviorDescriptor extends BaseBH
             if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
               if (true) {
                 // Default scope of AbstractConceptDeclaration 
-                return Scopes.forConcepts(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+                return new FilteringScope(Scopes.forConcepts(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
               }
               break;
             }
             if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"))) {
               if (true) {
-                // Default scope of TransformationMenu_Named - more or less 
+                // Default scope of SubstituteMenu_Named - more or less 
                 return new ModelPlusImportedScope(SNodeOperations.getModel(__thisNode__), true, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
               }
               break;

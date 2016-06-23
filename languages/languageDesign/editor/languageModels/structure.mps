@@ -4640,7 +4640,7 @@
       <ref role="PrY4T" node="1quYWAD02Od" resolve="IParameterizableMenuPart" />
     </node>
     <node concept="PrWs8" id="6kJcyCQj9Dc" role="PzmwI">
-      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
     <node concept="1TJgyj" id="4VZjoGvneVd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -5163,7 +5163,7 @@
   <node concept="PlHQZ" id="6kJcyCQj9CC">
     <property role="EcuMT" value="7291101478617127464" />
     <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="IExtensibleMenuPart" />
+    <property role="TrG5h" value="IExtensibleTransformationMenuPart" />
     <node concept="1TJgyj" id="7L5lpRJINkn" role="1TKVEi">
       <property role="IQ2ns" value="8954657570916349207" />
       <property role="20lmBu" value="aggregation" />

@@ -50,7 +50,7 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")) == null)) {
       return null;
     }
-    return DefaultTransformationMenuUtil.findDefaultMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")));
+    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")));
   }
   public static class ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0() {

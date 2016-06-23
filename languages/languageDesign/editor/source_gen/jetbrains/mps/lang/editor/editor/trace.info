@@ -34349,7 +34349,7 @@
       <node id="6718020819487638496" at="45,34,46,246" concept="2" />
       <node id="6718020819487638496" at="46,246,47,22" concept="8" />
       <node id="873949054148955370" at="50,187,51,18" concept="8" />
-      <node id="873949054148956570" at="52,5,53,235" concept="8" />
+      <node id="873949054148956570" at="52,5,53,249" concept="8" />
       <node id="2153278993335534639" at="58,53,59,183" concept="8" />
       <node id="6718020819487638496" at="62,87,63,81" concept="7" />
       <node id="6718020819487638496" at="63,81,64,35" concept="2" />
@@ -34424,7 +34424,7 @@
         <var name="editorContext" id="6718020819487638512" />
         <var name="node" id="6718020819487638512" />
       </scope>
-      <scope id="873949054148906688" at="49,107,53,235" />
+      <scope id="873949054148906688" at="49,107,53,249" />
       <scope id="6718020819487638496" at="31,89,37,22">
         <var name="editorCell" id="6718020819487638496" />
       </scope>
@@ -39880,13 +39880,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/873949054148909010">
     <file name="DefaultTransformationMenuUtil.java">
-      <node id="873949054148912705" at="14,73,15,357" concept="8" />
-      <node id="873949054148910595" at="14,0,17,0" concept="10" trace="findDefaultMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="873949054148910598" at="14,73,15,357" />
-      <scope id="873949054148910595" at="14,0,17,0">
+      <node id="873949054148912705" at="15,103,16,238" concept="8" />
+      <node id="4001367738979285017" at="18,87,19,216" concept="8" />
+      <node id="4001367738979297585" at="21,83,22,212" concept="8" />
+      <node id="873949054148910595" at="15,0,18,0" concept="10" trace="findDefaultMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4001367738979285015" at="18,0,21,0" concept="10" trace="findDefaultTransformationMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4001367738979297583" at="21,0,24,0" concept="10" trace="findDefaultSubstituteMenuForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="873949054148910598" at="15,103,16,238" />
+      <scope id="4001367738979285016" at="18,87,19,216" />
+      <scope id="4001367738979297584" at="21,83,22,212" />
+      <scope id="873949054148910595" at="15,0,18,0">
         <var name="concept" id="873949054148910854" />
+        <var name="menuConcept" id="4001367738979275762" />
       </scope>
-      <unit id="873949054148909010" at="13,0,18,0" name="jetbrains.mps.lang.editor.editor.DefaultTransformationMenuUtil" />
+      <scope id="4001367738979285015" at="18,0,21,0">
+        <var name="concept" id="4001367738979285030" />
+      </scope>
+      <scope id="4001367738979297583" at="21,0,24,0">
+        <var name="concept" id="4001367738979297594" />
+      </scope>
+      <unit id="873949054148909010" at="14,0,25,0" name="jetbrains.mps.lang.editor.editor.DefaultTransformationMenuUtil" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/8740634663377282528">

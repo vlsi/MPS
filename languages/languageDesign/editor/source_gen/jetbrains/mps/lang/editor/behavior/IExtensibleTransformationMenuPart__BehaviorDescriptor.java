@@ -32,8 +32,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IExtensibleMenuPart__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart");
+public final class IExtensibleTransformationMenuPart__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Iterable<SConcept>> getMissingFeatures_id6kJcyCQjeiA = new SMethodBuilder<Iterable<SConcept>>(new SJavaCompoundTypeImpl((Class<Iterable<SConcept>>) ((Class) Object.class))).name("getMissingFeatures").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6kJcyCQjeiA").registry(REGISTRY).build();
@@ -46,7 +46,7 @@ public final class IExtensibleMenuPart__BehaviorDescriptor extends BaseBHDescrip
   }
 
   /*package*/ static Iterable<SConcept> getMissingFeatures_id6kJcyCQjeiA(@NotNull SNode __thisNode__) {
-    Set<SConcept> required = SetSequence.fromSetWithValues(new HashSet<SConcept>(), ListSequence.fromList(IExtensibleMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(__thisNode__)).translate(new ITranslator2<SNode, SConcept>() {
+    Set<SConcept> required = SetSequence.fromSetWithValues(new HashSet<SConcept>(), ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getLocations_id6V0bp$oM1WF.invoke(__thisNode__)).translate(new ITranslator2<SNode, SConcept>() {
       public Iterable<SConcept> translate(SNode it) {
         return (Collection<SConcept>) TransformationLocation__BehaviorDescriptor.getRequiredFeatures_id7L5lpRJHK_w.invoke(it);
       }
@@ -66,7 +66,7 @@ public final class IExtensibleMenuPart__BehaviorDescriptor extends BaseBHDescrip
     return ListSequence.fromList(new ArrayList<SConcept>());
   }
 
-  /*package*/ IExtensibleMenuPart__BehaviorDescriptor() {
+  /*package*/ IExtensibleTransformationMenuPart__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
