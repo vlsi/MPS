@@ -22,6 +22,7 @@
   <dependency className="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" file="DefaultSearchOptionsComponent.java">
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
+    <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
     <classNode dependClassName="java.lang.Override" />

@@ -26,10 +26,10 @@ public final class AbstractNodeWarningCheckOperation__BehaviorDescriptor extends
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getDefaultName_id7scb9XJdmH2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7scb9XJdmH2").registry(REGISTRY).build();
-  public static final SMethod<Void> perform_iddCRb6FLnvk = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("dCRb6FLnvk").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> perform_id1kgh5YabdhC = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1kgh5YabdhC").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<SNode> getReferencedRuleNode_id2wBFdLy8qmt = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getReferencedRuleNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("2wBFdLy8qmt").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultName_id7scb9XJdmH2, perform_iddCRb6FLnvk, getReferencedRuleNode_id2wBFdLy8qmt);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultName_id7scb9XJdmH2, perform_id1kgh5YabdhC, getReferencedRuleNode_id2wBFdLy8qmt);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -43,7 +43,7 @@ public final class AbstractNodeWarningCheckOperation__BehaviorDescriptor extends
     }
     return "Node" + warningName + "Check";
   }
-  /*package*/ static void perform_iddCRb6FLnvk(@NotNull SNode __thisNode__, SNode node) {
+  /*package*/ static void perform_id1kgh5YabdhC(@NotNull SNode __thisNode__, SNode node) {
     PerformUtil.checkNodeHasWarning(__thisNode__);
   }
   /*package*/ static SNode getReferencedRuleNode_id2wBFdLy8qmt(@NotNull SNode __thisNode__) {
@@ -72,7 +72,7 @@ public final class AbstractNodeWarningCheckOperation__BehaviorDescriptor extends
       case 0:
         return (T) ((String) getDefaultName_id7scb9XJdmH2(node));
       case 1:
-        perform_iddCRb6FLnvk(node, (SNode) parameters[0]);
+        perform_id1kgh5YabdhC(node, (SNode) parameters[0]);
         return null;
       case 2:
         return (T) ((SNode) getReferencedRuleNode_id2wBFdLy8qmt(node));

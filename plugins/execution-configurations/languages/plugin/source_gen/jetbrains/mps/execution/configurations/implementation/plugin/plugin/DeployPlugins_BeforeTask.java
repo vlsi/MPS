@@ -29,12 +29,6 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.Icon;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ConceptIconLoader;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
@@ -117,14 +111,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           consolePanel.add(actionToolbar.getComponent(), BorderLayout.WEST);
           consolePanel.add(console.getComponent(), BorderLayout.CENTER);
 
-          // this is hell 
-          // All hope abandon, ye who enter in. 
-          Icon icon = null;
-          String iconPath = MacrosFactory.forModule((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"))).expandPath("${language_descriptor}/icons/buildProject.png");
-          if ((iconPath != null && iconPath.length() > 0)) {
-            icon = ConceptIconLoader.loadIcon(iconPath, false);
-          }
-          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", icon);
+          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a71a4e);
 
           group.add(ActionManager.getInstance().getAction("Stop"));
           group.addSeparator();

@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.ui.Messages;
@@ -39,12 +40,11 @@ import java.io.File;
 import java.io.IOException;
 
 @State(
-  name = "LastBuildNumber",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/other.xml"
-    )}
+    name = "LastBuildNumber",
+    storages = {
+        @Storage(value = "sampleProjects.xml", roamingType = RoamingType.DISABLED),
+        @Storage(value = "other.xml", deprecated = true)
+    }
 )
 public class SamplesExtractor implements ApplicationComponent, PersistentStateComponent<MyState>, SamplesInfo {
   private static final Logger LOG = LogManager.getLogger(SamplesExtractor.class);
@@ -74,7 +74,9 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     }
     updateSamplesLocation();
 
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
 
     checkSamplesAndUpdateIfNeeded();
   }
@@ -145,7 +147,9 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
-            int answer = Messages.showYesNoDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
+            int answer = Messages.showYesNoDialog(
+                "Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() +
+                    " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
             if (answer == 0) {
               FileUtil.delete(samplesDir);
               actuallyExtractSamples(samplesZipFile);

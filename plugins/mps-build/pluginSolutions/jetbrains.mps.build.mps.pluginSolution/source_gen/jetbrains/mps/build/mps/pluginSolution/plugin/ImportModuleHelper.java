@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.mps.util.PathBuilder;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
@@ -29,11 +30,11 @@ public class ImportModuleHelper {
   private ModuleDescriptor moduleDescriptor;
   private PathConverter converter;
   private SNode created;
-  public ImportModuleHelper(SNode project, PathConverter converter, IFile moduleFile, ModuleDescriptor moduleDescriptor) {
+  public ImportModuleHelper(SNode project, IFile moduleFile, ModuleDescriptor moduleDescriptor) {
     this.project = project;
     this.moduleFile = moduleFile;
     this.moduleDescriptor = moduleDescriptor;
-    this.converter = converter;
+    this.converter = new PathConverter(project);
   }
   public void create() {
     try {
@@ -62,7 +63,7 @@ public class ImportModuleHelper {
     SPropertyOperations.set(module, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x742675d05378e98dL, "compact"), "" + (true));
     SPropertyOperations.set(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), moduleDescriptor.getModuleReference().getModuleName());
     SPropertyOperations.set(module, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), moduleDescriptor.getModuleReference().getModuleId().toString());
-    SLinkOperations.setTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first());
+    SLinkOperations.setTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), ListSequence.fromList(converter.convertPath(moduleFile.getPath(), new PathBuilder(SNodeOperations.getModel(project)))).first());
   }
   public void update(VisibleModules visible) {
     if ((created == null)) {

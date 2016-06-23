@@ -7,6 +7,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -21,21 +24,38 @@ public class GeneratorDebug_LabelEntry_Editor extends DefaultNodeEditor {
     return this.createCollection_mfgmav_a(editorContext, node);
   }
   private EditorCell createCollection_mfgmav_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_mfgmav_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNodeList_mfgmav_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_mfgmav_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mfgmav_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createRefNodeList_mfgmav_a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new GeneratorDebug_LabelEntry_Editor.entriesListHandler_mfgmav_a0(node, "entries", editorContext);
+  private EditorCell createProperty_mfgmav_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("label");
+    provider.setNoTargetText("<no label>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_label");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_mfgmav_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new GeneratorDebug_LabelEntry_Editor.entriesListHandler_mfgmav_b0(node, "entries", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class entriesListHandler_mfgmav_a0 extends RefNodeListHandler {
-    public entriesListHandler_mfgmav_a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class entriesListHandler_mfgmav_b0 extends RefNodeListHandler {
+    public entriesListHandler_mfgmav_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

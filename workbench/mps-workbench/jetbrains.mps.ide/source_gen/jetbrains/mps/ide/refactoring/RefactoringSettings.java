@@ -4,7 +4,6 @@ package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
@@ -13,7 +12,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-@State(name = "MpsRefactoringSettings", storages = @Storage(file = StoragePathMacros.APP_CONFIG + "/refactoringSettings.xml")
+@State(name = "MpsRefactoringSettings", storages = @Storage(value = "refactoringSettings.xml")
 )
 public class RefactoringSettings implements PersistentStateComponent<RefactoringSettings>, ApplicationComponent {
 

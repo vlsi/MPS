@@ -87,7 +87,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     for (final SModuleReference module : Sequence.fromIterable(sortedModules)) {
       Iterable<DepLink> moduleDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
         public boolean accept(DepLink it) {
-          return it.module == module && it.role.isDependency();
+          return module.equals(it.module) && it.role.isDependency();
         }
       }).distinct();
       if (Sequence.fromIterable(moduleDeps).isEmpty()) {

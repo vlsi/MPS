@@ -81,10 +81,6 @@ public class GoToModel_Action extends BaseAction {
       private SModelReference myModelRef;
       public void elementChosen(Object p0) {
         myModelRef = goToModelModel.getModelObject(p0);
-      }
-
-      @Override
-      public void onClose() {
         if (myModelRef != null) {
           new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModelRef);
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:92932ea9-7c1a-42ec-ba50-b485e2406f2b(jetbrains.mps.ide.ui.util)/4744614252206716878">
@@ -13,5 +13,5 @@
       <unit id="4744614252206716878" at="11,0,16,0" name="jetbrains.mps.ide.ui.util.NodeAttributesUtil" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

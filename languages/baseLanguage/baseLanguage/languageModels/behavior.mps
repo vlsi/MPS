@@ -67,7 +67,7 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconResourceReference" flags="nn" index="1QGGTy">
+      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconReference" flags="nn" index="1QGGTy">
         <reference id="8974276187400029896" name="declaration" index="1QGGTH" />
       </concept>
     </language>
@@ -35059,12 +35059,8 @@
         <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="3clFbS" id="i1LP2xL" role="3clF47">
-        <node concept="YS8fn" id="i1LPhem" role="3cqZAp">
-          <node concept="2ShNRf" id="i1LPhLr" role="YScLw">
-            <node concept="1pGfFk" id="i1LPspY" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
+        <node concept="3cpWs6" id="7YqewBNdY4h" role="3cqZAp">
+          <node concept="10Nm6u" id="7YqewBNdYjM" role="3cqZAk" />
         </node>
       </node>
     </node>

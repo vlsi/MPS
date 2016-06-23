@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="14,0,45,0" name="org.jetbrains.mps.samples.DecisionTable.structure.ConceptPresentationAspectImpl" />
@@ -8,5 +8,5 @@
       <unit at="18,0,46,0" name="org.jetbrains.mps.samples.DecisionTable.structure.StructureAspectDescriptor" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

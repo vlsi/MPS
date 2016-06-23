@@ -178,7 +178,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -2866,17 +2868,18 @@
           <node concept="3cpWs8" id="3Cep5Ce5gTB" role="3cqZAp">
             <node concept="3cpWsn" id="3Cep5Ce5gTC" role="3cpWs9">
               <property role="TrG5h" value="successors" />
-              <node concept="_YKpA" id="3Cep5Ce5gTD" role="1tU5fm">
-                <node concept="3uibUv" id="5DqLs1FkCqB" role="_ZDj9">
-                  <ref role="3uigEE" to="qpn1:~SNodeEntry" resolve="SNodeEntry" />
-                </node>
-              </node>
               <node concept="3EllGN" id="3Cep5Ce5gTF" role="33vP2m">
                 <node concept="37vLTw" id="3GM_nagTyu0" role="3ElVtu">
                   <ref role="3cqZAo" node="5DqLs1Fk_Gs" resolve="key" />
                 </node>
                 <node concept="37vLTw" id="3ua3KnoPwio" role="3ElQJh">
                   <ref role="3cqZAo" node="3ua3KnoPuk3" resolve="result" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="40IlgrTx1aR" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                <node concept="3uibUv" id="40IlgrTx219" role="11_B2D">
+                  <ref role="3uigEE" to="qpn1:~SNodeEntry" resolve="SNodeEntry" />
                 </node>
               </node>
             </node>
@@ -2892,8 +2895,9 @@
               <node concept="3clFbF" id="3Cep5Ce5gTN" role="3cqZAp">
                 <node concept="37vLTI" id="3Cep5Ce5gTO" role="3clFbG">
                   <node concept="2ShNRf" id="3Cep5Ce5gTP" role="37vLTx">
-                    <node concept="Tc6Ow" id="3Cep5Ce5gTQ" role="2ShVmc">
-                      <node concept="3uibUv" id="5DqLs1FkCaW" role="HW$YZ">
+                    <node concept="1pGfFk" id="40IlgrTxsoM" role="2ShVmc">
+                      <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                      <node concept="3uibUv" id="40IlgrTxsPI" role="1pMfVU">
                         <ref role="3uigEE" to="qpn1:~SNodeEntry" resolve="SNodeEntry" />
                       </node>
                     </node>
@@ -2922,11 +2926,12 @@
           </node>
           <node concept="3clFbF" id="3Cep5Ce5gTZ" role="3cqZAp">
             <node concept="2OqwBi" id="3Cep5Ce5gU0" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagTz1_" role="2Oq$k0">
+              <node concept="37vLTw" id="40IlgrTxtOm" role="2Oq$k0">
                 <ref role="3cqZAo" node="3Cep5Ce5gTC" resolve="successors" />
               </node>
-              <node concept="TSZUe" id="3Cep5Ce5gU2" role="2OqNvi">
-                <node concept="2ShNRf" id="5DqLs1FkCJr" role="25WWJ7">
+              <node concept="liA8E" id="40IlgrTxvTd" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                <node concept="2ShNRf" id="5DqLs1FkCJr" role="37wK5m">
                   <node concept="1pGfFk" id="5DqLs1FkDgk" role="2ShVmc">
                     <ref role="37wK5l" to="qpn1:~SNodeEntry.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="SNodeEntry" />
                     <node concept="2OqwBi" id="5DqLs1FkDpX" role="37wK5m">

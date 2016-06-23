@@ -15,12 +15,16 @@
  */
 package jetbrains.mps;
 
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.module.ModifiableModuleModel;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleWithNameAlreadyExists;
-import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.module.impl.ModuleEx;
+import com.intellij.openapi.module.impl.ModuleManagerImpl;
+import com.intellij.openapi.project.Project;
 import com.intellij.util.graph.Graph;
+import com.intellij.util.messages.MessageBus;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +33,12 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
-public class EmptyModuleManager extends ModuleManager{
+@State(name = ModuleManagerImpl.COMPONENT_NAME, storages = @Storage("modules.xml"))
+public class EmptyModuleManager extends ModuleManagerImpl{
+  public EmptyModuleManager(Project project, MessageBus messageBus) {
+    super(project, messageBus);
+  }
+
   @NotNull
   @Override
   public Module newModule(@NotNull @NonNls String filePath, String moduleTypeId) {
@@ -38,7 +47,7 @@ public class EmptyModuleManager extends ModuleManager{
 
   @NotNull
   @Override
-  public Module loadModule(@NotNull String filePath) throws InvalidDataException, IOException, JDOMException, ModuleWithNameAlreadyExists {
+  public Module loadModule(@NotNull String filePath) throws IOException, JDOMException, ModuleWithNameAlreadyExists {
     return null;
   }
 
@@ -79,6 +88,18 @@ public class EmptyModuleManager extends ModuleManager{
   @Override
   public boolean isModuleDependent(@NotNull Module module, @NotNull Module onModule) {
     return false;
+  }
+
+  @NotNull
+  @Override
+  protected ModuleEx createModule(@NotNull String filePath) {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  protected ModuleEx createAndLoadModule(@NotNull String filePath) throws IOException {
+    return null;
   }
 
   @NotNull

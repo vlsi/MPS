@@ -25,6 +25,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Backgroundable;
@@ -67,12 +68,7 @@ import java.util.List;
 
 @State(
     name = "UsagesViewTool",
-    storages = {
-        @Storage(
-            id = "other",
-            file = "$WORKSPACE_FILE$"
-        )
-    }
+    storages = @Storage(StoragePathMacros.WORKSPACE_FILE)
 )
 public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element> {
 
@@ -214,9 +210,13 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void read(Element element, jetbrains.mps.project.Project project) {
     Element versionXML = element.getChild(VERSION);
-    if (versionXML == null) return;
+    if (versionXML == null) {
+      return;
+    }
     String version = versionXML.getAttribute(ID).getValue();
-    if (!VERSION_NUMBER.equals(version)) return;
+    if (!VERSION_NUMBER.equals(version)) {
+      return;
+    }
 
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
@@ -383,8 +383,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
       //this is to partially fix MPS-14671
-      if (myUsagesView.getTreeComponent().getAllResultNodes().size() > 500)
+      if (myUsagesView.getTreeComponent().getAllResultNodes().size() > 500) {
         throw new CantSaveSomethingException("usages view size too big to save");
+      }
 
 
       if (mySearchTask != null) {

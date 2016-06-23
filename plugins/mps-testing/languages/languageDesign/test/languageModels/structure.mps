@@ -16,7 +16,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -50,7 +50,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -246,8 +248,8 @@
     <property role="R4oN_" value="tag for checking either type errors or error messages, attached to some node" />
     <property role="EcuMT" value="1215601147424" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3zy9SwK6V1b" role="PzmwI">
-      <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
+    <node concept="PrWs8" id="1kgh5Yab39U" role="PzmwI">
+      <ref role="PrY4T" node="1kgh5Yab2sH" resolve="INodesTestMethod" />
     </node>
     <node concept="PrWs8" id="3zy9SwK6V3d" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -492,6 +494,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1225989811227" />
       <ref role="20lvS9" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="7JT4LO$qcEi" role="1TKVEi">
+      <property role="IQ2ns" value="8933192351751916178" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="hQJ5G8s">
@@ -840,6 +849,9 @@
         <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
+    <node concept="PrWs8" id="1kgh5Yab3a1" role="PzmwI">
+      <ref role="PrY4T" node="1kgh5Yab2sH" resolve="INodesTestMethod" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3aUmKV2nYBN">
     <property role="TrG5h" value="ScopesExpectedNode" />
@@ -1153,6 +1165,112 @@
       <property role="TrG5h" value="message" />
       <property role="IQ2nx" value="5219531754070085223" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVZA9M">
+    <property role="EcuMT" value="2153278993334166130" />
+    <property role="3GE5qa" value="nodeOperation" />
+    <property role="TrG5h" value="NodeInfoCheckOperation" />
+    <property role="34LRSv" value="has info" />
+    <ref role="1TJDcQ" node="3J6bWQr0BO4" resolve="NodeRuleCheckOperation" />
+    <node concept="1TJgyj" id="1RxYXnVZDuH" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="statementRef" />
+      <property role="IQ2ns" value="2153278993334179757" />
+      <ref role="20lvS9" node="1RxYXnVZDNT" resolve="InfoStatementReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVZDNT">
+    <property role="TrG5h" value="InfoStatementReference" />
+    <property role="EcuMT" value="2153278993334181113" />
+    <node concept="1TJgyj" id="1RxYXnVZDNU" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2153278993334181114" />
+      <ref role="20ksaX" node="7eBNsYUkvtl" />
+      <ref role="20lvS9" to="tpd4:hODpp5F" resolve="InfoStatement" />
+    </node>
+    <node concept="PrWs8" id="1RxYXnVZDNV" role="PzmwI">
+      <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVXz$p">
+    <property role="EcuMT" value="2153278993333631257" />
+    <property role="TrG5h" value="MockScopeProvider" />
+    <property role="3GE5qa" value="scopes" />
+    <property role="34LRSv" value="mock scopes" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1RxYXnVXz$q" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="1TJgyj" id="1RxYXnVXBGj" role="1TKVEi">
+      <property role="IQ2ns" value="2153278993333648147" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="entries" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="1RxYXnVXBFy" resolve="ScopeEntry" />
+    </node>
+    <node concept="1TJgyj" id="1RxYXnVZ8u5" role="1TKVEi">
+      <property role="IQ2ns" value="2153278993334044549" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="node" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVXBFy">
+    <property role="EcuMT" value="2153278993333648098" />
+    <property role="3GE5qa" value="scopes" />
+    <property role="TrG5h" value="ScopeEntry" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1RxYXnVXBF_" role="1TKVEi">
+      <property role="IQ2ns" value="2153278993333648101" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1RxYXnVYs8h" resolve="NamedNodeReference" />
+    </node>
+    <node concept="1TJgyj" id="1RxYXnVYpq4" role="1TKVEi">
+      <property role="IQ2ns" value="2153278993333851780" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="kind" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RxYXnVYs8h">
+    <property role="EcuMT" value="2153278993333862929" />
+    <property role="3GE5qa" value="scopes" />
+    <property role="TrG5h" value="NamedNodeReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1RxYXnVYs8i" role="1TKVEi">
+      <property role="IQ2ns" value="2153278993333862930" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="node" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1kgh5Yab2sH">
+    <property role="EcuMT" value="1517788251554588461" />
+    <property role="TrG5h" value="INodesTestMethod" />
+    <node concept="PrWs8" id="1kgh5Yab39S" role="PrDN$">
+      <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="wUiM63T4Ip">
+    <property role="EcuMT" value="592868908271422361" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="IsIntentionApplicableExpression" />
+    <property role="34LRSv" value="is intention applicable" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="wUiM63T4Iq" role="1TKVEi">
+      <property role="IQ2ns" value="592868908271422362" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="intention" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
     </node>
   </node>
 </model>

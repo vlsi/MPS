@@ -456,10 +456,6 @@ public class MPSModulesClosure {
     return myModules;
   }
 
-  public Iterable<SNode> getLanguagesWithRuntime() {
-    return myLanguagesWithRuntime;
-  }
-
   public Iterable<SNode> getAllModules() {
     return Sequence.fromIterable(((Iterable<SNode>) myModules)).concat(Sequence.fromIterable((Iterable<SNode>) myLanguagesWithRuntime)).concat(Sequence.fromIterable((Iterable<SNode>) myDevkits));
   }

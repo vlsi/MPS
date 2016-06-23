@@ -74,5 +74,10 @@
     <property role="34LRSv" value="location with no available features" />
     <ref role="1TJDcQ" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
   </node>
+  <node concept="1TIwiD" id="2mvci7PA05Z">
+    <property role="EcuMT" value="2710939522624389503" />
+    <property role="TrG5h" value="TransformationMenu_Test" />
+    <ref role="1TJDcQ" to="tpc2:4Sf$XywF3UU" resolve="TransformationMenu" />
+  </node>
 </model>
 

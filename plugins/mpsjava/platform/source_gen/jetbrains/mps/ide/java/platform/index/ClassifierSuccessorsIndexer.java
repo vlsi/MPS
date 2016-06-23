@@ -151,10 +151,10 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
       SNodeEntry key = new SNodeEntry(targetNode);
       List<SNodeEntry> successors = MapSequence.fromMap(result).get(key);
       if (successors == null) {
-        successors = ListSequence.fromList(new ArrayList<SNodeEntry>());
+        successors = new ArrayList<SNodeEntry>();
         MapSequence.fromMap(result).put(key, successors);
       }
-      ListSequence.fromList(successors).addElement(new SNodeEntry(SNodeOperations.getPointer(node)));
+      successors.add(new SNodeEntry(SNodeOperations.getPointer(node)));
     }
   }
 }

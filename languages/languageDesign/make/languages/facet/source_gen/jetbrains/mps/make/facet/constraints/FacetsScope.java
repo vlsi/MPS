@@ -15,9 +15,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -60,11 +58,7 @@ public class FacetsScope extends SimpleScope {
     // collect models 
     Iterable<SModel> models = SetSequence.fromSet(contextModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
-        if (it instanceof Language) {
-          return Sequence.<SModel>singleton(LanguageAspect.PLUGIN.get((Language) it));
-        } else {
-          return it.getModels();
-        }
+        return it.getModels();
       }
     });
 

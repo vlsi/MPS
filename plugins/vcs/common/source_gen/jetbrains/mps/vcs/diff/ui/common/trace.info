@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -2031,7 +2031,7 @@
       <node id="2492043904134112134" at="123,53,124,33" concept="14" />
       <node id="2492043904135320268" at="124,33,125,25" concept="12" />
       <node id="3815070587792254270" at="126,45,127,134" concept="12" />
-      <node id="3815070587792755260" at="128,55,129,32" concept="6" />
+      <node id="3815070587792755260" at="128,73,129,32" concept="6" />
       <node id="3815070587792838352" at="129,32,130,14" concept="2" />
       <node id="3815070587791559513" at="132,5,133,0" concept="15" />
       <node id="2492043904135576330" at="134,23,135,23" concept="6" />
@@ -2047,7 +2047,7 @@
       <node id="4652592318748339526" at="155,0,156,0" concept="11" trace="updateRootCustomPresentation#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)V" />
       <node id="4652592318748339533" at="156,0,157,0" concept="11" trace="getRootActions#()Ljava/lang/Iterable;" />
       <node id="4652592318748339578" at="157,43,158,17" concept="13" />
-      <node id="4652592318748339593" at="166,59,167,81" concept="13" />
+      <node id="4652592318748339593" at="166,59,167,59" concept="13" />
       <node id="2492043904134622080" at="171,53,172,42" concept="13" />
       <node id="2492043904134290593" at="174,61,175,101" concept="12" />
       <node id="2492043904134466900" at="175,101,176,76" concept="13" />
@@ -2115,6 +2115,8 @@
       <node id="2848593482133771704" at="334,5,335,16" concept="13" />
       <node id="4652592318748339480" at="337,55,338,43" concept="13" />
       <node id="3815070587792504084" at="340,68,341,47" concept="13" />
+      <node id="456758165254246396" at="343,65,344,46" concept="13" />
+      <node id="456758165254728388" at="346,70,347,46" concept="13" />
       <node id="309145655715637073" at="72,14,74,9" concept="1" />
       <node id="309145655690158416" at="160,0,162,0" concept="11" trace="onUnselect#()V" />
       <node id="309145655692267969" at="162,0,164,0" concept="11" trace="onSelectRoot#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
@@ -2154,6 +2156,8 @@
       <node id="2848593482133771704" at="331,130,334,5" concept="10" />
       <node id="4652592318748339480" at="337,0,340,0" concept="17" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="3815070587792504084" at="340,0,343,0" concept="17" trace="as_5x0uld_a0a0a2a5#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="456758165254246396" at="343,0,346,0" concept="17" trace="eq_5x0uld_a0a1a2a5#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="456758165254728388" at="346,0,349,0" concept="17" trace="eq_5x0uld_a0a0a0a0a0a0p#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="4652592318748339456" at="102,13,106,11" concept="10" />
       <node id="3815070587792353622" at="127,134,131,7" concept="10" />
       <node id="2492043904134160703" at="174,0,178,0" concept="11" trace="hasNeighbour#(Lorg/jetbrains/mps/openapi/model/SNodeId;Z)Z" />
@@ -2218,7 +2222,7 @@
       </scope>
       <scope id="4652592318748339533" at="156,0,157,0" />
       <scope id="4652592318748339577" at="157,43,158,17" />
-      <scope id="4652592318748339592" at="166,59,167,81" />
+      <scope id="4652592318748339592" at="166,59,167,59" />
       <scope id="2492043904134476178" at="171,53,172,42" />
       <scope id="4652592318748339662" at="184,58,185,58" />
       <scope id="4652592318748339702" at="192,62,193,62" />
@@ -2246,8 +2250,10 @@
       <scope id="2848593482133771704" at="332,36,333,49" />
       <scope id="4652592318748339480" at="337,55,338,43" />
       <scope id="3815070587792504084" at="340,68,341,47" />
+      <scope id="456758165254246396" at="343,65,344,46" />
+      <scope id="456758165254728388" at="346,70,347,46" />
       <scope id="4652592318748339457" at="103,30,105,34" />
-      <scope id="3815070587792353624" at="128,55,130,14" />
+      <scope id="3815070587792353624" at="128,73,130,14" />
       <scope id="309145655690158416" at="160,0,162,0" />
       <scope id="309145655692267969" at="162,0,164,0">
         <var name="rootId" id="309145655692949400" />
@@ -2333,6 +2339,14 @@
       <scope id="3815070587792504084" at="340,0,343,0">
         <var name="o" id="3815070587792504084" />
         <var name="type" id="3815070587792504084" />
+      </scope>
+      <scope id="456758165254246396" at="343,0,346,0">
+        <var name="a" id="456758165254246396" />
+        <var name="b" id="456758165254246396" />
+      </scope>
+      <scope id="456758165254728388" at="346,0,349,0">
+        <var name="a" id="456758165254728388" />
+        <var name="b" id="456758165254728388" />
       </scope>
       <scope id="2034046503361591686" at="145,25,149,27" />
       <scope id="2492043904134160703" at="174,0,178,0">
@@ -2451,7 +2465,7 @@
       <unit id="4652592318748339326" at="256,0,273,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$MetadataTreeNode" />
       <unit id="4652592318748339138" at="210,0,256,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$RootTreeNode" />
       <unit id="8694267608197375767" at="273,0,331,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$TreeNode" />
-      <unit id="4652592318748339080" at="44,0,344,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
+      <unit id="4652592318748339080" at="44,0,350,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
     </file>
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/4652592318748339723">
@@ -3074,35 +3088,6 @@
       <unit id="4652592318748340561" at="40,0,264,0" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />
     </file>
   </root>
-  <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/4652592318748341187">
-    <file name="SimpleDiffRequest.java">
-      <node id="4652592318748341188" at="12,0,13,0" concept="7" trace="myContentTitles" />
-      <node id="8398535039686069478" at="13,0,14,0" concept="7" trace="myContents" />
-      <node id="7890429894027177750" at="14,119,15,19" concept="18" />
-      <node id="7890429894027177752" at="15,19,16,36" concept="6" />
-      <node id="7548688593816109274" at="16,36,17,24" concept="6" />
-      <node id="4864705176521720903" at="20,34,21,30" concept="13" />
-      <node id="4652592318748341220" at="24,38,25,27" concept="13" />
-      <node id="8398535039686069485" at="29,38,30,22" concept="13" />
-      <node id="4652592318748341209" at="19,0,23,0" concept="11" trace="getWindowTitle#()Ljava/lang/String;" />
-      <node id="4652592318748341215" at="23,0,27,0" concept="11" trace="getContentTitles#()[Ljava/lang/String;" />
-      <node id="7890429894027177746" at="14,0,19,0" concept="3" trace="SimpleDiffRequest#(Lcom/intellij/openapi/project/Project;[Lcom/intellij/openapi/diff/DiffContent;[Ljava/lang/String;)V" />
-      <node id="4652592318748341222" at="27,0,32,0" concept="11" trace="getContents#()[Lcom/intellij/openapi/diff/DiffContent;" />
-      <scope id="4652592318748341212" at="20,34,21,30" />
-      <scope id="4652592318748341219" at="24,38,25,27" />
-      <scope id="4652592318748341226" at="29,38,30,22" />
-      <scope id="7890429894027177749" at="14,119,17,24" />
-      <scope id="4652592318748341209" at="19,0,23,0" />
-      <scope id="4652592318748341215" at="23,0,27,0" />
-      <scope id="7890429894027177746" at="14,0,19,0">
-        <var name="contentTitles" id="7890429894027177758" />
-        <var name="models" id="7890429894027177766" />
-        <var name="project" id="7890429894027177756" />
-      </scope>
-      <scope id="4652592318748341222" at="27,0,32,0" />
-      <unit id="4652592318748341187" at="11,0,33,0" name="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
-    </file>
-  </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/6402272430682108518">
     <file name="DiffChangeGroupLayout.java">
       <node id="6402272430682108982" at="15,0,16,0" concept="7" trace="myLeftEditor" />
@@ -3429,5 +3414,5 @@
       <unit id="9170101780449072521" at="26,0,87,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

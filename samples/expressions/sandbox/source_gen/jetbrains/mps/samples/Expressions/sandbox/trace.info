@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208335362:jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
   <root nodeRef="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)/2073504467208336329">
     <file name="Main.java">
@@ -21,5 +21,5 @@
       <unit id="3453667744252546022" at="11,0,15,0" name="jetbrains.mps.samples.Expressions.sandbox.TypeError" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

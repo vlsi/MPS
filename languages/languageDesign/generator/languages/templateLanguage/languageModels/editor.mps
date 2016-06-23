@@ -7156,9 +7156,15 @@
   <node concept="24kQdi" id="3mwbQJWA1Fe">
     <property role="3GE5qa" value="debug" />
     <ref role="1XX52x" to="tpf8:3mwbQJWA0r4" resolve="GeneratorDebug_LabelEntry" />
-    <node concept="3F2HdR" id="3mwbQJWA1Fg" role="2wV5jI">
-      <ref role="1NtTu8" to="tpf8:3mwbQJWA13F" />
-      <node concept="2iRkQZ" id="3mwbQJWA1Fj" role="2czzBx" />
+    <node concept="3EZMnI" id="2LhwpWcGWU8" role="2wV5jI">
+      <node concept="3F0A7n" id="2LhwpWcGWUk" role="3EZMnx">
+        <ref role="1NtTu8" to="tpf8:3mwbQJWA13D" resolve="label" />
+      </node>
+      <node concept="2iRkQZ" id="2LhwpWcGWU9" role="2iSdaV" />
+      <node concept="3F2HdR" id="3mwbQJWA1Fg" role="3EZMnx">
+        <ref role="1NtTu8" to="tpf8:3mwbQJWA13F" />
+        <node concept="2iRkQZ" id="3mwbQJWA1Fj" role="2czzBx" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3mwbQJWA1GV">

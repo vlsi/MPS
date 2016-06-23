@@ -258,9 +258,6 @@
     <dependency org="lib.src" name="jsch-agent-proxy.zip" rev="${idea.platform.version}">
       <artifact name="jsch-agent-proxy.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="jsr166e_src.jar" rev="${idea.platform.version}">
-      <artifact name="jsr166e_src.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib.src" name="junit-4.12-sources.jar" rev="${idea.platform.version}">
       <artifact name="junit-4.12-sources.jar" ext="jar"/>
     </dependency>
@@ -281,6 +278,9 @@
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}">
+      <artifact name="platform.src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="${idea.platform.version}">
       <artifact name="sanselan-0.98-snapshot-src.jar" ext="jar"/>
@@ -413,9 +413,6 @@
     </dependency>
     <dependency org="lib" name="jsch-0.1.52.jar" rev="${idea.platform.version}">
       <artifact name="jsch-0.1.52.jar" ext="jar"/>
-    </dependency>
-    <dependency org="lib" name="jsr166e.jar" rev="${idea.platform.version}">
-      <artifact name="jsr166e.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="jsr173_1.0_api.jar" rev="${idea.platform.version}">
       <artifact name="jsr173_1.0_api.jar" ext="jar"/>

@@ -2002,6 +2002,9 @@
     <node concept="lpD6D" id="3FJ0r$qO3df" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4x5$o71Ilqm" resolve="InterWithNonLabelSelected" />
     </node>
+    <node concept="lpD6D" id="5n95PhUqtjO" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5n95PhUqosj" resolve="CreateEnumConstantReference" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT6o" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5hxHU7NKJpR" resolve="EmptyEnumConstantCreationTest" />
     </node>

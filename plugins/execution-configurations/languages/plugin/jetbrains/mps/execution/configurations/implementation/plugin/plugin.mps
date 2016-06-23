@@ -144,8 +144,14 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
+      </concept>
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
+        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      </concept>
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -682,9 +688,6 @@
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
-        <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -9329,80 +9332,6 @@
                     </node>
                   </node>
                   <node concept="3clFbH" id="2diPio0It19" role="3cqZAp" />
-                  <node concept="3SKdUt" id="6hlEMz_ltu6" role="3cqZAp">
-                    <node concept="3SKdUq" id="6hlEMz_ltvr" role="3SKWNk">
-                      <property role="3SKdUp" value="this is hell" />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="2diPio0IuBD" role="3cqZAp">
-                    <node concept="3SKdUq" id="2diPio0Ivi3" role="3SKWNk">
-                      <property role="3SKdUp" value="All hope abandon, ye who enter in." />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="2diPio0IeRM" role="3cqZAp">
-                    <node concept="3cpWsn" id="2diPio0IeRN" role="3cpWs9">
-                      <property role="TrG5h" value="icon" />
-                      <node concept="3uibUv" id="2diPio0IeRL" role="1tU5fm">
-                        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-                      </node>
-                      <node concept="10Nm6u" id="7up3O4Xw_An" role="33vP2m" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="2diPio0Ih3t" role="3cqZAp">
-                    <node concept="3cpWsn" id="2diPio0Ih3u" role="3cpWs9">
-                      <property role="TrG5h" value="iconPath" />
-                      <node concept="3uibUv" id="2diPio0Ih3o" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
-                      <node concept="2OqwBi" id="2diPio0Ih3v" role="33vP2m">
-                        <node concept="2YIFZM" id="2diPio0Ih3w" role="2Oq$k0">
-                          <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                          <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                          <node concept="10QFUN" id="7up3O4XwBFX" role="37wK5m">
-                            <node concept="3uibUv" id="7up3O4XwBNa" role="10QFUM">
-                              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                            </node>
-                            <node concept="3rM5sP" id="2diPio0Ih3x" role="10QFUP">
-                              <property role="3rM5sR" value="798100da-4f0a-421a-b991-71f8c50ce5d2" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="2diPio0Ih3y" role="2OqNvi">
-                          <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                          <node concept="Xl_RD" id="2diPio0Ih3z" role="37wK5m">
-                            <property role="Xl_RC" value="${language_descriptor}/icons/buildProject.png" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="2diPio0Ihe3" role="3cqZAp">
-                    <node concept="3clFbS" id="2diPio0Ihe6" role="3clFbx">
-                      <node concept="3clFbF" id="2diPio0Ifxf" role="3cqZAp">
-                        <node concept="37vLTI" id="2diPio0Ifxh" role="3clFbG">
-                          <node concept="2YIFZM" id="5vfjF5cfa7J" role="37vLTx">
-                            <ref role="37wK5l" to="w1kc:~ConceptIconLoader.loadIcon(java.lang.String,boolean):javax.swing.Icon" resolve="loadIcon" />
-                            <ref role="1Pybhc" to="w1kc:~ConceptIconLoader" resolve="ConceptIconLoader" />
-                            <node concept="37vLTw" id="5vfjF5cfa7K" role="37wK5m">
-                              <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
-                            </node>
-                            <node concept="3clFbT" id="5vfjF5cfa7L" role="37wK5m">
-                              <property role="3clFbU" value="false" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="2diPio0Ifxl" role="37vLTJ">
-                            <ref role="3cqZAo" node="2diPio0IeRN" resolve="icon" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="2diPio0Iif0" role="3clFbw">
-                      <node concept="37vLTw" id="2diPio0IhRE" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2diPio0Ih3u" resolve="iconPath" />
-                      </node>
-                      <node concept="17RvpY" id="2diPio0IrFZ" role="2OqNvi" />
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="6hlEMz_kRtv" role="3cqZAp">
                     <node concept="3cpWsn" id="6hlEMz_kRtw" role="3cpWs9">
                       <property role="TrG5h" value="descriptor" />
@@ -9424,8 +9353,10 @@
                           <node concept="Xl_RD" id="6hlEMz_kRtC" role="37wK5m">
                             <property role="Xl_RC" value="Deploy plugins" />
                           </node>
-                          <node concept="37vLTw" id="2diPio0IeRU" role="37wK5m">
-                            <ref role="3cqZAo" node="2diPio0IeRN" resolve="icon" />
+                          <node concept="1QGGTA" id="Z6TQiSW4HD" role="37wK5m">
+                            <node concept="1QGGSu" id="Z6TQiSW4HF" role="1QGGTw">
+                              <property role="1QGGTI" value="${module}/icons/buildProject.png" />
+                            </node>
                           </node>
                         </node>
                       </node>

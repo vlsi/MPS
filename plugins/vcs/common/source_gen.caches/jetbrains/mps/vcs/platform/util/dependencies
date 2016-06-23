@@ -29,7 +29,6 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.util.MergeBackupUtil" file="MergeBackupUtil.java">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
     <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.io.ZipUtil" />

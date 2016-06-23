@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
@@ -22,8 +22,8 @@
       <node id="6374750171056867760" at="42,232,43,230" concept="4" />
       <node id="6374750171056867534" at="43,230,44,148" concept="1" />
       <node id="6374750171056867549" at="44,148,45,92" concept="1" />
-      <node id="6374750171056867477" at="48,75,49,230" concept="4" />
-      <node id="6374750171056867477" at="49,230,50,124" concept="1" />
+      <node id="6374750171056867477" at="48,75,49,242" concept="4" />
+      <node id="6374750171056867477" at="49,242,50,123" concept="1" />
       <node id="6374750171056867481" at="53,46,54,92" concept="5" />
       <node id="6374750171056867499" at="56,101,57,76" concept="4" />
       <node id="1046929382685538618" at="57,76,58,0" concept="6" />
@@ -57,7 +57,7 @@
       <scope id="6374750171056867477" at="53,46,54,92" />
       <scope id="6374750171056867477" at="26,51,28,117" />
       <scope id="6374750171056867477" at="31,73,33,139" />
-      <scope id="6374750171056867477" at="48,75,50,124">
+      <scope id="6374750171056867477" at="48,75,50,123">
         <var name="operation" id="6374750171056867477" />
       </scope>
       <scope id="6374750171056867477" at="53,0,56,0" />
@@ -314,12 +314,12 @@
       <node id="7289865355732881079" at="23,112,24,124" concept="1" />
       <node id="7289865355732881079" at="27,73,28,112" concept="1" />
       <node id="7289865355732881079" at="28,112,29,120" concept="1" />
-      <node id="7289865355732881079" at="35,75,36,230" concept="4" />
-      <node id="7289865355732881079" at="36,230,37,124" concept="1" />
-      <node id="7289865355732881079" at="39,79,40,230" concept="4" />
-      <node id="7289865355732881079" at="40,230,41,124" concept="1" />
-      <node id="7289865355732881079" at="43,75,44,230" concept="4" />
-      <node id="7289865355732881079" at="44,230,45,124" concept="1" />
+      <node id="7289865355732881079" at="35,75,36,242" concept="4" />
+      <node id="7289865355732881079" at="36,242,37,123" concept="1" />
+      <node id="7289865355732881079" at="39,79,40,242" concept="4" />
+      <node id="7289865355732881079" at="40,242,41,123" concept="1" />
+      <node id="7289865355732881079" at="43,75,44,242" concept="4" />
+      <node id="7289865355732881079" at="44,242,45,123" concept="1" />
       <node id="7289865355732881079" at="35,0,39,0" concept="3" trace="test_NodeErrorCheck5462327771639049246#()V" />
       <node id="7289865355732881079" at="39,0,43,0" concept="3" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
       <node id="7289865355732881079" at="43,0,47,0" concept="3" trace="test_NodeErrorCheck1674014916759209386#()V" />
@@ -329,13 +329,13 @@
       <scope id="7289865355732881079" at="17,73,19,120" />
       <scope id="7289865355732881079" at="22,77,24,124" />
       <scope id="7289865355732881079" at="27,73,29,120" />
-      <scope id="7289865355732881079" at="35,75,37,124">
+      <scope id="7289865355732881079" at="35,75,37,123">
         <var name="operation" id="7289865355732881079" />
       </scope>
-      <scope id="7289865355732881079" at="39,79,41,124">
+      <scope id="7289865355732881079" at="39,79,41,123">
         <var name="operation" id="7289865355732881079" />
       </scope>
-      <scope id="7289865355732881079" at="43,75,45,124">
+      <scope id="7289865355732881079" at="43,75,45,123">
         <var name="operation" id="7289865355732881079" />
       </scope>
       <scope id="7289865355732881079" at="35,0,39,0" />
@@ -348,5 +348,5 @@
       <unit id="7289865355732881079" at="14,0,50,0" name="jetbrains.mps.closures.test.model.Generics_Test" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

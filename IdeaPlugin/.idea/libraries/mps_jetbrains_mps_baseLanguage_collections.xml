@@ -1,9 +1,12 @@
 <component name="libraryTable">
-  <library name="mps.jetbrains.mps.baseLanguage.collections">
+  <library name="mps.jetbrains.mps.baseLanguage.collections" type="mps.solution.library">
     <CLASSES>
-      <root url="jar://$PLUGINS_PATH$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar!/" />
     </CLASSES>
     <JAVADOC />
+    <MPS_MODULE_XML>
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar!/META-INF/module.xml" />
+    </MPS_MODULE_XML>
     <SOURCES />
   </library>
 </component>

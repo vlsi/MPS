@@ -192,7 +192,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
     </language>
@@ -1011,6 +1011,10 @@
         <property role="TrG5h" value="scripts" />
       </node>
       <node concept="2a7GMi" id="4pH6NAGIG89" role="ftvYc" />
+      <node concept="10WQ6h" id="5WjfCaA2my1" role="ftvYc">
+        <property role="TrG5h" value="run" />
+      </node>
+      <node concept="2a7GMi" id="5WjfCaA2mvN" role="ftvYc" />
       <node concept="10WQ6h" id="2tmN3ZB4Vsm" role="ftvYc">
         <property role="TrG5h" value="favorites" />
       </node>
@@ -1021,6 +1025,7 @@
       <node concept="tCFHf" id="hYoRn0d" role="ftvYc">
         <ref role="tCJdB" node="hYoPViv" resolve="ModelProperties" />
       </node>
+      <node concept="2a7GMi" id="4iEnX$wf3FE" role="ftvYc" />
     </node>
   </node>
   <node concept="tC5Ba" id="hyf4HGL">
@@ -14853,17 +14858,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                    </node>
-                    <node concept="2tJIrI" id="5uaEgp6qxRJ" role="jymVt" />
-                    <node concept="3clFb_" id="5uaEgp6qxSN" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="onClose" />
-                      <property role="DiZV1" value="false" />
-                      <property role="od$2w" value="false" />
-                      <node concept="3Tm1VV" id="5uaEgp6qxSO" role="1B3o_S" />
-                      <node concept="3cqZAl" id="5uaEgp6qxSQ" role="3clF45" />
-                      <node concept="3clFbS" id="5uaEgp6qxSS" role="3clF47">
                         <node concept="3clFbJ" id="5uaEgp6q$cJ" role="3cqZAp">
                           <node concept="3clFbS" id="5uaEgp6q$cL" role="3clFbx">
                             <node concept="3clFbF" id="5dIyUY5bxah" role="3cqZAp">
@@ -14900,9 +14894,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node concept="2AHcQZ" id="5uaEgp6qxST" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>
@@ -15213,17 +15204,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                    </node>
-                    <node concept="2tJIrI" id="fwenio2yF5" role="jymVt" />
-                    <node concept="3clFb_" id="fwenio2yHL" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="onClose" />
-                      <property role="DiZV1" value="false" />
-                      <property role="od$2w" value="false" />
-                      <node concept="3Tm1VV" id="fwenio2yHM" role="1B3o_S" />
-                      <node concept="3cqZAl" id="fwenio2yHO" role="3clF45" />
-                      <node concept="3clFbS" id="fwenio2yHQ" role="3clF47">
                         <node concept="3clFbJ" id="5dIyUY5bpfs" role="3cqZAp">
                           <node concept="3clFbS" id="5dIyUY5bpfu" role="3clFbx">
                             <node concept="3clFbF" id="5dIyUY5aF4E" role="3cqZAp">
@@ -15260,9 +15240,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node concept="2AHcQZ" id="fwenio2yHR" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>
@@ -15938,6 +15915,7 @@
     </node>
     <node concept="tT9cl" id="5AK6Piks2Oc" role="2f5YQi">
       <ref role="tU$_T" node="hyf4Hgq" resolve="ModelActions" />
+      <ref role="2f8Tey" node="5WjfCaA2my1" resolve="run" />
     </node>
     <node concept="tT9cl" id="2g2Z_LfznQZ" role="2f5YQi">
       <ref role="tU$_T" node="miYJQAr2Uj" resolve="CommonModuleActions" />

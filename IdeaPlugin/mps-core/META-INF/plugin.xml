@@ -21,7 +21,7 @@
   <description>MPS Core</description>
   <version>3.4</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="145.1" until-build="146.1"/>
+  <idea-version since-build="145.1" until-build="163.1"/>
 
   <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>
@@ -75,9 +75,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.paths.PluginPathMacroInstaller</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.workbench.action.IRegistryManager</interface-class>
@@ -188,8 +185,9 @@
 
       mps-editor.jar added :( due to NoClassDef for IntentionAspectDescriptor
     -->
+    <!-- IMORTANT keep it in sync with build.xml runTests target, otherwise jps tests fill fail -->
     <compileServer.plugin
-            classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar"/>
+            classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable"

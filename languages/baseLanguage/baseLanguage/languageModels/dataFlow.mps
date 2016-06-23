@@ -4689,25 +4689,6 @@
               </node>
             </node>
             <node concept="3clFbS" id="5XiNbvoywcS" role="2LFqv$">
-              <node concept="3cpWs8" id="5XiNbvoywcT" role="3cqZAp">
-                <node concept="3cpWsn" id="5XiNbvoywcU" role="3cpWs9">
-                  <property role="TrG5h" value="name" />
-                  <node concept="17QB3L" id="5XiNbvoywcV" role="1tU5fm" />
-                  <node concept="2OqwBi" id="5XiNbvoywcW" role="33vP2m">
-                    <node concept="2OqwBi" id="5XiNbvoywcX" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagTxOh" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5XiNbvoywcQ" resolve="annotation" />
-                      </node>
-                      <node concept="3TrEf2" id="5XiNbvoywcZ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hiAI5P0" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="5XiNbvoywd0" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbJ" id="5XiNbvoywd1" role="3cqZAp">
                 <node concept="3clFbS" id="5XiNbvoywd2" role="3clFbx">
                   <node concept="2qeTo9" id="5XiNbvoywd3" role="3cqZAp">

@@ -38,6 +38,7 @@ public final class PathManager {
 
   private static final String PROTOCOL_DELIMITER = ":";
   private static final String PLUGINS_PATH = "plugins";
+  private static final String PROPERTIES_FILE_NAME = "idea.properties";
 
   private static String ourHomePath;
   private static String ourIdeaPath;
@@ -164,7 +165,7 @@ public final class PathManager {
   }
 
   private static boolean isMpsDir(File file) {
-    return new File(file, "build.number").exists();
+    return new File(file, "bin" + File.separator + PROPERTIES_FILE_NAME).exists();
   }
 
   /**

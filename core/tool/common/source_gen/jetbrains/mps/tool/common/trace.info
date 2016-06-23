@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -200,25 +200,36 @@
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3919148072087678241">
     <file name="JavaCompilerProperties.java">
       <node id="3919148072087701519" at="7,0,8,0" concept="14" trace="TARGET_JAVA_VERSION" />
-      <node id="3919148072087701523" at="8,0,9,0" concept="5" trace="myScript" />
-      <node id="3919148072087701532" at="9,48,10,22" concept="4" />
-      <node id="3919148072087701541" at="12,80,13,65" concept="4" />
-      <node id="3919148072087701545" at="13,65,14,16" concept="11" />
-      <node id="3919148072087701551" at="16,40,17,53" concept="11" />
-      <node id="3919148072087701527" at="9,0,12,0" concept="3" trace="JavaCompilerProperties#(Ljetbrains/mps/tool/common/Script;)V" />
-      <node id="3919148072087701549" at="16,0,19,0" concept="9" trace="getTargetJavaVersion#()Ljava/lang/String;" />
-      <node id="3919148072087701537" at="12,0,16,0" concept="9" trace="setTargetJavaVersion#(Ljava/lang/String;)Ljetbrains/mps/tool/common/JavaCompilerProperties;" />
-      <scope id="3919148072087701531" at="9,48,10,22" />
-      <scope id="3919148072087701550" at="16,40,17,53" />
-      <scope id="3919148072087701540" at="12,80,14,16" />
-      <scope id="3919148072087701527" at="9,0,12,0">
+      <node id="6183000554725826251" at="8,0,9,0" concept="14" trace="SKIP_COMPILATION" />
+      <node id="3919148072087701523" at="9,0,10,0" concept="5" trace="myScript" />
+      <node id="3919148072087701532" at="10,48,11,22" concept="4" />
+      <node id="3919148072087701541" at="13,80,14,65" concept="4" />
+      <node id="3919148072087701545" at="14,65,15,16" concept="11" />
+      <node id="3919148072087701551" at="17,40,18,53" concept="11" />
+      <node id="6183000554725837868" at="20,59,21,78" concept="4" />
+      <node id="6183000554725827694" at="23,38,24,67" concept="11" />
+      <node id="3919148072087701527" at="10,0,13,0" concept="3" trace="JavaCompilerProperties#(Ljetbrains/mps/tool/common/Script;)V" />
+      <node id="3919148072087701549" at="17,0,20,0" concept="9" trace="getTargetJavaVersion#()Ljava/lang/String;" />
+      <node id="6183000554725836713" at="20,0,23,0" concept="9" trace="setSkipCompilation#(Z)V" />
+      <node id="6183000554725827216" at="23,0,26,0" concept="9" trace="isSkipCompilation#()Z" />
+      <node id="3919148072087701537" at="13,0,17,0" concept="9" trace="setTargetJavaVersion#(Ljava/lang/String;)Ljetbrains/mps/tool/common/JavaCompilerProperties;" />
+      <scope id="3919148072087701531" at="10,48,11,22" />
+      <scope id="3919148072087701550" at="17,40,18,53" />
+      <scope id="6183000554725836716" at="20,59,21,78" />
+      <scope id="6183000554725827219" at="23,38,24,67" />
+      <scope id="3919148072087701540" at="13,80,15,16" />
+      <scope id="3919148072087701527" at="10,0,13,0">
         <var name="script" id="3919148072087701529" />
       </scope>
-      <scope id="3919148072087701549" at="16,0,19,0" />
-      <scope id="3919148072087701537" at="12,0,16,0">
+      <scope id="3919148072087701549" at="17,0,20,0" />
+      <scope id="6183000554725836713" at="20,0,23,0">
+        <var name="skipCompilation" id="6183000554725837297" />
+      </scope>
+      <scope id="6183000554725827216" at="23,0,26,0" />
+      <scope id="3919148072087701537" at="13,0,17,0">
         <var name="targetJavaVersion" id="3919148072087701538" />
       </scope>
-      <unit id="3919148072087678241" at="6,0,21,0" name="jetbrains.mps.tool.common.JavaCompilerProperties" />
+      <unit id="3919148072087678241" at="6,0,27,0" name="jetbrains.mps.tool.common.JavaCompilerProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">
@@ -1428,5 +1439,5 @@
       <unit id="8797607015334522630" at="29,0,240,0" name="jetbrains.mps.tool.common.JDOMUtil" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

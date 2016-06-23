@@ -19,6 +19,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_idealocalhistory = ID + "idealocalhistory";
   public static final String LABEL_ID_ideavcs = ID + "ideavcs";
   public static final String LABEL_ID_scripts = ID + "scripts";
+  public static final String LABEL_ID_run = ID + "run";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public ModelActions_ActionGroup() {
@@ -104,6 +105,13 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     }
     ModelActions_ActionGroup.this.addSeparator();
     {
+      LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_run);
+      ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+      manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+      ModelActions_ActionGroup.this.addAction(action);
+    }
+    ModelActions_ActionGroup.this.addSeparator();
+    {
       LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_favorites);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();
       manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
@@ -117,5 +125,6 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     }
     ModelActions_ActionGroup.this.addSeparator();
     ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModelProperties_Action");
+    ModelActions_ActionGroup.this.addSeparator();
   }
 }

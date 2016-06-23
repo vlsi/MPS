@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.generator;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -33,12 +32,7 @@ import javax.swing.Icon;
 
 @State(
   name = "GenerationSettings",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/generationSettings.xml"
-    )
-  }
+  storages = @Storage("generationSettings.xml")
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent {
 

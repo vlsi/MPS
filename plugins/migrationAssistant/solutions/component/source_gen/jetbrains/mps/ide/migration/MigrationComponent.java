@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.component.util.MigrationDataUtil;
-import javax.swing.SwingUtilities;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Level;
@@ -48,6 +48,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -86,7 +87,7 @@ public class MigrationComponent extends AbstractProjectComponent {
 
   @Override
   public void initComponent() {
-    SwingUtilities.invokeLater(new Runnable() {
+    UIUtil.invokeLaterIfNeeded(new Runnable() {
       public void run() {
         dataModuleOptions = TempModuleOptions.forDefaultModule();
         myMpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
@@ -100,8 +101,13 @@ public class MigrationComponent extends AbstractProjectComponent {
 
   @Override
   public void disposeComponent() {
-    SwingUtilities.invokeLater(new Runnable() {
+    UIUtil.invokeLaterIfNeeded(new Runnable() {
       public void run() {
+        // TODO: get rid off this HACK 
+        // In NoPendingMigrationsTest Idea project has already disposed here 
+        if (myProject.isDisposed()) {
+          return;
+        }
         myMpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             dataModuleOptions.disposeModule();
@@ -246,7 +252,7 @@ public class MigrationComponent extends AbstractProjectComponent {
   public RefactoringLog fetchRefactoringLog(RefactoringLogReference scriptReference, boolean silently) {
     Language depModule = (Language) scriptReference.getModule();
     final int current = scriptReference.getFromVersion();
-    SModel migrationModel = LanguageAspect.MIGRATION.get(depModule);
+    SModel migrationModel = SModuleOperations.getAspect(depModule, "migration");
     final SNode log = ListSequence.fromList(SModelOperations.roots(migrationModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")) == current;

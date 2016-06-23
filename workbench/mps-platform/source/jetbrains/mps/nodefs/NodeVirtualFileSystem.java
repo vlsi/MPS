@@ -22,6 +22,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.NodeChangeCollector;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
@@ -295,7 +296,8 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
             changedFiles.add(vf);
           }
         } else if (evt instanceof SNodeRemoveEvent) {
-          MPSNodeVirtualFile vf = rvf.getVirtualFile(((SNodeRemoveEvent) evt).getChild().getReference());
+          // SNode.getReference() for deleted node produces invalid pointer
+          MPSNodeVirtualFile vf = rvf.getVirtualFile(new SNodePointer(evt.getModel().getReference(), ((SNodeRemoveEvent) evt).getChild().getNodeId()));
           if (vf != null) {
             deletedFiles.add(vf);
           }
@@ -309,13 +311,13 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
 
     @Override
     public void propertyChanged(@NotNull SPropertyChangeEvent event) {
-      updateFileTimestampOfAffectedNodes(event, event.getNode(), event.getNode().getContainingRoot());
+      updateFileTimestampOfAffectedNodes(event, event.getNode().getReference(), new SNodePointer(event.getNode().getContainingRoot()));
       myChangeCollector.propertyChanged(event);
     }
 
     @Override
     public void referenceChanged(@NotNull SReferenceChangeEvent event) {
-      updateFileTimestampOfAffectedNodes(event, event.getNode(), event.getNode().getContainingRoot());
+      updateFileTimestampOfAffectedNodes(event, event.getNode().getReference(), new SNodePointer(event.getNode().getContainingRoot()));
     }
 
     @Override
@@ -324,12 +326,15 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
         // added root of no interest - there could be no file for it yet.
         return;
       }
-      updateFileTimestampOfAffectedNodes(event, event.getParent(), event.getParent().getContainingRoot());
+      final SNode affectedNode = event.getParent();
+      updateFileTimestampOfAffectedNodes(event, new SNodePointer(affectedNode), new SNodePointer(affectedNode.getContainingRoot()));
     }
 
     @Override
     public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
-      updateFileTimestampOfAffectedNodes(event, event.getChild(), event.isRoot() ? event.getChild() : event.getParent().getContainingRoot());
+      // SNode.getReference() for deleted node produces invalid pointer
+      final SNodeReference removedNode = new SNodePointer(event.getModel().getReference(), event.getChild().getNodeId());
+      updateFileTimestampOfAffectedNodes(event, removedNode, event.isRoot() ? removedNode : new SNodePointer(event.getParent().getContainingRoot()));
       myChangeCollector.nodeRemoved(event);
     }
 
@@ -341,18 +346,18 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
      * XXX 1. Do we need to update TS on model imports change? Present openapi listener doesn't support these changes, but old code didn't care either
      * XXX 2. Why don't we update TS of MPSModelVirtualFile?
      */
-    private void updateFileTimestampOfAffectedNodes(AbstractModelChangeEvent event, /*not null*/ SNode changed, @Nullable SNode root) {
+    private void updateFileTimestampOfAffectedNodes(AbstractModelChangeEvent event, /*not null*/ SNodeReference changed, @Nullable SNodeReference root) {
       final RepositoryVirtualFiles rvf = findRepoFiles(event.getModel());
       if (rvf == null) {
         return;
       }
       ArrayList<MPSNodeVirtualFile> files = new ArrayList<>(2);
-      final MPSNodeVirtualFile vf1 = rvf.getVirtualFile(changed.getReference());
+      final MPSNodeVirtualFile vf1 = rvf.getVirtualFile(changed);
       if (vf1 != null) {
         files.add(vf1);
       }
       if (root != null && root != changed) {
-        MPSNodeVirtualFile vf2 = rvf.getVirtualFile(root.getReference());
+        MPSNodeVirtualFile vf2 = rvf.getVirtualFile(root);
         if (vf2 != null && vf2 != vf1) {
           files.add(vf2);
         }

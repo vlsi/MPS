@@ -16,7 +16,7 @@ import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
-import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 
 public class Parameterized extends TransformationMenuBase {
   public Parameterized() {
@@ -72,7 +72,7 @@ public class Parameterized extends TransformationMenuBase {
       }
 
       @Override
-      public Icon getIcon() {
+      public IconResource getIcon() {
         return null;
       }
       @Override

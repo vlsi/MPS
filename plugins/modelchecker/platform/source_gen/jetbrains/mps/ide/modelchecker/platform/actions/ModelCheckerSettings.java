@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 
-@State(name = "ModelCheckerSettings", storages = {@Storage(id = "other", file = "$APP_CONFIG$/modelCheckerSettings.xml")
-})
+@State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
+)
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   public ModelCheckerSettings() {

@@ -19,6 +19,7 @@ import com.intellij.ide.PowerSaveMode;
 import com.intellij.ide.ui.UISettings;
 import com.intellij.ide.ui.UISettingsListener;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -40,13 +41,9 @@ import java.util.List;
 
 @State(
     name = "MpsEditorSettings",
-    storages = {
-        @Storage(
-            id = "other",
-            file = "$APP_CONFIG$/mpsEditor.xml"
-        )}
+    storages = @Storage("mpsEditor.xml")
 )
-public class EditorSettings implements PersistentStateComponent<MyState> {
+public class EditorSettings implements ApplicationComponent, PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
   private static final Color DEFAULT_CARET_ROW_COLOR = new Color(255, 255, 215);
   private static final Color DEFAULT_CARET_COLOR = Color.BLACK;
@@ -277,6 +274,22 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     mySpaceWidth = -1;
   }
 
+  @Override
+  public void initComponent() {
+
+  }
+
+  @Override
+  public void disposeComponent() {
+
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "EditorSettings";
+  }
+
   public static class MyState {
     private String myFontFamily = "Monospaced";
     private int myFontSize = 13;
@@ -300,18 +313,33 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
 
       MyState otherState = (MyState) o;
 
-      if (myFontSize != otherState.myFontSize) return false;
-      if (Double.compare(otherState.myLineSpacing, myLineSpacing) != 0) return false;
-      if (myTextWidth != otherState.myTextWidth) return false;
-      if (myUseAntialiasing != otherState.myUseAntialiasing) return false;
-      if (myUseBraces != otherState.myUseBraces) return false;
-      if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null)
+      if (myFontSize != otherState.myFontSize) {
         return false;
+      }
+      if (Double.compare(otherState.myLineSpacing, myLineSpacing) != 0) {
+        return false;
+      }
+      if (myTextWidth != otherState.myTextWidth) {
+        return false;
+      }
+      if (myUseAntialiasing != otherState.myUseAntialiasing) {
+        return false;
+      }
+      if (myUseBraces != otherState.myUseBraces) {
+        return false;
+      }
+      if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null) {
+        return false;
+      }
 
       if (myIndentSize != otherState.myIndentSize) {
         return false;

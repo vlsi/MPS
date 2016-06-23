@@ -15,8 +15,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
-import javax.swing.Icon;
-import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.smodel.runtime.IconResource;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -88,8 +87,8 @@ public class DefaultMenuContribution extends TransformationMenuBase {
       }
 
       @Override
-      public Icon getIcon() {
-        return MPSIcons.Nodes.Action;
+      public IconResource getIcon() {
+        return IconContainer.RESOURCE_a0a8c4;
       }
       @Override
       public String getTooltipText() {

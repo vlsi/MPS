@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -695,8 +695,8 @@
       <node id="5646063728432375799" at="50,23,51,24" concept="8" />
       <node id="5646063728432375821" at="59,72,60,87" concept="2" />
       <node id="5646063728432375832" at="60,87,61,24" concept="8" />
-      <node id="3037398679708004267" at="66,11,67,171" concept="2" />
-      <node id="8727644140581265447" at="67,171,68,89" concept="2" />
+      <node id="3037398679708004267" at="66,11,67,172" concept="2" />
+      <node id="8727644140581265447" at="67,172,68,89" concept="2" />
       <node id="3037398679708004278" at="68,89,69,0" concept="9" />
       <node id="2551169102353647692" at="69,0,70,45" concept="7" />
       <node id="2551169102353647725" at="74,38,75,36" concept="2" />
@@ -985,5 +985,5 @@
       <unit id="9000373783400844597" at="24,0,127,0" name="jetbrains.mps.make.generator.Worker__Facet" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

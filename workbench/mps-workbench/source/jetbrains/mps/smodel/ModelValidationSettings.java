@@ -20,27 +20,18 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.ModelValidationSettings.MyState;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-import java.awt.BorderLayout;
+import javax.swing.Icon;
 
 @State(
   name = "ModelValidationSettings",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/mpsModelValidationSettings.xml"
-    )}
+  storages = @Storage("mpsModelValidationSettings.xml")
 )
 public class ModelValidationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, IModelValidationSettings {
 

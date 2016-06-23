@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -39,7 +40,7 @@ public class TransformationMenu_Default_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_ctejw1_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaration");
-    provider.setNoTargetText("<no conceptDeclaration>");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TransformationMenu_Default_Editor._Inline_ctejw1_a1a());
     editorCell = provider.createEditorCell(editorContext);
@@ -48,7 +49,9 @@ public class TransformationMenu_Default_Editor extends DefaultNodeEditor {
       editorCell.setRole("conceptDeclaration");
     }
     Style style = new StyleImpl();
+    SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

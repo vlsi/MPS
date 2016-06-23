@@ -61,6 +61,9 @@
         <child id="1215604436604" name="nodeOperations" index="7EUXB" />
       </concept>
       <concept id="1215607067978" name="jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation" flags="ng" index="7OXhh" />
+      <concept id="592868908271422361" name="jetbrains.mps.lang.test.structure.IsIntentionApplicableExpression" flags="ng" index="2bRw2S">
+        <reference id="592868908271422362" name="intention" index="2bRw2V" />
+      </concept>
       <concept id="7691029917083872157" name="jetbrains.mps.lang.test.structure.IRuleReference" flags="ng" index="2u4UPC">
         <reference id="8333855927540250453" name="declaration" index="39XzEq" />
       </concept>
@@ -224,6 +227,10 @@
       </concept>
       <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf">
         <child id="492581319488141108" name="method" index="2HKRsH" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -559,6 +566,9 @@
       <concept id="1171978097730" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" flags="nn" index="3vlDli" />
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
+      </concept>
+      <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
+        <child id="1171983854940" name="condition" index="3vFALc" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -10543,8 +10553,10 @@
     <property role="TrG5h" value="TestNotApplicableConvertToTernaryOperatorIntention" />
     <property role="3GE5qa" value="intentions" />
     <node concept="3clFbS" id="6HxYJhjTmBA" role="LjaKd">
-      <node concept="1MFPAf" id="6HxYJhjTmBB" role="3cqZAp">
-        <ref role="1MFYO6" to="tpei:1LhDsI$40T4" resolve="ConvertIfConditionToTernaryOperator" />
+      <node concept="3vFxKo" id="wUiM63TDKt" role="3cqZAp">
+        <node concept="2bRw2S" id="wUiM63Uk_q" role="3vFALc">
+          <ref role="2bRw2V" to="tpei:1LhDsI$40T4" resolve="ConvertIfConditionToTernaryOperator" />
+        </node>
       </node>
     </node>
     <node concept="9aQIb" id="6HxYJhjToz$" role="LiRBU">
@@ -10586,7 +10598,7 @@
               <node concept="3clFbF" id="6HxYJhjTwQY" role="3cqZAp">
                 <node concept="2OqwBi" id="6HxYJhjTxBU" role="3clFbG">
                   <node concept="liA8E" id="6HxYJhjT_0_" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                    <ref role="37wK5l" to="33ny:~List.add(int,java.lang.Object):void" resolve="add" />
                     <node concept="3cmrfG" id="6HxYJhjT_0D" role="37wK5m">
                       <property role="3cmrfH" value="2" />
                     </node>
@@ -10604,63 +10616,6 @@
           <node concept="LIFWc" id="6HxYJhjTSDP" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="LIFWd" value="Collection_eb7h0d_a" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="9aQIb" id="6HxYJhjTSDR" role="LiZbd">
-      <node concept="3clFbS" id="6HxYJhjTSDS" role="9aQI4">
-        <node concept="3cpWs8" id="6HxYJhjTSFn" role="3cqZAp">
-          <node concept="3cpWsn" id="6HxYJhjTSFo" role="3cpWs9">
-            <property role="TrG5h" value="list" />
-            <node concept="10Nm6u" id="6HxYJhjTSFp" role="33vP2m" />
-            <node concept="3uibUv" id="6HxYJhjTSFq" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="6HxYJhjTSFr" role="11_B2D">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6HxYJhjTSFs" role="3cqZAp">
-          <node concept="3clFbT" id="6HxYJhjTSFt" role="3clFbw">
-            <property role="3clFbU" value="true" />
-          </node>
-          <node concept="3clFbS" id="6HxYJhjTSFu" role="3clFbx">
-            <node concept="3clFbF" id="6HxYJhjTSFv" role="3cqZAp">
-              <node concept="2OqwBi" id="6HxYJhjTSFw" role="3clFbG">
-                <node concept="liA8E" id="6HxYJhjTSFx" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.add(int,java.lang.Object):void" resolve="add" />
-                  <node concept="3cmrfG" id="6HxYJhjTSFy" role="37wK5m">
-                    <property role="3cmrfH" value="1" />
-                  </node>
-                  <node concept="10Nm6u" id="6HxYJhjTSFz" role="37wK5m" />
-                </node>
-                <node concept="37vLTw" id="6HxYJhjTSF$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6HxYJhjTSFo" resolve="list" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="9aQIb" id="6HxYJhjTSF_" role="9aQIa">
-            <node concept="3clFbS" id="6HxYJhjTSFA" role="9aQI4">
-              <node concept="3clFbF" id="6HxYJhjTSFB" role="3cqZAp">
-                <node concept="2OqwBi" id="6HxYJhjTSFC" role="3clFbG">
-                  <node concept="liA8E" id="6HxYJhjTSFD" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                    <node concept="3cmrfG" id="6HxYJhjTSFE" role="37wK5m">
-                      <property role="3cmrfH" value="2" />
-                    </node>
-                    <node concept="Xl_RD" id="6HxYJhjTSFF" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="6HxYJhjTSFG" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6HxYJhjTSFo" resolve="list" />
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -15637,7 +15592,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="4qwYiuMwb8G" role="3cqZAp">
-        <property role="2TTd_B" value="abc" />
+        <property role="2TTd_B" value="en_abc" />
       </node>
     </node>
     <node concept="Qs71p" id="5hxHU7NKWu7" role="LiZbd">
@@ -15645,7 +15600,7 @@
       <property role="TrG5h" value="Foo" />
       <node concept="3Tm1VV" id="5hxHU7NKWu8" role="1B3o_S" />
       <node concept="QsSxf" id="4qwYiuMw38D" role="Qtgdg">
-        <property role="TrG5h" value="abc" />
+        <property role="TrG5h" value="en_abc" />
         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
     </node>
@@ -15679,7 +15634,7 @@
         <node concept="3clFbS" id="676KKEeTgSv" role="3clF47" />
       </node>
       <node concept="QsSxf" id="676KKEeTgSL" role="Qtgdg">
-        <property role="TrG5h" value="abc" />
+        <property role="TrG5h" value="en_abc" />
         <ref role="37wK5l" node="676KKEeTgSr" resolve="Foo" />
       </node>
     </node>
@@ -15695,7 +15650,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="676KKEeTnix" role="3cqZAp">
-        <property role="2TTd_B" value="abc" />
+        <property role="2TTd_B" value="en_abc" />
       </node>
     </node>
   </node>
@@ -53112,6 +53067,60 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5n95PhUqosj">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="CreateEnumConstantReference" />
+    <node concept="9aQIb" id="5n95PhUqotp" role="LiRBU">
+      <node concept="3clFbS" id="5n95PhUqotr" role="9aQI4">
+        <node concept="LIFWc" id="5n95PhUqsVS" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_u338ov_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="5n95PhUqsVU" role="LiZbd">
+      <node concept="3clFbS" id="5n95PhUqsVV" role="9aQI4">
+        <node concept="3clFbF" id="5n95PhUqt0N" role="3cqZAp">
+          <node concept="Rm8GO" id="5n95PhUqt0M" role="3clFbG">
+            <ref role="1Px2BO" node="5n95PhUqsGT" resolve="TestDays" />
+            <ref role="Rm8GQ" node="5n95PhUqsKB" resolve="Wed" />
+            <node concept="LIFWc" id="5n95PhUqt63" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="3" />
+              <property role="p6zMs" value="3" />
+              <property role="LIFWd" value="property_name_1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="5n95PhUqtj1" role="LjaKd">
+      <node concept="2TK7Tu" id="5n95PhUqtj0" role="3cqZAp">
+        <property role="2TTd_B" value="Wed" />
+      </node>
+    </node>
+  </node>
+  <node concept="Qs71p" id="5n95PhUqsGT">
+    <property role="3GE5qa" value="enum" />
+    <property role="TrG5h" value="TestDays" />
+    <node concept="3Tm1VV" id="5n95PhUqsGU" role="1B3o_S" />
+    <node concept="QsSxf" id="5n95PhUqsIU" role="Qtgdg">
+      <property role="TrG5h" value="Mon" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
+    <node concept="QsSxf" id="5n95PhUqsJp" role="Qtgdg">
+      <property role="TrG5h" value="Tue" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
+    <node concept="QsSxf" id="5n95PhUqsKB" role="Qtgdg">
+      <property role="TrG5h" value="Wed" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
   </node>
 </model>

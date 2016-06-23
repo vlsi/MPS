@@ -214,6 +214,9 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -9070,6 +9073,17 @@
       </node>
       <node concept="3Tm6S6" id="3pzB6wMWswi" role="1B3o_S" />
     </node>
+    <node concept="Wx3nA" id="5nerzVuutVb" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="SKIP_COMPILATION" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="5nerzVuutNU" role="1B3o_S" />
+      <node concept="17QB3L" id="5nerzVuutV6" role="1tU5fm" />
+      <node concept="Xl_RD" id="5nerzVuuu2z" role="33vP2m">
+        <property role="Xl_RC" value="skipCompilation" />
+      </node>
+    </node>
     <node concept="312cEg" id="3pzB6wMWswj" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -9166,7 +9180,69 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
     </node>
-    <node concept="2tJIrI" id="3pzB6wMWsw6" role="jymVt" />
+    <node concept="3clFb_" id="5nerzVuuwuD" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setSkipCompilation" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5nerzVuuwuG" role="3clF47">
+        <node concept="3clFbF" id="5nerzVuuwKG" role="3cqZAp">
+          <node concept="2OqwBi" id="5nerzVuuwN7" role="3clFbG">
+            <node concept="37vLTw" id="5nerzVuuwKF" role="2Oq$k0">
+              <ref role="3cqZAo" node="3pzB6wMWswj" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="5nerzVuuwSX" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="5nerzVuuwUY" role="37wK5m">
+                <ref role="3cqZAo" node="5nerzVuutVb" resolve="SKIP_COMPILATION" />
+              </node>
+              <node concept="2YIFZM" id="5nerzVuux2_" role="37wK5m">
+                <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                <node concept="37vLTw" id="5nerzVuux8x" role="37wK5m">
+                  <ref role="3cqZAo" node="5nerzVuuwBL" resolve="skipCompilation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5nerzVuuwlC" role="1B3o_S" />
+      <node concept="3cqZAl" id="5nerzVuuwu$" role="3clF45" />
+      <node concept="37vLTG" id="5nerzVuuwBL" role="3clF46">
+        <property role="TrG5h" value="skipCompilation" />
+        <node concept="10P_77" id="5nerzVuuwBK" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5nerzVuuuag" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isSkipCompilation" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5nerzVuuuaj" role="3clF47">
+        <node concept="3cpWs6" id="5nerzVuuuhI" role="3cqZAp">
+          <node concept="2YIFZM" id="5nerzVuuxU$" role="3cqZAk">
+            <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
+            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+            <node concept="2OqwBi" id="5nerzVuuurb" role="37wK5m">
+              <node concept="37vLTw" id="5nerzVuuuid" role="2Oq$k0">
+                <ref role="3cqZAo" node="3pzB6wMWswj" resolve="myScript" />
+              </node>
+              <node concept="liA8E" id="5nerzVuuuAd" role="2OqNvi">
+                <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+                <node concept="37vLTw" id="5nerzVuuy5k" role="37wK5m">
+                  <ref role="3cqZAo" node="5nerzVuutVb" resolve="SKIP_COMPILATION" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5nerzVuuu34" role="1B3o_S" />
+      <node concept="10P_77" id="5nerzVuuuab" role="3clF45" />
+    </node>
     <node concept="3Tm1VV" id="3pzB6wMWmOy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1Vi5mb_oi7$">

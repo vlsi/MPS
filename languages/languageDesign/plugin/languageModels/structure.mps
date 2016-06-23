@@ -16,7 +16,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -1236,7 +1236,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="toolIcon" />
       <property role="IQ2ns" value="6791676465872004185" />
-      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="Icon" />
     </node>
     <node concept="1TJgyi" id="5FstybB4cVs" role="1TKVEl">
       <property role="TrG5h" value="caption" />
@@ -1601,7 +1601,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon" />
       <property role="IQ2ns" value="2386275659558598338" />
-      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="Icon" />
     </node>
     <node concept="1TJgyj" id="3fOKOapZLa6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1788,7 +1788,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon" />
       <property role="IQ2ns" value="8976425910813834639" />
-      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
+      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="Icon" />
     </node>
     <node concept="1TJgyj" id="hwtncg6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

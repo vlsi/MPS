@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -66,7 +67,7 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
       }
     }).toListSequence();
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SConcept myParameter;
     public IntentionImplementation(SConcept parameter) {
       myParameter = parameter;
@@ -84,6 +85,9 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
     @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithConcreteSubconcept_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

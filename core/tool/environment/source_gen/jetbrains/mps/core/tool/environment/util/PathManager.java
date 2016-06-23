@@ -30,6 +30,8 @@ public class PathManager {
   @NonNls
   private static final String PROPERTIES_FILE = "idea.properties.file";
   @NonNls
+  private static final String PROPERTIES_FILE_NAME = "idea.properties";
+  @NonNls
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   @NonNls
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
@@ -115,7 +117,7 @@ public class PathManager {
   }
 
   private static boolean isMpsDir(File file) {
-    return new File(file, "build.number").exists();
+    return new File(file, FileUtil.toSystemDependentName("bin/" + PROPERTIES_FILE_NAME)).exists();
   }
 
   public static String getLibPath() {

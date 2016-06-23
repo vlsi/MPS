@@ -14,8 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 
 public class CreateMissingStub_QuickFix extends QuickFix_Runtime {
   public CreateMissingStub_QuickFix() {
@@ -44,7 +43,7 @@ public class CreateMissingStub_QuickFix extends QuickFix_Runtime {
       return;
     }
     SModule language = model.getModule();
-    SModel editorModel = LanguageAspect.EDITOR.get((Language) language);
+    SModel editorModel = SModuleOperations.getAspect(language, "editor");
     if (editorModel == null) {
       return;
     }

@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class TestNotApplicableConvertToTernaryOperatorIntention_Test extends BaseTransformationTest {
@@ -19,8 +20,8 @@ public class TestNotApplicableConvertToTernaryOperatorIntention_Test extends Bas
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("7737741562085738724", "7737741562085870199");
-      invokeIntention("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", myStart.getNode());
+      initEditorComponent("7737741562085738724", "");
+      Assert.assertFalse(isIntentionApplicable("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", myStart.getNode()));
     }
   }
 }

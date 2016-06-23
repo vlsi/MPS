@@ -24,7 +24,7 @@ public class EmptyEnumConstantCreationWithConstructorTest_Test extends BaseTrans
       initEditorComponent("7045533117182184908", "7045533117182184964");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " A"));
-      typeString("abc");
+      typeString("en_abc");
     }
   }
 }

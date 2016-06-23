@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -49,7 +50,7 @@ public class GoToEditorDeclarationHelper {
     });
   }
   public static SModel getOrCreateEditorAspect(Project project, final Language language, final SNode concept) {
-    final SModel languageEditor = LanguageAspect.EDITOR.get(language);
+    final SModel languageEditor = SModuleOperations.getAspect(language, "editor");
     if (languageEditor != null) {
       return languageEditor;
     }
@@ -62,10 +63,10 @@ public class GoToEditorDeclarationHelper {
       @Override
       public void run() {
         LanguageAspect.EDITOR.createNew(language);
-        GoToEditorDeclarationHelper.createEditorDeclaration(concept, LanguageAspect.EDITOR.get(language));
+        GoToEditorDeclarationHelper.createEditorDeclaration(concept, SModuleOperations.getAspect(language, "editor"));
       }
     });
-    return LanguageAspect.EDITOR.get(language);
+    return SModuleOperations.getAspect(language, "editor");
   }
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
     return ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))).findFirst(new IWhereFilter<SNode>() {

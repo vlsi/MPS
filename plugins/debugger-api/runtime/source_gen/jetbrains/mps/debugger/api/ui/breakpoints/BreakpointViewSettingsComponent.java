@@ -4,14 +4,15 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.project.Project;
 
-@State(name = "BreakpointViewSettings", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
-})
+@State(name = "BreakpointViewSettings", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
+)
 public class BreakpointViewSettingsComponent implements PersistentStateComponent<BreakpointViewSettingsComponent.MyState>, ProjectComponent {
   private BreakpointViewSettingsComponent.MyState myState = new BreakpointViewSettingsComponent.MyState();
   public BreakpointViewSettingsComponent() {

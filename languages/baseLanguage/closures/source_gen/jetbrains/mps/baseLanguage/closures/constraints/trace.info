@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -806,7 +806,7 @@
       <node id="5612111951671408000" at="28,51,29,67" concept="4" />
       <node id="5612111951671408000" at="30,5,31,0" concept="11" />
       <node id="5612111951671408000" at="31,0,32,18" concept="9" />
-      <node id="5612111951671415373" at="34,148,35,78" concept="9" />
+      <node id="5612111951671415373" at="34,148,35,90" concept="9" />
       <node id="5612111951671408000" at="37,0,38,0" concept="12" trace="canBeChildBreakingPoint" />
       <node id="5612111951671408000" at="16,0,19,0" concept="2" trace="AbstractFunctionType_Constraints#()V" />
       <node id="5612111951671408000" at="27,0,30,5" concept="6" />
@@ -816,7 +816,7 @@
       <scope id="5612111951671408000" at="16,45,17,174" />
       <scope id="5612111951671408000" at="21,43,22,16" />
       <scope id="5612111951671408000" at="28,51,29,67" />
-      <scope id="5612111951671408002" at="34,148,35,78" />
+      <scope id="5612111951671408002" at="34,148,35,90" />
       <scope id="5612111951671408000" at="16,0,19,0" />
       <scope id="5612111951671408000" at="34,0,37,0">
         <var name="childConcept" id="5612111951671408000" />
@@ -849,5 +849,5 @@
       <unit id="8679288141369466327" at="8,0,14,0" name="jetbrains.mps.baseLanguage.closures.constraints.CompactInvokeFunctionExpression_Constraints" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

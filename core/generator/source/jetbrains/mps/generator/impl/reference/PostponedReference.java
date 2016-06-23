@@ -86,7 +86,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * @Deprecated in 3.0
    */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (InternalFlag.isSystemInternal()) {
+    if (InternalFlag.isInternalMode()) {
       throw new UnsupportedOperationException();
     }
     // I don't throw exception here as it might obscure any other error that lead

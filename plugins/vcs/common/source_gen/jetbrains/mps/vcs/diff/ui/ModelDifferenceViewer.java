@@ -110,6 +110,9 @@ public class ModelDifferenceViewer implements DataProvider {
       myGoToNeighbourRootActions = new ModelDifferenceViewer.MyGoToNeighbourRootActions();
       myGoToNeighbourRootActions.previous().registerCustomShortcutSet(GoToNeighbourRootActions.PREV_ROOT_SHORTCUT, myComponent);
       myGoToNeighbourRootActions.next().registerCustomShortcutSet(GoToNeighbourRootActions.NEXT_ROOT_SHORTCUT, myComponent);
+      if (rootId != null) {
+        setCurrentRoot(rootId);
+      }
     } else {
       setCurrentRoot(rootId);
     }

@@ -18,13 +18,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_Test = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_WithFeatures = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_WithoutFeatures = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TransformationMenu_Test = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -57,6 +58,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
             return props_TransformationLocation_WithoutFeatures;
           }
           break;
+        case 6:
+          if (true) {
+            return props_TransformationMenu_Test;
+          }
+          break;
         default:
       }
     }
@@ -70,5 +76,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Required"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Unavailable"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x595469d6668817a2L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_Test"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f7e88deL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithFeatures"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3eb92bL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithoutFeatures"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Required"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Unavailable"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x595469d6668817a2L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_Test"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f7e88deL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithFeatures"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3eb92bL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithoutFeatures"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationMenu_Test"));
 }

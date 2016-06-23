@@ -17,8 +17,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.ui.tree.SortUtil;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import com.intellij.diff.contents.DiffContent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.platform.integration.ModelDiffContent;
+import com.intellij.diff.requests.DiffRequest;
+import com.intellij.diff.requests.SimpleDiffRequest;
+import com.intellij.diff.DiffManager;
 
 public class CompareTransientModels_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
@@ -62,13 +67,19 @@ public class CompareTransientModels_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
-    final String[] titles = new String[]{model[0].getModelName(), model[1].getModelName()};
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), model[0], model[1], titles[0], titles[1], null).show();
+    List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+    List<DiffContent> contents = ListSequence.fromList(sortedModels).select(new ISelector<SModel, DiffContent>() {
+      public DiffContent select(SModel model) {
+        return (DiffContent) new ModelDiffContent(model);
       }
-    });
+    }).toListSequence();
+    List<String> titles = ListSequence.fromList(sortedModels).select(new ISelector<SModel, String>() {
+      public String select(SModel model) {
+        return model.getName() + "";
+      }
+    }).toListSequence();
+    DiffRequest request = new SimpleDiffRequest("", contents, titles);
+    DiffManager.getInstance().showDiff(((Project) MapSequence.fromMap(_params).get("project")), request);
   }
   private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

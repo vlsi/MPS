@@ -31,10 +31,13 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBase {
   private final ContextAssistantController myController;
   private final ContextAssistantPanel myPanel;
+  private final TriggerRelayoutComponentListener myComponentListener = new TriggerRelayoutComponentListener();
 
   public EditorCell_ContextAssistantComponent(EditorContext editorContext, SNode node) {
     super(editorContext, node);
@@ -62,10 +65,14 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
   public void onAdd() {
     super.onAdd();
     getContext().getContextAssistantManager().register(myController);
+
+    // Relayout the cell when the panel appears/disappears, mainly to ensure that the horizontal scrollbar appears or disappears as necessary.
+    myPanel.getComponent().addComponentListener(myComponentListener);
   }
 
   @Override
   public void onRemove() {
+    myPanel.getComponent().removeComponentListener(myComponentListener);
     getContext().getContextAssistantManager().unregister(myController);
     super.onRemove();
   }
@@ -89,6 +96,12 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
     setHeight(myPanel.getPreferredHeight() - 1); // do not count the bottom border, hence -1
   }
 
+  @Override
+  public void layoutComponent() {
+    // Do nothing. Our cell size is updated via the component listener and the superclass behavior would cause endless back-and-forth resizing since
+    // the component doesn't have a preferred size.
+  }
+
   public ContextAssistant getContextAssistant() {
     return myController;
   }
@@ -103,6 +116,29 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
     @Override
     public void actionPerformed(ActionEvent e) {
       FocusUtil.requestFocus((Component) myEditorComponent, true);
+    }
+  }
+
+  private class TriggerRelayoutComponentListener extends ComponentAdapter {
+    @Override
+    public void componentShown(ComponentEvent e) {
+      triggerRelayout();
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+      triggerRelayout();
+    }
+
+    @Override
+    public void componentResized(ComponentEvent e) {
+      triggerRelayout();
+    }
+
+    private void triggerRelayout() {
+      requestRelayout();
+      jetbrains.mps.nodeEditor.EditorComponent editorComponent = (jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent();
+      editorComponent.relayout();
     }
   }
 }

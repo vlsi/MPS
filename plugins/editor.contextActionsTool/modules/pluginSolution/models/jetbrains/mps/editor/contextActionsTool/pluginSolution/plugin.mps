@@ -51,6 +51,7 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="jan3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.image(JDK/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
+    <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -8480,16 +8481,20 @@
               <node concept="3clFbS" id="5Xa7gk5chbN" role="SfCbr">
                 <node concept="3clFbF" id="5Xa7gk5c996" role="3cqZAp">
                   <node concept="37vLTI" id="5Xa7gk5c997" role="3clFbG">
-                    <node concept="2OqwBi" id="5Xa7gk5c998" role="37vLTx">
-                      <node concept="37vLTw" id="5Xa7gk5c999" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
-                      </node>
-                      <node concept="liA8E" id="5Xa7gk5c99a" role="2OqNvi">
-                        <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
-                      </node>
-                    </node>
                     <node concept="37vLTw" id="5Xa7gk5cbC3" role="37vLTJ">
                       <ref role="3cqZAo" node="5Xa7gk5cafr" resolve="icon" />
+                    </node>
+                    <node concept="2YIFZM" id="3uJzduifvvD" role="37vLTx">
+                      <ref role="37wK5l" to="sn11:Z6TQiSQgL4" resolve="getIconForResource" />
+                      <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                      <node concept="2OqwBi" id="5Xa7gk5c998" role="37wK5m">
+                        <node concept="37vLTw" id="5Xa7gk5c999" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
+                        </node>
+                        <node concept="liA8E" id="5Xa7gk5c99a" role="2OqNvi">
+                          <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

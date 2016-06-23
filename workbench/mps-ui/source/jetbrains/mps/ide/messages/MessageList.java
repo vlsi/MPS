@@ -91,19 +91,19 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
-  private final MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
+  private final MyToggleAction myWarningsAction = new MyToggleAction("Show Warning Messages", Icons.WARNING_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasWarnings();
     }
   };
-  private final MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", Icons.INFORMATION_ICON) {
+  private final MyToggleAction myInfoAction = new MyToggleAction("Show Informational Messages", Icons.INFORMATION_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasInfo();
     }
   };
-  private final MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", Icons.AUTOSCROLLS_ICON) {
+  private final MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll to Source", Icons.AUTOSCROLLS_ICON) {
     @Override
     protected boolean isEnabled() {
       return hasHintObjects();
@@ -295,6 +295,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.add(myInfoAction);
     group.add(myAutoscrollToSourceAction);
     group.add(new MessagesLimitAction());
+    group.add(new ClearAction());
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
@@ -487,12 +488,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     populateActions(myList, group);
     group.addSeparator();
 
-    group.add(new AnAction("Clear", null, null) {
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        clear();
-      }
-    });
+    group.add(new ClearAction());
 
     return group;
   }
@@ -639,7 +635,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages limit", null, String.valueOf(MessageList.this.myMaxListSize),
+      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages Limit", null, String.valueOf(MessageList.this.myMaxListSize),
           new InputValidatorEx() {
             @Nullable
             @Override
@@ -908,6 +904,17 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     @Override
     public String getPreviousOccurenceActionName() {
       return UsageViewBundle.message("action.previous.occurrence");
+    }
+  }
+
+  private class ClearAction extends AnAction {
+    public ClearAction() {
+      super("Clear", "Clear all messages", Icons.CLEAR_ICON);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent e) {
+      clear();
     }
   }
 }

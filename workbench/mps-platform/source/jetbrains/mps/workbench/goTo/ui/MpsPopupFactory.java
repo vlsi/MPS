@@ -54,11 +54,11 @@ public abstract class MpsPopupFactory {
   }
 
   public static ChooseByNamePanel createPanelForNode(Project p, ChooseByNameModel model, boolean checkboxVisible) {
-    return new ChooseByNamePanel(p, model, checkboxVisible, nodeProvider());
+    return new ChooseByNamePanel(p, model, "", checkboxVisible, nodeProvider());
   }
 
   public static ChooseByNamePanel createPanelForPackage(Project p, ChooseByNameModel model, boolean checkboxVisible) {
-    return new ChooseByNamePanel(p, model, checkboxVisible, packageProvider());
+    return new ChooseByNamePanel(p, model, "", checkboxVisible, packageProvider());
   }
 
   private static ChooseByNameItemProvider nodeProvider() {

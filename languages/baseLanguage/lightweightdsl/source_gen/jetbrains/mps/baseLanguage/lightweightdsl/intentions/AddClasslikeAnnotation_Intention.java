@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -59,7 +60,7 @@ public final class AddClasslikeAnnotation_Intention extends IntentionDescriptorB
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     return SModelOperations.rootsIncludingImported(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"));
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SNode myParameter;
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
@@ -76,6 +77,9 @@ public final class AddClasslikeAnnotation_Intention extends IntentionDescriptorB
     @Override
     public IntentionDescriptor getDescriptor() {
       return AddClasslikeAnnotation_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
   private static SNode createDSLAnnotation_qk2y7i_a0a0a(Object p0) {

@@ -6,8 +6,9 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.menus.contextActions" version="0" />
-    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant" version="0" />
+    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus" version="0" />
+    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -23,6 +24,15 @@
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
+        <child id="5979521222239172928" name="icon" index="2SwzYu" />
+      </concept>
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
+        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      </concept>
+    </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
@@ -158,9 +168,6 @@
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -211,26 +218,26 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
     </language>
-    <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.menus.contextActions">
-      <concept id="8954657570916343208" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationLocation_ContextActionsTool" flags="ng" index="2jZ$wP" />
-      <concept id="8954657570916343205" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
+    <language id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus">
+      <concept id="8954657570916343208" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationLocation_ContextActionsTool" flags="ng" index="2jZ$wP" />
+      <concept id="8954657570916343205" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Tooltip" flags="ng" index="2jZ$wS">
         <child id="8954657570916343206" name="query" index="2jZ$wV" />
       </concept>
-      <concept id="8954657570916342474" name="jetbrains.mps.editor.menus.contextActions.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
-      <concept id="8954657570916342471" name="jetbrains.mps.editor.menus.contextActions.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
+      <concept id="8954657570916342474" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2jZ$Xn" />
+      <concept id="8954657570916342471" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Icon" flags="ng" index="2jZ$Xq">
         <child id="8954657570916343203" name="query" index="2jZ$wY" />
       </concept>
-      <concept id="7291101478621922220" name="jetbrains.mps.editor.menus.contextActions.structure.QueryFunction_TransformationMenu_Tooltip" flags="ig" index="1jIJ66" />
+      <concept id="7291101478621922220" name="jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Tooltip" flags="ig" index="1jIJ66" />
     </language>
-    <language id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.intentions.contextAssistant">
-      <concept id="2468431357014363369" name="jetbrains.mps.lang.intentions.contextAssistant.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
-      <concept id="2926686622729992785" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
+    <language id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras">
+      <concept id="2468431357014363369" name="jetbrains.mps.lang.editor.menus.extras.structure.QueryFunctionParameter_IntentionExecutable" flags="ng" index="291QRk" />
+      <concept id="2926686622729992785" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Intention" flags="ng" index="caduF">
         <reference id="2926686622729992786" name="intention" index="caduC" />
       </concept>
-      <concept id="2319156231054332300" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_PluginAction" flags="ng" index="yzXR2">
+      <concept id="2319156231054332300" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_PluginAction" flags="ng" index="yzXR2">
         <reference id="2319156231054332308" name="action" index="yzXRq" />
       </concept>
-      <concept id="4736696158595695479" name="jetbrains.mps.lang.intentions.contextAssistant.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
+      <concept id="4736696158595695479" name="jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Refactoring" flags="ng" index="BGudS">
         <reference id="4736696158595695482" name="refactoring" index="BGudP" />
       </concept>
     </language>
@@ -807,10 +814,11 @@
         <node concept="2jZ$Xq" id="3EZUZhmTIn1" role="2jZA2a">
           <node concept="2jZ$Xn" id="3EZUZhmTJa4" role="2jZ$wY">
             <node concept="3clFbS" id="3EZUZhmTJa5" role="2VODD2">
-              <node concept="3clFbF" id="3EZUZhmTSoV" role="3cqZAp">
-                <node concept="10M0yZ" id="3EZUZhmTSrW" role="3clFbG">
-                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Action" resolve="Action" />
+              <node concept="3clFbF" id="6nBFUP6XBty" role="3cqZAp">
+                <node concept="2SwGe0" id="6nBFUP733e5" role="3clFbG">
+                  <node concept="1QGGSu" id="6nBFUP733e7" role="2SwzYu">
+                    <property role="1QGGTI" value="${module}/icons/action.png" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -948,10 +956,11 @@
         <node concept="2jZ$Xq" id="46W80XA5HU6" role="2jZA2a">
           <node concept="2jZ$Xn" id="46W80XA5HX3" role="2jZ$wY">
             <node concept="3clFbS" id="46W80XA5HX4" role="2VODD2">
-              <node concept="3clFbF" id="46W80XA5HZX" role="3cqZAp">
-                <node concept="10M0yZ" id="46W80XA5Ii8" role="3clFbG">
-                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Refactoring" resolve="Refactoring" />
+              <node concept="3clFbF" id="6nBFUP6XCgQ" role="3cqZAp">
+                <node concept="2SwGe0" id="6nBFUP733vr" role="3clFbG">
+                  <node concept="1QGGSu" id="6nBFUP733vs" role="2SwzYu">
+                    <property role="1QGGTI" value="${module}/icons/refactoring.png" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -974,10 +983,11 @@
         <node concept="2jZ$Xq" id="20Jj4S2Dlw_" role="2jZA2a">
           <node concept="2jZ$Xn" id="20Jj4S2DlwA" role="2jZ$wY">
             <node concept="3clFbS" id="20Jj4S2DlwB" role="2VODD2">
-              <node concept="3clFbF" id="20Jj4S2DlwC" role="3cqZAp">
-                <node concept="10M0yZ" id="20Jj4S2DlwD" role="3clFbG">
-                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Action" resolve="Action" />
+              <node concept="3clFbF" id="6nBFUP6XCb7" role="3cqZAp">
+                <node concept="2SwGe0" id="6nBFUP733r2" role="3clFbG">
+                  <node concept="1QGGSu" id="6nBFUP733r3" role="2SwzYu">
+                    <property role="1QGGTI" value="${module}/icons/action.png" />
+                  </node>
                 </node>
               </node>
             </node>

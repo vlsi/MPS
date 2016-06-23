@@ -19,8 +19,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
@@ -31,12 +29,8 @@ import org.jetbrains.annotations.NotNull;
 
 @State(
     name = "CompilerSettings",
-    storages = {
-        @Storage(file = StoragePathMacros.PROJECT_FILE),
-        @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/compiler.xml", scheme = StorageScheme.DIRECTORY_BASED)
-    }
+    storages = @Storage("compiler.xml")
 )
-
 public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent {
   private CompilerState myState = new CompilerState();
   private final MPSProject myProject;

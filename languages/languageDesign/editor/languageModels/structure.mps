@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -16,7 +16,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -4766,7 +4766,7 @@
   <node concept="1TIwiD" id="5OVd5tVffW9">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuReference_Named" />
-    <property role="34LRSv" value="named menu" />
+    <property role="34LRSv" value="named menu &lt;{menu}&gt;" />
     <property role="EcuMT" value="6718020819487620873" />
     <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
     <node concept="1TJgyj" id="5OVd5tVffWa" role="1TKVEi">
@@ -4780,7 +4780,7 @@
   <node concept="1TIwiD" id="5OVd5tVffWc">
     <property role="3GE5qa" value="TransformationMenu" />
     <property role="TrG5h" value="TransformationMenuReference_Default" />
-    <property role="34LRSv" value="default menu" />
+    <property role="34LRSv" value="default menu for &lt;{concept}&gt;" />
     <property role="EcuMT" value="6718020819487620876" />
     <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
     <node concept="1TJgyj" id="5OVd5tVffWd" role="1TKVEi">
@@ -4809,6 +4809,9 @@
       <property role="20kJfa" value="menuReference" />
       <property role="IQ2ns" value="6718020819487784677" />
       <ref role="20lvS9" node="5OVd5tVffW8" resolve="TransformationMenuReference" />
+    </node>
+    <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Sf$XywF4VC">

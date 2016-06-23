@@ -38,6 +38,10 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
   }
 
   @Override
+  public void performLaterWhenAllCommitted(@NotNull Runnable runnable) {
+  }
+
+  @Override
   @Nullable
   public PsiFile getPsiFile(@NotNull Document document) {
     return null;

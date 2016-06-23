@@ -3720,7 +3720,7 @@
               <ref role="3cqZAo" node="2v0NNHY7Bze" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="le0dhZSpLc" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -3751,7 +3751,7 @@
               <ref role="3cqZAo" node="2v0NNHY7Bze" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="2v0NNHY9Jl1" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
             </node>
           </node>
         </node>
@@ -5274,7 +5274,7 @@
               <ref role="3cqZAo" node="6YK8y67pnoM" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="6YK8y67pnr6" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -5305,7 +5305,7 @@
               <ref role="3cqZAo" node="6YK8y67pnoM" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="6YK8y67pnrG" role="2OqNvi">
-              <ref role="37wK5l" to="cuxm:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
+              <ref role="37wK5l" to="1l1f:~ChooseByNamePanel.getPanel():javax.swing.JPanel" resolve="getPanel" />
             </node>
           </node>
         </node>
@@ -5528,16 +5528,10 @@
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
         <node concept="2AHcQZ" id="2es7MPSW6fs" role="2B70Vg">
           <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-          <node concept="2B6LJw" id="2es7MPSW6Mr" role="2B76xF">
-            <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-            <node concept="3cpWs3" id="3iIaw4WuPzE" role="2B70Vg">
-              <node concept="Xl_RD" id="3iIaw4WuReP" role="3uHU7w">
-                <property role="Xl_RC" value="/refactoringSettings.xml" />
-              </node>
-              <node concept="10M0yZ" id="2es7MPSW7BJ" role="3uHU7B">
-                <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
-                <ref role="3cqZAo" to="1m72:~StoragePathMacros.APP_CONFIG" resolve="APP_CONFIG" />
-              </node>
+          <node concept="2B6LJw" id="4PleL4OQ7hX" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="Xl_RD" id="ftM8OcQ_zS" role="2B70Vg">
+              <property role="Xl_RC" value="refactoringSettings.xml" />
             </node>
           </node>
         </node>

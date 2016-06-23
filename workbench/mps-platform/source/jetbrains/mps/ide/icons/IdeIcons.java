@@ -40,21 +40,8 @@ public class IdeIcons {
   public static final Icon DEFAULT_NODE_ICON = Nodes.Node;
 
   public static final Icon MODEL_ICON = FileIcons.MODEL_ICON;
-  public static final Icon STRUCTURE_MODEL_ICON = Nodes.Models.StructureModel;
-  public static final Icon EDITOR_MODEL_ICON = Nodes.Models.EditorModel;
-  public static final Icon ACTIONS_MODEL_ICON = Nodes.Models.ActionsModel;
   public static final Icon TEMPLATES_MODEL_ICON = Nodes.Models.TemplatesModel;
-  public static final Icon TYPESYSTEM_MODEL_ICON = Nodes.Models.TypesystemModel;
-  public static final Icon INTENTIONS_MODEL_ICON = Nodes.Models.IntentionsModel;
-  public static final Icon FIND_USAGES_MODEL_ICON = Nodes.Models.FindUsagesModel;
-  public static final Icon PLUGIN_MODEL_ICON = Nodes.Models.PluginModel;
-  public static final Icon BEHAVIOR_MODEL_ICON = Nodes.Models.BehaviourModel;
-  public static final Icon CONSTRAINTS_MODEL_ICON = Nodes.Models.ConstraintsModel;
-  public static final Icon DATA_FLOW_MODEL_ICON = Nodes.Models.DataFlowModel;
   public static final Icon TEST_MODEL_ICON = Nodes.TestModel;
-  public static final Icon REFACTORINGS_MODEL_ICON = Nodes.Models.RefactoringsModel;
-  public static final Icon STUBS_MODEL_ICON = Nodes.Models.StubsModel;
-  public static final Icon TEXT_GEN_MODEL_ICON = Nodes.Models.TextGenModel;
   public static final Icon ACCESSORY_MODEL_ICON = Nodes.Models.AccessoryModel;
 
   public static final Icon PROJECT_ICON = AllIcons.Nodes.Project;

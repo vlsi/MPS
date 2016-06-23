@@ -1957,6 +1957,23 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.editor.BuildVariableMacroInitWithFileContent_Editor" file="BuildVariableMacroInitWithFileContent_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildVariableMacroInitWithString_Editor" file="BuildVariableMacroInitWithString_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -2116,6 +2133,7 @@
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVarRefStringPart_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitValue_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithDate_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithFileContent_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithString_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacroInitWithValueFromFile_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildVariableMacro_Editor" />

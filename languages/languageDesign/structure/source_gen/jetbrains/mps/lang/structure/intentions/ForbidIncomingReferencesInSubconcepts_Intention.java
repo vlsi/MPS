@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -67,7 +67,7 @@ public final class ForbidIncomingReferencesInSubconcepts_Intention extends Inten
       Collection<SModel> allModels = new ModuleRepositoryFacade(editorContext.getRepository()).getAllModels();
       Iterable<SModel> seq = Sequence.fromIterable(((Iterable<SModel>) allModels)).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel md) {
-          return SModelStereotype.isUserModel(md) && LanguageAspect.STRUCTURE.is(md);
+          return SModelStereotype.isUserModel(md) && SModuleOperations.isAspect(md, "structure");
         }
       });
 

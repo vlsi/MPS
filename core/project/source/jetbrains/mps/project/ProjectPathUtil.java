@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.module.SModule;
-
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -24,6 +22,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 // todo: rewrite this. all methods should have same signature!
 public class ProjectPathUtil {
@@ -93,6 +92,6 @@ public class ProjectPathUtil {
     if (!(module instanceof AbstractModule)) {
       return null;
     }
-    return getGeneratorOutputPath(((AbstractModule) module).getModuleSourceDir(), ((AbstractModule) module).getModuleDescriptor());
+    return ((AbstractModule) module).getOutputPath();
   }
 }

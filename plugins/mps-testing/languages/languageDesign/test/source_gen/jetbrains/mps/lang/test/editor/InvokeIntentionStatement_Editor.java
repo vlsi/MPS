@@ -13,10 +13,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vtollk_a(editorContext, node);
+  }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_vtollk_a_0(editorContext, node);
   }
   private EditorCell createCollection_vtollk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -24,6 +32,9 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vtollk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_vtollk_b0(editorContext, node));
+    if (renderingCondition_vtollk_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_vtollk_c0(editorContext, node));
+    }
     return editorCell;
   }
   private EditorCell createConstant_vtollk_a0(EditorContext editorContext, SNode node) {
@@ -78,6 +89,96 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
         return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+  private EditorCell createCollection_vtollk_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_vtollk_c0");
+    editorCell.addEditorCell(this.createConstant_vtollk_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vtollk_b2a(editorContext, node));
+    return editorCell;
+  }
+  private static boolean renderingCondition_vtollk_a2a(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, 0x7bf9131d2468ca92L, "parameter")) != null);
+  }
+  private EditorCell createConstant_vtollk_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with parameter");
+    editorCell.setCellId("Constant_vtollk_a2a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_vtollk_b2a(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new InvokeIntentionStatement_Editor.parameterSingleRoleHandler_vtollk_b2a(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, 0x7bf9131d2468ca92L, "parameter"), editorContext);
+    return provider.createCell();
+  }
+  private class parameterSingleRoleHandler_vtollk_b2a extends SingleRoleCellProvider {
+    public parameterSingleRoleHandler_vtollk_b2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("parameter");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_parameter");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no parameter>";
+    }
+  }
+  private EditorCell createCollection_vtollk_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_vtollk_a_0");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createConstant_vtollk_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vtollk_b0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_vtollk_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter:");
+    editorCell.setCellId("Constant_vtollk_a0_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_vtollk_b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new InvokeIntentionStatement_Editor.parameterSingleRoleHandler_vtollk_b0(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, 0x7bf9131d2468ca92L, "parameter"), editorContext);
+    return provider.createCell();
+  }
+  private class parameterSingleRoleHandler_vtollk_b0 extends SingleRoleCellProvider {
+    public parameterSingleRoleHandler_vtollk_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("parameter");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_parameter");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no parameter>";
     }
   }
 }

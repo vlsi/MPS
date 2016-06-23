@@ -1,7 +1,7 @@
 <project name="Get Idea Platform" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
 
-  <property name="idea.platform.version" value="145.971.21" />
-  <property name="idea.platform.snapshot" value="146-SNAPSHOT" />
+  <property name="idea.platform.version" value="162.917" />
+  <property name="idea.platform.snapshot" value="162-SNAPSHOT" />
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
   <property name="ivy.cache.ttl.default" value="eternal" />
 
@@ -50,7 +50,11 @@
   </target>
 
   <target name="force-resolve" depends="install-ivy, cleanCache">
-    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different" />
+    <ivy:resolve file="ivy.xml"/>
+    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
+
+    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar"/>
+    <ivy:retrieve pattern="../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">

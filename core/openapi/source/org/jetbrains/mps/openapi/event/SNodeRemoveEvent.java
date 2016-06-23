@@ -70,6 +70,10 @@ public final class SNodeRemoveEvent extends AbstractModelChangeEvent {
     return myParent;
   }
 
+  /**
+   * @return removed node. Beware, it's detached from the model and has limited functionality.
+   *         E.g. {@link SNode#getReference()} doesn't make sense, use {@link #getModel() getModel().getReference()} and {@link SNode#getNodeId()} instead.
+   */
   @NotNull
   public SNode getChild() {
     return myChild;

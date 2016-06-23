@@ -1342,7 +1342,7 @@
                   <ref role="3cqZAo" node="7mrRUyVUv71" resolve="application" />
                 </node>
                 <node concept="liA8E" id="7mrRUyVUv7b" role="2OqNvi">
-                  <ref role="37wK5l" to="bd8o:~Application.isDisposed():boolean" resolve="isDisposed" />
+                  <ref role="37wK5l" to="1m72:~ComponentManager.isDisposed():boolean" resolve="isDisposed" />
                 </node>
               </node>
             </node>

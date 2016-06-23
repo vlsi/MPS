@@ -94,7 +94,6 @@ class InternalJavaCompiler {
       result = compileJava(compiler);
       reportModulesWithRemovalsAreNotChanged(analysisResult.modulesWithRemovals, result.getChangedModules());
       invalidateCompiledClasses(result.getChangedModules());
-      return result;
     }
     copyResources();
 

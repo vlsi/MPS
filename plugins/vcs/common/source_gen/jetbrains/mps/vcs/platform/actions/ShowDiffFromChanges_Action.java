@@ -15,8 +15,8 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -56,9 +56,9 @@ public class ShowDiffFromChanges_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-    final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
         final SModel model = editedNode.getModel();
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {

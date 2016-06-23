@@ -163,6 +163,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
@@ -597,7 +598,7 @@
                             <node concept="2OqwBi" id="4TqQgK0ruvr" role="3clFbG">
                               <node concept="2OqwBi" id="4TqQgK0ruvs" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyyZ1F" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="4TqQgK0ruvu" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -619,7 +620,7 @@
                                     </node>
                                   </node>
                                   <node concept="1rXfSq" id="4hiugqyz5KU" role="10QFUP">
-                                    <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                     <node concept="2ShNRf" id="4TqQgK0ruvB" role="37wK5m">
                                       <node concept="YeOm9" id="4TqQgK0ruvC" role="2ShVmc">
                                         <node concept="1Y3b0j" id="4TqQgK0ruvD" role="YeSDq">
@@ -693,7 +694,7 @@
                           </node>
                           <node concept="3clFbF" id="4TqQgK0ruw0" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyz7K7" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2ShNRf" id="4TqQgK0ruw2" role="37wK5m">
                                 <node concept="YeOm9" id="4TqQgK0ruw3" role="2ShVmc">
                                   <node concept="1Y3b0j" id="4TqQgK0ruw4" role="YeSDq">
@@ -774,7 +775,7 @@
                             <node concept="2OqwBi" id="2CB0w6xf7sq" role="3clFbG">
                               <node concept="2OqwBi" id="2CB0w6xf6YG" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzeXz" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="2CB0w6xf6YI" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -789,32 +790,32 @@
                               <node concept="liA8E" id="2CB0w6xf7su" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:70hZ3jyJvfD" resolve="setup" />
                                 <node concept="1rXfSq" id="4hiugqyz5Ne" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="4O1dS63KY_m" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="4O1dS63KY_n" role="37wK5m">
                                       <ref role="3VsUkX" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="1rXfSq" id="4hiugqyyYAg" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="4O1dS63KY_o" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="4O1dS63KY_p" role="37wK5m">
                                       <ref role="3VsUkX" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="1rXfSq" id="4hiugqyzhIy" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
-                                  <node concept="2YIFZM" id="4O1dS63KY_q" role="37wK5m">
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
+                                  <node concept="2YIFZM" id="3rVxTa_fYI0" role="37wK5m">
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.anything():org.hamcrest.Matcher" resolve="anything" />
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.any(java.lang.Class):org.hamcrest.Matcher" resolve="any" />
-                                    <node concept="3VsKOn" id="4O1dS63KY_r" role="37wK5m">
-                                      <ref role="3VsUkX" to="wyt6:~Iterable" resolve="Iterable" />
+                                    <node concept="3uibUv" id="3rVxTa_gANT" role="3PaCim">
+                                      <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
                                   </node>
                                 </node>
@@ -825,7 +826,7 @@
                             <node concept="2OqwBi" id="7$uOxFlnq0C" role="3clFbG">
                               <node concept="2OqwBi" id="7$uOxFlnq0D" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzeLU" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="7$uOxFlnq0F" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -840,10 +841,10 @@
                               <node concept="liA8E" id="7$uOxFlnq0I" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:3bEKrlZKk50" resolve="reportFeedback" />
                                 <node concept="1rXfSq" id="4hiugqyyQMP" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2YIFZM" id="4O1dS63KY_s" role="37wK5m">
                                     <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                    <ref role="37wK5l" to="mg6i:~Expectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
+                                    <ref role="37wK5l" to="mg6i:~AbstractExpectations.aNonNull(java.lang.Class):org.hamcrest.Matcher" resolve="aNonNull" />
                                     <node concept="3VsKOn" id="4O1dS63KY_t" role="37wK5m">
                                       <ref role="3VsUkX" to="i9so:6KRD$9F_Ul3" resolve="IFeedback" />
                                     </node>
@@ -880,7 +881,7 @@
                             <node concept="2OqwBi" id="2dB$GwFJsxm" role="3clFbG">
                               <node concept="2OqwBi" id="2dB$GwFJsxn" role="2Oq$k0">
                                 <node concept="1rXfSq" id="4hiugqyzfG6" role="2Oq$k0">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.exactly(int):org.jmock.syntax.ReceiverClause" resolve="exactly" />
                                   <node concept="3cmrfG" id="2dB$GwFJsxp" role="37wK5m">
                                     <property role="3cmrfH" value="1" />
                                   </node>
@@ -895,7 +896,7 @@
                               <node concept="liA8E" id="2dB$GwFJsxs" role="2OqNvi">
                                 <ref role="37wK5l" to="i9so:7eUbKP2ZRJM" resolve="relayQuery" />
                                 <node concept="1rXfSq" id="4hiugqyzd_S" role="37wK5m">
-                                  <ref role="37wK5l" to="mg6i:~Expectations.with(org.hamcrest.Matcher):java.lang.Object" resolve="with" />
+                                  <ref role="37wK5l" to="mg6i:~AbstractExpectations.with(java.lang.Object):java.lang.Object" resolve="with" />
                                   <node concept="2ShNRf" id="2dB$GwFJsxu" role="37wK5m">
                                     <node concept="YeOm9" id="2dB$GwFJsxv" role="2ShVmc">
                                       <node concept="1Y3b0j" id="2dB$GwFJsxw" role="YeSDq">
@@ -993,7 +994,7 @@
                           </node>
                           <node concept="3clFbF" id="2dB$GwFJsy0" role="3cqZAp">
                             <node concept="1rXfSq" id="4hiugqyzeyk" role="3clFbG">
-                              <ref role="37wK5l" to="mg6i:~Expectations.will(org.jmock.api.Action):void" resolve="will" />
+                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
                               <node concept="2ShNRf" id="2dB$GwFJsy2" role="37wK5m">
                                 <node concept="YeOm9" id="2dB$GwFJsy3" role="2ShVmc">
                                   <node concept="1Y3b0j" id="2dB$GwFJsy4" role="YeSDq">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)/1835794636205154554">
@@ -19,5 +19,5 @@
       <unit id="1835794636205154554" at="10,0,28,0" name="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

@@ -480,6 +480,9 @@
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
         <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
       </concept>
+      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
+        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
+      </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -6167,12 +6170,12 @@
                   </node>
                   <node concept="2OqwBi" id="4CruXksvwjy" role="37vLTx">
                     <node concept="2JrnkZ" id="4CruXksvwjz" role="2Oq$k0">
-                      <node concept="3B5_sB" id="4CruXksvwj$" role="2JrQYb">
-                        <ref role="3B5MYn" to="1k94:56cvcsnDMz9" resolve="Root" />
+                      <node concept="1N_AGu" id="2HoLY$CiMP3" role="2JrQYb">
+                        <ref role="1N_AGt" to="1k94:56cvcsnDMz9" resolve="Root" />
                       </node>
                     </node>
                     <node concept="liA8E" id="4CruXksvwj_" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                      <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                     </node>
                   </node>
                 </node>
@@ -6197,10 +6200,10 @@
               <node concept="3clFbS" id="7HgS$Vkbw72" role="1bW5cS">
                 <node concept="3clFbF" id="7HgS$Vkbw73" role="3cqZAp">
                   <node concept="2OqwBi" id="7HgS$Vkbw74" role="3clFbG">
-                    <node concept="1PgB_6" id="7HgS$Vkbw75" role="2OqNvi" />
                     <node concept="3B5_sB" id="7HgS$Vkbw76" role="2Oq$k0">
                       <ref role="3B5MYn" to="1k94:56cvcsnDMz9" resolve="Root" />
                     </node>
+                    <node concept="1PgB_6" id="7HgS$Vkbw75" role="2OqNvi" />
                   </node>
                 </node>
               </node>

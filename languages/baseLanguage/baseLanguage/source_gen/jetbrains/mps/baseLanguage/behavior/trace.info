@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -13353,7 +13353,7 @@
       <node id="1213877519784" at="48,92,49,16" concept="12" />
       <node id="1213877519789" at="51,78,52,261" concept="12" />
       <node id="1238860364538" at="54,91,55,263" concept="12" />
-      <node id="1238860370838" at="57,112,58,46" concept="19" />
+      <node id="9194725403639931153" at="57,112,58,16" concept="12" />
       <node id="6329021646629620938" at="61,326,62,18" concept="12" />
       <node id="1241531203715" at="63,5,64,271" concept="12" />
       <node id="1262430001741497938" at="66,94,67,17" concept="12" />
@@ -13407,7 +13407,7 @@
       <scope id="1213877519783" at="48,92,49,16" />
       <scope id="1213877519788" at="51,78,52,261" />
       <scope id="1238860258780" at="54,91,55,263" />
-      <scope id="1238860310641" at="57,112,58,46" />
+      <scope id="1238860310641" at="57,112,58,16" />
       <scope id="6329021646629620922" at="61,326,62,18" />
       <scope id="1262430001741497941" at="66,94,67,17" />
       <scope id="1262430001741498034" at="69,104,70,17" />
@@ -29332,5 +29332,5 @@
       <unit id="9103527268106341892" at="25,0,224,0" name="jetbrains.mps.baseLanguage.behavior.ResolveUtil" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

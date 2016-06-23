@@ -30,6 +30,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a3, menuId.getFqName())) {
               case 0:
+                return Arrays.asList(new TransformationMenu[]{new NamedMenuForBaseInUsedExtendingLanguage()});
+              default:
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a3, menuId.getFqName())) {
+              case 0:
                 return Arrays.asList(new TransformationMenu[]{new UsedContribution()});
               default:
             }
@@ -50,6 +59,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage"};
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.NamedMenuForBaseInUsedExtendingLanguage"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage"};
 }

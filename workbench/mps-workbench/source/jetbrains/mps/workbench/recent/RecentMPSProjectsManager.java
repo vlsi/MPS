@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.recent;
 
 import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
@@ -30,11 +31,10 @@ import org.jetbrains.annotations.Nullable;
 
 @com.intellij.openapi.components.State(
   name = "RecentMPSProjectsManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/other.xml"
-    )}
+    storages = {
+        @Storage(value = "recentProjects.xml", roamingType = RoamingType.DISABLED),
+        @Storage(value = "other.xml", deprecated = true)
+    }
 )
 public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
   public RecentMPSProjectsManager(MessageBus messageBus) {

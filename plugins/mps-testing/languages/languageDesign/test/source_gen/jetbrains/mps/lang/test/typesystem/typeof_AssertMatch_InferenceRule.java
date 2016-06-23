@@ -35,23 +35,17 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
       }
     }
     {
-      SNode nodeBefore;
-      SNode nodeAfter;
-      Iterator<SNode> nodeBefore_iterator = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, 0x11a2f989195L, "before"))).iterator();
-      Iterator<SNode> nodeAfter_iterator = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, 0x11a2f98d40fL, "after"))).iterator();
-      while (true) {
-        if (!(nodeBefore_iterator.hasNext())) {
-          break;
-        }
-        if (!(nodeAfter_iterator.hasNext())) {
-          break;
-        }
-        nodeBefore = nodeBefore_iterator.next();
-        nodeAfter = nodeAfter_iterator.next();
+      Iterator<SNode> nodeBefore_it = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, 0x11a2f989195L, "before"))).iterator();
+      Iterator<SNode> nodeAfter_it = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, 0x11a2f98d40fL, "after"))).iterator();
+      SNode nodeBefore_var;
+      SNode nodeAfter_var;
+      while (nodeBefore_it.hasNext() && nodeAfter_it.hasNext()) {
+        nodeBefore_var = nodeBefore_it.next();
+        nodeAfter_var = nodeAfter_it.next();
         {
-          SNode _nodeToCheck_1029348928467 = nodeBefore;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1214922658994", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1214922647143", true), (SNode) typeCheckingContext.typeOf(nodeAfter, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1214922660624", true), _info_12389875345);
+          SNode _nodeToCheck_1029348928467 = nodeBefore_var;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "6903010549536046161", 0, null);
+          typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "6903010549536046164", true), (SNode) typeCheckingContext.typeOf(nodeAfter_var, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "6903010549536046167", true), false, _info_12389875345);
         }
       }
     }

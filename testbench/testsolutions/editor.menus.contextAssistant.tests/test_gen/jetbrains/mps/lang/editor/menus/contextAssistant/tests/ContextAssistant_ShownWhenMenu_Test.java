@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
 import java.util.List;
@@ -24,14 +25,19 @@ public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest 
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8865042036543828398", "");
-      ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
-      contextAssistantManager.updateImmediately();
+      EditorContext editorContext = getEditorComponent().getEditorContext();
+      editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
+        public void run() {
+          ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
+          contextAssistantManager.updateImmediately();
 
-      Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
+          Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
 
-      List<MenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
-      Assert.assertNotNull(activeItems);
-      Assert.assertTrue(activeItems.size() > 0);
+          List<MenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
+          Assert.assertNotNull(activeItems);
+          Assert.assertTrue(activeItems.size() > 0);
+        }
+      });
     }
   }
 }

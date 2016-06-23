@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import com.intellij.ide.util.gotoByName.ChooseByNamePanel;
+import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.ValidationInfo;
 import javax.swing.JComponent;
@@ -16,8 +16,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.goTo.matcher.CompositeItemProvider;
-import jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProvider;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.Disposer;
@@ -111,26 +110,7 @@ import java.awt.event.ActionEvent;
         return rv.toArray(new SModelReference[rv.size()]);
       }
     };
-    myChoosePanel = new ChooseByNamePanel(myProject.getProject(), chooseModel, "", false, null) {
-      {
-        myProvider = new CompositeItemProvider(new MPSPackageItemProvider(null), myProvider);
-      }
-
-
-      @Override
-      protected void showTextFieldPanel() {
-        // intentionally no-op 
-        // if not overridden, there's grey rectangle behind the dialog that dissapears on Esc or focus lost. 
-        // Oh yes, don't try to find this in the documentation. 
-      }
-
-      @Override
-      protected void doClose(boolean ok) {
-        if (ok) {
-          myActionListener.elementChosen(getChosenElement());
-        }
-      }
-    };
+    myChoosePanel = MpsPopupFactory.createPanelForPackage(myProject.getProject(), chooseModel, false);
     myChoosePanel.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object o) {
         setSampleModel(chooseModel.getModelObject(o));

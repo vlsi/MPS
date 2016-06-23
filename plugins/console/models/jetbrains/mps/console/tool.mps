@@ -1417,11 +1417,11 @@
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
         <node concept="2AHcQZ" id="2es7MPSW6fs" role="2B70Vg">
           <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-          <node concept="2B6LJw" id="2es7MPSW6Mr" role="2B76xF">
-            <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-            <node concept="10M0yZ" id="2es7MPSW7BJ" role="2B70Vg">
-              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
+          <node concept="2B6LJw" id="4PleL4ON3Jo" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="10M0yZ" id="ftM8OcNcf3" role="2B70Vg">
               <ref role="3cqZAo" to="1m72:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
+              <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
             </node>
           </node>
         </node>

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
@@ -63,7 +64,7 @@ public final class AlterStatementListContainer_Intention extends IntentionDescri
     }
     return list;
   }
-  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SAbstractConcept myParameter;
     public IntentionImplementation(SAbstractConcept parameter) {
       myParameter = parameter;
@@ -92,6 +93,9 @@ public final class AlterStatementListContainer_Intention extends IntentionDescri
     @Override
     public IntentionDescriptor getDescriptor() {
       return AlterStatementListContainer_Intention.this;
+    }
+    public Object getParameter() {
+      return myParameter;
     }
   }
 }

@@ -62,11 +62,7 @@ import java.util.Set;
 
 @State(
     name = "MPSIntentionsManager",
-    storages = {
-        @Storage(
-            id = "other",
-            file = "$APP_CONFIG$/intentions.xml"
-        )}
+    storages = @Storage("intentions.xml")
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
 
@@ -384,6 +380,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
       myIntentionAdapters = adapters.isEmpty() ? Collections.<MigrationRefactoringAdapter>emptyList() : adapters;
     }
+
     @NotNull
     public Collection<? extends IntentionFactory> getIntentions() {
       return myIntentionAdapters;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
 import jetbrains.mps.smodel.CommandListenerAdapter;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
@@ -113,7 +114,8 @@ public class DataTreeChangesNotifier extends SRepositoryContentAdapter {
 
   @Override
   public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
-    final SNodeReference ptr = event.getChild().getReference();
+    // SNode.getReference() for deleted node produces invalid pointer
+    final SNodeReference ptr = new SNodePointer(event.getModel().getReference(), event.getChild().getNodeId());
     ArrayList<IChangeListener> toNotify = new ArrayList<IChangeListener>();
     for (IChangeListener l : myNodeListeners.keySet()) {
       if (myNodeListeners.get(l).contains(ptr)) {

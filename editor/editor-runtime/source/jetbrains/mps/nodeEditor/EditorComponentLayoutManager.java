@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
-
 import javax.swing.JComponent;
 import java.awt.Component;
 import java.awt.Container;
@@ -55,20 +53,12 @@ public class EditorComponentLayoutManager implements LayoutManager {
   @Override
   public void layoutContainer(Container parent) {
     checkContainer(parent);
-    boolean needRelayout = false;
     EditorComponent editorComponent = (EditorComponent) parent;
     for (EditorCell_WithComponent cell : editorComponent.getCellTracker().getComponentCells()) {
-      JComponent component = cell.getComponent();
-      component.validate();
-      Dimension preferredSize = component.getPreferredSize();
-      if (!component.getSize().equals(preferredSize)) {
-        component.setSize(preferredSize);
-        if (cell instanceof EditorCell_Basic)
-          cell.requestRelayout();
-        needRelayout = true;
-      }
+      cell.layoutComponent();
     }
-    if (needRelayout) {
+
+    if (editorComponent.getRootCell().wasRelayoutRequested()) {
       editorComponent.relayout();
     }
   }

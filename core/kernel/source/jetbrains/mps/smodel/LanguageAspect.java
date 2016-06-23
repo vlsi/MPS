@@ -34,26 +34,37 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum LanguageAspect {
+  //mostly migrated
   STRUCTURE("structure", BootstrapLanguages.structureLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Structure"),
 
+  //mostly migrated
   EDITOR("editor", BootstrapLanguages.editorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor"),
 
+  //mostly migrated
   ACTIONS("actions", BootstrapLanguages.actionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor+Actions"),
 
+  //mostly migrated
   CONSTRAINTS("constraints", BootstrapLanguages.constraintsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Constraints"),
 
+  //mostly migrated
   BEHAVIOR("behavior", BootstrapLanguages.behaviorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Behavior"),
 
+  //mostly migrated
   TYPESYSTEM("typesystem", BootstrapLanguages.typesystemLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Typesystem"),
 
+  //mostly migrated
   REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
+  //mostly migrated
   SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), null),
 
+  //mostly migrated
   INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
+  //mostly migrated
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
+  //migrated, uncomment when migration is finished [compatibility] and deprecate this class
   PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
     @Override
     public Collection<SLanguage> getMainLanguages() {
@@ -64,12 +75,16 @@ public enum LanguageAspect {
     }
   },
 
+  //mostly migrated
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
+  //mostly migrated
   TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
 
+  //mostly migrated
   TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
+  //mostly migrated
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
   public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";

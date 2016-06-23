@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/6478870542308871875:jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance" />
   <concept fqn="c:c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/3751132065236767060:jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -229,5 +229,5 @@
       <unit id="941086956891203925" at="15,0,57,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

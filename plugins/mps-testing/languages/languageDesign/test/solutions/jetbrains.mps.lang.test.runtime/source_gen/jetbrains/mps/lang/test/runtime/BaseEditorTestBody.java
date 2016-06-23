@@ -32,10 +32,9 @@ import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
-import jetbrains.mps.intentions.IntentionsManager;
-import java.util.Collection;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -270,32 +269,24 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     new MouseEventsDispatcher(this).processSecondaryMouseEvent(targetComponent, x, y, eventType);
   }
 
-  protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
-    final Throwable[] ts = new Throwable[1];
-    runUndoableInEDTAndWait(new Runnable() {
-      public void run() {
-        myProject.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            try {
-              myCurrentEditorComponent.getEditorContext().select(node);
-              IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-              query.setCurrentNodeOnly(true);
-              Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myCurrentEditorComponent.getEditorContext());
-              for (Pair<IntentionExecutable, SNode> intention : intentions) {
-                if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
-                  intention.o1.execute(intention.o2, myCurrentEditorComponent.getEditorContext());
-                }
-              }
-            } catch (Throwable t) {
-              ts[0] = t;
-            }
-          }
-        });
-      }
-    });
-    if (ts[0] != null) {
-      throw new RuntimeException("Failure during intention invoke", ts[0]);
-    }
+  protected void invokeIntention(String id, SNode node) throws InterruptedException, InvocationTargetException {
+    invokeMatchingIntention(node, new MatchIntentionById(id));
+  }
+
+  protected void invokeParameterizedIntention(String id, Object parameter, SNode node) throws InterruptedException, InvocationTargetException {
+    invokeMatchingIntention(node, new MatchIntentionByIdAndParameter(id, parameter));
+  }
+
+  protected void invokeMatchingIntention(final SNode node, Condition<IntentionExecutable> intentionCondition) throws InterruptedException, InvocationTargetException {
+    new IntentionTester(this).invokeMatchingIntention(node, intentionCondition);
+  }
+
+  protected boolean isIntentionApplicable(String intentionId, SNode node) throws InterruptedException, InvocationTargetException {
+    return new IntentionTester(this).isIntentionApplicable(intentionId, node);
+  }
+
+  public EditorContext getEditorContext() {
+    return myCurrentEditorComponent.getEditorContext();
   }
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
@@ -358,6 +349,14 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     myCurrentEditorComponent = myFileNodeEditor.getNodeEditor().getCurrentEditorComponent();
   }
 
+  public void runUndoableCommandInEDTAndWait(final Runnable runnable) throws InterruptedException, InvocationTargetException {
+    runUndoableInEDTAndWait(new Runnable() {
+      public void run() {
+        getProject().getModelAccess().executeCommand(runnable);
+      }
+    });
+  }
+
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {
     UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
     CurrentEditorProvider oldEditorProvider = undoManager.getEditorProvider();
@@ -366,18 +365,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         return myFileNodeEditor;
       }
     });
-    final Throwable[] ts = new Throwable[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        try {
-          runnable.run();
-        } catch (Throwable t) {
-          ts[0] = t;
-        }
-      }
-    });
-    if (ts[0] != null) {
-      throw new RuntimeException("Failure during editor test execution", ts[0]);
+    Exception exception = ThreadUtils.runInUIThreadAndWait(runnable);
+    if (exception != null) {
+      throw new RuntimeException("Failure during editor test execution", exception);
     }
     flushEDTEvents();
     // some actions (Copy/Paste) are running one more command later 

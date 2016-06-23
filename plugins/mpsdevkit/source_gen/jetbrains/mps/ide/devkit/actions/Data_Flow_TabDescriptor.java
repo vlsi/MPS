@@ -15,11 +15,12 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.DataFlow;
@@ -64,7 +65,7 @@ public class Data_Flow_TabDescriptor extends RelationDescriptor {
       return null;
     }
 
-    SModel aspectModel = LanguageAspect.DATA_FLOW.get(((Language) module));
+    SModel aspectModel = SModuleOperations.getAspect(module, "dataFlow");
     if (aspectModel == null) {
       return null;
     }

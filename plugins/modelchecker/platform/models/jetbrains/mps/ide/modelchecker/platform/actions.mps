@@ -113,9 +113,6 @@
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
-      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
-        <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
@@ -1465,20 +1462,12 @@
       </node>
       <node concept="2B6LJw" id="3etVqSRKzvU" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
-        <node concept="2BsdOp" id="3etVqSRKzvV" role="2B70Vg">
-          <node concept="2AHcQZ" id="3etVqSRKzvW" role="2BsfMF">
-            <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
-            <node concept="2B6LJw" id="3etVqSRKzvX" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.id()" resolve="id" />
-              <node concept="Xl_RD" id="3etVqSRKzvY" role="2B70Vg">
-                <property role="Xl_RC" value="other" />
-              </node>
-            </node>
-            <node concept="2B6LJw" id="3etVqSRKzvZ" role="2B76xF">
-              <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
-              <node concept="Xl_RD" id="3etVqSRKzw0" role="2B70Vg">
-                <property role="Xl_RC" value="$APP_CONFIG$/modelCheckerSettings.xml" />
-              </node>
+        <node concept="2AHcQZ" id="ftM8OcP03Z" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="4PleL4OQ9Ck" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.value()" resolve="value" />
+            <node concept="Xl_RD" id="3etVqSRKzw0" role="2B70Vg">
+              <property role="Xl_RC" value="modelCheckerSettings.xml" />
             </node>
           </node>
         </node>

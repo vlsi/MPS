@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -102,35 +102,35 @@ public class AspectDependenciesChecker extends SpecificChecker {
 
     SModule module = model.getModule();
     if (module instanceof Language) {
-      if (LanguageAspect.ACTIONS.is(model)) {
+      if (SModuleOperations.isAspect(model, "actions")) {
         return EDITOR;
-      } else if (LanguageAspect.BEHAVIOR.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "behavior")) {
         return CORE;
-      } else if (LanguageAspect.CONSTRAINTS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "constraints")) {
         return CORE;
-      } else if (LanguageAspect.DATA_FLOW.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "dataFlow")) {
         return CORE;
-      } else if (LanguageAspect.EDITOR.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "editor")) {
         return EDITOR;
-      } else if (LanguageAspect.FIND_USAGES.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "findUsages")) {
         return CORE;
-      } else if (LanguageAspect.INTENTIONS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "intentions")) {
         return EDITOR;
-      } else if (LanguageAspect.PLUGIN.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "plugin")) {
         return WORKBENCH;
-      } else if (LanguageAspect.REFACTORINGS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "refactorings")) {
         return CORE;
-      } else if (LanguageAspect.SCRIPTS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "scripts")) {
         return CORE;
-      } else if (LanguageAspect.STRUCTURE.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "structure")) {
         return CORE;
-      } else if (LanguageAspect.MIGRATION.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "migration")) {
         return CORE;
-      } else if (LanguageAspect.TEST.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "test")) {
         return EDITOR;
-      } else if (LanguageAspect.TEXT_GEN.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "textGen")) {
         return CORE;
-      } else if (LanguageAspect.TYPESYSTEM.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "typesystem")) {
         return CORE;
       } else {
         return CORE;

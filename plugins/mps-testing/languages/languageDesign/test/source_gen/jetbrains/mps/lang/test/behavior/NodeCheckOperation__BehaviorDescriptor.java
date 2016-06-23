@@ -28,14 +28,13 @@ public final class NodeCheckOperation__BehaviorDescriptor extends BaseBHDescript
 
   public static final SMethod<String> getName_idhHOMYE$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHOMYE$").registry(REGISTRY).build();
   public static final SMethod<String> getDefaultName_id7scb9XJdmH2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultName").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7scb9XJdmH2").registry(REGISTRY).build();
-  public static final SMethod<Void> perform_iddCRb6FLnvk = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("perform").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("dCRb6FLnvk").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> isMpsStartRequired_id2RMg39tmiFh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMpsStartRequired").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RMg39tmiFh").registry(REGISTRY).build();
   public static final SMethod<SNode> getTestCase_idhGBgWVd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTestCase").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBgWVd").registry(REGISTRY).build();
   public static final SMethod<String> getTestName_idhGBohAB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBohAB").registry(REGISTRY).build();
-  public static final SMethod<SNode> getAnnotatedNode_id2xExIeabVv_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getAnnotatedNode").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xExIeabVv_").registry(REGISTRY).build();
+  public static final SMethod<SNode> getAnnotatedNode_id38gbJV0XvZR = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getAnnotatedNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("38gbJV0XvZR").registry(REGISTRY).build();
   public static final SMethod<Boolean> expectsErrorsInside_id3efgZvcKrj8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("expectsErrorsInside").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3efgZvcKrj8").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getName_idhHOMYE$, getDefaultName_id7scb9XJdmH2, perform_iddCRb6FLnvk, isMpsStartRequired_id2RMg39tmiFh, getTestCase_idhGBgWVd, getTestName_idhGBohAB, getAnnotatedNode_id2xExIeabVv_, expectsErrorsInside_id3efgZvcKrj8);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getName_idhHOMYE$, getDefaultName_id7scb9XJdmH2, isMpsStartRequired_id2RMg39tmiFh, getTestCase_idhGBgWVd, getTestName_idhGBohAB, getAnnotatedNode_id38gbJV0XvZR, expectsErrorsInside_id3efgZvcKrj8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -56,7 +55,7 @@ public final class NodeCheckOperation__BehaviorDescriptor extends BaseBHDescript
   /*package*/ static String getTestName_idhGBohAB(@NotNull SNode __thisNode__) {
     return "test_" + NodeCheckOperation__BehaviorDescriptor.getName_idhHOMYE$.invoke(__thisNode__) + __thisNode__.getNodeId().toString();
   }
-  /*package*/ static SNode getAnnotatedNode_id2xExIeabVv_(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getAnnotatedNode_id38gbJV0XvZR(@NotNull SNode __thisNode__) {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     return SNodeOperations.getParent(container);
   }
@@ -82,15 +81,15 @@ public final class NodeCheckOperation__BehaviorDescriptor extends BaseBHDescript
     switch (methodIndex) {
       case 0:
         return (T) ((String) getName_idhHOMYE$(node));
-      case 3:
+      case 2:
         return (T) ((Boolean) isMpsStartRequired_id2RMg39tmiFh(node));
-      case 4:
+      case 3:
         return (T) ((SNode) getTestCase_idhGBgWVd(node));
-      case 5:
+      case 4:
         return (T) ((String) getTestName_idhGBohAB(node));
+      case 5:
+        return (T) ((SNode) getAnnotatedNode_id38gbJV0XvZR(node));
       case 6:
-        return (T) ((SNode) getAnnotatedNode_id2xExIeabVv_(node));
-      case 7:
         return (T) ((Boolean) expectsErrorsInside_id3efgZvcKrj8(node));
       default:
         throw new BHMethodNotFoundException(this, method);

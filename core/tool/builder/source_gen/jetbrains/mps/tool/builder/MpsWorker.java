@@ -52,21 +52,26 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final Script myWhatToDo;
   protected final JavaCompilerOptions myJavaCompilerOptions;
+  protected final boolean mySkipCompilation;
   private final MpsWorker.AntLogger myLogger;
   protected Environment myEnvironment;
 
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     myWhatToDo = whatToDo;
     myLogger = logger;
-    JavaCompilerProperties myJavaProperties = new JavaCompilerProperties(myWhatToDo);
-    String targetJavaVersion = myJavaProperties.getTargetJavaVersion();
-    JavaCompilerOptionsComponent.JavaVersion parsedJavaVersion = JavaCompilerOptionsComponent.JavaVersion.parse(targetJavaVersion);
+
+    JavaCompilerProperties javaProperties = new JavaCompilerProperties(myWhatToDo);
+    myJavaCompilerOptions = getJavaCompilerOptions(javaProperties);
+    mySkipCompilation = javaProperties.isSkipCompilation();
+  }
+
+  private static JavaCompilerOptions getJavaCompilerOptions(JavaCompilerProperties javaProperties) {
+    JavaCompilerOptionsComponent.JavaVersion parsedJavaVersion = JavaCompilerOptionsComponent.JavaVersion.parse(javaProperties.getTargetJavaVersion());
     if (parsedJavaVersion == null) {
-      myJavaCompilerOptions = JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS;
-    } else {
-      myJavaCompilerOptions = new JavaCompilerOptions(parsedJavaVersion);
+      return JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS;
     }
 
+    return new JavaCompilerOptions(parsedJavaVersion);
   }
 
   protected Environment createEnvironment() {
@@ -256,7 +261,7 @@ public abstract class MpsWorker {
     e.printStackTrace(new PrintWriter(writer));
     return writer.getBuffer();
   }
-  protected interface AntLogger {
+  public interface AntLogger {
     void log(String text, Level level);
   }
   public static class SystemOutLogger implements MpsWorker.AntLogger {

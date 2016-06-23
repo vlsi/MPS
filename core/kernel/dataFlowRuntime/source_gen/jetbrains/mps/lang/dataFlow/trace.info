@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -378,7 +378,7 @@
       <node id="8204202203348315520" at="79,19,80,13" concept="9" />
       <node id="8204202203348315522" at="81,5,82,20" concept="3" />
       <node id="8204202203348315715" at="82,20,83,16" concept="3" />
-      <node id="8204202203348315647" at="86,91,87,56" concept="8" />
+      <node id="8204202203348315647" at="86,91,87,67" concept="8" />
       <node id="8204202203348315663" at="88,77,89,98" concept="8" />
       <node id="8204202203348315670" at="89,98,90,63" concept="8" />
       <node id="1875514556278960823" at="91,13,92,100" concept="3" />
@@ -406,7 +406,7 @@
       <node id="4282822416100099109" at="49,0,57,0" concept="7" trace="init#()V" />
       <node id="3689217605463168639" at="95,36,107,11" concept="16" />
       <node id="8204202203348315678" at="94,9,108,9" concept="6" />
-      <node id="8204202203348315653" at="87,56,109,7" concept="6" />
+      <node id="8204202203348315653" at="87,67,109,7" concept="6" />
       <node id="8204202203348315639" at="85,23,110,5" concept="5" />
       <node id="8204202203348315635" at="85,0,112,0" concept="7" trace="load#()V" />
       <scope id="1875514556278959240" at="93,0,93,50">
@@ -478,5 +478,5 @@
       <unit id="4282822416100099058" at="30,0,117,0" name="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 
