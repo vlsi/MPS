@@ -36,6 +36,8 @@ import org.junit.Assert;
 
 import java.util.Arrays;
 
+import static com.intellij.testFramework.LightPlatformTestCase.getModule;
+
 /**
  * evgeny, 1/25/12
  */
@@ -70,7 +72,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
     String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
-    DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(path);
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

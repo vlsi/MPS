@@ -53,7 +53,7 @@ public class MarkModelRootAction extends AnAction {
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     for (VirtualFile vFile : vFiles) {
-      DefaultModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
+      DefaultModelRoot root = new DefaultModelRoot();
       String path = VirtualFileManager.extractPath(vFile.getUrl());
       root.setContentRoot(path);
       root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);

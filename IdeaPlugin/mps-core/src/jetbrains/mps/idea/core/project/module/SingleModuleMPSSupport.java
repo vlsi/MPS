@@ -102,7 +102,7 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport {
     descriptor.setOutputPath(outputPath);
     descriptor.setCompileInMPS(false);
 
-    FileBasedModelRoot root = new DefaultModelRoot(new IdeaFileSystem());
+    FileBasedModelRoot root = new DefaultModelRoot();
     root.setContentRoot(moduleContentRoot.getPath());
 
     for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots()) {

@@ -84,7 +84,7 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
   }
 
   protected DefaultModelRoot createModelRoot(String models) {
-    DefaultModelRoot dmr = new DefaultModelRoot(new IdeaFileSystem());
+    DefaultModelRoot dmr = new DefaultModelRoot();
     dmr.setContentRoot(models);
     dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
     return dmr;
