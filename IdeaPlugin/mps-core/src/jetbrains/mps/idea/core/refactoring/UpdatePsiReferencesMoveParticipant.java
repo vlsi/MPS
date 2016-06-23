@@ -118,7 +118,7 @@ public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBa
     List<Change<SNodeReference, SNodeReference>> changes = new ArrayList<>();
     for (final PsiReference usage : usages) {
       final List<UsageInfo> usageInfos = Collections.singletonList(new MoveRenameUsageInfo(usage, usage.resolve()));
-      changes.add(new Change<SNodeReference, SNodeReference>() {
+      changes.add(new ChangeBase<SNodeReference, SNodeReference>() {
         @Override
         public SearchResults<SNode> getSearchResults() {
           return new SearchResults<>(Collections.singleton(nodeToMove.resolve(sRepository)), Collections.singletonList(new PsiSearchResult(usage)));

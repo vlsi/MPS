@@ -132,7 +132,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
       }).distinct().ofType(Language.class).toListSequence();
       List<RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>> changes = ListSequence.fromList(subModules).select(new ISelector<Language, RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>>() {
         public RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> select(final Language subModule) {
-          RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> change = new RefactoringParticipant.ChangeBase<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>() {
+          RefactoringParticipant.Change<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> change = new MoveNodeRefactoringParticipant.ChangeBase<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void>() {
             public SearchResults getSearchResults() {
               SearchResults searchResults = new SearchResults();
               searchResults.add(new SearchResult<SModule>(subModule, "induced migration script"));

@@ -123,6 +123,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

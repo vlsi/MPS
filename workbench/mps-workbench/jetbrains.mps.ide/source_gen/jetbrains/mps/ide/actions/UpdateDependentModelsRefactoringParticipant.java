@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -88,7 +89,7 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
       public RefactoringParticipant.Change<SModelReference, SModelReference> select(SModel it) {
         final SModelReference usageRef = it.getReference();
         final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SModel>(), sourceModel.value), ListSequence.fromListAndArray(new ArrayList<SearchResult<SModel>>(), new SearchResult<SModel>(it, "dependent model")));
-        RefactoringParticipant.Change<SModelReference, SModelReference> change = new RefactoringParticipant.ChangeBase<SModelReference, SModelReference>() {
+        RefactoringParticipant.Change<SModelReference, SModelReference> change = new MoveNodeRefactoringParticipant.ChangeBase<SModelReference, SModelReference>() {
           public SearchResults getSearchResults() {
             return searchResults;
           }

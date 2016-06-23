@@ -292,7 +292,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
     // todo: write guard migration with 'execute after' 
 
-    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
+    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new MoveNodeRefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
       public SearchResults getSearchResults() {
         return results;
       }

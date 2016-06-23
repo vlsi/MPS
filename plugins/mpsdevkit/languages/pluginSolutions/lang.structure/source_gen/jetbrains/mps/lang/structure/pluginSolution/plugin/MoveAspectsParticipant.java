@@ -153,7 +153,7 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
 
               // todo: do not keep nodes but only node references 
 
-              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
+              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new MoveNodeRefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
                 public SearchResults getSearchResults() {
                   return results;
                 }
@@ -168,7 +168,7 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
                     }
                   }).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.KeepOldNodes>() {
                     public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.Change<?, ?> it) {
-                      return it.needsToPreserveOldNode();
+                      return ((MoveNodeRefactoringParticipant.MoveNodeChange) it).needsToPreserveOldNode();
                     }
                   }));
                 }

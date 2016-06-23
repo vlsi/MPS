@@ -84,16 +84,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   interface Change<InitialDataObject, FinalDataObject> {
     SearchResults getSearchResults();
-    RefactoringParticipant.KeepOldNodes needsToPreserveOldNode();
     void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
-  }
-
-  abstract class ChangeBase<InitialDataObject, FinalDataObject> implements RefactoringParticipant.Change<InitialDataObject, FinalDataObject> {
-    public abstract SearchResults getSearchResults();
-    public RefactoringParticipant.KeepOldNodes needsToPreserveOldNode() {
-      return RefactoringParticipant.KeepOldNodes.REMOVE;
-    }
-    public abstract void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 
   interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {

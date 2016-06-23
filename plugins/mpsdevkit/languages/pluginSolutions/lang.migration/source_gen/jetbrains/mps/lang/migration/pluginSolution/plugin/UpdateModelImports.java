@@ -56,7 +56,7 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
     if (!(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
-    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), new RefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), new MoveNodeRefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
       public MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> getParticipant() {
         return UpdateModelImports.this;
       }

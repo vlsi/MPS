@@ -6999,149 +6999,149 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2941496348503197695">
     <file name="UpdateDependentModelsRefactoringParticipant.java">
-      <node id="5883753008207004942" at="43,68,44,65" concept="18" />
-      <node id="5883753008207560983" at="46,56,47,63" concept="13" />
-      <node id="2941496348503424221" at="52,59,53,40" concept="13" />
-      <node id="2941496348503432125" at="55,57,56,39" concept="13" />
-      <node id="2941496348503456459" at="60,127,61,27" concept="13" />
-      <node id="2941496348503678958" at="64,0,65,0" concept="7" trace="myOption" />
-      <node id="2941496348503720003" at="67,120,68,99" concept="13" />
-      <node id="2941496348503754733" at="73,71,74,117" concept="13" />
-      <node id="2941496348503761355" at="75,5,76,0" concept="15" />
-      <node id="2941496348503786560" at="76,0,77,56" concept="6" />
-      <node id="2941496348503770735" at="77,56,78,75" concept="12" />
-      <node id="2941496348505148421" at="78,75,79,70" concept="12" />
-      <node id="2941496348503802626" at="81,25,82,162" concept="6" />
-      <node id="2941496348505162138" at="82,162,83,61" concept="6" />
-      <node id="2941496348503830262" at="85,7,86,0" concept="15" />
-      <node id="2941496348504126304" at="88,96,89,59" concept="12" />
-      <node id="2941496348505110345" at="89,59,90,252" concept="12" />
-      <node id="2941496348505077352" at="92,51,93,33" concept="13" />
-      <node id="2941496348504953859" at="97,33,98,60" concept="12" />
-      <node id="2941496348504953868" at="99,89,100,70" concept="6" />
-      <node id="2941496348504953877" at="100,70,101,81" concept="6" />
-      <node id="2941496348504953884" at="101,81,102,75" concept="6" />
-      <node id="2941496348504963357" at="107,10,108,22" concept="13" />
-      <node id="2941496348504906051" at="113,144,114,83" concept="12" />
-      <node id="2941496348504906068" at="116,55,117,49" concept="13" />
-      <node id="2941496348504906077" at="120,44,121,91" concept="13" />
-      <node id="2941496348504906088" at="124,40,125,87" concept="6" />
-      <node id="2941496348504906100" at="127,7,128,32" concept="6" />
-      <node id="2941496348504906078" at="131,72,132,46" concept="13" />
-      <node id="5883753008207004942" at="43,0,46,0" concept="4" trace="UpdateDependentModelsRefactoringParticipant_extension#()V" />
-      <node id="5883753008207004949" at="46,0,49,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveModelRefactoringParticipant;" />
-      <node id="2941496348503414673" at="52,0,55,0" concept="11" trace="beforeMove#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="2941496348503414681" at="55,0,58,0" concept="11" trace="afterMove#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="2941496348503449396" at="60,0,63,0" concept="11" trace="getDataCollector#()Ljetbrains/mps/ide/platform/actions/core/RefactoringParticipant/RefactoringDataCollector;" />
-      <node id="2941496348503738979" at="72,274,75,5" concept="10" />
-      <node id="2941496348504975535" at="92,0,95,0" concept="11" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <node id="2941496348504906066" at="116,0,119,0" concept="11" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2941496348504906075" at="120,0,123,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
-      <node id="2941496348504906086" at="124,0,127,0" concept="11" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
-      <node id="2941496348504906078" at="131,0,134,0" concept="17" trace="eq_qwsmwp_a0a0a0a0a0a1a31#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="2941496348503616735" at="66,0,70,0" concept="11" trace="getAvailableOptions#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
-      <node id="2941496348503811761" at="81,0,85,0" concept="11" trace="run#()V" />
-      <node id="2941496348504953866" at="98,60,103,17" concept="10" />
-      <node id="2941496348503811759" at="79,70,85,7" concept="6" />
-      <node id="2941496348503250868" at="51,0,59,0" concept="7" trace="myDataCollector" />
-      <node id="9163025738078139938" at="97,0,105,0" concept="11" trace="run#()V" />
-      <node id="9163025738078128573" at="95,134,105,15" concept="6" />
-      <node id="2941496348504953849" at="95,0,107,0" concept="11" trace="confirm#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
-      <node id="2941496348504906060" at="114,83,127,7" concept="6" />
-      <node id="2941496348504953841" at="90,252,107,10" concept="12" />
-      <node id="2941496348505405953" at="113,0,130,0" concept="17" trace="updateUsages#(Lorg/jetbrains/mps/openapi/model/EditableSModel;Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="2941496348503859295" at="88,0,110,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/ide/platform/actions/core/RefactoringParticipant/Change;" />
-      <node id="2941496348503836410" at="86,0,110,24" concept="13" />
-      <node id="2941496348503659438" at="71,0,112,0" concept="11" trace="getChanges#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <scope id="5883753008207004942" at="43,68,44,65" />
-      <scope id="5883753008207004953" at="46,56,47,63" />
-      <scope id="2941496348503414679" at="52,59,53,40" />
-      <scope id="2941496348503414687" at="55,57,56,39" />
-      <scope id="2941496348503449424" at="60,127,61,27" />
-      <scope id="2941496348503616752" at="67,120,68,99" />
-      <scope id="2941496348503738980" at="73,71,74,117" />
-      <scope id="2941496348504975542" at="92,51,93,33" />
-      <scope id="2941496348504906067" at="116,55,117,49" />
-      <scope id="2941496348504906076" at="120,44,121,91" />
-      <scope id="2941496348504906087" at="124,40,125,87" />
-      <scope id="2941496348504906078" at="131,72,132,46" />
-      <scope id="2941496348503811763" at="81,25,83,61" />
-      <scope id="5883753008207004942" at="43,0,46,0" />
-      <scope id="5883753008207004949" at="46,0,49,0" />
-      <scope id="2941496348503414673" at="52,0,55,0">
+      <node id="5883753008207004942" at="44,68,45,65" concept="18" />
+      <node id="5883753008207560983" at="47,56,48,63" concept="13" />
+      <node id="2941496348503424221" at="53,59,54,40" concept="13" />
+      <node id="2941496348503432125" at="56,57,57,39" concept="13" />
+      <node id="2941496348503456459" at="61,127,62,27" concept="13" />
+      <node id="2941496348503678958" at="65,0,66,0" concept="7" trace="myOption" />
+      <node id="2941496348503720003" at="68,120,69,99" concept="13" />
+      <node id="2941496348503754733" at="74,71,75,117" concept="13" />
+      <node id="2941496348503761355" at="76,5,77,0" concept="15" />
+      <node id="2941496348503786560" at="77,0,78,56" concept="6" />
+      <node id="2941496348503770735" at="78,56,79,75" concept="12" />
+      <node id="2941496348505148421" at="79,75,80,70" concept="12" />
+      <node id="2941496348503802626" at="82,25,83,162" concept="6" />
+      <node id="2941496348505162138" at="83,162,84,61" concept="6" />
+      <node id="2941496348503830262" at="86,7,87,0" concept="15" />
+      <node id="2941496348504126304" at="89,96,90,59" concept="12" />
+      <node id="2941496348505110345" at="90,59,91,252" concept="12" />
+      <node id="2941496348505077352" at="93,51,94,33" concept="13" />
+      <node id="2941496348504953859" at="98,33,99,60" concept="12" />
+      <node id="2941496348504953868" at="100,89,101,70" concept="6" />
+      <node id="2941496348504953877" at="101,70,102,81" concept="6" />
+      <node id="2941496348504953884" at="102,81,103,75" concept="6" />
+      <node id="2941496348504963357" at="108,10,109,22" concept="13" />
+      <node id="2941496348504906051" at="114,144,115,83" concept="12" />
+      <node id="2941496348504906068" at="117,55,118,49" concept="13" />
+      <node id="2941496348504906077" at="121,44,122,91" concept="13" />
+      <node id="2941496348504906088" at="125,40,126,87" concept="6" />
+      <node id="2941496348504906100" at="128,7,129,32" concept="6" />
+      <node id="2941496348504906078" at="132,72,133,46" concept="13" />
+      <node id="5883753008207004942" at="44,0,47,0" concept="4" trace="UpdateDependentModelsRefactoringParticipant_extension#()V" />
+      <node id="5883753008207004949" at="47,0,50,0" concept="0" trace="get#()Ljetbrains/mps/ide/platform/actions/core/MoveModelRefactoringParticipant;" />
+      <node id="2941496348503414673" at="53,0,56,0" concept="11" trace="beforeMove#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <node id="2941496348503414681" at="56,0,59,0" concept="11" trace="afterMove#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <node id="2941496348503449396" at="61,0,64,0" concept="11" trace="getDataCollector#()Ljetbrains/mps/ide/platform/actions/core/RefactoringParticipant/RefactoringDataCollector;" />
+      <node id="2941496348503738979" at="73,274,76,5" concept="10" />
+      <node id="2941496348504975535" at="93,0,96,0" concept="11" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <node id="2941496348504906066" at="117,0,120,0" concept="11" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="2941496348504906075" at="121,0,124,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
+      <node id="2941496348504906086" at="125,0,128,0" concept="11" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
+      <node id="2941496348504906078" at="132,0,135,0" concept="17" trace="eq_qwsmwp_a0a0a0a0a0a1a31#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2941496348503616735" at="67,0,71,0" concept="11" trace="getAvailableOptions#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
+      <node id="2941496348503811761" at="82,0,86,0" concept="11" trace="run#()V" />
+      <node id="2941496348504953866" at="99,60,104,17" concept="10" />
+      <node id="2941496348503811759" at="80,70,86,7" concept="6" />
+      <node id="2941496348503250868" at="52,0,60,0" concept="7" trace="myDataCollector" />
+      <node id="9163025738078139938" at="98,0,106,0" concept="11" trace="run#()V" />
+      <node id="9163025738078128573" at="96,134,106,15" concept="6" />
+      <node id="2941496348504953849" at="96,0,108,0" concept="11" trace="confirm#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
+      <node id="2941496348504906060" at="115,83,128,7" concept="6" />
+      <node id="2941496348504953841" at="91,252,108,10" concept="12" />
+      <node id="2941496348505405953" at="114,0,131,0" concept="17" trace="updateUsages#(Lorg/jetbrains/mps/openapi/model/EditableSModel;Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
+      <node id="2941496348503859295" at="89,0,111,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/ide/platform/actions/core/RefactoringParticipant/Change;" />
+      <node id="2941496348503836410" at="87,0,111,24" concept="13" />
+      <node id="2941496348503659438" at="72,0,113,0" concept="11" trace="getChanges#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <scope id="5883753008207004942" at="44,68,45,65" />
+      <scope id="5883753008207004953" at="47,56,48,63" />
+      <scope id="2941496348503414679" at="53,59,54,40" />
+      <scope id="2941496348503414687" at="56,57,57,39" />
+      <scope id="2941496348503449424" at="61,127,62,27" />
+      <scope id="2941496348503616752" at="68,120,69,99" />
+      <scope id="2941496348503738980" at="74,71,75,117" />
+      <scope id="2941496348504975542" at="93,51,94,33" />
+      <scope id="2941496348504906067" at="117,55,118,49" />
+      <scope id="2941496348504906076" at="121,44,122,91" />
+      <scope id="2941496348504906087" at="125,40,126,87" />
+      <scope id="2941496348504906078" at="132,72,133,46" />
+      <scope id="2941496348503811763" at="82,25,84,61" />
+      <scope id="5883753008207004942" at="44,0,47,0" />
+      <scope id="5883753008207004949" at="47,0,50,0" />
+      <scope id="2941496348503414673" at="53,0,56,0">
         <var name="modelToMove" id="2941496348503414677" />
       </scope>
-      <scope id="2941496348503414681" at="55,0,58,0">
+      <scope id="2941496348503414681" at="56,0,59,0">
         <var name="movedModel" id="2941496348503414685" />
       </scope>
-      <scope id="2941496348503449396" at="60,0,63,0" />
-      <scope id="2941496348504975535" at="92,0,95,0" />
-      <scope id="2941496348504953867" at="99,89,102,75" />
-      <scope id="2941496348504906066" at="116,0,119,0">
+      <scope id="2941496348503449396" at="61,0,64,0" />
+      <scope id="2941496348504975535" at="93,0,96,0" />
+      <scope id="2941496348504953867" at="100,89,103,75" />
+      <scope id="2941496348504906066" at="117,0,120,0">
         <var name="it" id="2941496348504906066" />
       </scope>
-      <scope id="2941496348504906075" at="120,0,123,0">
+      <scope id="2941496348504906075" at="121,0,124,0">
         <var name="it" id="2941496348504906075" />
       </scope>
-      <scope id="2941496348504906086" at="124,0,127,0">
+      <scope id="2941496348504906086" at="125,0,128,0">
         <var name="it" id="2941496348504906086" />
       </scope>
-      <scope id="2941496348504906078" at="131,0,134,0">
+      <scope id="2941496348504906078" at="132,0,135,0">
         <var name="a" id="2941496348504906078" />
         <var name="b" id="2941496348504906078" />
       </scope>
-      <scope id="2941496348503616735" at="66,0,70,0">
+      <scope id="2941496348503616735" at="67,0,71,0">
         <var name="initialState" id="2941496348503616736" />
         <var name="repository" id="2941496348503616738" />
       </scope>
-      <scope id="2941496348503811761" at="81,0,85,0" />
-      <scope id="9163025738078139939" at="97,33,103,17">
+      <scope id="2941496348503811761" at="82,0,86,0" />
+      <scope id="9163025738078139939" at="98,33,104,17">
         <var name="usage" id="2941496348504953860" />
       </scope>
-      <scope id="9163025738078139938" at="97,0,105,0" />
-      <scope id="2941496348504953858" at="95,134,105,15" />
-      <scope id="2941496348504953849" at="95,0,107,0">
+      <scope id="9163025738078139938" at="98,0,106,0" />
+      <scope id="2941496348504953858" at="96,134,106,15" />
+      <scope id="2941496348504953849" at="96,0,108,0">
         <var name="finalState" id="2941496348504953852" />
         <var name="refactoringSession" id="2941496348504953856" />
         <var name="repository" id="2941496348504953854" />
       </scope>
-      <scope id="2941496348504906050" at="113,144,128,32">
+      <scope id="2941496348504906050" at="114,144,129,32">
         <var name="nodes" id="2941496348504906052" />
       </scope>
-      <scope id="2941496348505405953" at="113,0,130,0">
+      <scope id="2941496348505405953" at="114,0,131,0">
         <var name="newModelReference" id="2941496348504906110" />
         <var name="oldModelReference" id="2941496348504906108" />
         <var name="usageModel" id="2941496348504906106" />
       </scope>
-      <scope id="2941496348503859296" at="88,96,108,22">
+      <scope id="2941496348503859296" at="89,96,109,22">
         <var name="change" id="2941496348504953842" />
         <var name="searchResults" id="1762976820112517819" />
         <var name="usageRef" id="2941496348504126305" />
       </scope>
-      <scope id="2941496348503859295" at="88,0,110,0">
+      <scope id="2941496348503859295" at="89,0,111,0">
         <var name="it" id="2941496348503859295" />
       </scope>
-      <scope id="2941496348503659471" at="72,274,110,24">
+      <scope id="2941496348503659471" at="73,274,111,24">
         <var name="sourceModel" id="2941496348505148422" />
         <var name="usages" id="2941496348503770736" />
       </scope>
-      <scope id="2941496348503659438" at="71,0,112,0">
+      <scope id="2941496348503659438" at="72,0,113,0">
         <var name="initialState" id="2941496348503659439" />
         <var name="progressMonitor" id="2941496348503659448" />
         <var name="repository" id="2941496348503659441" />
         <var name="searchScope" id="2941496348503659446" />
         <var name="selectedOptions" id="2941496348503659443" />
       </scope>
-      <unit id="2941496348504906066" at="115,47,119,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
-      <unit id="2941496348504906075" at="119,17,123,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
-      <unit id="2941496348504906086" at="123,20,127,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$6" />
-      <unit id="2941496348503811761" at="80,50,85,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$2" />
-      <unit id="2941496348503414671" at="51,136,58,3" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$1" />
-      <unit id="5883753008207004942" at="42,0,50,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$UpdateDependentModelsRefactoringParticipant_extension" />
-      <unit id="9163025738078139938" at="96,50,105,13" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
-      <unit id="2941496348504953845" at="91,85,107,9" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
-      <unit id="2941496348503859295" at="87,56,110,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$3" />
-      <unit id="2941496348503197695" at="40,0,135,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant" />
+      <unit id="2941496348504906066" at="116,47,120,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
+      <unit id="2941496348504906075" at="120,17,124,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
+      <unit id="2941496348504906086" at="124,20,128,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$6" />
+      <unit id="2941496348503811761" at="81,50,86,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$2" />
+      <unit id="2941496348503414671" at="52,136,59,3" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$1" />
+      <unit id="5883753008207004942" at="43,0,51,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$UpdateDependentModelsRefactoringParticipant_extension" />
+      <unit id="9163025738078139938" at="97,50,106,13" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
+      <unit id="2941496348504953845" at="92,85,108,9" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
+      <unit id="2941496348503859295" at="88,56,111,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$3" />
+      <unit id="2941496348503197695" at="41,0,136,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/3090090913825241429">

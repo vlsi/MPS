@@ -260,7 +260,7 @@ public class MoveNodesActionBase implements MoveNodesAction {
                 List<? extends RefactoringParticipant.Change<?, ?>> changes = nodeChangesCorrespondence.getCorrespondent(participantState.getChanges(), descendant);
                 return RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(changes).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.KeepOldNodes>() {
                   public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.Change<?, ?> change) {
-                    return change.needsToPreserveOldNode();
+                    return ((MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>) ((RefactoringParticipant.Change) change)).needsToPreserveOldNode();
                   }
                 }));
               }
