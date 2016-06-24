@@ -1042,7 +1042,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5OVd5tVrn$1">
-    <property role="TrG5h" value="TransformationMenuUtil" />
+    <property role="TrG5h" value="MenuRoots" />
     <node concept="2YIFZL" id="1quYWAD3K6S" role="jymVt">
       <property role="TrG5h" value="getMenusAndContributions" />
       <property role="od$2w" value="false" />

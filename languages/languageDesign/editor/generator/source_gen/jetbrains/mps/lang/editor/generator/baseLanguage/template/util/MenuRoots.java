@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.IMenu_Contribution__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-public class TransformationMenuUtil {
+public class MenuRoots {
   private static Iterable<SNode> getMenusAndContributions(SModel inputModel, final SAbstractConcept menuConcept, final SAbstractConcept referenceConcept) {
     Iterable<SNode> menus = ListSequence.fromList(SModelOperations.roots(inputModel, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
