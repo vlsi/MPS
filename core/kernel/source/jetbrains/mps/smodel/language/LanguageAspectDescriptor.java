@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.smodel.runtime.IconResource;
+import jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -28,7 +31,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 public abstract class LanguageAspectDescriptor {
-  private static final Icon MODEL_ICON = new ImageIcon(LanguageAspectDescriptor.class.getResource("/jetbrains/mps/smodel/language/model.png"));
+  private static final IconResource MODEL_ICON = new IconResource("/jetbrains/mps/smodel/language/model.png", LanguageAspectDescriptor.class);
 
   public abstract String getPresentableAspectName();
 
@@ -60,9 +63,20 @@ public abstract class LanguageAspectDescriptor {
     return null;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Nullable
   public Icon getIcon() {
-    return MODEL_ICON;
+    return null;
+  }
+
+  @Nullable
+  public IconResource getIconResource() {
+    Icon icn = getIcon();
+    if (icn == null) {
+      return MODEL_ICON;
+    }
+    return new Icon2IconResourceAdapter_Deprecated(icn);
   }
 
   @Nullable

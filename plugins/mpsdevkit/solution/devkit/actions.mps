@@ -14709,12 +14709,16 @@
             </node>
             <node concept="liA8E" id="7IH442cRjK6" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
-              <node concept="2OqwBi" id="7IH442cRyD6" role="37wK5m">
-                <node concept="37vLTw" id="7IH442cRYJP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7IH442cRUc4" resolve="ad" />
-                </node>
-                <node concept="liA8E" id="7IH442cRyI$" role="2OqNvi">
-                  <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIcon():javax.swing.Icon" resolve="getIcon" />
+              <node concept="2YIFZM" id="2DdXZ8RC1U2" role="37wK5m">
+                <ref role="37wK5l" to="xnls:~IconManager.getIconForResource(jetbrains.mps.smodel.runtime.IconResource):javax.swing.Icon" resolve="getIconForResource" />
+                <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
+                <node concept="2OqwBi" id="7IH442cRyD6" role="37wK5m">
+                  <node concept="37vLTw" id="7IH442cRYJP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7IH442cRUc4" resolve="ad" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cRyI$" role="2OqNvi">
+                    <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIconResource():jetbrains.mps.smodel.runtime.IconResource" resolve="getIconResource" />
+                  </node>
                 </node>
               </node>
             </node>

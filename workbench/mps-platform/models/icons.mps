@@ -1097,12 +1097,15 @@
           <property role="TyiWL" value="true" />
           <node concept="3clFbS" id="7IH442cOtsZ" role="3clFbx">
             <node concept="3cpWs6" id="7IH442cOu90" role="3cqZAp">
-              <node concept="2OqwBi" id="7IH442cOuij" role="3cqZAk">
-                <node concept="37vLTw" id="7IH442cOueW" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7IH442cOtIK" resolve="newAspect" />
-                </node>
-                <node concept="liA8E" id="7IH442cOusx" role="2OqNvi">
-                  <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIcon():javax.swing.Icon" resolve="getIcon" />
+              <node concept="1rXfSq" id="2DdXZ8RCOEl" role="3cqZAk">
+                <ref role="37wK5l" node="Z6TQiSQgL4" resolve="getIconForResource" />
+                <node concept="2OqwBi" id="7IH442cOuij" role="37wK5m">
+                  <node concept="37vLTw" id="7IH442cOueW" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7IH442cOtIK" resolve="newAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cOusx" role="2OqNvi">
+                    <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIconResource():jetbrains.mps.smodel.runtime.IconResource" resolve="getIconResource" />
+                  </node>
                 </node>
               </node>
             </node>

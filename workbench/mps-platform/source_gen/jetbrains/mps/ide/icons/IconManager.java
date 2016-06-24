@@ -162,7 +162,7 @@ public final class IconManager {
 
     LanguageAspectDescriptor newAspect = LanguageAspectSupport.getNewAspect(model);
     if (newAspect != null) {
-      return newAspect.getIcon();
+      return getIconForResource(newAspect.getIconResource());
     }
 
     if (SModelStereotype.isGeneratorModel(model)) {
