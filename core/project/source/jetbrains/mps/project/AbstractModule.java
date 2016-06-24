@@ -180,14 +180,22 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-
     LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
     LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
+    collectLanguagesAndDevkits(usedLanguages, devkits);
+    return usedLanguages;
+  }
+
+  // fills collections with of imported languages and devkits.
+  // Languages include directly imported and coming immediately through devkits; listed devkits are imported directly, without those they extend (why?).
+  private void collectLanguagesAndDevkits(Set<SLanguage> usedLanguages, Set<SModuleReference> devkits) {
+    // perhaps, shall introduce ModuleImports similar to ModelImports to accomplish this?
     for (SModel m : getModels()) {
       final SModelInternal modelInternal = (SModelInternal) m;
       usedLanguages.addAll(modelInternal.importedLanguageIds());
       devkits.addAll(modelInternal.importedDevkits());
     }
+    // XXX why don't we respect extended devkits here?
     final SRepository repository = getRepository();
     if (repository != null) {
       for (SModuleReference devkitRef : devkits) {
@@ -200,8 +208,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       }
     }
     usedLanguages.add(BootstrapLanguages.getLangCore());
-
-    return usedLanguages;
   }
 
   @Override
@@ -890,11 +896,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
-    final Set<SLanguage> allUsedLanguages = new SLanguageHierarchy(getUsedLanguages()).getExtended();
+
+    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
+    LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
+    collectLanguagesAndDevkits(usedLanguages, devkits);
+    final Set<SLanguage> allUsedLanguages = new SLanguageHierarchy(usedLanguages).getExtended();
     if (!md.hasLanguageVersions()) {
       for (SLanguage lang : allUsedLanguages) {
         newLanguageVersions.put(lang, 0);
       }
+      md.getUsedDevkits().addAll(devkits);
       md.setHasLanguageVersions(true);
     } else {
       for (SLanguage lang : allUsedLanguages) {
@@ -923,6 +934,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
             setChanged();
           }
         }
+      }
+      if (!md.getUsedDevkits().equals(devkits)) {
+        // intentionally no clean(), augmentation only, just in case there's anything vital already.
+        md.getUsedDevkits().addAll(devkits);
+        setChanged();
       }
       if (oldLanguageVersions.size() != newLanguageVersions.size()) {
         // todo: remove this hack after 3.3
