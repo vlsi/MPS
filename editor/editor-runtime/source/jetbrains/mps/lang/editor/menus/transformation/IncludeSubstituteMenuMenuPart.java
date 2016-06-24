@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -50,7 +51,7 @@ public class IncludeSubstituteMenuMenuPart implements TransformationMenuPart {
       List<SubstituteMenuItem> substituteMenuItems = substituteMenuContext.createItems(getSubstituteMenuLookup(context));
 
       List<TransformationMenuItem> result = new ArrayList<>();
-      substituteMenuItems.stream().filter(item -> isSuitableForConstraints(item, parent, containmentLink, context.getEditorContext().getRepository())).forEach(
+      substituteMenuItems.stream().filter(item -> isSuitableForConstraints(item, parent, containmentLink, context.getEditorContext().getRepository()) && isInUsedLanguages(item, parent)).forEach(
           item -> result.add(new SubstituteMenuItemAsCompletionActionItem(item, parent, currentChild, containmentLink, context.getEditorContext())));
       return result;
     }
@@ -68,6 +69,11 @@ public class IncludeSubstituteMenuMenuPart implements TransformationMenuPart {
     return conceptNode != null && ModelConstraints.canBeParent(parentNode, conceptNode, linkDeclarationNode, null, null) &&
         ModelConstraints.canBeAncestor(parentNode, null, conceptNode, null);
 
+  }
+
+  private boolean isInUsedLanguages(SubstituteMenuItem item, SNode parentNode) {
+    SModel model = parentNode.getModel();
+    return model != null && model.getModule().getUsedLanguages().contains(item.getOutputConcept().getLanguage());
   }
 
   protected SNode getParentNode(TransformationMenuContext context) {

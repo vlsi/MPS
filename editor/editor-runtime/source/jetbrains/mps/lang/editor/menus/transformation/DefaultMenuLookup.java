@@ -87,11 +87,6 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
   protected abstract T createDefaultMenu();
 
   @NotNull
-  public LanguageRegistry getLanguageRegistry() {
-    return myLanguageRegistry;
-  }
-
-  @NotNull
   public SAbstractConcept getConcept() {
     return myConcept;
   }
