@@ -18,7 +18,8 @@ import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -78,11 +79,11 @@ public class ModuleProperties_Action extends BaseAction {
     MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
     configurable.setParentForCallBack(configurableEditor);
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         configurableEditor.show();
       }
-    });
+    }, ModalityState.current());
   }
 }

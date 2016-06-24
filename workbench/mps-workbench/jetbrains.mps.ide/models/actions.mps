@@ -4266,41 +4266,50 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3GE7ucjMQu5" role="3cqZAp">
-          <node concept="2YIFZM" id="3GE7ucjMQMh" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="2ShNRf" id="3GE7ucjMQMi" role="37wK5m">
-              <node concept="YeOm9" id="3GE7ucjMR9m" role="2ShVmc">
-                <node concept="1Y3b0j" id="3GE7ucjMR9n" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                  <node concept="3clFb_" id="3GE7ucjMR9p" role="jymVt">
-                    <property role="IEkAT" value="false" />
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="run" />
-                    <property role="DiZV1" value="false" />
-                    <node concept="3Tm1VV" id="3GE7ucjMR9q" role="1B3o_S" />
-                    <node concept="3cqZAl" id="3GE7ucjMR9r" role="3clF45" />
-                    <node concept="3clFbS" id="3GE7ucjMR9s" role="3clF47">
-                      <node concept="3clFbF" id="3GE7ucjMR9t" role="3cqZAp">
-                        <node concept="2OqwBi" id="3GE7ucjMR9N" role="3clFbG">
-                          <node concept="liA8E" id="3GE7ucjMR9T" role="2OqNvi">
-                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
-                          </node>
-                          <node concept="37vLTw" id="3GE7ucjMR9u" role="2Oq$k0">
-                            <ref role="3cqZAo" node="78MpzK$YNLl" resolve="configurableEditor" />
+        <node concept="3clFbF" id="1TPhdkAIXwP" role="3cqZAp">
+          <node concept="2OqwBi" id="1TPhdkAIY6k" role="3clFbG">
+            <node concept="2YIFZM" id="1TPhdkAIXNL" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1TPhdkAIY$S" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+              <node concept="2ShNRf" id="3GE7ucjMQMi" role="37wK5m">
+                <node concept="YeOm9" id="3GE7ucjMR9m" role="2ShVmc">
+                  <node concept="1Y3b0j" id="3GE7ucjMR9n" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                    <node concept="3clFb_" id="3GE7ucjMR9p" role="jymVt">
+                      <property role="IEkAT" value="false" />
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="run" />
+                      <property role="DiZV1" value="false" />
+                      <node concept="3Tm1VV" id="3GE7ucjMR9q" role="1B3o_S" />
+                      <node concept="3cqZAl" id="3GE7ucjMR9r" role="3clF45" />
+                      <node concept="3clFbS" id="3GE7ucjMR9s" role="3clF47">
+                        <node concept="3clFbF" id="3GE7ucjMR9t" role="3cqZAp">
+                          <node concept="2OqwBi" id="3GE7ucjMR9N" role="3clFbG">
+                            <node concept="liA8E" id="3GE7ucjMR9T" role="2OqNvi">
+                              <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                            </node>
+                            <node concept="37vLTw" id="3GE7ucjMR9u" role="2Oq$k0">
+                              <ref role="3cqZAo" node="78MpzK$YNLl" resolve="configurableEditor" />
+                            </node>
                           </node>
                         </node>
                       </node>
+                      <node concept="2AHcQZ" id="3tYsUK_SfU3" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
                     </node>
-                    <node concept="2AHcQZ" id="3tYsUK_SfU3" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
+                    <node concept="3Tm1VV" id="3GE7ucjMR9o" role="1B3o_S" />
                   </node>
-                  <node concept="3Tm1VV" id="3GE7ucjMR9o" role="1B3o_S" />
                 </node>
+              </node>
+              <node concept="2YIFZM" id="1TPhdkAIYNg" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
               </node>
             </node>
           </node>
@@ -6563,41 +6572,50 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1kPkRp81Jp7" role="3cqZAp">
-          <node concept="2YIFZM" id="1kPkRp81Jp8" role="3clFbG">
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <node concept="2ShNRf" id="1kPkRp81Jp9" role="37wK5m">
-              <node concept="YeOm9" id="1kPkRp81Jpa" role="2ShVmc">
-                <node concept="1Y3b0j" id="1kPkRp81Jpb" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                  <node concept="3clFb_" id="1kPkRp81Jpd" role="jymVt">
-                    <property role="IEkAT" value="false" />
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="run" />
-                    <property role="DiZV1" value="false" />
-                    <node concept="3clFbS" id="1kPkRp81Jpg" role="3clF47">
-                      <node concept="3clFbF" id="1kPkRp81Jph" role="3cqZAp">
-                        <node concept="2OqwBi" id="1kPkRp81Jpi" role="3clFbG">
-                          <node concept="37vLTw" id="1kPkRp81Jpj" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
-                          </node>
-                          <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
-                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+        <node concept="3clFbF" id="1TPhdkAGo1J" role="3cqZAp">
+          <node concept="2OqwBi" id="1TPhdkAGoSy" role="3clFbG">
+            <node concept="2YIFZM" id="1TPhdkAGoeX" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1TPhdkAGpq8" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+              <node concept="2ShNRf" id="1kPkRp81Jp9" role="37wK5m">
+                <node concept="YeOm9" id="1kPkRp81Jpa" role="2ShVmc">
+                  <node concept="1Y3b0j" id="1kPkRp81Jpb" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                    <node concept="3clFb_" id="1kPkRp81Jpd" role="jymVt">
+                      <property role="IEkAT" value="false" />
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="run" />
+                      <property role="DiZV1" value="false" />
+                      <node concept="3clFbS" id="1kPkRp81Jpg" role="3clF47">
+                        <node concept="3clFbF" id="1kPkRp81Jph" role="3cqZAp">
+                          <node concept="2OqwBi" id="1kPkRp81Jpi" role="3clFbG">
+                            <node concept="37vLTw" id="1kPkRp81Jpj" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
+                            </node>
+                            <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
+                              <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                            </node>
                           </node>
                         </node>
                       </node>
+                      <node concept="3Tm1VV" id="1kPkRp81Jpe" role="1B3o_S" />
+                      <node concept="3cqZAl" id="1kPkRp81Jpf" role="3clF45" />
+                      <node concept="2AHcQZ" id="3tYsUK_RZ4V" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
                     </node>
-                    <node concept="3Tm1VV" id="1kPkRp81Jpe" role="1B3o_S" />
-                    <node concept="3cqZAl" id="1kPkRp81Jpf" role="3clF45" />
-                    <node concept="2AHcQZ" id="3tYsUK_RZ4V" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
+                    <node concept="3Tm1VV" id="1kPkRp81Jpc" role="1B3o_S" />
                   </node>
-                  <node concept="3Tm1VV" id="1kPkRp81Jpc" role="1B3o_S" />
                 </node>
+              </node>
+              <node concept="2YIFZM" id="1TPhdkAGpyO" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
               </node>
             </node>
           </node>
@@ -30996,8 +31014,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="qri2St1Fx4" role="37wK5m">
-                <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
                 <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
+                <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
               </node>
             </node>
           </node>
