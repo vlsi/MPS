@@ -2269,7 +2269,7 @@
                     <node concept="1Y3b0j" id="1xRmxf63uFl" role="YeSDq">
                       <property role="2bfB8j" value="true" />
                       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
+                      <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="MoveNodeRefactoringParticipant.ChangeBase" />
                       <node concept="3clFb_" id="1xRmxf63uFm" role="jymVt">
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getParticipant" />
@@ -5029,7 +5029,7 @@
                 <node concept="1Y3b0j" id="361hHoA2j_8" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
+                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="MoveNodeRefactoringParticipant.ChangeBase" />
                   <node concept="3clFb_" id="5c9yDr4IBbG" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="getSearchResults" />
@@ -5614,7 +5614,7 @@
                   <node concept="1Y3b0j" id="2aY$7DLS_A1" role="YeSDq">
                     <property role="2bfB8j" value="true" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
+                    <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="MoveNodeRefactoringParticipant.ChangeBase" />
                     <node concept="3clFb_" id="2aY$7DLS_A2" role="jymVt">
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getParticipant" />
@@ -6600,7 +6600,7 @@
                                 <node concept="1Y3b0j" id="4B0FDdRJCvs" role="YeSDq">
                                   <property role="2bfB8j" value="true" />
                                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="RefactoringParticipant.ChangeBase" />
+                                  <ref role="1Y3XeK" to="lfzw:7tV5ZLw1f3b" resolve="MoveNodeRefactoringParticipant.ChangeBase" />
                                   <node concept="3Tm1VV" id="4B0FDdRJCv_" role="1B3o_S" />
                                   <node concept="3clFb_" id="4B0FDdRJCvA" role="jymVt">
                                     <property role="1EzhhJ" value="false" />
