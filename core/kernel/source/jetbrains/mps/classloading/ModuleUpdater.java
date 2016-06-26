@@ -18,7 +18,6 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
 import jetbrains.mps.project.dependency.UsedModulesCollector;
 import org.apache.log4j.LogManager;
@@ -119,25 +118,32 @@ public class ModuleUpdater {
   public boolean refreshGraph() {
     myRepository.getModelAccess().checkReadAccess();
     synchronized (LOCK) {
-      myChangedFlag = false;
-      UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
+      final long beginTime = System.nanoTime();
+      LOG.debug(String.format("Refreshing classloading graph adding: %d, removing %d, updating %d", myModulesToAdd.size(),
+          myModulesToRemove.size(), myModulesToReload.size()));
+      try {
+        myChangedFlag = false;
+        UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
 
-      myDepGraph.checkGraphsCorrectness();
-      int wasEdges = myDepGraph.getEdgesCount();
-      int wasVertices = myDepGraph.getVerticesCount();
+        myDepGraph.checkGraphsCorrectness();
+        int wasEdges = myDepGraph.getEdgesCount();
+        int wasVertices = myDepGraph.getVerticesCount();
 
-      myModulesWithAbsentDeps.clear();
-      boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
-      updateRemoved(myModulesToRemove);
-      updateAdded(myModulesToAdd, usedModulesCollector);
-      updated |= updateReloaded(myModulesToReload, usedModulesCollector);
-      myModulesToRemove.clear();
-      myModulesToAdd.clear();
-      myModulesToReload.clear();
+        myModulesWithAbsentDeps.clear();
+        boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
+        updateRemoved(myModulesToRemove);
+        updateAdded(myModulesToAdd, usedModulesCollector);
+        updated |= updateReloaded(myModulesToReload, usedModulesCollector);
+        myModulesToRemove.clear();
+        myModulesToAdd.clear();
+        myModulesToReload.clear();
 
-      LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
-      LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
-      return updated;
+        LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
+        LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
+        return updated;
+      } finally {
+        LOG.info(String.format("Refreshing graph took %.3f s", (System.nanoTime() - beginTime) / 1e9));
+      }
     }
   }
 
