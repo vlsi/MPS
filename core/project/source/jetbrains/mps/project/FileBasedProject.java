@@ -23,5 +23,9 @@ import java.io.File;
  * A project which stores its state in the file on the disk
  */
 public interface FileBasedProject {
+  /**
+   * @deprecated must return {@link jetbrains.mps.vfs.IFile}
+   */
+  @Deprecated
   @NotNull File getProjectFile();
 }

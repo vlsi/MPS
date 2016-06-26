@@ -31,6 +31,7 @@ public class JpsMPSProject extends ProjectBase {
     return null;
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myProject.getName();

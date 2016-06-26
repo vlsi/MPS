@@ -85,6 +85,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   /**
    * @deprecated the project is not necessarily backed up by file. Left for compatibility
+   * @see FileBasedProject
    */
   @Deprecated
   @ToRemove(version = 3.3)
