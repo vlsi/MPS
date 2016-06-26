@@ -96,20 +96,28 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public static final String CLASSES_GEN = "classes_gen";
   public static final String CLASSES = "classes";
 
-  @Nullable
-  protected final IFile myDescriptorFile;
+  @Nullable protected final IFile myDescriptorFile;
   @NotNull private final FileSystem myFileSystem;
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
   private ModuleScope myScope = new ModuleScope();
 
-  protected boolean myChanged = false;
+  private boolean myChanged = false;
 
-  //----model creation
+  private static jetbrains.mps.vfs.FileSystem getFSSingleton() {
+    return jetbrains.mps.vfs.FileSystem.getInstance();
+  }
 
+  @Deprecated
   protected AbstractModule() {
-    this(null);
+    this(getFSSingleton());
+    LOG.warn("Creating module with empty arguments");
+  }
+
+  protected AbstractModule(@NotNull FileSystem fileSystem) {
+    myDescriptorFile = null;
+    myFileSystem = fileSystem;
   }
 
   protected AbstractModule(@Nullable IFile descriptorFile) {
@@ -117,8 +125,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (descriptorFile != null) {
       myFileSystem = descriptorFile.getFileSystem();
     } else {
-      myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance();
+      myFileSystem = getFSSingleton();
     }
+  }
+
+  @NotNull
+  public FileSystem getFileSystem() {
+    return myFileSystem;
   }
 
   //----reference
@@ -615,7 +628,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void attach(@NotNull SRepository repository) {
     super.attach(repository);
     if (myDescriptorFile != null) {
-      ((jetbrains.mps.vfs.FileSystem) myFileSystem).addListener(this);
+      myFileSystem.addListener(this);
     }
     initFacetsAndModels();
   }
@@ -672,7 +685,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void dispose() {
     assertCanChange();
     LOG.trace("Disposing the module " + this);
-    ((jetbrains.mps.vfs.FileSystem) myFileSystem).removeListener(this);
+    myFileSystem.removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
     }

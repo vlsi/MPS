@@ -86,7 +86,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
   }
 
-  private LanguageDescriptor myLanguageDescriptor;
+  @NotNull private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new LinkedList<Generator>();
 
   private ClassLoader myStubsLoader = new StubsClassLoader();
@@ -259,6 +259,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     super.dispose();
   }
 
+  @NotNull
   @Override
   public LanguageDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;

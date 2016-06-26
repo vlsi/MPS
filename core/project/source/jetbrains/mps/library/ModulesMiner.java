@@ -168,12 +168,7 @@ public final class ModulesMiner {
     if (!needProcess(file)) return;
 
     if (IFileUtils.isJarFile(file)) { // ends with .jar
-      IFile jarFile = null;
-      if (file instanceof IoFile) {
-        jarFile = new IoFileSystem().getFile(file.getPath() + JAR_SEPARATOR);
-      } else if (file instanceof CachingFile) {
-        jarFile = IFileUtils.stepIntoJar(file);
-      }
+      IFile jarFile = IFileUtils.stepIntoJar(file);
       readModuleDescriptorsFromFolder(jarFile);
     } else if (file.getPath().endsWith(JAR_SEPARATOR)) { // ends with .jar/!
       IFile moduleXml = file.getDescendant(META_INF).getDescendant(MODULE_XML);

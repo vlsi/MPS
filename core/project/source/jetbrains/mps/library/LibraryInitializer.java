@@ -188,8 +188,8 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    * Please use one-step version to load modules from disk to MPS {@link #load(List)} or {@link #loadRefreshed(List)}
    */
   @Deprecated
-  public void addContributor(@NotNull LibraryContributor c) {
-    LOG.info("Adding libraries from " + c);
+  private void addContributor(@NotNull LibraryContributor c) {
+    LOG.info("Adding libraries from " + c.getClass().getSimpleName());
     myContributors.add(c);
   }
 
@@ -197,8 +197,8 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    * Please use one-step version to unload modules from MPS {@link #unload(List)}
    */
   @Deprecated
-  public void removeContributor(@NotNull LibraryContributor c) {
-    LOG.info("Removing libraries from " + c);
+  private void removeContributor(@NotNull LibraryContributor c) {
+    LOG.info("Removing libraries from " + c.getClass().getSimpleName());
     myContributors.remove(c);
   }
 

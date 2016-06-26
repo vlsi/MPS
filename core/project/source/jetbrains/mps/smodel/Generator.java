@@ -59,6 +59,7 @@ public class Generator extends ReloadableModuleBase {
   private GeneratorDescriptor myGeneratorDescriptor;
 
   public Generator(@NotNull Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
+    super(sourceLanguage.getFileSystem());
     mySourceLanguage = sourceLanguage;
     initGeneratorDescriptor(generatorDescriptor);
   }
@@ -94,6 +95,7 @@ public class Generator extends ReloadableModuleBase {
     return templateModels;
   }
 
+  @NotNull
   @Override
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;

@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -39,11 +40,16 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
   private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<SModuleDependenciesListener>();
 
+  protected ReloadableModuleBase() {
+    super();
+  }
+
   protected ReloadableModuleBase(@Nullable IFile file) {
     super(file);
   }
 
-  protected ReloadableModuleBase() {
+  protected ReloadableModuleBase(@NotNull FileSystem fileSystem) {
+    super(fileSystem);
   }
 
   @NotNull

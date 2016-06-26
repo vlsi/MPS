@@ -31,6 +31,8 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
@@ -75,7 +77,7 @@ public class Solution extends ReloadableModuleBase {
   }
 
   /* TODO make package local, move to appropriate package */
-  public Solution(SolutionDescriptor descriptor, IFile file) {
+  public Solution(SolutionDescriptor descriptor, @Nullable IFile file) {
     super(file);
     mySolutionDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
@@ -125,6 +127,7 @@ public class Solution extends ReloadableModuleBase {
     }
   }
 
+  @NotNull
   @Override
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
