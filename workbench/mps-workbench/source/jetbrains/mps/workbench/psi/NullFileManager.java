@@ -28,7 +28,9 @@ import java.util.List;
 /**
  * User: shatalin
  * Date: 11/20/12
+ * @deprecated since MPS 3.4, use {@link com.intellij.psi.impl.file.impl.FileManagerImpl}
  */
+@Deprecated
 public class NullFileManager implements FileManager {
   @Nullable
   @Override

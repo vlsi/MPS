@@ -35,6 +35,8 @@
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
     <!--<bundledColorScheme path="/colorSchemes/Darcula"/>-->
+    <projectService serviceInterface="com.intellij.psi.impl.file.PsiDirectoryFactory"
+                    serviceImplementation="com.intellij.psi.impl.file.PsiDirectoryFactoryImpl"/>
 
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>
