@@ -36,7 +36,7 @@ public class ThreadUtils {
     LogExceptionsRunnable wrap = new LogExceptionsRunnable(LogManager.getLogger(ThreadUtils.class), r);
     if (ApplicationManager.getApplication() != null) {
       // Application#invokeAndWait() executes runnable immediately if in EDT thread (well, at least it is stated in javadoc)
-      ApplicationManager.getApplication().invokeAndWait(wrap, ModalityState.any());
+      ApplicationManager.getApplication().invokeAndWait(wrap, ModalityState.current());
     } else {
       if (isInEDT()) {
         wrap.run();
