@@ -19,11 +19,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
-import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.IconUtil;
 
 public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspectDescriptor> {
   public LanguageAspectsEP_extension() {
@@ -56,7 +55,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return null;
       }
       @Nullable
-      public Icon getIcon() {
+      public IconResource getIconResource() {
         return ICON;
       }
       @Nullable
@@ -85,7 +84,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final Icon ICON = IconUtil.getIcon("textGenModel.png");
+      private final IconResource ICON = new IconResource("textGenModel.png", getClass());
 
     };
   }

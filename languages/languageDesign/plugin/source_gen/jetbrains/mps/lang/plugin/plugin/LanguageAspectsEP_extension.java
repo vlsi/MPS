@@ -19,11 +19,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
-import javax.swing.Icon;
+import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.IconUtil;
 
 public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspectDescriptor> {
   public LanguageAspectsEP_extension() {
@@ -60,7 +59,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L), "jetbrains.mps.lang.plugin.standalone"), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources"));
       }
       @Nullable
-      public Icon getIcon() {
+      public IconResource getIconResource() {
         return ICON;
       }
       @Nullable
@@ -89,7 +88,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final Icon ICON = IconUtil.getIcon("pluginModel.png");
+      private final IconResource ICON = new IconResource("pluginModel.png", getClass());
 
     };
   }

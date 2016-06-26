@@ -30,7 +30,7 @@
       <node id="3193873080290339088" at="44,48,45,122" concept="8" />
       <node id="3193873080290339088" at="50,55,51,196" concept="8" />
       <node id="3193873080290339088" at="54,53,55,20" concept="8" />
-      <node id="3193873080290339088" at="58,29,59,20" concept="8" />
+      <node id="3193873080290339088" at="58,45,59,20" concept="8" />
       <node id="3193873080290339088" at="62,34,63,123" concept="8" />
       <node id="3193873080290339088" at="71,50,72,86" concept="8" />
       <node id="3193873080290339088" at="75,44,76,43" concept="7" />
@@ -50,7 +50,7 @@
       <node id="3193873080290339088" at="43,0,47,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="3193873080290339088" at="49,0,53,0" concept="6" trace="getMainLanguages#()Ljava/util/Collection;" />
       <node id="3193873080290339088" at="53,0,57,0" concept="6" trace="getGenerator#()Ljetbrains/mps/smodel/language/LanguageAspectGenerator;" />
-      <node id="3193873080290339088" at="57,0,61,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="3193873080290339088" at="57,0,61,0" concept="6" trace="getIconResource#()Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="3193873080290339088" at="61,0,65,0" concept="6" trace="getHelpUrl#()Ljava/lang/String;" />
       <node id="3193873080290339088" at="78,28,83,9" concept="5" />
       <node id="3193873080290339088" at="41,58,47,49" concept="8" />
@@ -63,7 +63,7 @@
       <scope id="3193873080290339088" at="38,48,39,41" />
       <scope id="3193873080290339088" at="50,55,51,196" />
       <scope id="3193873080290339088" at="54,53,55,20" />
-      <scope id="3193873080290339088" at="58,29,59,20" />
+      <scope id="3193873080290339088" at="58,45,59,20" />
       <scope id="3193873080290339088" at="62,34,63,123" />
       <scope id="3193873080290339088" at="71,50,72,86" />
       <scope id="3193873080290339088" at="79,37,80,58" />
