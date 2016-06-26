@@ -11,6 +11,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -134,7 +135,17 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="QcxE9" id="ghIDlF6HcF" role="2IRzpu">
+        <property role="QcwnP" value="&lt;deprecated&gt;" />
+      </node>
+    </node>
+    <node concept="qMXn0" id="2DdXZ8RD1X_" role="QNr5C" />
+    <node concept="q3mfq" id="2DdXZ8RD1Wa" role="QNr5C">
+      <property role="TrG5h" value="getIconResource" />
+      <node concept="QcxE9" id="2DdXZ8RD1Wc" role="2IRzpu">
         <property role="QcwnP" value="&lt;default icon&gt;" />
+      </node>
+      <node concept="3uibUv" id="2DdXZ8RD7kz" role="q3mfk">
+        <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
       </node>
     </node>
     <node concept="qMXn0" id="ghIDlF6I4z" role="QNr5C" />

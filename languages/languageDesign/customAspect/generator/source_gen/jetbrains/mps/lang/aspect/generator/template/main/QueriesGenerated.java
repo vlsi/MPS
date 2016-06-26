@@ -95,13 +95,13 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_7905571935049051289(final IfMacroContext _context) {
     return SimpleLanguageAspectDescriptor__BehaviorDescriptor.getGenerator_id6QQeWCmTwlo.invoke(_context.getNode()) != null;
   }
-  public static boolean ifMacro_Condition_8157291893995163305(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
-  }
   public static boolean ifMacro_Condition_956448990264904124(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")) != null);
   }
-  public static boolean ifMacro_Condition_956448990264911489(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8865016913344131887(final IfMacroContext _context) {
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
+  }
+  public static boolean ifMacro_Condition_8865016913344102384(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")) != null);
   }
   public static boolean ifMacro_Condition_8157291893995124533(final IfMacroContext _context) {
@@ -119,14 +119,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_3323697319248425079(final IfMacroContext _context) {
     return (LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "293220601665604225")) != null);
   }
+  public static boolean ifMacro_Condition_3048365142487316548(final IfMacroContext _context) {
+    return (LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "3048365142487342858")) != null);
+  }
   public static boolean ifMacro_Condition_3323697319248454294(final IfMacroContext _context) {
     return (LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "293220601665606461")) != null);
   }
   public static SNode sourceNodeQuery_7905571935049051282(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) SimpleLanguageAspectDescriptor__BehaviorDescriptor.getGenerator_id6QQeWCmTwlo.invoke(_context.getNode());
-  }
-  public static SNode sourceNodeQuery_8157291893995163318(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon")), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x60d1cf8c81faea09L, "iconExpression"));
   }
   public static SNode sourceNodeQuery_5386558680326263675(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc"));
@@ -151,6 +151,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_3323697319248442878(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "293220601665604225")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
+  }
+  public static SNode sourceNodeQuery_3048365142487316537(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "3048365142487342858")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
   }
   public static SNode sourceNodeQuery_3323697319248466482(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(LanguageAspectDescriptor__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspect.methods)", "293220601665606461")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
