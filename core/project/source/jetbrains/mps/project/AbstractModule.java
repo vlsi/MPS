@@ -356,7 +356,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    IFile sourcesDescriptorFile = ModulesMiner.getSourceDescriptorFile(getDescriptorFile().getPath(), deplDescriptor);
+    IFile sourcesDescriptorFile = ModulesMiner.getSourceDescriptorFile(getDescriptorFile(), deplDescriptor);
     if (sourcesDescriptorFile == null) {
       // todo: for now it's impossible
       assert descriptor instanceof DeploymentDescriptor;

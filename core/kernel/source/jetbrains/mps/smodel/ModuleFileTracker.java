@@ -105,7 +105,7 @@ public class ModuleFileTracker implements CoreComponent {
       if (module.getModuleDescriptor() == null || module.getModuleDescriptor().getDeploymentDescriptor() == null) {
         return null;
       }
-      return ModulesMiner.getSourceDescriptorFile(module.getDescriptorFile().getPath(), module.getModuleDescriptor().getDeploymentDescriptor());
+      return ModulesMiner.getSourceDescriptorFile(module.getDescriptorFile(), module.getModuleDescriptor().getDeploymentDescriptor());
     }
   }
 }

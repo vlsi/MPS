@@ -84,7 +84,7 @@ public final class ModulesMiner {
   }
 
   public ModulesMiner() {
-    this(Collections.<IFile>emptySet());
+    this(Collections.emptySet());
   }
 
   public ModulesMiner(@NotNull Collection<IFile> excludes) {
@@ -268,7 +268,7 @@ public final class ModulesMiner {
     try {
       DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
       ModuleDescriptor result = null;
-      IFile sourceDescriptorFile = getSourceDescriptorFile(file.getPath(), deploymentDescriptor);
+      IFile sourceDescriptorFile = getSourceDescriptorFile(file, deploymentDescriptor);
       if (sourceDescriptorFile != null) {
         result = loadSourceModuleDescriptor(sourceDescriptorFile);
       }
@@ -356,12 +356,15 @@ public final class ModulesMiner {
    * @param deploymentFile -- the path to deployment descriptor
    */
   @Nullable
-  public static IFile getSourceDescriptorFile(@NotNull String deploymentFile, @NotNull DeploymentDescriptor deploymentDescriptor) {
+  public static IFile getSourceDescriptorFile(@NotNull IFile deploymentFile, @NotNull DeploymentDescriptor deploymentDescriptor) {
     if (deploymentDescriptor.getSourcesJar() != null) {
-      IFile moduleJar = FileSystem.getInstance().getFileByPath(deploymentFile.substring(0, deploymentFile.length() - SLASH_META_INF_MODULE_XML.length()));
+      jetbrains.mps.vfs.openapi.FileSystem fileSystem = deploymentFile.getFileSystem();
+      String deploymentPath = deploymentFile.getPath();
+      String moduleJarPath = deploymentPath.substring(0, deploymentPath.length() - SLASH_META_INF_MODULE_XML.length());
+      IFile moduleJar = fileSystem.getFile(moduleJarPath);
       IFile sourcesJar = moduleJar.getParent().getDescendant(deploymentDescriptor.getSourcesJar());
       if (sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
-        return FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + JAR_SEPARATOR + SOURCES_MODULE_DIR + "/" + deploymentDescriptor.getDescriptorFile());
+        return fileSystem.getFile(sourcesJar.getPath() + JAR_SEPARATOR + SOURCES_MODULE_DIR + "/" + deploymentDescriptor.getDescriptorFile());
       }
     }
     return null;
@@ -402,7 +405,7 @@ public final class ModulesMiner {
       throw new IOException("broken stream: invalid descriptor type");
     }
     descriptor.load(stream);
-    return new ModuleHandle(getFileSystem().getFileByPath(file), descriptor);
+    return new ModuleHandle(getFileSystem().getFile(file), descriptor);
   }
 
   public static class ModuleHandle {

@@ -77,7 +77,7 @@ public class CachedModuleData {
 
   public static CachedModuleData load(ModelInputStream stream) throws IOException {
     if (stream.readByte() != 27) throw new IOException("bad stream: no module start marker");
-    ModuleHandle moduleHandle = ModulesMiner.getInstance().loadHandle(stream);
+    ModuleHandle moduleHandle = new ModulesMiner().loadHandle(stream);
 
     Map<String, List<CachedModelData>> modelsByPath = new HashMap<String, List<CachedModelData>>();
     for (int size = stream.readInt(); size > 0; size--) {
