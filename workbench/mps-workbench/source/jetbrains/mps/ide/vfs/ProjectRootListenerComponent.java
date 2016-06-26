@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
@@ -51,7 +52,7 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
     if (basePath!= null) {
       myFile = myFileSystem.getFile(basePath);
       EmptyFSListener listener = new EmptyFSListener();
-      myFile.addListener(listener);
+      ApplicationManager.getApplication().runReadAction(() -> {myFile.addListener(listener);});
       myProject2ListenerMap.put(myProject, listener);
     } else {
       LOG.warn("Could not find base path of the project " + myProject);
@@ -60,8 +61,8 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
 
   @Override
   public void disposeComponent() {
-    FileListener removed = myProject2ListenerMap.remove(myProject);
-    myFile.removeListener(removed);
+    FileListener listener = myProject2ListenerMap.remove(myProject);
+    ApplicationManager.getApplication().runReadAction(() -> {myFile.removeListener(listener);});
   }
 
   @NotNull

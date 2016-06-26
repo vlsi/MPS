@@ -8,6 +8,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Logger;
@@ -46,6 +47,7 @@ public class WatchedRoots implements ApplicationComponent {
    * @return true iff a new watch request was registered at the local file system
    */
   public synchronized boolean addWatchRequest(@NotNull String path) {
+    ApplicationManager.getApplication().assertReadAccessAllowed();
     Integer count = myRequestedPaths.get(path);
     if (count != null) {
       myRequestedPaths.put(path, count + 1);
@@ -67,11 +69,14 @@ public class WatchedRoots implements ApplicationComponent {
       }
     }
     if (!(alreadyCovered)) {
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Adding watch request for the path " + path);
+      }
       LocalFileSystem.WatchRequest request = myLocalFileSystem.addRootToWatch(path, true);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Watch request added");
+      }
       if (request != null) {
-        if (LOG.isDebugEnabled()) {
-          LOG.debug("Adding watch request for the path " + path);
-        }
         myRequests.put(path, request);
         return true;
       }
@@ -80,6 +85,7 @@ public class WatchedRoots implements ApplicationComponent {
   }
 
   public synchronized void removeWatchRequest(@NotNull String path) {
+    ApplicationManager.getApplication().assertReadAccessAllowed();
     Integer count = myRequestedPaths.get(path);
     if (count == null || count == 0) {
       throw new IllegalArgumentException("The watch request for the path " + path + " is not presented");

@@ -514,99 +514,104 @@
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/5765100171650883094">
     <file name="WatchedRoots.java">
-      <node id="5765100171650883104" at="24,0,25,0" concept="6" trace="myRequests" />
-      <node id="5765100171650883113" at="25,0,26,0" concept="6" trace="myRequestedPaths" />
-      <node id="5765100171650883122" at="26,0,27,0" concept="6" trace="myLocalFileSystem" />
-      <node id="5765100171650883129" at="28,53,29,28" concept="5" />
-      <node id="5765100171650883158" at="40,36,41,27" concept="11" />
-      <node id="5765100171650883271" at="48,69,49,47" concept="10" />
-      <node id="5765100171650883280" at="50,24,51,44" concept="5" />
-      <node id="6652154090206085803" at="51,44,52,19" concept="11" />
-      <node id="5765100171650883293" at="53,12,54,36" concept="5" />
-      <node id="6652154090206084521" at="54,36,55,40" concept="11" />
-      <node id="5765100171650883310" at="59,53,60,35" concept="10" />
-      <node id="5765100171650883314" at="60,35,61,0" concept="13" />
-      <node id="5765100171650883321" at="62,103,63,45" concept="10" />
-      <node id="5765100171650883329" at="64,48,65,30" concept="5" />
-      <node id="5765100171650883333" at="65,30,66,14" concept="2" />
-      <node id="5765100171650883339" at="69,28,70,90" concept="10" />
-      <node id="2408794412340179907" at="72,35,73,65" concept="5" />
-      <node id="5765100171650883349" at="74,9,75,38" concept="5" />
-      <node id="6652154090206074562" at="75,38,76,20" concept="11" />
-      <node id="6652154090206080441" at="78,5,79,17" concept="11" />
-      <node id="5765100171650883364" at="82,69,83,47" concept="10" />
-      <node id="6652154090206028516" at="84,38,85,105" concept="16" />
-      <node id="5765100171650883389" at="87,22,88,40" concept="5" />
-      <node id="5765100171650883400" at="89,12,90,36" concept="5" />
-      <node id="5765100171650883405" at="90,36,91,62" concept="10" />
-      <node id="5765100171650883414" at="91,62,92,47" concept="5" />
-      <node id="5765100171650883419" at="92,47,93,30" concept="5" />
-      <node id="5765100171650883094" at="96,0,97,0" concept="14" trace="LOG" />
-      <node id="5765100171650883137" at="32,0,34,0" concept="9" trace="initComponent#()V" />
-      <node id="5765100171650883145" at="35,0,37,0" concept="9" trace="disposeComponent#()V" />
-      <node id="5765100171650883126" at="28,0,31,0" concept="3" trace="WatchedRoots#(Lcom/intellij/openapi/vfs/LocalFileSystem;)V" />
-      <node id="5765100171650883291" at="53,10,56,5" concept="1" />
-      <node id="2408794412340179907" at="71,28,74,9" concept="8" />
-      <node id="6652154090206022673" at="83,47,86,5" concept="8" />
-      <node id="5765100171650883327" at="63,45,67,7" concept="8" />
-      <node id="5765100171650883152" at="38,0,43,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="5765100171650883398" at="89,10,94,5" concept="1" />
-      <node id="5765100171650883278" at="49,47,56,5" concept="8" />
-      <node id="5765100171650883315" at="61,0,68,5" concept="7" />
-      <node id="5765100171650883347" at="70,90,77,7" concept="8" />
-      <node id="5765100171650883387" at="86,5,94,5" concept="8" />
-      <node id="5765100171650883269" at="48,0,58,0" concept="9" trace="addWatchRequest#(Ljava/lang/String;)Z" />
-      <node id="5765100171650883337" at="68,5,78,5" concept="8" />
-      <node id="5765100171650883362" at="82,0,96,0" concept="9" trace="removeWatchRequest#(Ljava/lang/String;)V" />
-      <node id="5765100171650883306" at="59,0,81,0" concept="9" trace="maybeAddWatchRequest#(Ljava/lang/String;)Z" />
-      <scope id="5765100171650883140" at="32,31,32,31" />
-      <scope id="5765100171650883148" at="35,34,35,34" />
-      <scope id="5765100171650883128" at="28,53,29,28" />
-      <scope id="5765100171650883157" at="40,36,41,27" />
-      <scope id="2408794412340179907" at="72,35,73,65" />
-      <scope id="6652154090206022675" at="84,38,85,105" />
-      <scope id="5765100171650883388" at="87,22,88,40" />
-      <scope id="5765100171650883137" at="32,0,34,0" />
-      <scope id="5765100171650883145" at="35,0,37,0" />
-      <scope id="5765100171650883279" at="50,24,52,19" />
-      <scope id="5765100171650883292" at="53,12,55,40" />
-      <scope id="5765100171650883328" at="64,48,66,14" />
-      <scope id="5765100171650883126" at="28,0,31,0">
+      <node id="5765100171650883104" at="25,0,26,0" concept="6" trace="myRequests" />
+      <node id="5765100171650883113" at="26,0,27,0" concept="6" trace="myRequestedPaths" />
+      <node id="5765100171650883122" at="27,0,28,0" concept="6" trace="myLocalFileSystem" />
+      <node id="5765100171650883129" at="29,53,30,28" concept="5" />
+      <node id="5765100171650883158" at="41,36,42,27" concept="11" />
+      <node id="1958528365893320370" at="49,69,50,66" concept="5" />
+      <node id="5765100171650883271" at="50,66,51,47" concept="10" />
+      <node id="5765100171650883280" at="52,24,53,44" concept="5" />
+      <node id="6652154090206085803" at="53,44,54,19" concept="11" />
+      <node id="5765100171650883293" at="55,12,56,36" concept="5" />
+      <node id="6652154090206084521" at="56,36,57,40" concept="11" />
+      <node id="5765100171650883310" at="61,53,62,35" concept="10" />
+      <node id="5765100171650883314" at="62,35,63,0" concept="13" />
+      <node id="5765100171650883321" at="64,103,65,45" concept="10" />
+      <node id="5765100171650883329" at="66,48,67,30" concept="5" />
+      <node id="5765100171650883333" at="67,30,68,14" concept="2" />
+      <node id="2408794412340179907" at="72,33,73,63" concept="5" />
+      <node id="5765100171650883339" at="74,7,75,90" concept="10" />
+      <node id="1958528365893395072" at="76,33,77,41" concept="5" />
+      <node id="5765100171650883349" at="79,28,80,38" concept="5" />
+      <node id="6652154090206074562" at="80,38,81,20" concept="11" />
+      <node id="6652154090206080441" at="83,5,84,17" concept="11" />
+      <node id="1958528365893304470" at="87,69,88,66" concept="5" />
+      <node id="5765100171650883364" at="88,66,89,47" concept="10" />
+      <node id="6652154090206028516" at="90,38,91,105" concept="16" />
+      <node id="5765100171650883389" at="93,22,94,40" concept="5" />
+      <node id="5765100171650883400" at="95,12,96,36" concept="5" />
+      <node id="5765100171650883405" at="96,36,97,62" concept="10" />
+      <node id="5765100171650883414" at="97,62,98,47" concept="5" />
+      <node id="5765100171650883419" at="98,47,99,30" concept="5" />
+      <node id="5765100171650883094" at="102,0,103,0" concept="14" trace="LOG" />
+      <node id="5765100171650883137" at="33,0,35,0" concept="9" trace="initComponent#()V" />
+      <node id="5765100171650883145" at="36,0,38,0" concept="9" trace="disposeComponent#()V" />
+      <node id="5765100171650883126" at="29,0,32,0" concept="3" trace="WatchedRoots#(Lcom/intellij/openapi/vfs/LocalFileSystem;)V" />
+      <node id="5765100171650883291" at="55,10,58,5" concept="1" />
+      <node id="2408794412340179907" at="71,28,74,7" concept="8" />
+      <node id="1958528365893395072" at="75,90,78,7" concept="8" />
+      <node id="6652154090206022673" at="89,47,92,5" concept="8" />
+      <node id="5765100171650883327" at="65,45,69,7" concept="8" />
+      <node id="5765100171650883347" at="78,7,82,7" concept="8" />
+      <node id="5765100171650883152" at="39,0,44,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="5765100171650883398" at="95,10,100,5" concept="1" />
+      <node id="5765100171650883278" at="51,47,58,5" concept="8" />
+      <node id="5765100171650883315" at="63,0,70,5" concept="7" />
+      <node id="5765100171650883387" at="92,5,100,5" concept="8" />
+      <node id="5765100171650883269" at="49,0,60,0" concept="9" trace="addWatchRequest#(Ljava/lang/String;)Z" />
+      <node id="5765100171650883337" at="70,5,83,5" concept="8" />
+      <node id="5765100171650883362" at="87,0,102,0" concept="9" trace="removeWatchRequest#(Ljava/lang/String;)V" />
+      <node id="5765100171650883306" at="61,0,86,0" concept="9" trace="maybeAddWatchRequest#(Ljava/lang/String;)Z" />
+      <scope id="5765100171650883140" at="33,31,33,31" />
+      <scope id="5765100171650883148" at="36,34,36,34" />
+      <scope id="5765100171650883128" at="29,53,30,28" />
+      <scope id="5765100171650883157" at="41,36,42,27" />
+      <scope id="2408794412340179907" at="72,33,73,63" />
+      <scope id="1958528365893395072" at="76,33,77,41" />
+      <scope id="6652154090206022675" at="90,38,91,105" />
+      <scope id="5765100171650883388" at="93,22,94,40" />
+      <scope id="5765100171650883137" at="33,0,35,0" />
+      <scope id="5765100171650883145" at="36,0,38,0" />
+      <scope id="5765100171650883279" at="52,24,54,19" />
+      <scope id="5765100171650883292" at="55,12,57,40" />
+      <scope id="5765100171650883328" at="66,48,68,14" />
+      <scope id="5765100171650883348" at="79,28,81,20" />
+      <scope id="5765100171650883126" at="29,0,32,0">
         <var name="lfs" id="5765100171650883134" />
       </scope>
-      <scope id="5765100171650883399" at="89,12,93,30">
+      <scope id="5765100171650883399" at="95,12,99,30">
         <var name="req" id="5765100171650883406" />
       </scope>
-      <scope id="5765100171650883152" at="38,0,43,0" />
-      <scope id="5765100171650883320" at="62,103,67,7">
+      <scope id="5765100171650883152" at="39,0,44,0" />
+      <scope id="5765100171650883320" at="64,103,69,7">
         <var name="watchPath" id="5765100171650883322" />
       </scope>
-      <scope id="5765100171650883348" at="71,28,76,20" />
-      <scope id="5765100171650883315" at="61,0,68,5">
+      <scope id="5765100171650883315" at="63,0,70,5">
         <var name="watch" id="5765100171650883316" />
       </scope>
-      <scope id="5765100171650883270" at="48,69,56,5">
+      <scope id="5765100171650883270" at="49,69,58,5">
         <var name="count" id="5765100171650883272" />
       </scope>
-      <scope id="5765100171650883338" at="69,28,77,7">
-        <var name="request" id="5765100171650883340" />
-      </scope>
-      <scope id="5765100171650883269" at="48,0,58,0">
+      <scope id="5765100171650883269" at="49,0,60,0">
         <var name="path" id="5765100171650883304" />
       </scope>
-      <scope id="5765100171650883363" at="82,69,94,5">
+      <scope id="5765100171650883338" at="71,28,82,7">
+        <var name="request" id="5765100171650883340" />
+      </scope>
+      <scope id="5765100171650883363" at="87,69,100,5">
         <var name="count" id="5765100171650883365" />
       </scope>
-      <scope id="5765100171650883362" at="82,0,96,0">
+      <scope id="5765100171650883362" at="87,0,102,0">
         <var name="path" id="5765100171650883429" />
       </scope>
-      <scope id="5765100171650883309" at="59,53,79,17">
+      <scope id="5765100171650883309" at="61,53,84,17">
         <var name="alreadyCovered" id="5765100171650883311" />
       </scope>
-      <scope id="5765100171650883306" at="59,0,81,0">
+      <scope id="5765100171650883306" at="61,0,86,0">
         <var name="path" id="5765100171650883360" />
       </scope>
-      <unit id="5765100171650883094" at="23,0,98,0" name="jetbrains.mps.ide.platform.watching.WatchedRoots" />
+      <unit id="5765100171650883094" at="24,0,104,0" name="jetbrains.mps.ide.platform.watching.WatchedRoots" />
     </file>
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/6784047278245094901">

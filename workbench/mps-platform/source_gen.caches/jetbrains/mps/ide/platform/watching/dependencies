@@ -185,6 +185,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.WatchedRoots" file="WatchedRoots.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />

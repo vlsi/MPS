@@ -7184,6 +7184,17 @@
       <property role="od$2w" value="true" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="501K0YLMPV6" role="3clF47">
+        <node concept="3clFbF" id="1GI5MKbAfUM" role="3cqZAp">
+          <node concept="2OqwBi" id="1GI5MKbAfUN" role="3clFbG">
+            <node concept="2YIFZM" id="1GI5MKbAfUO" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1GI5MKbAfUP" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.assertReadAccessAllowed():void" resolve="assertReadAccessAllowed" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="501K0YLMPV7" role="3cqZAp">
           <node concept="3cpWsn" id="501K0YLMPV8" role="3cpWs9">
             <property role="TrG5h" value="count" />
@@ -7355,6 +7366,17 @@
         </node>
         <node concept="3clFbJ" id="501K0YLMPW9" role="3cqZAp">
           <node concept="3clFbS" id="501K0YLMPWa" role="3clFbx">
+            <node concept="34ab3g" id="25HKs5OuRf3" role="3cqZAp">
+              <property role="35gtTG" value="debug" />
+              <node concept="3cpWs3" id="25HKs5OuRLI" role="34bqiv">
+                <node concept="Xl_RD" id="25HKs5OuRf5" role="3uHU7B">
+                  <property role="Xl_RC" value="Adding watch request for the path " />
+                </node>
+                <node concept="37vLTw" id="25HKs5OuRSi" role="3uHU7w">
+                  <ref role="3cqZAo" node="501K0YLMPWw" resolve="path" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="501K0YLMPWb" role="3cqZAp">
               <node concept="3cpWsn" id="501K0YLMPWc" role="3cpWs9">
                 <property role="TrG5h" value="request" />
@@ -7377,19 +7399,14 @@
                 </node>
               </node>
             </node>
+            <node concept="34ab3g" id="1GI5MKbAya0" role="3cqZAp">
+              <property role="35gtTG" value="debug" />
+              <node concept="Xl_RD" id="1GI5MKbAya2" role="34bqiv">
+                <property role="Xl_RC" value="Watch request added" />
+              </node>
+            </node>
             <node concept="3clFbJ" id="501K0YLMPWj" role="3cqZAp">
               <node concept="3clFbS" id="501K0YLMPWk" role="3clFbx">
-                <node concept="34ab3g" id="25HKs5OuRf3" role="3cqZAp">
-                  <property role="35gtTG" value="debug" />
-                  <node concept="3cpWs3" id="25HKs5OuRLI" role="34bqiv">
-                    <node concept="Xl_RD" id="25HKs5OuRf5" role="3uHU7B">
-                      <property role="Xl_RC" value="Adding watch request for the path " />
-                    </node>
-                    <node concept="37vLTw" id="25HKs5OuRSi" role="3uHU7w">
-                      <ref role="3cqZAo" node="501K0YLMPWw" resolve="path" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="501K0YLMPWl" role="3cqZAp">
                   <node concept="2OqwBi" id="501K0YLMPWm" role="3clFbG">
                     <node concept="37vLTw" id="501K0YLMPWn" role="2Oq$k0">
@@ -7444,6 +7461,17 @@
       <property role="od$2w" value="true" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="501K0YLMPWz" role="3clF47">
+        <node concept="3clFbF" id="1GI5MKbAc2m" role="3cqZAp">
+          <node concept="2OqwBi" id="1GI5MKbAeI9" role="3clFbG">
+            <node concept="2YIFZM" id="1GI5MKbAcoI" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1GI5MKbAf1p" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.assertReadAccessAllowed():void" resolve="assertReadAccessAllowed" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="501K0YLMPW$" role="3cqZAp">
           <node concept="3cpWsn" id="501K0YLMPW_" role="3cpWs9">
             <property role="TrG5h" value="count" />
