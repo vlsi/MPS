@@ -63,8 +63,16 @@ public class CellFinder {
     EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {
-        if (!(cell instanceof EditorCell_Property)) return false;
+        if (!(cell instanceof EditorCell_Property)) {
+          return false;
+        }
+
         EditorCell_Property propertyCell = (EditorCell_Property) cell;
+        if (propertyCell.getRole() != null) {
+          // Ignore property cells with a role since they do not display the property of their node but rather the property of the target node.
+          return false;
+        }
+
         ModelAccessor modelAccessor = propertyCell.getModelAccessor();
         return modelAccessor instanceof PropertyAccessor && node == propertyCell.getSNode()
             && name.equals(((PropertyAccessor) modelAccessor).getPropertyName());
