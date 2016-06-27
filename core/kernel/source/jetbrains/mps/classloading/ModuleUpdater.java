@@ -142,7 +142,7 @@ public class ModuleUpdater {
         LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
         return updated;
       } finally {
-        LOG.info(String.format("Refreshing graph took %.3f s", (System.nanoTime() - beginTime) / 1e9));
+        LOG.info(String.format("Classloading refresh took %.3f s", (System.nanoTime() - beginTime) / 1e9));
       }
     }
   }

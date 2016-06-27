@@ -20,7 +20,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.util.PerfUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;

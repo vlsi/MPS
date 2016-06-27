@@ -903,13 +903,12 @@
                                   <ref role="1Pybhc" to="6qgz:~ModelRootDescriptor" resolve="ModelRootDescriptor" />
                                   <ref role="37wK5l" to="6qgz:~ModelRootDescriptor.getJavaStubsModelRoot(jetbrains.mps.vfs.IFile):jetbrains.mps.project.structure.model.ModelRootDescriptor" resolve="getJavaStubsModelRoot" />
                                   <node concept="2OqwBi" id="6UQiGMPpLx8" role="37wK5m">
-                                    <node concept="2ShNRf" id="1OabvAsh_0V" role="2Oq$k0">
-                                      <node concept="1pGfFk" id="1OabvAshIab" role="2ShVmc">
-                                        <ref role="37wK5l" to="4hrd:~IdeaFileSystem.&lt;init&gt;()" resolve="IdeaFileSystem" />
-                                      </node>
+                                    <node concept="2YIFZM" id="5lw$Z_ggbGX" role="2Oq$k0">
+                                      <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
+                                      <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
                                     </node>
                                     <node concept="liA8E" id="6UQiGMPpMb4" role="2OqNvi">
-                                      <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getFile(java.lang.String):jetbrains.mps.ide.vfs.IdeaFile" resolve="getFile" />
+                                      <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                                       <node concept="37vLTw" id="1OabvAshIdf" role="37wK5m">
                                         <ref role="3cqZAo" node="3tOCygy3A$y" resolve="it" />
                                       </node>
