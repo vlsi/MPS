@@ -210,6 +210,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -1838,13 +1839,13 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2DeJnY" id="7cSr0CigswG" role="2OqNvi" />
+                <node concept="zfrQC" id="6ZkouddSm3n" role="2OqNvi" />
               </node>
               <node concept="3Tsc0h" id="7cSr0CigswH" role="2OqNvi">
                 <ref role="3TtcxE" to="m373:4EPKw6tR9BN" />
               </node>
             </node>
-            <node concept="2DeJg1" id="7cSr0CigswI" role="2OqNvi">
+            <node concept="WFELt" id="6ZkouddSnfD" role="2OqNvi">
               <ref role="1A0vxQ" to="m373:7lVCwDcxZ_$" resolve="DeprecatedBlockDocTag" />
             </node>
           </node>

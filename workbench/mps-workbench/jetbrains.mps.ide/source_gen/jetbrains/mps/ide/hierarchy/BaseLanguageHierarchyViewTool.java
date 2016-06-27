@@ -92,21 +92,21 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();
-        if ("classifier".equals(usage.getRole())) {
+        if (MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier").equals(usage.getLink())) {
           if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             SNode classifierType = SNodeOperations.cast(sourceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && "superclass".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass").equals(classifierType.getContainmentLink())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && "implementedInterface".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface").equals(classifierType.getContainmentLink())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && "extendedInterface".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface").equals(classifierType.getContainmentLink())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
           }
         }
-        if ("classifier".equals(usage.getRole())) {
+        if (MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier").equals(usage.getLink())) {
           if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
             SNode anonymousClass = SNodeOperations.cast(sourceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
             result.add(anonymousClass);

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -66,9 +68,22 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(@NonNls List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
+  enum KeepOldNodes implements Comparable<RefactoringParticipant.KeepOldNodes> {
+    REMOVE(),
+    POSTPONE_REMOVE(),
+    KEEP();
+
+    public static RefactoringParticipant.KeepOldNodes max(Iterable<RefactoringParticipant.KeepOldNodes> values) {
+      return Sequence.fromIterable(values).foldRight(RefactoringParticipant.KeepOldNodes.REMOVE, new IRightCombinator<RefactoringParticipant.KeepOldNodes, RefactoringParticipant.KeepOldNodes>() {
+        public RefactoringParticipant.KeepOldNodes combine(RefactoringParticipant.KeepOldNodes it, RefactoringParticipant.KeepOldNodes s) {
+          return (s.compareTo(it) > 0 ? s : it);
+        }
+      });
+    }
+  }
+
   interface Change<InitialDataObject, FinalDataObject> {
     SearchResults getSearchResults();
-    boolean needsToPreserveOldNode();
     void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 

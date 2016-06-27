@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -214,7 +215,32 @@
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -2578,6 +2604,86 @@
       </node>
       <node concept="3Tm1VV" id="J2bOg0cat9" role="1B3o_S" />
       <node concept="3cqZAl" id="J2bOg0cata" role="3clF45" />
+    </node>
+  </node>
+  <node concept="3HP615" id="7DGCeT2Ukgb">
+    <property role="TrG5h" value="SearchTask" />
+    <node concept="3clFb_" id="7DGCeT2Ukpc" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="canExecute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7DGCeT2Ukpd" role="1B3o_S" />
+      <node concept="3clFbS" id="7DGCeT2Ukpe" role="3clF47" />
+      <node concept="10P_77" id="7DGCeT2Ukpf" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="7DGCeT2Ukpg" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="execute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7DGCeT2Ukph" role="1B3o_S" />
+      <node concept="37vLTG" id="7DGCeT2Ukpi" role="3clF46">
+        <property role="TrG5h" value="modelAccess" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="2FW2ExVkIuC" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7DGCeT2Ukpk" role="3clF46">
+        <property role="TrG5h" value="progressMonitor" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="7DGCeT2Uks0" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="7DGCeT2Ukpm" role="3clF47" />
+      <node concept="3uibUv" id="7DGCeT2Ukpn" role="3clF45">
+        <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7DGCeT2Ukgc" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ZzFP$JA00Q" role="lGtFl">
+      <node concept="TZ5HA" id="7ZzFP$JA2yn" role="TZ5H$">
+        <node concept="1dT_AC" id="7ZzFP$JA2yo" role="1dT_Ay">
+          <property role="1dT_AB" value="Abstraction of search activity one could execute several times." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3veQ_zQyFp8" role="TZ5H$">
+        <node concept="1dT_AC" id="3veQ_zQyFp9" role="1dT_Ay">
+          <property role="1dT_AB" value="Use " />
+        </node>
+        <node concept="1dT_AA" id="3veQ_zQyFpb" role="1dT_Ay">
+          <node concept="92FcH" id="7ZzFP$JAfo$" role="qph3F">
+            <node concept="TZ5HA" id="7ZzFP$JAfoA" role="2XjZqd">
+              <node concept="1dT_AC" id="7ZzFP$JAxOM" role="1dT_Ay">
+                <property role="1dT_AB" value="" />
+              </node>
+            </node>
+            <node concept="VXe0Z" id="7ZzFP$JAER7" role="92FcQ">
+              <ref role="VXe0S" node="7DGCeT2Ukpc" resolve="canExecute" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="7ZzFP$JBCLB" role="1dT_Ay">
+          <property role="1dT_AB" value=" and " />
+        </node>
+        <node concept="1dT_AA" id="7ZzFP$JBqRy" role="1dT_Ay">
+          <node concept="92FcH" id="7ZzFP$JBqRz" role="qph3F">
+            <node concept="TZ5HA" id="7ZzFP$JBqR$" role="2XjZqd">
+              <node concept="1dT_AC" id="7ZzFP$JBqR_" role="1dT_Ay">
+                <property role="1dT_AB" value="" />
+              </node>
+            </node>
+            <node concept="VXe0Z" id="7ZzFP$JBqRA" role="92FcQ">
+              <ref role="VXe0S" node="7DGCeT2Ukpg" resolve="execute" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="3veQ_zQyFpi" role="1dT_Ay">
+          <property role="1dT_AB" value="." />
+        </node>
+      </node>
     </node>
   </node>
 </model>

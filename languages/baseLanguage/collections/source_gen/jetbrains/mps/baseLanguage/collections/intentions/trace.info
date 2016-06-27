@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="16,0,149,0" name="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
+      <unit at="16,0,151,0" name="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/1193396656620">
@@ -957,6 +957,63 @@
       </scope>
       <unit id="4863683935051516296" at="46,0,62,0" name="jetbrains.mps.baseLanguage.collections.intentions.RemoveAllSetElementsOperation_replace_Intention$IntentionImplementation" />
       <unit id="4863683935051516296" at="23,0,74,0" name="jetbrains.mps.baseLanguage.collections.intentions.RemoveAllSetElementsOperation_replace_Intention" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/8656797459614518948">
+    <file name="ConvertToMultiForeach_Intention.java">
+      <node id="8656797459614518948" at="20,0,21,0" concept="2" trace="myCachedExecutable" />
+      <node id="8656797459614518948" at="21,44,22,331" concept="10" />
+      <node id="8656797459614518948" at="25,35,26,35" concept="7" />
+      <node id="8656797459614518948" at="29,84,30,16" concept="7" />
+      <node id="8656797459614518948" at="33,35,34,17" concept="7" />
+      <node id="8656797459614518948" at="37,37,38,137" concept="1" />
+      <node id="8656797459614518948" at="39,5,40,30" concept="7" />
+      <node id="8656797459614518951" at="46,87,47,53" concept="7" />
+      <node id="8656797459614984714" at="50,78,51,265" concept="1" />
+      <node id="8656797459614518948" at="54,48,55,50" concept="7" />
+      <node id="8656797459614518948" at="43,0,45,0" concept="0" trace="IntentionImplementation#()V" />
+      <node id="8656797459614518948" at="21,0,24,0" concept="0" trace="ConvertToMultiForeach_Intention#()V" />
+      <node id="8656797459614518948" at="36,99,39,5" concept="4" />
+      <node id="8656797459614518948" at="24,0,28,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="8656797459614518948" at="28,0,32,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="8656797459614518948" at="32,0,36,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="8656797459614518948" at="45,0,49,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="8656797459614518948" at="49,0,53,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="8656797459614518948" at="53,0,57,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="8656797459614518948" at="36,0,42,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <scope id="8656797459614518948" at="43,38,43,38" />
+      <scope id="8656797459614518948" at="21,44,22,331" />
+      <scope id="8656797459614518948" at="25,35,26,35" />
+      <scope id="8656797459614518948" at="29,84,30,16" />
+      <scope id="8656797459614518948" at="33,35,34,17" />
+      <scope id="8656797459614518948" at="37,37,38,137" />
+      <scope id="8656797459614518950" at="46,87,47,53" />
+      <scope id="8656797459614518954" at="50,78,51,265" />
+      <scope id="8656797459614518948" at="54,48,55,50" />
+      <scope id="8656797459614518948" at="43,0,45,0" />
+      <scope id="8656797459614518948" at="21,0,24,0" />
+      <scope id="8656797459614518948" at="24,0,28,0" />
+      <scope id="8656797459614518948" at="28,0,32,0">
+        <var name="editorContext" id="8656797459614518948" />
+        <var name="node" id="8656797459614518948" />
+      </scope>
+      <scope id="8656797459614518948" at="32,0,36,0" />
+      <scope id="8656797459614518948" at="36,99,40,30" />
+      <scope id="8656797459614518948" at="45,0,49,0">
+        <var name="editorContext" id="8656797459614518948" />
+        <var name="node" id="8656797459614518948" />
+      </scope>
+      <scope id="8656797459614518948" at="49,0,53,0">
+        <var name="editorContext" id="8656797459614518948" />
+        <var name="node" id="8656797459614518948" />
+      </scope>
+      <scope id="8656797459614518948" at="53,0,57,0" />
+      <scope id="8656797459614518948" at="36,0,42,0">
+        <var name="context" id="8656797459614518948" />
+        <var name="node" id="8656797459614518948" />
+      </scope>
+      <unit id="8656797459614518948" at="42,0,58,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertToMultiForeach_Intention$IntentionImplementation" />
+      <unit id="8656797459614518948" at="19,0,59,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertToMultiForeach_Intention" />
     </file>
   </root>
 </debug-info>

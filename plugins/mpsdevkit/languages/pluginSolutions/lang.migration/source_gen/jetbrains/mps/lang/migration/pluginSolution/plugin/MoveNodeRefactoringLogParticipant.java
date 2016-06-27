@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -30,22 +31,24 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.List;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
 
@@ -119,7 +122,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static class LogBuilder {
     private static final String myId = "refactoringSession.logBuilder";
-    public static MoveNodeRefactoringLogParticipant.LogBuilder getBuilder(RefactoringSession session, SModule module) {
+    public static MoveNodeRefactoringLogParticipant.LogBuilder getBuilder(RefactoringSession session, SearchScope searchScope, SModule module) {
       Map<SModuleReference, MoveNodeRefactoringLogParticipant.LogBuilder> moduleBuilders = (Map<SModuleReference, MoveNodeRefactoringLogParticipant.LogBuilder>) session.getObject(myId);
       if (moduleBuilders == null) {
         moduleBuilders = MapSequence.fromMap(new HashMap<SModuleReference, MoveNodeRefactoringLogParticipant.LogBuilder>());
@@ -128,13 +131,13 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
       MoveNodeRefactoringLogParticipant.LogBuilder builder = MapSequence.fromMap(moduleBuilders).get(module.getModuleReference());
       if (builder == null) {
-        builder = new MoveNodeRefactoringLogParticipant.LogBuilder(session, ((Language) module));
+        builder = new MoveNodeRefactoringLogParticipant.LogBuilder(session, searchScope, ((Language) module));
         MapSequence.fromMap(moduleBuilders).put(module.getModuleReference(), builder);
       }
       return builder;
     }
     private SNode myRefactoringStep;
-    private LogBuilder(RefactoringSession session, final Language module) {
+    private LogBuilder(RefactoringSession session, final SearchScope searchScope, final Language module) {
       final int moduleVersion = module.getModuleVersion();
       myRefactoringStep = createRefactoringLog_29rp6m_a0b0d21(moduleVersion, "RefactoringLog_" + moduleVersion);
       session.registerChange(new Runnable() {
@@ -151,12 +154,33 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             }
           }).distinct()) {
             if (!(SModelOperations.getImportedModelUIDs(migrationModel).contains(reference))) {
-              sm.addModelImport(reference, true);
+              sm.addModelImport(reference);
             }
           }
           sm.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9882f4ad195546feL, 0x826994189e5dbbf2L), "jetbrains.mps.lang.migration.util"));
           jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.addRootNode(migrationModel, myRefactoringStep);
           module.setModuleVersion(moduleVersion + 1);
+
+          Iterable<SModule> modules = searchScope.getModules();
+          List<SModule> modulesToIncrementDependencyVersion = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule m) {
+              return MigrationModuleUtil.isModuleMigrateable(m);
+            }
+          }).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule m) {
+              return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(module) && MigrationModuleUtil.hasDepVersion(m, module.getModuleReference());
+            }
+          }).toListSequence();
+          for (SModule m : ListSequence.fromList(modulesToIncrementDependencyVersion)) {
+            int depVersion = MigrationModuleUtil.getDepVersion(m, module.getModuleReference());
+            if (moduleVersion != depVersion) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Module " + m + " depends on module " + module + " with version " + depVersion + ", but current version is " + moduleVersion);
+              }
+            } else {
+              MigrationModuleUtil.setDepVersion(m, module.getModuleReference(), moduleVersion + 1);
+            }
+          }
         }
       });
     }
@@ -209,23 +233,40 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     }
   }
 
-  public boolean isApplicable(SNodeReference initialState, SRepository repository) {
-    SNode sourceNode = initialState.resolve(repository);
-    final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
-    return sourceModule instanceof Language;
+  public boolean isApplicable(List<SNodeReference> initialStates, SRepository repository) {
+    final SModule sourceModule = check_29rp6m_a0a0o(check_29rp6m_a0a0a41(ListSequence.fromList(initialStates).first().resolve(repository)));
+    if (!(sourceModule instanceof Language)) {
+      return false;
+    }
+    for (SModule module : Sequence.fromIterable(repository.getModules())) {
+      if (MigrationModuleUtil.isModuleMigrateable(module) && !(MigrationModuleUtil.allDependenciesActual(module))) {
+        return false;
+      }
+    }
+    return true;
   }
-  public List<RefactoringParticipant.Option> getAvailableOptions(SNodeReference initialState, SRepository repository) {
-    if (isApplicable(initialState, repository)) {
+  @Override
+  public List<RefactoringParticipant.Option> getAvailableOptions(List<SNodeReference> initialStates, SRepository repository) {
+    if (isApplicable(initialStates, repository)) {
       return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
     } else {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
     }
   }
 
-  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope) {
-    if (!(isApplicable(initialState, repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
-      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
+  @Override
+  public List<List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>> getChanges(List<SNodeReference> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    if (!(isApplicable(initialStates, repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
+      return ListSequence.fromList(initialStates).select(new ISelector<SNodeReference, List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>>() {
+        public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> select(SNodeReference it) {
+          return ((List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>) ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>()));
+        }
+      }).toListSequence();
     }
+    return super.getChanges(initialStates, repository, selectedOptions, searchScope, progressMonitor);
+  }
+
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope) {
     final SNode sourceNode = initialState.resolve(repository);
     final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
     final List<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> participantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>>() {
@@ -251,12 +292,9 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
     // todo: write guard migration with 'execute after' 
 
-    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
+    RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new MoveNodeRefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
       public SearchResults getSearchResults() {
         return results;
-      }
-      public boolean needsToPreserveOldNode() {
-        return false;
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
         final SNode targetNode = finalState.resolve(repository);
@@ -266,7 +304,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             return it.getSerializedFinal(targetNode);
           }
         }).toListSequence();
-        MoveNodeRefactoringLogParticipant.LogBuilder logBuilder = MoveNodeRefactoringLogParticipant.LogBuilder.getBuilder(refactoringSession, sourceModule);
+        MoveNodeRefactoringLogParticipant.LogBuilder logBuilder = MoveNodeRefactoringLogParticipant.LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule);
         logBuilder.addOptions(selectedOptions);
         {
           Iterator<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>> participant_it = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
@@ -286,25 +324,6 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             if (i_var != null) {
               logBuilder.addPart(participant_var, i_var, f_var);
             }
-            refactoringSession.registerChange(new Runnable() {
-              public void run() {
-                Iterable<SModule> modules = searchScope.getModules();
-                Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
-                  public boolean accept(SModule m) {
-                    return MigrationModuleUtil.isModuleMigrateable(m);
-                  }
-                }).where(new IWhereFilter<SModule>() {
-                  public boolean accept(SModule m) {
-                    return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(sourceModule);
-                  }
-                }).visitAll(new IVisitor<SModule>() {
-                  public void visit(SModule m) {
-                    int fromVersion = MigrationModuleUtil.getDepVersion(m, sourceModule.getModuleReference());
-                    MigrationModuleUtil.setDepVersion(m, sourceModule.getModuleReference(), fromVersion + 1);
-                  }
-                });
-              }
-            });
           }
         }
       }
@@ -314,4 +333,17 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
 
+  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
+  private static SModule check_29rp6m_a0a0o(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModel check_29rp6m_a0a0a41(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
 }

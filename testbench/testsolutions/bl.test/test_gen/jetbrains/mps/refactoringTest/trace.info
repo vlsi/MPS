@@ -2253,8 +2253,8 @@
       <node id="3014415391767789223" at="30,41,31,489" concept="5" />
       <node id="3014415391767834673" at="31,489,32,57" concept="5" />
       <node id="3014415391767834683" at="32,57,33,272" concept="1" />
-      <node id="3014415391767834947" at="33,272,34,38" concept="1" />
-      <node id="3014415391767804985" at="34,38,35,34" concept="1" />
+      <node id="3014415391767834947" at="33,272,34,37" concept="1" />
+      <node id="3014415391767804985" at="34,37,35,34" concept="1" />
       <node id="3014415391767789119" at="18,0,23,0" concept="4" trace="test_SimpleMoveStaticMethod#()V" />
       <node id="3014415391767789218" at="26,0,37,0" concept="4" trace="test_SimpleMoveStaticMethod#()V" />
       <scope id="3014415391767789119" at="19,62,21,119" />

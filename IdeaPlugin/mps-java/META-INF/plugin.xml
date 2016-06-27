@@ -60,6 +60,10 @@
     <component>
       <implementation-class>jetbrains.mps.idea.java.psi.PsiChangesWatcher</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.java.refactoring.RegisterMoveStaticMemberPsiParticipant
+      </implementation-class>
+    </component>
   </project-components>
 
   <actions>
@@ -80,8 +84,6 @@
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
     <mps.renameRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MethodRenameContributor" order="before mps-core-rename"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticFieldContributor" order="before mps-core-move"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticMethodContributor" order="before mps-core-move"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

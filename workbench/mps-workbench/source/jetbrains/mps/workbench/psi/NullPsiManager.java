@@ -32,6 +32,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
+/**
+ * @deprecated since MPS 3.4, use {@link com.intellij.psi.impl.PsiManagerImpl}
+ */
+@Deprecated
 class NullPsiManager extends PsiManagerImpl {
   private Project myProject;
   private FileManager myFileManager;

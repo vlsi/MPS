@@ -47,7 +47,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
-import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
+import jetbrains.mps.ide.findusages.view.UsagesView.SearchTaskImpl;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
@@ -144,7 +144,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
-    final SearchTask searchTask = new SearchTask(provider, query);
+    final SearchTaskImpl searchTask = new SearchTaskImpl(provider, query);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
@@ -153,7 +153,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()), new ProgressMonitorAdapter(indicator));
+            searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()).getModelAccess(), new ProgressMonitorAdapter(indicator));
           }
 
           @Override
@@ -170,7 +170,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     showResults(null, results, new UsageToolOptions().navigateIfSingle(false).forceNewTab(true).allowRunAgain(false).notFoundMessage(notFoundMsg));
   }
 
-  private void showResults(SearchTask searchTask, final SearchResults<?> searchResults, UsageToolOptions options) {
+  private void showResults(SearchTaskImpl searchTask, final SearchResults<?> searchResults, UsageToolOptions options) {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
@@ -312,7 +312,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     });
   }
 
-  private UsagesView createUsageView(@Nullable SearchTask searchTask) {
+  private UsagesView createUsageView(@Nullable SearchTaskImpl searchTask) {
     final UsagesView view = new UsagesView(ProjectHelper.toMPSProject(getProject()), myDefaultViewOptions, myChangeTracker);
     ArrayList<AnAction> actions = new ArrayList<AnAction>();
     if (searchTask != null) {
@@ -351,12 +351,12 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
 
     public final UsagesView myUsagesView;
-    public final SearchTask mySearchTask;
+    public final SearchTaskImpl mySearchTask;
     private boolean myIsTransientView = false;
     // now it's not in use, but will be used to implement constructable finders
 //    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
-    public UsageViewData(@NotNull UsagesView view, @Nullable SearchTask searchTask) {
+    public UsageViewData(@NotNull UsagesView view, @Nullable SearchTaskImpl searchTask) {
       myUsagesView = view;
       mySearchTask = searchTask;
     }
@@ -371,7 +371,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     @NotNull
     public static UsageViewData read(UsagesViewTool tool, Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
-      final SearchTask task = SearchTask.read(element, project);
+      final SearchTaskImpl task = SearchTaskImpl.read(element, project);
       final UsagesView usageView = tool.createUsageView(task);
       Element usageViewXML = element.getChild(USAGE_VIEW);
       usageView.read(usageViewXML, project);
@@ -402,9 +402,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private static class FindUsagesWithDialogAction extends AnAction {
-    private final SearchTask mySearchTask;
+    private final SearchTaskImpl mySearchTask;
 
-    public FindUsagesWithDialogAction(@NotNull SearchTask searchTask) {
+    public FindUsagesWithDialogAction(@NotNull SearchTaskImpl searchTask) {
       super("Settings...", "Show find usages settings dialog", General.ProjectSettings);
       mySearchTask = searchTask;
     }

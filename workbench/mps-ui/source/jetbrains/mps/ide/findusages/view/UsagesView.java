@@ -37,6 +37,7 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
@@ -58,6 +59,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.BorderFactory;
@@ -295,7 +297,7 @@ public class UsagesView implements IExternalizeable {
     }
 
     public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery) {
-      setRunOptions(new SearchTask(resultProvider, searchQuery));
+      setRunOptions(new SearchTaskImpl(resultProvider, searchQuery));
     }
     public void setRunOptions(SearchTask searchTask) {
       mySearchTask = searchTask;
@@ -314,28 +316,30 @@ public class UsagesView implements IExternalizeable {
         return;
       }
       ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(myView.myProject), myProgressText, true) {
+        private SearchResults mySearchResults;
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          SearchResults sr = mySearchTask.execute(myView.myProject, new ProgressMonitorAdapter(indicator));
-          sr.removeDuplicates();
-          myView.setContents(sr);
+          mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
+        }
+
+        @Override
+        public void onSuccess() {
+          if (mySearchResults != null) {
+            mySearchResults.removeDuplicates();
+            myView.setContents(mySearchResults);
+          }
         }
       });
     }
   }
 
-  /**
-   * Abstraction of search activity one could execute several times.
-   * Use {@link #canExecute()} and {@link #execute(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.util.ProgressMonitor)}.
-   */
-  public static final class SearchTask implements Runnable {
+  public static final class SearchTaskImpl implements SearchTask, Runnable {
     private final IResultProvider myResultProvider;
     private final SearchQuery mySearchQuery;
     private SearchResults myLastResults;
     private ProgressMonitor myProgress;
 
-    public SearchTask(@NotNull IResultProvider resultProvider, @NotNull SearchQuery searchQuery) {
+    public SearchTaskImpl(@NotNull IResultProvider resultProvider, @NotNull SearchQuery searchQuery) {
       myResultProvider = resultProvider;
       mySearchQuery = searchQuery;
     }
@@ -363,9 +367,9 @@ public class UsagesView implements IExternalizeable {
       return objectHolder.getObject();
     }
 
-    public SearchResults execute(Project mpsProject, ProgressMonitor progressMonitor) {
+    public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
       myProgress = progressMonitor;
-      mpsProject.getModelAccess().runReadAction(this);
+      modelAccess.runReadAction(this);
       return getSearchResults();
     }
 
@@ -379,7 +383,7 @@ public class UsagesView implements IExternalizeable {
     }
 
     @Nullable
-    public static SearchTask read(Element element, Project mpsProject) throws CantLoadSomethingException {
+    public static SearchTaskImpl read(Element element, Project mpsProject) throws CantLoadSomethingException {
       Element resultProviderXML = element.getChild(RESULT_PROVIDER);
       if (resultProviderXML != null) {
         String className = resultProviderXML.getAttributeValue(CLASS_NAME);
@@ -388,7 +392,7 @@ public class UsagesView implements IExternalizeable {
           resultProvider.read(resultProviderXML, mpsProject);
           Element queryXML = element.getChild(QUERY);
           SearchQuery searchQuery = new SearchQuery(queryXML, mpsProject);
-          return new SearchTask(resultProvider, searchQuery);
+          return new SearchTaskImpl(resultProvider, searchQuery);
         } catch (Throwable t) {
           throw new CantLoadSomethingException("Can't instantiate result provider: " + className, t);
         }

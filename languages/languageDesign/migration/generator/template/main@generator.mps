@@ -183,12 +183,6 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -464,13 +458,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
     </language>
     <language id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration">
       <concept id="8352104482584315555" name="jetbrains.mps.lang.migration.structure.MigrationScript" flags="ig" index="3SyAh_">
@@ -569,7 +556,7 @@
       </node>
     </node>
     <node concept="2VPoh5" id="3lidccNIMsn" role="2VS0gm">
-      <ref role="2VPoh2" node="3lidccNIMsp" resolve="MigrationDescriptorImpl" />
+      <ref role="2VPoh2" node="3lidccNIMsp" resolve="MigrationDescriptor" />
       <node concept="2VP$b9" id="4vxJP2wuetK" role="2VPoh3">
         <node concept="3clFbS" id="4vxJP2wuetL" role="2VODD2">
           <node concept="3clFbF" id="7XWR6$5jxwT" role="3cqZAp">
@@ -1370,7 +1357,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3lidccNIMsp">
-    <property role="TrG5h" value="MigrationDescriptorImpl" />
+    <property role="TrG5h" value="MigrationDescriptor" />
     <node concept="312cEg" id="3v32as6TfSo" role="jymVt">
       <property role="TrG5h" value="myScripts" />
       <node concept="3Tm6S6" id="3v32as6TfSp" role="1B3o_S" />
@@ -1495,7 +1482,7 @@
       <ref role="n9lRv" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
     </node>
     <node concept="3uibUv" id="5Fumpqe4Jqk" role="EKbjA">
-      <ref role="3uigEE" to="6f4m:2RG318eVG1Q" resolve="MigrationDescriptor" />
+      <ref role="3uigEE" to="6f4m:2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
     </node>
     <node concept="3clFb_" id="5Fumpqe4Jqn" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -5306,39 +5293,25 @@
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
-          <node concept="1X3_iC" id="13XfKgjWSfW" role="lGtFl">
-            <property role="3V$3am" value="statement" />
-            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-            <node concept="3clFbF" id="1KHvivZKB6b" role="8Wnug">
-              <node concept="1Wc70l" id="5cAnPGmopIC" role="3clFbG">
-                <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
-                  <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
-                    <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                  </node>
-                  <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
-                    <ref role="3zA4av" to="che4:2LiUEk8oQ$g" resolve="migration" />
-                  </node>
+          <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
+            <node concept="1Wc70l" id="5cAnPGmopIC" role="3clFbG">
+              <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
+                <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
+                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
                 </node>
-                <node concept="2OqwBi" id="227lWzxVIY5" role="3uHU7w">
-                  <node concept="2OqwBi" id="227lWzxVIY7" role="2Oq$k0">
-                    <node concept="v3LJS" id="5cAnPGmopNK" role="2Oq$k0">
-                      <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                    </node>
-                    <node concept="2RRcyG" id="7XWR6$5i4Gu" role="2OqNvi" />
-                  </node>
-                  <node concept="3GX2aA" id="7XWR6$5i5ID" role="2OqNvi" />
+                <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
+                  <ref role="3zA4av" to="che4:2LiUEk8oQ$g" resolve="migration" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3SKdUt" id="13XfKgjWSsT" role="3cqZAp">
-            <node concept="3SKdUq" id="13XfKgjWSsV" role="3SKWNk">
-              <property role="3SKdUp" value="disabled since aspect is not generated yet" />
-            </node>
-          </node>
-          <node concept="3cpWs6" id="13XfKgjWRHh" role="3cqZAp">
-            <node concept="3clFbT" id="13XfKgjWRW_" role="3cqZAk">
-              <property role="3clFbU" value="false" />
+              <node concept="2OqwBi" id="227lWzxVIY5" role="3uHU7w">
+                <node concept="2OqwBi" id="227lWzxVIY7" role="2Oq$k0">
+                  <node concept="v3LJS" id="5cAnPGmopNK" role="2Oq$k0">
+                    <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                  </node>
+                  <node concept="2RRcyG" id="7XWR6$5i4Gu" role="2OqNvi" />
+                </node>
+                <node concept="3GX2aA" id="7XWR6$5i5ID" role="2OqNvi" />
+              </node>
             </node>
           </node>
         </node>
@@ -5347,7 +5320,7 @@
         <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="GeneratedClassInstantiation" />
         <node concept="3cpWs3" id="3XrE5vcrH7O" role="v9R3O">
           <node concept="Xl_RD" id="3XrE5vcrH7P" role="3uHU7w">
-            <property role="Xl_RC" value=".MigrationDescriptorImpl" />
+            <property role="Xl_RC" value=".MigrationDescriptor" />
           </node>
           <node concept="2OqwBi" id="4WrOGsLZD2f" role="3uHU7B">
             <node concept="v3LJS" id="4WrOGsLZD1q" role="2Oq$k0">
@@ -5357,7 +5330,7 @@
           </node>
         </node>
         <node concept="3B5_sB" id="4WrOGsLZMQi" role="v9R3O">
-          <ref role="3B5MYn" to="6f4m:2RG318eVG1Q" resolve="MigrationDescriptor" />
+          <ref role="3B5MYn" to="6f4m:2RG318eVG1Q" resolve="MigrationAspectDescriptor" />
         </node>
       </node>
     </node>

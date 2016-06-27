@@ -142,8 +142,6 @@
                     interface="jetbrains.mps.idea.core.actions.ModelTemplateProvider"/>
     <extensionPoint qualifiedName="com.intellij.mps.renameRefactoringContributor"
                     beanClass="jetbrains.mps.idea.core.refactoring.RenameRefactoringContributorEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.moveRefactoringContributor"
-                    beanClass="jetbrains.mps.idea.core.refactoring.MoveRefactoringContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiFactory"
                     interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder"
@@ -162,8 +160,6 @@
     <mps.LanguageLibrary dir="/lib"/>
     <mps.renameRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultRenameContributor"
                                       id="mps-core-rename" order="last"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor"
-                                    id="mps-core-move" order="last"/>
 
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl"/>

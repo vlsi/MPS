@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -68,16 +69,23 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   }
 
   @Override
-  public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+  public void showRefactoringView(Project project, final RefactoringViewAction callback, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
-    refactoringViewItem.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
+    refactoringViewItem.showRefactoringView(project, callback, disposeAction, searchResults, name);
   }
-
 
   @Override
-  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, Runnable disposeAction, SearchResults searchResults, SearchTask searchTask, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
-    refactoringViewItem.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
+    refactoringViewItem.showRefactoringView(refactoringContext, callback, disposeAction, searchResults);
   }
 
+  @Deprecated
+  public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    showRefactoringView(project, callback, null, searchResults, null, name);
+  }
+  @Deprecated
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    showRefactoringView(refactoringContext, callback, null, searchResults, null, name);
+  }
 }

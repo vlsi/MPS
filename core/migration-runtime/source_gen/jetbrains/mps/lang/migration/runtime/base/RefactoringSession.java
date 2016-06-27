@@ -9,4 +9,5 @@ public interface RefactoringSession {
   Object getObject(String id);
 
   void registerChange(Runnable change);
+  void registerLast(Runnable change);
 }

@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.tempmodel.TempModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -30,7 +31,7 @@ public class MigrationModuleUtil {
     }).ofType(SModule.class);
   }
   public static boolean isModuleMigrateable(SModule m) {
-    return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly()));
+    return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly())) && !((m instanceof TempModule));
   }
   public static Set<SModule> getModuleDependencies(SModule module) {
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
@@ -40,8 +41,12 @@ public class MigrationModuleUtil {
   public static Set<SLanguage> getUsedLanguages(SModule module) {
     return new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
   }
-  public static int getDepVersion(SModule module, SModuleReference dependency) {
+  public static boolean hasDepVersion(SModule module, SModuleReference dependency) {
     Integer result = check_6ishgu_a0a0e(check_6ishgu_a0a0a4(((AbstractModule) module).getModuleDescriptor()), dependency);
+    return result != null;
+  }
+  public static int getDepVersion(SModule module, SModuleReference dependency) {
+    Integer result = check_6ishgu_a0a0f(check_6ishgu_a0a0a5(((AbstractModule) module).getModuleDescriptor()), dependency);
     if (result == null) {
       throw new IllegalArgumentException();
     }
@@ -55,6 +60,19 @@ public class MigrationModuleUtil {
     moduleDescriptor.getDependencyVersions().put(dependency, version);
     ((AbstractModule) module).setChanged();
   }
+  public static boolean allDependenciesActual(SModule module) {
+    for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
+      if (!(hasDepVersion(module, dep.getModuleReference()))) {
+        continue;
+      }
+      int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
+      int ver = ((AbstractModule) module).getDependencyVersion(dep);
+      if (currentDepVersion != ver) {
+        return false;
+      }
+    }
+    return true;
+  }
   private static Integer check_6ishgu_a0a0e(Map<SModuleReference, Integer> checkedDotOperand, SModuleReference dependency) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.get(dependency);
@@ -62,6 +80,18 @@ public class MigrationModuleUtil {
     return null;
   }
   private static Map<SModuleReference, Integer> check_6ishgu_a0a0a4(ModuleDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDependencyVersions();
+    }
+    return null;
+  }
+  private static Integer check_6ishgu_a0a0f(Map<SModuleReference, Integer> checkedDotOperand, SModuleReference dependency) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.get(dependency);
+    }
+    return null;
+  }
+  private static Map<SModuleReference, Integer> check_6ishgu_a0a0a5(ModuleDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDependencyVersions();
     }

@@ -36,10 +36,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
 
 public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference>, RecursiveParticipant<SNodeReference, SNodeReference, SNode, SNode> {
 
@@ -154,42 +153,46 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
 
               // todo: do not keep nodes but only node references 
 
-              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
+              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new MoveNodeRefactoringParticipant.ChangeBase<SNodeReference, SNodeReference>() {
                 public SearchResults getSearchResults() {
                   return results;
                 }
-                public boolean needsToPreserveOldNode() {
-                  return ListSequence.fromList(childparticipantStates).select(new ISelector<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>>, List<? extends RefactoringParticipant.Change<?, ?>>>() {
-                    public List<? extends RefactoringParticipant.Change<?, ?>> select(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>> it) {
-                      return (List<? extends RefactoringParticipant.Change<?, ?>>) ListSequence.fromList(it._1().getChanges()).first();
-                    }
-                  }).any(new IWhereFilter<List<? extends RefactoringParticipant.Change<?, ?>>>() {
-                    public boolean accept(List<? extends RefactoringParticipant.Change<?, ?>> it) {
-                      return ListSequence.fromList(it).any(new IWhereFilter<RefactoringParticipant.Change<?, ?>>() {
-                        public boolean accept(RefactoringParticipant.Change<?, ?> it1) {
-                          return it1.needsToPreserveOldNode();
+                public RefactoringParticipant.KeepOldNodes needsToPreserveOldNode() {
+                  return RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(childparticipantStates).translate(new ITranslator2<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>>, RefactoringParticipant.Change<?, ?>>() {
+                    public Iterable<RefactoringParticipant.Change<?, ?>> translate(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>> it) {
+                      return ListSequence.fromList(ListSequence.fromList(it._1().getChanges()).first()).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.Change<?, ?>>() {
+                        public RefactoringParticipant.Change<?, ?> select(RefactoringParticipant.Change<?, ?> it) {
+                          return (RefactoringParticipant.Change<?, ?>) it;
                         }
                       });
                     }
-                  });
+                  }).select(new ISelector<RefactoringParticipant.Change<?, ?>, RefactoringParticipant.KeepOldNodes>() {
+                    public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.Change<?, ?> it) {
+                      return ((MoveNodeRefactoringParticipant.MoveNodeChange) it).needsToPreserveOldNode();
+                    }
+                  }));
                 }
                 public void confirm(SNodeReference finalState, final SRepository repository, final RefactoringSession refactoringSession) {
                   SNode targetConcept = SNodeOperations.cast(finalState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
                   Language targetLanguage = ((Language) SNodeOperations.getModel(targetConcept).getModule());
                   NodeLocation.NodeLocationRootWithAspectModelCreation newLocation = new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, mapping.key());
 
-                  List<SNode> copied = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).copy(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
-                  if (!(needsToPreserveOldNode()) && SNodeOperations.getModel(sourceConcept) == null) {
+                  List<SNode> copied = MoveNodesActionBase.CopyMapObject.getCopyMap(refactoringSession).copy(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
+                  if (needsToPreserveOldNode() == RefactoringParticipant.KeepOldNodes.REMOVE && SNodeOperations.getModel(sourceConcept) == null) {
                     SNodeOperations.detachNode(aspect);
                   }
 
-                  final Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).getCopyMap();
+                  final Map<SNode, SNode> copyMap = MoveNodesActionBase.CopyMapObject.getCopyMap(refactoringSession).getCopyMap();
                   newLocation.insertNode(repository, ListSequence.fromList(copied).first());
                   ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>>>() {
                     public void visit(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>> pis) {
                       pis._1().doRefactor(ListSequence.fromListAndArray(new ArrayList<SNode>(), MapSequence.fromMap(copyMap).get(pis._0())), repository, refactoringSession);
                     }
                   });
+
+                  if (needsToPreserveOldNode() == RefactoringParticipant.KeepOldNodes.POSTPONE_REMOVE && SNodeOperations.getModel(sourceConcept) == null) {
+                    SNodeOperations.detachNode(aspect);
+                  }
                 }
               };
               return (RefactoringParticipant.Change<SNodeReference, SNodeReference>) change;

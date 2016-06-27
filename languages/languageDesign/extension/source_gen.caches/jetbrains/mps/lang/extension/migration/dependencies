@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.migration.MigrationDescriptorImpl" file="MigrationDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.extension.migration.MigrationDescriptor" file="MigrationDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="jetbrains.mps.lang.extension.migration.ExtensionPoint_name" />
     <classNode dependClassName="jetbrains.mps.lang.extension.migration.migrateExtension" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.migration.Pattern_1jxyiazehb9bk" file="Pattern_1jxyiazehb9bk.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

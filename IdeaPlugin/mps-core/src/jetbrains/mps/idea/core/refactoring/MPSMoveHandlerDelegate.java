@@ -6,6 +6,9 @@ import com.intellij.psi.PsiElement;
 import com.intellij.refactoring.move.MoveCallback;
 import com.intellij.refactoring.move.MoveHandlerDelegate;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesAction;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesActionHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
@@ -33,8 +36,8 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
   public boolean canMove(PsiElement[] elements, @Nullable PsiElement targetContainer) {
     if (elements.length == 0) return false;
 
-    for (int i=0; i<elements.length; i++) {
-      if (!(elements[i] instanceof MPSPsiRealNode)) {
+    for (PsiElement element : elements) {
+      if (!(element instanceof MPSPsiRealNode)) {
         return false;
       }
     }
@@ -46,28 +49,14 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
 
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
 
-    mpsProject.getRepository().getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-
-        MoveRefactoringContributor theContributor = null;
-
-        List<SNode> nodes = new ArrayList<SNode>(elements.length);
-        for (int i = 0; i< elements.length; i++) {
-          nodes.add(((MPSPsiRealNode) elements[i]).getSNodeReference().resolve(mpsProject.getRepository()));
-        }
-
-        for (MoveRefactoringContributorEP ep : MoveRefactoringContributorEP.EP_NAME.getExtensions()) {
-          MoveRefactoringContributor c = ep.getContribitor();
-          if (c.isAvailableFor(nodes)) {
-            theContributor = c;
-            break;
-          }
-        }
-
-        if (theContributor != null) {
-          theContributor.invoke(project, nodes);
-        }
+    mpsProject.getRepository().getModelAccess().runReadInEDT(() -> {
+      List<SNode> nodes = new ArrayList<SNode>(elements.length);
+      for (PsiElement element : elements) {
+        nodes.add(((MPSPsiRealNode) element).getSNodeReference().resolve(mpsProject.getRepository()));
+      }
+      if (MoveNodesActionBase.areSiblings(nodes, mpsProject.getRepository())) {
+        MoveNodesAction moveNodesAction = MoveNodesActionHelper.getRefactoring(mpsProject, nodes);
+        moveNodesAction.execute(mpsProject, nodes);
       }
     });
 

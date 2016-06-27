@@ -47,10 +47,12 @@
                         serviceImplementation="com.intellij.execution.filters.TextConsoleBuilderFactoryImpl"/>
     <applicationService serviceInterface="com.intellij.execution.filters.HyperlinkInfoFactory"
                         serviceImplementation="com.intellij.execution.filters.impl.HyperlinkInfoFactoryImpl"/>
+    -->
 
     <applicationService serviceInterface="com.intellij.lang.PsiBuilderFactory"
-                        serviceImplementation="com.intellij.lang.impl.PsiBuilderFactoryImpl"/>
+    serviceImplementation="com.intellij.lang.impl.PsiBuilderFactoryImpl"/>
 
+    <!--
     <applicationService serviceImplementation="com.intellij.codeInsight.documentation.DocumentationManagerUtil"/>
 
     <applicationService serviceImplementation="com.intellij.navigation.ChooseByNameRegistry"/>
@@ -78,10 +80,12 @@
 
     <applicationService serviceInterface="com.intellij.facet.FacetTypeRegistry"
                         serviceImplementation="com.intellij.facet.impl.FacetTypeRegistryImpl"/>
+    -->
 
     <projectService serviceInterface="com.intellij.openapi.roots.impl.DirectoryIndex"
                     serviceImplementation="com.intellij.openapi.roots.impl.DirectoryIndexImpl"/>
 
+    <!--
     <projectService serviceInterface="com.intellij.pom.references.PomService"
                     serviceImplementation="com.intellij.pom.references.PomServiceImpl"/>
     -->
@@ -171,7 +175,10 @@
     <applicationService serviceInterface="com.intellij.util.download.DownloadableFileService"
                         serviceImplementation="com.intellij.util.download.impl.DownloadableFileServiceImpl"/>
 
-    <applicationService serviceImplementation="com.intellij.psi.impl.DocumentCommitThread"/>
+    -->
+    <applicationService serviceInterface="com.intellij.psi.impl.DocumentCommitProcessor"
+    serviceImplementation="com.intellij.core.MockDocumentCommitProcessor"/>
+    <!--
 
     <applicationService serviceInterface="com.intellij.psi.stubs.StubTreeLoader"
                         serviceImplementation="com.intellij.psi.stubs.StubTreeLoaderImpl"/>
@@ -957,10 +964,12 @@
     <editorNotificationProvider implementation="com.intellij.ide.GeneratedFileEditingNotificationProvider"/>
 
     <editorTabTitleProvider implementation="com.intellij.openapi.fileEditor.impl.UniqueNameEditorTabTitleProvider" order="last"/>
+    -->
 
     <projectService serviceInterface="com.intellij.psi.util.PsiModificationTracker"
-                    serviceImplementation="com.intellij.psi.impl.PsiModificationTrackerImpl"/>
+    serviceImplementation="com.intellij.psi.impl.PsiModificationTrackerImpl"/>
 
+    <!--
     <itemPresentationProvider forClass="com.intellij.psi.PsiDirectory"
                               implementationClass="com.intellij.navigation.DirectoryPresentationProvider"/>
 

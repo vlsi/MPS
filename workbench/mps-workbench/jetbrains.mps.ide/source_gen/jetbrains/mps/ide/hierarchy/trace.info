@@ -822,9 +822,9 @@
       <node id="5797068448049411685" at="91,156,92,47" concept="10" />
       <node id="5797068448049411697" at="93,39,94,49" concept="10" />
       <node id="5797068448049411716" at="96,201,97,212" concept="10" />
-      <node id="5797068448049411738" at="98,288,99,68" concept="4" />
-      <node id="5797068448049411761" at="101,298,102,68" concept="4" />
-      <node id="5797068448049411784" at="104,293,105,68" concept="4" />
+      <node id="5797068448049411738" at="98,403,99,68" concept="4" />
+      <node id="5797068448049411761" at="101,412,102,68" concept="4" />
+      <node id="5797068448049411784" at="104,409,105,68" concept="4" />
       <node id="5797068448049411806" at="110,201,111,212" concept="10" />
       <node id="5797068448049411814" at="111,212,112,39" concept="4" />
       <node id="5797068448049411819" at="115,7,116,20" concept="11" />
@@ -840,14 +840,14 @@
       <node id="5797068448049411770" at="103,13,106,13" concept="8" />
       <node id="2299985075419799919" at="32,0,36,0" concept="2" trace="BaseLanguageHierarchyTree#(Lorg/jetbrains/mps/openapi/module/SRepository;Z)V" />
       <node id="5797068448049411470" at="66,0,70,0" concept="9" trace="noNodeString#()Ljava/lang/String;" />
-      <node id="5797068448049411801" at="109,51,113,11" concept="8" />
+      <node id="5797068448049411801" at="109,162,113,11" concept="8" />
       <node id="5797068448049411576" at="41,197,47,9" concept="8" />
       <node id="5797068448049411597" at="47,9,53,9" concept="7" />
       <node id="5797068448049411540" at="56,194,62,9" concept="7" />
       <node id="5797068448049411793" at="108,9,114,9" concept="8" />
       <node id="5797068448049411499" at="24,0,31,0" concept="9" trace="createHierarchyTree#(Z)Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;" />
       <node id="5797068448049411529" at="54,12,63,7" concept="8" />
-      <node id="5797068448049411711" at="95,51,107,11" concept="8" />
+      <node id="5797068448049411711" at="95,162,107,11" concept="8" />
       <node id="5797068448049411626" at="71,43,85,7" concept="8" />
       <node id="5797068448049411703" at="94,49,108,9" concept="8" />
       <node id="5797068448049411473" at="70,0,88,0" concept="9" trace="getParent#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -863,9 +863,9 @@
       <scope id="5797068448049411654" at="75,27,76,22" />
       <scope id="5797068448049411667" at="79,196,80,28" />
       <scope id="5797068448049411634" at="83,186,84,20" />
-      <scope id="5797068448049411737" at="98,288,99,68" />
-      <scope id="5797068448049411760" at="101,298,102,68" />
-      <scope id="5797068448049411783" at="104,293,105,68" />
+      <scope id="5797068448049411737" at="98,403,99,68" />
+      <scope id="5797068448049411760" at="101,412,102,68" />
+      <scope id="5797068448049411783" at="104,409,105,68" />
       <scope id="2299985075419799924" at="32,84,34,44" />
       <scope id="5797068448049411805" at="110,201,112,39">
         <var name="anonymousClass" id="5797068448049411807" />
@@ -890,7 +890,7 @@
         <var name="interfaceClassifier" id="5797068448049411548" />
       </scope>
       <scope id="5797068448049411470" at="66,0,70,0" />
-      <scope id="5797068448049411800" at="109,51,113,11" />
+      <scope id="5797068448049411800" at="109,162,113,11" />
       <scope id="5797068448049411597" at="47,9,53,9">
         <var name="interfaceType" id="5797068448049411601" />
       </scope>
@@ -911,7 +911,7 @@
       <scope id="5797068448049411715" at="96,201,106,13">
         <var name="classifierType" id="5797068448049411717" />
       </scope>
-      <scope id="5797068448049411710" at="95,51,107,11" />
+      <scope id="5797068448049411710" at="95,162,107,11" />
       <scope id="5797068448049411563" at="39,188,53,9">
         <var name="classConcept" id="5797068448049411565" />
         <var name="classifierType" id="5797068448049411571" />

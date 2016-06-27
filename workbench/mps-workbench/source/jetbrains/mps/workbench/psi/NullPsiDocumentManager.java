@@ -26,6 +26,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
+/**
+ * @deprecated since MPS 3.4, use {@link com.intellij.core.CorePsiDocumentManager}
+ */
+@Deprecated
 public class NullPsiDocumentManager extends PsiDocumentManager {
   @Override
   public boolean isCommitted(@NotNull Document document) {

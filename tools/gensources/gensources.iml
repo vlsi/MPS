@@ -1180,8 +1180,7 @@
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Idea-extensions" level="project" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="persistence" />
@@ -1200,7 +1199,7 @@
     <orderEntry type="module" module-name="editorlang-runtime" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="intentions-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-util" />
@@ -1214,7 +1213,7 @@
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="tuples-runtime" />
-    <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="JetPad" level="project" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
@@ -1222,6 +1221,7 @@
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="kernel-resources" />
@@ -1236,4 +1236,3 @@
     <orderEntry type="module" module-name="execution-api" />
   </component>
 </module>
-
