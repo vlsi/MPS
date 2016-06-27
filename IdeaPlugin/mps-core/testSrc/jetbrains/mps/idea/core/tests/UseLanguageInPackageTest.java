@@ -129,7 +129,8 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     public void chooseLanguage(BaseModuleModel baseModuleModel, Callback callback) {
       // closing it right away without choosing anything
       // we _must_ close the "window", real UI probably always calls this method
-      callback.onClose();
+      // FIXME onClose() commented out till IDEA settles up Callback contract (https://youtrack.jetbrains.com/issue/IDEA-155319)
+      // callback.onClose();
     }
 
     @Override

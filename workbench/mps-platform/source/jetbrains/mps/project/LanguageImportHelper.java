@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
@@ -254,19 +255,18 @@ public final class LanguageImportHelper {
     // we used to allow multiple selection, but didn't handle it in any special way
     // (each selected language would trigger own extra dialog to import extended, which is odd)
     myInteraction.chooseLanguage(languagesData, new Callback() {
-      private SModuleReference myModuleRef;
       @Override
       public void elementChosen(Object element) {
-        myModuleRef = languagesData.getModelObject(element);
-      }
-
-      @Override
-      public void onClose() {
-        // FIXME onClose comes prior to elementChosen(), this logic is broken!!!
-        if (myModuleRef != null) {
-          addLanguageAction.call(MetaAdapterFactory.getLanguage(myModuleRef));
+        SModuleReference moduleRef = languagesData.getModelObject(element);
+        if (moduleRef != null) {
+          addLanguageAction.call(MetaAdapterFactory.getLanguage(moduleRef));
         }
         if (myOnCloseActivity != null) {
+          // FIXME clients expect this code to run regardless of selection (i.e. when user canceled a dialog).
+          // Since there's no way to figure out popup cancelation now (https://youtrack.jetbrains.com/issue/IDEA-155319)
+          // For the time being, I decided to invoke it here instead of onClose(), which would be useless anyway provided MakeDirAModel use case
+          // (it relies on changes made in elementChosen() which won't be invoked yet at the time of onClose())
+          // We shall fix either MakeDirAModel or use a dialog (likely, one of CommonChoosers) here instead of popup, so that we've got selection state
           myOnCloseActivity.run();
         }
       }
@@ -287,7 +287,7 @@ public final class LanguageImportHelper {
   private class UiInteraction implements Interaction {
     @Override
     public void chooseLanguage(BaseModuleModel model, Callback addLanguageAction) {
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject.getProject(), model, null);
+      final ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject.getProject(), model, null);
       if (myShortcut != null) {
         popup.setCheckBoxShortcut(myShortcut);
       }
