@@ -26,7 +26,6 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.projectView.BaseProjectViewTestCase;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;

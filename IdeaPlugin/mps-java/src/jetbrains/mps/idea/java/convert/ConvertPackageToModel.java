@@ -46,7 +46,7 @@ import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -280,7 +280,7 @@ public class ConvertPackageToModel extends AnAction {
 
     for (PsiFile file : psiFiles) {
       VirtualFile vfile = file.getVirtualFile();
-      IFile ifile = FileSystem.getInstance().getFile(vfile.getPath());
+      IFile ifile = new IdeaFileSystem().getFile(vfile.getPath());
       result.add(ifile);
     }
 

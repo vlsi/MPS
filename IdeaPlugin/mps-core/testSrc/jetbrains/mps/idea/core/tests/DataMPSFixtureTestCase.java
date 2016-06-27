@@ -69,7 +69,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
   protected abstract void prepareTestData(MPSFacetConfiguration configuration) throws Exception;
 
   protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException {
-    IFile targetFile = new IdeaFile(fileSystem, toPath);
+    IFile targetFile = FileSystem.getInstance().getFile(toPath);
 
     return copyResource(resName, fromPath, targetFile);
   }

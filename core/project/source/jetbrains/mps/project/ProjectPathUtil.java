@@ -22,6 +22,8 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 // todo: rewrite this. all methods should have same signature!
@@ -60,7 +62,7 @@ public class ProjectPathUtil {
     return parent != null ? parent.getDescendant("classes") : null;
   }
 
-  public static IFile getGeneratorOutputPath(IFile moduleSourceDir, ModuleDescriptor descriptor) {
+  public static IFile getGeneratorOutputPath(@Nullable IFile moduleSourceDir, ModuleDescriptor descriptor) {
     // todo: !
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
@@ -73,7 +75,8 @@ public class ProjectPathUtil {
       return null;
     }
     if (generatorOutputPath != null) {
-      return moduleSourceDir.getFileSystem().getFile(generatorOutputPath);
+      FileSystem fileSystem = moduleSourceDir == null ? jetbrains.mps.vfs.FileSystem.getInstance() : moduleSourceDir.getFileSystem();
+      return fileSystem.getFile(generatorOutputPath);
     }
     // todo: ???
     if (moduleSourceDir != null) {

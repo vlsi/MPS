@@ -17,7 +17,6 @@
 package jetbrains.mps.jps.make.testEnvironment;
 
 
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
 import jetbrains.mps.persistence.DefaultModelRoot;

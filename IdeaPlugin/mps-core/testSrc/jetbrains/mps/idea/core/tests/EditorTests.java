@@ -31,7 +31,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,7 +48,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
-    DefaultModelRoot root = new DefaultModelRoot(new IoFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(test.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, test.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

@@ -16,10 +16,8 @@
 package jetbrains.mps.jps.project;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.jps.model.JpsProject;
 import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.library.JpsOrderRootType;

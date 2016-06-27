@@ -9,7 +9,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
@@ -48,7 +47,7 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
     VirtualFile sourceRoot = sourceRoots[0];
     final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
 
-    DefaultModelRoot root = new DefaultModelRoot(psiTestModel.getFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(psiTestModel.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, psiTestModel.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

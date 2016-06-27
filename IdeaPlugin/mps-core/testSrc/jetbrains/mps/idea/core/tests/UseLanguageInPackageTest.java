@@ -38,7 +38,6 @@ import com.intellij.refactoring.rename.RenameProcessor;
 import com.intellij.testFramework.MapDataContext;
 import com.intellij.testFramework.TestActionEvent;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.actions.MakeDirAModel;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;

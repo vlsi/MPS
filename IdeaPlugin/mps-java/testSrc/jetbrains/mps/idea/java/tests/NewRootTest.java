@@ -43,7 +43,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -79,7 +78,7 @@ public class NewRootTest extends DataMPSFixtureTestCase {
     VirtualFile sourceRoot = sourceRoots[0];
     final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/otherPsiTest.mps", "otherPsiTest.mps", "/tests/psiProject/models/jetbrains/mps/otherPsiTest.mps");
 
-    DefaultModelRoot root = new DefaultModelRoot(new IoFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(psiTestModel.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, psiTestModel.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

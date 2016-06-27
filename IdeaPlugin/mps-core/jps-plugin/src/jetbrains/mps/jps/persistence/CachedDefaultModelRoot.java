@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;

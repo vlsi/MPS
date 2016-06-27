@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -136,7 +135,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
-    DefaultModelRoot root = new DefaultModelRoot(FileSystem.getInstance().getFileSystemExt());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(modelRootPath);
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelRootPath);
     configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));

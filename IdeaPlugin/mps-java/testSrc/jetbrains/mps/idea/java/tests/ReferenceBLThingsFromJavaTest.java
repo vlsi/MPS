@@ -20,7 +20,6 @@ import com.intellij.codeInsight.daemon.impl.quickfix.ImportClassFix;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
@@ -45,7 +44,7 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
     VirtualFile sourceRoot = sourceRoots[0];
     final IFile modelFile = copyResource(sourceRoot.getPath() + "/blModel.mps", "blModel.mps", "/tests/blProject/models/blModel.mps");
 
-    DefaultModelRoot root = new DefaultModelRoot(modelFile.getFileSystem());
+    DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(modelFile.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelFile.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));

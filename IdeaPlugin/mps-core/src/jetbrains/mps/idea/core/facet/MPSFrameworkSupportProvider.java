@@ -29,7 +29,6 @@ import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
