@@ -96,7 +96,7 @@ public class ModulesWatcher {
     if (isChanged()) {
       LOG.warn("The class loading status info might be outdated");
     }
-    if (!getAllModules().contains(mRef)) {
+    if (!myModuleUpdater.contains(mRef)) {
       return INVALID;
     } else {
       synchronized (myStatusMapLock) {

@@ -16,30 +16,35 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.util.PerfUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ModuleClassLoaderSupport {
-
   private final ReloadableModule myModule;
   private final IClassPathItem myClassPathItem;
   private final Collection<? extends ReloadableModule> myCompileDependencies;
+  private final ClassLoadersHolder myHolder;
 
-  private ModuleClassLoaderSupport(@NotNull ReloadableModuleBase module, Collection<? extends ReloadableModule> compileDependencies) {
+  private ModuleClassLoaderSupport(ClassLoadersHolder holder, @NotNull ReloadableModule module,
+      Collection<? extends ReloadableModule> compileDependencies) {
     assert canCreate(module);
+    myHolder = holder;
     myModule = module;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     //noinspection ConstantConditions
     myClassPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
     myCompileDependencies = compileDependencies;
+    myCompileDependencies.remove(myModule);
   }
 
   /**
@@ -54,16 +59,13 @@ public class ModuleClassLoaderSupport {
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
-  public static ModuleClassLoaderSupport create(@NotNull ReloadableModule module, Collection<? extends ReloadableModule> compileDependencies) {
-    return new ModuleClassLoaderSupport((ReloadableModuleBase) module, compileDependencies);
+  public static ModuleClassLoaderSupport create(ClassLoadersHolder holder, @NotNull ReloadableModule module,
+      Collection<? extends ReloadableModule> compileDependencies) {
+    return new ModuleClassLoaderSupport(holder, module, compileDependencies);
   }
 
   public ReloadableModule getModule() {
     return myModule;
-  }
-
-  public IClassPathItem getClassPathItem() {
-    return myClassPathItem;
   }
 
   public boolean willLoad() {
@@ -89,8 +91,11 @@ public class ModuleClassLoaderSupport {
     return myClassPathItem.getResources(name);
   }
 
-  public Collection<? extends ReloadableModule> getCompileDependencies() {
-    return myCompileDependencies;
+  /**
+   * important to have the calculation here: at the time of construction the classloaders might be not available yet
+   */
+  List<ClassLoader> getCompileDependencies() {
+    return myCompileDependencies.stream().map(myHolder::getClassLoader).collect(Collectors.toList());
   }
 
   /**

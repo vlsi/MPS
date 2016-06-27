@@ -30,10 +30,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * MPS realisation of ClassLoader which uses non-standard way of class loading delegation.
@@ -53,9 +51,9 @@ public class ModuleClassLoader extends ClassLoader {
 
   private final ModuleClassLoaderSupport mySupport;
 
-  private volatile Set<ClassLoader> myDependenciesClassLoaders;
+  private volatile Collection<ClassLoader> myDependenciesClassLoaders;
 
-  private final Map<String, Class> myClasses = new HashMap<String, Class>();
+  private final Map<String, Class> myClasses = new HashMap<>(); // cache for all initiated classes by this CL.
 
   private boolean myDisposed;
 
@@ -75,9 +73,11 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   @NotNull
-  public Class<?> loadOwnClass(String name) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  public Class<?> loadOwnClass(String name) throws ClassNotFoundException {
     Class<?> aClass = loadClass(name, false, true);
-    if (aClass == null) throw new ModuleClassNotFoundException(getModule());
+    if (aClass == null) {
+      throw new ModuleClassNotFoundException(getModule());
+    }
     return aClass;
   }
 
@@ -86,7 +86,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   @Override
-  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException{
     return loadClass(name, resolve, false);
   }
 
@@ -96,37 +96,32 @@ public class ModuleClassLoader extends ClassLoader {
    *
    * synchronization on some internal lock object leads to a dead lock.
    */
-  private Class<?> loadClass(String name, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  private Class<?> loadClass(String fqName, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException {
     checkNotDisposed();
-    if (name.startsWith("java.")) {
-      return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
-    }
 
-    Class<?> aClass = getClassFromCache(name);
+    Class<?> aClass = getClassFromCache(fqName);
     if (aClass != null) return aClass;
 
-    synchronized (this) {
-      aClass = getClassFromCache(name);
-      if (aClass != null) return aClass;
+    if (fqName.startsWith("java.")) {
+      return Class.forName(fqName, false, BOOTSTRAP_CLASSLOADER);
+    }
 
-      aClass = findLoadedClass(name);
-      if (aClass != null) return aClass;
+    synchronized (this) {
+      aClass = loadFromSelf(fqName);
 
       try {
-        aClass = loadFromSelf(name);
         if (aClass != null) return aClass;
-
         if (!onlyFromSelf) {
-          aClass = loadFromDeps(name);
+          aClass = loadFromDeps(fqName);
         }
 
-        if (aClass == null) throw createCLNFException(name);
+        if (aClass == null) throw createCLNFException(fqName);
 
         if (resolve) resolveClass(aClass);
 
         return aClass;
       } finally {
-        myClasses.put(name, aClass);
+        myClasses.put(fqName, aClass);
       }
     }
   }
@@ -148,31 +143,36 @@ public class ModuleClassLoader extends ClassLoader {
     return aClass;
   }
 
-  private Class<?> loadFromSelf(String name) throws ModuleIsNotLoadableException {
-    ClassBytes classBytes = mySupport.findClassBytes(name);
+  private Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
+    Class<?> aClass = getClassFromCache(fqName);
+    if (aClass != null) {
+      return aClass;
+    }
+    ClassBytes classBytes = mySupport.findClassBytes(fqName);
     if (classBytes != null) {
       byte[] bytes = classBytes.getBytes();
-      String pack = NameUtil.namespaceFromLongName(name);
+      String pack = NameUtil.namespaceFromLongName(fqName);
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
+      aClass = defineClass(fqName, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
+      myClasses.put(fqName, aClass);
+      return aClass;
     }
     return null;
   }
 
-  private Class<?> loadFromDeps(String name) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  private Class<?> loadFromDeps(String name) throws ClassNotFoundException {
     Collection<? extends ClassLoader> dependencyClassLoaders = getDependencyClassLoaders();
 
     // loading from ModuleClassLoaders firstly; it's faster, we can tell right here if we can find class there.
     for (ClassLoader depCL : dependencyClassLoaders) {
       if (depCL instanceof ModuleClassLoader) {
-        if (depCL == this) continue;
 
         ModuleClassLoader depCL1 = (ModuleClassLoader) depCL;
         if (depCL1.mySupport.canFindClass(name)) {
-          //here it will certainly load with class loader depCL
-          return depCL1.loadOwnClass(name);
+          // here it will certainly load with class loader depCL
+          return depCL1.loadFromSelf(name);
         }
       }
     }
@@ -186,8 +186,11 @@ public class ModuleClassLoader extends ClassLoader {
       }
     }
 
-    if (dependencyClassLoaders.contains(getParent())) return null;
-    else return loadFromParent(name);
+    if (dependencyClassLoaders.contains(getParent())) {
+      return null;
+    } else {
+      return loadFromParent(name);
+    }
   }
 
   private Class<?> loadFromParent(String name) throws ClassNotFoundException {
@@ -254,22 +257,11 @@ public class ModuleClassLoader extends ClassLoader {
   /**
    * @return all dependencies [excluding itself]
    */
-  private Set<? extends ClassLoader> getDependencyClassLoaders() {
-    if (myDependenciesClassLoaders != null) {
-      return myDependenciesClassLoaders;
+  private Collection<ClassLoader> getDependencyClassLoaders() {
+    if (myDependenciesClassLoaders == null) {
+      myDependenciesClassLoaders = mySupport.getCompileDependencies();
     }
-    Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
-    for (ReloadableModule dep : mySupport.getCompileDependencies()) {
-      if (dep != mySupport.getModule()) {
-        ClassLoader classLoader = dep.getClassLoader();
-        if (classLoader == null) {
-          LOG.debug("The class loader dependency " + dep + " is not loaded");
-        }
-        classLoaders.add(classLoader);
-      }
-    }
-    myDependenciesClassLoaders = classLoaders;
-    return classLoaders;
+    return myDependenciesClassLoaders;
   }
 
   public String toString() {

@@ -47,10 +47,12 @@ class MPSClassLoadersRegistry {
   private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
   private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
   private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<ModuleClassLoader>();
+  private final ClassLoadersHolder myClHolder;
   private final ModulesWatcher myModulesWatcher;
   private final SRepository myRepository;
 
-  public MPSClassLoadersRegistry(ModulesWatcher modulesWatcher, SRepository repository) {
+  public MPSClassLoadersRegistry(ClassLoadersHolder clHolder, ModulesWatcher modulesWatcher, SRepository repository) {
+    myClHolder = clHolder;
     myModulesWatcher = modulesWatcher;
     myRepository = repository;
   }
@@ -154,7 +156,7 @@ class MPSClassLoadersRegistry {
     myRepository.getModelAccess().checkReadAccess(); // need for new ModuleClassLoader()
     LOG.debug("Creating ModuleClassLoader for " + module);
     Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
-    final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
+    final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(myClHolder, module, deps);
     return new ModuleClassLoader(support);
   }
 

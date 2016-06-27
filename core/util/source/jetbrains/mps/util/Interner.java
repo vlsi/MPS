@@ -24,7 +24,7 @@ public class Interner {
       @Override
       public String canonic(String s) {
         // Ensure we cache only what's necessary!
-        return new String(s);
+        return s;
       }
     };
   }

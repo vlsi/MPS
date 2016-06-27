@@ -314,4 +314,10 @@ public class ModuleUpdater {
   public boolean isDirty() {
     return myChangedFlag;
   }
+
+  public boolean contains(SModuleReference mRef) {
+    synchronized (LOCK) {
+      return myDepGraph.contains(mRef);
+    }
+  }
 }

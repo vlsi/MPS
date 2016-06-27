@@ -66,7 +66,7 @@ public class ClassLoadersHolder {
 
   public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher) {
     myRepository = repository;
-    myCLRegistry = new MPSClassLoadersRegistry(modulesWatcher, repository);
+    myCLRegistry = new MPSClassLoadersRegistry(this, modulesWatcher, repository);
   }
 
   public void init() {
