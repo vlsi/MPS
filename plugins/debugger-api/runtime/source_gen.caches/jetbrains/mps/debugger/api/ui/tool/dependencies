@@ -28,7 +28,6 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="com.intellij.ui.content.Content" />
-    <classNode dependClassName="com.intellij.ui.content.tabs.PinToolwindowTabAction" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

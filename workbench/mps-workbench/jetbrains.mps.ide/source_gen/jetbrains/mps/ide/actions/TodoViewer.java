@@ -19,7 +19,8 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.IdeActions;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
@@ -81,7 +82,7 @@ public class TodoViewer extends JPanel {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         getTool().makeUnavailableLater();
       }
-    }, PinToolwindowTabAction.getPinAction());
+    }, ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
     searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new GenericHolder<Project>(myProject), new ProjectScope(myProject)));
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());

@@ -180,7 +180,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
 
     DefaultActionGroup group = new DefaultActionGroup();
     registerActions(group);
-    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.TOOLBAR, group, false);
     toolbar.setTargetComponent(myEditor);
     JPanel toolbarComponent = new JPanel(new BorderLayout());
     toolbarComponent.add(toolbar.getComponent(), BorderLayout.CENTER);

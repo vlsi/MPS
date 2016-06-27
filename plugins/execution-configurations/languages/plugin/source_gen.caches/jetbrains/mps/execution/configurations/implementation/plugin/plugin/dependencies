@@ -74,11 +74,11 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.IdeActions" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="com.intellij.ui.content.tabs.PinToolwindowTabAction" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Runnable" />

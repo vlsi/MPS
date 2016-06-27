@@ -15,7 +15,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.IdeActions;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.AbstractAction;
@@ -73,7 +74,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         MigrationScriptsView.this.close();
       }
-    }, PinToolwindowTabAction.getPinAction());
+    }, ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
     myUsagesView.setContents(finder.getLastSearchResults());
     myMainPanel = new JPanel(new BorderLayout());
     myMainPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);

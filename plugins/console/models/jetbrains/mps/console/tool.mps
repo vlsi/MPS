@@ -72,6 +72,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
+    <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -4870,7 +4871,7 @@
                 <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
                 <node concept="10M0yZ" id="3sIEoj5Jpmz" role="37wK5m">
                   <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                  <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+                  <ref role="3cqZAo" to="qkt:~ActionPlaces.TOOLBAR" resolve="TOOLBAR" />
                 </node>
                 <node concept="37vLTw" id="46QvZZVPOHu" role="37wK5m">
                   <ref role="3cqZAo" node="3sIEoj5JplG" resolve="group" />
@@ -8267,16 +8268,25 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="34ojPL__Jkr" role="3cqZAp">
-          <node concept="2OqwBi" id="34ojPL__K02" role="3clFbG">
-            <node concept="37vLTw" id="34ojPL__Jkq" role="2Oq$k0">
+        <node concept="3clFbF" id="$51S7iu$Is" role="3cqZAp">
+          <node concept="2OqwBi" id="$51S7iu$It" role="3clFbG">
+            <node concept="37vLTw" id="$51S7iu$Iu" role="2Oq$k0">
               <ref role="3cqZAo" node="3sIEoj5NMxk" resolve="group" />
             </node>
-            <node concept="liA8E" id="34ojPL__OWR" role="2OqNvi">
+            <node concept="liA8E" id="$51S7iu$Iv" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="2YIFZM" id="qri2St1Fx4" role="37wK5m">
-                <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
-                <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
+              <node concept="2OqwBi" id="$51S7iuS4x" role="37wK5m">
+                <node concept="2YIFZM" id="$51S7iuRXI" role="2Oq$k0">
+                  <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                </node>
+                <node concept="liA8E" id="$51S7iuSit" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                  <node concept="10M0yZ" id="$51S7ivEuf" role="37wK5m">
+                    <ref role="1PxDUh" to="qkt:~IdeActions" resolve="IdeActions" />
+                    <ref role="3cqZAo" to="qkt:~IdeActions.ACTION_PIN_ACTIVE_TAB" resolve="ACTION_PIN_ACTIVE_TAB" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

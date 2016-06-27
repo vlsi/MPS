@@ -268,7 +268,7 @@ public class UsagesView implements IExternalizeable {
   private JPanel createActionsToolbar(ActionGroup ag, JComponent targetComponent) {
     JPanel rv = new JPanel();
     rv.setBorder(BorderFactory.createEmptyBorder(2, 1, 2, 1));
-    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ag, false);
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.USAGE_VIEW_TOOLBAR, ag, false);
     actionToolbar.setTargetComponent(targetComponent);
     actionToolbar.setOrientation(SwingConstants.VERTICAL);
     rv.add(actionToolbar.getComponent());

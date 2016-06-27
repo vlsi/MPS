@@ -28,7 +28,6 @@ import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
@@ -73,8 +72,8 @@ public class DebuggerToolContentBuilder implements Disposable {
     }
     buildUi(ui, console);
     DebuggerToolContentBuilder.MyRunContentDescriptor contentDescriptor = createDescriptorInternal(ui, profile);
-    ui.getOptions().setLeftToolbar(createActionToolbar(ui, contentDescriptor), ActionPlaces.UNKNOWN);
-    ui.getOptions().setTopToolbar(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup")), ActionPlaces.UNKNOWN);
+    ui.getOptions().setLeftToolbar(createActionToolbar(ui, contentDescriptor), ActionPlaces.DEBUGGER_TOOLBAR);
+    ui.getOptions().setTopToolbar(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup")), ActionPlaces.DEBUGGER_TOOLBAR);
     return contentDescriptor;
   }
   private DebuggerToolContentBuilder.MyRunContentDescriptor createDescriptorInternal(RunnerLayoutUi ui, RunProfile profile) {
@@ -104,7 +103,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     actionGroup.addSeparator();
     actionGroup.add(ui.getOptions().getLayoutActions());
     actionGroup.addSeparator();
-    actionGroup.add(PinToolwindowTabAction.getPinAction());
+    actionGroup.add(ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
     actionGroup.add(new CloseAction(myExecutor, contentDescriptor, myProject));
     return actionGroup;
   }
