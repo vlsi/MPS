@@ -64,7 +64,7 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
       List<File> roots = lib.getFiles(JpsOrderRootType.COMPILED);
       for (File root : roots) {
         String path = root.getPath();
-        JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot(FileSystem.getInstance());
+        JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot();
         modelRoot.setContentRoot(path);
         modelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, path);
         modelRoots.add(modelRoot);

@@ -6,7 +6,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
@@ -61,7 +60,7 @@ public class JpsLibSolution extends Solution {
     }
 
     for (JpsLibraryRoot libRoot: myLibrary.getRoots(JpsOrderRootType.COMPILED)) {
-      ModelRoot modelRoot = factory.create(new FileModelRootContext(new IoFileSystem()));
+      ModelRoot modelRoot = factory.create();
       if (!(modelRoot instanceof JavaClassStubsModelRoot)) {
         // log error
         MPSCompilerUtil.debug(context, "@@@@ return null, " + getModuleName());

@@ -57,6 +57,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -279,7 +280,7 @@ public class ConvertPackageToModel extends AnAction {
 
     for (PsiFile file : psiFiles) {
       VirtualFile vfile = file.getVirtualFile();
-      IFile ifile = new IdeaFile(fileSystem, vfile.getPath());
+      IFile ifile = FileSystem.getInstance().getFile(vfile.getPath());
       result.add(ifile);
     }
 

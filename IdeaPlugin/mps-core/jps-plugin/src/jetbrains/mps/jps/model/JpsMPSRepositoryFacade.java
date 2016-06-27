@@ -61,7 +61,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.ModelRootContext;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.io.File;
@@ -153,17 +152,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           @NotNull
           @Override
           public ModelRoot create() {
-            return new CachedDefaultModelRoot(FileSystem.getInstance(), myRepo);
-          }
-
-          @NotNull
-          @Override
-          public ModelRoot create(@NotNull ModelRootContext context) {
-            if (context instanceof FileModelRootContext) {
-              return new CachedDefaultModelRoot(((FileModelRootContext) context).getFileSystem(), myRepo);
-            } else {
-              return create();
-            }
+            return new CachedDefaultModelRoot(myRepo);
           }
         });
 
@@ -171,17 +160,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           @NotNull
           @Override
           public ModelRoot create() {
-            return new CachedJavaClassStubsModelRoot(FileSystem.getInstance(), myRepo);
-          }
-
-          @NotNull
-          @Override
-          public ModelRoot create(@NotNull ModelRootContext context) {
-            if (context instanceof FileModelRootContext) {
-              return new CachedJavaClassStubsModelRoot(((FileModelRootContext) context).getFileSystem(), myRepo);
-            } else {
-              return create();
-            }
+            return new CachedJavaClassStubsModelRoot(myRepo);
           }
         });
 
