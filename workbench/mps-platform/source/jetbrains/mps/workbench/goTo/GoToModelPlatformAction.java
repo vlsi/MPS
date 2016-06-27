@@ -87,15 +87,15 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         if (myModelReference == null) {
           return;
         }
-        final SModel model = myModelReference.resolve(project.getRepository());
-
-        if (model == null) {
-          return;
-        }
 
         VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
           @Override
           public VirtualFile compute() {
+            final SModel model = myModelReference.resolve(project.getRepository());
+
+            if (model == null) {
+              return null;
+            }
             return new FileSystemModelHelper(model).getVirtualFile();
           }
         });
