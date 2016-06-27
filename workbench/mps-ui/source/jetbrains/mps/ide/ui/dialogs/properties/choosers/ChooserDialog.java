@@ -19,6 +19,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElements
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
@@ -48,7 +49,6 @@ final class ChooserDialog<T> extends DialogWrapper {
     myChooser = MpsPopupFactory.createPanelForPackage(myProject, data, hasExtraScope);
     // Although it's odd to have invoke() in the cons, we shall invoke it prior to super.init() otherwise there's no panel in the dialog
     myChooser.invoke(new MultiElementsCallback() {
-      private int myDialogExitCode = CANCEL_EXIT_CODE;
       @Override
       public void elementsChosen(List<Object> elements) {
         if (!myOkDone) {
@@ -58,28 +58,20 @@ final class ChooserDialog<T> extends DialogWrapper {
           myIsCancelled = false;
           // according to ChooseByNamePopup, elementsChosen are invoked when selection
           // has to be processed (it was hard to express this contract in the method javadoc, one has to guess it from sources)
-          // while callback.onClose() is invoked regardless of selection.
-          myDialogExitCode = OK_EXIT_CODE;
+          // not when actual selection changes (i.e. on double click rather than on single click). As there's nothing else to do in
+          // this dialog once element is picked, we close it.
+          ChooserDialog.this.close(OK_EXIT_CODE);
         }
       }
-
-      @Override
-      public void onClose() {
-        ChooserDialog.this.close(myDialogExitCode);
-      }
     }, ModalityState.current(), multiSelection);
+    Disposer.register(getDisposable(), myChooser);
     init();
   }
 
   /*
-   * handle Ok dialog button. Proper way to do this would be custom actions
-   * from createActions, that would delegate to myChooser. However, it's impossible
-   * to figure out whether myChooser.close() or .doClose() need to be invoked. Both are
-   * protected in ChooseByNameBase. Latter does much more cleanup and seems the right one, however,
-   * ChooseByNamePopup (which we extend through myChooser's ChooseByNamePanel) makes #close() public
-   * and uses it directly when it needs to close previously opened popup. That's why I've picked
-   * this wrong approach here (duplicates code, and ignores the fact ok action may be disabled, see
-   * method impl in superclass)
+   * handle Ok dialog button. myChooser doesn't send out events when selection changes,
+   * only when user double-clicks on an item. We need to handle scenario when user selects an element
+   * and press 'Ok', that's why we consult chooser for selected elements here instead of using mySelectedElements value.
    */
   @Override
   protected void doOKAction() {

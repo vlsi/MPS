@@ -80,10 +80,6 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
       @Override
       public void elementChosen(Object element) {
         myModelReference = goToModelModel.getModelObject(element);
-      }
-
-      @Override
-      public void onClose() {
         if (myModelReference == null) {
           return;
         }

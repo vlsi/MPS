@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.goTo.ui;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElementsCallback;
 import com.intellij.openapi.project.Project;
 
@@ -25,6 +26,11 @@ import java.util.List;
 /**
  * Choose by name component to embed into composite UI as a regular Swing {@linkplain #getPanel() JPanel} (e.g. as part of a dialog with other controls).
  * Don't forget to register instance with owner {@link com.intellij.openapi.Disposable} with {@code Disposer.register(getDisposable(), myChoosePanel);}
+ * <p/>
+ * NOTIFICATIONS: This panel intentionally sends out element selection event only (either
+ * {@link Callback#elementChosen(Object)} or  {@link MultiElementsCallback#elementChosen(Object)}).
+ * There's no sense in {@link Callback#onClose()} for the embeddable panel component. Besides, IDEA has no clear contract for onClose call, and it's
+ * not wise to rely on it (see https://youtrack.jetbrains.com/issue/IDEA-155319) anyway.
  */
 public class ChooseByNamePanel extends com.intellij.ide.util.gotoByName.ChooseByNamePanel {
   private List<Object> myChoosenElementsBackUp = null;

@@ -262,6 +262,7 @@ public final class LanguageImportHelper {
 
       @Override
       public void onClose() {
+        // FIXME onClose comes prior to elementChosen(), this logic is broken!!!
         if (myModuleRef != null) {
           addLanguageAction.call(MetaAdapterFactory.getLanguage(myModuleRef));
         }

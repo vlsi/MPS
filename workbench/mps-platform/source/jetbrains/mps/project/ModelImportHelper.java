@@ -107,7 +107,7 @@ public class ModelImportHelper {
     popup.invoke(new AddImportCallback(myProject, model) {
       @Override
       public void elementChosen(Object element) {
-        myModelToImport = goToModelModel.getModelObject(element);
+        doImport(goToModelModel.getModelObject(element));
       }
     }, ModalityState.current(), false);
 
@@ -128,12 +128,7 @@ public class ModelImportHelper {
       public void elementChosen(Object element) {
         NavigationTarget object = goToNodeModel.getModelObject(element);
         myRootName = object.getPresentation();
-        myModelToImport = object.getNodeReference().getModelReference();
-      }
-
-      @Override
-      public void onClose() {
-        super.onClose();
+        doImport(object.getNodeReference().getModelReference());
         importedRootCallback.call(myRootName);
       }
     }, ModalityState.current(), false);
@@ -144,7 +139,6 @@ public class ModelImportHelper {
   private static abstract class AddImportCallback extends ChooseByNamePopupComponent.Callback {
     private final jetbrains.mps.project.Project myProject;
     private final SModel myModel;
-    protected SModelReference myModelToImport;
 
     public AddImportCallback(jetbrains.mps.project.Project mpsProject, SModel model) {
       myProject = mpsProject;
@@ -155,17 +149,12 @@ public class ModelImportHelper {
       return ProjectHelper.toMainFrame(myProject);
     }
 
-    @Override
-    public void onClose() {
-      if (myModelToImport == null) {
-        return;
-      }
-
+    protected void doImport(final SModelReference modelToImport) {
       myProject.getModelAccess().executeCommand(new Runnable() {
         @Override
         public void run() {
           final ModelImporter modelImporter = new ModelImporter(myModel);
-          modelImporter.prepare(myModelToImport);
+          modelImporter.prepare(modelToImport);
           boolean confirmed = true;
           if (modelImporter.affectsModuleDependencies()) {
             confirmed = modelImporter.confirmModuleChanges(getFrame());
