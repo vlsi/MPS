@@ -31,7 +31,7 @@
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
-  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5006"/>-->
+  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5011"/>-->
   <property name="junit.debug.arg" value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
 
   <property environment="env"/>
@@ -144,7 +144,7 @@
     </ant>
   </target>
 
-  <target name="buildTests" depends="build">
+  <target name="buildTests" depends="loadIdeaPathVar, build">
     <ant antfile="mpsPluginTests.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
@@ -185,6 +185,7 @@
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
+      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
@@ -224,6 +225,7 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
+      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>

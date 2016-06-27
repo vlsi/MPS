@@ -44,7 +44,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -63,7 +62,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 
   static {
-    com.intellij.openapi.diagnostic.Logger.setFactory(DelegatingLoggerFactory.class);
     IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
   }
 

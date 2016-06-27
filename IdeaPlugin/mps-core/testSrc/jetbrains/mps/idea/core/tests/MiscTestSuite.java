@@ -16,11 +16,12 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
+import org.apache.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import jetbrains.mps.TestMode;
-import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProjectViewTests.class,
@@ -32,5 +33,6 @@ public class MiscTestSuite {
   @BeforeClass
   public static void setTestMode() {
     RuntimeFlags.setTestMode(TestMode.USUAL);
+    LogManager.getLogger(MiscTestSuite.class).info("The log4j has been initialized successfully");
   }
 }

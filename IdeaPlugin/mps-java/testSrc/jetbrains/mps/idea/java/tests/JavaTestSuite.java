@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.tests;
 
+import org.apache.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -27,6 +28,7 @@ import jetbrains.mps.RuntimeFlags;
 public class JavaTestSuite {
   @BeforeClass
   public static void setTestMode() {
+    LogManager.getLogger(JavaTestSuite.class).info("The log4j has been initialized successfully");
     RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 }

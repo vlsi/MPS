@@ -24,6 +24,7 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
 import jetbrains.mps.jps.make.fileUtil.ProjectDirFinder;
 import jetbrains.mps.jps.make.fileUtil.SimpleFileReader;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.JpsBuildTestCase;
@@ -47,7 +48,7 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
 
   private static void initLogging() {
     Logger.setFactory(DelegatingLoggerFactory.class);
-    Logger.getInstance(MpsJpsBuildTestCase.class).info("The log4j has been initialized successfully");
+    LogManager.getLogger(MpsJpsBuildTestCase.class).info("The log4 has been initialized successfully");
   }
 
   @NotNull
