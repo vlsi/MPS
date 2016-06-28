@@ -18,12 +18,12 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Level;
@@ -55,6 +55,11 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
+    if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")))) {
+      // todo compatibility code to be removed after 3.4 
+      return null;
+    }
+
     SModel model = SNodeOperations.getModel(__thisNode__);
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
