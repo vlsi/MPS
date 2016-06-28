@@ -13,7 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -43,7 +44,7 @@ public class OutputConsoleTab extends BaseConsoleTab {
   protected void registerActions(DefaultActionGroup group) {
     super.registerActions(group);
     group.add(new OutputConsoleTab.CloseAction());
-    group.add(PinToolwindowTabAction.getPinAction());
+    group.add(ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
   }
 
   private class CloseAction extends AnAction {

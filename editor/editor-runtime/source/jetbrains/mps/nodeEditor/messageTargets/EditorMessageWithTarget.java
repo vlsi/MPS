@@ -58,15 +58,9 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
           return cell.isBig() && getCell(editor) == cell;
         }
       case PROPERTY:
-        if (!(cell instanceof EditorCell_Property)) {
-          return cell.isBig() && getCell(editor) == cell;
-        }
-        EditorCell_Property propertyCell = (EditorCell_Property) cell;
-        ModelAccessor modelAccessor = propertyCell.getModelAccessor();
-        if (modelAccessor instanceof PropertyAccessor) {
-          PropertyAccessor propertyAccessor = (PropertyAccessor) modelAccessor;
-          return myMessageTarget.getRole().equals(propertyAccessor.getPropertyName()) && getNode() == propertyAccessor.getNode();
-        }
+        return CellFinder.isCellForProperty(cell, getNode(), myMessageTarget.getRole())
+            || (cell.isBig() && getCell(editor) == cell);
+
       case DELETED_CHILD:
         return getCell(editor) == cell;
       default:

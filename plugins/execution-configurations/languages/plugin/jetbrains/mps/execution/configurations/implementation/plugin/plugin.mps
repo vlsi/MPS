@@ -9257,7 +9257,7 @@
                           <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
                           <node concept="10M0yZ" id="qri2St2AfK" role="37wK5m">
                             <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                            <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+                            <ref role="3cqZAo" to="qkt:~ActionPlaces.TOOLBAR" resolve="TOOLBAR" />
                           </node>
                           <node concept="37vLTw" id="qri2St2AfL" role="37wK5m">
                             <ref role="3cqZAo" node="6hlEMz_jvFo" resolve="group" />
@@ -9402,9 +9402,18 @@
                       </node>
                       <node concept="liA8E" id="6XQUAE$NgSv" role="2OqNvi">
                         <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-                        <node concept="2YIFZM" id="6XQUAE$O0x3" role="37wK5m">
-                          <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
-                          <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
+                        <node concept="2OqwBi" id="$51S7iuS4x" role="37wK5m">
+                          <node concept="2YIFZM" id="$51S7iuRXI" role="2Oq$k0">
+                            <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                            <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                          </node>
+                          <node concept="liA8E" id="$51S7iuSit" role="2OqNvi">
+                            <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                            <node concept="10M0yZ" id="$51S7ivEuf" role="37wK5m">
+                              <ref role="1PxDUh" to="qkt:~IdeActions" resolve="IdeActions" />
+                              <ref role="3cqZAo" to="qkt:~IdeActions.ACTION_PIN_ACTIVE_TAB" resolve="ACTION_PIN_ACTIVE_TAB" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>

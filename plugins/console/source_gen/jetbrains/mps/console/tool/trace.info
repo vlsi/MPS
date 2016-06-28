@@ -259,57 +259,57 @@
   </root>
   <root nodeRef="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)/2893936025727763809">
     <file name="OutputConsoleTab.java">
-      <node id="2893936025728880228" at="23,108,24,44" concept="16" />
-      <node id="1377757278866704400" at="29,25,30,53" concept="10" />
-      <node id="1377757278866704424" at="30,53,31,258" concept="5" />
-      <node id="1377757278866704432" at="32,258,33,388" concept="5" />
-      <node id="1377757278866704451" at="34,16,35,559" concept="5" />
-      <node id="1377757278866704463" at="36,9,37,398" concept="5" />
-      <node id="1377757278866704471" at="37,398,38,75" concept="5" />
-      <node id="3976301908734219041" at="43,60,44,33" concept="5" />
-      <node id="7458928938654078404" at="44,33,45,50" concept="5" />
-      <node id="3537664765559502107" at="45,50,46,53" concept="5" />
-      <node id="6691335283829087177" at="50,26,51,59" concept="16" />
-      <node id="7458928938653665549" at="53,54,54,48" concept="5" />
-      <node id="1377757278866704449" at="34,14,36,9" concept="0" />
-      <node id="2893936025728872568" at="23,0,26,0" concept="2" trace="OutputConsoleTab#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/console/tool/ConsoleTool;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="7458928938653635121" at="50,0,53,0" concept="2" trace="CloseAction#()V" />
-      <node id="7458928938653635131" at="53,0,56,0" concept="9" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1377757278866704430" at="31,258,36,9" concept="8" />
-      <node id="2893936025727885086" at="43,0,48,0" concept="9" trace="registerActions#(Lcom/intellij/openapi/actionSystem/DefaultActionGroup;)V" />
-      <node id="1377757278866704398" at="29,0,40,0" concept="9" trace="run#()V" />
-      <node id="1377757278866704397" at="27,50,40,7" concept="5" />
-      <node id="1377757278866704395" at="27,0,42,0" concept="9" trace="loadHistory#(Ljava/lang/String;)V" />
-      <scope id="2893936025728872570" at="23,108,24,44" />
-      <scope id="1377757278866704431" at="32,258,33,388" />
-      <scope id="1377757278866704450" at="34,16,35,559" />
-      <scope id="7458928938653635122" at="50,26,51,59" />
-      <scope id="7458928938653635140" at="53,54,54,48" />
-      <scope id="2893936025728872568" at="23,0,26,0">
+      <node id="2893936025728880228" at="24,108,25,44" concept="16" />
+      <node id="1377757278866704400" at="30,25,31,53" concept="10" />
+      <node id="1377757278866704424" at="31,53,32,258" concept="5" />
+      <node id="1377757278866704432" at="33,258,34,388" concept="5" />
+      <node id="1377757278866704451" at="35,16,36,559" concept="5" />
+      <node id="1377757278866704463" at="37,9,38,398" concept="5" />
+      <node id="1377757278866704471" at="38,398,39,75" concept="5" />
+      <node id="3976301908734219041" at="44,60,45,33" concept="5" />
+      <node id="7458928938654078404" at="45,33,46,50" concept="5" />
+      <node id="649933975388310428" at="46,50,47,87" concept="5" />
+      <node id="6691335283829087177" at="51,26,52,59" concept="16" />
+      <node id="7458928938653665549" at="54,54,55,48" concept="5" />
+      <node id="1377757278866704449" at="35,14,37,9" concept="0" />
+      <node id="2893936025728872568" at="24,0,27,0" concept="2" trace="OutputConsoleTab#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/console/tool/ConsoleTool;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="7458928938653635121" at="51,0,54,0" concept="2" trace="CloseAction#()V" />
+      <node id="7458928938653635131" at="54,0,57,0" concept="9" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1377757278866704430" at="32,258,37,9" concept="8" />
+      <node id="2893936025727885086" at="44,0,49,0" concept="9" trace="registerActions#(Lcom/intellij/openapi/actionSystem/DefaultActionGroup;)V" />
+      <node id="1377757278866704398" at="30,0,41,0" concept="9" trace="run#()V" />
+      <node id="1377757278866704397" at="28,50,41,7" concept="5" />
+      <node id="1377757278866704395" at="28,0,43,0" concept="9" trace="loadHistory#(Ljava/lang/String;)V" />
+      <scope id="2893936025728872570" at="24,108,25,44" />
+      <scope id="1377757278866704431" at="33,258,34,388" />
+      <scope id="1377757278866704450" at="35,16,36,559" />
+      <scope id="7458928938653635122" at="51,26,52,59" />
+      <scope id="7458928938653635140" at="54,54,55,48" />
+      <scope id="2893936025728872568" at="24,0,27,0">
         <var name="history" id="2893936025728872587" />
         <var name="mpsProject" id="8162894946401371035" />
         <var name="title" id="2893936025728872585" />
         <var name="tool" id="2893936025728872583" />
       </scope>
-      <scope id="2893936025727885090" at="43,60,46,53" />
-      <scope id="7458928938653635121" at="50,0,53,0" />
-      <scope id="7458928938653635131" at="53,0,56,0">
+      <scope id="2893936025727885090" at="44,60,47,87" />
+      <scope id="7458928938653635121" at="51,0,54,0" />
+      <scope id="7458928938653635131" at="54,0,57,0">
         <var name="event" id="7458928938653635134" />
       </scope>
-      <scope id="2893936025727885086" at="43,0,48,0">
+      <scope id="2893936025727885086" at="44,0,49,0">
         <var name="group" id="3976301908734191700" />
       </scope>
-      <scope id="1377757278866704399" at="29,25,38,75">
+      <scope id="1377757278866704399" at="30,25,39,75">
         <var name="loadedModel" id="1377757278866704401" />
       </scope>
-      <scope id="1377757278866704398" at="29,0,40,0" />
-      <scope id="1377757278866704396" at="27,50,40,7" />
-      <scope id="1377757278866704395" at="27,0,42,0">
+      <scope id="1377757278866704398" at="30,0,41,0" />
+      <scope id="1377757278866704396" at="28,50,41,7" />
+      <scope id="1377757278866704395" at="28,0,43,0">
         <var name="state" id="1377757278866704478" />
       </scope>
-      <unit id="7458928938653635120" at="49,0,57,0" name="jetbrains.mps.console.tool.OutputConsoleTab$CloseAction" />
-      <unit id="1377757278866704398" at="28,69,40,5" name="jetbrains.mps.console.tool.OutputConsoleTab$1" />
-      <unit id="2893936025727763809" at="21,0,59,0" name="jetbrains.mps.console.tool.OutputConsoleTab" />
+      <unit id="7458928938653635120" at="50,0,58,0" name="jetbrains.mps.console.tool.OutputConsoleTab$CloseAction" />
+      <unit id="1377757278866704398" at="29,69,41,5" name="jetbrains.mps.console.tool.OutputConsoleTab$1" />
+      <unit id="2893936025727763809" at="22,0,60,0" name="jetbrains.mps.console.tool.OutputConsoleTab" />
     </file>
   </root>
   <root nodeRef="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)/351968380915666545">

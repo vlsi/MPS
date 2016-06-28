@@ -721,7 +721,7 @@
               </node>
               <node concept="10M0yZ" id="3SnNvqCbxOJ" role="37wK5m">
                 <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+                <ref role="3cqZAo" to="qkt:~ActionPlaces.DEBUGGER_TOOLBAR" resolve="DEBUGGER_TOOLBAR" />
               </node>
             </node>
           </node>
@@ -743,7 +743,7 @@
               </node>
               <node concept="10M0yZ" id="1S2xql_3x66" role="37wK5m">
                 <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+                <ref role="3cqZAo" to="qkt:~ActionPlaces.DEBUGGER_TOOLBAR" resolve="DEBUGGER_TOOLBAR" />
               </node>
             </node>
           </node>
@@ -1174,9 +1174,18 @@
             </node>
             <node concept="liA8E" id="3SnNvqCbxRc" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="2YIFZM" id="3SnNvqCbxRd" role="37wK5m">
-                <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
-                <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
+              <node concept="2OqwBi" id="$51S7iuS4x" role="37wK5m">
+                <node concept="2YIFZM" id="$51S7iuRXI" role="2Oq$k0">
+                  <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                  <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="$51S7iuSit" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                  <node concept="10M0yZ" id="$51S7ivEuf" role="37wK5m">
+                    <ref role="3cqZAo" to="qkt:~IdeActions.ACTION_PIN_ACTIVE_TAB" resolve="ACTION_PIN_ACTIVE_TAB" />
+                    <ref role="1PxDUh" to="qkt:~IdeActions" resolve="IdeActions" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
