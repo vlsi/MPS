@@ -1006,17 +1006,10 @@
               <node concept="Xl_RD" id="7AIFj4NnYy" role="3uHU7B">
                 <property role="Xl_RC" value="TextIcon_" />
               </node>
-              <node concept="2OqwBi" id="7AIFj4Np5V" role="3uHU7w">
-                <node concept="2OqwBi" id="7AIFj4NoOT" role="2Oq$k0">
-                  <node concept="2JrnkZ" id="7AIFj4NoEx" role="2Oq$k0">
-                    <node concept="13iPFW" id="7AIFj4Nohv" role="2JrQYb" />
-                  </node>
-                  <node concept="liA8E" id="7AIFj4NoX3" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7AIFj4Npjp" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+              <node concept="2OqwBi" id="1brHjIQHBUB" role="3uHU7w">
+                <node concept="13iPFW" id="1brHjIQHBJH" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1brHjIQHCbE" role="2OqNvi">
+                  <ref role="3TsBF5" to="1oap:1brHjIQHw0T" resolve="iconId" />
                 </node>
               </node>
             </node>

@@ -11,6 +11,9 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -47,16 +50,46 @@ public class TextIcon_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_u5g1fn_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_u5g1fn_a0a(editorContext, node));
     if (renderingCondition_u5g1fn_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_u5g1fn_b0a(editorContext, node));
     }
     return editorCell;
   }
-  private EditorCell createConstant_u5g1fn_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_u5g1fn_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_u5g1fn_a0a");
+    editorCell.addEditorCell(this.createConstant_u5g1fn_a0a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u5g1fn_b0a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_u5g1fn_c0a0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_u5g1fn_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "describe");
-    editorCell.setCellId("Constant_u5g1fn_a0a");
+    editorCell.setCellId("Constant_u5g1fn_a0a0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_u5g1fn_b0a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fileName=");
+    editorCell.setCellId("Constant_u5g1fn_b0a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_u5g1fn_c0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("iconId");
+    provider.setNoTargetText("<no iconId>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_iconId");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
   private EditorCell createConstant_u5g1fn_b0a(EditorContext editorContext, SNode node) {

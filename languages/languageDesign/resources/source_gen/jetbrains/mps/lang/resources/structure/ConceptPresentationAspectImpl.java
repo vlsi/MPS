@@ -19,7 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon("iconResourceBundle.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();

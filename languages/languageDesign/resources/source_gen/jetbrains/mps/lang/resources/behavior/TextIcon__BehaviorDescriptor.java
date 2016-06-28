@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -45,7 +46,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getResourceId_id2p1v3tOadt0(@NotNull SNode __thisNode__) {
-    return "TextIcon_" + __thisNode__.getNodeId().toString() + ".png";
+    return "TextIcon_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId")) + ".png";
   }
   /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__, IFile outputRoot) {
     SModel model = SNodeOperations.getModel(__thisNode__);

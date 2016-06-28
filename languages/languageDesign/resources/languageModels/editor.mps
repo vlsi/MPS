@@ -488,8 +488,17 @@
     <property role="3GE5qa" value="icons.descriptors" />
     <ref role="1XX52x" to="1oap:2p1v3tObwP5" resolve="TextIcon" />
     <node concept="b$f91" id="2p1v3tObwWH" role="2wV5jI">
-      <node concept="3F0ifn" id="2p1v3tObwX8" role="b$u42">
-        <property role="3F0ifm" value="describe" />
+      <node concept="3EZMnI" id="1brHjIQHBiv" role="b$u42">
+        <node concept="2iRfu4" id="1brHjIQHBiw" role="2iSdaV" />
+        <node concept="3F0ifn" id="2p1v3tObwX8" role="3EZMnx">
+          <property role="3F0ifm" value="describe" />
+        </node>
+        <node concept="3F0ifn" id="1brHjIQHBiK" role="3EZMnx">
+          <property role="3F0ifm" value="fileName=" />
+        </node>
+        <node concept="3F0A7n" id="1brHjIQHBiC" role="3EZMnx">
+          <ref role="1NtTu8" to="1oap:1brHjIQHw0T" resolve="iconId" />
+        </node>
       </node>
       <node concept="3F2HdR" id="2p1v3tObwXj" role="b$wch">
         <ref role="1NtTu8" to="1oap:2p1v3tObwTA" />

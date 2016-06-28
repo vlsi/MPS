@@ -203,6 +203,11 @@
     <property role="TrG5h" value="TextIcon" />
     <property role="34LRSv" value="describe" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1brHjIQHw0T" role="1TKVEl">
+      <property role="IQ2nx" value="1358878980655415353" />
+      <property role="TrG5h" value="iconId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="2p1v3tObwTA" role="1TKVEi">
       <property role="IQ2ns" value="2756621024541675110" />
       <property role="20lmBu" value="aggregation" />
