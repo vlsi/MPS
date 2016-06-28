@@ -61,14 +61,6 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.SModelOperations;
-import java.util.Collections;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -149,7 +141,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
     SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.InEditorStructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
-    SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.UsedLanguagesChecker());
+    SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
     new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
   }
   @Override
@@ -393,71 +385,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
           return true;
         }
       });
-    }
-  }
-  private class UsedLanguagesChecker extends AbstractConstraintsChecker {
-    private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
-    private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
-
-    public UsedLanguagesChecker() {
-    }
-    public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
-      if (SNodeOperations.getParent(node) != null) {
-        return;
-      }
-
-      final Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
-      importedLanguages.addAll(new SLanguageHierarchy(SModelOperations.getAllLanguageImports(SNodeOperations.getModel(node))).getExtended());
-
-      // need to recurse the tree, to report missing language once per sub-tree  
-      // (starting from the first node with missing language encountered) 
-      // Iterative alternative would be more complicated, and there are no utility  
-      // methods in the rules nor we support inner classes, hence the trick with Runnable 
-      findMissing(component, Collections.singleton(node), Collections.<SLanguage>emptySet(), importedLanguages);
-    }
-
-    public void findMissing(LanguageErrorsComponent component, Iterable<? extends SNode> level, Set<SLanguage> parentReported, Set<SLanguage> imported) {
-      boolean parentReportedSetChanged = false;
-      for (SNode node : Sequence.fromIterable(level)) {
-        HashSet<SLanguage> reported = new HashSet<SLanguage>(parentReported);
-        SConcept concept = node.getConcept();
-        if (concept.equals(C) && L.equals(node.getContainmentLink())) {
-          continue;
-        }
-
-        SLanguage language = concept.getLanguage();
-        boolean notYetReported = reported.add(language);
-        parentReportedSetChanged |= notYetReported;
-        if (!(imported.contains(language)) && notYetReported) {
-          component.addError(node, language.getQualifiedName() + " is not imported", null, new NodeMessageTarget(), new LanguageEditorChecker.UsedLanguagesChecker.LangImportQFixProvider());
-        }
-        findMissing(component, node.getChildren(), (parentReportedSetChanged ? reported : parentReported), imported);
-      }
-    }
-
-    private class LangImportQFixProvider implements QuickFixProvider {
-      public LangImportQFixProvider() {
-      }
-      public QuickFix_Runtime getQuickFix() {
-        return new QuickFix_Runtime() {
-          @Override
-          public String getDescription(SNode node) {
-            return "Import " + node.getConcept().getLanguage().getQualifiedName() + " language";
-          }
-          public void execute(SNode node) {
-            SLanguage language = node.getConcept().getLanguage();
-            ((SModelInternal) node.getModel()).addLanguage(language);
-          }
-        };
-      }
-      public boolean isExecutedImmediately() {
-        return false;
-      }
-      public void setIsError(boolean val) {
-      }
-      public boolean isError() {
-        return true;
-      }
     }
   }
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
