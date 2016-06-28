@@ -47,6 +47,15 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="typesystemIntegration.languageChecker.InEditorStructureChecker" file="InEditorStructureChecker.java">
+    <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
+    <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
+  </dependency>
   <dependency className="typesystemIntegration.languageChecker.LanguageEditorChecker" file="LanguageEditorChecker.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Object" />
@@ -87,8 +96,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
@@ -112,8 +119,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode dependClassName="typesystemIntegration.languageChecker.AutoResolver" />
+    <classNode dependClassName="typesystemIntegration.languageChecker.InEditorStructureChecker" />
     <classNode dependClassName="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" />
     <classNode dependClassName="typesystemIntegration.languageChecker.UsedLanguagesChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />

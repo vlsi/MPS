@@ -58,9 +58,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.project.validation.ValidationUtil;
-import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -139,7 +136,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     myRepository = projectRepo;
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
-    SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.InEditorStructureChecker());
+    SetSequence.fromSet(myRules).addElement(new InEditorStructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
     new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
@@ -371,21 +368,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   protected void resetCheckerState() {
     myForceRunQuickFixes = true;
     super.resetCheckerState();
-  }
-  private class InEditorStructureChecker extends AbstractConstraintsChecker {
-    public InEditorStructureChecker() {
-    }
-    public void checkNode(final SNode node, final LanguageErrorsComponent component, SRepository repository) {
-      ValidationUtil.validateSingleNode(node, new Processor<ValidationProblem>() {
-        public boolean process(ValidationProblem vp) {
-          if (vp.getSeverity() != ValidationProblem.Severity.ERROR) {
-            return true;
-          }
-          component.addError(node, vp.getMessage(), null);
-          return true;
-        }
-      });
-    }
   }
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
 }
