@@ -43,6 +43,11 @@ public class ConceptPresentationBuilder {
     return this;
   }
 
+  public ConceptPresentationBuilder icon(IconResource icn) {
+    myIcon = icn;
+    return this;
+  }
+
   public ConceptPresentationBuilder deprecated(boolean deprecated) {
     myIsDeprecated = deprecated;
     return this;
