@@ -21,9 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.IconCreationUtil;
 import org.jetbrains.mps.openapi.util.Consumer;
 import com.intellij.ui.LayeredIcon;
@@ -55,7 +52,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
     // copy 
-    String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
+    String source = Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(__thisNode__);
     if (source == null) {
       return null;
     }

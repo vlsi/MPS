@@ -1082,32 +1082,10 @@
           <node concept="3cpWsn" id="Ib_Fk7CFdR" role="3cpWs9">
             <property role="TrG5h" value="source" />
             <node concept="17QB3L" id="Ib_Fk7CFdS" role="1tU5fm" />
-            <node concept="2OqwBi" id="Ib_Fk7CFdT" role="33vP2m">
-              <node concept="2YIFZM" id="Ib_Fk7CFdU" role="2Oq$k0">
-                <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                <node concept="10QFUN" id="Ib_Fk7CFdV" role="37wK5m">
-                  <node concept="2OqwBi" id="Ib_Fk7CFdW" role="10QFUP">
-                    <node concept="liA8E" id="Ib_Fk7CFdX" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                    </node>
-                    <node concept="37vLTw" id="Ib_Fk7CFdY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="Ib_Fk7CFdB" resolve="model" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="Ib_Fk7CFdZ" role="10QFUM">
-                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="Ib_Fk7CFe0" role="2OqNvi">
-                <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                <node concept="2OqwBi" id="Ib_Fk7CFe1" role="37wK5m">
-                  <node concept="13iPFW" id="Ib_Fk7CFe2" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="Ib_Fk7CFe3" role="2OqNvi">
-                    <ref role="3TsBF5" to="1oap:2p1v3tOafqN" resolve="file" />
-                  </node>
-                </node>
+            <node concept="2OqwBi" id="Ib_Fk7CFe1" role="33vP2m">
+              <node concept="13iPFW" id="Ib_Fk7CFe2" role="2Oq$k0" />
+              <node concept="2qgKlT" id="7PBJsdLAPDB" role="2OqNvi">
+                <ref role="37wK5l" node="2p1v3tOadt0" resolve="getResourceId" />
               </node>
             </node>
           </node>
