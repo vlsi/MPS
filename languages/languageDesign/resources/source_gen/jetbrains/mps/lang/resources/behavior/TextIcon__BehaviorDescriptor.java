@@ -18,6 +18,19 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.IconCreationUtil;
+import org.jetbrains.mps.openapi.util.Consumer;
+import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import javax.swing.ImageIcon;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,10 +48,29 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getResourceId_id2p1v3tOadt0(@NotNull SNode __thisNode__) {
-    return "TextIcon_" + __thisNode__.getNodeId().toString();
+    return "TextIcon_" + __thisNode__.getNodeId().toString() + ".png";
   }
-  /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
-    return null;
+  /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__, IFile outputRoot) {
+    SModel model = SNodeOperations.getModel(__thisNode__);
+    IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
+
+    // copy 
+    String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
+    if (source == null) {
+      return null;
+    }
+
+    byte[] iconData = IconCreationUtil.drawIcon(new Consumer<IconCreationUtil.DrawContext>() {
+      public void consume(IconCreationUtil.DrawContext dc) {
+        // todo copy layered icon into core 
+        LayeredIcon res = new LayeredIcon(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x26417c37742e0e66L, "layers"))).count());
+        for (SNode layer : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x26417c37742e0e66L, "layers")))) {
+          res.setIcon(new ImageIcon(IconLayerDescription__BehaviorDescriptor.getImageForGeneration_id2p1v3tObywX.invoke(layer)), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x26417c37742e0e66L, "layers"))).indexOf(layer));
+        }
+        res.paintIcon(null, dc.g, 0, 0);
+      }
+    });
+    return MultiTuple.<IFile,byte[]>from(outputDir.getDescendant(Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(__thisNode__)), iconData);
   }
 
   /*package*/ TextIcon__BehaviorDescriptor() {
