@@ -38,9 +38,9 @@ public final class Circle__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static byte[] getImageForGeneration_id2p1v3tObywX(@NotNull final SNode __thisNode__) {
     return IconCreationUtil.drawIcon(new Consumer<IconCreationUtil.DrawContext>() {
       public void consume(IconCreationUtil.DrawContext dc) {
-        dc.g.setColor(new Color(Integer.parseInt(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x26417c37742e28b4L, "borderColor")))));
+        dc.g.setColor(new Color(Integer.parseInt(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x26417c37742e28b4L, "borderColor")), 16)));
         dc.g.fillOval(dc.width / 2, dc.height / 2, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, 0x26417c37742e28c1L, "r")), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, 0x26417c37742e28c1L, "r")));
-        dc.g.setColor(new Color(Integer.parseInt(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x26417c37742e28b2L, "fillColor")))));
+        dc.g.setColor(new Color(Integer.parseInt(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x26417c37742e28b2L, "fillColor")), 16)));
         dc.g.fillOval(dc.width / 2, dc.height / 2, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, 0x26417c37742e28c1L, "r")) - 2, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, 0x26417c37742e28c1L, "r")) - 2);
       }
     });
