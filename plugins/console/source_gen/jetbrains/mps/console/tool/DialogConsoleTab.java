@@ -18,8 +18,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -77,9 +77,9 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
         SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), SelectionManager.LAST_CELL, -1);
+        getEditorComponent().ensureSelectionVisible();
       }
     });
-    getEditorComponent().ensureSelectionVisible();
   }
 
   private class ExecuteAction extends BaseAction {
@@ -92,26 +92,24 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
   public void executeCurrentCommand() {
+    final Wrappers._boolean emptyCommand = new Wrappers._boolean();
     getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         myCursor = null;
         TemporaryModels.getInstance().addMissingImports(getConsoleModel());
-        if ((SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) == null)) {
-          return;
-        }
+        emptyCommand.value = (SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) == null);
       }
     });
+    if (emptyCommand.value) {
+      return;
+    }
     execute(null, new Runnable() {
       public void run() {
         myNewCommand = null;
       }
     }, new Runnable() {
       public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            setSelection();
-          }
-        });
+        setSelection();
       }
     });
   }
