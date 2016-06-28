@@ -24,12 +24,13 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /*package*/ public abstract class IncrementalTypecheckingComponent<STATE extends State> extends SimpleTypecheckingComponent<STATE> {
 
-  private boolean myInvalidationWasPerformed = false;
-  private boolean myCacheWasRebuilt = false;
-  private boolean myInvalidationResult = false;
+  private AtomicBoolean myInvalidationWasPerformed = new AtomicBoolean(false);
+  private AtomicBoolean myCacheWasRebuilt = new AtomicBoolean(false);
+  private AtomicBoolean myInvalidationResult = new AtomicBoolean(false);
 
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
@@ -41,7 +42,7 @@ import java.util.Set;
   protected abstract boolean doInvalidate();
 
   public void setInvalidationWasPerformed(boolean invalidationWasPerformed) {
-    myInvalidationWasPerformed = invalidationWasPerformed;
+    myInvalidationWasPerformed.set(invalidationWasPerformed);
   }
 
   public void addNodeToInvalidate(SNode node) {
@@ -52,9 +53,9 @@ import java.util.Set;
   @Override
   public void clear() {
     myIsChecked = false;
-    myInvalidationWasPerformed = false;
-    myCacheWasRebuilt = false;
-    myInvalidationResult = false;
+    myInvalidationWasPerformed.set(false);
+    myCacheWasRebuilt.set(false);
+    myInvalidationResult.set(false);
   }
 
   public void clearNodeTypes() {
@@ -62,15 +63,15 @@ import java.util.Set;
   }
 
   protected boolean isInvalidationWasPerformed() {
-    return myInvalidationWasPerformed;
+    return myInvalidationWasPerformed.get();
   }
 
   protected boolean isCacheWasRebuilt() {
-    return myCacheWasRebuilt;
+    return myCacheWasRebuilt.get();
   }
 
   protected boolean isInvalidationResult() {
-    return myInvalidationResult;
+    return myInvalidationResult.get();
   }
 
   protected Set<SNode> getCurrentNodesToInvalidate() {
@@ -145,7 +146,7 @@ import java.util.Set;
 
   protected void setInvalidationResult(boolean result) {
     setInvalidationWasPerformed(true);
-    myCacheWasRebuilt = false;
-    myInvalidationResult = result;
+    myCacheWasRebuilt.set(false);
+    myInvalidationResult.set(result);
   }
 }

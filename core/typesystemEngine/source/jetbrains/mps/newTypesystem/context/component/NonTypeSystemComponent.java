@@ -28,6 +28,7 @@ import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -35,11 +36,12 @@ import jetbrains.mps.typesystem.inference.TypesReadListener;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<State> implements ITypeErrorComponent {
 
-  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
-  private Queue<SNode> myCurrentTypedTermsToInvalidate = new LinkedList<SNode>();
+  private ConcurrentLinkedQueue<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new ConcurrentLinkedQueue<>();
+  private ConcurrentLinkedQueue<SNode> myCurrentTypedTermsToInvalidate = new ConcurrentLinkedQueue<>();
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodes
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
   private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
@@ -133,7 +135,8 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
     //properties
-    for (Pair<SNode, String> pair : myCurrentPropertiesToInvalidate) {
+    while (!myCurrentPropertiesToInvalidate.isEmpty()) {
+      Pair<SNode, String> pair = myCurrentPropertiesToInvalidate.remove();
       doInvalidate(myPropertiesToDependentNodesWithNTRules.get(pair), invalidatedNodesAndRules);
     }
 
@@ -187,7 +190,6 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     myCurrentTypedTermsToInvalidate.add(term);
     setInvalidationWasPerformed(false);
   }
-
 
   @Override
   public void addError(SNode node, IErrorReporter errorReporter) {
