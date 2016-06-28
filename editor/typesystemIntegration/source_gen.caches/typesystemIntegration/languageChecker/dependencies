@@ -58,11 +58,11 @@
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.LanguageEditorChecker" file="LanguageEditorChecker.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -95,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.HighlighterMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.UpdateResult" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -125,7 +126,8 @@
     <classNode dependClassName="typesystemIntegration.languageChecker.InEditorStructureChecker" />
     <classNode dependClassName="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" />
     <classNode dependClassName="typesystemIntegration.languageChecker.UsedLanguagesChecker" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.DisposableEditorChecker" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" file="RefScopeCheckerInEditor.java">
     <classNode dependClassName="java.lang.Override" />
