@@ -21,6 +21,7 @@ import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.Processor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -30,18 +31,24 @@ public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
   }
 
   @Override
-  public boolean filterElements(ChooseByNameBase base, String pattern, boolean everywhere, ProgressIndicator cancelled, Processor<Object> consumer) {
+  public boolean filterElements(@NotNull ChooseByNameBase base, @NotNull String pattern, boolean everywhere, @NotNull ProgressIndicator cancelled, @NotNull Processor<Object> consumer) {
     return super.filterElements(base, transformPattern(pattern), everywhere, cancelled, consumer);
   }
 
+  @NotNull
   @Override
-  public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
+  public List<String> filterNames(@NotNull ChooseByNameBase base, @NotNull String[] names, @NotNull String pattern) {
     return super.filterNames(base, names, transformPattern(pattern));
   }
 
   private String transformPattern(String pattern) {
-    if ("".equals(pattern)) return "*";
-    if (pattern.endsWith(" ")) return pattern;
-    else return pattern + ".*";
+    if (pattern.isEmpty()) {
+      return "*";
+    }
+    if (pattern.endsWith(" ")) {
+      return pattern;
+    } else {
+      return pattern + ".*";
+    }
   }
 }

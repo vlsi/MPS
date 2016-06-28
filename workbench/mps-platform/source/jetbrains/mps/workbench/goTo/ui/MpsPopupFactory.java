@@ -66,13 +66,15 @@ public abstract class MpsPopupFactory {
   }
 
   private static ChooseByNameItemProvider packageProvider() {
-    return new CompositeItemProvider(new MPSPackageItemProvider(null), new DefaultChooseByNameItemProvider(null));
+    // TODO: try to use only DefaultChooseByNameItemProvider
+    // Provides must be in such order otherwise it can produce usability problem (see MPS-23576)
+    return new CompositeItemProvider(new DefaultChooseByNameItemProvider(null), new MPSPackageItemProvider(null));
   }
 
   private static void setCheckboxShortcutFromAction(ChooseByNamePopup popup, @Nullable BaseAction parentAction) {
     if (parentAction != null) {
       Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(parentAction.getActionId());
-      if (shortcuts != null && shortcuts.length > 0) {
+      if (shortcuts.length > 0) {
         popup.setCheckBoxShortcut(new CustomShortcutSet(shortcuts));
       }
     }
