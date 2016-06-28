@@ -48,7 +48,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     // TODO: use same settings as in LanguageEritorChecker 
     Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
-      EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
+      EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this);
       SetSequence.fromSet(messages).addElement(message);
     }
     Set<EditorCell> editorErrorCells = ((EditorComponent) editorContext.getEditorComponent()).getCellTracker().getErrorCells();

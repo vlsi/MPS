@@ -30,8 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorMessageOwner checker,
-      EditorContext editorContext) {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorMessageOwner checker) {
     return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getMessageStatus() : MessageStatus.ERROR, errorReporter, checker);
   }
 
@@ -55,8 +54,8 @@ public class HighlightUtil {
     return error;
   }
 
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorMessageOwner owner, EditorContext editorContext) {
-    return createHighlighterMessage(node, message, null, owner, editorContext);
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorMessageOwner owner) {
+    return createHighlighterMessage(node, message, null, owner);
   }
 
   public static HighlighterMessage createWarningMessage(SNode node, String message, EditorMessageOwner owner) {

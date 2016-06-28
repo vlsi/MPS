@@ -325,7 +325,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       }
       MessageStatus status = errorReporter.getMessageStatus();
       String errorString = errorReporter.reportError();
-      HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this, editorContext);
+      HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this);
       List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
       if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
         QuickFix_Runtime quickFix = intentionProviders.get(0).getQuickFix();

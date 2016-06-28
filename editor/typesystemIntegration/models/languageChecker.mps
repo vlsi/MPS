@@ -2478,7 +2478,7 @@
                 </node>
                 <node concept="2YIFZM" id="6se4BTU1$fb" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.IErrorReporter,jetbrains.mps.openapi.editor.message.EditorMessageOwner,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.IErrorReporter,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="37vLTw" id="1rlD583ji$A" role="37wK5m">
                     <ref role="3cqZAo" node="1rlD583ji$x" resolve="nodeWithError" />
                   </node>
@@ -2509,9 +2509,6 @@
                   </node>
                   <node concept="Xjq3P" id="6se4BTU1$fo" role="37wK5m">
                     <ref role="1HBi2w" node="6qi2OtU3ufq" resolve="LanguageEditorChecker" />
-                  </node>
-                  <node concept="37vLTw" id="6se4BTU1$fp" role="37wK5m">
-                    <ref role="3cqZAo" node="6qi2OtU3ukl" resolve="editorContext" />
                   </node>
                 </node>
               </node>
@@ -3874,7 +3871,7 @@
                 <property role="TrG5h" value="message" />
                 <node concept="2YIFZM" id="3bq5tR0EFZN" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.message.EditorMessageOwner,jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="2OqwBi" id="3bq5tR0EFZO" role="37wK5m">
                     <node concept="2GrUjf" id="3bq5tR0EFZP" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="2euxXH1_Fym" resolve="ref" />
@@ -3887,9 +3884,6 @@
                     <property role="Xl_RC" value="Unresolved reference" />
                   </node>
                   <node concept="Xjq3P" id="3bq5tR0EFZS" role="37wK5m" />
-                  <node concept="37vLTw" id="2BHiRxglw$Y" role="37wK5m">
-                    <ref role="3cqZAo" node="4nkKl$KPUHL" resolve="editorContext" />
-                  </node>
                 </node>
                 <node concept="3uibUv" id="51UVhLlXuym" role="1tU5fm">
                   <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />

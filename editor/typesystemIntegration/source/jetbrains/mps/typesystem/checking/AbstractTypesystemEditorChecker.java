@@ -136,8 +136,7 @@ public abstract class AbstractTypesystemEditorChecker implements EditorChecker, 
             errorNode.o1,
             NameUtil.capitalize(status.getPresentation()) + ": " + errorString,
             errorReporter,
-            AbstractTypesystemEditorChecker.this,
-            editorContext
+            AbstractTypesystemEditorChecker.this
         );
 
         List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
