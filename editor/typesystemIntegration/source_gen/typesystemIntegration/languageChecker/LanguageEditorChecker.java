@@ -40,11 +40,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.checkers.ErrorReportUtil;
@@ -54,7 +52,10 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -230,47 +231,9 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
-    LanguageErrorsComponent errorsComponent;
-
-    synchronized (myMapsLock) {
-      final Wrappers._T<EditorComponent> mainEditorComponent = new Wrappers._T<EditorComponent>(null);
-      if (inspector) {
-        List<SNode> editedNodeAncestors = SNodeOperations.getNodeAncestors(editedNode, null, true);
-        for (EditorComponent candidate : MapSequence.fromMap(myEditorComponentToErrorMap).keySet()) {
-          if (ListSequence.fromList(editedNodeAncestors).contains(candidate.getEditedNode())) {
-            mainEditorComponent.value = candidate;
-            break;
-          }
-        }
-        if (mainEditorComponent.value == null) {
-          return result;
-        }
-      } else {
-        mainEditorComponent.value = editorComponent;
-      }
-
-      errorsComponent = MapSequence.fromMap(myEditorComponentToErrorMap).get(mainEditorComponent.value);
-      if (errorsComponent == null) {
-        errorsComponent = new LanguageErrorsComponent(model);
-        MapSequence.fromMap(myEditorComponentToErrorMap).put(mainEditorComponent.value, errorsComponent);
-
-        Set<EditorComponent> mappedEditorComponent = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
-        if (mappedEditorComponent == null) {
-          mappedEditorComponent = SetSequence.fromSet(new HashSet<EditorComponent>());
-          MapSequence.fromMap(myModelToEditorComponentsMap).put(model, mappedEditorComponent);
-          addModelListener(model);
-        }
-        SetSequence.fromSet(mappedEditorComponent).addElement(mainEditorComponent.value);
-
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            mainEditorComponent.value.addDisposeListener(myDisposeListener);
-            if (mainEditorComponent.value.isDisposed()) {
-              myDisposeListener.editorWillBeDisposed(mainEditorComponent.value);
-            }
-          }
-        });
-      }
+    LanguageErrorsComponent errorsComponent = getErrorsComponent(editorComponent);
+    if (errorsComponent == null) {
+      return result;
     }
 
     if (!(wasCheckedOnce)) {
@@ -351,6 +314,58 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       });
     }
     return result;
+  }
+
+  /**
+   * 
+   * @return null if {@code editorComponent} is null, a non-null value otherwise
+   */
+  @Nullable
+  private LanguageErrorsComponent getErrorsComponent(EditorComponent editorComponent) {
+    synchronized (myMapsLock) {
+      LanguageErrorsComponent errorsComponent;
+
+      final Wrappers._T<EditorComponent> mainEditorComponent = new Wrappers._T<EditorComponent>(null);
+      if (editorComponent instanceof InspectorEditorComponent) {
+        List<SNode> editedNodeAncestors = SNodeOperations.getNodeAncestors(((SNode) editorComponent.getEditedNode()), null, true);
+        for (EditorComponent candidate : MapSequence.fromMap(myEditorComponentToErrorMap).keySet()) {
+          if (ListSequence.fromList(editedNodeAncestors).contains(candidate.getEditedNode())) {
+            mainEditorComponent.value = candidate;
+            break;
+          }
+        }
+        if (mainEditorComponent.value == null) {
+          return null;
+        }
+      } else {
+        mainEditorComponent.value = editorComponent;
+      }
+
+      SModel model = editorComponent.getEditorContext().getModel();
+      errorsComponent = MapSequence.fromMap(myEditorComponentToErrorMap).get(mainEditorComponent.value);
+      if (errorsComponent == null) {
+        errorsComponent = new LanguageErrorsComponent(model);
+        MapSequence.fromMap(myEditorComponentToErrorMap).put(mainEditorComponent.value, errorsComponent);
+
+        Set<EditorComponent> mappedEditorComponent = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
+        if (mappedEditorComponent == null) {
+          mappedEditorComponent = SetSequence.fromSet(new HashSet<EditorComponent>());
+          MapSequence.fromMap(myModelToEditorComponentsMap).put(model, mappedEditorComponent);
+          addModelListener(model);
+        }
+        SetSequence.fromSet(mappedEditorComponent).addElement(mainEditorComponent.value);
+
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            mainEditorComponent.value.addDisposeListener(myDisposeListener);
+            if (mainEditorComponent.value.isDisposed()) {
+              myDisposeListener.editorWillBeDisposed(mainEditorComponent.value);
+            }
+          }
+        });
+      }
+      return errorsComponent;
+    }
   }
   private boolean shouldRunQuickFixs(SModel model, boolean inspector) {
     if (inspector || !(model instanceof EditableSModel) || model instanceof TransientSModel) {
