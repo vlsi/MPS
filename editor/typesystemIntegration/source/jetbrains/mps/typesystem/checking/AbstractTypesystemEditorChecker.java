@@ -26,6 +26,7 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
+import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -54,7 +55,7 @@ import java.util.Set;
  * User: fyodor
  * Date: 4/30/13
  */
-public abstract class AbstractTypesystemEditorChecker implements EditorChecker, EditorMessageOwner {
+public abstract class AbstractTypesystemEditorChecker extends BaseNewEditorChecker implements EditorMessageOwner {
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myHasEvents = false;
@@ -62,11 +63,6 @@ public abstract class AbstractTypesystemEditorChecker implements EditorChecker, 
   @NotNull
   protected abstract UpdateResult doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext,
       SNode rootNode, Cancellable cancellable, boolean applyQuickFixes);
-
-  @Override
-  public boolean isLaterThan(EditorChecker editorChecker) {
-    return false;
-  }
 
   @Override
   public void processEvents(List<SModelEvent> events) {
@@ -81,15 +77,6 @@ public abstract class AbstractTypesystemEditorChecker implements EditorChecker, 
   @Override
   public void doneUpdating() {
     myHasEvents = false;
-  }
-
-  @Override
-  public void forceAutofix(EditorComponent editorComponent) {
-  }
-
-  @Override
-  public EditorMessageOwner getEditorMessageOwner() {
-    return this;
   }
 
   @NotNull

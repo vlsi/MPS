@@ -3028,25 +3028,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2v0ve8x$pnb" role="jymVt" />
-    <node concept="3clFb_" id="2v0ve8x$pnc" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="isEssential" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="2v0ve8x$pnd" role="1B3o_S" />
-      <node concept="10P_77" id="2v0ve8x$pne" role="3clF45" />
-      <node concept="3clFbS" id="2v0ve8x$pnf" role="3clF47">
-        <node concept="3clFbF" id="2v0ve8x$png" role="3cqZAp">
-          <node concept="3clFbT" id="2v0ve8x$pnh" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2v0ve8x$pni" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2v0ve8x$pnj" role="jymVt" />
     <node concept="3clFb_" id="2v0ve8x$pnk" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="forceAutofix" />
@@ -3077,72 +3058,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2v0ve8x$pnv" role="jymVt" />
-    <node concept="3clFb_" id="2v0ve8x$pnw" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="doneUpdating" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="2v0ve8x$pnx" role="1B3o_S" />
-      <node concept="3cqZAl" id="2v0ve8x$pny" role="3clF45" />
-      <node concept="3clFbS" id="2v0ve8x$pnz" role="3clF47">
-        <node concept="3SKdUt" id="2v0ve8x$pn$" role="3cqZAp">
-          <node concept="3SKdUq" id="2v0ve8x$pn_" role="3SKWNk">
-            <property role="3SKdUp" value="Nothing to do here" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2v0ve8x$pnA" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2v0ve8x$pnB" role="jymVt" />
-    <node concept="3clFb_" id="2v0ve8x$pnC" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getEditorMessageOwner" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="2v0ve8x$pnD" role="1B3o_S" />
-      <node concept="3uibUv" id="2v0ve8x$pnE" role="3clF45">
-        <ref role="3uigEE" to="kpve:~EditorMessageOwner" resolve="EditorMessageOwner" />
-      </node>
-      <node concept="3clFbS" id="2v0ve8x$pnF" role="3clF47">
-        <node concept="3clFbF" id="2v0ve8x$pnG" role="3cqZAp">
-          <node concept="Xjq3P" id="2v0ve8x$pnH" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2v0ve8x$pnI" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2v0ve8x$pnJ" role="jymVt" />
-    <node concept="3clFb_" id="2v0ve8x$pnK" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="processEvents" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="2v0ve8x$pnL" role="1B3o_S" />
-      <node concept="3cqZAl" id="2v0ve8x$pnM" role="3clF45" />
-      <node concept="37vLTG" id="2v0ve8x$pnN" role="3clF46">
-        <property role="TrG5h" value="list" />
-        <node concept="3uibUv" id="2v0ve8x$pnO" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="2v0ve8x$pnP" role="11_B2D">
-            <ref role="3uigEE" to="j9co:~SModelEvent" resolve="SModelEvent" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbS" id="2v0ve8x$pnQ" role="3clF47">
-        <node concept="3SKdUt" id="2v0ve8x$pnR" role="3cqZAp">
-          <node concept="3SKdUq" id="2v0ve8x$pnS" role="3SKWNk">
-            <property role="3SKdUp" value="Nothing to do here - each sub-checker is responsible for listening to appropriate events by itself" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2v0ve8x$pnT" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2v0ve8x$pnU" role="jymVt" />
     <node concept="3clFb_" id="2v0ve8x$pnV" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="needsUpdate" />
@@ -3168,11 +3083,11 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6qi2OtU3ugr" role="1B3o_S" />
-    <node concept="3uibUv" id="2v0ve8x$DH2" role="EKbjA">
-      <ref role="3uigEE" to="n70j:~DisposableEditorChecker" resolve="DisposableEditorChecker" />
+    <node concept="3uibUv" id="5uC6IZduc9G" role="1zkMxy">
+      <ref role="3uigEE" to="n70j:~BaseNewEditorChecker" resolve="BaseNewEditorChecker" />
     </node>
-    <node concept="3uibUv" id="2v0ve8x$Nmw" role="EKbjA">
-      <ref role="3uigEE" to="kpve:~EditorMessageOwner" resolve="EditorMessageOwner" />
+    <node concept="3uibUv" id="5uC6IZdwjEE" role="EKbjA">
+      <ref role="3uigEE" to="n70j:~DisposableEditorChecker" resolve="DisposableEditorChecker" />
     </node>
   </node>
   <node concept="312cEu" id="4nkKl$KPUHv">

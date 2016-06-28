@@ -19,6 +19,7 @@ import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
@@ -35,7 +36,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BookmarksHighlighter implements DisposableEditorChecker, EditorMessageOwner {
+public class BookmarksHighlighter extends BaseNewEditorChecker implements DisposableEditorChecker {
   private BookmarkManager myBookmarkManager;
   private boolean myChanged = true;
   private BookmarkListener myListener = new BookmarkListener() {
@@ -65,21 +66,6 @@ public class BookmarksHighlighter implements DisposableEditorChecker, EditorMess
     return myChanged;
   }
 
-  @Override
-  public void processEvents(List<SModelEvent> events) {
-    // Do nothing, we have our own listener
-  }
-
-  @Override
-  public boolean isLaterThan(EditorChecker editorChecker) {
-    return false;
-  }
-
-  @Override
-  public boolean isEssential() {
-    return true;
-  }
-
   @NotNull
   @Override
   public UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
@@ -95,18 +81,5 @@ public class BookmarksHighlighter implements DisposableEditorChecker, EditorMess
       myChanged = true;
       throw e;
     }
-  }
-
-  @Override
-  public void doneUpdating() {
-  }
-
-  @Override
-  public void forceAutofix(EditorComponent editorComponent) {
-  }
-
-  @Override
-  public EditorMessageOwner getEditorMessageOwner() {
-    return this;
   }
 }

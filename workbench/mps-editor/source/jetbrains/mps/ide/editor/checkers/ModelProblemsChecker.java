@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editor.checkers;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
@@ -40,7 +41,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ModelProblemsChecker implements DisposableEditorChecker, EditorMessageOwner {
+public class ModelProblemsChecker extends BaseNewEditorChecker implements DisposableEditorChecker {
 
   private boolean myChanged = true;
   private final SRepository myProjectRepo;
@@ -87,35 +88,8 @@ public class ModelProblemsChecker implements DisposableEditorChecker, EditorMess
   }
 
   @Override
-  public EditorMessageOwner getEditorMessageOwner() {
-    return this;
-  }
-
-  @Override
   public boolean needsUpdate(EditorComponent editorComponent) {
     return myChanged;
-  }
-
-  @Override
-  public boolean isEssential() {
-    return true;
-  }
-
-  @Override
-  public boolean isLaterThan(EditorChecker editorChecker) {
-    return false;
-  }
-
-  @Override
-  public void processEvents(List<SModelEvent> events) {
-  }
-
-  @Override
-  public void doneUpdating() {
-  }
-
-  @Override
-  public void forceAutofix(EditorComponent editorComponent) {
   }
 
   @NotNull
