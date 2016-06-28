@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.editor.menus.*;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
@@ -38,7 +37,7 @@ public class DefaultConceptMenu extends TransformationMenuBase {
   @Override
   protected List<jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
-      return Collections.singletonList(new IncludeSubstituteMenuMenuPart());
+      return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart());
     } else {
       return Collections.singletonList(new ConceptMenusMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
     }

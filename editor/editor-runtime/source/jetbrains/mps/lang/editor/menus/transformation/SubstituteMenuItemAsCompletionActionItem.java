@@ -15,39 +15,22 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * @author simon
  */
-public class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase implements CompletionActionItem {
-  private static final Logger LOG = Logger.getLogger(SubstituteMenuItemAsCompletionActionItem.class);
+public abstract class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase implements CompletionActionItem {
+  private final SubstituteMenuItem mySubstituteItem;
 
-  public final SubstituteMenuItem mySubstituteItem;
-  private final SContainmentLink myContainmentLink;
-  private final SNode myParentNode;
-  private final SNode myCurrentChild;
-  private final EditorContext myEditorContext;
-
-  public SubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem, SNode parentNode, SNode currentChild, SContainmentLink link, EditorContext editorContext) {
+  public SubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem) {
     mySubstituteItem = substituteItem;
-    myParentNode = parentNode;
-    myCurrentChild = currentChild;
-    myContainmentLink = link;
-    myEditorContext = editorContext;
   }
 
   @Nullable
@@ -75,34 +58,12 @@ public class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase imp
   }
 
   @Override
-  public void execute(@NotNull String pattern) {
-    SNode newChild = mySubstituteItem.createNode(pattern);
-    if (newChild != null) {
-      if (!newChild.getConcept().isSubConceptOf(myContainmentLink.getTargetConcept())) {
-        LOG.error("couldn't set instance of " + newChild.getConcept().getName() +
-            " as child '" + myContainmentLink.getName() + "' to parent" + myParentNode.getPresentation() + " Parent id: " + myParentNode.getNodeId());
-      }
-      if (myCurrentChild == null) {
-        myParentNode.addChild(myContainmentLink, newChild);
-      } else {
-        SNodeUtil.replaceWithAnother(myCurrentChild, newChild);
-        myCurrentChild.delete();
-      }
-    }
-    boolean wasSelected = mySubstituteItem.select(newChild, pattern);
-    if (!wasSelected) {
-      //todo move to select class;
-      myEditorContext.flushEvents();
-      EditorComponent editorComponent = ((EditorComponent) myEditorContext.getEditorComponent());
-      EditorCell cell = editorComponent.findNodeCell(newChild);
-      if (cell != null) {
-        EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-        if (errorCell != null) {
-          editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-        } else {
-          editorComponent.changeSelectionWRTFocusPolicy(cell);
-        }
-      }
-    }
+  public boolean canExecute(@NotNull String pattern) {
+    return mySubstituteItem.canExecute(pattern);
   }
+
+  protected SubstituteMenuItem getSubstituteItem() {
+    return mySubstituteItem;
+  }
+
 }

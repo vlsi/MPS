@@ -4831,6 +4831,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="menuReference" />
       <property role="IQ2ns" value="6718020819487784677" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
     </node>
   </node>
@@ -5578,11 +5579,6 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Substitute Menu (Default)" />
     <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
-    <node concept="1TJgyi" id="5i0CB70TSuR" role="1TKVEl">
-      <property role="IQ2nx" value="6089045305656313783" />
-      <property role="TrG5h" value="includeSubconcepts" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="PrWs8" id="1quYWAD3_QS" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
     </node>
@@ -5877,6 +5873,61 @@
     <node concept="PrWs8" id="3rSzFHWOd_n" role="PrDN$">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="yarZQNHfz6">
+    <property role="EcuMT" value="615427434521884870" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_Subconcepts" />
+    <property role="34LRSv" value="subconcepts menu" />
+    <property role="R4oN_" value="subconcepts menu" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+  </node>
+  <node concept="1TIwiD" id="4BQO_Wi42wm">
+    <property role="EcuMT" value="5329678514806335510" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_Concepts" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms60c">
+    <property role="EcuMT" value="1896914160037421068" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="TransformationMenuPart_WrapSubstituteMenu" />
+    <property role="34LRSv" value="wrap substitute menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="1Djcm3ms60d" role="1TKVEi">
+      <property role="IQ2ns" value="1896914160037421069" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="1TJgyj" id="1Djcm3ms6CX" role="1TKVEi">
+      <property role="IQ2ns" value="1896914160037423677" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="handler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1Djcm3ms6D0" resolve="QueryFunction_TransformationMenu_WrapperHandler" />
+    </node>
+    <node concept="PrWs8" id="1Djcm3ms60f" role="PzmwI">
+      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+    <node concept="PrWs8" id="1Djcm3ms9SV" role="PzmwI">
+      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms6D0">
+    <property role="EcuMT" value="1896914160037423680" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_WrapperHandler" />
+    <property role="34LRSv" value="wrapper" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms9XU">
+    <property role="EcuMT" value="1896914160037437306" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_CreatedNode" />
+    <property role="34LRSv" value="createdNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 

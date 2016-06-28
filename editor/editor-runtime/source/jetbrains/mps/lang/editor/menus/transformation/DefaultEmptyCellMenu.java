@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.editor.menus.*;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -45,7 +41,7 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase{
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
-      return Collections.singletonList(new IncludeSubstituteMenuMenuPart() {
+      return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart() {
         @Override
         protected SNode getParentNode(TransformationMenuContext context) {
           return context.getNode();

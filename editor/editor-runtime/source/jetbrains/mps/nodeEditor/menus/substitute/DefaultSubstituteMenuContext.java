@@ -40,17 +40,15 @@ import java.util.List;
  * @author simon
  */
 public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
-  private SAbstractConcept myTargetConcept;
   private EditorContext myEditorContext;
 
   private SContainmentLink myContainmentLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
   private CircularReferenceSafeMenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
-  private DefaultSubstituteMenuContext(CircularReferenceSafeMenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SAbstractConcept targetConcept, SContainmentLink containmentLink, SNode parentNode,
+  private DefaultSubstituteMenuContext(CircularReferenceSafeMenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
     myMenuItemFactory = menuItemFactory;
-    myTargetConcept = targetConcept;
     myContainmentLink = containmentLink;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
@@ -61,11 +59,6 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @Override
   public EditorContext getEditorContext() {
     return myEditorContext;
-  }
-
-  @Override
-  public SAbstractConcept getTargetConcept() {
-    return myTargetConcept;
   }
 
   @Override
@@ -86,16 +79,16 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @Override
   public List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup) {
     if (menuLookup == null) {
-      menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myTargetConcept);
+      menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
 
     return myMenuItemFactory.createItems(this, menuLookup);
   }
 
   @NotNull
-  public static DefaultSubstituteMenuContext createInitialContextForNode(SAbstractConcept targetConcept, SContainmentLink containmentLink, SNode parentNode,
+  public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
-    return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(parentNode)), targetConcept, containmentLink, parentNode, currentChild, editorContext);
+    return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(parentNode)), containmentLink, parentNode, currentChild, editorContext);
   }
 
 }

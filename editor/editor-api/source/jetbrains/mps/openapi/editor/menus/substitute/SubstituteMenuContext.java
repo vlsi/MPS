@@ -30,7 +30,6 @@ import java.util.List;
  */
 public interface SubstituteMenuContext {
   EditorContext getEditorContext();
-  SAbstractConcept getTargetConcept();
   SContainmentLink getLink();
   SNode getParentNode();
   SNode getCurrentChild();
